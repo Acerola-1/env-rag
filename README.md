@@ -16,6 +16,7 @@
 git clone https://github.com/Acerola-1/env-rag.git
 cd env-rag
 git lfs pull
+python3 scripts/verify_dataset.py
 uv sync --locked
 cp .env.example .env
 # 填写自己的数据库和模型服务配置
@@ -38,7 +39,7 @@ PYTHONDONTWRITEBYTECODE=1 uv run pytest tests -q
 uv sync --locked
 uv run env-rag-final doctor
 uv run env-rag-final doctor --connections
-uv run ruff check .
+uv run ruff check src tests
 ```
 
 Python 使用 3.12。正式依赖为 PyPI 的 `lightrag-hku`，没有引用本地源码。
