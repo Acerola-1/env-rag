@@ -1,0 +1,20 @@
+[
+  {
+    "id": "D1",
+    "path": "src/env_rag_final/answer.py",
+    "start_line": 1122,
+    "end_line": 1136,
+    "severity": "high",
+    "category": "bug",
+    "content": "Prose slot coverage uses the whole read paragraph rather than the verified asserted fragment, so unanswered cadmium is marked answered when only mercury is emitted."
+  },
+  {
+    "id": "D2",
+    "path": "src/env_rag_final/answer.py",
+    "start_line": 868,
+    "end_line": 912,
+    "severity": "high",
+    "category": "bug",
+    "content": "Multiple unit assertions inside one bracket remain one segment; a mercury mg/L clause plus a pH dimensionless clause makes mercury dimensionless complete."
+  }
+]

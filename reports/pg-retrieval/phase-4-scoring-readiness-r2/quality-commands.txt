@@ -1,0 +1,34 @@
+I001 [*] Import block is un-sorted or un-formatted
+   --> assess_two_rounds.py:106:1
+    |
+104 |   """
+105 |
+106 | / from __future__ import annotations
+107 | |
+108 | | import argparse
+109 | | import hashlib
+110 | | import os
+111 | | import json
+112 | | import re
+113 | | import statistics
+114 | | import sys
+115 | | from collections import defaultdict
+116 | | from pathlib import Path
+    | |________________________^
+117 |
+118 |   REPO = Path(__file__).resolve().parents[3]
+    |
+help: Organize imports
+    |
+109 | import hashlib
+110 + import json
+111 | import os
+    - import json
+112 | import re
+    |
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.
+ruff=1
+2 files already formatted
+fmt=0

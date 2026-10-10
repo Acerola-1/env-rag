@@ -1,0 +1,31 @@
+{
+  "frozen_r1_r2_r3_unchanged": {
+    "tests/test_evaluation_review_r1.py": true,
+    "tests/test_evaluation_review_r2.py": true,
+    "tests/test_evaluation_review_r3.py": true
+  },
+  "accepted_answer_expand_seams_unchanged": {
+    "src/env_rag_final/answer.py": true,
+    "src/env_rag_final/search/expand.py": true
+  },
+  "cli_unchanged_vs_prior_review": true,
+  "other_accepted_components_unchanged": {
+    "rerank.py": true,
+    "fusion.py": true,
+    "local_adapter.py": true,
+    "compat_runtime.py": true
+  },
+  "phase3_frozen_tests_count": 17,
+  "phase3_frozen_tests_all_unchanged": true,
+  "history_checked": 27,
+  "history_all_unchanged": true,
+  "env_sha_matches_hy3_success_generation": true,
+  "gold_sha_matches": true,
+  "sensitive_values_matches": 0,
+  "leaking_files": [],
+  "dry_matrix_rows": 246,
+  "positive_rows": 186,
+  "counter_rows": 60,
+  "reviewer_real_requests": 0,
+  "production_writes": 0
+}

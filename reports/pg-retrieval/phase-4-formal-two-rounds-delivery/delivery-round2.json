@@ -1,0 +1,295 @@
+{
+ "enum_exact_PASS_by_category_path": {
+  "file_enum": {
+   "pg": 5,
+   "local": 5,
+   "fusion": 5
+  },
+  "prose_enum": {
+   "pg": 5,
+   "local": 4,
+   "fusion": 5
+  },
+  "table_enum": {
+   "pg": 5,
+   "local": 5,
+   "fusion": 5
+  }
+ },
+ "fact_by_path": {
+  "pg": {
+   "PASS": 0,
+   "FAIL": 1,
+   "PENDING": 6
+  },
+  "local": {
+   "PASS": 0,
+   "FAIL": 7,
+   "PENDING": 0
+  },
+  "fusion": {
+   "PASS": 0,
+   "FAIL": 1,
+   "PENDING": 6
+  }
+ },
+ "synthesis_by_path": {
+  "pg": {
+   "PASS": 0,
+   "FAIL": 6,
+   "PENDING": 0
+  },
+  "local": {
+   "PASS": 0,
+   "FAIL": 6,
+   "PENDING": 0
+  },
+  "fusion": {
+   "PASS": 0,
+   "FAIL": 6,
+   "PENDING": 0
+  }
+ },
+ "counters_by_path": {
+  "pg": {
+   "PASS": 4,
+   "FAIL": 4,
+   "PENDING": 2
+  },
+  "local": {
+   "PASS": 2,
+   "FAIL": 6,
+   "PENDING": 2
+  },
+  "fusion": {
+   "PASS": 4,
+   "FAIL": 4,
+   "PENDING": 2
+  }
+ },
+ "citations": {
+  "unverified": [
+   {
+    "qid": "file-enum-004",
+    "path": "pg",
+    "n": 1
+   },
+   {
+    "qid": "file-enum-004",
+    "path": "local",
+    "n": 1
+   },
+   {
+    "qid": "file-enum-004",
+    "path": "fusion",
+    "n": 1
+   },
+   {
+    "qid": "table-enum-003",
+    "path": "pg",
+    "n": 2
+   },
+   {
+    "qid": "table-enum-003",
+    "path": "local",
+    "n": 2
+   },
+   {
+    "qid": "table-enum-003",
+    "path": "fusion",
+    "n": 2
+   }
+  ],
+  "masked": [
+   {
+    "qid": "table-enum-003",
+    "path": "pg",
+    "n": 2
+   },
+   {
+    "qid": "table-enum-003",
+    "path": "local",
+    "n": 2
+   },
+   {
+    "qid": "table-enum-003",
+    "path": "fusion",
+    "n": 2
+   }
+  ],
+  "gap_only": []
+ },
+ "positive_coverage": {
+  "complete": 56,
+  "partial": 31,
+  "ambiguous": 6
+ },
+ "counter_false_complete": [
+  "neg-003/pg",
+  "neg-003/local",
+  "neg-003/fusion",
+  "neg-004/pg",
+  "neg-004/local",
+  "neg-004/fusion",
+  "neg-005/pg",
+  "neg-005/local",
+  "neg-005/fusion"
+ ],
+ "recall_means_simple": {
+  "pg": {
+   "chunk_recall_at_20": [
+    0.9585,
+    31
+   ],
+   "typed_coverage": [
+    1.0,
+    31
+   ],
+   "union_coverage": [
+    1.0,
+    31
+   ]
+  },
+  "local": {
+   "usable_recall_at_20": [
+    0.9516,
+    31
+   ],
+   "note": "local discovery is unordered usable set; key differs from pg/fusion chunk@20"
+  },
+  "fusion": {
+   "chunk_recall_at_20": [
+    0.9908,
+    31
+   ],
+   "typed_coverage": [
+    1.0,
+    31
+   ],
+   "union_coverage": [
+    1.0,
+    31
+   ]
+  }
+ },
+ "recall_missed": {
+  "file-enum-004/pg": {
+   "chunk": 0.714,
+   "union": 1.0
+  },
+  "file-enum-004/fusion": {
+   "chunk": 0.714,
+   "union": 1.0
+  },
+  "file-enum-005/pg": {
+   "chunk": 0.0,
+   "union": 1.0
+  }
+ },
+ "typed_missed": {
+  "syn-001/pg": {
+   "recall": 0.667,
+   "missed": [
+    "eebc13e2a0348fa67955192750d4e9e6"
+   ]
+  },
+  "syn-001/local": {
+   "recall": 0.667,
+   "missed": [
+    "tb-4c883d21fa02a53189e0911c3d59d1d1-0001"
+   ]
+  },
+  "syn-002/pg": {
+   "recall": 0.0,
+   "missed": [
+    "e0dae0566f942e76eb779d90de929d39",
+    "ef6868c7bc693df8da996208421b815d"
+   ]
+  },
+  "syn-002/local": {
+   "recall": 0.5,
+   "missed": [
+    "e0dae0566f942e76eb779d90de929d39"
+   ]
+  },
+  "syn-002/fusion": {
+   "recall": 0.5,
+   "missed": [
+    "e0dae0566f942e76eb779d90de929d39"
+   ]
+  },
+  "syn-004/local": {
+   "recall": 0.5,
+   "missed": [
+    "6291e97f42b5eed29d234cf1e96ed724"
+   ]
+  }
+ },
+ "latency": {
+  "discovery_ms": {
+   "n": 120,
+   "p50": 2552.0,
+   "p95": 7441.0
+  },
+  "total_ms": {
+   "n": 120,
+   "p50": 4488.5,
+   "p95": 10606.0
+  },
+  "answer_http_ms": {
+   "n": 11,
+   "p50": 4265,
+   "p95": 6600.0,
+   "note": "only legs with model_calls==1 (budget-ledger HTTP count)"
+  },
+  "expansion_ms": "unavailable (no per-stage field; do not derive by subtraction)",
+  "rerank_http_ms": "inside fusion discovery_ms (inclusive)",
+  "answer_stage_ms": {
+   "n": 120,
+   "p50": 1606.0,
+   "p95": 5571.3
+  }
+ },
+ "rerank": {
+  "legs_with_artifact": 38,
+  "degraded_entries": 0
+ },
+ "ledger": {
+  "reserved": {
+   "pg": 12444,
+   "llm": 79,
+   "embedding": 200,
+   "qdrant": 200,
+   "neo4j": 395,
+   "rerank": 38,
+   "answer_llm": 21
+  },
+  "issued": {
+   "pg": 12444,
+   "llm": 79,
+   "embedding": 200,
+   "qdrant": 200,
+   "neo4j": 395,
+   "rerank": 38,
+   "answer_llm": 11
+  },
+  "refusals": [
+   "r2/pg/neg-008:pg",
+   "r2/local/neg-008:readonly_select_chunks",
+   "r2/fusion/neg-008:pg"
+  ],
+  "caps": {
+   "llm": 82,
+   "embedding": 328,
+   "qdrant": 656,
+   "neo4j": 820,
+   "pg": 125952,
+   "rerank": 41,
+   "answer_llm": 21
+  }
+ },
+ "recall_missed_local": {
+  "file-enum-004": 0.0,
+  "syn-004": 0.5
+ }
+}

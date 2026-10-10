@@ -1,0 +1,60 @@
+{
+ "task": "5.2 real local candidate adapter (production backends, read-only)",
+ "release": "lightrag-hku 1.5.7",
+ "frozen": {
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_run_id": "c15c741742394320",
+  "catalog_snapshot_id": "4919b3938ad93747",
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "public_counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  }
+ },
+ "started_at": "2026-10-06T22:16:22+0800",
+ "results": [
+  {
+   "query_id": "fact-001",
+   "query": "GB 3095-2012 中二氧化硫的年平均浓度二级限值是多少？",
+   "mode": "local",
+   "workspace": "default",
+   "started_at": "2026-10-06T22:16:19+0800",
+   "finished_at": "2026-10-06T22:16:22+0800",
+   "keywords": {
+    "high_level": [
+     "环境空气质量标准",
+     "大气污染物浓度限值"
+    ],
+    "low_level": [
+     "GB 3095-2012",
+     "二氧化硫",
+     "年平均浓度",
+     "二级限值"
+    ]
+   },
+   "entities_top": [],
+   "relations_count": 0,
+   "candidates": [],
+   "service_calls": {
+    "embedding_requests": 1,
+    "embedding_texts": 1,
+    "llm_requests": 1,
+    "qdrant_queries": 2,
+    "neo4j_reads": 1,
+    "pg_readonly_queries": 1
+   },
+   "degraded": [],
+   "errors": [],
+   "targets": [
+    "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+   ]
+  }
+ ]
+}

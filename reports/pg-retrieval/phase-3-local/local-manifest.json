@@ -1,0 +1,78 @@
+{
+ "task": "5.2 real local candidate adapter (production backends, read-only)",
+ "generated_at": "2026-10-06T22:27:24+0800",
+ "command_run": "uv run env-rag-final lightrag-local --query-id fact-001,fact-002,syn-001,neg-001 --report-dir reports/pg-retrieval/phase-3-local",
+ "files_sha256": {
+  "src/env_rag_final/local_adapter.py": "818666fbd7e2b29f7aeef6f696612918a6e7e0eb31ac8505a95d933faccca002",
+  "src/env_rag_final/cli.py": "5ce0f02d054af87d3aed6993b5437ba01b00c809361b29b0c43919e11a8e3713",
+  "reports/pg-retrieval/phase-3-local/local-runtime.md": "e564881f7fe12323b19e751ba47b3d4378c9eaeb2d17ce724f303aa2c597a034",
+  "reports/pg-retrieval/phase-3-local/local-runtime-latest.json": "f6f961e55a17225d83fdd57ee99721e25357630ad7fda4563f17efac81d5cf3b",
+  "reports/pg-retrieval/gate-2/review-r5/gold-approved.json": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e"
+ },
+ "release": {
+  "lightrag_hku": "1.5.7",
+  "wheel_record_mismatches": 0
+ },
+ "frozen": {
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_run_id": "c15c741742394320",
+  "catalog_snapshot_id": "4919b3938ad93747",
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "public_counts": {
+   "doc_full": 221,
+   "doc_chunks": 5709,
+   "doc_status": 279,
+   "llm_cache": 16514,
+   "entity_chunks": 65527,
+   "full_entities": 221,
+   "full_relations": 221,
+   "relation_chunks": 119575
+  }
+ },
+ "backends": {
+  "qdrant": {
+   "chunks": 5709,
+   "entities": 65526,
+   "relationships": 119574,
+   "dim": 2560,
+   "vector_workspace": "_",
+   "workspace_index_preexisting": true
+  },
+  "neo4j": {
+   "label": "base",
+   "nodes": 66069,
+   "relationships": 121819,
+   "indexes_preexisting": [
+    "index_f5e5c6f5 (RANGE entity_id)",
+    "entity_id_fulltext_idx_base (FULLTEXT)"
+   ]
+  },
+  "pg": "read-only asyncpg only; no ClientManager / no LightRAG storage initialize (no DDL)"
+ },
+ "service_call_totals": {
+  "embedding_requests": 8,
+  "embedding_texts": 8,
+  "llm_requests": 4,
+  "qdrant_queries": 8,
+  "neo4j_reads": 4,
+  "pg_readonly_queries": 4
+ },
+ "verification": {
+  "candidates_total": 79,
+  "candidates_verified": 79,
+  "identity_contract": "(workspace, chunk_id) -> lightrag_doc_chunks row; full_doc_id must equal id prefix; missing/mismatch rejected"
+ },
+ "production_unchanged": {
+  "llm_cache_rows": 16514,
+  "env_sha_head": "e3bf75975fde9761",
+  "answer_llm_calls": 0,
+  "cache_reads": 0,
+  "cache_writes": 0
+ },
+ "tests": {
+  "total": 228,
+  "local_adapter_new": 8
+ },
+ "observation": "neg-001: semantic path surfaces 2012/2026 chunks for absent 1996 version; version strictness is an answer/fusion-level contract (PG keyword route), expectation preserved verbatim in evidence"
+}

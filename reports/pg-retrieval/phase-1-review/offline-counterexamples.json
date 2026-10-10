@@ -1,0 +1,60 @@
+{
+  "teardown_foreign_schema_sql": [
+    "DROP SCHEMA IF EXISTS public CASCADE"
+  ],
+  "foreign_ddl_guard_accepts": [
+    "DROP TABLE IF EXISTS public.owned_elsewhere",
+    "ALTER TABLE other.foreign_table ADD COLUMN x INT"
+  ],
+  "reference_misclassified_as_self": {
+    "title": null,
+    "title_confidence": "unknown",
+    "self_code": "GB3838",
+    "self_code_version": "2002",
+    "referenced_codes": [],
+    "doc_type": null,
+    "publish_date": null,
+    "implement_date": null,
+    "stats_period": null,
+    "unknown_fields": [
+      "title",
+      "doc_type",
+      "publish_date",
+      "implement_date"
+    ],
+    "field_provenance": {
+      "title": "first non-generic heading: '本文件'no business title found; left unknown",
+      "self_code": "cover line: '依据 GB 3838-2002 执行'",
+      "referenced_codes": "regex scan of full body via lexical_norm.extract_codes",
+      "doc_type": "no recognizable type keyword in file name",
+      "dates": "发布/实施 matched separately; no merging, no year inference"
+    }
+  },
+  "gb3095_chapter4_members": [
+    {
+      "number": "4",
+      "members": [
+        "6b561f175905ef52a9c4b02aab741551"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "number": "4.1",
+      "members": [
+        "ced9002b92f52f07096945aae564c1d5"
+      ],
+      "status": "confirmed"
+    },
+    {
+      "number": "4.2",
+      "members": [
+        "7f9dddaf02f372cc7d329f4678c46fbc"
+      ],
+      "status": "confirmed"
+    }
+  ],
+  "adapter_same_id_multi_workspace_risk": {
+    "error": "CrossWorkspaceError",
+    "description": "lookup fetchrow does not filter by requested workspace"
+  }
+}

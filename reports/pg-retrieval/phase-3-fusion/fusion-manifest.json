@@ -1,0 +1,97 @@
+{
+ "task": "5.3 two-path candidate fusion (merge / identity dedup / version constraints, read-only, guarded)",
+ "generated_at": "2026-10-07T08:05:00+0800",
+ "command_run": "uv run env-rag-final fuse-candidates --query-id fact-002,syn-001,neg-001 --report-dir reports/pg-retrieval/phase-3-fusion",
+ "pg_only_switch": "uv run env-rag-final fuse-candidates --query-id <ids> --pg-only --report-dir <dir>",
+ "files_sha256": {
+  "src/env_rag_final/fusion.py": "dafa557f216a4edec241ca09730bdb3f892af10331ac2141fa69bff29f4b072c",
+  "src/env_rag_final/cli.py": "08753ee88a1cb2b439aafd542f69651fab439396e5f316a27c867a16f393aa52",
+  "tests/test_fusion.py": "a89194b9222e1d5fb7cfa54ae2129ce02e7e6392f2e2ef0ccbb8622b730d569b",
+  "reports/pg-retrieval/phase-3-fusion/fusion-runtime-latest.json": "0bb845a6c270cb603746343ca3a8d4710fbb0754279aba45edb61b88e514281e",
+  "reports/pg-retrieval/phase-3-fusion/fusion-candidates.jsonl": "facbdc69f10a8a1b7de182e47ae5bee3b0bbe59a938b23e2ec9ced90c0f2222d",
+  "reports/pg-retrieval/phase-3-fusion/fusion-report.md": "d132569ff6291db52138a3033b17e620540ac7cf804a4d3904eb32aaee4c6c61",
+  "reports/pg-retrieval/gate-2/review-r5/gold-approved.json": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e"
+ },
+ "release": {
+  "lightrag_hku": "1.5.7"
+ },
+ "inputs": {
+  "pg_path": "search.query.run_query(expand=False); fusion consumes discovery_candidates ONLY (explicit [] = authoritative zero discovery; enumeration never backfills)",
+  "local_path": "local_adapter.LocalCandidateAdapter.fetch (5.2 accepted read-only path)",
+  "shared_identity": "gold question text + workspace per query; source/catalog/search/gold/env guards before/after"
+ },
+ "merge_contract": {
+  "chunk_key": "(workspace, chunk_id)",
+  "dedup": "same identity merges the candidate; ALL paths kept (score kinds: pg_ts_rank / local_selection_order / none)",
+  "scores": "raw kinds preserved verbatim; never summed, converted or fabricated (no cosine, no joint score)",
+  "cross_workspace": "rejected explicitly (sources never mixed)",
+  "doc_conflict": "conflicting attribution -> entry rejected, no attribution picked",
+  "typed_targets": "doc/scope/table targets stay typed; only real chunk identities become chunk candidates"
+ },
+ "version_constraints": {
+  "requested_resolved_from": "PG code_exact trace steps",
+  "local_binding": "local chunks outside resolved target docs are rejected (marked, propagated to merged entry)",
+  "missing_targets": "kept missing; nearby versions never substitute; retained evidence for other targets kept",
+  "all_missing": "local call skipped entirely (zero model calls)",
+  "multi_version": "each resolved (code, version) branch allowed; cross-version candidates kept"
+ },
+ "budget": {"limit": 40, "rule": "first-seen (PG discovery order, then local order); truncation recorded with unretained ids; status partial, never complete"},
+ "degrade_contract": {
+  "local_failure": "explicit pg-only-degraded with real error + failing adapter receipts",
+  "pg_stale": "stale status; local output never upgrades it",
+  "stage_check": "fusion re-checks local per-stage completeness records (stage_completeness); global label/one boolean not trusted alone"
+ },
+ "service_call_totals": {
+  "fact-002": {"llm": 1, "embedding": 3, "qdrant": 3, "neo4j": 5, "pg": 3, "pg_sql": "fetchrow 8 + fetch 14"},
+  "syn-001": {"llm": 1, "embedding": 2, "qdrant": 2, "neo4j": 5, "pg": 2, "pg_sql": "fetchrow 8 + fetch 13 + fetchval 5"},
+  "neg-001": {"llm": 0, "embedding": 0, "qdrant": 0, "neo4j": 0, "pg": 0, "pg_sql": "fetchrow 8 + fetch 10"}
+ },
+ "identity_guards": {
+  "identity_before_matches_frozen": true,
+  "identity_after_matches_frozen": true,
+  "identity_drift": [],
+  "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "counts_after": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  }
+ },
+ "results": {
+  "fact-002": {
+   "status": "ok",
+   "targets_resolved": 1,
+   "usable": 10,
+   "rejected": 0,
+   "merged_both_paths": 1,
+   "merged_example": {"chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001", "pg_score": 0.002201834926381707, "local_order": 0},
+   "local_stage_completeness": [{"stage": "entities", "complete": true}, {"stage": "relations", "complete": true}]
+  },
+  "syn-001": {
+   "status": "ok",
+   "targets_resolved": 2,
+   "usable": 9,
+   "rejected": 3,
+   "rejected_reason": "candidate docs (doc-8bd9..., doc-c963..., doc-eb0a...) are not RESOLVED requested targets (GB3095-2012/2026); nearby versions never substitute"
+  },
+  "neg-001": {
+   "status": "missing",
+   "targets_resolved": 0,
+   "usable": 0,
+   "local_skipped": "all requested targets missing; local call skipped (zero model calls)"
+  }
+ },
+ "content_readback": "every usable candidate read back from production public.lightrag_doc_chunks by (workspace, chunk_id); full text + content_sha256 retained; content_head never treated as full text",
+ "pg_only_smoke": {
+  "dir": "reports/pg-retrieval/phase-3-fusion-smoke",
+  "command": "uv run env-rag-final fuse-candidates --query-id neg-001 --pg-only --report-dir reports/pg-retrieval/phase-3-fusion-smoke",
+  "result": "neg-001 missing, usable=0, zero model calls (switch wired end-to-end in the real CLI)"
+ },
+ "answer_llm_calls": 0,
+ "tests": {"total": 266, "fusion_entry": "11/11 pass", "prior_suites": "255 preserved"}
+}

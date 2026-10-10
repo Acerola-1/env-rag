@@ -1,0 +1,18 @@
+[
+  {
+    "qid": "syn-003",
+    "path": "fusion",
+    "stated_http": "not-issued",
+    "actual_call": {
+      "service": "answer-model",
+      "endpoint": "http://127.0.0.1:8787/v1/chat/completions",
+      "model": "<redacted>",
+      "status": "success",
+      "error": null,
+      "latency_ms": 3084
+    },
+    "actual_status": "incomplete_answer_coverage",
+    "model_calls_used": 1,
+    "classification": "选错题面要求的范围（真实引用≠回答所问）"
+  }
+]

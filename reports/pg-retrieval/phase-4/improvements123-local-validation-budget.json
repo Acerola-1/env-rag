@@ -1,0 +1,29 @@
+{
+  "max_texts_per_embed_call": 32,
+  "max_chars_per_embed_call": 64000,
+  "per_question": {
+    "llm": 1,
+    "embedding": 4,
+    "qdrant": 8,
+    "neo4j": 10,
+    "pg": 1024
+  },
+  "round_caps": {
+    "llm": 4,
+    "embedding": 16,
+    "qdrant": 32,
+    "neo4j": 40,
+    "pg": 4096,
+    "rerank": 0,
+    "answer_llm": 0
+  },
+  "total_caps": {
+    "llm": 4,
+    "embedding": 16,
+    "qdrant": 32,
+    "neo4j": 40,
+    "pg": 4096,
+    "rerank": 0,
+    "answer_llm": 0
+  }
+}

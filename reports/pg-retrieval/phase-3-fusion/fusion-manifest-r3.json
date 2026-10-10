@@ -1,0 +1,26 @@
+{
+ "task": "5.3 two-path candidate fusion (rev 3, F3-a/F3-b boundary remediation, read-only, guarded)",
+ "generated_at": "2026-10-07T09:55:00+0800",
+ "baseline": "rev 2 accepted F1/F2/F4 (phase-3-fusion-review-r2/review.md); this round fixes ONLY the two remaining F3 boundaries",
+ "files_sha256": {
+  "src/env_rag_final/fusion.py": "5cab682be39fc38b5303de337dcc6fee8d4e858c51f35f7e6a4650a08f8f8681",
+  "src/env_rag_final/cli.py": "08753ee88a1cb2b439aafd542f69651fab439396e5f316a27c867a16f393aa52",
+  "tests/test_fusion.py": "a89194b9222e1d5fb7cfa54ae2129ce02e7e6392f2e2ef0ccbb8622b730d569b",
+  "tests/test_fusion_review_r1.py": "9aff4a4b596a4fd53134e2131ded82ae6d184f9ebf0c4d645093c7d8b80e3c4c",
+  "tests/test_fusion_review_r2.py": "b8d643cb27209023fcb6b15a6004a46b413902bb2ac56f22761cdc266caf4636",
+  "reports/pg-retrieval/gate-2/review-r5/gold-approved.json": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e"
+ },
+ "fixes": {
+  "F3-a": "the WHOLE pre-flight (gold read_text, JSON parse, structure prep, unknown ids, config guards, SHA verification) sits inside ONE zero-backend-contact failure boundary; every rejection writes the zero-call failure terminal (failure_service_records.call_records=[], real error type/reason, no finished_at) before re-raising: JSONDecodeError -> gold-parse, OSError -> gold-read, AdapterError -> pre-flight, unknown ids -> unknown-query-id. Frozen gold/.env never modified; malformed input is rejected, never tolerated.",
+  "F3-b": "entering a new query FULLY RESETS the live slot (query_id, partial, receipts) synchronously BEFORE any backend contact/await; a failure before the current query's local stage yields an explicitly EMPTY ledger under the CURRENT query id; after local completes the slot carries this query's real receipts; previous queries' successful ledgers stay on their own completed results and are never substituted in either direction."
+ },
+ "verification": {
+  "frozen_acceptance": "tests/test_fusion_review_r2.py 2/2 (malformed gold zero-call terminal; second-query PG failure does not borrow first local receipts)",
+  "regression": "tests/test_fusion_review_r1.py 8/8, tests/test_fusion.py 11/11 unchanged",
+  "full_suite": 276,
+  "model_calls": 0,
+  "real_service_reruns": "none required per handoff; rev-2 live evidence (phase-3-fusion-r2, phase-3-fusion-r2-f1) retained as accepted"
+ },
+ "checks": {"ruff": "pass", "ruff_format": "pass", "openspec_strict": "valid", "diff_check": "pass", "credential_scan": "0 hits"},
+ "next": "stop at the 5.3 checkpoint for main-agent review; 5.4-5.6/Gate3 not entered"
+}

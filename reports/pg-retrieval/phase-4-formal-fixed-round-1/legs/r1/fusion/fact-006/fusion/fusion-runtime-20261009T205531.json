@@ -1,0 +1,1298 @@
+{
+ "task": "5.3 two-path candidate fusion (read-only, guarded)",
+ "started_at": "2026-10-09T20:55:27+0800",
+ "pg_only_switch": false,
+ "frozen_contract": {
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8"
+ },
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "results": [
+  {
+   "query_id": "fact-006",
+   "query": "GB 3095-2012 的发布日期和实施日期分别是什么？",
+   "workspace": "default",
+   "pg": {
+    "status": "ok",
+    "search_id": "872d689343a9cbb6",
+    "catalog_snapshot_id": "4919b3938ad93747",
+    "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "discovery_total": 5,
+    "discovery_captured": true,
+    "chunks": 4,
+    "stale_state": "current",
+    "notes": [],
+    "trace_stages": [
+     "code_exact",
+     "keyword_and",
+     "keyword_and_diagnostics",
+     "keyword_core_and",
+     "keyword_synonym_and",
+     "keyword_or_relaxed"
+    ],
+    "sql_statements": {
+     "fetchrow": 8,
+     "fetch": 14,
+     "fetchval": 4
+    },
+    "trace": [
+     {
+      "stage": "code_exact",
+      "code": "GB3095",
+      "version_requested": "2012",
+      "strict": false,
+      "hits": 2,
+      "version_matched": 1,
+      "selected_versions": [
+       "2012"
+      ],
+      "selected_docs": [
+       "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      ]
+     },
+     {
+      "stage": "keyword_and",
+      "tsquery": "'发布' & '日期' & '实施' & '日期'",
+      "top_k": 20,
+      "restricted_to_code_docs": [
+       "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      ],
+      "doc_hits": 0,
+      "chunk_hits": 0,
+      "elapsed_ms": 3
+     },
+     {
+      "stage": "keyword_and_diagnostics",
+      "per_term": [
+       {
+        "term": "发布",
+        "chunk_hits": 1
+       },
+       {
+        "term": "日期",
+        "chunk_hits": 1
+       },
+       {
+        "term": "实施",
+        "chunk_hits": 4
+       },
+       {
+        "term": "日期",
+        "chunk_hits": 1
+       }
+      ],
+      "absent_terms": []
+     },
+     {
+      "stage": "keyword_core_and",
+      "tsquery": "'发布' & '日期' & '实施' & '日期'",
+      "dropped_absent_terms": [],
+      "chunk_hits": 0,
+      "note": "terms absent from the corpus cannot participate in AND"
+     },
+     {
+      "stage": "keyword_synonym_and",
+      "tsquery": "('发布') & ('日期') & ('实施') & ('日期')",
+      "synonyms_applied": [],
+      "skipped_terms": [],
+      "chunk_hits": 0,
+      "note": "each concept is an OR group (original + controlled synonyms); concepts are AND-combined; strong constraints kept"
+     },
+     {
+      "stage": "keyword_or_relaxed",
+      "tsquery": "'发布' | '日期' | '实施' | '日期'",
+      "synonyms_applied": [],
+      "chunk_hits": 4,
+      "note": "last-resort OR over terms present in the corpus"
+     }
+    ]
+   },
+   "local": {
+    "ran": true,
+    "skipped_reason": null,
+    "error": null,
+    "receipts": {
+     "query_id": "fact-006",
+     "call_records": [
+      {
+       "service": "llm",
+       "operation": "keyword_extraction",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 1354,
+       "result": {
+        "chars": 101
+       },
+       "target": null
+      },
+      {
+       "service": "embedding",
+       "operation": "openai_embed",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 223,
+       "result": {
+        "shape": [
+         1,
+         2560
+        ]
+       },
+       "target": null
+      },
+      {
+       "service": "qdrant",
+       "operation": "query_points",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 20,
+       "result": {
+        "points": 10
+       },
+       "target": "entities"
+      },
+      {
+       "service": "neo4j",
+       "operation": "session.run",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 15,
+       "result": null,
+       "target": null
+      },
+      {
+       "service": "neo4j",
+       "operation": "session.run",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 15,
+       "result": null,
+       "target": null
+      },
+      {
+       "service": "neo4j",
+       "operation": "session.run",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 4,
+       "result": null,
+       "target": null
+      },
+      {
+       "service": "neo4j",
+       "operation": "session.run",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 4,
+       "result": null,
+       "target": null
+      },
+      {
+       "service": "neo4j",
+       "operation": "session.run",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 6,
+       "result": null,
+       "target": null
+      },
+      {
+       "service": "embedding",
+       "operation": "openai_embed",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 137,
+       "result": {
+        "shape": [
+         1,
+         2560
+        ]
+       },
+       "target": null
+      },
+      {
+       "service": "qdrant",
+       "operation": "retrieve",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 30,
+       "result": {
+        "items": 17,
+        "requested": 17
+       },
+       "target": "chunks"
+      },
+      {
+       "service": "pg",
+       "operation": "readonly_select_chunks",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 3,
+       "result": {
+        "items": 17
+       },
+       "target": null
+      },
+      {
+       "service": "pg",
+       "operation": "readonly_select_chunks",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 5,
+       "result": {
+        "items": 10
+       },
+       "target": null
+      }
+     ],
+     "by_service": {
+      "llm": {
+       "attempt": 1,
+       "success": 1,
+       "failure": 0
+      },
+      "embedding": {
+       "attempt": 2,
+       "success": 2,
+       "failure": 0
+      },
+      "qdrant": {
+       "attempt": 2,
+       "success": 2,
+       "failure": 0
+      },
+      "neo4j": {
+       "attempt": 5,
+       "success": 5,
+       "failure": 0
+      },
+      "pg": {
+       "attempt": 2,
+       "success": 2,
+       "failure": 0
+      }
+     },
+     "groups": {
+      "neo4j": {
+       "attempt": 1,
+       "success": 1,
+       "failure": 0
+      },
+      "pg": {
+       "attempt": 2,
+       "success": 2,
+       "failure": 0
+      }
+     },
+     "degraded": []
+    },
+    "sorting_sources": {
+     "chunk_pick_vectors": {
+      "expected_chunks": 8,
+      "observer_bound": true,
+      "observed_calls": [
+       {
+        "stage": "entities",
+        "collection": "chunks",
+        "vectors_requested": 17,
+        "vectors_effective": 17,
+        "missing_total": 0,
+        "missing_sample": [],
+        "mismatched_total": 0,
+        "mismatched_sample": [],
+        "unusable_total": 0,
+        "unusable_sample": [],
+        "points_returned_raw": 17,
+        "retrieve_failed": false,
+        "complete": true
+       }
+      ],
+      "vectors_requested": 17,
+      "vectors_effective": 17,
+      "missing_total": 0,
+      "mismatched_total": 0,
+      "unusable_total": 0,
+      "points_returned_raw": 17,
+      "vector_backed": true
+     },
+     "chunk_pick": "vector-similarity"
+    },
+    "degraded": [],
+    "keywords": {
+     "high_level": [
+      "标准发布时间",
+      "标准实施时间"
+     ],
+     "low_level": [
+      "GB 3095-2012",
+      "发布日期",
+      "实施日期"
+     ]
+    },
+    "stage_completeness": [
+     {
+      "stage": "entities",
+      "complete": true,
+      "vectors_requested": 17,
+      "vectors_effective": 17
+     }
+    ]
+   },
+   "targets_requested": [
+    {
+     "code": "GB3095",
+     "version": "2012"
+    }
+   ],
+   "targets_resolved": [
+    {
+     "code": "GB3095",
+     "version": "2012",
+     "docs": [
+      "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+     ],
+     "versions": [
+      "2012"
+     ]
+    }
+   ],
+   "typed_targets": [
+    {
+     "target_type": "doc",
+     "workspace": "default",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_name": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "self_code": "GB3095",
+     "self_code_version": "2012",
+     "discovery": "code_exact",
+     "membership_basis": null,
+     "citation": {
+      "kind": "catalog_row",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+     },
+     "citation_verified": true
+    }
+   ],
+   "candidates": [
+    {
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": "中 华 人 民 共 和 国 国 家 标 准",
+       "chunk_order": 0,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 2.6000001430511475
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:环境空气质量标准(GB 3095-2012)",
+        "entity:中华人民共和国环境保护部公告(2012年第7号)",
+        "entity:环境空气质量标准(GB 3095-1996)",
+        "edge:环境空气质量标准(GB 3095-2012)|臭氧",
+        "edge:环境空气质量标准(GB 3095-2012)|铅",
+        "edge:二氧化氮|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|附录A",
+        "edge:环境空气质量标准(GB 3095-2012)|苯并[a]芘",
+        "edge:中华人民共和国大气污染防治法|环境空气质量标准(GB 3095-2012)",
+        "edge:中华人民共和国环境保护法|环境空气质量标准(GB 3095-2012)",
+        "edge:中国环境监测总站|环境空气质量标准(GB 3095-2012)",
+        "edge:环境保护部|环境空气质量标准(GB 3095-2012)",
+        "edge:国家质量监督检验检疫总局|环境空气质量标准(GB 3095-2012)",
+        "edge:中国环境科学研究院|环境空气质量标准(GB 3095-2012)",
+        "edge:国务院环境保护行政主管部门|环境空气质量标准(GB 3095-2012)",
+        "edge:中国环境科学出版社|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|监测方法",
+        "edge:环境保护部科技标准司|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气功能区分类|环境空气质量标准(GB 3095-2012)",
+        "edge:数据统计的有效性规定|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|颗粒物(粒径小于等于10μm)",
+        "edge:环境空气质量标准(GB 3095-2012)|颗粒物(粒径小于等于2.5μm)",
+        "edge:各省级人民政府|环境空气质量标准(GB 3095-2012)",
+        "edge:实施与监督|环境空气质量标准(GB 3095-2012)",
+        "edge:标准分级|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|质量浓度",
+        "edge:环境保护部网站|环境空气质量标准(GB 3095-2012)",
+        "edge:环境保护部网站(bz.mep.gov.cn)|环境空气质量标准(GB 3095-2012)",
+        "edge:中华人民共和国环境保护部公告(2012年第7号)|环境空气质量标准(GB 3095-2012)",
+        "edge:环境保护部公告(2012年第7号)|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-1996)|环境空气质量标准(GB 3095-2012)",
+        "edge:《环境空气质量标准》(GB 3095-1996)修改单|环境空气质量标准(GB 3095-2012)",
+        "edge:《环境空气质量标准》(GB3095-1996)修改单|环境空气质量标准(GB 3095-2012)",
+        "edge:保护农作物的大气污染物最高允许浓度(GB 9137-88)|环境空气质量标准(GB 3095-2012)",
+        "edge:中华人民共和国环境保护部公告(2012年第7号)|环境保护部",
+        "edge:《环境空气质量标准》(GB 3095-1996)修改单|环境空气质量标准(GB 3095-1996)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 0,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 0,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "21c3345f91c141953e2ee535f539d25d08d4d308cac6f3d4a5c45fd03f6d3c2f",
+     "content_len": 1561,
+     "content": "# 中 华 人 民 共 和 国 国 家 标 准\nGB 3095—2012\n代替 GB 3095—1996 GB 9137—88\n\n# 环境空气质量标准\n\n# Ambient air quality standards\n2012-02-29 发布 2016-01-01 实施\n环 境 保 护 部 发 布\n国家质量监督检验检疫总局\nICS 13.040.20 Z 50\nGB\n\n# 中华人民共和国环境保护部公 告\n2012 年 第 7 号\n为贯彻《中华人民共和国环境保护法》和《中华人民共和国大气污染防治法》，保护环境，保障人体健康，防治大气污染，现批准《环境空气质量标准》为国家环境质量标准，并由我部与国家质量监督检验检疫总局联合发布。\n标准名称、编号如下：\n环境空气质量标准（GB 3095—2012）\n按有关法律规定，本标准具有强制执行的效力。\n本标准自2016年1月1日起在全国实施。\n在全国实施本标准之前，国务院环境保护行政主管部门可根据《关于推进大气污染联防联控工作改善区域空气质量的指导意见》（国办发[2010]33号）等文件要求指定部分地区提前实施本标准，具体实施方案（包括地域范围、时间等）另行公告；各省级人民政府也可根据实际情况和当地环境保护的需要提前实施本标准。\n本标准由中国环境科学出版社出版，标准内容可在环境保护部网站（bz.mep.gov.cn）查询。\n自本标准实施之日起，《环境空气质量标准》（GB3095—1996）、《〈环境空气质量标准〉（GB3095—1996）修改单》（环发[2000]1号）和《保护农作物的大气污染物最高允许浓度》（GB9137—88）废止。特此公告。\n2012 年 2 月 29 日\nGB 3095—2012\n\n## 目 次\n前言....iv\n1 适用范围....1\n2 规范性引用文件....1\n3 术语和定义....1\n4 环境空气功能区分类和质量要求....2\n5 监测....3\n6 数据统计的有效性规定....4\n7 实施与监督....5\n附录A（资料性附录） 环境空气中镉、汞、砷、六价铬和氟化物参考浓度限值....6\nGB 3095—2012\n\n## 前 言\n为贯彻《中华人民共和国环境保护法》和《中华人民共和国大气污染防治法》，保护和改善生活环境、生态环境，保障人体健康，制定本标准。\n本标准规定了环境空气功能区分类、标准分级、污染物项目、平均时间及浓度限值、监测方法、数据统计的有效性规定及实施与监督等内容。各省、自治区、直辖市人民政府对本标准中未作规定的污染物项目，可以制定地方环境空气质量标准。\n本标准中的污染物浓度为质量浓度。\n本标准首次发布于1982年。1996年第一次修订，2000年第二次修订，本次为第三次修订。本标准将根据国家经济社会发展状况和环境保护要求适时修订。\n本次修订的主要内容：\n——调整了环境空气功能区分类，将三类区并入二类区；\n——增设了颗粒物（粒径小于等于 2.5m）浓度限值和臭氧 8小时平均浓度限值；\n——调整了颗粒物（粒径小于等于 10m）、二氧化氮、铅和苯并[a]芘等的浓度限值；\n——调整了数据统计的有效性规定。\n自本标准实施之日起，《环境空气质量标准》（GB3095—1996）、《〈环境空气质量标准〉（GB3095—1996）修改单》（环发[2000]1号）和《保护农作物的大气污染物最高允许浓度》（GB9137—88）废止。\n本标准附录A 为资料性附录，为各省级人民政府制定地方环境空气质量标准提供参考。\n本标准由环境保护部科技标准司组织制订。\n本标准主要起草单位：中国环境科学研究院、中国环境监测总站。\n本标准环境保护部2012年2月29日批准。\n本标准由环境保护部解释。\nGB 3095—2012",
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": "4 环境空气功能区分类和质量要求 环境空气质量标准",
+       "chunk_order": 2,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.399999976158142
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 3095-2012全国实施",
+        "entity:GB 3095-2012",
+        "entity:2016年1月1日",
+        "edge:GB 3095-2012|表1",
+        "edge:GB 3095-2012|表2",
+        "edge:GB 3095-2012|一类区",
+        "edge:GB 3095-2012|省级人民政府",
+        "edge:GB 3095-2012|二类区",
+        "edge:GB 3095-2012|国务院环境保护行政主管部门",
+        "edge:GB 3095-2012|表2(环境空气污染物其他项目浓度限值)",
+        "edge:GB 3095-2012|表1(环境空气污染物基本项目浓度限值)",
+        "edge:GB 3095-2012|环境空气功能区",
+        "edge:GB 3095-2012|环境空气质量监测",
+        "edge:GB 3095-2012|环境空气功能区分类",
+        "edge:GB 3095-2012|部分地区提前实施",
+        "edge:GB 3095-2012|GB 3095-2012全国实施",
+        "edge:GB 3095-2012|全国实施",
+        "edge:2016年1月1日|GB 3095-2012全国实施"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 2,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 2,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "eafea04098b4bf61ff94053d457a8760eee04b9ea04b039ab6f53e180aa83a5a",
+     "content_len": 2840,
+     "content": "## 4 环境空气功能区分类和质量要求\n\n## 4.1 环境空气功能区分类\n环境空气功能区分为二类：一类区为自然保护区、风景名胜区和其他需要特殊保护的区域；二类区为居住区、商业交通居民混合区、文化区、工业区和农村地区。\nGB 3095—2012\n\n## 4.2 环境空气功能区质量要求\n一类区适用一级浓度限值，二类区适用二级浓度限值。一、二类环境空气功能区质量要求见表 1和表 2。\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">浓度限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td></tr><tr><td rowspan=\"3\">1</td><td rowspan=\"3\">二氧化硫( $SO_2$ )</td><td>年平均</td><td>20</td><td>60</td><td rowspan=\"6\"> $μg/m^3$ </td></tr><tr><td>24小时平均</td><td>50</td><td>150</td></tr><tr><td>1小时平均</td><td>150</td><td>500</td></tr><tr><td rowspan=\"3\">2</td><td rowspan=\"3\">二氧化氮( $NO_2$ )</td><td>年平均</td><td>40</td><td>40</td></tr><tr><td>24小时平均</td><td>80</td><td>80</td></tr><tr><td>1小时平均</td><td>200</td><td>200</td></tr><tr><td rowspan=\"2\">3</td><td rowspan=\"2\">一氧化碳(CO)</td><td>24小时平均</td><td>4</td><td>4</td><td rowspan=\"2\"> $mg/m^3$ </td></tr><tr><td>1小时平均</td><td>10</td><td>10</td></tr><tr><td rowspan=\"2\">4</td><td rowspan=\"2\">臭氧( $O_3$ )</td><td>日最大8小时平均</td><td>100</td><td>160</td><td rowspan=\"6\"> $μg/m^3$ </td></tr><tr><td>1小时平均</td><td>160</td><td>200</td></tr><tr><td rowspan=\"2\">5</td><td rowspan=\"2\">颗粒物(粒径小于等于10μm)</td><td>年平均</td><td>40</td><td>70</td></tr><tr><td>24小时平均</td><td>50</td><td>150</td></tr><tr><td rowspan=\"2\">6</td><td rowspan=\"2\">颗粒物(粒径小于等于2.5μm)</td><td>年平均</td><td>15</td><td>35</td></tr><tr><td>24小时平均</td><td>35</td><td>75</td></tr></table>\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0002\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">浓度限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td></tr><tr><td rowspan=\"2\">1</td><td rowspan=\"2\">总悬浮颗粒物(TSP)</td><td>年平均</td><td>80</td><td>200</td><td rowspan=\"9\"> $\\mu g/m^3$ </td></tr><tr><td>24小时平均</td><td>120</td><td>300</td></tr><tr><td rowspan=\"3\">2</td><td rowspan=\"3\">氮氧化物( $NO_x$ )(以 $NO_2$ 计)</td><td>年平均</td><td>50</td><td>50</td></tr><tr><td>24小时平均</td><td>100</td><td>100</td></tr><tr><td>1小时平均</td><td>250</td><td>250</td></tr><tr><td rowspan=\"2\">3</td><td rowspan=\"2\">铅(Pb)</td><td>年平均</td><td>0.5</td><td>0.5</td></tr><tr><td>季平均</td><td>1.0</td><td>1.0</td></tr><tr><td rowspan=\"2\">4</td><td rowspan=\"2\">苯并[a]芘(BaP)</td><td>年平均</td><td>0.001</td><td>0.001</td></tr><tr><td>24小时平均</td><td>0.0025</td><td>0.0025</td></tr></table>\n4.3 本标准自2016年1月1日起在全国实施。基本项目（表1）在全国范围内实施；其他项目（表 2）由国务院环境保护行政主管部门或者省级人民政府根据实际情况，确定具体实施方式。\n4.4 在全国实施本标准之前，国务院环境保护行政主管部门可根据《关于推进大气污染联防联控工作改善区域空气质量的指导意见》等文件要求指定部分地区提前实施本标准，具体实施方案（包括地域范围、时间等）另行公告，各省级人民政府也可根据实际情况和当地环境保护的需要提前实施本标准。\n\n## 5 监测\n环境空气质量监测工作应按照《环境空气质量监测规范（试行）》等规范性文件的要求进行。\nGB 3095—2012\n\n## 5.1 监测点位布设\n表 1和表2 中环境空气污染物监测点位的设置，应按照《环境空气质量监测规范（试行）》中的要求执行。\n\n## 5.2 样品采集\n环境空气质量监测中的采样环境、采样高度及采样频率等要求，按 HJ/T 193 或 HJ/T 194 的要求执行。",
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": "7 实施与监督 环境空气质量标准",
+       "chunk_order": 4,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.2000000476837158
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:环境空气质量标准(GB 3095-2012)",
+        "entity:GB 3095-2012",
+        "edge:环境空气质量标准(GB 3095-2012)|附录A",
+        "edge:GB 3095-2012|附录A",
+        "edge:环境保护行政主管部门|环境空气质量标准(GB 3095-2012)",
+        "edge:地方环境空气质量标准|环境空气质量标准(GB 3095-2012)",
+        "edge:大气污染防治重点城市|环境空气质量标准(GB 3095-2012)",
+        "edge:GB 3095-2012|中华人民共和国大气污染防治法",
+        "edge:GB 3095-2012|环境保护行政主管部门",
+        "edge:GB 3095-2012|地方环境空气质量标准",
+        "edge:GB 3095-2012|大气污染防治重点城市",
+        "edge:GB 3095-2012|限期达标规划"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 3,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 3,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "c57667a03194fd8a9cbf7044b0dc36db737b793fa65e46c423f85c5b6080e893",
+     "content_len": 1370,
+     "content": "## 7 实施与监督\n7.1 本标准由各级环境保护行政主管部门负责监督实施。\n7.2 各类环境空气功能区的范围由县级以上（含县级）人民政府环境保护行政主管部门划分，报本级人民政府批准实施。\n7.3 按照《中华人民共和国大气污染防治法》的规定，未达到本标准的大气污染防治重点城市，应当按照国务院或者国务院环境保护行政主管部门规定的期限，达到本标准。该城市人民政府应当制定限期达标规划，并可以根据国务院的授权或者规定，采取更严格的措施，按期实现达标规划。\nGB 3095—2012\n\n## 附 录 A\n（资料性附录）\n\n## 环境空气中镉、汞、砷、六价铬和氟化物参考浓度限值\n各省级人民政府可根据当地环境保护的需要，针对环境污染的特点，对本标准中未规定的污染物项目制定并实施地方环境空气质量标准。以下为环境空气中部分污染物参考浓度限值。\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0005\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">浓度(通量)限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td></tr><tr><td>1</td><td>镉(Cd)</td><td>年平均</td><td>0.005</td><td>0.005</td><td rowspan=\"6\"> $\\mu g/m^3$ </td></tr><tr><td>2</td><td>汞(Hg)</td><td>年平均</td><td>0.05</td><td>0.05</td></tr><tr><td>3</td><td>砷(As)</td><td>年平均</td><td>0.006</td><td>0.006</td></tr><tr><td>4</td><td>六价铬(Cr(VI))</td><td>年平均</td><td>0.000 025</td><td>0.000 025</td></tr><tr><td rowspan=\"4\">5</td><td rowspan=\"4\">氟化物(F)</td><td>1小时平均</td><td> $20^{1}$ </td><td> $20^{1}$ </td></tr><tr><td>24小时平均</td><td> $7^{1}$ </td><td> $7^{1}$ </td></tr><tr><td>月平均</td><td> $1.8^{2}$ </td><td> $3.0^{3}$ </td><td rowspan=\"2\"> $\\mu g/(dm^2 d)$ </td></tr><tr><td>植物生长季平均</td><td> $1.2^{2}$ </td><td> $2.0^{3}$ </td></tr><tr><td colspan=\"6\">注:1适用于城市地区;2适用于牧业区和以牧业为主的半农半牧区,蚕桑区;3适用于农业和林业区。</td></tr></table>\nGB 3095—2012",
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": "环境空气质量标准",
+       "chunk_order": 1,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.4000000059604645
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "0f66aa569b65f4132e9a0cdb6970234878ebe10418fb262eb6e90d0254708607",
+     "content_len": 1568,
+     "content": "# 环境空气质量标准\n\n## 1 适用范围\n本标准规定了环境空气功能区分类、标准分级、污染物项目、平均时间及浓度限值、监测方法、数据统计的有效性规定及实施与监督等内容。\n本标准适用于环境空气质量评价与管理。\n\n## 2 规范性引用文件\n本标准引用下列文件或其中的条款。凡是未注明日期的引用文件，其最新版本适用于本标准。\nGB 8971 空气质量 飘尘中苯并[a]芘的测定 乙酰化滤纸层析荧光分光光度法\nGB 9801 空气质量 一氧化碳的测定 非分散红外法\nGB/T 15264 环境空气 铅的测定 火焰原子吸收分光光度法\nGB/T 15432 环境空气 总悬浮颗粒物的测定 重量法\nGB/T 15439 环境空气 苯并[a]芘的测定 高效液相色谱法\nHJ 479 环境空气 氮氧化物（一氧化氮和二氧化氮）的测定 盐酸萘乙二胺分光光度法\nHJ 482 环境空气 二氧化硫的测定 甲醛吸收-副玫瑰苯胺分光光度法\nHJ 483 环境空气 二氧化硫的测定 四氯汞盐吸收-副玫瑰苯胺分光光度法\nHJ 504 环境空气 臭氧的测定 靛蓝二磺酸钠分光光度法\nHJ 539 环境空气 铅的测定 石墨炉原子吸收分光光度法（暂行）\nHJ 590 环境空气 臭氧的测定 紫外光度法\nHJ 618 环境空气 $\\mathrm { P M } _ { 1 0 }$ 和 $\\mathrm { P M } _ { 2 . 5 }$ 的测定 重量法\nHJ 630 环境监测质量管理技术导则\nHJ/T 193 环境空气质量自动监测技术规范\nHJ/T 194 环境空气质量手工监测技术规范\n《环境空气质量监测规范（试行）》（国家环境保护总局公告 2007年第4 号）\n《关于推进大气污染联防联控工作改善区域空气质量的指导意见》（国办发[2010]33 号）\n\n## 3 术语和定义\n下列术语和定义适用于本标准。\n\n## 3.1\n环境空气 ambient air\n指人群、植物、动物和建筑物所暴露的室外空气。\n\n## 3.2\n总悬浮颗粒物 total suspended particle（TSP）\n指环境空气中空气动力学当量直径小于等于100m的颗粒物。\nGB 3095—2012\n3.3颗粒物（粒径小于等于 10 m） particulate matter $( P M _ { 1 0 } )$ 指环境空气中空气动力学当量直径小于等于 $1 0 \\mu \\mathrm { m }$ 的颗粒物，也称可吸入颗粒物。\n3.4颗粒物（粒径小于等于 2.5 m） particulate matter $( P M _ { 2 . 5 } )$ 指环境空气中空气动力学当量直径小于等于2.5m的颗粒物，也称细颗粒物。\n铅 lead指存在于总悬浮颗粒物中的铅及其化合物。\n苯并[a]芘 benzo[a]pyrene（BaP）指存在于颗粒物（粒径小于等于 $1 0 \\mu \\mathrm { m } )$ 中的苯并[a]芘。\n3.7氟化物 fluoride指以气态和颗粒态形式存在的无机氟化物。\n1 小时平均 1-hour average指任何1小时污染物浓度的算术平均值。\n8 小时平均 8-hour average指连续8个小时平均浓度的算术平均值，也称 8小时滑动平均。\n3.11月平均 monthly average指一个日历月内各日平均浓度的算术平均值。\n.12季平均 quarterly average指一个日历季内各日平均浓度的算术平均值。\n年平均 annual mean\n指一个日历年内各日平均浓度的算术平均值。\n标准状态 standard state指温度为273K，压力为 101.325kPa时的状态。本标准中的污染物浓度均为标准状态下的浓度。",
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf"
+    }
+   ],
+   "usable": [
+    {
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": "中 华 人 民 共 和 国 国 家 标 准",
+       "chunk_order": 0,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 2.6000001430511475
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:环境空气质量标准(GB 3095-2012)",
+        "entity:中华人民共和国环境保护部公告(2012年第7号)",
+        "entity:环境空气质量标准(GB 3095-1996)",
+        "edge:环境空气质量标准(GB 3095-2012)|臭氧",
+        "edge:环境空气质量标准(GB 3095-2012)|铅",
+        "edge:二氧化氮|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|附录A",
+        "edge:环境空气质量标准(GB 3095-2012)|苯并[a]芘",
+        "edge:中华人民共和国大气污染防治法|环境空气质量标准(GB 3095-2012)",
+        "edge:中华人民共和国环境保护法|环境空气质量标准(GB 3095-2012)",
+        "edge:中国环境监测总站|环境空气质量标准(GB 3095-2012)",
+        "edge:环境保护部|环境空气质量标准(GB 3095-2012)",
+        "edge:国家质量监督检验检疫总局|环境空气质量标准(GB 3095-2012)",
+        "edge:中国环境科学研究院|环境空气质量标准(GB 3095-2012)",
+        "edge:国务院环境保护行政主管部门|环境空气质量标准(GB 3095-2012)",
+        "edge:中国环境科学出版社|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|监测方法",
+        "edge:环境保护部科技标准司|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气功能区分类|环境空气质量标准(GB 3095-2012)",
+        "edge:数据统计的有效性规定|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|颗粒物(粒径小于等于10μm)",
+        "edge:环境空气质量标准(GB 3095-2012)|颗粒物(粒径小于等于2.5μm)",
+        "edge:各省级人民政府|环境空气质量标准(GB 3095-2012)",
+        "edge:实施与监督|环境空气质量标准(GB 3095-2012)",
+        "edge:标准分级|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|质量浓度",
+        "edge:环境保护部网站|环境空气质量标准(GB 3095-2012)",
+        "edge:环境保护部网站(bz.mep.gov.cn)|环境空气质量标准(GB 3095-2012)",
+        "edge:中华人民共和国环境保护部公告(2012年第7号)|环境空气质量标准(GB 3095-2012)",
+        "edge:环境保护部公告(2012年第7号)|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-1996)|环境空气质量标准(GB 3095-2012)",
+        "edge:《环境空气质量标准》(GB 3095-1996)修改单|环境空气质量标准(GB 3095-2012)",
+        "edge:《环境空气质量标准》(GB3095-1996)修改单|环境空气质量标准(GB 3095-2012)",
+        "edge:保护农作物的大气污染物最高允许浓度(GB 9137-88)|环境空气质量标准(GB 3095-2012)",
+        "edge:中华人民共和国环境保护部公告(2012年第7号)|环境保护部",
+        "edge:《环境空气质量标准》(GB 3095-1996)修改单|环境空气质量标准(GB 3095-1996)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 0,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 0,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "21c3345f91c141953e2ee535f539d25d08d4d308cac6f3d4a5c45fd03f6d3c2f",
+     "content_len": 1561,
+     "content": "# 中 华 人 民 共 和 国 国 家 标 准\nGB 3095—2012\n代替 GB 3095—1996 GB 9137—88\n\n# 环境空气质量标准\n\n# Ambient air quality standards\n2012-02-29 发布 2016-01-01 实施\n环 境 保 护 部 发 布\n国家质量监督检验检疫总局\nICS 13.040.20 Z 50\nGB\n\n# 中华人民共和国环境保护部公 告\n2012 年 第 7 号\n为贯彻《中华人民共和国环境保护法》和《中华人民共和国大气污染防治法》，保护环境，保障人体健康，防治大气污染，现批准《环境空气质量标准》为国家环境质量标准，并由我部与国家质量监督检验检疫总局联合发布。\n标准名称、编号如下：\n环境空气质量标准（GB 3095—2012）\n按有关法律规定，本标准具有强制执行的效力。\n本标准自2016年1月1日起在全国实施。\n在全国实施本标准之前，国务院环境保护行政主管部门可根据《关于推进大气污染联防联控工作改善区域空气质量的指导意见》（国办发[2010]33号）等文件要求指定部分地区提前实施本标准，具体实施方案（包括地域范围、时间等）另行公告；各省级人民政府也可根据实际情况和当地环境保护的需要提前实施本标准。\n本标准由中国环境科学出版社出版，标准内容可在环境保护部网站（bz.mep.gov.cn）查询。\n自本标准实施之日起，《环境空气质量标准》（GB3095—1996）、《〈环境空气质量标准〉（GB3095—1996）修改单》（环发[2000]1号）和《保护农作物的大气污染物最高允许浓度》（GB9137—88）废止。特此公告。\n2012 年 2 月 29 日\nGB 3095—2012\n\n## 目 次\n前言....iv\n1 适用范围....1\n2 规范性引用文件....1\n3 术语和定义....1\n4 环境空气功能区分类和质量要求....2\n5 监测....3\n6 数据统计的有效性规定....4\n7 实施与监督....5\n附录A（资料性附录） 环境空气中镉、汞、砷、六价铬和氟化物参考浓度限值....6\nGB 3095—2012\n\n## 前 言\n为贯彻《中华人民共和国环境保护法》和《中华人民共和国大气污染防治法》，保护和改善生活环境、生态环境，保障人体健康，制定本标准。\n本标准规定了环境空气功能区分类、标准分级、污染物项目、平均时间及浓度限值、监测方法、数据统计的有效性规定及实施与监督等内容。各省、自治区、直辖市人民政府对本标准中未作规定的污染物项目，可以制定地方环境空气质量标准。\n本标准中的污染物浓度为质量浓度。\n本标准首次发布于1982年。1996年第一次修订，2000年第二次修订，本次为第三次修订。本标准将根据国家经济社会发展状况和环境保护要求适时修订。\n本次修订的主要内容：\n——调整了环境空气功能区分类，将三类区并入二类区；\n——增设了颗粒物（粒径小于等于 2.5m）浓度限值和臭氧 8小时平均浓度限值；\n——调整了颗粒物（粒径小于等于 10m）、二氧化氮、铅和苯并[a]芘等的浓度限值；\n——调整了数据统计的有效性规定。\n自本标准实施之日起，《环境空气质量标准》（GB3095—1996）、《〈环境空气质量标准〉（GB3095—1996）修改单》（环发[2000]1号）和《保护农作物的大气污染物最高允许浓度》（GB9137—88）废止。\n本标准附录A 为资料性附录，为各省级人民政府制定地方环境空气质量标准提供参考。\n本标准由环境保护部科技标准司组织制订。\n本标准主要起草单位：中国环境科学研究院、中国环境监测总站。\n本标准环境保护部2012年2月29日批准。\n本标准由环境保护部解释。\nGB 3095—2012",
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": "4 环境空气功能区分类和质量要求 环境空气质量标准",
+       "chunk_order": 2,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.399999976158142
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 3095-2012全国实施",
+        "entity:GB 3095-2012",
+        "entity:2016年1月1日",
+        "edge:GB 3095-2012|表1",
+        "edge:GB 3095-2012|表2",
+        "edge:GB 3095-2012|一类区",
+        "edge:GB 3095-2012|省级人民政府",
+        "edge:GB 3095-2012|二类区",
+        "edge:GB 3095-2012|国务院环境保护行政主管部门",
+        "edge:GB 3095-2012|表2(环境空气污染物其他项目浓度限值)",
+        "edge:GB 3095-2012|表1(环境空气污染物基本项目浓度限值)",
+        "edge:GB 3095-2012|环境空气功能区",
+        "edge:GB 3095-2012|环境空气质量监测",
+        "edge:GB 3095-2012|环境空气功能区分类",
+        "edge:GB 3095-2012|部分地区提前实施",
+        "edge:GB 3095-2012|GB 3095-2012全国实施",
+        "edge:GB 3095-2012|全国实施",
+        "edge:2016年1月1日|GB 3095-2012全国实施"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 2,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 2,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "eafea04098b4bf61ff94053d457a8760eee04b9ea04b039ab6f53e180aa83a5a",
+     "content_len": 2840,
+     "content": "## 4 环境空气功能区分类和质量要求\n\n## 4.1 环境空气功能区分类\n环境空气功能区分为二类：一类区为自然保护区、风景名胜区和其他需要特殊保护的区域；二类区为居住区、商业交通居民混合区、文化区、工业区和农村地区。\nGB 3095—2012\n\n## 4.2 环境空气功能区质量要求\n一类区适用一级浓度限值，二类区适用二级浓度限值。一、二类环境空气功能区质量要求见表 1和表 2。\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">浓度限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td></tr><tr><td rowspan=\"3\">1</td><td rowspan=\"3\">二氧化硫( $SO_2$ )</td><td>年平均</td><td>20</td><td>60</td><td rowspan=\"6\"> $μg/m^3$ </td></tr><tr><td>24小时平均</td><td>50</td><td>150</td></tr><tr><td>1小时平均</td><td>150</td><td>500</td></tr><tr><td rowspan=\"3\">2</td><td rowspan=\"3\">二氧化氮( $NO_2$ )</td><td>年平均</td><td>40</td><td>40</td></tr><tr><td>24小时平均</td><td>80</td><td>80</td></tr><tr><td>1小时平均</td><td>200</td><td>200</td></tr><tr><td rowspan=\"2\">3</td><td rowspan=\"2\">一氧化碳(CO)</td><td>24小时平均</td><td>4</td><td>4</td><td rowspan=\"2\"> $mg/m^3$ </td></tr><tr><td>1小时平均</td><td>10</td><td>10</td></tr><tr><td rowspan=\"2\">4</td><td rowspan=\"2\">臭氧( $O_3$ )</td><td>日最大8小时平均</td><td>100</td><td>160</td><td rowspan=\"6\"> $μg/m^3$ </td></tr><tr><td>1小时平均</td><td>160</td><td>200</td></tr><tr><td rowspan=\"2\">5</td><td rowspan=\"2\">颗粒物(粒径小于等于10μm)</td><td>年平均</td><td>40</td><td>70</td></tr><tr><td>24小时平均</td><td>50</td><td>150</td></tr><tr><td rowspan=\"2\">6</td><td rowspan=\"2\">颗粒物(粒径小于等于2.5μm)</td><td>年平均</td><td>15</td><td>35</td></tr><tr><td>24小时平均</td><td>35</td><td>75</td></tr></table>\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0002\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">浓度限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td></tr><tr><td rowspan=\"2\">1</td><td rowspan=\"2\">总悬浮颗粒物(TSP)</td><td>年平均</td><td>80</td><td>200</td><td rowspan=\"9\"> $\\mu g/m^3$ </td></tr><tr><td>24小时平均</td><td>120</td><td>300</td></tr><tr><td rowspan=\"3\">2</td><td rowspan=\"3\">氮氧化物( $NO_x$ )(以 $NO_2$ 计)</td><td>年平均</td><td>50</td><td>50</td></tr><tr><td>24小时平均</td><td>100</td><td>100</td></tr><tr><td>1小时平均</td><td>250</td><td>250</td></tr><tr><td rowspan=\"2\">3</td><td rowspan=\"2\">铅(Pb)</td><td>年平均</td><td>0.5</td><td>0.5</td></tr><tr><td>季平均</td><td>1.0</td><td>1.0</td></tr><tr><td rowspan=\"2\">4</td><td rowspan=\"2\">苯并[a]芘(BaP)</td><td>年平均</td><td>0.001</td><td>0.001</td></tr><tr><td>24小时平均</td><td>0.0025</td><td>0.0025</td></tr></table>\n4.3 本标准自2016年1月1日起在全国实施。基本项目（表1）在全国范围内实施；其他项目（表 2）由国务院环境保护行政主管部门或者省级人民政府根据实际情况，确定具体实施方式。\n4.4 在全国实施本标准之前，国务院环境保护行政主管部门可根据《关于推进大气污染联防联控工作改善区域空气质量的指导意见》等文件要求指定部分地区提前实施本标准，具体实施方案（包括地域范围、时间等）另行公告，各省级人民政府也可根据实际情况和当地环境保护的需要提前实施本标准。\n\n## 5 监测\n环境空气质量监测工作应按照《环境空气质量监测规范（试行）》等规范性文件的要求进行。\nGB 3095—2012\n\n## 5.1 监测点位布设\n表 1和表2 中环境空气污染物监测点位的设置，应按照《环境空气质量监测规范（试行）》中的要求执行。\n\n## 5.2 样品采集\n环境空气质量监测中的采样环境、采样高度及采样频率等要求，按 HJ/T 193 或 HJ/T 194 的要求执行。",
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": "7 实施与监督 环境空气质量标准",
+       "chunk_order": 4,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.2000000476837158
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:环境空气质量标准(GB 3095-2012)",
+        "entity:GB 3095-2012",
+        "edge:环境空气质量标准(GB 3095-2012)|附录A",
+        "edge:GB 3095-2012|附录A",
+        "edge:环境保护行政主管部门|环境空气质量标准(GB 3095-2012)",
+        "edge:地方环境空气质量标准|环境空气质量标准(GB 3095-2012)",
+        "edge:大气污染防治重点城市|环境空气质量标准(GB 3095-2012)",
+        "edge:GB 3095-2012|中华人民共和国大气污染防治法",
+        "edge:GB 3095-2012|环境保护行政主管部门",
+        "edge:GB 3095-2012|地方环境空气质量标准",
+        "edge:GB 3095-2012|大气污染防治重点城市",
+        "edge:GB 3095-2012|限期达标规划"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 3,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 3,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "c57667a03194fd8a9cbf7044b0dc36db737b793fa65e46c423f85c5b6080e893",
+     "content_len": 1370,
+     "content": "## 7 实施与监督\n7.1 本标准由各级环境保护行政主管部门负责监督实施。\n7.2 各类环境空气功能区的范围由县级以上（含县级）人民政府环境保护行政主管部门划分，报本级人民政府批准实施。\n7.3 按照《中华人民共和国大气污染防治法》的规定，未达到本标准的大气污染防治重点城市，应当按照国务院或者国务院环境保护行政主管部门规定的期限，达到本标准。该城市人民政府应当制定限期达标规划，并可以根据国务院的授权或者规定，采取更严格的措施，按期实现达标规划。\nGB 3095—2012\n\n## 附 录 A\n（资料性附录）\n\n## 环境空气中镉、汞、砷、六价铬和氟化物参考浓度限值\n各省级人民政府可根据当地环境保护的需要，针对环境污染的特点，对本标准中未规定的污染物项目制定并实施地方环境空气质量标准。以下为环境空气中部分污染物参考浓度限值。\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0005\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">浓度(通量)限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td></tr><tr><td>1</td><td>镉(Cd)</td><td>年平均</td><td>0.005</td><td>0.005</td><td rowspan=\"6\"> $\\mu g/m^3$ </td></tr><tr><td>2</td><td>汞(Hg)</td><td>年平均</td><td>0.05</td><td>0.05</td></tr><tr><td>3</td><td>砷(As)</td><td>年平均</td><td>0.006</td><td>0.006</td></tr><tr><td>4</td><td>六价铬(Cr(VI))</td><td>年平均</td><td>0.000 025</td><td>0.000 025</td></tr><tr><td rowspan=\"4\">5</td><td rowspan=\"4\">氟化物(F)</td><td>1小时平均</td><td> $20^{1}$ </td><td> $20^{1}$ </td></tr><tr><td>24小时平均</td><td> $7^{1}$ </td><td> $7^{1}$ </td></tr><tr><td>月平均</td><td> $1.8^{2}$ </td><td> $3.0^{3}$ </td><td rowspan=\"2\"> $\\mu g/(dm^2 d)$ </td></tr><tr><td>植物生长季平均</td><td> $1.2^{2}$ </td><td> $2.0^{3}$ </td></tr><tr><td colspan=\"6\">注:1适用于城市地区;2适用于牧业区和以牧业为主的半农半牧区,蚕桑区;3适用于农业和林业区。</td></tr></table>\nGB 3095—2012",
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": "环境空气质量标准",
+       "chunk_order": 1,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.4000000059604645
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "0f66aa569b65f4132e9a0cdb6970234878ebe10418fb262eb6e90d0254708607",
+     "content_len": 1568,
+     "content": "# 环境空气质量标准\n\n## 1 适用范围\n本标准规定了环境空气功能区分类、标准分级、污染物项目、平均时间及浓度限值、监测方法、数据统计的有效性规定及实施与监督等内容。\n本标准适用于环境空气质量评价与管理。\n\n## 2 规范性引用文件\n本标准引用下列文件或其中的条款。凡是未注明日期的引用文件，其最新版本适用于本标准。\nGB 8971 空气质量 飘尘中苯并[a]芘的测定 乙酰化滤纸层析荧光分光光度法\nGB 9801 空气质量 一氧化碳的测定 非分散红外法\nGB/T 15264 环境空气 铅的测定 火焰原子吸收分光光度法\nGB/T 15432 环境空气 总悬浮颗粒物的测定 重量法\nGB/T 15439 环境空气 苯并[a]芘的测定 高效液相色谱法\nHJ 479 环境空气 氮氧化物（一氧化氮和二氧化氮）的测定 盐酸萘乙二胺分光光度法\nHJ 482 环境空气 二氧化硫的测定 甲醛吸收-副玫瑰苯胺分光光度法\nHJ 483 环境空气 二氧化硫的测定 四氯汞盐吸收-副玫瑰苯胺分光光度法\nHJ 504 环境空气 臭氧的测定 靛蓝二磺酸钠分光光度法\nHJ 539 环境空气 铅的测定 石墨炉原子吸收分光光度法（暂行）\nHJ 590 环境空气 臭氧的测定 紫外光度法\nHJ 618 环境空气 $\\mathrm { P M } _ { 1 0 }$ 和 $\\mathrm { P M } _ { 2 . 5 }$ 的测定 重量法\nHJ 630 环境监测质量管理技术导则\nHJ/T 193 环境空气质量自动监测技术规范\nHJ/T 194 环境空气质量手工监测技术规范\n《环境空气质量监测规范（试行）》（国家环境保护总局公告 2007年第4 号）\n《关于推进大气污染联防联控工作改善区域空气质量的指导意见》（国办发[2010]33 号）\n\n## 3 术语和定义\n下列术语和定义适用于本标准。\n\n## 3.1\n环境空气 ambient air\n指人群、植物、动物和建筑物所暴露的室外空气。\n\n## 3.2\n总悬浮颗粒物 total suspended particle（TSP）\n指环境空气中空气动力学当量直径小于等于100m的颗粒物。\nGB 3095—2012\n3.3颗粒物（粒径小于等于 10 m） particulate matter $( P M _ { 1 0 } )$ 指环境空气中空气动力学当量直径小于等于 $1 0 \\mu \\mathrm { m }$ 的颗粒物，也称可吸入颗粒物。\n3.4颗粒物（粒径小于等于 2.5 m） particulate matter $( P M _ { 2 . 5 } )$ 指环境空气中空气动力学当量直径小于等于2.5m的颗粒物，也称细颗粒物。\n铅 lead指存在于总悬浮颗粒物中的铅及其化合物。\n苯并[a]芘 benzo[a]pyrene（BaP）指存在于颗粒物（粒径小于等于 $1 0 \\mu \\mathrm { m } )$ 中的苯并[a]芘。\n3.7氟化物 fluoride指以气态和颗粒态形式存在的无机氟化物。\n1 小时平均 1-hour average指任何1小时污染物浓度的算术平均值。\n8 小时平均 8-hour average指连续8个小时平均浓度的算术平均值，也称 8小时滑动平均。\n3.11月平均 monthly average指一个日历月内各日平均浓度的算术平均值。\n.12季平均 quarterly average指一个日历季内各日平均浓度的算术平均值。\n年平均 annual mean\n指一个日历年内各日平均浓度的算术平均值。\n标准状态 standard state指温度为273K，压力为 101.325kPa时的状态。本标准中的污染物浓度均为标准状态下的浓度。",
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf"
+    }
+   ],
+   "rejected": [
+    {
+     "workspace": "default",
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-000",
+     "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-000",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 3095-2012",
+        "entity:GB 3095-1982",
+        "entity:GB 3095-2026",
+        "entity:GB 3095-1996",
+        "edge:GB 3095-2026|生态环境部",
+        "edge:GB 3095-2026|氮氧化物",
+        "edge:GB 3095-2026|二氧化硫",
+        "edge:GB 3095-2026|二氧化氮",
+        "edge:GB 3095-2026|附录A",
+        "edge:GB 3095-2026|规范性引用文件",
+        "edge:GB 3095-2026|中华人民共和国大气污染防治法",
+        "edge:GB 3095-2026|中华人民共和国环境保护法",
+        "edge:GB 3095-2012|GB 3095-2026",
+        "edge:GB 3095-2026|一类区",
+        "edge:GB 3095-2026|中国环境监测总站",
+        "edge:GB 3095-2026|等效方法",
+        "edge:GB 3095-2026|中国环境科学研究院",
+        "edge:GB 3095-2026|环境空气污染物基本项目",
+        "edge:GB 3095-2026|参比状态",
+        "edge:GB 3095-2026|监测方法",
+        "edge:24小时平均|GB 3095-2026",
+        "edge:GB 3095-2026|生态环境部环境标准研究所",
+        "edge:GB 3095-2026|生态环境部法规与标准司",
+        "edge:GB 3095-2026|地方环境空气质量标准",
+        "edge:GB 3095-2026|数据统计的有效性规定",
+        "edge:GB 3095-2026|环境空气功能区分类",
+        "edge:GB 3095-2026|浓度限值",
+        "edge:GB 3095-2026|国家市场监督管理总局",
+        "edge:GB 3095-2026|实施与监督",
+        "edge:GB 3095-2026|颗粒物(粒径小于等于2.5μm)",
+        "edge:GB 3095-2026|颗粒物(粒径小于等于10μm)",
+        "edge:GB 3095-2026|环境空气质量评价与管理",
+        "edge:GB 3095-2026|参比方法",
+        "edge:GB 3095-2026|清华大学",
+        "edge:GB 3095-2026|标准分级",
+        "edge:GB 3095-2026|质量浓度",
+        "edge:GB 3095-2026|生态环境部环境规划院",
+        "edge:GB 3095-2026|环境空气功能区一类区",
+        "edge:GB 3095-2026|日最大8小时平均",
+        "edge:GB 3095-2026|生态环境部大气环境司",
+        "edge:GB 3095-1982|GB 3095-2026",
+        "edge:GB 3095-2026|北京大学",
+        "edge:GB 3095-2012修改单|GB 3095-2026",
+        "edge:GB 3095-2026|复旦大学",
+        "edge:GB 3095-2026|污染物分析方法",
+        "edge:GB 3095-1996|GB 3095-2012"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 1,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 1,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       },
+       "constraint_rejected": "doc doc-4c883d21fa02a53189e0911c3d59d1d1 is not a RESOLVED requested target; a nearby version/other document is never substituted"
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "bfaeca541b0f3bf559c8b86d000f2f83fc0fe752fcee5b55ea59690d309d7f2b",
+     "content_len": 1335,
+     "content": "# 中华人民共和国国家标准\nGB 3095—2026\n代替 GB 3095—2012\n环境空气质量标准\nAmbient air quality standards\n本电子版为正式标准文件，由生态环境部环境标准研究所审校排版。\n2026-02-13发布\n2026-03-01实施\n生态环境部\n国家市场监督管理总局\n发布\nICS 13.040.20\nCCS Z 50\nGB\n\n## 目 次\n前言....II\n1 适用范围....1\n2 规范性引用文件....1\n3 术语和定义....2\n4 环境空气功能区分类和质量要求....3\n5 监测....4\n6 数据统计的有效性规定....6\n7 实施与监督....6\n附录A（资料性附录） 环境空气中镉、汞、砷、六价铬和氟化物参考浓度限值....7\nGB 3095—2026\n\n## 前言\n为贯彻《中华人民共和国环境保护法》和《中华人民共和国大气污染防治法》，保护和改善生态环境，保障公众健康，制定本标准。\n本标准规定了环境空气功能区分类、标准分级、污染物项目、平均时间及浓度限值、监测方法、数据统计的有效性规定及实施与监督等内容。各省、自治区、直辖市人民政府对本标准中未作规定的污染物项目，可以制定地方环境空气质量标准；对本标准中规定的污染物项目，可以制定更加严格的地方环境空气质量标准。\n本标准中的污染物浓度为质量浓度。\n本标准是对《环境空气质量标准》（GB 3095—2012）的修订。\n本标准首次发布于 1982 年。1996 年第一次修订（2000 年发布修改单），2012 年第二次修订（2018 年发布修改单），本次为第三次修订。本标准将根据国家经济社会发展状况和生态环境保护要求适时修订。本次修订的主要内容：\n——更新了规范性引用文件；\n——新增了日最大8小时平均、参比状态、参比方法、等效方法的术语和定义，调整了24小时平均的术语和定义；\n——调整了环境空气功能区一类区范围；\n——调整了颗粒物（粒径小于等于 $2.5 \\mu m$ ）、颗粒物（粒径小于等于 $10 \\mu m$ ）、二氧化硫、二氧化氮、氮氧化物的浓度限值；\n——更新了污染物分析方法的要求；\n——更新了实施与监督的要求。\n自本标准实施之日起，《环境空气质量标准》（GB 3095—2012）及其修改单废止。\n本标准附录A为资料性附录，为各省级人民政府制定地方环境空气质量标准提供参考。\n本标准由生态环境部大气环境司、法规与标准司组织制订。\n本标准主要起草单位：中国环境科学研究院、中国环境监测总站、生态环境部环境规划院、复旦大学、清华大学、北京大学。\n本标准生态环境部 2026年2月12日批准。\n本标准自2026年3月1日起实施。\n本标准自实施之日起至2030年12月31日，环境空气污染物基本项目实施过渡阶段浓度限值；2031年1月1日起，在全国范围内实施基本项目浓度限值。\n本标准由生态环境部解释。\nGB 3095—2026\n\n# 环境空气质量标准\n\n## 1 适用范围\n本标准规定了环境空气功能区分类、标准分级、污染物项目、平均时间及浓度限值、监测方法、数据统计的有效性规定及实施与监督等内容。\n本标准适用于环境空气质量评价与管理。",
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "rejected_reason": "doc doc-4c883d21fa02a53189e0911c3d59d1d1 is not a RESOLVED requested target; a nearby version/other document is never substituted"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-8bd91f028c6c0749375c042c3c1537ea-chunk-004",
+     "doc_id": "doc-8bd91f028c6c0749375c042c3c1537ea",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-8bd91f028c6c0749375c042c3c1537ea-chunk-004",
+       "doc_id": "doc-8bd91f028c6c0749375c042c3c1537ea",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:环境空气质量标准(GB 3095-2026)",
+        "edge:PM2.5|环境空气质量标准(GB 3095-2026)",
+        "edge:PM10|环境空气质量标准(GB 3095-2026)",
+        "edge:O3|环境空气质量标准(GB 3095-2026)",
+        "edge:NO2|环境空气质量标准(GB 3095-2026)",
+        "edge:SO2|环境空气质量标准(GB 3095-2026)",
+        "edge:CO|环境空气质量标准(GB 3095-2026)",
+        "edge:环境空气质量标准(GB 3095-2026)|过渡阶段浓度限值",
+        "edge:环境空气污染物基本项目|环境空气质量标准(GB 3095-2026)",
+        "edge:基本项目浓度限值|环境空气质量标准(GB 3095-2026)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 4,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 4,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       },
+       "constraint_rejected": "doc doc-8bd91f028c6c0749375c042c3c1537ea is not a RESOLVED requested target; a nearby version/other document is never substituted"
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "a8dbce7078bdba9dcfac61f2a0a8e39d979fec6654cb6630f4f1fa0b76d23dd2",
+     "content_len": 1700,
+     "content": "全国城市空气质量报告\n2. 《环境空气质量标准》（GB 3095—2026）中六项污染物浓度限值如下表所示：\n<table id=\"tb-8bd91f028c6c0749375c042c3c1537ea-0002\" format=\"html\"><tr><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">过渡阶段浓度限值</td><td colspan=\"2\">浓度限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td><td>一级</td><td>二级</td></tr><tr><td rowspan=\"3\">SO2</td><td>年平均</td><td>20</td><td>60</td><td>20</td><td>20</td><td rowspan=\"6\">μg/m³</td></tr><tr><td>日平均</td><td>50</td><td>150</td><td>50</td><td>50</td></tr><tr><td>1小时平均</td><td>150</td><td>500</td><td>150</td><td>150</td></tr><tr><td rowspan=\"3\">NO2</td><td>年平均</td><td>40</td><td>40</td><td>30</td><td>30</td></tr><tr><td>日平均</td><td>80</td><td>80</td><td>50</td><td>50</td></tr><tr><td>1小时平均</td><td>200</td><td>200</td><td>200</td><td>200</td></tr><tr><td rowspan=\"2\">CO</td><td>日平均</td><td>4</td><td>4</td><td>4</td><td>4</td><td rowspan=\"2\">mg/m³</td></tr><tr><td>1小时平均</td><td>10</td><td>10</td><td>10</td><td>10</td></tr><tr><td rowspan=\"2\">O3</td><td>日最大8小时平均</td><td>100</td><td>160</td><td>100</td><td>160</td><td rowspan=\"6\">μg/m³</td></tr><tr><td>1小时平均</td><td>160</td><td>200</td><td>160</td><td>200</td></tr><tr><td rowspan=\"2\">PM10</td><td>年平均</td><td>40</td><td>60</td><td>20</td><td>50</td></tr><tr><td>日平均</td><td>50</td><td>120</td><td>50</td><td>100</td></tr><tr><td rowspan=\"2\">PM2.5</td><td>年平均</td><td>15</td><td>30</td><td>10</td><td>25</td></tr><tr><td>日平均</td><td>35</td><td>60</td><td>25</td><td>50</td></tr></table>\n其中，自《环境空气质量标准》（GB 3095—2026）实施之日起至2030年12月31日止，环境空气污染物基本项目实施过渡阶段浓度限值；自2031年1月1日起，在全国范围内实施基本项目浓度限值。\n3. 本报告采用“十五五”国控城市点位监测数据开展评价，其中 $\\mathrm{PM}_{10}$ 浓度、 $\\mathrm{PM}_{2.5}$ 浓度扣除沙尘天气影响；优良天数比例、重度及以上污染天数比例保留沙尘。\n全国城市空气质量报告",
+     "file_path": "air-25_中国环境监测总站_2026年6月全国城市空气质量报告_2026.pdf",
+     "rejected_reason": "doc doc-8bd91f028c6c0749375c042c3c1537ea is not a RESOLVED requested target; a nearby version/other document is never substituted"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f-chunk-004",
+     "doc_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f-chunk-004",
+       "doc_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:环境空气质量标准(GB 3095-2026)",
+        "edge:环境空气质量标准(GB 3095-2026)|过渡阶段浓度限值",
+        "edge:全国城市空气质量报告|环境空气质量标准(GB 3095-2026)",
+        "edge:环境空气污染物基本项目|环境空气质量标准(GB 3095-2026)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 5,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 5,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       },
+       "constraint_rejected": "doc doc-c963ecba7eeb28190aa94ffbc29e6b2f is not a RESOLVED requested target; a nearby version/other document is never substituted"
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "2d7ffdf8a6fc9b980932f3e98a3604f3261670c1a7d8e455bbf07c4cbcde4dbf",
+     "content_len": 1728,
+     "content": "全国城市空气质量报告\n2. 《环境空气质量标准》（GB 3095—2026）中六项污染物浓度限值如下表所示：\n<table id=\"tb-c963ecba7eeb28190aa94ffbc29e6b2f-0002\" format=\"html\"><tr><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">过渡阶段浓度限值</td><td colspan=\"2\">浓度限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td><td>一级</td><td>二级</td></tr><tr><td rowspan=\"3\"> $SO_2$ </td><td>年平均</td><td>20</td><td>60</td><td>20</td><td>20</td><td rowspan=\"6\"> $μg/m^3$ </td></tr><tr><td>日平均</td><td>50</td><td>150</td><td>50</td><td>50</td></tr><tr><td>1小时平均</td><td>150</td><td>500</td><td>150</td><td>150</td></tr><tr><td rowspan=\"3\"> $NO_2$ </td><td>年平均</td><td>40</td><td>40</td><td>30</td><td>30</td></tr><tr><td>日平均</td><td>80</td><td>80</td><td>50</td><td>50</td></tr><tr><td>1小时平均</td><td>200</td><td>200</td><td>200</td><td>200</td></tr><tr><td rowspan=\"2\">CO</td><td>日平均</td><td>4</td><td>4</td><td>4</td><td>4</td><td rowspan=\"2\"> $mg/m^3$ </td></tr><tr><td>1小时平均</td><td>10</td><td>10</td><td>10</td><td>10</td></tr><tr><td rowspan=\"2\"> $O_3$ </td><td>日最大8小时平均</td><td>100</td><td>160</td><td>100</td><td>160</td><td rowspan=\"6\"> $μg/m^3$ </td></tr><tr><td>1小时平均</td><td>160</td><td>200</td><td>160</td><td>200</td></tr><tr><td rowspan=\"2\"> $PM_{10}$ </td><td>年平均</td><td>40</td><td>60</td><td>20</td><td>50</td></tr><tr><td>日平均</td><td>50</td><td>120</td><td>50</td><td>100</td></tr><tr><td rowspan=\"2\"> $PM_{2.5}$ </td><td>年平均</td><td>15</td><td>30</td><td>10</td><td>25</td></tr><tr><td>日平均</td><td>35</td><td>60</td><td>25</td><td>50</td></tr></table>\n其中，自《环境空气质量标准》（GB 3095—2026）实施之日起至2030年12月31日止，环境空气污染物基本项目实施过渡阶段浓度限值；自2031年1月1日起，在全国范围内实施基本项目浓度限值。\n3. 本报告采用 “十五五” 国控城市点位监测数据开展评价，其中 $PM_{10}$ 浓度、 $PM_{2.5}$ 浓度扣除沙尘天气影响；优良天数比例、重度及以上污染天数比例保留沙尘。\n全国城市空气质量报告",
+     "file_path": "air-26_中国环境监测总站_2026年7月全国城市空气质量报告_2026.pdf",
+     "rejected_reason": "doc doc-c963ecba7eeb28190aa94ffbc29e6b2f is not a RESOLVED requested target; a nearby version/other document is never substituted"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-001",
+     "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-001",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 3095-2026",
+        "edge:GB 3095-2026|HJ 655",
+        "edge:GB 3095-2026|HJ 818",
+        "edge:GB 3095-2026|HJ 664",
+        "edge:GB 3095-2026|HJ 193",
+        "edge:GB 3095-2026|HJ 654",
+        "edge:GB 3095-2026|HJ 817",
+        "edge:GB 3095-2026|HJ 618",
+        "edge:GB 3095-2026|HJ 479",
+        "edge:GB 3095-2026|HJ 653",
+        "edge:GB 3095-2026|HJ 630",
+        "edge:GB 3095-2026|HJ 539",
+        "edge:GB 3095-2026|HJ 646",
+        "edge:GB 3095-2026|HJ 830",
+        "edge:GB 3095-2026|HJ 829",
+        "edge:GB 3095-2026|HJ 777",
+        "edge:GB 3095-2026|HJ 956",
+        "edge:GB 3095-2026|HJ 647",
+        "edge:GB 3095-2026|HJ 590",
+        "edge:GB 3095-2026|HJ 504",
+        "edge:GB 3095-2026|HJ 482",
+        "edge:GB 3095-2026|HJ 1263",
+        "edge:GB 3095-2026|HJ 657",
+        "edge:GB 3095-2026|HJ 194",
+        "edge:GB 3095-2026|HJ 1225",
+        "edge:GB 3095-2026|HJ 1043",
+        "edge:GB 3095-2026|GB/T 9801",
+        "edge:GB 3095-2026|HJ 1044",
+        "edge:GB 3095-2026|HJ 965"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 6,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 6,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       },
+       "constraint_rejected": "doc doc-4c883d21fa02a53189e0911c3d59d1d1 is not a RESOLVED requested target; a nearby version/other document is never substituted"
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "28aae0f3ed8e1c324c110d65142fbe94f47b5ca983fefb55a775c9dc01043aa0",
+     "content_len": 2530,
+     "content": "## 2 规范性引用文件\n本标准引用了下列文件或其中的条款。凡是注明日期的引用标准，仅注日期的版本适用于本标准。凡是未注明日期的引用标准，其最新版本（包括所有的修改单）适用于本标准。其他文件被新文件废止、修改、修订的，新文件适用于本标准。\nGB/T 9801 空气质量 一氧化碳的测定 非分散红外法\nHJ 193 环境空气气态污染物（ $\\mathrm{SO}_2$ 、 $\\mathrm{NO}_2$ 、 $\\mathrm{O}_3$ 、 $\\mathrm{CO}$ ）连续自动监测系统安装验收技术规范\nHJ 194 环境空气质量手工监测技术规范\nHJ 479 环境空气 氮氧化物（一氧化氮和二氧化氮）的测定 盐酸萘乙二胺分光光度法\nHJ 482 环境空气 二氧化硫的测定 甲醛吸收-副玫瑰苯胺分光光度法\nHJ 504 环境空气 臭氧的测定 靛蓝二磺酸钠分光光度法\nHJ 539 环境空气 铅的测定 石墨炉原子吸收分光光度法\nHJ 590 环境空气 臭氧的测定 紫外光度法\nHJ 618 环境空气 $\\mathrm{PM}_{10}$ 和 $\\mathrm{PM}_{2.5}$ 的测定 重量法\nHJ 630 环境监测质量管理技术导则\nHJ 646 环境空气和废气 气相和颗粒物中多环芳烃的测定 气相色谱-质谱法\nHJ 647 环境空气和废气 气相和颗粒物中多环芳烃的测定 高效液相色谱法\nHJ 653 环境空气颗粒物（ $\\mathrm{PM}_{10}$ 和 $\\mathrm{PM}_{2.5}$ ）连续自动监测系统技术要求及检测方法\nHJ 654 环境空气气态污染物（ $\\mathrm{SO}_2$ 、 $\\mathrm{NO}_2$ 、 $\\mathrm{O}_3$ 、 $\\mathrm{CO}$ ）连续自动监测系统技术要求及检测方法\nHJ 655 环境空气颗粒物（ $\\mathrm{PM}_{10}$ 和 $\\mathrm{PM}_{2.5}$ ）连续自动监测系统安装和验收技术规范\nHJ 657 空气和废气 颗粒物中铅等金属元素的测定 电感耦合等离子体质谱法\nHJ 664 环境空气质量监测点位布设技术规范（试行）\nHJ 777 空气和废气 颗粒物中金属元素的测定 电感耦合等离子体发射光谱法\nHJ 817 环境空气颗粒物（ $\\mathrm{PM}_{10}$ 和 $\\mathrm{PM}_{2.5}$ ）连续自动监测系统运行和质控技术规范\nHJ 818 环境空气气态污染物（ $\\mathrm{SO}_2$ 、 $\\mathrm{NO}_2$ 、 $\\mathrm{O}_3$ 、 $\\mathrm{CO}$ ）连续自动监测系统运行和质控技术规范\nHJ 829 环境空气 颗粒物中无机元素的测定 能量色散 X 射线荧光光谱法\nHJ 830 环境空气 颗粒物中无机元素的测定 波长色散 X 射线荧光光谱法\nHJ 956 环境空气 苯并[a]芘的测定 高效液相色谱法\nHJ 965 环境空气 一氧化碳的自动测定 非分散红外法\nHJ 1043 环境空气 氮氧化物的自动测定 化学发光法\nHJ 1044 环境空气 二氧化硫的自动测定 紫外荧光法\nGB 3095—2026\nHJ 1225 环境空气 臭氧的自动测定 化学发光法\nHJ 1263 环境空气 总悬浮颗粒物的测定 重量法\n\n## 3 术语和定义\n下列术语和定义适用于本标准。\n\n## 3.1\n环境空气 ambient air\n人群、植物、动物和建筑物所暴露的室外空气。\n\n## 3.2\n总悬浮颗粒物 total suspended particle (TSP)\n环境空气中空气动力学当量直径小于等于 $100 \\mu m$ 的颗粒物。\n\n## 3.3\n颗粒物（粒径小于等于 $10 \\mu m$ ） particulate matter （PM $_{10}$ ）\n环境空气中空气动力学当量直径小于等于 $10 \\mu \\mathrm{m}$ 的颗粒物，也称可吸入颗粒物。\n\n## 3.4\n颗粒物（粒径小于等于 $2.5 \\mu m$ ） particulate matter ( $PM_{2.5}$ )\n环境空气中空气动力学当量直径小于等于 $2.5\\mu \\mathrm{m}$ 的颗粒物，也称细颗粒物。\n\n## 3.5\n\n## 铅 lead\n存在于总悬浮颗粒物中的铅及其化合物。\n\n## 3.6\n苯并[a]芘 benzo[a]pyrene (BaP)\n存在于颗粒物（粒径小于等于 $10 \\mu m$ ）中的苯并[a]芘。\n\n## 3.7\n1 小时平均 1-hour average\n任何 1 小时污染物浓度的算术平均值。\n\n## 3.8\n8 小时平均 8-hour average\n连续8个小时平均浓度的算术平均值，也称8小时滑动平均。\n\n## 3.9\n日最大 8 小时平均 maximum daily 8-hour average\n一个自然日内8小时滑动平均的最大值。\n\n## 3.10\n日平均 daily average\n一个自然日24个小时平均浓度的算术平均值，也称24小时平均。\n\n## 3.11\n月平均 monthly average\n一个日历月内各日平均浓度的算术平均值。\n\n## 3.12\n季平均 quarterly average\n一个日历季内各日平均浓度的算术平均值。\nGB 3095—2026\n\n## 3.13\n年平均 annual mean\n一个日历年内各日平均浓度的算术平均值。\n\n## 3.14\n参比状态 reference state\n大气温度为 298.15 K，大气压力为 1013.25 hPa 时的状态。\n\n## 3.15\n参比方法 reference method\n作为环境空气污染物监测方法等效性评估依据的国家生态环境标准方法。\n\n## 3.16\n等效方法 equivalent method\n通过国务院生态环境主管部门组织的等效性评估，确认与本标准中规定的参比方法等效的生态环境监测方法。\n\n## 4 环境空气功能区分类和质量要求",
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "rejected_reason": "doc doc-4c883d21fa02a53189e0911c3d59d1d1 is not a RESOLVED requested target; a nearby version/other document is never substituted"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005",
+     "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 3095-2026",
+        "edge:GB 3095-2026|铅",
+        "edge:GB 3095-2026|苯并[a]芘",
+        "edge:GB 3095-2026|HJ 539",
+        "edge:GB 3095-2026|HJ 646",
+        "edge:GB 3095-2026|HJ 830",
+        "edge:GB 3095-2026|HJ 829",
+        "edge:GB 3095-2026|HJ 777",
+        "edge:GB 3095-2026|HJ 956",
+        "edge:GB 3095-2026|HJ 647",
+        "edge:GB 3095-2026|HJ 647《环境空气和废气气相和颗粒物中多环芳烃的测定高效液相色谱法》",
+        "edge:GB 3095-2026|HJ 646《环境空气和废气气相和颗粒物中多环芳烃的测定气相色谱-质谱法》",
+        "edge:GB 3095-2026|HJ 830《环境空气颗粒物中无机元素的测定波长色散X射线荧光光谱法》",
+        "edge:GB 3095-2026|HJ 829《环境空气颗粒物中无机元素的测定能量色散X射线荧光光谱法》",
+        "edge:GB 3095-2026|HJ 956《环境空气苯并[a]芘的测定高效液相色谱法》",
+        "edge:GB 3095-2026|HJ 777《空气和废气颗粒物中金属元素的测定电感耦合等离子体发射光谱法》",
+        "edge:GB 3095-2026|HJ 539《环境空气铅的测定石墨炉原子吸收分光光度法》"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 7,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 7,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       },
+       "constraint_rejected": "doc doc-4c883d21fa02a53189e0911c3d59d1d1 is not a RESOLVED requested target; a nearby version/other document is never substituted"
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "1bdb6c938860400657503f1d4d48a402bd65c9b23e25b3a4cf1268c83f294728",
+     "content_len": 758,
+     "content": "<table id=\"tb-4c883d21fa02a53189e0911c3d59d1d1-0003\" format=\"html\"><tr><td>环境空气 铅的测定 石墨炉原子吸收分光光度法</td><td>HJ 539</td><td>—</td><td>—</td></tr><tr><td>空气和废气 颗粒物中金属元素的测定 电感耦合等离子体发射光谱法</td><td>HJ 777</td><td>—</td><td>—</td></tr><tr><td>环境空气 颗粒物中无机元素的测定 能量色散X射线荧光光谱法</td><td>HJ 829</td><td>—</td><td>—</td></tr><tr><td>环境空气 颗粒物中无机元素的测定 波长色散X射线荧光光谱法</td><td>HJ 830</td><td>—</td><td>—</td></tr><tr><td rowspan=\"3\">10</td><td rowspan=\"3\">苯并[a]芘(BaP)</td><td>环境空气 苯并[a]芘的测定 高效液相色谱法*</td><td>HJ 956</td><td>—</td><td>—</td></tr><tr><td>环境空气和废气 气相和颗粒物中多环芳烃的测定 气相色谱-质谱法</td><td>HJ 646</td><td>—</td><td>—</td></tr><tr><td>环境空气和废气 气相和颗粒物中多环芳烃的测定 高效液相色谱法</td><td>HJ 647</td><td>—</td><td>—</td></tr><tr><td colspan=\"6\">注:“*”表示该污染物项目的参比方法。</td></tr></table>\nGB 3095—2026",
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "rejected_reason": "doc doc-4c883d21fa02a53189e0911c3d59d1d1 is not a RESOLVED requested target; a nearby version/other document is never substituted"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+     "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:环境空气质量标准(GB 3095-2026)",
+        "edge:环境空气质量标准(GB 3095-2026)|表3",
+        "edge:一氧化碳(CO)|环境空气质量标准(GB 3095-2026)",
+        "edge:国务院生态环境主管部门|环境空气质量标准(GB 3095-2026)",
+        "edge:HJ 655|环境空气质量标准(GB 3095-2026)",
+        "edge:HJ 818|环境空气质量标准(GB 3095-2026)",
+        "edge:二氧化硫(SO₂)|环境空气质量标准(GB 3095-2026)",
+        "edge:HJ 193|环境空气质量标准(GB 3095-2026)",
+        "edge:环境空气质量标准(GB 3095-2026)|臭氧(O₃)",
+        "edge:HJ 654|环境空气质量标准(GB 3095-2026)",
+        "edge:HJ 817|环境空气质量标准(GB 3095-2026)",
+        "edge:二氧化氮(NO₂)|环境空气质量标准(GB 3095-2026)",
+        "edge:HJ 653|环境空气质量标准(GB 3095-2026)",
+        "edge:污染物分析|环境空气质量标准(GB 3095-2026)",
+        "edge:HJ 194|环境空气质量标准(GB 3095-2026)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 8,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 8,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       },
+       "constraint_rejected": "doc doc-4c883d21fa02a53189e0911c3d59d1d1 is not a RESOLVED requested target; a nearby version/other document is never substituted"
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "161e5634b5c94a07633407801a5ba9d7a17d0bea8e0e4dd0456fcd41b407596b",
+     "content_len": 1168,
+     "content": "## 5.3 污染物分析\n应按表 3 的要求，采用相应的方法分析各项污染物的浓度，并执行 HJ 193、HJ 194、HJ 653、HJ 654、HJ 655、HJ 817、HJ 818 的相关规定。本标准实施后，国务院生态环境主管部门确认的等效方法，同样适用于本标准相应污染物项目的测定。\nGB 3095—2026\n<table id=\"tb-4c883d21fa02a53189e0911c3d59d1d1-0003\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td colspan=\"2\">手工分析方法</td><td colspan=\"2\">自动分析方法</td></tr><tr><td>名称</td><td>标准编号</td><td>名称</td><td>标准编号</td></tr><tr><td rowspan=\"2\">1</td><td rowspan=\"2\">二氧化硫( $SO_{2}$ )</td><td rowspan=\"2\">环境空气 二氧化硫的测定 甲醛吸收-副玫瑰苯胺分光光度法</td><td rowspan=\"2\">HJ 482</td><td>环境空气 二氧化硫的自动测定 紫外荧光法*</td><td>HJ 1044</td></tr><tr><td>差分吸收光谱分析法</td><td>—</td></tr><tr><td rowspan=\"2\">2</td><td rowspan=\"2\">二氧化氮( $NO_{2}$ )</td><td rowspan=\"2\">环境空气 氮氧化物(一氧化氮和二氧化氮)的测定 盐酸萘乙二胺分光光度法</td><td rowspan=\"2\">HJ 479</td><td>环境空气 氮氧化物的自动测定 化学发光法*</td><td>HJ 1043</td></tr><tr><td>差分吸收光谱分析法</td><td>—</td></tr><tr><td>3</td><td>一氧化碳(CO)</td><td>空气质量 一氧化碳的测定 非分散红外法</td><td>GB/T 9801</td><td>环境空气 一氧化碳的自动测定 非分散红外法*</td><td>HJ 965</td></tr><tr><td rowspan=\"3\">4</td><td rowspan=\"3\">臭氧( $O_{3}$ )</td><td rowspan=\"3\">环境空气 臭氧的测定 靛蓝二磺酸钠分光光度法</td><td rowspan=\"3\">HJ 504</td><td>环境空气 臭氧的测定 紫外光度法*</td><td>HJ 590</td></tr></table>",
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "rejected_reason": "doc doc-4c883d21fa02a53189e0911c3d59d1d1 is not a RESOLVED requested target; a nearby version/other document is never substituted"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-006",
+     "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-006",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 3095-2026",
+        "edge:GB 3095-2026|附录A",
+        "edge:GB 3095-2026|生态环境主管部门",
+        "edge:GB 3095-2026|自动监测设备",
+        "edge:GB 3095-2026|表4数据有效性规定",
+        "edge:GB 3095-2026|各级生态环境主管部门",
+        "edge:GB 3095-2026|地方环境空气质量标准",
+        "edge:GB 3095-2026|数据统计的有效性规定",
+        "edge:GB 3095-2026|附录A参考浓度限值",
+        "edge:GB 3095-2026|实施与监督",
+        "edge:GB 3095-2026|各省级人民政府",
+        "edge:GB 3095-2026|监测数据有效性"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 9,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 9,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       },
+       "constraint_rejected": "doc doc-4c883d21fa02a53189e0911c3d59d1d1 is not a RESOLVED requested target; a nearby version/other document is never substituted"
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "85cc1fc8365339b7e0dd27bbbd2f58b6c3bf379ccc6dbf3771d52034cae2c06b",
+     "content_len": 2467,
+     "content": "## 6 数据统计的有效性规定\n6.1 应采取措施保证监测数据的准确性、连续性和完整性，确保全面、客观地反映监测结果。\n6.2 采用自动监测设备监测时，监测仪器应全年 365 天（闰年 366 天）连续运行。在监测仪器校准、停电和设备故障，以及其他不可抗拒的因素导致不能获得连续监测数据时，应采取有效措施及时恢复设备正常运行。\n6.3 异常值的判断和处理应符合 HJ 630、HJ 817 和 HJ 818 的规定。对于监测过程中缺失和删除的数据均应说明原因，并保留详细的原始数据记录，以备数据审核。\n6.4 任何情况下，有效的污染物浓度数据均应符合表 4 中的最低要求，否则应视为无效数据。所有有效数据均应参加统计和评价。\n<table id=\"tb-4c883d21fa02a53189e0911c3d59d1d1-0004\" format=\"html\"><tr><td>污染物项目</td><td>平均时间</td><td>数据有效性规定</td></tr><tr><td>二氧化硫( $SO_2$ )、二氧化氮( $NO_2$ )、颗粒物(粒径小于等于10μm, $PM_{10}$ )、颗粒物(粒径小于等于2.5μm, $PM_{2.5}$ )、氮氧化物( $NO_x$ )</td><td>年平均</td><td>每年至少有324个日平均浓度值;每月至少有27个日平均浓度值(二月至少有25个日平均浓度值)</td></tr><tr><td>二氧化硫( $SO_2$ )、二氧化氮( $NO_2$ )、一氧化碳(CO)、颗粒物(粒径小于等于10μm, $PM_{10}$ )、颗粒物(粒径小于等于2.5μm, $PM_{2.5}$ )、氮氧化物( $NO_x$ )</td><td>日平均</td><td>每日至少有20个小时平均浓度值或采样时间</td></tr><tr><td>臭氧( $O_3$ )</td><td>8小时平均</td><td>每8小时至少有6个小时平均浓度值</td></tr><tr><td>二氧化硫( $SO_2$ )、二氧化氮( $NO_2$ )、一氧化碳(CO)、臭氧( $O_3$ )、氮氧化物( $NO_x$ )</td><td>1小时平均</td><td>每小时至少有45分钟的采样时间</td></tr><tr><td>总悬浮颗粒物(TSP)、苯并[a]芘(BaP)、铅(Pb)</td><td>年平均</td><td>每年至少有分布均匀的60个日平均浓度值;每月至少有分布均匀的5个日平均浓度值</td></tr><tr><td>铅(Pb)</td><td>季平均</td><td>每季至少有分布均匀的15个日平均浓度值;每月至少有分布均匀的5个日平均浓度值</td></tr><tr><td>总悬浮颗粒物(TSP)、苯并[a]芘(BaP)、铅(Pb)</td><td>日平均</td><td>每日应有24小时的采样时间</td></tr></table>\n\n## 7 实施与监督\n7.1 本标准由各级生态环境主管部门负责监督实施。\n7.2 各类环境空气功能区的范围由设区的市级及以上生态环境主管部门依法划分。\nGB 3095—2026\n\n## 附录 A\n(资料性附录)\n环境空气中镉、汞、砷、六价铬和氟化物参考浓度限值\n各省级人民政府可根据当地生态环境保护的需要，针对环境污染的特点，对本标准中未规定的污染物项目制定并实施地方环境空气质量标准。以下为环境空气中部分污染物参考浓度限值。\n<table id=\"tb-4c883d21fa02a53189e0911c3d59d1d1-0005\" format=\"html\"><tr><td>序号</td><td>污染物项目</td><td>平均时间</td><td>浓度(通量)限值</td><td>单位</td></tr><tr><td>1</td><td> $镉(Cd)^{a}$ </td><td>年平均</td><td>0.005</td><td rowspan=\"6\"> $\\mu g/m^{3}$ </td></tr><tr><td>2</td><td> $汞(Hg)^{b}$ </td><td>年平均</td><td>0.05</td></tr><tr><td>3</td><td> $砷(As)^{a}$ </td><td>年平均</td><td>0.006</td></tr><tr><td>4</td><td>六价铬  $[Cr(VI)]^{a}$ </td><td>年平均</td><td>0.000 025</td></tr><tr><td rowspan=\"4\">5</td><td rowspan=\"4\"> $氟化物(F)^{c}$ </td><td>1小时平均</td><td> $20^{d}$ </td></tr><tr><td>日平均</td><td> $7^{d}$ </td></tr><tr><td>月平均</td><td> $1.8^{e}, 3.0^{f}$ </td><td rowspan=\"2\"> $\\mu g/(dm^{2}·d)$ </td></tr><tr><td>植物生长季平均</td><td> $1.2^{e}, 2.0^{f}$ </td></tr><tr><td colspan=\"5\"> $^{a}$ 存在于颗粒物(粒径小于等于 $10\\mu m, PM_{10}$ )中的镉(Cd)及其化合物、砷(As)及其化合物、六价铬  $[Cr(VI)]$ 及其化合物。 $^{b}$ 以气态和颗粒态形式存在的汞及其化合物。 $^{c}$ 以气态和颗粒态形式存在的无机氟化物。 $^{d}$ 适用于城市地区。 $^{e}$ 适用于牧业区和以牧业为主的半农半牧区、蚕桑区。 $^{f}$ 适用于农业和林业区。</td></tr></table>\nGB 3095—2026",
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "rejected_reason": "doc doc-4c883d21fa02a53189e0911c3d59d1d1 is not a RESOLVED requested target; a nearby version/other document is never substituted"
+    }
+   ],
+   "budget": {
+    "limit": 40,
+    "kept": 4,
+    "truncated": [],
+    "rule": "no truncation"
+   },
+   "status": "ok",
+   "degraded": [],
+   "notes": [],
+   "allowed_set_basis": {
+    "resolved_code_targets": [
+     [
+      "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+     ]
+    ],
+    "verified_attributions": []
+   },
+   "verify": {
+    "requested": 11,
+    "verified": 11,
+    "missing": 0,
+    "attribution_conflict": 0
+   }
+  }
+ ],
+ "finished_at": "2026-10-09T20:55:31+0800"
+}

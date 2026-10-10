@@ -1,0 +1,56 @@
+{
+  "version": "1.0",
+  "tables": {
+    "tb-fcd02da0f1e699b885a78b7ceea91c80-0001": {
+      "id": "tb-fcd02da0f1e699b885a78b7ceea91c80-0001",
+      "blockid": "fefca24705375c66262d88c97884f1fb",
+      "heading": "(1) 断面水质评价",
+      "parent_headings": [
+        "二、主要江河"
+      ],
+      "dimension": [
+        6,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td>水质类别</td><td>水质状况</td><td>表征颜色</td><td>水质功能</td></tr><tr><td>I、II类水质</td><td>优</td><td>蓝色</td><td>饮用水源一级保护区、珍稀水生生物栖息地、鱼虾类产卵场、仔稚幼鱼的索饵场等</td></tr><tr><td>III类水质</td><td>良好</td><td>绿色</td><td>饮用水源二级保护区、鱼虾类越冬场、洄游通道、水产养殖区、游泳区</td></tr><tr><td>IV类水质</td><td>轻度污染</td><td>黄色</td><td>一般工业用水和人体非直接接触的娱乐用水</td></tr><tr><td>V类水质</td><td>中度污染</td><td>橙色</td><td>农业用水及一般景观用水</td></tr><tr><td>劣V类水质</td><td>重度污染</td><td>红色</td><td>除调节局部气候外,使用功能较差</td></tr></table>",
+      "caption": "表 1 断面、河段水质定性评价",
+      "footnotes": [],
+      "self_ref": "content_list.json#/206"
+    },
+    "tb-fcd02da0f1e699b885a78b7ceea91c80-0002": {
+      "id": "tb-fcd02da0f1e699b885a78b7ceea91c80-0002",
+      "blockid": "5e3929041f66ed6e3302a983811ced4f",
+      "heading": "(2) 河流、流域（水系）水质评价",
+      "parent_headings": [
+        "二、主要江河"
+      ],
+      "dimension": [
+        6,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>水质类别比例</td><td>水质状况</td><td>表征颜色</td></tr><tr><td>I~III类水质比例≥90%</td><td>优</td><td>蓝色</td></tr><tr><td>75%≤I~III类水质比例&lt;90%</td><td>良好</td><td>绿色</td></tr><tr><td>I~III类水质比例&lt;75%,且劣V类比例&lt;20%</td><td>轻度污染</td><td>黄色</td></tr><tr><td>I~III类水质比例&lt;75%,且20%≤劣V类比例&lt;40%</td><td>中度污染</td><td>橙色</td></tr><tr><td>I~III类水质比例&lt;60%,且劣V类比例≥40%</td><td>重度污染</td><td>红色</td></tr></table>",
+      "caption": "表2 河流、水系水质定性评价",
+      "footnotes": [],
+      "self_ref": "content_list.json#/214"
+    },
+    "tb-fcd02da0f1e699b885a78b7ceea91c80-0003": {
+      "id": "tb-fcd02da0f1e699b885a78b7ceea91c80-0003",
+      "blockid": "0392ef805a231dd60e1f31c7ccae89f8",
+      "heading": "c、综合营养状态指数计算",
+      "parent_headings": [
+        "二、主要江河"
+      ],
+      "dimension": [
+        3,
+        6
+      ],
+      "format": "html",
+      "content": "<table><tr><td>参数</td><td>chla</td><td>TP</td><td>TN</td><td>SD</td><td> $COD_{Mn}$ </td></tr><tr><td> $r_{ij}$ </td><td>1</td><td>0.84</td><td>0.82</td><td>-0.83</td><td>0.83</td></tr><tr><td> $r_{ij}^{2}$ </td><td>1</td><td>0.7056</td><td>0.6724</td><td>0.6889</td><td>0.6889</td></tr></table>",
+      "caption": "表 3 中国湖泊(水库)部分参数与 chla 的相关关系 $r_{ij}$ 及 $r_{ij}^{2}$ 值",
+      "footnotes": [],
+      "self_ref": "content_list.json#/254"
+    }
+  }
+}

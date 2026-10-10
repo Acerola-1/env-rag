@@ -1,0 +1,66 @@
+{
+  "decision": "passed",
+  "run_ids": [
+    "865a626eb7ce4365",
+    "3b7f17b1e30140a7"
+  ],
+  "fingerprints_equal": true,
+  "source_snapshot_fingerprint": {
+    "algorithm": "sha256 composite of per-source sha256 values",
+    "value": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "components": {
+      "pg_doc_full_content": "30cf5ddf9b33d3322bb46f39785114daf32a059d120f0cda69c67aea940eab29",
+      "pg_doc_chunks_content_order_refs": "7bbdb3849edeb4555aa76e2eab1a4d5a1b838a789c88b8d598ff752b8a9a3506",
+      "pg_doc_status": "2d0fe540b3fe0bc219c69adc41141b70be105141b841069bb81ff494455940bc",
+      "parsed_blocks_tables_bytes": "fccb274827fc21f0f02f721271d175efd800175a4a8db5140bf7f72f404ab1db",
+      "chunking_params": {
+        "distinct_values": 1,
+        "counts": {
+          "\"{\\\"chunk_token_size\\\": 1500, \\\"paragraph_semantic\\\": {\\\"chunk_token_size\\\": 2000, \\\"chunk_overlap_token_size\\\": 100}}\"": 221
+        }
+      }
+    }
+  },
+  "audit_code_matches_manifest": true,
+  "sample_counts": {
+    "required": {
+      "fact": 6,
+      "file_enum": 6,
+      "prose_enum": 6,
+      "table_enum": 6,
+      "synthesis": 6
+    },
+    "actual": {
+      "fact": 7,
+      "file_enum": 7,
+      "prose_enum": 7,
+      "table_enum": 7,
+      "synthesis": 7
+    },
+    "counter_examples": 10,
+    "counter_examples_required": 8,
+    "displaced_unresolved_targets": [],
+    "meets_minimum": true
+  },
+  "white_list_documents": 221,
+  "current_database_counts": {
+    "lightrag_doc_chunks": 5709,
+    "lightrag_doc_full": 221,
+    "lightrag_doc_status": 279,
+    "lightrag_entity_chunks": 65527,
+    "lightrag_full_entities": 221,
+    "lightrag_full_relations": 221,
+    "lightrag_graph_edges": 0,
+    "lightrag_graph_nodes": 0,
+    "lightrag_llm_cache": 16514,
+    "lightrag_relation_chunks": 119575
+  },
+  "current_schema_plan": {
+    "candidate_name": "env_rag",
+    "exists": false,
+    "current_user_can_create_schema": true
+  },
+  "fixture_tests_passed": 19,
+  "publication": "complete generations with atomic symlink switch; failures retained separately",
+  "review_date": "2026-10-05 Asia/Shanghai"
+}

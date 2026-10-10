@@ -1,0 +1,1860 @@
+{
+  "total_files": 142,
+  "reviewed_files": 18,
+  "skipped_files": 124,
+  "previewed_total_including_excluded": 230,
+  "excluded_count": 88,
+  "accounted_for_rate": 1.0,
+  "entries": [
+    {
+      "path": "pyproject.toml",
+      "status": "modified",
+      "ocr_classification": "reviewable",
+      "review_status": "reviewed",
+      "reason": "Phase2 implementation/behavior/call path or submitted scoring evidence inspected",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/cli.py",
+      "status": "modified",
+      "ocr_classification": "reviewable",
+      "review_status": "reviewed",
+      "reason": "Phase2 implementation/behavior/call path or submitted scoring evidence inspected",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/.openspec.yaml",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "openspec/changes/archive/.gitkeep",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "openspec/config.yaml",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "openspec/specs/.gitkeep",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/run-manifest.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/sample-set.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/schema.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/search-probes.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/run-manifest.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/sample-set.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/schema.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/search-probes.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/run-manifest.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/sample-set.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/schema.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/search-probes.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/fingerprint-check.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/independent-verification.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/re-review-evidence.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/recheck-a",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/verify_gate0.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/counterexamples-offline.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/cli-0.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/cli-1.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/cli-2.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/model-ambiguous.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/model-live.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/model-verification.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/ocr-preview.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/ocr-rules.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/replay-before-fix.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/replay.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/replay.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/review-comments.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/review-coverage.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/review-manifest.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/verify_model.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/ocr-preview.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/ocr-rules.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/ocr-preview.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/ocr-rules.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/replay-live.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/replay-offline.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/replay.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/review-comments.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/review-coverage.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/review-manifest.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/submitted-records-recovered.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/submitted-runs-original.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/reproduce.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/ocr-preview.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/ocr-rules.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/replay.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/replay.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/review-comments.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/review-coverage.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/review-manifest.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-comments.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-coverage.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-manifest.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/submitted-prose-vs-original.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/submitted-table-citations.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/gold-review.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/gold-source-proof.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/gold_source_proof.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/ocr-preview.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/ocr-rules.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/raw-gold-materials.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/cli-amendment-docs.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/cli-chapter3.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/cli-commands.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/cli-two-version-docs.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/final-source-check.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/gold-review-v2.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/ocr-preview.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/ocr-rules.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/replay.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/replay.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/review-comments.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/review-coverage.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/review-manifest.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/replay.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/replay.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-comments.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-coverage.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-manifest.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/ocr-preview.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review_gold.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/run-manifest.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/sample-set.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/schema.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/search-probes.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/builder-change-counterexample.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/live-verification.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/offline-counterexamples.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/re-review-evidence.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/table-link-counterexample.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/v4-live-verification.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/v4-submitted-build-manifest.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1/build-manifest.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1/structure-samples.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/bench-r2.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "reviewed",
+      "reason": "Phase2 implementation/behavior/call path or submitted scoring evidence inspected",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/explain-evidence.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "reviewed",
+      "reason": "Phase2 implementation/behavior/call path or submitted scoring evidence inspected",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/gold-candidates.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "reviewed",
+      "reason": "Phase2 implementation/behavior/call path or submitted scoring evidence inspected",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/index-manifest.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/selfcheck-machinery.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/tokenizer-probes.json",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/audit/__init__.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/audit/collect.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/audit/compat.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/audit/identity.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/audit/lexical.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/audit/pg.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/audit/probes.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/audit/samples.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/audit/snapshot.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/catalog/__init__.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/catalog/builder.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/catalog/lexical_norm.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/catalog/metadata.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/catalog/schema.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/catalog/scopes.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/catalog/source.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/catalog/units.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/__init__.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/contract.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "reviewed",
+      "reason": "Phase2 implementation/behavior/call path or submitted scoring evidence inspected",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/doc_enum.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/prose_enum.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "reviewed",
+      "reason": "Phase2 implementation/behavior/call path or submitted scoring evidence inspected",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/table_enum.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "reviewed",
+      "reason": "Phase2 implementation/behavior/call path or submitted scoring evidence inspected",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/tables.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "reviewed",
+      "reason": "Phase2 implementation/behavior/call path or submitted scoring evidence inspected",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/search/__init__.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "reviewed",
+      "reason": "Phase2 implementation/behavior/call path or submitted scoring evidence inspected",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/search/clean.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "reviewed",
+      "reason": "Phase2 implementation/behavior/call path or submitted scoring evidence inspected",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/search/eval.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "reviewed",
+      "reason": "Phase2 implementation/behavior/call path or submitted scoring evidence inspected",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/search/expand.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "reviewed",
+      "reason": "Phase2 implementation/behavior/call path or submitted scoring evidence inspected",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/search/gold.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "reviewed",
+      "reason": "Phase2 implementation/behavior/call path or submitted scoring evidence inspected",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/search/index.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "reviewed",
+      "reason": "Phase2 implementation/behavior/call path or submitted scoring evidence inspected",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/search/probe.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "reviewed",
+      "reason": "Phase2 implementation/behavior/call path or submitted scoring evidence inspected",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/search/query.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "reviewed",
+      "reason": "Phase2 implementation/behavior/call path or submitted scoring evidence inspected",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "src/env_rag_final/search/tokenizer.py",
+      "status": "added",
+      "ocr_classification": "reviewable",
+      "review_status": "reviewed",
+      "reason": "Phase2 implementation/behavior/call path or submitted scoring evidence inspected",
+      "ocr_exclusion_reason": null
+    },
+    {
+      "path": "README.md",
+      "status": "modified",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "uv.lock",
+      "status": "modified",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/README.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/design.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-0-fixes.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-0.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-1-enumeration-fixes-r2.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-1-enumeration-fixes-r3.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-1-enumeration-fixes.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-1-enumeration.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-1-fixes.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-1.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-2-fixes-r2.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-2-fixes.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-2.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/proposal.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/specs/corpus-evidence-catalog/spec.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/specs/pg-scoped-retrieval/spec.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/specs/retrieval-evaluation/spec.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/specs/retrieval-fusion/spec.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/tasks.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/audit.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/compatibility.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/inventory.jsonl",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/mapping-samples.jsonl",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/audit.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/changelog-vs-first-run.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/compatibility.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/inventory.jsonl",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/mapping-samples.jsonl",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/audit.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/compatibility.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/inventory.jsonl",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/mapping-samples.jsonl",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/review.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/model-live-cli.txt",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/review.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/submitted-report.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/submitted-tasks.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/test-results.txt",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/review.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/submitted-report.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/acceptance-results.txt",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/all-tests.txt",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/review.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/submitted-report.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/submitted-runs.jsonl",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/submitted-enumeration-runs.jsonl",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/submitted-report.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/independent-tests.txt",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/independent-tests.txt",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/review.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/submitted-fixes-report.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/submitted-tasks.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/test-results.txt",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/submitted-report.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/submitted-tasks.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/test-results.txt",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/audit.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/compatibility.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/inventory.jsonl",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/mapping-samples.jsonl",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/review.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/v4-submitted-structure-report.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1/enumeration-runs.jsonl",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1/report.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1/structure-report.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/counterexamples-r2.jsonl",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/counterexamples.jsonl",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/failure-cases.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/replay-r2.jsonl",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/report-gate2-fixes-r2.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/report-gate2-fixes.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/report.md",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/search-runs.jsonl",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Historical acceptance/runtime artifact retained; not re-audited during Phase2 incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "src/env_rag_final/search/vocab/base.txt",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "src/env_rag_final/search/vocab/stopwords.txt",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "src/env_rag_final/search/vocab/synonyms.txt",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "unsupported_ext"
+    },
+    {
+      "path": "tests/test_audit_fixtures.py",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "default_path"
+    },
+    {
+      "path": "tests/test_catalog_phase1.py",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "default_path"
+    },
+    {
+      "path": "tests/test_enumeration.py",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "default_path"
+    },
+    {
+      "path": "tests/test_gate1_acceptance.py",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "default_path"
+    },
+    {
+      "path": "tests/test_gate2_acceptance.py",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "reviewed",
+      "reason": "Phase2 implementation/behavior/call path or submitted scoring evidence inspected",
+      "ocr_exclusion_reason": "default_path"
+    },
+    {
+      "path": "tests/test_gate2_rereview.py",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "reviewed",
+      "reason": "Phase2 implementation/behavior/call path or submitted scoring evidence inspected",
+      "ocr_exclusion_reason": "default_path"
+    },
+    {
+      "path": "tests/test_search_guards.py",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "default_path"
+    },
+    {
+      "path": "tests/test_search_phase2.py",
+      "status": "added",
+      "ocr_classification": "excluded",
+      "review_status": "skipped",
+      "reason": "Previously accepted Gate0/Gate1 implementation or unrelated scaffold; outside this incremental review",
+      "ocr_exclusion_reason": "default_path"
+    }
+  ],
+  "extra_manual_review": [
+    "README.md",
+    "OpenSpec tasks/design/handoff acceptance requirements",
+    "tests/test_gate2_review_r3.py",
+    "current phase2 fix report/counterexample logs",
+    "31 gold questions/10 negative expectations",
+    "new readonly PG results and source fingerprints",
+    "raw-source grid and block spans"
+  ],
+  "coverage_rate": 0.1267605633802817
+}

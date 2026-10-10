@@ -1,0 +1,104 @@
+{
+  "date": "2026-10-07",
+  "task": "5.2",
+  "review_round": 2,
+  "accepted": false,
+  "required_fixes": [
+    "M1",
+    "M2",
+    "M3"
+  ],
+  "pending_tasks": [
+    "5.2",
+    "5.3",
+    "5.4",
+    "5.5",
+    "5.6"
+  ],
+  "gate2_remains_accepted": true,
+  "5_1_remains_accepted": true,
+  "gate3_accepted": false,
+  "tests": {
+    "submitted238_passed": true,
+    "previous10_passed": true,
+    "previous10_sha_unchanged": true,
+    "new_passed": 1,
+    "new_failed": 7,
+    "full_passed": 239,
+    "full_failed": 7,
+    "original_assertions_modified": false
+  },
+  "submitted_sha_matches": {
+    "src/env_rag_final/local_adapter.py": true,
+    "src/env_rag_final/cli.py": true,
+    "reports/pg-retrieval/phase-3-local-r2/local-runtime-latest.json": true,
+    "reports/pg-retrieval/gate-2/review-r5/gold-approved.json": true,
+    "tests/test_local_adapter_review.py": true
+  },
+  "wheel": {
+    "version": "1.5.7",
+    "python_files_checked": 172,
+    "record_mismatches": []
+  },
+  "5_1_implementation_sha_unchanged": true,
+  "actual_embedding_llm_calls_by_reviewer": 0,
+  "production_writes_by_reviewer": 0,
+  "formal_model_replay": "not repeated while owning-path failures remain; direct readonly inventory only",
+  "production_frozen_problems": [],
+  "identity_before_after_equal": true,
+  "current_identity": {
+    "when": "after",
+    "public_counts": {
+      "lightrag_doc_full": 221,
+      "lightrag_doc_chunks": 5709,
+      "lightrag_doc_status": 279,
+      "lightrag_llm_cache": 16514,
+      "lightrag_entity_chunks": 65527,
+      "lightrag_full_entities": 221,
+      "lightrag_full_relations": 221,
+      "lightrag_relation_chunks": 119575
+    },
+    "catalog_active": {
+      "run_id": "c15c741742394320",
+      "snapshot_id": "4919b3938ad93747"
+    },
+    "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "search_active": "872d689343a9cbb6",
+    "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+    "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+  },
+  "checks": {
+    "ruff": true,
+    "format": true,
+    "openspec_strict": true,
+    "diff": true,
+    "credential_scan_files": 17,
+    "credential_leaks": []
+  },
+  "scope": {
+    "total_files": 633,
+    "reviewed_files": 9,
+    "skipped_files": 624,
+    "coverage_rate": 0.014218009478672985
+  },
+  "implementation_modified_by_reviewer": false,
+  "artifact_sha256": {
+    "reports/pg-retrieval/phase-3-local-review-r2/ocr-rules.json": "2dc02a35530a6d791b3b37ee7f0a8296ecc1ec2dc30cfcdbfd530697bc4b115e",
+    "reports/pg-retrieval/phase-3-local-review-r2/ruff-format.txt": "c1b38a9478b031b6d4bd55b5f933dd2ac57ed867adb55152d400e81451810b51",
+    "reports/pg-retrieval/phase-3-local-review-r2/ocr-preview.json": "0805182805f48ce2429ce3f419482c6506d3c9b2f847895611b0488c7423d1b4",
+    "reports/pg-retrieval/phase-3-local-review-r2/ruff-check.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "reports/pg-retrieval/phase-3-local-review-r2/all-tests.txt": "6c7d33adef7582c82c7d8669a32cea7b8218c5aae37135b1fc80b2f32673ab13",
+    "reports/pg-retrieval/phase-3-local-review-r2/submitted-tests.txt": "fe3321d6a5796b6f27a8d2e21d55595e7de6e1aba008757058c4ce4d13f5b953",
+    "reports/pg-retrieval/phase-3-local-review-r2/live-inventory.py": "424f0aa91045eaae59fc16cd911bdfc6ef771f7288fdc842c29842f2e27be75a",
+    "reports/pg-retrieval/phase-3-local-review-r2/static-evidence.json": "b251aa86347350d2393009d1b7f5038683373414e27f7dd2f41be536d0898aa6",
+    "reports/pg-retrieval/phase-3-local-review-r2/acceptance-tests.txt": "a523c3b04343532489f6fdcce242312db32dbc84022be17841ef472023ee4cbf",
+    "reports/pg-retrieval/phase-3-local-review-r2/findings.json": "fb1eab2bc7197f4067b28ca4c3d5007f138c9ce93c8232237c730adf95a10e69",
+    "reports/pg-retrieval/phase-3-local-review-r2/openspec-check.txt": "4693ceda9e27e58fa59b2c9dbba2ff1cf729bd8067915263151894179518ba7c",
+    "reports/pg-retrieval/phase-3-local-review-r2/coverage.json": "01a2078a6a7cc723e3aee416927ee9877e1c9ad18f878cba954fc07e8444bd2b",
+    "reports/pg-retrieval/phase-3-local-review-r2/review.md": "09836ead9c203355b83b2745255fe92d9f6ea236cdd0598e7ae11ff43e18ce92",
+    "reports/pg-retrieval/phase-3-local-review-r2/diff-check.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/pg-retrieval/phase-3-local-review-r2/live-inventory.json": "e4b5832878915f51b1dcf469ba91e70831fc27dcba148f3fa84b5115ea7d0596",
+    "tests/test_local_adapter_review_r2.py": "93ca5ea4066723c6dbad925e4eaaafc2fa1f06ec0fcac1668df7091c470581e2",
+    "openspec/changes/add-pg-scoped-retrieval/handoff-phase-3-5.2-fixes-r2.md": "357a1e6fca64a9e336acfa31ba26d5212a26de83696af9f407d1b147d03053e5"
+  }
+}

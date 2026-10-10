@@ -1,0 +1,18 @@
+{
+  "r1_r2_frozen_hashes_unchanged": {
+    "tests/test_evaluation_review_r1.py": true,
+    "tests/test_evaluation_review_r2.py": true
+  },
+  "prior_answer_expand_seams_unchanged": {
+    "src/env_rag_final/answer.py": true,
+    "src/env_rag_final/search/expand.py": true
+  },
+  "all_phase3_frozen_acceptance_files_unchanged": 17,
+  "old_phase3_ledger_changes": [
+    "src/env_rag_final/answer.py",
+    "src/env_rag_final/cli.py"
+  ],
+  "accepted_change_note": "previous explicitly approved answer/CLI seams; current rev2 did not change answer, source algorithm, gold/history/env",
+  "env_sha_unchanged": true,
+  "reviewer_real_requests": 0
+}

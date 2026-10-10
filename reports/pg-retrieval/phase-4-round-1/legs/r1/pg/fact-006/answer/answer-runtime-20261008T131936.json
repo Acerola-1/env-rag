@@ -1,0 +1,306 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-08T13:19:34+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "fact-006"
+ ],
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "reports/pg-retrieval/phase-4-round-1/inputs/pg/fact-006-rerank.json",
+   "sha256": "5988298c3364abaddb20bc991d38730b2b765c4f5fbefc4cf3c704c3189becf7",
+   "task": null,
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": []
+  },
+  "fused_report": {
+   "path": "reports/pg-retrieval/phase-4-round-1/inputs/pg/fact-006-fusion.json",
+   "sha256": "9600b00910720f6bf2b70933fab9ba14f4571848efbbfb0148b9d319f04a4f38",
+   "task": "Phase 4 round 1 evaluation input (path=pg)",
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": [
+    "fact-006"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "model_calls_used": 0,
+ "results": [
+  {
+   "query_id": "fact-006",
+   "query": "GB 3095-2012 的发布日期和实施日期分别是什么？",
+   "category": "fact",
+   "workspace": "default",
+   "coverage_status": "complete",
+   "fail_stage": "",
+   "flags": [
+    "no rerank replay for this query id — scope priority falls back to fusion path order, explicitly recorded (no fabricated scores)"
+   ],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "absent",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 0,
+    "typed_targets": [
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "doc_name": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+      "self_code": "GB3095",
+      "self_code_version": "2012",
+      "discovery": "code_exact",
+      "membership_basis": null,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      },
+      "citation_verified": true
+     }
+    ],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 5,
+    "selected_docs": [
+     "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+    ],
+    "priority": [
+     {
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "rerank_rank_or_none": null
+     }
+    ],
+    "basis": "targets_resolved + typed targets (5.3) define the scope; rerank order only prioritizes — membership is never top-k bounded"
+   },
+   "expansions": [
+    {
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "kind": "prose",
+     "scope_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1:scope:7",
+     "requested_clauses": null,
+     "missing_requested_clauses": [],
+     "members_total": 3,
+     "members_processed": 3,
+     "coverage_status": "complete",
+     "read_status": "complete",
+     "fail_stage": "",
+     "units_read": 3,
+     "unit_ids": [
+      "c45552d0a5d96a5541e6ea2588a6ccc2",
+      "d9c1681fcfbfd2f48e654d5692f28b30",
+      "8d717f7bab4184537990a86fdd9aba21"
+     ],
+     "chunk_ids": [
+      "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+     ],
+     "items_count": 3,
+     "warnings": [],
+     "selected": true
+    }
+   ],
+   "answer": {
+    "mode": "deterministic",
+    "generated_by": "enumerate/expand entries",
+    "items": [
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "scope_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1:scope:7",
+      "clause": "7.1",
+      "text": "7.1 本标准由各级环境保护行政主管部门负责监督实施。",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 11,
+       "char_end": 39,
+       "quote": "7.1 本标准由各级环境保护行政主管部门负责监督实施。",
+       "unit_rel_start": 11,
+       "unit_rel_end": 39,
+       "unit_id": "c45552d0a5d96a5541e6ea2588a6ccc2",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "c45552d0a5d96a5541e6ea2588a6ccc2",
+        "parsed_dir": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+       ],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "scope_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1:scope:7",
+      "clause": "7.2",
+      "text": "7.2 各类环境空气功能区的范围由县级以上（含县级）人民政府环境保护行政主管部门划分，报本级人民政府批准实施。",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 39,
+       "char_end": 95,
+       "quote": "7.2 各类环境空气功能区的范围由县级以上（含县级）人民政府环境保护行政主管部门划分，报本级人民政府批准实施。",
+       "unit_rel_start": 39,
+       "unit_rel_end": 95,
+       "unit_id": "c45552d0a5d96a5541e6ea2588a6ccc2",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "c45552d0a5d96a5541e6ea2588a6ccc2",
+        "parsed_dir": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+       ],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "scope_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1:scope:7",
+      "clause": "7.3",
+      "text": "7.3 按照《中华人民共和国大气污染防治法》的规定，未达到本标准的大气污染防治重点城市，应当按照国务院或者国务院环境保护行政主管部门规定的期限，达到本标准。该城市人民政府应当制定限期达标规划，并可以根据国务院的授权或者规定，采取更严格的措施，按期实现达标规划。\nGB 3095—2012\n\n## 附 录 A\n（资料性附录）\n\n## 环境空气中镉、汞、砷、六价铬和氟化物参考浓度限值\n各省级人民政府可根据当地环境保护的需要，针对环境污染的特点，对本标准中未规定的污染物项目制定并实施地方环境空气质量标准。以下为环境空气中部分污染物参考浓度限值。\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0005\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">浓度(通量)限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td></tr><tr><td>1</td><td>镉(Cd)</td><td>年平均</td><td>0.005</td><td>0.005</td><td rowspan=\"6\"> $\\mu g/m^3$ </td></tr><tr><td>2</td><td>汞(Hg)</td><td>年平均</td><td>0.05</td><td>0.05</td></tr><tr><td>3</td><td>砷(As)</td><td>年平均</td><td>0.006</td><td>0.006</td></tr><tr><td>4</td><td>六价铬(Cr(VI))</td><td>年平均</td><td>0.000 025</td><td>0.000 025</td></tr><tr><td rowspan=\"4\">5</td><td rowspan=\"4\">氟化物(F)</td><td>1小时平均</td><td> $20^{1}$ </td><td> $20^{1}$ </td></tr><tr><td>24小时平均</td><td> $7^{1}$ </td><td> $7^{1}$ </td></tr><tr><td>月平均</td><td> $1.8^{2}$ </td><td> $3.0^{3}$ </td><td rowspan=\"2\"> $\\mu g/(dm^2 d)$ </td></tr><tr><td>植物生长季平均</td><td> $1.2^{2}$ </td><td> $2.0^{3}$ </td></tr><tr><td colspan=\"6\">注:1适用于城市地区;2适用于牧业区和以牧业为主的半农半牧区,蚕桑区;3适用于农业和林业区。</td></tr></table>\nGB 3095—2012",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 95,
+       "char_end": 1370,
+       "quote": "7.3 按照《中华人民共和国大气污染防治法》的规定，未达到本标准的大气污染防治重点城市，应当按照国务院或者国务院环境保护行政主管部门规定的期限，达到本标准。该城市人民政府应当制定限期达标规划，并可以根据国务院的授权或者规定，采取更严格的措施",
+       "unit_rel_start": 95,
+       "unit_rel_end": 238,
+       "unit_id": "c45552d0a5d96a5541e6ea2588a6ccc2",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "c45552d0a5d96a5541e6ea2588a6ccc2",
+        "parsed_dir": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+       ],
+       "unit_source": "parsed_block",
+       "unit_segments": [
+        {
+         "unit_id": "8d717f7bab4184537990a86fdd9aba21",
+         "rel_start": 0,
+         "rel_end": 1112
+        },
+        {
+         "unit_id": "d9c1681fcfbfd2f48e654d5692f28b30",
+         "rel_start": 0,
+         "rel_end": 16
+        },
+        {
+         "unit_id": "c45552d0a5d96a5541e6ea2588a6ccc2",
+         "rel_start": 95,
+         "rel_end": 238
+        }
+       ],
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     }
+    ],
+    "selection": {
+     "terms": [
+      "发布",
+      "日期",
+      "实施",
+      "布日",
+      "期和",
+      "和实",
+      "施日",
+      "期分"
+     ],
+     "candidates": 3,
+     "kept": 3,
+     "rule": "rows/items whose raw text contains the most subject terms of the QUESTION (never gold text); ties keep every match"
+    },
+    "unit_blockers": []
+   },
+   "reverification": {
+    "items_checked": 3,
+    "problems": [],
+    "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+   },
+   "model": null,
+   "status": "ok"
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+{
+  "status": "closed_with_baseline_and_failure_report",
+  "gate4": "not_passed",
+  "gate4_reason": "neg-005 violates frozen ambiguous behaviour in both rounds across pg/local/fusion: actual answer declares complete and delivers 38 rows from two documents",
+  "scope": "final authorized fixed-code two-round batch plus bounded offline main-agent acceptance",
+  "completed_mapping_units": 27,
+  "completed_rounds": 2,
+  "completed_legs": 246,
+  "main_review_scope": "6 decisive counterexample runtimes; no claim that all pending semantics were reviewed",
+  "pending_rows_per_round": 18,
+  "other_quality_boundaries_retained": true,
+  "default_fusion": "not_enabled; existing configuration and source bytes preserved",
+  "new_real_requests_in_closeout": 0,
+  "new_database_writes_in_closeout": 0,
+  "further_paid_runs": false,
+  "further_improvement_groups": false,
+  "tasks_checkboxes": "unchanged per handoff; quality conditions not represented as passed",
+  "closure_basis": "user selected final two rounds then closeout whether quality passes or fails"
+}

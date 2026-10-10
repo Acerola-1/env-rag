@@ -1,0 +1,505 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-09T21:11:23+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "file-enum-004"
+ ],
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-formal-fixed-round-2/inputs/fusion/file-enum-004-rerank.json",
+   "sha256": "8d6825bfe1d4c4bfed0b68c3fbd08cd7d7e4cb1dfaa11653a83fab00844c510c",
+   "task": "5.4 joint rerank over fused candidates (bounded, recorded)",
+   "started_at": "2026-10-09T21:11:19+0800",
+   "finished_at": "2026-10-09T21:11:23+0800",
+   "query_ids": [
+    "file-enum-004"
+   ]
+  },
+  "fused_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-formal-fixed-round-2/inputs/fusion/file-enum-004-fusion.json",
+   "sha256": "e9a40f8a8549134a1fee9096bf6151db93dc334c542b7f8472511d08543a1316",
+   "task": "Phase 4 round 2 evaluation input (path=fusion)",
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": [
+    "file-enum-004"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "model_calls_used": 0,
+ "results": [
+  {
+   "query_id": "file-enum-004",
+   "query": "库内有哪些文档名称含“修改单”？",
+   "category": "file_enum",
+   "workspace": "default",
+   "coverage_status": "ambiguous",
+   "fail_stage": "",
+   "flags": [],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "ok",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 30,
+    "typed_targets": [
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-2e012f4fd0622b647d151de5d0ecc51b",
+      "doc_name": "air-07_生态环境部_水泥工业大气污染物排放标准GB4915-2013修改单_2026.pdf",
+      "self_code": null,
+      "self_code_version": null,
+      "discovery": "doc_and",
+      "membership_basis": null,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-2e012f4fd0622b647d151de5d0ecc51b"
+      },
+      "citation_verified": true
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-afd999b66f220c7ba8de2e624ba9c212",
+      "doc_name": "air-08_生态环境部_水泥工业大气污染物排放标准GB4915-2013含2025修改单.pdf",
+      "self_code": "GB4915",
+      "self_code_version": "2013",
+      "discovery": "doc_and",
+      "membership_basis": null,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-afd999b66f220c7ba8de2e624ba9c212"
+      },
+      "citation_verified": true
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-395b34401e7ee48e833a01d1d5bb4256",
+      "doc_name": "air-11_生态环境部_轻型汽车污染物排放限值及测量方法GB18352.6-2016修改单_2026.pdf",
+      "self_code": null,
+      "self_code_version": null,
+      "discovery": "doc_and",
+      "membership_basis": null,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-395b34401e7ee48e833a01d1d5bb4256"
+      },
+      "citation_verified": true
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-374860e84aca365bb7fc7abb64f719fe",
+      "doc_name": "air-12_生态环境部_钢铁烧结球团工业大气污染物排放标准GB28662-2012修改单_2020.pdf",
+      "self_code": null,
+      "self_code_version": null,
+      "discovery": "doc_and",
+      "membership_basis": null,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-374860e84aca365bb7fc7abb64f719fe"
+      },
+      "citation_verified": true
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+      "doc_name": "water-03_生态环境部_医疗机构水污染物排放标准_含2026修改单.pdf",
+      "self_code": null,
+      "self_code_version": null,
+      "discovery": "doc_and",
+      "membership_basis": null,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b"
+      },
+      "citation_verified": true
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+      "doc_name": "water-10_生态环境部_医疗机构水污染物排放标准修改单_2026.pdf",
+      "self_code": null,
+      "self_code_version": null,
+      "discovery": "doc_and",
+      "membership_basis": null,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-b423a0e3331541588988fd34496c349d"
+      },
+      "citation_verified": true
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-d0039dda04ea5c8c113da89d31e893e3",
+      "doc_name": "water-13_生态环境部_磷肥工业水污染物排放标准修改单_2020.pdf",
+      "self_code": null,
+      "self_code_version": null,
+      "discovery": "doc_and",
+      "membership_basis": null,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-d0039dda04ea5c8c113da89d31e893e3"
+      },
+      "citation_verified": true
+     }
+    ],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 30,
+    "selected_docs": [
+     "doc-2e012f4fd0622b647d151de5d0ecc51b",
+     "doc-afd999b66f220c7ba8de2e624ba9c212",
+     "doc-395b34401e7ee48e833a01d1d5bb4256",
+     "doc-374860e84aca365bb7fc7abb64f719fe",
+     "doc-9bb11e5d3809e590259aef28fb61062b",
+     "doc-b423a0e3331541588988fd34496c349d",
+     "doc-d0039dda04ea5c8c113da89d31e893e3"
+    ],
+    "priority": [
+     {
+      "doc_id": "doc-395b34401e7ee48e833a01d1d5bb4256",
+      "rerank_rank_or_none": 0
+     },
+     {
+      "doc_id": "doc-d0039dda04ea5c8c113da89d31e893e3",
+      "rerank_rank_or_none": 1
+     },
+     {
+      "doc_id": "doc-2e012f4fd0622b647d151de5d0ecc51b",
+      "rerank_rank_or_none": 2
+     },
+     {
+      "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+      "rerank_rank_or_none": 3
+     },
+     {
+      "doc_id": "doc-374860e84aca365bb7fc7abb64f719fe",
+      "rerank_rank_or_none": 4
+     },
+     {
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "rerank_rank_or_none": 6
+     },
+     {
+      "doc_id": "doc-30cc8c5a085a96f9e00e57e0ad3a6da4",
+      "rerank_rank_or_none": 10
+     },
+     {
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "rerank_rank_or_none": 12
+     },
+     {
+      "doc_id": "doc-37d6d1dff8b855067b03af29ff5926a3",
+      "rerank_rank_or_none": 14
+     },
+     {
+      "doc_id": "doc-245e0be8fb0feff02c96a5864fb723c7",
+      "rerank_rank_or_none": 17
+     },
+     {
+      "doc_id": "doc-61bb11eaa68892fc418d38a7b796cb86",
+      "rerank_rank_or_none": 18
+     },
+     {
+      "doc_id": "doc-a5bcbd459fe4829bafa1ad8806821667",
+      "rerank_rank_or_none": 19
+     },
+     {
+      "doc_id": "doc-877572bbb9ade707c4c3335e6109e4c8",
+      "rerank_rank_or_none": 20
+     },
+     {
+      "doc_id": "doc-3dcde0a64493e7f1156b9cfc08f8c0ed",
+      "rerank_rank_or_none": 21
+     },
+     {
+      "doc_id": "doc-a9936b42bbfac2084ffd605a646553ef",
+      "rerank_rank_or_none": 22
+     },
+     {
+      "doc_id": "doc-5b1886b7d0c64429a3537f24b65418c1",
+      "rerank_rank_or_none": 25
+     },
+     {
+      "doc_id": "doc-319155fc7f8a9aa824f9cb0aabf396df",
+      "rerank_rank_or_none": 26
+     },
+     {
+      "doc_id": "doc-2080ec70d8a794c1df2c163b1b14bd7f",
+      "rerank_rank_or_none": 27
+     },
+     {
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "rerank_rank_or_none": 29
+     }
+    ],
+    "target_confirmation": {
+     "skipped": "file enumeration lists documents by metadata predicate — the identity gate must not bound the listing"
+    },
+    "basis": "confirmed canonical target identity defines the answer scope (improvement-2); discovery/top-k/rerank order never bound or promote membership — unconfirmed documents are excluded with recorded reasons and cannot enter the answer"
+   },
+   "expansions": [
+    {
+     "stage": "document_enumeration",
+     "predicate": "(doc_name LIKE '%' || $3 || '%')",
+     "predicate_args": [
+      "修改单"
+     ],
+     "workspace": "default",
+     "catalog_snapshot_id": "4919b3938ad93747",
+     "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+     "identity_source": "observed catalog rows via the guarded workspace+snapshot connection (separate from any replayed PG search identity)",
+     "attribution_branch": true,
+     "attribution_added": 0,
+     "related_matches": 0,
+     "related_evidence": 0,
+     "overlap_evidence": [],
+     "overlap_canonical": [],
+     "related_excluded": [],
+     "base_total": 7,
+     "base_processed": 7,
+     "base_coverage": "complete",
+     "related_total": 0,
+     "related_processed": 0,
+     "related_coverage": "the request explicitly asks for related/amended documents but carries no parseable (code, version) branch — name/title attribution has nothing to verify against; refusing to publish a related set (this is a THIS-PATH refusal, not a claim that none exist)",
+     "related_warnings": [
+      "the request explicitly asks for related/amended documents but carries no parseable (code, version) branch — name/title attribution has nothing to verify against; refusing to publish a related set (this is a THIS-PATH refusal, not a claim that none exist)"
+     ],
+     "related_request_note": "the request explicitly asks for 含修改单/相关文件: the attribution scan matched 0 row(s) but confirmed NO related evidence on this path (canonical self matches alone never satisfy a related request; this is not a claim that none exist in the corpus)",
+     "union_total": 7,
+     "union_processed": 7,
+     "publication_guard": "stable",
+     "members_total": 7,
+     "members_processed": 7,
+     "coverage_status": "ambiguous",
+     "read_token": "<redacted>",
+     "fail_stage": "",
+     "warnings": [
+      "7 matched docs have unknown metadata fields; they are included but flagged"
+     ],
+     "note": "full paged base enumeration UNION the same-snapshot catalog attribution scan — not top-k ranked discovery, not the search index; members_total/processed describe the FINAL matched union"
+    }
+   ],
+   "answer": {
+    "mode": "deterministic",
+    "generated_by": "enumerate/expand entries",
+    "items": [
+     {
+      "kind": "document",
+      "doc_id": "doc-2e012f4fd0622b647d151de5d0ecc51b",
+      "doc_name": "air-07_生态环境部_水泥工业大气污染物排放标准GB4915-2013修改单_2026.pdf",
+      "title": "《水泥工业大气污染物排放标准》（GB 4915—2013）修改单",
+      "self_code": null,
+      "self_code_version": null,
+      "attribution": false,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-2e012f4fd0622b647d151de5d0ecc51b",
+       "doc_name": "air-07_生态环境部_水泥工业大气污染物排放标准GB4915-2013修改单_2026.pdf"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "document",
+      "doc_id": "doc-afd999b66f220c7ba8de2e624ba9c212",
+      "doc_name": "air-08_生态环境部_水泥工业大气污染物排放标准GB4915-2013含2025修改单.pdf",
+      "title": "GB 4915—2013（含2025年修改单）",
+      "self_code": "GB4915",
+      "self_code_version": "2013",
+      "attribution": false,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-afd999b66f220c7ba8de2e624ba9c212",
+       "doc_name": "air-08_生态环境部_水泥工业大气污染物排放标准GB4915-2013含2025修改单.pdf"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "document",
+      "doc_id": "doc-395b34401e7ee48e833a01d1d5bb4256",
+      "doc_name": "air-11_生态环境部_轻型汽车污染物排放限值及测量方法GB18352.6-2016修改单_2026.pdf",
+      "title": "《轻型汽车污染物排放限值及测量方法（中国第六阶段）》（GB18352.6—2016）修改单",
+      "self_code": null,
+      "self_code_version": null,
+      "attribution": false,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-395b34401e7ee48e833a01d1d5bb4256",
+       "doc_name": "air-11_生态环境部_轻型汽车污染物排放限值及测量方法GB18352.6-2016修改单_2026.pdf"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "document",
+      "doc_id": "doc-374860e84aca365bb7fc7abb64f719fe",
+      "doc_name": "air-12_生态环境部_钢铁烧结球团工业大气污染物排放标准GB28662-2012修改单_2020.pdf",
+      "title": "《钢铁烧结、球团工业大气污染物排放标准》（GB 28662—2012）修改单",
+      "self_code": null,
+      "self_code_version": null,
+      "attribution": false,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-374860e84aca365bb7fc7abb64f719fe",
+       "doc_name": "air-12_生态环境部_钢铁烧结球团工业大气污染物排放标准GB28662-2012修改单_2020.pdf"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "document",
+      "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+      "doc_name": "water-03_生态环境部_医疗机构水污染物排放标准_含2026修改单.pdf",
+      "title": "GB 18466—2005（含2026年修改单）",
+      "self_code": null,
+      "self_code_version": null,
+      "attribution": false,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+       "doc_name": "water-03_生态环境部_医疗机构水污染物排放标准_含2026修改单.pdf"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "document",
+      "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+      "doc_name": "water-10_生态环境部_医疗机构水污染物排放标准修改单_2026.pdf",
+      "title": "《医疗机构水污染物排放标准》（GB 18466—2005）修改单",
+      "self_code": null,
+      "self_code_version": null,
+      "attribution": false,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+       "doc_name": "water-10_生态环境部_医疗机构水污染物排放标准修改单_2026.pdf"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "document",
+      "doc_id": "doc-d0039dda04ea5c8c113da89d31e893e3",
+      "doc_name": "water-13_生态环境部_磷肥工业水污染物排放标准修改单_2020.pdf",
+      "title": "《磷肥工业水污染物排放标准》（GB 15580-2011）修改单",
+      "self_code": null,
+      "self_code_version": null,
+      "attribution": false,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-d0039dda04ea5c8c113da89d31e893e3",
+       "doc_name": "water-13_生态环境部_磷肥工业水污染物排放标准修改单_2020.pdf"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     }
+    ]
+   },
+   "reverification": {
+    "items_checked": 0,
+    "problems": [],
+    "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+   },
+   "model": null,
+   "status": "ambiguous"
+  }
+ ]
+}

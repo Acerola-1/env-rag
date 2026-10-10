@@ -1,0 +1,245 @@
+{
+  "version": "1.0",
+  "tables": {
+    "tb-2857c5b1ed428225fd633e4a15b06df5-0001": {
+      "id": "tb-2857c5b1ed428225fd633e4a15b06df5-0001",
+      "blockid": "a98878b4ff49f1287482946c23421207",
+      "heading": "Filters",
+      "parent_headings": [
+        "EEA Discodata"
+      ],
+      "dimension": [
+        5,
+        2
+      ],
+      "format": "html",
+      "content": "<table><tr><td></td><td>Simple text filter. The column contains too many distinct text values to put them into a dropdown filter. It is used also for date/time values.The system returns all records with values that match the filter, whether fully or partially. The wildcard character ‘%’ can be used for more advanced filtering, as shown in the example (returns both ‘Nitrate’ and ‘Nitrite’ records).The filter is applied after pressing enter key or clicking outside the field.Delete the filter text to reset the filter.</td></tr><tr><td></td><td>Dropdown text filter. The column contains up to 100 distinct values.The number of records matching the current filters is shown in parentheses (disabled for most fields in large tables to improve performance).Only one option can be selected at a time.The filters is applied after selecting a value from the dropdown menu.Select the ‘(all)’ option to reset the filter.</td></tr><tr><td></td><td>Check box text filter. The column contains up to 10 distinct values.The number of records matching the current filters is shown in parentheses (disabled for most fields in large tables).Multiple options can be selected at the same time.The filter is applied when a checkbox is checked or unchecked.Uncheck all options to reset the filter.</td></tr><tr><td></td><td>Numeric range filter. The column contains numeric values.Filter allows to define both upper and lower value limit, or just one of them.The arrow/spinner buttons inside the fields will increase or decrease the value by 0.1 for decimals/floats or by 1 for integers.The filter is applied after pressing enter key, clicking on a spinner button, or clicking outside the field.Delete both filter values to reset the filter.</td></tr><tr><td></td><td>Date range filter. The column contains date values.Filter allows to define both upper and lower value limit, or just one of them.The date values can be entered either manually or selected using the calendar widget. It is recommended to use the widget, because manual entry, especially for year values, is sometimes difficult. Clicking on the ‘month year’ dropdown at the top of the widget switches to selection of year and month.The filter is applied after selecting a day in the widget, changing a year, either in the widget or manually, after pressing enter key or clicking outside the field.Press the circular reset buttons in both fields to reset the filter.</td></tr></table>",
+      "caption": "",
+      "footnotes": [
+        "Application of a filter can take a significant time, depending on the number of records in the table."
+      ],
+      "self_ref": "content_list.json#/132"
+    },
+    "tb-2857c5b1ed428225fd633e4a15b06df5-0002": {
+      "id": "tb-2857c5b1ed428225fd633e4a15b06df5-0002",
+      "blockid": "e02115ce1d55be275b41b04eec3bce98",
+      "heading": "1. Basic selection",
+      "parent_headings": [
+        "EEA Discodata"
+      ],
+      "dimension": [
+        8,
+        7
+      ],
+      "format": "html",
+      "content": "<table><tr><td>country</td><td>SUI</td><td>SUIS</td><td>timePeriod</td><td>determinand</td><td>resultValue</td><td>UoM</td></tr><tr><td>AT</td><td>AT1100</td><td>euSubUnitCode</td><td>2007</td><td>BOD5</td><td>904.29</td><td>t/a</td></tr><tr><td>AT</td><td>AT1100</td><td>euSubUnitCode</td><td>2007</td><td>BOD5</td><td>6.6</td><td>t/a</td></tr><tr><td>AT</td><td>AT1100</td><td>euSubUnitCode</td><td>2007</td><td>BOD5</td><td>51.51</td><td>t/a</td></tr><tr><td>AT</td><td>AT1100</td><td>euSubUnitCode</td><td>2007</td><td>BOD5</td><td>537.58</td><td>t/a</td></tr><tr><td>AT</td><td>AT1100</td><td>euSubUnitCode</td><td>2007</td><td>BOD5</td><td>308.6</td><td>t/a</td></tr><tr><td>AT</td><td>AT1100</td><td>euSubUnitCode</td><td>2011</td><td>BOD5</td><td>59</td><td>t/a</td></tr><tr><td>AT</td><td>AT1100</td><td>euSubUnitCode</td><td>2011</td><td>BOD5</td><td>441</td><td>t/a</td></tr></table>",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/171"
+    },
+    "tb-2857c5b1ed428225fd633e4a15b06df5-0003": {
+      "id": "tb-2857c5b1ed428225fd633e4a15b06df5-0003",
+      "blockid": "169dd2fc173d666926d295eac7fcdf45",
+      "heading": "1.d Selection of unique value combinations",
+      "parent_headings": [
+        "EEA Discodata"
+      ],
+      "dimension": [
+        9,
+        2
+      ],
+      "format": "html",
+      "content": "<table><tr><td>countryCode</td><td>timePeriod</td></tr><tr><td>AT</td><td>2011</td></tr><tr><td>AT</td><td>2012</td></tr><tr><td>AT</td><td>2015</td></tr><tr><td>AT</td><td>2016</td></tr><tr><td>AT</td><td>2019</td></tr><tr><td>AT</td><td>2007</td></tr><tr><td>AT</td><td>2009--2011</td></tr><tr><td>AT</td><td>2010</td></tr></table>",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/183"
+    },
+    "tb-2857c5b1ed428225fd633e4a15b06df5-0004": {
+      "id": "tb-2857c5b1ed428225fd633e4a15b06df5-0004",
+      "blockid": "22e3eda04622dc95ee076037afeaec4a",
+      "heading": "1.e Order by clause",
+      "parent_headings": [
+        "EEA Discodata"
+      ],
+      "dimension": [
+        9,
+        2
+      ],
+      "format": "html",
+      "content": "<table><tr><td>countryCode</td><td>timePeriod</td></tr><tr><td>AT</td><td>2004--2007</td></tr><tr><td>AT</td><td>2007</td></tr><tr><td>AT</td><td>2009--2011</td></tr><tr><td>AT</td><td>2010</td></tr><tr><td>AT</td><td>2011</td></tr><tr><td>AT</td><td>2012</td></tr><tr><td>AT</td><td>2014</td></tr><tr><td>AT</td><td>2015</td></tr></table>",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/189"
+    },
+    "tb-2857c5b1ed428225fd633e4a15b06df5-0005": {
+      "id": "tb-2857c5b1ed428225fd633e4a15b06df5-0005",
+      "blockid": "48e90533a9179be8f4880e56ed6af268",
+      "heading": "2.d Selection with a wildcard filter",
+      "parent_headings": [
+        "EEA Discodata"
+      ],
+      "dimension": [
+        9,
+        7
+      ],
+      "format": "html",
+      "content": "<table><tr><td>SUI</td><td>SUIS</td><td>timePeriod</td><td>determinandCode</td><td>determinand</td><td>resultValue</td><td>UoM</td></tr><tr><td>SIRBD1</td><td>euSubUnitCode</td><td>2014</td><td>EEA_31615-01-7</td><td>Total nitrogen</td><td>63.9429435208</td><td>t/a</td></tr><tr><td>SIRBD1</td><td>euSubUnitCode</td><td>2014</td><td>CAS_14797-55-8</td><td>Nitrate</td><td>4.8161973261</td><td>t/a</td></tr><tr><td>SIRBD1</td><td>euSubUnitCode</td><td>2013</td><td>EEA_31615-01-7</td><td>Total nitrogen</td><td>67.3237454693</td><td>t/a</td></tr><tr><td>SIRBD1</td><td>euSubUnitCode</td><td>2013</td><td>CAS_14797-55-8</td><td>Nitrate</td><td>9.284385109</td><td>t/a</td></tr><tr><td>SIRBD1</td><td>euSubUnitCode</td><td>2012</td><td>EEA_31615-01-7</td><td>Total nitrogen</td><td>49.5939228862</td><td>t/a</td></tr><tr><td>SIRBD1</td><td>euSubUnitCode</td><td>2012</td><td>CAS_14797-55-8</td><td>Nitrate</td><td>4.5331938747</td><td>t/a</td></tr><tr><td>SIRBD1</td><td>euSubUnitCode</td><td>2011</td><td>EEA_31615-01-7</td><td>Total nitrogen</td><td>132.6889286728</td><td>t/a</td></tr><tr><td>SIRBD1</td><td>euSubUnitCode</td><td>2011</td><td>CAS_14797-55-8</td><td>Nitrate</td><td>8.2026202115</td><td>t/a</td></tr></table>",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/216"
+    },
+    "tb-2857c5b1ed428225fd633e4a15b06df5-0006": {
+      "id": "tb-2857c5b1ed428225fd633e4a15b06df5-0006",
+      "blockid": "d9f18b4496add5e2eacaed59399c07de",
+      "heading": "SQL result",
+      "parent_headings": [
+        "EEA Discodata"
+      ],
+      "dimension": [
+        9,
+        9
+      ],
+      "format": "html",
+      "content": "<table><tr><td>MSI</td><td>MSIS</td><td>wbCat</td><td>determinandCode</td><td>determinand</td><td>matrix</td><td>year</td><td>samples</td><td>meanValue</td></tr><tr><td>CZPLA_1</td><td>euMonitoringSiteCode</td><td>RW</td><td>CAS_14797-55-8</td><td>Nitrate</td><td>W</td><td>2019</td><td>12</td><td>6.82465</td></tr><tr><td>CZPLA_1</td><td>euMonitoringSiteCode</td><td>RW</td><td>CAS_14797-55-8</td><td>Nitrate</td><td>W</td><td>2018</td><td>12</td><td>6.97221</td></tr><tr><td>CZPLA_1</td><td>euMonitoringSiteCode</td><td>RW</td><td>CAS_14798-03-9</td><td>Ammonium</td><td>W</td><td>2018</td><td>12</td><td>0.07894</td></tr><tr><td>CZPLA_1</td><td>euMonitoringSiteCode</td><td>RW</td><td>CAS_14797-65-0</td><td>Nitrite</td><td>W</td><td>2019</td><td>12</td><td>0.07664</td></tr><tr><td>CZPLA_1</td><td>euMonitoringSiteCode</td><td>RW</td><td>CAS_14798-03-9</td><td>Ammonium</td><td>W</td><td>2019</td><td>12</td><td>0.1799</td></tr><tr><td>CZPLA_1</td><td>euMonitoringSiteCode</td><td>RW</td><td>CAS_14797-65-0</td><td>Nitrite</td><td>W</td><td>2018</td><td>12</td><td>0.04325</td></tr><tr><td>CZPLA_10</td><td>euMonitoringSiteCode</td><td>RW</td><td>CAS_14797-65-0</td><td>Nitrite</td><td>W</td><td>2015</td><td>12</td><td>0.08868</td></tr><tr><td>CZPLA_10</td><td>euMonitoringSiteCode</td><td>RW</td><td>CAS_14797-55-8</td><td>Nitrate</td><td>W</td><td>2015</td><td>12</td><td>13.61241</td></tr></table>",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/224"
+    },
+    "tb-2857c5b1ed428225fd633e4a15b06df5-0007": {
+      "id": "tb-2857c5b1ed428225fd633e4a15b06df5-0007",
+      "blockid": "2cc6ae4ed4d70f7c49cee3fff733240b",
+      "heading": "3.a.2 Record count grouped by one category",
+      "parent_headings": [
+        "EEA Discodata"
+      ],
+      "dimension": [
+        9,
+        2
+      ],
+      "format": "html",
+      "content": "<table><tr><td>countryCode</td><td>records</td></tr><tr><td>AL</td><td>4082</td></tr><tr><td>AT</td><td>1116738</td></tr><tr><td>BA</td><td>24113</td></tr><tr><td>BE</td><td>1052810</td></tr><tr><td>BG</td><td>277398</td></tr><tr><td>CH</td><td>234201</td></tr><tr><td>CY</td><td>183769</td></tr><tr><td>CZ</td><td>1440008</td></tr></table>",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/242"
+    },
+    "tb-2857c5b1ed428225fd633e4a15b06df5-0008": {
+      "id": "tb-2857c5b1ed428225fd633e4a15b06df5-0008",
+      "blockid": "dbf38c65a43d5e0be36de9deb0427a36",
+      "heading": "3.a.3 Filtered record count grouped by multiple categories",
+      "parent_headings": [
+        "EEA Discodata"
+      ],
+      "dimension": [
+        9,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>countryCode</td><td>year</td><td>records</td></tr><tr><td>ES</td><td>2010</td><td>55874</td></tr><tr><td>ES</td><td>2011</td><td>27088</td></tr><tr><td>ES</td><td>2012</td><td>25883</td></tr><tr><td>ES</td><td>2013</td><td>44814</td></tr><tr><td>ES</td><td>2014</td><td>47454</td></tr><tr><td>ES</td><td>2015</td><td>54118</td></tr><tr><td>PT</td><td>2010</td><td>983</td></tr><tr><td>PT</td><td>2011</td><td>710</td></tr></table>",
+      "caption": "SQL result",
+      "footnotes": [],
+      "self_ref": "content_list.json#/246"
+    },
+    "tb-2857c5b1ed428225fd633e4a15b06df5-0009": {
+      "id": "tb-2857c5b1ed428225fd633e4a15b06df5-0009",
+      "blockid": "676b934c6ebef4ba87eb15a59a64bb66",
+      "heading": "SQL result",
+      "parent_headings": [
+        "EEA Discodata"
+      ],
+      "dimension": [
+        9,
+        8
+      ],
+      "format": "html",
+      "content": "<table><tr><td>MSI</td><td>MSIS</td><td>year</td><td>avgSF</td><td>minSF</td><td>maxSF</td><td>stdevSF</td><td>observations</td></tr><tr><td>EE1005</td><td>eionetMonitoringSiteCode</td><td>2012</td><td>5.39464480874317</td><td>0.56</td><td>36.6</td><td>6.255432905275029</td><td>366</td></tr><tr><td>EE104</td><td>eionetMonitoringSiteCode</td><td>2011</td><td>13.96846575342465</td><td>3.81</td><td>124</td><td>18.05291767694655</td><td>365</td></tr><tr><td>EE104</td><td>eionetMonitoringSiteCode</td><td>2012</td><td>15.73267759562841</td><td>5.55</td><td>63.6</td><td>11.16016715345389</td><td>366</td></tr><tr><td>EE1040</td><td>eionetMonitoringSiteCode</td><td>2012</td><td>3.152377049180328</td><td>0.9</td><td>9.35</td><td>1.967193141179765</td><td>366</td></tr><tr><td>EE106</td><td>eionetMonitoringSiteCode</td><td>2012</td><td>4.184371584699453</td><td>0.96</td><td>15.8</td><td>2.674084252658032</td><td>366</td></tr><tr><td>EE1078</td><td>eionetMonitoringSiteCode</td><td>2012</td><td>2.348770491803278</td><td>0.11</td><td>15.6</td><td>2.950490438322713</td><td>366</td></tr><tr><td>EE1095</td><td>eionetMonitoringSiteCode</td><td>2012</td><td>2.722213114754099</td><td>0.18</td><td>23.6</td><td>2.984419040033161</td><td>366</td></tr><tr><td>EE80</td><td>eionetMonitoringSiteCode</td><td>2012</td><td>14.66978142076504</td><td>5.94</td><td>43.9</td><td>7.873971958522486</td><td>366</td></tr></table>",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/253"
+    },
+    "tb-2857c5b1ed428225fd633e4a15b06df5-0010": {
+      "id": "tb-2857c5b1ed428225fd633e4a15b06df5-0010",
+      "blockid": "b018faff162c5fe4ae362b465273c6ec",
+      "heading": "SQL result",
+      "parent_headings": [
+        "EEA Discodata"
+      ],
+      "dimension": [
+        4,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>observedPropertyDeterminandCode</td><td>observedPropertyDeterminandLabel</td><td>totalSamples</td></tr><tr><td>CAS_14798-03-9</td><td>Ammonium</td><td>23297</td></tr><tr><td>CAS_14797-55-8</td><td>Nitrate</td><td>22761</td></tr><tr><td>CAS_14797-65-0</td><td>Nitrite</td><td>23240</td></tr></table>",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/258"
+    },
+    "tb-2857c5b1ed428225fd633e4a15b06df5-0011": {
+      "id": "tb-2857c5b1ed428225fd633e4a15b06df5-0011",
+      "blockid": "73048935ebde2f11887877a6e7df49f1",
+      "heading": "SQL source",
+      "parent_headings": [
+        "EEA Discodata"
+      ],
+      "dimension": [
+        4,
+        6
+      ],
+      "format": "html",
+      "content": "<table><tr><td>waterBodyName</td><td>countryCode</td><td>monitoringSiteIdentifier</td><td>monitoringSiteIdentifierScheme</td><td>parameterWaterBodyCategory</td><td>observedPro</td></tr><tr><td>ALEPU LAKE</td><td>BG</td><td>BG2IU10000MS004</td><td>euMonitoringSiteCode</td><td>TW</td><td>EEA_3121-01</td></tr><tr><td>ALEPU LAKE</td><td>BG</td><td>BG2IU10000MS004</td><td>euMonitoringSiteCode</td><td>TW</td><td>CAS_14265-4</td></tr><tr><td>ALEPU LAKE</td><td>BG</td><td>BG2IU10000MS004</td><td>euMonitoringSiteCode</td><td>TW</td><td>CAS_7723-14</td></tr></table>",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/276"
+    },
+    "tb-2857c5b1ed428225fd633e4a15b06df5-0012": {
+      "id": "tb-2857c5b1ed428225fd633e4a15b06df5-0012",
+      "blockid": "ff8ac7b3d01ef4d3e4f006a67201d6d1",
+      "heading": "SQL source",
+      "parent_headings": [
+        "EEA Discodata"
+      ],
+      "dimension": [
+        6,
+        7
+      ],
+      "format": "html",
+      "content": "<table><tr><td>WBI</td><td>WBIS</td><td>WBName</td><td>year</td><td>determinand</td><td>avgV</td><td>UoM</td></tr><tr><td>IT00_I028_010_TR01_A</td><td>euSurfaceWaterBodyCode</td><td>TORRENTE FLUVIONE TRATTO 1 C.I._A</td><td>2015</td><td>BOD5</td><td>1.105</td><td>mg{O2}/L</td></tr><tr><td>IT00_I028_010_TR01_A</td><td>euSurfaceWaterBodyCode</td><td>TORRENTE FLUVIONE TRATTO 1 C.I._A</td><td>2015</td><td>Nitrate</td><td>2.617</td><td>mg{NO3}/L</td></tr><tr><td>IT00_I028_010_TR01_A</td><td>euSurfaceWaterBodyCode</td><td>TORRENTE FLUVIONE TRATTO 1 C.I._A</td><td>2015</td><td>Nitrite</td><td>0.01</td><td>mg{NO2}/L</td></tr><tr><td>IT00_I028_010_TR01_A</td><td>euSurfaceWaterBodyCode</td><td>TORRENTE FLUVIONE TRATTO 1 C.I._A</td><td>2019</td><td>BOD5</td><td>1.667</td><td>mg{O2}/L</td></tr><tr><td>IT00_I028_010_TR01_A</td><td>euSurfaceWaterBodyCode</td><td>TORRENTE FLUVIONE TRATTO 1 C.I._A</td><td>2019</td><td>Nitrate</td><td>1.987</td><td>mg{NO3}/L</td></tr></table>",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/290"
+    },
+    "tb-2857c5b1ed428225fd633e4a15b06df5-0013": {
+      "id": "tb-2857c5b1ed428225fd633e4a15b06df5-0013",
+      "blockid": "efb36ef04209f9b425f162f9150d8d35",
+      "heading": "SQL source",
+      "parent_headings": [
+        "EEA Discodata"
+      ],
+      "dimension": [
+        8,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>countryCode</td><td>dataset</td><td>records</td></tr><tr><td>AL</td><td>AdditionalWaterResources</td><td>1</td></tr><tr><td>AL</td><td>RenewableFreshwaterResources</td><td>6</td></tr><tr><td>AL</td><td>WaterUse</td><td>12</td></tr><tr><td>AT</td><td>RenewableFreshwaterResources</td><td>520</td></tr><tr><td>AT</td><td>WaterAbstraction</td><td>19</td></tr><tr><td>BA</td><td>WaterAbstraction</td><td>2</td></tr><tr><td>BA</td><td>WaterReturns</td><td>1</td></tr></table>",
+      "caption": "SQL result",
+      "footnotes": [],
+      "self_ref": "content_list.json#/298"
+    },
+    "tb-2857c5b1ed428225fd633e4a15b06df5-0014": {
+      "id": "tb-2857c5b1ed428225fd633e4a15b06df5-0014",
+      "blockid": "99687534c1bbdb0d81d0abc66d795d00",
+      "heading": "5.b Pivot",
+      "parent_headings": [
+        "EEA Discodata"
+      ],
+      "dimension": [
+        8,
+        6
+      ],
+      "format": "html",
+      "content": "<table><tr><td>countryCode</td><td>AdditionalWaterResources</td><td>RenewableFreshwaterResources</td><td>WaterAbstraction</td><td>WaterReturns</td><td>WaterUse</td></tr><tr><td>AL</td><td>1</td><td>6</td><td></td><td></td><td>12</td></tr><tr><td>AT</td><td></td><td>520</td><td>19</td><td></td><td></td></tr><tr><td>BA</td><td></td><td></td><td>2</td><td>1</td><td></td></tr><tr><td>BE</td><td>844</td><td>7464</td><td>1094</td><td>95</td><td>361</td></tr><tr><td>BG</td><td>3</td><td>119</td><td>3124</td><td>384</td><td>132</td></tr><tr><td>CH</td><td>34</td><td>824</td><td>155</td><td>14</td><td>93</td></tr><tr><td>CY</td><td>540</td><td>399</td><td>40</td><td></td><td></td></tr></table>",
+      "caption": "SQL result",
+      "footnotes": [],
+      "self_ref": "content_list.json#/304"
+    }
+  }
+}

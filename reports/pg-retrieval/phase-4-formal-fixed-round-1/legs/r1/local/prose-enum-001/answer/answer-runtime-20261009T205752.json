@@ -1,0 +1,389 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-09T20:57:47+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "prose-enum-001"
+ ],
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-formal-fixed-round-1/inputs/local/prose-enum-001-rerank.json",
+   "sha256": "aad4ba036d8aba315f57c20cef1faf545571f0b7aec5c7e630c94892a164d301",
+   "task": null,
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": []
+  },
+  "fused_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-formal-fixed-round-1/inputs/local/prose-enum-001-fusion.json",
+   "sha256": "c3616124b8a2c8ee65357c36b0a2770ba79337a60e444dfa1c714a78713edeab",
+   "task": "Phase 4 round 1 evaluation input (path=local)",
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": [
+    "prose-enum-001"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "model_calls_used": 0,
+ "results": [
+  {
+   "query_id": "prose-enum-001",
+   "query": "GB 18466-2005 中 3 章定义了哪些术语？逐项列出编号和中文名。",
+   "category": "prose_enum",
+   "workspace": "default",
+   "coverage_status": "complete",
+   "fail_stage": "",
+   "flags": [
+    "no rerank replay for this query id — scope priority falls back to fusion path order, explicitly recorded (no fabricated scores)",
+    "discovery document doc-b45c510232ed4d2452b0f5b2a13434e4 excluded from the answer scope: canonical identity GB8978-1996 matches no requested branch ['GB18466-2005']",
+    "discovery document doc-9bb11e5d3809e590259aef28fb61062b identity unresolved: self_code unknown in the catalog — never guessed from a name; only the upstream-published, allowed-set-cross-checked attribution evidence may carry such a document",
+    "2 expansion record(s) from non-target candidate documents are recorded but cannot degrade the selected scope"
+   ],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "absent",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 0,
+    "typed_targets": [],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 10,
+    "selected_docs": [
+     "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+    ],
+    "priority": [
+     {
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "rerank_rank_or_none": null
+     }
+    ],
+    "target_confirmation": {
+     "request_branches": [
+      {
+       "code": "GB18466",
+       "version": "2005"
+      }
+     ],
+     "branch_source": "local parse of the question",
+     "identity_source": "catalog documents rows (self_code/self_code_version) read through the guarded workspace+catalog-snapshot connection",
+     "allowed": [
+      "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+     ],
+     "allowed_basis": {
+      "doc-68a03b50e1ba1ffc6a0116529f694fe1": "canonical GB18466-2005 matches requested branch GB18466-2005 (catalog documents row via the guarded workspace+snapshot)"
+     },
+     "rejected": [
+      {
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "reason": "canonical identity GB8978-1996 matches no requested branch ['GB18466-2005']"
+      }
+     ],
+     "unresolved": [
+      {
+       "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+       "reason": "self_code unknown in the catalog — never guessed from a name; only the upstream-published, allowed-set-cross-checked attribution evidence may carry such a document"
+      }
+     ],
+     "unconfirmed_branches": [],
+     "rule": "discovery never defines the answer scope; a typed label or a replay-declared name is an audit clue, never canonical identity"
+    },
+    "basis": "confirmed canonical target identity defines the answer scope (improvement-2); discovery/top-k/rerank order never bound or promote membership — unconfirmed documents are excluded with recorded reasons and cannot enter the answer"
+   },
+   "expansions": [
+    {
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "kind": "prose",
+     "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3",
+     "requested_clauses": null,
+     "missing_requested_clauses": [],
+     "members_total": 3,
+     "members_processed": 3,
+     "coverage_status": "complete",
+     "read_status": "complete",
+     "fail_stage": "",
+     "units_read": 3,
+     "unit_ids": [
+      "385d9e8e0539a87e61f0407bda1739ad",
+      "ad9d292d3ee2fd88a8fd25b9efc8265a",
+      "90d4b1c55cb8c6ff81dcbdfd55827165"
+     ],
+     "chunk_ids": [
+      "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+     ],
+     "items_count": 4,
+     "warnings": [],
+     "boundary_ambiguities": [],
+     "selected": true
+    },
+    {
+     "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+     "kind": "prose",
+     "scope_id": "doc-9bb11e5d3809e590259aef28fb61062b:scope:3",
+     "requested_clauses": null,
+     "missing_requested_clauses": [],
+     "members_total": 9,
+     "members_processed": 9,
+     "coverage_status": "complete",
+     "read_status": "complete",
+     "fail_stage": "",
+     "units_read": 9,
+     "unit_ids": [
+      "185b00e681d6cb45204d4dbd145bfede",
+      "55972773a9137febfb2efd2285e7488f",
+      "587e5ce9c5d7442b97d1468c05a1a56c",
+      "1de87c87dad027c4b748f2dd260ad9c1",
+      "a3d7d9029e3f1acd37215165007be711",
+      "698517acfa3d5b39d791b671a945360a",
+      "432e48bc821af60bb7800f3719826e36",
+      "63af297867b280f2ba2be4077b5004f8",
+      "bf75fa7efbe2b3020b89b39820a5c4b0"
+     ],
+     "chunk_ids": [
+      "doc-9bb11e5d3809e590259aef28fb61062b-chunk-001",
+      "doc-9bb11e5d3809e590259aef28fb61062b-chunk-002"
+     ],
+     "items_count": 8,
+     "warnings": [],
+     "boundary_ambiguities": [],
+     "selected": false,
+     "note": "non-target candidate document — recorded for transparency, excluded from the answer scope and coverage decision"
+    },
+    {
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "kind": "prose",
+     "scope_id": "doc-b45c510232ed4d2452b0f5b2a13434e4:scope:3",
+     "requested_clauses": null,
+     "missing_requested_clauses": [],
+     "members_total": 5,
+     "members_processed": 5,
+     "coverage_status": "complete",
+     "read_status": "complete",
+     "fail_stage": "",
+     "units_read": 5,
+     "unit_ids": [
+      "214ef7613f1a3c64da042ce72f2bddc0",
+      "cb0ada331cd13c433a265db1cdcf17ba",
+      "2861821374df5ffccf40ab934d97c1e7",
+      "66c19b0895c01ee1c36a172fcc99b0dd",
+      "6ff2251b284e052a6797b61b046938e2"
+     ],
+     "chunk_ids": [
+      "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+     ],
+     "items_count": 5,
+     "warnings": [],
+     "boundary_ambiguities": [],
+     "selected": false,
+     "note": "non-target candidate document — recorded for transparency, excluded from the answer scope and coverage decision"
+    }
+   ],
+   "answer": {
+    "mode": "deterministic",
+    "generated_by": "enumerate/expand entries",
+    "items": [
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3",
+      "clause": "3.1",
+      "text": "3.1 医疗机构 medical organization\n指从事疾病诊断、治疗活动的医院、卫生院、疗养院、门诊部、诊所、卫生急救站等。",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 22,
+       "char_end": 91,
+       "quote": "3.1 医疗机构 medical organization\n指从事疾病诊断、治疗活动的医院、卫生院、疗养院、门诊部、诊所、卫生急救站等。",
+       "unit_rel_start": 22,
+       "unit_rel_end": 91,
+       "unit_id": "385d9e8e0539a87e61f0407bda1739ad",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "385d9e8e0539a87e61f0407bda1739ad",
+        "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+       ],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3",
+      "clause": "3.2",
+      "text": "3.2 医疗机构污水 medical organization wastewater\n指医疗机构门诊、病房、手术室、各类检验室、病理解剖室、放射室、洗衣房、太平间等处排出的诊疗、生活及粪便污水。当医疗机构其他污水与上述污水混合排出时一律视为医疗机构污水。",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 91,
+       "char_end": 219,
+       "quote": "3.2 医疗机构污水 medical organization wastewater\n指医疗机构门诊、病房、手术室、各类检验室、病理解剖室、放射室、洗衣房、太平间等处排出的诊疗、生活及粪便污水。当医疗机构其他污水与上述污水混合排出时一律视为",
+       "unit_rel_start": 91,
+       "unit_rel_end": 218,
+       "unit_id": "385d9e8e0539a87e61f0407bda1739ad",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "385d9e8e0539a87e61f0407bda1739ad",
+        "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+       ],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3",
+      "clause": "3.3",
+      "text": "## 3.3 污泥 sludge\n指医疗机构污水处理过程中产生的栅渣、沉淀污泥和化粪池污泥。",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 219,
+       "char_end": 267,
+       "quote": "## 3.3 污泥 sludge\n指医疗机构污水处理过程中产生的栅渣、沉淀污泥和化粪池污泥。",
+       "unit_rel_start": 0,
+       "unit_rel_end": 46,
+       "unit_id": "ad9d292d3ee2fd88a8fd25b9efc8265a",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "ad9d292d3ee2fd88a8fd25b9efc8265a",
+        "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+       ],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3",
+      "clause": "3.4",
+      "text": "## 3.4 废气 waste gas\n指医疗机构污水处理过程中产生的有害气体。",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 267,
+       "char_end": 308,
+       "quote": "## 3.4 废气 waste gas\n指医疗机构污水处理过程中产生的有害气体。",
+       "unit_rel_start": 0,
+       "unit_rel_end": 40,
+       "unit_id": "90d4b1c55cb8c6ff81dcbdfd55827165",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "90d4b1c55cb8c6ff81dcbdfd55827165",
+        "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+       ],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     }
+    ]
+   },
+   "reverification": {
+    "items_checked": 4,
+    "problems": [],
+    "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+   },
+   "model": null,
+   "status": "ok"
+  }
+ ]
+}

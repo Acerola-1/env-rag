@@ -1,0 +1,461 @@
+[
+ {
+  "qid": "fact-001",
+  "path": "local",
+  "final_status": "FAIL",
+  "basis": "mechanical",
+  "reason": "judgement=no_delivery_coverage_partial; coverage=partial（非 complete 整题 exact 不成立）",
+  "answer_runtime_sha256": "0f44e3f69275ff1800bdf6c5e31cad71797b66aaf6b59fdcc90c1d55c4e60d93",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "fact-002",
+  "path": "pg",
+  "final_status": "FAIL",
+  "basis": "mechanical",
+  "reason": "judgement=partial_fragment_correct; coverage=partial（非 complete 整题 exact 不成立）",
+  "answer_runtime_sha256": "99cba14ccf6a595b4fb62bb0f6be1b49de9a84143ada93f5fe39ed0be4602ba1",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "fact-002",
+  "path": "local",
+  "final_status": "FAIL",
+  "basis": "mechanical",
+  "reason": "judgement=partial_fragment_correct; coverage=partial（非 complete 整题 exact 不成立）",
+  "answer_runtime_sha256": "2562dc14404f361be50890c7c4f3993455ff2454cc6e8eada3fbe8cc00fba11f",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "fact-002",
+  "path": "fusion",
+  "final_status": "FAIL",
+  "basis": "mechanical",
+  "reason": "judgement=partial_fragment_correct; coverage=partial（非 complete 整题 exact 不成立）",
+  "answer_runtime_sha256": "65d57d6180086babb98873d9c54471e3696304c1f0b49e319ea69ad27494a6bf",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "fact-003",
+  "path": "local",
+  "final_status": "FAIL",
+  "basis": "mechanical",
+  "reason": "judgement=no_delivery_coverage_partial; coverage=partial（非 complete 整题 exact 不成立）",
+  "answer_runtime_sha256": "b28592f59ce6f82886c4f48730c23e07abd17713bd903f7c37ea943dadd600ba",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "fact-004",
+  "path": "local",
+  "final_status": "FAIL",
+  "basis": "mechanical",
+  "reason": "judgement=no_delivery_coverage_partial; coverage=partial（非 complete 整题 exact 不成立）",
+  "answer_runtime_sha256": "b771018b22f8794333a7b4c3075e6f044301fa550eb776b4908d10a4f5e134cd",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "fact-005",
+  "path": "local",
+  "final_status": "FAIL",
+  "basis": "mechanical",
+  "reason": "judgement=no_delivery_coverage_partial; coverage=partial（非 complete 整题 exact 不成立）",
+  "answer_runtime_sha256": "1393221e1fe45b6b57d83ca0c2d896be06b8b3d71f287602ede9d6cd90cd4576",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "fact-006",
+  "path": "local",
+  "final_status": "FAIL",
+  "basis": "mechanical",
+  "reason": "judgement=no_delivery_coverage_partial; coverage=partial（非 complete 整题 exact 不成立）",
+  "answer_runtime_sha256": "60939a1f8a77b5a9287f9c6b040541623ca248f1894392134ab0565f23ed3351",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "fact-007",
+  "path": "local",
+  "final_status": "FAIL",
+  "basis": "mechanical",
+  "reason": "judgement=no_delivery_coverage_partial; coverage=partial（非 complete 整题 exact 不成立）",
+  "answer_runtime_sha256": "ff38d459427a945e5bd6270906f547fe1d4983f1989924af2ecc63d1ab71d1df",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "file-enum-004",
+  "path": "pg",
+  "final_status": "FAIL",
+  "basis": "mechanical",
+  "reason": "judgement=coverage_not_complete; coverage=ambiguous（非 complete 整题 exact 不成立）",
+  "answer_runtime_sha256": "9f40f85384485a2cb6ef97690b399555cc978f4dc74b3a0f0ab5a024d6e4f482",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "file-enum-004",
+  "path": "local",
+  "final_status": "FAIL",
+  "basis": "mechanical",
+  "reason": "judgement=coverage_not_complete; coverage=ambiguous（非 complete 整题 exact 不成立）",
+  "answer_runtime_sha256": "830715989ec47fd70e436de95c2197f57e9ddf419f7c4f57c54ac4ae2dde7657",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "file-enum-004",
+  "path": "fusion",
+  "final_status": "FAIL",
+  "basis": "mechanical",
+  "reason": "judgement=coverage_not_complete; coverage=ambiguous（非 complete 整题 exact 不成立）",
+  "answer_runtime_sha256": "d378ce583242fd90e2b24e7b12c0d03e26495053d6be40b8e678226ca60db240",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "prose-enum-004",
+  "path": "local",
+  "final_status": "FAIL",
+  "basis": "mechanical",
+  "reason": "judgement=projection_mismatch; missing=['主要适用于源头水、国家自然保护区', '主要适用于集中式生活饮用水地表水源地一级保护区、珍稀水生生物栖息地、鱼虾类产卵场、仔稚幼鱼的索饵场等', '主要适用于集中式生活饮用水地表水源地二级保护区、鱼虾类越冬场、洄游通道、水产养殖区等渔业水域及游泳区']; coverage=partial（非 complete 整题 exact 不成立）",
+  "answer_runtime_sha256": "0805017042632cdc0139e06de2e829be983ba097befe11982964de9ec878aa90",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "prose-enum-005",
+  "path": "pg",
+  "final_status": "FAIL",
+  "basis": "mechanical",
+  "reason": "judgement=projection_mismatch; missing=['一级', '二级', '三级']; coverage=partial（非 complete 整题 exact 不成立）",
+  "answer_runtime_sha256": "15541e020b5ace9f33b6d5a028597422efc49c86a4e6d6cfcf5c231e5bd9caa4",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "prose-enum-005",
+  "path": "local",
+  "final_status": "FAIL",
+  "basis": "mechanical",
+  "reason": "judgement=projection_mismatch; missing=['一级', '二级', '三级']; coverage=partial（非 complete 整题 exact 不成立）",
+  "answer_runtime_sha256": "763ea6556c3d1a711a6607380ca0f9da461d98090c4b24316dbcfd60f4b34154",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "prose-enum-005",
+  "path": "fusion",
+  "final_status": "FAIL",
+  "basis": "mechanical",
+  "reason": "judgement=projection_mismatch; missing=['一级', '二级', '三级']; coverage=partial（非 complete 整题 exact 不成立）",
+  "answer_runtime_sha256": "18f10fc563d4d3af9a740ff5a4677f89b4d72535c09be73f98801d9541ae2b59",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "table-enum-003",
+  "path": "pg",
+  "final_status": "FAIL",
+  "basis": "mechanical",
+  "reason": "judgement=coverage_not_complete; coverage=ambiguous（非 complete 整题 exact 不成立）; masked_citation_details=2（局部 unknown，不改整题结论）",
+  "answer_runtime_sha256": "da5af0624066935343eb0b5523179b53e038772f57e55d1090e01300ff1313a1",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "table-enum-003",
+  "path": "local",
+  "final_status": "FAIL",
+  "basis": "mechanical",
+  "reason": "judgement=coverage_not_complete; coverage=ambiguous（非 complete 整题 exact 不成立）; masked_citation_details=2（局部 unknown，不改整题结论）",
+  "answer_runtime_sha256": "ae0917cd893e9c82ae4e0e7acc95ecc453a00620d4b7b1b1a4efaff6e54d30b0",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "table-enum-003",
+  "path": "fusion",
+  "final_status": "FAIL",
+  "basis": "mechanical",
+  "reason": "judgement=coverage_not_complete; coverage=ambiguous（非 complete 整题 exact 不成立）; masked_citation_details=2（局部 unknown，不改整题结论）",
+  "answer_runtime_sha256": "5e5ce64cf0cbaf519ff9340ba6f6b97b5aa339a53e81a4f358c92fac432c94eb",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "syn-001",
+  "path": "pg",
+  "final_status": "FAIL",
+  "basis": "mechanical_hard_failure",
+  "reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）",
+  "answer_runtime_sha256": "e85ee36e0949c97e73578e071f490ca7ee10688f19435a008bf8695a496f47fa",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "syn-001",
+  "path": "local",
+  "final_status": "FAIL",
+  "basis": "mechanical_hard_failure",
+  "reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）",
+  "answer_runtime_sha256": "d207364884a9f1d9ddb4a9a03eae220bce712960a2508402acf2d3c52b8ee6af",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "syn-001",
+  "path": "fusion",
+  "final_status": "FAIL",
+  "basis": "mechanical_hard_failure",
+  "reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）",
+  "answer_runtime_sha256": "40b7c7fc15c14d71aecb0af94e335ea39dfc538f9fc52bccaeb081fcca448bb4",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "syn-002",
+  "path": "pg",
+  "final_status": "FAIL",
+  "basis": "mechanical_hard_failure",
+  "reason": "coverage=partial（非 complete）（已证实的硬失败不依赖人工状态，也不因未审而软化）",
+  "answer_runtime_sha256": "6e42daae6925d2f9da2852b3e6f1c650adbbd6d199bbbd651f3f9161ec11b3a8",
+  "response_evidence_sha256": "74e2707d4aaf7de58c22d795e513b4acee503d069a6924b7da5106fc9521b880"
+ },
+ {
+  "qid": "syn-002",
+  "path": "local",
+  "final_status": "FAIL",
+  "basis": "mechanical_hard_failure",
+  "reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）",
+  "answer_runtime_sha256": "59d3b1dcbda181f339e7f7b871fcb47b65468e8bdee0dd60e496a032d8e1400e",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "syn-002",
+  "path": "fusion",
+  "final_status": "FAIL",
+  "basis": "mechanical_hard_failure",
+  "reason": "coverage=partial（非 complete）（已证实的硬失败不依赖人工状态，也不因未审而软化）",
+  "answer_runtime_sha256": "fa8e5c9626bbe8100f1af2a243bbfaf9ca67504ec84531121497737b36bf8277",
+  "response_evidence_sha256": "a7a6b0be176d6d50a023af7d41d8dcd1565dae2afa75db0288d43c912c37641b"
+ },
+ {
+  "qid": "syn-003",
+  "path": "pg",
+  "final_status": "FAIL",
+  "basis": "mechanical_hard_failure",
+  "reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）",
+  "answer_runtime_sha256": "79416d868b4e8d1e68f1d99bf6f18b4bd71c65df6e177013829f222d144fd448",
+  "response_evidence_sha256": "ef92f1e41d248cbd2b5aa1f5eebb740e4a7ecc2d99679429ff960896d8e806f8"
+ },
+ {
+  "qid": "syn-003",
+  "path": "local",
+  "final_status": "FAIL",
+  "basis": "mechanical_hard_failure",
+  "reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）",
+  "answer_runtime_sha256": "31c5668a5031f9aabdb4a7c6d3206f1a50f4f9287653c11d91b2a203d82d53a0",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "syn-003",
+  "path": "fusion",
+  "final_status": "FAIL",
+  "basis": "mechanical_hard_failure",
+  "reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）",
+  "answer_runtime_sha256": "ad4b12dc1c2728e6e67a9ab653fba6695ef14b334dff546a6ac93289cf04094d",
+  "response_evidence_sha256": "0fa6facc95a085ae15e9346a5c200396f3e4d6806758d2671c89e80af5298c96"
+ },
+ {
+  "qid": "syn-004",
+  "path": "pg",
+  "final_status": "FAIL",
+  "basis": "mechanical_hard_failure",
+  "reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）",
+  "answer_runtime_sha256": "37e91b97f2a23a307a55d0fd13abba1789410fb41bcc04257351689952e58bb2",
+  "response_evidence_sha256": "2f22ece96afebcde67d571f1e6e1a441e553fdf9fc4b65fa78cc946799db5dd4"
+ },
+ {
+  "qid": "syn-004",
+  "path": "local",
+  "final_status": "FAIL",
+  "basis": "mechanical_hard_failure",
+  "reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）",
+  "answer_runtime_sha256": "6ee10ee6a72cffe2f9e598d824a5d4adf1eeea74cf4989077bda9f1750315d64",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "syn-004",
+  "path": "fusion",
+  "final_status": "FAIL",
+  "basis": "mechanical_hard_failure",
+  "reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）",
+  "answer_runtime_sha256": "0aabf239cbb9af2e3d9bf964ce04d1c28bee017c9f2557bf47d19259ce56b05d",
+  "response_evidence_sha256": "87501cb8c85a3f8a28e2c44f7915c1d39be079fca4174748ca79de775564280c"
+ },
+ {
+  "qid": "syn-005",
+  "path": "pg",
+  "final_status": "FAIL",
+  "basis": "mechanical_hard_failure",
+  "reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）",
+  "answer_runtime_sha256": "1926ed628dcd60a92e6fe1b8c0ee9fc36ca7a72648c213e4d38e49003bb6a6ad",
+  "response_evidence_sha256": "139ec2b29c25cac876a97eb5aed7d2d31abe063208a87240d233285c74ede09d"
+ },
+ {
+  "qid": "syn-005",
+  "path": "local",
+  "final_status": "FAIL",
+  "basis": "mechanical_hard_failure",
+  "reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）",
+  "answer_runtime_sha256": "7e45a26b3cb205d9b0aba03330e446a0e5a6f9cc1aa370b3dc209e00cb0dcb52",
+  "response_evidence_sha256": "f58c5596c763e97565a5f65168fe398d1a115dc7e0f1b0abfb7df91ba9f97fd7"
+ },
+ {
+  "qid": "syn-005",
+  "path": "fusion",
+  "final_status": "FAIL",
+  "basis": "mechanical_hard_failure",
+  "reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）",
+  "answer_runtime_sha256": "4ce3a1b636cef3fe18ecebf8aa57599ac8114d39790b3333429008d6ff89aa52",
+  "response_evidence_sha256": "d7cf7a39a668bf7ddd791952c48a3ad6e13ec142b4359ef5f30a751c4754d554"
+ },
+ {
+  "qid": "syn-006",
+  "path": "pg",
+  "final_status": "FAIL",
+  "basis": "mechanical_hard_failure",
+  "reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）",
+  "answer_runtime_sha256": "47e5c768990b396f90e34b71664caece9b85894d4662b9b933910d4f33be5372",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "syn-006",
+  "path": "local",
+  "final_status": "FAIL",
+  "basis": "mechanical_hard_failure",
+  "reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）",
+  "answer_runtime_sha256": "481af1e8ec9151c3525c2b5ef6101b1829b8a6d6e847eda3552d83afc4e509d1",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "syn-006",
+  "path": "fusion",
+  "final_status": "FAIL",
+  "basis": "mechanical_hard_failure",
+  "reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）",
+  "answer_runtime_sha256": "d54707e66775ab982d16daf44f001cdf4f5cc0f6703421e6a8158f4819e35da5",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "neg-001",
+  "path": "local",
+  "final_status": "FAIL",
+  "basis": "frozen_behaviour_contract",
+  "reason": "coverage=partial，未明确回答 missing——仅 partial/条件不足不等同冻结答复合同",
+  "answer_runtime_sha256": "9d1ff6b8fafbf9bb694f4ac52bed8ab9a52d03227747f6b11743953d6e4d9ebf",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "neg-005",
+  "path": "pg",
+  "final_status": "FAIL",
+  "basis": "frozen_behaviour_contract",
+  "reason": "跨 2 文档 complete 交付，不符冻结 ambiguous（仅判当前行为，不宣称底层表身份串并）",
+  "answer_runtime_sha256": "8c22578a178bc390594daeeea12113f0fffa1a36841e398f6ba9b016077180f7",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "neg-005",
+  "path": "local",
+  "final_status": "FAIL",
+  "basis": "frozen_behaviour_contract",
+  "reason": "跨 2 文档 complete 交付，不符冻结 ambiguous（仅判当前行为，不宣称底层表身份串并）",
+  "answer_runtime_sha256": "cbe68bfb7a3bc75b7902f0fc5a0c5536c4391bd62f02d216df0fff9fdd48dc68",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "neg-005",
+  "path": "fusion",
+  "final_status": "FAIL",
+  "basis": "frozen_behaviour_contract",
+  "reason": "跨 2 文档 complete 交付，不符冻结 ambiguous（仅判当前行为，不宣称底层表身份串并）",
+  "answer_runtime_sha256": "860d193dde6079838250fbdbf099c854dea88092b1e825c04cfb3362ca57cb17",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "neg-006",
+  "path": "local",
+  "final_status": "FAIL",
+  "basis": "frozen_behaviour_contract",
+  "reason": "coverage=partial，未明确回答 missing——仅 partial/条件不足不等同冻结答复合同",
+  "answer_runtime_sha256": "ec14d7d85cdc4d283f12985d74a8e0b10d922d63c124d23895aa4b448686e5e0",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "neg-007",
+  "path": "pg",
+  "final_status": "FAIL",
+  "basis": "frozen_behaviour_contract",
+  "reason": "coverage=partial ≠ 冻结 ambiguous——保守拒绝不等同合同满足",
+  "answer_runtime_sha256": "cacbb888b87c70ee075e706038972c3dd888e9c647110996213db47c91dfa92b",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "neg-007",
+  "path": "local",
+  "final_status": "FAIL",
+  "basis": "frozen_behaviour_contract",
+  "reason": "coverage=partial ≠ 冻结 ambiguous——保守拒绝不等同合同满足",
+  "answer_runtime_sha256": "eeaa8b0a4764a2a9fb299474008bf086b567428294f42d90a6beff3973b9e2a9",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "neg-007",
+  "path": "fusion",
+  "final_status": "FAIL",
+  "basis": "frozen_behaviour_contract",
+  "reason": "coverage=partial ≠ 冻结 ambiguous——保守拒绝不等同合同满足",
+  "answer_runtime_sha256": "8b2de6496db2eadc2488b21e5c331dde49680730df90d627e120a87857597477",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "neg-009",
+  "path": "pg",
+  "final_status": "FAIL",
+  "basis": "frozen_behaviour_contract",
+  "reason": "expected 应答（ok）而 0 交付——整题未回答",
+  "answer_runtime_sha256": "3b6564b84497b4666593eb45a7e650ad81748e402a12a9071d2f8d4b6319fb04",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "neg-009",
+  "path": "local",
+  "final_status": "FAIL",
+  "basis": "frozen_behaviour_contract",
+  "reason": "expected 应答（ok）而 0 交付——整题未回答",
+  "answer_runtime_sha256": "d310f88775b43d0004a0488002330a3eb71b2ad723b3bed638bec397c04ef06c",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "neg-009",
+  "path": "fusion",
+  "final_status": "FAIL",
+  "basis": "frozen_behaviour_contract",
+  "reason": "expected 应答（ok）而 0 交付——整题未回答",
+  "answer_runtime_sha256": "07b63cd54be39dcd3bd1c96a9217850bb01c126e642222661d6d5c036dfebacd",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "neg-010",
+  "path": "pg",
+  "final_status": "FAIL",
+  "basis": "frozen_behaviour_contract",
+  "reason": "expected 应答而 0 交付——整题未回答（model_failure/条件不足保留）",
+  "answer_runtime_sha256": "2d01876cdc76c13377c9041a9767f06d5402a51cee66b0e7eb5ccfe1e6ef988e",
+  "response_evidence_sha256": "e99d02980feda85c05085eff7516350efcc48f5e598c5ce12f31117ba563ac2a"
+ },
+ {
+  "qid": "neg-010",
+  "path": "local",
+  "final_status": "FAIL",
+  "basis": "frozen_behaviour_contract",
+  "reason": "expected 应答而 0 交付——整题未回答（model_failure/条件不足保留）",
+  "answer_runtime_sha256": "28987f94a0570f255a939c34663cd7b52ea4699e32522f0a3d5d850e617b079d",
+  "response_evidence_sha256": "absent"
+ },
+ {
+  "qid": "neg-010",
+  "path": "fusion",
+  "final_status": "FAIL",
+  "basis": "frozen_behaviour_contract",
+  "reason": "expected 应答而 0 交付——整题未回答（model_failure/条件不足保留）",
+  "answer_runtime_sha256": "517bec0a473efe81413d0c658babfb82c4d13febf49a26f5daeed59990dedbb1",
+  "response_evidence_sha256": "c1b2e768244f18bc1c733581be80bc8e7a1a485401631b99029c23aaa60e3095"
+ }
+]

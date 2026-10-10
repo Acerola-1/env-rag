@@ -1,0 +1,143 @@
+{
+  "review_date": "2026-10-06",
+  "result": "Gate2 not passed; prior G1-G3 cases accepted; cross-unit, missing unit, empty segment cases fail",
+  "accepted_tasks": [
+    "4.1",
+    "4.2",
+    "4.3",
+    "4.5"
+  ],
+  "pending_tasks": [
+    "4.4",
+    "4.6"
+  ],
+  "phase3_authorized": false,
+  "tests": {
+    "existing_passed": 174,
+    "new_failed": 3,
+    "old46_files_unchanged": {
+      "tests/test_gate2_acceptance.py": true,
+      "tests/test_gate2_rereview.py": true,
+      "tests/test_gate2_review_r3.py": true,
+      "tests/test_gate2_review_r4.py": true,
+      "tests/test_gate2_review_r5.py": true,
+      "tests/test_gate2_review_r6.py": true,
+      "tests/test_gate2_review_r7.py": true
+    }
+  },
+  "gold": {
+    "source_gold_frozen": true,
+    "sha256": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+    "unchanged": true,
+    "positive_questions": 31,
+    "negative_expectations": 10
+  },
+  "live": {
+    "production_queries": 0,
+    "benchmark_questions": 31,
+    "real_negative_runs": 8,
+    "negative_passed": 8,
+    "formal_cli_runs": 0,
+    "tokenizer_cases": 25,
+    "tokenizer_passed": 25,
+    "db_writes": 0,
+    "index_rebuilds": 0,
+    "model_calls": 0,
+    "readonly": true,
+    "citations": {
+      "char_span": {
+        "checked": 60,
+        "failed": 0
+      },
+      "table_row": {
+        "checked": 241,
+        "failed": 0
+      }
+    }
+  },
+  "frozen_benchmark_metrics_reproduced": true,
+  "metrics": {
+    "groups": 59,
+    "hits": 56,
+    "file_docs": 23,
+    "file_hits": 23,
+    "evidence_recall_at_20": 0.9491525423728814,
+    "file_doc_recall_at_20": 1.0
+  },
+  "enum_set_checks": {
+    "prose_enum": {
+      "questions": 6,
+      "exact_match": 5,
+      "failed": 1,
+      "citation_unverified_total": 0
+    },
+    "table_enum": {
+      "questions": 6,
+      "exact_match": 5,
+      "failed": 1,
+      "citation_unverified_total": 0
+    },
+    "file_enum": {
+      "questions": 6,
+      "exact_match": 6,
+      "failed": 0,
+      "citation_unverified_total": 0
+    }
+  },
+  "source_final": {
+    "public_counts": {
+      "doc_full": 221,
+      "doc_chunks": 5709,
+      "doc_status": 279,
+      "llm_cache": 16514,
+      "entity_chunks": 65527,
+      "full_entities": 221,
+      "full_relations": 221,
+      "relation_chunks": 119575
+    },
+    "catalog": {
+      "state": "current",
+      "active_run_id": "c15c741742394320",
+      "active_snapshot_id": "4919b3938ad93747",
+      "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "expected_recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "live_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "stored_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "action": ""
+    },
+    "search": {
+      "state": "current",
+      "search_id": "872d689343a9cbb6",
+      "catalog_snapshot_id": "4919b3938ad93747",
+      "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+      "vocab_sha": "c3d0b6a6cf7d6af0758329bccea3bbbf432d73b20df4db42b768ae07446978cf",
+      "index_recipe": "phase-2-v2-local-caption-identity-guard",
+      "expected_search_id": "872d689343a9cbb6",
+      "reasons": []
+    },
+    "all_match_initial": true,
+    "match_previous_review_search": true
+  },
+  "checks": {
+    "ruff_check": "passed",
+    "ruff_format": "passed",
+    "openspec_strict": "passed",
+    "diff_check": "passed",
+    "credential_scan_files": 25,
+    "credential_leak_files": []
+  },
+  "source_sha256": {
+    "reports/pg-retrieval/phase-2/bench-r7.json": "0b8abe431b9aa61b14a5bdb40a2462dd2c45c6aca6bf5a65b8f8d6b4d2543ccd",
+    "src/env_rag_final/enumerate_/prose_enum.py": "becba8162a2c140e1f447844ee6cfc3232625533ba382104749b2042b0e8759d",
+    "tests/test_gate2_review_r8.py": "fb07ea7ae4d7dd36a5733993f78d36d153ddc9f3fa4da4cb5115841e3471fd47",
+    "reports/pg-retrieval/phase-2/report-gate2-fixes-r7.md": "76d3343068919c9b62d3579e34f0acaf945803d45893e984a3712bdb9d42a145",
+    "tests/test_gate2_review_r7.py": "3d9341f3d193f3a6c1588afb04561eda0a73206e54b8afb47067af66eb54a9b2"
+  },
+  "coverage": {
+    "total_files": 250,
+    "reviewed_files": 2,
+    "skipped_files": 248,
+    "coverage_rate": 0.008
+  }
+}

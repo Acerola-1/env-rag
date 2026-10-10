@@ -1,0 +1,13 @@
+{
+ "task": "5.3 two-path candidate fusion (read-only, guarded)",
+ "started_at": "2026-10-09T21:19:19+0800",
+ "pg_only_switch": false,
+ "frozen_contract": {
+  "source_fingerprint": null
+ },
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "failure": {
+  "stage": "identity-capture",
+  "detail": "BudgetExhausted: budget refused pg x1 at r2/fusion/neg-008:pg: per-question envelope 4 reached (4) (zero calls issued)"
+ }
+}

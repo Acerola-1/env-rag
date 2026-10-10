@@ -1,0 +1,420 @@
+{
+  "generation": "phase-4-improvements123-pg-validation-r1",
+  "real_backend": "PG read-only live",
+  "identity_before_equals_after": true,
+  "identity_after": {
+    "matches_frozen": true,
+    "problems": [],
+    "counts": {
+      "lightrag_doc_full": 221,
+      "lightrag_doc_chunks": 5709,
+      "lightrag_doc_status": 279,
+      "lightrag_llm_cache": 16514,
+      "lightrag_entity_chunks": 65527,
+      "lightrag_full_entities": 221,
+      "lightrag_full_relations": 221,
+      "lightrag_relation_chunks": 119575
+    },
+    "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "catalog_active": {
+      "run_id": "c15c741742394320",
+      "snapshot_id": "4919b3938ad93747"
+    },
+    "search_active": "872d689343a9cbb6",
+    "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+    "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+  },
+  "budget_totals": {
+    "reserved": {
+      "pg": 556
+    },
+    "issued": {
+      "pg": 556
+    },
+    "refusal_count": 0,
+    "service_events": {
+      "pg/reserved": 556,
+      "pg/issued": 556
+    },
+    "single_leg_peaks": {
+      "r1/pg/file-enum-002:pg": 91,
+      "r1/pg/file-enum-005:pg": 111,
+      "r1/pg/prose-enum-002:pg": 128,
+      "r1/pg/prose-enum-003:pg": 118,
+      "r1/pg/prose-enum-006:pg": 108
+    },
+    "max_single_leg": 128,
+    "per_leg_cap": 1024,
+    "batch_cap": 5120
+  },
+  "cold_generation_contract": "no old runtime answers read; every answer uses the context/messages of THIS round's own generation",
+  "budget_coverage_declaration": {
+    "enforced_pre_request": {
+      "service_boundary": "every ServiceBoundary.call (embedding/llm/pg groups, including local_adapter readonly_select_chunks); embedding batch texts/chars caps judged on the ACTUAL positional-or-keyword shape",
+      "qdrant_native_wrapper": "query_points/retrieve via BudgetedQdrantClient — reserve before the native call, issued only when it is entered",
+      "neo4j_native_wrapper": "BOTH driver.session().run(...) and the async-with entered session run through _BudgetedNeo4jSession (one gate + one issued mark per real run; __aenter__/__aexit__ and close ownership delegate unchanged)",
+      "pg_data_sql": "fetch/fetchrow/fetchval on the explicit AND on every self-made connection (asyncpg.connect is scoped-patched per leg: answer's own connection, SourceAdapter read-back, fusion/rerank guard reads, local_adapter provenance reads)",
+      "rerank_and_answer_model": "reserved before the accepted entries run; issuance reconciled ONLY from the entries' real HTTP receipts — answer_llm from model_calls_used (runtime included on the exception path), rerank from the call receipt of THIS question's result entry or failure_service_records whose query_id IS this question (a foreign question's in-flight call never counts; the mere existence of some failure never proves this question stopped before HTTP; only a named pre-flight/identity guard stage is an explicit before-http zero; otherwise unknown) — executed 401/timeout counts, skip/refusal 0, unknown is explicit and unbilled; the three-state status is published onto the leg record and terminal even when the leg raises"
+    },
+    "not_billed": [
+      "connection establishment and close (readonly/timeout/server_settings pass through to the owning code path)",
+      "transaction control: BEGIN/COMMIT via conn.transaction and SET LOCAL via conn.execute — audited to carry no data SQL in the read-only evaluation paths",
+      "run-level pre/post identity capture (guard reads outside per-question envelopes)",
+      "native client methods not recorded by the accepted wrappers (identical coverage to the accepted recording contract — declared, not hidden)"
+    ],
+    "artifact_counts_note": "per-leg pg numbers are envelope usage on the WRAPPED seams (local_adapter._fetch is deliberately double-accounted: group reservation AND statement gate — conservative over-accounting, never under); they are NOT a claim of exhaustive coverage of every historical PG read"
+  },
+  "legs": [
+    {
+      "query_id": "file-enum-002",
+      "path": "pg",
+      "status": "ok",
+      "coverage": "complete",
+      "model_calls_used": 0,
+      "answer_latency_ms": 2081,
+      "timings": {
+        "discovery_ms": 3285,
+        "total_ms": 5366
+      },
+      "execution_attribution": "real_entry",
+      "reverification": {
+        "items_checked": 0,
+        "problems": [],
+        "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+      },
+      "gold_check": {
+        "expected": [
+          "doc-507bc40d1d6395c6932d2201e8483504",
+          "doc-60eb1ff63505bb659d0d97f2524479a2",
+          "doc-90f413ede6224a15083a7e2f75ac0c63",
+          "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+          "doc-b64a60d5251a9101f3d8f050f6933216"
+        ],
+        "published": [
+          "doc-507bc40d1d6395c6932d2201e8483504",
+          "doc-60eb1ff63505bb659d0d97f2524479a2",
+          "doc-90f413ede6224a15083a7e2f75ac0c63",
+          "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+          "doc-b64a60d5251a9101f3d8f050f6933216"
+        ],
+        "missing": [],
+        "extra": [],
+        "expected_versions": [
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ]
+      },
+      "items": [
+        {
+          "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+          "doc_name": "air-15_生态环境部_中国移动源环境管理年报_2021.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "citation_verified": true,
+          "citation_reverified": true,
+          "attribution": false
+        },
+        {
+          "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+          "doc_name": "air-16_生态环境部_中国移动源环境管理年报_2022.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "citation_verified": true,
+          "citation_reverified": true,
+          "attribution": false
+        },
+        {
+          "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+          "doc_name": "air-17_生态环境部_中国移动源环境管理年报_2023.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "citation_verified": true,
+          "citation_reverified": true,
+          "attribution": false
+        },
+        {
+          "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+          "doc_name": "air-18_生态环境部_中国移动源环境管理年报_2024.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "citation_verified": true,
+          "citation_reverified": true,
+          "attribution": false
+        },
+        {
+          "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+          "doc_name": "air-19_生态环境部_中国移动源环境管理年报_2025.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "citation_verified": true,
+          "citation_reverified": true,
+          "attribution": false
+        }
+      ],
+      "enumeration_stage": {
+        "base_total": 5,
+        "base_processed": 5,
+        "base_coverage": "complete",
+        "related_total": 0,
+        "related_processed": 0,
+        "related_matches": 0,
+        "related_evidence": 0,
+        "attribution_added": 0,
+        "union_total": 5,
+        "members_total": 5,
+        "members_processed": 5,
+        "publication_guard": "stable",
+        "read_token": "<redacted>",
+        "catalog_snapshot_id": "4919b3938ad93747",
+        "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+        "coverage_status": "complete",
+        "warnings": [
+          "5 matched docs have unknown metadata fields; they are included but flagged"
+        ],
+        "related_request_note": "",
+        "overlap_canonical": [],
+        "overlap_evidence": []
+      },
+      "pg_ledger": {
+        "reserved": 91,
+        "issued": 91,
+        "refused": 0
+      }
+    },
+    {
+      "query_id": "file-enum-005",
+      "path": "pg",
+      "status": "ok",
+      "coverage": "complete",
+      "model_calls_used": 0,
+      "answer_latency_ms": 4447,
+      "timings": {
+        "discovery_ms": 2742,
+        "total_ms": 7189
+      },
+      "execution_attribution": "real_entry",
+      "reverification": {
+        "items_checked": 0,
+        "problems": [],
+        "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+      },
+      "gold_check": {
+        "expected": [
+          "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "doc-9bb11e5d3809e590259aef28fb61062b",
+          "doc-b423a0e3331541588988fd34496c349d"
+        ],
+        "published": [
+          "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "doc-9bb11e5d3809e590259aef28fb61062b",
+          "doc-b423a0e3331541588988fd34496c349d"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      "items": [
+        {
+          "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "doc_name": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf",
+          "self_code": "GB18466",
+          "self_code_version": "2005",
+          "citation_verified": true,
+          "citation_reverified": true,
+          "attribution": false
+        },
+        {
+          "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+          "doc_name": "water-03_生态环境部_医疗机构水污染物排放标准_含2026修改单.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "citation_verified": true,
+          "citation_reverified": true,
+          "attribution": true
+        },
+        {
+          "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+          "doc_name": "water-10_生态环境部_医疗机构水污染物排放标准修改单_2026.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "citation_verified": true,
+          "citation_reverified": true,
+          "attribution": true
+        }
+      ],
+      "enumeration_stage": {
+        "base_total": 1,
+        "base_processed": 1,
+        "base_coverage": "complete",
+        "related_total": 3,
+        "related_processed": 3,
+        "related_matches": 3,
+        "related_evidence": 2,
+        "attribution_added": 2,
+        "union_total": 3,
+        "members_total": 3,
+        "members_processed": 3,
+        "publication_guard": "stable",
+        "read_token": "<redacted>",
+        "catalog_snapshot_id": "4919b3938ad93747",
+        "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+        "coverage_status": "complete",
+        "warnings": [
+          "1 matched docs have unknown metadata fields; they are included but flagged"
+        ],
+        "related_request_note": "",
+        "overlap_canonical": [
+          "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+        ],
+        "overlap_evidence": []
+      },
+      "pg_ledger": {
+        "reserved": 111,
+        "issued": 111,
+        "refused": 0
+      }
+    },
+    {
+      "query_id": "prose-enum-002",
+      "path": "pg",
+      "status": "ok",
+      "coverage": "complete",
+      "model_calls_used": 0,
+      "answer_latency_ms": 5465,
+      "timings": {
+        "discovery_ms": 2574,
+        "total_ms": 8039
+      },
+      "execution_attribution": "real_entry",
+      "reverification": {
+        "items_checked": 2,
+        "problems": [],
+        "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+      },
+      "gold_check": {
+        "expected_count": 2,
+        "published_count": 2
+      },
+      "items": [
+        {
+          "clause": "4.1.1",
+          "citation_verified": true,
+          "citation_reverified": true,
+          "text_len": 31,
+          "text_norm_matches_gold_body": false
+        },
+        {
+          "clause": "4.1.2",
+          "citation_verified": true,
+          "citation_reverified": true,
+          "text_len": 128,
+          "text_norm_matches_gold_body": false
+        }
+      ],
+      "pg_ledger": {
+        "reserved": 128,
+        "issued": 128,
+        "refused": 0
+      }
+    },
+    {
+      "query_id": "prose-enum-003",
+      "path": "pg",
+      "status": "ok",
+      "coverage": "complete",
+      "model_calls_used": 0,
+      "answer_latency_ms": 3353,
+      "timings": {
+        "discovery_ms": 2912,
+        "total_ms": 6265
+      },
+      "execution_attribution": "real_entry",
+      "reverification": {
+        "items_checked": 4,
+        "problems": [],
+        "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+      },
+      "gold_check": {
+        "expected_count": 4,
+        "published_count": 4
+      },
+      "items": [
+        {
+          "clause": "4.3.1",
+          "citation_verified": true,
+          "citation_reverified": true,
+          "text_len": 62,
+          "text_norm_matches_gold_body": false
+        },
+        {
+          "clause": "4.3.2",
+          "citation_verified": true,
+          "citation_reverified": true,
+          "text_len": 32,
+          "text_norm_matches_gold_body": false
+        },
+        {
+          "clause": "4.3.3",
+          "citation_verified": true,
+          "citation_reverified": true,
+          "text_len": 27,
+          "text_norm_matches_gold_body": false
+        },
+        {
+          "clause": "4.3.4",
+          "citation_verified": true,
+          "citation_reverified": true,
+          "text_len": 53,
+          "text_norm_matches_gold_body": false
+        }
+      ],
+      "pg_ledger": {
+        "reserved": 118,
+        "issued": 118,
+        "refused": 0
+      }
+    },
+    {
+      "query_id": "prose-enum-006",
+      "path": "pg",
+      "status": "ok",
+      "coverage": "complete",
+      "model_calls_used": 0,
+      "answer_latency_ms": 3587,
+      "timings": {
+        "discovery_ms": 3311,
+        "total_ms": 6898
+      },
+      "execution_attribution": "real_entry",
+      "reverification": {
+        "items_checked": 1,
+        "problems": [],
+        "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+      },
+      "gold_check": {
+        "expected_count": 1,
+        "published_count": 1
+      },
+      "items": [
+        {
+          "clause": "4.2",
+          "citation_verified": true,
+          "citation_reverified": true,
+          "text_len": 48,
+          "text_norm_matches_gold_body": true
+        }
+      ],
+      "pg_ledger": {
+        "reserved": 108,
+        "issued": 108,
+        "refused": 0
+      }
+    }
+  ],
+  "gold_policy": "expected values used for post-hoc verification only; never injected as generation input",
+  "model_requests": 0,
+  "paid_service_requests": 0,
+  "database_writes": 0
+}

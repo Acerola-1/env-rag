@@ -1,0 +1,868 @@
+{
+ "task": "5.4 joint rerank over fused candidates (bounded, recorded)",
+ "started_at": "2026-10-09T20:54:04+0800",
+ "service_contract": {
+  "endpoint": "{host}/v1/rerank (POST)",
+  "request": [
+   "model",
+   "query",
+   "documents",
+   "top_n",
+   "return_documents=false"
+  ],
+  "response": [
+   "id",
+   "results[{index, relevance_score}]",
+   "meta.tokens"
+  ],
+  "errors": {
+   "401/403": "auth",
+   "429": "rate limit",
+   "5xx": "service"
+  }
+ },
+ "input_budget": 40,
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "results": [
+  {
+   "query_id": "fact-001",
+   "query": "GB 3095-2012 中二氧化硫的年平均浓度二级限值是多少？",
+   "workspace": "default",
+   "skipped": null,
+   "inputs": [
+    {
+     "input_index": 0,
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "content_sha256": "eafea04098b4bf61ff94053d457a8760eee04b9ea04b039ab6f53e180aa83a5a",
+     "content_len": 2840,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": "4 环境空气功能区分类和质量要求 环境空气质量标准",
+       "chunk_order": 2,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.023312272503972054
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:表1(环境空气污染物基本项目浓度限值)",
+        "entity:二级浓度限值",
+        "entity:表2(环境空气污染物其他项目浓度限值)",
+        "edge:二级浓度限值|表1",
+        "edge:二级浓度限值|表2",
+        "edge:二氧化氮(NO2)|表1(环境空气污染物基本项目浓度限值)",
+        "edge:臭氧(O3)|表1(环境空气污染物基本项目浓度限值)",
+        "edge:二氧化硫(SO2)|表1(环境空气污染物基本项目浓度限值)",
+        "edge:一氧化碳(CO)|表1(环境空气污染物基本项目浓度限值)",
+        "edge:氮氧化物(NOx)|表2(环境空气污染物其他项目浓度限值)",
+        "edge:GB 3095-2012|表1(环境空气污染物基本项目浓度限值)",
+        "edge:GB 3095-2012|表2(环境空气污染物其他项目浓度限值)",
+        "edge:一类区|表1(环境空气污染物基本项目浓度限值)",
+        "edge:一类区|表2(环境空气污染物其他项目浓度限值)",
+        "edge:总悬浮颗粒物(TSP)|表2(环境空气污染物其他项目浓度限值)",
+        "edge:省级人民政府|表2(环境空气污染物其他项目浓度限值)",
+        "edge:二类区|二级浓度限值",
+        "edge:二类区|表1(环境空气污染物基本项目浓度限值)",
+        "edge:二类区|表2(环境空气污染物其他项目浓度限值)",
+        "edge:国务院环境保护行政主管部门|表2(环境空气污染物其他项目浓度限值)",
+        "edge:苯并[a]芘(BaP)|表2(环境空气污染物其他项目浓度限值)",
+        "edge:二级浓度限值|表1(环境空气污染物基本项目浓度限值)",
+        "edge:二级浓度限值|表2(环境空气污染物其他项目浓度限值)",
+        "edge:一级浓度限值|表1(环境空气污染物基本项目浓度限值)",
+        "edge:一级浓度限值|表2(环境空气污染物其他项目浓度限值)",
+        "edge:监测点位布设|表1(环境空气污染物基本项目浓度限值)",
+        "edge:监测点位布设|表2(环境空气污染物其他项目浓度限值)",
+        "edge:表2(环境空气污染物其他项目浓度限值)|铅(Pb)",
+        "edge:表1(环境空气污染物基本项目浓度限值)|颗粒物(粒径小于等于2.5μm)",
+        "edge:表1(环境空气污染物基本项目浓度限值)|颗粒物(粒径小于等于10μm)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 0,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 0,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "10865333c97ac5b443984f6fd0d2b7c6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "10865333c97ac5b443984f6fd0d2b7c6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "5ec7f017b394e19d919dce200fc3684c",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "5ec7f017b394e19d919dce200fc3684c",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "6b561f175905ef52a9c4b02aab741551",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "6b561f175905ef52a9c4b02aab741551",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "7f9dddaf02f372cc7d329f4678c46fbc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "ced9002b92f52f07096945aae564c1d5",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "ced9002b92f52f07096945aae564c1d5",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "e151ce5965ec3b5346b3cd8dcac27645",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "e151ce5965ec3b5346b3cd8dcac27645",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0002",
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0002",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0002",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "eafea04098b4bf61ff94053d457a8760eee04b9ea04b039ab6f53e180aa83a5a"
+    },
+    {
+     "input_index": 1,
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "content_sha256": "c57667a03194fd8a9cbf7044b0dc36db737b793fa65e46c423f85c5b6080e893",
+     "content_len": 1370,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:二级浓度限值",
+        "edge:二级浓度限值|附录A"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 3,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 3,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "8d717f7bab4184537990a86fdd9aba21",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "8d717f7bab4184537990a86fdd9aba21",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "c45552d0a5d96a5541e6ea2588a6ccc2",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "c45552d0a5d96a5541e6ea2588a6ccc2",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "d9c1681fcfbfd2f48e654d5692f28b30",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "d9c1681fcfbfd2f48e654d5692f28b30",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0005",
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0005",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0005",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "c57667a03194fd8a9cbf7044b0dc36db737b793fa65e46c423f85c5b6080e893"
+    }
+   ],
+   "call": {
+    "service": "rerank",
+    "operation": "rerank",
+    "endpoint": "/v1/rerank",
+    "url_path_used": "configured-endpoint",
+    "model": "Qwen/Qwen3-Reranker-4B",
+    "documents_sent": 2,
+    "chars_sent": 4210,
+    "elapsed_ms": 605,
+    "status_code": 200,
+    "status": "success",
+    "response_evidence": {
+     "id": "01a120ba55af73df8cbc0181a44076b3",
+     "results_len": 2
+    },
+    "raw_response": {
+     "id": "01a120ba55af73df8cbc0181a44076b3",
+     "results": [
+      {
+       "index": 0,
+       "document": null,
+       "relevance_score": 0.9978933930397034
+      },
+      {
+       "index": 1,
+       "document": null,
+       "relevance_score": 0.9079969525337219
+      }
+     ],
+     "meta": {
+      "tokens": "<redacted>",
+      "billed_units": {
+       "input_tokens": "<redacted>",
+       "output_tokens": "<redacted>",
+       "image_tokens": "<redacted>",
+       "search_units": 0,
+       "classifications": 0
+      }
+     }
+    }
+   },
+   "ordered": [
+    {
+     "input_index": 0,
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "content_sha256": "eafea04098b4bf61ff94053d457a8760eee04b9ea04b039ab6f53e180aa83a5a",
+     "rerank_score": 0.9978933930397034,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": "4 环境空气功能区分类和质量要求 环境空气质量标准",
+       "chunk_order": 2,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.023312272503972054
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:表1(环境空气污染物基本项目浓度限值)",
+        "entity:二级浓度限值",
+        "entity:表2(环境空气污染物其他项目浓度限值)",
+        "edge:二级浓度限值|表1",
+        "edge:二级浓度限值|表2",
+        "edge:二氧化氮(NO2)|表1(环境空气污染物基本项目浓度限值)",
+        "edge:臭氧(O3)|表1(环境空气污染物基本项目浓度限值)",
+        "edge:二氧化硫(SO2)|表1(环境空气污染物基本项目浓度限值)",
+        "edge:一氧化碳(CO)|表1(环境空气污染物基本项目浓度限值)",
+        "edge:氮氧化物(NOx)|表2(环境空气污染物其他项目浓度限值)",
+        "edge:GB 3095-2012|表1(环境空气污染物基本项目浓度限值)",
+        "edge:GB 3095-2012|表2(环境空气污染物其他项目浓度限值)",
+        "edge:一类区|表1(环境空气污染物基本项目浓度限值)",
+        "edge:一类区|表2(环境空气污染物其他项目浓度限值)",
+        "edge:总悬浮颗粒物(TSP)|表2(环境空气污染物其他项目浓度限值)",
+        "edge:省级人民政府|表2(环境空气污染物其他项目浓度限值)",
+        "edge:二类区|二级浓度限值",
+        "edge:二类区|表1(环境空气污染物基本项目浓度限值)",
+        "edge:二类区|表2(环境空气污染物其他项目浓度限值)",
+        "edge:国务院环境保护行政主管部门|表2(环境空气污染物其他项目浓度限值)",
+        "edge:苯并[a]芘(BaP)|表2(环境空气污染物其他项目浓度限值)",
+        "edge:二级浓度限值|表1(环境空气污染物基本项目浓度限值)",
+        "edge:二级浓度限值|表2(环境空气污染物其他项目浓度限值)",
+        "edge:一级浓度限值|表1(环境空气污染物基本项目浓度限值)",
+        "edge:一级浓度限值|表2(环境空气污染物其他项目浓度限值)",
+        "edge:监测点位布设|表1(环境空气污染物基本项目浓度限值)",
+        "edge:监测点位布设|表2(环境空气污染物其他项目浓度限值)",
+        "edge:表2(环境空气污染物其他项目浓度限值)|铅(Pb)",
+        "edge:表1(环境空气污染物基本项目浓度限值)|颗粒物(粒径小于等于2.5μm)",
+        "edge:表1(环境空气污染物基本项目浓度限值)|颗粒物(粒径小于等于10μm)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 0,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 0,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "10865333c97ac5b443984f6fd0d2b7c6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "10865333c97ac5b443984f6fd0d2b7c6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "5ec7f017b394e19d919dce200fc3684c",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "5ec7f017b394e19d919dce200fc3684c",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "6b561f175905ef52a9c4b02aab741551",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "6b561f175905ef52a9c4b02aab741551",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "7f9dddaf02f372cc7d329f4678c46fbc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "ced9002b92f52f07096945aae564c1d5",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "ced9002b92f52f07096945aae564c1d5",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "e151ce5965ec3b5346b3cd8dcac27645",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "e151ce5965ec3b5346b3cd8dcac27645",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0002",
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0002",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0002",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 1,
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "content_sha256": "c57667a03194fd8a9cbf7044b0dc36db737b793fa65e46c423f85c5b6080e893",
+     "rerank_score": 0.9079969525337219,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:二级浓度限值",
+        "edge:二级浓度限值|附录A"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 3,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 3,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "8d717f7bab4184537990a86fdd9aba21",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "8d717f7bab4184537990a86fdd9aba21",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "c45552d0a5d96a5541e6ea2588a6ccc2",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "c45552d0a5d96a5541e6ea2588a6ccc2",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "d9c1681fcfbfd2f48e654d5692f28b30",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "d9c1681fcfbfd2f48e654d5692f28b30",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0005",
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0005",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0005",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    }
+   ],
+   "degraded": [],
+   "status": "ok",
+   "typed_targets": [
+    {
+     "target_type": "doc",
+     "workspace": "default",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_name": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "self_code": "GB3095",
+     "self_code_version": "2012",
+     "discovery": "code_exact",
+     "membership_basis": null,
+     "citation": {
+      "kind": "catalog_row",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+     },
+     "citation_verified": true
+    }
+   ],
+   "path_enrichment": [
+    "association completion: 3 table fragment path(s) and 9 non-table (block/source_unit) path(s) from unit_chunk_links JOIN source_units by actual unit_kind (replay paths predate the 5.3-F2 fix); no id/locator/kind guessed"
+   ],
+   "source_verification": {
+    "candidates_checked": 2,
+    "verified": 2,
+    "problems": []
+   },
+   "skipped_inputs": []
+  }
+ ],
+ "finished_at": "2026-10-09T20:54:05+0800"
+}

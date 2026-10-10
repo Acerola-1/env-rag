@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-10-04T17:01:59.468509+00:00",
+  "tool": "env_rag_final.audit (Phase 0 read-only audit)",
+  "code_version": {
+    "commit": "0732119a5ae3acd7c51ae6e6ca935b5bbfc7a3b3",
+    "dirty": true
+  },
+  "dependency_versions": {
+    "lightrag-hku": "1.5.7",
+    "asyncpg": "0.31.0",
+    "pgvector": "0.5.0",
+    "qdrant-client": "1.19.1",
+    "neo4j": "6.3.1",
+    "lxml": "6.1.3",
+    "python-dotenv": "1.2.4",
+    "python": "3.12.10",
+    "jieba": "not-installed（探针候选，未安装，Phase 2 才锁定）"
+  },
+  "execution": {
+    "entry": "uv run env-rag-final audit [--report-dir reports/pg-retrieval/phase-0]",
+    "transaction": "single READ ONLY transaction, statement_timeout=30s, statement_cache_size=0",
+    "queries": "SELECT-only against public.lightrag_doc_full / doc_status / doc_chunks; pg_catalog introspection; ts_debug probes",
+    "writes": "none — no DDL/DML, no LightRAG storage initialization against the live DB"
+  },
+  "inputs": {
+    "workspace": "default",
+    "parsed_artifacts_dir": "/Users/acerola/Dev/Python/RAG/LightRAG/inputs/__parsed__",
+    "corpus_fingerprint": {
+      "algorithm": "sha256 over sorted (doc_id, doc_name) list",
+      "value": "83ab60eff7c98450"
+    }
+  },
+  "steps": [
+    {
+      "step": "schema.json",
+      "status": "ok"
+    },
+    {
+      "step": "inventory.jsonl",
+      "status": "ok",
+      "rows": 279
+    },
+    {
+      "step": "mapping-samples.jsonl",
+      "status": "ok",
+      "rows": 6
+    },
+    {
+      "step": "search-probes.json",
+      "status": "ok"
+    },
+    {
+      "step": "sample-set.json",
+      "status": "ok"
+    },
+    {
+      "step": "compatibility.md",
+      "status": "ok"
+    }
+  ],
+  "rerun_policy": "语料或解析产物变化会导致 fingerprint 与部分计数字段变化；这是观察事实，不得为消除差异写库。"
+}

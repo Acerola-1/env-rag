@@ -1,0 +1,200 @@
+{
+  "version": "1.0",
+  "tables": {
+    "tb-eb0a53bb0a4ab5d9eae87c68f6a60fbb-0001": {
+      "id": "tb-eb0a53bb0a4ab5d9eae87c68f6a60fbb-0001",
+      "blockid": "a88de95be2f425184e9edf5c7a02de1a",
+      "heading": "（二）地级市空气质量状况",
+      "parent_headings": [
+        "安徽省生态环境质量月报"
+      ],
+      "dimension": [
+        17,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td>城市</td><td>空气质量综合指数</td><td>优良天数比例(%)</td><td> $PM_{2.5}$  $(\\mu g/m^3)$ </td></tr><tr><td>合肥</td><td>6.36</td><td>60.0</td><td>22.2</td></tr><tr><td>淮北</td><td>6.71</td><td>43.3</td><td>23.8</td></tr><tr><td>亳州</td><td>5.73</td><td>53.3</td><td>20.1</td></tr><tr><td>宿州</td><td>7.08</td><td>46.7</td><td>26.8</td></tr><tr><td>蚌埠</td><td>7.10</td><td>50.0</td><td>27.2</td></tr><tr><td>阜阳</td><td>6.56</td><td>56.7</td><td>25.7</td></tr><tr><td>淮南</td><td>6.67</td><td>53.3</td><td>26.4</td></tr><tr><td>滁州</td><td>7.00</td><td>60.0</td><td>28.2</td></tr><tr><td>六安</td><td>5.90</td><td>76.7</td><td>23.8</td></tr><tr><td>马鞍山</td><td>6.98</td><td>60.0</td><td>25.7</td></tr><tr><td>芜湖</td><td>6.42</td><td>66.7</td><td>22.7</td></tr><tr><td>宣城</td><td>5.54</td><td>73.3</td><td>22.0</td></tr><tr><td>铜陵</td><td>6.72</td><td>63.3</td><td>23.2</td></tr><tr><td>池州</td><td>5.90</td><td>63.3</td><td>19.3</td></tr><tr><td>安庆</td><td>6.06</td><td>63.3</td><td>22.0</td></tr><tr><td>黄山</td><td>3.87</td><td>100</td><td>13.1</td></tr></table>",
+      "caption": "表1 2026年6月全省16 个地级市环境空气质量状况",
+      "footnotes": [
+        "注：环境空气质量评价数据执行环境空气质量标准（GB3095-2026），下同。"
+      ],
+      "self_ref": "content_list.json#/24"
+    },
+    "tb-eb0a53bb0a4ab5d9eae87c68f6a60fbb-0002": {
+      "id": "tb-eb0a53bb0a4ab5d9eae87c68f6a60fbb-0002",
+      "blockid": "df251265da807dfd56f14e0be921ad9c",
+      "heading": "（三）县（市、区）环境空气",
+      "parent_headings": [
+        "安徽省生态环境质量月报"
+      ],
+      "dimension": [
+        36,
+        9
+      ],
+      "format": "html",
+      "content": "<table><tr><td>城市</td><td>县(市、区)</td><td> $PM_{2.5}$ </td><td>城市</td><td>县(市、区)</td><td> $PM_{2.5}$ </td><td>城市</td><td>县(市、区)</td><td> $PM_{2.5}$ </td></tr><tr><td rowspan=\"9\">合肥</td><td>瑶海区</td><td>22.5</td><td rowspan=\"2\">阜阳</td><td>颍上县</td><td>30.1</td><td rowspan=\"2\">芜湖</td><td>南陵县</td><td>19.5</td></tr><tr><td>庐阳区</td><td>22.5</td><td>界首市</td><td>27.4</td><td>无为市</td><td>23.3</td></tr><tr><td>蜀山区</td><td>22.4</td><td rowspan=\"7\">淮南</td><td>大通区</td><td>27.6</td><td rowspan=\"7\">宣城</td><td>宣州区</td><td>22.0</td></tr><tr><td>包河区</td><td>21.4</td><td>田家庵区</td><td>26.6</td><td>郎溪县</td><td>23.6</td></tr><tr><td>长丰县</td><td>26.6</td><td>谢家集区</td><td>26.0</td><td>泾县</td><td>16.1</td></tr><tr><td>肥东县</td><td>26.0</td><td>八公山区</td><td>26.3</td><td>绩溪县</td><td>12.5</td></tr><tr><td>肥西县</td><td>23.1</td><td>潘集区</td><td>25.5</td><td>旌德县</td><td>13.8</td></tr><tr><td>庐江县</td><td>29.3</td><td>凤台县</td><td>24.6</td><td>宁国市</td><td>16.3</td></tr><tr><td>巢湖市</td><td>24.4</td><td>寿县</td><td>23.1</td><td>广德市</td><td>24.2</td></tr><tr><td rowspan=\"4\">淮北</td><td>杜集区</td><td>22.9</td><td rowspan=\"8\">滁州</td><td>琅琊区</td><td>29.6</td><td rowspan=\"4\">铜陵</td><td>铜官区</td><td>23.2</td></tr><tr><td>相山区</td><td>24.0</td><td>南谯区</td><td>23.9</td><td>义安区</td><td>27.2</td></tr><tr><td>烈山区</td><td>24.0</td><td>来安县</td><td>28.0</td><td>郊区</td><td>20.2</td></tr><tr><td>濉溪县</td><td>20.2</td><td>全椒县</td><td>24.0</td><td>枞阳县</td><td>24.0</td></tr><tr><td rowspan=\"4\">亳州</td><td>谯城区</td><td>20.1</td><td>定远县</td><td>23.7</td><td rowspan=\"4\">池州</td><td>贵池区</td><td>19.3</td></tr><tr><td>涡阳县</td><td>24.7</td><td>凤阳县</td><td>31.3</td><td>东至县</td><td>19.3</td></tr><tr><td>蒙城县</td><td>26.9</td><td>天长市</td><td>20.6</td><td>石台县</td><td>12.7</td></tr><tr><td>利辛县</td><td>27.0</td><td>明光市</td><td>25.5</td><td>青阳县</td><td>14.9</td></tr><tr><td rowspan=\"5\">宿州</td><td>埇桥区</td><td>26.8</td><td rowspan=\"7\">六安</td><td>金安区</td><td>24.1</td><td rowspan=\"10\">安庆</td><td>迎江区</td><td>22.1</td></tr><tr><td>砀山县</td><td>27.2</td><td>裕安区</td><td>22.8</td><td>大观区</td><td>22.3</td></tr><tr><td>萧县</td><td>22.4</td><td>叶集区</td><td>30.6</td><td>宜秀区</td><td>21.9</td></tr><tr><td>灵璧县</td><td>24.9</td><td>霍邱县</td><td>26.1</td><td>怀宁县</td><td>17.9</td></tr><tr><td>泗县</td><td>22.2</td><td>舒城县</td><td>18.7</td><td>太湖县</td><td>22.5</td></tr><tr><td rowspan=\"7\">蚌埠</td><td>龙子湖区</td><td>27.8</td><td>金寨县</td><td>18.7</td><td>宿松县</td><td>20.8</td></tr><tr><td>蚌山区</td><td>26.3</td><td>霍山县</td><td>20.5</td><td>望江县</td><td>20.0</td></tr><tr><td>禹会区</td><td>29.1</td><td rowspan=\"6\">马鞍山</td><td>雨山区</td><td>25.4</td><td>岳西县</td><td>18.5</td></tr><tr><td>淮上区</td><td>24.9</td><td>花山区</td><td>25.7</td><td>桐城市</td><td>19.9</td></tr><tr><td>怀远县</td><td>31.8</td><td>博望区</td><td>18.6</td><td>潜山市</td><td>24.9</td></tr><tr><td>五河县</td><td>25.8</td><td>当涂县</td><td>23.1</td><td rowspan=\"7\">黄山</td><td>屯溪区</td><td>12.4</td></tr><tr><td>固镇县</td><td>31.0</td><td>含山县</td><td>28.4</td><td>黄山区</td><td>14.3</td></tr><tr><td rowspan=\"6\">阜阳</td><td>颍州区</td><td>25.4</td><td>和县</td><td>22.9</td><td>徽州区</td><td>12.1</td></tr><tr><td>颍东区</td><td>27.4</td><td rowspan=\"5\">芜湖</td><td>镜湖区</td><td>25.4</td><td>歙县</td><td>12.7</td></tr><tr><td>颍泉区</td><td>26.3</td><td>鸠江区</td><td>21.8</td><td>休宁县</td><td>11.5</td></tr><tr><td>临泉县</td><td>26.4</td><td>弋江区</td><td>21.2</td><td>黟县</td><td>10.2</td></tr><tr><td>太和县</td><td>28.5</td><td>湾沚区</td><td>25.7</td><td>祁门县</td><td>11.5</td></tr><tr><td>阜南县</td><td>25.6</td><td>繁昌区</td><td>24.0</td><td colspan=\"3\"></td></tr></table>",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/32"
+    },
+    "tb-eb0a53bb0a4ab5d9eae87c68f6a60fbb-0003": {
+      "id": "tb-eb0a53bb0a4ab5d9eae87c68f6a60fbb-0003",
+      "blockid": "9ca2a35510ef0d8827b7c82960779b82",
+      "heading": "（四）省级及以上经济开发区空气质量状况",
+      "parent_headings": [
+        "安徽省生态环境质量月报"
+      ],
+      "dimension": [
+        63,
+        6
+      ],
+      "format": "html",
+      "content": "<table><tr><td>城市</td><td>开发区名称</td><td> $PM_{2.5}$ </td><td>城市</td><td>开发区名称</td><td> $PM_{2.5}$ </td></tr><tr><td rowspan=\"10\">合肥</td><td>合肥经济技术开发区</td><td>24.4</td><td rowspan=\"10\">滁州</td><td>滁州经济技术开发区</td><td>19.4</td></tr><tr><td>合肥高新技术产业开发区</td><td>22.0</td><td>安徽滁州高新技术产业开发区</td><td>20.2</td></tr><tr><td>安徽合肥庐阳经济开发区</td><td>22.5</td><td>安徽滁州琅琊经济开发区</td><td>24.0</td></tr><tr><td>安徽合肥蜀山经济开发区</td><td>32.0</td><td>安徽滁州南谯经济开发区</td><td>19.1</td></tr><tr><td>安徽合肥包河经济开发区</td><td>33.5</td><td>安徽明光经济开发区</td><td>24.4</td></tr><tr><td>安徽合肥新站高新技术产业开发区</td><td>21.1</td><td>安徽全椒经济开发区</td><td>18.3</td></tr><tr><td>安徽合肥巢湖经济开发区</td><td>21.3</td><td>安徽凤阳经济开发区</td><td>26.5</td></tr><tr><td>安徽居巢经济开发区</td><td>25.1</td><td>安徽定远经济开发区</td><td>18.9</td></tr><tr><td>安徽长丰(双凤)经济开发区</td><td>22.3</td><td>安徽来安经济开发区</td><td>19.1</td></tr><tr><td>安徽肥东经济开发区</td><td>29.1</td><td>中新苏滁高新技术产业开发区</td><td>18.4*</td></tr><tr><td rowspan=\"2\">合肥</td><td>安徽肥西经济开发区</td><td>34.3</td><td rowspan=\"8\">六安</td><td>六安经济技术开发区</td><td>24.3</td></tr><tr><td>安徽庐江高新技术产业开发区</td><td>34.3</td><td>安徽六安高新技术产业开发区</td><td>24.0</td></tr><tr><td rowspan=\"5\">淮北</td><td>安徽淮北高新技术产业开发区</td><td>27.2</td><td>安徽六安叶集经济开发区</td><td>31.2</td></tr><tr><td>安徽淮北杜集经济开发区</td><td>27.0</td><td>安徽六安金安经济开发区</td><td>28.7</td></tr><tr><td>安徽淮北相山经济开发区</td><td>24.0</td><td>安徽霍邱经济开发区</td><td>31.3</td></tr><tr><td>安徽淮北烈山经济开发区</td><td>24.3</td><td>安徽舒城经济开发区</td><td>17.3</td></tr><tr><td>安徽濉溪经济开发区</td><td>27.4</td><td>安徽金寨经济开发区</td><td>24.7</td></tr><tr><td rowspan=\"6\">亳州</td><td>安徽亳州高新技术产业开发区</td><td>21.1</td><td>安徽霍山经济开发区</td><td>26.7</td></tr><tr><td>安徽亳州谯城经济开发区</td><td>23.1</td><td rowspan=\"8\">马鞍山</td><td>马鞍山经济技术开发区</td><td>27.9</td></tr><tr><td>安徽涡阳经济开发区</td><td>27.2</td><td>马鞍山慈湖高新技术产业开发区</td><td>26.7</td></tr><tr><td>安徽蒙城经济开发区</td><td>23.6</td><td>安徽马鞍山雨山经济开发区</td><td>19.8</td></tr><tr><td>安徽利辛经济开发区</td><td>28.3</td><td>安徽马鞍山博望高新技术产业开发区</td><td>29.1</td></tr><tr><td>亳州芜湖现代产业园</td><td>19.3</td><td>安徽当涂经济开发区</td><td>26.1</td></tr><tr><td rowspan=\"7\">宿州</td><td>安徽宿州经济开发区</td><td>27.8</td><td>安徽含山经济开发区</td><td>30.2</td></tr><tr><td>安徽宿州高新技术产业开发区</td><td>21.9</td><td>安徽和县经济开发区</td><td>29.7</td></tr><tr><td>安徽萧县经济开发区</td><td>27.8</td><td>郑蒲港新区现代产业园区</td><td>30.9</td></tr><tr><td>安徽灵璧经济开发区</td><td>29.8</td><td rowspan=\"9\">芜湖</td><td>芜湖经济技术开发区</td><td>22.6</td></tr><tr><td>安徽泗县经济开发区</td><td>23.9</td><td>芜湖高新技术产业开发区</td><td>21.7</td></tr><tr><td>安徽砀山经济开发区</td><td>25.5</td><td>安徽芜湖鸠江经济开发区</td><td>26.8</td></tr><tr><td>宿州马鞍山现代产业园</td><td>24.8</td><td>安徽芜湖三山经济开发区</td><td>20.4</td></tr><tr><td rowspan=\"6\">蚌埠</td><td>蚌埠高新技术产业开发区</td><td>29.5</td><td>安徽新芜经济开发区</td><td>26.7</td></tr><tr><td>安徽蚌埠经济开发区</td><td>27.6</td><td>安徽繁昌经济开发区</td><td>23.0</td></tr><tr><td>安徽蚌埠淮上经济开发区</td><td>29.9</td><td>安徽南陵经济开发区</td><td>24.5</td></tr><tr><td>安徽怀远经济开发区</td><td>29.4</td><td>安徽无为经济开发区</td><td>28.7</td></tr><tr><td>安徽五河经济开发区</td><td>25.5</td><td>皖江江北新兴产业集中区</td><td>25.6</td></tr><tr><td>安徽固镇经济开发区</td><td>36.7</td><td>宣城</td><td>宣城经济技术开发区</td><td>22.5</td></tr><tr><td rowspan=\"9\">阜阳</td><td>安徽阜阳经济开发区</td><td>25.7</td><td rowspan=\"8\">宣城</td><td>宁国经济技术开发区</td><td>16.7</td></tr><tr><td>安徽阜阳颍东经济开发区</td><td>37.5</td><td>安徽宣城高新技术产业开发区</td><td>23.9</td></tr><tr><td>安徽阜阳颍泉经济开发区</td><td>24.6</td><td>安徽宣城宣州经济开发区</td><td>33.4</td></tr><tr><td>安徽界首高新技术产业开发区</td><td>28.0</td><td>安徽广德经济开发区</td><td>27.3</td></tr><tr><td>安徽临泉经济开发区</td><td>29.5</td><td>安徽郎溪经济开发区</td><td>29.7</td></tr><tr><td>安徽太和经济开发区</td><td>36.3</td><td>安徽泾县经济开发区</td><td>22.7</td></tr><tr><td>安徽阜南经济开发区</td><td>25.6</td><td>安徽绩溪经济开发区</td><td>18.6</td></tr><tr><td>安徽颍上经济开发区</td><td>32.6</td><td>安徽旌德经济开发区</td><td>19.1</td></tr><tr><td>阜阳合肥现代产业园区</td><td>29.6</td><td rowspan=\"11\">安庆</td><td>安庆经济技术开发区</td><td>22.1</td></tr><tr><td rowspan=\"6\">淮南</td><td>淮南经济技术开发区</td><td>27.6</td><td>桐城经济技术开发区</td><td>21.7</td></tr><tr><td>淮南高新技术产业开发区</td><td>27.1</td><td>安徽安庆高新技术产业开发区</td><td>22.4</td></tr><tr><td>安徽淮南毛集经济开发区</td><td>21.2</td><td>安徽安庆宜秀经济开发区</td><td>22.2</td></tr><tr><td>安徽淮南潘集经济开发区</td><td>32.6</td><td>安徽安庆迎江经济开发区</td><td>24.2</td></tr><tr><td>安徽凤台经济开发区</td><td>37.2</td><td>安徽潜山经济开发区</td><td>23.9</td></tr><tr><td>安徽寿县经济开发区</td><td>27.4</td><td>安徽宿松经济开发区</td><td>22.0</td></tr><tr><td rowspan=\"5\">铜陵</td><td>铜陵经济技术开发区</td><td>20.2</td><td>安徽望江经济开发区</td><td>22.4</td></tr><tr><td>铜陵狮子山高新技术产业开发区</td><td>22.8</td><td>安徽太湖经济开发区</td><td>22.5</td></tr><tr><td>安徽铜陵义安经济开发区</td><td>24.7</td><td>安徽怀宁经济开发区</td><td>24.7</td></tr><tr><td>安徽铜陵郊区经济开发区</td><td>22.5</td><td>安徽岳西经济开发区</td><td>22.2</td></tr><tr><td>安徽枞阳经济开发区</td><td>23.7</td><td rowspan=\"7\">黄山</td><td>安徽黄山高新技术产业开发区</td><td>13.5</td></tr><tr><td rowspan=\"6\">池州</td><td>池州经济技术开发区</td><td>22.7</td><td>安徽黄山徽州经济开发区</td><td>12.8</td></tr><tr><td>安徽池州高新技术产业开发区</td><td>19.6</td><td>安徽黄山太平经济开发区</td><td>15.6</td></tr><tr><td>安徽东至经济开发区</td><td>20.2</td><td>安徽休宁经济开发区</td><td>13.5</td></tr><tr><td>安徽青阳经济开发区</td><td>20.4</td><td>安徽黟县经济开发区</td><td>17.0</td></tr><tr><td>安徽池州大渡口经济开发区(安徽石台经济开发区)</td><td>22.1</td><td>安徽祁门经济开发区</td><td>11.9</td></tr><tr><td>皖江江南新兴产业集中区</td><td>19.9</td><td>安徽歙县经济开发区</td><td>17.9</td></tr></table>",
+      "caption": "",
+      "footnotes": [
+        "注：\\*中新苏滁高新技术产业开发区本月因停电等基础保障问题导致数据有效天为22 天。"
+      ],
+      "self_ref": "content_list.json#/41"
+    },
+    "tb-eb0a53bb0a4ab5d9eae87c68f6a60fbb-0004": {
+      "id": "tb-eb0a53bb0a4ab5d9eae87c68f6a60fbb-0004",
+      "blockid": "1cd5cd30d37b9f627120788c01a1b585",
+      "heading": "（二）酸雨频率",
+      "parent_headings": [
+        "安徽省生态环境质量月报"
+      ],
+      "dimension": [
+        17,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>城市</td><td>平均pH值(无量纲)</td><td>酸雨频率(%)</td></tr><tr><td>合肥</td><td>6.14</td><td>0</td></tr><tr><td>淮北</td><td>6.90</td><td>0</td></tr><tr><td>亳州</td><td>7.55</td><td>0</td></tr><tr><td>宿州</td><td>6.96</td><td>0</td></tr><tr><td>蚌埠</td><td>6.77</td><td>0</td></tr><tr><td>阜阳</td><td>6.62</td><td>0</td></tr><tr><td>淮南</td><td>6.72</td><td>0</td></tr><tr><td>滁州</td><td>6.90</td><td>0</td></tr><tr><td>六安</td><td>6.38</td><td>0</td></tr><tr><td>马鞍山</td><td>6.27</td><td>6.7</td></tr><tr><td>芜湖</td><td>6.68</td><td>0</td></tr><tr><td>宣城</td><td>6.48</td><td>0</td></tr><tr><td>铜陵</td><td>6.47</td><td>0</td></tr><tr><td>池州</td><td>6.08</td><td>0</td></tr><tr><td>安庆</td><td>6.13</td><td>4.2</td></tr><tr><td>黄山</td><td>5.45</td><td>32.3</td></tr></table>",
+      "caption": "表4 2026 年6月全省16 个地级市降水pH 均值和酸雨频率",
+      "footnotes": [],
+      "self_ref": "content_list.json#/58"
+    },
+    "tb-eb0a53bb0a4ab5d9eae87c68f6a60fbb-0005": {
+      "id": "tb-eb0a53bb0a4ab5d9eae87c68f6a60fbb-0005",
+      "blockid": "24fc2d5f4defe1e03fc4d27f388f0629",
+      "heading": "五、城市功能区声环境",
+      "parent_headings": [
+        "安徽省生态环境质量月报"
+      ],
+      "dimension": [
+        18,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td>城 市</td><td>监测点位数(个)</td><td>昼间达标率(%)</td><td>夜间达标率(%)</td></tr><tr><td>合 肥</td><td>20</td><td>97.6</td><td>89.8</td></tr><tr><td>淮 北</td><td>10</td><td>92.6</td><td>98.7</td></tr><tr><td>亳 州</td><td>7</td><td>99.5</td><td>91.4</td></tr><tr><td>宿 州</td><td>10</td><td>97.3</td><td>93.0</td></tr><tr><td>蚌 埠</td><td>10</td><td>97.3</td><td>81.0</td></tr><tr><td>阜 阳</td><td>15</td><td>95.5</td><td>96.6</td></tr><tr><td>淮 南</td><td>15</td><td>98.2</td><td>90.0</td></tr><tr><td>滁 州</td><td>13</td><td>98.1</td><td>85.1</td></tr><tr><td>六 安</td><td>10</td><td>96.3</td><td>87.7</td></tr><tr><td>马鞍山</td><td>11</td><td>96.4</td><td>84.6</td></tr><tr><td>芜 湖</td><td>15</td><td>98.2</td><td>86.2</td></tr><tr><td>宣 城</td><td>7</td><td>99.5</td><td>80.3</td></tr><tr><td>铜 陵</td><td>11</td><td>95.8</td><td>75.5</td></tr><tr><td>池 州</td><td>10</td><td>91.7</td><td>85.2</td></tr><tr><td>安 庆</td><td>14</td><td>98.3</td><td>90.3</td></tr><tr><td>黄 山</td><td>7</td><td>95.2</td><td>84.3</td></tr><tr><td>全 省</td><td>185</td><td>96.7</td><td>87.5</td></tr></table>",
+      "caption": "表5 2026 年6月全省16 个地级市声环境功能区达标率",
+      "footnotes": [
+        "备注：某个城市月达标率采用该城市日达标率的算术平均计算，全省月达标率采用 16 个地级市月达标率的算术平均计算。"
+      ],
+      "self_ref": "content_list.json#/78"
+    },
+    "tb-eb0a53bb0a4ab5d9eae87c68f6a60fbb-0006": {
+      "id": "tb-eb0a53bb0a4ab5d9eae87c68f6a60fbb-0006",
+      "blockid": "78dd72a6e9b5419385f9572a968a7db9",
+      "heading": "1.环境空气评价项目及标准",
+      "parent_headings": [
+        "安徽省生态环境质量月报"
+      ],
+      "dimension": [
+        16,
+        7
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">过渡阶段浓度限值</td><td colspan=\"2\">浓度限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td><td>一级</td><td>二级</td></tr><tr><td rowspan=\"3\"> $SO_{2}$ </td><td>年平均</td><td>20</td><td>60</td><td>20</td><td>20</td><td rowspan=\"6\"> $\\mu g/m^{3}$ </td></tr><tr><td>日平均</td><td>50</td><td>150</td><td>50</td><td>50</td></tr><tr><td>1小时平均</td><td>150</td><td>500</td><td>150</td><td>150</td></tr><tr><td rowspan=\"3\"> $NO_{2}$ </td><td>年平均</td><td>40</td><td>40</td><td>30</td><td>30</td></tr><tr><td>日平均</td><td>80</td><td>80</td><td>50</td><td>50</td></tr><tr><td>1小时平均</td><td>200</td><td>200</td><td>200</td><td>200</td></tr><tr><td rowspan=\"2\">CO</td><td>日平均</td><td>4</td><td>4</td><td>4</td><td>4</td><td rowspan=\"2\"> $mg/m^{3}$ </td></tr><tr><td>1小时平均</td><td>10</td><td>10</td><td>10</td><td>10</td></tr><tr><td rowspan=\"2\"> $O_{3}$ </td><td>日最大8小时平均</td><td>100</td><td>160</td><td>100</td><td>160</td><td rowspan=\"6\"> $\\mu g/m^{3}$ </td></tr><tr><td>1小时平均</td><td>160</td><td>200</td><td>160</td><td>200</td></tr><tr><td rowspan=\"2\"> $PM_{10}$ </td><td>年平均</td><td>40</td><td>60</td><td>20</td><td>50</td></tr><tr><td>日平均</td><td>50</td><td>120</td><td>50</td><td>100</td></tr><tr><td rowspan=\"2\"> $PM_{2.5}$ </td><td>年平均</td><td>15</td><td>30</td><td>10</td><td>25</td></tr><tr><td>日平均</td><td>35</td><td>60</td><td>25</td><td>50</td></tr></table>",
+      "caption": "附表 1 环境空气污染物基本项目浓度限值",
+      "footnotes": [],
+      "self_ref": "content_list.json#/86"
+    },
+    "tb-eb0a53bb0a4ab5d9eae87c68f6a60fbb-0007": {
+      "id": "tb-eb0a53bb0a4ab5d9eae87c68f6a60fbb-0007",
+      "blockid": "78dd72a6e9b5419385f9572a968a7db9",
+      "heading": "1.环境空气评价项目及标准",
+      "parent_headings": [
+        "安徽省生态环境质量月报"
+      ],
+      "dimension": [
+        7,
+        5
+      ],
+      "format": "html",
+      "content": "<table><tr><td>空气质量指数</td><td>空气质量指数级别</td><td>空气质量指数类别</td><td>对健康影响情况</td><td>建议采取的措施</td></tr><tr><td>1~50</td><td>一级</td><td>优</td><td>空气质量令人满意,基本无空气污染</td><td>各类人群可正常活动</td></tr><tr><td>51~100</td><td>二级</td><td>良</td><td>空气质量可接受,但某些污染物可能对极少数异常敏感人群健康有较弱影响</td><td>极少数异常敏感人群应减少户外运动</td></tr><tr><td>101~150</td><td>三级</td><td>轻度污染</td><td>敏感人群症状有轻度加剧,健康人群出现刺激症状</td><td>青少年儿童、老年人及心血管系统疾病、呼吸系统疾病患者应减少长时间、高强度的户外锻炼</td></tr><tr><td>151~200</td><td>四级</td><td>中度污染</td><td>进一步加剧敏感人群症状,可能对健康人群心血管系统、呼吸系统有影响</td><td>青少年儿童、老年人及心血管系统疾病、呼吸系统疾病患者应避免长时间、高强度的户外锻炼,一般人群适量减少户外活动</td></tr><tr><td>201~300</td><td>五级</td><td>重度污染</td><td>心血管系统和呼吸系统患者症状显著加剧,运动耐受力降低,健康人群普遍出现症状</td><td>青少年儿童、老年人和心血管系统疾病、呼吸系统疾病患者应停留在室内,停止户外运动,一般人群减少户外活动</td></tr><tr><td>&gt;300</td><td>六级</td><td>严重污染</td><td>健康人群运动耐受力降低,有明显强烈症状,提前出现某些疾病</td><td>青少年儿童、老年人和病人应当留在室内,避免体力消耗,一般人群应避免户外活动</td></tr></table>",
+      "caption": "附表2 空气质量指数及相关信息",
+      "footnotes": [],
+      "self_ref": "content_list.json#/88"
+    },
+    "tb-eb0a53bb0a4ab5d9eae87c68f6a60fbb-0008": {
+      "id": "tb-eb0a53bb0a4ab5d9eae87c68f6a60fbb-0008",
+      "blockid": "79ae822b925a75b390a083be821268d6",
+      "heading": "3.地表水评价项目及标准",
+      "parent_headings": [
+        "安徽省生态环境质量月报"
+      ],
+      "dimension": [
+        6,
+        2
+      ],
+      "format": "html",
+      "content": "<table><tr><td>水质类别</td><td>水质状况</td></tr><tr><td>I~II类水质</td><td>优</td></tr><tr><td>III类水质</td><td>良好</td></tr><tr><td>IV类水质</td><td>轻度污染</td></tr><tr><td>V类水质</td><td>中度污染</td></tr><tr><td>劣V类水质</td><td>重度污染</td></tr></table>",
+      "caption": "附表3 断面水质定性评价",
+      "footnotes": [],
+      "self_ref": "content_list.json#/100"
+    },
+    "tb-eb0a53bb0a4ab5d9eae87c68f6a60fbb-0009": {
+      "id": "tb-eb0a53bb0a4ab5d9eae87c68f6a60fbb-0009",
+      "blockid": "79ae822b925a75b390a083be821268d6",
+      "heading": "3.地表水评价项目及标准",
+      "parent_headings": [
+        "安徽省生态环境质量月报"
+      ],
+      "dimension": [
+        6,
+        2
+      ],
+      "format": "html",
+      "content": "<table><tr><td>水质类别比例</td><td>水质状况</td></tr><tr><td>I~III类水质比例≥90%</td><td>优</td></tr><tr><td>75%≤I~III类水质比例&lt;90%</td><td>良好</td></tr><tr><td>I~III类水质比例&lt;75%,且劣V类比例&lt;20%</td><td>轻度污染</td></tr><tr><td>I~III类水质比例&lt;75%,且20%≤劣V类比例&lt;40%</td><td>中度污染</td></tr><tr><td>I~III类水质比例&lt;60%,且劣V类比例≥40%</td><td>重度污染</td></tr></table>",
+      "caption": "附表4 河流、流域（水系）水质定性评价分级",
+      "footnotes": [
+        "（4）综合营养状态指数和营养状态评价分级的对应关系为："
+      ],
+      "self_ref": "content_list.json#/105"
+    },
+    "tb-eb0a53bb0a4ab5d9eae87c68f6a60fbb-0010": {
+      "id": "tb-eb0a53bb0a4ab5d9eae87c68f6a60fbb-0010",
+      "blockid": "79ae822b925a75b390a083be821268d6",
+      "heading": "3.地表水评价项目及标准",
+      "parent_headings": [
+        "安徽省生态环境质量月报"
+      ],
+      "dimension": [
+        6,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td colspan=\"2\">综合营养状态指数</td><td colspan=\"2\">湖泊(水库)营养状态</td></tr><tr><td colspan=\"2\">TLI (Σ) &lt; 30</td><td colspan=\"2\">贫营养</td></tr><tr><td colspan=\"2\">30 ≤ TLI (Σ) ≤ 50</td><td colspan=\"2\">中营养</td></tr><tr><td rowspan=\"3\">TLI (Σ) &gt; 50</td><td>50 &lt; TLI (Σ) ≤ 60</td><td rowspan=\"3\">富营养</td><td>轻度富营养</td></tr><tr><td>60 &lt; TLI (Σ) ≤ 70</td><td>中度富营养</td></tr><tr><td>TLI (Σ) &gt; 70</td><td>重度富营养</td></tr></table>",
+      "caption": "附表5 湖泊、水库营养状态评价分级",
+      "footnotes": [],
+      "self_ref": "content_list.json#/106"
+    },
+    "tb-eb0a53bb0a4ab5d9eae87c68f6a60fbb-0011": {
+      "id": "tb-eb0a53bb0a4ab5d9eae87c68f6a60fbb-0011",
+      "blockid": "aad0301d8e1008f5b425ea1086d003e4",
+      "heading": "4.城市功能区声环境质量评价项目及标准",
+      "parent_headings": [
+        "安徽省生态环境质量月报"
+      ],
+      "dimension": [
+        8,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\" colspan=\"2\">声环境功能区类别</td><td colspan=\"2\">时段</td></tr><tr><td>昼间</td><td>夜间</td></tr><tr><td colspan=\"2\">0类</td><td>50</td><td>40</td></tr><tr><td colspan=\"2\">1类</td><td>55</td><td>45</td></tr><tr><td colspan=\"2\">2类</td><td>60</td><td>50</td></tr><tr><td colspan=\"2\">3类</td><td>65</td><td>55</td></tr><tr><td rowspan=\"2\">4类</td><td>4a类</td><td>70</td><td>55</td></tr><tr><td>4b类</td><td>70</td><td>60</td></tr></table>",
+      "caption": "附表 6 各类声环境功能区环境噪声限值",
+      "footnotes": [],
+      "self_ref": "content_list.json#/109"
+    }
+  }
+}

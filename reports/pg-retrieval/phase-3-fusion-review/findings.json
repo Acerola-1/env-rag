@@ -1,0 +1,38 @@
+[
+  {
+    "id": "F1",
+    "path": "src/env_rag_final/fusion.py",
+    "start_line": 278,
+    "end_line": 283,
+    "severity": "high",
+    "category": "bug",
+    "content": "Allowed docs only come from code_exact; two real PG-verified explicit amendment targets are rejected from local candidates. Preserve proven explicit attribution without loosening self-code or version restrictions."
+  },
+  {
+    "id": "F2",
+    "path": "src/env_rag_final/fusion.py",
+    "start_line": 165,
+    "end_line": 177,
+    "severity": "medium",
+    "category": "bug",
+    "content": "Table fragment paths lose unit/table ID and citation. Actual fact-002 yields two identical PG path dictionaries for different physical fragments; retain each original source binding and typed-target metadata."
+  },
+  {
+    "id": "F3",
+    "path": "src/env_rag_final/fusion.py",
+    "start_line": 529,
+    "end_line": 536,
+    "severity": "high",
+    "category": "bug",
+    "content": "Current-query service receipts never populate failed_receipts. PG reread failure after local success produces a zero-service failure terminal. Gold guard refusal at line 503 also escapes the terminal writer."
+  },
+  {
+    "id": "F4",
+    "path": "src/env_rag_final/fusion.py",
+    "start_line": 507,
+    "end_line": 507,
+    "severity": "high",
+    "category": "bug",
+    "content": "Production identity capture runs before config validation at line 534. A forbidden QDRANT_WORKSPACE override causes two backend captures before refusal; validate all requested configurations locally first."
+  }
+]

@@ -1,0 +1,86 @@
+--- reports/pg-retrieval/phase-4-scoring-readiness-r3/assess_two_rounds.py	2026-10-09 18:06:59
++++ reports/pg-retrieval/phase-4-scoring-readiness-r4/assess_two_rounds.py	2026-10-09 19:06:20
+@@ -551,10 +551,12 @@
+     workspace) — never consume another question's first results row."""
+     if not _generation_mode():
+         return
+-    # R4 r3: under main scoring, a SUCCESSFUL result row must carry a legal
+-    # query_id/workspace — missing fields may never skip the comparison.
+-    # Explicit failure / no-results / absent legs returned before this call
+-    # keep their failure/absent semantics.
++    # R4 r3 + r4 scope: during the FULL formal generation consumption path
++    # (answer scoring AND the recall/typed discovery reads), a SUCCESSFUL
++    # result row must carry a legal query_id/workspace — missing fields may
++    # never skip the comparison. Explicit failure / no-results / absent legs
++    # returned before this call keep their failure/absent semantics, and
++    # direct bare-interface callers run with the switch restored to False.
+     got_q = res.get("query_id")
+     if got_q is None and _STRICT_BIND:
+         raise InputIntegrityError(
+@@ -2626,31 +2628,45 @@
+             doc_reg = doc_registry()
+             issued_legs = answer_issued_by_leg(terminal)
+             global _STRICT_BIND
++            prev_strict = _STRICT_BIND
+             _STRICT_BIND = True
+             try:
+                 verdicts = _score_legs(terminal, gold_by, doc_reg, issued_legs)
++                # S1: every file actually consumed must be bound by the manifest
++                man = json.loads((ROUND1 / RUN_MANIFEST_NAME).read_text(encoding="utf-8"))["files"]
++                bound = {str((REPO / k).resolve()) for k in man}  # absolute k stays k
++                # explicit attachments (anchor/records/mapping) bind by CLI argument
++                # with their SHA recorded in generation_binding — they live outside
++                # the run directory by design and are not run-manifest artifacts.
++                attachments = {
++                    str(Path(ANCHOR_PATH).resolve()),
++                    str(REVIEW_RECORDS_PATH.resolve()) if REVIEW_RECORDS_PATH else None,
++                    str(Path(args.mapping).resolve()) if args.mapping else None,
++                } - {None}
++                unbound = sorted(p for p in CONSUMED if p not in bound | attachments)
++                if unbound:
++                    raise InputIntegrityError(
++                        f"consumed artifacts not bound by manifest: {len(unbound)} (e.g. {unbound[:2]})"
++                    )
++                # r4 scope: strict identity binding spans the WHOLE formal
++                # consumption path. recall_report/typed_evidence_recall
++                # re-read the same official fusion/local artifacts through
++                # _fusion_segments / pre_expansion_docs /
++                # local_discovery_identities; running them AFTER the switch
++                # had closed let a placed SUCCESS row missing
++                # query_id/workspace pass as a lenient bare probe. The S1
++                # coverage check moves with them so fusion/local artifacts
++                # consumed here are manifest-bound before publish, and the
++                # finally restores the pre-entry value on success AND on
++                # every exception — direct (bare-interface) callers outside
++                # main never enter this scope and keep lenient probe
++                # semantics.
++                recall = recall_report(gold)
++                typed = typed_evidence_recall(gold)
++                if typed is not None:
++                    recall["typed_evidence_recall"] = typed
+             finally:
+-                _STRICT_BIND = False
+-            # S1: every file actually consumed must be bound by the manifest
+-            man = json.loads((ROUND1 / RUN_MANIFEST_NAME).read_text(encoding="utf-8"))["files"]
+-            bound = {str((REPO / k).resolve()) for k in man}  # absolute k stays k
+-            # explicit attachments (anchor/records/mapping) bind by CLI argument
+-            # with their SHA recorded in generation_binding — they live outside
+-            # the run directory by design and are not run-manifest artifacts.
+-            attachments = {
+-                str(Path(ANCHOR_PATH).resolve()),
+-                str(REVIEW_RECORDS_PATH.resolve()) if REVIEW_RECORDS_PATH else None,
+-                str(Path(args.mapping).resolve()) if args.mapping else None,
+-            } - {None}
+-            unbound = sorted(p for p in CONSUMED if p not in bound | attachments)
+-            if unbound:
+-                raise InputIntegrityError(
+-                    f"consumed artifacts not bound by manifest: {len(unbound)} (e.g. {unbound[:2]})"
+-                )
+-            recall = recall_report(gold)
+-            typed = typed_evidence_recall(gold)
+-            if typed is not None:
+-                recall["typed_evidence_recall"] = typed
++                _STRICT_BIND = prev_strict
+             ledger = ledger_corrections(terminal)
+             results = _assemble_results(verdicts, verification, recall, ledger, gen_mode=True)
+             results["generation_binding"] = {

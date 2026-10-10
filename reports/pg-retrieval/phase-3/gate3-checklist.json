@@ -1,0 +1,118 @@
+{
+  "task": "5.6 Gate 3 condition checklist (materials only; decision reserved for the main agent)",
+  "prepared_at": "2026-10-07",
+  "real_calls_this_round": {
+    "answer_model": 0,
+    "keyword_llm": 0,
+    "embedding": 0,
+    "rerank": 0,
+    "db": 0,
+    "writes": 0,
+    "note": "docs/evidence consolidation round; commands verified against the CLI parser offline (--help/argparse), no network execution"
+  },
+  "identity_contract": {
+    "status": "passed",
+    "evidence": {
+      "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "catalog_run_snapshot": "c15c741742394320/4919b3938ad93747",
+      "search_active": "872d689343a9cbb6",
+      "gold_sha256": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+      "eight_table_counts": [
+        221,
+        5709,
+        279,
+        16514,
+        65527,
+        221,
+        221,
+        119575
+      ],
+      "workspace_mapping": "only PG default <-> vector '_' <-> graph 'base', env override refused",
+      "files": [
+        "reports/pg-retrieval/gate-2/review-r5/gold-approved.json",
+        "reports/pg-retrieval/phase-3-answer/answer-manifest.json",
+        "reports/pg-retrieval/phase-3-rerank-r2/rerank-runtime-latest.json",
+        "reports/pg-retrieval/phase-3-fusion-review/read-only-probes.json"
+      ]
+    },
+    "boundary": "16514 cache rows are a DRIFT check only; zero answer-cache access is proven by the direct-HTTP code path (no hashing_kv/LightRAG instantiation)；本轮未采集新生产身份，下次运行必须执行前后守卫。"
+  },
+  "joint_rerank_really_happened": {
+    "status": "passed",
+    "evidence": {
+      "accepted_real_run": {
+        "query": "fact-002",
+        "endpoint_class": "configured SiliconFlow-style /v1/rerank (Qwen/Qwen3-Reranker-4B)",
+        "result": "HTTP 200, 997ms, 10 merged inputs, 16441 chars, source_verification 10/10, scores mapped back by response index",
+        "file": "reports/pg-retrieval/phase-3-rerank-r2/rerank-runtime-latest.json",
+        "sha256": "4ad5a56f14acf6debd17dbc16f3836c767322b0b1779ab166f873dfce044227c"
+      },
+      "history_preserved": [
+        "first real call HTTP 404 (133ms, URL double-concat; degraded, no fabricated scores) - phase-3-rerank/rerank-runtime-20261007T085918.json",
+        "first success HTTP 200/863ms - phase-3-rerank/rerank-runtime-20261007T090036.json"
+      ],
+      "consumption": "5.5 replays this accepted generation bound by file SHA + identity; queries without a rerank replay record an explicit absent flag (never a claimed rerank success)"
+    },
+    "boundary": "real rerank evidence exists for the fact-002 merged set only; other queries legitimately run PG-only/replay with explicit absent status — recorded, not fabricated"
+  },
+  "confirmed_scope_complete_no_topk_truncation": {
+    "status": "passed",
+    "evidence": {
+      "table_enum_real": "GB8978表1两物理片13/13原始网格回读；全部引用指向chunk-001，该chunk实际精排第1位0.999273。真实完整物理片读取与低排名fixture证明分列。",
+      "prose_enum_real": "GB18466 第3章 3.1-3.4, 4/4 unit-relative-span re-reads - phase-3-answer-enums/",
+      "synthesis_real": "syn-004 both scopes located and read (5+3 items, 8/8 re-read problems[]) - phase-3-answer-syn4-check/answer-runtime-latest.json",
+      "scope_selection_contract": "targets_resolved/typed define membership; a resolved target missing from candidates is REGISTERED for the full read; non-target docs expand but cannot degrade coverage",
+      "fusion_budget": "usable>40 per query -> partial (refuse-not-truncate); rerank input >40 refused",
+      "lowest_rank_continuation_fixture": "tests/test_answer.py：独立续片chunk分数0.02的fixture反例，读取全部13项；不是生产精排分数或独立真实低排名续片。",
+      "synthesis_raw_positions_offline": "主agent离线从原始blocks重建8项，raw坐标与历史上下文SHA一致；syn004-source-citations.json。per-unit chunk映射与当前生产身份留给正式执行复核。"
+    }
+  },
+  "degradation_and_failure_visible": {
+    "status": "passed",
+    "evidence": {
+      "replay_guards": "前置身份采集后、范围读取及服务请求前拒绝代次不符；输入SHA只记录，reviewer另行比对。",
+      "service_failures": "rerank 404/401/timeout/HTTP500 receipts; answer http_503 x3 published (two historical + the single bounded validation run); keyword/embedding/PG failures -> degraded with true receipts",
+      "conservative_coverage": "fact-002 missing unit -> partial (number kept); syn-001 missing condition -> incomplete 0 calls; ambiguous table kept ambiguous; unsupported/swapped prose claims -> model_failure; slot matrix gaps -> incomplete_answer_coverage; budget truncation never complete",
+      "terminal_exit": "A3 unified try/finally boundary: failed post-guard/connection failure writes terminal then raises; CLI non-zero; original and post errors coexist - tests/test_answer_review_r1.py (frozen 9/9)；已记录model_failure/partial是业务结果可正常返回，不能以CLI退出0认定回答成功。"
+    }
+  },
+  "formal_chain_reproducible": {
+    "status": "passed_documentary",
+    "evidence": {
+      "commands": "README.md 《Phase 3 运行说明（5.6 交付）》 — every command cross-checked against the argparse parser in src/env_rag_final/cli.py",
+      "call_semantics_labeled": "per-command real call flags (local/fusion/rerank/answer; --pg-only; --allow-model default OFF = 0 answer model)",
+      "unit_replay_chain": "fusion-runtime-latest.json -> rerank-candidates --fused-report -> rerank-runtime-latest.json -> answer --fused-report --rerank-report (defaults point at accepted generations)",
+      "not_executed_with_network": "初始材料轮仅离线核对；随后syn3正式answer入口已实测范围读取、单次请求和503失败终态。未重新运行全检索/精排链路，真实合成成功路径仍未验证。"
+    }
+  },
+  "real_end_to_end_synthesis_success": {
+    "status": "passed_manual_semantic_review_for_environmental_medium_identification",
+    "evidence": {
+      "attempts": [
+        "phase-3-answer-syn/answer-runtime-latest.json: 1 authorized call -> http_503 (64ms)",
+        "phase-3-answer-syn2/answer-runtime-latest.json: 1 authorized call -> http_503 (64ms)",
+        "phase-3-answer-syn3/answer-runtime-latest.json: 1 authorized call -> http_503 (73ms) — the single bounded validation run arranged after the 5.6 material review; pre-guards passed (identity frozen, replay SHAs = prep material), 8/8 re-reads clean, user-content 1934 chars / context SHA b0487919… identical to prep, system prompt sha 626fda41… (aligned), no retry, receipt kept",
+        "phase-3-answer-syn4-hy3/answer-runtime-latest.json: 1 authorized call after main-agent switched QUERY_LLM_MODEL deepseek-v4.1-flash -> hy3 -> FIRST REAL HTTP 200 (22.1s); model returned well-formed JSON with legal edition labels and verbatim quotes, but BOTH prose claims were paraphrases (not continuous verbatim fragments) and were REFUSED by the accepted C1 contract -> model_failure/partial, 0 items; refusal is the contract working, not a fabricated pass; no retry"
+      ],
+      "context_stability": "三次503的user-content均1934字符、context SHA相同；hy3轮同一上下文发出后首次收到真实200——仅证明同一材料链路可发出并获响应，更早503的上游根因未独立确认。",
+      "fixture_success_not_substitute": "syn6是真实HTTP200及应用合同通过；syn4-hy3/syn5/syn7是真实合同拒绝。此前fixture证据继续独立保留。",
+      "preparation_for_one_real_call": "reports/pg-retrieval/phase-3/syn-prep-syn004.json (query, replayed inputs' SHAs, sources/versions/snapshot, required slots, memberships/citations, intended messages, budget, keyless config list, contract-consistency note)",
+      "request_material_complete": "syn-prep-syn004.json完整messages及8项raw定位已补齐；系统提示只作最小一致性调整。真实执行必须重新校验活体身份和输入文件。",
+      "multi_sample_diagnostic": "3 identical hy3 runs (syn5/syn6/syn7, one call each, all receipts kept): syn5 & syn7 paraphrased claims refused by the C1 contract (partial/model_failure); syn6 FIRST REAL COMPLETE SYNTHESIS — claims verbatim (GB3838 five-water-class sentence; GB3095 appendix-A intro sentence), 0 verification problems, 2 citations verified, coverage=complete, identity frozen. Non-determinism at temperature=0 confirmed (1/3 compliant). Total 4 real hy3 calls, no retries, no cherry-picking.",
+      "manual_check_scope": "main-agent semantic review still required: does each claim actually answer 'which environmental elements' — note the GB3095 supporting sentence is the APPENDIX-A (informative) intro, previously flagged as not chapter-7 requirements; acceptability is the main agent's call.",
+      "manual_review_file": "reports/pg-retrieval/phase-3-gate3-review/review.md"
+    },
+    "decision": "syn6人工要素识别通过；附录A仅作为环境介质识别证据，非第7章或强制限值依据。四次诊断全保留；稳定性/质量进入Phase4，不再追加单题请求。"
+  },
+  "gate3": {
+    "self_checked": false,
+    "tasks_5_6_checked": true,
+    "note": "5.6完成，Gate3放行。5.1–5.5工程结论保持；syn6真实成功与环境要素识别语义通过。Phase4交接就绪，本轮未执行Phase4或新请求。",
+    "main_agent_decision": "passed",
+    "materials_review": "accepted_after_main_agent_offline_corrections",
+    "bounded_execution_review": "accepted_failure_receipt",
+    "review_file": "reports/pg-retrieval/phase-3-gate3-review/review.md",
+    "manual_semantic_review": "passed_for_this_medium_identification_question",
+    "phase4": "handoff_ready_not_executed"
+  }
+}

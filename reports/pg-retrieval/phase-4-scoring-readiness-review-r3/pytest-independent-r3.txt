@@ -1,0 +1,44 @@
+FF.                                                                      [100%]
+=================================== FAILURES ===================================
+___ test_strict_binding_covers_post_answer_discovery_reads[fusion-query_id] ____
+
+ctx = (<module 'scoring_r3_target' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-re.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-931/test_strict_binding_covers_pos0')
+kind = 'fusion', omitted = 'query_id'
+
+    @pytest.mark.parametrize(("kind", "omitted"), [("fusion", "query_id"), ("local", "workspace")])
+    def test_strict_binding_covers_post_answer_discovery_reads(ctx, tmp_path, kind, omitted):
+        a, h = ctx
+        run = discovery_run(h, tmp_path, kind, omitted)
+>       with pytest.raises(a.InputIntegrityError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE InputIntegrityError
+
+reports/pg-retrieval/phase-4-scoring-readiness-review-r3/test_scoring_review_r3.py:62: Failed
+----------------------------- Captured stdout call -----------------------------
+rows: 123
+{"positive": {"FAIL": 93}, "counter": {"PENDING": 21, "FAIL": 9}}
+inputs ok: True | manifest entries: 12
+___ test_strict_binding_covers_post_answer_discovery_reads[local-workspace] ____
+
+ctx = (<module 'scoring_r3_target' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-re.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-931/test_strict_binding_covers_pos1')
+kind = 'local', omitted = 'workspace'
+
+    @pytest.mark.parametrize(("kind", "omitted"), [("fusion", "query_id"), ("local", "workspace")])
+    def test_strict_binding_covers_post_answer_discovery_reads(ctx, tmp_path, kind, omitted):
+        a, h = ctx
+        run = discovery_run(h, tmp_path, kind, omitted)
+>       with pytest.raises(a.InputIntegrityError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE InputIntegrityError
+
+reports/pg-retrieval/phase-4-scoring-readiness-review-r3/test_scoring_review_r3.py:62: Failed
+----------------------------- Captured stdout call -----------------------------
+rows: 123
+{"positive": {"FAIL": 93}, "counter": {"PENDING": 21, "FAIL": 9}}
+inputs ok: True | manifest entries: 12
+=========================== short test summary info ============================
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review-r3/test_scoring_review_r3.py::test_strict_binding_covers_post_answer_discovery_reads[fusion-query_id]
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review-r3/test_scoring_review_r3.py::test_strict_binding_covers_post_answer_discovery_reads[local-workspace]
+2 failed, 1 passed in 1.89s

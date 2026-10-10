@@ -1,0 +1,325 @@
+{
+ "legs": [
+  {
+   "leg": "file-enum-005-local",
+   "query_id": "file-enum-005",
+   "path": "local",
+   "evidence_label": "存量产物读取 + 离线owning入口回放（当前源码；服务炸弹；目录行=gate-2 存量 221 行 verbatim）",
+   "coverage_status": "complete",
+   "items_count": 1,
+   "published_doc_ids": [
+    "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+   ],
+   "enum": {
+    "predicate": "((self_code = $3 AND self_code_version IN ($4, $5)))",
+    "predicate_args": [
+     "GB18466",
+     "05",
+     "2005"
+    ],
+    "attribution_branch": true,
+    "attribution_added": 0,
+    "members_total": 1,
+    "members_processed": 1,
+    "coverage_status": "complete"
+   },
+   "attribution_route_calls": [
+    {
+     "workspace": "default",
+     "search_id_arg": "",
+     "tsquery": [
+      "'gb18466'",
+      ""
+     ],
+     "limit": "400",
+     "returned_rows": 0
+    }
+   ],
+   "match_vs_round1_stored": {
+    "stored_items_count": 1,
+    "stored_doc_ids": [
+     "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+    ],
+    "stored_coverage": "complete",
+    "reproduces_stored": true
+   },
+   "posthoc_gold_reconciliation": {
+    "expected_doc_ids": [
+     "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "doc-9bb11e5d3809e590259aef28fb61062b",
+     "doc-b423a0e3331541588988fd34496c349d"
+    ],
+    "missing": [
+     "doc-9bb11e5d3809e590259aef28fb61062b",
+     "doc-b423a0e3331541588988fd34496c349d"
+    ],
+    "extra": []
+   },
+   "model_calls_used": 0,
+   "identity_before_matches_frozen": true
+  },
+  {
+   "leg": "file-enum-005-pg",
+   "query_id": "file-enum-005",
+   "path": "pg",
+   "evidence_label": "存量产物读取 + 离线owning入口回放（当前源码；服务炸弹；目录行=gate-2 存量 221 行 verbatim）",
+   "coverage_status": "complete",
+   "items_count": 3,
+   "published_doc_ids": [
+    "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+    "doc-9bb11e5d3809e590259aef28fb61062b",
+    "doc-b423a0e3331541588988fd34496c349d"
+   ],
+   "enum": {
+    "predicate": "((self_code = $3 AND self_code_version IN ($4, $5)))",
+    "predicate_args": [
+     "GB18466",
+     "05",
+     "2005"
+    ],
+    "attribution_branch": true,
+    "attribution_added": 2,
+    "members_total": 1,
+    "members_processed": 1,
+    "coverage_status": "complete"
+   },
+   "attribution_route_calls": [
+    {
+     "workspace": "default",
+     "search_id_arg": "872d689343a9cbb6",
+     "tsquery": [
+      "'gb18466'",
+      ""
+     ],
+     "limit": "400",
+     "returned_rows": 221
+    }
+   ],
+   "match_vs_round1_stored": {
+    "stored_items_count": 3,
+    "stored_doc_ids": [
+     "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "doc-9bb11e5d3809e590259aef28fb61062b",
+     "doc-b423a0e3331541588988fd34496c349d"
+    ],
+    "stored_coverage": "complete",
+    "reproduces_stored": true
+   },
+   "posthoc_gold_reconciliation": {
+    "expected_doc_ids": [
+     "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "doc-9bb11e5d3809e590259aef28fb61062b",
+     "doc-b423a0e3331541588988fd34496c349d"
+    ],
+    "missing": [],
+    "extra": []
+   },
+   "model_calls_used": 0,
+   "identity_before_matches_frozen": true
+  },
+  {
+   "leg": "file-enum-001-local",
+   "query_id": "file-enum-001",
+   "path": "local",
+   "evidence_label": "存量产物读取 + 离线owning入口回放（当前源码；服务炸弹；目录行=gate-2 存量 221 行 verbatim）",
+   "coverage_status": "complete",
+   "items_count": 2,
+   "published_doc_ids": [
+    "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+    "doc-4c883d21fa02a53189e0911c3d59d1d1"
+   ],
+   "enum": {
+    "predicate": "((self_code = $3))",
+    "predicate_args": [
+     "GB3095"
+    ],
+    "attribution_branch": false,
+    "attribution_added": 0,
+    "members_total": 2,
+    "members_processed": 2,
+    "coverage_status": "complete"
+   },
+   "attribution_route_calls": [],
+   "match_vs_round1_stored": {
+    "stored_items_count": 2,
+    "stored_doc_ids": [
+     "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc-4c883d21fa02a53189e0911c3d59d1d1"
+    ],
+    "stored_coverage": "complete",
+    "reproduces_stored": true
+   },
+   "posthoc_gold_reconciliation": {
+    "expected_doc_ids": [
+     "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc-4c883d21fa02a53189e0911c3d59d1d1"
+    ],
+    "missing": [],
+    "extra": []
+   },
+   "model_calls_used": 0,
+   "identity_before_matches_frozen": true
+  },
+  {
+   "leg": "file-enum-002-local",
+   "query_id": "file-enum-002",
+   "path": "local",
+   "evidence_label": "存量产物读取 + 离线owning入口回放（当前源码；服务炸弹；目录行=gate-2 存量 221 行 verbatim）",
+   "coverage_status": "complete",
+   "items_count": 5,
+   "published_doc_ids": [
+    "doc-507bc40d1d6395c6932d2201e8483504",
+    "doc-60eb1ff63505bb659d0d97f2524479a2",
+    "doc-90f413ede6224a15083a7e2f75ac0c63",
+    "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+    "doc-b64a60d5251a9101f3d8f050f6933216"
+   ],
+   "enum": {
+    "predicate": "(doc_name LIKE '%' || $3 || '%')",
+    "predicate_args": [
+     "中国移动源环境管理年报"
+    ],
+    "attribution_branch": false,
+    "attribution_added": 0,
+    "members_total": 5,
+    "members_processed": 5,
+    "coverage_status": "complete"
+   },
+   "attribution_route_calls": [],
+   "match_vs_round1_stored": {
+    "stored_items_count": 5,
+    "stored_doc_ids": [
+     "doc-507bc40d1d6395c6932d2201e8483504",
+     "doc-60eb1ff63505bb659d0d97f2524479a2",
+     "doc-90f413ede6224a15083a7e2f75ac0c63",
+     "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+     "doc-b64a60d5251a9101f3d8f050f6933216"
+    ],
+    "stored_coverage": "complete",
+    "reproduces_stored": true
+   },
+   "posthoc_gold_reconciliation": {
+    "expected_doc_ids": [
+     "doc-507bc40d1d6395c6932d2201e8483504",
+     "doc-60eb1ff63505bb659d0d97f2524479a2",
+     "doc-90f413ede6224a15083a7e2f75ac0c63",
+     "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+     "doc-b64a60d5251a9101f3d8f050f6933216"
+    ],
+    "missing": [],
+    "extra": []
+   },
+   "model_calls_used": 0,
+   "identity_before_matches_frozen": true
+  },
+  {
+   "leg": "file-enum-005-local-searchid-variant",
+   "query_id": "file-enum-005",
+   "path": "local",
+   "evidence_label": "构造参数对照：与已存 local fused 逐字段相同，仅 pg.search_id 置为 active 冻结值",
+   "coverage_status": "complete",
+   "items_count": 3,
+   "published_doc_ids": [
+    "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+    "doc-9bb11e5d3809e590259aef28fb61062b",
+    "doc-b423a0e3331541588988fd34496c349d"
+   ],
+   "enum": {
+    "predicate": "((self_code = $3 AND self_code_version IN ($4, $5)))",
+    "predicate_args": [
+     "GB18466",
+     "05",
+     "2005"
+    ],
+    "attribution_branch": true,
+    "attribution_added": 2,
+    "members_total": 1,
+    "members_processed": 1,
+    "coverage_status": "complete"
+   },
+   "attribution_route_calls": [
+    {
+     "workspace": "default",
+     "search_id_arg": "872d689343a9cbb6",
+     "tsquery": [
+      "'gb18466'",
+      ""
+     ],
+     "limit": "400",
+     "returned_rows": 221
+    }
+   ],
+   "match_vs_round1_stored": {
+    "stored_items_count": 1,
+    "stored_doc_ids": [
+     "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+    ],
+    "stored_coverage": "complete",
+    "reproduces_stored": false
+   },
+   "posthoc_gold_reconciliation": {
+    "expected_doc_ids": [
+     "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "doc-9bb11e5d3809e590259aef28fb61062b",
+     "doc-b423a0e3331541588988fd34496c349d"
+    ],
+    "missing": [],
+    "extra": []
+   },
+   "model_calls_used": 0,
+   "identity_before_matches_frozen": true
+  },
+  {
+   "leg": "file-enum-002-local-pagesize2",
+   "query_id": "file-enum-002",
+   "path": "local",
+   "evidence_label": "构造参数对照：真实 enumerate 入口强制 page_size=2（跨页收集）",
+   "coverage_status": "complete",
+   "items_count": 5,
+   "published_doc_ids": [
+    "doc-507bc40d1d6395c6932d2201e8483504",
+    "doc-60eb1ff63505bb659d0d97f2524479a2",
+    "doc-90f413ede6224a15083a7e2f75ac0c63",
+    "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+    "doc-b64a60d5251a9101f3d8f050f6933216"
+   ],
+   "enum": {
+    "predicate": "(doc_name LIKE '%' || $3 || '%')",
+    "predicate_args": [
+     "中国移动源环境管理年报"
+    ],
+    "attribution_branch": false,
+    "attribution_added": 0,
+    "members_total": 5,
+    "members_processed": 5,
+    "coverage_status": "complete"
+   },
+   "attribution_route_calls": [],
+   "match_vs_round1_stored": {
+    "stored_items_count": 5,
+    "stored_doc_ids": [
+     "doc-507bc40d1d6395c6932d2201e8483504",
+     "doc-60eb1ff63505bb659d0d97f2524479a2",
+     "doc-90f413ede6224a15083a7e2f75ac0c63",
+     "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+     "doc-b64a60d5251a9101f3d8f050f6933216"
+    ],
+    "stored_coverage": "complete",
+    "reproduces_stored": true
+   },
+   "posthoc_gold_reconciliation": {
+    "expected_doc_ids": [
+     "doc-507bc40d1d6395c6932d2201e8483504",
+     "doc-60eb1ff63505bb659d0d97f2524479a2",
+     "doc-90f413ede6224a15083a7e2f75ac0c63",
+     "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+     "doc-b64a60d5251a9101f3d8f050f6933216"
+    ],
+    "missing": [],
+    "extra": []
+   },
+   "model_calls_used": 0,
+   "identity_before_matches_frozen": true
+  }
+ ]
+}

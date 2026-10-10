@@ -1,0 +1,37 @@
+{
+ "generation": "phase-4-improvement-1-r3",
+ "baseline": "baseline-shas-r3.json (r2 submission state)",
+ "diff": [
+  {
+   "file": "src/env_rag_final/enumerate_/prose_enum.py",
+   "before": "3d922e20d1088460488c04ce2cea9f616f3f7ec0d100eb96eae6d60ee9eea8af",
+   "after": "ad98184ea145aae0ae0f024f0edb7bcdf1ae180bc63194a0d4888f477cf0057e",
+   "changed": true
+  },
+  {
+   "file": "src/env_rag_final/search/expand.py",
+   "before": "d328e76b049703aa7e872b567a67d01a38f3a7dcd3dbfec5c2e8f8aabfe97ace",
+   "after": "d328e76b049703aa7e872b567a67d01a38f3a7dcd3dbfec5c2e8f8aabfe97ace",
+   "changed": false
+  },
+  {
+   "file": "src/env_rag_final/answer.py",
+   "before": "fef50024dd1a4f1e91eeb4b5eca0f1c59f7a2f545ce40ab88c946141b1fb5d8b",
+   "after": "fef50024dd1a4f1e91eeb4b5eca0f1c59f7a2f545ce40ab88c946141b1fb5d8b",
+   "changed": false
+  },
+  {
+   "file": "tests/test_phase4_improvement1_prose_integrity.py",
+   "before": "0ac0d3a785b575d6f527a23bd51c90e7450d042b16f68c61613f663f538962d2",
+   "after": "b78c8b14c38a18e55f9a107ae3be6112ef2feec524d5a5e8d04d69fc47c5b04b",
+   "changed": true
+  },
+  {
+   "file": "tests/test_phase4_improvement1r2_owning_replay.py",
+   "before": "fee44937000f2cd7eff35ee914f930bed0a4232d6daeb1b29da8aec3fb144096",
+   "after": "0763af8258cb35ba9d9d25313c562777387660cac63206f7105d67c4b8272bcd",
+   "changed": true
+  }
+ ],
+ "note": "only the F3-a boundary-lookup helper and group-owned tests changed; expand/answer untouched this round"
+}

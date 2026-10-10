@@ -1,0 +1,36 @@
+[
+  {
+    "id": "R1",
+    "path": "src/env_rag_final/rerank.py",
+    "start_line": 71,
+    "end_line": 104,
+    "severity": "high",
+    "category": "bug",
+    "content": "Replay usable entries are accepted without frozen-input, source SHA, workspace, verified or current PG source validation; missing body silently shrinks the full set and may still report success."
+  },
+  {
+    "id": "R2",
+    "path": "src/env_rag_final/rerank.py",
+    "start_line": 397,
+    "severity": "high",
+    "category": "bug",
+    "content": "Typed targets are never retained in rerank output (real artifact: 3 to 0), and degraded fallback entries omit doc_id, SHA and paths."
+  },
+  {
+    "id": "R3",
+    "path": "src/env_rag_final/rerank.py",
+    "start_line": 240,
+    "severity": "high",
+    "category": "bug",
+    "content": "Gold/unknown/replay structural errors bypass failure writer; replay read occurs outside post-guard finally. HTTP receipts never populate live_receipts. Large integer score OverflowError exposes the lost receipt path."
+  },
+  {
+    "id": "R4",
+    "path": "src/env_rag_final/rerank.py",
+    "start_line": 186,
+    "end_line": 204,
+    "severity": "high",
+    "category": "security",
+    "content": "Raw response index/score arrays are stripped, preventing independent actual-response verification; error response text is stored without removing configured secrets, and an echoed fixture API key appears verbatim in the terminal."
+  }
+]

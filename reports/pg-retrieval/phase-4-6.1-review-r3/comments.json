@@ -1,0 +1,29 @@
+[
+  {
+    "id": "S1",
+    "path": "src/env_rag_final/evaluation.py",
+    "start_line": 992,
+    "end_line": 998,
+    "severity": "high",
+    "category": "bug",
+    "content": "_fusion_path在run_rerank入口前直接mark_issued。该入口先做配置/身份/完整来源校验，可能HTTP前抛错或返回call=None的来源拒绝，因此入口执行不等于精排请求发出。两种冻结反例都显示reserved=1但应issued=0；按真实call凭证对账，保留已发生HTTP失败=1，异常终态也需当前题凭证。"
+  },
+  {
+    "id": "S2",
+    "path": "src/env_rag_final/evaluation.py",
+    "start_line": 1179,
+    "end_line": 1221,
+    "severity": "high",
+    "category": "bug",
+    "content": "完整配置锚校验未读取model_config.keyword_llm，改变KEYWORD_LLM_MODEL而其它项一致仍通过，无法冻结两轮local/fusion关键词模型。验证实际解析模型（KEYWORD_LLM_MODEL或LLM_MODEL fallback）与锚一致，变更只通过明确新代次，不静默放行。"
+  },
+  {
+    "id": "S2",
+    "path": "src/env_rag_final/evaluation.py",
+    "start_line": 1222,
+    "end_line": 1252,
+    "severity": "high",
+    "category": "bug",
+    "content": "code_anchors={}与frozen_budgets={}均被视为可选，循环为空便校验通过。缺少代码/提示或参数约束的锚不是完整有效锚；先验证完整必填schema/字段，再逐项比较，不仅比较出现的字段。"
+  }
+]

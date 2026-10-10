@@ -1,0 +1,305 @@
+FFFFFFFFF...                                                             [100%]
+=================================== FAILURES ===================================
+_________________ test_neo4j_async_context_budget_is_enforced __________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x117ce9730>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x117ce9b80>, calls={'identity': 2, 'conn': <test_answer.FakeEnvConn...egory_overrides': {'fact-001': 'fact'}, 'conn': <env_rag_final.evaluation._BudgetedConnection object at 0x117b64470>}])
+
+    def test_neo4j_async_context_budget_is_enforced(monkeypatch, setup):
+        issued = []
+    
+        class Session:
+            async def __aenter__(self):
+                return self
+    
+            async def __aexit__(self, *args):
+                return False
+    
+            async def run(self, *args, **kwargs):
+                issued.append(1)
+                return []
+    
+        class Driver:
+            def session(self):
+                return Session()
+    
+        async def runner(q, *args, **kwargs):
+            driver = la._RecordingNeo4jDriver(Driver(), la.ServiceBoundary())
+            async with driver.session() as session:
+                await session.run("MATCH (n) RETURN n")
+                await session.run("MATCH (n) RETURN n")
+            return stage(q)
+    
+        monkeypatch.setattr(ev, "PATH_RUNNERS", {"local": runner})
+        report = run(setup, budgets={"per_question": {"neo4j": 1}})
+>       assert len(issued) == 1, (issued, report)
+E       AssertionError: ([1, 1], {'task': 'Phase 4 evaluation round 1 (6.1 owning entry)', 'round': 1, 'paths': ['local'], 'gold_sha256': '621a142301fca99beb7b4fc022e85f2a81993eb7cde86515cf43a28c824f2b7c', ...})
+E       assert 2 == 1
+E        +  where 2 = len([1, 1])
+
+tests/test_evaluation_review_r2.py:50: AssertionError
+_______ test_answer_owned_connection_not_only_supplied_conn_is_budgeted ________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x117cea300>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x117cea480>, calls={'identity': 4, 'conn': <test_answer.FakeEnvConn...: 'fact-001', 'question': 'GB 8978-1996 表 1 中总汞的最高允许排放浓度是多少？', 'workspace': 'default', 'category': 'fact'}, answers=[])
+
+    def test_answer_owned_connection_not_only_supplied_conn_is_budgeted(monkeypatch, setup):
+        async def runner(q, *args, **kwargs):
+            result = stage(q)
+            result["fused_result"] = fx._fused(
+                q["query_id"],
+                q["question"],
+                [fx._usable(fx.C1, fx.DOC_8978, fx.CHUNKS[fx.C1]["content"])],
+            )
+            result["usable"] = 1
+            return result
+    
+        async def connect(**kwargs):
+            return setup.conn
+    
+        monkeypatch.setattr(ev, "PATH_RUNNERS", {"local": runner})
+        monkeypatch.setattr(ev, "_run_answer", an.run_answer)
+        monkeypatch.setattr(an.asyncpg, "connect", connect)
+        report = asyncio.run(
+            ev.run_evaluation(
+                setup.out,
+                paths=["local"],
+                gold_path=setup.gold,
+                values=fx.VALUES,
+                conn=None,
+                budgets={"total_caps": {"pg": 0}},
+            )
+        )
+>       assert setup.conn.queries == [], report
+E       AssertionError: {'task': 'Phase 4 evaluation round 1 (6.1 owning entry)', 'round': 1, 'paths': ['local'], 'gold_sha256': '621a142301fca99beb7b4fc022e85f2a81993eb7cde86515cf43a28c824f2b7c', ...}
+E       assert [('fetchval',...ind='table'")] == []
+E         
+E         Left contains 6 more items, first extra item: ('fetchval', 'SELECT doc_name FROM env_rag.documents WHERE workspace=$1 AND snapshot_id=$2 AND doc_id=$3')
+E         Use -v to get more diff
+
+tests/test_evaluation_review_r2.py:81: AssertionError
+----------------------------- Captured stderr call -----------------------------
+Building prefix dict from the default dictionary ...
+Loading model from cache /var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/jieba.cache
+Loading model cost 0.290 seconds.
+Prefix dict has been built successfully.
+------------------------------ Captured log call -------------------------------
+DEBUG    jieba:__init__.py:113 Building prefix dict from the default dictionary ...
+DEBUG    jieba:__init__.py:132 Loading model from cache /var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/jieba.cache
+DEBUG    jieba:__init__.py:164 Loading model cost 0.290 seconds.
+DEBUG    jieba:__init__.py:166 Prefix dict has been built successfully.
+_______________ test_reservation_is_not_an_issued_answer_request _______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x117cebc20>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x117ce9dc0>, calls={'identity': 2, 'conn': <test_answer.FakeEnvConn...: 'fact-001', 'question': 'GB 8978-1996 表 1 中总汞的最高允许排放浓度是多少？', 'workspace': 'default', 'category': 'fact'}, answers=[])
+
+    def test_reservation_is_not_an_issued_answer_request(monkeypatch, setup):
+        fake_path(monkeypatch)
+        q = fx._gold_q("syn-001", fx.Q_SYN, "synthesis")
+        setup.gold.write_text(json.dumps({"questions": [q], "counter_examples": []}))
+    
+        async def no_model_answer(*args, **kwargs):
+            return {
+                "results": [
+                    {
+                        "coverage_status": "partial",
+                        "model": {"used": False, "status": "incomplete_conditions"},
+                        "answer": {"items": []},
+                    }
+                ],
+                "model_calls_used": 0,
+            }
+    
+        monkeypatch.setattr(ev, "_run_answer", no_model_answer)
+        report = run(setup, user_allows_answer_model=True)
+        assert report["results"][0]["answer"]["model_calls"] == 0
+>       assert report["budget_snapshot_end"]["issued_total"].get("answer_llm", 0) == 0
+E       AssertionError: assert 1 == 0
+E        +  where 1 = <built-in method get of dict object at 0x11a5c3200>('answer_llm', 0)
+E        +    where <built-in method get of dict object at 0x11a5c3200> = {'answer_llm': 1}.get
+
+tests/test_evaluation_review_r2.py:105: AssertionError
+______________ test_post_adapter_refusal_also_preserves_terminal _______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x117ceac90>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x117cea9f0>, calls={'identity': 0, 'conn': <test_answer.FakeEnvConn...egory_overrides': {'fact-001': 'fact'}, 'conn': <env_rag_final.evaluation._BudgetedConnection object at 0x117ceae70>}])
+
+    def test_post_adapter_refusal_also_preserves_terminal(monkeypatch, setup):
+        fake_path(monkeypatch)
+        n = 0
+    
+        async def identity(values):
+            nonlocal n
+            n += 1
+            if n == 2:
+                raise ev.AdapterError("post source guard refused")
+            return capture()
+    
+        monkeypatch.setattr(an, "_capture_identity", identity)
+        with pytest.raises(ev.AdapterError):
+            run(setup)
+        p = setup.out / "eval-runtime-latest.json"
+>       assert p.exists(), "AdapterError bypassed the post failure writer"
+E       AssertionError: AdapterError bypassed the post failure writer
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-634/test_post_adapter_refusal_also0/out/eval-runtime-latest.json').exists
+
+tests/test_evaluation_review_r2.py:123: AssertionError
+__________ test_cli_missing_phase4_anchor_never_dispatches_real_entry __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x117d95d90>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x117d97680>, calls={'identity': 0, 'conn': <test_answer.FakeEnvConn...: 'fact-001', 'question': 'GB 8978-1996 表 1 中总汞的最高允许排放浓度是多少？', 'workspace': 'default', 'category': 'fact'}, answers=[])
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-634/test_cli_missing_phase4_anchor0')
+
+    def test_cli_missing_phase4_anchor_never_dispatches_real_entry(monkeypatch, setup, tmp_path):
+        monkeypatch.chdir(tmp_path)
+        touched = []
+    
+        async def entry(*args, **kwargs):
+            touched.append(kwargs)
+            raise ev.AdapterError("entry was reached without frozen configuration")
+    
+        monkeypatch.setattr(ev, "run_evaluation", entry)
+        args = SimpleNamespace(
+            report_dir=setup.out,
+            paths="local",
+            budgets=None,
+            dry_run=False,
+            rounds=None,
+            round=1,
+            query_id="fact-001",
+            allow_model=False,
+        )
+        with pytest.raises(SystemExit):
+            cli._run_eval(args, fx.VALUES)
+>       assert touched == [], "missing anchor silently became expected_identity=None"
+E       AssertionError: missing anchor silently became expected_identity=None
+E       assert [{'round_no':...t-001'], ...}] == []
+E         
+E         Left contains one more item: {'round_no': 1, 'rounds': None, 'paths': ['local'], 'query_ids': ['fact-001'], ...}
+E         Use -v to get more diff
+
+/Users/acerola/Dev/Python/RAG/env-rag-final/tests/test_evaluation_review_r2.py:149: AssertionError
+____________ test_invalid_cap_schema_refused_before_identity[None] _____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x117d95df0>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x117d966f0>, calls={'identity': 2, 'conn': <test_answer.FakeEnvConn...egory_overrides': {'fact-001': 'fact'}, 'conn': <env_rag_final.evaluation._BudgetedConnection object at 0x117d96bd0>}])
+bad_cap = None
+
+    @pytest.mark.parametrize("bad_cap", [None, -1])
+    def test_invalid_cap_schema_refused_before_identity(monkeypatch, setup, bad_cap):
+        fake_path(monkeypatch)
+>       with pytest.raises(ev.AdapterError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE AdapterError
+
+tests/test_evaluation_review_r2.py:155: Failed
+_____________ test_invalid_cap_schema_refused_before_identity[-1] ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x117d96870>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x117d96780>, calls={'identity': 2, 'conn': <test_answer.FakeEnvConn...egory_overrides': {'fact-001': 'fact'}, 'conn': <env_rag_final.evaluation._BudgetedConnection object at 0x117d97590>}])
+bad_cap = -1
+
+    @pytest.mark.parametrize("bad_cap", [None, -1])
+    def test_invalid_cap_schema_refused_before_identity(monkeypatch, setup, bad_cap):
+        fake_path(monkeypatch)
+>       with pytest.raises(ev.AdapterError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE AdapterError
+
+tests/test_evaluation_review_r2.py:155: Failed
+________________ test_actual_local_provenance_is_not_discarded _________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x117d976e0>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x117d97b00>, calls={'identity': 2, 'conn': <test_answer.FakeEnvConn...egory_overrides': {'fact-001': 'fact'}, 'conn': <env_rag_final.evaluation._BudgetedConnection object at 0x11a5a82c0>}])
+
+    def test_actual_local_provenance_is_not_discarded(monkeypatch, setup):
+        candidate = la.Candidate(
+            fx.C1,
+            "default",
+            fx.DOC_8978,
+            "gb8978.pdf",
+            "head",
+            len(fx.CHUNKS[fx.C1]["content"]),
+            True,
+            reached_via=["entity:provenance-marker", "edge:source-marker|target-marker"],
+            similarity_order=7,
+            source_type="entity+relation",
+        )
+    
+        class Adapter:
+            async def fetch(self, *args, **kwargs):
+                return SimpleNamespace(
+                    candidates=[candidate],
+                    call_records=[],
+                    service_calls={},
+                    degraded=[],
+                    sorting_sources={"chunk_pick": "weight-fallback"},
+                )
+    
+        run(setup, local_adapter_factory=lambda *args: Adapter())
+        published = "\n".join(p.read_text() for p in setup.out.rglob("*.json"))
+>       assert (
+            "entity:provenance-marker" in published and "edge:source-marker|target-marker" in published
+        )
+E       assert ('entity:provenance-marker' in '{\n  "task": "Phase 4 evaluation round 1 (6.1 owning entry)",\n  "round": 1,\n  "paths": [\n    "local"\n  ],\n  "gol...: "declared rerank strategy for this path is none (raw path order) — explicit absent, never a claimed rerank success"}')
+
+tests/test_evaluation_review_r2.py:186: AssertionError
+______ test_release_swallowed_quota_refusal_cannot_become_clean_complete _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11a5ab7a0>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x11a5a92e0>, calls={'identity': 4, 'conn': <test_answer.FakeEnvConn...: 'fact-001', 'question': 'GB 8978-1996 表 1 中总汞的最高允许排放浓度是多少？', 'workspace': 'default', 'category': 'fact'}, answers=[])
+
+    def test_release_swallowed_quota_refusal_cannot_become_clean_complete(monkeypatch, setup):
+        issued = []
+    
+        class Client:
+            def retrieve(self, *args, **kwargs):
+                issued.append(1)
+                return []
+    
+        async def runner(q, *args, **kwargs):
+            client = la._RecordingQdrantClient(Client(), la.ServiceBoundary(), "chunks")
+            client.retrieve(ids=["a"])
+            # The release vector helper catches Exception and falls back to WEIGHT.
+            try:
+                client.retrieve(ids=["b"])
+            except Exception:
+                pass
+            result = stage(q)
+            result["fused_result"] = fx._fused(
+                q["query_id"],
+                q["question"],
+                [fx._usable(fx.C1, fx.DOC_8978, fx.CHUNKS[fx.C1]["content"])],
+            )
+            result["discovery_status"] = "ok"
+            result["usable"] = 1
+            return result
+    
+        monkeypatch.setattr(ev, "PATH_RUNNERS", {"local": runner})
+        monkeypatch.setattr(ev, "_run_answer", an.run_answer)
+        report = run(setup, budgets={"per_question": {"qdrant": 1, "pg": 1000}})
+        record = report["results"][0]
+        assert issued == [1]
+>       assert (
+            "budget_failure" in record or record.get("answer", {}).get("coverage_status") == "partial"
+        ), record
+E       AssertionError: {'round': 1, 'path': 'local', 'query_id': 'fact-001', 'category': 'fact', ...}
+E       assert ('budget_failure' in {'round': 1, 'path': 'local', 'query_id': 'fact-001', 'category': 'fact', ...} or 'complete' == 'partial'
+E         
+E         - partial
+E         + complete)
+
+tests/test_evaluation_review_r2.py:223: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_evaluation_review_r2.py::test_neo4j_async_context_budget_is_enforced
+FAILED tests/test_evaluation_review_r2.py::test_answer_owned_connection_not_only_supplied_conn_is_budgeted
+FAILED tests/test_evaluation_review_r2.py::test_reservation_is_not_an_issued_answer_request
+FAILED tests/test_evaluation_review_r2.py::test_post_adapter_refusal_also_preserves_terminal
+FAILED tests/test_evaluation_review_r2.py::test_cli_missing_phase4_anchor_never_dispatches_real_entry
+FAILED tests/test_evaluation_review_r2.py::test_invalid_cap_schema_refused_before_identity[None]
+FAILED tests/test_evaluation_review_r2.py::test_invalid_cap_schema_refused_before_identity[-1]
+FAILED tests/test_evaluation_review_r2.py::test_actual_local_provenance_is_not_discarded
+FAILED tests/test_evaluation_review_r2.py::test_release_swallowed_quota_refusal_cannot_become_clean_complete
+9 failed, 3 passed in 1.93s

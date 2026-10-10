@@ -1,0 +1,17 @@
+{
+  "task": "round-1 offline assessment manifest (0 network recompute-able)",
+  "date": "2026-10-08",
+  "run_cmd": "uv run python reports/pg-retrieval/phase-4-round-1-assessment/assess_round1.py",
+  "test_cmd": "uv run pytest reports/pg-retrieval/phase-4-round-1-assessment/test_assessment_round1.py -q",
+  "files": {
+    "reports/pg-retrieval/phase-4-round-1-assessment/__pycache__/assess_round1.cpython-312.pyc": "9f81efed2d0b9ded711d4c9a10825ab49bfa43b93c7c753dc6a51fb5cd489b54",
+    "reports/pg-retrieval/phase-4-round-1-assessment/__pycache__/test_assessment_round1.cpython-312-pytest-9.1.1.pyc": "811f8cfffcadf58467c45f82e97dcbedc2e39ef7de497d16e58a5d29d4f6b8c5",
+    "reports/pg-retrieval/phase-4-round-1-assessment/adjudication.json": "f15ea639c745886350199b786bfab38e44d2de8b12df16ef0fc2bf9013b97759",
+    "reports/pg-retrieval/phase-4-round-1-assessment/assess_round1.py": "b9eeb266f0fba3c72c9cda6b951771bd696b5de92e44c2349aac8825d3382a64",
+    "reports/pg-retrieval/phase-4-round-1-assessment/round-1-assessment.md": "23196757a0c49eac7ee5646690a7bf9e3e9ecbc218d5375cd0b8faadec9c7c65",
+    "reports/pg-retrieval/phase-4-round-1-assessment/test_assessment_round1.py": "9d2c8b8e7881a6d74353b36d25de1f73a4f96fceaf8be9cfb57b80b98d8571b8",
+    "reports/pg-retrieval/phase-4-round-1/pilot-manifest.json": "094c97727c740c681d239969f7514eaa53225210733fe766f74ab06438e54861",
+    "reports/pg-retrieval/gate-2/review-r5/gold-approved.json": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+    "openspec/changes/add-pg-scoped-retrieval/handoff-phase-4-offline-assessment-round-1.md": "41f2410ef751bcf60b4446f09fe7ec279e60b8d1599ce608b8a70dae59eb6efd"
+  }
+}

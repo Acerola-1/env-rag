@@ -1,0 +1,404 @@
+{
+ "task": "5.3 two-path candidate fusion (read-only, guarded)",
+ "started_at": "2026-10-08T12:44:14+0800",
+ "pg_only_switch": true,
+ "frozen_contract": {
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8"
+ },
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "results": [
+  {
+   "query_id": "fact-002",
+   "query": "GB 8978-1996 表 1 中总汞的最高允许排放浓度是多少？",
+   "workspace": "default",
+   "pg": {
+    "status": "ok",
+    "search_id": "872d689343a9cbb6",
+    "catalog_snapshot_id": "4919b3938ad93747",
+    "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "discovery_total": 4,
+    "discovery_captured": true,
+    "chunks": 3,
+    "stale_state": "current",
+    "notes": [],
+    "trace_stages": [
+     "code_exact",
+     "keyword_and",
+     "range_binding"
+    ],
+    "sql_statements": {
+     "fetchrow": 8,
+     "fetch": 14
+    },
+    "trace": [
+     {
+      "stage": "code_exact",
+      "code": "GB8978",
+      "version_requested": "1996",
+      "strict": false,
+      "hits": 1,
+      "version_matched": 1,
+      "selected_versions": [
+       "1996"
+      ],
+      "selected_docs": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4"
+      ]
+     },
+     {
+      "stage": "keyword_and",
+      "tsquery": "'表1' & '总汞' & '最高允许排放浓度'",
+      "top_k": 20,
+      "restricted_to_code_docs": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4"
+      ],
+      "doc_hits": 0,
+      "chunk_hits": 1,
+      "elapsed_ms": 12
+     },
+     {
+      "stage": "range_binding",
+      "targets": [
+       {
+        "kind": "table",
+        "value": "1",
+        "clauses": null
+       }
+      ],
+      "code_docs": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4"
+      ],
+      "hits": 2,
+      "selected": 2,
+      "budget": 20,
+      "units": [
+       "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+       "tb-b45c510232ed4d2452b0f5b2a13434e4-0002"
+      ],
+      "note": "requested table/chapter bound to actual catalog units; full member read stays in expansion, top-k bounds this discovery list too"
+     }
+    ]
+   },
+   "local": {
+    "ran": false,
+    "skipped_reason": "pg-only switch",
+    "error": null,
+    "receipts": null
+   },
+   "targets_requested": [
+    {
+     "code": "GB8978",
+     "version": "1996"
+    }
+   ],
+   "targets_resolved": [
+    {
+     "code": "GB8978",
+     "version": "1996",
+     "docs": [
+      "doc-b45c510232ed4d2452b0f5b2a13434e4"
+     ],
+     "versions": [
+      "1996"
+     ]
+    }
+   ],
+   "typed_targets": [
+    {
+     "target_type": "doc",
+     "workspace": "default",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_name": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "self_code": "GB8978",
+     "self_code_version": "1996",
+     "discovery": "code_exact",
+     "membership_basis": null,
+     "citation": {
+      "kind": "catalog_row",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4"
+     },
+     "citation_verified": true
+    },
+    {
+     "target_type": "table_unit",
+     "workspace": "default",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+     "heading": "4.3 其他规定",
+     "chunk_ids": [
+      "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+     ],
+     "discovery": "table_range_binding",
+     "scope_status": null,
+     "membership_basis": null,
+     "citation": {
+      "kind": "table_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+      ]
+     }
+    },
+    {
+     "target_type": "table_unit",
+     "workspace": "default",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+     "heading": "4.3 其他规定",
+     "chunk_ids": [
+      "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+     ],
+     "discovery": "table_range_binding",
+     "scope_status": null,
+     "membership_basis": null,
+     "citation": {
+      "kind": "table_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+      ]
+     }
+    }
+   ],
+   "candidates": [
+    {
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "4.3 其他规定 污水综合排放标准",
+       "chunk_order": 1,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.002201834926381707
+       }
+      },
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "4.3 其他规定",
+       "chunk_order": null,
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+        ]
+       },
+       "discovery": "table_range_binding",
+       "citation_verified": true,
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "4.3 其他规定",
+       "chunk_order": null,
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+        ]
+       },
+       "discovery": "table_range_binding",
+       "citation_verified": true,
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "7ff986aed318b42ea5139ee7985c80a70bc265568b0b89dbe009eab206b5e6f1",
+     "content_len": 2957,
+     "content": "## 4.3 其他规定\n4.3.1 同一排放口排放两种或两种以上不同类别的污水，且每种污水的排放标准又不同时，其混合污水的排放标准按附录 A 计算。\n4.3.2 工业污水污染物的最高允许排放负荷量按附录 B 计算。\n4.3.3 污染物最高允许年排放总量按附录 C 计算。\n4.3.4 对于排放含有放射性物质的污水，除执行本标准外，还须符合 GB 8703—88《辐射防护规定》。\n<table id=\"tb-b45c510232ed4d2452b0f5b2a13434e4-0001\" format=\"html\"><tr><td>序号</td><td>污染物</td><td>最高允许排放浓度</td></tr><tr><td>1</td><td>总汞</td><td>0.05</td></tr><tr><td>2</td><td>烷基汞</td><td>不得检出</td></tr><tr><td>3</td><td>总镉</td><td>0.1</td></tr><tr><td>4</td><td>总铬</td><td>1.5</td></tr></table>\nGB 8978—1996\n<table id=\"tb-b45c510232ed4d2452b0f5b2a13434e4-0002\" format=\"html\"><tr><td>序号</td><td>污染物</td><td>最高允许排放浓度</td></tr><tr><td>5</td><td>六价铬</td><td>0.5</td></tr><tr><td>6</td><td>总砷</td><td>0.5</td></tr><tr><td>7</td><td>总铅</td><td>1.0</td></tr><tr><td>8</td><td>总镍</td><td>1.0</td></tr><tr><td>9</td><td>苯并(a)芘</td><td>0.000 03</td></tr><tr><td>10</td><td>总铍</td><td>0.005</td></tr><tr><td>11</td><td>总银</td><td>0.5</td></tr><tr><td>12</td><td>总 $\\alpha$ 放射性</td><td>1 Bq/L</td></tr><tr><td>13</td><td>总 $\\beta$ 放射性</td><td>10 Bq/L</td></tr></table>\n<table id=\"tb-b45c510232ed4d2452b0f5b2a13434e4-0003\" format=\"html\"><tr><td>序号</td><td>污染物</td><td>适用范围</td><td>一级标准</td><td>二级标准</td><td>三级标准</td></tr><tr><td>1</td><td>pH</td><td>一切排污单位</td><td>6~9</td><td>6~9</td><td>6~9</td></tr><tr><td rowspan=\"2\">2</td><td rowspan=\"2\">色度(稀释倍数)</td><td>染料工业</td><td>50</td><td>180</td><td>-</td></tr><tr><td>其他排污单位</td><td>50</td><td>80</td><td>-</td></tr><tr><td rowspan=\"5\">3</td><td rowspan=\"5\">悬浮物(SS)</td><td>采矿、选矿、选煤工业</td><td>100</td><td>300</td><td>-</td></tr><tr><td>脉金选矿</td><td>100</td><td>500</td><td>-</td></tr><tr><td>边远地区砂金选矿</td><td>100</td><td>800</td><td>-</td></tr><tr><td>城镇二级污水处理厂</td><td>20</td><td>30</td><td>-</td></tr><tr><td>其他排污单位</td><td>70</td><td>200</td><td>400</td></tr><tr><td rowspan=\"4\">4</td><td rowspan=\"4\">五日生化需氧量(BOD5)</td><td>甘蔗制糖、苎麻脱胶、湿法纤维板工业</td><td>30</td><td>100</td><td>600</td></tr><tr><td>甜菜制糖、酒精、味精、皮革、化纤浆粕工业</td><td>30</td><td>150</td><td>600</td></tr><tr><td>城镇二级污水处理厂</td><td>20</td><td>30</td><td>-</td></tr><tr><td>其他排污单位</td><td>30</td><td>60</td><td>300</td></tr><tr><td rowspan=\"5\">5</td><td rowspan=\"5\">化学需氧量(COD)</td><td>甜菜制糖、焦化、合成脂肪酸、湿法纤维板、染料、洗毛、有机磷农药工业</td><td>100</td><td>200</td><td>1 000</td></tr><tr><td>味精、酒精、医药原料药、生物制药、苎麻脱胶、皮革、化纤浆粕工业</td><td>100</td><td>300</td><td>1 000</td></tr><tr><td>石油化工工业(包括石油炼制)</td><td>100</td><td>150</td><td>500</td></tr><tr><td>城镇二级污水处理厂</td><td>60</td><td>120</td><td>-</td></tr><tr><td>其他排污单位</td><td>100</td><td>150</td><td>500</td></tr><tr><td>6</td><td>石油类</td><td>一切排污单位</td><td>10</td><td>10</td><td>30</td></tr><tr><td>7</td><td>动植物油</td><td>一切排污单位</td><td>20</td><td>20</td><td>100</td></tr><tr><td>8</td><td>挥发酚</td><td>一切排污单位</td><td>0.5</td><td>0.5</td><td>2.0</td></tr><tr><td rowspan=\"2\">9</td><td rowspan=\"2\">总氰化合物</td><td>电影洗片(铁氰化合物)</td><td>0.5</td><td>5.0</td><td>5.0</td></tr><tr><td>其他排污单位</td><td>0.5</td><td>0.5</td><td>1.0</td></tr></table>\nGB 8978—1996",
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf"
+    }
+   ],
+   "usable": [
+    {
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "4.3 其他规定 污水综合排放标准",
+       "chunk_order": 1,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.002201834926381707
+       }
+      },
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "4.3 其他规定",
+       "chunk_order": null,
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+        ]
+       },
+       "discovery": "table_range_binding",
+       "citation_verified": true,
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "4.3 其他规定",
+       "chunk_order": null,
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+        ]
+       },
+       "discovery": "table_range_binding",
+       "citation_verified": true,
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "7ff986aed318b42ea5139ee7985c80a70bc265568b0b89dbe009eab206b5e6f1",
+     "content_len": 2957,
+     "content": "## 4.3 其他规定\n4.3.1 同一排放口排放两种或两种以上不同类别的污水，且每种污水的排放标准又不同时，其混合污水的排放标准按附录 A 计算。\n4.3.2 工业污水污染物的最高允许排放负荷量按附录 B 计算。\n4.3.3 污染物最高允许年排放总量按附录 C 计算。\n4.3.4 对于排放含有放射性物质的污水，除执行本标准外，还须符合 GB 8703—88《辐射防护规定》。\n<table id=\"tb-b45c510232ed4d2452b0f5b2a13434e4-0001\" format=\"html\"><tr><td>序号</td><td>污染物</td><td>最高允许排放浓度</td></tr><tr><td>1</td><td>总汞</td><td>0.05</td></tr><tr><td>2</td><td>烷基汞</td><td>不得检出</td></tr><tr><td>3</td><td>总镉</td><td>0.1</td></tr><tr><td>4</td><td>总铬</td><td>1.5</td></tr></table>\nGB 8978—1996\n<table id=\"tb-b45c510232ed4d2452b0f5b2a13434e4-0002\" format=\"html\"><tr><td>序号</td><td>污染物</td><td>最高允许排放浓度</td></tr><tr><td>5</td><td>六价铬</td><td>0.5</td></tr><tr><td>6</td><td>总砷</td><td>0.5</td></tr><tr><td>7</td><td>总铅</td><td>1.0</td></tr><tr><td>8</td><td>总镍</td><td>1.0</td></tr><tr><td>9</td><td>苯并(a)芘</td><td>0.000 03</td></tr><tr><td>10</td><td>总铍</td><td>0.005</td></tr><tr><td>11</td><td>总银</td><td>0.5</td></tr><tr><td>12</td><td>总 $\\alpha$ 放射性</td><td>1 Bq/L</td></tr><tr><td>13</td><td>总 $\\beta$ 放射性</td><td>10 Bq/L</td></tr></table>\n<table id=\"tb-b45c510232ed4d2452b0f5b2a13434e4-0003\" format=\"html\"><tr><td>序号</td><td>污染物</td><td>适用范围</td><td>一级标准</td><td>二级标准</td><td>三级标准</td></tr><tr><td>1</td><td>pH</td><td>一切排污单位</td><td>6~9</td><td>6~9</td><td>6~9</td></tr><tr><td rowspan=\"2\">2</td><td rowspan=\"2\">色度(稀释倍数)</td><td>染料工业</td><td>50</td><td>180</td><td>-</td></tr><tr><td>其他排污单位</td><td>50</td><td>80</td><td>-</td></tr><tr><td rowspan=\"5\">3</td><td rowspan=\"5\">悬浮物(SS)</td><td>采矿、选矿、选煤工业</td><td>100</td><td>300</td><td>-</td></tr><tr><td>脉金选矿</td><td>100</td><td>500</td><td>-</td></tr><tr><td>边远地区砂金选矿</td><td>100</td><td>800</td><td>-</td></tr><tr><td>城镇二级污水处理厂</td><td>20</td><td>30</td><td>-</td></tr><tr><td>其他排污单位</td><td>70</td><td>200</td><td>400</td></tr><tr><td rowspan=\"4\">4</td><td rowspan=\"4\">五日生化需氧量(BOD5)</td><td>甘蔗制糖、苎麻脱胶、湿法纤维板工业</td><td>30</td><td>100</td><td>600</td></tr><tr><td>甜菜制糖、酒精、味精、皮革、化纤浆粕工业</td><td>30</td><td>150</td><td>600</td></tr><tr><td>城镇二级污水处理厂</td><td>20</td><td>30</td><td>-</td></tr><tr><td>其他排污单位</td><td>30</td><td>60</td><td>300</td></tr><tr><td rowspan=\"5\">5</td><td rowspan=\"5\">化学需氧量(COD)</td><td>甜菜制糖、焦化、合成脂肪酸、湿法纤维板、染料、洗毛、有机磷农药工业</td><td>100</td><td>200</td><td>1 000</td></tr><tr><td>味精、酒精、医药原料药、生物制药、苎麻脱胶、皮革、化纤浆粕工业</td><td>100</td><td>300</td><td>1 000</td></tr><tr><td>石油化工工业(包括石油炼制)</td><td>100</td><td>150</td><td>500</td></tr><tr><td>城镇二级污水处理厂</td><td>60</td><td>120</td><td>-</td></tr><tr><td>其他排污单位</td><td>100</td><td>150</td><td>500</td></tr><tr><td>6</td><td>石油类</td><td>一切排污单位</td><td>10</td><td>10</td><td>30</td></tr><tr><td>7</td><td>动植物油</td><td>一切排污单位</td><td>20</td><td>20</td><td>100</td></tr><tr><td>8</td><td>挥发酚</td><td>一切排污单位</td><td>0.5</td><td>0.5</td><td>2.0</td></tr><tr><td rowspan=\"2\">9</td><td rowspan=\"2\">总氰化合物</td><td>电影洗片(铁氰化合物)</td><td>0.5</td><td>5.0</td><td>5.0</td></tr><tr><td>其他排污单位</td><td>0.5</td><td>0.5</td><td>1.0</td></tr></table>\nGB 8978—1996",
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf"
+    }
+   ],
+   "rejected": [],
+   "budget": {
+    "limit": 40,
+    "kept": 1,
+    "truncated": [],
+    "rule": "no truncation"
+   },
+   "status": "ok",
+   "degraded": [],
+   "notes": [],
+   "allowed_set_basis": {
+    "resolved_code_targets": [
+     [
+      "doc-b45c510232ed4d2452b0f5b2a13434e4"
+     ]
+    ],
+    "verified_attributions": []
+   },
+   "verify": {
+    "requested": 1,
+    "verified": 1,
+    "missing": 0,
+    "attribution_conflict": 0
+   }
+  }
+ ],
+ "finished_at": "2026-10-08T12:44:16+0800"
+}

@@ -1,0 +1,619 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-08T21:46:36+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "prose-enum-006"
+ ],
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-round-1/inputs/local/prose-enum-006-rerank.json",
+   "sha256": "9284ca401b383aa280b2ed56d07d02c53540674fcda863b4b0630fa2399472d5",
+   "task": null,
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": []
+  },
+  "fused_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-round-1/inputs/local/prose-enum-006-fusion.json",
+   "sha256": "c619e384f517a69f8b091e617e5da713c4e5891be3b3126df2395b257b43732a",
+   "task": "Phase 4 round 1 evaluation input (path=local)",
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": [
+    "prose-enum-006"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "model_calls_used": 0,
+ "results": [
+  {
+   "query_id": "prose-enum-006",
+   "query": "GB 3095-2012 的 4.2 节对环境空气功能区质量要求作了哪些规定？",
+   "category": "prose_enum",
+   "workspace": "default",
+   "coverage_status": "complete",
+   "fail_stage": "",
+   "flags": [
+    "no rerank replay for this query id — scope priority falls back to fusion path order, explicitly recorded (no fabricated scores)"
+   ],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "absent",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 0,
+    "typed_targets": [
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "discovery": "local"
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "discovery": "local"
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404",
+      "discovery": "local"
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-8eeaab2c272e8a01235e17cfa59d610f",
+      "discovery": "local"
+     }
+    ],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 10,
+    "selected_docs": [
+     "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc-d3d7d38fe9dc1348e57c1fa29b47f404",
+     "doc-8eeaab2c272e8a01235e17cfa59d610f"
+    ],
+    "priority": [
+     {
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-8eeaab2c272e8a01235e17cfa59d610f",
+      "rerank_rank_or_none": null
+     }
+    ],
+    "basis": "targets_resolved + typed targets (5.3) define the scope; rerank order only prioritizes — membership is never top-k bounded"
+   },
+   "expansions": [
+    {
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "kind": "prose",
+     "scope_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1:scope:4.2",
+     "requested_clauses": null,
+     "missing_requested_clauses": [],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "read_status": "complete",
+     "fail_stage": "",
+     "units_read": 1,
+     "unit_ids": [
+      "7f9dddaf02f372cc7d329f4678c46fbc"
+     ],
+     "chunk_ids": [],
+     "items_count": 1,
+     "warnings": [],
+     "boundary_ambiguities": [],
+     "selected": true
+    },
+    {
+     "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "kind": "prose",
+     "scope_id": "doc-4c883d21fa02a53189e0911c3d59d1d1:scope:4.2",
+     "requested_clauses": null,
+     "missing_requested_clauses": [],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "read_status": "complete",
+     "fail_stage": "",
+     "units_read": 1,
+     "unit_ids": [
+      "78548b12c1e8ff7d651ce4dba805909a"
+     ],
+     "chunk_ids": [],
+     "items_count": 1,
+     "warnings": [],
+     "boundary_ambiguities": [],
+     "selected": true
+    },
+    {
+     "doc_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404",
+     "kind": "prose",
+     "scope_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404:scope:4.2",
+     "requested_clauses": null,
+     "missing_requested_clauses": [],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "read_status": "complete",
+     "fail_stage": "",
+     "units_read": 1,
+     "unit_ids": [
+      "12f30bd9166452314d6e559c4a28c872"
+     ],
+     "chunk_ids": [],
+     "items_count": 4,
+     "warnings": [],
+     "boundary_ambiguities": [],
+     "selected": true
+    },
+    {
+     "doc_id": "doc-8eeaab2c272e8a01235e17cfa59d610f",
+     "kind": "prose",
+     "scope_id": "doc-8eeaab2c272e8a01235e17cfa59d610f:scope:4.2",
+     "requested_clauses": null,
+     "missing_requested_clauses": [],
+     "members_total": 20,
+     "members_processed": 20,
+     "coverage_status": "complete",
+     "read_status": "complete",
+     "fail_stage": "",
+     "units_read": 20,
+     "unit_ids": [
+      "2fbca4c7fab751c351eef352650b5554",
+      "2e50b3357235ff676e94c3d378e8167e",
+      "369045098a002851a0f6437435db8d20",
+      "211bf02b05425e81f41efc44f74b8ded",
+      "b9a3c8121eeda11fcabb32eae8d8959c",
+      "d82f697d97902dbadef3b6f81700cd76",
+      "6d17215d6da9c8d452e95b60f7047d3d",
+      "f9e280de6b64a1ff00dba291b2498f3a",
+      "6295e876ac55e1efe43e5fdbf59e593b",
+      "d5cb41e2b501eba3cd7ceee6e7bad9f1",
+      "bd7c905c2eb1d7704812aed8b13b5244",
+      "cf9cc7b8eeb2c6aa956f24e2022baf6b",
+      "86fb9b898951547772eda0e5b102798b",
+      "beecba9c61f982705d20a292c6ed32b1",
+      "9ac361a091640e1ea1ca6b04db861627",
+      "b3f83e8fcd86074136b82c8bc61c6618",
+      "ed61f861fc28ad351b2bedb07df10f70",
+      "dea8bc44f0f80dc70b81a5c191128c43",
+      "f785240256f828687de02cfa002f93df",
+      "7df699f79ed5ecbcdf2440d841521009"
+     ],
+     "chunk_ids": [],
+     "items_count": 7,
+     "warnings": [],
+     "boundary_ambiguities": [],
+     "selected": true
+    }
+   ],
+   "answer": {
+    "mode": "deterministic",
+    "generated_by": "enumerate/expand entries",
+    "items": [
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "scope_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1:scope:4.2",
+      "clause": "4.2",
+      "text": "一类区适用一级浓度限值，二类区适用二级浓度限值。一、二类环境空气功能区质量要求见表 1和表 2。",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 19,
+       "char_end": 67,
+       "quote": "一类区适用一级浓度限值，二类区适用二级浓度限值。一、二类环境空气功能区质量要求见表 1和表 2。",
+       "unit_rel_start": 19,
+       "unit_rel_end": 67,
+       "unit_id": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": {
+        "blockid": "7f9dddaf02f372cc7d329f4678c46fbc"
+       },
+       "chunk_ids": [],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "scope_id": "doc-4c883d21fa02a53189e0911c3d59d1d1:scope:4.2",
+      "clause": "4.2",
+      "text": "一类区适用一级浓度限值，二类区适用二级浓度限值。一、二类环境空气功能区质量要求见表 1 和表 2。",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 19,
+       "char_end": 68,
+       "quote": "一类区适用一级浓度限值，二类区适用二级浓度限值。一、二类环境空气功能区质量要求见表 1 和表 2。",
+       "unit_rel_start": 19,
+       "unit_rel_end": 68,
+       "unit_id": "78548b12c1e8ff7d651ce4dba805909a",
+       "locator": {
+        "blockid": "78548b12c1e8ff7d651ce4dba805909a"
+       },
+       "chunk_ids": [],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404",
+      "scope_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404:scope:4.2",
+      "clause": "4.2.1",
+      "text": "4.2.1 第一阶段。主要工作包括研究有关文件，项目污染源调查，环境空气保护目标调查，评价因子筛选与评价标准确定，区域气象与地表特征调查，收集区域地形参数，确定评价等级和评价范围等。",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 12,
+       "char_end": 104,
+       "quote": "4.2.1 第一阶段。主要工作包括研究有关文件，项目污染源调查，环境空气保护目标调查，评价因子筛选与评价标准确定，区域气象与地表特征调查，收集区域地形参数，确定评价等级和评价范围等。",
+       "unit_rel_start": 12,
+       "unit_rel_end": 104,
+       "unit_id": "12f30bd9166452314d6e559c4a28c872",
+       "locator": {
+        "blockid": "12f30bd9166452314d6e559c4a28c872"
+       },
+       "chunk_ids": [],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404",
+      "scope_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404:scope:4.2",
+      "clause": "4.2.2",
+      "text": "4.2.2 第二阶段。主要工作依据评价等级要求开展，包括与项目评价相关污染源调查与核实，选择适合的预测模型，环境质量现状调查或补充监测，收集建立模型所需气象、地表参数等基础数据，确定预测内容与预测方案，开展大气环境影响预测与评价工作等。",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 104,
+       "char_end": 223,
+       "quote": "4.2.2 第二阶段。主要工作依据评价等级要求开展，包括与项目评价相关污染源调查与核实，选择适合的预测模型，环境质量现状调查或补充监测，收集建立模型所需气象、地表参数等基础数据，确定预测内容与预测方案，开展大气环境影响预测与评价工作等。",
+       "unit_rel_start": 104,
+       "unit_rel_end": 223,
+       "unit_id": "12f30bd9166452314d6e559c4a28c872",
+       "locator": {
+        "blockid": "12f30bd9166452314d6e559c4a28c872"
+       },
+       "chunk_ids": [],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404",
+      "scope_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404:scope:4.2",
+      "clause": "4.2.3",
+      "text": "4.2.3 第三阶段。主要工作包括制定环境监测计划，明确大气环境影响评价结论与建议，完成环境影响评价文件的编写等。",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 223,
+       "char_end": 281,
+       "quote": "4.2.3 第三阶段。主要工作包括制定环境监测计划，明确大气环境影响评价结论与建议，完成环境影响评价文件的编写等。",
+       "unit_rel_start": 223,
+       "unit_rel_end": 281,
+       "unit_id": "12f30bd9166452314d6e559c4a28c872",
+       "locator": {
+        "blockid": "12f30bd9166452314d6e559c4a28c872"
+       },
+       "chunk_ids": [],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404",
+      "scope_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404:scope:4.2",
+      "clause": "4.2.4",
+      "text": "4.2.4 大气环境影响评价工作程序见图 1，各工作阶段基本内容与规范见附录 C。\nHJ 2.2—2018\n<drawing id=\"im-d3d7d38fe9dc1348e57c1fa29b47f404-0001\" format=\"jpg\" caption=\"图 1 大气环境影响评价工作程序\" path=\"air-04_生态环境部_环境影响评价技术导则_大气环境_HJ2.2-2018_2018.blocks.assets/c0cc5f30fd5043815c718315a6caa2a859eae4f2a179f6830cac98abeda38e6e.jpg\" src=\"\" />\nHJ 2.2—2018",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 281,
+       "char_end": 586,
+       "quote": "4.2.4 大气环境影响评价工作程序见图 1，各工作阶段基本内容与规范见附录 C。\nHJ 2.2—2018\n<drawing id=\"im-d3d7d38fe9dc1348e57c1fa29b47f404-0001\" format=\"jpg",
+       "unit_rel_start": 281,
+       "unit_rel_end": 586,
+       "unit_id": "12f30bd9166452314d6e559c4a28c872",
+       "locator": {
+        "blockid": "12f30bd9166452314d6e559c4a28c872"
+       },
+       "chunk_ids": [],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-8eeaab2c272e8a01235e17cfa59d610f",
+      "scope_id": "doc-8eeaab2c272e8a01235e17cfa59d610f:scope:4.2",
+      "clause": "2.6.1",
+      "text": "2.6.1 Gaseous pollutant concentration standards (permeation devices or cylinders of compressed gas) used to obtain test concentrations for CO, $SO_{2}$ , NO, and $NO_{2}$ must be EPA Protocol Gases certified in accordance with one of the procedures given in Reference 4 of this appendix.",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 50118,
+       "char_end": 50406,
+       "quote": "2.6.1 Gaseous pollutant concentration standards (permeation devices or cylinders of compressed gas) used to obtain test ",
+       "unit_rel_start": 619,
+       "unit_rel_end": 907,
+       "unit_id": "f785240256f828687de02cfa002f93df",
+       "locator": {
+        "blockid": "f785240256f828687de02cfa002f93df"
+       },
+       "chunk_ids": [],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-8eeaab2c272e8a01235e17cfa59d610f",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-8eeaab2c272e8a01235e17cfa59d610f",
+      "scope_id": "doc-8eeaab2c272e8a01235e17cfa59d610f:scope:4.2",
+      "clause": "2.6.1.1",
+      "text": "2.6.1.1 The concentrations of EPA Protocol Gas standards used for ambient air monitoring must be certified with a 95-percent confidence interval to have an analytical uncertainty of no more than $\\pm2.0$ percent (inclusive) of the certified concentration (tag value) of the gas mixture. The uncertainty must be calculated in accordance with the statistical procedures defined in Reference 4 of this appendix.",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 50406,
+       "char_end": 50815,
+       "quote": "2.6.1.1 The concentrations of EPA Protocol Gas standards used for ambient air monitoring must be certified with a 95-per",
+       "unit_rel_start": 907,
+       "unit_rel_end": 1316,
+       "unit_id": "f785240256f828687de02cfa002f93df",
+       "locator": {
+        "blockid": "f785240256f828687de02cfa002f93df"
+       },
+       "chunk_ids": [],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-8eeaab2c272e8a01235e17cfa59d610f",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-8eeaab2c272e8a01235e17cfa59d610f",
+      "scope_id": "doc-8eeaab2c272e8a01235e17cfa59d610f:scope:4.2",
+      "clause": "2.6.1.2",
+      "text": "2.6.1.2 Specialty gas producers advertising certification with the procedures provided in Reference 4 of this appendix and distributing gases as “EPA Protocol Gas” for ambient air monitoring purposes must adhere to the regulatory requirements specified in 40 CFR 75.21(g) or not use “EPA” in any form of advertising. Monitoring organizations must provide information to the EPA on the specialty gas producers they use on an annual basis. PQAOs, when requested by the EPA, must participate in the EPA Ambient Air Protocol Gas Verification Program at least once every 5 years by sending a new unused standard to a designated verification laboratory.",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 50815,
+       "char_end": 51463,
+       "quote": "2.6.1.2 Specialty gas producers advertising certification with the procedures provided in Reference 4 of this appendix a",
+       "unit_rel_start": 1316,
+       "unit_rel_end": 1964,
+       "unit_id": "f785240256f828687de02cfa002f93df",
+       "locator": {
+        "blockid": "f785240256f828687de02cfa002f93df"
+       },
+       "chunk_ids": [],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-8eeaab2c272e8a01235e17cfa59d610f",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-8eeaab2c272e8a01235e17cfa59d610f",
+      "scope_id": "doc-8eeaab2c272e8a01235e17cfa59d610f:scope:4.2",
+      "clause": "3.1.3.3",
+      "text": "3.1.3.3 Using audit gases that are verified against the NIST standard reference methods or special review procedures and validated per the certification periods specified in Reference 4 of this appendix (EPA Traceability Protocol for Assay and Certification of Gaseous Calibration Standards) for CO, $\\mathrm{SO}_2$ , and $\\mathrm{NO}_2$ and using $\\mathrm{O}_3$ analyzers that are verified quarterly against a standard reference photometer.",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 51463,
+       "char_end": 51905,
+       "quote": "3.1.3.3 Using audit gases that are verified against the NIST standard reference methods or special review procedures and",
+       "unit_rel_start": 1964,
+       "unit_rel_end": 2406,
+       "unit_id": "f785240256f828687de02cfa002f93df",
+       "locator": {
+        "blockid": "f785240256f828687de02cfa002f93df"
+       },
+       "chunk_ids": [],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-8eeaab2c272e8a01235e17cfa59d610f",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-8eeaab2c272e8a01235e17cfa59d610f",
+      "scope_id": "doc-8eeaab2c272e8a01235e17cfa59d610f:scope:4.2",
+      "clause": "3.2.4",
+      "text": "3.2.4 $PM_{2.5}$ Performance Evaluation Program (PEP) Procedures. The PEP is an independent assessment used to estimate total measurement system bias. These evaluations will be performed under the national performance evaluation program (NPEP) as described in section 2.4 of this appendix or a comparable program. A prescribed number of Performance evaluation sampling events will be performed annually within each PQAO. For PQAOs with less than or equal to five monitoring sites, five valid performance evaluation audits must be collected and reported each year. For PQAOs with greater than five monitoring sites, eight valid performance evaluation audits must be collected and reported each year. A valid performance evaluation audit means that both the primary monitor and PEP audit concentrations are valid and equal to or greater than 2 $\\mu$ g/m $^{3}$ . Siting of the PEP monitor must be consistent with section 3.2.3.4(c) of this appendix. However, any horizontal distance greater than 4 meters and any vertical distance greater than one meter must be reported to the EPA regional PEP coordinator. Additionally for every monitor designated as a primary monitor, a primary quality assurance organization must:",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 51905,
+       "char_end": 53122,
+       "quote": "3.2.4 $PM_{2.5}$ Performance Evaluation Program (PEP) Procedures. The PEP is an independent assessment used to estimate ",
+       "unit_rel_start": 2406,
+       "unit_rel_end": 3623,
+       "unit_id": "f785240256f828687de02cfa002f93df",
+       "locator": {
+        "blockid": "f785240256f828687de02cfa002f93df"
+       },
+       "chunk_ids": [],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-8eeaab2c272e8a01235e17cfa59d610f",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-8eeaab2c272e8a01235e17cfa59d610f",
+      "scope_id": "doc-8eeaab2c272e8a01235e17cfa59d610f:scope:4.2",
+      "clause": "4.2.1",
+      "text": "4.2.1 Collocated Quality Control Sampler Precision Estimate for $PM_{10}$ , $PM_{2.5}$ , and Pb. Precision is estimated via duplicate measurements from collocated samplers. It is recommended that the precision be aggregated at the PQAO level quarterly, annually, and at the 3-year level. The data pair would only be considered valid if both concentrations are greater than or equal to the minimum values specified in section 4(c) of this appendix. For each collocated data pair, calculate $t_{i}$ , using equation 6 to this appendix:\nEquation 6 to Appendix A to Part 58\n<equation id=\"eq-8eeaab2c272e8a01235e17cfa59d610f-0015\" format=\"latex\">$$\nt _ {i} = \\frac {X _ {i} - Y _ {i}}{\\sqrt {(X _ {i} + Y _ {i}) / 2}} \\times 1 0 0\n$$</equation>\nWhere $X_{i}$ is the concentration from the primary sampler and $Y_{i}$ is the concentration value from the audit sampler. The coefficient of variation upper bound is calculated using equation 7 to this appendix:\nEquation 7 to Appendix A to Part 58\n<equation id=\"eq-8eeaab2c272e8a01235e17cfa59d610f-0016\" format=\"latex\">$$\n| C V 9 0 _ {N A A Q S} = 1 0 0 * \\sqrt {\\frac {k \\times \\sum_ {i = 1} ^ {k} t _ {i} ^ {2} - \\left(\\sum_ {i = 1} ^ {k} t _ {i}\\right) ^ {2}}{2 k (k - 1)}} \\times \\sqrt {\\frac {k - 1}{N A A Q S C o n c e n t r a t i o n * X _ {0 . 1 , k - 1} ^ {2}}}\n$$</equation>\nWhere k is the number of valid data pairs being aggregated, and $X^{2}_{0.1,k-1}$ is the 10th percentile of a chi-squared distribution with k-1 degrees of freedom. The factor of 2 in the denominator adjusts for the fact that each $t_{i}$ is calculated from two values with error.\n\\* \\* \\* \\* \\*",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 53122,
+       "char_end": 54743,
+       "quote": "4.2.1 Collocated Quality Control Sampler Precision Estimate for $PM_{10}$ , $PM_{2.5}$ , and Pb. Precision is estimated ",
+       "unit_rel_start": 3623,
+       "unit_rel_end": 5244,
+       "unit_id": "f785240256f828687de02cfa002f93df",
+       "locator": {
+        "blockid": "f785240256f828687de02cfa002f93df"
+       },
+       "chunk_ids": [],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-8eeaab2c272e8a01235e17cfa59d610f",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-8eeaab2c272e8a01235e17cfa59d610f",
+      "scope_id": "doc-8eeaab2c272e8a01235e17cfa59d610f:scope:4.2",
+      "clause": "4.2.5",
+      "text": "4.2.5 Performance Evaluation Programs Bias Estimate for $PM_{2.5}$ . The bias estimate is calculated using the PEP audits described in section 3.2.4. of this appendix. The bias estimator is based on, $s_{i}$ , the absolute difference in concentrations divided by the square root of the PEP concentration. Equation 8 to Appendix A to Part 58\n<equation id=\"eq-8eeaab2c272e8a01235e17cfa59d610f-0017\" format=\"latex\">$$",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 54743,
+       "char_end": 55158,
+       "quote": "4.2.5 Performance Evaluation Programs Bias Estimate for $PM_{2.5}$ . The bias estimate is calculated using the PEP audit",
+       "unit_rel_start": 5244,
+       "unit_rel_end": 5659,
+       "unit_id": "f785240256f828687de02cfa002f93df",
+       "locator": {
+        "blockid": "f785240256f828687de02cfa002f93df"
+       },
+       "chunk_ids": [],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-8eeaab2c272e8a01235e17cfa59d610f",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     }
+    ]
+   },
+   "reverification": {
+    "items_checked": 13,
+    "problems": [],
+    "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+   },
+   "model": null,
+   "status": "ok"
+  }
+ ]
+}

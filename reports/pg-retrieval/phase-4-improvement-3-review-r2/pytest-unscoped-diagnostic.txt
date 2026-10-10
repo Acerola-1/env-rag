@@ -1,0 +1,407 @@
+.......................................F.............FFF.FFFFFFF.FF...F. [ 11%]
+FF.FFFFFFF..F........................................................... [ 23%]
+........................................................................ [ 35%]
+........................................................................ [ 47%]
+........................................................................ [ 58%]
+........................................................................ [ 70%]
+........................................................................ [ 82%]
+........................................................................ [ 94%]
+...................................                                      [100%]
+=================================== FAILURES ===================================
+________ test_appended_fabricated_wording_breaks_declared_span_support _________
+
+    def test_appended_fabricated_wording_breaks_declared_span_support():
+        items, meta = assess.answer_items("pg", "prose-enum-001")
+        bad = copy.deepcopy(items)
+        bad[0]["text"] += "停车场允许无条件排放污水。"
+        v = score("prose-enum-001", bad, meta)
+        assert v["final_status"] == "FAIL"
+>       assert v.get("unsupported_declarations")
+E       AssertionError: assert None
+E        +  where None = <built-in method get of dict object at 0x119ff2c00>('unsupported_declarations')
+E        +    where <built-in method get of dict object at 0x119ff2c00> = {'qid': 'prose-enum-001', 'path': 'pg', 'category': 'prose_enum', 'is_counter': False, ...}.get
+
+reports/pg-retrieval/phase-4-round-1-assessment-r3/test_assessment_round1_r3.py:69: AssertionError
+_______ test_correct_prose_text_cannot_support_fabricated_clause_number ________
+
+    def test_correct_prose_text_cannot_support_fabricated_clause_number():
+        items, meta = assess.answer_items("pg", "prose-enum-002")
+        bad = copy.deepcopy(items)
+        bad[0]["clause"] = "9.9.9"
+>       assert score("prose-enum-002", bad, meta)["judgement"] != "pass_mechanical"
+E       AssertionError: assert 'pass_mechanical' != 'pass_mechanical'
+
+reports/pg-retrieval/phase-4-round-1-assessment-review/test_assessment_review_r1.py:56: AssertionError
+____________ test_seq_name_projection_counts_unexpected_source_rows ____________
+
+    def test_seq_name_projection_counts_unexpected_source_rows():
+        qid = "table-enum-004"
+        items, meta = assess.answer_items("pg", qid)
+        bad = copy.deepcopy(items)
+        extra = copy.deepcopy(items[0])
+        citation = extra["citation"]
+        parsed = assess.an._doc_parsed_dir(REGISTRY[citation["doc_id"]]["file_path"])
+        sidecar = assess.an._tables_sidecar(parsed)[citation["table_id"]]
+        grid = assess.an.read_html_table(sidecar["content"])
+        extra["cells"] = grid[0]
+        extra["seq"] = "序号"
+        citation["row_in_fragment"] = 0
+        # This is a genuine source row, so source existence alone cannot reject it.
+        assert assess.verify_citations([extra], REGISTRY)[0]["verified"]
+        bad.append(extra)
+        verdict = score(qid, bad, meta)
+>       assert verdict["judgement"] != "pass_mechanical"
+E       AssertionError: assert 'pass_mechanical' != 'pass_mechanical'
+
+reports/pg-retrieval/phase-4-round-1-assessment-review/test_assessment_review_r1.py:75: AssertionError
+__________ test_fact_prose_needs_verified_source_and_requested_value ___________
+
+    def test_fact_prose_needs_verified_source_and_requested_value():
+        qid = "fact-005"
+        item = {
+            "kind": "prose",
+            # The question asks second-level 20/30. 10 is a different column.
+            "text": "臭气浓度 无量纲 10 30",
+            "citation": {
+                "kind": "char_span",
+                "workspace": "default",
+                "doc_id": QUESTIONS[qid]["target_docs"][0]["doc_id"],
+                "unit_id": "missing",
+                "unit_rel_start": 0,
+                "unit_rel_end": 8,
+                "quote": "虚假引句",
+            },
+        }
+        verdict = score(qid, [item], {"runtime": "ok", "coverage": "complete", "model": {}})
+        assert verdict["all_citations_verified"] is False
+>       assert verdict["judgement"] != "pass_mechanical"
+E       AssertionError: assert 'pass_mechanical' != 'pass_mechanical'
+
+reports/pg-retrieval/phase-4-round-1-assessment-review/test_assessment_review_r1.py:97: AssertionError
+_____________ test_wrong_workspace_is_not_verified[table-enum-001] _____________
+
+qid = 'table-enum-001'
+
+    @pytest.mark.parametrize("qid", ["table-enum-001", "prose-enum-001", "file-enum-001"])
+    def test_wrong_workspace_is_not_verified(qid):
+        items, meta = assess.answer_items("pg", qid)
+        bad = copy.deepcopy(items)
+        for item in bad:
+            item["citation"]["workspace"] = "foreign"
+        verdict = score(qid, bad, meta)
+>       assert verdict["all_citations_verified"] is False
+E       assert True is False
+
+reports/pg-retrieval/phase-4-round-1-assessment-review/test_assessment_review_r1.py:115: AssertionError
+_____________ test_wrong_workspace_is_not_verified[prose-enum-001] _____________
+
+qid = 'prose-enum-001'
+
+    @pytest.mark.parametrize("qid", ["table-enum-001", "prose-enum-001", "file-enum-001"])
+    def test_wrong_workspace_is_not_verified(qid):
+        items, meta = assess.answer_items("pg", qid)
+        bad = copy.deepcopy(items)
+        for item in bad:
+            item["citation"]["workspace"] = "foreign"
+        verdict = score(qid, bad, meta)
+>       assert verdict["all_citations_verified"] is False
+E       assert True is False
+
+reports/pg-retrieval/phase-4-round-1-assessment-review/test_assessment_review_r1.py:115: AssertionError
+_____________ test_wrong_workspace_is_not_verified[file-enum-001] ______________
+
+qid = 'file-enum-001'
+
+    @pytest.mark.parametrize("qid", ["table-enum-001", "prose-enum-001", "file-enum-001"])
+    def test_wrong_workspace_is_not_verified(qid):
+        items, meta = assess.answer_items("pg", qid)
+        bad = copy.deepcopy(items)
+        for item in bad:
+            item["citation"]["workspace"] = "foreign"
+        verdict = score(qid, bad, meta)
+>       assert verdict["all_citations_verified"] is False
+E       assert True is False
+
+reports/pg-retrieval/phase-4-round-1-assessment-review/test_assessment_review_r1.py:115: AssertionError
+____________ test_nonempty_forged_catalog_name_is_not_source_proof _____________
+
+    def test_nonempty_forged_catalog_name_is_not_source_proof():
+        items, meta = assess.answer_items("pg", "file-enum-001")
+        bad = copy.deepcopy(items)
+        for item in bad:
+            item["citation"]["doc_name"] = "完全伪造的文件名.pdf"
+        verdict = score("file-enum-001", bad, meta)
+>       assert verdict["all_citations_verified"] is False
+E       assert True is False
+
+reports/pg-retrieval/phase-4-round-1-assessment-review/test_assessment_review_r1.py:125: AssertionError
+__________ test_counter_behaviour_does_not_bypass_source_verification __________
+
+    def test_counter_behaviour_does_not_bypass_source_verification():
+        qid = "neg-003"
+        items, meta = assess.answer_items("pg", qid)
+        bad = copy.deepcopy(items)
+        for item in bad:
+            item["citation"]["workspace"] = "foreign"
+        entry = {"category": "file_enum", "items": bad, "meta": meta, "budget_failure": None}
+        counter = next(c for c in GOLD["counter_examples"] if c["counter_id"] == qid)
+        v = assess.score_row(qid, "pg", entry, {"gold": {}, "target_docs": []}, True, REGISTRY)
+        v = assess.score_counter_row(qid, "pg", v, entry, counter, REGISTRY, [])
+>       assert v["judgement"] != "behaviour_ok_mechanical"
+E       AssertionError: assert 'behaviour_ok_mechanical' != 'behaviour_ok_mechanical'
+
+reports/pg-retrieval/phase-4-round-1-assessment-review/test_assessment_review_r1.py:139: AssertionError
+_____ test_known_incomplete_table_is_fail_even_when_some_cells_are_masked ______
+
+    def test_known_incomplete_table_is_fail_even_when_some_cells_are_masked():
+        items, meta = assess.answer_items("pg", "table-enum-003")
+        assert meta["coverage"] == "ambiguous"
+        verdict = score("table-enum-003", items, meta)
+        assert verdict["masked_citations"] > 0
+>       assert verdict.get("final_status") == "FAIL"
+E       AssertionError: assert None == 'FAIL'
+E        +  where None = <built-in method get of dict object at 0x11a099900>('final_status')
+E        +    where <built-in method get of dict object at 0x11a099900> = {'qid': 'table-enum-003', 'path': 'pg', 'category': 'table_enum', 'is_counter': False, ...}.get
+
+reports/pg-retrieval/phase-4-round-1-assessment-review/test_assessment_review_r1.py:147: AssertionError
+_______ test_catalog_discovery_is_not_lost_when_no_chunk_was_discovered ________
+
+    def test_catalog_discovery_is_not_lost_when_no_chunk_was_discovered():
+        qid = "file-enum-005"
+        expected = {t["doc_id"] for t in QUESTIONS[qid]["target_docs"]}
+        docs = assess.pre_expansion_docs(qid, "pg")
+>       assert set(docs) == expected
+E       AssertionError: assert set() == {'doc-68a03b5...fd34496c349d'}
+E         
+E         Extra items in the right set:
+E         'doc-68a03b50e1ba1ffc6a0116529f694fe1'
+E         'doc-b423a0e3331541588988fd34496c349d'
+E         'doc-9bb11e5d3809e590259aef28fb61062b'
+E         Use -v to get more diff
+
+reports/pg-retrieval/phase-4-round-1-assessment-review/test_assessment_review_r1.py:155: AssertionError
+________ test_input_integrity_failure_prevents_scoring_and_publication _________
+
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-842/test_input_integrity_failure_p0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1171fdfd0>
+
+    def test_input_integrity_failure_prevents_scoring_and_publication(tmp_path, monkeypatch):
+        monkeypatch.setattr(assess, "__file__", str(tmp_path / "assess_round1.py"))
+        monkeypatch.setattr(assess, "GOLD_SHA", "0" * 64)
+        terminal = assess.load_terminal()
+        terminal["results"] = [
+            r for r in terminal["results"] if r["query_id"] == "table-enum-001" and r["path"] == "pg"
+        ]
+        monkeypatch.setattr(assess, "load_terminal", lambda: terminal)
+        calls = []
+        original = assess.score_row
+    
+        def observed(*args, **kwargs):
+            calls.append("score")
+            return original(*args, **kwargs)
+    
+        monkeypatch.setattr(assess, "score_row", observed)
+>       with pytest.raises(Exception):
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE Exception
+
+reports/pg-retrieval/phase-4-round-1-assessment-review/test_assessment_review_r1.py:195: Failed
+----------------------------- Captured stdout call -----------------------------
+rows: 1
+{
+ "pass_mechanical": 1
+}
+inputs: {"entries": 809, "mismatches": []}
+gold match: False | identity agree: {'source_fingerprint': True, 'catalog_run_snapshot': True, 'search_active': True, 'gold_sha': False}
+ledger diffs count: 10 | recorded total s: 3.472 | wall span s: 977.1
+_____________ test_manual_synthesis_failures_are_in_canonical_rows _____________
+
+    def test_manual_synthesis_failures_are_in_canonical_rows():
+        report = json.loads(SCRIPT.with_name("adjudication.json").read_text(encoding="utf-8"))
+        rows = [r for r in report["rows"] if r["category"] == "synthesis" and not r["is_counter"]]
+        assert len(rows) == 18
+>       assert all(r.get("final_status") == "FAIL" for r in rows)
+E       assert False
+E        +  where False = all(<generator object test_manual_synthesis_failures_are_in_canonical_rows.<locals>.<genexpr> at 0x11a12dbe0>)
+
+reports/pg-retrieval/phase-4-round-1-assessment-review/test_assessment_review_r1.py:205: AssertionError
+__________________ test_string_gold_binds_declared_clause_too __________________
+
+    def test_string_gold_binds_declared_clause_too():
+        items, meta = assess.answer_items("pg", "prose-enum-001")
+        bad = copy.deepcopy(items)
+        bad[0]["clause"] = "9.9.9"
+>       assert score("prose-enum-001", bad, meta)["final_status"] == "FAIL"
+E       AssertionError: assert 'PASS' == 'FAIL'
+E         
+E         - FAIL
+E         + PASS
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:61: AssertionError
+______ test_declared_item_doc_and_citation_doc_must_agree[prose-enum-001] ______
+
+qid = 'prose-enum-001'
+
+    @pytest.mark.parametrize("qid", ["prose-enum-001", "table-enum-001"])
+    def test_declared_item_doc_and_citation_doc_must_agree(qid):
+        items, meta = assess.answer_items("pg", qid)
+        bad = copy.deepcopy(items)
+        bad[0]["doc_id"] = "doc-not-the-source"
+>       assert score(qid, bad, meta)["final_status"] == "FAIL"
+E       AssertionError: assert 'PASS' == 'FAIL'
+E         
+E         - FAIL
+E         + PASS
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:76: AssertionError
+______ test_declared_item_doc_and_citation_doc_must_agree[table-enum-001] ______
+
+qid = 'table-enum-001'
+
+    @pytest.mark.parametrize("qid", ["prose-enum-001", "table-enum-001"])
+    def test_declared_item_doc_and_citation_doc_must_agree(qid):
+        items, meta = assess.answer_items("pg", qid)
+        bad = copy.deepcopy(items)
+        bad[0]["doc_id"] = "doc-not-the-source"
+>       assert score(qid, bad, meta)["final_status"] == "FAIL"
+E       AssertionError: assert 'PASS' == 'FAIL'
+E         
+E         - FAIL
+E         + PASS
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:76: AssertionError
+_________ test_failed_counter_leg_is_not_a_successful_missing_response _________
+
+    def test_failed_counter_leg_is_not_a_successful_missing_response():
+        v = {
+            "judgement": "no_answer_artifact",
+            "runtime": "failure",
+            "coverage": "partial",
+            "delivered": 0,
+            "counter_expected_status": "missing",
+        }
+>       assert assess.finalize_counter(v)["final_status"] != "PASS"
+E       AssertionError: assert 'PASS' != 'PASS'
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:102: AssertionError
+__________ test_observed_empty_leg_is_not_proof_of_isolation_contract __________
+
+    def test_observed_empty_leg_is_not_proof_of_isolation_contract():
+>       assert canonical_row("neg-002")["final_status"] == "PENDING"
+E       AssertionError: assert 'PASS' == 'PENDING'
+E         
+E         - PENDING
+E         + PASS
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:106: AssertionError
+______ test_guard_budget_refusal_is_not_completed_member_budget_contract _______
+
+    def test_guard_budget_refusal_is_not_completed_member_budget_contract():
+        row = canonical_row("neg-008")
+        assert row["coverage"] is None
+>       assert row["final_status"] == "PENDING"
+E       AssertionError: assert 'PASS' == 'PENDING'
+E         
+E         - PENDING
+E         + PASS
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:112: AssertionError
+______________ test_partial_is_not_the_frozen_ambiguous_behaviour ______________
+
+    def test_partial_is_not_the_frozen_ambiguous_behaviour():
+        row = canonical_row("neg-007")
+        assert row["coverage"] == "partial"
+>       assert row["final_status"] == "FAIL"
+E       AssertionError: assert 'PASS' == 'FAIL'
+E         
+E         - FAIL
+E         + PASS
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:118: AssertionError
+___ test_known_unanswered_expected_answer_is_whole_question_failure[neg-009] ___
+
+qid = 'neg-009'
+
+    @pytest.mark.parametrize("qid", ["neg-009", "neg-010"])
+    def test_known_unanswered_expected_answer_is_whole_question_failure(qid):
+        row = canonical_row(qid)
+        assert row["delivered"] == 0
+>       assert row["final_status"] == "FAIL"
+E       AssertionError: assert 'PENDING' == 'FAIL'
+E         
+E         - FAIL
+E         + PENDING
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:125: AssertionError
+___ test_known_unanswered_expected_answer_is_whole_question_failure[neg-010] ___
+
+qid = 'neg-010'
+
+    @pytest.mark.parametrize("qid", ["neg-009", "neg-010"])
+    def test_known_unanswered_expected_answer_is_whole_question_failure(qid):
+        row = canonical_row(qid)
+        assert row["delivered"] == 0
+>       assert row["final_status"] == "FAIL"
+E       AssertionError: assert 'PENDING' == 'FAIL'
+E         
+E         - FAIL
+E         + PENDING
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:125: AssertionError
+_ test_true_but_off_topic_neg010_fragments_do_not_answer_replacement_relation __
+
+    def test_true_but_off_topic_neg010_fragments_do_not_answer_replacement_relation():
+        row = canonical_row("neg-010", "fusion")
+        assert row["delivered"] == 4
+>       assert row["final_status"] == "FAIL"
+E       AssertionError: assert 'PENDING' == 'FAIL'
+E         
+E         - FAIL
+E         + PENDING
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:131: AssertionError
+_____ test_corrupt_manifest_has_rejection_diagnostic_without_adjudication ______
+
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-842/test_corrupt_manifest_has_reje0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11a3ed130>
+
+    def test_corrupt_manifest_has_rejection_diagnostic_without_adjudication(tmp_path, monkeypatch):
+        run = tmp_path / "run"
+        run.mkdir()
+        (run / "pilot-manifest.json").write_text("{ corrupt json")
+        monkeypatch.setattr(assess, "ROUND1", run)
+        monkeypatch.setattr(assess, "__file__", str(tmp_path / "assess_round1.py"))
+        with pytest.raises(Exception):
+            assess.main()
+>       assert (tmp_path / "input-rejection.json").exists()
+E       AssertionError: assert False
+E        +  where False = exists()
+E        +    where exists = (PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-842/test_corrupt_manifest_has_reje0') / 'input-rejection.json').exists
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:156: AssertionError
+=========================== short test summary info ============================
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-r3/test_assessment_round1_r3.py::test_appended_fabricated_wording_breaks_declared_span_support
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review/test_assessment_review_r1.py::test_correct_prose_text_cannot_support_fabricated_clause_number
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review/test_assessment_review_r1.py::test_seq_name_projection_counts_unexpected_source_rows
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review/test_assessment_review_r1.py::test_fact_prose_needs_verified_source_and_requested_value
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review/test_assessment_review_r1.py::test_wrong_workspace_is_not_verified[table-enum-001]
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review/test_assessment_review_r1.py::test_wrong_workspace_is_not_verified[prose-enum-001]
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review/test_assessment_review_r1.py::test_wrong_workspace_is_not_verified[file-enum-001]
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review/test_assessment_review_r1.py::test_nonempty_forged_catalog_name_is_not_source_proof
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review/test_assessment_review_r1.py::test_counter_behaviour_does_not_bypass_source_verification
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review/test_assessment_review_r1.py::test_known_incomplete_table_is_fail_even_when_some_cells_are_masked
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review/test_assessment_review_r1.py::test_catalog_discovery_is_not_lost_when_no_chunk_was_discovered
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review/test_assessment_review_r1.py::test_input_integrity_failure_prevents_scoring_and_publication
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review/test_assessment_review_r1.py::test_manual_synthesis_failures_are_in_canonical_rows
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_string_gold_binds_declared_clause_too
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_declared_item_doc_and_citation_doc_must_agree[prose-enum-001]
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_declared_item_doc_and_citation_doc_must_agree[table-enum-001]
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_failed_counter_leg_is_not_a_successful_missing_response
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_observed_empty_leg_is_not_proof_of_isolation_contract
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_guard_budget_refusal_is_not_completed_member_budget_contract
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_partial_is_not_the_frozen_ambiguous_behaviour
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_known_unanswered_expected_answer_is_whole_question_failure[neg-009]
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_known_unanswered_expected_answer_is_whole_question_failure[neg-010]
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_true_but_off_topic_neg010_fragments_do_not_answer_replacement_relation
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_corrupt_manifest_has_rejection_diagnostic_without_adjudication
+24 failed, 587 passed in 22.49s

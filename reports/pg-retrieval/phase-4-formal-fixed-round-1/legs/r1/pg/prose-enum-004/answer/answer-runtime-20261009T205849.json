@@ -1,0 +1,354 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-09T20:58:46+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "prose-enum-004"
+ ],
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-formal-fixed-round-1/inputs/pg/prose-enum-004-rerank.json",
+   "sha256": "abf975c8def4c559af59e6bf280d676857ba17b510574f47dee8b141c60bb086",
+   "task": null,
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": []
+  },
+  "fused_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-formal-fixed-round-1/inputs/pg/prose-enum-004-fusion.json",
+   "sha256": "781f2efb9c49a6549bc534ce01585e0414f0776284610103c0afed1558dc6d63",
+   "task": "Phase 4 round 1 evaluation input (path=pg)",
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": [
+    "prose-enum-004"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "model_calls_used": 0,
+ "results": [
+  {
+   "query_id": "prose-enum-004",
+   "query": "GB 3838-2002 的水域功能是如何分类的？列出全部类别。",
+   "category": "prose_enum",
+   "workspace": "default",
+   "coverage_status": "complete",
+   "fail_stage": "",
+   "flags": [
+    "no rerank replay for this query id — scope priority falls back to fusion path order, explicitly recorded (no fabricated scores)"
+   ],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "absent",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 0,
+    "typed_targets": [
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "doc_name": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf",
+      "self_code": "GB3838",
+      "self_code_version": "2002",
+      "discovery": "code_exact",
+      "membership_basis": null,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78"
+      },
+      "citation_verified": true
+     }
+    ],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 2,
+    "selected_docs": [
+     "doc-91f9049decde09153368d4b69f280e78"
+    ],
+    "priority": [
+     {
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "rerank_rank_or_none": null
+     }
+    ],
+    "target_confirmation": {
+     "request_branches": [
+      {
+       "code": "GB3838",
+       "version": "2002"
+      }
+     ],
+     "branch_source": "local parse of the question",
+     "identity_source": "catalog documents rows (self_code/self_code_version) read through the guarded workspace+catalog-snapshot connection",
+     "allowed": [
+      "doc-91f9049decde09153368d4b69f280e78"
+     ],
+     "allowed_basis": {
+      "doc-91f9049decde09153368d4b69f280e78": "canonical GB3838-2002 matches requested branch GB3838-2002 (catalog documents row via the guarded workspace+snapshot)"
+     },
+     "rejected": [],
+     "unresolved": [],
+     "unconfirmed_branches": [],
+     "rule": "discovery never defines the answer scope; a typed label or a replay-declared name is an audit clue, never canonical identity"
+    },
+    "basis": "confirmed canonical target identity defines the answer scope (improvement-2); discovery/top-k/rerank order never bound or promote membership — unconfirmed documents are excluded with recorded reasons and cannot enter the answer"
+   },
+   "expansions": [
+    {
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "kind": "prose",
+     "scope_id": "doc-91f9049decde09153368d4b69f280e78:scope:3",
+     "requested_clauses": null,
+     "missing_requested_clauses": [],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "read_status": "complete",
+     "fail_stage": "",
+     "units_read": 1,
+     "unit_ids": [
+      "7b4770667908af51eb321bd82c89aaf7"
+     ],
+     "chunk_ids": [
+      "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+     ],
+     "items_count": 5,
+     "warnings": [],
+     "boundary_ambiguities": [],
+     "selected": true
+    }
+   ],
+   "answer": {
+    "mode": "deterministic",
+    "generated_by": "enumerate/expand entries",
+    "items": [
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "scope_id": "doc-91f9049decde09153368d4b69f280e78:scope:3",
+      "clause": "I类",
+      "text": "主要适用于源头水、国家自然保护区",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 45,
+       "char_end": 66,
+       "quote": "\nI 类 主要适用于源头水、国家自然保护区",
+       "unit_rel_start": 45,
+       "unit_rel_end": 66,
+       "unit_id": "7b4770667908af51eb321bd82c89aaf7",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "7b4770667908af51eb321bd82c89aaf7",
+        "parsed_dir": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+       ],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "scope_id": "doc-91f9049decde09153368d4b69f280e78:scope:3",
+      "clause": "Ⅰ类",
+      "text": "主要适用于集中式生活饮用水地表水源地一级保护区、珍稀水生生物栖息地、鱼虾类产卵场、仔稚幼鱼的索饵场等",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 67,
+       "char_end": 121,
+       "quote": "\nⅠ类 主要适用于集中式生活饮用水地表水源地一级保护区、珍稀水生生物栖息地、鱼虾类产卵场、仔稚幼鱼的索饵场等",
+       "unit_rel_start": 67,
+       "unit_rel_end": 121,
+       "unit_id": "7b4770667908af51eb321bd82c89aaf7",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "7b4770667908af51eb321bd82c89aaf7",
+        "parsed_dir": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+       ],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "scope_id": "doc-91f9049decde09153368d4b69f280e78:scope:3",
+      "clause": "Ⅰ类",
+      "text": "主要适用于集中式生活饮用水地表水源地二级保护区、鱼虾类越冬场、洄游通道、水产养殖区等渔业水域及游泳区",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 122,
+       "char_end": 176,
+       "quote": "\nⅠ类 主要适用于集中式生活饮用水地表水源地二级保护区、鱼虾类越冬场、洄游通道、水产养殖区等渔业水域及游泳区",
+       "unit_rel_start": 122,
+       "unit_rel_end": 176,
+       "unit_id": "7b4770667908af51eb321bd82c89aaf7",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "7b4770667908af51eb321bd82c89aaf7",
+        "parsed_dir": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+       ],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "scope_id": "doc-91f9049decde09153368d4b69f280e78:scope:3",
+      "clause": "N类",
+      "text": "主要适用于一般工业用水区及人体非直接接触的娱乐用水区",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 177,
+       "char_end": 207,
+       "quote": "\nN类 主要适用于一般工业用水区及人体非直接接触的娱乐用水区",
+       "unit_rel_start": 177,
+       "unit_rel_end": 207,
+       "unit_id": "7b4770667908af51eb321bd82c89aaf7",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "7b4770667908af51eb321bd82c89aaf7",
+        "parsed_dir": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+       ],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "scope_id": "doc-91f9049decde09153368d4b69f280e78:scope:3",
+      "clause": "V类",
+      "text": "主要适用于农业用水区及一般景观要求水域。\n对应地表水上述五类水域功能，将地表水环境质量标准基本项目标准值分为五类，不同功能类别分别执行相应类别的标准值。水域功能类别高的标准值严于水域功能类别低的标准值。同一水域兼有多类使用功能的，执行最高功能类别对应的标准值。实现水域功能与达功能类别标准为同一含义",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 208,
+       "char_end": 363,
+       "quote": "\nV 类 主要适用于农业用水区及一般景观要求水域。\n对应地表水上述五类水域功能，将地表水环境质量标准基本项目标准值分为五类，不同功能类别分别执行相应类别的标准值。水域功能类别高的标准值严于水域功能类别低的标准值。同一水域兼有多类使用功能的，",
+       "unit_rel_start": 208,
+       "unit_rel_end": 363,
+       "unit_id": "7b4770667908af51eb321bd82c89aaf7",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "7b4770667908af51eb321bd82c89aaf7",
+        "parsed_dir": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+       ],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     }
+    ]
+   },
+   "reverification": {
+    "items_checked": 5,
+    "problems": [],
+    "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+   },
+   "model": null,
+   "status": "ok"
+  }
+ ]
+}

@@ -1,0 +1,2040 @@
+{
+ "task": "5.2 real local candidate adapter (rev 2, read-only, guarded)",
+ "release": "lightrag-hku 1.5.7",
+ "frozen_contract": {
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_run_id": "c15c741742394320",
+  "catalog_snapshot_id": "4919b3938ad93747",
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "public_counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  }
+ },
+ "started_at": "2026-10-07T00:54:19+0800",
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "results": [
+  {
+   "query_id": "fact-001",
+   "query": "GB 3095-2012 中二氧化硫的年平均浓度二级限值是多少？",
+   "mode": "local",
+   "workspace": "default",
+   "started_at": "2026-10-07T00:54:19+0800",
+   "finished_at": "2026-10-07T00:54:22+0800",
+   "keywords": {
+    "high_level": [
+     "环境空气质量标准",
+     "污染物浓度限值"
+    ],
+    "low_level": [
+     "GB 3095-2012",
+     "二氧化硫",
+     "年平均浓度",
+     "二级限值"
+    ]
+   },
+   "entities_top": [
+    {
+     "entity_name": "表1(环境空气污染物基本项目浓度限值)",
+     "rank": 12
+    },
+    {
+     "entity_name": "二级浓度限值",
+     "rank": 12
+    },
+    {
+     "entity_name": "二氧化硫(SO₂)",
+     "rank": 12
+    },
+    {
+     "entity_name": "Annual Standard Of 10 Ppb",
+     "rank": 2
+    },
+    {
+     "entity_name": "表2(环境空气污染物其他项目浓度限值)",
+     "rank": 12
+    },
+    {
+     "entity_name": "二级SO2标准",
+     "rank": 3
+    },
+    {
+     "entity_name": "Secondary SO2 NAAQS",
+     "rank": 14
+    },
+    {
+     "entity_name": "国家二级标准",
+     "rank": 6
+    }
+   ],
+   "relations_count": 74,
+   "candidates": [
+    {
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+     "workspace": "default",
+     "full_doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_id_verified": true,
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "content_head": "## 4 环境空气功能区分类和质量要求\n\n## 4.1 环境空气功能区分类\n环境空气功能区分为二类：一类区为自然保护区、风景名胜区和其他需要特殊保护的区域；二类",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:表1(环境空气污染物基本项目浓度限值)",
+      "entity:二级浓度限值",
+      "entity:表2(环境空气污染物其他项目浓度限值)",
+      "edge:二级浓度限值|表1",
+      "edge:二级浓度限值|表2",
+      "edge:二氧化氮(NO2)|表1(环境空气污染物基本项目浓度限值)",
+      "edge:臭氧(O3)|表1(环境空气污染物基本项目浓度限值)",
+      "edge:二氧化硫(SO2)|表1(环境空气污染物基本项目浓度限值)",
+      "edge:一氧化碳(CO)|表1(环境空气污染物基本项目浓度限值)",
+      "edge:氮氧化物(NOx)|表2(环境空气污染物其他项目浓度限值)",
+      "edge:GB 3095-2012|表1(环境空气污染物基本项目浓度限值)",
+      "edge:GB 3095-2012|表2(环境空气污染物其他项目浓度限值)",
+      "edge:一类区|表1(环境空气污染物基本项目浓度限值)",
+      "edge:一类区|表2(环境空气污染物其他项目浓度限值)",
+      "edge:总悬浮颗粒物(TSP)|表2(环境空气污染物其他项目浓度限值)",
+      "edge:省级人民政府|表2(环境空气污染物其他项目浓度限值)",
+      "edge:二类区|二级浓度限值",
+      "edge:二类区|表1(环境空气污染物基本项目浓度限值)",
+      "edge:二类区|表2(环境空气污染物其他项目浓度限值)",
+      "edge:国务院环境保护行政主管部门|表2(环境空气污染物其他项目浓度限值)",
+      "edge:苯并[a]芘(BaP)|表2(环境空气污染物其他项目浓度限值)",
+      "edge:二级浓度限值|表1(环境空气污染物基本项目浓度限值)",
+      "edge:二级浓度限值|表2(环境空气污染物其他项目浓度限值)",
+      "edge:一级浓度限值|表1(环境空气污染物基本项目浓度限值)",
+      "edge:一级浓度限值|表2(环境空气污染物其他项目浓度限值)",
+      "edge:监测点位布设|表1(环境空气污染物基本项目浓度限值)",
+      "edge:监测点位布设|表2(环境空气污染物其他项目浓度限值)",
+      "edge:表2(环境空气污染物其他项目浓度限值)|铅(Pb)",
+      "edge:表1(环境空气污染物基本项目浓度限值)|颗粒物(粒径小于等于2.5μm)",
+      "edge:表1(环境空气污染物基本项目浓度限值)|颗粒物(粒径小于等于10μm)"
+     ],
+     "similarity_order": 0,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-002",
+     "workspace": "default",
+     "full_doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc_id_verified": false,
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "content_head": "## 4.1 环境空气功能区分类\n环境空气功能区分为两类：一类区为国家公园、自然保护区、自然公园和其他需要特殊保护的区域；二类区为居住区、商业交通居民混合区、文",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二级浓度限值",
+      "edge:二级浓度限值|表1",
+      "edge:二级浓度限值|表2",
+      "edge:二类区|二级浓度限值",
+      "edge:二级浓度限值|表1(环境空气污染物基本项目)",
+      "edge:二级浓度限值|表2(环境空气污染物其他项目)"
+     ],
+     "similarity_order": 1,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-69538e249043b7fb564980ccab13438e-chunk-005",
+     "workspace": "default",
+     "full_doc_id": "doc-69538e249043b7fb564980ccab13438e",
+     "doc_id_verified": false,
+     "file_path": "air-24_中国环境监测总站_2025中国生态环境状况公报_2026.pdf",
+     "content_head": "## 2.2 PM $_{10}$\n全国 339 个城市环境空气 $PM_{10}$ 年均浓度在 12～124 微克 / 立方米之间，平均为 48 微克 / 立",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:国家二级标准",
+      "edge:PM10|国家二级标准",
+      "edge:O3|国家二级标准",
+      "edge:NO2|国家二级标准",
+      "edge:SO2|国家二级标准"
+     ],
+     "similarity_order": 2,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+     "workspace": "default",
+     "full_doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_id_verified": true,
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "content_head": "## 7 实施与监督\n7.1 本标准由各级环境保护行政主管部门负责监督实施。\n7.2 各类环境空气功能区的范围由县级以上（含县级）人民政府环境保护行政主管部门划",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二级浓度限值",
+      "edge:二级浓度限值|附录A"
+     ],
+     "similarity_order": 3,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+     "workspace": "default",
+     "full_doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc_id_verified": false,
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "content_head": "## 5.3 污染物分析\n应按表 3 的要求，采用相应的方法分析各项污染物的浓度，并执行 HJ 193、HJ 194、HJ 653、HJ 654、HJ 655、",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二氧化硫(SO₂)",
+      "edge:二氧化硫(SO₂)|环境空气质量标准(GB 3095-2026)",
+      "edge:二氧化硫(SO₂)|差分吸收光谱分析法",
+      "edge:二氧化硫(SO₂)|紫外荧光法(HJ 1044)",
+      "edge:二氧化硫(SO₂)|甲醛吸收-副玫瑰苯胺分光光度法(HJ 482)"
+     ],
+     "similarity_order": 4,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-13aaccec179aaa355c8c3d98abd0716e-chunk-020",
+     "workspace": "default",
+     "full_doc_id": "doc-13aaccec179aaa355c8c3d98abd0716e",
+     "doc_id_verified": false,
+     "file_path": "air-47_European-Commission_Directive-2024-2881-Ambient-Air-Quality_2024.pdf",
+     "content_head": "## Article 33\nAddressees\nThis Directive is addressed to the Member States.\nDone ",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二氧化硫(SO₂)",
+      "edge:二氧化硫(SO₂)|附件一(空气质量标准)"
+     ],
+     "similarity_order": 5,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-f786d9079ac78c8e746df84e2e8e8535-chunk-118",
+     "workspace": "default",
+     "full_doc_id": "doc-f786d9079ac78c8e746df84e2e8e8535",
+     "doc_id_verified": false,
+     "file_path": "air-56_Federal-Register_Secondary-NAAQS-Final-Review-NOx-SO2-PM_2024.pdf",
+     "content_head": "## 3.2 Comparisons With the Annual Secondary SO<sub>2</sub> NAAQS\n(a) The annual",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:年度二级SO2 NAAQS",
+      "edge:年度二级SO2 NAAQS|年度二级标准设计值"
+     ],
+     "similarity_order": 6,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f-chunk-004",
+     "workspace": "default",
+     "full_doc_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f",
+     "doc_id_verified": false,
+     "file_path": "air-26_中国环境监测总站_2026年7月全国城市空气质量报告_2026.pdf",
+     "content_head": "全国城市空气质量报告\n2. 《环境空气质量标准》（GB 3095—2026）中六项污染物浓度限值如下表所示：\n<table id=\"tb-c963ecba7ee",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二级浓度限值",
+      "edge:二级浓度限值|过渡阶段浓度限值",
+      "edge:二级浓度限值|基本项目浓度限值"
+     ],
+     "similarity_order": 7,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-006",
+     "workspace": "default",
+     "full_doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc_id_verified": false,
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "content_head": "## 6 数据统计的有效性规定\n6.1 应采取措施保证监测数据的准确性、连续性和完整性，确保全面、客观地反映监测结果。\n6.2 采用自动监测设备监测时，监测仪器",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二氧化硫(SO₂)",
+      "edge:二氧化硫(SO₂)|表4数据有效性规定"
+     ],
+     "similarity_order": 8,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-f786d9079ac78c8e746df84e2e8e8535-chunk-096",
+     "workspace": "default",
+     "full_doc_id": "doc-f786d9079ac78c8e746df84e2e8e8535",
+     "doc_id_verified": false,
+     "file_path": "air-56_Federal-Register_Secondary-NAAQS-Final-Review-NOx-SO2-PM_2024.pdf",
+     "content_head": "## C. Decision on the Secondary Standards\nFor the reasons discussed above and co",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:Secondary SO2 NAAQS",
+      "edge:Administrator|Secondary SO2 NAAQS",
+      "edge:40 CFR Part 50|Secondary SO2 NAAQS",
+      "edge:Integrated Science Assessment|Secondary SO2 NAAQS",
+      "edge:Clean Air Scientific Advisory Committee|Secondary SO2 NAAQS",
+      "edge:Policy Assessment|Secondary SO2 NAAQS",
+      "edge:Appendix T|Secondary SO2 NAAQS",
+      "edge:1-Hour Primary SO2 NAAQS|Secondary SO2 NAAQS",
+      "edge:Secondary SO2 NAAQS|Technical Memorandum"
+     ],
+     "similarity_order": 9,
+     "source_type": "entity"
+    }
+   ],
+   "service_calls": {
+    "embedding_requests": 2,
+    "llm_requests": 1,
+    "qdrant_queries": 2,
+    "neo4j_reads": 1,
+    "pg_readonly_queries": 2,
+    "by_service": {
+     "llm": {
+      "attempt": 1,
+      "success": 1,
+      "failure": 0
+     },
+     "embedding": {
+      "attempt": 2,
+      "success": 2,
+      "failure": 0
+     },
+     "qdrant": {
+      "attempt": 2,
+      "success": 2,
+      "failure": 0
+     },
+     "neo4j": {
+      "attempt": 5,
+      "success": 5,
+      "failure": 0
+     },
+     "pg": {
+      "attempt": 2,
+      "success": 2,
+      "failure": 0
+     }
+    },
+    "groups": {
+     "neo4j": {
+      "attempt": 1,
+      "success": 1,
+      "failure": 0
+     },
+     "pg": {
+      "attempt": 2,
+      "success": 2,
+      "failure": 0
+     }
+    }
+   },
+   "call_records": [
+    {
+     "service": "llm",
+     "operation": "keyword_extraction",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 1905,
+     "result": {
+      "chars": 119
+     }
+    },
+    {
+     "service": "embedding",
+     "operation": "openai_embed",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 130,
+     "result": {
+      "shape": [
+       1,
+       2560
+      ]
+     }
+    },
+    {
+     "service": "qdrant",
+     "operation": "query_points",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 18,
+     "result": {
+      "points": 10
+     }
+    },
+    {
+     "service": "neo4j",
+     "operation": "session.run",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 0,
+     "result": null
+    },
+    {
+     "service": "neo4j",
+     "operation": "session.run",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 0,
+     "result": null
+    },
+    {
+     "service": "neo4j",
+     "operation": "session.run",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 0,
+     "result": null
+    },
+    {
+     "service": "neo4j",
+     "operation": "session.run",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 0,
+     "result": null
+    },
+    {
+     "service": "neo4j",
+     "operation": "session.run",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 0,
+     "result": null
+    },
+    {
+     "service": "embedding",
+     "operation": "openai_embed",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 159,
+     "result": {
+      "shape": [
+       1,
+       2560
+      ]
+     }
+    },
+    {
+     "service": "qdrant",
+     "operation": "retrieve",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 31,
+     "result": {
+      "items": 22
+     }
+    },
+    {
+     "service": "pg",
+     "operation": "readonly_select_chunks",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 7,
+     "result": {
+      "items": 22
+     }
+    },
+    {
+     "service": "pg",
+     "operation": "readonly_select_chunks",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 7,
+     "result": {
+      "items": 10
+     }
+    }
+   ],
+   "sorting_sources": {
+    "chunk_pick": "vector-similarity"
+   },
+   "identity": {
+    "pg_workspace": "default",
+    "vector_workspace": "_",
+    "graph_workspace": "base",
+    "embedding_model": "Qwen/Qwen3-Embedding-4B",
+    "collections": [
+     "lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d",
+     "lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d"
+    ]
+   },
+   "degraded": [],
+   "errors": [],
+   "targets": [
+    "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+   ],
+   "counter": null
+  },
+  {
+   "query_id": "fact-002",
+   "query": "GB 8978-1996 表 1 中总汞的最高允许排放浓度是多少？",
+   "mode": "local",
+   "workspace": "default",
+   "started_at": "2026-10-07T00:54:22+0800",
+   "finished_at": "2026-10-07T00:54:24+0800",
+   "keywords": {
+    "high_level": [
+     "污染物排放标准",
+     "最高允许排放浓度"
+    ],
+    "low_level": [
+     "GB 8978-1996",
+     "表 1",
+     "总汞"
+    ]
+   },
+   "entities_top": [
+    {
+     "entity_name": "GB 8978-1996",
+     "rank": 96
+    },
+    {
+     "entity_name": "GB 7468",
+     "rank": 2
+    },
+    {
+     "entity_name": "GB 7468-87",
+     "rank": 1
+    },
+    {
+     "entity_name": "GB 7469",
+     "rank": 2
+    },
+    {
+     "entity_name": "GB 8978-88",
+     "rank": 1
+    },
+    {
+     "entity_name": "GB/T 17132-1997",
+     "rank": 1
+    },
+    {
+     "entity_name": "GB 7468水质总汞测定冷原子吸收分光光度法",
+     "rank": 1
+    },
+    {
+     "entity_name": "水质总汞的测定冷原子吸收分光光度法",
+     "rank": 2
+    }
+   ],
+   "relations_count": 131,
+   "candidates": [
+    {
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+     "workspace": "default",
+     "full_doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_id_verified": true,
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "content_head": "## 4.3 其他规定\n4.3.1 同一排放口排放两种或两种以上不同类别的污水，且每种污水的排放标准又不同时，其混合污水的排放标准按附录 A 计算。\n4.3.2",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996",
+      "edge:GB 8978-1996|pH",
+      "edge:GB 8978-1996|总汞",
+      "edge:GB 8978-1996|石油类",
+      "edge:GB 8978-1996|六价铬",
+      "edge:GB 8978-1996|苯并(a)芘",
+      "edge:GB 8978-1996|总铬",
+      "edge:GB 8978-1996|总镉",
+      "edge:GB 8978-1996|化学需氧量(COD)",
+      "edge:GB 8978-1996|总铅",
+      "edge:GB 8978-1996|动植物油",
+      "edge:GB 8978-1996|挥发酚",
+      "edge:GB 8978-1996|总银",
+      "edge:GB 8978-1996|悬浮物(SS)",
+      "edge:GB 8978-1996|总砷",
+      "edge:GB 8978-1996|五日生化需氧量(BOD5)",
+      "edge:GB 8978-1996|总镍",
+      "edge:GB 8978-1996|色度(稀释倍数)",
+      "edge:GB 8978-1996|烷基汞",
+      "edge:GB 8978-1996|总铍",
+      "edge:GB 8978-1996|总 α 放射性",
+      "edge:GB 8978-1996|总 β 放射性",
+      "edge:GB 8978-1996|总氰化合物"
+     ],
+     "similarity_order": 0,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002",
+     "workspace": "default",
+     "full_doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_id_verified": true,
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "content_head": "## GB 8978—1996\n<table id=\"tb-b45c510232ed4d2452b0f5b2a13434e4-0004\" format=\"htm",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996",
+      "edge:GB 8978-1996|氨氮",
+      "edge:GB 8978-1996|氟化物",
+      "edge:GB 8978-1996|甲醛",
+      "edge:GB 8978-1996|硫化物",
+      "edge:GB 8978-1996|苯胺类",
+      "edge:GB 8978-1996|硝基苯类",
+      "edge:GB 8978-1996|阴离子表面活性剂(LAS)",
+      "edge:GB 8978-1996|磷酸盐(以P计)"
+     ],
+     "similarity_order": 1,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-007",
+     "workspace": "default",
+     "full_doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_id_verified": true,
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "content_head": "## GB 8978—1996\n表 4(续)\nmg/L\n<table id=\"tb-b45c510232ed4d2452b0f5b2a13434e4-0008\"",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996",
+      "edge:GB 8978-1996|氟化物",
+      "edge:GB 8978-1996|甲醛",
+      "edge:GB 8978-1996|总铜",
+      "edge:GB 8978-1996|苯胺类",
+      "edge:GB 8978-1996|总锌",
+      "edge:GB 8978-1996|硝基苯类",
+      "edge:GB 8978-1996|阴离子表面活性剂(LAS)",
+      "edge:GB 8978-1996|磷酸盐"
+     ],
+     "similarity_order": 2,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-010",
+     "workspace": "default",
+     "full_doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_id_verified": true,
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "content_head": "## GB 8978—1996\nmg/L\n<table id=\"tb-b45c510232ed4d2452b0f5b2a13434e4-0009\" format",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996",
+      "edge:GB 8978-1996|氯苯",
+      "edge:GB 8978-1996|苯酚",
+      "edge:2,4,6-三氯酚|GB 8978-1996",
+      "edge:2,4-二硝基氯苯|GB 8978-1996",
+      "edge:2,4-二氯酚|GB 8978-1996",
+      "edge:GB 8978-1996|间-甲酚",
+      "edge:GB 8978-1996|对-硝基氯苯",
+      "edge:GB 8978-1996|对-二氯苯",
+      "edge:GB 8978-1996|邻-二氯苯",
+      "edge:GB 8978-1996|邻苯二甲酸二丁脂"
+     ],
+     "similarity_order": 3,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000",
+     "workspace": "default",
+     "full_doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_id_verified": true,
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "content_head": "# 中华人民共和国国家标准\nGB 8978—1996\n\n# 污水综合排放标准\n代替 GB 8978—88\nIntegrated wastewater disch",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996",
+      "entity:GB 8978-88",
+      "edge:GB 8978-1996|污水综合排放标准",
+      "edge:GB 8978-1996|GB 8978-88"
+     ],
+     "similarity_order": 4,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-003",
+     "workspace": "default",
+     "full_doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_id_verified": true,
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "content_head": "<table id=\"tb-b45c510232ed4d2452b0f5b2a13434e4-0004\" format=\"html\"><tr><td>18</t",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996",
+      "edge:GB 8978-1996|总铜",
+      "edge:GB 8978-1996|总锌",
+      "edge:GB 8978-1996|元素磷",
+      "edge:GB 8978-1996|总锰",
+      "edge:GB 8978-1996|有机磷农药(以P计)"
+     ],
+     "similarity_order": 5,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006",
+     "workspace": "default",
+     "full_doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_id_verified": true,
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "content_head": "<table id=\"tb-b45c510232ed4d2452b0f5b2a13434e4-0005\" format=\"html\"><tr><td colsp",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996污水综合排放标准",
+      "edge:GB 8978-1996污水综合排放标准|氨氮",
+      "edge:GB 8978-1996污水综合排放标准|pH",
+      "edge:GB 8978-1996污水综合排放标准|石油类",
+      "edge:GB 8978-1996污水综合排放标准|硫化物",
+      "edge:GB 8978-1996污水综合排放标准|化学需氧量(COD)",
+      "edge:GB 8978-1996污水综合排放标准|挥发酚",
+      "edge:GB 8978-1996污水综合排放标准|动植物油",
+      "edge:GB 8978-1996污水综合排放标准|悬浮物(SS)",
+      "edge:GB 8978-1996污水综合排放标准|五日生化需氧量(BOD5)",
+      "edge:GB 8978-1996污水综合排放标准|酒精工业",
+      "edge:GB 8978-1996污水综合排放标准|色度(稀释倍数)",
+      "edge:GB 8978-1996污水综合排放标准|电影洗片",
+      "edge:GB 8978-1996污水综合排放标准|发酵酿造工业",
+      "edge:GB 8978-1996污水综合排放标准|总氰化合物",
+      "edge:GB 8978-1996污水综合排放标准|苎麻脱胶工业",
+      "edge:GB 8978-1996污水综合排放标准|味精工业",
+      "edge:GB 8978-1996污水综合排放标准|羊干皮",
+      "edge:GB 8978-1996污水综合排放标准|牛干皮",
+      "edge:GB 8978-1996污水综合排放标准|石油沥青工业",
+      "edge:GB 8978-1996污水综合排放标准|铁路货车洗刷",
+      "edge:GB 8978-1996污水综合排放标准|化纤浆粕",
+      "edge:GB 8978-1996污水综合排放标准|硫酸工业(水洗法)",
+      "edge:GB 8978-1996污水综合排放标准|铬盐工业",
+      "edge:GB 8978-1996污水综合排放标准|啤酒工业",
+      "edge:GB 8978-1996污水综合排放标准|粘胶纤维工业(单纯纤维)"
+     ],
+     "similarity_order": 6,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019",
+     "workspace": "default",
+     "full_doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_id_verified": true,
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "content_head": "## 6 标准实施监督\n6.1 本标准由县级以上人民政府环境保护行政主管部门负责监督实施。\n6.2 省、自治区、直辖市人民政府对执行国家水污染物排放标准不能保证",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996"
+     ],
+     "similarity_order": 7,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-008",
+     "workspace": "default",
+     "full_doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_id_verified": true,
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "content_head": "<table id=\"tb-b45c510232ed4d2452b0f5b2a13434e4-0008\" format=\"html\"><tr><td rowsp",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996",
+      "edge:GB 8978-1996|马拉硫磷",
+      "edge:GB 8978-1996|甲基对硫磷",
+      "edge:GB 8978-1996|乐果",
+      "edge:GB 8978-1996|元素磷",
+      "edge:GB 8978-1996|对硫磷",
+      "edge:GB 8978-1996|总锰",
+      "edge:GB 8978-1996|显影剂及氧化物总量",
+      "edge:GB 8978-1996|有机磷农药(以P计)",
+      "edge:GB 8978-1996|五氯酚及五氯酚钠(以五氯酚计)",
+      "edge:GB 8978-1996|彩色显影剂"
+     ],
+     "similarity_order": 8,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-011",
+     "workspace": "default",
+     "full_doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_id_verified": true,
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "content_head": "<table id=\"tb-b45c510232ed4d2452b0f5b2a13434e4-0009\" format=\"html\"><tr><td>51</t",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996",
+      "edge:GB 8978-1996|污水综合排放标准"
+     ],
+     "similarity_order": 9,
+     "source_type": "entity"
+    }
+   ],
+   "service_calls": {
+    "embedding_requests": 3,
+    "llm_requests": 1,
+    "qdrant_queries": 3,
+    "neo4j_reads": 1,
+    "pg_readonly_queries": 3,
+    "by_service": {
+     "llm": {
+      "attempt": 1,
+      "success": 1,
+      "failure": 0
+     },
+     "embedding": {
+      "attempt": 3,
+      "success": 3,
+      "failure": 0
+     },
+     "qdrant": {
+      "attempt": 3,
+      "success": 3,
+      "failure": 0
+     },
+     "neo4j": {
+      "attempt": 5,
+      "success": 5,
+      "failure": 0
+     },
+     "pg": {
+      "attempt": 3,
+      "success": 3,
+      "failure": 0
+     }
+    },
+    "groups": {
+     "neo4j": {
+      "attempt": 1,
+      "success": 1,
+      "failure": 0
+     },
+     "pg": {
+      "attempt": 2,
+      "success": 2,
+      "failure": 0
+     }
+    }
+   },
+   "call_records": [
+    {
+     "service": "llm",
+     "operation": "keyword_extraction",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 1437,
+     "result": {
+      "chars": 101
+     }
+    },
+    {
+     "service": "embedding",
+     "operation": "openai_embed",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 136,
+     "result": {
+      "shape": [
+       1,
+       2560
+      ]
+     }
+    },
+    {
+     "service": "qdrant",
+     "operation": "query_points",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 20,
+     "result": {
+      "points": 10
+     }
+    },
+    {
+     "service": "neo4j",
+     "operation": "session.run",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 0,
+     "result": null
+    },
+    {
+     "service": "neo4j",
+     "operation": "session.run",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 0,
+     "result": null
+    },
+    {
+     "service": "neo4j",
+     "operation": "session.run",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 0,
+     "result": null
+    },
+    {
+     "service": "neo4j",
+     "operation": "session.run",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 0,
+     "result": null
+    },
+    {
+     "service": "neo4j",
+     "operation": "session.run",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 0,
+     "result": null
+    },
+    {
+     "service": "embedding",
+     "operation": "openai_embed",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 126,
+     "result": {
+      "shape": [
+       1,
+       2560
+      ]
+     }
+    },
+    {
+     "service": "qdrant",
+     "operation": "retrieve",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 30,
+     "result": {
+      "items": 29
+     }
+    },
+    {
+     "service": "pg",
+     "operation": "readonly_select_chunks",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 5,
+     "result": {
+      "items": 25
+     }
+    },
+    {
+     "service": "embedding",
+     "operation": "openai_embed",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 145,
+     "result": {
+      "shape": [
+       1,
+       2560
+      ]
+     }
+    },
+    {
+     "service": "qdrant",
+     "operation": "retrieve",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 6,
+     "result": {
+      "items": 3
+     }
+    },
+    {
+     "service": "pg",
+     "operation": "readonly_select_chunks",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 3,
+     "result": {
+      "items": 3
+     }
+    },
+    {
+     "service": "pg",
+     "operation": "readonly_select_chunks",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 4,
+     "result": {
+      "items": 10
+     }
+    }
+   ],
+   "sorting_sources": {
+    "chunk_pick": "vector-similarity"
+   },
+   "identity": {
+    "pg_workspace": "default",
+    "vector_workspace": "_",
+    "graph_workspace": "base",
+    "embedding_model": "Qwen/Qwen3-Embedding-4B",
+    "collections": [
+     "lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d",
+     "lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d"
+    ]
+   },
+   "degraded": [],
+   "errors": [],
+   "targets": [
+    "doc-b45c510232ed4d2452b0f5b2a13434e4"
+   ],
+   "counter": null
+  },
+  {
+   "query_id": "syn-001",
+   "query": "对比 GB 3095-2012 与 GB 3095-2026 中 PM2.5 年平均浓度限值的差异。",
+   "mode": "local",
+   "workspace": "default",
+   "started_at": "2026-10-07T00:54:24+0800",
+   "finished_at": "2026-10-07T00:54:26+0800",
+   "keywords": {
+    "high_level": [
+     "空气质量标准对比",
+     "污染物浓度限值差异"
+    ],
+    "low_level": [
+     "GB 3095-2012",
+     "GB 3095-2026",
+     "PM2.5",
+     "年平均浓度限值"
+    ]
+   },
+   "entities_top": [
+    {
+     "entity_name": "细颗粒物(PM₂.₅)",
+     "rank": 3
+    },
+    {
+     "entity_name": "浓度限值",
+     "rank": 6
+    },
+    {
+     "entity_name": "环境空气质量标准(GB 3095-2026)",
+     "rank": 28
+    },
+    {
+     "entity_name": "颗粒物(粒径小于等于2.5μm)",
+     "rank": 4
+    },
+    {
+     "entity_name": "PM2.5年均限值",
+     "rank": 3
+    },
+    {
+     "entity_name": "GB 3095-2012",
+     "rank": 27
+    },
+    {
+     "entity_name": "表1(环境空气污染物基本项目浓度限值)",
+     "rank": 12
+    },
+    {
+     "entity_name": "现行年PM2.5标准(12.0 μg/m³)",
+     "rank": 4
+    }
+   ],
+   "relations_count": 175,
+   "candidates": [
+    {
+     "chunk_id": "doc-8bd91f028c6c0749375c042c3c1537ea-chunk-004",
+     "workspace": "default",
+     "full_doc_id": "doc-8bd91f028c6c0749375c042c3c1537ea",
+     "doc_id_verified": false,
+     "file_path": "air-25_中国环境监测总站_2026年6月全国城市空气质量报告_2026.pdf",
+     "content_head": "全国城市空气质量报告\n2. 《环境空气质量标准》（GB 3095—2026）中六项污染物浓度限值如下表所示：\n<table id=\"tb-8bd91f028c6",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:环境空气质量标准(GB 3095-2026)",
+      "edge:PM2.5|环境空气质量标准(GB 3095-2026)",
+      "edge:PM10|环境空气质量标准(GB 3095-2026)",
+      "edge:O3|环境空气质量标准(GB 3095-2026)",
+      "edge:NO2|环境空气质量标准(GB 3095-2026)",
+      "edge:SO2|环境空气质量标准(GB 3095-2026)",
+      "edge:CO|环境空气质量标准(GB 3095-2026)",
+      "edge:环境空气质量标准(GB 3095-2026)|过渡阶段浓度限值",
+      "edge:环境空气污染物基本项目|环境空气质量标准(GB 3095-2026)",
+      "edge:基本项目浓度限值|环境空气质量标准(GB 3095-2026)"
+     ],
+     "similarity_order": 0,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f-chunk-004",
+     "workspace": "default",
+     "full_doc_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f",
+     "doc_id_verified": false,
+     "file_path": "air-26_中国环境监测总站_2026年7月全国城市空气质量报告_2026.pdf",
+     "content_head": "全国城市空气质量报告\n2. 《环境空气质量标准》（GB 3095—2026）中六项污染物浓度限值如下表所示：\n<table id=\"tb-c963ecba7ee",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:环境空气质量标准(GB 3095-2026)",
+      "edge:环境空气质量标准(GB 3095-2026)|过渡阶段浓度限值",
+      "edge:全国城市空气质量报告|环境空气质量标准(GB 3095-2026)",
+      "edge:环境空气污染物基本项目|环境空气质量标准(GB 3095-2026)"
+     ],
+     "similarity_order": 1,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+     "workspace": "default",
+     "full_doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_id_verified": true,
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "content_head": "# 中 华 人 民 共 和 国 国 家 标 准\nGB 3095—2012\n代替 GB 3095—1996 GB 9137—88\n\n# 环境空气质量标准\n\n# A",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:颗粒物(粒径小于等于2.5μm)",
+      "edge:环境空气质量标准(GB 3095-2012)|颗粒物(粒径小于等于2.5μm)"
+     ],
+     "similarity_order": 2,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-000",
+     "workspace": "default",
+     "full_doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc_id_verified": true,
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "content_head": "# 中华人民共和国国家标准\nGB 3095—2026\n代替 GB 3095—2012\n环境空气质量标准\nAmbient air quality standard",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:浓度限值",
+      "entity:颗粒物(粒径小于等于2.5μm)",
+      "entity:GB 3095-2012",
+      "entity:GB 3095-2026",
+      "edge:GB 3095-2026|生态环境部",
+      "edge:GB 3095-2026|氮氧化物",
+      "edge:GB 3095-2026|二氧化硫",
+      "edge:GB 3095-2026|二氧化氮",
+      "edge:GB 3095-2026|附录A",
+      "edge:GB 3095-2026|规范性引用文件",
+      "edge:GB 3095-2026|中华人民共和国大气污染防治法",
+      "edge:GB 3095-2026|中华人民共和国环境保护法",
+      "edge:GB 3095-2012|GB 3095-2026",
+      "edge:GB 3095-2026|一类区",
+      "edge:GB 3095-2026|中国环境监测总站",
+      "edge:GB 3095-2026|等效方法",
+      "edge:GB 3095-2026|中国环境科学研究院",
+      "edge:GB 3095-2026|环境空气污染物基本项目",
+      "edge:GB 3095-2026|参比状态",
+      "edge:GB 3095-2026|监测方法",
+      "edge:24小时平均|GB 3095-2026",
+      "edge:GB 3095-2026|生态环境部环境标准研究所",
+      "edge:GB 3095-2026|生态环境部法规与标准司",
+      "edge:GB 3095-2026|地方环境空气质量标准",
+      "edge:GB 3095-2026|数据统计的有效性规定",
+      "edge:GB 3095-2026|浓度限值",
+      "edge:GB 3095-2026|环境空气功能区分类",
+      "edge:GB 3095-2026|国家市场监督管理总局",
+      "edge:GB 3095-2026|实施与监督",
+      "edge:GB 3095-2026|颗粒物(粒径小于等于2.5μm)",
+      "edge:GB 3095-2026|颗粒物(粒径小于等于10μm)",
+      "edge:GB 3095-2026|环境空气质量评价与管理",
+      "edge:GB 3095-2026|参比方法",
+      "edge:GB 3095-2026|清华大学",
+      "edge:GB 3095-2026|标准分级",
+      "edge:GB 3095-2026|质量浓度",
+      "edge:GB 3095-2026|生态环境部环境规划院",
+      "edge:GB 3095-2026|环境空气功能区一类区",
+      "edge:GB 3095-2026|日最大8小时平均",
+      "edge:GB 3095-2026|生态环境部大气环境司",
+      "edge:GB 3095-1982|GB 3095-2026",
+      "edge:GB 3095-2026|北京大学",
+      "edge:GB 3095-2012修改单|GB 3095-2026",
+      "edge:GB 3095-2026|复旦大学",
+      "edge:GB 3095-2026|污染物分析方法",
+      "edge:GB 3095-1996|GB 3095-2012"
+     ],
+     "similarity_order": 3,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-eb0a53bb0a4ab5d9eae87c68f6a60fbb-chunk-011",
+     "workspace": "default",
+     "full_doc_id": "doc-eb0a53bb0a4ab5d9eae87c68f6a60fbb",
+     "doc_id_verified": false,
+     "file_path": "air-35_安徽省生态环境厅_安徽省生态环境质量月报2026年6月_2026.pdf",
+     "content_head": "## 附录\n\n## 1.环境空气评价项目及标准\n（1）环境空气质量按照《环境空气质量标准》（GB 3095—2026）和《环境空气质量评价技术规范》（HJ 66",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:细颗粒物(PM₂.₅)",
+      "entity:环境空气质量标准(GB 3095-2026)",
+      "entity:可吸入颗粒物(PM₁₀)",
+      "edge:安徽省生态环境质量月报|环境空气质量标准(GB 3095-2026)",
+      "edge:一氧化碳(CO)|环境空气质量标准(GB 3095-2026)",
+      "edge:沙尘天气|细颗粒物(PM₂.₅)",
+      "edge:可吸入颗粒物(PM₁₀)|沙尘天气",
+      "edge:环境空气质量标准(GB 3095-2026)|过渡阶段浓度限值",
+      "edge:二氧化硫(SO₂)|环境空气质量标准(GB 3095-2026)",
+      "edge:环境空气质量标准(GB 3095-2026)|臭氧(O₃)",
+      "edge:二氧化氮(NO₂)|环境空气质量标准(GB 3095-2026)",
+      "edge:环境空气质量标准(GB 3095-2026)|细颗粒物(PM₂.₅)",
+      "edge:可吸入颗粒物(PM₁₀)|环境空气质量标准(GB 3095-2026)",
+      "edge:细颗粒物(PM₂.₅)|过渡阶段浓度限值",
+      "edge:可吸入颗粒物(PM₁₀)|过渡阶段浓度限值"
+     ],
+     "similarity_order": 4,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+     "workspace": "default",
+     "full_doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_id_verified": true,
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "content_head": "## 7 实施与监督\n7.1 本标准由各级环境保护行政主管部门负责监督实施。\n7.2 各类环境空气功能区的范围由县级以上（含县级）人民政府环境保护行政主管部门划",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 3095-2012",
+      "edge:GB 3095-2012|附录A",
+      "edge:GB 3095-2012|中华人民共和国大气污染防治法",
+      "edge:GB 3095-2012|环境保护行政主管部门",
+      "edge:GB 3095-2012|地方环境空气质量标准",
+      "edge:GB 3095-2012|大气污染防治重点城市",
+      "edge:GB 3095-2012|限期达标规划"
+     ],
+     "similarity_order": 5,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-001",
+     "workspace": "default",
+     "full_doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc_id_verified": true,
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "content_head": "## 2 规范性引用文件\n本标准引用了下列文件或其中的条款。凡是注明日期的引用标准，仅注日期的版本适用于本标准。凡是未注明日期的引用标准，其最新版本（包括所有的",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 3095-2026",
+      "edge:GB 3095-2026|HJ 655",
+      "edge:GB 3095-2026|HJ 818",
+      "edge:GB 3095-2026|HJ 664",
+      "edge:GB 3095-2026|HJ 193",
+      "edge:GB 3095-2026|HJ 654",
+      "edge:GB 3095-2026|HJ 817",
+      "edge:GB 3095-2026|HJ 618",
+      "edge:GB 3095-2026|HJ 479",
+      "edge:GB 3095-2026|HJ 653",
+      "edge:GB 3095-2026|HJ 630",
+      "edge:GB 3095-2026|HJ 539",
+      "edge:GB 3095-2026|HJ 646",
+      "edge:GB 3095-2026|HJ 830",
+      "edge:GB 3095-2026|HJ 829",
+      "edge:GB 3095-2026|HJ 777",
+      "edge:GB 3095-2026|HJ 956",
+      "edge:GB 3095-2026|HJ 647",
+      "edge:GB 3095-2026|HJ 590",
+      "edge:GB 3095-2026|HJ 504",
+      "edge:GB 3095-2026|HJ 482",
+      "edge:GB 3095-2026|HJ 1263",
+      "edge:GB 3095-2026|HJ 657",
+      "edge:GB 3095-2026|HJ 194",
+      "edge:GB 3095-2026|HJ 1225",
+      "edge:GB 3095-2026|HJ 1043",
+      "edge:GB 3095-2026|GB/T 9801",
+      "edge:GB 3095-2026|HJ 1044",
+      "edge:GB 3095-2026|HJ 965"
+     ],
+     "similarity_order": 6,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005",
+     "workspace": "default",
+     "full_doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc_id_verified": true,
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "content_head": "<table id=\"tb-4c883d21fa02a53189e0911c3d59d1d1-0003\" format=\"html\"><tr><td>环境空气 ",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 3095-2026",
+      "edge:GB 3095-2026|铅",
+      "edge:GB 3095-2026|苯并[a]芘",
+      "edge:GB 3095-2026|HJ 539",
+      "edge:GB 3095-2026|HJ 646",
+      "edge:GB 3095-2026|HJ 830",
+      "edge:GB 3095-2026|HJ 829",
+      "edge:GB 3095-2026|HJ 777",
+      "edge:GB 3095-2026|HJ 956",
+      "edge:GB 3095-2026|HJ 647",
+      "edge:GB 3095-2026|HJ 647《环境空气和废气气相和颗粒物中多环芳烃的测定高效液相色谱法》",
+      "edge:GB 3095-2026|HJ 646《环境空气和废气气相和颗粒物中多环芳烃的测定气相色谱-质谱法》",
+      "edge:GB 3095-2026|HJ 830《环境空气颗粒物中无机元素的测定波长色散X射线荧光光谱法》",
+      "edge:GB 3095-2026|HJ 829《环境空气颗粒物中无机元素的测定能量色散X射线荧光光谱法》",
+      "edge:GB 3095-2026|HJ 956《环境空气苯并[a]芘的测定高效液相色谱法》",
+      "edge:GB 3095-2026|HJ 777《空气和废气颗粒物中金属元素的测定电感耦合等离子体发射光谱法》",
+      "edge:GB 3095-2026|HJ 539《环境空气铅的测定石墨炉原子吸收分光光度法》"
+     ],
+     "similarity_order": 7,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+     "workspace": "default",
+     "full_doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_id_verified": true,
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "content_head": "## 4 环境空气功能区分类和质量要求\n\n## 4.1 环境空气功能区分类\n环境空气功能区分为二类：一类区为自然保护区、风景名胜区和其他需要特殊保护的区域；二类",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:颗粒物(粒径小于等于2.5μm)",
+      "entity:GB 3095-2012",
+      "entity:表1(环境空气污染物基本项目浓度限值)",
+      "edge:GB 3095-2012|表1",
+      "edge:GB 3095-2012|表2",
+      "edge:表1|颗粒物(粒径小于等于2.5μm)",
+      "edge:二氧化氮(NO2)|表1(环境空气污染物基本项目浓度限值)",
+      "edge:臭氧(O3)|表1(环境空气污染物基本项目浓度限值)",
+      "edge:二氧化硫(SO2)|表1(环境空气污染物基本项目浓度限值)",
+      "edge:一氧化碳(CO)|表1(环境空气污染物基本项目浓度限值)",
+      "edge:GB 3095-2012|一类区",
+      "edge:GB 3095-2012|省级人民政府",
+      "edge:GB 3095-2012|二类区",
+      "edge:GB 3095-2012|国务院环境保护行政主管部门",
+      "edge:GB 3095-2012|表2(环境空气污染物其他项目浓度限值)",
+      "edge:GB 3095-2012|表1(环境空气污染物基本项目浓度限值)",
+      "edge:GB 3095-2012|环境空气功能区",
+      "edge:一类区|表1(环境空气污染物基本项目浓度限值)",
+      "edge:GB 3095-2012|环境空气质量监测",
+      "edge:GB 3095-2012|环境空气功能区分类",
+      "edge:二类区|表1(环境空气污染物基本项目浓度限值)",
+      "edge:GB 3095-2012|部分地区提前实施",
+      "edge:GB 3095-2012|GB 3095-2012全国实施",
+      "edge:GB 3095-2012|全国实施",
+      "edge:二级浓度限值|表1(环境空气污染物基本项目浓度限值)",
+      "edge:一级浓度限值|表1(环境空气污染物基本项目浓度限值)",
+      "edge:监测点位布设|表1(环境空气污染物基本项目浓度限值)",
+      "edge:表1(环境空气污染物基本项目浓度限值)|颗粒物(粒径小于等于2.5μm)",
+      "edge:表1(环境空气污染物基本项目浓度限值)|颗粒物(粒径小于等于10μm)"
+     ],
+     "similarity_order": 8,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+     "workspace": "default",
+     "full_doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_id_verified": true,
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "content_head": "# 环境空气质量标准\n\n## 1 适用范围\n本标准规定了环境空气功能区分类、标准分级、污染物项目、平均时间及浓度限值、监测方法、数据统计的有效性规定及实施与监督",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:浓度限值",
+      "edge:浓度限值|环境空气质量标准"
+     ],
+     "similarity_order": 9,
+     "source_type": "entity"
+    }
+   ],
+   "service_calls": {
+    "embedding_requests": 2,
+    "llm_requests": 1,
+    "qdrant_queries": 2,
+    "neo4j_reads": 1,
+    "pg_readonly_queries": 2,
+    "by_service": {
+     "llm": {
+      "attempt": 1,
+      "success": 1,
+      "failure": 0
+     },
+     "embedding": {
+      "attempt": 2,
+      "success": 2,
+      "failure": 0
+     },
+     "qdrant": {
+      "attempt": 2,
+      "success": 2,
+      "failure": 0
+     },
+     "neo4j": {
+      "attempt": 5,
+      "success": 5,
+      "failure": 0
+     },
+     "pg": {
+      "attempt": 2,
+      "success": 2,
+      "failure": 0
+     }
+    },
+    "groups": {
+     "neo4j": {
+      "attempt": 1,
+      "success": 1,
+      "failure": 0
+     },
+     "pg": {
+      "attempt": 2,
+      "success": 2,
+      "failure": 0
+     }
+    }
+   },
+   "call_records": [
+    {
+     "service": "llm",
+     "operation": "keyword_extraction",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 1503,
+     "result": {
+      "chars": 126
+     }
+    },
+    {
+     "service": "embedding",
+     "operation": "openai_embed",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 123,
+     "result": {
+      "shape": [
+       1,
+       2560
+      ]
+     }
+    },
+    {
+     "service": "qdrant",
+     "operation": "query_points",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 9,
+     "result": {
+      "points": 10
+     }
+    },
+    {
+     "service": "neo4j",
+     "operation": "session.run",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 0,
+     "result": null
+    },
+    {
+     "service": "neo4j",
+     "operation": "session.run",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 0,
+     "result": null
+    },
+    {
+     "service": "neo4j",
+     "operation": "session.run",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 0,
+     "result": null
+    },
+    {
+     "service": "neo4j",
+     "operation": "session.run",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 0,
+     "result": null
+    },
+    {
+     "service": "neo4j",
+     "operation": "session.run",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 0,
+     "result": null
+    },
+    {
+     "service": "embedding",
+     "operation": "openai_embed",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 318,
+     "result": {
+      "shape": [
+       1,
+       2560
+      ]
+     }
+    },
+    {
+     "service": "qdrant",
+     "operation": "retrieve",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 20,
+     "result": {
+      "items": 20
+     }
+    },
+    {
+     "service": "pg",
+     "operation": "readonly_select_chunks",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 4,
+     "result": {
+      "items": 20
+     }
+    },
+    {
+     "service": "pg",
+     "operation": "readonly_select_chunks",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 3,
+     "result": {
+      "items": 10
+     }
+    }
+   ],
+   "sorting_sources": {
+    "chunk_pick": "vector-similarity"
+   },
+   "identity": {
+    "pg_workspace": "default",
+    "vector_workspace": "_",
+    "graph_workspace": "base",
+    "embedding_model": "Qwen/Qwen3-Embedding-4B",
+    "collections": [
+     "lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d",
+     "lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d"
+    ]
+   },
+   "degraded": [],
+   "errors": [],
+   "targets": [
+    "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+    "doc-4c883d21fa02a53189e0911c3d59d1d1"
+   ],
+   "counter": null
+  },
+  {
+   "query_id": "neg-001",
+   "query": "GB 3095-1996 的二级标准年均限值是多少？",
+   "mode": "local",
+   "workspace": "default",
+   "started_at": "2026-10-07T00:54:26+0800",
+   "finished_at": "2026-10-07T00:54:28+0800",
+   "keywords": {
+    "high_level": [
+     "环境空气质量标准"
+    ],
+    "low_level": [
+     "GB 3095-1996",
+     "二级标准",
+     "年均限值"
+    ]
+   },
+   "entities_top": [
+    {
+     "entity_name": "细颗粒物(PM₂.₅)",
+     "rank": 3
+    },
+    {
+     "entity_name": "表1(环境空气污染物基本项目浓度限值)",
+     "rank": 12
+    },
+    {
+     "entity_name": "国家二级标准",
+     "rank": 6
+    },
+    {
+     "entity_name": "GB 3095",
+     "rank": 7
+    },
+    {
+     "entity_name": "二级浓度限值",
+     "rank": 12
+    },
+    {
+     "entity_name": "表2(环境空气污染物其他项目浓度限值)",
+     "rank": 12
+    },
+    {
+     "entity_name": "可吸入颗粒物(PM₁₀)",
+     "rank": 3
+    },
+    {
+     "entity_name": "浓度限值",
+     "rank": 6
+    }
+   ],
+   "relations_count": 94,
+   "candidates": [
+    {
+     "chunk_id": "doc-8bd91f028c6c0749375c042c3c1537ea-chunk-004",
+     "workspace": "default",
+     "full_doc_id": "doc-8bd91f028c6c0749375c042c3c1537ea",
+     "doc_id_verified": false,
+     "file_path": "air-25_中国环境监测总站_2026年6月全国城市空气质量报告_2026.pdf",
+     "content_head": "全国城市空气质量报告\n2. 《环境空气质量标准》（GB 3095—2026）中六项污染物浓度限值如下表所示：\n<table id=\"tb-8bd91f028c6",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:环境空气质量标准(GB 3095-2026)",
+      "edge:PM2.5|环境空气质量标准(GB 3095-2026)",
+      "edge:PM10|环境空气质量标准(GB 3095-2026)",
+      "edge:O3|环境空气质量标准(GB 3095-2026)",
+      "edge:NO2|环境空气质量标准(GB 3095-2026)",
+      "edge:SO2|环境空气质量标准(GB 3095-2026)",
+      "edge:CO|环境空气质量标准(GB 3095-2026)",
+      "edge:环境空气质量标准(GB 3095-2026)|过渡阶段浓度限值",
+      "edge:环境空气污染物基本项目|环境空气质量标准(GB 3095-2026)",
+      "edge:基本项目浓度限值|环境空气质量标准(GB 3095-2026)"
+     ],
+     "similarity_order": 0,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-000",
+     "workspace": "default",
+     "full_doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc_id_verified": false,
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "content_head": "# 中华人民共和国国家标准\nGB 3095—2026\n代替 GB 3095—2012\n环境空气质量标准\nAmbient air quality standard",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:浓度限值",
+      "edge:GB 3095-2026|浓度限值"
+     ],
+     "similarity_order": 1,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f-chunk-004",
+     "workspace": "default",
+     "full_doc_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f",
+     "doc_id_verified": false,
+     "file_path": "air-26_中国环境监测总站_2026年7月全国城市空气质量报告_2026.pdf",
+     "content_head": "全国城市空气质量报告\n2. 《环境空气质量标准》（GB 3095—2026）中六项污染物浓度限值如下表所示：\n<table id=\"tb-c963ecba7ee",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二级浓度限值",
+      "entity:环境空气质量标准(GB 3095-2026)",
+      "edge:环境空气质量标准(GB 3095-2026)|过渡阶段浓度限值",
+      "edge:全国城市空气质量报告|环境空气质量标准(GB 3095-2026)",
+      "edge:环境空气污染物基本项目|环境空气质量标准(GB 3095-2026)",
+      "edge:二级浓度限值|过渡阶段浓度限值",
+      "edge:二级浓度限值|基本项目浓度限值"
+     ],
+     "similarity_order": 2,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+     "workspace": "default",
+     "full_doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_id_verified": false,
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "content_head": "## 7 实施与监督\n7.1 本标准由各级环境保护行政主管部门负责监督实施。\n7.2 各类环境空气功能区的范围由县级以上（含县级）人民政府环境保护行政主管部门划",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二级浓度限值",
+      "edge:二级浓度限值|附录A"
+     ],
+     "similarity_order": 3,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-eb0a53bb0a4ab5d9eae87c68f6a60fbb-chunk-011",
+     "workspace": "default",
+     "full_doc_id": "doc-eb0a53bb0a4ab5d9eae87c68f6a60fbb",
+     "doc_id_verified": false,
+     "file_path": "air-35_安徽省生态环境厅_安徽省生态环境质量月报2026年6月_2026.pdf",
+     "content_head": "## 附录\n\n## 1.环境空气评价项目及标准\n（1）环境空气质量按照《环境空气质量标准》（GB 3095—2026）和《环境空气质量评价技术规范》（HJ 66",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:细颗粒物(PM₂.₅)",
+      "entity:可吸入颗粒物(PM₁₀)",
+      "entity:环境空气质量标准(GB 3095-2026)",
+      "edge:安徽省生态环境质量月报|环境空气质量标准(GB 3095-2026)",
+      "edge:一氧化碳(CO)|环境空气质量标准(GB 3095-2026)",
+      "edge:沙尘天气|细颗粒物(PM₂.₅)",
+      "edge:可吸入颗粒物(PM₁₀)|沙尘天气",
+      "edge:环境空气质量标准(GB 3095-2026)|过渡阶段浓度限值",
+      "edge:二氧化硫(SO₂)|环境空气质量标准(GB 3095-2026)",
+      "edge:环境空气质量标准(GB 3095-2026)|臭氧(O₃)",
+      "edge:二氧化氮(NO₂)|环境空气质量标准(GB 3095-2026)",
+      "edge:环境空气质量标准(GB 3095-2026)|细颗粒物(PM₂.₅)",
+      "edge:可吸入颗粒物(PM₁₀)|环境空气质量标准(GB 3095-2026)",
+      "edge:细颗粒物(PM₂.₅)|过渡阶段浓度限值",
+      "edge:可吸入颗粒物(PM₁₀)|过渡阶段浓度限值"
+     ],
+     "similarity_order": 4,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-46b25338ec9db0a65d0401b938baf44f-chunk-011",
+     "workspace": "default",
+     "full_doc_id": "doc-46b25338ec9db0a65d0401b938baf44f",
+     "doc_id_verified": false,
+     "file_path": "air-36_安徽省生态环境厅_安徽省生态环境质量月报2026年7月_2026.pdf",
+     "content_head": "## 附录\n\n## 1.环境空气评价项目及标准\n（1）环境空气质量按照《环境空气质量标准》（GB 3095—2026）和《环境空气质量评价技术规范》（HJ 66",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:《环境空气质量标准》(GB 3095-2026)",
+      "edge:《环境空气质量标准》(GB 3095-2026)|细颗粒物(PM2.5)",
+      "edge:《环境空气质量标准》(GB 3095-2026)|二氧化氮(NO2)",
+      "edge:《环境空气质量标准》(GB 3095-2026)|臭氧(O3)",
+      "edge:《环境空气质量标准》(GB 3095-2026)|二氧化硫(SO2)",
+      "edge:《环境空气质量标准》(GB 3095-2026)|一氧化碳(CO)",
+      "edge:《环境空气质量标准》(GB 3095-2026)|环境空气质量",
+      "edge:《环境空气质量标准》(GB 3095-2026)|可吸入颗粒物(PM10)",
+      "edge:《环境空气质量标准》(GB 3095-2026)|过渡阶段浓度限值"
+     ],
+     "similarity_order": 5,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-69538e249043b7fb564980ccab13438e-chunk-005",
+     "workspace": "default",
+     "full_doc_id": "doc-69538e249043b7fb564980ccab13438e",
+     "doc_id_verified": false,
+     "file_path": "air-24_中国环境监测总站_2025中国生态环境状况公报_2026.pdf",
+     "content_head": "## 2.2 PM $_{10}$\n全国 339 个城市环境空气 $PM_{10}$ 年均浓度在 12～124 微克 / 立方米之间，平均为 48 微克 / 立",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:国家二级标准",
+      "edge:PM10|国家二级标准",
+      "edge:O3|国家二级标准",
+      "edge:NO2|国家二级标准",
+      "edge:SO2|国家二级标准"
+     ],
+     "similarity_order": 6,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+     "workspace": "default",
+     "full_doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_id_verified": false,
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "content_head": "## 4 环境空气功能区分类和质量要求\n\n## 4.1 环境空气功能区分类\n环境空气功能区分为二类：一类区为自然保护区、风景名胜区和其他需要特殊保护的区域；二类",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:表1(环境空气污染物基本项目浓度限值)",
+      "entity:二级浓度限值",
+      "entity:表2(环境空气污染物其他项目浓度限值)",
+      "edge:二级浓度限值|表1",
+      "edge:二级浓度限值|表2",
+      "edge:二氧化氮(NO2)|表1(环境空气污染物基本项目浓度限值)",
+      "edge:臭氧(O3)|表1(环境空气污染物基本项目浓度限值)",
+      "edge:二氧化硫(SO2)|表1(环境空气污染物基本项目浓度限值)",
+      "edge:一氧化碳(CO)|表1(环境空气污染物基本项目浓度限值)",
+      "edge:氮氧化物(NOx)|表2(环境空气污染物其他项目浓度限值)",
+      "edge:GB 3095-2012|表1(环境空气污染物基本项目浓度限值)",
+      "edge:GB 3095-2012|表2(环境空气污染物其他项目浓度限值)",
+      "edge:一类区|表1(环境空气污染物基本项目浓度限值)",
+      "edge:一类区|表2(环境空气污染物其他项目浓度限值)",
+      "edge:总悬浮颗粒物(TSP)|表2(环境空气污染物其他项目浓度限值)",
+      "edge:省级人民政府|表2(环境空气污染物其他项目浓度限值)",
+      "edge:二类区|二级浓度限值",
+      "edge:二类区|表1(环境空气污染物基本项目浓度限值)",
+      "edge:二类区|表2(环境空气污染物其他项目浓度限值)",
+      "edge:国务院环境保护行政主管部门|表2(环境空气污染物其他项目浓度限值)",
+      "edge:苯并[a]芘(BaP)|表2(环境空气污染物其他项目浓度限值)",
+      "edge:二级浓度限值|表1(环境空气污染物基本项目浓度限值)",
+      "edge:二级浓度限值|表2(环境空气污染物其他项目浓度限值)",
+      "edge:一级浓度限值|表1(环境空气污染物基本项目浓度限值)",
+      "edge:一级浓度限值|表2(环境空气污染物其他项目浓度限值)",
+      "edge:监测点位布设|表1(环境空气污染物基本项目浓度限值)",
+      "edge:监测点位布设|表2(环境空气污染物其他项目浓度限值)",
+      "edge:表2(环境空气污染物其他项目浓度限值)|铅(Pb)",
+      "edge:表1(环境空气污染物基本项目浓度限值)|颗粒物(粒径小于等于2.5μm)",
+      "edge:表1(环境空气污染物基本项目浓度限值)|颗粒物(粒径小于等于10μm)"
+     ],
+     "similarity_order": 7,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-002",
+     "workspace": "default",
+     "full_doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc_id_verified": false,
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "content_head": "## 4.1 环境空气功能区分类\n环境空气功能区分为两类：一类区为国家公园、自然保护区、自然公园和其他需要特殊保护的区域；二类区为居住区、商业交通居民混合区、文",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二级浓度限值",
+      "entity:浓度限值",
+      "edge:二级浓度限值|表1",
+      "edge:二级浓度限值|表2",
+      "edge:二类区|二级浓度限值",
+      "edge:二级浓度限值|表1(环境空气污染物基本项目)",
+      "edge:二级浓度限值|表2(环境空气污染物其他项目)"
+     ],
+     "similarity_order": 8,
+     "source_type": "entity"
+    },
+    {
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+     "workspace": "default",
+     "full_doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_id_verified": false,
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "content_head": "# 环境空气质量标准\n\n## 1 适用范围\n本标准规定了环境空气功能区分类、标准分级、污染物项目、平均时间及浓度限值、监测方法、数据统计的有效性规定及实施与监督",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:浓度限值",
+      "edge:浓度限值|环境空气质量标准"
+     ],
+     "similarity_order": 9,
+     "source_type": "entity"
+    }
+   ],
+   "service_calls": {
+    "embedding_requests": 2,
+    "llm_requests": 1,
+    "qdrant_queries": 2,
+    "neo4j_reads": 1,
+    "pg_readonly_queries": 2,
+    "by_service": {
+     "llm": {
+      "attempt": 1,
+      "success": 1,
+      "failure": 0
+     },
+     "embedding": {
+      "attempt": 2,
+      "success": 2,
+      "failure": 0
+     },
+     "qdrant": {
+      "attempt": 2,
+      "success": 2,
+      "failure": 0
+     },
+     "neo4j": {
+      "attempt": 5,
+      "success": 5,
+      "failure": 0
+     },
+     "pg": {
+      "attempt": 2,
+      "success": 2,
+      "failure": 0
+     }
+    },
+    "groups": {
+     "neo4j": {
+      "attempt": 1,
+      "success": 1,
+      "failure": 0
+     },
+     "pg": {
+      "attempt": 2,
+      "success": 2,
+      "failure": 0
+     }
+    }
+   },
+   "call_records": [
+    {
+     "service": "llm",
+     "operation": "keyword_extraction",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 1671,
+     "result": {
+      "chars": 93
+     }
+    },
+    {
+     "service": "embedding",
+     "operation": "openai_embed",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 139,
+     "result": {
+      "shape": [
+       1,
+       2560
+      ]
+     }
+    },
+    {
+     "service": "qdrant",
+     "operation": "query_points",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 13,
+     "result": {
+      "points": 10
+     }
+    },
+    {
+     "service": "neo4j",
+     "operation": "session.run",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 0,
+     "result": null
+    },
+    {
+     "service": "neo4j",
+     "operation": "session.run",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 0,
+     "result": null
+    },
+    {
+     "service": "neo4j",
+     "operation": "session.run",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 0,
+     "result": null
+    },
+    {
+     "service": "neo4j",
+     "operation": "session.run",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 0,
+     "result": null
+    },
+    {
+     "service": "neo4j",
+     "operation": "session.run",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 0,
+     "result": null
+    },
+    {
+     "service": "embedding",
+     "operation": "openai_embed",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 175,
+     "result": {
+      "shape": [
+       1,
+       2560
+      ]
+     }
+    },
+    {
+     "service": "qdrant",
+     "operation": "retrieve",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 16,
+     "result": {
+      "items": 19
+     }
+    },
+    {
+     "service": "pg",
+     "operation": "readonly_select_chunks",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 6,
+     "result": {
+      "items": 19
+     }
+    },
+    {
+     "service": "pg",
+     "operation": "readonly_select_chunks",
+     "status": "success",
+     "error": null,
+     "elapsed_ms": 6,
+     "result": {
+      "items": 10
+     }
+    }
+   ],
+   "sorting_sources": {
+    "chunk_pick": "vector-similarity"
+   },
+   "identity": {
+    "pg_workspace": "default",
+    "vector_workspace": "_",
+    "graph_workspace": "base",
+    "embedding_model": "Qwen/Qwen3-Embedding-4B",
+    "collections": [
+     "lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d",
+     "lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d"
+    ]
+   },
+   "degraded": [],
+   "errors": [],
+   "targets": [],
+   "counter": {
+    "type": "absent_version",
+    "expected_status": "missing"
+   }
+  }
+ ],
+ "finished_at": "2026-10-07T00:54:29+0800"
+}

@@ -1,0 +1,133 @@
+........................................................................ [ 25%]
+.......................................FFF.............................. [ 51%]
+........................................................................ [ 77%]
+...............................................................          [100%]
+=================================== FAILURES ===================================
+_ test_preflight_failure_types_all_write_zero_call_terminal[missing_questions] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1135a9b20>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-409/test_preflight_failure_types_a0')
+bad_input = 'missing_questions'
+
+    @pytest.mark.parametrize("bad_input", ["missing_questions", "null_questions", "invalid_dim"])
+    def test_preflight_failure_types_all_write_zero_call_terminal(monkeypatch, tmp_path, bad_input):
+        accepted._install_local(monkeypatch, tmp_path, base._pg_result())
+        if bad_input == "missing_questions":
+            fu.GOLD_PATH.write_text(json.dumps({"counter_examples": []}))
+            expected_error = KeyError
+        elif bad_input == "null_questions":
+            fu.GOLD_PATH.write_text(json.dumps({"questions": None}))
+            expected_error = TypeError
+        else:
+            values = {**base.VALUES, "EMBEDDING_DIM": "not-an-integer"}
+            monkeypatch.setattr(fu, "dotenv_values", lambda path: values)
+            expected_error = ValueError
+    
+        captures = []
+    
+        async def capture(values):
+            captures.append(True)
+            return base._identity()
+    
+        monkeypatch.setattr(fu, "_capture_identity", capture)
+        with pytest.raises(Exception) as error:
+            asyncio.run(fu.run_fusion(tmp_path, ["q-merge"]))
+        assert isinstance(error.value, expected_error) or isinstance(
+            error.value.__cause__, expected_error
+        )
+        assert captures == []
+        terminal_path = tmp_path / "fusion-runtime-latest.json"
+>       assert terminal_path.exists(), f"{expected_error.__name__} must write a preflight terminal"
+E       AssertionError: KeyError must write a preflight terminal
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-409/test_preflight_failure_types_a0/fusion-runtime-latest.json').exists
+
+tests/test_fusion_review_r3.py:41: AssertionError
+__ test_preflight_failure_types_all_write_zero_call_terminal[null_questions] ___
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11342e210>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-409/test_preflight_failure_types_a1')
+bad_input = 'null_questions'
+
+    @pytest.mark.parametrize("bad_input", ["missing_questions", "null_questions", "invalid_dim"])
+    def test_preflight_failure_types_all_write_zero_call_terminal(monkeypatch, tmp_path, bad_input):
+        accepted._install_local(monkeypatch, tmp_path, base._pg_result())
+        if bad_input == "missing_questions":
+            fu.GOLD_PATH.write_text(json.dumps({"counter_examples": []}))
+            expected_error = KeyError
+        elif bad_input == "null_questions":
+            fu.GOLD_PATH.write_text(json.dumps({"questions": None}))
+            expected_error = TypeError
+        else:
+            values = {**base.VALUES, "EMBEDDING_DIM": "not-an-integer"}
+            monkeypatch.setattr(fu, "dotenv_values", lambda path: values)
+            expected_error = ValueError
+    
+        captures = []
+    
+        async def capture(values):
+            captures.append(True)
+            return base._identity()
+    
+        monkeypatch.setattr(fu, "_capture_identity", capture)
+        with pytest.raises(Exception) as error:
+            asyncio.run(fu.run_fusion(tmp_path, ["q-merge"]))
+        assert isinstance(error.value, expected_error) or isinstance(
+            error.value.__cause__, expected_error
+        )
+        assert captures == []
+        terminal_path = tmp_path / "fusion-runtime-latest.json"
+>       assert terminal_path.exists(), f"{expected_error.__name__} must write a preflight terminal"
+E       AssertionError: TypeError must write a preflight terminal
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-409/test_preflight_failure_types_a1/fusion-runtime-latest.json').exists
+
+tests/test_fusion_review_r3.py:41: AssertionError
+____ test_preflight_failure_types_all_write_zero_call_terminal[invalid_dim] ____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1135aa240>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-409/test_preflight_failure_types_a2')
+bad_input = 'invalid_dim'
+
+    @pytest.mark.parametrize("bad_input", ["missing_questions", "null_questions", "invalid_dim"])
+    def test_preflight_failure_types_all_write_zero_call_terminal(monkeypatch, tmp_path, bad_input):
+        accepted._install_local(monkeypatch, tmp_path, base._pg_result())
+        if bad_input == "missing_questions":
+            fu.GOLD_PATH.write_text(json.dumps({"counter_examples": []}))
+            expected_error = KeyError
+        elif bad_input == "null_questions":
+            fu.GOLD_PATH.write_text(json.dumps({"questions": None}))
+            expected_error = TypeError
+        else:
+            values = {**base.VALUES, "EMBEDDING_DIM": "not-an-integer"}
+            monkeypatch.setattr(fu, "dotenv_values", lambda path: values)
+            expected_error = ValueError
+    
+        captures = []
+    
+        async def capture(values):
+            captures.append(True)
+            return base._identity()
+    
+        monkeypatch.setattr(fu, "_capture_identity", capture)
+        with pytest.raises(Exception) as error:
+            asyncio.run(fu.run_fusion(tmp_path, ["q-merge"]))
+        assert isinstance(error.value, expected_error) or isinstance(
+            error.value.__cause__, expected_error
+        )
+        assert captures == []
+        terminal_path = tmp_path / "fusion-runtime-latest.json"
+>       assert terminal_path.exists(), f"{expected_error.__name__} must write a preflight terminal"
+E       AssertionError: ValueError must write a preflight terminal
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-409/test_preflight_failure_types_a2/fusion-runtime-latest.json').exists
+
+tests/test_fusion_review_r3.py:41: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_fusion_review_r3.py::test_preflight_failure_types_all_write_zero_call_terminal[missing_questions]
+FAILED tests/test_fusion_review_r3.py::test_preflight_failure_types_all_write_zero_call_terminal[null_questions]
+FAILED tests/test_fusion_review_r3.py::test_preflight_failure_types_all_write_zero_call_terminal[invalid_dim]
+3 failed, 276 passed in 10.54s

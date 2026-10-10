@@ -1,0 +1,284 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-07T22:16:29+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "syn-004"
+ ],
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "reports/pg-retrieval/phase-3-rerank-r2/rerank-runtime-latest.json",
+   "sha256": "4ad5a56f14acf6debd17dbc16f3836c767322b0b1779ab166f873dfce044227c",
+   "task": "5.4 joint rerank over fused candidates (bounded, recorded)",
+   "started_at": "2026-10-07T11:56:11+0800",
+   "finished_at": "2026-10-07T11:56:13+0800",
+   "query_ids": [
+    "fact-002"
+   ]
+  },
+  "fused_report": {
+   "path": "reports/pg-retrieval/phase-3-answer-fusion-syn/fusion-runtime-latest.json",
+   "sha256": "824c708526cb1d25a850ad2e1bd6ab4bc6fc90f150451f5cc9204ed532a1da55",
+   "task": "5.3 two-path candidate fusion (read-only, guarded)",
+   "started_at": "2026-10-07T14:26:37+0800",
+   "finished_at": "2026-10-07T14:26:42+0800",
+   "query_ids": [
+    "syn-004"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "dffdc04f91c21b1e0c8c17776b100c224952aca9a648e91f7b97b171240e5bae"
+ },
+ "replay_generation_warnings": [
+  "rerank replay env_sha differs from the live .env capture (recorded, not a refusal: the frozen library identity is bound above)",
+  "fused replay env_sha differs from the live .env capture (recorded, not a refusal: the frozen library identity is bound above)"
+ ],
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "dffdc04f91c21b1e0c8c17776b100c224952aca9a648e91f7b97b171240e5bae"
+ },
+ "model_calls_used": 1,
+ "results": [
+  {
+   "query_id": "syn-004",
+   "query": "GB 3838-2002 与 GB 3095-2012 分别对哪些环境要素规定质量标准？",
+   "category": "synthesis",
+   "workspace": "default",
+   "coverage_status": "partial",
+   "fail_stage": "model_failure",
+   "flags": [
+    "no rerank replay for this query id — scope priority falls back to fusion path order, explicitly recorded (no fabricated scores)"
+   ],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "absent",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 0,
+    "typed_targets": [
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "doc_name": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf",
+      "self_code": "GB3838",
+      "self_code_version": "2002",
+      "discovery": "code_exact",
+      "membership_basis": null,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78"
+      },
+      "citation_verified": true
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "doc_name": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+      "self_code": "GB3095",
+      "self_code_version": "2012",
+      "discovery": "code_exact",
+      "membership_basis": null,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      },
+      "citation_verified": true
+     }
+    ],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 22,
+    "selected_docs": [
+     "doc-91f9049decde09153368d4b69f280e78",
+     "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+    ],
+    "priority": [
+     {
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "rerank_rank_or_none": null
+     }
+    ],
+    "basis": "targets_resolved + typed targets (5.3) define the scope; rerank order only prioritizes — membership is never top-k bounded"
+   },
+   "expansions": [
+    {
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "kind": "prose",
+     "scope_id": "doc-91f9049decde09153368d4b69f280e78:scope:3",
+     "requested_clauses": null,
+     "missing_requested_clauses": [],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "read_status": "complete",
+     "fail_stage": "",
+     "units_read": 1,
+     "unit_ids": [
+      "7b4770667908af51eb321bd82c89aaf7"
+     ],
+     "chunk_ids": [
+      "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+     ],
+     "items_count": 5,
+     "warnings": [],
+     "selected": true
+    },
+    {
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "kind": "prose",
+     "scope_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1:scope:7",
+     "requested_clauses": null,
+     "missing_requested_clauses": [],
+     "members_total": 3,
+     "members_processed": 3,
+     "coverage_status": "complete",
+     "read_status": "complete",
+     "fail_stage": "",
+     "units_read": 3,
+     "unit_ids": [
+      "c45552d0a5d96a5541e6ea2588a6ccc2",
+      "d9c1681fcfbfd2f48e654d5692f28b30",
+      "8d717f7bab4184537990a86fdd9aba21"
+     ],
+     "chunk_ids": [
+      "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+     ],
+     "items_count": 3,
+     "warnings": [],
+     "selected": true
+    }
+   ],
+   "answer": {
+    "mode": "model",
+    "generated_by": "one answer model call (hy3)",
+    "items": [],
+    "unverified_claims": [
+     "prose claim is not a continuous verbatim statement of the bound source (only an edition-year prefix or trailing punctuation may be added on the application side) — every word and number merely OCCURRING in the source does not prove which subject carries which value; a rewritten or value-swapped claim is refused as model_failure without a second call",
+     "prose claim is not a continuous verbatim statement of the bound source (only an edition-year prefix or trailing punctuation may be added on the application side) — every word and number merely OCCURRING in the source does not prove which subject carries which value; a rewritten or value-swapped claim is refused as model_failure without a second call"
+    ],
+    "model_failure": "2 claim(s) failed source verification"
+   },
+   "reverification": {
+    "items_checked": 8,
+    "problems": [],
+    "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+   },
+   "model": {
+    "used": true,
+    "sections": [
+     {
+      "label": "GB3838-2002",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "code_norm": "GB3838",
+      "version": "2002",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "item_count": 5,
+      "context_chars": 392
+     },
+     {
+      "label": "GB3095-2012",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "code_norm": "GB3095",
+      "version": "2012",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "item_count": 3,
+      "context_chars": 1449
+     }
+    ],
+    "context_sha256": "b0487919fa1d1deff53db927300d1f2123f259f054e83608690aae83a04670a4",
+    "call": {
+     "service": "answer-model",
+     "endpoint": "http://127.0.0.1:8787/v1/chat/completions",
+     "model": "hy3",
+     "status": "success",
+     "error": null,
+     "latency_ms": 28872
+    },
+    "request_messages": [
+     {
+      "role": "system",
+      "content": "你是严谨的环境标准比对助手。只依据给定上下文回答，输出 JSON：{\"summary\": \"...\", \"items\": [{\"edition\": \"上下文中的版本标签之一\", \"claim\": \"结论\", \"quote\": \"支持结论的逐字原文引句\"}]}。每个 claim 的所有数值/日期必须出现在其 quote 中；quote 必须逐字来自该版本上下文；edition 只能原样使用上下文中给出的标签；不得改写归属，不得补充上下文之外的内容。正文类 claim 必须直接引用该版本上下文中连续的逐字原文片段，不得改写、拼接或概括（仅可附加同版本年份前缀和句末标点）；表格行 claim 须按绑定行列明主体、平均时间、级别及对应数值和单位。"
+     },
+     {
+      "role": "user",
+      "content": "问题：GB 3838-2002 与 GB 3095-2012 分别对哪些环境要素规定质量标准？\n\n版本标签：['GB3095-2012', 'GB3838-2002']\n\n上下文：\n=== 版本标签: GB3838-2002 (doc_id=doc-91f9049decde09153368d4b69f280e78) ===\n[I类] 主要适用于源头水、国家自然保护区\n[Ⅰ类] 主要适用于集中式生活饮用水地表水源地一级保护区、珍稀水生生物栖息地、鱼虾类产卵场、仔稚幼鱼的索饵场等\n[Ⅰ类] 主要适用于集中式生活饮用水地表水源地二级保护区、鱼虾类越冬场、洄游通道、水产养殖区等渔业水域及游泳区\n[N类] 主要适用于一般工业用水区及人体非直接接触的娱乐用水区\n[V类] 主要适用于农业用水区及一般景观要求水域。\n对应地表水上述五类水域功能，将地表水环境质量标准基本项目标准值分为五类，不同功能类别分别执行相应类别的标准值。水域功能类别高的标准值严于水域功能类别低的标准值。同一水域兼有多类使用功能的，执行最高功能类别对应的标准值。实现水域功能与达功能类别标准为同一含义\n\n=== 版本标签: GB3095-2012 (doc_id=doc-257d8cf3fdf90e76c31908c4f92fc1a1) ===\n[7.1] 7.1 本标准由各级环境保护行政主管部门负责监督实施。\n[7.2] 7.2 各类环境空气功能区的范围由县级以上（含县级）人民政府环境保护行政主管部门划分，报本级人民政府批准实施。\n[7.3] 7.3 按照《中华人民共和国大气污染防治法》的规定，未达到本标准的大气污染防治重点城市，应当按照国务院或者国务院环境保护行政主管部门规定的期限，达到本标准。该城市人民政府应当制定限期达标规划，并可以根据国务院的授权或者规定，采取更严格的措施，按期实现达标规划。\nGB 3095—2012\n\n## 附 录 A\n（资料性附录）\n\n## 环境空气中镉、汞、砷、六价铬和氟化物参考浓度限值\n各省级人民政府可根据当地环境保护的需要，针对环境污染的特点，对本标准中未规定的污染物项目制定并实施地方环境空气质量标准。以下为环境空气中部分污染物参考浓度限值。\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0005\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">浓度(通量)限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td></tr><tr><td>1</td><td>镉(Cd)</td><td>年平均</td><td>0.005</td><td>0.005</td><td rowspan=\"6\"> $\\mu g/m^3$ </td></tr><tr><td>2</td><td>汞(Hg)</td><td>年平均</td><td>0.05</td><td>0.05</td></tr><tr><td>3</td><td>砷(As)</td><td>年平均</td><td>0.006</td><td>0.006</td></tr><tr><td>4</td><td>六价铬(Cr(VI))</td><td>年平均</td><td>0.000 025</td><td>0.000 025</td></tr><tr><td rowspan=\"4\">5</td><td rowspan=\"4\">氟化物(F)</td><td>1小时平均</td><td> $20^{1}$ </td><td> $20^{1}$ </td></tr><tr><td>24小时平均</td><td> $7^{1}$ </td><td> $7^{1}$ </td></tr><tr><td>月平均</td><td> $1.8^{2}$ </td><td> $3.0^{3}$ </td><td rowspan=\"2\"> $\\mu g/(dm^2 d)$ </td></tr><tr><td>植物生长季平均</td><td> $1.2^{2}$ </td><td> $2.0^{3}$ </td></tr><tr><td colspan=\"6\">注:1适用于城市地区;2适用于牧业区和以牧业为主的半农半牧区,蚕桑区;3适用于农业和林业区。</td></tr></table>\nGB 3095—2012"
+     }
+    ],
+    "raw_response": "{\n  \"summary\": \"GB3838-2002 对地表水规定质量标准，GB3095-2012 对环境空气规定质量标准。\",\n  \"items\": [\n    {\n      \"edition\": \"GB3838-2002\",\n      \"claim\": \"GB3838-2002 对地表水环境要素规定质量标准\",\n      \"quote\": \"对应地表水上述五类水域功能，将地表水环境质量标准基本项目标准值分为五类，不同功能类别分别执行相应类别的标准值。\"\n    },\n    {\n      \"edition\": \"GB3095-2012\",\n      \"claim\": \"GB3095-2012 对环境空气环境要素规定质量标准\",\n      \"quote\": \"各省级人民政府可根据当地环境保护的需要，针对环境污染的特点，对本标准中未规定的污染物项目制定并实施地方环境空气质量标准。\"\n    }\n  ]\n}",
+    "status": "model_failure",
+    "verification_problems": [
+     "prose claim is not a continuous verbatim statement of the bound source (only an edition-year prefix or trailing punctuation may be added on the application side) — every word and number merely OCCURRING in the source does not prove which subject carries which value; a rewritten or value-swapped claim is refused as model_failure without a second call",
+     "prose claim is not a continuous verbatim statement of the bound source (only an edition-year prefix or trailing punctuation may be added on the application side) — every word and number merely OCCURRING in the source does not prove which subject carries which value; a rewritten or value-swapped claim is refused as model_failure without a second call"
+    ],
+    "failure": "2 claim(s) failed source verification"
+   },
+   "status": "partial"
+  }
+ ]
+}

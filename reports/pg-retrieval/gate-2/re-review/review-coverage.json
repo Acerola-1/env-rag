@@ -1,0 +1,786 @@
+{
+  "summary": {
+    "total_files": 128,
+    "reviewed_files": 13,
+    "skipped_files": 115,
+    "coverage_rate": 0.1015625,
+    "accounted_for_rate": 1.0,
+    "excluded_count": 78,
+    "extra_manual_review": [
+      "tests/test_gate2_rereview.py",
+      "enumerate_/table_enum.py and tables.py sequence handling",
+      "31 gold revisions and10 expectations",
+      "real24 production reads and3 formal CLI runs"
+    ]
+  },
+  "files": [
+    {
+      "path": "pyproject.toml",
+      "source_status": "modified",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "src/env_rag_final/cli.py",
+      "source_status": "modified",
+      "review_status": "reviewed",
+      "reason": "Current search caller context and original13 tests inspected/hash-checked; earlier accepted unrelated paths not re-reviewed"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/.openspec.yaml",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "openspec/changes/archive/.gitkeep",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "openspec/config.yaml",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "openspec/specs/.gitkeep",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/run-manifest.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/sample-set.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/schema.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/search-probes.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/run-manifest.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/sample-set.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/schema.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/search-probes.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/run-manifest.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/sample-set.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/schema.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/search-probes.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/fingerprint-check.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/independent-verification.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/re-review-evidence.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/recheck-a",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/verify_gate0.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/counterexamples-offline.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/cli-0.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/cli-1.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/cli-2.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/model-ambiguous.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/model-live.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/model-verification.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/ocr-preview.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/ocr-rules.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/replay-before-fix.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/replay.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/replay.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/review-comments.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/review-coverage.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/review-manifest.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/verify_model.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/ocr-preview.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/ocr-rules.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/ocr-preview.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/ocr-rules.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/replay-live.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/replay-offline.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/replay.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/review-comments.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/review-coverage.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/review-manifest.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/submitted-records-recovered.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/submitted-runs-original.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/reproduce.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/ocr-preview.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/ocr-rules.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/replay.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/replay.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/review-comments.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/review-coverage.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/review-manifest.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-comments.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-coverage.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-manifest.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/submitted-prose-vs-original.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/submitted-table-citations.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/gold-review.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/gold-source-proof.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/gold_source_proof.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/ocr-preview.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/ocr-rules.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/raw-gold-materials.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/ocr-preview.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/replay.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/replay.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-comments.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-coverage.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-manifest.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review_gold.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/run-manifest.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/sample-set.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/schema.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/search-probes.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/builder-change-counterexample.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/live-verification.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/offline-counterexamples.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/re-review-evidence.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/table-link-counterexample.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/v4-live-verification.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/v4-submitted-build-manifest.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1/build-manifest.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1/structure-samples.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/explain-evidence.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/gold-candidates.json",
+      "source_status": "added",
+      "review_status": "reviewed",
+      "reason": "Phase2 correction code and concrete proof paths reviewed"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/index-manifest.json",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/selfcheck-machinery.json",
+      "source_status": "added",
+      "review_status": "reviewed",
+      "reason": "Phase2 correction code and concrete proof paths reviewed"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/tokenizer-probes.json",
+      "source_status": "added",
+      "review_status": "reviewed",
+      "reason": "Phase2 correction code and concrete proof paths reviewed"
+    },
+    {
+      "path": "src/env_rag_final/audit/__init__.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "src/env_rag_final/audit/collect.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "src/env_rag_final/audit/compat.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "src/env_rag_final/audit/identity.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "src/env_rag_final/audit/lexical.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "src/env_rag_final/audit/pg.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "src/env_rag_final/audit/probes.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "src/env_rag_final/audit/samples.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "src/env_rag_final/audit/snapshot.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "src/env_rag_final/catalog/__init__.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "src/env_rag_final/catalog/builder.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "src/env_rag_final/catalog/lexical_norm.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "src/env_rag_final/catalog/metadata.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "src/env_rag_final/catalog/schema.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "src/env_rag_final/catalog/scopes.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "src/env_rag_final/catalog/source.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "src/env_rag_final/catalog/units.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/__init__.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/contract.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/doc_enum.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/prose_enum.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/table_enum.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/tables.py",
+      "source_status": "added",
+      "review_status": "skipped",
+      "reason": "Outside bounded Phase2 re-review; previously accepted audit/catalog/enum or historical reports, no new acceptance claimed"
+    },
+    {
+      "path": "src/env_rag_final/search/__init__.py",
+      "source_status": "added",
+      "review_status": "reviewed",
+      "reason": "Phase2 correction code and concrete proof paths reviewed"
+    },
+    {
+      "path": "src/env_rag_final/search/clean.py",
+      "source_status": "added",
+      "review_status": "reviewed",
+      "reason": "Phase2 correction code and concrete proof paths reviewed"
+    },
+    {
+      "path": "src/env_rag_final/search/eval.py",
+      "source_status": "added",
+      "review_status": "reviewed",
+      "reason": "Phase2 correction code and concrete proof paths reviewed"
+    },
+    {
+      "path": "src/env_rag_final/search/expand.py",
+      "source_status": "added",
+      "review_status": "reviewed",
+      "reason": "Phase2 correction code and concrete proof paths reviewed"
+    },
+    {
+      "path": "src/env_rag_final/search/gold.py",
+      "source_status": "added",
+      "review_status": "reviewed",
+      "reason": "Phase2 correction code and concrete proof paths reviewed"
+    },
+    {
+      "path": "src/env_rag_final/search/index.py",
+      "source_status": "added",
+      "review_status": "reviewed",
+      "reason": "Phase2 correction code and concrete proof paths reviewed"
+    },
+    {
+      "path": "src/env_rag_final/search/probe.py",
+      "source_status": "added",
+      "review_status": "reviewed",
+      "reason": "Phase2 correction code and concrete proof paths reviewed"
+    },
+    {
+      "path": "src/env_rag_final/search/query.py",
+      "source_status": "added",
+      "review_status": "reviewed",
+      "reason": "Phase2 correction code and concrete proof paths reviewed"
+    },
+    {
+      "path": "src/env_rag_final/search/tokenizer.py",
+      "source_status": "added",
+      "review_status": "reviewed",
+      "reason": "Phase2 correction code and concrete proof paths reviewed"
+    }
+  ]
+}

@@ -16,3 +16,11 @@ logs/
 runs/
 *.log
 .DS_Store
+
+# Runtime database backups are local only.
+snapshots/
+*.dump
+*.snapshot
+
+# Historical audit note contains a credential; keep local, never publish.
+reports/pg-retrieval/phase-4-improvements123-local-validation-r1/sensitive-scan.json

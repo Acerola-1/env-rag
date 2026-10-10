@@ -1,0 +1,19 @@
+..F..........                                                            [100%]
+=================================== FAILURES ===================================
+________ test_appended_fabricated_wording_breaks_declared_span_support _________
+
+    def test_appended_fabricated_wording_breaks_declared_span_support():
+        items, meta = assess.answer_items("pg", "prose-enum-001")
+        bad = copy.deepcopy(items)
+        bad[0]["text"] += "停车场允许无条件排放污水。"
+        v = score("prose-enum-001", bad, meta)
+        assert v["final_status"] == "FAIL"
+>       assert v.get("unsupported_declarations")
+E       AssertionError: assert None
+E        +  where None = <built-in method get of dict object at 0x11aed73c0>('unsupported_declarations')
+E        +    where <built-in method get of dict object at 0x11aed73c0> = {'qid': 'prose-enum-001', 'path': 'pg', 'category': 'prose_enum', 'is_counter': False, ...}.get
+
+reports/pg-retrieval/phase-4-round-1-assessment-r3/test_assessment_round1_r3.py:69: AssertionError
+=========================== short test summary info ============================
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-r3/test_assessment_round1_r3.py::test_appended_fabricated_wording_breaks_declared_span_support
+1 failed, 12 passed in 1.21s

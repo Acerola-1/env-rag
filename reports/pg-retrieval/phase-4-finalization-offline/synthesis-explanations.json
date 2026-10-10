@@ -1,0 +1,296 @@
+[
+  {
+    "qid": "syn-001",
+    "path": "pg",
+    "pre_change_final": "FAIL",
+    "model_status": "incomplete_conditions",
+    "http": "not-issued",
+    "classification": "前置条件不足（版本/范围条件未解决；HTTP 未发出、0 调用，非服务失败）",
+    "stored_evidence": {
+      "adjudication": "phase-4-round-1-assessment-r3/adjudication.json",
+      "answer_runtime": "reports/pg-retrieval/phase-4-round-1/legs/r1/pg/syn-001/answer/answer-runtime-latest.json",
+      "context_or_raw": false
+    },
+    "code_relevance": "im1–3 未放松逐字/绑定合同（im1 只收紧正文完整性与归属边界）；旧失败不因猜测销账"
+  },
+  {
+    "qid": "syn-001",
+    "path": "local",
+    "pre_change_final": "FAIL",
+    "model_status": "incomplete_conditions",
+    "http": "not-issued",
+    "classification": "前置条件不足（版本/范围条件未解决；HTTP 未发出、0 调用，非服务失败）",
+    "stored_evidence": {
+      "adjudication": "phase-4-round-1-assessment-r3/adjudication.json",
+      "answer_runtime": "reports/pg-retrieval/phase-4-round-1/legs/r1/local/syn-001/answer/answer-runtime-latest.json",
+      "context_or_raw": false
+    },
+    "code_relevance": "im1–3 未放松逐字/绑定合同（im1 只收紧正文完整性与归属边界）；旧失败不因猜测销账"
+  },
+  {
+    "qid": "syn-001",
+    "path": "fusion",
+    "pre_change_final": "FAIL",
+    "model_status": "incomplete_conditions",
+    "http": "not-issued",
+    "classification": "前置条件不足（版本/范围条件未解决；HTTP 未发出、0 调用，非服务失败）",
+    "stored_evidence": {
+      "adjudication": "phase-4-round-1-assessment-r3/adjudication.json",
+      "answer_runtime": "reports/pg-retrieval/phase-4-round-1/legs/r1/fusion/syn-001/answer/answer-runtime-latest.json",
+      "context_or_raw": false
+    },
+    "code_relevance": "im1–3 未放松逐字/绑定合同（im1 只收紧正文完整性与归属边界）；旧失败不因猜测销账"
+  },
+  {
+    "qid": "syn-002",
+    "path": "pg",
+    "pre_change_final": "FAIL",
+    "model_status": "model_failure",
+    "http": "issued",
+    "classification": "选错题面要求的范围（真实引用≠回答所问）",
+    "stored_evidence": {
+      "adjudication": "phase-4-round-1-assessment-r3/adjudication.json",
+      "answer_runtime": "reports/pg-retrieval/phase-4-round-1/legs/r1/pg/syn-002/answer/answer-runtime-latest.json",
+      "context_or_raw": true
+    },
+    "code_relevance": "im1–3 未放松逐字/绑定合同（im1 只收紧正文完整性与归属边界）；旧失败不因猜测销账"
+  },
+  {
+    "qid": "syn-002",
+    "path": "local",
+    "pre_change_final": "FAIL",
+    "model_status": "incomplete_conditions",
+    "http": "not-issued",
+    "classification": "前置条件不足（版本/范围条件未解决；HTTP 未发出、0 调用，非服务失败）",
+    "stored_evidence": {
+      "adjudication": "phase-4-round-1-assessment-r3/adjudication.json",
+      "answer_runtime": "reports/pg-retrieval/phase-4-round-1/legs/r1/local/syn-002/answer/answer-runtime-latest.json",
+      "context_or_raw": false
+    },
+    "code_relevance": "im1–3 未放松逐字/绑定合同（im1 只收紧正文完整性与归属边界）；旧失败不因猜测销账"
+  },
+  {
+    "qid": "syn-002",
+    "path": "fusion",
+    "pre_change_final": "FAIL",
+    "model_status": "model_failure",
+    "http": "issued",
+    "classification": "引用文本在该版本读取上下文中不逐字",
+    "stored_evidence": {
+      "adjudication": "phase-4-round-1-assessment-r3/adjudication.json",
+      "answer_runtime": "reports/pg-retrieval/phase-4-round-1/legs/r1/fusion/syn-002/answer/answer-runtime-latest.json",
+      "context_or_raw": true
+    },
+    "code_relevance": "im1–3 未放松逐字/绑定合同（im1 只收紧正文完整性与归属边界）；旧失败不因猜测销账"
+  },
+  {
+    "qid": "syn-003",
+    "path": "pg",
+    "pre_change_final": "FAIL",
+    "model_status": "model_failure",
+    "http": "issued",
+    "classification": "全部改述被拒（聚合，逐条见 verification_problems）",
+    "stored_evidence": {
+      "adjudication": "phase-4-round-1-assessment-r3/adjudication.json",
+      "answer_runtime": "reports/pg-retrieval/phase-4-round-1/legs/r1/pg/syn-003/answer/answer-runtime-latest.json",
+      "context_or_raw": true
+    },
+    "code_relevance": "im1–3 未放松逐字/绑定合同（im1 只收紧正文完整性与归属边界）；旧失败不因猜测销账"
+  },
+  {
+    "qid": "syn-003",
+    "path": "local",
+    "pre_change_final": "FAIL",
+    "model_status": "incomplete_conditions",
+    "http": "not-issued",
+    "classification": "前置条件不足（版本/范围条件未解决；HTTP 未发出、0 调用，非服务失败）",
+    "stored_evidence": {
+      "adjudication": "phase-4-round-1-assessment-r3/adjudication.json",
+      "answer_runtime": "reports/pg-retrieval/phase-4-round-1/legs/r1/local/syn-003/answer/answer-runtime-latest.json",
+      "context_or_raw": false
+    },
+    "code_relevance": "im1–3 未放松逐字/绑定合同（im1 只收紧正文完整性与归属边界）；旧失败不因猜测销账"
+  },
+  {
+    "qid": "syn-003",
+    "path": "fusion",
+    "pre_change_final": "FAIL",
+    "model_status": "incomplete_answer_coverage",
+    "http": "not-issued",
+    "classification": "选错题面要求的范围（真实引用≠回答所问）",
+    "stored_evidence": {
+      "adjudication": "phase-4-round-1-assessment-r3/adjudication.json",
+      "answer_runtime": "reports/pg-retrieval/phase-4-round-1/legs/r1/fusion/syn-003/answer/answer-runtime-latest.json",
+      "context_or_raw": true
+    },
+    "code_relevance": "im1–3 未放松逐字/绑定合同（im1 只收紧正文完整性与归属边界）；旧失败不因猜测销账"
+  },
+  {
+    "qid": "syn-004",
+    "path": "pg",
+    "pre_change_final": "FAIL",
+    "model_status": "model_failure",
+    "http": "issued",
+    "classification": "引用文本在该版本读取上下文中不逐字 + 改述不满足连续逐字合同 + 数值/单位/对象关系不被引用支持",
+    "stored_evidence": {
+      "adjudication": "phase-4-round-1-assessment-r3/adjudication.json",
+      "answer_runtime": "reports/pg-retrieval/phase-4-round-1/legs/r1/pg/syn-004/answer/answer-runtime-latest.json",
+      "context_or_raw": true
+    },
+    "code_relevance": "im1–3 未放松逐字/绑定合同（im1 只收紧正文完整性与归属边界）；旧失败不因猜测销账"
+  },
+  {
+    "qid": "syn-004",
+    "path": "local",
+    "pre_change_final": "FAIL",
+    "model_status": "incomplete_conditions",
+    "http": "not-issued",
+    "classification": "前置条件不足（版本/范围条件未解决；HTTP 未发出、0 调用，非服务失败）",
+    "stored_evidence": {
+      "adjudication": "phase-4-round-1-assessment-r3/adjudication.json",
+      "answer_runtime": "reports/pg-retrieval/phase-4-round-1/legs/r1/local/syn-004/answer/answer-runtime-latest.json",
+      "context_or_raw": false
+    },
+    "code_relevance": "im1–3 未放松逐字/绑定合同（im1 只收紧正文完整性与归属边界）；旧失败不因猜测销账"
+  },
+  {
+    "qid": "syn-004",
+    "path": "fusion",
+    "pre_change_final": "FAIL",
+    "model_status": "model_failure",
+    "http": "issued",
+    "classification": "引用文本在该版本读取上下文中不逐字 + 改述不满足连续逐字合同 + 数值/单位/对象关系不被引用支持",
+    "stored_evidence": {
+      "adjudication": "phase-4-round-1-assessment-r3/adjudication.json",
+      "answer_runtime": "reports/pg-retrieval/phase-4-round-1/legs/r1/fusion/syn-004/answer/answer-runtime-latest.json",
+      "context_or_raw": true
+    },
+    "code_relevance": "im1–3 未放松逐字/绑定合同（im1 只收紧正文完整性与归属边界）；旧失败不因猜测销账"
+  },
+  {
+    "qid": "syn-005",
+    "path": "pg",
+    "pre_change_final": "FAIL",
+    "model_status": "model_failure",
+    "http": "issued",
+    "classification": "引用文本在该版本读取上下文中不逐字",
+    "stored_evidence": {
+      "adjudication": "phase-4-round-1-assessment-r3/adjudication.json",
+      "answer_runtime": "reports/pg-retrieval/phase-4-round-1/legs/r1/pg/syn-005/answer/answer-runtime-latest.json",
+      "context_or_raw": true
+    },
+    "code_relevance": "im1–3 未放松逐字/绑定合同（im1 只收紧正文完整性与归属边界）；旧失败不因猜测销账"
+  },
+  {
+    "qid": "syn-005",
+    "path": "local",
+    "pre_change_final": "FAIL",
+    "model_status": "model_failure",
+    "http": "issued",
+    "classification": "引用文本在该版本读取上下文中不逐字",
+    "stored_evidence": {
+      "adjudication": "phase-4-round-1-assessment-r3/adjudication.json",
+      "answer_runtime": "reports/pg-retrieval/phase-4-round-1/legs/r1/local/syn-005/answer/answer-runtime-latest.json",
+      "context_or_raw": true
+    },
+    "code_relevance": "im1–3 未放松逐字/绑定合同（im1 只收紧正文完整性与归属边界）；旧失败不因猜测销账"
+  },
+  {
+    "qid": "syn-005",
+    "path": "fusion",
+    "pre_change_final": "FAIL",
+    "model_status": "model_failure",
+    "http": "issued",
+    "classification": "全部改述被拒（聚合，逐条见 verification_problems）",
+    "stored_evidence": {
+      "adjudication": "phase-4-round-1-assessment-r3/adjudication.json",
+      "answer_runtime": "reports/pg-retrieval/phase-4-round-1/legs/r1/fusion/syn-005/answer/answer-runtime-latest.json",
+      "context_or_raw": true
+    },
+    "code_relevance": "im1–3 未放松逐字/绑定合同（im1 只收紧正文完整性与归属边界）；旧失败不因猜测销账"
+  },
+  {
+    "qid": "syn-006",
+    "path": "pg",
+    "pre_change_final": "FAIL",
+    "model_status": "incomplete_conditions",
+    "http": "not-issued",
+    "classification": "前置条件不足（版本/范围条件未解决；HTTP 未发出、0 调用，非服务失败）",
+    "stored_evidence": {
+      "adjudication": "phase-4-round-1-assessment-r3/adjudication.json",
+      "answer_runtime": "reports/pg-retrieval/phase-4-round-1/legs/r1/pg/syn-006/answer/answer-runtime-latest.json",
+      "context_or_raw": false
+    },
+    "code_relevance": "im1–3 未放松逐字/绑定合同（im1 只收紧正文完整性与归属边界）；旧失败不因猜测销账"
+  },
+  {
+    "qid": "syn-006",
+    "path": "local",
+    "pre_change_final": "FAIL",
+    "model_status": "incomplete_conditions",
+    "http": "not-issued",
+    "classification": "前置条件不足（版本/范围条件未解决；HTTP 未发出、0 调用，非服务失败）",
+    "stored_evidence": {
+      "adjudication": "phase-4-round-1-assessment-r3/adjudication.json",
+      "answer_runtime": "reports/pg-retrieval/phase-4-round-1/legs/r1/local/syn-006/answer/answer-runtime-latest.json",
+      "context_or_raw": false
+    },
+    "code_relevance": "im1–3 未放松逐字/绑定合同（im1 只收紧正文完整性与归属边界）；旧失败不因猜测销账"
+  },
+  {
+    "qid": "syn-006",
+    "path": "fusion",
+    "pre_change_final": "FAIL",
+    "model_status": "incomplete_conditions",
+    "http": "not-issued",
+    "classification": "前置条件不足（版本/范围条件未解决；HTTP 未发出、0 调用，非服务失败）",
+    "stored_evidence": {
+      "adjudication": "phase-4-round-1-assessment-r3/adjudication.json",
+      "answer_runtime": "reports/pg-retrieval/phase-4-round-1/legs/r1/fusion/syn-006/answer/answer-runtime-latest.json",
+      "context_or_raw": false
+    },
+    "code_relevance": "im1–3 未放松逐字/绑定合同（im1 只收紧正文完整性与归属边界）；旧失败不因猜测销账"
+  },
+  {
+    "qid": "neg-010",
+    "path": "pg",
+    "pre_change_final": "FAIL",
+    "model_status": "model_failure",
+    "http": "issued",
+    "classification": "全部改述被拒（聚合，逐条见 verification_problems）",
+    "stored_evidence": {
+      "adjudication": "phase-4-round-1-assessment-r3/adjudication.json",
+      "answer_runtime": "reports/pg-retrieval/phase-4-round-1/legs/r1/pg/neg-010/answer/answer-runtime-latest.json",
+      "context_or_raw": true
+    },
+    "code_relevance": "im1–3 未放松逐字/绑定合同（im1 只收紧正文完整性与归属边界）；旧失败不因猜测销账"
+  },
+  {
+    "qid": "neg-010",
+    "path": "local",
+    "pre_change_final": "FAIL",
+    "model_status": "incomplete_conditions",
+    "http": "not-issued",
+    "classification": "前置条件不足（版本/范围条件未解决；HTTP 未发出、0 调用，非服务失败）",
+    "stored_evidence": {
+      "adjudication": "phase-4-round-1-assessment-r3/adjudication.json",
+      "answer_runtime": "reports/pg-retrieval/phase-4-round-1/legs/r1/local/neg-010/answer/answer-runtime-latest.json",
+      "context_or_raw": false
+    },
+    "code_relevance": "im1–3 未放松逐字/绑定合同（im1 只收紧正文完整性与归属边界）；旧失败不因猜测销账"
+  },
+  {
+    "qid": "neg-010",
+    "path": "fusion",
+    "pre_change_final": "FAIL",
+    "model_status": "model_failure",
+    "http": "issued",
+    "classification": "改述不满足连续逐字合同 + 数值/单位/对象关系不被引用支持",
+    "stored_evidence": {
+      "adjudication": "phase-4-round-1-assessment-r3/adjudication.json",
+      "answer_runtime": "reports/pg-retrieval/phase-4-round-1/legs/r1/fusion/neg-010/answer/answer-runtime-latest.json",
+      "context_or_raw": true
+    },
+    "code_relevance": "im1–3 未放松逐字/绑定合同（im1 只收紧正文完整性与归属边界）；旧失败不因猜测销账"
+  }
+]

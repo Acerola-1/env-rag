@@ -1,0 +1,54 @@
+{
+  "submission_sha_matches": {
+    "src/env_rag_final/local_adapter.py": {
+      "match": true,
+      "actual_sha": "818666fbd7e2b29f7aeef6f696612918a6e7e0eb31ac8505a95d933faccca002"
+    },
+    "src/env_rag_final/cli.py": {
+      "match": true,
+      "actual_sha": "5ce0f02d054af87d3aed6993b5437ba01b00c809361b29b0c43919e11a8e3713"
+    },
+    "reports/pg-retrieval/phase-3-local/local-runtime.md": {
+      "match": true,
+      "actual_sha": "e564881f7fe12323b19e751ba47b3d4378c9eaeb2d17ce724f303aa2c597a034"
+    },
+    "reports/pg-retrieval/phase-3-local/local-runtime-latest.json": {
+      "match": true,
+      "actual_sha": "f6f961e55a17225d83fdd57ee99721e25357630ad7fda4563f17efac81d5cf3b"
+    },
+    "reports/pg-retrieval/gate-2/review-r5/gold-approved.json": {
+      "match": true,
+      "actual_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e"
+    }
+  },
+  "release_version": "1.5.7",
+  "wheel_python_files_checked": 172,
+  "wheel_record_mismatches": [],
+  "actual_runtime_bad_edge_provenance": {
+    "fact-001": [
+      "doc-f786d9079ac78c8e746df84e2e8e8535-chunk-118"
+    ],
+    "fact-002": [
+      "doc-91f9049decde09153368d4b69f280e78-chunk-009"
+    ],
+    "syn-001": [
+      "doc-94c5cacd2f64ca6430dc5175d520f539-chunk-039"
+    ],
+    "neg-001": [
+      "doc-d3d7d38fe9dc1348e57c1fa29b47f404-chunk-002"
+    ]
+  },
+  "submitted_candidates": 79,
+  "submission_service_totals": {
+    "embedding_requests": 8,
+    "embedding_texts": 8,
+    "llm_requests": 4,
+    "qdrant_queries": 8,
+    "neo4j_reads": 4,
+    "pg_readonly_queries": 4
+  },
+  "service_totals_independently_verified": false,
+  "current_5_1_compat_sha": "5fa566b2b6a54571803a302e4e5c25df33382b874c5aacf2e4ea696f33ed3933",
+  "previous_5_1_accepted": true,
+  "previous_5_1_compat_sha_unchanged": true
+}

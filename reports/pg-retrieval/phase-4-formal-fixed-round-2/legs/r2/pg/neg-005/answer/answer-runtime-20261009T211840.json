@@ -1,0 +1,2130 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-09T21:18:37+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "neg-005"
+ ],
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-formal-fixed-round-2/inputs/pg/neg-005-rerank.json",
+   "sha256": "bf34c548b8d8e28bb5bd476e2bc2439a95b6cee312087da9ab1eb80623ca3f60",
+   "task": null,
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": []
+  },
+  "fused_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-formal-fixed-round-2/inputs/pg/neg-005-fusion.json",
+   "sha256": "3a6818f9233bf77880a822be22b79232eaa30c0bf78239d79705a632fea9ca44",
+   "task": "Phase 4 round 2 evaluation input (path=pg)",
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": [
+    "neg-005"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "model_calls_used": 0,
+ "results": [
+  {
+   "query_id": "neg-005",
+   "query": "GB 3838-2002 的表 1 与 GB 3095-2012 的表 1 是同一张表吗？",
+   "category": "table_enum",
+   "workspace": "default",
+   "coverage_status": "complete",
+   "fail_stage": "",
+   "flags": [
+    "no rerank replay for this query id — scope priority falls back to fusion path order, explicitly recorded (no fabricated scores)"
+   ],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "absent",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 0,
+    "typed_targets": [
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "doc_name": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf",
+      "self_code": "GB3838",
+      "self_code_version": "2002",
+      "discovery": "code_exact",
+      "membership_basis": null,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78"
+      },
+      "citation_verified": true
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "doc_name": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+      "self_code": "GB3095",
+      "self_code_version": "2012",
+      "discovery": "code_exact",
+      "membership_basis": null,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      },
+      "citation_verified": true
+     },
+     {
+      "target_type": "table_unit",
+      "workspace": "default",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+      "heading": "4.2 环境空气功能区质量要求",
+      "chunk_ids": [
+       "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+      ],
+      "discovery": "table_range_binding",
+      "scope_status": null,
+      "membership_basis": null,
+      "citation": {
+       "kind": "table_unit",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      }
+     },
+     {
+      "target_type": "table_unit",
+      "workspace": "default",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+      "heading": "7 标准的实施与监督",
+      "chunk_ids": [
+       "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+       "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+       "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+      ],
+      "discovery": "table_range_binding",
+      "scope_status": null,
+      "membership_basis": null,
+      "citation": {
+       "kind": "table_unit",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      }
+     }
+    ],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 8,
+    "selected_docs": [
+     "doc-91f9049decde09153368d4b69f280e78",
+     "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+    ],
+    "priority": [
+     {
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "rerank_rank_or_none": null
+     }
+    ],
+    "target_confirmation": {
+     "request_branches": [
+      {
+       "code": "GB3838",
+       "version": "2002"
+      },
+      {
+       "code": "GB3095",
+       "version": "2012"
+      }
+     ],
+     "branch_source": "local parse of the question",
+     "identity_source": "catalog documents rows (self_code/self_code_version) read through the guarded workspace+catalog-snapshot connection",
+     "allowed": [
+      "doc-91f9049decde09153368d4b69f280e78",
+      "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+     ],
+     "allowed_basis": {
+      "doc-91f9049decde09153368d4b69f280e78": "canonical GB3838-2002 matches requested branch GB3838-2002 (catalog documents row via the guarded workspace+snapshot)",
+      "doc-257d8cf3fdf90e76c31908c4f92fc1a1": "canonical GB3095-2012 matches requested branch GB3095-2012 (catalog documents row via the guarded workspace+snapshot)"
+     },
+     "rejected": [],
+     "unresolved": [],
+     "unconfirmed_branches": [],
+     "rule": "discovery never defines the answer scope; a typed label or a replay-declared name is an audit clue, never canonical identity"
+    },
+    "basis": "confirmed canonical target identity defines the answer scope (improvement-2); discovery/top-k/rerank order never bound or promote membership — unconfirmed documents are excluded with recorded reasons and cannot enter the answer"
+   },
+   "expansions": [
+    {
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "kind": "table",
+     "table_number": "1",
+     "scope_ids": [
+      "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001"
+     ],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "fail_stage": "",
+     "items_count": 14,
+     "warnings": [
+      "table_structure: header=[[\"序号\", \"污染物项目\", \"平均时间\", \"浓度限值\", \"浓度限值\", \"单位\"], [\"序号\", \"污染物项目\", \"平均时间\", \"一级\", \"二级\", \"单位\"]]; units=[]; footnotes=[]"
+     ],
+     "selected": true
+    },
+    {
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "kind": "table",
+     "table_number": "1",
+     "scope_ids": [
+      "tb-91f9049decde09153368d4b69f280e78-0001"
+     ],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "fail_stage": "",
+     "items_count": 24,
+     "warnings": [
+      "table_structure: header=[[\"序号\", \"标准值\\\\分类项目\", \"I类\", \"II类\", \"III类\", \"IV类\", \"V类\"]]; units=[]; footnotes=[]"
+     ],
+     "selected": true
+    }
+   ],
+   "answer": {
+    "mode": "deterministic",
+    "generated_by": "enumerate/expand entries",
+    "items": [
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "1",
+      "cells": [
+       "1",
+       "二氧化硫( $SO_2$ )",
+       "年平均",
+       "20",
+       "60",
+       "$μg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 2,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "1",
+      "cells": [
+       "1",
+       "二氧化硫( $SO_2$ )",
+       "24小时平均",
+       "50",
+       "150",
+       "$μg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 3,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "1",
+      "cells": [
+       "1",
+       "二氧化硫( $SO_2$ )",
+       "1小时平均",
+       "150",
+       "500",
+       "$μg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 4,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "2",
+      "cells": [
+       "2",
+       "二氧化氮( $NO_2$ )",
+       "年平均",
+       "40",
+       "40",
+       "$μg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 5,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "2",
+      "cells": [
+       "2",
+       "二氧化氮( $NO_2$ )",
+       "24小时平均",
+       "80",
+       "80",
+       "$μg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 6,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "2",
+      "cells": [
+       "2",
+       "二氧化氮( $NO_2$ )",
+       "1小时平均",
+       "200",
+       "200",
+       "$μg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 7,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "3",
+      "cells": [
+       "3",
+       "一氧化碳(CO)",
+       "24小时平均",
+       "4",
+       "4",
+       "$mg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 8,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "3",
+      "cells": [
+       "3",
+       "一氧化碳(CO)",
+       "1小时平均",
+       "10",
+       "10",
+       "$mg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 9,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "4",
+      "cells": [
+       "4",
+       "臭氧( $O_3$ )",
+       "日最大8小时平均",
+       "100",
+       "160",
+       "$μg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 10,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "4",
+      "cells": [
+       "4",
+       "臭氧( $O_3$ )",
+       "1小时平均",
+       "160",
+       "200",
+       "$μg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 11,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "5",
+      "cells": [
+       "5",
+       "颗粒物(粒径小于等于10μm)",
+       "年平均",
+       "40",
+       "70",
+       "$μg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 12,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "5",
+      "cells": [
+       "5",
+       "颗粒物(粒径小于等于10μm)",
+       "24小时平均",
+       "50",
+       "150",
+       "$μg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 13,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "6",
+      "cells": [
+       "6",
+       "颗粒物(粒径小于等于2.5μm)",
+       "年平均",
+       "15",
+       "35",
+       "$μg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 14,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "6",
+      "cells": [
+       "6",
+       "颗粒物(粒径小于等于2.5μm)",
+       "24小时平均",
+       "35",
+       "75",
+       "$μg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 15,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "1",
+      "cells": [
+       "1",
+       "水温(°C)",
+       "人为造成的环境水温变化应限制在:周平均最大温升≤1周平均最大温降≤2",
+       "人为造成的环境水温变化应限制在:周平均最大温升≤1周平均最大温降≤2",
+       "人为造成的环境水温变化应限制在:周平均最大温升≤1周平均最大温降≤2",
+       "人为造成的环境水温变化应限制在:周平均最大温升≤1周平均最大温降≤2",
+       "人为造成的环境水温变化应限制在:周平均最大温升≤1周平均最大温降≤2"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 1,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "2",
+      "cells": [
+       "2",
+       "pH值(无量纲)",
+       "6~9",
+       "6~9",
+       "6~9",
+       "6~9",
+       "6~9"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 2,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "3",
+      "cells": [
+       "3",
+       "溶解氧≥",
+       "饱和率90%(或7.5)",
+       "6",
+       "5",
+       "3",
+       "2"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 3,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "4",
+      "cells": [
+       "4",
+       "高锰酸盐指数≤",
+       "2",
+       "4",
+       "6",
+       "10",
+       "15"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 4,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "5",
+      "cells": [
+       "5",
+       "化学需氧量(COD)≤",
+       "15",
+       "15",
+       "20",
+       "30",
+       "40"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 5,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "6",
+      "cells": [
+       "6",
+       "五日生化需氧量(BOD5)≤",
+       "3",
+       "3",
+       "4",
+       "6",
+       "10"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 6,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "7",
+      "cells": [
+       "7",
+       "氨氮(NH3-N)≤",
+       "0.15",
+       "0.5",
+       "1.0",
+       "1.5",
+       "2.0"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 7,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "8",
+      "cells": [
+       "8",
+       "总磷(以P计)≤",
+       "0.02(湖、库0.01)",
+       "0.1(湖、库0.025)",
+       "0.2(湖、库0.05)",
+       "0.3(湖、库0.1)",
+       "0.4(湖、库0.2)"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 8,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "9",
+      "cells": [
+       "9",
+       "总氮(湖、库,以N计)≤",
+       "0.2",
+       "0.5",
+       "1.0",
+       "1.5",
+       "2.0"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 9,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "10",
+      "cells": [
+       "10",
+       "铜≤",
+       "0.01",
+       "1.0",
+       "1.0",
+       "1.0",
+       "1.0"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 10,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "11",
+      "cells": [
+       "11",
+       "锌≤",
+       "0.05",
+       "1.0",
+       "1.0",
+       "2.0",
+       "2.0"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 11,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "12",
+      "cells": [
+       "12",
+       "氟化物(以F-计)≤",
+       "1.0",
+       "1.0",
+       "1.0",
+       "1.5",
+       "1.5"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 12,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "13",
+      "cells": [
+       "13",
+       "硒≤",
+       "0.01",
+       "0.01",
+       "0.01",
+       "0.02",
+       "0.02"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 13,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "14",
+      "cells": [
+       "14",
+       "砷≤",
+       "0.05",
+       "0.05",
+       "0.05",
+       "0.1",
+       "0.1"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 14,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "15",
+      "cells": [
+       "15",
+       "汞≤",
+       "0.00005",
+       "0.00005",
+       "0.0001",
+       "0.001",
+       "0.001"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 15,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "16",
+      "cells": [
+       "16",
+       "镉≤",
+       "0.001",
+       "0.005",
+       "0.005",
+       "0.005",
+       "0.01"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 16,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "17",
+      "cells": [
+       "17",
+       "铬(六价)≤",
+       "0.01",
+       "0.05",
+       "0.05",
+       "0.05",
+       "0.1"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 17,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "18",
+      "cells": [
+       "18",
+       "铅≤",
+       "0.01",
+       "0.01",
+       "0.05",
+       "0.05",
+       "0.1"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 18,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "19",
+      "cells": [
+       "19",
+       "氰化物≤",
+       "0.005",
+       "0.05",
+       "0.2",
+       "0.2",
+       "0.2"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 19,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "20",
+      "cells": [
+       "20",
+       "挥发酚≤",
+       "0.002",
+       "0.002",
+       "0.005",
+       "0.01",
+       "0.1"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 20,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "21",
+      "cells": [
+       "21",
+       "石油类≤",
+       "0.05",
+       "0.05",
+       "0.05",
+       "0.5",
+       "1.0"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 21,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "22",
+      "cells": [
+       "22",
+       "阴离子表面活性剂≤",
+       "0.2",
+       "0.2",
+       "0.2",
+       "0.3",
+       "0.3"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 22,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "23",
+      "cells": [
+       "23",
+       "硫化物≤",
+       "0.05",
+       "0.1",
+       "0.2",
+       "0.5",
+       "1.0"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 23,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "24",
+      "cells": [
+       "24",
+       "粪大肠菌群(个/L)≤",
+       "200",
+       "2000",
+       "10000",
+       "20000",
+       "40000"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 24,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     }
+    ]
+   },
+   "reverification": {
+    "items_checked": 38,
+    "problems": [],
+    "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+   },
+   "model": null,
+   "status": "ok"
+  }
+ ]
+}

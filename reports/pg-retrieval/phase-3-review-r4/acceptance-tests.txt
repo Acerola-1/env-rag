@@ -1,0 +1,190 @@
+FFF.                                                                     [100%]
+=================================== FAILURES ===================================
+________ test_oid_lookup_error_does_not_mask_partial_creation_identity _________
+
+self = <test_phase3_compat_review_r5.test_oid_lookup_error_does_not_mask_partial_creation_identity.<locals>.ScratchConnection object at 0x1080d8350>
+sql = 'SELECT oid FROM pg_database WHERE datname=$1'
+args = ('lightrag_probe_5bd6701e27',)
+
+    async def fetchrow(self, sql, *args):
+>       raise OSError("OID metadata read failed after creation")
+E       OSError: OID metadata read failed after creation
+
+tests/test_phase3_compat_review_r5.py:34: OSError
+
+During handling of the above exception, another exception occurred:
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1080d8110>
+
+    def test_oid_lookup_error_does_not_mask_partial_creation_identity(monkeypatch):
+        created = []
+    
+        class Admin:
+            async def fetchval(self, sql, *args):
+                return 0
+    
+            async def execute(self, sql, *args):
+                if sql.startswith("CREATE DATABASE"):
+                    created.append(sql.split('"')[1])
+    
+            async def close(self):
+                pass
+    
+        class ScratchConnection:
+            async def fetchrow(self, sql, *args):
+                raise OSError("OID metadata read failed after creation")
+    
+            async def close(self):
+                pass
+    
+        async def connect(**kwargs):
+            return Admin() if kwargs["database"] == "postgres" else ScratchConnection()
+    
+        monkeypatch.setattr(compat.asyncpg, "connect", connect)
+        with pytest.raises(compat.ProbeAborted) as caught:
+>           asyncio.run(compat._acquire_scratch(fixtures.VALUES))
+
+tests/test_phase3_compat_review_r5.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../../Library/Application Support/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/asyncio/runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+../../../../Library/Application Support/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../../Library/Application Support/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+values = {'POSTGRES_HOST': 'test.invalid', 'POSTGRES_PORT': '5432', 'POSTGRES_USER': 'fixture', 'POSTGRES_PASSWORD': 'fixture', ...}
+
+    async def _acquire_scratch(values: dict) -> dict:
+        """Create a UNIQUE scratch DB with a three-part ownership marker.
+    
+        Never reuses a pre-existing database: a generated-name collision is
+        treated as foreign and a NEW name is generated. The marker (run id +
+        secret + OID) lives in a probe_ownership table inside the scratch DB and
+        is returned for cleanup verification.
+    
+        E2: if the marker setup fails AFTER CREATE DATABASE, the partially
+        created database is NOT lost — a ProbeAborted carrying
+        `partial_scratch` (name + owner run id + secret) is raised so run() can
+        recover/verify it (verify_ownership tolerates the missing marker row as
+        long as the DB identity is intact; the run still cleans it up).
+        """
+        conn = await asyncpg.connect(
+            host=values["POSTGRES_HOST"],
+            port=int(values["POSTGRES_PORT"]),
+            user=values["POSTGRES_USER"],
+            password=values["POSTGRES_PASSWORD"],
+            database="postgres",
+            timeout=15,
+        )
+        try:
+            for _ in range(5):
+                db = f"lightrag_probe_{uuid.uuid4().hex[:10]}"
+                exists = await conn.fetchval("SELECT 1 FROM pg_database WHERE datname=$1", db)
+                if exists:
+                    continue  # name collision = foreign, try a new name
+                await conn.execute(f'CREATE DATABASE "{db}"')
+                break
+            else:
+                raise ProbeAborted("could not generate a unique scratch database name")
+        finally:
+            await conn.close()
+    
+        secret = uuid.uuid4().hex
+        run_id = RUN_ID_LOCAL()
+        try:
+            conn = await asyncpg.connect(
+                host=values["POSTGRES_HOST"],
+                port=int(values["POSTGRES_PORT"]),
+                user=values["POSTGRES_USER"],
+                password=values["POSTGRES_PASSWORD"],
+                database=db,
+                timeout=15,
+                server_settings={"application_name": _PROBE_APP_NAME},
+            )
+        except Exception as exc:
+            # E2: partial creation — the DB exists but we could not connect to
+            # stamp the marker. Raise a refusal that CARRIES the partial identity
+            # so the run can still account for and clean the created database.
+            aborted = ProbeAborted(
+                f"scratch database {db} created but marker setup failed: {type(exc).__name__}: {exc}"
+            )
+            aborted.partial_scratch = {
+                "database": db,
+                "oid": None,  # OID unknown — cleanup verifies by name+secret presence
+                "secret": secret,
+                "run_id": run_id,
+                "partial": True,
+            }
+            raise aborted from exc
+        try:
+            row = await conn.fetchrow("SELECT oid FROM pg_database WHERE datname=$1", db)
+            await conn.execute(
+                """CREATE TABLE probe_ownership (
+                       run_id TEXT PRIMARY KEY,
+                       secret TEXT NOT NULL,
+                       db_oid BIGINT NOT NULL,
+                       created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+                   )"""
+            )
+            await conn.execute(
+                "INSERT INTO probe_ownership (run_id, secret, db_oid) VALUES ($1,$2,$3)",
+                run_id,
+                secret,
+                row["oid"],
+            )
+        except Exception as exc:
+            aborted = ProbeAborted(
+                f"scratch database {db} created but marker setup failed: {type(exc).__name__}: {exc}"
+            )
+            aborted.partial_scratch = {
+                "database": db,
+>               "oid": row["oid"] if row is not None else None,
+                                     ^^^
+                "secret": secret,
+                "run_id": run_id,
+                "partial": True,
+            }
+E           UnboundLocalError: cannot access local variable 'row' where it is not associated with a value
+
+src/env_rag_final/compat_runtime.py:321: UnboundLocalError
+______ test_partial_acquire_persists_terminal_identity_and_cleanup_result ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1080d9a60>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-298/test_partial_acquire_persists_0')
+
+    def test_partial_acquire_persists_terminal_identity_and_cleanup_result(monkeypatch, tmp_path):
+        events, reports, partial = partial_run(monkeypatch)
+        with pytest.raises(compat.ProbeAborted):
+            asyncio.run(compat.run(fixtures.VALUES, tmp_path))
+        assert "cleanup" in events
+>       assert reports[-1].get("scratch", {}).get("database") == partial["database"]
+E       AssertionError: assert None == 'lightrag_probe_fixture'
+E        +  where None = <built-in method get of dict object at 0x108afd600>('database')
+E        +    where <built-in method get of dict object at 0x108afd600> = {}.get
+E        +      where {} = <built-in method get of dict object at 0x108afd3c0>('scratch', {})
+E        +        where <built-in method get of dict object at 0x108afd3c0> = {'task': '5.1 runtime compatibility probes (isolated, ownership-guarded)', 'release': 'lightrag-hku 1.5.7 (uv.lock, si...nly)', 'run_id': 'compat-1982cb6eeb36', 'embedding_fixture': 'deterministic numpy (4-dim) — interface shape only', ...}.get
+
+tests/test_phase3_compat_review_r5.py:67: AssertionError
+____________ test_partial_acquire_still_performs_post_guard_capture ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1080da390>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-298/test_partial_acquire_still_per0')
+
+    def test_partial_acquire_still_performs_post_guard_capture(monkeypatch, tmp_path):
+        events, reports, _partial = partial_run(monkeypatch)
+        with pytest.raises(compat.ProbeAborted):
+            asyncio.run(compat.run(fixtures.VALUES, tmp_path))
+>       assert "capture:after" in events
+E       AssertionError: assert 'capture:after' in ['capture:before', 'recovery', 'cleanup']
+
+tests/test_phase3_compat_review_r5.py:76: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_phase3_compat_review_r5.py::test_oid_lookup_error_does_not_mask_partial_creation_identity
+FAILED tests/test_phase3_compat_review_r5.py::test_partial_acquire_persists_terminal_identity_and_cleanup_result
+FAILED tests/test_phase3_compat_review_r5.py::test_partial_acquire_still_performs_post_guard_capture
+3 failed, 1 passed in 0.11s

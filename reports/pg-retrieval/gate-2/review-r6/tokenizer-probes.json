@@ -1,0 +1,1833 @@
+{
+  "task": "4.1 tokenizer probes",
+  "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+  "vocab_sha": "c3d0b6a6cf7d6af0758329bccea3bbbf432d73b20df4db42b768ae07446978cf",
+  "vocab_counts": {
+    "base": 104,
+    "stopwords": 70,
+    "synonyms": 10
+  },
+  "generated_from": "live PG read-only + real parsed corpus text",
+  "elapsed_ms": 172,
+  "real_text_cases": [
+    {
+      "source": "real heading (env_rag.source_units)",
+      "text": "\"Factor 2”",
+      "default_jieba": [
+        "\"",
+        "Factor",
+        "2",
+        "”"
+      ],
+      "controlled": [
+        "factor",
+        "2"
+      ],
+      "tokens_text": "factor 2"
+    },
+    {
+      "source": "real heading (env_rag.source_units)",
+      "text": "\"Factor 3”",
+      "default_jieba": [
+        "\"",
+        "Factor",
+        "3",
+        "”"
+      ],
+      "controlled": [
+        "factor",
+        "3"
+      ],
+      "tokens_text": "factor 3"
+    },
+    {
+      "source": "real heading (env_rag.source_units)",
+      "text": "\"Factor 6”",
+      "default_jieba": [
+        "\"",
+        "Factor",
+        "6",
+        "”"
+      ],
+      "controlled": [
+        "factor",
+        "6"
+      ],
+      "tokens_text": "factor 6"
+    },
+    {
+      "source": "real heading (env_rag.source_units)",
+      "text": "\"MAXIMUM BENEFIT\" WATER QUALITY OBJECTIVES",
+      "default_jieba": [
+        "\"",
+        "MAXIMUM",
+        "BENEFIT",
+        "\"",
+        "WATER",
+        "QUALITY",
+        "OBJECTIVES"
+      ],
+      "controlled": [
+        "maximum",
+        "benefit",
+        "water",
+        "quality",
+        "objectives"
+      ],
+      "tokens_text": "maximum benefit water quality objectives"
+    },
+    {
+      "source": "real heading (env_rag.source_units)",
+      "text": "$\\mathbf { P M } _ { 2 , 5 }$ target value and limit value for the protection of human health",
+      "default_jieba": [
+        "$",
+        "\\",
+        "mathbf",
+        "{",
+        "P",
+        "M",
+        "}",
+        "_",
+        "{",
+        "2",
+        ",",
+        "5",
+        "}",
+        "$",
+        "target",
+        "value",
+        "and",
+        "limit",
+        "value",
+        "for",
+        "the",
+        "protection",
+        "of",
+        "human",
+        "health"
+      ],
+      "controlled": [
+        "mathbf",
+        "p",
+        "m",
+        "2",
+        "5",
+        "target",
+        "value",
+        "and",
+        "limit",
+        "value",
+        "for",
+        "the",
+        "protection",
+        "of",
+        "human",
+        "health"
+      ],
+      "tokens_text": "mathbf p m 2 5 target value and limit value for the protection of human health"
+    },
+    {
+      "source": "real heading (env_rag.source_units)",
+      "text": "$\\mathrm{PM}_{2.5}$ 污染气象条件综合评估",
+      "default_jieba": [
+        "$",
+        "\\",
+        "mathrm",
+        "{",
+        "PM",
+        "}",
+        "_",
+        "{",
+        "2",
+        ".",
+        "5",
+        "}",
+        "$",
+        "污染",
+        "气象条件",
+        "综合",
+        "评估"
+      ],
+      "controlled": [
+        "mathrm",
+        "pm",
+        "2.5",
+        "污染",
+        "气象条件",
+        "综合",
+        "评估"
+      ],
+      "tokens_text": "mathrm pm 2.5 污染 气象条件 综合 评估"
+    },
+    {
+      "source": "real heading (env_rag.source_units)",
+      "text": "$\\mathsf { C r i s } = \\mathsf { v }$ eighted average observed tissue concentration",
+      "default_jieba": [
+        "$",
+        "\\",
+        "mathsf",
+        "{",
+        "C",
+        "r",
+        "i",
+        "s",
+        "}",
+        "=",
+        "\\",
+        "mathsf",
+        "{",
+        "v",
+        "}",
+        "$",
+        "eighted",
+        "average",
+        "observed",
+        "tissue",
+        "concentration"
+      ],
+      "controlled": [
+        "mathsf",
+        "c",
+        "r",
+        "i",
+        "s",
+        "mathsf",
+        "v",
+        "eighted",
+        "average",
+        "observed",
+        "tissue",
+        "concentration"
+      ],
+      "tokens_text": "mathsf c r i s mathsf v eighted average observed tissue concentration"
+    },
+    {
+      "source": "real heading (env_rag.source_units)",
+      "text": "( 一）降水量",
+      "default_jieba": [
+        "(",
+        "一",
+        "）",
+        "降水量"
+      ],
+      "controlled": [
+        "一",
+        "降水量"
+      ],
+      "tokens_text": "一 降水量"
+    },
+    {
+      "source": "real heading (env_rag.source_units)",
+      "text": "(1) Basin Plan Waste Discharge Prohibitions",
+      "default_jieba": [
+        "(",
+        "1",
+        ")",
+        "Basin",
+        "Plan",
+        "Waste",
+        "Discharge",
+        "Prohibitions"
+      ],
+      "controlled": [
+        "1",
+        "basin",
+        "plan",
+        "waste",
+        "discharge",
+        "prohibitions"
+      ],
+      "tokens_text": "1 basin plan waste discharge prohibitions"
+    },
+    {
+      "source": "real heading (env_rag.source_units)",
+      "text": "(1) Concentration Based TMDLs",
+      "default_jieba": [
+        "(",
+        "1",
+        ")",
+        "Concentration",
+        "Based",
+        "TMDLs"
+      ],
+      "controlled": [
+        "1",
+        "concentration",
+        "based",
+        "tmdls"
+      ],
+      "tokens_text": "1 concentration based tmdls"
+    },
+    {
+      "source": "real heading (env_rag.source_units)",
+      "text": "(1) Development of State Board Management Strategies",
+      "default_jieba": [
+        "(",
+        "1",
+        ")",
+        "Development",
+        "of",
+        "State",
+        "Board",
+        "Management",
+        "Strategies"
+      ],
+      "controlled": [
+        "1",
+        "development",
+        "of",
+        "state",
+        "board",
+        "management",
+        "strategies"
+      ],
+      "tokens_text": "1 development of state board management strategies"
+    },
+    {
+      "source": "real heading (env_rag.source_units)",
+      "text": "(1) Effects Not Related to S and N Deposition",
+      "default_jieba": [
+        "(",
+        "1",
+        ")",
+        "Effects",
+        "Not",
+        "Related",
+        "to",
+        "S",
+        "and",
+        "N",
+        "Deposition"
+      ],
+      "controlled": [
+        "1",
+        "effects",
+        "not",
+        "related",
+        "to",
+        "s",
+        "and",
+        "n",
+        "deposition"
+      ],
+      "tokens_text": "1 effects not related to s and n deposition"
+    },
+    {
+      "source": "real caption",
+      "text": "(1997年12月31日之前建设的单位)",
+      "default_jieba": [
+        "(",
+        "1997",
+        "年",
+        "12",
+        "月",
+        "31",
+        "日",
+        "之前",
+        "建设",
+        "的",
+        "单位",
+        ")"
+      ],
+      "controlled": [
+        "1997",
+        "年",
+        "12",
+        "月",
+        "31",
+        "日",
+        "之前",
+        "建设",
+        "的",
+        "单位"
+      ],
+      "tokens_text": "1997 年 12 月 31 日 之前 建设 的 单位"
+    },
+    {
+      "source": "real caption",
+      "text": "(b) Recapitulation of temperature limitations prescribed above:",
+      "default_jieba": [
+        "(",
+        "b",
+        ")",
+        "Recapitulation",
+        "of",
+        "temperature",
+        "limitations",
+        "prescribed",
+        "above",
+        ":"
+      ],
+      "controlled": [
+        "b",
+        "recapitulation",
+        "of",
+        "temperature",
+        "limitations",
+        "prescribed",
+        "above"
+      ],
+      "tokens_text": "b recapitulation of temperature limitations prescribed above"
+    },
+    {
+      "source": "real caption",
+      "text": "(c) Waters within State Parks, State Wildlife Parks, and State Recreation Areas.",
+      "default_jieba": [
+        "(",
+        "c",
+        ")",
+        "Waters",
+        "within",
+        "State",
+        "Parks",
+        ",",
+        "State",
+        "Wildlife",
+        "Parks",
+        ",",
+        "and",
+        "State",
+        "Recreation",
+        "Areas",
+        "."
+      ],
+      "controlled": [
+        "c",
+        "waters",
+        "within",
+        "state",
+        "parks",
+        "state",
+        "wildlife",
+        "parks",
+        "and",
+        "state",
+        "recreation",
+        "areas"
+      ],
+      "tokens_text": "c waters within state parks state wildlife parks and state recreation areas"
+    },
+    {
+      "source": "real caption",
+      "text": "(d) Waters within State Ornamental Gardens, State Botanical Sites, State Historic Sites, and State Geological Sites.",
+      "default_jieba": [
+        "(",
+        "d",
+        ")",
+        "Waters",
+        "within",
+        "State",
+        "Ornamental",
+        "Gardens",
+        ",",
+        "State",
+        "Botanical",
+        "Sites",
+        ",",
+        "State",
+        "Historic",
+        "Sites",
+        ",",
+        "and",
+        "State",
+        "Geological",
+        "Sites",
+        "."
+      ],
+      "controlled": [
+        "d",
+        "waters",
+        "within",
+        "state",
+        "ornamental",
+        "gardens",
+        "state",
+        "botanical",
+        "sites",
+        "state",
+        "historic",
+        "sites",
+        "and",
+        "state",
+        "geological",
+        "sites"
+      ],
+      "tokens_text": "d waters within state ornamental gardens state botanical sites state historic sites and state geological sites"
+    },
+    {
+      "source": "real caption",
+      "text": "(e) Waters within State Preserves, State Underwater Archaeological Preserves, and State Reserves.",
+      "default_jieba": [
+        "(",
+        "e",
+        ")",
+        "Waters",
+        "within",
+        "State",
+        "Preserves",
+        ",",
+        "State",
+        "Underwater",
+        "Archaeological",
+        "Preserves",
+        ",",
+        "and",
+        "State",
+        "Reserves",
+        "."
+      ],
+      "controlled": [
+        "e",
+        "waters",
+        "within",
+        "state",
+        "preserves",
+        "state",
+        "underwater",
+        "archaeological",
+        "preserves",
+        "and",
+        "state",
+        "reserves"
+      ],
+      "tokens_text": "e waters within state preserves state underwater archaeological preserves and state reserves"
+    },
+    {
+      "source": "real caption",
+      "text": "(g) Waters within National Seashores.",
+      "default_jieba": [
+        "(",
+        "g",
+        ")",
+        "Waters",
+        "within",
+        "National",
+        "Seashores",
+        "."
+      ],
+      "controlled": [
+        "g",
+        "waters",
+        "within",
+        "national",
+        "seashores"
+      ],
+      "tokens_text": "g waters within national seashores"
+    },
+    {
+      "source": "real caption",
+      "text": "(h) Waters within State Aquatic Preserves.",
+      "default_jieba": [
+        "(",
+        "h",
+        ")",
+        "Waters",
+        "within",
+        "State",
+        "Aquatic",
+        "Preserves",
+        "."
+      ],
+      "controlled": [
+        "h",
+        "waters",
+        "within",
+        "state",
+        "aquatic",
+        "preserves"
+      ],
+      "tokens_text": "h waters within state aquatic preserves"
+    },
+    {
+      "source": "real caption",
+      "text": "1 . 2 . 1 . D <sub>e</sub> f i <sub>n</sub> i t i <sub>o</sub> <sub>n</sub> <sub>s</sub> f <sub>o</sub> <sub>r</sub> h i <sub>g</sub> h  <sub>g</sub> <sub>o</sub> <sub>o</sub> d <sub>a</sub> <sub>n</sub> d <sub>m</sub> <sub>o</sub> d <sub>e</sub> <sub>r</sub> <sub>a</sub> t <sub>e</sub> <sub>e</sub> <sub>c</sub> <sub>o</sub> l <sub>o</sub> <sub>g</sub> i <sub>c</sub> <sub>a</sub> l <sub>s</sub> t <sub>a</sub> t <sub>u</sub> <sub>s</sub> i <sub>n</sub> <sub>r</sub> i <sub>v</sub> <sub>e</sub> <sub>r</sub> <sub>s</sub> Biolo<sub>g</sub>ical <sub>q</sub>ualit<sub>y</sub> elements",
+      "default_jieba": [
+        "1",
+        ".",
+        "2",
+        ".",
+        "1",
+        ".",
+        "D",
+        "<",
+        "sub",
+        ">",
+        "e",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "f",
+        "i",
+        "<",
+        "sub",
+        ">",
+        "n",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "i",
+        "t",
+        "i",
+        "<",
+        "sub",
+        ">",
+        "o",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "<",
+        "sub",
+        ">",
+        "n",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "<",
+        "sub",
+        ">",
+        "s",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "f",
+        "<",
+        "sub",
+        ">",
+        "o",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "<",
+        "sub",
+        ">",
+        "r",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "h",
+        "i",
+        "<",
+        "sub",
+        ">",
+        "g",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "h",
+        "<",
+        "sub",
+        ">",
+        "g",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "<",
+        "sub",
+        ">",
+        "o",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "<",
+        "sub",
+        ">",
+        "o",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "d",
+        "<",
+        "sub",
+        ">",
+        "a",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "<",
+        "sub",
+        ">",
+        "n",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "d",
+        "<",
+        "sub",
+        ">",
+        "m",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "<",
+        "sub",
+        ">",
+        "o",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "d",
+        "<",
+        "sub",
+        ">",
+        "e",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "<",
+        "sub",
+        ">",
+        "r",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "<",
+        "sub",
+        ">",
+        "a",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "t",
+        "<",
+        "sub",
+        ">",
+        "e",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "<",
+        "sub",
+        ">",
+        "e",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "<",
+        "sub",
+        ">",
+        "c",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "<",
+        "sub",
+        ">",
+        "o",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "l",
+        "<",
+        "sub",
+        ">",
+        "o",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "<",
+        "sub",
+        ">",
+        "g",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "i",
+        "<",
+        "sub",
+        ">",
+        "c",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "<",
+        "sub",
+        ">",
+        "a",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "l",
+        "<",
+        "sub",
+        ">",
+        "s",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "t",
+        "<",
+        "sub",
+        ">",
+        "a",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "t",
+        "<",
+        "sub",
+        ">",
+        "u",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "<",
+        "sub",
+        ">",
+        "s",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "i",
+        "<",
+        "sub",
+        ">",
+        "n",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "<",
+        "sub",
+        ">",
+        "r",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "i",
+        "<",
+        "sub",
+        ">",
+        "v",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "<",
+        "sub",
+        ">",
+        "e",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "<",
+        "sub",
+        ">",
+        "r",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "<",
+        "sub",
+        ">",
+        "s",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "Biolo",
+        "<",
+        "sub",
+        ">",
+        "g",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "ical",
+        "<",
+        "sub",
+        ">",
+        "q",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "ualit",
+        "<",
+        "sub",
+        ">",
+        "y",
+        "<",
+        "/",
+        "sub",
+        ">",
+        "elements"
+      ],
+      "controlled": [
+        "1",
+        "2",
+        "1",
+        "d",
+        "sub",
+        "e",
+        "sub",
+        "f",
+        "i",
+        "sub",
+        "n",
+        "sub",
+        "i",
+        "t",
+        "i",
+        "sub",
+        "o",
+        "sub",
+        "sub",
+        "n",
+        "sub",
+        "sub",
+        "s",
+        "sub",
+        "f",
+        "sub",
+        "o",
+        "sub",
+        "sub",
+        "r",
+        "sub",
+        "h",
+        "i",
+        "sub",
+        "g",
+        "sub",
+        "h",
+        "sub",
+        "g",
+        "sub",
+        "sub",
+        "o",
+        "sub",
+        "sub",
+        "o",
+        "sub",
+        "d",
+        "sub",
+        "a",
+        "sub",
+        "sub",
+        "n",
+        "sub",
+        "d",
+        "sub",
+        "m",
+        "sub",
+        "sub",
+        "o",
+        "sub",
+        "d",
+        "sub",
+        "e",
+        "sub",
+        "sub",
+        "r",
+        "sub",
+        "sub",
+        "a",
+        "sub",
+        "t",
+        "sub",
+        "e",
+        "sub",
+        "sub",
+        "e",
+        "sub",
+        "sub",
+        "c",
+        "sub",
+        "sub",
+        "o",
+        "sub",
+        "l",
+        "sub",
+        "o",
+        "sub",
+        "sub",
+        "g",
+        "sub",
+        "i",
+        "sub",
+        "c",
+        "sub",
+        "sub",
+        "a",
+        "sub",
+        "l",
+        "sub",
+        "s",
+        "sub",
+        "t",
+        "sub",
+        "a",
+        "sub",
+        "t",
+        "sub",
+        "u",
+        "sub",
+        "sub",
+        "s",
+        "sub",
+        "i",
+        "sub",
+        "n",
+        "sub",
+        "sub",
+        "r",
+        "sub",
+        "i",
+        "sub",
+        "v",
+        "sub",
+        "sub",
+        "e",
+        "sub",
+        "sub",
+        "r",
+        "sub",
+        "sub",
+        "s",
+        "sub",
+        "biolo",
+        "sub",
+        "g",
+        "sub",
+        "ical",
+        "sub",
+        "q",
+        "sub",
+        "ualit",
+        "sub",
+        "y",
+        "sub",
+        "elements"
+      ],
+      "tokens_text": "1 2 1 d sub e sub f i sub n sub i t i sub o sub sub n sub sub s sub f sub o sub sub r sub h i sub g sub h sub g sub sub o sub sub o sub d sub a sub sub n sub d sub m sub sub o sub d sub e sub sub r sub sub a sub t sub e sub sub e sub sub c sub sub o sub l sub o sub sub g sub i sub c sub sub a sub l sub s sub t sub a sub t sub u sub sub s sub i sub n sub sub r sub i sub v sub sub e sub sub r sub sub s sub biolo sub g sub ical sub q sub ualit sub y sub elements"
+    },
+    {
+      "source": "real chunk body snippet",
+      "text": "## 2 规范性引用文件\n本标准引用了下列文件或其中的条款。凡是注明日期的引用标准，仅注日期的版本适用于本标准。凡是未注日期的引用标准，其最新版本（包括所有的修改单）适用于本标准。其他文件中被新文件废止、修改、修订的，新文件适用于本标准。\nGB 15562.1 环境保护图形标志——排放口（源）\nGB/T 4754—2017 国民经济行业分类\nGB/T 7467 水质 六价铬的测定 二苯碳酰二肼分光光度法\nGB/T 11889 水质 苯胺类化合物的测定 N-（1-萘基）乙二胺偶氮分光光度法\nGB/T 11893 水质 总磷的测定 钼酸铵分光光度法\nGB/T 11901 水质 悬浮物的测定 重量法\nGB/T 18916.4—2022 取水定额 第 4 部分：纺织染整产品\nGB/T 18916.14—2023 取水定额 第 14 部分：毛纺织产品\nGB/T 18916.20—2016 取水定额 ",
+      "controlled_head": [
+        "2",
+        "规范性",
+        "引用",
+        "文件",
+        "本",
+        "标准",
+        "引用",
+        "了",
+        "下列",
+        "文件",
+        "或",
+        "其中",
+        "的",
+        "条款",
+        "凡是",
+        "注明",
+        "日期",
+        "的",
+        "引用",
+        "标准",
+        "仅",
+        "注",
+        "日期",
+        "的",
+        "版本"
+      ],
+      "tokens_text_head": "2 规范性 引用 文件 本 标准 引用 了 下列 文件 或 其中 的 条款 凡是 注明 日期 的 引用 标准 仅 注 日期 的 版本 适用 于 本 标准 凡是 未 注 日期 的 引用 标准 其 最新 版本 包括"
+    },
+    {
+      "source": "real chunk body snippet",
+      "text": "## 4.2.2 排向纺织工业污水集中处理设施的：\n表1中第1-12项污染物项目可由排污单位与污水集中处理设施运营单位协商约定排放浓度限值。4.2.3 排向综合型工业污水集中处理设施的：\n对于经评估能够处理纺织工业污水并能实现达标排放的综合型工业污水集中处理设施，表 1 中第\nGB 4287—2026\n1-9项污染物项目可由排污单位与综合型工业污水集中处理设施运营单位协商约定排放限值。\n4.2.4 在 4.2.2-4.2.3 中规定的可协商约定间接排放限值的情形，均应在不造成管网腐蚀和淤积堵塞、污水集中处理设施进水满足处理能力的前提下进行。协商约定的限值经核定后依法被载入排污许可证或全国排污许可证管理信息平台填报的排污登记表的，则以该限值作为间接排放限值。协商约定间接排放限值的现有排污单位，可自2026年9月1日起实施。\n<table id=\"tb-30cc8c5a085a96f9e00e",
+      "controlled_head": [
+        "4.2.2",
+        "排",
+        "向",
+        "纺织工业",
+        "污水",
+        "集中处理",
+        "设施",
+        "的",
+        "表1",
+        "中",
+        "第",
+        "1",
+        "12",
+        "项",
+        "污染物",
+        "项目",
+        "可",
+        "由",
+        "排污",
+        "单位",
+        "与",
+        "污水",
+        "集中处理",
+        "设施",
+        "运营"
+      ],
+      "tokens_text_head": "4.2.2 排 向 纺织工业 污水 集中处理 设施 的 表1 中 第 1 12 项 污染物 项目 可 由 排污 单位 与 污水 集中处理 设施 运营 单位 协商 约定 排放 浓度限值 4.2.3 排 向 综合型 工业 污水 集中处理 设施 的 对于"
+    },
+    {
+      "source": "code-phrase adjacency",
+      "text": "GB 8978—1996 表 1 总汞",
+      "controlled_head": [
+        "gb8978--1996",
+        "表1",
+        "总汞"
+      ],
+      "tokens_text_head": "gb8978-1996 表1 总汞"
+    },
+    {
+      "source": "code-phrase adjacency",
+      "text": "依据 GB 3095-2012 与 HJ 2.2—2018 执行",
+      "controlled_head": [
+        "依据",
+        "gb3095--2012",
+        "与",
+        "hj2.2--2018",
+        "执行"
+      ],
+      "tokens_text_head": "依据 gb3095-2012 与 hj2.2-2018 执行"
+    },
+    {
+      "source": "code-phrase adjacency",
+      "text": "GB/T 18883-2002 室内空气质量",
+      "controlled_head": [
+        "gbt18883--2002",
+        "室内",
+        "空气质量"
+      ],
+      "tokens_text_head": "gbt18883-2002 室内 空气 气质 质量 空气质量"
+    }
+  ],
+  "code_normalization": [
+    {
+      "input": "GB 3095—2012",
+      "normalized_code": "GB3095-2012",
+      "tokens": [
+        {
+          "lexemes": [
+            "gb3095",
+            "-2012"
+          ],
+          "tsquery": "('gb3095' <-> '-2012' | 'gb3095-2012')"
+        }
+      ],
+      "tokens_text": "gb3095-2012"
+    },
+    {
+      "input": "GB3095-2012",
+      "normalized_code": "GB3095-2012",
+      "tokens": [
+        {
+          "lexemes": [
+            "gb3095",
+            "-2012"
+          ],
+          "tsquery": "('gb3095' <-> '-2012' | 'gb3095-2012')"
+        }
+      ],
+      "tokens_text": "gb3095-2012"
+    },
+    {
+      "input": "ＧＢ３０９５－２０１２",
+      "normalized_code": "GB3095-2012",
+      "tokens": [
+        {
+          "lexemes": [
+            "gb3095",
+            "-2012"
+          ],
+          "tsquery": "('gb3095' <-> '-2012' | 'gb3095-2012')"
+        }
+      ],
+      "tokens_text": "gb3095-2012"
+    },
+    {
+      "input": "GB 8978—88",
+      "normalized_code": "GB8978-88",
+      "tokens": [
+        {
+          "lexemes": [
+            "gb8978",
+            "-88"
+          ],
+          "tsquery": "('gb8978' <-> '-88' | 'gb8978-88')"
+        }
+      ],
+      "tokens_text": "gb8978-88"
+    },
+    {
+      "input": "gb3095/2012",
+      "normalized_code": "GB30952012",
+      "tokens": [
+        {
+          "lexemes": [
+            "gb3095",
+            "-2012"
+          ],
+          "tsquery": "('gb3095' <-> '-2012' | 'gb3095-2012')"
+        }
+      ],
+      "tokens_text": "gb3095-2012"
+    },
+    {
+      "input": "HJ 91.1-2019",
+      "normalized_code": "HJ91.1-2019",
+      "tokens": [
+        {
+          "lexemes": [
+            "hj91.1",
+            "-2019"
+          ],
+          "tsquery": "('hj91.1' <-> '-2019' | 'hj91.1-2019')"
+        }
+      ],
+      "tokens_text": "hj91.1-2019"
+    },
+    {
+      "input": "GB/T 18883-2002",
+      "normalized_code": "GBT18883-2002",
+      "tokens": [
+        {
+          "lexemes": [
+            "gbt18883",
+            "-2002"
+          ],
+          "tsquery": "('gbt18883' <-> '-2002' | 'gbt18883-2002')"
+        }
+      ],
+      "tokens_text": "gbt18883-2002"
+    },
+    {
+      "input": "表 1 中总汞",
+      "normalized_code": null,
+      "tokens": [
+        {
+          "lexemes": [
+            "表1"
+          ],
+          "tsquery": "'表1'"
+        },
+        {
+          "lexemes": [
+            "中"
+          ],
+          "tsquery": "'中'"
+        },
+        {
+          "lexemes": [
+            "总汞"
+          ],
+          "tsquery": "'总汞'"
+        }
+      ],
+      "tokens_text": "表1 中 总汞"
+    },
+    {
+      "input": "4.2.1 第一类污染物",
+      "normalized_code": null,
+      "tokens": [
+        {
+          "lexemes": [
+            "4.2.1"
+          ],
+          "tsquery": "'4.2.1'"
+        },
+        {
+          "lexemes": [
+            "第一类"
+          ],
+          "tsquery": "'第一类'"
+        },
+        {
+          "lexemes": [
+            "污染物"
+          ],
+          "tsquery": "'污染物'"
+        }
+      ],
+      "tokens_text": "4.2.1 第一类 污染物"
+    },
+    {
+      "input": "PM2.5 年平均浓度",
+      "normalized_code": null,
+      "tokens": [
+        {
+          "lexemes": [
+            "pm2.5"
+          ],
+          "tsquery": "'pm2.5'"
+        },
+        {
+          "lexemes": [
+            "年平均"
+          ],
+          "tsquery": "'年平均'"
+        },
+        {
+          "lexemes": [
+            "浓度"
+          ],
+          "tsquery": "'浓度'"
+        }
+      ],
+      "tokens_text": "pm2.5 年平均 浓度"
+    },
+    {
+      "input": "pH 值 6~9",
+      "normalized_code": null,
+      "tokens": [
+        {
+          "lexemes": [
+            "ph"
+          ],
+          "tsquery": "'ph'"
+        },
+        {
+          "lexemes": [
+            "值"
+          ],
+          "tsquery": "'值'"
+        },
+        {
+          "lexemes": [
+            "6"
+          ],
+          "tsquery": "'6'"
+        },
+        {
+          "lexemes": [
+            "9"
+          ],
+          "tsquery": "'9'"
+        }
+      ],
+      "tokens_text": "ph 值 6 9"
+    }
+  ],
+  "index_query_consistency": [
+    {
+      "text": "\"Factor 2”",
+      "index_mode": "index",
+      "indexed_tokens": "factor 2",
+      "pg_lexemes_head": "'2':2 'factor':1",
+      "query_mode": "query",
+      "query_terms": [
+        "'factor'",
+        "'2'"
+      ],
+      "hits": 2,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "text": "\"Factor 3”",
+      "index_mode": "index",
+      "indexed_tokens": "factor 3",
+      "pg_lexemes_head": "'3':2 'factor':1",
+      "query_mode": "query",
+      "query_terms": [
+        "'factor'",
+        "'3'"
+      ],
+      "hits": 2,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "text": "\"Factor 6”",
+      "index_mode": "index",
+      "indexed_tokens": "factor 6",
+      "pg_lexemes_head": "'6':2 'factor':1",
+      "query_mode": "query",
+      "query_terms": [
+        "'factor'",
+        "'6'"
+      ],
+      "hits": 2,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "text": "\"MAXIMUM BENEFIT\" WATER QUALITY OBJECTIVES",
+      "index_mode": "index",
+      "indexed_tokens": "maximum benefit water quality objectives",
+      "pg_lexemes_head": "'benefit':2 'maximum':1 'objectives':5 'quality':4 'water':3",
+      "query_mode": "query",
+      "query_terms": [
+        "'maximum'",
+        "'benefit'",
+        "'water'",
+        "'quality'",
+        "'objectives'"
+      ],
+      "hits": 5,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "text": "$\\mathbf { P M } _ { 2 , 5 }$ target value and limit value for the protection of human health",
+      "index_mode": "index",
+      "indexed_tokens": "mathbf p m 2 5 target value and limit value for the protection of human health",
+      "pg_lexemes_head": "'2':4 '5':5 'and':8 'for':11 'health':16 'human':15 'limit':9 'm':3 'mathbf':1 'of':14 'p':2 'protection':13 'target':6 'the':12 'value':7,10",
+      "query_mode": "query",
+      "query_terms": [
+        "'mathbf'",
+        "'p'",
+        "'m'",
+        "'2'",
+        "'5'",
+        "'target'",
+        "'value'",
+        "'and'",
+        "'limit'",
+        "'value'",
+        "'for'",
+        "'the'"
+      ],
+      "hits": 12,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "text": "$\\mathrm{PM}_{2.5}$ 污染气象条件综合评估",
+      "index_mode": "index",
+      "indexed_tokens": "mathrm pm 2.5 污染 气象 条件 气象条件 综合 评估",
+      "pg_lexemes_head": "'2.5':3 'mathrm':1 'pm':2 '条件':6 '气象':5 '气象条件':7 '污染':4 '综合':8 '评估':9",
+      "query_mode": "query",
+      "query_terms": [
+        "'mathrm'",
+        "'pm'",
+        "'2.5'",
+        "'污染'",
+        "'气象条件'",
+        "'综合'",
+        "'评估'"
+      ],
+      "hits": 7,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "text": "$\\mathsf { C r i s } = \\mathsf { v }$ eighted average observed tissue concentration",
+      "index_mode": "index",
+      "indexed_tokens": "mathsf c r i s mathsf v eighted average observed tissue concentration",
+      "pg_lexemes_head": "'average':9 'c':2 'concentration':12 'eighted':8 'i':4 'mathsf':1,6 'observed':10 'r':3 's':5 'tissue':11 'v':7",
+      "query_mode": "query",
+      "query_terms": [
+        "'mathsf'",
+        "'c'",
+        "'r'",
+        "'i'",
+        "'s'",
+        "'mathsf'",
+        "'v'",
+        "'eighted'",
+        "'average'",
+        "'observed'",
+        "'tissue'",
+        "'concentration'"
+      ],
+      "hits": 12,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "text": "( 一）降水量",
+      "index_mode": "index",
+      "indexed_tokens": "一 降水 水量 降水量",
+      "pg_lexemes_head": "'一':1 '水量':3 '降水':2 '降水量':4",
+      "query_mode": "query",
+      "query_terms": [
+        "'一'",
+        "'降水量'"
+      ],
+      "hits": 2,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "text": "(1) Basin Plan Waste Discharge Prohibitions",
+      "index_mode": "index",
+      "indexed_tokens": "1 basin plan waste discharge prohibitions",
+      "pg_lexemes_head": "'1':1 'basin':2 'discharge':5 'plan':3 'prohibitions':6 'waste':4",
+      "query_mode": "query",
+      "query_terms": [
+        "'1'",
+        "'basin'",
+        "'plan'",
+        "'waste'",
+        "'discharge'",
+        "'prohibitions'"
+      ],
+      "hits": 6,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "text": "(1) Concentration Based TMDLs",
+      "index_mode": "index",
+      "indexed_tokens": "1 concentration based tmdls",
+      "pg_lexemes_head": "'1':1 'based':3 'concentration':2 'tmdls':4",
+      "query_mode": "query",
+      "query_terms": [
+        "'1'",
+        "'concentration'",
+        "'based'",
+        "'tmdls'"
+      ],
+      "hits": 4,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "text": "(1) Development of State Board Management Strategies",
+      "index_mode": "index",
+      "indexed_tokens": "1 development of state board management strategies",
+      "pg_lexemes_head": "'1':1 'board':5 'development':2 'management':6 'of':3 'state':4 'strategies':7",
+      "query_mode": "query",
+      "query_terms": [
+        "'1'",
+        "'development'",
+        "'of'",
+        "'state'",
+        "'board'",
+        "'management'",
+        "'strategies'"
+      ],
+      "hits": 7,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "text": "(1) Effects Not Related to S and N Deposition",
+      "index_mode": "index",
+      "indexed_tokens": "1 effects not related to s and n deposition",
+      "pg_lexemes_head": "'1':1 'and':7 'deposition':9 'effects':2 'n':8 'not':3 'related':4 's':6 'to':5",
+      "query_mode": "query",
+      "query_terms": [
+        "'1'",
+        "'effects'",
+        "'not'",
+        "'related'",
+        "'to'",
+        "'s'",
+        "'and'",
+        "'n'",
+        "'deposition'"
+      ],
+      "hits": 9,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "text": "(1997年12月31日之前建设的单位)",
+      "index_mode": "index",
+      "indexed_tokens": "1997 年 12 月 31 日 之前 建设 的 单位",
+      "pg_lexemes_head": "'12':3 '1997':1 '31':5 '之前':7 '单位':10 '年':2 '建设':8 '日':6 '月':4 '的':9",
+      "query_mode": "query",
+      "query_terms": [
+        "'1997'",
+        "'年'",
+        "'12'",
+        "'月'",
+        "'31'",
+        "'日'",
+        "'之前'",
+        "'建设'",
+        "'单位'"
+      ],
+      "hits": 9,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "text": "(b) Recapitulation of temperature limitations prescribed above:",
+      "index_mode": "index",
+      "indexed_tokens": "b recapitulation of temperature limitations prescribed above",
+      "pg_lexemes_head": "'above':7 'b':1 'limitations':5 'of':3 'prescribed':6 'recapitulation':2 'temperature':4",
+      "query_mode": "query",
+      "query_terms": [
+        "'b'",
+        "'recapitulation'",
+        "'of'",
+        "'temperature'",
+        "'limitations'",
+        "'prescribed'",
+        "'above'"
+      ],
+      "hits": 7,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "text": "(c) Waters within State Parks, State Wildlife Parks, and State Recreation Areas.",
+      "index_mode": "index",
+      "indexed_tokens": "c waters within state parks state wildlife parks and state recreation areas",
+      "pg_lexemes_head": "'and':9 'areas':12 'c':1 'parks':5,8 'recreation':11 'state':4,6,10 'waters':2 'wildlife':7 'within':3",
+      "query_mode": "query",
+      "query_terms": [
+        "'c'",
+        "'waters'",
+        "'within'",
+        "'state'",
+        "'parks'",
+        "'state'",
+        "'wildlife'",
+        "'parks'",
+        "'and'",
+        "'state'",
+        "'recreation'",
+        "'areas'"
+      ],
+      "hits": 12,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "text": "(d) Waters within State Ornamental Gardens, State Botanical Sites, State Historic Sites, and State Geological Sites.",
+      "index_mode": "index",
+      "indexed_tokens": "d waters within state ornamental gardens state botanical sites state historic sites and state geological sites",
+      "pg_lexemes_head": "'and':13 'botanical':8 'd':1 'gardens':6 'geological':15 'historic':11 'ornamental':5 'sites':9,12,16 'state':4,7,10,14 'waters':2 'within':3",
+      "query_mode": "query",
+      "query_terms": [
+        "'d'",
+        "'waters'",
+        "'within'",
+        "'state'",
+        "'ornamental'",
+        "'gardens'",
+        "'state'",
+        "'botanical'",
+        "'sites'",
+        "'state'",
+        "'historic'",
+        "'sites'"
+      ],
+      "hits": 12,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "text": "(e) Waters within State Preserves, State Underwater Archaeological Preserves, and State Reserves.",
+      "index_mode": "index",
+      "indexed_tokens": "e waters within state preserves state underwater archaeological preserves and state reserves",
+      "pg_lexemes_head": "'and':10 'archaeological':8 'e':1 'preserves':5,9 'reserves':12 'state':4,6,11 'underwater':7 'waters':2 'within':3",
+      "query_mode": "query",
+      "query_terms": [
+        "'e'",
+        "'waters'",
+        "'within'",
+        "'state'",
+        "'preserves'",
+        "'state'",
+        "'underwater'",
+        "'archaeological'",
+        "'preserves'",
+        "'and'",
+        "'state'",
+        "'reserves'"
+      ],
+      "hits": 12,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "text": "(g) Waters within National Seashores.",
+      "index_mode": "index",
+      "indexed_tokens": "g waters within national seashores",
+      "pg_lexemes_head": "'g':1 'national':4 'seashores':5 'waters':2 'within':3",
+      "query_mode": "query",
+      "query_terms": [
+        "'g'",
+        "'waters'",
+        "'within'",
+        "'national'",
+        "'seashores'"
+      ],
+      "hits": 5,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "text": "(h) Waters within State Aquatic Preserves.",
+      "index_mode": "index",
+      "indexed_tokens": "h waters within state aquatic preserves",
+      "pg_lexemes_head": "'aquatic':5 'h':1 'preserves':6 'state':4 'waters':2 'within':3",
+      "query_mode": "query",
+      "query_terms": [
+        "'h'",
+        "'waters'",
+        "'within'",
+        "'state'",
+        "'aquatic'",
+        "'preserves'"
+      ],
+      "hits": 6,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "text": "1 . 2 . 1 . D <sub>e</sub> f i <sub>n</sub> i t i <sub>o</sub> <sub>n</sub> <sub>s</sub> f <sub>o</sub> <sub>r</sub> h i <sub>g</sub> h  <sub>g</sub> <sub>o</sub> <sub>o</sub> d <sub>a</sub> <sub>n</sub> d <sub>m</sub> <sub>o</sub> d <sub>e</sub> <sub>r</sub> <sub>a</sub> t <sub>e</sub> <sub>e</sub> <sub>c</sub> <sub>o</sub> l <sub>o</sub> <sub>g</sub> i <sub>c</sub> <sub>a</sub> l <sub>s</sub> t <sub>a</sub> t <sub>u</sub> <sub>s</sub> i <sub>n</sub> <sub>r</sub> i <sub>v</sub> <sub>e</sub> <sub>r</sub> <sub>s</sub> Biolo<sub>g</sub>ical <sub>q</sub>ualit<sub>y</sub> elements",
+      "index_mode": "index",
+      "indexed_tokens": "1 2 1 d sub e sub f i sub n sub i t i sub o sub sub n sub sub s sub f sub o sub sub r sub h i sub g sub h sub g sub sub o sub sub o sub d sub a sub sub n sub d sub m sub sub o sub d sub e sub sub r su",
+      "pg_lexemes_head": "'1':1,3 '2':2 'a':49,69,96,104 'biolo':133 'c':79,93 'd':4,47,54,61 'e':6,63,73,76,125 'elements':145 'f':8,25 'g':35,39,89,135 'h':32,37 'i':9,13,15,33,91,113,120 'ical':137 'l':84,98 'm':56 'n':11,20,52,115 'o':17,27,4",
+      "query_mode": "query",
+      "query_terms": [
+        "'1'",
+        "'2'",
+        "'1'",
+        "'d'",
+        "'sub'",
+        "'e'",
+        "'sub'",
+        "'f'",
+        "'i'",
+        "'sub'",
+        "'n'",
+        "'sub'"
+      ],
+      "hits": 12,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "text": "## 2 规范性引用文件\n本标准引用了下列文件或其中的条款。凡是注明日期的引用标准，仅注日期的版本适用于本标准。凡是未注日期的引用标准，其最新版本（包括所有的修改单）适用于本标准。其他文件中被新文件废止、修改、修订的，新文件适用于本标准。\nGB 15562.1 环境保护图形标志——排放口（源）\nGB/T 4754—2017 国民经济行业分类\nGB/T 7467 水质 六价铬的测定 二苯碳酰二肼分光光度法\nGB/T 11889 水质 苯胺类化合物的测定 N-（1-萘基）乙二胺偶氮分光光度法\nGB/T 11893 水质 总磷的测定 钼酸铵分光光度法\nGB/T 11901 水质 悬浮物的测定 重量法\nGB/T 18916.4—2022 取水定额 第 4 部分：纺织染整产品\nGB/T 18916.14—2023 取水定额 第 14 部分：毛纺织产品\nGB/T 18916.20—2016 取水定额 ",
+      "index_mode": "index",
+      "indexed_tokens": "2 规范 范性 规范性 引用 文件 本 标准 引用 了 下列 文件 或 其中 的 条款 凡是 注明 日期 的 引用 标准 仅 注 日期 的 版本 适用 于 本 标准 凡是 未 注 日期 的 引用 标准 其 最新 版本 包括 所有 的 修改 修改单 适用 于 本 标准 其他 文件 中 被 新 文件 废止 修改 修订 的 新 文件 适用 于 本 标准 gb15562.1 环境 保护 环境保护 图形 标",
+      "pg_lexemes_head": "'-2017':77 '1':107 '14':147 '2':1 '4':138 'gb15562.1':67 'gbt11889':97 'gbt11893':116 'gbt11901':126 'gbt18916.14-2023':143 'gbt18916.20-2016':153 'gbt18916.4-2022':134 'gbt4754':76 'gbt7467':83 'n':106 '下列':11 '中':53 '乙",
+      "query_mode": "query",
+      "query_terms": [
+        "'2'",
+        "'规范性'",
+        "'引用'",
+        "'文件'",
+        "'本'",
+        "'标准'",
+        "'引用'",
+        "'下列'",
+        "'文件'",
+        "'其中'",
+        "'条款'",
+        "'凡是'"
+      ],
+      "hits": 12,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "text": "## 4.2.2 排向纺织工业污水集中处理设施的：\n表1中第1-12项污染物项目可由排污单位与污水集中处理设施运营单位协商约定排放浓度限值。4.2.3 排向综合型工业污水集中处理设施的：\n对于经评估能够处理纺织工业污水并能实现达标排放的综合型工业污水集中处理设施，表 1 中第\nGB 4287—2026\n1-9项污染物项目可由排污单位与综合型工业污水集中处理设施运营单位协商约定排放限值。\n4.2.4 在 4.2.2-4.2.3 中规定的可协商约定间接排放限值的情形，均应在不造成管网腐蚀和淤积堵塞、污水集中处理设施进水满足处理能力的前提下进行。协商约定的限值经核定后依法被载入排污许可证或全国排污许可证管理信息平台填报的排污登记表的，则以该限值作为间接排放限值。协商约定间接排放限值的现有排污单位，可自2026年9月1日起实施。\n<table id=\"tb-30cc8c5a085a96f9e00e",
+      "index_mode": "index",
+      "indexed_tokens": "4.2.2 排 向 纺织 织工 工业 纺织工业 污水 集中 处理 集中处理 设施 的 表1 中 第 1 12 项 污染 污染物 项目 可 由 排污 单位 与 污水 集中 处理 集中处理 设施 运营 单位 协商 约定 排放 浓度 限值 浓度限值 4.2.3 排 向 综合 综合型 工业 污水 集中 处理 集中处理 设施 的 对于 经 评估 能够 处理 纺织 织工 工业 纺织工业 污水 并 能 实现 达",
+      "pg_lexemes_head": "'-2026':82 '1':17,83,202 '12':18 '2026':198 '30':209 '4.2.2':1,111 '4.2.3':41,112 '4.2.4':109 '9':84,200 'a085':212 'a96':213 'c5':211 'cc8':210 'e':216 'e00':215 'f9':214 'gb4287':81 'id':207 'table':206 'tb':208 '下':14",
+      "query_mode": "query",
+      "query_terms": [
+        "'4.2.2'",
+        "'排'",
+        "'纺织工业'",
+        "'污水'",
+        "'集中处理'",
+        "'设施'",
+        "'表1'",
+        "'第'",
+        "'1'",
+        "'12'",
+        "'项'",
+        "'污染物'"
+      ],
+      "hits": 12,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "text": "GB 8978—1996 表 1 总汞",
+      "index_mode": "index",
+      "indexed_tokens": "gb8978-1996 表1 总汞",
+      "pg_lexemes_head": "'-1996':2 'gb8978':1 '总汞':4 '表1':3",
+      "query_mode": "query",
+      "query_terms": [
+        "('gb8978' <-> '-1996' | 'gb8978-1996')",
+        "'表1'",
+        "'总汞'"
+      ],
+      "hits": 3,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "text": "依据 GB 3095-2012 与 HJ 2.2—2018 执行",
+      "index_mode": "index",
+      "indexed_tokens": "依据 gb3095-2012 与 hj2.2-2018 执行",
+      "pg_lexemes_head": "'-2012':3 'gb3095':2 'hj2.2-2018':5 '与':4 '依据':1 '执行':6",
+      "query_mode": "query",
+      "query_terms": [
+        "'依据'",
+        "('gb3095' <-> '-2012' | 'gb3095-2012')",
+        "('hj2.2' <-> '-2018' | 'hj2.2-2018')"
+      ],
+      "hits": 3,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "text": "GB/T 18883-2002 室内空气质量",
+      "index_mode": "index",
+      "indexed_tokens": "gbt18883-2002 室内 空气 气质 质量 空气质量",
+      "pg_lexemes_head": "'-2002':2 'gbt18883':1 '室内':3 '气质':5 '空气':4 '空气质量':7 '质量':6",
+      "query_mode": "query",
+      "query_terms": [
+        "('gbt18883' <-> '-2002' | 'gbt18883-2002')",
+        "'室内'",
+        "'空气质量'"
+      ],
+      "hits": 3,
+      "misses": [],
+      "pass": true
+    }
+  ],
+  "naive_baseline": {
+    "method": "punctuation split only (Phase 0 baseline)",
+    "tokens": [
+      "医疗机构水污染物排放标准"
+    ],
+    "controlled_tokens": [
+      "医疗机构",
+      "水污染物",
+      "排放标准"
+    ],
+    "observed": "no-dictionary split leaves the whole clause as one token; controlled jieba+vocab yields 医疗机构/水污染物/排放/标准"
+  }
+}

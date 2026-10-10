@@ -1,0 +1,390 @@
+{
+  "manifest_files_verified": 809,
+  "manifest_mismatches": [],
+  "positive_legs": 93,
+  "counter_legs": 30,
+  "identity_and_accepted_source_unchanged": true,
+  "reserved": {
+    "pg": 12197,
+    "llm": 79,
+    "embedding": 201,
+    "qdrant": 201,
+    "neo4j": 395,
+    "rerank": 38,
+    "answer_llm": 21
+  },
+  "issued": {
+    "pg": 12197,
+    "llm": 79,
+    "embedding": 201,
+    "qdrant": 201,
+    "neo4j": 395,
+    "rerank": 38,
+    "answer_llm": 11
+  },
+  "per_leg_reservation_mismatches": [
+    {
+      "leg": "r1/pg/syn-001",
+      "differences": {
+        "answer_llm": {
+          "reserved": 1,
+          "issued": 0
+        }
+      }
+    },
+    {
+      "leg": "r1/local/syn-001",
+      "differences": {
+        "answer_llm": {
+          "reserved": 1,
+          "issued": 0
+        }
+      }
+    },
+    {
+      "leg": "r1/fusion/syn-001",
+      "differences": {
+        "answer_llm": {
+          "reserved": 1,
+          "issued": 0
+        }
+      }
+    },
+    {
+      "leg": "r1/local/syn-002",
+      "differences": {
+        "answer_llm": {
+          "reserved": 1,
+          "issued": 0
+        }
+      }
+    },
+    {
+      "leg": "r1/local/syn-003",
+      "differences": {
+        "answer_llm": {
+          "reserved": 1,
+          "issued": 0
+        }
+      }
+    },
+    {
+      "leg": "r1/local/syn-004",
+      "differences": {
+        "answer_llm": {
+          "reserved": 1,
+          "issued": 0
+        }
+      }
+    },
+    {
+      "leg": "r1/pg/syn-006",
+      "differences": {
+        "answer_llm": {
+          "reserved": 1,
+          "issued": 0
+        }
+      }
+    },
+    {
+      "leg": "r1/local/syn-006",
+      "differences": {
+        "answer_llm": {
+          "reserved": 1,
+          "issued": 0
+        }
+      }
+    },
+    {
+      "leg": "r1/fusion/syn-006",
+      "differences": {
+        "answer_llm": {
+          "reserved": 1,
+          "issued": 0
+        }
+      }
+    },
+    {
+      "leg": "r1/local/neg-010",
+      "differences": {
+        "answer_llm": {
+          "reserved": 1,
+          "issued": 0
+        }
+      }
+    }
+  ],
+  "service_statuses": {
+    "llm/success": 40,
+    "embedding/success": 101,
+    "qdrant/success": 101,
+    "neo4j/success": 200,
+    "pg/success": 101
+  },
+  "successful_rerank_receipts": 38,
+  "pg_peak": 176,
+  "constructed_refusals": [
+    {
+      "kind": "budget_refusal",
+      "service": "pg",
+      "amount": 1,
+      "where": "r1/pg/neg-008:pg",
+      "reason": "per-question envelope 4 reached (4)",
+      "issued": 0
+    },
+    {
+      "kind": "budget_refusal",
+      "service": "pg",
+      "amount": 1,
+      "where": "r1/local/neg-008:readonly_select_chunks",
+      "reason": "per-question envelope 4 reached (4)",
+      "issued": 0
+    },
+    {
+      "kind": "budget_refusal",
+      "service": "pg",
+      "amount": 1,
+      "where": "r1/fusion/neg-008:pg",
+      "reason": "per-question envelope 4 reached (4)",
+      "issued": 0
+    }
+  ],
+  "complete_counter_review": [
+    {
+      "qid": "neg-003",
+      "path": "pg",
+      "app_coverage": "complete",
+      "items": 1,
+      "document_counts": {
+        "doc-91f9049decde09153368d4b69f280e78": 1
+      },
+      "review": "provisional_behavior_supported",
+      "note": ""
+    },
+    {
+      "qid": "neg-004",
+      "path": "pg",
+      "app_coverage": "complete",
+      "items": 13,
+      "document_counts": {
+        "doc-b45c510232ed4d2452b0f5b2a13434e4": 13
+      },
+      "review": "provisional_behavior_supported",
+      "note": ""
+    },
+    {
+      "qid": "neg-005",
+      "path": "pg",
+      "app_coverage": "complete",
+      "items": 38,
+      "document_counts": {
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1": 14,
+        "doc-91f9049decde09153368d4b69f280e78": 24
+      },
+      "review": "fails_frozen_behavior",
+      "note": "neg-005 retains different document identities; failure is answer intent/status, not demonstrated table identity merge"
+    },
+    {
+      "qid": "neg-003",
+      "path": "local",
+      "app_coverage": "complete",
+      "items": 1,
+      "document_counts": {
+        "doc-91f9049decde09153368d4b69f280e78": 1
+      },
+      "review": "provisional_behavior_supported",
+      "note": ""
+    },
+    {
+      "qid": "neg-004",
+      "path": "local",
+      "app_coverage": "complete",
+      "items": 44,
+      "document_counts": {
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1": 31,
+        "doc-b45c510232ed4d2452b0f5b2a13434e4": 13
+      },
+      "review": "fails_frozen_behavior",
+      "note": ""
+    },
+    {
+      "qid": "neg-003",
+      "path": "fusion",
+      "app_coverage": "complete",
+      "items": 1,
+      "document_counts": {
+        "doc-91f9049decde09153368d4b69f280e78": 1
+      },
+      "review": "provisional_behavior_supported",
+      "note": ""
+    },
+    {
+      "qid": "neg-004",
+      "path": "fusion",
+      "app_coverage": "complete",
+      "items": 13,
+      "document_counts": {
+        "doc-b45c510232ed4d2452b0f5b2a13434e4": 13
+      },
+      "review": "provisional_behavior_supported",
+      "note": ""
+    },
+    {
+      "qid": "neg-005",
+      "path": "fusion",
+      "app_coverage": "complete",
+      "items": 38,
+      "document_counts": {
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1": 14,
+        "doc-91f9049decde09153368d4b69f280e78": 24
+      },
+      "review": "fails_frozen_behavior",
+      "note": "neg-005 retains different document identities; failure is answer intent/status, not demonstrated table identity merge"
+    }
+  ],
+  "file_enum_identity_screen": [
+    {
+      "qid": "file-enum-001",
+      "path": "pg",
+      "identity_set_equal": true,
+      "app_coverage": "complete",
+      "source_position_review_pending": true
+    },
+    {
+      "qid": "file-enum-001",
+      "path": "local",
+      "identity_set_equal": true,
+      "app_coverage": "complete",
+      "source_position_review_pending": true
+    },
+    {
+      "qid": "file-enum-001",
+      "path": "fusion",
+      "identity_set_equal": true,
+      "app_coverage": "complete",
+      "source_position_review_pending": true
+    },
+    {
+      "qid": "file-enum-002",
+      "path": "pg",
+      "identity_set_equal": true,
+      "app_coverage": "complete",
+      "source_position_review_pending": true
+    },
+    {
+      "qid": "file-enum-002",
+      "path": "local",
+      "identity_set_equal": true,
+      "app_coverage": "complete",
+      "source_position_review_pending": true
+    },
+    {
+      "qid": "file-enum-002",
+      "path": "fusion",
+      "identity_set_equal": true,
+      "app_coverage": "complete",
+      "source_position_review_pending": true
+    },
+    {
+      "qid": "file-enum-003",
+      "path": "pg",
+      "identity_set_equal": true,
+      "app_coverage": "complete",
+      "source_position_review_pending": true
+    },
+    {
+      "qid": "file-enum-003",
+      "path": "local",
+      "identity_set_equal": true,
+      "app_coverage": "complete",
+      "source_position_review_pending": true
+    },
+    {
+      "qid": "file-enum-003",
+      "path": "fusion",
+      "identity_set_equal": true,
+      "app_coverage": "complete",
+      "source_position_review_pending": true
+    },
+    {
+      "qid": "file-enum-004",
+      "path": "pg",
+      "identity_set_equal": true,
+      "app_coverage": "complete",
+      "source_position_review_pending": true
+    },
+    {
+      "qid": "file-enum-004",
+      "path": "local",
+      "identity_set_equal": true,
+      "app_coverage": "complete",
+      "source_position_review_pending": true
+    },
+    {
+      "qid": "file-enum-004",
+      "path": "fusion",
+      "identity_set_equal": true,
+      "app_coverage": "complete",
+      "source_position_review_pending": true
+    },
+    {
+      "qid": "file-enum-005",
+      "path": "pg",
+      "identity_set_equal": true,
+      "app_coverage": "complete",
+      "source_position_review_pending": true
+    },
+    {
+      "qid": "file-enum-005",
+      "path": "local",
+      "identity_set_equal": false,
+      "app_coverage": "complete",
+      "source_position_review_pending": true
+    },
+    {
+      "qid": "file-enum-005",
+      "path": "fusion",
+      "identity_set_equal": true,
+      "app_coverage": "complete",
+      "source_position_review_pending": true
+    },
+    {
+      "qid": "file-enum-006",
+      "path": "pg",
+      "identity_set_equal": true,
+      "app_coverage": "complete",
+      "source_position_review_pending": true
+    },
+    {
+      "qid": "file-enum-006",
+      "path": "local",
+      "identity_set_equal": true,
+      "app_coverage": "complete",
+      "source_position_review_pending": true
+    },
+    {
+      "qid": "file-enum-006",
+      "path": "fusion",
+      "identity_set_equal": true,
+      "app_coverage": "complete",
+      "source_position_review_pending": true
+    }
+  ],
+  "file_screen_is_full_score": false,
+  "timing_scope_audit": {
+    "recorded_total_sum_ms": 744775,
+    "recorded_discovery_sum_ms": 457829,
+    "recorded_rerank_sum_ms": 90965,
+    "recorded_answer_sum_ms": 286946,
+    "fusion_discovery_includes_rerank": true,
+    "standalone_expand_and_generate_times_not_available_for_all_legs": true,
+    "reported_wall_minutes": 44,
+    "wall_scope_independently_verified": false
+  },
+  "execution_delivery_accepted": true,
+  "gate4_quality_not_passed": true,
+  "task6_2_complete": false,
+  "second_round_on_hold": true,
+  "reviewer_real_requests": 0,
+  "production_writes": 0
+}

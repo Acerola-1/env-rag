@@ -1,0 +1,83 @@
+{
+  "task": "Phase 4 config anchor (offline preparation only; no real requests made creating this file)",
+  "prepared_at": "2026-10-07",
+  "frozen_identity": {
+    "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "catalog_run_snapshot": "c15c741742394320/4919b3938ad93747",
+    "search_active": "872d689343a9cbb6",
+    "gold_sha256": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+    "gold_file": "reports/pg-retrieval/gate-2/review-r5/gold-approved.json",
+    "gold_composition": "31 positives (fact 7 / file_enum 6 / prose_enum 6 / table_enum 6 / synthesis 6) + 10 counter-examples",
+    "eight_table_counts": [
+      221,
+      5709,
+      279,
+      16514,
+      65527,
+      221,
+      221,
+      119575
+    ],
+    "workspace_mapping": "only PG default <-> vector '_' <-> graph 'base'",
+    "note": "re-frozen from the live catalog at each real run's guard; this anchor records the Gate-3-era values and must NOT be edited to mask drift"
+  },
+  "code_anchors": {
+    "answer.py": "2a53f2d7b959b34434a0a78d4345c205693b01b56378e94f70c62608d6bea8e6",
+    "synthesis_system_prompt_sha256": "626fda413ae3be3c7531ee04e2f235ee80da72ac6fade45848705a194dc31dda",
+    "rerank.py": "e2a8e089dd69cc02791a3c175bfadd27dd4fded80b249a32786b6a4d099cce08",
+    "fusion.py": "be1cd4c586596468efda7b9483903a407f0e214fc35e7a83355ad304ef94127e",
+    "local_adapter.py": "0bbad9764856250085b5cefb90c9d56933bfd2f6e9ed5ed796fdd93bdf2da7e3",
+    "compat_runtime.py": "5fa566b2b6a54571803a302e4e5c25df33382b874c5aacf2e4ea696f33ed3933",
+    "note": "eval entry (6.1) will be NEW code reviewed separately; existing accepted components must not be modified for evaluation convenience"
+  },
+  "model_config": {
+    "answer_query_llm": {
+      "key": "QUERY_LLM_MODEL",
+      "value": "hy3",
+      "endpoint_class": "LLM_BINDING_HOST=http://127.0.0.1:8787/v1 (OpenAI-compatible local proxy), POST /chat/completions, temperature=0",
+      "authorization": "user-authorized switch from deepseek-v4.1-flash (2026-10-07); Gate-3 ruling: HY3 is link-acceptance evidence only, NOT proven comparable to DeepSeek in quality"
+    },
+    "keyword_llm": {
+      "key": "KEYWORD_LLM_MODEL (falls back LLM_MODEL)",
+      "value": "deepseek-v4.1-flash",
+      "endpoint_class": "same 127.0.0.1:8787/v1 proxy",
+      "availability": "BLOCKED pending user restoration/change decision: user reports DeepSeek quota exhausted; syn3 observed503 on answer invocation through the configured DeepSeek channel, not a fresh keyword endpoint health test. No live probe performed."
+    },
+    "embedding": {
+      "key": "EMBEDDING_MODEL",
+      "value": "Qwen/Qwen3-Embedding-4B",
+      "dim": 2560,
+      "endpoint_class": "EMBEDDING_BINDING_HOST=https://api.siliconflow.cn/v1 (OpenAI-compatible)",
+      "api_key": "present in .env; value never persisted",
+      "availability": "config in place; live availability to be confirmed by the first authorized real batch only"
+    },
+    "rerank": {
+      "key": "RERANK_MODEL",
+      "value": "Qwen/Qwen3-Reranker-4B",
+      "endpoint_class": "RERANK_BINDING_HOST=https://api.siliconflow.cn/v1/rerank (Cohere-style)",
+      "api_key": "present in .env; value never persisted",
+      "availability": "config in place; accepted real evidence exists (fact-002 200/997ms); live availability to be re-confirmed at run time"
+    }
+  },
+  "frozen_budgets": {
+    "discovery_top_k": 20,
+    "fusion_usable_cap_per_query": 40,
+    "rerank_max_inputs": 40,
+    "max_answer_model_context_chars": 40000,
+    "max_answer_model_calls_per_run": 1,
+    "answer_temperature": 0,
+    "counter_examples": "10 approved expectations; evaluate actual production behaviour, never use expected_status to bypass the tested path. Constructed isolation/budget cases are explicitly separate fixture tests."
+  },
+  "cache_and_cold_generation_contract": {
+    "answer_path": "plain HTTP only — no LightRAG/ClientManager instantiation, no hashing_kv/openai_complete_if_cache; zero answer-cache read/write proven by the code path itself",
+    "evaluation_rules": "syn6 and any older runtime are NOT reusable as cold-generation answers; each round re-generates and stores its own context/messages; parsing/index caches are separate from answer caches and remain untouched",
+    "readonly_boundary": "Phase4 production PG public and env_rag/catalog/search, Qdrant/Neo4j and MinerU sources are read-only; no migration/build/index/storage initialize. Only local evaluation artifacts may be written."
+  },
+  "preparation_real_calls": 0,
+  "review_disposition": {
+    "code_implementation": "6.1 offline implementation and fixture tests may proceed under handoff-phase-4-6.1.md",
+    "network_evaluation": "not authorized; submitted totals and comparison contract require correction",
+    "keyword_model_change": "not authorized; current configuration preserved",
+    "review_file": "reports/pg-retrieval/phase-4-review/review.md"
+  }
+}

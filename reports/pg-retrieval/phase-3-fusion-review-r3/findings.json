@@ -1,0 +1,10 @@
+[
+  {
+    "id": "F3-a",
+    "path": "src/env_rag_final/fusion.py",
+    "start_line": 570,
+    "severity": "high",
+    "category": "bug",
+    "content": "The preflight try only catches four exception classes. Gold structural KeyError/TypeError and config ValueError still escape with no failure terminal. Three owning-entry cases reproduce the same remaining preflight contract gap."
+  }
+]

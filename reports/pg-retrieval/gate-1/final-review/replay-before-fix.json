@@ -1,0 +1,2001 @@
+{
+  "live": {
+    "public_before": {
+      "doc_full": 221,
+      "doc_chunks": 5709,
+      "doc_status": 279,
+      "llm_cache": 16514,
+      "entity_chunks": 65527,
+      "full_entities": 221,
+      "full_relations": 221,
+      "relation_chunks": 119575
+    },
+    "start": {
+      "state": "current",
+      "active_run_id": "c15c741742394320",
+      "active_snapshot_id": "4919b3938ad93747",
+      "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "expected_recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "live_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "stored_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "action": ""
+    },
+    "table1": {
+      "query_id": "table-54953a200832",
+      "kind": "table",
+      "workspace": "default",
+      "catalog_snapshot_id": "4919b3938ad93747",
+      "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "scope_ids": [
+        "tb-b45c510232ed4d2452b0f5b2a13434e4-0001"
+      ],
+      "members_total": 2,
+      "members_processed": 2,
+      "items": [
+        {
+          "seq": "1",
+          "cells": [
+            "1",
+            "总汞",
+            "0.05"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 0,
+            "row_in_fragment": 1,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        },
+        {
+          "seq": "2",
+          "cells": [
+            "2",
+            "烷基汞",
+            "不得检出"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 0,
+            "row_in_fragment": 2,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        },
+        {
+          "seq": "3",
+          "cells": [
+            "3",
+            "总镉",
+            "0.1"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 0,
+            "row_in_fragment": 3,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        },
+        {
+          "seq": "4",
+          "cells": [
+            "4",
+            "总铬",
+            "1.5"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 0,
+            "row_in_fragment": 4,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        },
+        {
+          "seq": "5",
+          "cells": [
+            "5",
+            "六价铬",
+            "0.5"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 1,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        },
+        {
+          "seq": "6",
+          "cells": [
+            "6",
+            "总砷",
+            "0.5"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 2,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        },
+        {
+          "seq": "7",
+          "cells": [
+            "7",
+            "总铅",
+            "1.0"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 3,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        },
+        {
+          "seq": "8",
+          "cells": [
+            "8",
+            "总镍",
+            "1.0"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 4,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        },
+        {
+          "seq": "9",
+          "cells": [
+            "9",
+            "苯并(a)芘",
+            "0.000 03"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 5,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        },
+        {
+          "seq": "10",
+          "cells": [
+            "10",
+            "总铍",
+            "0.005"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 6,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        },
+        {
+          "seq": "11",
+          "cells": [
+            "11",
+            "总银",
+            "0.5"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 7,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        },
+        {
+          "seq": "12",
+          "cells": [
+            "12",
+            "总 $\\alpha$ 放射性",
+            "1 Bq/L"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 8,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        },
+        {
+          "seq": "13",
+          "cells": [
+            "13",
+            "总 $\\beta$ 放射性",
+            "10 Bq/L"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 9,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        }
+      ],
+      "coverage_status": "complete",
+      "warnings": [
+        "table_structure: header=[[\"序号\", \"污染物\", \"最高允许排放浓度\"]]; units=[]; footnotes=[]"
+      ],
+      "fail_stage": "",
+      "predicate": null,
+      "read_token": null,
+      "model_calls": [],
+      "read_status": ""
+    },
+    "row_citation_reread": [
+      {
+        "seq": "1",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 0,
+          "row_in_fragment": 1,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "1",
+          "总汞",
+          "0.05"
+        ],
+        "cited_source_row": [
+          "1",
+          "总汞",
+          "0.05"
+        ],
+        "matches": true
+      },
+      {
+        "seq": "2",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 0,
+          "row_in_fragment": 2,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "2",
+          "烷基汞",
+          "不得检出"
+        ],
+        "cited_source_row": [
+          "2",
+          "烷基汞",
+          "不得检出"
+        ],
+        "matches": true
+      },
+      {
+        "seq": "3",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 0,
+          "row_in_fragment": 3,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "3",
+          "总镉",
+          "0.1"
+        ],
+        "cited_source_row": [
+          "3",
+          "总镉",
+          "0.1"
+        ],
+        "matches": true
+      },
+      {
+        "seq": "4",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 0,
+          "row_in_fragment": 4,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "4",
+          "总铬",
+          "1.5"
+        ],
+        "cited_source_row": [
+          "4",
+          "总铬",
+          "1.5"
+        ],
+        "matches": true
+      },
+      {
+        "seq": "5",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 1,
+          "row_in_fragment": 1,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "5",
+          "六价铬",
+          "0.5"
+        ],
+        "cited_source_row": [
+          "5",
+          "六价铬",
+          "0.5"
+        ],
+        "matches": true
+      },
+      {
+        "seq": "6",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 1,
+          "row_in_fragment": 2,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "6",
+          "总砷",
+          "0.5"
+        ],
+        "cited_source_row": [
+          "6",
+          "总砷",
+          "0.5"
+        ],
+        "matches": true
+      },
+      {
+        "seq": "7",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 1,
+          "row_in_fragment": 3,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "7",
+          "总铅",
+          "1.0"
+        ],
+        "cited_source_row": [
+          "7",
+          "总铅",
+          "1.0"
+        ],
+        "matches": true
+      },
+      {
+        "seq": "8",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 1,
+          "row_in_fragment": 4,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "8",
+          "总镍",
+          "1.0"
+        ],
+        "cited_source_row": [
+          "8",
+          "总镍",
+          "1.0"
+        ],
+        "matches": true
+      },
+      {
+        "seq": "9",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 1,
+          "row_in_fragment": 5,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "9",
+          "苯并(a)芘",
+          "0.000 03"
+        ],
+        "cited_source_row": [
+          "9",
+          "苯并(a)芘",
+          "0.000 03"
+        ],
+        "matches": true
+      },
+      {
+        "seq": "10",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 1,
+          "row_in_fragment": 6,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "10",
+          "总铍",
+          "0.005"
+        ],
+        "cited_source_row": [
+          "10",
+          "总铍",
+          "0.005"
+        ],
+        "matches": true
+      },
+      {
+        "seq": "11",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 1,
+          "row_in_fragment": 7,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "11",
+          "总银",
+          "0.5"
+        ],
+        "cited_source_row": [
+          "11",
+          "总银",
+          "0.5"
+        ],
+        "matches": true
+      },
+      {
+        "seq": "12",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 1,
+          "row_in_fragment": 8,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "12",
+          "总 $\\alpha$ 放射性",
+          "1 Bq/L"
+        ],
+        "cited_source_row": [
+          "12",
+          "总 $\\alpha$ 放射性",
+          "1 Bq/L"
+        ],
+        "matches": true
+      },
+      {
+        "seq": "13",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 1,
+          "row_in_fragment": 9,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "13",
+          "总 $\\beta$ 放射性",
+          "10 Bq/L"
+        ],
+        "cited_source_row": [
+          "13",
+          "总 $\\beta$ 放射性",
+          "10 Bq/L"
+        ],
+        "matches": true
+      }
+    ],
+    "table2": {
+      "query_id": "table-f3349ac030a8",
+      "kind": "table",
+      "workspace": "default",
+      "catalog_snapshot_id": "4919b3938ad93747",
+      "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "scope_ids": [],
+      "members_total": 0,
+      "members_processed": 0,
+      "items": [],
+      "coverage_status": "ambiguous",
+      "warnings": [
+        "no logical table 表2 in water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf"
+      ],
+      "fail_stage": "ambiguous",
+      "predicate": null,
+      "read_token": null,
+      "model_calls": [],
+      "read_status": ""
+    },
+    "scope3": {
+      "workspace": "default",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "snapshot_id": "4919b3938ad93747",
+      "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3",
+      "scope_kind": "clause",
+      "parent_scope_id": null,
+      "title": "3 术语和定义",
+      "number": "3",
+      "confirm_status": "confirmed",
+      "note": null
+    },
+    "prose3_manually_bound": {
+      "query_id": "prose-90a9f7017ca7",
+      "kind": "prose",
+      "workspace": "default",
+      "catalog_snapshot_id": "4919b3938ad93747",
+      "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "scope_ids": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3"
+      ],
+      "members_total": 3,
+      "members_processed": 3,
+      "items": [
+        {
+          "clause": "3.1",
+          "text": "3.1 医疗机构 medical organization\n指从事疾病诊断、治疗活动的医院、卫生院、疗养院、门诊部、诊所、卫生急救站等。",
+          "citation": {
+            "kind": "char_span",
+            "char_start": 22,
+            "char_end": 91,
+            "quote": "3.1 医疗机构 medical organization\n指从事疾病诊断、治疗活动的医院、卫生院、疗养院、门诊部、诊所、卫生急救站等。",
+            "unit_rel_start": 22,
+            "unit_rel_end": 91,
+            "unit_id": "385d9e8e0539a87e61f0407bda1739ad",
+            "locator": {
+              "file": "blocks.jsonl",
+              "kind": "block",
+              "blockid": "385d9e8e0539a87e61f0407bda1739ad",
+              "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+            },
+            "chunk_ids": [
+              "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+            ],
+            "unit_source": "parsed_block",
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "snapshot_id": "4919b3938ad93747"
+          },
+          "citation_verified": true,
+          "source": "regex_clause_split"
+        },
+        {
+          "clause": "3.2",
+          "text": "3.2 医疗机构污水 medical organization wastewater\n指医疗机构门诊、病房、手术室、各类检验室、病理解剖室、放射室、洗衣房、太平间等处排出的诊疗、生活及粪便污水。当医疗机构其他污水与上述污水混合排出时一律视为医疗机构污水。",
+          "citation": {
+            "kind": "char_span",
+            "char_start": 91,
+            "char_end": 219,
+            "quote": "3.2 医疗机构污水 medical organization wastewater\n指医疗机构门诊、病房、手术室、各类检验室、病理解剖室、放射室、洗衣房、太平间等处排出的诊疗、生活及粪便污水。当医疗机构其他污水与上述污水混合排出时一律视为",
+            "unit_rel_start": 91,
+            "unit_rel_end": 218,
+            "unit_id": "385d9e8e0539a87e61f0407bda1739ad",
+            "locator": {
+              "file": "blocks.jsonl",
+              "kind": "block",
+              "blockid": "385d9e8e0539a87e61f0407bda1739ad",
+              "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+            },
+            "chunk_ids": [
+              "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+            ],
+            "unit_source": "parsed_block",
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "snapshot_id": "4919b3938ad93747"
+          },
+          "citation_verified": true,
+          "source": "regex_clause_split"
+        },
+        {
+          "clause": "3.3",
+          "text": "## 3.3 污泥 sludge\n指医疗机构污水处理过程中产生的栅渣、沉淀污泥和化粪池污泥。",
+          "citation": {
+            "kind": "char_span",
+            "char_start": 219,
+            "char_end": 267,
+            "quote": "## 3.3 污泥 sludge\n指医疗机构污水处理过程中产生的栅渣、沉淀污泥和化粪池污泥。",
+            "unit_rel_start": 0,
+            "unit_rel_end": 46,
+            "unit_id": "ad9d292d3ee2fd88a8fd25b9efc8265a",
+            "locator": {
+              "file": "blocks.jsonl",
+              "kind": "block",
+              "blockid": "ad9d292d3ee2fd88a8fd25b9efc8265a",
+              "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+            },
+            "chunk_ids": [
+              "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+            ],
+            "unit_source": "parsed_block",
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "snapshot_id": "4919b3938ad93747"
+          },
+          "citation_verified": true,
+          "source": "regex_clause_split"
+        },
+        {
+          "clause": "3.4",
+          "text": "## 3.4 废气 waste gas\n指医疗机构污水处理过程中产生的有害气体。",
+          "citation": {
+            "kind": "char_span",
+            "char_start": 267,
+            "char_end": 308,
+            "quote": "## 3.4 废气 waste gas\n指医疗机构污水处理过程中产生的有害气体。",
+            "unit_rel_start": 0,
+            "unit_rel_end": 40,
+            "unit_id": "90d4b1c55cb8c6ff81dcbdfd55827165",
+            "locator": {
+              "file": "blocks.jsonl",
+              "kind": "block",
+              "blockid": "90d4b1c55cb8c6ff81dcbdfd55827165",
+              "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+            },
+            "chunk_ids": [
+              "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+            ],
+            "unit_source": "parsed_block",
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "snapshot_id": "4919b3938ad93747"
+          },
+          "citation_verified": true,
+          "source": "regex_clause_split"
+        }
+      ],
+      "coverage_status": "ambiguous",
+      "warnings": [],
+      "fail_stage": "",
+      "predicate": null,
+      "read_token": null,
+      "model_calls": [],
+      "read_status": "complete"
+    },
+    "prose_cli": {
+      "command": [
+        ".venv/bin/env-rag-final",
+        "enum-prose",
+        "--doc-id",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "--scope-id",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3",
+        "--clause-wanted",
+        "3.1,3.2,3.3,3.4"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout_tail": "  \"blockid\": \"90d4b1c55cb8c6ff81dcbdfd55827165\",\n     \"parsed_dir\": \"water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed\"\n    },\n    \"chunk_ids\": [\n     \"doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001\"\n    ],\n    \"unit_source\": \"parsed_block\",\n    \"workspace\": \"default\",\n    \"doc_id\": \"doc-68a03b50e1ba1ffc6a0116529f694fe1\",\n    \"snapshot_id\": \"4919b3938ad93747\"\n   },\n   \"citation_verified\": true,\n   \"source\": \"regex_clause_split\"\n  }\n ],\n \"coverage_status\": \"complete\",\n \"warnings\": [],\n \"fail_stage\": \"\",\n \"predicate\": null,\n \"read_token\": null,\n \"model_calls\": [],\n \"read_status\": \"complete\"\n}\n"
+    },
+    "missing_clause_cli": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout_tail": "lightrag-hku: 1.5.7\nopenai: 2.54.0\nasyncpg: 0.31.0\npgvector: 0.5.0\nqdrant-client: 1.19.1\nneo4j: 6.3.1\nhttpx: 0.28.1\npython-dotenv: 1.2.4\nlxml: 6.1.3\nConfiguration: OK (51 keys; credential values hidden)\n{\n \"query_id\": \"prose-b2d8cbb468ad\",\n \"kind\": \"prose\",\n \"workspace\": \"default\",\n \"catalog_snapshot_id\": \"4919b3938ad93747\",\n \"source_snapshot_id\": \"95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8\",\n \"scope_ids\": [\n  \"doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3\"\n ],\n \"members_total\": 3,\n \"members_processed\": 3,\n \"items\": [],\n \"coverage_status\": \"partial\",\n \"warnings\": [\n  \"requested clauses missing: ['9.9.9']\"\n ],\n \"fail_stage\": \"\",\n \"predicate\": null,\n \"read_token\": null,\n \"model_calls\": [],\n \"read_status\": \"complete\"\n}\n"
+    },
+    "big_scope": {
+      "workspace": "default",
+      "doc_id": "doc-fc62a74b19f18e323438c733643c5f7a",
+      "snapshot_id": "4919b3938ad93747",
+      "scope_id": "doc-fc62a74b19f18e323438c733643c5f7a:scope:Annex 3 Drinking water estimates",
+      "scope_kind": "chapter",
+      "parent_scope_id": null,
+      "title": "Annex 3 Drinking water estimates",
+      "number": null,
+      "confirm_status": "requires_span",
+      "note": "内容位于大 block（937f224e77d8…，共 245869 字符，被最多 176 个 chunk 引用）；子片段（表格/段落）需按 locator 逐片段定位；不得把整个 block 引用跨度当作完整范围"
+    },
+    "big_scope_result": {
+      "query_id": "prose-86b04a03ef66",
+      "kind": "prose",
+      "workspace": "default",
+      "catalog_snapshot_id": "4919b3938ad93747",
+      "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "scope_ids": [
+        "doc-fc62a74b19f18e323438c733643c5f7a:scope:Annex 3 Drinking water estimates"
+      ],
+      "members_total": 1,
+      "members_processed": 0,
+      "items": [],
+      "coverage_status": "partial",
+      "warnings": [
+        "unit 937f224e77d8c5c9d8b528171282fd52 requires span extraction but contains no locatable sub-clause structure for the scope request"
+      ],
+      "fail_stage": "unresolved_span",
+      "predicate": null,
+      "read_token": null,
+      "model_calls": [],
+      "read_status": "partial"
+    },
+    "big_scope_units": [],
+    "big_member_original": {
+      "unit_id": "937f224e77d8c5c9d8b528171282fd52",
+      "content_length": 245869
+    },
+    "documents": {
+      "yearbooks": {
+        "query_id": "doc-enum-662dd5efa515",
+        "kind": "document",
+        "workspace": "default",
+        "catalog_snapshot_id": "4919b3938ad93747",
+        "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+        "scope_ids": [],
+        "members_total": 5,
+        "members_processed": 5,
+        "items": [
+          {
+            "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+            "doc_name": "air-15_生态环境部_中国移动源环境管理年报_2021.pdf",
+            "title": "中国移动源环境管理年报",
+            "title_confidence": "extracted",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "yearbook",
+            "unknown_fields": "[\"self_code\", \"publish_date\", \"implement_date\", \"stats_period\"]",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+              "doc_name": "air-15_生态环境部_中国移动源环境管理年报_2021.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+            "doc_name": "air-16_生态环境部_中国移动源环境管理年报_2022.pdf",
+            "title": "中国移动源环境管理年报",
+            "title_confidence": "extracted",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "yearbook",
+            "unknown_fields": "[\"self_code\", \"publish_date\", \"implement_date\", \"stats_period\"]",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+              "doc_name": "air-16_生态环境部_中国移动源环境管理年报_2022.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+            "doc_name": "air-17_生态环境部_中国移动源环境管理年报_2023.pdf",
+            "title": "中国移动源环境管理年报",
+            "title_confidence": "extracted",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "yearbook",
+            "unknown_fields": "[\"self_code\", \"publish_date\", \"implement_date\", \"stats_period\"]",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+              "doc_name": "air-17_生态环境部_中国移动源环境管理年报_2023.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+            "doc_name": "air-18_生态环境部_中国移动源环境管理年报_2024.pdf",
+            "title": "中国移动源环境管理年报",
+            "title_confidence": "extracted",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "yearbook",
+            "unknown_fields": "[\"self_code\", \"publish_date\", \"implement_date\", \"stats_period\"]",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+              "doc_name": "air-18_生态环境部_中国移动源环境管理年报_2024.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+            "doc_name": "air-19_生态环境部_中国移动源环境管理年报_2025.pdf",
+            "title": "中国移动源环境管理年报",
+            "title_confidence": "extracted",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "yearbook",
+            "unknown_fields": "[\"self_code\", \"publish_date\", \"implement_date\", \"stats_period\"]",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+              "doc_name": "air-19_生态环境部_中国移动源环境管理年报_2025.pdf"
+            },
+            "citation_verified": true
+          }
+        ],
+        "coverage_status": "complete",
+        "warnings": [
+          "5 matched docs have unknown metadata fields; they are included but flagged"
+        ],
+        "fail_stage": "",
+        "predicate": "doc_name LIKE '%中国移动源环境管理年报%'",
+        "read_token": "2fc8ff99c075883d4c6be35df9c87b03f658bda9c0a3e3f7cb98be5c0aaa900a",
+        "model_calls": [],
+        "read_status": ""
+      },
+      "water_bulletins": {
+        "query_id": "doc-enum-8b43a2612cb2",
+        "kind": "document",
+        "workspace": "default",
+        "catalog_snapshot_id": "4919b3938ad93747",
+        "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+        "scope_ids": [],
+        "members_total": 5,
+        "members_processed": 5,
+        "items": [
+          {
+            "doc_id": "doc-0e575533a4ec747d16a0b24c381c5ede",
+            "doc_name": "water-25_水利部_2021年中国水资源公报_2021.pdf",
+            "title": "CHINA WATER RESOURCES BULLETIN",
+            "title_confidence": "extracted",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "bulletin",
+            "unknown_fields": "[\"self_code\", \"publish_date\", \"implement_date\", \"stats_period\"]",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-0e575533a4ec747d16a0b24c381c5ede",
+              "doc_name": "water-25_水利部_2021年中国水资源公报_2021.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-a13be3e29e82c913f3470fbe60b4bf6a",
+            "doc_name": "water-26_水利部_2022年中国水资源公报_2022.pdf",
+            "title": "CHINA WATER RESOURCES BULLETIN",
+            "title_confidence": "extracted",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "bulletin",
+            "unknown_fields": "[\"self_code\", \"publish_date\", \"implement_date\", \"stats_period\"]",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-a13be3e29e82c913f3470fbe60b4bf6a",
+              "doc_name": "water-26_水利部_2022年中国水资源公报_2022.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-d29dd8b36d29309ba693bfdc78ba3103",
+            "doc_name": "water-27_水利部_2023年中国水资源公报_2023.pdf",
+            "title": "CHINA WATER RESOURCES BULLETIN",
+            "title_confidence": "extracted",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "bulletin",
+            "unknown_fields": "[\"self_code\", \"publish_date\", \"implement_date\", \"stats_period\"]",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-d29dd8b36d29309ba693bfdc78ba3103",
+              "doc_name": "water-27_水利部_2023年中国水资源公报_2023.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-bb0530b18d32763b3211b67365b36359",
+            "doc_name": "water-28_水利部_2024年中国水资源公报_2024.pdf",
+            "title": "CHINA WATER RESOURCESBULLETIN",
+            "title_confidence": "extracted",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "bulletin",
+            "unknown_fields": "[\"self_code\", \"publish_date\", \"implement_date\", \"stats_period\"]",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-bb0530b18d32763b3211b67365b36359",
+              "doc_name": "water-28_水利部_2024年中国水资源公报_2024.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-969f75052f9f2473ad13e7b7aeaa31d8",
+            "doc_name": "water-29_水利部_2025年中国水资源公报_2025.pdf",
+            "title": "CHINA WATER RESOURCES BULLETIN",
+            "title_confidence": "extracted",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "bulletin",
+            "unknown_fields": "[\"self_code\", \"publish_date\", \"implement_date\", \"stats_period\"]",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-969f75052f9f2473ad13e7b7aeaa31d8",
+              "doc_name": "water-29_水利部_2025年中国水资源公报_2025.pdf"
+            },
+            "citation_verified": true
+          }
+        ],
+        "coverage_status": "complete",
+        "warnings": [
+          "5 matched docs have unknown metadata fields; they are included but flagged"
+        ],
+        "fail_stage": "",
+        "predicate": "doc_name LIKE '%中国水资源公报%'",
+        "read_token": "5a8c98fec341e611c417bd312aec94f359b230beaf2f36657da83530ece053eb",
+        "model_calls": [],
+        "read_status": ""
+      },
+      "GB3095": {
+        "query_id": "doc-enum-d9c25202d149",
+        "kind": "document",
+        "workspace": "default",
+        "catalog_snapshot_id": "4919b3938ad93747",
+        "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+        "scope_ids": [],
+        "members_total": 2,
+        "members_processed": 2,
+        "items": [
+          {
+            "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+            "doc_name": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+            "title": "环境空气质量标准",
+            "title_confidence": "extracted",
+            "self_code": "GB3095",
+            "self_code_version": "2012",
+            "doc_type": "standard",
+            "unknown_fields": "[\"stats_period\"]",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+              "doc_name": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+            "doc_name": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+            "title": "环境空气质量标准",
+            "title_confidence": "extracted",
+            "self_code": "GB3095",
+            "self_code_version": "2026",
+            "doc_type": "standard",
+            "unknown_fields": "[\"stats_period\"]",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+              "doc_name": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf"
+            },
+            "citation_verified": true
+          }
+        ],
+        "coverage_status": "complete",
+        "warnings": [
+          "2 matched docs have unknown metadata fields; they are included but flagged"
+        ],
+        "fail_stage": "",
+        "predicate": "self_code='GB3095'",
+        "read_token": "150d4717519fed6b1ea4711bded7e5abf1eec5223bdc3e331d28cda70677ae05",
+        "model_calls": [],
+        "read_status": ""
+      }
+    },
+    "end": {
+      "state": "current",
+      "active_run_id": "c15c741742394320",
+      "active_snapshot_id": "4919b3938ad93747",
+      "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "expected_recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "live_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "stored_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "action": ""
+    },
+    "public_after": {
+      "doc_full": 221,
+      "doc_chunks": 5709,
+      "doc_status": 279,
+      "llm_cache": 16514,
+      "entity_chunks": 65527,
+      "full_entities": 221,
+      "full_relations": 221,
+      "relation_chunks": 119575
+    },
+    "public_unchanged": true,
+    "readonly": "on"
+  },
+  "prose_reread": [
+    {
+      "clause": "3.1",
+      "citation": {
+        "kind": "char_span",
+        "char_start": 22,
+        "char_end": 91,
+        "quote": "3.1 医疗机构 medical organization\n指从事疾病诊断、治疗活动的医院、卫生院、疗养院、门诊部、诊所、卫生急救站等。",
+        "unit_rel_start": 22,
+        "unit_rel_end": 91,
+        "unit_id": "385d9e8e0539a87e61f0407bda1739ad",
+        "locator": {
+          "file": "blocks.jsonl",
+          "kind": "block",
+          "blockid": "385d9e8e0539a87e61f0407bda1739ad",
+          "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+        },
+        "chunk_ids": [
+          "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+        ],
+        "unit_source": "parsed_block",
+        "workspace": "default",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "snapshot_id": "4919b3938ad93747"
+      },
+      "quote_matches": true
+    },
+    {
+      "clause": "3.2",
+      "citation": {
+        "kind": "char_span",
+        "char_start": 91,
+        "char_end": 219,
+        "quote": "3.2 医疗机构污水 medical organization wastewater\n指医疗机构门诊、病房、手术室、各类检验室、病理解剖室、放射室、洗衣房、太平间等处排出的诊疗、生活及粪便污水。当医疗机构其他污水与上述污水混合排出时一律视为",
+        "unit_rel_start": 91,
+        "unit_rel_end": 218,
+        "unit_id": "385d9e8e0539a87e61f0407bda1739ad",
+        "locator": {
+          "file": "blocks.jsonl",
+          "kind": "block",
+          "blockid": "385d9e8e0539a87e61f0407bda1739ad",
+          "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+        },
+        "chunk_ids": [
+          "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+        ],
+        "unit_source": "parsed_block",
+        "workspace": "default",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "snapshot_id": "4919b3938ad93747"
+      },
+      "quote_matches": true
+    },
+    {
+      "clause": "3.3",
+      "citation": {
+        "kind": "char_span",
+        "char_start": 219,
+        "char_end": 267,
+        "quote": "## 3.3 污泥 sludge\n指医疗机构污水处理过程中产生的栅渣、沉淀污泥和化粪池污泥。",
+        "unit_rel_start": 0,
+        "unit_rel_end": 46,
+        "unit_id": "ad9d292d3ee2fd88a8fd25b9efc8265a",
+        "locator": {
+          "file": "blocks.jsonl",
+          "kind": "block",
+          "blockid": "ad9d292d3ee2fd88a8fd25b9efc8265a",
+          "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+        },
+        "chunk_ids": [
+          "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+        ],
+        "unit_source": "parsed_block",
+        "workspace": "default",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "snapshot_id": "4919b3938ad93747"
+      },
+      "quote_matches": true
+    },
+    {
+      "clause": "3.4",
+      "citation": {
+        "kind": "char_span",
+        "char_start": 267,
+        "char_end": 308,
+        "quote": "## 3.4 废气 waste gas\n指医疗机构污水处理过程中产生的有害气体。",
+        "unit_rel_start": 0,
+        "unit_rel_end": 40,
+        "unit_id": "90d4b1c55cb8c6ff81dcbdfd55827165",
+        "locator": {
+          "file": "blocks.jsonl",
+          "kind": "block",
+          "blockid": "90d4b1c55cb8c6ff81dcbdfd55827165",
+          "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+        },
+        "chunk_ids": [
+          "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+        ],
+        "unit_source": "parsed_block",
+        "workspace": "default",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "snapshot_id": "4919b3938ad93747"
+      },
+      "quote_matches": true
+    }
+  ],
+  "extra_cli": [
+    {
+      "command": [
+        ".venv/bin/env-rag-final",
+        "enum-prose",
+        "--doc-id",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "--scope-id",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1:scope:4",
+        "--clause-wanted",
+        "4.1,4.2",
+        "--out",
+        "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/gate-1/final-review/cli-0.json"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "result": {
+        "query_id": "prose-ea29b4c86a24",
+        "kind": "prose",
+        "workspace": "default",
+        "catalog_snapshot_id": "4919b3938ad93747",
+        "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+        "scope_ids": [
+          "doc-257d8cf3fdf90e76c31908c4f92fc1a1:scope:4"
+        ],
+        "members_total": 3,
+        "members_processed": 3,
+        "items": [
+          {
+            "clause": "4.1",
+            "text": "## 4.1 环境空气功能区分类\n环境空气功能区分为二类：一类区为自然保护区、风景名胜区和其他需要特殊保护的区域；二类区为居住区、商业交通居民混合区、文化区、工业区和农村地区。\nGB 3095—2012",
+            "citation": {
+              "kind": "char_span",
+              "char_start": 20,
+              "char_end": 123,
+              "quote": "## 4.1 环境空气功能区分类\n环境空气功能区分为二类：一类区为自然保护区、风景名胜区和其他需要特殊保护的区域；二类区为居住区、商业交通居民混合区、文化区、工业区和农村地区。\nGB 3095—2012",
+              "unit_rel_start": 0,
+              "unit_rel_end": 101,
+              "unit_id": "ced9002b92f52f07096945aae564c1d5",
+              "locator": {
+                "file": "blocks.jsonl",
+                "kind": "block",
+                "blockid": "ced9002b92f52f07096945aae564c1d5",
+                "parsed_dir": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf.parsed"
+              },
+              "chunk_ids": [
+                "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+              ],
+              "unit_source": "parsed_block",
+              "workspace": "default",
+              "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+              "snapshot_id": "4919b3938ad93747"
+            },
+            "citation_verified": true,
+            "source": "regex_clause_split"
+          },
+          {
+            "clause": "4.2",
+            "text": "## 4.2 环境空气功能区质量要求\n一类区适用一级浓度限值，二类区适用二级浓度限值。一、二类环境空气功能区质量要求见表 1和表 2。\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">浓度限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td></tr><tr><td rowspan=\"3\">1</td><td rowspan=\"3\">二氧化硫( $SO_2$ )</td><td>年平均</td><td>20</td><td>60</td><td rowspan=\"6\"> $μg/m^3$ </td></tr><tr><td>24小时平均</td><td>50</td><td>150</td></tr><tr><td>1小时平均</td><td>150</td><td>500</td></tr><tr><td rowspan=\"3\">2</td><td rowspan=\"3\">二氧化氮( $NO_2$ )</td><td>年平均</td><td>40</td><td>40</td></tr><tr><td>24小时平均</td><td>80</td><td>80</td></tr><tr><td>1小时平均</td><td>200</td><td>200</td></tr><tr><td rowspan=\"2\">3</td><td rowspan=\"2\">一氧化碳(CO)</td><td>24小时平均</td><td>4</td><td>4</td><td rowspan=\"2\"> $mg/m^3$ </td></tr><tr><td>1小时平均</td><td>10</td><td>10</td></tr><tr><td rowspan=\"2\">4</td><td rowspan=\"2\">臭氧( $O_3$ )</td><td>日最大8小时平均</td><td>100</td><td>160</td><td rowspan=\"6\"> $μg/m^3$ </td></tr><tr><td>1小时平均</td><td>160</td><td>200</td></tr><tr><td rowspan=\"2\">5</td><td rowspan=\"2\">颗粒物(粒径小于等于10μm)</td><td>年平均</td><td>40</td><td>70</td></tr><tr><td>24小时平均</td><td>50</td><td>150</td></tr><tr><td rowspan=\"2\">6</td><td rowspan=\"2\">颗粒物(粒径小于等于2.5μm)</td><td>年平均</td><td>15</td><td>35</td></tr><tr><td>24小时平均</td><td>35</td><td>75</td></tr></table>\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0002\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">浓度限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td></tr><tr><td rowspan=\"2\">1</td><td rowspan=\"2\">总悬浮颗粒物(TSP)</td><td>年平均</td><td>80</td><td>200</td><td rowspan=\"9\"> $\\mu g/m^3$ </td></tr><tr><td>24小时平均</td><td>120</td><td>300</td></tr><tr><td rowspan=\"3\">2</td><td rowspan=\"3\">氮氧化物( $NO_x$ )(以 $NO_2$ 计)</td><td>年平均</td><td>50</td><td>50</td></tr><tr><td>24小时平均</td><td>100</td><td>100</td></tr><tr><td>1小时平均</td><td>250</td><td>250</td></tr><tr><td rowspan=\"2\">3</td><td rowspan=\"2\">铅(Pb)</td><td>年平均</td><td>0.5</td><td>0.5</td></tr><tr><td>季平均</td><td>1.0</td><td>1.0</td></tr><tr><td rowspan=\"2\">4</td><td rowspan=\"2\">苯并[a]芘(BaP)</td><td>年平均</td><td>0.001</td><td>0.001</td></tr><tr><td>24小时平均</td><td>0.0025</td><td>0.0025</td></tr></table>",
+            "citation": {
+              "kind": "char_span",
+              "char_start": 123,
+              "char_end": 2417,
+              "quote": "## 4.2 环境空气功能区质量要求\n一类区适用一级浓度限值，二类区适用二级浓度限值。一、二类环境空气功能区质量要求见表 1和表 2。\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001\"",
+              "unit_rel_start": 0,
+              "unit_rel_end": 2293,
+              "unit_id": "7f9dddaf02f372cc7d329f4678c46fbc",
+              "locator": {
+                "file": "blocks.jsonl",
+                "kind": "block",
+                "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+                "parsed_dir": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf.parsed"
+              },
+              "chunk_ids": [
+                "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+              ],
+              "unit_source": "parsed_block",
+              "workspace": "default",
+              "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+              "snapshot_id": "4919b3938ad93747"
+            },
+            "citation_verified": true,
+            "source": "regex_clause_split"
+          }
+        ],
+        "coverage_status": "complete",
+        "warnings": [],
+        "fail_stage": "",
+        "predicate": null,
+        "read_token": null,
+        "model_calls": [],
+        "read_status": "complete"
+      }
+    },
+    {
+      "command": [
+        ".venv/bin/env-rag-final",
+        "enum-prose",
+        "--doc-id",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "--scope-id",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:4.1",
+        "--clause-wanted",
+        "4.1.1,4.1.2,4.1.3,4.1.4,4.1.5",
+        "--out",
+        "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/gate-1/final-review/cli-1.json"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "result": {
+        "query_id": "prose-53a9560542c8",
+        "kind": "prose",
+        "workspace": "default",
+        "catalog_snapshot_id": "4919b3938ad93747",
+        "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+        "scope_ids": [
+          "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:4.1"
+        ],
+        "members_total": 1,
+        "members_processed": 1,
+        "items": [
+          {
+            "clause": "4.1.1",
+            "text": "4.1.1 传染病和结核病医疗机构污水排放一律执行表1的规定。",
+            "citation": {
+              "kind": "char_span",
+              "char_start": 14,
+              "char_end": 46,
+              "quote": "4.1.1 传染病和结核病医疗机构污水排放一律执行表1的规定。",
+              "unit_rel_start": 14,
+              "unit_rel_end": 46,
+              "unit_id": "ef6868c7bc693df8da996208421b815d",
+              "locator": {
+                "file": "blocks.jsonl",
+                "kind": "block",
+                "blockid": "ef6868c7bc693df8da996208421b815d",
+                "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+              },
+              "chunk_ids": [
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+              ],
+              "unit_source": "parsed_block",
+              "workspace": "default",
+              "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+              "snapshot_id": "4919b3938ad93747"
+            },
+            "citation_verified": true,
+            "source": "regex_clause_split"
+          },
+          {
+            "clause": "4.1.2",
+            "text": "4.1.2 县级及县级以上或 20 张床位及以上的综合医疗机构和其他医疗机构污水排放执行表 2 的规定。直接或间接排入地表水体和海域的污水执行排放标准，排入终端已建有正常运行城镇二级污水处理厂的下水道的污水，执行预处理标准。\nGB 18466 — 2005\n<table id=\"tb-68a03b50e1ba1ffc6a0116529f694fe1-0001\" format=\"html\"><tr><td>序号</td><td>控制项目</td><td>标准值</td></tr><tr><td>1</td><td>粪大肠菌群数/(MPN/L)</td><td>100</td></tr><tr><td>2</td><td>肠道致病菌</td><td>不得检出</td></tr><tr><td>3</td><td>肠道病毒</td><td>不得检出</td></tr><tr><td>4</td><td>结核杆菌</td><td>不得检出</td></tr><tr><td>5</td><td>pH</td><td>6~9</td></tr><tr><td rowspan=\"3\">6</td><td>化学需氧量(COD)</td><td></td></tr><tr><td>浓度/(mg/L)</td><td>60</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>60</td></tr><tr><td rowspan=\"3\">7</td><td>生化需氧量(BOD)</td><td></td></tr><tr><td>浓度/(mg/L)</td><td>20</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>20</td></tr><tr><td rowspan=\"3\">8</td><td>悬浮物(SS)</td><td></td></tr><tr><td>浓度/(mg/L)</td><td>20</td></tr><tr><td>最高允许排放负荷[g/(床位·d)]</td><td>20</td></tr><tr><td>9</td><td>氨氮/(mg/L)</td><td>15</td></tr><tr><td>10</td><td>动植物油/(mg/L)</td><td>5</td></tr><tr><td>11</td><td>石油类/(mg/L)</td><td>5</td></tr><tr><td>12</td><td>阴离子表面活性剂/(mg/L)</td><td>5</td></tr><tr><td>13</td><td>色度/(稀释倍数)</td><td>30</td></tr><tr><td>14</td><td>挥发酚/(mg/L)</td><td>0.5</td></tr><tr><td>15</td><td>总氰化物/(mg/L)</td><td>0.5</td></tr><tr><td>16</td><td>总汞/(mg/L)</td><td>0.05</td></tr><tr><td>17</td><td>总镉/(mg/L)</td><td>0.1</td></tr><tr><td>18</td><td>总铬/(mg/L)</td><td>1.5</td></tr><tr><td>19</td><td>六价铬/(mg/L)</td><td>0.5</td></tr><tr><td>20</td><td>总砷/(mg/L)</td><td>0.5</td></tr><tr><td>21</td><td>总铅/(mg/L)</td><td>1.0</td></tr><tr><td>22</td><td>总银/(mg/L)</td><td>0.5</td></tr><tr><td>23</td><td>总α/(Bq/L)</td><td>1</td></tr><tr><td>24</td><td>总β/(Bq/L)</td><td>10</td></tr><tr><td>25</td><td>总余氯 $^{1),2)}$ /(mg/L)(直接排入水体的要求)</td><td>0.5</td></tr><tr><td colspan=\"3\">注:1)采用含氯消毒剂消毒的工艺控制要求为:消毒接触池的接触时间≥1.5h,接触池出口总余氯6.5~10mg/L。2)采用其他消毒剂对总余氯不做要求。</td></tr></table>\nGB 18466 — 2005\n<table id=\"tb-68a03b50e1ba1ffc6a0116529f694fe1-0002\" format=\"html\"><tr><td>序号</td><td>控制项目</td><td>排放标准</td><td>预处理标准</td></tr><tr><td>1</td><td>粪大肠菌群数/(MPN/L)</td><td>500</td><td>5 000</td></tr><tr><td>2</td><td>肠道致病菌</td><td>不得检出</td><td>—</td></tr><tr><td>3</td><td>肠道病毒</td><td>不得检出</td><td>—</td></tr><tr><td>4</td><td>pH</td><td>6~9</td><td>6~9</td></tr><tr><td rowspan=\"3\">5</td><td>化学需氧量(COD)</td><td></td><td></td></tr><tr><td>浓度/(mg/L)</td><td>60</td><td>250</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>60</td><td>250</td></tr><tr><td rowspan=\"3\">6</td><td>生化需氧量(BOD)</td><td></td><td></td></tr><tr><td>浓度/(mg/L)</td><td>20</td><td>100</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>20</td><td>100</td></tr><tr><td rowspan=\"3\">7</td><td>悬浮物(SS)</td><td></td><td></td></tr><tr><td>浓度/(mg/L)</td><td>20</td><td>60</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>20</td><td>60</td></tr><tr><td>8</td><td>氨氮/(mg/L)</td><td>15</td><td>—</td></tr><tr><td>9</td><td>动植物油/(mg/L)</td><td>5</td><td>20</td></tr><tr><td>10</td><td>石油类/(mg/L)</td><td>5</td><td>20</td></tr><tr><td>11</td><td>阴离子表面活性剂/(mg/L)</td><td>5</td><td>10</td></tr><tr><td>12</td><td>色度/(稀释倍数)</td><td>30</td><td>—</td></tr><tr><td>13</td><td>挥发酚/(mg/L)</td><td>0.5</td><td>1.0</td></tr><tr><td>14</td><td>总氰化物/(mg/L)</td><td>0.5</td><td>0.5</td></tr><tr><td>15</td><td>总汞/(mg/L)</td><td>0.05</td><td>0.05</td></tr><tr><td>16</td><td>总镉/(mg/L)</td><td>0.1</td><td>0.1</td></tr><tr><td>17</td><td>总铬/(mg/L)</td><td>1.5</td><td>1.5</td></tr><tr><td>18</td><td>六价铬/(mg/L)</td><td>0.5</td><td>0.5</td></tr><tr><td>19</td><td>总砷/(mg/L)</td><td>0.5</td><td>0.5</td></tr><tr><td>20</td><td>总铅/(mg/L)</td><td>1.0</td><td>1.0</td></tr><tr><td>21</td><td>总银/(mg/L)</td><td>0.5</td><td>0.5</td></tr><tr><td>22</td><td>总α/(Bq/L)</td><td>1</td><td>1</td></tr><tr><td>23</td><td>总β/(Bq/L)</td><td>10</td><td>10</td></tr><tr><td>24</td><td>总余氯 $^{1),2)}$ /(mg/L)</td><td>0.5</td><td>—</td></tr><tr><td colspan=\"4\">注:1)采用含氯消毒剂消毒的工艺控制要求为:排放标准:消毒接触池接触时间≥1 h,接触池出口总余氯3~10 mg/L。预处理标准:消毒接触池接触时间≥1 h,接触池出口总余氯2~8 mg/L。2)采用其他消毒剂对总余氯不做要求。</td></tr></table>",
+            "citation": {
+              "kind": "char_span",
+              "char_start": 46,
+              "char_end": 4055,
+              "quote": "4.1.2 县级及县级以上或 20 张床位及以上的综合医疗机构和其他医疗机构污水排放执行表 2 的规定。直接或间接排入地表水体和海域的污水执行排放标准，排入终端已建有正常运行城镇二级污水处理厂的下水道的污水，执行预处理标准。\nGB 1846",
+              "unit_rel_start": 46,
+              "unit_rel_end": 4055,
+              "unit_id": "ef6868c7bc693df8da996208421b815d",
+              "locator": {
+                "file": "blocks.jsonl",
+                "kind": "block",
+                "blockid": "ef6868c7bc693df8da996208421b815d",
+                "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+              },
+              "chunk_ids": [
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+              ],
+              "unit_source": "parsed_block",
+              "workspace": "default",
+              "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+              "snapshot_id": "4919b3938ad93747"
+            },
+            "citation_verified": true,
+            "source": "regex_clause_split"
+          },
+          {
+            "clause": "4.1.3",
+            "text": "4.1.3 县级以下或20张床位以下的综合医疗机构和其他所有医疗机构污水经消毒处理后方可排放。",
+            "citation": {
+              "kind": "char_span",
+              "char_start": 4055,
+              "char_end": 4103,
+              "quote": "4.1.3 县级以下或20张床位以下的综合医疗机构和其他所有医疗机构污水经消毒处理后方可排放。",
+              "unit_rel_start": 4055,
+              "unit_rel_end": 4103,
+              "unit_id": "ef6868c7bc693df8da996208421b815d",
+              "locator": {
+                "file": "blocks.jsonl",
+                "kind": "block",
+                "blockid": "ef6868c7bc693df8da996208421b815d",
+                "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+              },
+              "chunk_ids": [
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+              ],
+              "unit_source": "parsed_block",
+              "workspace": "default",
+              "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+              "snapshot_id": "4919b3938ad93747"
+            },
+            "citation_verified": true,
+            "source": "regex_clause_split"
+          },
+          {
+            "clause": "4.1.4",
+            "text": "4.1.4 禁止向 GB 3838 I、Ⅱ类水域和Ⅲ类水域的饮用水保护区和游泳区，GB 3097 一、二类海域直接排放医疗机构污水。\nGB 18466 — 2005",
+            "citation": {
+              "kind": "char_span",
+              "char_start": 4103,
+              "char_end": 4186,
+              "quote": "4.1.4 禁止向 GB 3838 I、Ⅱ类水域和Ⅲ类水域的饮用水保护区和游泳区，GB 3097 一、二类海域直接排放医疗机构污水。\nGB 18466 — 2005",
+              "unit_rel_start": 4103,
+              "unit_rel_end": 4186,
+              "unit_id": "ef6868c7bc693df8da996208421b815d",
+              "locator": {
+                "file": "blocks.jsonl",
+                "kind": "block",
+                "blockid": "ef6868c7bc693df8da996208421b815d",
+                "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+              },
+              "chunk_ids": [
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+              ],
+              "unit_source": "parsed_block",
+              "workspace": "default",
+              "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+              "snapshot_id": "4919b3938ad93747"
+            },
+            "citation_verified": true,
+            "source": "regex_clause_split"
+          },
+          {
+            "clause": "4.1.5",
+            "text": "4.1.5 带传染病房的综合医疗机构，应将传染病房污水与非传染病房污水分开。传染病房的污水、粪便经过消毒后方可与其他污水合并处理。",
+            "citation": {
+              "kind": "char_span",
+              "char_start": 4186,
+              "char_end": 4252,
+              "quote": "4.1.5 带传染病房的综合医疗机构，应将传染病房污水与非传染病房污水分开。传染病房的污水、粪便经过消毒后方可与其他污水合并处理。",
+              "unit_rel_start": 4186,
+              "unit_rel_end": 4252,
+              "unit_id": "ef6868c7bc693df8da996208421b815d",
+              "locator": {
+                "file": "blocks.jsonl",
+                "kind": "block",
+                "blockid": "ef6868c7bc693df8da996208421b815d",
+                "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+              },
+              "chunk_ids": [
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+              ],
+              "unit_source": "parsed_block",
+              "workspace": "default",
+              "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+              "snapshot_id": "4919b3938ad93747"
+            },
+            "citation_verified": true,
+            "source": "regex_clause_split"
+          }
+        ],
+        "coverage_status": "complete",
+        "warnings": [],
+        "fail_stage": "",
+        "predicate": null,
+        "read_token": null,
+        "model_calls": [],
+        "read_status": "complete"
+      }
+    },
+    {
+      "command": [
+        ".venv/bin/env-rag-final",
+        "enum-prose",
+        "--doc-id",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "--scope-id",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:4.1",
+        "--clause-wanted",
+        "4.1.1,4.1.2,4.1.3,4.1.4,4.1.5,4.1.6",
+        "--out",
+        "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/gate-1/final-review/cli-2.json"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "result": {
+        "query_id": "prose-b1876d2527b7",
+        "kind": "prose",
+        "workspace": "default",
+        "catalog_snapshot_id": "4919b3938ad93747",
+        "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+        "scope_ids": [
+          "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:4.1"
+        ],
+        "members_total": 1,
+        "members_processed": 1,
+        "items": [
+          {
+            "clause": "4.1.1",
+            "text": "4.1.1 传染病和结核病医疗机构污水排放一律执行表1的规定。",
+            "citation": {
+              "kind": "char_span",
+              "char_start": 14,
+              "char_end": 46,
+              "quote": "4.1.1 传染病和结核病医疗机构污水排放一律执行表1的规定。",
+              "unit_rel_start": 14,
+              "unit_rel_end": 46,
+              "unit_id": "ef6868c7bc693df8da996208421b815d",
+              "locator": {
+                "file": "blocks.jsonl",
+                "kind": "block",
+                "blockid": "ef6868c7bc693df8da996208421b815d",
+                "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+              },
+              "chunk_ids": [
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+              ],
+              "unit_source": "parsed_block",
+              "workspace": "default",
+              "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+              "snapshot_id": "4919b3938ad93747"
+            },
+            "citation_verified": true,
+            "source": "regex_clause_split"
+          },
+          {
+            "clause": "4.1.2",
+            "text": "4.1.2 县级及县级以上或 20 张床位及以上的综合医疗机构和其他医疗机构污水排放执行表 2 的规定。直接或间接排入地表水体和海域的污水执行排放标准，排入终端已建有正常运行城镇二级污水处理厂的下水道的污水，执行预处理标准。\nGB 18466 — 2005\n<table id=\"tb-68a03b50e1ba1ffc6a0116529f694fe1-0001\" format=\"html\"><tr><td>序号</td><td>控制项目</td><td>标准值</td></tr><tr><td>1</td><td>粪大肠菌群数/(MPN/L)</td><td>100</td></tr><tr><td>2</td><td>肠道致病菌</td><td>不得检出</td></tr><tr><td>3</td><td>肠道病毒</td><td>不得检出</td></tr><tr><td>4</td><td>结核杆菌</td><td>不得检出</td></tr><tr><td>5</td><td>pH</td><td>6~9</td></tr><tr><td rowspan=\"3\">6</td><td>化学需氧量(COD)</td><td></td></tr><tr><td>浓度/(mg/L)</td><td>60</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>60</td></tr><tr><td rowspan=\"3\">7</td><td>生化需氧量(BOD)</td><td></td></tr><tr><td>浓度/(mg/L)</td><td>20</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>20</td></tr><tr><td rowspan=\"3\">8</td><td>悬浮物(SS)</td><td></td></tr><tr><td>浓度/(mg/L)</td><td>20</td></tr><tr><td>最高允许排放负荷[g/(床位·d)]</td><td>20</td></tr><tr><td>9</td><td>氨氮/(mg/L)</td><td>15</td></tr><tr><td>10</td><td>动植物油/(mg/L)</td><td>5</td></tr><tr><td>11</td><td>石油类/(mg/L)</td><td>5</td></tr><tr><td>12</td><td>阴离子表面活性剂/(mg/L)</td><td>5</td></tr><tr><td>13</td><td>色度/(稀释倍数)</td><td>30</td></tr><tr><td>14</td><td>挥发酚/(mg/L)</td><td>0.5</td></tr><tr><td>15</td><td>总氰化物/(mg/L)</td><td>0.5</td></tr><tr><td>16</td><td>总汞/(mg/L)</td><td>0.05</td></tr><tr><td>17</td><td>总镉/(mg/L)</td><td>0.1</td></tr><tr><td>18</td><td>总铬/(mg/L)</td><td>1.5</td></tr><tr><td>19</td><td>六价铬/(mg/L)</td><td>0.5</td></tr><tr><td>20</td><td>总砷/(mg/L)</td><td>0.5</td></tr><tr><td>21</td><td>总铅/(mg/L)</td><td>1.0</td></tr><tr><td>22</td><td>总银/(mg/L)</td><td>0.5</td></tr><tr><td>23</td><td>总α/(Bq/L)</td><td>1</td></tr><tr><td>24</td><td>总β/(Bq/L)</td><td>10</td></tr><tr><td>25</td><td>总余氯 $^{1),2)}$ /(mg/L)(直接排入水体的要求)</td><td>0.5</td></tr><tr><td colspan=\"3\">注:1)采用含氯消毒剂消毒的工艺控制要求为:消毒接触池的接触时间≥1.5h,接触池出口总余氯6.5~10mg/L。2)采用其他消毒剂对总余氯不做要求。</td></tr></table>\nGB 18466 — 2005\n<table id=\"tb-68a03b50e1ba1ffc6a0116529f694fe1-0002\" format=\"html\"><tr><td>序号</td><td>控制项目</td><td>排放标准</td><td>预处理标准</td></tr><tr><td>1</td><td>粪大肠菌群数/(MPN/L)</td><td>500</td><td>5 000</td></tr><tr><td>2</td><td>肠道致病菌</td><td>不得检出</td><td>—</td></tr><tr><td>3</td><td>肠道病毒</td><td>不得检出</td><td>—</td></tr><tr><td>4</td><td>pH</td><td>6~9</td><td>6~9</td></tr><tr><td rowspan=\"3\">5</td><td>化学需氧量(COD)</td><td></td><td></td></tr><tr><td>浓度/(mg/L)</td><td>60</td><td>250</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>60</td><td>250</td></tr><tr><td rowspan=\"3\">6</td><td>生化需氧量(BOD)</td><td></td><td></td></tr><tr><td>浓度/(mg/L)</td><td>20</td><td>100</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>20</td><td>100</td></tr><tr><td rowspan=\"3\">7</td><td>悬浮物(SS)</td><td></td><td></td></tr><tr><td>浓度/(mg/L)</td><td>20</td><td>60</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>20</td><td>60</td></tr><tr><td>8</td><td>氨氮/(mg/L)</td><td>15</td><td>—</td></tr><tr><td>9</td><td>动植物油/(mg/L)</td><td>5</td><td>20</td></tr><tr><td>10</td><td>石油类/(mg/L)</td><td>5</td><td>20</td></tr><tr><td>11</td><td>阴离子表面活性剂/(mg/L)</td><td>5</td><td>10</td></tr><tr><td>12</td><td>色度/(稀释倍数)</td><td>30</td><td>—</td></tr><tr><td>13</td><td>挥发酚/(mg/L)</td><td>0.5</td><td>1.0</td></tr><tr><td>14</td><td>总氰化物/(mg/L)</td><td>0.5</td><td>0.5</td></tr><tr><td>15</td><td>总汞/(mg/L)</td><td>0.05</td><td>0.05</td></tr><tr><td>16</td><td>总镉/(mg/L)</td><td>0.1</td><td>0.1</td></tr><tr><td>17</td><td>总铬/(mg/L)</td><td>1.5</td><td>1.5</td></tr><tr><td>18</td><td>六价铬/(mg/L)</td><td>0.5</td><td>0.5</td></tr><tr><td>19</td><td>总砷/(mg/L)</td><td>0.5</td><td>0.5</td></tr><tr><td>20</td><td>总铅/(mg/L)</td><td>1.0</td><td>1.0</td></tr><tr><td>21</td><td>总银/(mg/L)</td><td>0.5</td><td>0.5</td></tr><tr><td>22</td><td>总α/(Bq/L)</td><td>1</td><td>1</td></tr><tr><td>23</td><td>总β/(Bq/L)</td><td>10</td><td>10</td></tr><tr><td>24</td><td>总余氯 $^{1),2)}$ /(mg/L)</td><td>0.5</td><td>—</td></tr><tr><td colspan=\"4\">注:1)采用含氯消毒剂消毒的工艺控制要求为:排放标准:消毒接触池接触时间≥1 h,接触池出口总余氯3~10 mg/L。预处理标准:消毒接触池接触时间≥1 h,接触池出口总余氯2~8 mg/L。2)采用其他消毒剂对总余氯不做要求。</td></tr></table>",
+            "citation": {
+              "kind": "char_span",
+              "char_start": 46,
+              "char_end": 4055,
+              "quote": "4.1.2 县级及县级以上或 20 张床位及以上的综合医疗机构和其他医疗机构污水排放执行表 2 的规定。直接或间接排入地表水体和海域的污水执行排放标准，排入终端已建有正常运行城镇二级污水处理厂的下水道的污水，执行预处理标准。\nGB 1846",
+              "unit_rel_start": 46,
+              "unit_rel_end": 4055,
+              "unit_id": "ef6868c7bc693df8da996208421b815d",
+              "locator": {
+                "file": "blocks.jsonl",
+                "kind": "block",
+                "blockid": "ef6868c7bc693df8da996208421b815d",
+                "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+              },
+              "chunk_ids": [
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+              ],
+              "unit_source": "parsed_block",
+              "workspace": "default",
+              "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+              "snapshot_id": "4919b3938ad93747"
+            },
+            "citation_verified": true,
+            "source": "regex_clause_split"
+          },
+          {
+            "clause": "4.1.3",
+            "text": "4.1.3 县级以下或20张床位以下的综合医疗机构和其他所有医疗机构污水经消毒处理后方可排放。",
+            "citation": {
+              "kind": "char_span",
+              "char_start": 4055,
+              "char_end": 4103,
+              "quote": "4.1.3 县级以下或20张床位以下的综合医疗机构和其他所有医疗机构污水经消毒处理后方可排放。",
+              "unit_rel_start": 4055,
+              "unit_rel_end": 4103,
+              "unit_id": "ef6868c7bc693df8da996208421b815d",
+              "locator": {
+                "file": "blocks.jsonl",
+                "kind": "block",
+                "blockid": "ef6868c7bc693df8da996208421b815d",
+                "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+              },
+              "chunk_ids": [
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+              ],
+              "unit_source": "parsed_block",
+              "workspace": "default",
+              "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+              "snapshot_id": "4919b3938ad93747"
+            },
+            "citation_verified": true,
+            "source": "regex_clause_split"
+          },
+          {
+            "clause": "4.1.4",
+            "text": "4.1.4 禁止向 GB 3838 I、Ⅱ类水域和Ⅲ类水域的饮用水保护区和游泳区，GB 3097 一、二类海域直接排放医疗机构污水。\nGB 18466 — 2005",
+            "citation": {
+              "kind": "char_span",
+              "char_start": 4103,
+              "char_end": 4186,
+              "quote": "4.1.4 禁止向 GB 3838 I、Ⅱ类水域和Ⅲ类水域的饮用水保护区和游泳区，GB 3097 一、二类海域直接排放医疗机构污水。\nGB 18466 — 2005",
+              "unit_rel_start": 4103,
+              "unit_rel_end": 4186,
+              "unit_id": "ef6868c7bc693df8da996208421b815d",
+              "locator": {
+                "file": "blocks.jsonl",
+                "kind": "block",
+                "blockid": "ef6868c7bc693df8da996208421b815d",
+                "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+              },
+              "chunk_ids": [
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+              ],
+              "unit_source": "parsed_block",
+              "workspace": "default",
+              "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+              "snapshot_id": "4919b3938ad93747"
+            },
+            "citation_verified": true,
+            "source": "regex_clause_split"
+          },
+          {
+            "clause": "4.1.5",
+            "text": "4.1.5 带传染病房的综合医疗机构，应将传染病房污水与非传染病房污水分开。传染病房的污水、粪便经过消毒后方可与其他污水合并处理。",
+            "citation": {
+              "kind": "char_span",
+              "char_start": 4186,
+              "char_end": 4252,
+              "quote": "4.1.5 带传染病房的综合医疗机构，应将传染病房污水与非传染病房污水分开。传染病房的污水、粪便经过消毒后方可与其他污水合并处理。",
+              "unit_rel_start": 4186,
+              "unit_rel_end": 4252,
+              "unit_id": "ef6868c7bc693df8da996208421b815d",
+              "locator": {
+                "file": "blocks.jsonl",
+                "kind": "block",
+                "blockid": "ef6868c7bc693df8da996208421b815d",
+                "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+              },
+              "chunk_ids": [
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+              ],
+              "unit_source": "parsed_block",
+              "workspace": "default",
+              "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+              "snapshot_id": "4919b3938ad93747"
+            },
+            "citation_verified": true,
+            "source": "regex_clause_split"
+          },
+          {
+            "clause": "4.1.6",
+            "text": "4.1.6 采用含氯消毒剂进行消毒的医疗机构污水，若直接排入地表水体和海域，应进行脱氯处理，使总余氯小于0.5 mg/L。",
+            "citation": {
+              "kind": "char_span",
+              "char_start": 4252,
+              "char_end": 4313,
+              "quote": "4.1.6 采用含氯消毒剂进行消毒的医疗机构污水，若直接排入地表水体和海域，应进行脱氯处理，使总余氯小于0.5 mg/L。",
+              "unit_rel_start": 4252,
+              "unit_rel_end": 4313,
+              "unit_id": "ef6868c7bc693df8da996208421b815d",
+              "locator": {
+                "file": "blocks.jsonl",
+                "kind": "block",
+                "blockid": "ef6868c7bc693df8da996208421b815d",
+                "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+              },
+              "chunk_ids": [
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+              ],
+              "unit_source": "parsed_block",
+              "workspace": "default",
+              "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+              "snapshot_id": "4919b3938ad93747"
+            },
+            "citation_verified": true,
+            "source": "regex_clause_split"
+          }
+        ],
+        "coverage_status": "complete",
+        "warnings": [],
+        "fail_stage": "",
+        "predicate": null,
+        "read_token": null,
+        "model_calls": [],
+        "read_status": "complete"
+      }
+    }
+  ],
+  "ambiguous_model_cli": {
+    "command": [
+      "env-rag-final",
+      "enum-prose",
+      "--doc-id",
+      "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "--scope-id",
+      "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3",
+      "--with-model",
+      "--predicate",
+      "列出该章出现的词语污水，并提供精确原文位置",
+      "--out",
+      "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/gate-1/final-review/model-ambiguous.json"
+    ],
+    "exit_code": 0,
+    "error": "",
+    "result": {
+      "query_id": "prose-6236e13c1078",
+      "kind": "prose",
+      "workspace": "default",
+      "catalog_snapshot_id": "4919b3938ad93747",
+      "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "scope_ids": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3"
+      ],
+      "members_total": 3,
+      "members_processed": 3,
+      "items": [
+        {
+          "clause": "3.2",
+          "text": "污水",
+          "citation": {
+            "quote": "污水",
+            "unit_candidates": [
+              "385d9e8e0539a87e61f0407bda1739ad",
+              "ad9d292d3ee2fd88a8fd25b9efc8265a",
+              "90d4b1c55cb8c6ff81dcbdfd55827165"
+            ],
+            "locator_ambiguous": true,
+            "unit_ids": [
+              "385d9e8e0539a87e61f0407bda1739ad",
+              "ad9d292d3ee2fd88a8fd25b9efc8265a",
+              "90d4b1c55cb8c6ff81dcbdfd55827165"
+            ],
+            "unit_chunk_ids": {
+              "385d9e8e0539a87e61f0407bda1739ad": [
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+              ],
+              "ad9d292d3ee2fd88a8fd25b9efc8265a": [
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+              ],
+              "90d4b1c55cb8c6ff81dcbdfd55827165": [
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+              ]
+            },
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "snapshot_id": "4919b3938ad93747"
+          },
+          "citation_verified": true
+        }
+      ],
+      "coverage_status": "complete",
+      "warnings": [],
+      "fail_stage": "",
+      "predicate": null,
+      "read_token": null,
+      "model_calls": [
+        {
+          "model": "deepseek-v4.1-flash",
+          "latency_ms": 0,
+          "ok": true,
+          "error": "",
+          "request_messages": [
+            {
+              "role": "system",
+              "content": "你是严谨的文本抽取助手。只输出 JSON 数组，每个元素形如 {\"clause\": \"编号\", \"text\": \"条目全文\", \"citation\": {\"quote\": \"支持该条目的逐字原文引句\"}}。quote 必须逐字来自原文且直接支持对应条目。"
+            },
+            {
+              "role": "user",
+              "content": "列出该章出现的词语污水，并提供精确原文位置\n\n原文：\n## 3 术语和定义\n本标准采用下列定义。\n3.1 医疗机构 medical organization\n指从事疾病诊断、治疗活动的医院、卫生院、疗养院、门诊部、诊所、卫生急救站等。\n3.2 医疗机构污水 medical organization wastewater\n指医疗机构门诊、病房、手术室、各类检验室、病理解剖室、放射室、洗衣房、太平间等处排出的诊疗、生活及粪便污水。当医疗机构其他污水与上述污水混合排出时一律视为医疗机构污水。\n\n## 3.3 污泥 sludge\n指医疗机构污水处理过程中产生的栅渣、沉淀污泥和化粪池污泥。\n\n## 3.4 废气 waste gas\n指医疗机构污水处理过程中产生的有害气体。"
+            }
+          ],
+          "raw_response": "[{\"clause\": \"3.2\", \"text\": \"污水\", \"citation\": {\"quote\": \"污水\"}}]"
+        }
+      ],
+      "read_status": "complete"
+    },
+    "real_model_calls": 0,
+    "http_response": {
+      "choices": [
+        {
+          "message": {
+            "content": "[{\"clause\": \"3.2\", \"text\": \"污水\", \"citation\": {\"quote\": \"污水\"}}]"
+          }
+        }
+      ]
+    }
+  },
+  "ambiguous_bind_then_verify": {
+    "after_bind": [
+      {
+        "text": "污水",
+        "citation": {
+          "quote": "污水",
+          "unit_candidates": [
+            "a",
+            "b"
+          ],
+          "locator_ambiguous": true,
+          "unit_ids": [
+            "a",
+            "b"
+          ],
+          "unit_chunk_ids": {
+            "a": [
+              "c"
+            ],
+            "b": [
+              "c"
+            ]
+          },
+          "workspace": "default",
+          "doc_id": "d",
+          "snapshot_id": "s"
+        },
+        "citation_verified": false
+      }
+    ],
+    "after_verify": [
+      {
+        "text": "污水",
+        "citation": {
+          "quote": "污水",
+          "unit_candidates": [
+            "a",
+            "b"
+          ],
+          "locator_ambiguous": true,
+          "unit_ids": [
+            "a",
+            "b"
+          ],
+          "unit_chunk_ids": {
+            "a": [
+              "c"
+            ],
+            "b": [
+              "c"
+            ]
+          },
+          "workspace": "default",
+          "doc_id": "d",
+          "snapshot_id": "s"
+        },
+        "citation_verified": true
+      }
+    ]
+  },
+  "code_sha256": {
+    "src/env_rag_final/enumerate_/__init__.py": "a1f93429fbe9550836d7f1b08f87c9e62b7946e834e8c9698936a138346f696f",
+    "src/env_rag_final/enumerate_/contract.py": "1e0e38233b1acb207e9de86ee895605101af0c153588da9b001dc54d59335998",
+    "src/env_rag_final/enumerate_/doc_enum.py": "0c91155bff0132bd4761e4ae3045f6ce6cbe1cb69cdbb3c884487fb9978f0ebe",
+    "src/env_rag_final/enumerate_/prose_enum.py": "45dcc8dd0ae33bb11245fa64165caadaedfc474d10df2abfb69138bc2f2eccf7",
+    "src/env_rag_final/enumerate_/table_enum.py": "8ee22a41888849402a7ce3bde795f72dccbea0757c3f249eb8f6f0daa2d0ebe8",
+    "src/env_rag_final/enumerate_/tables.py": "3f24d09271e45a5b16f46e46088e2a4830c41309636fddc2b62ea8f7ab6f90a0",
+    "src/env_rag_final/cli.py": "905843def77dddbd1bb3a542a1b6d96bc190f425d28ca25ef26d5465bde071ad"
+  }
+}

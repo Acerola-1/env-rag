@@ -1,0 +1,250 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-08T12:44:24+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "syn-004"
+ ],
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "reports/pg-retrieval/phase-4-pilot-r2-pg-calibration/inputs/pg/syn-004-rerank.json",
+   "sha256": "0dfd64ab876cf6e699dc98875e30f8e228d2b827ad4aad6f4dadb1ff6176356a",
+   "task": null,
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": []
+  },
+  "fused_report": {
+   "path": "reports/pg-retrieval/phase-4-pilot-r2-pg-calibration/inputs/pg/syn-004-fusion.json",
+   "sha256": "3256bee8f87b421763db165207f8c30702a399b64fbd5060bdbb8441b3cdf0b2",
+   "task": "Phase 4 round 1 evaluation input (path=pg)",
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": [
+    "syn-004"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "model_calls_used": 0,
+ "results": [
+  {
+   "query_id": "syn-004",
+   "query": "GB 3838-2002 与 GB 3095-2012 分别对哪些环境要素规定质量标准？",
+   "category": "synthesis",
+   "workspace": "default",
+   "coverage_status": "partial",
+   "fail_stage": "model_failure",
+   "flags": [
+    "no rerank replay for this query id — scope priority falls back to fusion path order, explicitly recorded (no fabricated scores)"
+   ],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "absent",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 0,
+    "typed_targets": [
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "doc_name": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf",
+      "self_code": "GB3838",
+      "self_code_version": "2002",
+      "discovery": "code_exact",
+      "membership_basis": null,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78"
+      },
+      "citation_verified": true
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "doc_name": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+      "self_code": "GB3095",
+      "self_code_version": "2012",
+      "discovery": "code_exact",
+      "membership_basis": null,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      },
+      "citation_verified": true
+     }
+    ],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 22,
+    "selected_docs": [
+     "doc-91f9049decde09153368d4b69f280e78",
+     "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+    ],
+    "priority": [
+     {
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "rerank_rank_or_none": null
+     }
+    ],
+    "basis": "targets_resolved + typed targets (5.3) define the scope; rerank order only prioritizes — membership is never top-k bounded"
+   },
+   "expansions": [
+    {
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "kind": "prose",
+     "scope_id": "doc-91f9049decde09153368d4b69f280e78:scope:3",
+     "requested_clauses": null,
+     "missing_requested_clauses": [],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "read_status": "complete",
+     "fail_stage": "",
+     "units_read": 1,
+     "unit_ids": [
+      "7b4770667908af51eb321bd82c89aaf7"
+     ],
+     "chunk_ids": [
+      "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+     ],
+     "items_count": 5,
+     "warnings": [],
+     "selected": true
+    },
+    {
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "kind": "prose",
+     "scope_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1:scope:7",
+     "requested_clauses": null,
+     "missing_requested_clauses": [],
+     "members_total": 3,
+     "members_processed": 3,
+     "coverage_status": "complete",
+     "read_status": "complete",
+     "fail_stage": "",
+     "units_read": 3,
+     "unit_ids": [
+      "c45552d0a5d96a5541e6ea2588a6ccc2",
+      "d9c1681fcfbfd2f48e654d5692f28b30",
+      "8d717f7bab4184537990a86fdd9aba21"
+     ],
+     "chunk_ids": [
+      "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+     ],
+     "items_count": 3,
+     "warnings": [],
+     "selected": true
+    }
+   ],
+   "answer": {
+    "mode": "model",
+    "generated_by": "enumerate/expand entries",
+    "items": [],
+    "model_failure": "answer model call not authorized in this run — the compared editions' scopes and citations were verified read-only above; synthesis is reported incomplete, never answered from gold (0 model calls)"
+   },
+   "reverification": {
+    "items_checked": 8,
+    "problems": [],
+    "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+   },
+   "model": {
+    "used": false,
+    "sections": [
+     {
+      "label": "GB3838-2002",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "code_norm": "GB3838",
+      "version": "2002",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "item_count": 5,
+      "context_chars": 392
+     },
+     {
+      "label": "GB3095-2012",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "code_norm": "GB3095",
+      "version": "2012",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "item_count": 3,
+      "context_chars": 1449
+     }
+    ],
+    "status": "model_not_authorized",
+    "failure": "answer model call not authorized in this run — the compared editions' scopes and citations were verified read-only above; synthesis is reported incomplete, never answered from gold (0 model calls)"
+   },
+   "status": "partial"
+  }
+ ]
+}

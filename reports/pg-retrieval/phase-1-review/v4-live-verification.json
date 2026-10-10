@@ -1,0 +1,144 @@
+{
+  "reviewed_at": "2026-10-05T06:07:52.341233+00:00",
+  "runs": [
+    {
+      "run_id": "0aba3ea21d8944e4",
+      "status": "failed",
+      "recipe_id": "phase-1-v2-hierarchical-scopes-span-guard-strict-table-ids",
+      "snapshot_id": "79f4b49b8c83ea7f",
+      "source_fingerprint": "{\"value\": \"95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8\"}"
+    },
+    {
+      "run_id": "c7c1129e29ba4ef4",
+      "status": "failed",
+      "recipe_id": "phase-1-v2-hierarchical-scopes-span-guard-strict-table-ids",
+      "snapshot_id": "79f4b49b8c83ea7f",
+      "source_fingerprint": "{\"value\": \"95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8\"}"
+    },
+    {
+      "run_id": "6f8edc7200cf4a34",
+      "status": "failed",
+      "recipe_id": "phase-1-v2-hierarchical-scopes-span-guard-strict-table-ids",
+      "snapshot_id": "79f4b49b8c83ea7f",
+      "source_fingerprint": "{\"value\": \"95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8\"}"
+    },
+    {
+      "run_id": "2c78d543f68f4209",
+      "status": "retired",
+      "recipe_id": "phase-1-v2-hierarchical-scopes-span-guard-strict-table-ids",
+      "snapshot_id": "79f4b49b8c83ea7f",
+      "source_fingerprint": "{\"value\": \"95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8\"}"
+    },
+    {
+      "run_id": "f088ef170e904c0d",
+      "status": "retired",
+      "recipe_id": "phase-1-v3-code-line-2digit-year-replacement-titles",
+      "snapshot_id": "a28f182e718f5da4",
+      "source_fingerprint": "{\"value\": \"95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8\"}"
+    },
+    {
+      "run_id": "c15c741742394320",
+      "status": "active",
+      "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "snapshot_id": "4919b3938ad93747",
+      "source_fingerprint": "{\"value\": \"95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8\"}"
+    }
+  ],
+  "counts": {
+    "documents": 221,
+    "source_units": 12269,
+    "unit_chunk_links": 16783,
+    "scopes": 1970,
+    "scope_units": 14557
+  },
+  "by_snapshot": [
+    {
+      "snapshot_id": "4919b3938ad93747",
+      "n": 221
+    }
+  ],
+  "link_distribution": [
+    {
+      "match_basis": "sidecar_ref",
+      "n": 13227
+    },
+    {
+      "match_basis": "inline_table_id",
+      "n": 3556
+    }
+  ],
+  "scope_distribution": [
+    {
+      "scope_kind": "chapter",
+      "confirm_status": "ambiguous",
+      "n": 219
+    },
+    {
+      "scope_kind": "chapter",
+      "confirm_status": "confirmed",
+      "n": 113
+    },
+    {
+      "scope_kind": "clause",
+      "confirm_status": "confirmed",
+      "n": 1634
+    },
+    {
+      "scope_kind": "chapter",
+      "confirm_status": "requires_span",
+      "n": 4
+    }
+  ],
+  "public_counts": {
+    "lightrag_doc_full": 221,
+    "lightrag_doc_chunks": 5709,
+    "lightrag_doc_status": 279,
+    "lightrag_llm_cache": 16514,
+    "lightrag_entity_chunks": 65527,
+    "lightrag_full_entities": 221,
+    "lightrag_full_relations": 221,
+    "lightrag_relation_chunks": 119575
+  },
+  "chapter4": [
+    {
+      "number": "4",
+      "confirm_status": "confirmed",
+      "unit_id": "6b561f175905ef52a9c4b02aab741551",
+      "heading": "4 环境空气功能区分类和质量要求"
+    },
+    {
+      "number": "4",
+      "confirm_status": "confirmed",
+      "unit_id": "ced9002b92f52f07096945aae564c1d5",
+      "heading": "4.1 环境空气功能区分类"
+    },
+    {
+      "number": "4",
+      "confirm_status": "confirmed",
+      "unit_id": "7f9dddaf02f372cc7d329f4678c46fbc",
+      "heading": "4.2 环境空气功能区质量要求"
+    }
+  ],
+  "medical_title": [
+    {
+      "title": "医疗机构水污染物排放标准",
+      "self_code": "GB18466",
+      "self_code_version": "2005"
+    }
+  ],
+  "stale": {
+    "state": "current",
+    "active_run_id": "c15c741742394320",
+    "active_snapshot_id": "4919b3938ad93747",
+    "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+    "expected_recipe_id": "phase-1-v4-single-active-snapshot-prune",
+    "live_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "stored_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "action": ""
+  },
+  "first_page_epoch": "74418c93c21105d6e5f995db2f3131ebe6460c03dd3a3b944b47d68f1f424b21",
+  "unchanged_chained_page": {
+    "status": "ok",
+    "second_epoch": "74418c93c21105d6e5f995db2f3131ebe6460c03dd3a3b944b47d68f1f424b21"
+  }
+}

@@ -1,0 +1,3592 @@
+[
+    {
+        "type": "text",
+        "text": "EEA Discodata",
+        "text_level": 1,
+        "bbox": [
+            300,
+            332,
+            700,
+            378
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "WISE SOE - Waterbase",
+        "bbox": [
+            267,
+            424,
+            728,
+            459
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Basic user guide",
+        "bbox": [
+            372,
+            502,
+            624,
+            532
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "version 1.0, July 2021",
+        "bbox": [
+            364,
+            540,
+            629,
+            566
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "footer",
+        "text": "by Marek Staron, EEA",
+        "bbox": [
+            697,
+            907,
+            934,
+            930
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "Introduction",
+        "text_level": 2,
+        "bbox": [
+            55,
+            55,
+            192,
+            74
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "The WISE SOE Waterbase data has been traditionally disseminated through the EEA Data and Maps portal as a series of downloadable files in various formats. The increase in the number of data, and the respective increase in the size of the files, however, makes this option less viable for some users.",
+        "bbox": [
+            53,
+            79,
+            933,
+            133
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "For example, at the time of writing this guide, the latest WISE SOE Water Quality ICM (WISE6) dataset contains more than 51 millions of Disaggregated Data records. The users can download a .csv file containing all the data which is almost 13 GB in size once unzipped.",
+        "bbox": [
+            53,
+            143,
+            942,
+            196
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Consuming such an amount of data in a traditional spreadsheet software, like Microsoft Excel, is very difficult, or even impossible. It requires a use of a database software, which may not be a solution available to all users.",
+        "bbox": [
+            53,
+            209,
+            921,
+            244
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Some users may also be interested only in a very specific part of the dataset. For example, only records from a particular country, year, or of a specific substance. Downloading the whole file to use just a small part of it (and possibly struggle to do so due to its size) may be too inconvenient.",
+        "bbox": [
+            53,
+            255,
+            937,
+            309
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "To tackle this issue, the EEA has developed a portal, named Discodata, which provides an endpoint to access and filter data directly in the database. The main use for the portal is to provide access to datasets for specifically developed applications. But it also provides a user interface that gives any user an option to access, filter and download the data.",
+        "bbox": [
+            53,
+            320,
+            923,
+            375
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "This guide is to help the users with exploration, selection, and extractions of Waterbase data by introducing the layout and functions of the Discodata portal, with some examples of more advanced techniques",
+        "bbox": [
+            53,
+            385,
+            924,
+            421
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "Note: The Discodata portal is still in active development at the time of writing this guide. Some parts of this guide may therefore become obsolete, although we will try to update it when that happens. We will also try to extend the guide with additional examples, and potentially focusing on individual datasets and specific use of the Waterbase data.",
+        "bbox": [
+            63,
+            436,
+            921,
+            508
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "EEA Discodata – WISE SOE Waterbase – Basic user guide, version 1.0",
+        "bbox": [
+            290,
+            21,
+            705,
+            34
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "2",
+        "bbox": [
+            491,
+            948,
+            504,
+            960
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "image",
+        "img_path": "images/b63e9bd47a012697c71df64a3183e6e19581caecf9411d2aef771f0c49f42ee7.jpg",
+        "image_caption": [
+            "The Discodata portal can be accessed through this URL: https://discodata.eea.europa.eu/",
+            "When user opens the Discodata portal they will see this homepage:"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            76,
+            128,
+            919,
+            578
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "EEA Discodata – WISE SOE Waterbase – Basic user guide, version 1.0",
+        "bbox": [
+            290,
+            21,
+            705,
+            34
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "3",
+        "bbox": [
+            491,
+            948,
+            504,
+            960
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "Database explorer",
+        "text_level": 2,
+        "bbox": [
+            55,
+            69,
+            251,
+            89
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "On the left side of the page, we see a list of databases that are currently accessible through the Discodata portal.",
+        "bbox": [
+            53,
+            94,
+            454,
+            147
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Clicking on the WISE\\_SOE database expands the list of the database versions, releases, and views.",
+        "bbox": [
+            53,
+            167,
+            457,
+            203
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\nDatabase explorer\n> CataloguePolicyEvaluations\n> CO2Emission\n> EUNIS\n> FISE\n> GHGPAMS\n> IED\n> MarineLitterWatch\n> metadata\n> natura2000\n> NCCAPS\n> SimpleTables\n> Test\n> UWWTD\n> WISE_BWD\n> WISE_Indicators\nWISE_SOE\n> latest\n> v1\n> v1r1\nWISE_WFD\n```",
+        "bbox": [
+            120,
+            210,
+            401,
+            728
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Database versioning",
+        "bbox": [
+            524,
+            80,
+            707,
+            101
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\nWISE_SOE\n> latest\n> v1\n> v1r1\n```",
+        "bbox": [
+            614,
+            104,
+            846,
+            281
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "latest – a folder that contains views pointing to the latest releases of the tables from the latest version of the database.",
+        "bbox": [
+            553,
+            291,
+            934,
+            345
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "• v1 – a folder that contains views pointing to the latest releases of tables from the database version 1.",
+        "bbox": [
+            553,
+            348,
+            937,
+            398
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "• v1r1 – a folder with the actual tables from release 1 in the database version 1.",
+        "bbox": [
+            553,
+            402,
+            900,
+            438
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "version – a new version is created when the structure of the database tables is updated (a new field is added, an old field is removed, etc.).",
+        "bbox": [
+            553,
+            459,
+            921,
+            529
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "release – a new release is created when the content of the database tables is updated (e.g., with newly reported data).",
+        "bbox": [
+            553,
+            532,
+            934,
+            585
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "Because the WISE\\_SOE database has currently only one version and release (v1r1), the views in both the latest and the v1 folder point to the tables in the v1r1 folder.",
+        "bbox": [
+            524,
+            604,
+            934,
+            660
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "For the sake of simplicity this guide describes only the use of v1r1 folder content.",
+        "bbox": [
+            522,
+            678,
+            923,
+            714
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "EEA Discodata – WISE SOE Waterbase – Basic user guide, version 1.0",
+        "bbox": [
+            290,
+            20,
+            705,
+            34
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "4",
+        "bbox": [
+            491,
+            948,
+            504,
+            960
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```c\nv1r1\n> Waterbase_S_WISE_SpatialObject:\n> Waterbase_S_WISE_SpatialObject_DerivedData\nWaterbase_T_WISET_Emissions\n```",
+        "bbox": [
+            112,
+            825,
+            416,
+            902
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Table list",
+        "text_level": 2,
+        "bbox": [
+            53,
+            53,
+            138,
+            70
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Clicking on the v1r1 folder will expand the list of tables in the WISE SOE v1r1 database.",
+        "bbox": [
+            53,
+            74,
+            460,
+            109
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\nWISE_SOE\n> latest\n> v1\n> v1r1\n> Waterbase_S_WISE_SpatialObject\n> Waterbase_T_WISE1_Emissions\n> Waterbase_T_WISE3_AdditionalW\n> Waterbase_T_WISE3_MonitoringC\n> Waterbase_T_WISE3_RenewableFi\n> Waterbase_T_WISE3_ReservoirDat\n> Waterbase_T_WISE3_WaterAbstra\n> Waterbase_T_WISE3_WaterReturn\n> Waterbase_T_WISE3_WaterUse\n> Waterbase_T_WISE6_Aggregatedl\n> Waterbase_T_WISE6_Aggregatedl\n> Waterbase_T_WISE6_Disaggregat\n```",
+        "bbox": [
+            116,
+            114,
+            408,
+            518
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The WISE\\_SOE database currently contains all dataset tables which were updated during the WISE SOE 2020 dataflow cycle and are published in the respective dataset in EEA Data and Maps portal.",
+        "bbox": [
+            53,
+            529,
+            454,
+            604
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "The table",
+        "text_level": 2,
+        "bbox": [
+            53,
+            622,
+            129,
+            638
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "‘Waterbase\\_S\\_WISE\\_SpatialObject\\_DerivedData’ contains information on all spatial objects referenced in the other tables. The information includes coordinates of the spatial object point or a centroid, if available. The remaining tables contain timeseries data (indicated by ‘\\_T\\_’ in the name).",
+        "bbox": [
+            53,
+            638,
+            468,
+            750
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Hovering over the name of a particular table brings a frame with the table’s full name, which may be useful if the name in the list is truncated when it’s too long:",
+        "bbox": [
+            53,
+            768,
+            467,
+            821
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Hovering over the three vertical dots right of the table name brings a frame with the table descriptions.",
+        "bbox": [
+            524,
+            51,
+            926,
+            87
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\nv1r1\nWaterbase_S_WISE_SpatialObject\nWaterbase_T_WISE1_Emissions List of spatial object identifiers present in the WISE SOE dataset tables. Contains selected information reported through WFD or WISE5 spatial data reporting.\n```",
+        "bbox": [
+            537,
+            93,
+            957,
+            143
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Right clicking on the table name, or clicking on the three dots, opens an info block between the Database explorer and the Query window. The info block contains description of the table and provides a few options:",
+        "bbox": [
+            524,
+            156,
+            941,
+            229
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Waterbase\\_T\\_WISE1\\_Emissi...",
+        "text_level": 2,
+        "bbox": [
+            609,
+            239,
+            852,
+            268
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Annual emissions of nutrients, organic matter and hazardous substances from point discharges and diffuse sources to inland surface waters, aggregated by pollutant and spatial unit.",
+        "bbox": [
+            607,
+            272,
+            834,
+            347
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Select top 100 rows",
+        "bbox": [
+            614,
+            356,
+            751,
+            372
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Download",
+        "bbox": [
+            614,
+            375,
+            697,
+            392
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Open table viewer",
+        "bbox": [
+            614,
+            395,
+            741,
+            411
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "<Close",
+        "bbox": [
+            624,
+            430,
+            678,
+            446
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Select top 100 rows – clears the SQL source frame and puts in an SQL query statement which, when manually submitted, will select the first 100 records of the table, and show them in the query result frame (see the Query window for more information).",
+        "bbox": [
+            553,
+            488,
+            939,
+            597
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Download – allows to download the whole table in zipped csv format. Please be aware, that downloading tables with large number of records may take some time and there is a risk of failure.",
+        "bbox": [
+            553,
+            599,
+            931,
+            689
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "Go to table viewer – opens a Table viewer page with option to explore, filter and download filtered table records. See Table viewer for more details on how to use the viewer.",
+        "bbox": [
+            553,
+            691,
+            939,
+            763
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "EEA Discodata – WISE SOE Waterbase – Basic user guide, version 1.0",
+        "bbox": [
+            290,
+            20,
+            705,
+            34
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "5",
+        "bbox": [
+            491,
+            948,
+            504,
+            960
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "image",
+        "img_path": "images/e91a3b33828e98bfd8663d9009ecb95a24797ec34a4087be4336094f00e36223.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            617,
+            128,
+            848,
+            296
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Field list",
+        "text_level": 2,
+        "bbox": [
+            55,
+            53,
+            132,
+            70
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Clicking on a table name will expand a list of fields in the table. The fields are sorted alphabetically. The field’s datatype is shown next after its name.",
+        "bbox": [
+            53,
+            74,
+            470,
+            128
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Hovering over the field’s name brings a frame with the field’s description. Hovering over the three vertical dots right of the field name brings a frame with the field’s descriptions.:",
+        "bbox": [
+            53,
+            147,
+            468,
+            219
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "chart",
+        "img_path": "images/2041c4534e483dd1b7ad11267c4402cf9270e3dfd9f5cc3f5031d4bb101cf1de.jpg",
+        "content": "",
+        "chart_caption": [],
+        "chart_footnote": [],
+        "bbox": [
+            60,
+            222,
+            406,
+            757
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Note: Compared to datasets in EEA Data and Maps portal, most of the timeseries tables in Discodata contain additional fields, like country code or year, that can make filtering of specific data easier.",
+        "bbox": [
+            63,
+            768,
+            444,
+            843
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Right clicking on the field name, or clicking on the three dots, opens an info block between the Database explorer and the Query window. The info block contains description of the field and provides a few options:",
+        "bbox": [
+            522,
+            51,
+            939,
+            125
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "countryCode",
+        "text_level": 2,
+        "bbox": [
+            635,
+            138,
+            753,
+            156
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Abbreviation of EEA Member or Collaborating Country",
+        "bbox": [
+            635,
+            169,
+            821,
+            200
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Preview distinct values",
+        "bbox": [
+            640,
+            209,
+            792,
+            226
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Select distinct values",
+        "bbox": [
+            640,
+            229,
+            787,
+            246
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "",
+        "bbox": [
+            651,
+            263,
+            707,
+            281
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Preview distinct values – opens a window with alphabetically sorted list of all distinct values in this field.",
+        "bbox": [
+            553,
+            324,
+            934,
+            376
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Select distinct values – clears the SQL source frame and puts in an SQL query statement which, when manually submitted, will select all distinct values in this field, and show them in the query result frame (see the Query window for more information).",
+        "bbox": [
+            553,
+            378,
+            933,
+            489
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Some of the fields contain alphanumeric codes instead of self-explanatory values. Explanation of these codes, or link to the respective reference, can be found in the table and dataset definition files available for download in the respective Waterbase dataset in the EEA Data and Maps portal, or in the respective Eionet data dictionary.",
+        "bbox": [
+            522,
+            507,
+            937,
+            635
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "EEA Discodata – WISE SOE Waterbase – Basic user guide, version 1.0",
+        "bbox": [
+            290,
+            20,
+            705,
+            34
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "6",
+        "bbox": [
+            491,
+            948,
+            504,
+            960
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "Query window",
+        "text_level": 2,
+        "bbox": [
+            53,
+            59,
+            215,
+            79
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The Query window provides an option to create and execute SELECT type SQL queries over the Discodata databases. This allows the user to make customized selection of data and even to use more advanced SQL techniques, like table joins, aggregations, and others.",
+        "bbox": [
+            52,
+            84,
+            910,
+            137
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/a96faba1fbe691488d289203eca199bb8b62868bee75fe7979fd718aa324c941.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            147,
+            142,
+            846,
+            580
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Type of Request",
+        "text_level": 2,
+        "bbox": [
+            53,
+            593,
+            187,
+            609
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The drop-dawn menu provides two option – Query and Describe. In this guide we will use only the Query option, as the Describe option is not sufficiently documented yet.",
+        "bbox": [
+            53,
+            611,
+            933,
+            647
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "SQL Source",
+        "text_level": 2,
+        "bbox": [
+            53,
+            659,
+            150,
+            674
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "In this field the user can write, construct, and modify their SQL query, which they can then execute using the Submit button. See Writing a query for details on how to create a query. Examples of WISE SOE database queries can be found in the SQL query examples.",
+        "bbox": [
+            53,
+            678,
+            926,
+            732
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "SQL query URL",
+        "text_level": 2,
+        "bbox": [
+            53,
+            744,
+            176,
+            760
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The field under the Submit button, contains an URL version of the SQL query. If the URL is entered into a web browser, the result of the query is returned in JSON format. See the Discodata JSON for more information.",
+        "bbox": [
+            53,
+            762,
+            923,
+            797
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Result frame",
+        "text_level": 2,
+        "bbox": [
+            53,
+            810,
+            161,
+            825
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "The result of an SQL query is shown in two tabs underneath the URL field. The Table view shows the query result in a simple tabular structure, split to multiple pages. The Raw response tab contains the result on the current page of the Table view in JSON format. See Query result for more details.",
+        "bbox": [
+            52,
+            829,
+            915,
+            883
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "EEA Discodata – WISE SOE Waterbase – Basic user guide, version 1.0",
+        "bbox": [
+            290,
+            20,
+            705,
+            34
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "7",
+        "bbox": [
+            491,
+            948,
+            504,
+            960
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "Writing a query",
+        "text_level": 2,
+        "bbox": [
+            53,
+            54,
+            194,
+            71
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The Discodata users can use the SQL source field of the Query window to write a custom SQL query.",
+        "bbox": [
+            53,
+            74,
+            785,
+            92
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The Discodata SQL uses syntax and functions used in Microsoft SQL Server. As it’s said in the green comment text of a default query, more information, including examples of certain SQL queries, can be found at https://docs.microsoft.com/en-us/sql/t-sql/queries/select-examples-transact-sql?view=sql-server-2017",
+        "bbox": [
+            53,
+            101,
+            916,
+            156
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Note: It is not a purpose of this guide to teach the SQL. Inexperienced users can, however, use the examples of various WISE SOE database queries in the SQL query examples to get an idea on how the SQL works.",
+        "bbox": [
+            65,
+            171,
+            883,
+            209
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "A complete query can be written directly, by manually typing all the SQL statements, clauses, names of the tables and fields. To make it easier, however, it is possible to drag and drop the names of the items from the lists in the Database explorer into the SQL Source field.",
+        "bbox": [
+            53,
+            228,
+            919,
+            281
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "In this example we have grabbed (left click and hold) the name of the Waterbase\\_T\\_WISE1\\_Emissions table and dragged it to a proper place of the query:",
+        "bbox": [
+            53,
+            292,
+            939,
+            329
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\nSQL source\n-- Write your SQL-query here\n-- For more information in SQL go here https://docs.microsoft.com/en-us/sql/t-sql/queries/select\nSelect top 1000 * from\nWaterbase_T_WISE1_Emissions\n```",
+        "bbox": [
+            104,
+            345,
+            883,
+            553
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "Note: The actual visual representation of the dragged item depends on the web browser you use. All screenshot in this guide were taken from the Firefox, but you should be able to use any modern web browser.",
+        "bbox": [
+            65,
+            579,
+            908,
+            614
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "After releasing the mouse button, the table name, together with the full path, is pasted into the field:",
+        "bbox": [
+            53,
+            635,
+            799,
+            652
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\nSQL source\n-- Write your SQL-query here\n-- For more information in SQL go here https://docs.microsoft.com/en-us/sql/t-sql/queries/select\nSelect top 1000 * from [WISE_SOE].[v1r1].[Waterbase_T_WISE1_Emissions]\n```",
+        "bbox": [
+            104,
+            669,
+            883,
+            878
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "EEA Discodata – WISE SOE Waterbase – Basic user guide, version 1.0",
+        "bbox": [
+            290,
+            20,
+            705,
+            34
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "8",
+        "bbox": [
+            491,
+            948,
+            504,
+            960
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "The same drag and drop technique can be used for fields. Let’s say that we want to select only the countryCode field values. We drag and drop the field countryCode from the table’s field list into the SQL source field next to the asterisk:",
+        "bbox": [
+            53,
+            51,
+            923,
+            88
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\nSQL source\n-- Write your SQL-query here\n-- For more information in SQL go here https://docs.microsoft.com/en-us/sql/t-sql/queries/select\nSelect top 1000 * from [WISE_SOE].[v1r1].[Waterbase_T_WISE1_Emissions]\n```",
+        "bbox": [
+            107,
+            104,
+            883,
+            190
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "This is what we will see after releasing the mouse button:",
+        "bbox": [
+            53,
+            215,
+            477,
+            234
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\nSQL source\n-- Write your SQL-query here\n-- For more information in SQL go here https://docs.microsoft.com/en-us/sql/t-sql/queries/selectSelect top 1000 [WISE_SOE].[v1r1].[Waterbase_T_WISE1_Emissions].[countryCode]* from [WISE_SOE].[v\n```",
+        "bbox": [
+            107,
+            250,
+            883,
+            329
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "We can see that the field notation is unnecessary verbose. In this example we do not need to identify the complete field path, so we can remove the notation of database, schema, and table.",
+        "bbox": [
+            53,
+            356,
+            936,
+            391
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "We remove the ‘\\*’, as we want to select just values from one field, not from all fields.",
+        "bbox": [
+            53,
+            402,
+            681,
+            419
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Splitting the query into multiple lines is a good practice to make the query even more readable, especially on smaller screens. We can also remove the initial comment or replace it with our own.",
+        "bbox": [
+            53,
+            431,
+            910,
+            467
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\nSQL source\n-- Test query\nSelect top 1000\n    [countryCode]\nfrom [WISE_SOE].[v1r1].[Waterbase_T_WISE1_Emissions]\n```",
+        "bbox": [
+            104,
+            484,
+            531,
+            566
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "When we are testing a query, and just want to see whether it works, it may be useful to limit the number of records the query returns. The most basic way is to use the top clause followed by a specific number. It can make the query finish faster. Once we decide to explore the whole result, we can remove it.",
+        "bbox": [
+            53,
+            595,
+            931,
+            650
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\nSQL source\n-- Test query\nSelect [countryCode]\nfrom [WISE_SOE].[v1r1].[Waterbase_T_WISE1_Emissions]\n```",
+        "bbox": [
+            109,
+            667,
+            531,
+            734
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Query timeout limit",
+        "text_level": 2,
+        "bbox": [
+            55,
+            770,
+            230,
+            787
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "In the current Discodata configuration, if a query runs longer than 20 seconds, it ends in a timeout. This is to prevent overloading the system with many demanding queries running at the same time. The downside is, that it may not be possible to get a result of more complex queries, or queries accessing data in very large tables.",
+        "bbox": [
+            53,
+            790,
+            910,
+            845
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "The responsible Discodata managers try to improve the query running times by adding various indexes into the database tables, but some advanced queries may still fail due to the timeout. In such case the recommended solution is trying to simplify the query or splitting the query operation to multiple steps, if possible.",
+        "bbox": [
+            53,
+            854,
+            939,
+            910
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "EEA Discodata – WISE SOE Waterbase – Basic user guide, version 1.0",
+        "bbox": [
+            292,
+            20,
+            705,
+            34
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "9",
+        "bbox": [
+            491,
+            948,
+            504,
+            960
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "Query result",
+        "text_level": 2,
+        "bbox": [
+            55,
+            53,
+            168,
+            71
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "A query is executed by pressing the Submit button. When the query finishes a new frame opens underneath the URL field, which contains the result of the query.",
+        "bbox": [
+            53,
+            74,
+            910,
+            109
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\nSQL source\n-- Write your SQL-query here\n-- For more information in SQL go here https://docs.microsoft.com/en-us/sql/t-sql/queries/selectSelect top 1000 * from [WISE_SOE].[v1r1].[Waterbase_T_WISE1_Emissions]\n\n<    >\nSubmit\nResponse time: 0.14s.\n\n?0%20from%20%5BWISE_SOE%5D.%5Bv1r1%5D.%5BWaterbase_T_WISE1_Emissions%5D&p=1&nrOfHits=100\nCopy\n\nTable view\nRaw response\nPrevious\t1\t...\tNext\n\ncountryCode\tspatialUnitIdentifier\tspatialUnitIdentifierScheme\tphenomenonTimeReferencePeriod\tobservedPropertyDeterminandCod\nAT\tAT1100\teuSubUnitCode\t2007\tEEA_3133-01-5\n\nAT\tAT1100\teuSubUnitCode\t2007\tEEA_3133-01-5\n\nAT\tAT1100\teuSubUnitCode\t2007\tEEA_3133-01-5\n```",
+        "bbox": [
+            124,
+            125,
+            869,
+            619
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The result frame has two tabs. The Table view shows the query result in a simple tabular structure, split to multiple pages. The page navigation panel is at the top and the bottom of the tab. One page contains 100 records.",
+        "bbox": [
+            53,
+            638,
+            898,
+            675
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The Raw response tab contains the result in the current page of the Table view in JSON format.",
+        "bbox": [
+            53,
+            685,
+            754,
+            703
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\nNote: The SQL query URL changes depending on which result page is shown in the table view. See Discodata JSON for more details.\n?0*%20from%20%5BWISE_SOE%5D.%5Bv1r1%5D.%5BWaterbase_T_WISE1_Emissions%5D&p=2&nrOfHits=100 Copy\nTable view Raw response\nPrevious 1 2 ... Next\n```",
+        "bbox": [
+            63,
+            709,
+            924,
+            891
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "The option to download the SQL query result is currently not implemented. See Discodata JSON for a workaround solution, or the Table viewer for alternative way of selecting, filtering, and downloading data from a database table.",
+        "bbox": [
+            53,
+            900,
+            903,
+            936
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "EEA Discodata – WISE SOE Waterbase – Basic user guide, version 1.0",
+        "bbox": [
+            290,
+            20,
+            705,
+            34
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "10",
+        "bbox": [
+            488,
+            948,
+            509,
+            960
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "Table viewer",
+        "text_level": 2,
+        "bbox": [
+            53,
+            54,
+            194,
+            74
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The table info blocked, opened by clicking on the three dots next to table name in the Database explorer, gives an option to open table in a table viewer. Please note that this option is available only for tables, not the views (see Database versioning for how to distinguish them).",
+        "bbox": [
+            53,
+            79,
+            890,
+            133
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The Table viewer opens in a new browser window or a tab.",
+        "bbox": [
+            53,
+            143,
+            490,
+            160
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/ca4521dc256f6bfe94564be44b651af5e782a118b05d6d3f5b7184bb9f8a7786.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            75,
+            174,
+            918,
+            625
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The main part of the window is taken by the data table. The table is split into pages, one page showing 30 records. The total number of the records can be seen at the bottom left, while page navigation panel is at the bottom right.",
+        "bbox": [
+            53,
+            646,
+            924,
+            683
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The Share button at the top gives user an option to copy URL of the current data view with all the filters applied, either to share with others, to reference, or to save for future use.",
+        "bbox": [
+            53,
+            691,
+            926,
+            728
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "The Download CSV button allows user to download all data in the current view in CSV format. Clicking on the dropdown arrow opens additional options – download data in TSV (tab separated values) or in JSON format.",
+        "bbox": [
+            53,
+            739,
+            934,
+            775
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "EEA Discodata – WISE SOE Waterbase – Basic user guide, version 1.0",
+        "bbox": [
+            290,
+            20,
+            705,
+            34
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "11",
+        "bbox": [
+            488,
+            948,
+            509,
+            960
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "Filters",
+        "text_level": 2,
+        "bbox": [
+            55,
+            53,
+            114,
+            70
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The right-hand side of the windows provides filters for each column in the table. The form of the filter depends on the respective column data type and number of distinct values it holds.",
+        "bbox": [
+            53,
+            74,
+            923,
+            109
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "table",
+        "img_path": "images/3dfdc1db07e1a652dc793dbf7020bb9126b8b5564b50b1ad44f992ef130d899c.jpg",
+        "table_caption": [],
+        "table_footnote": [
+            "Application of a filter can take a significant time, depending on the number of records in the table."
+        ],
+        "table_body": "<table><tr><td></td><td>Simple text filter. The column contains too many distinct text values to put them into a dropdown filter. It is used also for date/time values.The system returns all records with values that match the filter, whether fully or partially. The wildcard character ‘%’ can be used for more advanced filtering, as shown in the example (returns both ‘Nitrate’ and ‘Nitrite’ records).The filter is applied after pressing enter key or clicking outside the field.Delete the filter text to reset the filter.</td></tr><tr><td></td><td>Dropdown text filter. The column contains up to 100 distinct values.The number of records matching the current filters is shown in parentheses (disabled for most fields in large tables to improve performance).Only one option can be selected at a time.The filters is applied after selecting a value from the dropdown menu.Select the ‘(all)’ option to reset the filter.</td></tr><tr><td></td><td>Check box text filter. The column contains up to 10 distinct values.The number of records matching the current filters is shown in parentheses (disabled for most fields in large tables).Multiple options can be selected at the same time.The filter is applied when a checkbox is checked or unchecked.Uncheck all options to reset the filter.</td></tr><tr><td></td><td>Numeric range filter. The column contains numeric values.Filter allows to define both upper and lower value limit, or just one of them.The arrow/spinner buttons inside the fields will increase or decrease the value by 0.1 for decimals/floats or by 1 for integers.The filter is applied after pressing enter key, clicking on a spinner button, or clicking outside the field.Delete both filter values to reset the filter.</td></tr><tr><td></td><td>Date range filter. The column contains date values.Filter allows to define both upper and lower value limit, or just one of them.The date values can be entered either manually or selected using the calendar widget. It is recommended to use the widget, because manual entry, especially for year values, is sometimes difficult. Clicking on the ‘month year’ dropdown at the top of the widget switches to selection of year and month.The filter is applied after selecting a day in the widget, changing a year, either in the widget or manually, after pressing enter key or clicking outside the field.Press the circular reset buttons in both fields to reset the filter.</td></tr></table>",
+        "bbox": [
+            53,
+            117,
+            941,
+            844
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "The numbers of records in parentheses in the dropdown and check box filters are also recalculated every time a filter is applied. If no records with a given value match the current filters, the filter option for that value is hidden.",
+        "bbox": [
+            53,
+            873,
+            931,
+            909
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "EEA Discodata – WISE SOE Waterbase – Basic user guide, version 1.0",
+        "bbox": [
+            290,
+            20,
+            705,
+            34
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "12",
+        "bbox": [
+            488,
+            948,
+            509,
+            960
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "text",
+        "text": "Discodata JSON",
+        "text_level": 2,
+        "bbox": [
+            55,
+            54,
+            223,
+            74
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "The SQL query result can be retrieved in JSON format. Copy the SQL query URL from the field under the Submit button and enter it into a web browser. This is the primary option how the Discodata datasets can be accessed by dedicated data viewer applications. It also can be used by users who are skilled in handling JSON data.",
+        "bbox": [
+            52,
+            79,
+            924,
+            133
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "JSON to CSV conversion",
+        "text_level": 2,
+        "bbox": [
+            53,
+            145,
+            267,
+            162
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "One of the reasons for using the JSON data, is to work around the current lack of CSV download option for SQL query results. The user can create an SQL query, copy the resulting URL, modify it, and use it in a free JSON to CSV online converter that can be found on the Internet. Not all online converters can handle Discodata JSON though. Most of them will also have problem to convert large amount of data.",
+        "bbox": [
+            52,
+            165,
+            934,
+            238
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "In our testing we have found that the following converter can convert JSON datasets with up to about 20000 records and provides a free download option.",
+        "bbox": [
+            53,
+            248,
+            910,
+            284
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "https://www.convertcsv.com/json-to-csv.htm",
+        "bbox": [
+            53,
+            295,
+            393,
+            311
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Modifying URL",
+        "text_level": 2,
+        "bbox": [
+            53,
+            325,
+            186,
+            343
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "By default, the SQL result URL returns first 100 records from the query. This number can be modified.",
+        "bbox": [
+            53,
+            344,
+            797,
+            362
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "This is an example of URL from the following SQL query:",
+        "bbox": [
+            53,
+            375,
+            467,
+            391
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\n-- all German and French WISE6 Aggregated data\nSelect *\nfrom [WISE_SOE].[v1r1].[Waterbase_T_WISE6_AggregatedData]\nwhere countryCode = 'DE' or countryCode = 'FR'\n```",
+        "bbox": [
+            60,
+            404,
+            480,
+            460
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "https://discodata.eea.europa.eu/sql?query=--%20Write%20your%20SQL-query%20here%0A-- %20For%20more%20information%20in%20SQL%20go%20here%20https%3A%2F%2Fdocs.microsoft.com%2Fe n-us%2Fsql%2Ft-sql%2Fqueries%2Fselect-examples-transact-sql%3Fview%3Dsql-server-2017%0ASelect%20\\*%0AFROM%20%5BWISE\\_SOE%5D.%5Bv1r1%5D.%5BWaterbase\\_T\\_WISE6\\_AggregatedData% 5D%0Awhere%20countryCode%20%3D%20'DE'%0A%20%20%20%20or%20countryCode%20%3D%20'FR'%0A&p=1& nrOfHits=100",
+        "bbox": [
+            53,
+            467,
+            941,
+            571
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Please note the highlighted parameters at the end of the URL. The p parameter represents the page of the SQL query result, and the nrOfHits parameter defines number of records per page. By modifying the number after nrOfHits we can change the number of returned records. For example, like this:",
+        "bbox": [
+            53,
+            583,
+            941,
+            637
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "…&p=1&nrOfHits=20000",
+        "text_level": 2,
+        "bbox": [
+            55,
+            647,
+            259,
+            665
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "Now the URL returns 20 000 records in JSON format.",
+        "bbox": [
+            53,
+            675,
+            442,
+            691
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "If the query returns more records than we can safely convert using an online converter, we must split it in multiple parts by using the p parameter. So, to retrieve another set of 20 000 records, we modify the URL as follows:",
+        "bbox": [
+            53,
+            704,
+            937,
+            739
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "…&p=2&nrOfHits=20000",
+        "text_level": 2,
+        "bbox": [
+            55,
+            750,
+            259,
+            768
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "It can certainly be a time-consuming exercise, but this way we can eventually get all required records to CSV.",
+        "bbox": [
+            53,
+            779,
+            852,
+            796
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "As was said previously, this is a workaround solution. It is expected that CSV download of SQL query results will be eventually implemented inside the Discodata portal. In addition, EEA plans to develop a dedicated application for filtering and downloading the WISE SOE data, which will most likely include more advanced querying options.",
+        "bbox": [
+            50,
+            806,
+            892,
+            862
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "header",
+        "text": "EEA Discodata – WISE SOE Waterbase – Basic user guide, version 1.0",
+        "bbox": [
+            290,
+            20,
+            705,
+            34
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "page_number",
+        "text": "13",
+        "bbox": [
+            488,
+            948,
+            509,
+            960
+        ],
+        "page_idx": 12
+    },
+    {
+        "type": "text",
+        "text": "SQL query examples",
+        "text_level": 2,
+        "bbox": [
+            53,
+            54,
+            272,
+            75
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "The following examples are there to give users, with no prior SQL experience, ideas on how to create Waterbase specific SQL queries. They are sorted by the level of complexity from simple to advanced. We tried to cover applications that the Waterbase users may find the most useful, but they do not focus on one particular Waterbase dataset.",
+        "bbox": [
+            53,
+            79,
+            937,
+            133
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Each example shows the text of the SQL query, which the users can copy and paste into the SQL source field on the Discodata portal, and the depiction of the query result they will see after pressing Submit button. Some examples may provide a short explanation or remark.",
+        "bbox": [
+            53,
+            143,
+            924,
+            198
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Note: Discodata SQL is not case sensitive. The brackets around the object names are necessary only if the name contains a space, hyphen, or other special character (which is not the case in WISE SOE).",
+        "bbox": [
+            63,
+            212,
+            887,
+            250
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "1. Basic selection",
+        "text_level": 2,
+        "bbox": [
+            55,
+            268,
+            207,
+            286
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "1.a Selection with result limit",
+        "bbox": [
+            55,
+            292,
+            287,
+            309
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "SQL source",
+        "bbox": [
+            55,
+            311,
+            127,
+            325
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\n-- First 1000 WISE1 Emissions records\nSelect top 1000 * from [WISE_SOE].[v1r1].[Waterbase_T_WISE1_Emissions]\n```",
+        "bbox": [
+            63,
+            328,
+            573,
+            359
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "SQL result",
+        "bbox": [
+            55,
+            366,
+            120,
+            378
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\ncountryCode spatialUnitIdentifier spatialUnitIdentifierScheme phenomenonTimeReferencePeriod observedPropertyDeterminandCod\nAT AT1100 euSubUnitCode 2007 EEA_3133-01-5\nAT AT1100 euSubUnitCode 2007 EEA_3133-01-5\nAT AT1100 euSubUnitCode 2007 EEA_3133-01-5\n```",
+        "bbox": [
+            63,
+            387,
+            763,
+            534
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "1.b Selection with specified result fields and field label aliases",
+        "bbox": [
+            55,
+            553,
+            540,
+            570
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "Specifying, which fields we want in the result, and giving them an alias, will make the result more readable.",
+        "bbox": [
+            53,
+            574,
+            838,
+            590
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "SQL source",
+        "bbox": [
+            55,
+            601,
+            127,
+            614
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\n-- Select all WISE1 Emissions records, specify fields and shorten their labels in the result\nSelect [countryCode] as country\n    ,[spatialUnitIdentifier] as SUI\n    ,[spatialUnitIdentifierScheme] as SUIS\n    ,[phenomenonTimeReferencePeriod] as timePeriod\n    ,[observedPropertyDeterminandLabel] as determinand\n    ,[resultEmissionsValue] as resultValue\n    ,[resultEmissionsUom] as UoM\nfrom [WISE_SOE].[v1r1].[Waterbase_T_WISE1_Emissions]\n```",
+        "bbox": [
+            63,
+            618,
+            733,
+            738
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "SQL result",
+        "bbox": [
+            55,
+            744,
+            120,
+            758
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "table",
+        "img_path": "images/bb55329707df76c577f6e40fa26b7730e295ad0afbab45bdd59596559b177063.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>country</td><td>SUI</td><td>SUIS</td><td>timePeriod</td><td>determinand</td><td>resultValue</td><td>UoM</td></tr><tr><td>AT</td><td>AT1100</td><td>euSubUnitCode</td><td>2007</td><td>BOD5</td><td>904.29</td><td>t/a</td></tr><tr><td>AT</td><td>AT1100</td><td>euSubUnitCode</td><td>2007</td><td>BOD5</td><td>6.6</td><td>t/a</td></tr><tr><td>AT</td><td>AT1100</td><td>euSubUnitCode</td><td>2007</td><td>BOD5</td><td>51.51</td><td>t/a</td></tr><tr><td>AT</td><td>AT1100</td><td>euSubUnitCode</td><td>2007</td><td>BOD5</td><td>537.58</td><td>t/a</td></tr><tr><td>AT</td><td>AT1100</td><td>euSubUnitCode</td><td>2007</td><td>BOD5</td><td>308.6</td><td>t/a</td></tr><tr><td>AT</td><td>AT1100</td><td>euSubUnitCode</td><td>2011</td><td>BOD5</td><td>59</td><td>t/a</td></tr><tr><td>AT</td><td>AT1100</td><td>euSubUnitCode</td><td>2011</td><td>BOD5</td><td>441</td><td>t/a</td></tr></table>",
+        "bbox": [
+            63,
+            763,
+            764,
+            919
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "header",
+        "text": "EEA Discodata – WISE SOE Waterbase – Basic user guide, version 1.0",
+        "bbox": [
+            290,
+            20,
+            705,
+            34
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "page_number",
+        "text": "14",
+        "bbox": [
+            488,
+            948,
+            509,
+            960
+        ],
+        "page_idx": 13
+    },
+    {
+        "type": "text",
+        "text": "1.c Selection of unique values",
+        "text_level": 2,
+        "bbox": [
+            55,
+            53,
+            292,
+            69
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "SQL source",
+        "bbox": [
+            55,
+            71,
+            127,
+            85
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\n-- List of unique observed property values from WISE3 Reservoir data\nSelect Distinct [observedProperty]\nfrom [WISE_SOE].[v1r1].[Waterbase_T_WISE3_ReservoirData]\n```",
+        "bbox": [
+            63,
+            90,
+            558,
+            132
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "SQL result",
+        "bbox": [
+            55,
+            142,
+            120,
+            156
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\nobservedProperty\nRINV\nROUTV\nRSTOCK\n```",
+        "bbox": [
+            63,
+            159,
+            767,
+            242
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "1.d Selection of unique value combinations",
+        "text_level": 2,
+        "bbox": [
+            55,
+            263,
+            397,
+            280
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "SQL source",
+        "bbox": [
+            55,
+            282,
+            125,
+            296
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\n-- WISE1 Emissions - list of unique combinations of country and time period Select Distinct [countryCode], [phenomenonTimeReferencePeriod] as timePeriod from [WISE_SOE].[v1r1].[Waterbase_T_WISE1_Emissions]\n```",
+        "bbox": [
+            63,
+            300,
+            617,
+            342
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "SQL result",
+        "bbox": [
+            55,
+            353,
+            120,
+            367
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "table",
+        "img_path": "images/5121c137cc6405ae29d1969bfdf1e5fed1b2854a348734e6cd5a963bcb00003e.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>countryCode</td><td>timePeriod</td></tr><tr><td>AT</td><td>2011</td></tr><tr><td>AT</td><td>2012</td></tr><tr><td>AT</td><td>2015</td></tr><tr><td>AT</td><td>2016</td></tr><tr><td>AT</td><td>2019</td></tr><tr><td>AT</td><td>2007</td></tr><tr><td>AT</td><td>2009--2011</td></tr><tr><td>AT</td><td>2010</td></tr></table>",
+        "bbox": [
+            63,
+            372,
+            767,
+            547
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "1.e Order by clause",
+        "text_level": 2,
+        "bbox": [
+            55,
+            569,
+            212,
+            585
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "Order by clause sorts the result by specified fields, making it more readable. The downside is, that the query will usually take longer to finish. Also, be aware that in Discodata, if you want to sort the result by a field with an alias, instead of the field name you must use the alias in the Order by clause. Let’s order the result of 1.d.",
+        "bbox": [
+            53,
+            588,
+            941,
+            642
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "SQL source",
+        "bbox": [
+            55,
+            652,
+            127,
+            666
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\n-- WISE1 Emissions - sorted list of unique combinations of country and time period\nSelect Distinct [countryCode], [phenomenonTimeReferencePeriod] as timePeriod from [WISE_SOE].[v1r1].[Waterbase_T_WISE1_Emissions]\nOrder by [countryCode], timePeriod\n```",
+        "bbox": [
+            60,
+            670,
+            661,
+            724
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "SQL result",
+        "bbox": [
+            55,
+            733,
+            122,
+            747
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "table",
+        "img_path": "images/34a2b5526b5efbffefd12d411656033e1c10fd3d2f0a98062bb0041152e0a444.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>countryCode</td><td>timePeriod</td></tr><tr><td>AT</td><td>2004--2007</td></tr><tr><td>AT</td><td>2007</td></tr><tr><td>AT</td><td>2009--2011</td></tr><tr><td>AT</td><td>2010</td></tr><tr><td>AT</td><td>2011</td></tr><tr><td>AT</td><td>2012</td></tr><tr><td>AT</td><td>2014</td></tr><tr><td>AT</td><td>2015</td></tr></table>",
+        "bbox": [
+            63,
+            751,
+            764,
+            926
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "header",
+        "text": "EEA Discodata – WISE SOE Waterbase – Basic user guide, version 1.0",
+        "bbox": [
+            292,
+            20,
+            705,
+            34
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "page_number",
+        "text": "15",
+        "bbox": [
+            488,
+            948,
+            509,
+            960
+        ],
+        "page_idx": 14
+    },
+    {
+        "type": "text",
+        "text": "2. Filtered selection",
+        "text_level": 2,
+        "bbox": [
+            55,
+            54,
+            230,
+            70
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "Selection of specific records is the main reason to use the SQL query.",
+        "bbox": [
+            53,
+            74,
+            558,
+            90
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "2.a Selection with one filter",
+        "text_level": 2,
+        "bbox": [
+            55,
+            103,
+            274,
+            119
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "SQL source",
+        "bbox": [
+            55,
+            122,
+            125,
+            135
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\n-- All Belgian WISE1 Emissions records\nSelect *\nfrom [WISE_SOE].[v1r1].[Waterbase_T_WISE1_Emissions]\nwhere countryCode = 'BE'\n```",
+        "bbox": [
+            63,
+            138,
+            444,
+            194
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "SQL result",
+        "bbox": [
+            55,
+            203,
+            120,
+            217
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\ncountryCode spatialUnitIdentifier spatialUnitIdentifierScheme phenomenonTimeReferencePeriod observedPropertyDeterminandCod\nBE BEMAAS_VL euRBDCode 2005 CAS_14798-03-9\nBE BEMAAS_VL euRBDCode 2006 CAS_14798-03-9\nBE BEMAAS_VL euRBDCode 2007 CAS_14798-03-9\n```",
+        "bbox": [
+            65,
+            223,
+            764,
+            382
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "2.b Selection with multiple filters",
+        "text_level": 2,
+        "bbox": [
+            55,
+            402,
+            318,
+            419
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "SQL source",
+        "bbox": [
+            55,
+            422,
+            125,
+            435
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\n-- All Spanish and Portuguese WISE6 Aggregated Data records from between 2010 and 20015\nSelect *\nfrom [WISE_SOE].[v1r1].[Waterbase_T_WISE6_AggregatedData]\nwhere (countryCode = 'ES' or countryCode = 'PT')\n    and [phenomenonTimeReferenceYear] >= 2010\n    and [phenomenonTimeReferenceYear] <= 2015\n```",
+        "bbox": [
+            63,
+            438,
+            697,
+            521
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "SQL result",
+        "bbox": [
+            55,
+            527,
+            120,
+            540
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\ncountryCode monitoringSiteIdentifier monitoringSiteIdentifierScheme parameterWaterBodyCategory observedPropertyDeterminants\nES ES210005 eionetMonitoringSiteCode RW CAS_104-40-5\nES ES210005 eionetMonitoringSiteCode RW CAS_107-06-2\nES ES210005 eionetMonitoringSiteCode RW CAS_117-81-7\n```",
+        "bbox": [
+            65,
+            547,
+            767,
+            739
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "header",
+        "text": "EEA Discodata – WISE SOE Waterbase – Basic user guide, version 1.0",
+        "bbox": [
+            292,
+            21,
+            705,
+            34
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "page_number",
+        "text": "16",
+        "bbox": [
+            488,
+            948,
+            509,
+            960
+        ],
+        "page_idx": 15
+    },
+    {
+        "type": "text",
+        "text": "2.c Selection with Between operator filter",
+        "text_level": 2,
+        "bbox": [
+            55,
+            53,
+            388,
+            69
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "The previous query can be simplified using this operator, that selects values in range.",
+        "bbox": [
+            53,
+            71,
+            679,
+            89
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "SQL source",
+        "text_level": 2,
+        "bbox": [
+            55,
+            101,
+            127,
+            114
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\n-- All Spanish and Portuguese WISE6 Aggregated Data records from between 2010 and 20015\nSelect *\nfrom [WISE_SOE].[v1r1].[Waterbase_T_WISE6_AggregatedData]\nwhere (countryCode = 'ES' or countryCode = 'PT')\nand [phenomenonTimeReferenceYear] between 2010 and 2015\n```",
+        "bbox": [
+            60,
+            116,
+            697,
+            186
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "SQL result",
+        "bbox": [
+            55,
+            191,
+            120,
+            205
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```txt\ncountryCode monitoringSiteIdentifier monitoringSiteIdentifierScheme parameterWaterBodyCategory observedPropertyDeterminants\nES ES210005 eionetMonitoringSiteCode RW CAS_104-40-5\nES ES210005 eionetMonitoringSiteCode RW CAS_107-06-2\nES ES210005 eionetMonitoringSiteCode RW CAS_117-81-7\n```",
+        "bbox": [
+            65,
+            212,
+            764,
+            405
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "2.d Selection with a wildcard filter",
+        "text_level": 2,
+        "bbox": [
+            55,
+            426,
+            328,
+            443
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "SQL source",
+        "bbox": [
+            55,
+            446,
+            127,
+            459
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\n-- All Slovenian WISE1 Emissions data with a determinand label containing text 'nitr'\nSelect [spatialUnitIdentifier] as SUI\n    ,[spatialUnitIdentifierScheme] as SUIS\n    ,[phenomenonTimeReferencePeriod] as timePeriod\n    ,[observedPropertyDeterminandCode] as determinandCode\n    ,[observedPropertyDeterminandLabel] as determinand\n    ,[resultEmissionsValue] as resultValue\n    ,[resultEmissionsUom] as UoM\nfrom [WISE_SOE].[v1r1].[Waterbase_T_WISE1_Emissions]\nwhere (countryCode = 'SI')\n    and observedPropertyDeterminandLabel like '%nitr%'\n```",
+        "bbox": [
+            58,
+            459,
+            936,
+            609
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "SQL result",
+        "bbox": [
+            55,
+            617,
+            120,
+            631
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "table",
+        "img_path": "images/12034d100b8fb8b16e599399534f49354188c8d54c93887aa28f6fadc9deffb8.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>SUI</td><td>SUIS</td><td>timePeriod</td><td>determinandCode</td><td>determinand</td><td>resultValue</td><td>UoM</td></tr><tr><td>SIRBD1</td><td>euSubUnitCode</td><td>2014</td><td>EEA_31615-01-7</td><td>Total nitrogen</td><td>63.9429435208</td><td>t/a</td></tr><tr><td>SIRBD1</td><td>euSubUnitCode</td><td>2014</td><td>CAS_14797-55-8</td><td>Nitrate</td><td>4.8161973261</td><td>t/a</td></tr><tr><td>SIRBD1</td><td>euSubUnitCode</td><td>2013</td><td>EEA_31615-01-7</td><td>Total nitrogen</td><td>67.3237454693</td><td>t/a</td></tr><tr><td>SIRBD1</td><td>euSubUnitCode</td><td>2013</td><td>CAS_14797-55-8</td><td>Nitrate</td><td>9.284385109</td><td>t/a</td></tr><tr><td>SIRBD1</td><td>euSubUnitCode</td><td>2012</td><td>EEA_31615-01-7</td><td>Total nitrogen</td><td>49.5939228862</td><td>t/a</td></tr><tr><td>SIRBD1</td><td>euSubUnitCode</td><td>2012</td><td>CAS_14797-55-8</td><td>Nitrate</td><td>4.5331938747</td><td>t/a</td></tr><tr><td>SIRBD1</td><td>euSubUnitCode</td><td>2011</td><td>EEA_31615-01-7</td><td>Total nitrogen</td><td>132.6889286728</td><td>t/a</td></tr><tr><td>SIRBD1</td><td>euSubUnitCode</td><td>2011</td><td>CAS_14797-55-8</td><td>Nitrate</td><td>8.2026202115</td><td>t/a</td></tr></table>",
+        "bbox": [
+            63,
+            635,
+            764,
+            810
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "header",
+        "text": "EEA Discodata – WISE SOE Waterbase – Basic user guide, version 1.0",
+        "bbox": [
+            292,
+            21,
+            705,
+            34
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "page_number",
+        "text": "17",
+        "bbox": [
+            488,
+            948,
+            509,
+            960
+        ],
+        "page_idx": 16
+    },
+    {
+        "type": "text",
+        "text": "2.e Selection with IN operator filter",
+        "text_level": 2,
+        "bbox": [
+            53,
+            53,
+            338,
+            69
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "The IN clause, followed by a comma separated list of values enclosed in parentheses, simplifies filtering by multiple distinct values from one column.",
+        "bbox": [
+            53,
+            71,
+            897,
+            107
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "SQL source",
+        "text_level": 2,
+        "bbox": [
+            55,
+            119,
+            127,
+            132
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\n-- Select 2015 Nitrate, Nitrite and Ammonium WISE6 Aggregated Data from Czechia\nSelect [monitoringSiteIdentifier] as MSI\n    ,[monitoringSiteIdentifierScheme] as MSIS\n    ,[parameterWaterBodyCategory] as wbCat\n    ,[observedPropertyDeterminandCode] as determinandCode\n    ,[observedPropertyDeterminandLabel] as determinand\n    ,[procedureAnalysedMatrix] as matrix\n    ,[phenomenonTimeReferenceYear] as year\n    ,[resultNumberOfSamples] as samples\n    ,[resultMeanValue] as meanValue\nfrom [WISE_SOE].[v1r1].[Waterbase_T_WISE6_AggregatedData]\nwhere countryCode = 'CZ'\n    and [phenomenonTimeReferenceYear] >= '2015'\n    and [observedPropertyDeterminandCode] IN ('CAS_14798-03-9', 'CAS_14797-55-8', 'CAS_14797-65-0')\n```",
+        "bbox": [
+            63,
+            133,
+            769,
+            324
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "SQL result",
+        "text_level": 2,
+        "bbox": [
+            55,
+            334,
+            120,
+            347
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "table",
+        "img_path": "images/a5fc695889399f78dd5bd8fa0bce2112971884a743212847a60bd3a3dd6eef95.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>MSI</td><td>MSIS</td><td>wbCat</td><td>determinandCode</td><td>determinand</td><td>matrix</td><td>year</td><td>samples</td><td>meanValue</td></tr><tr><td>CZPLA_1</td><td>euMonitoringSiteCode</td><td>RW</td><td>CAS_14797-55-8</td><td>Nitrate</td><td>W</td><td>2019</td><td>12</td><td>6.82465</td></tr><tr><td>CZPLA_1</td><td>euMonitoringSiteCode</td><td>RW</td><td>CAS_14797-55-8</td><td>Nitrate</td><td>W</td><td>2018</td><td>12</td><td>6.97221</td></tr><tr><td>CZPLA_1</td><td>euMonitoringSiteCode</td><td>RW</td><td>CAS_14798-03-9</td><td>Ammonium</td><td>W</td><td>2018</td><td>12</td><td>0.07894</td></tr><tr><td>CZPLA_1</td><td>euMonitoringSiteCode</td><td>RW</td><td>CAS_14797-65-0</td><td>Nitrite</td><td>W</td><td>2019</td><td>12</td><td>0.07664</td></tr><tr><td>CZPLA_1</td><td>euMonitoringSiteCode</td><td>RW</td><td>CAS_14798-03-9</td><td>Ammonium</td><td>W</td><td>2019</td><td>12</td><td>0.1799</td></tr><tr><td>CZPLA_1</td><td>euMonitoringSiteCode</td><td>RW</td><td>CAS_14797-65-0</td><td>Nitrite</td><td>W</td><td>2018</td><td>12</td><td>0.04325</td></tr><tr><td>CZPLA_10</td><td>euMonitoringSiteCode</td><td>RW</td><td>CAS_14797-65-0</td><td>Nitrite</td><td>W</td><td>2015</td><td>12</td><td>0.08868</td></tr><tr><td>CZPLA_10</td><td>euMonitoringSiteCode</td><td>RW</td><td>CAS_14797-55-8</td><td>Nitrate</td><td>W</td><td>2015</td><td>12</td><td>13.61241</td></tr></table>",
+        "bbox": [
+            63,
+            354,
+            766,
+            529
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "3. Aggregation functions",
+        "text_level": 2,
+        "bbox": [
+            53,
+            578,
+            269,
+            595
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "3.a Count",
+        "text_level": 2,
+        "bbox": [
+            55,
+            601,
+            137,
+            617
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Count is the most used aggregation function in SQL.",
+        "bbox": [
+            53,
+            619,
+            437,
+            636
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "3.a.1 Basic record count",
+        "text_level": 2,
+        "bbox": [
+            55,
+            648,
+            232,
+            664
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "Knowing how many records is there in a specific table can provide a better idea on how challenging the handling will be.",
+        "bbox": [
+            53,
+            667,
+            934,
+            684
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "SQL source",
+        "text_level": 2,
+        "bbox": [
+            55,
+            696,
+            125,
+            708
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\n-- Count all WISE6 Disaggregated data records\nSelect count(*) as records\nfrom [WISE_SOE].[v1r1].[Waterbase_T_WISE6_DisaggregatedData]\n```",
+        "bbox": [
+            63,
+            710,
+            501,
+            756
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "SQL result",
+        "text_level": 2,
+        "bbox": [
+            55,
+            765,
+            120,
+            777
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "records",
+        "bbox": [
+            71,
+            794,
+            114,
+            805
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "51321704",
+        "bbox": [
+            71,
+            813,
+            122,
+            824
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "header",
+        "text": "EEA Discodata – WISE SOE Waterbase – Basic user guide, version 1.0",
+        "bbox": [
+            290,
+            21,
+            705,
+            34
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "page_number",
+        "text": "18",
+        "bbox": [
+            488,
+            948,
+            509,
+            960
+        ],
+        "page_idx": 17
+    },
+    {
+        "type": "text",
+        "text": "3.a.2 Record count grouped by one category",
+        "text_level": 2,
+        "bbox": [
+            55,
+            53,
+            377,
+            68
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "Group by clause allows us to subdivide aggregations into categories.",
+        "bbox": [
+            53,
+            71,
+            558,
+            87
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "SQL source",
+        "bbox": [
+            55,
+            99,
+            127,
+            112
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\n-- Number of WISE6 Disaggregated data records per country\nSelect [countryCode], count(*) as records from [WISE_SOE].[v1r1].[Waterbase_T_WISE6_DisaggregatedData] group by [countryCode]\n```",
+        "bbox": [
+            63,
+            116,
+            501,
+            171
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "SQL result",
+        "bbox": [
+            55,
+            178,
+            120,
+            191
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "table",
+        "img_path": "images/52dae5b4ec0347a585df01b0030c8d807565326145c719ad27d0030e1643f126.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>countryCode</td><td>records</td></tr><tr><td>AL</td><td>4082</td></tr><tr><td>AT</td><td>1116738</td></tr><tr><td>BA</td><td>24113</td></tr><tr><td>BE</td><td>1052810</td></tr><tr><td>BG</td><td>277398</td></tr><tr><td>CH</td><td>234201</td></tr><tr><td>CY</td><td>183769</td></tr><tr><td>CZ</td><td>1440008</td></tr></table>",
+        "bbox": [
+            63,
+            196,
+            767,
+            369
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "3.a.3 Filtered record count grouped by multiple categories",
+        "text_level": 2,
+        "bbox": [
+            55,
+            391,
+            473,
+            406
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "SQL source",
+        "bbox": [
+            55,
+            409,
+            127,
+            421
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\n-- Yearly record count of all Spanish and Portuguese WISE6 Aggregated Data records from between 2010 and 20015\nSelect [countryCode], [phenomenonTimeReferenceYear] as year, count(*) as records\nfrom [WISE_SOE].[v1r1].[Waterbase_T_WISE6_AggregatedData]\nwhere (countryCode = 'ES' or countryCode = 'PT')\n    and [phenomenonTimeReferenceYear] >= 2010\n    and [phenomenonTimeReferenceYear] <= 2015\ngroup by [countryCode], [phenomenonTimeReferenceYear]\norder by [countryCode], year\n```",
+        "bbox": [
+            62,
+            425,
+            862,
+            534
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "table",
+        "img_path": "images/9bae1ac9c586118f48bd9665e67659184a60bda24ef9f53513008cbb8055e5cc.jpg",
+        "table_caption": [
+            "SQL result"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>countryCode</td><td>year</td><td>records</td></tr><tr><td>ES</td><td>2010</td><td>55874</td></tr><tr><td>ES</td><td>2011</td><td>27088</td></tr><tr><td>ES</td><td>2012</td><td>25883</td></tr><tr><td>ES</td><td>2013</td><td>44814</td></tr><tr><td>ES</td><td>2014</td><td>47454</td></tr><tr><td>ES</td><td>2015</td><td>54118</td></tr><tr><td>PT</td><td>2010</td><td>983</td></tr><tr><td>PT</td><td>2011</td><td>710</td></tr></table>",
+        "bbox": [
+            63,
+            585,
+            766,
+            760
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "header",
+        "text": "EEA Discodata – WISE SOE Waterbase – Basic user guide, version 1.0",
+        "bbox": [
+            292,
+            21,
+            705,
+            34
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "page_number",
+        "text": "19",
+        "bbox": [
+            488,
+            948,
+            509,
+            960
+        ],
+        "page_idx": 18
+    },
+    {
+        "type": "text",
+        "text": "3.b Average, Minimum, Maximum, Standard deviation",
+        "text_level": 2,
+        "bbox": [
+            55,
+            53,
+            483,
+            70
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "SQL source",
+        "bbox": [
+            55,
+            71,
+            127,
+            85
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\n-- Calculate yearly average, minimum, maximum, standard deviation values, and total number of streamflow observation in all Estonian monitoring sites from WISE3 Monitoring data table\nSelect [monitoringSiteIdentifier] as MSI\n    ,[monitoringSiteIdentifierScheme] as MSIS\n    ,[phenomenonTimePeriod_year] as year\n    ,avg([resultObservedValue]) as avgSF\n    ,min([resultObservedValue]) as minSF\n    ,max([resultObservedValue]) as maxSF\n    ,stdev([resultObservedValue]) as stdevSF\n    ,count(*) as observations\nfrom [WISE_SOE].[v1r1].[Waterbase_T_WISE3_MonitoringData]\nwhere countryCode = 'EE'\n    and observedProperty = 'SF'\ngroup by [monitoringSiteIdentifier],[monitoringSiteIdentifierScheme],[phenomenonTimePeriod_year]\norder by MSI, MSIS, year\n```",
+        "bbox": [
+            60,
+            87,
+            936,
+            286
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "SQL result",
+        "text_level": 2,
+        "bbox": [
+            55,
+            292,
+            120,
+            306
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "table",
+        "img_path": "images/573bcbcefbb431ba233446ed4d63a315a738a81a4b1bb35065290fc3dc6c6894.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>MSI</td><td>MSIS</td><td>year</td><td>avgSF</td><td>minSF</td><td>maxSF</td><td>stdevSF</td><td>observations</td></tr><tr><td>EE1005</td><td>eionetMonitoringSiteCode</td><td>2012</td><td>5.39464480874317</td><td>0.56</td><td>36.6</td><td>6.255432905275029</td><td>366</td></tr><tr><td>EE104</td><td>eionetMonitoringSiteCode</td><td>2011</td><td>13.96846575342465</td><td>3.81</td><td>124</td><td>18.05291767694655</td><td>365</td></tr><tr><td>EE104</td><td>eionetMonitoringSiteCode</td><td>2012</td><td>15.73267759562841</td><td>5.55</td><td>63.6</td><td>11.16016715345389</td><td>366</td></tr><tr><td>EE1040</td><td>eionetMonitoringSiteCode</td><td>2012</td><td>3.152377049180328</td><td>0.9</td><td>9.35</td><td>1.967193141179765</td><td>366</td></tr><tr><td>EE106</td><td>eionetMonitoringSiteCode</td><td>2012</td><td>4.184371584699453</td><td>0.96</td><td>15.8</td><td>2.674084252658032</td><td>366</td></tr><tr><td>EE1078</td><td>eionetMonitoringSiteCode</td><td>2012</td><td>2.348770491803278</td><td>0.11</td><td>15.6</td><td>2.950490438322713</td><td>366</td></tr><tr><td>EE1095</td><td>eionetMonitoringSiteCode</td><td>2012</td><td>2.722213114754099</td><td>0.18</td><td>23.6</td><td>2.984419040033161</td><td>366</td></tr><tr><td>EE80</td><td>eionetMonitoringSiteCode</td><td>2012</td><td>14.66978142076504</td><td>5.94</td><td>43.9</td><td>7.873971958522486</td><td>366</td></tr></table>",
+        "bbox": [
+            63,
+            311,
+            764,
+            486
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "3.c Sum",
+        "text_level": 2,
+        "bbox": [
+            55,
+            508,
+            120,
+            523
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "SQL source",
+        "bbox": [
+            55,
+            527,
+            125,
+            540
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\n-- WISE6 Aggregated Data - total number of 2015 Nitrate, Nitrite and Ammonium samples from Czechia\nSelect [observedPropertyDeterminandCode]\n    ,[observedPropertyDeterminandLabel]\n    ,sum([resultNumberOfSamples]) as totalSamples\nfrom [WISE_SOE].[v1r1].[Waterbase_T_WISE6_AggregatedData]\nwhere countryCode = 'CZ'\n    and [phenomenonTimeReferenceYear] >= '2015'\n    and [observedPropertyDeterminandCode] in ('CAS_14798-03-9', 'CAS_14797-55-8', 'CAS_14797-65-0')\ngroup by [observedPropertyDeterminandCode], [observedPropertyDeterminandLabel]\norder by [observedPropertyDeterminandLabel]\n```",
+        "bbox": [
+            63,
+            544,
+            772,
+            680
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "SQL result",
+        "text_level": 2,
+        "bbox": [
+            55,
+            688,
+            120,
+            700
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "table",
+        "img_path": "images/6c817130756a94071e351d414b73a2bde73c8ad29219f22bf60c748c5f4517f0.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>observedPropertyDeterminandCode</td><td>observedPropertyDeterminandLabel</td><td>totalSamples</td></tr><tr><td>CAS_14798-03-9</td><td>Ammonium</td><td>23297</td></tr><tr><td>CAS_14797-55-8</td><td>Nitrate</td><td>22761</td></tr><tr><td>CAS_14797-65-0</td><td>Nitrite</td><td>23240</td></tr></table>",
+        "bbox": [
+            62,
+            705,
+            761,
+            792
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "header",
+        "text": "EEA Discodata – WISE SOE Waterbase – Basic user guide, version 1.0",
+        "bbox": [
+            292,
+            21,
+            705,
+            34
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "page_number",
+        "text": "20",
+        "bbox": [
+            488,
+            948,
+            509,
+            960
+        ],
+        "page_idx": 19
+    },
+    {
+        "type": "text",
+        "text": "4. Nested and Join queries",
+        "text_level": 2,
+        "bbox": [
+            53,
+            53,
+            287,
+            71
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Nesting queries allows for results of one query to be used as a source for another. Joining multiple tables or query results with a use of common fields is a powerful tool for advanced data analysis.",
+        "bbox": [
+            53,
+            74,
+            890,
+            109
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "4.a Basic nested query – Z-score calculation",
+        "text_level": 2,
+        "bbox": [
+            53,
+            121,
+            401,
+            138
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "In this example we use the result from the example 3.b to calculate Z-score values and to find timeseries where it is more than 3 for the maximum value (may indicate outliers). Please note the use of Round function to reduce number of decimals, and the Order by modifier DESC to sort the result by the z-score value in descending order. Notice that the nested query is enclosed in parentheses and must be named by using an alias.",
+        "bbox": [
+            52,
+            141,
+            939,
+            214
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "SQL source",
+        "text_level": 2,
+        "bbox": [
+            55,
+            224,
+            127,
+            237
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\n-- WISE3 - Monitoring data\n-- Estonian yearly streamflow aggregations where Z-score of the maximum value is > 3\nSelect round((maxSF - avgSF)/stdevSF,3) as [z-score], *\nfrom (\n    Select [monitoringSiteIdentifier] as MSI\n    ,[monitoringSiteIdentifierScheme] as MSIS\n    ,[phenomenonTimePeriod_year] as year\n    ,avg([resultObservedValue]) as avgSF\n    ,min([resultObservedValue]) as minSF\n    ,max([resultObservedValue]) as maxSF\n    ,stdev([resultObservedValue]) as stdevSF\n    ,count(*) as observations\n    from [WISE_SOE].[v1r1].[Waterbase_T_WISE3_MonitoringData]\n    where countryCode = 'EE'\n    and observedProperty = 'SF'\n    group by [monitoringSiteIdentifier],[monitoringSiteIdentifierScheme],[phenomenonTimePeriod_year]\n) as stats\nwhere (maxSF - avgSF)/stdevSF > 3\norder by [z-score] DESC\n```",
+        "bbox": [
+            58,
+            238,
+            790,
+            488
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "SQL result",
+        "text_level": 2,
+        "bbox": [
+            55,
+            496,
+            120,
+            510
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```csv\nz-score MSI MSIS year avgSF minSF maxSF stdevSF observations\n18.139 EESJA4852000 euMonitoringSiteCode 2011 1.215945205479452 0.15 71 3.847121872294405 365\n9.387 EESJA3252000 euMonitoringSiteCode 2013 0.08216438356164381 0.02 1.33 0.1329338236689108 365\n9.279 EESJA8903000 euMonitoringSiteCode 2019 0.6534849315068492 0.109 8.07 0.7992662176789823 365\n9.006 EESJA3252000 euMonitoringSiteCode 2014 0.0516438356164383 0.01 0.26 0.02313444334243035 365\n8.887 EESJA8796000 euMonitoringSiteCode 2019 1.632969863013698 0.436 14.3 1.425384648942494 365\n8.535 EESJA5928000 euMonitoringSiteCode 2014 4.416273972602737 2.86 16.8 1.450982930014813 365\n8.358 EESJA2371000 euMonitoringSiteCode 2013 2.217260273972602 0.04 40.7 4.60415610750669 365\n8.345 EESJA6842000 euMonitoringSiteCode 2013 2.459753424657535 0.23 44.8 5.073558713167376 365\n```",
+        "bbox": [
+            63,
+            515,
+            764,
+            690
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "4.b Inner Join – join two data sources",
+        "text_level": 2,
+        "bbox": [
+            53,
+            704,
+            354,
+            720
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "Inner Join is the basic type of join. It returns records from both sides, whether it is tables or queries, that have a matching key or keys. The connection between the two is defined in the ON clause. In this example we join a timeseries table with the spatial metadata table, to retrieve a specific value from the spatial table.",
+        "bbox": [
+            53,
+            722,
+            931,
+            776
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "SQL source",
+        "text_level": 2,
+        "bbox": [
+            55,
+            787,
+            127,
+            800
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\n-- Select name of the respective water body with all Greek WISE6 Aggregated records where year >= 2010\nSelect sd.[waterBodyName], ad.*\nfrom [WISE_SOE].[v1r1].[Waterbase_T_WISE6_AggregatedData] as ad\nInner Join [WISE_SOE].[v1r1].[Waterbase_S_WISE_SpatialObject_DerivedData] as sd\n    ON ad.[monitoringSiteIdentifier] = sd.[monitoringSiteIdentifier]\n    and ad.[monitoringSiteIdentifierScheme] = sd.[monitoringSiteIdentifierScheme]\nwhere ad.countryCode = 'BG'\n    and ad.phenomenonTimeReferenceYear >= 2010\n```",
+        "bbox": [
+            60,
+            803,
+            803,
+            912
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "header",
+        "text": "EEA Discodata – WISE SOE Waterbase – Basic user guide, version 1.0",
+        "bbox": [
+            290,
+            20,
+            705,
+            34
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "page_number",
+        "text": "21",
+        "bbox": [
+            488,
+            948,
+            509,
+            960
+        ],
+        "page_idx": 20
+    },
+    {
+        "type": "text",
+        "text": "SQL result",
+        "bbox": [
+            55,
+            51,
+            120,
+            66
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "table",
+        "img_path": "images/b1e062cc213d89ecdc033eb362782b41f3d886ea88bf7b3196b6f92089ab50b9.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>waterBodyName</td><td>countryCode</td><td>monitoringSiteIdentifier</td><td>monitoringSiteIdentifierScheme</td><td>parameterWaterBodyCategory</td><td>observedPro</td></tr><tr><td>ALEPU LAKE</td><td>BG</td><td>BG2IU10000MS004</td><td>euMonitoringSiteCode</td><td>TW</td><td>EEA_3121-01</td></tr><tr><td>ALEPU LAKE</td><td>BG</td><td>BG2IU10000MS004</td><td>euMonitoringSiteCode</td><td>TW</td><td>CAS_14265-4</td></tr><tr><td>ALEPU LAKE</td><td>BG</td><td>BG2IU10000MS004</td><td>euMonitoringSiteCode</td><td>TW</td><td>CAS_7723-14</td></tr></table>",
+        "bbox": [
+            63,
+            71,
+            767,
+            253
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "4.c Left Join – find missing records",
+        "text_level": 2,
+        "bbox": [
+            53,
+            267,
+            331,
+            284
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "The Left Join (or its opposite Right Join) retrieves all records from the left (or right) source, independently whether there is a matching record on the other side. The left source is the one with keys of the left side of the ON clause. This join is useful, for example, to find records that do not have a counterpart on the other side.",
+        "bbox": [
+            53,
+            286,
+            939,
+            340
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "In the example, see the use of nested queries querying the same table, and the is null filter operator.",
+        "bbox": [
+            53,
+            351,
+            797,
+            369
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\n-- Find WISE6 DisaggregatedData determinants reported by Austria in period 2010-2018, but not later\nSelect olderData.detC, olderData.detL, olderData.records\nfrom (\n    Select [observedPropertyDeterminandCode] as detC\n    ,[observedPropertyDeterminandLabel] as detL\n    , count(*) as records\n    from [WISE_SOE].[v1r1].[Waterbase_T_WISE6_DisaggregatedData]\n    where countryCode = 'AT'\n    and [phenomenonTimeSamplingDate_year] between 2010 and 2018\n    group by [observedPropertyDeterminandCode], [observedPropertyDeterminandLabel]\n) as olderData\nLeft Join (\n    Select [observedPropertyDeterminandCode] as detC\n    from [WISE_SOE].[v1r1].[Waterbase_T_WISE6_DisaggregatedData]\n    where countryCode = 'AT'\n    and [phenomenonTimeSamplingDate_year] > 2018\n    group by [observedPropertyDeterminandCode]\n) as latestData\n    on olderData.detC = latestData.detC\nwhere latestData.detC is null\n```",
+        "bbox": [
+            57,
+            388,
+            933,
+            661
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "SQL result",
+        "bbox": [
+            55,
+            669,
+            120,
+            683
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```csv\ndetC detL records\nCAS_1002-53-5 Dibutyltin 274\nCAS_1024-57-3 Heptachlor epoxide 337\nCAS_107-06-2 1,2-dichloroethane 1660\nCAS_108-70-3 1,3,5-trichlorobenzene 274\nCAS_1113-02-6 Omethoate 275\nCAS_111988-49-9 Thiacloprid 209\nCAS_115-32-2 Dicofol 337\nCAS_118-74-1 Hexachlorobenzene 355\n```",
+        "bbox": [
+            63,
+            686,
+            764,
+            861
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "header",
+        "text": "EEA Discodata – WISE SOE Waterbase – Basic user guide, version 1.0",
+        "bbox": [
+            292,
+            20,
+            705,
+            34
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "page_number",
+        "text": "22",
+        "bbox": [
+            488,
+            948,
+            509,
+            960
+        ],
+        "page_idx": 21
+    },
+    {
+        "type": "text",
+        "text": "4.d Two step aggregation",
+        "text_level": 2,
+        "bbox": [
+            53,
+            54,
+            258,
+            70
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "This example joins results of two nested queries from timeseries and spatial table and aggregates them to calculate statistics on higher spatial level.",
+        "bbox": [
+            53,
+            71,
+            901,
+            107
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "SQL source",
+        "text_level": 2,
+        "bbox": [
+            55,
+            119,
+            127,
+            132
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\n-- From WISE6 Disaggregated Data calculate yearly mean observation values\n-- for selected determinants from water matrix in Italian Water Bodies\nSelect so.WBI, so.WBIS, so.WBName, ts.year, ts.determinand, round(avg(ts.avgV),3) as avgV, ts.UoM\nfrom (\n    Select [monitoringSiteIdentifier] as MSI\n    ,[monitoringSiteIdentifierScheme] as MSIS\n    ,[phenomenonTimeSamplingDate_year] as year\n    ,[observedPropertyDeterminandLabel] as determinand\n    ,avg(resultObservedValue) as avgV\n    ,[resultUom] as UoM\n    from [WISE_SOE].[v1r1].[Waterbase_T_WISE6_DisaggregatedData]\n    where [countryCode] = 'IT'\n    and [phenomenonTimeSamplingDate_year] >= 2010\n    and [procedureAnalysedMatrix] = 'W'\n    and [observedPropertyDeterminandLabel] in ('Nitrate','Nitrite','BOD5')\n    group by [monitoringSiteIdentifier],[monitoringSiteIdentifierScheme],[phenomenonTimeSamplingDate_year]\n    ,[observedPropertyDeterminandLabel],[resultUom]\n) as ts\nInner Join (\n    Select [monitoringSiteIdentifier] as MSI\n    ,[monitoringSiteIdentifierScheme] as MSIS\n    ,[waterBodyIdentifier] as WBI\n    ,[waterBodyIdentifierScheme] as WBIS\n    ,[waterBodyName] as WBName\n    from [WISE_SOE].[v1r1].[Waterbase_S_WISE_SpatialObject_DerivedData]\n    where countryCode = 'IT'\n    and [waterBodyIdentifier] is not null\n) as so\n    on ts.MSI = so.MSI and ts.MSIS = so.MSIS\ngroup by so.WBI, so.WBIS, so.WBName, ts.year, ts.determinand, ts.UoM\norder by WBI, WBIS, WBName, year, determinand\n```",
+        "bbox": [
+            58,
+            132,
+            934,
+            539
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "text",
+        "text": "SQL result",
+        "bbox": [
+            55,
+            546,
+            120,
+            559
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "table",
+        "img_path": "images/a7befafb5d66aa33eb5e3bfc64f2383c7df53bc2936bebb509cfec6bf3960337.jpg",
+        "table_caption": [],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>WBI</td><td>WBIS</td><td>WBName</td><td>year</td><td>determinand</td><td>avgV</td><td>UoM</td></tr><tr><td>IT00_I028_010_TR01_A</td><td>euSurfaceWaterBodyCode</td><td>TORRENTE FLUVIONE TRATTO 1 C.I._A</td><td>2015</td><td>BOD5</td><td>1.105</td><td>mg{O2}/L</td></tr><tr><td>IT00_I028_010_TR01_A</td><td>euSurfaceWaterBodyCode</td><td>TORRENTE FLUVIONE TRATTO 1 C.I._A</td><td>2015</td><td>Nitrate</td><td>2.617</td><td>mg{NO3}/L</td></tr><tr><td>IT00_I028_010_TR01_A</td><td>euSurfaceWaterBodyCode</td><td>TORRENTE FLUVIONE TRATTO 1 C.I._A</td><td>2015</td><td>Nitrite</td><td>0.01</td><td>mg{NO2}/L</td></tr><tr><td>IT00_I028_010_TR01_A</td><td>euSurfaceWaterBodyCode</td><td>TORRENTE FLUVIONE TRATTO 1 C.I._A</td><td>2019</td><td>BOD5</td><td>1.667</td><td>mg{O2}/L</td></tr><tr><td>IT00_I028_010_TR01_A</td><td>euSurfaceWaterBodyCode</td><td>TORRENTE FLUVIONE TRATTO 1 C.I._A</td><td>2019</td><td>Nitrate</td><td>1.987</td><td>mg{NO3}/L</td></tr></table>",
+        "bbox": [
+            63,
+            565,
+            767,
+            763
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "header",
+        "text": "EEA Discodata – WISE SOE Waterbase – Basic user guide, version 1.0",
+        "bbox": [
+            292,
+            21,
+            705,
+            34
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "page_number",
+        "text": "23",
+        "bbox": [
+            488,
+            948,
+            509,
+            960
+        ],
+        "page_idx": 22
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\n-- WISE3 record count per country - Water Resources, Abstraction, Returns, Use\nSelect [countryCode], 'AdditionalWaterResources' as dataset, count(*) as records\nfrom [WISE_SOE].[v1r1].[Waterbase_T_WISE3_AdditionalWaterResources]\ngroup by [countryCode]\nUNION\nSelect [countryCode], 'RenewableFreshwaterResources' as dataset, count(*) as records\nfrom [WISE_SOE].[v1r1].[Waterbase_T_WISE3_RenewableFreshwaterResources]\ngroup by [countryCode]\nUNION\nSelect [countryCode], 'WaterAbstraction' as dataset, count(*) as records\nfrom [WISE_SOE].[v1r1].[Waterbase_T_WISE3_WaterAbstraction]\ngroup by [countryCode]\nUNION\nSelect [countryCode], 'WaterReturns' as dataset, count(*) as records\nfrom [WISE_SOE].[v1r1].[Waterbase_T_WISE3_WaterReturns]\ngroup by [countryCode]\nUNION\nSelect [countryCode], 'WaterUse' as dataset, count(*) as records\nfrom [WISE_SOE].[v1r1].[Waterbase_T_WISE3_WaterUse]\ngroup by [countryCode]\n```",
+        "bbox": [
+            58,
+            156,
+            936,
+            422
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "5. Advanced queries",
+        "text_level": 2,
+        "bbox": [
+            53,
+            54,
+            235,
+            71
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "5.a Union",
+        "text_level": 2,
+        "bbox": [
+            55,
+            79,
+            135,
+            94
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "Union allows to merge results of multiple queries. Each query must return the same number of columns with the same datatypes. The column names do not need to match, although it is a good practice.",
+        "bbox": [
+            53,
+            95,
+            924,
+            131
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "SQL source",
+        "text_level": 2,
+        "bbox": [
+            55,
+            143,
+            127,
+            156
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "table",
+        "img_path": "images/1aa2031be6dcf55e72d4f68740e4ea76720c526f174702fe479a9738258df19e.jpg",
+        "table_caption": [
+            "SQL result"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>countryCode</td><td>dataset</td><td>records</td></tr><tr><td>AL</td><td>AdditionalWaterResources</td><td>1</td></tr><tr><td>AL</td><td>RenewableFreshwaterResources</td><td>6</td></tr><tr><td>AL</td><td>WaterUse</td><td>12</td></tr><tr><td>AT</td><td>RenewableFreshwaterResources</td><td>520</td></tr><tr><td>AT</td><td>WaterAbstraction</td><td>19</td></tr><tr><td>BA</td><td>WaterAbstraction</td><td>2</td></tr><tr><td>BA</td><td>WaterReturns</td><td>1</td></tr></table>",
+        "bbox": [
+            63,
+            448,
+            767,
+            604
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "header",
+        "text": "EEA Discodata – WISE SOE Waterbase – Basic user guide, version 1.0",
+        "bbox": [
+            290,
+            21,
+            705,
+            34
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "page_number",
+        "text": "24",
+        "bbox": [
+            488,
+            948,
+            509,
+            960
+        ],
+        "page_idx": 23
+    },
+    {
+        "type": "text",
+        "text": "5.b Pivot",
+        "text_level": 2,
+        "bbox": [
+            55,
+            53,
+            127,
+            68
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "text",
+        "text": "The Pivot is an advanced function for pivoting results of another query. Let’s use the result of 5.a and make it more readable.",
+        "bbox": [
+            53,
+            71,
+            898,
+            106
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "code",
+        "sub_type": "code",
+        "code_caption": [],
+        "code_body": "```sql\n-- WISE3 pivot record count per country - Water resources, abstraction, returns, use\nSelect countryCode\n    , [AdditionalWaterResources], [RenewableFreshwaterResources], [WaterAbstraction], [WaterReturns], [WaterUse]\nfrom (\n    Select [countryCode], 'AdditionalWaterResources' as dataset, count(*) as records\n    from [WISE_SOE].[v1r1].[Waterbase_T_WISE3_AdditionalWaterResources]\n    group by [countryCode]\n    UNION\n    Select [countryCode], 'RenewableFreshwaterResources' as dataset, count(*) as records\n    from [WISE_SOE].[v1r1].[Waterbase_T_WISE3_RenewableFreshwaterResources]\n    group by [countryCode]\n    UNION\n    Select [countryCode], 'WaterAbstraction' as dataset, count(*) as records\n    from [WISE_SOE].[v1r1].[Waterbase_T_WISE3_WaterAbstraction]\n    group by [countryCode]\n    UNION\n    Select [countryCode], 'WaterReturns' as dataset, count(*) as records\n    from [WISE_SOE].[v1r1].[Waterbase_T_WISE3_WaterReturns]\n    group by [countryCode]\n    UNION\n    Select [countryCode], 'WaterUse' as dataset, count(*) as records\n    from [WISE_SOE].[v1r1].[Waterbase_T_WISE3_WaterUse]\n    group by [countryCode]\n) as sourceTable\nPIVOT (\n    max(records)\n    for dataset in\n    ([AdditionalWaterResources], [RenewableFreshwaterResources], [WaterAbstraction], [WaterReturns], [WaterUse])\n) as pivotTable\n```",
+        "bbox": [
+            58,
+            131,
+            934,
+            512
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "table",
+        "img_path": "images/92d46e1b6f4eaa944a0daa4900a2ea3573193a7473ce98ccf28589039a782ddf.jpg",
+        "table_caption": [
+            "SQL result"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>countryCode</td><td>AdditionalWaterResources</td><td>RenewableFreshwaterResources</td><td>WaterAbstraction</td><td>WaterReturns</td><td>WaterUse</td></tr><tr><td>AL</td><td>1</td><td>6</td><td></td><td></td><td>12</td></tr><tr><td>AT</td><td></td><td>520</td><td>19</td><td></td><td></td></tr><tr><td>BA</td><td></td><td></td><td>2</td><td>1</td><td></td></tr><tr><td>BE</td><td>844</td><td>7464</td><td>1094</td><td>95</td><td>361</td></tr><tr><td>BG</td><td>3</td><td>119</td><td>3124</td><td>384</td><td>132</td></tr><tr><td>CH</td><td>34</td><td>824</td><td>155</td><td>14</td><td>93</td></tr><tr><td>CY</td><td>540</td><td>399</td><td>40</td><td></td><td></td></tr></table>",
+        "bbox": [
+            63,
+            536,
+            764,
+            693
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "header",
+        "text": "EEA Discodata – WISE SOE Waterbase – Basic user guide, version 1.0",
+        "bbox": [
+            290,
+            21,
+            705,
+            34
+        ],
+        "page_idx": 24
+    },
+    {
+        "type": "page_number",
+        "text": "25",
+        "bbox": [
+            488,
+            948,
+            509,
+            960
+        ],
+        "page_idx": 24
+    }
+]

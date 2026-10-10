@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-08",
+  "authorization": "User-directed DeepSeek restoration and requested bounded execution handoff",
+  "changed_config_keys": [
+    "QUERY_LLM_MODEL"
+  ],
+  "answer_model_before": "hy3",
+  "answer_model_after": "deepseek-v4.1-flash",
+  "keyword_model_unchanged": "deepseek-v4.1-flash",
+  "env_sha256_before": "dffdc04f91c21b1e0c8c17776b100c224952aca9a648e91f7b97b171240e5bae",
+  "env_sha256_after": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604",
+  "previous_anchor_file": "reports/pg-retrieval/phase-4/phase-4-config-anchor-6.1-approved-r4.json",
+  "previous_anchor_sha256": "797b023c0a5fa732ceed63d5838b12296e2f47e194abb00de53f1c5d964ab591",
+  "current_anchor_file": "reports/pg-retrieval/phase-4/phase-4-config-anchor.json",
+  "current_anchor_sha256": "b0c73cdf54bbf8df649dc5c19f16db7edd0ebd787522eaea80ff630acaded63e",
+  "code_anchors_unchanged": true,
+  "frozen_source_identity_unchanged": true,
+  "gold_sha256_unchanged": true,
+  "zero_backend_anchor_validation": "passed",
+  "expected_source_identity": {
+    "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "catalog_run_snapshot": "c15c741742394320/4919b3938ad93747",
+    "search_active": "872d689343a9cbb6",
+    "gold_sha256": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e"
+  },
+  "actual_live_service_availability": "user-reported; not probed here",
+  "network_requests_performed_by_this_preparation": 0,
+  "database_writes": 0,
+  "scope": "One 9-leg pilot, then checkpoint; complete 246-leg evaluation excluded",
+  "checks": {
+    "anchor_frozen_subset": "11 passed",
+    "openspec_strict": "passed",
+    "diff": "passed",
+    "sensitive_value_matches": 0
+  },
+  "handoff_sha256": "8480be9191b18946e823d5adddabe9522fb786958607e10c15c7c5453b797fc1",
+  "artifact_sha256": {
+    "reports/pg-retrieval/phase-4/phase-4-config-anchor.json": "b0c73cdf54bbf8df649dc5c19f16db7edd0ebd787522eaea80ff630acaded63e",
+    "reports/pg-retrieval/phase-4/phase-4-config-anchor-6.1-approved-r4.json": "797b023c0a5fa732ceed63d5838b12296e2f47e194abb00de53f1c5d964ab591",
+    "reports/pg-retrieval/phase-4/pilot-budget-proposal.json": "704024098fcb20ef1f735b3b7676dbc7a90cea615855c4a5f0b581934851183a",
+    "reports/pg-retrieval/phase-4/deepseek-restoration-tests.txt": "85e61299f39d272135f7dc4b680ded1eb0af4edf4e9eaf4fc70a77e1b1046588",
+    "reports/pg-retrieval/phase-4/deepseek-restoration-openspec.txt": "4693ceda9e27e58fa59b2c9dbba2ff1cf729bd8067915263151894179518ba7c",
+    "reports/pg-retrieval/phase-4/deepseek-restoration-diff.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "openspec/changes/add-pg-scoped-retrieval/handoff-phase-4-6.2-pilot.md": "8480be9191b18946e823d5adddabe9522fb786958607e10c15c7c5453b797fc1"
+  }
+}

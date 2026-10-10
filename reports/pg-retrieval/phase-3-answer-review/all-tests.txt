@@ -1,0 +1,385 @@
+........................FFFFFFFFF....................................... [ 20%]
+........................................................................ [ 40%]
+........................................................................ [ 61%]
+........................................................................ [ 81%]
+................................................................         [100%]
+=================================== FAILURES ===================================
+_________ test_unsupported_model_claim_cannot_complete[wrong-subject] __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x117307470>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-514/test_unsupported_model_claim_c0')
+claim = '2012版停车场年平均二级限值为35μg/m³'
+
+    @pytest.mark.parametrize(
+        "claim",
+        [
+            "2012版停车场年平均二级限值为35μg/m³",
+            "2012版PM2.5年平均二级限值为15μg/m³",
+            "2012版PM2.5年平均二级限值为35吨",
+            "2012版PM2.5年平均二级限值为3μg/m³",
+        ],
+        ids=["wrong-subject", "wrong-column", "wrong-unit", "numeric-substring"],
+    )
+    def test_unsupported_model_claim_cannot_complete(monkeypatch, tmp_path, claim):
+        conn, _ = fx._install(monkeypatch, tmp_path, [fx._gold_q("q-syn", fx.Q_SYN, "synthesis")])
+        fp, rp = fx._syn_replay(tmp_path)
+        payload = copy.deepcopy(fx._GOOD_SYN)
+        payload["items"][0]["claim"] = claim
+        sink = []
+        report = asyncio.run(
+            an.run_answer(
+                tmp_path / "out",
+                ["q-syn"],
+                fused_report_path=fp,
+                rerank_report_path=rp,
+                values=fx.VALUES,
+                conn=conn,
+                allow_model=True,
+                transport=fx._model_transport(payload, sink=sink),
+            )
+        )
+        assert len(sink) == 1
+        result = report["results"][0]
+>       assert result["coverage_status"] != "complete", result["answer"]
+E       AssertionError: {'mode': 'model', 'generated_by': 'one answer model call (fixture-answer-model-0005)', 'items': [{'kind': 'synthesis_c...nap-1'}, 'claim': '2026版PM2.5年平均二级限值收严为25μg/m³', 'quote': 'PM2.5 | 年平均 | 10 | 25', ...}], 'unverified_claims': [], ...}
+E       assert 'complete' != 'complete'
+
+tests/test_answer_review_r1.py:43: AssertionError
+__________ test_unsupported_model_claim_cannot_complete[wrong-column] __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x119b84920>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-514/test_unsupported_model_claim_c1')
+claim = '2012版PM2.5年平均二级限值为15μg/m³'
+
+    @pytest.mark.parametrize(
+        "claim",
+        [
+            "2012版停车场年平均二级限值为35μg/m³",
+            "2012版PM2.5年平均二级限值为15μg/m³",
+            "2012版PM2.5年平均二级限值为35吨",
+            "2012版PM2.5年平均二级限值为3μg/m³",
+        ],
+        ids=["wrong-subject", "wrong-column", "wrong-unit", "numeric-substring"],
+    )
+    def test_unsupported_model_claim_cannot_complete(monkeypatch, tmp_path, claim):
+        conn, _ = fx._install(monkeypatch, tmp_path, [fx._gold_q("q-syn", fx.Q_SYN, "synthesis")])
+        fp, rp = fx._syn_replay(tmp_path)
+        payload = copy.deepcopy(fx._GOOD_SYN)
+        payload["items"][0]["claim"] = claim
+        sink = []
+        report = asyncio.run(
+            an.run_answer(
+                tmp_path / "out",
+                ["q-syn"],
+                fused_report_path=fp,
+                rerank_report_path=rp,
+                values=fx.VALUES,
+                conn=conn,
+                allow_model=True,
+                transport=fx._model_transport(payload, sink=sink),
+            )
+        )
+        assert len(sink) == 1
+        result = report["results"][0]
+>       assert result["coverage_status"] != "complete", result["answer"]
+E       AssertionError: {'mode': 'model', 'generated_by': 'one answer model call (fixture-answer-model-0005)', 'items': [{'kind': 'synthesis_c...nap-1'}, 'claim': '2026版PM2.5年平均二级限值收严为25μg/m³', 'quote': 'PM2.5 | 年平均 | 10 | 25', ...}], 'unverified_claims': [], ...}
+E       assert 'complete' != 'complete'
+
+tests/test_answer_review_r1.py:43: AssertionError
+___________ test_unsupported_model_claim_cannot_complete[wrong-unit] ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x119b86720>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-514/test_unsupported_model_claim_c2')
+claim = '2012版PM2.5年平均二级限值为35吨'
+
+    @pytest.mark.parametrize(
+        "claim",
+        [
+            "2012版停车场年平均二级限值为35μg/m³",
+            "2012版PM2.5年平均二级限值为15μg/m³",
+            "2012版PM2.5年平均二级限值为35吨",
+            "2012版PM2.5年平均二级限值为3μg/m³",
+        ],
+        ids=["wrong-subject", "wrong-column", "wrong-unit", "numeric-substring"],
+    )
+    def test_unsupported_model_claim_cannot_complete(monkeypatch, tmp_path, claim):
+        conn, _ = fx._install(monkeypatch, tmp_path, [fx._gold_q("q-syn", fx.Q_SYN, "synthesis")])
+        fp, rp = fx._syn_replay(tmp_path)
+        payload = copy.deepcopy(fx._GOOD_SYN)
+        payload["items"][0]["claim"] = claim
+        sink = []
+        report = asyncio.run(
+            an.run_answer(
+                tmp_path / "out",
+                ["q-syn"],
+                fused_report_path=fp,
+                rerank_report_path=rp,
+                values=fx.VALUES,
+                conn=conn,
+                allow_model=True,
+                transport=fx._model_transport(payload, sink=sink),
+            )
+        )
+        assert len(sink) == 1
+        result = report["results"][0]
+>       assert result["coverage_status"] != "complete", result["answer"]
+E       AssertionError: {'mode': 'model', 'generated_by': 'one answer model call (fixture-answer-model-0005)', 'items': [{'kind': 'synthesis_c...nap-1'}, 'claim': '2026版PM2.5年平均二级限值收严为25μg/m³', 'quote': 'PM2.5 | 年平均 | 10 | 25', ...}], 'unverified_claims': [], ...}
+E       assert 'complete' != 'complete'
+
+tests/test_answer_review_r1.py:43: AssertionError
+_______ test_unsupported_model_claim_cannot_complete[numeric-substring] ________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x119b87650>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-514/test_unsupported_model_claim_c3')
+claim = '2012版PM2.5年平均二级限值为3μg/m³'
+
+    @pytest.mark.parametrize(
+        "claim",
+        [
+            "2012版停车场年平均二级限值为35μg/m³",
+            "2012版PM2.5年平均二级限值为15μg/m³",
+            "2012版PM2.5年平均二级限值为35吨",
+            "2012版PM2.5年平均二级限值为3μg/m³",
+        ],
+        ids=["wrong-subject", "wrong-column", "wrong-unit", "numeric-substring"],
+    )
+    def test_unsupported_model_claim_cannot_complete(monkeypatch, tmp_path, claim):
+        conn, _ = fx._install(monkeypatch, tmp_path, [fx._gold_q("q-syn", fx.Q_SYN, "synthesis")])
+        fp, rp = fx._syn_replay(tmp_path)
+        payload = copy.deepcopy(fx._GOOD_SYN)
+        payload["items"][0]["claim"] = claim
+        sink = []
+        report = asyncio.run(
+            an.run_answer(
+                tmp_path / "out",
+                ["q-syn"],
+                fused_report_path=fp,
+                rerank_report_path=rp,
+                values=fx.VALUES,
+                conn=conn,
+                allow_model=True,
+                transport=fx._model_transport(payload, sink=sink),
+            )
+        )
+        assert len(sink) == 1
+        result = report["results"][0]
+>       assert result["coverage_status"] != "complete", result["answer"]
+E       AssertionError: {'mode': 'model', 'generated_by': 'one answer model call (fixture-answer-model-0005)', 'items': [{'kind': 'synthesis_c...nap-1'}, 'claim': '2026版PM2.5年平均二级限值收严为25μg/m³', 'quote': 'PM2.5 | 年平均 | 10 | 25', ...}], 'unverified_claims': [], ...}
+E       assert 'complete' != 'complete'
+
+tests/test_answer_review_r1.py:43: AssertionError
+_________ test_comparison_requires_claims_for_both_requested_editions __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x119b85b80>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-514/test_comparison_requires_claim0')
+
+    def test_comparison_requires_claims_for_both_requested_editions(monkeypatch, tmp_path):
+        conn, _ = fx._install(monkeypatch, tmp_path, [fx._gold_q("q-syn", fx.Q_SYN, "synthesis")])
+        fp, rp = fx._syn_replay(tmp_path)
+        payload = copy.deepcopy(fx._GOOD_SYN)
+        payload["items"] = payload["items"][:1]
+        report = asyncio.run(
+            an.run_answer(
+                tmp_path / "out",
+                ["q-syn"],
+                fused_report_path=fp,
+                rerank_report_path=rp,
+                values=fx.VALUES,
+                conn=conn,
+                allow_model=True,
+                transport=fx._model_transport(payload),
+            )
+        )
+        result = report["results"][0]
+>       assert result["coverage_status"] != "complete", result["answer"]
+E       AssertionError: {'mode': 'model', 'generated_by': 'one answer model call (fixture-answer-model-0005)', 'items': [{'kind': 'synthesis_c...'snap-1'}, 'claim': '2012版PM2.5年平均二级限值为35μg/m³', 'quote': 'PM2.5 | 年平均 | 15 | 35', ...}], 'unverified_claims': [], ...}
+E       assert 'complete' != 'complete'
+
+tests/test_answer_review_r1.py:65: AssertionError
+___________ test_concentration_without_verified_unit_is_not_complete ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x119b86360>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-514/test_concentration_without_ver0')
+
+    def test_concentration_without_verified_unit_is_not_complete(monkeypatch, tmp_path):
+        # Mirror the real fact-002 three-column grid: the unit is absent in the
+        # parsed table, so it must be recovered from verified context or be unknown.
+        header = "<tr><th>序号</th><th>污染物</th><th>最高允许排放浓度</th></tr>"
+        for attr, rows in [("_TBL1_8978_F1", fx._ROWS1), ("_TBL1_8978_F2", fx._ROWS2)]:
+            html = "<table>" + header
+            html += "".join(
+                "<tr>" + "".join(f"<td>{cell}</td>" for cell in row[:3]) + "</tr>" for row in rows
+            )
+            monkeypatch.setattr(fx, attr, html + "</table>")
+        chunks = copy.deepcopy(fx.CHUNKS)
+        chunks[fx.C1]["content"] = "表 1 第一类污染物 总汞 0.05"
+        monkeypatch.setattr(fx, "CHUNKS", chunks)
+        conn, _ = fx._install(monkeypatch, tmp_path, [fx._gold_q("q-fact", fx.Q_FACT, "fact")])
+        fp, rp = fx._write_replay(
+            tmp_path,
+            [
+                fx._fused(
+                    "q-fact",
+                    fx.Q_FACT,
+                    [fx._usable(fx.C1, fx.DOC_8978, fx.CHUNKS[fx.C1]["content"])],
+                )
+            ],
+            [],
+        )
+        report = asyncio.run(
+            an.run_answer(
+                tmp_path / "out",
+                ["q-fact"],
+                fused_report_path=fp,
+                rerank_report_path=rp,
+                values=fx.VALUES,
+                conn=conn,
+                allow_model=False,
+            )
+        )
+        result = report["results"][0]
+        assert result["answer"]["items"], "keep the verified numeric evidence"
+>       assert result["coverage_status"] != "complete", result["answer"]
+E       AssertionError: {'mode': 'deterministic', 'generated_by': 'enumerate/expand entries', 'items': [{'kind': 'table_row', 'doc_id': 'doc-8... 'rows/items whose raw text contains the most subject terms of the QUESTION (never gold text); ties keep every match'}}
+E       assert 'complete' != 'complete'
+
+tests/test_answer_review_r1.py:106: AssertionError
+_____________ test_post_guard_failure_rejects_owning_entry[drift] ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x119b84b30>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-514/test_post_guard_failure_reject0')
+fault = 'drift'
+
+    @pytest.mark.parametrize("fault", ["drift", "capture-error"])
+    def test_post_guard_failure_rejects_owning_entry(monkeypatch, tmp_path, fault):
+        conn, _ = fx._install(monkeypatch, tmp_path, [fx._gold_q("q-table", fx.Q_TABLE, "table_enum")])
+        fp, rp = _table_replay(tmp_path)
+        capture = an._capture_identity
+        calls = 0
+    
+        async def fail_after(values):
+            nonlocal calls
+            calls += 1
+            if calls == 2 and fault == "capture-error":
+                raise OSError("injected post guard unavailable")
+            identity = await capture(values)
+            if calls == 2:
+                identity["identity"]["source_fingerprint"] = "changed-after-read"
+            return identity
+    
+        monkeypatch.setattr(an, "_capture_identity", fail_after)
+        caught = None
+        try:
+            asyncio.run(
+                an.run_answer(
+                    tmp_path / "out",
+                    ["q-table"],
+                    fused_report_path=fp,
+                    rerank_report_path=rp,
+                    values=fx.VALUES,
+                    conn=conn,
+                    allow_model=False,
+                )
+            )
+        except an.AdapterError as exc:
+            caught = exc
+        terminal = json.loads((tmp_path / "out" / "answer-runtime-latest.json").read_text())
+        assert terminal["failure"]["stage"].startswith("identity-after")
+        assert "finished_at" not in terminal
+        assert calls == 2
+>       assert caught is not None, "failed post guard returned normally with complete answers"
+E       AssertionError: failed post guard returned normally with complete answers
+E       assert None is not None
+
+tests/test_answer_review_r1.py:160: AssertionError
+_________ test_post_guard_failure_rejects_owning_entry[capture-error] __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1173a96d0>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-514/test_post_guard_failure_reject1')
+fault = 'capture-error'
+
+    @pytest.mark.parametrize("fault", ["drift", "capture-error"])
+    def test_post_guard_failure_rejects_owning_entry(monkeypatch, tmp_path, fault):
+        conn, _ = fx._install(monkeypatch, tmp_path, [fx._gold_q("q-table", fx.Q_TABLE, "table_enum")])
+        fp, rp = _table_replay(tmp_path)
+        capture = an._capture_identity
+        calls = 0
+    
+        async def fail_after(values):
+            nonlocal calls
+            calls += 1
+            if calls == 2 and fault == "capture-error":
+                raise OSError("injected post guard unavailable")
+            identity = await capture(values)
+            if calls == 2:
+                identity["identity"]["source_fingerprint"] = "changed-after-read"
+            return identity
+    
+        monkeypatch.setattr(an, "_capture_identity", fail_after)
+        caught = None
+        try:
+            asyncio.run(
+                an.run_answer(
+                    tmp_path / "out",
+                    ["q-table"],
+                    fused_report_path=fp,
+                    rerank_report_path=rp,
+                    values=fx.VALUES,
+                    conn=conn,
+                    allow_model=False,
+                )
+            )
+        except an.AdapterError as exc:
+            caught = exc
+        terminal = json.loads((tmp_path / "out" / "answer-runtime-latest.json").read_text())
+        assert terminal["failure"]["stage"].startswith("identity-after")
+        assert "finished_at" not in terminal
+        assert calls == 2
+>       assert caught is not None, "failed post guard returned normally with complete answers"
+E       AssertionError: failed post guard returned normally with complete answers
+E       assert None is not None
+
+tests/test_answer_review_r1.py:160: AssertionError
+_________ test_connection_acquire_failure_has_post_guard_and_terminal __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x119c36b70>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-514/test_connection_acquire_failur0')
+
+    def test_connection_acquire_failure_has_post_guard_and_terminal(monkeypatch, tmp_path):
+        _, calls = fx._install(monkeypatch, tmp_path, [fx._gold_q("q-table", fx.Q_TABLE, "table_enum")])
+        fp, rp = _table_replay(tmp_path)
+    
+        async def failed_connect(**kwargs):
+            raise TimeoutError("injected PG connection failure")
+    
+        monkeypatch.setattr(an.asyncpg, "connect", failed_connect)
+        with pytest.raises((an.AdapterError, TimeoutError)):
+            asyncio.run(
+                an.run_answer(
+                    tmp_path / "out",
+                    ["q-table"],
+                    fused_report_path=fp,
+                    rerank_report_path=rp,
+                    values=fx.VALUES,
+                    allow_model=False,
+                )
+            )
+        terminal = tmp_path / "out" / "answer-runtime-latest.json"
+>       assert terminal.exists(), "PG acquisition failed outside terminal-writing boundary"
+E       AssertionError: PG acquisition failed outside terminal-writing boundary
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-514/test_connection_acquire_failur0/out/answer-runtime-latest.json').exists
+
+tests/test_answer_review_r1.py:183: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_answer_review_r1.py::test_unsupported_model_claim_cannot_complete[wrong-subject]
+FAILED tests/test_answer_review_r1.py::test_unsupported_model_claim_cannot_complete[wrong-column]
+FAILED tests/test_answer_review_r1.py::test_unsupported_model_claim_cannot_complete[wrong-unit]
+FAILED tests/test_answer_review_r1.py::test_unsupported_model_claim_cannot_complete[numeric-substring]
+FAILED tests/test_answer_review_r1.py::test_comparison_requires_claims_for_both_requested_editions
+FAILED tests/test_answer_review_r1.py::test_concentration_without_verified_unit_is_not_complete
+FAILED tests/test_answer_review_r1.py::test_post_guard_failure_rejects_owning_entry[drift]
+FAILED tests/test_answer_review_r1.py::test_post_guard_failure_rejects_owning_entry[capture-error]
+FAILED tests/test_answer_review_r1.py::test_connection_acquire_failure_has_post_guard_and_terminal
+9 failed, 343 passed in 11.01s

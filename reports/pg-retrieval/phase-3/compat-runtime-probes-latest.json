@@ -1,0 +1,191 @@
+{
+ "task": "5.1 runtime compatibility probes (isolated, ownership-guarded)",
+ "release": "lightrag-hku 1.5.7 (uv.lock, site-packages only)",
+ "run_id": "compat-b373771449de",
+ "embedding_fixture": "deterministic numpy (4-dim) — interface shape only",
+ "llm_fixture": "deterministic async stub — no external model",
+ "production_database": "rag",
+ "started_at": "2026-10-06T17:45:14+0800",
+ "identity_before": {
+  "when": "before",
+  "public_counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "scratch": {
+  "database": "lightrag_probe_2a54efebb1",
+  "oid": 144733,
+  "run_id": "compat-b373771449de"
+ },
+ "probe_pool_lifecycle": {
+  "initdb_check_tables_per_stage": {
+   "first_acquire": {
+    "initdb": 1,
+    "check_tables": 1
+   },
+   "second_acquire_holding_ref": {
+    "initdb": 1,
+    "check_tables": 1
+   },
+   "reacquire_after_full_release": {
+    "initdb": 2,
+    "check_tables": 2
+   },
+   "note": "holding a reference reuses the pool (no re-init); after ALL references release, the next get_client rebuilds and re-runs initdb/check_tables (idempotent DDL)"
+  }
+ },
+ "probe_backend_matrix": {
+  "PGTableGraphStorage": {
+   "status": "OK",
+   "get_node": {
+    "entity_id": "probe-node",
+    "entity_type": "FIXTURE"
+   },
+   "tables_added": [
+    "lightrag_graph_edges",
+    "lightrag_graph_nodes"
+   ],
+   "note": "release-native PLAIN-TABLE graph backend (pgtable_impl); PK includes workspace/namespace — matches the production schema shape; requires NO AGE/pgvector"
+  },
+  "PGGraphStorage": {
+   "status": "FAIL",
+   "error": "UndefinedTableError: relation \"ag_catalog.ag_graph\" does not exist",
+   "attributed_to": "Apache AGE missing (ag_catalog)"
+  },
+  "PGVectorStorage": {
+   "status": "FAIL",
+   "error": "ValueError: cosine_better_than_threshold must be specified in vector_db_storage_cls_kwargs",
+   "attributed_to": "ValueError"
+  },
+  "enable_vector_matrix_by_vector_storage": {
+   "None": false,
+   "NanoVectorDBStorage": false,
+   "QdrantVectorDBStorage": false,
+   "PGVectorStorage": true
+  },
+  "note": "LightRAG's DEFAULT vector storage is NanoVectorDBStorage (enable_vector=False); 'None' is the ClientManager argument, not a full LightRAG vector config. The project .env names PG KV/Status, Qdrant vector and Neo4J graph — the formal Qdrant/Neo4j semantic paths are task 5.2, NOT verified here.",
+  "scratch_tables_after_matrix": [
+   "lightrag_doc_chunks",
+   "lightrag_doc_full",
+   "lightrag_doc_status",
+   "lightrag_entity_chunks",
+   "lightrag_full_entities",
+   "lightrag_full_relations",
+   "lightrag_graph_edges",
+   "lightrag_graph_nodes",
+   "lightrag_llm_cache",
+   "lightrag_relation_chunks",
+   "probe_ownership"
+  ],
+  "production_graph_tables": {
+   "names": [
+    "lightrag_graph_nodes",
+    "lightrag_graph_edges"
+   ],
+   "rows": "read-only check earlier in this run (0 rows each); the ORIGIN of these tables cannot be proven from table counts alone and stays UNKNOWN — plausibly the release-native PGTableGraphStorage backend"
+  }
+ },
+ "probe_workspace_identity": {
+  "workspaces": {
+   "ws_probe_a": {
+    "chunk_ids": [
+     "doc-2ab7b92cfb4b39d40db3bd37c33819fa-chunk-000"
+    ],
+    "content_head": "Probe 文档A（A工作区内容）：空气污染物浓度限值为 60。",
+    "doc_status": "processed",
+    "aquery_content_head": "Probe 文档A（A工作区内容）：空气污染物浓度限值为 60。"
+   },
+   "ws_probe_b": {
+    "chunk_ids": [
+     "doc-2ab7b92cfb4b39d40db3bd37c33819fa-chunk-000"
+    ],
+    "content_head": "Probe 文档A（B工作区内容）：浓度限值为 99。",
+    "doc_status": "processed",
+    "aquery_content_head": "Probe 文档A（B工作区内容）：浓度限值为 99。"
+   }
+  },
+  "same_chunk_id_both_workspaces": [
+   "doc-2ab7b92cfb4b39d40db3bd37c33819fa-chunk-000"
+  ],
+  "get_by_ids_missing": [
+   null
+  ],
+  "failures": []
+ },
+ "probe_cache_details": {
+  "columns": [
+   "cache_type",
+   "chunk_id",
+   "create_time",
+   "id",
+   "original_prompt",
+   "queryparam",
+   "return_value",
+   "update_time",
+   "workspace"
+  ],
+  "rows": [
+   {
+    "workspace": "ws_probe_a",
+    "cache_type": "extract"
+   },
+   {
+    "workspace": "ws_probe_a",
+    "cache_type": "extract"
+   },
+   {
+    "workspace": "ws_probe_b",
+    "cache_type": "extract"
+   },
+   {
+    "workspace": "ws_probe_b",
+    "cache_type": "extract"
+   }
+  ],
+  "cache_types_present": [
+   "extract"
+  ],
+  "note": "these are INSERT/extraction-stage cache rows; QUERY-stage cache write/disable behavior is task 6.1 and NOT claimed here"
+ },
+ "identity_after": {
+  "when": "after",
+  "public_counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "cleanup": {
+  "dropped": "lightrag_probe_2a54efebb1",
+  "ownership_verified": true
+ },
+ "finished_at": "2026-10-06T17:45:17+0800"
+}

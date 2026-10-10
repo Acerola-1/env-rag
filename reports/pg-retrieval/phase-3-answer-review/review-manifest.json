@@ -1,0 +1,66 @@
+{
+  "checkpoint": "Phase 3 / task 5.5",
+  "review_date": "2026-10-07",
+  "accepted": false,
+  "blocking_groups": [
+    "A1 fact/claim support",
+    "A2 answer comparison coverage",
+    "A3 terminal/rejection boundary"
+  ],
+  "submitted_tests_passed": 343,
+  "new_owning_tests_failed": 9,
+  "augmented_suite": "9 failed, 343 passed in 11.01s",
+  "submission_sha_matches": 19,
+  "submission_sha_total": 19,
+  "offline_raw_answer_citations_verified": 18,
+  "reviewer_real_calls": {
+    "database": 0,
+    "answer_model": 0,
+    "embedding": 0,
+    "rerank": 0,
+    "backend_writes": 0
+  },
+  "successful_real_synthesis": "not verified (submitted two HTTP 503 attempts)",
+  "previous_acceptance_retained": [
+    "Gate 2",
+    "5.1",
+    "5.2",
+    "5.3",
+    "5.4"
+  ],
+  "not_entered": [
+    "5.6 / Gate 3",
+    "Phase 4"
+  ],
+  "checks": {
+    "ruff": true,
+    "format": true,
+    "openspec_strict": true,
+    "diff_check": true,
+    "credentials": true
+  },
+  "sha256": {
+    "src/env_rag_final/answer.py": "c27f1b2bc6d1062308c7f6eb0a5d3facc323cfee522a39ed38ae54f2353dddcc",
+    "src/env_rag_final/cli.py": "ba940f63205b617be00fe0e2cf58683ea53d74247c4039e0cb28c27ced521195",
+    "tests/test_answer.py": "a004298c3366eb2a7396df177a7685792c839e76d9bddf374cabcb51499f2b55",
+    "tests/test_answer_review_r1.py": "3650133dbbf84a6571786bf4bba051ab60003171a7fef9d9752ea6fb0fffea9f",
+    "openspec/changes/add-pg-scoped-retrieval/handoff-phase-3-5.5-fixes.md": "712354b677bb51c9ae9f5b42f32d6d7643fe0de0663280ba96b935c8aa18276a",
+    "openspec/changes/add-pg-scoped-retrieval/tasks.md": "e8c0825d5f4f7d3e29e545f2e4d3dfc7e273af361afa859f8a12eeaebf5058c2",
+    "README.md": "f5da4b73debaec700d6e693f7b41feb34175fbd66bbaee103002b71c26ae9fb4",
+    "reports/pg-retrieval/phase-3-answer-review/acceptance-tests.txt": "08352209cd3e30fab8cb43e55d849ce72f359b84de3afddf92b59a330f326fbc",
+    "reports/pg-retrieval/phase-3-answer-review/all-tests.txt": "4ce3a6a0e1cd560e182ab408fa117b721dc97516a7a54c8adb11e8c0ca60ead4",
+    "reports/pg-retrieval/phase-3-answer-review/audit_evidence.py": "f73bc74c3c263cee9573d2366dbb020f944ad39eaea8a8aa8a31835d272a3d46",
+    "reports/pg-retrieval/phase-3-answer-review/coverage.json": "420f0f5c5ea254104b1b07e5db77f869ed5a909ecdee547c0a4c2e1488c708e1",
+    "reports/pg-retrieval/phase-3-answer-review/credential-scan.json": "4f1da043008fb3a8795bcb711e58b11fb879da233ba61e36ef1264050e4ef86a",
+    "reports/pg-retrieval/phase-3-answer-review/diff-check.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/pg-retrieval/phase-3-answer-review/evidence-audit.json": "113450fc72f503c00b64f18ca03f655605d6591c98248815e3689ccfefab65f3",
+    "reports/pg-retrieval/phase-3-answer-review/findings.json": "7de499230edb7e16886f1d0032dd5bc0eee13f150382800408931f711cef32b0",
+    "reports/pg-retrieval/phase-3-answer-review/ocr-preview.json": "103a0437be82a96622120cea7e69602d11600a474324c25939725e222d11e309",
+    "reports/pg-retrieval/phase-3-answer-review/ocr-rules.json": "2bb54a792a7a7c1b1b69b6d2ed7a853b89fa99d02b7168716504dac66d85aa93",
+    "reports/pg-retrieval/phase-3-answer-review/openspec-check.txt": "4693ceda9e27e58fa59b2c9dbba2ff1cf729bd8067915263151894179518ba7c",
+    "reports/pg-retrieval/phase-3-answer-review/review.md": "380aa9929069879e1308a80ad08557b284a9c6f8fab469d77df4796aa963e106",
+    "reports/pg-retrieval/phase-3-answer-review/ruff-check.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "reports/pg-retrieval/phase-3-answer-review/ruff-format.txt": "3a21445bb7ec5bd865e583bec08d6571c4b3b289821acb041d1505c596e90257",
+    "reports/pg-retrieval/phase-3-answer-review/submitted-tests.txt": "3560655f53b3ae6eee45423126c4611edf09d1fce245aad37254c4d2ac360d0c"
+  }
+}

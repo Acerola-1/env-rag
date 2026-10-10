@@ -1,0 +1,594 @@
+{
+  "readonly": true,
+  "model_calls": 0,
+  "public_before": {
+    "doc_full": 221,
+    "doc_chunks": 5709,
+    "doc_status": 279,
+    "llm_cache": 16514,
+    "entity_chunks": 65527,
+    "full_entities": 221,
+    "full_relations": 221,
+    "relation_chunks": 119575
+  },
+  "catalog_before": {
+    "state": "current",
+    "active_run_id": "c15c741742394320",
+    "active_snapshot_id": "4919b3938ad93747",
+    "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+    "expected_recipe_id": "phase-1-v4-single-active-snapshot-prune",
+    "live_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "stored_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "action": ""
+  },
+  "search_before": {
+    "state": "current",
+    "search_id": "e3cb2a39dee53d9d",
+    "catalog_snapshot_id": "4919b3938ad93747",
+    "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+    "vocab_sha": "66edabd3b268b0fcbc6cf50c4a1ac0c066b4e7a0dc2041a3d9873e59d7f42003",
+    "index_recipe": "phase-2-v2-local-caption-identity-guard",
+    "expected_search_id": "e3cb2a39dee53d9d",
+    "reasons": []
+  },
+  "runs": [
+    {
+      "name": "prose-enum-004",
+      "catalog_structure": [
+        {
+          "scope_id": "doc-91f9049decde09153368d4b69f280e78:scope:3",
+          "number": "3",
+          "title": "3 水域功能和标准分类",
+          "confirm_status": "confirmed"
+        }
+      ],
+      "catalog_members": [
+        {
+          "unit_id": "7b4770667908af51eb321bd82c89aaf7",
+          "content_length": 363,
+          "requires_span": false
+        }
+      ],
+      "read_result": {
+        "query_id": "prose-58faf86a953d",
+        "kind": "prose",
+        "workspace": "default",
+        "catalog_snapshot_id": "4919b3938ad93747",
+        "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+        "scope_ids": [
+          "doc-91f9049decde09153368d4b69f280e78:scope:3"
+        ],
+        "members_total": 1,
+        "members_processed": 1,
+        "items": [],
+        "coverage_status": "ambiguous",
+        "warnings": [],
+        "fail_stage": "",
+        "predicate": null,
+        "read_token": null,
+        "model_calls": [],
+        "read_status": "complete"
+      },
+      "raw_units": [
+        {
+          "unit_id": "7b4770667908af51eb321bd82c89aaf7",
+          "text": "## 3 水域功能和标准分类\n依据地表水水域环境功能和保护目标，按功能高低依次划分为五类：\nI 类 主要适用于源头水、国家自然保护区；\nⅠ类 主要适用于集中式生活饮用水地表水源地一级保护区、珍稀水生生物栖息地、鱼虾类产卵场、仔稚幼鱼的索饵场等；\nⅠ类 主要适用于集中式生活饮用水地表水源地二级保护区、鱼虾类越冬场、洄游通道、水产养殖区等渔业水域及游泳区；\nN类 主要适用于一般工业用水区及人体非直接接触的娱乐用水区；\nV 类 主要适用于农业用水区及一般景观要求水域。\n对应地表水上述五类水域功能，将地表水环境质量标准基本项目标准值分为五类，不同功能类别分别执行相应类别的标准值。水域功能类别高的标准值严于水域功能类别低的标准值。同一水域兼有多类使用功能的，执行最高功能类别对应的标准值。实现水域功能与达功能类别标准为同一含义。"
+        }
+      ],
+      "explicit_scope_query": {
+        "query_id": "search-ec4aabb611e7",
+        "workspace": "default",
+        "status": "ok",
+        "search_id": "e3cb2a39dee53d9d",
+        "catalog_snapshot_id": "4919b3938ad93747",
+        "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+        "parsed_code": {
+          "raw": "GB 3838-2002",
+          "code": "GB3838",
+          "version": "2002"
+        },
+        "parsed_codes": [
+          {
+            "raw": "GB 3838-2002",
+            "code": "GB3838",
+            "version": "2002"
+          }
+        ],
+        "query_text": "GB 3838-2002 的水域功能是如何分类的？列出全部类别。",
+        "candidates": [
+          {
+            "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+            "doc_name": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf",
+            "self_code": "GB3838",
+            "self_code_version": "2002",
+            "title": "地表水环境质量标准",
+            "doc_type": "standard",
+            "discovery": "code_exact",
+            "score": 1.0,
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-91f9049decde09153368d4b69f280e78"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+            "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-000",
+            "heading": "中华人民共和国国家标准",
+            "chunk_order": 0,
+            "score": 0.0023197305854409933,
+            "discovery": "keyword_core_and",
+            "citation": {
+              "kind": "chunk_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+              "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+            },
+            "citation_verified": true
+          }
+        ],
+        "notes": [],
+        "trace": [
+          {
+            "stage": "code_exact",
+            "code": "GB3838",
+            "version_requested": "2002",
+            "strict": false,
+            "hits": 1,
+            "version_matched": 1,
+            "selected_versions": [
+              "2002"
+            ],
+            "selected_docs": [
+              "doc-91f9049decde09153368d4b69f280e78"
+            ]
+          },
+          {
+            "stage": "keyword_and",
+            "tsquery": "'水域功能' & '分类' & '全部' & '类别'",
+            "top_k": 20,
+            "restricted_to_code_docs": [
+              "doc-91f9049decde09153368d4b69f280e78"
+            ],
+            "doc_hits": 0,
+            "chunk_hits": 0,
+            "elapsed_ms": 3
+          },
+          {
+            "stage": "keyword_and_diagnostics",
+            "per_term": [
+              {
+                "term": "水域功能",
+                "chunk_hits": 1
+              },
+              {
+                "term": "分类",
+                "chunk_hits": 2
+              },
+              {
+                "term": "全部",
+                "chunk_hits": 0
+              },
+              {
+                "term": "类别",
+                "chunk_hits": 1
+              }
+            ],
+            "absent_terms": [
+              "全部"
+            ]
+          },
+          {
+            "stage": "keyword_core_and",
+            "tsquery": "'水域功能' & '分类' & '类别'",
+            "dropped_absent_terms": [
+              "全部"
+            ],
+            "chunk_hits": 1,
+            "note": "terms absent from the corpus cannot participate in AND"
+          },
+          {
+            "stage": "scope_expansion",
+            "requested_scope_id": "doc-91f9049decde09153368d4b69f280e78:scope:3",
+            "requested_table_number": null,
+            "auto_targets": [],
+            "expansions": [
+              {
+                "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+                "kind": "prose",
+                "scope_id": "doc-91f9049decde09153368d4b69f280e78:scope:3",
+                "requested_clauses": null,
+                "missing_requested_clauses": [],
+                "members_total": 1,
+                "members_processed": 1,
+                "coverage_status": "complete",
+                "read_status": "complete",
+                "fail_stage": "",
+                "units_read": 1,
+                "unit_ids": [
+                  "7b4770667908af51eb321bd82c89aaf7"
+                ],
+                "chunk_ids": [
+                  "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+                ],
+                "items_count": 1,
+                "items": [
+                  {
+                    "clause": "3",
+                    "text": "依据地表水水域环境功能和保护目标，按功能高低依次划分为五类：\nI 类 主要适用于源头水、国家自然保护区；\nⅠ类 主要适用于集中式生活饮用水地表水源地一级保护区、珍稀水生生物栖息地、鱼虾类产卵场、仔稚幼鱼的索饵场等；\nⅠ类 主要适用于集中式生活饮用水地表水源地二级保护区、鱼虾类越冬场、洄游通道、水产养殖区等渔业水域及游泳区；\nN类 主要适用于一般工业用水区及人体非直接接触的娱乐用水区；\nV 类 主要适用于农业用水区及一般景观要求水域。\n对应地表水上述五类水域功能，将地表水环境质量标准基本项目标准值分为五类，不同功能类别分别执行相应类别的标准值。水域功能类别高的标准值严于水域功能类别低的标准值。同一水域兼有多类使用功能的，执行最高功能类别对应的标准值。实现水域功能与达功能类别标准为同一含义。",
+                    "citation": {
+                      "kind": "char_span",
+                      "char_start": 0,
+                      "char_end": 348,
+                      "quote": "依据地表水水域环境功能和保护目标，按功能高低依次划分为五类：\nI 类 主要适用于源头水、国家自然保护区；\nⅠ类 主要适用于集中式生活饮用水地表水源地一级保护区、珍稀水生生物栖息地、鱼虾类产卵场、仔稚幼鱼的索饵场等；\nⅠ类 主要适用于集中式生"
+                    },
+                    "citation_verified": true,
+                    "source": "scope_body_no_subclauses"
+                  }
+                ],
+                "warnings": []
+              }
+            ],
+            "note": "expansion reads the FULL ordered membership; discovery top-k is not a limit"
+          }
+        ],
+        "elapsed_ms": 1905
+      }
+    },
+    {
+      "name": "prose-enum-005",
+      "catalog_structure": [
+        {
+          "scope_id": "doc-d6d711b0614234635955480a53f52a10:scope:4.1",
+          "number": "4.1",
+          "title": "4.1 标准分级",
+          "confirm_status": "confirmed"
+        }
+      ],
+      "catalog_members": [
+        {
+          "unit_id": "d9ead1de90c8e67959ccb2b4a67cac4a",
+          "content_length": 225,
+          "requires_span": false
+        }
+      ],
+      "read_result": {
+        "query_id": "prose-05813cd0f09c",
+        "kind": "prose",
+        "workspace": "default",
+        "catalog_snapshot_id": "4919b3938ad93747",
+        "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+        "scope_ids": [
+          "doc-d6d711b0614234635955480a53f52a10:scope:4.1"
+        ],
+        "members_total": 1,
+        "members_processed": 1,
+        "items": [],
+        "coverage_status": "ambiguous",
+        "warnings": [],
+        "fail_stage": "",
+        "predicate": null,
+        "read_token": null,
+        "model_calls": [],
+        "read_status": "complete"
+      },
+      "raw_units": [
+        {
+          "unit_id": "d9ead1de90c8e67959ccb2b4a67cac4a",
+          "text": "## 4.1 标准分级\n本标准恶臭污染物厂界标准值分三级。\n中华人民共和国国家标准\nGB 14554—93\n1994-01-15 实施\n注：1）本标准代替 GBJ 4—73 中硫化氢、二硫化碳指标部分。\n国家环境保护局1993-07-19批准\n4.1.1 排入 GB 3095 中一类区的执行一级标准，一类区中不得建新的排污单位。\n4.1.2 排入 GB 3095 中二类区的执行二级标准。\n4.1.3 排入 GB 3095 中三类区的执行三级标准。"
+        }
+      ],
+      "explicit_scope_query": {
+        "query_id": "search-6a3f68372a98",
+        "workspace": "default",
+        "status": "ok",
+        "search_id": "e3cb2a39dee53d9d",
+        "catalog_snapshot_id": "4919b3938ad93747",
+        "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+        "parsed_code": {
+          "raw": "GB 14554-93",
+          "code": "GB14554",
+          "version": "93"
+        },
+        "parsed_codes": [
+          {
+            "raw": "GB 14554-93",
+            "code": "GB14554",
+            "version": "93"
+          }
+        ],
+        "query_text": "GB 14554-93 对恶臭污染物厂界标准值的分级别规定了哪几级？",
+        "candidates": [
+          {
+            "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+            "doc_name": "air-06_生态环境部_恶臭污染物排放标准_GB14554-93.pdf",
+            "self_code": "GB14554",
+            "self_code_version": "93",
+            "title": "恶臭污染物排放标准",
+            "doc_type": "standard",
+            "discovery": "code_exact",
+            "score": 1.0,
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-d6d711b0614234635955480a53f52a10"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+            "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-000",
+            "heading": "中华人民共和国国家标准",
+            "chunk_order": 0,
+            "score": 0.05432546138763428,
+            "discovery": "keyword_core_and",
+            "citation": {
+              "kind": "chunk_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+              "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+            },
+            "citation_verified": true
+          }
+        ],
+        "notes": [],
+        "trace": [
+          {
+            "stage": "code_exact",
+            "code": "GB14554",
+            "version_requested": "93",
+            "strict": false,
+            "hits": 1,
+            "version_matched": 1,
+            "selected_versions": [
+              "93"
+            ],
+            "selected_docs": [
+              "doc-d6d711b0614234635955480a53f52a10"
+            ]
+          },
+          {
+            "stage": "keyword_and",
+            "tsquery": "'恶臭污染物' & '厂界标准值' & '分' & '级别' & '哪' & '几级'",
+            "top_k": 20,
+            "restricted_to_code_docs": [
+              "doc-d6d711b0614234635955480a53f52a10"
+            ],
+            "doc_hits": 0,
+            "chunk_hits": 0,
+            "elapsed_ms": 1
+          },
+          {
+            "stage": "keyword_and_diagnostics",
+            "per_term": [
+              {
+                "term": "恶臭污染物",
+                "chunk_hits": 4
+              },
+              {
+                "term": "厂界标准值",
+                "chunk_hits": 2
+              },
+              {
+                "term": "分",
+                "chunk_hits": 1
+              },
+              {
+                "term": "级别",
+                "chunk_hits": 0
+              },
+              {
+                "term": "哪",
+                "chunk_hits": 0
+              },
+              {
+                "term": "几级",
+                "chunk_hits": 0
+              }
+            ],
+            "absent_terms": [
+              "级别",
+              "哪",
+              "几级"
+            ]
+          },
+          {
+            "stage": "keyword_core_and",
+            "tsquery": "'恶臭污染物' & '厂界标准值' & '分'",
+            "dropped_absent_terms": [
+              "几级",
+              "哪",
+              "级别"
+            ],
+            "chunk_hits": 1,
+            "note": "terms absent from the corpus cannot participate in AND"
+          },
+          {
+            "stage": "scope_expansion",
+            "requested_scope_id": "doc-d6d711b0614234635955480a53f52a10:scope:4.1",
+            "requested_table_number": null,
+            "auto_targets": [],
+            "expansions": [
+              {
+                "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+                "kind": "prose",
+                "scope_id": "doc-d6d711b0614234635955480a53f52a10:scope:4.1",
+                "requested_clauses": null,
+                "missing_requested_clauses": [],
+                "members_total": 1,
+                "members_processed": 1,
+                "coverage_status": "complete",
+                "read_status": "complete",
+                "fail_stage": "",
+                "units_read": 1,
+                "unit_ids": [
+                  "d9ead1de90c8e67959ccb2b4a67cac4a"
+                ],
+                "chunk_ids": [
+                  "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+                ],
+                "items_count": 4,
+                "items": [
+                  {
+                    "clause": "1994",
+                    "text": "1994-01-15 实施\n注：1）本标准代替 GBJ 4—73 中硫化氢、二硫化碳指标部分。\n国家环境保护局1993-07-19批准",
+                    "citation": {
+                      "kind": "char_span",
+                      "char_start": 54,
+                      "char_end": 122,
+                      "quote": "1994-01-15 实施\n注：1）本标准代替 GBJ 4—73 中硫化氢、二硫化碳指标部分。\n国家环境保护局1993-07-19批准",
+                      "unit_rel_start": 54,
+                      "unit_rel_end": 122,
+                      "unit_id": "d9ead1de90c8e67959ccb2b4a67cac4a",
+                      "locator": {
+                        "file": "blocks.jsonl",
+                        "kind": "block",
+                        "blockid": "d9ead1de90c8e67959ccb2b4a67cac4a",
+                        "parsed_dir": "air-06_生态环境部_恶臭污染物排放标准_GB14554-93.pdf.parsed"
+                      },
+                      "chunk_ids": [
+                        "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+                      ],
+                      "unit_source": "parsed_block",
+                      "workspace": "default",
+                      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+                      "snapshot_id": "4919b3938ad93747"
+                    },
+                    "citation_verified": true,
+                    "source": "regex_clause_split"
+                  },
+                  {
+                    "clause": "4.1.1",
+                    "text": "4.1.1 排入 GB 3095 中一类区的执行一级标准，一类区中不得建新的排污单位。",
+                    "citation": {
+                      "kind": "char_span",
+                      "char_start": 122,
+                      "char_end": 166,
+                      "quote": "4.1.1 排入 GB 3095 中一类区的执行一级标准，一类区中不得建新的排污单位。",
+                      "unit_rel_start": 122,
+                      "unit_rel_end": 166,
+                      "unit_id": "d9ead1de90c8e67959ccb2b4a67cac4a",
+                      "locator": {
+                        "file": "blocks.jsonl",
+                        "kind": "block",
+                        "blockid": "d9ead1de90c8e67959ccb2b4a67cac4a",
+                        "parsed_dir": "air-06_生态环境部_恶臭污染物排放标准_GB14554-93.pdf.parsed"
+                      },
+                      "chunk_ids": [
+                        "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+                      ],
+                      "unit_source": "parsed_block",
+                      "workspace": "default",
+                      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+                      "snapshot_id": "4919b3938ad93747"
+                    },
+                    "citation_verified": true,
+                    "source": "regex_clause_split"
+                  },
+                  {
+                    "clause": "4.1.2",
+                    "text": "4.1.2 排入 GB 3095 中二类区的执行二级标准。",
+                    "citation": {
+                      "kind": "char_span",
+                      "char_start": 166,
+                      "char_end": 196,
+                      "quote": "4.1.2 排入 GB 3095 中二类区的执行二级标准。",
+                      "unit_rel_start": 166,
+                      "unit_rel_end": 196,
+                      "unit_id": "d9ead1de90c8e67959ccb2b4a67cac4a",
+                      "locator": {
+                        "file": "blocks.jsonl",
+                        "kind": "block",
+                        "blockid": "d9ead1de90c8e67959ccb2b4a67cac4a",
+                        "parsed_dir": "air-06_生态环境部_恶臭污染物排放标准_GB14554-93.pdf.parsed"
+                      },
+                      "chunk_ids": [
+                        "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+                      ],
+                      "unit_source": "parsed_block",
+                      "workspace": "default",
+                      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+                      "snapshot_id": "4919b3938ad93747"
+                    },
+                    "citation_verified": true,
+                    "source": "regex_clause_split"
+                  },
+                  {
+                    "clause": "4.1.3",
+                    "text": "4.1.3 排入 GB 3095 中三类区的执行三级标准。",
+                    "citation": {
+                      "kind": "char_span",
+                      "char_start": 196,
+                      "char_end": 225,
+                      "quote": "4.1.3 排入 GB 3095 中三类区的执行三级标准。",
+                      "unit_rel_start": 196,
+                      "unit_rel_end": 225,
+                      "unit_id": "d9ead1de90c8e67959ccb2b4a67cac4a",
+                      "locator": {
+                        "file": "blocks.jsonl",
+                        "kind": "block",
+                        "blockid": "d9ead1de90c8e67959ccb2b4a67cac4a",
+                        "parsed_dir": "air-06_生态环境部_恶臭污染物排放标准_GB14554-93.pdf.parsed"
+                      },
+                      "chunk_ids": [
+                        "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+                      ],
+                      "unit_source": "parsed_block",
+                      "workspace": "default",
+                      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+                      "snapshot_id": "4919b3938ad93747"
+                    },
+                    "citation_verified": true,
+                    "source": "regex_clause_split"
+                  }
+                ],
+                "warnings": []
+              }
+            ],
+            "note": "expansion reads the FULL ordered membership; discovery top-k is not a limit"
+          }
+        ],
+        "elapsed_ms": 1640
+      }
+    }
+  ],
+  "catalog_after": {
+    "state": "current",
+    "active_run_id": "c15c741742394320",
+    "active_snapshot_id": "4919b3938ad93747",
+    "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+    "expected_recipe_id": "phase-1-v4-single-active-snapshot-prune",
+    "live_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "stored_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "action": ""
+  },
+  "search_after": {
+    "state": "current",
+    "search_id": "e3cb2a39dee53d9d",
+    "catalog_snapshot_id": "4919b3938ad93747",
+    "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+    "vocab_sha": "66edabd3b268b0fcbc6cf50c4a1ac0c066b4e7a0dc2041a3d9873e59d7f42003",
+    "index_recipe": "phase-2-v2-local-caption-identity-guard",
+    "expected_search_id": "e3cb2a39dee53d9d",
+    "reasons": []
+  },
+  "public_after": {
+    "doc_full": 221,
+    "doc_chunks": 5709,
+    "doc_status": 279,
+    "llm_cache": 16514,
+    "entity_chunks": 65527,
+    "full_entities": 221,
+    "full_relations": 221,
+    "relation_chunks": 119575
+  },
+  "source_and_active_unchanged": true,
+  "public_unchanged": true
+}

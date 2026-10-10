@@ -1,0 +1,912 @@
+{
+  "readonly": true,
+  "model_calls": 0,
+  "public_before": {
+    "doc_full": 221,
+    "doc_chunks": 5709,
+    "doc_status": 279,
+    "llm_cache": 16514,
+    "entity_chunks": 65527,
+    "full_entities": 221,
+    "full_relations": 221,
+    "relation_chunks": 119575
+  },
+  "catalog_before": {
+    "state": "current",
+    "active_run_id": "c15c741742394320",
+    "active_snapshot_id": "4919b3938ad93747",
+    "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+    "expected_recipe_id": "phase-1-v4-single-active-snapshot-prune",
+    "live_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "stored_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "action": ""
+  },
+  "search_before": {
+    "state": "current",
+    "search_id": "e3cb2a39dee53d9d",
+    "catalog_snapshot_id": "4919b3938ad93747",
+    "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+    "vocab_sha": "66edabd3b268b0fcbc6cf50c4a1ac0c066b4e7a0dc2041a3d9873e59d7f42003",
+    "index_recipe": "phase-2-v2-local-caption-identity-guard",
+    "expected_search_id": "e3cb2a39dee53d9d",
+    "reasons": []
+  },
+  "runs": [
+    {
+      "name": "file-enum-001",
+      "result": {
+        "query_id": "search-2c2fe5cd466d",
+        "workspace": "default",
+        "status": "ok",
+        "search_id": "e3cb2a39dee53d9d",
+        "catalog_snapshot_id": "4919b3938ad93747",
+        "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+        "parsed_code": {
+          "raw": "GB 3095",
+          "code": "GB3095",
+          "version": null
+        },
+        "parsed_codes": [
+          {
+            "raw": "GB 3095",
+            "code": "GB3095",
+            "version": null
+          }
+        ],
+        "query_text": "库内有哪些 GB 3095 标准的文档？列出文件名和版本年份。",
+        "candidates": [
+          {
+            "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+            "doc_name": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+            "title": "环境空气质量标准",
+            "self_code": "GB3095",
+            "self_code_version": "2012",
+            "doc_type": "standard",
+            "discovery": "document_enumeration",
+            "score": null,
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+              "doc_name": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+            "doc_name": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+            "title": "环境空气质量标准",
+            "self_code": "GB3095",
+            "self_code_version": "2026",
+            "doc_type": "standard",
+            "discovery": "document_enumeration",
+            "score": null,
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+              "doc_name": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf"
+            },
+            "citation_verified": true
+          }
+        ],
+        "notes": [],
+        "trace": [
+          {
+            "stage": "code_exact",
+            "code": "GB3095",
+            "version_requested": null,
+            "strict": false,
+            "hits": 2,
+            "selected_versions": [
+              "2012",
+              "2026"
+            ],
+            "selected_docs": [
+              "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+              "doc-4c883d21fa02a53189e0911c3d59d1d1"
+            ]
+          },
+          {
+            "stage": "keyword_and",
+            "tsquery": "'标准'",
+            "top_k": 20,
+            "restricted_to_code_docs": [
+              "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+              "doc-4c883d21fa02a53189e0911c3d59d1d1"
+            ],
+            "doc_hits": 0,
+            "chunk_hits": 12,
+            "elapsed_ms": 4
+          },
+          {
+            "stage": "document_enumeration",
+            "predicate": "((self_code = $3))",
+            "predicate_args": [
+              "GB3095"
+            ],
+            "workspace": "default",
+            "attribution_branch": false,
+            "attribution_added": 0,
+            "members_total": 2,
+            "members_processed": 2,
+            "coverage_status": "complete",
+            "read_token": "150d4717519fed6b1ea4711bded7e5abf1eec5223bdc3e331d28cda70677ae05",
+            "fail_stage": "",
+            "warnings": [
+              "2 matched docs have unknown metadata fields; they are included but flagged"
+            ],
+            "note": "full paged enumeration with the complete strong predicate — not top-k ranked discovery, not the whole corpus"
+          }
+        ],
+        "elapsed_ms": 1537
+      },
+      "doc_set_equal": true,
+      "missing": [],
+      "extra": []
+    },
+    {
+      "name": "file-enum-002",
+      "result": {
+        "query_id": "search-7ae904d7594c",
+        "workspace": "default",
+        "status": "ok",
+        "search_id": "e3cb2a39dee53d9d",
+        "catalog_snapshot_id": "4919b3938ad93747",
+        "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+        "parsed_code": null,
+        "parsed_codes": [],
+        "query_text": "库内有哪些《中国移动源环境管理年报》？",
+        "candidates": [
+          {
+            "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+            "doc_name": "air-15_生态环境部_中国移动源环境管理年报_2021.pdf",
+            "title": "中国移动源环境管理年报",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "yearbook",
+            "discovery": "document_enumeration",
+            "score": null,
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+              "doc_name": "air-15_生态环境部_中国移动源环境管理年报_2021.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+            "doc_name": "air-16_生态环境部_中国移动源环境管理年报_2022.pdf",
+            "title": "中国移动源环境管理年报",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "yearbook",
+            "discovery": "document_enumeration",
+            "score": null,
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+              "doc_name": "air-16_生态环境部_中国移动源环境管理年报_2022.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+            "doc_name": "air-17_生态环境部_中国移动源环境管理年报_2023.pdf",
+            "title": "中国移动源环境管理年报",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "yearbook",
+            "discovery": "document_enumeration",
+            "score": null,
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+              "doc_name": "air-17_生态环境部_中国移动源环境管理年报_2023.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+            "doc_name": "air-18_生态环境部_中国移动源环境管理年报_2024.pdf",
+            "title": "中国移动源环境管理年报",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "yearbook",
+            "discovery": "document_enumeration",
+            "score": null,
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+              "doc_name": "air-18_生态环境部_中国移动源环境管理年报_2024.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+            "doc_name": "air-19_生态环境部_中国移动源环境管理年报_2025.pdf",
+            "title": "中国移动源环境管理年报",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "yearbook",
+            "discovery": "document_enumeration",
+            "score": null,
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+              "doc_name": "air-19_生态环境部_中国移动源环境管理年报_2025.pdf"
+            },
+            "citation_verified": true
+          }
+        ],
+        "notes": [],
+        "trace": [
+          {
+            "stage": "keyword_and",
+            "tsquery": "'中国' & '移动源' & '环境' & '管理' & '年报'",
+            "top_k": 20,
+            "restricted_to_code_docs": null,
+            "doc_hits": 5,
+            "chunk_hits": 20,
+            "elapsed_ms": 13
+          },
+          {
+            "stage": "document_enumeration",
+            "predicate": "(doc_name LIKE '%' || $3 || '%')",
+            "predicate_args": [
+              "中国移动源环境管理年报"
+            ],
+            "workspace": "default",
+            "attribution_branch": false,
+            "attribution_added": 0,
+            "members_total": 5,
+            "members_processed": 5,
+            "coverage_status": "complete",
+            "read_token": "2fc8ff99c075883d4c6be35df9c87b03f658bda9c0a3e3f7cb98be5c0aaa900a",
+            "fail_stage": "",
+            "warnings": [
+              "5 matched docs have unknown metadata fields; they are included but flagged"
+            ],
+            "note": "full paged enumeration with the complete strong predicate — not top-k ranked discovery, not the whole corpus"
+          }
+        ],
+        "elapsed_ms": 1287
+      },
+      "doc_set_equal": true,
+      "missing": [],
+      "extra": []
+    },
+    {
+      "name": "file-enum-003",
+      "result": {
+        "query_id": "search-565d5603d7fe",
+        "workspace": "default",
+        "status": "ok",
+        "search_id": "e3cb2a39dee53d9d",
+        "catalog_snapshot_id": "4919b3938ad93747",
+        "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+        "parsed_code": null,
+        "parsed_codes": [],
+        "query_text": "库内有哪些《中国水资源公报》（水利部）？",
+        "candidates": [
+          {
+            "doc_id": "doc-0e575533a4ec747d16a0b24c381c5ede",
+            "doc_name": "water-25_水利部_2021年中国水资源公报_2021.pdf",
+            "title": "CHINA WATER RESOURCES BULLETIN",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "bulletin",
+            "discovery": "document_enumeration",
+            "score": null,
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-0e575533a4ec747d16a0b24c381c5ede",
+              "doc_name": "water-25_水利部_2021年中国水资源公报_2021.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-a13be3e29e82c913f3470fbe60b4bf6a",
+            "doc_name": "water-26_水利部_2022年中国水资源公报_2022.pdf",
+            "title": "CHINA WATER RESOURCES BULLETIN",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "bulletin",
+            "discovery": "document_enumeration",
+            "score": null,
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-a13be3e29e82c913f3470fbe60b4bf6a",
+              "doc_name": "water-26_水利部_2022年中国水资源公报_2022.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-d29dd8b36d29309ba693bfdc78ba3103",
+            "doc_name": "water-27_水利部_2023年中国水资源公报_2023.pdf",
+            "title": "CHINA WATER RESOURCES BULLETIN",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "bulletin",
+            "discovery": "document_enumeration",
+            "score": null,
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-d29dd8b36d29309ba693bfdc78ba3103",
+              "doc_name": "water-27_水利部_2023年中国水资源公报_2023.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-bb0530b18d32763b3211b67365b36359",
+            "doc_name": "water-28_水利部_2024年中国水资源公报_2024.pdf",
+            "title": "CHINA WATER RESOURCESBULLETIN",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "bulletin",
+            "discovery": "document_enumeration",
+            "score": null,
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-bb0530b18d32763b3211b67365b36359",
+              "doc_name": "water-28_水利部_2024年中国水资源公报_2024.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-969f75052f9f2473ad13e7b7aeaa31d8",
+            "doc_name": "water-29_水利部_2025年中国水资源公报_2025.pdf",
+            "title": "CHINA WATER RESOURCES BULLETIN",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "bulletin",
+            "discovery": "document_enumeration",
+            "score": null,
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-969f75052f9f2473ad13e7b7aeaa31d8",
+              "doc_name": "water-29_水利部_2025年中国水资源公报_2025.pdf"
+            },
+            "citation_verified": true
+          }
+        ],
+        "notes": [],
+        "trace": [
+          {
+            "stage": "keyword_and",
+            "tsquery": "'中国' & '水资源' & '公报' & '水利部'",
+            "top_k": 20,
+            "restricted_to_code_docs": null,
+            "doc_hits": 5,
+            "chunk_hits": 15,
+            "elapsed_ms": 3
+          },
+          {
+            "stage": "document_enumeration",
+            "predicate": "(doc_name LIKE '%' || $3 || '%')",
+            "predicate_args": [
+              "中国水资源公报"
+            ],
+            "workspace": "default",
+            "attribution_branch": false,
+            "attribution_added": 0,
+            "members_total": 5,
+            "members_processed": 5,
+            "coverage_status": "complete",
+            "read_token": "5a8c98fec341e611c417bd312aec94f359b230beaf2f36657da83530ece053eb",
+            "fail_stage": "",
+            "warnings": [
+              "5 matched docs have unknown metadata fields; they are included but flagged"
+            ],
+            "note": "full paged enumeration with the complete strong predicate — not top-k ranked discovery, not the whole corpus"
+          }
+        ],
+        "elapsed_ms": 1296
+      },
+      "doc_set_equal": true,
+      "missing": [],
+      "extra": []
+    },
+    {
+      "name": "file-enum-004",
+      "result": {
+        "query_id": "search-cea9fe615426",
+        "workspace": "default",
+        "status": "ok",
+        "search_id": "e3cb2a39dee53d9d",
+        "catalog_snapshot_id": "4919b3938ad93747",
+        "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+        "parsed_code": null,
+        "parsed_codes": [],
+        "query_text": "库内有哪些文档名称含“修改单”？",
+        "candidates": [
+          {
+            "doc_id": "doc-2e012f4fd0622b647d151de5d0ecc51b",
+            "doc_name": "air-07_生态环境部_水泥工业大气污染物排放标准GB4915-2013修改单_2026.pdf",
+            "title": "《水泥工业大气污染物排放标准》（GB 4915—2013）修改单",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "standard",
+            "discovery": "document_enumeration",
+            "score": null,
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-2e012f4fd0622b647d151de5d0ecc51b",
+              "doc_name": "air-07_生态环境部_水泥工业大气污染物排放标准GB4915-2013修改单_2026.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-afd999b66f220c7ba8de2e624ba9c212",
+            "doc_name": "air-08_生态环境部_水泥工业大气污染物排放标准GB4915-2013含2025修改单.pdf",
+            "title": "GB 4915—2013（含2025年修改单）",
+            "self_code": "GB4915",
+            "self_code_version": "2013",
+            "doc_type": "standard",
+            "discovery": "document_enumeration",
+            "score": null,
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-afd999b66f220c7ba8de2e624ba9c212",
+              "doc_name": "air-08_生态环境部_水泥工业大气污染物排放标准GB4915-2013含2025修改单.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-395b34401e7ee48e833a01d1d5bb4256",
+            "doc_name": "air-11_生态环境部_轻型汽车污染物排放限值及测量方法GB18352.6-2016修改单_2026.pdf",
+            "title": "《轻型汽车污染物排放限值及测量方法（中国第六阶段）》（GB18352.6—2016）修改单",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": null,
+            "discovery": "document_enumeration",
+            "score": null,
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-395b34401e7ee48e833a01d1d5bb4256",
+              "doc_name": "air-11_生态环境部_轻型汽车污染物排放限值及测量方法GB18352.6-2016修改单_2026.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-374860e84aca365bb7fc7abb64f719fe",
+            "doc_name": "air-12_生态环境部_钢铁烧结球团工业大气污染物排放标准GB28662-2012修改单_2020.pdf",
+            "title": "《钢铁烧结、球团工业大气污染物排放标准》（GB 28662—2012）修改单",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "standard",
+            "discovery": "document_enumeration",
+            "score": null,
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-374860e84aca365bb7fc7abb64f719fe",
+              "doc_name": "air-12_生态环境部_钢铁烧结球团工业大气污染物排放标准GB28662-2012修改单_2020.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+            "doc_name": "water-03_生态环境部_医疗机构水污染物排放标准_含2026修改单.pdf",
+            "title": "GB 18466—2005（含2026年修改单）",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "standard",
+            "discovery": "document_enumeration",
+            "score": null,
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+              "doc_name": "water-03_生态环境部_医疗机构水污染物排放标准_含2026修改单.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+            "doc_name": "water-10_生态环境部_医疗机构水污染物排放标准修改单_2026.pdf",
+            "title": "《医疗机构水污染物排放标准》（GB 18466—2005）修改单",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "standard",
+            "discovery": "document_enumeration",
+            "score": null,
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+              "doc_name": "water-10_生态环境部_医疗机构水污染物排放标准修改单_2026.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-d0039dda04ea5c8c113da89d31e893e3",
+            "doc_name": "water-13_生态环境部_磷肥工业水污染物排放标准修改单_2020.pdf",
+            "title": "《磷肥工业水污染物排放标准》（GB 15580-2011）修改单",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "standard",
+            "discovery": "document_enumeration",
+            "score": null,
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-d0039dda04ea5c8c113da89d31e893e3",
+              "doc_name": "water-13_生态环境部_磷肥工业水污染物排放标准修改单_2020.pdf"
+            },
+            "citation_verified": true
+          }
+        ],
+        "notes": [],
+        "trace": [
+          {
+            "stage": "keyword_and",
+            "tsquery": "'修改单'",
+            "top_k": 20,
+            "restricted_to_code_docs": null,
+            "doc_hits": 7,
+            "chunk_hits": 20,
+            "elapsed_ms": 2
+          },
+          {
+            "stage": "document_enumeration",
+            "predicate": "(doc_name LIKE '%' || $3 || '%')",
+            "predicate_args": [
+              "修改单"
+            ],
+            "workspace": "default",
+            "attribution_branch": true,
+            "attribution_added": 0,
+            "members_total": 7,
+            "members_processed": 7,
+            "coverage_status": "complete",
+            "read_token": "f555587c857520e6cc55bdd9cbb43742bd267638d6bf56bc2a1d213a10928ef8",
+            "fail_stage": "",
+            "warnings": [
+              "7 matched docs have unknown metadata fields; they are included but flagged"
+            ],
+            "note": "full paged enumeration with the complete strong predicate — not top-k ranked discovery, not the whole corpus"
+          }
+        ],
+        "elapsed_ms": 1300
+      },
+      "doc_set_equal": true,
+      "missing": [],
+      "extra": []
+    },
+    {
+      "name": "file-enum-005",
+      "result": {
+        "query_id": "search-3d518d95f00a",
+        "workspace": "default",
+        "status": "ok",
+        "search_id": "e3cb2a39dee53d9d",
+        "catalog_snapshot_id": "4919b3938ad93747",
+        "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+        "parsed_code": {
+          "raw": "GB 18466-2005",
+          "code": "GB18466",
+          "version": "2005"
+        },
+        "parsed_codes": [
+          {
+            "raw": "GB 18466-2005",
+            "code": "GB18466",
+            "version": "2005"
+          }
+        ],
+        "query_text": "库内有哪些 GB 18466-2005 的文档（含修改单）？",
+        "candidates": [
+          {
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "doc_name": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf",
+            "title": "医疗机构水污染物排放标准",
+            "self_code": "GB18466",
+            "self_code_version": "2005",
+            "doc_type": "standard",
+            "discovery": "document_enumeration",
+            "score": null,
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+              "doc_name": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+            "doc_name": "water-03_生态环境部_医疗机构水污染物排放标准_含2026修改单.pdf",
+            "title": "GB 18466—2005（含2026年修改单）",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "standard",
+            "score": null,
+            "discovery": "doc_attribution",
+            "membership_basis": "doc name/title carries the requested code (self_code=None)",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+            "doc_name": "water-10_生态环境部_医疗机构水污染物排放标准修改单_2026.pdf",
+            "title": "《医疗机构水污染物排放标准》（GB 18466—2005）修改单",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "standard",
+            "score": null,
+            "discovery": "doc_attribution",
+            "membership_basis": "doc name/title carries the requested code (self_code=None)",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-b423a0e3331541588988fd34496c349d"
+            },
+            "citation_verified": true
+          }
+        ],
+        "notes": [],
+        "trace": [
+          {
+            "stage": "code_exact",
+            "code": "GB18466",
+            "version_requested": "2005",
+            "strict": false,
+            "hits": 1,
+            "version_matched": 1,
+            "selected_versions": [
+              "2005"
+            ],
+            "selected_docs": [
+              "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+            ]
+          },
+          {
+            "stage": "doc_attribution",
+            "codes": [
+              "gb18466"
+            ],
+            "emitted": 2,
+            "note": "name/title-explicit code attribution; no self_code fabricated"
+          },
+          {
+            "stage": "keyword_and",
+            "tsquery": "'修改单'",
+            "top_k": 20,
+            "restricted_to_code_docs": [
+              "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+            ],
+            "doc_hits": 0,
+            "chunk_hits": 0,
+            "elapsed_ms": 1
+          },
+          {
+            "stage": "keyword_and_diagnostics",
+            "per_term": [
+              {
+                "term": "修改单",
+                "chunk_hits": 0
+              }
+            ],
+            "absent_terms": [
+              "修改单"
+            ]
+          },
+          {
+            "stage": "keyword_no_terms_present",
+            "skipped_terms": [
+              "修改单"
+            ],
+            "note": "no term (or its synonyms) occurs in the index at all"
+          },
+          {
+            "stage": "keyword_or_original",
+            "tsquery": "'修改单'",
+            "chunk_hits": 0,
+            "note": "OR over the original terms also returned nothing"
+          },
+          {
+            "stage": "doc_attribution",
+            "codes": [
+              "gb18466"
+            ],
+            "emitted": 2,
+            "note": "name/title-explicit code attribution; no self_code fabricated"
+          },
+          {
+            "stage": "document_enumeration",
+            "predicate": "((self_code = $3 AND self_code_version IN ($4, $5)))",
+            "predicate_args": [
+              "GB18466",
+              "05",
+              "2005"
+            ],
+            "workspace": "default",
+            "attribution_branch": true,
+            "attribution_added": 2,
+            "members_total": 1,
+            "members_processed": 1,
+            "coverage_status": "complete",
+            "read_token": "97aa721e3165069eba6e3d967749b24f74714428585c25f03fe9c6a67ac53bfd",
+            "fail_stage": "",
+            "warnings": [
+              "1 matched docs have unknown metadata fields; they are included but flagged"
+            ],
+            "note": "full paged enumeration with the complete strong predicate — not top-k ranked discovery, not the whole corpus"
+          }
+        ],
+        "elapsed_ms": 1292
+      },
+      "doc_set_equal": true,
+      "missing": [],
+      "extra": []
+    },
+    {
+      "name": "file-enum-006",
+      "result": {
+        "query_id": "search-dc3dfab37bcb",
+        "workspace": "default",
+        "status": "ok",
+        "search_id": "e3cb2a39dee53d9d",
+        "catalog_snapshot_id": "4919b3938ad93747",
+        "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+        "parsed_code": {
+          "raw": "GB 3838",
+          "code": "GB3838",
+          "version": null
+        },
+        "parsed_codes": [
+          {
+            "raw": "GB 3838",
+            "code": "GB3838",
+            "version": null
+          }
+        ],
+        "query_text": "库内有哪些 GB 3838 地表水环境质量标准文档？",
+        "candidates": [
+          {
+            "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+            "doc_name": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf",
+            "title": "地表水环境质量标准",
+            "self_code": "GB3838",
+            "self_code_version": "2002",
+            "doc_type": "standard",
+            "discovery": "document_enumeration",
+            "score": null,
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+              "doc_name": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf"
+            },
+            "citation_verified": true
+          }
+        ],
+        "notes": [],
+        "trace": [
+          {
+            "stage": "code_exact",
+            "code": "GB3838",
+            "version_requested": null,
+            "strict": false,
+            "hits": 1,
+            "selected_versions": [
+              "2002"
+            ],
+            "selected_docs": [
+              "doc-91f9049decde09153368d4b69f280e78"
+            ]
+          },
+          {
+            "stage": "keyword_and",
+            "tsquery": "'地表水' & '环境' & '质量标准'",
+            "top_k": 20,
+            "restricted_to_code_docs": [
+              "doc-91f9049decde09153368d4b69f280e78"
+            ],
+            "doc_hits": 0,
+            "chunk_hits": 18,
+            "elapsed_ms": 3
+          },
+          {
+            "stage": "document_enumeration",
+            "predicate": "((self_code = $3))",
+            "predicate_args": [
+              "GB3838"
+            ],
+            "workspace": "default",
+            "attribution_branch": false,
+            "attribution_added": 0,
+            "members_total": 1,
+            "members_processed": 1,
+            "coverage_status": "complete",
+            "read_token": "d9ee04e924b239987b80761e0be96cd71aeee3027fb627e46fda53e86019fa17",
+            "fail_stage": "",
+            "warnings": [
+              "1 matched docs have unknown metadata fields; they are included but flagged"
+            ],
+            "note": "full paged enumeration with the complete strong predicate — not top-k ranked discovery, not the whole corpus"
+          }
+        ],
+        "elapsed_ms": 1293
+      },
+      "doc_set_equal": true,
+      "missing": [],
+      "extra": []
+    }
+  ],
+  "catalog_after": {
+    "state": "current",
+    "active_run_id": "c15c741742394320",
+    "active_snapshot_id": "4919b3938ad93747",
+    "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+    "expected_recipe_id": "phase-1-v4-single-active-snapshot-prune",
+    "live_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "stored_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "action": ""
+  },
+  "search_after": {
+    "state": "current",
+    "search_id": "e3cb2a39dee53d9d",
+    "catalog_snapshot_id": "4919b3938ad93747",
+    "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+    "vocab_sha": "66edabd3b268b0fcbc6cf50c4a1ac0c066b4e7a0dc2041a3d9873e59d7f42003",
+    "index_recipe": "phase-2-v2-local-caption-identity-guard",
+    "expected_search_id": "e3cb2a39dee53d9d",
+    "reasons": []
+  },
+  "public_after": {
+    "doc_full": 221,
+    "doc_chunks": 5709,
+    "doc_status": 279,
+    "llm_cache": 16514,
+    "entity_chunks": 65527,
+    "full_entities": 221,
+    "full_relations": 221,
+    "relation_chunks": 119575
+  },
+  "source_and_active_unchanged": true,
+  "public_unchanged": true
+}

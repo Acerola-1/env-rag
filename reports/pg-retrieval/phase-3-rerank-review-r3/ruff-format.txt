@@ -1,0 +1,15 @@
+unformatted: File would be reformatted
+   --> tests/test_rerank.py:202:12
+    |
+201 |     # C1: the recorded SHA is the REAL recomputable body SHA (never a placeholder)
+    -     assert res["inputs"][0]["content_sha256"] == __import__("hashlib").sha256("文本甲".encode()).hexdigest(), (
+    -         "input identity + real SHA recorded"
+    -     )
+202 +     assert (
+203 +         res["inputs"][0]["content_sha256"]
+204 +         == __import__("hashlib").sha256("文本甲".encode()).hexdigest()
+205 +     ), "input identity + real SHA recorded"
+206 |
+    |
+
+1 file would be reformatted, 271 files already formatted

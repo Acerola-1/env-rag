@@ -1,0 +1,207 @@
+{
+  "readonly": true,
+  "search": {
+    "state": "current",
+    "search_id": "872d689343a9cbb6",
+    "catalog_snapshot_id": "4919b3938ad93747",
+    "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+    "vocab_sha": "c3d0b6a6cf7d6af0758329bccea3bbbf432d73b20df4db42b768ae07446978cf",
+    "index_recipe": "phase-2-v2-local-caption-identity-guard",
+    "expected_search_id": "872d689343a9cbb6",
+    "reasons": []
+  },
+  "counts": {
+    "search_documents": 221,
+    "search_chunks": 5709
+  },
+  "plans": [
+    {
+      "tsquery": "'医疗机构' & '水污染物'",
+      "lines": [
+        "Limit  (cost=34.07..34.08 rows=1 width=51) (actual time=0.807..0.808 rows=20 loops=1)",
+        "  Buffers: shared hit=136 read=3",
+        "  ->  Sort  (cost=34.07..34.08 rows=1 width=51) (actual time=0.806..0.807 rows=20 loops=1)",
+        "        Sort Key: (ts_rank_cd(tsv, '''医疗机构'' & ''水污染物'''::tsquery)) DESC",
+        "        Sort Method: quicksort  Memory: 29kB",
+        "        Buffers: shared hit=136 read=3",
+        "        ->  Bitmap Heap Scan on search_chunks  (cost=30.04..34.06 rows=1 width=51) (actual time=0.130..0.790 rows=32 loops=1)",
+        "              Recheck Cond: (tsv @@ '''医疗机构'' & ''水污染物'''::tsquery)",
+        "              Filter: ((workspace = 'default'::text) AND (search_id = '872d689343a9cbb6'::text))",
+        "              Heap Blocks: exact=9",
+        "              Buffers: shared hit=133 read=3",
+        "              ->  Bitmap Index Scan on idx_schunk_gin  (cost=0.00..30.04 rows=1 width=0) (actual time=0.056..0.056 rows=32 loops=1)",
+        "                    Index Cond: (tsv @@ '''医疗机构'' & ''水污染物'''::tsquery)",
+        "                    Buffers: shared hit=7",
+        "Planning:",
+        "  Buffers: shared hit=51",
+        "Planning Time: 0.238 ms",
+        "Execution Time: 0.825 ms"
+      ]
+    },
+    {
+      "tsquery": "'环境空气' & '浓度限值'",
+      "lines": [
+        "Limit  (cost=34.07..34.08 rows=1 width=51) (actual time=0.558..0.559 rows=16 loops=1)",
+        "  Buffers: shared hit=60 read=10",
+        "  ->  Sort  (cost=34.07..34.08 rows=1 width=51) (actual time=0.558..0.558 rows=16 loops=1)",
+        "        Sort Key: (ts_rank_cd(tsv, '''环境空气'' & ''浓度限值'''::tsquery)) DESC",
+        "        Sort Method: quicksort  Memory: 27kB",
+        "        Buffers: shared hit=60 read=10",
+        "        ->  Bitmap Heap Scan on search_chunks  (cost=30.04..34.06 rows=1 width=51) (actual time=0.121..0.552 rows=16 loops=1)",
+        "              Recheck Cond: (tsv @@ '''环境空气'' & ''浓度限值'''::tsquery)",
+        "              Filter: ((workspace = 'default'::text) AND (search_id = '872d689343a9cbb6'::text))",
+        "              Heap Blocks: exact=11",
+        "              Buffers: shared hit=60 read=10",
+        "              ->  Bitmap Index Scan on idx_schunk_gin  (cost=0.00..30.04 rows=1 width=0) (actual time=0.055..0.055 rows=16 loops=1)",
+        "                    Index Cond: (tsv @@ '''环境空气'' & ''浓度限值'''::tsquery)",
+        "                    Buffers: shared hit=6 read=1",
+        "Planning:",
+        "  Buffers: shared hit=1",
+        "Planning Time: 0.061 ms",
+        "Execution Time: 0.569 ms"
+      ]
+    },
+    {
+      "tsquery": "'gb3095' <-> '-2012'",
+      "lines": [
+        "Limit  (cost=34.07..34.08 rows=1 width=51) (actual time=0.379..0.381 rows=12 loops=1)",
+        "  Buffers: shared hit=88 read=4",
+        "  ->  Sort  (cost=34.07..34.08 rows=1 width=51) (actual time=0.379..0.380 rows=12 loops=1)",
+        "        Sort Key: (ts_rank_cd(tsv, '''gb3095'' <-> ''-2012'''::tsquery)) DESC",
+        "        Sort Method: quicksort  Memory: 26kB",
+        "        Buffers: shared hit=88 read=4",
+        "        ->  Bitmap Heap Scan on search_chunks  (cost=30.04..34.06 rows=1 width=51) (actual time=0.068..0.375 rows=12 loops=1)",
+        "              Recheck Cond: (tsv @@ '''gb3095'' <-> ''-2012'''::tsquery)",
+        "              Filter: ((workspace = 'default'::text) AND (search_id = '872d689343a9cbb6'::text))",
+        "              Heap Blocks: exact=7",
+        "              Buffers: shared hit=88 read=4",
+        "              ->  Bitmap Index Scan on idx_schunk_gin  (cost=0.00..30.04 rows=1 width=0) (actual time=0.040..0.041 rows=12 loops=1)",
+        "                    Index Cond: (tsv @@ '''gb3095'' <-> ''-2012'''::tsquery)",
+        "                    Buffers: shared hit=6 read=1",
+        "Planning:",
+        "  Buffers: shared hit=1",
+        "Planning Time: 0.046 ms",
+        "Execution Time: 0.388 ms"
+      ]
+    }
+  ],
+  "caption_links": [
+    {
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+      "captions": "表 1 第一类污染物最高允许排放浓度 表 1(完) (1997年12月31日之前建设的单位)",
+      "linked_captions": [
+        "表 1 第一类污染物最高允许排放浓度",
+        "表 1(完)",
+        "(1997年12月31日之前建设的单位)"
+      ]
+    },
+    {
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002",
+      "captions": "表 2(完)",
+      "linked_captions": [
+        "表 2(完)"
+      ]
+    },
+    {
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-003",
+      "captions": "表 2(完)",
+      "linked_captions": [
+        "表 2(完)"
+      ]
+    },
+    {
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-004",
+      "captions": "表 3 部分行业最高允许排水量",
+      "linked_captions": [
+        "表 3 部分行业最高允许排水量"
+      ]
+    },
+    {
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-005",
+      "captions": "表 3 部分行业最高允许排水量",
+      "linked_captions": [
+        "表 3 部分行业最高允许排水量"
+      ]
+    },
+    {
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006",
+      "captions": "表 3 部分行业最高允许排水量 表 3(完) 表 4 第二类污染物最高允许排放浓度",
+      "linked_captions": [
+        "表 3 部分行业最高允许排水量",
+        "表 3(完)",
+        "表 4 第二类污染物最高允许排放浓度"
+      ]
+    },
+    {
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-014",
+      "captions": "表5(完)",
+      "linked_captions": [
+        null,
+        "表5(完)"
+      ]
+    },
+    {
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-015",
+      "captions": "表 6 测定方法",
+      "linked_captions": [
+        "表 6 测定方法"
+      ]
+    },
+    {
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-016",
+      "captions": "表 6(续)",
+      "linked_captions": [
+        "表 6(续)"
+      ]
+    },
+    {
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-017",
+      "captions": "表 6(续)",
+      "linked_captions": [
+        "表 6(续)"
+      ]
+    },
+    {
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-018",
+      "captions": "表 6(续) 表 6(完)",
+      "linked_captions": [
+        "表 6(续)",
+        "表 6(完)"
+      ]
+    },
+    {
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-020",
+      "captions": "D1.4.1 标准曲线的制作",
+      "linked_captions": [
+        "D1.4.1 标准曲线的制作"
+      ]
+    }
+  ],
+  "indexes": [
+    {
+      "indexname": "idx_schunk_gin",
+      "indexdef": "CREATE INDEX idx_schunk_gin ON env_rag.search_chunks USING gin (tsv)"
+    },
+    {
+      "indexname": "idx_schunk_identity",
+      "indexdef": "CREATE INDEX idx_schunk_identity ON env_rag.search_chunks USING btree (workspace, search_id, doc_id, chunk_order)"
+    },
+    {
+      "indexname": "idx_sdoc_gin",
+      "indexdef": "CREATE INDEX idx_sdoc_gin ON env_rag.search_documents USING gin (tsv)"
+    },
+    {
+      "indexname": "idx_sdoc_identity",
+      "indexdef": "CREATE INDEX idx_sdoc_identity ON env_rag.search_documents USING btree (workspace, search_id, doc_id)"
+    },
+    {
+      "indexname": "search_chunks_pkey",
+      "indexdef": "CREATE UNIQUE INDEX search_chunks_pkey ON env_rag.search_chunks USING btree (workspace, doc_id, snapshot_id, chunk_id, search_id)"
+    },
+    {
+      "indexname": "search_documents_pkey",
+      "indexdef": "CREATE UNIQUE INDEX search_documents_pkey ON env_rag.search_documents USING btree (workspace, doc_id, snapshot_id, search_id)"
+    }
+  ]
+}

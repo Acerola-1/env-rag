@@ -1,0 +1,269 @@
+INFO: PostgreSQL, Retry config: attempts=10, backoff=3.0s, backoff_max=30.0s, pool_close_timeout=5.0s
+INFO: PostgreSQL, Connected to database at localhost:5432/lightrag_probe_0fd498c573 without SSL
+ERROR: PostgreSQL database, error:relation "lightrag_doc_full" does not exist
+INFO: PostgreSQL, Try Creating table LIGHTRAG_DOC_FULL in database
+INFO: PostgreSQL, Creation success table LIGHTRAG_DOC_FULL in PostgreSQL database
+ERROR: PostgreSQL database, error:relation "lightrag_doc_chunks" does not exist
+INFO: PostgreSQL, Try Creating table LIGHTRAG_DOC_CHUNKS in database
+INFO: PostgreSQL, Creation success table LIGHTRAG_DOC_CHUNKS in PostgreSQL database
+ERROR: PostgreSQL database, error:relation "lightrag_llm_cache" does not exist
+INFO: PostgreSQL, Try Creating table LIGHTRAG_LLM_CACHE in database
+INFO: PostgreSQL, Creation success table LIGHTRAG_LLM_CACHE in PostgreSQL database
+ERROR: PostgreSQL database, error:relation "lightrag_doc_status" does not exist
+INFO: PostgreSQL, Try Creating table LIGHTRAG_DOC_STATUS in database
+INFO: PostgreSQL, Creation success table LIGHTRAG_DOC_STATUS in PostgreSQL database
+ERROR: PostgreSQL database, error:relation "lightrag_full_entities" does not exist
+INFO: PostgreSQL, Try Creating table LIGHTRAG_FULL_ENTITIES in database
+INFO: PostgreSQL, Creation success table LIGHTRAG_FULL_ENTITIES in PostgreSQL database
+ERROR: PostgreSQL database, error:relation "lightrag_full_relations" does not exist
+INFO: PostgreSQL, Try Creating table LIGHTRAG_FULL_RELATIONS in database
+INFO: PostgreSQL, Creation success table LIGHTRAG_FULL_RELATIONS in PostgreSQL database
+ERROR: PostgreSQL database, error:relation "lightrag_entity_chunks" does not exist
+INFO: PostgreSQL, Try Creating table LIGHTRAG_ENTITY_CHUNKS in database
+INFO: PostgreSQL, Creation success table LIGHTRAG_ENTITY_CHUNKS in PostgreSQL database
+ERROR: PostgreSQL database, error:relation "lightrag_relation_chunks" does not exist
+INFO: PostgreSQL, Try Creating table LIGHTRAG_RELATION_CHUNKS in database
+INFO: PostgreSQL, Creation success table LIGHTRAG_RELATION_CHUNKS in PostgreSQL database
+INFO: PostgreSQL, Creating index idx_lightrag_doc_full_id on table LIGHTRAG_DOC_FULL
+INFO: PostgreSQL, Creating composite index idx_lightrag_doc_full_workspace_id on table LIGHTRAG_DOC_FULL
+INFO: PostgreSQL, Creating index idx_lightrag_doc_chunks_id on table LIGHTRAG_DOC_CHUNKS
+INFO: PostgreSQL, Creating composite index idx_lightrag_doc_chunks_workspace_id on table LIGHTRAG_DOC_CHUNKS
+INFO: PostgreSQL, Creating index idx_lightrag_llm_cache_id on table LIGHTRAG_LLM_CACHE
+INFO: PostgreSQL, Creating composite index idx_lightrag_llm_cache_workspace_id on table LIGHTRAG_LLM_CACHE
+INFO: PostgreSQL, Creating index idx_lightrag_doc_status_id on table LIGHTRAG_DOC_STATUS
+INFO: PostgreSQL, Creating composite index idx_lightrag_doc_status_workspace_id on table LIGHTRAG_DOC_STATUS
+INFO: PostgreSQL, Creating index idx_lightrag_full_entities_id on table LIGHTRAG_FULL_ENTITIES
+INFO: PostgreSQL, Creating composite index idx_lightrag_full_entities_workspace_id on table LIGHTRAG_FULL_ENTITIES
+INFO: PostgreSQL, Creating index idx_lightrag_full_relations_id on table LIGHTRAG_FULL_RELATIONS
+INFO: PostgreSQL, Creating composite index idx_lightrag_full_relations_workspace_id on table LIGHTRAG_FULL_RELATIONS
+INFO: PostgreSQL, Creating index idx_lightrag_entity_chunks_id on table LIGHTRAG_ENTITY_CHUNKS
+INFO: PostgreSQL, Creating composite index idx_lightrag_entity_chunks_workspace_id on table LIGHTRAG_ENTITY_CHUNKS
+INFO: PostgreSQL, Creating index idx_lightrag_relation_chunks_id on table LIGHTRAG_RELATION_CHUNKS
+INFO: PostgreSQL, Creating composite index idx_lightrag_relation_chunks_workspace_id on table LIGHTRAG_RELATION_CHUNKS
+INFO: chunk_id column already exists in LIGHTRAG_LLM_CACHE table
+INFO: cache_type column already exists in LIGHTRAG_LLM_CACHE table
+INFO: queryparam column already exists in LIGHTRAG_LLM_CACHE table
+INFO: mode column does not exist in LIGHTRAG_LLM_CACHE table
+INFO: chunks_list column already exists in LIGHTRAG_DOC_STATUS table
+INFO: llm_cache_list column already exists in LIGHTRAG_DOC_CHUNKS table
+INFO: track_id column already exists in LIGHTRAG_DOC_STATUS table
+INFO: Creating index on track_id column for LIGHTRAG_DOC_STATUS table
+INFO: Successfully created index on track_id column for LIGHTRAG_DOC_STATUS table
+INFO: metadata column already exists in LIGHTRAG_DOC_STATUS table
+INFO: error_msg column already exists in LIGHTRAG_DOC_STATUS table
+INFO: Creating pagination index: Composite index for workspace + status + updated_at pagination
+INFO: Successfully created index: idx_lightrag_doc_status_workspace_status_updated_at
+INFO: Creating pagination index: Composite index for workspace + status + created_at pagination
+INFO: Successfully created index: idx_lightrag_doc_status_workspace_status_created_at
+INFO: Creating pagination index: Index for workspace + updated_at pagination (all statuses)
+INFO: Successfully created index: idx_lightrag_doc_status_workspace_updated_at
+INFO: Creating pagination index: Index for workspace + created_at pagination (all statuses)
+INFO: Successfully created index: idx_lightrag_doc_status_workspace_created_at
+INFO: Creating pagination index: Index for workspace + file_path sorting
+INFO: Successfully created index: idx_lightrag_doc_status_workspace_file_path
+INFO: Creating partial index idx_lightrag_doc_status_workspace_content_hash
+INFO: Creating index idx_lightrag_doc_status_ws_status_created_nf_id on LIGHTRAG_DOC_STATUS
+INFO: Closed PostgreSQL database connection pool
+INFO: PostgreSQL, Retry config: attempts=10, backoff=3.0s, backoff_max=30.0s, pool_close_timeout=5.0s
+INFO: PostgreSQL, Connected to database at localhost:5432/lightrag_probe_0fd498c573 without SSL
+INFO: chunk_id column already exists in LIGHTRAG_LLM_CACHE table
+INFO: cache_type column already exists in LIGHTRAG_LLM_CACHE table
+INFO: queryparam column already exists in LIGHTRAG_LLM_CACHE table
+INFO: mode column does not exist in LIGHTRAG_LLM_CACHE table
+INFO: chunks_list column already exists in LIGHTRAG_DOC_STATUS table
+INFO: llm_cache_list column already exists in LIGHTRAG_DOC_CHUNKS table
+INFO: track_id column already exists in LIGHTRAG_DOC_STATUS table
+INFO: Index on track_id column already exists for LIGHTRAG_DOC_STATUS table
+INFO: metadata column already exists in LIGHTRAG_DOC_STATUS table
+INFO: error_msg column already exists in LIGHTRAG_DOC_STATUS table
+INFO: Closed PostgreSQL database connection pool
+INFO: PostgreSQL, Retry config: attempts=10, backoff=3.0s, backoff_max=30.0s, pool_close_timeout=5.0s
+INFO: PostgreSQL, Connected to database at localhost:5432/lightrag_probe_0fd498c573 without SSL
+INFO: chunk_id column already exists in LIGHTRAG_LLM_CACHE table
+INFO: cache_type column already exists in LIGHTRAG_LLM_CACHE table
+INFO: queryparam column already exists in LIGHTRAG_LLM_CACHE table
+INFO: mode column does not exist in LIGHTRAG_LLM_CACHE table
+INFO: chunks_list column already exists in LIGHTRAG_DOC_STATUS table
+INFO: llm_cache_list column already exists in LIGHTRAG_DOC_CHUNKS table
+INFO: track_id column already exists in LIGHTRAG_DOC_STATUS table
+INFO: Index on track_id column already exists for LIGHTRAG_DOC_STATUS table
+INFO: metadata column already exists in LIGHTRAG_DOC_STATUS table
+INFO: error_msg column already exists in LIGHTRAG_DOC_STATUS table
+INFO: [probe_matrix_graph] PGTableGraphStorage initialized
+INFO: [probe_matrix_graph] PGTableGraphStorage initialized
+INFO: Closed PostgreSQL database connection pool
+INFO: [probe_matrix_graph] PGTableGraphStorage finalized
+INFO: PostgreSQL, Retry config: attempts=10, backoff=3.0s, backoff_max=30.0s, pool_close_timeout=5.0s
+INFO: PostgreSQL, Connected to database at localhost:5432/lightrag_probe_0fd498c573 without SSL
+INFO: chunk_id column already exists in LIGHTRAG_LLM_CACHE table
+INFO: cache_type column already exists in LIGHTRAG_LLM_CACHE table
+INFO: queryparam column already exists in LIGHTRAG_LLM_CACHE table
+INFO: mode column does not exist in LIGHTRAG_LLM_CACHE table
+INFO: chunks_list column already exists in LIGHTRAG_DOC_STATUS table
+INFO: llm_cache_list column already exists in LIGHTRAG_DOC_CHUNKS table
+INFO: track_id column already exists in LIGHTRAG_DOC_STATUS table
+INFO: Index on track_id column already exists for LIGHTRAG_DOC_STATUS table
+INFO: metadata column already exists in LIGHTRAG_DOC_STATUS table
+INFO: error_msg column already exists in LIGHTRAG_DOC_STATUS table
+INFO: [probe_matrix_age] PostgreSQL Graph initialized: graph_name='probe_matrix_age_chunk_entity_relation'
+INFO: PostgreSQL, no Apache AGE version check was performed: neither pg_available_extensions nor pg_extension names 'age', so AGE is not installed on this server and there is nothing to gate
+WARNING: Could not create AGE extension: extension "age" is not available
+DETAIL:  Could not open extension control file "/usr/local/share/postgresql/extension/age.control": No such file or directory.
+HINT:  The extension must first be installed on the system where PostgreSQL is running.
+ERROR: PostgreSQL database, error:relation "ag_catalog.ag_graph" does not exist
+INFO: Closed PostgreSQL database connection pool
+WARNING: PostgreSQL table: LIGHTRAG_VDB_CHUNKS missing suffix. Pls add model_name to embedding_func for proper workspace data isolation.
+INFO: PostgreSQL, Retry config: attempts=10, backoff=3.0s, backoff_max=30.0s, pool_close_timeout=5.0s
+WARNING: Could not create VECTOR extension: extension "vector" is not available
+DETAIL:  Could not open extension control file "/usr/local/share/postgresql/extension/vector.control": No such file or directory.
+HINT:  The extension must first be installed on the system where PostgreSQL is running.
+ERROR: PostgreSQL, Failed to connect database at localhost:5432/lightrag_probe_0fd498c573, Got:unknown type: public.vector
+INFO: [ws_probe_a] Loaded graph from /tmp/lightrag-probe-ws_probe_a/ws_probe_a/graph_chunk_entity_relation.graphml with 0 nodes, 0 edges
+INFO:nano-vectordb:Load (0, 4) data
+INFO:nano-vectordb:Init {'embedding_dim': 4, 'metric': 'cosine', 'storage_file': '/tmp/lightrag-probe-ws_probe_a/ws_probe_a/vdb_entities.json'} 0 data
+INFO:nano-vectordb:Load (0, 4) data
+INFO:nano-vectordb:Init {'embedding_dim': 4, 'metric': 'cosine', 'storage_file': '/tmp/lightrag-probe-ws_probe_a/ws_probe_a/vdb_relationships.json'} 0 data
+INFO:nano-vectordb:Load (1, 4) data
+INFO:nano-vectordb:Init {'embedding_dim': 4, 'metric': 'cosine', 'storage_file': '/tmp/lightrag-probe-ws_probe_a/ws_probe_a/vdb_chunks.json'} 1 data
+INFO: Role LLM Configuration (initialized):
+INFO:  - extract: None/None, host=None, max_async=8, timeout=900
+INFO:  - keyword: None/None, host=None, max_async=8, timeout=900
+INFO:  - query: None/None, host=None, max_async=8, timeout=900
+INFO:  - vlm: None/None, host=None, max_async=8, timeout=900
+INFO: PostgreSQL, Retry config: attempts=10, backoff=3.0s, backoff_max=30.0s, pool_close_timeout=5.0s
+INFO: PostgreSQL, Connected to database at localhost:5432/lightrag_probe_0fd498c573 without SSL
+INFO: chunk_id column already exists in LIGHTRAG_LLM_CACHE table
+INFO: cache_type column already exists in LIGHTRAG_LLM_CACHE table
+INFO: queryparam column already exists in LIGHTRAG_LLM_CACHE table
+INFO: mode column does not exist in LIGHTRAG_LLM_CACHE table
+INFO: chunks_list column already exists in LIGHTRAG_DOC_STATUS table
+INFO: llm_cache_list column already exists in LIGHTRAG_DOC_CHUNKS table
+INFO: track_id column already exists in LIGHTRAG_DOC_STATUS table
+INFO: Index on track_id column already exists for LIGHTRAG_DOC_STATUS table
+INFO: metadata column already exists in LIGHTRAG_DOC_STATUS table
+INFO: error_msg column already exists in LIGHTRAG_DOC_STATUS table
+INFO: Processing 1 document(s)
+INFO: Parsing (native): doc-2ab7b92cfb4b39d40db3bd37c33819fa
+INFO: Extracting stage 1/1: doc-a
+INFO: Processing d-id: doc-2ab7b92cfb4b39d40db3bd37c33819fa
+INFO: Chunking F(legacy): size=1500, split_only=False, overlap=100, doc_id: doc-2ab7b92cfb4b39d40db3bd37c33819fa
+INFO: extract LLM func: 8 new workers initialized (Timeouts: Func: 900s, Worker: 1800s, Health Check: 1815s)
+INFO:  == LLM cache == saving: default:extract:9efc60548e8e86934a110337c5f1cdb9
+WARNING: doc-2ab7b92cfb4b39d40db3bd37c33819fa-chunk-000: JSON extraction result is empty or unrecoverable
+INFO:  == LLM cache == saving: default:extract:dcc401c99dea9cef293da099d4616b3a
+WARNING: doc-2ab7b92cfb4b39d40db3bd37c33819fa-chunk-000: JSON extraction result is empty or unrecoverable
+INFO: Chunk 1 of 1 extracted 0 Ent + 0 Rel doc-2ab7b92cfb4b39d40db3bd37c33819fa-chunk-000
+INFO: Merging stage 1/1: doc-a
+INFO: Phase 0: Writing recovery indexes for doc-2ab7b92cfb4b39d40db3bd37c33819fa: 0 candidate entities, 0 candidate relations
+INFO: Phase 1: Processing 0 entities from doc-2ab7b92cfb4b39d40db3bd37c33819fa (async: 16)
+INFO: Phase 2: Processing 0 relations from doc-2ab7b92cfb4b39d40db3bd37c33819fa (async: 16)
+INFO: Completed merging: 0 entities, 0 extra entities, 0 relations
+INFO: [ws_probe_a] chunks flush: embedding 1 vectors in 1 batch(es) (batch_num=32)
+INFO: Embedding func: 16 new workers initialized (Timeouts: Func: 30s, Worker: 60s, Health Check: 75s)
+INFO: [ws_probe_a] Writing graph with 0 nodes, 0 edges
+INFO: In memory DB persist to disk
+INFO: Completed processing file 1/1: doc-a
+INFO: Enqueued document processing pipeline stopped
+INFO: [ws_probe_b] Loaded graph from /tmp/lightrag-probe-ws_probe_b/ws_probe_b/graph_chunk_entity_relation.graphml with 0 nodes, 0 edges
+INFO:nano-vectordb:Load (0, 4) data
+INFO:nano-vectordb:Init {'embedding_dim': 4, 'metric': 'cosine', 'storage_file': '/tmp/lightrag-probe-ws_probe_b/ws_probe_b/vdb_entities.json'} 0 data
+INFO:nano-vectordb:Load (0, 4) data
+INFO:nano-vectordb:Init {'embedding_dim': 4, 'metric': 'cosine', 'storage_file': '/tmp/lightrag-probe-ws_probe_b/ws_probe_b/vdb_relationships.json'} 0 data
+INFO:nano-vectordb:Load (1, 4) data
+INFO:nano-vectordb:Init {'embedding_dim': 4, 'metric': 'cosine', 'storage_file': '/tmp/lightrag-probe-ws_probe_b/ws_probe_b/vdb_chunks.json'} 1 data
+INFO: Role LLM Configuration (initialized):
+INFO:  - extract: None/None, host=None, max_async=8, timeout=900
+INFO:  - keyword: None/None, host=None, max_async=8, timeout=900
+INFO:  - query: None/None, host=None, max_async=8, timeout=900
+INFO:  - vlm: None/None, host=None, max_async=8, timeout=900
+INFO: Creating LightRAG instance with workspace='ws_probe_b' while default workspace is set to 'ws_probe_a'
+INFO: Processing 1 document(s)
+INFO: Parsing (native): doc-2ab7b92cfb4b39d40db3bd37c33819fa
+INFO: Extracting stage 1/1: doc-a
+INFO: Processing d-id: doc-2ab7b92cfb4b39d40db3bd37c33819fa
+INFO: Chunking F(legacy): size=1500, split_only=False, overlap=100, doc_id: doc-2ab7b92cfb4b39d40db3bd37c33819fa
+INFO: extract LLM func: 8 new workers initialized (Timeouts: Func: 900s, Worker: 1800s, Health Check: 1815s)
+INFO:  == LLM cache == saving: default:extract:5e9bb77eec5cb12e4a2620bb55950780
+WARNING: doc-2ab7b92cfb4b39d40db3bd37c33819fa-chunk-000: JSON extraction result is empty or unrecoverable
+INFO:  == LLM cache == saving: default:extract:524009c40e17dcbafe706e3a13c7b6b5
+WARNING: doc-2ab7b92cfb4b39d40db3bd37c33819fa-chunk-000: JSON extraction result is empty or unrecoverable
+INFO: Chunk 1 of 1 extracted 0 Ent + 0 Rel doc-2ab7b92cfb4b39d40db3bd37c33819fa-chunk-000
+INFO: Merging stage 1/1: doc-a
+INFO: Phase 0: Writing recovery indexes for doc-2ab7b92cfb4b39d40db3bd37c33819fa: 0 candidate entities, 0 candidate relations
+INFO: Phase 1: Processing 0 entities from doc-2ab7b92cfb4b39d40db3bd37c33819fa (async: 16)
+INFO: Phase 2: Processing 0 relations from doc-2ab7b92cfb4b39d40db3bd37c33819fa (async: 16)
+INFO: Completed merging: 0 entities, 0 extra entities, 0 relations
+INFO: [ws_probe_b] chunks flush: embedding 1 vectors in 1 batch(es) (batch_num=32)
+INFO: Embedding func: 16 new workers initialized (Timeouts: Func: 30s, Worker: 60s, Health Check: 75s)
+INFO: [ws_probe_b] Writing graph with 0 nodes, 0 edges
+INFO: In memory DB persist to disk
+INFO: Completed processing file 1/1: doc-a
+INFO: Enqueued document processing pipeline stopped
+INFO: [ws_probe_same] Loaded graph from /tmp/lightrag-probe-ws_probe_same/ws_probe_same/graph_chunk_entity_relation.graphml with 0 nodes, 0 edges
+INFO:nano-vectordb:Load (0, 4) data
+INFO:nano-vectordb:Init {'embedding_dim': 4, 'metric': 'cosine', 'storage_file': '/tmp/lightrag-probe-ws_probe_same/ws_probe_same/vdb_entities.json'} 0 data
+INFO:nano-vectordb:Load (0, 4) data
+INFO:nano-vectordb:Init {'embedding_dim': 4, 'metric': 'cosine', 'storage_file': '/tmp/lightrag-probe-ws_probe_same/ws_probe_same/vdb_relationships.json'} 0 data
+INFO:nano-vectordb:Load (2, 4) data
+INFO:nano-vectordb:Init {'embedding_dim': 4, 'metric': 'cosine', 'storage_file': '/tmp/lightrag-probe-ws_probe_same/ws_probe_same/vdb_chunks.json'} 2 data
+INFO: Role LLM Configuration (initialized):
+INFO:  - extract: None/None, host=None, max_async=8, timeout=900
+INFO:  - keyword: None/None, host=None, max_async=8, timeout=900
+INFO:  - query: None/None, host=None, max_async=8, timeout=900
+INFO:  - vlm: None/None, host=None, max_async=8, timeout=900
+INFO: Creating LightRAG instance with workspace='ws_probe_same' while default workspace is set to 'ws_probe_a'
+INFO: Processing 1 document(s)
+INFO: Parsing (native): doc-2ab7b92cfb4b39d40db3bd37c33819fa
+INFO: Extracting stage 1/1: doc-a
+INFO: Processing d-id: doc-2ab7b92cfb4b39d40db3bd37c33819fa
+INFO: Chunking F(legacy): size=1500, split_only=False, overlap=100, doc_id: doc-2ab7b92cfb4b39d40db3bd37c33819fa
+INFO: extract LLM func: 8 new workers initialized (Timeouts: Func: 900s, Worker: 1800s, Health Check: 1815s)
+INFO:  == LLM cache == saving: default:extract:642b993e08a3452ddddf8a371ea6533e
+WARNING: doc-2ab7b92cfb4b39d40db3bd37c33819fa-chunk-000: JSON extraction result is empty or unrecoverable
+INFO:  == LLM cache == saving: default:extract:d488260e75500270d0d593ae305bc4f8
+WARNING: doc-2ab7b92cfb4b39d40db3bd37c33819fa-chunk-000: JSON extraction result is empty or unrecoverable
+INFO: Chunk 1 of 1 extracted 0 Ent + 0 Rel doc-2ab7b92cfb4b39d40db3bd37c33819fa-chunk-000
+INFO: Merging stage 1/1: doc-a
+INFO: Phase 0: Writing recovery indexes for doc-2ab7b92cfb4b39d40db3bd37c33819fa: 0 candidate entities, 0 candidate relations
+INFO: Phase 1: Processing 0 entities from doc-2ab7b92cfb4b39d40db3bd37c33819fa (async: 16)
+INFO: Phase 2: Processing 0 relations from doc-2ab7b92cfb4b39d40db3bd37c33819fa (async: 16)
+INFO: Completed merging: 0 entities, 0 extra entities, 0 relations
+INFO: [ws_probe_same] chunks flush: embedding 1 vectors in 1 batch(es) (batch_num=32)
+INFO: Embedding func: 16 new workers initialized (Timeouts: Func: 30s, Worker: 60s, Health Check: 75s)
+INFO: [ws_probe_same] Writing graph with 0 nodes, 0 edges
+INFO: In memory DB persist to disk
+INFO: Completed processing file 1/1: doc-a
+INFO: Enqueued document processing pipeline stopped
+INFO: Processing 1 document(s)
+INFO: Parsing (native): doc-c87b8a57ddd7759a98eabe918e092ec5
+INFO: Extracting stage 1/1: doc-b
+INFO: Processing d-id: doc-c87b8a57ddd7759a98eabe918e092ec5
+INFO: Chunking F(legacy): size=1500, split_only=False, overlap=100, doc_id: doc-c87b8a57ddd7759a98eabe918e092ec5
+INFO:  == LLM cache == saving: default:extract:e10fbe49906fcdb9b8b0e3dcd108dee9
+WARNING: doc-c87b8a57ddd7759a98eabe918e092ec5-chunk-000: JSON extraction result is empty or unrecoverable
+INFO:  == LLM cache == saving: default:extract:6b63e9c713ac42975306a94184b665f6
+WARNING: doc-c87b8a57ddd7759a98eabe918e092ec5-chunk-000: JSON extraction result is empty or unrecoverable
+INFO: Chunk 1 of 1 extracted 0 Ent + 0 Rel doc-c87b8a57ddd7759a98eabe918e092ec5-chunk-000
+INFO: Merging stage 1/1: doc-b
+INFO: Phase 0: Writing recovery indexes for doc-c87b8a57ddd7759a98eabe918e092ec5: 0 candidate entities, 0 candidate relations
+INFO: Phase 1: Processing 0 entities from doc-c87b8a57ddd7759a98eabe918e092ec5 (async: 16)
+INFO: Phase 2: Processing 0 relations from doc-c87b8a57ddd7759a98eabe918e092ec5 (async: 16)
+INFO: Completed merging: 0 entities, 0 extra entities, 0 relations
+INFO: [ws_probe_same] chunks flush: embedding 1 vectors in 1 batch(es) (batch_num=32)
+INFO: [ws_probe_same] Writing graph with 0 nodes, 0 edges
+INFO: In memory DB persist to disk
+INFO: Completed processing file 1/1: doc-b
+INFO: Enqueued document processing pipeline stopped
+INFO: Naive query: 1 chunks (chunk_top_k:5 cosine:0.2)
+INFO: Final context: 1 chunks
+INFO: Naive query: 1 chunks (chunk_top_k:5 cosine:0.2)
+INFO: Final context: 1 chunks
+INFO: Naive query: 2 chunks (chunk_top_k:5 cosine:0.2)
+INFO: Final context: 2 chunks
+INFO: Successfully finalized 12 storages
+INFO: Successfully finalized 12 storages
+INFO: Closed PostgreSQL database connection pool
+INFO: Successfully finalized 12 storages
+compat probes OK -> reports/pg-retrieval/phase-3-review-r4/formal-cli
+pool lifecycle: {'first_acquire': {'initdb': 1, 'check_tables': 1}, 'second_acquire_holding_ref': {'initdb': 1, 'check_tables': 1}, 'note_repeated_initialize': 'same-instance repeated initialize() counts are asserted on the matrix probe pool inside probe_backend_matrix', 'reacquire_after_full_release': {'initdb': 2, 'check_tables': 2}, 'counts_are_initdb_check_tables': True, 'note': 'holding a reference reuses the pool (no re-init); after ALL references release, the next get_client rebuilds and re-runs initdb/check_tables (idempotent DDL)'}
+production identity: before/after both match frozen

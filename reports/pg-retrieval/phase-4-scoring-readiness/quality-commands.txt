@@ -1,0 +1,696 @@
+Change 'add-pg-scoped-retrieval' is valid
+strict=0
+diff=0
+All checks passed!
+ruff=0
+unformatted: File would be reformatted
+    --> reports/pg-retrieval/phase-4-scoring-readiness/assess_two_rounds.py:177:26
+     |
+176  |
+     - def configure_generation(run_dir: Path, round_no: int, anchor_path: Path, manifest_name: str) -> None:
+177  + def configure_generation(
+178  +     run_dir: Path, round_no: int, anchor_path: Path, manifest_name: str
+179  + ) -> None:
+180  |     global ROUND1, ANCHOR_PATH, FROZEN_IDENTITY, MODE, ROUND_TAG, RUN_MANIFEST_NAME, GEN_ROUND
+--------------------------------------------------------------------------------
+211  |         man = json.loads(man_path.read_text(encoding="utf-8"))["files"]
+     -     bad = [rel for rel, digest in man.items() if not (REPO / rel).exists() or sha(REPO / rel) != digest]
+212  +     bad = [
+213  +         rel for rel, digest in man.items() if not (REPO / rel).exists() or sha(REPO / rel) != digest
+214  +     ]
+215  |     report["manifest"] = {"entries": len(man), "mismatches": bad}
+--------------------------------------------------------------------------------
+246  |                 return {
+     -                     "source_fingerprint": ident.get("source_fingerprint") == fi["source_fingerprint"],
+247  +                     "source_fingerprint": ident.get("source_fingerprint")
+248  +                     == fi["source_fingerprint"],
+249  |                     "catalog_run_snapshot": f"{cat.get('run_id')}/{cat.get('snapshot_id')}"
+--------------------------------------------------------------------------------
+285  |             if not post:
+     -                 problems.append("post-run identity MISSING — a finished run without actual post fields is rejected before scoring")
+286  +                 problems.append(
+287  +                     "post-run identity MISSING — a finished run without actual post fields is rejected before scoring"
+288  +                 )
+289  |             elif m_post:
+--------------------------------------------------------------------------------
+421  |                 if did and u.get("file_path"):
+     -                     reg.setdefault(did, {"file_path": u["file_path"], "name": Path(u["file_path"]).name})
+422  +                     reg.setdefault(
+423  +                         did, {"file_path": u["file_path"], "name": Path(u["file_path"]).name}
+424  +                     )
+425  |     return reg
+--------------------------------------------------------------------------------
+434  |     if snap != ident["catalog_snapshot_id"]:
+     -         probs.append(f"citation snapshot {snap!r} != frozen catalog snapshot {ident['catalog_snapshot_id']!r}")
+435  +         probs.append(
+436  +             f"citation snapshot {snap!r} != frozen catalog snapshot {ident['catalog_snapshot_id']!r}"
+437  +         )
+438  |     return probs
+--------------------------------------------------------------------------------
+449  |     if not segs:
+     -         if cit.get("unit_id") is None or cit.get("unit_rel_start") is None or cit.get("unit_rel_end") is None:
+450  +         if (
+451  +             cit.get("unit_id") is None
+452  +             or cit.get("unit_rel_start") is None
+453  +             or cit.get("unit_rel_end") is None
+454  +         ):
+455  |             return False, {"note": "no declared unit-relative span on citation"}
+     -         segs = [{"unit_id": cit.get("unit_id"), "rel_start": cit.get("unit_rel_start"), "rel_end": cit.get("unit_rel_end")}]
+456  +         segs = [
+457  +             {
+458  +                 "unit_id": cit.get("unit_id"),
+459  +                 "rel_start": cit.get("unit_rel_start"),
+460  +                 "rel_end": cit.get("unit_rel_end"),
+461  +             }
+462  +         ]
+463  |     parts = []
+--------------------------------------------------------------------------------
+477  |         return True, meta
+     -     return (t in joined), (meta if t in joined else {**meta, "note": "text not contained in declared-order span"})
+478  +     return (t in joined), (
+479  +         meta if t in joined else {**meta, "note": "text not contained in declared-order span"}
+480  +     )
+481  |
+--------------------------------------------------------------------------------
+485  |
+     - def _catalog_name_check(it: dict, cit: dict, reg_entry: dict | None) -> tuple[bool, list[str], bool]:
+486  + def _catalog_name_check(
+487  +     it: dict, cit: dict, reg_entry: dict | None
+488  + ) -> tuple[bool, list[str], bool]:
+489  |     """A3: real-name/metadata grounded in the SHA-guarded run inputs only.
+--------------------------------------------------------------------------------
+494  |         # pending, never a silent pass and never the answer self-certifying
+     -         return False, ["catalog doc not present in SHA-guarded run inputs (no independent evidence)"], True
+495  +         return (
+496  +             False,
+497  +             ["catalog doc not present in SHA-guarded run inputs (no independent evidence)"],
+498  +             True,
+499  +         )
+500  |     base = reg_entry["name"]
+--------------------------------------------------------------------------------
+506  |     elif norm(str(cited_name)) != norm(base):
+     -         problems.append(f"catalog doc_name mismatch: citation {cited_name!r} vs independent input {base!r}")
+507  +         problems.append(
+508  +             f"catalog doc_name mismatch: citation {cited_name!r} vs independent input {base!r}"
+509  +         )
+510  |     item_name = it.get("doc_name")
+--------------------------------------------------------------------------------
+518  |             if code and norm(str(code)).replace(" ", "") != m.group(1).replace(" ", ""):
+     -                 problems.append(f"self_code {code!r} contradicts independent filename code {m.group(1)!r}")
+519  +                 problems.append(
+520  +                     f"self_code {code!r} contradicts independent filename code {m.group(1)!r}"
+521  +                 )
+522  |             if ver and str(ver) != m.group(2):
+     -                 problems.append(f"self_code_version {ver!r} contradicts independent filename year {m.group(2)!r}")
+523  +                 problems.append(
+524  +                     f"self_code_version {ver!r} contradicts independent filename year {m.group(2)!r}"
+525  +                 )
+526  |     return not problems, problems, gap
+--------------------------------------------------------------------------------
+536  |     the independent input evidence."""
+     -     ident = identity or FROZEN_IDENTITY or {"workspace": "default", "catalog_snapshot_id": "4919b3938ad93747"}
+537  +     ident = (
+538  +         identity
+539  +         or FROZEN_IDENTITY
+540  +         or {"workspace": "default", "catalog_snapshot_id": "4919b3938ad93747"}
+541  +     )
+542  |     verdicts: list[dict] = [{"verified": False, "problems": ["not re-read"]} for _ in items]
+--------------------------------------------------------------------------------
+556  |             # hidden by scope OR-logic downstream.
+     -             if cit.get("doc_id") and it.get("doc_id") and norm(str(it["doc_id"])) != norm(str(cit["doc_id"])):
+     -                 idp.append(f"declared item doc_id {it['doc_id']!r} conflicts with citation doc_id {cit['doc_id']!r}")
+557  +             if (
+558  +                 cit.get("doc_id")
+559  +                 and it.get("doc_id")
+560  +                 and norm(str(it["doc_id"])) != norm(str(cit["doc_id"]))
+561  +             ):
+562  +                 idp.append(
+563  +                     f"declared item doc_id {it['doc_id']!r} conflicts with citation doc_id {cit['doc_id']!r}"
+564  +                 )
+565  |             if cit.get("kind") == "catalog_row":
+--------------------------------------------------------------------------------
+575  |             elif cit.get("kind") not in ("table_row", "char_span"):
+     -                 verdicts[i] = {"verified": False, "problems": (idp + [f"citation kind {cit.get('kind')!r} not re-readable offline"])[:3]}
+576  +                 verdicts[i] = {
+577  +                     "verified": False,
+578  +                     "problems": (
+579  +                         idp + [f"citation kind {cit.get('kind')!r} not re-readable offline"]
+580  +                     )[:3],
+581  +                 }
+582  |             else:
+--------------------------------------------------------------------------------
+603  |         ):
+     -             subset = [(i, dict(it), idp) for i, it, idp in remaining if (it.get("citation") or {}).get("kind") == kind]
+604  +             subset = [
+605  +                 (i, dict(it), idp)
+606  +                 for i, it, idp in remaining
+607  +                 if (it.get("citation") or {}).get("kind") == kind
+608  +             ]
+609  |             if not subset:
+--------------------------------------------------------------------------------
+619  |                     # wording is not.
+     -                     supported, meta = _declared_support(parsed_dir, copy.get("citation") or {}, copy.get("text"))
+620  +                     supported, meta = _declared_support(
+621  +                         parsed_dir, copy.get("citation") or {}, copy.get("text")
+622  +                     )
+623  |                     if not supported:
+--------------------------------------------------------------------------------
+628  |                             "problems": [
+     -                                 f"delivered declaration not re-readable from declared span (R1): {meta}"[:180]
+629  +                                 f"delivered declaration not re-readable from declared span (R1): {meta}"[
+630  +                                     :180
+631  +                                 ]
+632  |                             ],
+--------------------------------------------------------------------------------
+1145 | _MANUAL = {
+     -     ("syn-001", "pg"): "incomplete_conditions：请求版本对（GB3095-2012/2026）未在读取范围全部解决 → HTTP 未发出、0 交付 → 整题失败（未回答）",
+     -     ("syn-001", "local"): "incomplete_conditions：同左（版本对未解决）→ HTTP 未发出、0 交付 → 整题失败",
+1146 +     (
+1147 +         "syn-001",
+1148 +         "pg",
+1149 +     ): "incomplete_conditions：请求版本对（GB3095-2012/2026）未在读取范围全部解决 → HTTP 未发出、0 交付 → 整题失败（未回答）",
+1150 +     (
+1151 +         "syn-001",
+1152 +         "local",
+1153 +     ): "incomplete_conditions：同左（版本对未解决）→ HTTP 未发出、0 交付 → 整题失败",
+1154 |     ("syn-001", "fusion"): "incomplete_conditions：同左 → HTTP 未发出、0 交付 → 整题失败",
+     -     ("syn-002", "pg"): "HTTP 200；合同交付 4 条绑定真实来源（4.1 执行表1 / 消毒控制 / 禁排区 / 脱氯 0.5 mg/L），但缺 gold 要求的 6.1 取样监测与表2/预处理标准侧 → 整题失败；4 条记正确片段，不为整题补分",
+     -     ("syn-002", "local"): "incomplete_conditions（GB18466-2005 版本未解决）→ HTTP 未发出、0 交付 → 整题失败",
+1155 +     (
+1156 +         "syn-002",
+1157 +         "pg",
+1158 +     ): "HTTP 200；合同交付 4 条绑定真实来源（4.1 执行表1 / 消毒控制 / 禁排区 / 脱氯 0.5 mg/L），但缺 gold 要求的 6.1 取样监测与表2/预处理标准侧 → 整题失败；4 条记正确片段，不为整题补分",
+1159 +     (
+1160 +         "syn-002",
+1161 +         "local",
+1162 +     ): "incomplete_conditions（GB18466-2005 版本未解决）→ HTTP 未发出、0 交付 → 整题失败",
+1163 |     ("syn-002", "fusion"): "HTTP 200；raw 9 claims 合同全拒、0 交付 → 整题失败",
+1164 |     ("syn-003", "pg"): "HTTP 200；raw 0 合格 claims（合同全拒）、0 交付 → 整题失败",
+     -     ("syn-003", "local"): "incomplete_conditions（GB8978-1996 版本未解决）→ HTTP 未发出、0 交付 → 整题失败",
+     -     ("syn-003", "fusion"): "HTTP 200；交付 5 条绑定真实引用（4.1/4.2 标准级别选择条款）——不对题：gold 要求 6.1 采样位置（车间排放口/单位排放口），quote 真≠答案被支持 → 整题失败；5 片段记为真实但跑题",
+     -     ("syn-004", "pg"): "HTTP 200（raw 10 条）合同全拒、0 交付；raw summary 媒体映射对不为失败补分 → 整题失败",
+     -     ("syn-004", "local"): "incomplete_conditions（GB3095-2012/GB3838-2002 版本对未解决）→ HTTP 未发出、0 交付 → 整题失败",
+1165 +     (
+1166 +         "syn-003",
+1167 +         "local",
+1168 +     ): "incomplete_conditions（GB8978-1996 版本未解决）→ HTTP 未发出、0 交付 → 整题失败",
+1169 +     (
+1170 +         "syn-003",
+1171 +         "fusion",
+1172 +     ): "HTTP 200；交付 5 条绑定真实引用（4.1/4.2 标准级别选择条款）——不对题：gold 要求 6.1 采样位置（车间排放口/单位排放口），quote 真≠答案被支持 → 整题失败；5 片段记为真实但跑题",
+1173 +     (
+1174 +         "syn-004",
+1175 +         "pg",
+1176 +     ): "HTTP 200（raw 10 条）合同全拒、0 交付；raw summary 媒体映射对不为失败补分 → 整题失败",
+1177 +     (
+1178 +         "syn-004",
+1179 +         "local",
+1180 +     ): "incomplete_conditions（GB3095-2012/GB3838-2002 版本对未解决）→ HTTP 未发出、0 交付 → 整题失败",
+1181 |     ("syn-004", "fusion"): "HTTP 200（raw 8 条）合同全拒、0 交付 → 整题失败",
+1182 |     ("syn-005", "pg"): "HTTP 200；合同拒收后 0 交付 → 整题失败",
+1183 |     ("syn-005", "local"): "HTTP 200（coverage ambiguous，附录混载）；合同拒收后 0 交付 → 整题失败",
+1184 |     ("syn-005", "fusion"): "HTTP 200；raw 0 合格 claims、0 交付 → 整题失败",
+     -     ("syn-006", "pg"): "incomplete_conditions（过渡期/批准日期条件装配未成立）→ HTTP 未发出、0 交付 → 整题失败",
+1185 +     (
+1186 +         "syn-006",
+1187 +         "pg",
+1188 +     ): "incomplete_conditions（过渡期/批准日期条件装配未成立）→ HTTP 未发出、0 交付 → 整题失败",
+1189 |     ("syn-006", "local"): "incomplete_conditions（同左）→ HTTP 未发出、0 交付 → 整题失败",
+1190 |     ("syn-006", "fusion"): "incomplete_conditions（同左）→ HTTP 未发出、0 交付 → 整题失败",
+     -     ("neg-010", "pg"): "model_failure/条件不足、HTTP 未发出、0 交付——expected 为应答，整题未回答 FAIL；保守不发不等同契约满足（无 over-claim 另行记录）",
+     -     ("neg-010", "local"): "incomplete_conditions、HTTP 未发出、0 交付——整题未回答 FAIL；保守不发不等同契约满足",
+     -     ("neg-010", "fusion"): "HTTP 200；交付 4 条原标准 4.1 系条款（排放/消毒/禁排/脱氯）来源真实，但未回答『2026 修改单能否替代原标准』之关系——主 agent 2026-10-08 语义裁决整题 FAIL；真实条款保留为片段记录",
+1191 +     (
+1192 +         "neg-010",
+1193 +         "pg",
+1194 +     ): "model_failure/条件不足、HTTP 未发出、0 交付——expected 为应答，整题未回答 FAIL；保守不发不等同契约满足（无 over-claim 另行记录）",
+1195 +     (
+1196 +         "neg-010",
+1197 +         "local",
+1198 +     ): "incomplete_conditions、HTTP 未发出、0 交付——整题未回答 FAIL；保守不发不等同契约满足",
+1199 +     (
+1200 +         "neg-010",
+1201 +         "fusion",
+1202 +     ): "HTTP 200；交付 4 条原标准 4.1 系条款（排放/消毒/禁排/脱氯）来源真实，但未回答『2026 修改单能否替代原标准』之关系——主 agent 2026-10-08 语义裁决整题 FAIL；真实条款保留为片段记录",
+1203 | }
+--------------------------------------------------------------------------------
+1230 |             k
+     -             for k in ("round", "qid", "path", "answer_runtime_sha256", "reviewer", "verdict", "reason", "checked_items")
+1231 +             for k in (
+1232 +                 "round",
+1233 +                 "qid",
+1234 +                 "path",
+1235 +                 "answer_runtime_sha256",
+1236 +                 "reviewer",
+1237 +                 "verdict",
+1238 +                 "reason",
+1239 +                 "checked_items",
+1240 +             )
+1241 |             if k not in rec
+--------------------------------------------------------------------------------
+1304 |     if has_response and rec.get("response_evidence") == "absent":
+     -         raise InputIntegrityError(f"review record says absent but the runtime holds a response: {rec['qid']}/{rec['path']}")
+1305 +         raise InputIntegrityError(
+1306 +             f"review record says absent but the runtime holds a response: {rec['qid']}/{rec['path']}"
+1307 +         )
+1308 |     if not has_response and "response_evidence_sha256" in rec:
+     -         raise InputIntegrityError(f"review record binds a response SHA the runtime never produced: {rec['qid']}/{rec['path']}")
+1309 +         raise InputIntegrityError(
+1310 +             f"review record binds a response SHA the runtime never produced: {rec['qid']}/{rec['path']}"
+1311 +         )
+1312 |     if has_response:
+     -         canon = json.dumps(model.get("raw_response"), sort_keys=True, ensure_ascii=False).encode("utf-8")
+1313 +         canon = json.dumps(model.get("raw_response"), sort_keys=True, ensure_ascii=False).encode(
+1314 +             "utf-8"
+1315 +         )
+1316 |         got_resp = hashlib.sha256(canon).hexdigest()
+--------------------------------------------------------------------------------
+1392 |         if v_out.get("masked_citations"):
+     -             det.append(f"masked_citation_details={v_out['masked_citations']}（局部 unknown，不改整题结论）")
+1393 +             det.append(
+1394 +                 f"masked_citation_details={v_out['masked_citations']}（局部 unknown，不改整题结论）"
+1395 +             )
+1396 |         if v_out.get("judgement") == "unverified_citation":
+--------------------------------------------------------------------------------
+1429 |             delivered = v_out.get("delivered")
+     -             n_items = delivered if isinstance(delivered, int) else (len(delivered) if delivered else 0)
+1430 +             n_items = (
+1431 +                 delivered if isinstance(delivered, int) else (len(delivered) if delivered else 0)
+1432 +             )
+1433 |             if m_status == "FAIL" or n_items == 0:
+--------------------------------------------------------------------------------
+1459 |         if m_status == "FAIL":
+     -             v_out["final_status"], v_out["final_basis"], v_out["final_reason"] = m_status, m_basis, m_reason
+1460 +             v_out["final_status"], v_out["final_basis"], v_out["final_reason"] = (
+1461 +                 m_status,
+1462 +                 m_basis,
+1463 +                 m_reason,
+1464 +             )
+1465 |             return v_out
+--------------------------------------------------------------------------------
+1469 |         return v_out
+     -     return _mech_pass_finalize(v_out) if j == "pass_mechanical" else _mechanical_finalize_rest(v_out)
+1470 +     return (
+1471 +         _mech_pass_finalize(v_out) if j == "pass_mechanical" else _mechanical_finalize_rest(v_out)
+1472 +     )
+1473 |
+--------------------------------------------------------------------------------
+1518 |                 "frozen_behaviour_contract",
+     -                 "整题行为有结构证据：集合/覆盖/引用身份全部通过" + ("（neg-003 自身编号集合）" if qid == "neg-003" else "（合并合同 13 项 exact）"),
+1519 +                 "整题行为有结构证据：集合/覆盖/引用身份全部通过"
+1520 +                 + ("（neg-003 自身编号集合）" if qid == "neg-003" else "（合并合同 13 项 exact）"),
+1521 |             )
+--------------------------------------------------------------------------------
+1545 |             obs.append("未用版本替代")
+     -             return done("PASS", "frozen_behaviour_contract", "显式 missing 答复（missing 形态、0 交付）——有证据支持")
+1546 +             return done(
+1547 +                 "PASS",
+1548 +                 "frozen_behaviour_contract",
+1549 +                 "显式 missing 答复（missing 形态、0 交付）——有证据支持",
+1550 +             )
+1551 |         if n == 0:
+1552 |             obs.append("未乱答 / 无 false complete")
+     -             return done("FAIL", "frozen_behaviour_contract", f"coverage={cov}，未明确回答 missing——仅 partial/条件不足不等同冻结答复合同")
+1553 +             return done(
+1554 +                 "FAIL",
+1555 +                 "frozen_behaviour_contract",
+1556 +                 f"coverage={cov}，未明确回答 missing——仅 partial/条件不足不等同冻结答复合同",
+1557 +             )
+1558 |         return done("FAIL", "frozen_behaviour_contract", "存在交付而期望为 missing 答复")
+1559 |
+1560 |     if qid == "neg-002":
+1561 |         obs.append("本腿未见外来 workspace（观测级隔离，非 same-id 对抗实弹）")
+     -         return done("PENDING", "isolation_contract_unproven", "隔离合同需对抗证据；观测不升格为 PASS")
+1562 +         return done(
+1563 +             "PENDING", "isolation_contract_unproven", "隔离合同需对抗证据；观测不升格为 PASS"
+1564 +         )
+1565 |
+--------------------------------------------------------------------------------
+1570 |             return done("PENDING", "content_review", "ambiguous 形态到达，内容待复核")
+     -         return done("FAIL", "frozen_behaviour_contract", f"coverage={cov} ≠ 冻结 ambiguous——保守拒绝不等同合同满足")
+1571 +         return done(
+1572 +             "FAIL",
+1573 +             "frozen_behaviour_contract",
+1574 +             f"coverage={cov} ≠ 冻结 ambiguous——保守拒绝不等同合同满足",
+1575 +         )
+1576 |
+--------------------------------------------------------------------------------
+1589 |         if n == 0:
+     -             return done("FAIL", "frozen_behaviour_contract", "expected 应答（ok）而 0 交付——整题未回答")
+1590 +             return done(
+1591 +                 "FAIL", "frozen_behaviour_contract", "expected 应答（ok）而 0 交付——整题未回答"
+1592 +             )
+1593 |         return done("PENDING", "content_review", "有交付，内容待复核")
+--------------------------------------------------------------------------------
+1599 |             obs.append(f"{v_out.get('model_status')}（保守不发记录，无 over-claim）")
+     -             return done("FAIL", "frozen_behaviour_contract", "expected 应答而 0 交付——整题未回答（model_failure/条件不足保留）")
+1600 +             return done(
+1601 +                 "FAIL",
+1602 +                 "frozen_behaviour_contract",
+1603 +                 "expected 应答而 0 交付——整题未回答（model_failure/条件不足保留）",
+1604 +             )
+1605 |         if n == 4 and not _generation_mode():
+--------------------------------------------------------------------------------
+1619 |     if runtime not in ("ok", None):
+     -         return done("PENDING", "evidence_absent", f"runtime={runtime}, judgement={j}——证据缺失不等同明确拒绝答复")
+1620 +         return done(
+1621 +             "PENDING",
+1622 +             "evidence_absent",
+1623 +             f"runtime={runtime}, judgement={j}——证据缺失不等同明确拒绝答复",
+1624 +         )
+1625 |     if n == 0:
+--------------------------------------------------------------------------------
+1775 |                     "chunk_n": len(chunks),
+     -                     "chunk_recall_at_20": round(len(({d for d in chunks[:20]}) & expected) / len(expected), 3),
+1776 +                     "chunk_recall_at_20": round(
+1777 +                         len(({d for d in chunks[:20]}) & expected) / len(expected), 3
+1778 +                     ),
+1779 |                     "typed_n": len(typed_docs),
+--------------------------------------------------------------------------------
+1790 |                         "usable_ordered_n": len(docs),
+     -                         "usable_recall_at_20": round(len({d for d in docs[:20]} & expected) / len(expected), 3),
+1791 +                         "usable_recall_at_20": round(
+1792 +                             len({d for d in docs[:20]} & expected) / len(expected), 3
+1793 +                         ),
+1794 |                         "explicit_zero": len(docs) == 0,
+--------------------------------------------------------------------------------
+1825 |     if not entries:
+     -         raise InputIntegrityError("mapping table empty — missing mappings must stay pending, empty is not complete")
+1826 +         raise InputIntegrityError(
+1827 +             "mapping table empty — missing mappings must stay pending, empty is not complete"
+1828 +         )
+1829 |     good, rejected = {}, []
+1830 |     for e in entries:
+1831 |         if e.get("workspace") != ws or e.get("snapshot_id") != snap:
+     -             rejected.append({"unit_id": e.get("unit_id"), "reason": "foreign workspace/snapshot reference"})
+1832 +             rejected.append(
+1833 +                 {"unit_id": e.get("unit_id"), "reason": "foreign workspace/snapshot reference"}
+1834 +             )
+1835 |             continue
+     -         if not e.get("unit_id") or not e.get("doc_id") or not e.get("chunk_ids") or not e.get("content_sha256"):
+     -             rejected.append({"unit_id": e.get("unit_id"), "reason": "incomplete composite key/evidence"})
+1836 +         if (
+1837 +             not e.get("unit_id")
+1838 +             or not e.get("doc_id")
+1839 +             or not e.get("chunk_ids")
+1840 +             or not e.get("content_sha256")
+1841 +         ):
+1842 +             rejected.append(
+1843 +                 {"unit_id": e.get("unit_id"), "reason": "incomplete composite key/evidence"}
+1844 +             )
+1845 |             continue
+--------------------------------------------------------------------------------
+1860 |     for q in gold["questions"]:
+     -         targets = [t for t in (q.get("gold") or {}).get("target_evidence") or [] if t.get("unit_id")]
+1861 +         targets = [
+1862 +             t for t in (q.get("gold") or {}).get("target_evidence") or [] if t.get("unit_id")
+1863 +         ]
+1864 |         if not targets:
+--------------------------------------------------------------------------------
+1991 |         "recorded_total_sum_s": round(total_sum_ms / 1000, 3),
+     -         "wall_artifact_mtime_span_s": round(last_art - first_art, 1) if first_art and last_art else None,
+1992 +         "wall_artifact_mtime_span_s": round(last_art - first_art, 1)
+1993 +         if first_art and last_art
+1994 +         else None,
+1995 |         "wall_note": "前报告 '约44分钟' 为作者报告（依据后台任务起止通知时刻差），非工件自证；已记录总和与墙钟差不可归因部分不做解释",
+--------------------------------------------------------------------------------
+2027 |     are preserved (truncated, credential-pattern scrubbed)."""
+     -     diag: dict = {"schema": "assessment-input-rejection/r3", "problems": [_sanitize(p)[:300] for p in problems]}
+2028 +     diag: dict = {
+2029 +         "schema": "assessment-input-rejection/r3",
+2030 +         "problems": [_sanitize(p)[:300] for p in problems],
+2031 +     }
+2032 |     if exc is not None:
+--------------------------------------------------------------------------------
+2046 |     ap.add_argument("--anchor", help="generation mode: the APPROVED anchor for this lineage")
+     -     ap.add_argument("--manifest", default="pilot-manifest.json", help="generation mode: run manifest file name")
+2047 +     ap.add_argument(
+2048 +         "--manifest", default="pilot-manifest.json", help="generation mode: run manifest file name"
+2049 +     )
+2050 |     ap.add_argument("--records", help="generation mode: bound human review records")
+--------------------------------------------------------------------------------
+2057 |             raise SystemExit("--run-dir requires --round and --anchor (generation binding)")
+     -         out_dir = Path(args.out) if args.out else Path(args.run_dir) / f"adjudication-r{args.round}.json"
+2058 +         out_dir = (
+2059 +             Path(args.out) if args.out else Path(args.run_dir) / f"adjudication-r{args.round}.json"
+2060 +         )
+2061 |         configure_generation(Path(args.run_dir), args.round, Path(args.anchor), args.manifest)
+--------------------------------------------------------------------------------
+2084 |             raise InputIntegrityError(
+     -                 "assessment inputs failed integrity verification: " + "; ".join(verification["problems"])
+2085 +                 "assessment inputs failed integrity verification: "
+2086 +                 + "; ".join(verification["problems"])
+2087 |             )
+--------------------------------------------------------------------------------
+2198 |     if gen_mode:
+     -         results["supersedes"] = f"this adjudication supersedes nothing; it is bound to {ROUND1} r{GEN_ROUND}"
+2199 +         results["supersedes"] = (
+2200 +             f"this adjudication supersedes nothing; it is bound to {ROUND1} r{GEN_ROUND}"
+2201 +         )
+2202 |         results["generation_binding"] = {
+--------------------------------------------------------------------------------
+2220 |     print(json.dumps(dict(byj), ensure_ascii=False, indent=1))
+     -     print("inputs ok:", verification["ok"], "| manifest entries:", verification["manifest"]["entries"])
+2221 +     print(
+2222 +         "inputs ok:", verification["ok"], "| manifest entries:", verification["manifest"]["entries"]
+2223 +     )
+2224 |     ref_key = "refusals" if gen_mode else "refusals_round1"
+     |
+
+unformatted: File would be reformatted
+   --> reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py:67:40
+    |
+66  |     terminal["round"] = round_no
+    -     terminal["budget_snapshot_end"] = {"events": events or [], "issued_total": {}, "reserved_total": {}}
+67  +     terminal["budget_snapshot_end"] = {
+68  +         "events": events or [],
+69  +         "issued_total": {},
+70  +         "reserved_total": {},
+71  +     }
+72  |     (run / "eval-runtime-latest.json").write_text(json.dumps(terminal), encoding="utf-8")
+--------------------------------------------------------------------------------
+98  |     p = tmp_path / name
+    -     p.write_text(json.dumps({"schema": "manual-review-records/r1", "records": records}), encoding="utf-8")
+99  +     p.write_text(
+100 +         json.dumps({"schema": "manual-review-records/r1", "records": records}), encoding="utf-8"
+101 +     )
+102 |     return p
+103 |
+104 |
+    - def record(run, round_no, path, qid, verdict="FAIL", reason="fixture 审查", checked=None, response="absent"):
+105 + def record(
+106 +     run, round_no, path, qid, verdict="FAIL", reason="fixture 审查", checked=None, response="absent"
+107 + ):
+108 |     art = run / "legs" / f"r{round_no}" / path / qid / "answer" / "answer-runtime-latest.json"
+--------------------------------------------------------------------------------
+122 |     else:
+    -         canon = json.dumps(model.get("raw_response"), sort_keys=True, ensure_ascii=False).encode("utf-8")
+123 +         canon = json.dumps(model.get("raw_response"), sort_keys=True, ensure_ascii=False).encode(
+124 +             "utf-8"
+125 +         )
+126 |         rec["response_evidence_sha256"] = hashlib.sha256(canon).hexdigest()
+--------------------------------------------------------------------------------
+132 |     argv = [
+    -         "--run-dir", str(run), "--round", str(round_no), "--anchor", str(ANCHOR), "--out", str(out),
+133 +         "--run-dir",
+134 +         str(run),
+135 +         "--round",
+136 +         str(round_no),
+137 +         "--anchor",
+138 +         str(ANCHOR),
+139 +         "--out",
+140 +         str(out),
+141 |         *args_more,
+--------------------------------------------------------------------------------
+205 |     run = build_run(
+    -         tmp_path, legs=[("pg", "fact-001", ROUND1 / "legs/r1/pg/fact-001/answer/answer-runtime-latest.json")]
+206 +         tmp_path,
+207 +         legs=[("pg", "fact-001", ROUND1 / "legs/r1/pg/fact-001/answer/answer-runtime-latest.json")],
+208 |     )
+--------------------------------------------------------------------------------
+217 |     run = build_run(
+    -         tmp_path, legs=[("pg", "prose-enum-002", PG_RUN / "legs/r1/pg/prose-enum-002/answer/answer-runtime-latest.json")]
+218 +         tmp_path,
+219 +         legs=[
+220 +             (
+221 +                 "pg",
+222 +                 "prose-enum-002",
+223 +                 PG_RUN / "legs/r1/pg/prose-enum-002/answer/answer-runtime-latest.json",
+224 +             )
+225 +         ],
+226 |     )
+--------------------------------------------------------------------------------
+231 |     rewrite_manifest(run)
+    -     recs = [record(run, 1, "pg", "prose-enum-002", "PASS", "fixture：试图用人工救已证错", checked=["clause"])]
+232 +     recs = [
+233 +         record(
+234 +             run,
+235 +             1,
+236 +             "pg",
+237 +             "prose-enum-002",
+238 +             "PASS",
+239 +             "fixture：试图用人工救已证错",
+240 +             checked=["clause"],
+241 +         )
+242 +     ]
+243 |     adj, _ = adjudicate(tmp_path, run, ("--records", str(write_records(tmp_path, recs))))
+--------------------------------------------------------------------------------
+250 |     run = build_run(
+    -         tmp_path, legs=[("pg", "prose-enum-002", PG_RUN / "legs/r1/pg/prose-enum-002/answer/answer-runtime-latest.json")]
+251 +         tmp_path,
+252 +         legs=[
+253 +             (
+254 +                 "pg",
+255 +                 "prose-enum-002",
+256 +                 PG_RUN / "legs/r1/pg/prose-enum-002/answer/answer-runtime-latest.json",
+257 +             )
+258 +         ],
+259 |     )
+--------------------------------------------------------------------------------
+268 |     run = build_run(
+    -         tmp_path, legs=[("pg", "syn-002", ROUND1 / "legs/r1/pg/syn-002/answer/answer-runtime-latest.json")]
+269 +         tmp_path,
+270 +         legs=[("pg", "syn-002", ROUND1 / "legs/r1/pg/syn-002/answer/answer-runtime-latest.json")],
+271 |     )
+--------------------------------------------------------------------------------
+277 |             [
+    -                 "--run-dir", str(run), "--round", "1", "--anchor", str(ANCHOR), "--out", str(out),
+    -                 "--records", str(write_records(tmp_path, [rec])),
+278 +                 "--run-dir",
+279 +                 str(run),
+280 +                 "--round",
+281 +                 "1",
+282 +                 "--anchor",
+283 +                 str(ANCHOR),
+284 +                 "--out",
+285 +                 str(out),
+286 +                 "--records",
+287 +                 str(write_records(tmp_path, [rec])),
+288 |             ]
+--------------------------------------------------------------------------------
+295 |     run = build_run(
+    -         tmp_path, legs=[("pg", "syn-002", ROUND1 / "legs/r1/pg/syn-002/answer/answer-runtime-latest.json")]
+296 +         tmp_path,
+297 +         legs=[("pg", "syn-002", ROUND1 / "legs/r1/pg/syn-002/answer/answer-runtime-latest.json")],
+298 |     )
+--------------------------------------------------------------------------------
+307 |     run = build_run(
+    -         tmp_path, legs=[("pg", "syn-002", ROUND1 / "legs/r1/pg/syn-002/answer/answer-runtime-latest.json")]
+308 +         tmp_path,
+309 +         legs=[("pg", "syn-002", ROUND1 / "legs/r1/pg/syn-002/answer/answer-runtime-latest.json")],
+310 |     )
+--------------------------------------------------------------------------------
+327 |     with pytest.raises(Exception):
+    -         assess.main(["--run-dir", str(run), "--round", "1", "--anchor", str(ANCHOR), "--out", str(out)])
+328 +         assess.main(
+329 +             ["--run-dir", str(run), "--round", "1", "--anchor", str(ANCHOR), "--out", str(out)]
+330 +         )
+331 |     assert not out.exists()
+--------------------------------------------------------------------------------
+350 |     with pytest.raises(Exception):
+    -         assess.main(["--run-dir", str(run), "--round", "1", "--anchor", str(ANCHOR), "--out", str(out)])
+351 +         assess.main(
+352 +             ["--run-dir", str(run), "--round", "1", "--anchor", str(ANCHOR), "--out", str(out)]
+353 +         )
+354 |     diag = json.loads((tmp_path / "input-rejection.json").read_text())
+--------------------------------------------------------------------------------
+373 |     run = build_run(tmp_path)
+    -     old_anchor = REPO / "reports/pg-retrieval/phase-4/phase-4-config-anchor.json"  # pins old answer.py
+374 +     old_anchor = (
+375 +         REPO / "reports/pg-retrieval/phase-4/phase-4-config-anchor.json"
+376 +     )  # pins old answer.py
+377 |     out = tmp_path / "adj.json"
+378 |     with pytest.raises(Exception) as ei:
+    -         assess.main(["--run-dir", str(run), "--round", "1", "--anchor", str(old_anchor), "--out", str(out)])
+379 +         assess.main(
+380 +             ["--run-dir", str(run), "--round", "1", "--anchor", str(old_anchor), "--out", str(out)]
+381 +         )
+382 |     assert "lineage" in str(ei.value) or "identity drift" in str(ei.value)
+--------------------------------------------------------------------------------
+401 |         {"kind": "issued", "service": "answer_llm", "amount": 1, "where": "r1/pg/syn-002:answer"},
+    -         {"kind": "reserved", "service": "answer_llm", "amount": 1, "where": "r1/local/syn-002:answer"},
+402 +         {
+403 +             "kind": "reserved",
+404 +             "service": "answer_llm",
+405 +             "amount": 1,
+406 +             "where": "r1/local/syn-002:answer",
+407 +         },
+408 |     ]
+--------------------------------------------------------------------------------
+413 |             ("pg", "syn-002", ROUND1 / "legs/r1/pg/syn-002/answer/answer-runtime-latest.json"),
+    -             ("local", "syn-002", ROUND1 / "legs/r1/local/syn-002/answer/answer-runtime-latest.json"),
+414 +             (
+415 +                 "local",
+416 +                 "syn-002",
+417 +                 ROUND1 / "legs/r1/local/syn-002/answer/answer-runtime-latest.json",
+418 +             ),
+419 |         ],
+--------------------------------------------------------------------------------
+479 |     run = build_run(
+    -         tmp_path, legs=[("pg", "prose-enum-003", PG_RUN / "legs/r1/pg/prose-enum-003/answer/answer-runtime-latest.json")]
+480 +         tmp_path,
+481 +         legs=[
+482 +             (
+483 +                 "pg",
+484 +                 "prose-enum-003",
+485 +                 PG_RUN / "legs/r1/pg/prose-enum-003/answer/answer-runtime-latest.json",
+486 +             )
+487 +         ],
+488 |     )
+--------------------------------------------------------------------------------
+492 |     (fz / "fusion-runtime-latest.json").write_text(
+    -         json.dumps({"results": [{"candidates": [], "typed_targets": [], "pg": {"discovery_captured": True}}]}),
+493 +         json.dumps(
+494 +             {
+495 +                 "results": [
+496 +                     {"candidates": [], "typed_targets": [], "pg": {"discovery_captured": True}}
+497 +                 ]
+498 +             }
+499 +         ),
+500 |         encoding="utf-8",
+--------------------------------------------------------------------------------
+516 |         [
+    -             "--run-dir", str(run), "--round", "1", "--anchor", str(ANCHOR), "--out", str(out),
+    -             "--mapping", str(_write_mapping(tmp_path, mapping)),
+517 +             "--run-dir",
+518 +             str(run),
+519 +             "--round",
+520 +             "1",
+521 +             "--anchor",
+522 +             str(ANCHOR),
+523 +             "--out",
+524 +             str(out),
+525 +             "--mapping",
+526 +             str(_write_mapping(tmp_path, mapping)),
+527 |         ]
+--------------------------------------------------------------------------------
+533 |     assert row["missed"] == ["a00e1705c43ffacbca6c408197c6bac9"]
+    -     assert ter["per_question"]["prose-enum-002"]["pg"] == "pending_no_artifact" or "prose-enum-002" in ter["per_question"]
+534 +     assert (
+535 +         ter["per_question"]["prose-enum-002"]["pg"] == "pending_no_artifact"
+536 +         or "prose-enum-002" in ter["per_question"]
+537 +     )
+538 |     # prose-enum-006 target unit absent from mapping => pending_unmapped (never guessed)
+--------------------------------------------------------------------------------
+544 | def test_compat_mode_never_reads_mapping(tmp_path, _reset_state):
+    -     assert assess.typed_evidence_recall(GOLD) is None and assess.recall_report(GOLD)["typed_evidence_recall"] == "pending"
+545 +     assert (
+546 +         assess.typed_evidence_recall(GOLD) is None
+547 +         and assess.recall_report(GOLD)["typed_evidence_recall"] == "pending"
+548 +     )
+549 |
+--------------------------------------------------------------------------------
+559 |     assert rows["neg-001/pg"]["final_basis"] == "evidence_absent"
+    -     assert "expected_status" in json.dumps(adj["policy_notes"]) or "expected" in json.dumps(adj["policy_notes"])
+560 +     assert "expected_status" in json.dumps(adj["policy_notes"]) or "expected" in json.dumps(
+561 +         adj["policy_notes"]
+562 +     )
+563 |     # decisive beats item-level unknown: direct finalize check (rules unchanged)
+    |
+
+2 files would be reformatted, 4 files already formatted
+fmt=1
+All checks passed!
+ruff=0
+6 files already formatted
+fmt=0

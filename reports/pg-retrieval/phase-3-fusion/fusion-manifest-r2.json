@@ -1,0 +1,54 @@
+{
+ "task": "5.3 two-path candidate fusion (rev 2, F1-F4 remediation, read-only, guarded)",
+ "generated_at": "2026-10-07T09:05:00+0800",
+ "baseline": "first submission reports/pg-retrieval/phase-3-fusion/ (kept as history); review reports/pg-retrieval/phase-3-fusion-review/review.md (5 failed / 1 positive)",
+ "files_sha256": {
+  "src/env_rag_final/fusion.py": "d5dc8570074d16ae4c3fecb30845cc616b027f6bcb7f9385a65d7bf485d1cbdf",
+  "src/env_rag_final/cli.py": "08753ee88a1cb2b439aafd542f69651fab439396e5f316a27c867a16f393aa52",
+  "tests/test_fusion.py": "a89194b9222e1d5fb7cfa54ae2129ce02e7e6392f2e2ef0ccbb8622b730d569b",
+  "tests/test_fusion_review_r1.py": "9aff4a4b596a4fd53134e2131ded82ae6d184f9ebf0c4d645093c7d8b80e3c4c",
+  "reports/pg-retrieval/phase-3-fusion-r2/fusion-runtime-latest.json": "37b30d4dc4950422a28dd0776a68c42a93b2d0be032b899560bb8e5960394ebc",
+  "reports/pg-retrieval/phase-3-fusion-r2-f1/fusion-runtime-latest.json": "033fe2f8325cd961833ec4b6c013a918ee17609f41363bc327dc71bbeac00139",
+  "reports/pg-retrieval/gate-2/review-r5/gold-approved.json": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e"
+ },
+ "fixes": {
+  "F1": "verified doc_attribution targets join the allowed set ONLY for explicit related/amended requests (same R1 predicate as the PG route, self-code excluded); membership_basis/citation/snapshot retained; no self_code fabricated; plain/self-code requests keep the strict code_exact set (new positive control test)",
+  "F2": "table_unit->chunk paths keep unit_id/table_id and the ORIGINAL citation verbatim (workspace/snapshot/doc/table/locator as provided); typed targets keep scope_status/membership_basis/citation; no invented locators",
+  "F3": "gold parse/SHA refusal and config refusal write failure terminals (explicit zero calls, no finished_at); the running query publishes its identity/stage and post-local receipts into a live slot, so read-back/merge failures serialize THIS query's real ledger (previous-query receipts never substituted); existing drift/post-capture branches unchanged",
+  "F4": "verify_config_guard over all selected request workspaces runs BEFORE any backend contact (identity capture / PG read / service call); refusal writes a zero-call failure terminal; .env never modified"
+ },
+ "bounded_verification": {
+  "independent_acceptance": "tests/test_fusion_review_r1.py 8/8 (5 former failures + 1 positive + 2 handoff-required additions: self-code no-relax, multi-query receipt ownership)",
+  "prior_suites": "tests/test_fusion.py 11/11 unchanged; full suite 274 passed",
+  "model_calls": 0
+ },
+ "live_evidence": {
+  "pg_only_fact002_F2": {
+   "dir": "reports/pg-retrieval/phase-3-fusion-r2",
+   "result": "status ok; usable chunk doc-b45c...-chunk-001 has TWO distinguishable table_range_binding paths with unit_id/table_id tb-...-0001 and tb-...-0002, citation.kind=table_unit, snapshot 4919b3938ad93747 retained on every path",
+   "identity": "before/after frozen match, no drift"
+  },
+  "pg_only_neg010_F1": {
+   "dir": "reports/pg-retrieval/phase-3-fusion-r2-f1",
+   "result": "GB 18466-2005 attribution request resolves main doc (self_code=GB18466) + two self_code-less attributed docs (doc-9bb1..., doc-b423...); allowed_set_basis.verified_attributions records both with membership_basis verbatim, no fabricated self_code; 6 usable / 0 rejected (both attributed docs were rejected before the fix)"
+  }
+ },
+ "identity_guards": {
+  "identity_before_matches_frozen": true,
+  "identity_after_matches_frozen": true,
+  "identity_drift": [],
+  "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "counts_after": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  }
+ },
+ "checks": {"ruff": "pass", "ruff_format": "pass", "openspec_strict": "valid", "diff_check": "pass", "credential_scan": "0 hits"},
+ "next": "stop at the 5.3 checkpoint for main-agent review; 5.4-5.6/Gate3 not entered"
+}

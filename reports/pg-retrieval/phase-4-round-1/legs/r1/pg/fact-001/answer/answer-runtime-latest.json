@@ -1,0 +1,231 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-08T13:18:10+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "fact-001"
+ ],
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "reports/pg-retrieval/phase-4-round-1/inputs/pg/fact-001-rerank.json",
+   "sha256": "af7d05730c40ed3b844031a64146d531d112e91c2c86ce010b65f21b74de3c5c",
+   "task": null,
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": []
+  },
+  "fused_report": {
+   "path": "reports/pg-retrieval/phase-4-round-1/inputs/pg/fact-001-fusion.json",
+   "sha256": "0877bb826e4253ca2594d5cf9c898d65bdfed4d1caccf907b9a6a18a0a9ef11d",
+   "task": "Phase 4 round 1 evaluation input (path=pg)",
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": [
+    "fact-001"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "model_calls_used": 0,
+ "results": [
+  {
+   "query_id": "fact-001",
+   "query": "GB 3095-2012 中二氧化硫的年平均浓度二级限值是多少？",
+   "category": "fact",
+   "workspace": "default",
+   "coverage_status": "complete",
+   "fail_stage": "",
+   "flags": [
+    "no rerank replay for this query id — scope priority falls back to fusion path order, explicitly recorded (no fabricated scores)"
+   ],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "absent",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 0,
+    "typed_targets": [
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "doc_name": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+      "self_code": "GB3095",
+      "self_code_version": "2012",
+      "discovery": "code_exact",
+      "membership_basis": null,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      },
+      "citation_verified": true
+     }
+    ],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 2,
+    "selected_docs": [
+     "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+    ],
+    "priority": [
+     {
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "rerank_rank_or_none": null
+     }
+    ],
+    "basis": "targets_resolved + typed targets (5.3) define the scope; rerank order only prioritizes — membership is never top-k bounded"
+   },
+   "expansions": [
+    {
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "kind": "prose",
+     "scope_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1:scope:4.2",
+     "requested_clauses": null,
+     "missing_requested_clauses": [],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "read_status": "complete",
+     "fail_stage": "",
+     "units_read": 1,
+     "unit_ids": [
+      "7f9dddaf02f372cc7d329f4678c46fbc"
+     ],
+     "chunk_ids": [
+      "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+     ],
+     "items_count": 1,
+     "warnings": [],
+     "selected": true
+    }
+   ],
+   "answer": {
+    "mode": "deterministic",
+    "generated_by": "enumerate/expand entries",
+    "items": [
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "scope_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1:scope:4.2",
+      "clause": "4.2",
+      "text": "一类区适用一级浓度限值，二类区适用二级浓度限值。一、二类环境空气功能区质量要求见表 1和表 2。\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">浓度限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td></tr><tr><td rowspan=\"3\">1</td><td rowspan=\"3\">二氧化硫( $SO_2$ )</td><td>年平均</td><td>20</td><td>60</td><td rowspan=\"6\"> $μg/m^3$ </td></tr><tr><td>24小时平均</td><td>50</td><td>150</td></tr><tr><td>1小时平均</td><td>150</td><td>500</td></tr><tr><td rowspan=\"3\">2</td><td rowspan=\"3\">二氧化氮( $NO_2$ )</td><td>年平均</td><td>40</td><td>40</td></tr><tr><td>24小时平均</td><td>80</td><td>80</td></tr><tr><td>1小时平均</td><td>200</td><td>200</td></tr><tr><td rowspan=\"2\">3</td><td rowspan=\"2\">一氧化碳(CO)</td><td>24小时平均</td><td>4</td><td>4</td><td rowspan=\"2\"> $mg/m^3$ </td></tr><tr><td>1小时平均</td><td>10</td><td>10</td></tr><tr><td rowspan=\"2\">4</td><td rowspan=\"2\">臭氧( $O_3$ )</td><td>日最大8小时平均</td><td>100</td><td>160</td><td rowspan=\"6\"> $μg/m^3$ </td></tr><tr><td>1小时平均</td><td>160</td><td>200</td></tr><tr><td rowspan=\"2\">5</td><td rowspan=\"2\">颗粒物(粒径小于等于10μm)</td><td>年平均</td><td>40</td><td>70</td></tr><tr><td>24小时平均</td><td>50</td><td>150</td></tr><tr><td rowspan=\"2\">6</td><td rowspan=\"2\">颗粒物(粒径小于等于2.5μm)</td><td>年平均</td><td>15</td><td>35</td></tr><tr><td>24小时平均</td><td>35</td><td>75</td></tr></table>\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0002\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">浓度限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td></tr><tr><td rowspan=\"2\">1</td><td rowspan=\"2\">总悬浮颗粒物(TSP)</td><td>年平均</td><td>80</td><td>200</td><td rowspan=\"9\"> $\\mu g/m^3$ </td></tr><tr><td>24小时平均</td><td>120</td><td>300</td></tr><tr><td rowspan=\"3\">2</td><td rowspan=\"3\">氮氧化物( $NO_x$ )(以 $NO_2$ 计)</td><td>年平均</td><td>50</td><td>50</td></tr><tr><td>24小时平均</td><td>100</td><td>100</td></tr><tr><td>1小时平均</td><td>250</td><td>250</td></tr><tr><td rowspan=\"2\">3</td><td rowspan=\"2\">铅(Pb)</td><td>年平均</td><td>0.5</td><td>0.5</td></tr><tr><td>季平均</td><td>1.0</td><td>1.0</td></tr><tr><td rowspan=\"2\">4</td><td rowspan=\"2\">苯并[a]芘(BaP)</td><td>年平均</td><td>0.001</td><td>0.001</td></tr><tr><td>24小时平均</td><td>0.0025</td><td>0.0025</td></tr></table>",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 19,
+       "char_end": 2292,
+       "quote": "一类区适用一级浓度限值，二类区适用二级浓度限值。一、二类环境空气功能区质量要求见表 1和表 2。\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001\" format=\"html\"><tr>",
+       "unit_rel_start": 19,
+       "unit_rel_end": 2292,
+       "unit_id": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+        "parsed_dir": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     }
+    ],
+    "selection": {
+     "terms": [
+      "二氧化硫",
+      "年平均",
+      "浓度",
+      "二级",
+      "限值",
+      "中二",
+      "二氧",
+      "氧化",
+      "化硫",
+      "年平",
+      "平均",
+      "均浓",
+      "度二",
+      "级限"
+     ],
+     "candidates": 1,
+     "kept": 1,
+     "rule": "rows/items whose raw text contains the most subject terms of the QUESTION (never gold text); ties keep every match"
+    },
+    "unit_blockers": []
+   },
+   "reverification": {
+    "items_checked": 1,
+    "problems": [],
+    "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+   },
+   "model": null,
+   "status": "ok"
+  }
+ ]
+}

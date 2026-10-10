@@ -1,0 +1,53 @@
+{
+ "task": "5.1 runtime compatibility (rev 5, F1-F2 remediation final clean run)",
+ "generated_at": "2026-10-06T21:03:48+0800",
+ "command_run": "uv run python -m env_rag_final.compat_runtime --report-dir reports/pg-retrieval/phase-3-r5",
+ "probe_run_id": "compat-f17917f2f455",
+ "files_sha256": {
+  "src/env_rag_final/compat_runtime.py": "5fa566b2b6a54571803a302e4e5c25df33382b874c5aacf2e4ea696f33ed3933",
+  "reports/pg-retrieval/phase-3-r5/compatibility-runtime.md": "3ff1057325db1f822659df55893794932b562bfc86e5ea08bef5402d0f711138",
+  "reports/pg-retrieval/phase-3-r5/compat-runtime-probes-latest.json": "130a3e4ee2986debd4198f26aca05de1dcee7fd7d9c4827effa92880d2568a09",
+  "reports/pg-retrieval/gate-2/review-r5/gold-approved.json": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "tests/test_phase3_compat_review_r5.py": "6bf5f2502fc22b3ec12e2d20f644b06f63b033dd77af42c75b57d63973b73359"
+ },
+ "environment": {
+  "release": "lightrag-hku 1.5.7 (uv.lock)",
+  "python": "3.12 (.venv site-packages only)",
+  "scratch_database": "per-run unique name + probe_ownership(run_id, secret, db_oid); partial creation keeps known identity with oid_known flag (F1); unified terminal path for partial acquire (F2)",
+  "production_database": "rag (read-only identity guards before/after; never initialized by LightRAG)",
+  "model_calls": 0,
+  "embedding_service_calls": 0
+ },
+ "required_probe_contract": {
+  "required": [
+   "PGTableGraphStorage",
+   "PGGraphStorage",
+   "PGVectorStorage"
+  ],
+  "lifecycle_stages_required": {
+   "first_acquire": {
+    "initdb": 1,
+    "check_tables": 1
+   },
+   "second_acquire_holding_ref": {
+    "initdb": 1,
+    "check_tables": 1
+   },
+   "reacquire_after_full_release": {
+    "initdb": 2,
+    "check_tables": 2
+   }
+  },
+  "problems": [],
+  "enforced": true
+ },
+ "live_rejection_proofs": {
+  "F1_oid_read_failure_after_create": "ProbeAborted carries partial_scratch (db+secret, oid=None/oid_known=false, stage=marker-setup); original OSError preserved (no UnboundLocalError); DB confirmed created",
+  "F1_verifiable_recovery": "marker re-stamped with retained secret -> strict three-part ownership passes -> cleanup_scratch dropped",
+  "F2_unified_terminal_path": "partial acquire flows through post-guard capture + safe recovery + failure report (no early-raise branch); cleanup refusal -> guard_failure.stage=cleanup-error persisted"
+ },
+ "tests": {
+  "total": 220,
+  "note": "220 passed; review r5 4 assertions: 3 former failures fixed, 1 positive kept; no deletion/xfail/weakening"
+ }
+}

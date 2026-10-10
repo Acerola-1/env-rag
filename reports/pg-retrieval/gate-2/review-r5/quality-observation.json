@@ -1,0 +1,42 @@
+{
+  "source_gold_sha256": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "raw_run_gold_sha256": "62567ff17af490645027153e0a436dacdcca36c2f9945af48fef3f5c8ccfe29d",
+  "source_content_same_after_review": true,
+  "formal_gate2_passed": false,
+  "formal_metrics_approved": false,
+  "program_set_checks": {
+    "file_enum": {
+      "correct": 6,
+      "total": 6
+    },
+    "prose_enum": {
+      "correct": 5,
+      "total": 6
+    },
+    "table_enum": {
+      "correct": 5,
+      "total": 6
+    }
+  },
+  "source_citation_qualified_set_checks": {
+    "file_enum": {
+      "correct": 6,
+      "total": 6
+    },
+    "prose_enum": {
+      "correct": 4,
+      "total": 6
+    },
+    "table_enum": {
+      "correct": 5,
+      "total": 6
+    }
+  },
+  "source_citation_errors": 5,
+  "recorded_candidate_evidence_diagnostic": {
+    "satisfied": 56,
+    "total": 59,
+    "ratio": 0.9491525423728814,
+    "approval": "not approved while empty discovery fallback remains; no gold targets changed"
+  }
+}

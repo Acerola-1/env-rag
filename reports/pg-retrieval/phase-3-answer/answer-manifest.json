@@ -1,0 +1,57 @@
+{
+  "task": "5.5 rev-4 remediation (answer-review r4: D1 read-scope vs answered-scope slots + D2 local unit assertions inside one bracket)",
+  "submitted_at": "2026-10-07",
+  "frozen_contract": {
+    "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "catalog_run_snapshot": [
+      "c15c741742394320",
+      "4919b3938ad93747"
+    ],
+    "search": "872d689343a9cbb6",
+    "gold_sha256": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e"
+  },
+  "frozen_files_unchanged": true,
+  "sha256": {
+    "reports/pg-retrieval/gate-2/review-r5/gold-approved.json": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+    "reports/pg-retrieval/phase-3-answer-enums/answer-runtime-latest.json": "697df4c044014455fcd1d4cb308c7e0af9c389949ddfd3afbd2c6a5b8261d3f1",
+    "reports/pg-retrieval/phase-3-answer-fusion-syn/fusion-runtime-latest.json": "824c708526cb1d25a850ad2e1bd6ab4bc6fc90f150451f5cc9204ed532a1da55",
+    "reports/pg-retrieval/phase-3-answer-fusion/fusion-runtime-latest.json": "d7e87076dbc5f799890c5c369aefea18d1d6e28b3d2cc4344effb76d7a6e0e2a",
+    "reports/pg-retrieval/phase-3-answer-r2/answer-runtime-latest.json": "1b737e3349879272d49ba36a4b082189614e338f1279dc9b6c5e12b3a3b86a56",
+    "reports/pg-retrieval/phase-3-answer-syn-check/answer-runtime-latest.json": "f3cebee7393c9fc1aa09b91bd730ac76aeaf99e65f30e9296d3f94fdf447f5e1",
+    "reports/pg-retrieval/phase-3-answer-syn-check/formal-expand-control.json": "5a41ac15471a8f68fabf724e67403096d965e4e2c17760ad3d48f86f853e5cf0",
+    "reports/pg-retrieval/phase-3-answer-syn/answer-runtime-latest.json": "aa2a9ff01271066951f6f9b3f91fbcbf8ccfbf6bbdfd68bfc65adf3f5f8257b9",
+    "reports/pg-retrieval/phase-3-answer-syn2/answer-runtime-latest.json": "41b715e536a2e275b58c217bb666abc71c13578252b63746f71e73a6dfb0df8a",
+    "reports/pg-retrieval/phase-3-answer/answer-report.md": "507d9c1d5add9bcec11e77f952aaa2d360c1bdb552f010f61bb9837a4c230ace",
+    "reports/pg-retrieval/phase-3-answer/answer-runtime-latest.json": "1d97ce27741c7815727bc687edcb28f9d9656359f95bec549444748107bb542e",
+    "src/env_rag_final/answer.py": "29e0aa29b2b49be4370adbedd3e6bfc746d9ca9530d992f98d731a8056e213c7",
+    "src/env_rag_final/cli.py": "ba940f63205b617be00fe0e2cf58683ea53d74247c4039e0cb28c27ced521195",
+    "src/env_rag_final/fusion.py": "be1cd4c586596468efda7b9483903a407f0e214fc35e7a83355ad304ef94127e",
+    "src/env_rag_final/local_adapter.py": "0bbad9764856250085b5cefb90c9d56933bfd2f6e9ed5ed796fdd93bdf2da7e3",
+    "src/env_rag_final/rerank.py": "e2a8e089dd69cc02791a3c175bfadd27dd4fded80b249a32786b6a4d099cce08",
+    "tests/test_answer.py": "f30ce84a7c5df70b7379ddb0ab99623dd99b9b361cddd609dd79ab4f8d9ecb37",
+    "tests/test_answer_review_r1.py": "3650133dbbf84a6571786bf4bba051ab60003171a7fef9d9752ea6fb0fffea9f",
+    "tests/test_answer_review_r2.py": "c4de6606c101833a2195b0abe41ddf32dd2ea445f0eb1aba1cfee28314c08550",
+    "tests/test_answer_review_r3.py": "fae62747f4407790af792e5d1e9eb94c75a9b48e8ed9cb16a097bbeda8371da2",
+    "tests/test_answer_review_r4.py": "16829712b469f178917671953d21d2db17fbeb78592e997538f2db1325b6df1a",
+    "tests/test_rerank.py": "7edeaa62a72f330b1baa2e6f6294ed5c8259eb38ab18d6b28e5d4a2f2a463586",
+    "tests/test_rerank_review_r1.py": "303906859bf4c8199c11cac2c2c698250cca85d70b5380483bd34fc96908c34e",
+    "tests/test_rerank_review_r2.py": "6673e0ef9579a373da9c8c0481f8e92722e6a1c8b14f487d56772a62f0d45fac",
+    "tests/test_rerank_review_r3.py": "9a337de82a2d4d5822fbc8821ba4d45252cb7d45b57790d65b1301573c1790d8"
+  },
+  "test_totals": {
+    "full_suite_passed": 383,
+    "answer_matrix": "38 (own; +2 rev-4: mirror missing-subject negative, punctuated table-wide positive)",
+    "answer_review_r1": "9/9 (frozen, unmodified)",
+    "answer_review_r2": "7/7 (frozen, unmodified)",
+    "answer_review_r3": "6/6 (frozen, unmodified)",
+    "answer_review_r4": "4/4 (2 counters + 2 positives; reviewer-authored, frozen, unmodified)"
+  },
+  "real_calls_this_round": {
+    "answer_model": "0 new calls (two historical http_503 receipts remain published; fixture success != real synthesis success — real end-to-end synthesis still unverified)",
+    "keyword/embedding/local/rerank": "0",
+    "db": "0 (FakeEnvConn fixtures only; no PG contact this round)"
+  },
+  "artifact_secret_scan": "PASS",
+  "frozen_and_historical_runtime_unchanged_since_rev1": true,
+  "historical_runtime_note": "all phase-3-answer* runtime generations preserved verbatim; only code/tests/report/manifest changed this round (plus the reviewer's new frozen test_answer_review_r4.py entering the ledger)"
+}

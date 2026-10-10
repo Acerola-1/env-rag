@@ -1,0 +1,79 @@
+{
+ "query_id": "search-beab487ce191",
+ "workspace": "default",
+ "status": "ok",
+ "search_id": "e3cb2a39dee53d9d",
+ "catalog_snapshot_id": "4919b3938ad93747",
+ "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+ "parsed_code": {
+  "raw": "GB3095-2012",
+  "code": "GB3095",
+  "version": "2012"
+ },
+ "parsed_codes": [
+  {
+   "raw": "GB3095-2012",
+   "code": "GB3095",
+   "version": "2012"
+  },
+  {
+   "raw": "GB3095-2026",
+   "code": "GB3095",
+   "version": "2026"
+  }
+ ],
+ "query_text": "GB3095-2012 与 GB3095-2026",
+ "candidates": [],
+ "notes": [],
+ "trace": [
+  {
+   "stage": "code_exact",
+   "code": "GB3095",
+   "version_requested": "2012",
+   "strict": false,
+   "hits": 2,
+   "version_matched": 1,
+   "selected_versions": [
+    "2012"
+   ],
+   "selected_docs": [
+    "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+   ]
+  },
+  {
+   "stage": "code_exact",
+   "code": "GB3095",
+   "version_requested": "2026",
+   "strict": false,
+   "hits": 2,
+   "version_matched": 1,
+   "selected_versions": [
+    "2026"
+   ],
+   "selected_docs": [
+    "doc-4c883d21fa02a53189e0911c3d59d1d1"
+   ]
+  },
+  {
+   "stage": "document_enumeration",
+   "predicate": "(self_code = $3 AND self_code_version IN ($4, $5)) AND (self_code = $6 AND self_code_version IN ($7, $8))",
+   "predicate_args": [
+    "GB3095",
+    "12",
+    "2012",
+    "GB3095",
+    "2026",
+    "26"
+   ],
+   "workspace": "default",
+   "members_total": 0,
+   "members_processed": 0,
+   "coverage_status": "complete",
+   "read_token": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "fail_stage": "",
+   "warnings": [],
+   "note": "full paged enumeration with the complete strong predicate — not top-k ranked discovery, not the whole corpus"
+  }
+ ],
+ "elapsed_ms": 1672
+}

@@ -1,0 +1,311 @@
+lightrag-hku: 1.5.7
+openai: 2.54.0
+asyncpg: 0.31.0
+pgvector: 0.5.0
+qdrant-client: 1.19.1
+neo4j: 6.3.1
+httpx: 0.28.1
+python-dotenv: 1.2.4
+lxml: 6.1.3
+Configuration: OK (51 keys; credential values hidden)
+{
+ "query_id": "search-c2284161d334",
+ "workspace": "default",
+ "status": "ok",
+ "search_id": "e3cb2a39dee53d9d",
+ "catalog_snapshot_id": "4919b3938ad93747",
+ "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+ "parsed_code": {
+  "raw": "GB 3095-2012",
+  "code": "GB3095",
+  "version": "2012"
+ },
+ "parsed_codes": [
+  {
+   "raw": "GB 3095-2012",
+   "code": "GB3095",
+   "version": "2012"
+  }
+ ],
+ "query_text": "GB 3095-2012 的 4.2 节对环境空气功能区质量要求作了哪些规定？",
+ "candidates": [
+  {
+   "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+   "doc_name": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+   "self_code": "GB3095",
+   "self_code_version": "2012",
+   "title": "环境空气质量标准",
+   "doc_type": "standard",
+   "discovery": "code_exact",
+   "score": 1.0,
+   "citation": {
+    "kind": "catalog_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+   "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+   "heading": "4 环境空气功能区分类和质量要求 环境空气质量标准",
+   "chunk_order": 2,
+   "score": 6.800000190734863,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+    "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+   "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+   "heading": "中 华 人 民 共 和 国 国 家 标 准",
+   "chunk_order": 0,
+   "score": 6.400000095367432,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+    "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+   "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+   "heading": "环境空气质量标准",
+   "chunk_order": 1,
+   "score": 6.0,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+    "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+   "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003",
+   "heading": "5.3 污染物分析 环境空气质量标准",
+   "chunk_order": 3,
+   "score": 3.6000001430511475,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+    "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+   "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+   "heading": "7 实施与监督 环境空气质量标准",
+   "chunk_order": 4,
+   "score": 2.4000000953674316,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+    "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+   "scope_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1:scope:4.2",
+   "heading": "4.2 环境空气功能区质量要求",
+   "chunk_ids": [],
+   "score": null,
+   "discovery": "scope_range_binding",
+   "scope_status": "confirmed",
+   "member_units": [
+    "7f9dddaf02f372cc7d329f4678c46fbc"
+   ],
+   "citation": {
+    "kind": "scope",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+    "scope_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1:scope:4.2"
+   },
+   "citation_verified": true
+  }
+ ],
+ "notes": [],
+ "trace": [
+  {
+   "stage": "code_exact",
+   "code": "GB3095",
+   "version_requested": "2012",
+   "strict": false,
+   "hits": 2,
+   "version_matched": 1,
+   "selected_versions": [
+    "2012"
+   ],
+   "selected_docs": [
+    "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+   ]
+  },
+  {
+   "stage": "keyword_and",
+   "tsquery": "'4.2' & '节' & '环境空气' & '功能区' & '质量' & '作'",
+   "top_k": 20,
+   "restricted_to_code_docs": [
+    "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+   ],
+   "doc_hits": 0,
+   "chunk_hits": 0,
+   "elapsed_ms": 4
+  },
+  {
+   "stage": "keyword_and_diagnostics",
+   "per_term": [
+    {
+     "term": "4.2",
+     "chunk_hits": 1
+    },
+    {
+     "term": "节",
+     "chunk_hits": 0
+    },
+    {
+     "term": "环境空气",
+     "chunk_hits": 5
+    },
+    {
+     "term": "功能区",
+     "chunk_hits": 4
+    },
+    {
+     "term": "质量",
+     "chunk_hits": 5
+    },
+    {
+     "term": "作",
+     "chunk_hits": 1
+    }
+   ],
+   "absent_terms": [
+    "节"
+   ]
+  },
+  {
+   "stage": "keyword_core_and",
+   "tsquery": "'4.2' & '环境空气' & '功能区' & '质量' & '作'",
+   "dropped_absent_terms": [
+    "节"
+   ],
+   "chunk_hits": 0,
+   "note": "terms absent from the corpus cannot participate in AND"
+  },
+  {
+   "stage": "keyword_synonym_and",
+   "tsquery": "('4.2') & ('环境空气') & ('功能区') & ('质量') & ('作')",
+   "synonyms_applied": [],
+   "skipped_terms": [
+    "节"
+   ],
+   "chunk_hits": 0,
+   "note": "each concept is an OR group (original + controlled synonyms); concepts are AND-combined; strong constraints kept"
+  },
+  {
+   "stage": "keyword_or_relaxed",
+   "tsquery": "'4.2' | '环境空气' | '功能区' | '质量' | '作'",
+   "synonyms_applied": [],
+   "chunk_hits": 5,
+   "note": "last-resort OR over terms present in the corpus"
+  },
+  {
+   "stage": "range_binding",
+   "targets": [
+    {
+     "kind": "clause",
+     "value": "4.2",
+     "clauses": [
+      "4.2"
+     ]
+    }
+   ],
+   "code_docs": [
+    "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+   ],
+   "hits": 1,
+   "selected": 1,
+   "budget": 20,
+   "units": [
+    "doc-257d8cf3fdf90e76c31908c4f92fc1a1:scope:4.2"
+   ],
+   "note": "requested table/chapter bound to actual catalog units; full member read stays in expansion, top-k bounds this discovery list too"
+  },
+  {
+   "stage": "scope_expansion",
+   "requested_scope_id": null,
+   "requested_table_number": null,
+   "auto_targets": [
+    {
+     "kind": "clause",
+     "value": "4.2",
+     "clauses": [
+      "4.2"
+     ]
+    }
+   ],
+   "expansions": [
+    {
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "kind": "prose",
+     "scope_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1:scope:4.2",
+     "requested_clauses": null,
+     "missing_requested_clauses": [],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "read_status": "complete",
+     "fail_stage": "",
+     "units_read": 1,
+     "unit_ids": [
+      "7f9dddaf02f372cc7d329f4678c46fbc"
+     ],
+     "chunk_ids": [
+      "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+     ],
+     "items_count": 1,
+     "items": [
+      {
+       "clause": "4.2",
+       "text": "一类区适用一级浓度限值，二类区适用二级浓度限值。一、二类环境空气功能区质量要求见表 1和表 2。\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">浓度限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td></tr><tr><td rowspan=\"3\">1</td><td rowspan=\"3\">二氧化硫( $SO_2$ )</td><td>年平均</td><td>20</td><td>60</td><td rowspan=\"6\"> $μg/m^3$ <",
+       "citation": {
+        "kind": "char_span",
+        "char_start": 0,
+        "char_end": 400,
+        "quote": "一类区适用一级浓度限值，二类区适用二级浓度限值。一、二类环境空气功能区质量要求见表 1和表 2。\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001\" format=\"html\"><tr>"
+       },
+       "citation_verified": true,
+       "source": "scope_body_no_subclauses"
+      }
+     ],
+     "warnings": []
+    }
+   ],
+   "note": "expansion reads the FULL ordered membership; discovery top-k is not a limit"
+  }
+ ],
+ "elapsed_ms": 2211
+}

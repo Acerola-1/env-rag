@@ -1,0 +1,145 @@
+{
+  "submitted_observations": [
+    {
+      "query_id": "fact-001",
+      "candidates": 10,
+      "verified": 10,
+      "by_service": {
+        "llm": {
+          "attempt": 1,
+          "success": 1,
+          "failure": 0
+        },
+        "embedding": {
+          "attempt": 2,
+          "success": 2,
+          "failure": 0
+        },
+        "qdrant": {
+          "attempt": 2,
+          "success": 2,
+          "failure": 0
+        },
+        "neo4j": {
+          "attempt": 5,
+          "success": 5,
+          "failure": 0
+        },
+        "pg": {
+          "attempt": 2,
+          "success": 2,
+          "failure": 0
+        }
+      },
+      "sorting_sources": {
+        "chunk_pick": "vector-similarity"
+      }
+    },
+    {
+      "query_id": "fact-002",
+      "candidates": 10,
+      "verified": 10,
+      "by_service": {
+        "llm": {
+          "attempt": 1,
+          "success": 1,
+          "failure": 0
+        },
+        "embedding": {
+          "attempt": 3,
+          "success": 3,
+          "failure": 0
+        },
+        "qdrant": {
+          "attempt": 3,
+          "success": 3,
+          "failure": 0
+        },
+        "neo4j": {
+          "attempt": 5,
+          "success": 5,
+          "failure": 0
+        },
+        "pg": {
+          "attempt": 3,
+          "success": 3,
+          "failure": 0
+        }
+      },
+      "sorting_sources": {
+        "chunk_pick": "vector-similarity"
+      }
+    },
+    {
+      "query_id": "syn-001",
+      "candidates": 10,
+      "verified": 10,
+      "by_service": {
+        "llm": {
+          "attempt": 1,
+          "success": 1,
+          "failure": 0
+        },
+        "embedding": {
+          "attempt": 2,
+          "success": 2,
+          "failure": 0
+        },
+        "qdrant": {
+          "attempt": 2,
+          "success": 2,
+          "failure": 0
+        },
+        "neo4j": {
+          "attempt": 5,
+          "success": 5,
+          "failure": 0
+        },
+        "pg": {
+          "attempt": 2,
+          "success": 2,
+          "failure": 0
+        }
+      },
+      "sorting_sources": {
+        "chunk_pick": "vector-similarity"
+      }
+    },
+    {
+      "query_id": "neg-001",
+      "candidates": 10,
+      "verified": 10,
+      "by_service": {
+        "llm": {
+          "attempt": 1,
+          "success": 1,
+          "failure": 0
+        },
+        "embedding": {
+          "attempt": 2,
+          "success": 2,
+          "failure": 0
+        },
+        "qdrant": {
+          "attempt": 2,
+          "success": 2,
+          "failure": 0
+        },
+        "neo4j": {
+          "attempt": 5,
+          "success": 5,
+          "failure": 0
+        },
+        "pg": {
+          "attempt": 2,
+          "success": 2,
+          "failure": 0
+        }
+      },
+      "sorting_sources": {
+        "chunk_pick": "vector-similarity"
+      }
+    }
+  ],
+  "independently_regenerated": false
+}

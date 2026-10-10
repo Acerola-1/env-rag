@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-08",
+  "pilot_r1_status": "safeguards and observed discovery verified; end-to-end and answer semantics not verified",
+  "task6_2_checked": false,
+  "gate3_and_task6_1_maintained": true,
+  "reviewer_real_requests": 0,
+  "production_writes": 0,
+  "source_and_model_changes": false,
+  "r1_31_artifacts_preserved": true,
+  "new_pg_envelope": 1024,
+  "new_pg_cap_is_measurement": false,
+  "calibration": {
+    "legs": 3,
+    "model_service_caps": 0,
+    "pg_total_cap": 3072,
+    "max_pg_usage_gate": 512
+  },
+  "next_pilot": {
+    "legs": 9,
+    "pg_total_cap": 9216,
+    "other_service_caps_unchanged": true,
+    "conditional_on_calibration_success": true
+  },
+  "checks": {
+    "dry_run_backend_fetches": 0,
+    "openspec_strict": "passed",
+    "diff": "passed",
+    "sensitive_value_matches": 0
+  },
+  "sha256": {
+    "reports/pg-retrieval/phase-4-pilot-r1-review/audit.json": "bc351b76ed0bad5d3bdbd5733253dc5de4a11af48f6aa874f2e33e87aed8c5fc",
+    "reports/pg-retrieval/phase-4-pilot-r1-review/r2-dry-run.txt": "e205c1ecdfd0546a9f86fabe274de92eda968116d65d67b86518c8b766699df3",
+    "reports/pg-retrieval/phase-4-pilot-r1-review/openspec-check.txt": "4693ceda9e27e58fa59b2c9dbba2ff1cf729bd8067915263151894179518ba7c",
+    "reports/pg-retrieval/phase-4-pilot-r1-review/review.md": "4a4f5e061b1d32eae4e086aa1dedb5c51d7d9eee682c2cd67ced46d2ada5d1a0",
+    "reports/pg-retrieval/phase-4-pilot-r1-review/diff-check.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/pg-retrieval/phase-4-pilot-r1-review/calibration-dry-run.txt": "ac8ca96a381a458a66a7e7cc169a6c80e79142b66c970f32d587301163b17aa3",
+    "reports/pg-retrieval/phase-4-pilot-r1-review/calibration-dry-run/execution-matrix.json": "cf27e88edce32f587c77a2ea1e01ef23e5e2aefbd5b042355bfc0bfd6d4e3ae4",
+    "reports/pg-retrieval/phase-4-pilot-r1-review/calibration-dry-run/budget-upper-bounds.json": "ab31a256dbadd667cc7bdaa782e84d2f3fd5f206457d39497c80851913e9a18c",
+    "reports/pg-retrieval/phase-4-pilot-r1-review/r2-dry-run/execution-matrix.json": "ccd299f57ec59a79c7432b540fb964fb374e387daa6ad463a96776f375418cea",
+    "reports/pg-retrieval/phase-4-pilot-r1-review/r2-dry-run/budget-upper-bounds.json": "559737ad8de756e4f9f047e708feb9b11671eaf47b70ed6196710903555fc616",
+    "reports/pg-retrieval/phase-4/pilot-r2-budget.json": "99b07fd41e334f0da53f1cb996917c6b1d414e4bfd2065fd91f3414fee79d88c",
+    "reports/pg-retrieval/phase-4/pilot-r2-pg-calibration-budget.json": "bd85b463e412c26b111214357317d2bf5a17dab467c5f4354d2b1a7b12a0e375",
+    "openspec/changes/add-pg-scoped-retrieval/handoff-phase-4-6.2-pilot-r2.md": "38ae2e7a93fa6bc059c14a352ea808b3230f17241fad6c5e70c40b23f0b990be"
+  }
+}

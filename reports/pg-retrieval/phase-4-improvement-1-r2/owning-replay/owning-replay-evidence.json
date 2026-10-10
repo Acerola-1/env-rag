@@ -1,0 +1,98 @@
+[
+ {
+  "case": "stored-trace-prose-enum-003-real-sidecars",
+  "evidence_label": "原始产物读取 + 离线answer入口回放（stored round-1 请求 trace + 已存 5.3/5.4 重放报告 + 原始 sidecars）",
+  "published_terminal": "owning-replay/stored-trace-prose-enum-003-real-sidecars/answer-runtime-latest.json",
+  "identity_before_matches_frozen": true,
+  "identity_after_matches_frozen": true,
+  "model_calls_used": 0,
+  "coverage_status": "complete",
+  "status": "ok",
+  "reverification_problems": [],
+  "items_count": 4,
+  "boundary_ambiguities": [],
+  "flags": [
+   "no rerank replay for this query id — scope priority falls back to fusion path order, explicitly recorded (no fabricated scores)"
+  ]
+ },
+ {
+  "case": "legit-cross-unit-complete",
+  "evidence_label": "构造读取注入 + 离线answer入口回放（协议换行真实间隙的跨单元合法条款）",
+  "published_terminal": "owning-replay/legit-cross-unit-complete/answer-runtime-latest.json",
+  "identity_before_matches_frozen": true,
+  "identity_after_matches_frozen": true,
+  "model_calls_used": 0,
+  "coverage_status": "complete",
+  "status": "ok",
+  "reverification_problems": [],
+  "items_count": 2,
+  "boundary_ambiguities": [],
+  "flags": []
+ },
+ {
+  "case": "fabricated-separator-refused-partial",
+  "evidence_label": "构造篡改注入 + 离线answer入口回放（真实展开后的条目被伪 separator 重拼）",
+  "published_terminal": "owning-replay/fabricated-separator-refused-partial/answer-runtime-latest.json",
+  "identity_before_matches_frozen": true,
+  "identity_after_matches_frozen": true,
+  "model_calls_used": 0,
+  "coverage_status": "partial",
+  "status": "partial",
+  "reverification_problems": [
+   "declared assembly_separator '停车场允许无条件排放污水。' for 4.1 is not the protocol join '\\n\\n' — a separator cannot manufacture source text"
+  ],
+  "items_count": 2,
+  "boundary_ambiguities": [],
+  "flags": []
+ },
+ {
+  "case": "malformed-numeric-span-refused-partial",
+  "evidence_label": "构造篡改注入 + 离线answer入口回放（真实展开后的条目坐标字段置 null）",
+  "published_terminal": "owning-replay/malformed-numeric-span-refused-partial/answer-runtime-latest.json",
+  "identity_before_matches_frozen": true,
+  "identity_after_matches_frozen": true,
+  "model_calls_used": 0,
+  "coverage_status": "partial",
+  "status": "partial",
+  "reverification_problems": [
+   "item 4.1 declares a numeric span with malformed coordinates (char_start=None, char_end=46) — refusing instead of downgrading to the quote-only path",
+   "item 4.2 declares a numeric span with malformed coordinates (char_start=None, char_end=58) — refusing instead of downgrading to the quote-only path"
+  ],
+  "items_count": 2,
+  "boundary_ambiguities": [],
+  "flags": []
+ },
+ {
+  "case": "attributed-embedded-table-kept-complete",
+  "evidence_label": "构造读取注入 + 离线answer入口回放（冒号宣告且指认 表 对象的内嵌表条款）",
+  "published_terminal": "owning-replay/attributed-embedded-table-kept-complete/answer-runtime-latest.json",
+  "identity_before_matches_frozen": true,
+  "identity_after_matches_frozen": true,
+  "model_calls_used": 0,
+  "coverage_status": "complete",
+  "status": "ok",
+  "reverification_problems": [],
+  "items_count": 2,
+  "boundary_ambiguities": [],
+  "flags": []
+ },
+ {
+  "case": "ambiguous-boundary-partial-recorded",
+  "evidence_label": "构造读取注入 + 离线answer入口回放（冒号宣告未指认对象 → 显式 partial + 记录）",
+  "published_terminal": "owning-replay/ambiguous-boundary-partial-recorded/answer-runtime-latest.json",
+  "identity_before_matches_frozen": true,
+  "identity_after_matches_frozen": true,
+  "model_calls_used": 0,
+  "coverage_status": "partial",
+  "status": "partial",
+  "reverification_problems": [],
+  "items_count": 2,
+  "boundary_ambiguities": [
+   {
+    "pos": 21,
+    "detail": "structure boundary at offset 21 was announced by a colon intro without an explicit 表/图 object reference — whether the structure belongs to the clause cannot be determined from the source; the clause body is cut at the boundary and coverage must stay partial"
+   }
+  ],
+  "flags": []
+ }
+]

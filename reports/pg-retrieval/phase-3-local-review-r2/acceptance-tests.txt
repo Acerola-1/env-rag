@@ -1,0 +1,195 @@
+FFFFFFF.                                                                 [100%]
+=================================== FAILURES ===================================
+_________________ test_reused_adapter_records_are_per_request __________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11701ef60>
+
+    def test_reused_adapter_records_are_per_request(monkeypatch):
+        install_fetch(monkeypatch)
+    
+        async def run():
+            adapter = la.LocalCandidateAdapter(fixture.VALUES)
+            first = await adapter.fetch("first")
+            second = await adapter.fetch("second")
+            assert second.service_calls["by_service"] == first.service_calls["by_service"]
+            assert len(second.call_records) == len(first.call_records)
+    
+>       asyncio.run(run())
+
+tests/test_local_adapter_review_r2.py:106: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../../Library/Application Support/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/asyncio/runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+../../../../Library/Application Support/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../../Library/Application Support/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def run():
+        adapter = la.LocalCandidateAdapter(fixture.VALUES)
+        first = await adapter.fetch("first")
+        second = await adapter.fetch("second")
+>       assert second.service_calls["by_service"] == first.service_calls["by_service"]
+E       AssertionError: assert {'neo4j': {'a...'failure': 0}} == {'neo4j': {'a...'failure': 0}}
+E         
+E         Differing items:
+E         {'neo4j': {'attempt': 2, 'success': 2, 'failure': 0}} != {'neo4j': {'attempt': 1, 'success': 1, 'failure': 0}}
+E         Use -v to get more diff
+
+tests/test_local_adapter_review_r2.py:103: AssertionError
+----------------------------- Captured stderr call -----------------------------
+INFO: Qdrant collection: lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d
+INFO: Qdrant collection: lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d
+INFO: Qdrant collection: lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d
+INFO: Qdrant collection: lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d
+------------------------------ Captured log call -------------------------------
+INFO     lightrag:qdrant_impl.py:507 Qdrant collection: lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d
+INFO     lightrag:qdrant_impl.py:507 Qdrant collection: lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d
+INFO     lightrag:qdrant_impl.py:507 Qdrant collection: lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d
+INFO     lightrag:qdrant_impl.py:507 Qdrant collection: lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d
+________________ test_actual_qdrant_reads_have_service_receipts ________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x118178560>
+
+    def test_actual_qdrant_reads_have_service_receipts(monkeypatch):
+        clients = install_fetch(monkeypatch, with_entity=True)
+        result = asyncio.run(la.LocalCandidateAdapter(fixture.VALUES).fetch("fixture"))
+        assert any(c.reads for c in clients), "Actual release read APIs were executed"
+>       assert any(r["service"] == "qdrant" for r in result.call_records)
+E       assert False
+E        +  where False = any(<generator object test_actual_qdrant_reads_have_service_receipts.<locals>.<genexpr> at 0x118176330>)
+
+tests/test_local_adapter_review_r2.py:113: AssertionError
+----------------------------- Captured stderr call -----------------------------
+INFO: Qdrant collection: lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d
+INFO: Qdrant collection: lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d
+WARNING: Vector similarity chunk selection: no vectors retrieved from chunks_vdb
+WARNING: Vector similarity chunk selection: no vectors retrieved from chunks_vdb
+WARNING: No entity-related chunks selected by vector similarity, falling back to WEIGHT method
+INFO: Selecting 1 from 1 entity-related chunks by weighted polling
+------------------------------ Captured log call -------------------------------
+INFO     lightrag:qdrant_impl.py:507 Qdrant collection: lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d
+INFO     lightrag:qdrant_impl.py:507 Qdrant collection: lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d
+WARNING  lightrag:utils.py:6038 Vector similarity chunk selection: no vectors retrieved from chunks_vdb
+WARNING  lightrag:utils.py:6038 Vector similarity chunk selection: no vectors retrieved from chunks_vdb
+WARNING  lightrag:operate.py:6241 No entity-related chunks selected by vector similarity, falling back to WEIGHT method
+INFO     lightrag:operate.py:6262 Selecting 1 from 1 entity-related chunks by weighted polling
+_____________ test_missing_vectors_do_not_claim_vector_similarity ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11817a7b0>
+
+    def test_missing_vectors_do_not_claim_vector_similarity(monkeypatch):
+        install_fetch(monkeypatch, with_entity=True)
+        result = asyncio.run(la.LocalCandidateAdapter(fixture.VALUES).fetch("fixture"))
+        assert result.candidates and all(c.verified for c in result.candidates)
+>       assert result.sorting_sources["chunk_pick"] != "vector-similarity"
+E       AssertionError: assert 'vector-similarity' != 'vector-similarity'
+
+tests/test_local_adapter_review_r2.py:120: AssertionError
+----------------------------- Captured stderr call -----------------------------
+INFO: Qdrant collection: lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d
+INFO: Qdrant collection: lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d
+WARNING: Vector similarity chunk selection: no vectors retrieved from chunks_vdb
+WARNING: Vector similarity chunk selection: no vectors retrieved from chunks_vdb
+WARNING: No entity-related chunks selected by vector similarity, falling back to WEIGHT method
+INFO: Selecting 1 from 1 entity-related chunks by weighted polling
+------------------------------ Captured log call -------------------------------
+INFO     lightrag:qdrant_impl.py:507 Qdrant collection: lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d
+INFO     lightrag:qdrant_impl.py:507 Qdrant collection: lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d
+WARNING  lightrag:utils.py:6038 Vector similarity chunk selection: no vectors retrieved from chunks_vdb
+WARNING  lightrag:utils.py:6038 Vector similarity chunk selection: no vectors retrieved from chunks_vdb
+WARNING  lightrag:operate.py:6241 No entity-related chunks selected by vector similarity, falling back to WEIGHT method
+INFO     lightrag:operate.py:6262 Selecting 1 from 1 entity-related chunks by weighted polling
+______________ test_swallowed_qdrant_timeout_has_failure_receipt _______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x117b53d70>
+
+    def test_swallowed_qdrant_timeout_has_failure_receipt(monkeypatch):
+        install_fetch(monkeypatch, with_entity=True, vector_error=True)
+        result = asyncio.run(la.LocalCandidateAdapter(fixture.VALUES).fetch("fixture"))
+>       assert any(r["service"] == "qdrant" and r["status"] == "failure" for r in result.call_records)
+E       assert False
+E        +  where False = any(<generator object test_swallowed_qdrant_timeout_has_failure_receipt.<locals>.<genexpr> at 0x118c182b0>)
+
+tests/test_local_adapter_review_r2.py:126: AssertionError
+----------------------------- Captured stderr call -----------------------------
+INFO: Qdrant collection: lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d
+INFO: Qdrant collection: lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d
+ERROR: [_] Error getting vectors: vector service failed
+WARNING: Vector similarity chunk selection: no vectors retrieved from chunks_vdb
+ERROR: [_] Error getting vectors: vector service failed
+WARNING: Vector similarity chunk selection: no vectors retrieved from chunks_vdb
+WARNING: No entity-related chunks selected by vector similarity, falling back to WEIGHT method
+INFO: Selecting 1 from 1 entity-related chunks by weighted polling
+------------------------------ Captured log call -------------------------------
+INFO     lightrag:qdrant_impl.py:507 Qdrant collection: lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d
+INFO     lightrag:qdrant_impl.py:507 Qdrant collection: lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d
+ERROR    lightrag:qdrant_impl.py:1302 [_] Error getting vectors: vector service failed
+WARNING  lightrag:utils.py:6038 Vector similarity chunk selection: no vectors retrieved from chunks_vdb
+ERROR    lightrag:qdrant_impl.py:1302 [_] Error getting vectors: vector service failed
+WARNING  lightrag:utils.py:6038 Vector similarity chunk selection: no vectors retrieved from chunks_vdb
+WARNING  lightrag:operate.py:6241 No entity-related chunks selected by vector similarity, falling back to WEIGHT method
+INFO     lightrag:operate.py:6262 Selecting 1 from 1 entity-related chunks by weighted polling
+__________________ test_env_drift_is_rejected_by_frozen_entry __________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x117b53e60>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-335/test_env_drift_is_rejected_by_0')
+
+    def test_env_drift_is_rejected_by_frozen_entry(monkeypatch, tmp_path):
+        install_run(monkeypatch, env_drift=True)
+>       with pytest.raises(la.AdapterError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE AdapterError
+
+tests/test_local_adapter_review_r2.py:165: Failed
+_______________ test_fetch_failure_persists_post_guard_terminal ________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11701e6c0>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-335/test_fetch_failure_persists_po0')
+
+    def test_fetch_failure_persists_post_guard_terminal(monkeypatch, tmp_path):
+        import json
+    
+        install_run(monkeypatch, fetch_failure=True)
+        with pytest.raises(la.AdapterError):
+            asyncio.run(la.run_frozen(tmp_path, ["fact-001"]))
+        report = json.loads((tmp_path / "local-runtime-latest.json").read_text())
+        assert report["failure"]["stage"] == "fetch"
+>       assert "identity_after" in report, "Post-guard ran but the terminal report must persist it"
+E       AssertionError: Post-guard ran but the terminal report must persist it
+E       assert 'identity_after' in {'task': '5.2 real local candidate adapter (rev 2, read-only, guarded)', 'release': 'lightrag-hku 1.5.7', 'frozen_cont...shot_id': '4919b3938ad93747', 'search_active': '872d689343a9cbb6', ...}, 'started_at': '2026-10-07T00:29:12+0800', ...}
+
+tests/test_local_adapter_review_r2.py:177: AssertionError
+_________ test_construct_failure_closes_client_acquired_inside_binding _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11817a510>
+
+    def test_construct_failure_closes_client_acquired_inside_binding(monkeypatch):
+        import lightrag.kg.qdrant_impl as qmodule
+    
+        clients = install_fetch(monkeypatch)
+    
+        def broken_constructor(self, **kwargs):
+            raise RuntimeError("storage constructor failed after client acquisition")
+    
+        monkeypatch.setattr(qmodule.QdrantVectorDBStorage, "__init__", broken_constructor)
+        with pytest.raises(RuntimeError):
+            asyncio.run(la.LocalCandidateAdapter(fixture.VALUES).fetch("fixture"))
+>       assert clients and all(c.closed for c in clients)
+E       assert ([<test_local_adapter_review_r2.install_fetch.<locals>.Client object at 0x11817aba0>] and False)
+E        +  where False = all(<generator object test_construct_failure_closes_client_acquired_inside_binding.<locals>.<genexpr> at 0x11804b100>)
+
+tests/test_local_adapter_review_r2.py:191: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_local_adapter_review_r2.py::test_reused_adapter_records_are_per_request
+FAILED tests/test_local_adapter_review_r2.py::test_actual_qdrant_reads_have_service_receipts
+FAILED tests/test_local_adapter_review_r2.py::test_missing_vectors_do_not_claim_vector_similarity
+FAILED tests/test_local_adapter_review_r2.py::test_swallowed_qdrant_timeout_has_failure_receipt
+FAILED tests/test_local_adapter_review_r2.py::test_env_drift_is_rejected_by_frozen_entry
+FAILED tests/test_local_adapter_review_r2.py::test_fetch_failure_persists_post_guard_terminal
+FAILED tests/test_local_adapter_review_r2.py::test_construct_failure_closes_client_acquired_inside_binding
+7 failed, 1 passed in 1.52s

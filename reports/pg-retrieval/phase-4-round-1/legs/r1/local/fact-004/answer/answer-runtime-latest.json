@@ -1,0 +1,187 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-08T13:19:06+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "fact-004"
+ ],
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "reports/pg-retrieval/phase-4-round-1/inputs/local/fact-004-rerank.json",
+   "sha256": "08df2e05343dfe0fcfa882cd70d0e2de3adcc88c54b60570b665f4161e92397e",
+   "task": null,
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": []
+  },
+  "fused_report": {
+   "path": "reports/pg-retrieval/phase-4-round-1/inputs/local/fact-004-fusion.json",
+   "sha256": "99512fdd6a246e6b32a6468fc9d9f95d6849f9409f49845b2d20536e6d6e7de8",
+   "task": "Phase 4 round 1 evaluation input (path=local)",
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": [
+    "fact-004"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "model_calls_used": 0,
+ "results": [
+  {
+   "query_id": "fact-004",
+   "query": "GB 3838-2002 中 III 类水体化学需氧量（COD）的标准限值是多少？",
+   "category": "fact",
+   "workspace": "default",
+   "coverage_status": "partial",
+   "fail_stage": "",
+   "flags": [
+    "no rerank replay for this query id — scope priority falls back to fusion path order, explicitly recorded (no fabricated scores)",
+    "expansion requested but nothing confirmed — never a guessed range"
+   ],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "absent",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 0,
+    "typed_targets": [
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "discovery": "local"
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-e2505ba8dc19349e1e88b68b82a42c79",
+      "discovery": "local"
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "discovery": "local"
+     }
+    ],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 10,
+    "selected_docs": [
+     "doc-91f9049decde09153368d4b69f280e78",
+     "doc-e2505ba8dc19349e1e88b68b82a42c79",
+     "doc-6557be3b1e950f40b8d14282ecdaf2c6"
+    ],
+    "priority": [
+     {
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-e2505ba8dc19349e1e88b68b82a42c79",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "rerank_rank_or_none": null
+     }
+    ],
+    "basis": "targets_resolved + typed targets (5.3) define the scope; rerank order only prioritizes — membership is never top-k bounded"
+   },
+   "expansions": [],
+   "answer": {
+    "mode": "deterministic",
+    "generated_by": "enumerate/expand entries",
+    "items": [],
+    "selection": {
+     "terms": [
+      "iii",
+      "水体",
+      "化学需氧量",
+      "cod",
+      "标准",
+      "限值",
+      "类水",
+      "体化",
+      "化学",
+      "学需",
+      "需氧",
+      "氧量",
+      "准限"
+     ],
+     "candidates": 0,
+     "kept": 0,
+     "rule": "rows/items whose raw text contains the most subject terms of the QUESTION (never gold text); ties keep every match"
+    },
+    "unit_blockers": []
+   },
+   "reverification": {
+    "items_checked": 0,
+    "problems": [],
+    "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+   },
+   "model": null,
+   "status": "partial"
+  }
+ ]
+}

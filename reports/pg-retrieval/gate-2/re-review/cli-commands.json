@@ -1,0 +1,47 @@
+[
+  {
+    "name": "chapter3",
+    "command": [
+      ".venv/bin/env-rag-final",
+      "search-query",
+      "--query",
+      "GB18466-2005 第3章有哪些术语",
+      "--expand",
+      "--out",
+      "reports/pg-retrieval/gate-2/re-review/cli-chapter3.json"
+    ],
+    "exit_code": 0,
+    "stderr": "Building prefix dict from the default dictionary ...\nLoading model from cache /var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/jieba.cache\nLoading model cost 0.262 seconds.\nPrefix dict has been built successfully.\n",
+    "output_file": "reports/pg-retrieval/gate-2/re-review/cli-chapter3.json"
+  },
+  {
+    "name": "two-version-docs",
+    "command": [
+      ".venv/bin/env-rag-final",
+      "search-query",
+      "--query",
+      "GB3095-2012 与 GB3095-2026",
+      "--expand-docs",
+      "--out",
+      "reports/pg-retrieval/gate-2/re-review/cli-two-version-docs.json"
+    ],
+    "exit_code": 0,
+    "stderr": "Building prefix dict from the default dictionary ...\nLoading model from cache /var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/jieba.cache\nLoading model cost 0.242 seconds.\nPrefix dict has been built successfully.\n",
+    "output_file": "reports/pg-retrieval/gate-2/re-review/cli-two-version-docs.json"
+  },
+  {
+    "name": "amendment-docs",
+    "command": [
+      ".venv/bin/env-rag-final",
+      "search-query",
+      "--query",
+      "库内有哪些 GB18466-2005 的文档（含修改单）",
+      "--expand-docs",
+      "--out",
+      "reports/pg-retrieval/gate-2/re-review/cli-amendment-docs.json"
+    ],
+    "exit_code": 0,
+    "stderr": "Building prefix dict from the default dictionary ...\nLoading model from cache /var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/jieba.cache\nLoading model cost 0.271 seconds.\nPrefix dict has been built successfully.\n",
+    "output_file": "reports/pg-retrieval/gate-2/re-review/cli-amendment-docs.json"
+  }
+]

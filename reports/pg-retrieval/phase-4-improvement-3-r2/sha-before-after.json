@@ -1,0 +1,31 @@
+{
+ "generation": "phase-4-improvement-3-r2",
+ "before_captured": "2026-10-09 本会话开始、任何编辑之前用 shasum 实测（交接 §开始编辑前捕获本次所有工作文件 SHA）",
+ "before": {
+  "src/env_rag_final/search/expand.py": "b004c9fa75baadc6b6716dca643e54ae1a3d1a2f61850aa4fa9af571172bd2ef",
+  "src/env_rag_final/enumerate_/doc_enum.py": "e553d05235b683b83206704df69cb18c0bccd97145b54a6fe35f8a024d893ed2",
+  "src/env_rag_final/answer.py": "65eefd79a01414d678a8d9e5e2155158870e6de9856db2125a871d29b7e72df3",
+  "src/env_rag_final/search/query.py": "25bed96d082198001bfb5502d15a6ff9890863c494ec2bfdac6adcb1812e7712",
+  "src/env_rag_final/evaluation.py": "a42d5c68952e40627a395f023650eae89f59a0527ac0208f45c90ea0f8dd7529",
+  "tests/test_phase4_improvement3_union_enumeration.py": "8c294b78e8217972626a12e2df4aa21fe5df5504d3e2a2c80f208b399ec62ddc"
+ },
+ "after": {
+  "src/env_rag_final/search/expand.py": "7ce0a67ca9f325ec0263a54cd4850cc188ce8987f65c94666b3b6a464d28b5c1",
+  "src/env_rag_final/enumerate_/doc_enum.py": "495efb96f9ecb2f63fff73748e9686a9714090db886bb7ff28d27dde0d172944",
+  "src/env_rag_final/answer.py": "98328f7f18540b82ed5dc2798c4bc94957357b8ed8f76ccb37e3bf63c7c565df",
+  "src/env_rag_final/search/query.py": "25bed96d082198001bfb5502d15a6ff9890863c494ec2bfdac6adcb1812e7712",
+  "src/env_rag_final/evaluation.py": "a42d5c68952e40627a395f023650eae89f59a0527ac0208f45c90ea0f8dd7529",
+  "tests/test_phase4_improvement3_union_enumeration.py": "7857e7912c73e3fdd5a80a901649028932f8dd261727487bcf6b5755a69743f8"
+ },
+ "changed": [
+  "src/env_rag_final/search/expand.py",
+  "src/env_rag_final/enumerate_/doc_enum.py",
+  "src/env_rag_final/answer.py",
+  "tests/test_phase4_improvement3_union_enumeration.py"
+ ],
+ "unchanged": [
+  "src/env_rag_final/search/query.py",
+  "src/env_rag_final/evaluation.py"
+ ],
+ "note": "上一代 sha-after 中 expand/answer 记录值与其工件最终态存在 format 先后差（b004c9fa 为本轮实测起点）；上一代 manifest 未记录 src 文件，不影响其清单复算"
+}

@@ -1,0 +1,270 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-08T13:22:28+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "prose-enum-002"
+ ],
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "reports/pg-retrieval/phase-4-round-1/inputs/fusion/prose-enum-002-rerank.json",
+   "sha256": "c0916299f13fba78598b9ebf1c41aed4836726cf5f2291271ae85f0b1de1f63f",
+   "task": "5.4 joint rerank over fused candidates (bounded, recorded)",
+   "started_at": "2026-10-08T13:22:26+0800",
+   "finished_at": "2026-10-08T13:22:28+0800",
+   "query_ids": [
+    "prose-enum-002"
+   ]
+  },
+  "fused_report": {
+   "path": "reports/pg-retrieval/phase-4-round-1/inputs/fusion/prose-enum-002-fusion.json",
+   "sha256": "487d3b5981c9b061d0a7e5ac11e4ff5b972c2ed0487a223a2f7b3af819972d56",
+   "task": "Phase 4 round 1 evaluation input (path=fusion)",
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": [
+    "prose-enum-002"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "model_calls_used": 0,
+ "results": [
+  {
+   "query_id": "prose-enum-002",
+   "query": "GB 18466-2005 的 4.1.1 与 4.1.2 分别规定了什么？逐条列出。",
+   "category": "prose_enum",
+   "workspace": "default",
+   "coverage_status": "complete",
+   "fail_stage": "",
+   "flags": [],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "ok",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 10,
+    "typed_targets": [
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "doc_name": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf",
+      "self_code": "GB18466",
+      "self_code_version": "2005",
+      "discovery": "code_exact",
+      "membership_basis": null,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+      },
+      "citation_verified": true
+     }
+    ],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 11,
+    "selected_docs": [
+     "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+    ],
+    "priority": [
+     {
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "rerank_rank_or_none": 0
+     }
+    ],
+    "basis": "targets_resolved + typed targets (5.3) define the scope; rerank order only prioritizes — membership is never top-k bounded"
+   },
+   "expansions": [
+    {
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "kind": "prose",
+     "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:4.1",
+     "requested_clauses": [
+      "4.1.1"
+     ],
+     "missing_requested_clauses": [],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "read_status": "complete",
+     "fail_stage": "",
+     "units_read": 1,
+     "unit_ids": [
+      "ef6868c7bc693df8da996208421b815d"
+     ],
+     "chunk_ids": [
+      "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+      "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+     ],
+     "items_count": 1,
+     "warnings": [],
+     "selected": true
+    },
+    {
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "kind": "prose",
+     "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:4.1",
+     "requested_clauses": [
+      "4.1.2"
+     ],
+     "missing_requested_clauses": [],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "read_status": "complete",
+     "fail_stage": "",
+     "units_read": 1,
+     "unit_ids": [
+      "ef6868c7bc693df8da996208421b815d"
+     ],
+     "chunk_ids": [
+      "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+      "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+     ],
+     "items_count": 1,
+     "warnings": [],
+     "selected": true
+    }
+   ],
+   "answer": {
+    "mode": "deterministic",
+    "generated_by": "enumerate/expand entries",
+    "items": [
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:4.1",
+      "clause": "4.1.1",
+      "text": "4.1.1 传染病和结核病医疗机构污水排放一律执行表1的规定。",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 14,
+       "char_end": 46,
+       "quote": "4.1.1 传染病和结核病医疗机构污水排放一律执行表1的规定。",
+       "unit_rel_start": 14,
+       "unit_rel_end": 46,
+       "unit_id": "ef6868c7bc693df8da996208421b815d",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "ef6868c7bc693df8da996208421b815d",
+        "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+       ],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:4.1",
+      "clause": "4.1.2",
+      "text": "4.1.2 县级及县级以上或 20 张床位及以上的综合医疗机构和其他医疗机构污水排放执行表 2 的规定。直接或间接排入地表水体和海域的污水执行排放标准，排入终端已建有正常运行城镇二级污水处理厂的下水道的污水，执行预处理标准。\nGB 18466 — 2005\n<table id=\"tb-68a03b50e1ba1ffc6a0116529f694fe1-0001\" format=\"html\"><tr><td>序号</td><td>控制项目</td><td>标准值</td></tr><tr><td>1</td><td>粪大肠菌群数/(MPN/L)</td><td>100</td></tr><tr><td>2</td><td>肠道致病菌</td><td>不得检出</td></tr><tr><td>3</td><td>肠道病毒</td><td>不得检出</td></tr><tr><td>4</td><td>结核杆菌</td><td>不得检出</td></tr><tr><td>5</td><td>pH</td><td>6~9</td></tr><tr><td rowspan=\"3\">6</td><td>化学需氧量(COD)</td><td></td></tr><tr><td>浓度/(mg/L)</td><td>60</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>60</td></tr><tr><td rowspan=\"3\">7</td><td>生化需氧量(BOD)</td><td></td></tr><tr><td>浓度/(mg/L)</td><td>20</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>20</td></tr><tr><td rowspan=\"3\">8</td><td>悬浮物(SS)</td><td></td></tr><tr><td>浓度/(mg/L)</td><td>20</td></tr><tr><td>最高允许排放负荷[g/(床位·d)]</td><td>20</td></tr><tr><td>9</td><td>氨氮/(mg/L)</td><td>15</td></tr><tr><td>10</td><td>动植物油/(mg/L)</td><td>5</td></tr><tr><td>11</td><td>石油类/(mg/L)</td><td>5</td></tr><tr><td>12</td><td>阴离子表面活性剂/(mg/L)</td><td>5</td></tr><tr><td>13</td><td>色度/(稀释倍数)</td><td>30</td></tr><tr><td>14</td><td>挥发酚/(mg/L)</td><td>0.5</td></tr><tr><td>15</td><td>总氰化物/(mg/L)</td><td>0.5</td></tr><tr><td>16</td><td>总汞/(mg/L)</td><td>0.05</td></tr><tr><td>17</td><td>总镉/(mg/L)</td><td>0.1</td></tr><tr><td>18</td><td>总铬/(mg/L)</td><td>1.5</td></tr><tr><td>19</td><td>六价铬/(mg/L)</td><td>0.5</td></tr><tr><td>20</td><td>总砷/(mg/L)</td><td>0.5</td></tr><tr><td>21</td><td>总铅/(mg/L)</td><td>1.0</td></tr><tr><td>22</td><td>总银/(mg/L)</td><td>0.5</td></tr><tr><td>23</td><td>总α/(Bq/L)</td><td>1</td></tr><tr><td>24</td><td>总β/(Bq/L)</td><td>10</td></tr><tr><td>25</td><td>总余氯 $^{1),2)}$ /(mg/L)(直接排入水体的要求)</td><td>0.5</td></tr><tr><td colspan=\"3\">注:1)采用含氯消毒剂消毒的工艺控制要求为:消毒接触池的接触时间≥1.5h,接触池出口总余氯6.5~10mg/L。2)采用其他消毒剂对总余氯不做要求。</td></tr></table>\nGB 18466 — 2005\n<table id=\"tb-68a03b50e1ba1ffc6a0116529f694fe1-0002\" format=\"html\"><tr><td>序号</td><td>控制项目</td><td>排放标准</td><td>预处理标准</td></tr><tr><td>1</td><td>粪大肠菌群数/(MPN/L)</td><td>500</td><td>5 000</td></tr><tr><td>2</td><td>肠道致病菌</td><td>不得检出</td><td>—</td></tr><tr><td>3</td><td>肠道病毒</td><td>不得检出</td><td>—</td></tr><tr><td>4</td><td>pH</td><td>6~9</td><td>6~9</td></tr><tr><td rowspan=\"3\">5</td><td>化学需氧量(COD)</td><td></td><td></td></tr><tr><td>浓度/(mg/L)</td><td>60</td><td>250</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>60</td><td>250</td></tr><tr><td rowspan=\"3\">6</td><td>生化需氧量(BOD)</td><td></td><td></td></tr><tr><td>浓度/(mg/L)</td><td>20</td><td>100</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>20</td><td>100</td></tr><tr><td rowspan=\"3\">7</td><td>悬浮物(SS)</td><td></td><td></td></tr><tr><td>浓度/(mg/L)</td><td>20</td><td>60</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>20</td><td>60</td></tr><tr><td>8</td><td>氨氮/(mg/L)</td><td>15</td><td>—</td></tr><tr><td>9</td><td>动植物油/(mg/L)</td><td>5</td><td>20</td></tr><tr><td>10</td><td>石油类/(mg/L)</td><td>5</td><td>20</td></tr><tr><td>11</td><td>阴离子表面活性剂/(mg/L)</td><td>5</td><td>10</td></tr><tr><td>12</td><td>色度/(稀释倍数)</td><td>30</td><td>—</td></tr><tr><td>13</td><td>挥发酚/(mg/L)</td><td>0.5</td><td>1.0</td></tr><tr><td>14</td><td>总氰化物/(mg/L)</td><td>0.5</td><td>0.5</td></tr><tr><td>15</td><td>总汞/(mg/L)</td><td>0.05</td><td>0.05</td></tr><tr><td>16</td><td>总镉/(mg/L)</td><td>0.1</td><td>0.1</td></tr><tr><td>17</td><td>总铬/(mg/L)</td><td>1.5</td><td>1.5</td></tr><tr><td>18</td><td>六价铬/(mg/L)</td><td>0.5</td><td>0.5</td></tr><tr><td>19</td><td>总砷/(mg/L)</td><td>0.5</td><td>0.5</td></tr><tr><td>20</td><td>总铅/(mg/L)</td><td>1.0</td><td>1.0</td></tr><tr><td>21</td><td>总银/(mg/L)</td><td>0.5</td><td>0.5</td></tr><tr><td>22</td><td>总α/(Bq/L)</td><td>1</td><td>1</td></tr><tr><td>23</td><td>总β/(Bq/L)</td><td>10</td><td>10</td></tr><tr><td>24</td><td>总余氯 $^{1),2)}$ /(mg/L)</td><td>0.5</td><td>—</td></tr><tr><td colspan=\"4\">注:1)采用含氯消毒剂消毒的工艺控制要求为:排放标准:消毒接触池接触时间≥1 h,接触池出口总余氯3~10 mg/L。预处理标准:消毒接触池接触时间≥1 h,接触池出口总余氯2~8 mg/L。2)采用其他消毒剂对总余氯不做要求。</td></tr></table>",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 46,
+       "char_end": 4055,
+       "quote": "4.1.2 县级及县级以上或 20 张床位及以上的综合医疗机构和其他医疗机构污水排放执行表 2 的规定。直接或间接排入地表水体和海域的污水执行排放标准，排入终端已建有正常运行城镇二级污水处理厂的下水道的污水，执行预处理标准。\nGB 1846",
+       "unit_rel_start": 46,
+       "unit_rel_end": 4055,
+       "unit_id": "ef6868c7bc693df8da996208421b815d",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "ef6868c7bc693df8da996208421b815d",
+        "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+       ],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     }
+    ]
+   },
+   "reverification": {
+    "items_checked": 2,
+    "problems": [],
+    "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+   },
+   "model": null,
+   "status": "ok"
+  }
+ ]
+}

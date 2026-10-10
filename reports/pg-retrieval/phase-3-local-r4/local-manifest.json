@@ -1,0 +1,112 @@
+{
+ "task": "5.2 real local candidate adapter (rev 4, N1-N3 remediation, read-only)",
+ "generated_at": "2026-10-07T01:24:44+0800",
+ "command_run": "uv run env-rag-final lightrag-local --query-id fact-001,fact-002,syn-001,neg-001 --report-dir reports/pg-retrieval/phase-3-local-r4",
+ "files_sha256": {
+  "src/env_rag_final/local_adapter.py": "4ca04196d3d472cf59969cca2a3bc7fe080b5ddb6715dda300c2a2272e09615f",
+  "src/env_rag_final/cli.py": "cb4ddcb025d3e17e484099ddcbaab4fdcaed2e3aa7bc3054885752d7da11c023",
+  "reports/pg-retrieval/phase-3-local-r4/local-runtime-latest.json": "4b699bf65d3cac8aa2e3326f9714d43de28416970362b6f361ea0d958c7eb230",
+  "reports/pg-retrieval/gate-2/review-r5/gold-approved.json": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "tests/test_local_adapter_review_r3.py": "a8d5bb08c2d50650211d55808b33a108efabe076d1f3366a03f21ca4b22bb0ae"
+ },
+ "release": {
+  "lightrag_hku": "1.5.7",
+  "wheel_record_mismatches": 0
+ },
+ "fixes": {
+  "N1a": "Neo4j receipts written after the real awaited session.run; async failure -> failure receipt then re-raise; elapsed includes wait",
+  "N1b": "vector support judged per stage/collection: chunks-collection retrieve coverage (requested vs returned) only; entities hits cannot vouch for chunks",
+  "N2": "failed fetch terminal serializes the failing adapter's call_records/group_records/by_service/groups + query_id; pre-flight rejections report an explicit zero-call ledger",
+  "N3a": "Neo4j storage constructed before driver acquisition; after acquisition only plain assignments (always returned to the fetch-owned cleanup)",
+  "N3b": "cleanup branches by native-handle ownership; native close failure NEVER falls back to the flushing release finalize"
+ },
+ "service_call_totals": {
+  "by_service": {
+   "llm": {
+    "attempt": 4,
+    "success": 4,
+    "failure": 0
+   },
+   "embedding": {
+    "attempt": 10,
+    "success": 10,
+    "failure": 0
+   },
+   "qdrant": {
+    "attempt": 10,
+    "success": 10,
+    "failure": 0
+   },
+   "neo4j": {
+    "attempt": 20,
+    "success": 20,
+    "failure": 0
+   },
+   "pg": {
+    "attempt": 10,
+    "success": 10,
+    "failure": 0
+   }
+  },
+  "groups": {
+   "neo4j": {
+    "attempt": 4,
+    "success": 4,
+    "failure": 0
+   },
+   "pg": {
+    "attempt": 8,
+    "success": 8,
+    "failure": 0
+   }
+  }
+ },
+ "identity_guards": {
+  "identity_before_matches_frozen": true,
+  "identity_after_matches_frozen": true,
+  "identity_drift": [],
+  "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e"
+ },
+ "verification": {
+  "candidates_total": 40,
+  "candidates_verified": 40,
+  "vector_coverage": {
+   "fact-001": {
+    "expected_chunks": 10,
+    "chunks_retrieve_calls": 2,
+    "vectors_requested": 220,
+    "vectors_returned": 220,
+    "vector_backed": true
+   },
+   "fact-002": {
+    "expected_chunks": 10,
+    "chunks_retrieve_calls": 2,
+    "vectors_requested": 282,
+    "vectors_returned": 282,
+    "vector_backed": true
+   },
+   "syn-001": {
+    "expected_chunks": 9,
+    "chunks_retrieve_calls": 1,
+    "vectors_requested": 20,
+    "vectors_returned": 20,
+    "vector_backed": true
+   },
+   "neg-001": {
+    "expected_chunks": 8,
+    "chunks_retrieve_calls": 1,
+    "vectors_requested": 19,
+    "vectors_returned": 19,
+    "vector_backed": true
+   }
+  },
+  "answer_llm_calls": 0,
+  "llm_cache_rows_after": 16514
+ },
+ "tests": {
+  "total": 252,
+  "r3_review": "6/6 pass (5 former failures fixed)",
+  "r2_review": "8/8 pass",
+  "r1_review": "10/10 pass"
+ }
+}

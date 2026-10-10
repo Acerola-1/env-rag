@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-08",
+  "engineering_pilot_accepted": true,
+  "business_quality_not_inferred_from_complete": true,
+  "task6_2_checked": false,
+  "first_complete_round_prepared_not_executed": true,
+  "network_dispatch_scope": "user forwards the round1 handoff; no current reviewer execution; no automatic round2",
+  "code_prompt_models_gold_unchanged": true,
+  "pg_per_leg_cap_maintained": 1024,
+  "round1_rows": 123,
+  "positive_rows": 93,
+  "counter_rows": 30,
+  "round1_effective_bounds": {
+    "llm": 82,
+    "embedding": 328,
+    "qdrant": 656,
+    "neo4j": 820,
+    "pg": 125952,
+    "rerank": 41,
+    "answer_llm": 21
+  },
+  "known_failures": [
+    "syn-004 delivered 0 in all paths",
+    "local prose-enum-001 13 extra from other standards"
+  ],
+  "model_failure_counts_as_baseline_failure": true,
+  "reviewer_real_requests": 0,
+  "production_writes": 0,
+  "checks": {
+    "dry_run_backend_fetches": 0,
+    "openspec_strict": "passed",
+    "diff": "passed",
+    "secret_matches": 0
+  },
+  "sha256": {
+    "reports/pg-retrieval/phase-4-pilot-r2-review/audit.json": "cb677c0f4c52c5338c93b2d68f16ae3d17a48e5db1a70b1321ad82832eec0bee",
+    "reports/pg-retrieval/phase-4-pilot-r2-review/openspec-check.txt": "4693ceda9e27e58fa59b2c9dbba2ff1cf729bd8067915263151894179518ba7c",
+    "reports/pg-retrieval/phase-4-pilot-r2-review/round-1-dry-run.txt": "3d97f897453cc35bd917ffb86c160f65167268d3a4a82fdb6f51c0f334bfb937",
+    "reports/pg-retrieval/phase-4-pilot-r2-review/review.md": "01636205c9b85214f463efa2af92734017be50df48ac887f5df4f90158d4afc0",
+    "reports/pg-retrieval/phase-4-pilot-r2-review/diff-check.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/pg-retrieval/phase-4-pilot-r2-review/round-1-dry-run/execution-matrix.json": "010714cde006e037ee58bf915ff3a7d188416c6ecd3d2cc93d6d3e3d1e58a3c2",
+    "reports/pg-retrieval/phase-4-pilot-r2-review/round-1-dry-run/budget-upper-bounds.json": "c5be43bad2982736be450f45c0acaddc2e1222fb3a4f239c3908f900d9e3b4cb",
+    "reports/pg-retrieval/phase-4/round-1-budget.json": "6c48626d1f5145990b197087187716438e7cbee23dc9c2219b35c43083756d6f",
+    "openspec/changes/add-pg-scoped-retrieval/handoff-phase-4-6.2-round-1.md": "69813ef6b74bd934262434c1c474475928f4d75b115bff09b55bff8bd88cb9d2"
+  }
+}

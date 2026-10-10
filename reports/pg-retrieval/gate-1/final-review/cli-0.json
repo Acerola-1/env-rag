@@ -1,0 +1,77 @@
+{
+ "query_id": "prose-0f88588710f4",
+ "kind": "prose",
+ "workspace": "default",
+ "catalog_snapshot_id": "4919b3938ad93747",
+ "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+ "scope_ids": [
+  "doc-257d8cf3fdf90e76c31908c4f92fc1a1:scope:4"
+ ],
+ "members_total": 3,
+ "members_processed": 3,
+ "items": [
+  {
+   "clause": "4.1",
+   "text": "## 4.1 环境空气功能区分类\n环境空气功能区分为二类：一类区为自然保护区、风景名胜区和其他需要特殊保护的区域；二类区为居住区、商业交通居民混合区、文化区、工业区和农村地区。\nGB 3095—2012",
+   "citation": {
+    "kind": "char_span",
+    "char_start": 20,
+    "char_end": 123,
+    "quote": "## 4.1 环境空气功能区分类\n环境空气功能区分为二类：一类区为自然保护区、风景名胜区和其他需要特殊保护的区域；二类区为居住区、商业交通居民混合区、文化区、工业区和农村地区。\nGB 3095—2012",
+    "unit_rel_start": 0,
+    "unit_rel_end": 101,
+    "unit_id": "ced9002b92f52f07096945aae564c1d5",
+    "locator": {
+     "file": "blocks.jsonl",
+     "kind": "block",
+     "blockid": "ced9002b92f52f07096945aae564c1d5",
+     "parsed_dir": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf.parsed"
+    },
+    "chunk_ids": [
+     "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+    ],
+    "unit_source": "parsed_block",
+    "workspace": "default",
+    "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+    "snapshot_id": "4919b3938ad93747"
+   },
+   "citation_verified": true,
+   "source": "regex_clause_split"
+  },
+  {
+   "clause": "4.2",
+   "text": "## 4.2 环境空气功能区质量要求\n一类区适用一级浓度限值，二类区适用二级浓度限值。一、二类环境空气功能区质量要求见表 1和表 2。\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">浓度限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td></tr><tr><td rowspan=\"3\">1</td><td rowspan=\"3\">二氧化硫( $SO_2$ )</td><td>年平均</td><td>20</td><td>60</td><td rowspan=\"6\"> $μg/m^3$ </td></tr><tr><td>24小时平均</td><td>50</td><td>150</td></tr><tr><td>1小时平均</td><td>150</td><td>500</td></tr><tr><td rowspan=\"3\">2</td><td rowspan=\"3\">二氧化氮( $NO_2$ )</td><td>年平均</td><td>40</td><td>40</td></tr><tr><td>24小时平均</td><td>80</td><td>80</td></tr><tr><td>1小时平均</td><td>200</td><td>200</td></tr><tr><td rowspan=\"2\">3</td><td rowspan=\"2\">一氧化碳(CO)</td><td>24小时平均</td><td>4</td><td>4</td><td rowspan=\"2\"> $mg/m^3$ </td></tr><tr><td>1小时平均</td><td>10</td><td>10</td></tr><tr><td rowspan=\"2\">4</td><td rowspan=\"2\">臭氧( $O_3$ )</td><td>日最大8小时平均</td><td>100</td><td>160</td><td rowspan=\"6\"> $μg/m^3$ </td></tr><tr><td>1小时平均</td><td>160</td><td>200</td></tr><tr><td rowspan=\"2\">5</td><td rowspan=\"2\">颗粒物(粒径小于等于10μm)</td><td>年平均</td><td>40</td><td>70</td></tr><tr><td>24小时平均</td><td>50</td><td>150</td></tr><tr><td rowspan=\"2\">6</td><td rowspan=\"2\">颗粒物(粒径小于等于2.5μm)</td><td>年平均</td><td>15</td><td>35</td></tr><tr><td>24小时平均</td><td>35</td><td>75</td></tr></table>\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0002\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">浓度限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td></tr><tr><td rowspan=\"2\">1</td><td rowspan=\"2\">总悬浮颗粒物(TSP)</td><td>年平均</td><td>80</td><td>200</td><td rowspan=\"9\"> $\\mu g/m^3$ </td></tr><tr><td>24小时平均</td><td>120</td><td>300</td></tr><tr><td rowspan=\"3\">2</td><td rowspan=\"3\">氮氧化物( $NO_x$ )(以 $NO_2$ 计)</td><td>年平均</td><td>50</td><td>50</td></tr><tr><td>24小时平均</td><td>100</td><td>100</td></tr><tr><td>1小时平均</td><td>250</td><td>250</td></tr><tr><td rowspan=\"2\">3</td><td rowspan=\"2\">铅(Pb)</td><td>年平均</td><td>0.5</td><td>0.5</td></tr><tr><td>季平均</td><td>1.0</td><td>1.0</td></tr><tr><td rowspan=\"2\">4</td><td rowspan=\"2\">苯并[a]芘(BaP)</td><td>年平均</td><td>0.001</td><td>0.001</td></tr><tr><td>24小时平均</td><td>0.0025</td><td>0.0025</td></tr></table>",
+   "citation": {
+    "kind": "char_span",
+    "char_start": 123,
+    "char_end": 2417,
+    "quote": "## 4.2 环境空气功能区质量要求\n一类区适用一级浓度限值，二类区适用二级浓度限值。一、二类环境空气功能区质量要求见表 1和表 2。\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001\"",
+    "unit_rel_start": 0,
+    "unit_rel_end": 2293,
+    "unit_id": "7f9dddaf02f372cc7d329f4678c46fbc",
+    "locator": {
+     "file": "blocks.jsonl",
+     "kind": "block",
+     "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+     "parsed_dir": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf.parsed"
+    },
+    "chunk_ids": [
+     "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+    ],
+    "unit_source": "parsed_block",
+    "workspace": "default",
+    "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+    "snapshot_id": "4919b3938ad93747"
+   },
+   "citation_verified": true,
+   "source": "regex_clause_split"
+  }
+ ],
+ "coverage_status": "complete",
+ "warnings": [],
+ "fail_stage": "",
+ "predicate": null,
+ "read_token": null,
+ "model_calls": [],
+ "read_status": "complete"
+}

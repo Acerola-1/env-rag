@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-07",
+  "task": "5.3",
+  "accepted": false,
+  "blocking_groups": [
+    "F1",
+    "F2",
+    "F3",
+    "F4"
+  ],
+  "independent_acceptance": {
+    "failed": 5,
+    "passed": 1
+  },
+  "submitted_tests_passed": 266,
+  "previous_5_2_accepted": true,
+  "gate3_accepted": false,
+  "next_task_only": "5.3 F1-F4 fixes",
+  "submitted_sha_matches": {
+    "src/env_rag_final/fusion.py": true,
+    "src/env_rag_final/cli.py": true,
+    "tests/test_fusion.py": true,
+    "reports/pg-retrieval/phase-3-fusion/fusion-runtime-latest.json": true,
+    "reports/pg-retrieval/phase-3-fusion/fusion-candidates.jsonl": true,
+    "reports/pg-retrieval/phase-3-fusion/fusion-report.md": true,
+    "reports/pg-retrieval/gate-2/review-r5/gold-approved.json": true
+  },
+  "local_adapter_sha": "0bbad9764856250085b5cefb90c9d56933bfd2f6e9ed5ed796fdd93bdf2da7e3",
+  "independent_readonly_reread": {
+    "requested": 19,
+    "verified": 19
+  },
+  "real_related_targets": 2,
+  "real_related_targets_rejected": 2,
+  "identity_matches_before": true,
+  "identity_matches_after": true,
+  "identity_drift": [],
+  "reviewer_model_calls": 0,
+  "reviewer_production_writes": 0,
+  "implementation_modified_by_reviewer": false,
+  "old_tests_modified_by_reviewer": false,
+  "scope": {
+    "total_files": 454,
+    "reviewed_files": 5,
+    "skipped_files": 449,
+    "coverage_rate": 0.011013215859030838
+  },
+  "checks": {
+    "ruff": true,
+    "format": true,
+    "openspec_strict": true,
+    "diff_check": true
+  },
+  "credential_scan_leaks": [],
+  "artifact_sha256": {
+    "reports/pg-retrieval/phase-3-fusion-review/ocr-rules.json": "ebbe61341dba03df5e06386571cd5725244185331ac63d8f4ea4cb003b2e1aa0",
+    "reports/pg-retrieval/phase-3-fusion-review/ruff-format.txt": "8fc84de260370606207d2013c73b2de92868bcb9e7e1020fd067097954486ba6",
+    "reports/pg-retrieval/phase-3-fusion-review/ocr-preview.json": "d2c1e4904ca8caea8ea6ea4f7fb317928b8ab203e1d25d29aceba2363a7a3178",
+    "reports/pg-retrieval/phase-3-fusion-review/ruff-check.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "reports/pg-retrieval/phase-3-fusion-review/submitted-tests.txt": "f613093660d273e8c1cea90c8e072ac019bb41f0f4bb8ecec08b2b4a2fefeb3c",
+    "reports/pg-retrieval/phase-3-fusion-review/final-tests.txt": "65cbcfa278ae2a73ef26e3d7b089045fc87ae1b265bfa2876f347444410e7000",
+    "reports/pg-retrieval/phase-3-fusion-review/acceptance-tests.txt": "4ed870c1890239ca272b5befd049d65ae7477aed4d2075e5256e55ccb036d933",
+    "reports/pg-retrieval/phase-3-fusion-review/findings.json": "f0fc6415dfff1162449898a911a996f904d4ce97e6fa72b7836d568ef0f6422c",
+    "reports/pg-retrieval/phase-3-fusion-review/openspec-check.txt": "4693ceda9e27e58fa59b2c9dbba2ff1cf729bd8067915263151894179518ba7c",
+    "reports/pg-retrieval/phase-3-fusion-review/read-only-probes.json": "1943ddc0eaeb64837b38fac4c488cbde7dc831e9012e7782680c8e9b2ab1f5a9",
+    "reports/pg-retrieval/phase-3-fusion-review/coverage.json": "8fe50c772e9848f705d2b3b07eb54cca5f987646c444bc26407e532a422cc591",
+    "reports/pg-retrieval/phase-3-fusion-review/review.md": "4f69ba84432837d13f7c5301a3582a6e3c4a0675d7136dd7f3960db2be50a4fe",
+    "reports/pg-retrieval/phase-3-fusion-review/read-only-probes.py": "1ab1d6edeeaef32fae726e165c5e4644331854eb7857654951cd6f4dc29b44d2",
+    "reports/pg-retrieval/phase-3-fusion-review/diff-check.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "final_combined_tests": {
+    "passed": 267,
+    "failed": 5,
+    "old_assertions_unchanged": true
+  }
+}

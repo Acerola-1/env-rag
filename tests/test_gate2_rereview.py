@@ -1,0 +1,336 @@
+"""New Gate2 acceptance counterexamples; no live DB or model invocation."""
+
+import asyncio
+import json
+import sqlite3
+
+from env_rag_final.enumerate_.contract import EnumResult
+from env_rag_final.enumerate_.prose_enum import UnitText
+from env_rag_final.search import eval as evaluation
+from env_rag_final.search import expand, gold, query
+
+
+def run(coro):
+    return asyncio.run(coro)
+
+
+def patch_search_current(monkeypatch):
+    async def state(*args, **kwargs):
+        return {
+            "state": "current",
+            "search_id": "search",
+            "catalog_snapshot_id": "catalog",
+            "reasons": [],
+        }
+
+    monkeypatch.setattr(query, "check_search_stale", state)
+    monkeypatch.setattr(expand, "check_search_stale", state)
+
+
+def test_definition_expansion_does_not_count_chapter_heading_as_item(monkeypatch):
+    import env_rag_final.enumerate_.prose_enum as prose
+
+    patch_search_current(monkeypatch)
+    text = "## 3 术语和定义\n3.1 医疗机构\n指医院。\n3.2 医疗机构污水\n指诊疗污水。\n3.3 污泥\n指污泥。\n3.4 废气\n指有害气体。"
+    unit = UnitText("u", text, ["c"], {"blockid": "u"}, 0, len(text), False, "parsed_block")
+
+    async def read(*args, **kwargs):
+        return [unit], EnumResult(
+            "q",
+            "prose",
+            "default",
+            "catalog",
+            "source",
+            members_total=1,
+            members_processed=1,
+            coverage_status="ambiguous",
+            read_status="complete",
+        )
+
+    monkeypatch.setattr(prose, "read_prose_scope", read)
+    result = run(expand._expand_prose(None, "default", "d", "d:scope:3", None))
+    assert result["coverage_status"] == "complete"
+    assert {i["clause"] for i in result["items"]} == {"3.1", "3.2", "3.3", "3.4"}
+
+
+def test_two_version_file_expansion_returns_union_not_impossible_intersection(monkeypatch):
+    from env_rag_final.enumerate_ import doc_enum
+
+    async def enum(conn, predicate, args=(), **kwargs):
+        db = sqlite3.connect(":memory:")
+        try:
+            db.execute(
+                "CREATE TABLE docs (doc_id TEXT,self_code TEXT,self_code_version TEXT,doc_name TEXT)"
+            )
+            db.executemany(
+                "INSERT INTO docs VALUES (?,?,?,?)",
+                [
+                    ("d12", "GB3095", "2012", "GB3095-2012.pdf"),
+                    ("d26", "GB3095", "2026", "GB3095-2026.pdf"),
+                ],
+            )
+            bindings = {str(n): value for n, value in enumerate(args, 3)}
+            rows = db.execute("SELECT * FROM docs WHERE " + predicate, bindings).fetchall()
+            items = [
+                dict(
+                    doc_id=d,
+                    self_code=c,
+                    self_code_version=v,
+                    doc_name=n,
+                    title="标准",
+                    doc_type="standard",
+                    citation={},
+                    citation_verified=True,
+                )
+                for d, c, v, n in rows
+            ]
+            return EnumResult(
+                "q",
+                "document",
+                "default",
+                "catalog",
+                "source",
+                items=items,
+                coverage_status="complete",
+            )
+        finally:
+            db.close()
+
+    monkeypatch.setattr(doc_enum, "enumerate_documents", enum)
+
+    class GuardConn:
+        """read-only active-catalog response for the publication guard
+        (improvement-3)."""
+
+        async def fetchrow(self, sql, *args):
+            assert "corpus_runs" in sql
+            return {"snapshot_id": "catalog", "source_fingerprint": {"value": "source"}}
+
+    result = query.SearchResult("q", "default")
+    result.query_text = "GB3095-2012 与 GB3095-2026"
+    result.parsed_codes = [
+        {"code": "GB3095", "version": "2012"},
+        {"code": "GB3095", "version": "2026"},
+    ]
+    result.parsed_code = result.parsed_codes[0]
+    run(expand.expand_candidates(GuardConn(), result, "default", {}, expand_docs=True))
+    assert {c["self_code_version"] for c in result.candidates} == {"2012", "2026"}
+
+
+def test_self_code_query_does_not_add_cover_attributed_amendment(monkeypatch):
+    patch_search_current(monkeypatch)
+    standard = dict(
+        doc_id="original",
+        doc_name="GB18466-2005.pdf",
+        title="医疗机构水污染物排放标准",
+        self_code="GB18466",
+        self_code_version="2005",
+        doc_type="standard",
+    )
+    amendment = dict(
+        doc_id="amendment",
+        doc_name="修改单.pdf",
+        title="GB18466-2005修改单",
+        self_code=None,
+        self_code_version=None,
+        doc_type="amendment",
+    )
+
+    class Conn:
+        async def fetchrow(self, *args):
+            return {
+                "search_id": "search",
+                "catalog_snapshot_id": "catalog",
+                "source_fingerprint": "source",
+            }
+
+        async def fetchval(self, *args):
+            return 0
+
+        async def fetch(self, sql, *args):
+            if "self_code=$3" in sql:
+                return [standard]
+            if "search_documents" in sql:
+                return [amendment]
+            return []
+
+    result = run(query.run_query(Conn(), "自身编号为GB18466-2005的文档有哪些"))
+    assert {c["doc_id"] for c in result.candidates} == {"original"}
+
+
+def test_requested_expansion_without_confirmed_scope_is_ambiguous(monkeypatch):
+    result = query.SearchResult("q", "default")
+    result.query_text = "医疗机构污水执行要求"
+    result.candidates = [{"doc_id": "d"}]
+    run(expand.expand_candidates(None, result, "default", {}))
+    assert result.status == "ambiguous"
+
+
+def benchmark_gold(workspace="default", frozen=None):
+    g = {
+        "questions": [
+            {
+                "query_id": "q",
+                "question": "query",
+                "category": "fact",
+                "gold_review_status": "approved",
+                "workspace": "default",
+                "gold": {
+                    "assertion": "fact",
+                    "target_evidence": [{"workspace": workspace, "doc_id": "d", "chunk_id": "c"}],
+                },
+            }
+        ]
+    }
+    if frozen:
+        g["frozen_inputs"] = frozen
+    return g
+
+
+def patch_benchmark_result(monkeypatch, status="ok"):
+    async def fake(*a, **kw):
+        result = query.SearchResult("q", "default")
+        result.status = status
+        result.catalog_snapshot_id = "catalog"
+        result.source_snapshot_id = "source"
+        result.candidates = [
+            {"workspace": "default", "doc_id": "d", "chunk_id": "c", "citation_verified": True}
+        ]
+        return result
+
+    monkeypatch.setattr(evaluation, "run_query", fake)
+
+
+def test_stale_query_candidates_are_not_eligible_evidence(monkeypatch):
+    patch_benchmark_result(monkeypatch, "stale")
+    result = run(evaluation.run_benchmark(None, benchmark_gold()))
+    assert result["evidence_recall_at_k_reviewed"] in (None, 0)
+
+
+def test_evidence_metric_does_not_match_other_workspace_identity(monkeypatch):
+    patch_benchmark_result(monkeypatch)
+    result = run(evaluation.run_benchmark(None, benchmark_gold("other")))
+    assert result["evidence_recall_at_k_reviewed"] in (None, 0)
+
+
+def test_frozen_source_mismatch_does_not_enter_metrics(monkeypatch):
+    import env_rag_final.search.index as index
+
+    patch_benchmark_result(monkeypatch)
+
+    async def state(*a, **kw):
+        return {"state": "current", "catalog_snapshot_id": "catalog"}
+
+    monkeypatch.setattr(index, "check_search_stale", state)
+    dataset = benchmark_gold(
+        frozen={
+            "source_fingerprint": "old-source",
+            "catalog_snapshot_id": "old-catalog",
+            "workspace": "default",
+        }
+    )
+    result = run(evaluation.run_benchmark(object(), dataset))
+    assert result["evidence_recall_at_k_reviewed"] in (None, 0)
+
+
+def test_gold_block_selector_ignores_table_of_contents(monkeypatch):
+    contents = [
+        {"blockid": "toc", "content": "## 目次\n6.1 污水取样与监测 ……5"},
+        {"blockid": "body", "content": "## 6.1 污水取样与监测\n6.1.1 应设科室排出口与单位外排口。"},
+    ]
+    monkeypatch.setattr(gold, "blocks_of", lambda *a: contents)
+    assert gold.block_of("file.pdf", r"^#*\s*6\.1\s")["blockid"] == "body"
+
+
+def test_rowspan_repeated_sequence_does_not_imply_missing_table_rows(monkeypatch, tmp_path):
+    import env_rag_final.enumerate_.table_enum as tables
+    from env_rag_final.audit import identity
+
+    folder = tmp_path / "test.pdf.parsed"
+    folder.mkdir()
+    html = '<table><tr><th>序号</th><th>项目</th><th>平均时间</th><th>限值</th></tr><tr><td rowspan="2">1</td><td rowspan="2">二氧化硫</td><td>年平均</td><td>20</td></tr><tr><td>小时平均</td><td>100</td></tr><tr><td>2</td><td>二氧化氮</td><td>年平均</td><td>40</td></tr></table>'
+    (folder / "test.tables.json").write_text(json.dumps({"tables": {"table": {"content": html}}}))
+
+    class Conn:
+        async def fetchval(self, *a):
+            return "test.pdf"
+
+        async def fetch(self, sql, *a):
+            if "source_units" in sql:
+                return [
+                    dict(
+                        unit_id="table",
+                        unit_order=1,
+                        table_seq=1,
+                        caption="表1 浓度限值",
+                        heading="4",
+                        locator={"blockid": "u"},
+                    )
+                ]
+            return [{"chunk_id": "c"}]
+
+    async def current(*a, **kw):
+        return {"state": "current", "active_snapshot_id": "catalog", "stored_fingerprint": "source"}
+
+    monkeypatch.setattr(identity, "PARSED_ROOT", tmp_path)
+    monkeypatch.setattr(tables, "check_stale", current)
+    result = run(tables.enumerate_table(Conn(), "default", "d", "1"))
+    assert len(result.items) == 3
+    assert result.coverage_status == "complete"
+
+
+def test_oov_concept_synonym_is_tried_before_dropping_that_concept(monkeypatch):
+    from env_rag_final.search import tokenizer as tk
+
+    monkeypatch.setattr(tk, "synonyms", lambda: {"污水": ["废水"]})
+
+    async def hits(conn, search_id, term, workspace, docs):
+        return 0 if term.render() == "污水" else 1
+
+    async def ranked(conn, search_id, tsq, top_k, workspace, docs=None):
+        if tsq == "'厂界标准值'":
+            doc_id = "unrelated-factory"
+        elif "'废水'" in tsq and "'厂界标准值'" in tsq:
+            doc_id = "wastewater-factory"
+        else:
+            return []
+        return [
+            {
+                "doc_id": doc_id,
+                "chunk_id": "c-" + doc_id,
+                "heading": "h",
+                "chunk_order": 0,
+                "rank": 1,
+            }
+        ]
+
+    async def no_docs(*a, **kw):
+        return []
+
+    monkeypatch.setattr(query, "_term_hits", hits)
+    monkeypatch.setattr(query, "_rank_chunks", ranked)
+    monkeypatch.setattr(query, "_rank_docs", no_docs)
+    result = query.SearchResult("q", "default")
+    result.search_id = "search"
+    run(
+        query._keyword_route(
+            None, result, [tk.QueryToken(("污水",)), tk.QueryToken(("厂界标准值",))], "default", 20
+        )
+    )
+    assert {c["doc_id"] for c in result.candidates} == {"wastewater-factory"}
+
+
+def test_probe_does_not_skip_new_code_adjacency_cases_after_first_twenty():
+    from env_rag_final.search import probe
+
+    class Conn:
+        async def fetchval(self, sql, *args):
+            if "@@" in sql:
+                return "<->" not in args[1]
+            return "recorded-vector"
+
+    cases = [{"text": "污水"} for _ in range(20)] + [
+        {"source": "code-phrase adjacency", "text": "GB3095-2012"}
+    ]
+    result = run(probe._consistency(Conn(), cases))
+    assert any(r["text"] == "GB3095-2012" and r["pass"] is False for r in result)

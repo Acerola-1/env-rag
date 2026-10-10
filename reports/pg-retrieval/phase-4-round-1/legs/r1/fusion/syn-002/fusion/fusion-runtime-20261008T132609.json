@@ -1,0 +1,1285 @@
+{
+ "task": "5.3 two-path candidate fusion (read-only, guarded)",
+ "started_at": "2026-10-08T13:26:05+0800",
+ "pg_only_switch": false,
+ "frozen_contract": {
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8"
+ },
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "results": [
+  {
+   "query_id": "syn-002",
+   "query": "GB 18466-2005 排放的污水在执行标准和监测点位上分别有什么要求？",
+   "workspace": "default",
+   "pg": {
+    "status": "ok",
+    "search_id": "872d689343a9cbb6",
+    "catalog_snapshot_id": "4919b3938ad93747",
+    "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "discovery_total": 2,
+    "discovery_captured": true,
+    "chunks": 1,
+    "stale_state": "current",
+    "notes": [],
+    "trace_stages": [
+     "code_exact",
+     "keyword_and",
+     "keyword_and_diagnostics",
+     "keyword_core_and"
+    ],
+    "sql_statements": {
+     "fetchrow": 8,
+     "fetch": 12,
+     "fetchval": 5
+    },
+    "trace": [
+     {
+      "stage": "code_exact",
+      "code": "GB18466",
+      "version_requested": "2005",
+      "strict": false,
+      "hits": 1,
+      "version_matched": 1,
+      "selected_versions": [
+       "2005"
+      ],
+      "selected_docs": [
+       "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+      ]
+     },
+     {
+      "stage": "keyword_and",
+      "tsquery": "'排放' & '污水' & '标准' & '监测点' & '位'",
+      "top_k": 20,
+      "restricted_to_code_docs": [
+       "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+      ],
+      "doc_hits": 0,
+      "chunk_hits": 0,
+      "elapsed_ms": 2
+     },
+     {
+      "stage": "keyword_and_diagnostics",
+      "per_term": [
+       {
+        "term": "排放",
+        "chunk_hits": 7
+       },
+       {
+        "term": "污水",
+        "chunk_hits": 15
+       },
+       {
+        "term": "标准",
+        "chunk_hits": 6
+       },
+       {
+        "term": "监测点",
+        "chunk_hits": 1
+       },
+       {
+        "term": "位",
+        "chunk_hits": 0
+       }
+      ],
+      "absent_terms": [
+       "位"
+      ]
+     },
+     {
+      "stage": "keyword_core_and",
+      "tsquery": "'排放' & '污水' & '标准' & '监测点'",
+      "dropped_absent_terms": [
+       "位"
+      ],
+      "chunk_hits": 1,
+      "note": "terms absent from the corpus cannot participate in AND"
+     }
+    ]
+   },
+   "local": {
+    "ran": true,
+    "skipped_reason": null,
+    "error": null,
+    "receipts": {
+     "query_id": "syn-002",
+     "call_records": [
+      {
+       "service": "llm",
+       "operation": "keyword_extraction",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 1446,
+       "result": {
+        "chars": 110
+       },
+       "target": null
+      },
+      {
+       "service": "embedding",
+       "operation": "openai_embed",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 186,
+       "result": {
+        "shape": [
+         1,
+         2560
+        ]
+       },
+       "target": null
+      },
+      {
+       "service": "qdrant",
+       "operation": "query_points",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 33,
+       "result": {
+        "points": 10
+       },
+       "target": "entities"
+      },
+      {
+       "service": "neo4j",
+       "operation": "session.run",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 13,
+       "result": null,
+       "target": null
+      },
+      {
+       "service": "neo4j",
+       "operation": "session.run",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 13,
+       "result": null,
+       "target": null
+      },
+      {
+       "service": "neo4j",
+       "operation": "session.run",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 2,
+       "result": null,
+       "target": null
+      },
+      {
+       "service": "neo4j",
+       "operation": "session.run",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 3,
+       "result": null,
+       "target": null
+      },
+      {
+       "service": "neo4j",
+       "operation": "session.run",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 6,
+       "result": null,
+       "target": null
+      },
+      {
+       "service": "embedding",
+       "operation": "openai_embed",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 155,
+       "result": {
+        "shape": [
+         1,
+         2560
+        ]
+       },
+       "target": null
+      },
+      {
+       "service": "qdrant",
+       "operation": "retrieve",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 60,
+       "result": {
+        "items": 65,
+        "requested": 65
+       },
+       "target": "chunks"
+      },
+      {
+       "service": "pg",
+       "operation": "readonly_select_chunks",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 3,
+       "result": {
+        "items": 25
+       },
+       "target": null
+      },
+      {
+       "service": "embedding",
+       "operation": "openai_embed",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 144,
+       "result": {
+        "shape": [
+         1,
+         2560
+        ]
+       },
+       "target": null
+      },
+      {
+       "service": "qdrant",
+       "operation": "retrieve",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 43,
+       "result": {
+        "items": 34,
+        "requested": 34
+       },
+       "target": "chunks"
+      },
+      {
+       "service": "pg",
+       "operation": "readonly_select_chunks",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 4,
+       "result": {
+        "items": 34
+       },
+       "target": null
+      },
+      {
+       "service": "pg",
+       "operation": "readonly_select_chunks",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 5,
+       "result": {
+        "items": 10
+       },
+       "target": null
+      }
+     ],
+     "by_service": {
+      "llm": {
+       "attempt": 1,
+       "success": 1,
+       "failure": 0
+      },
+      "embedding": {
+       "attempt": 3,
+       "success": 3,
+       "failure": 0
+      },
+      "qdrant": {
+       "attempt": 3,
+       "success": 3,
+       "failure": 0
+      },
+      "neo4j": {
+       "attempt": 5,
+       "success": 5,
+       "failure": 0
+      },
+      "pg": {
+       "attempt": 3,
+       "success": 3,
+       "failure": 0
+      }
+     },
+     "groups": {
+      "neo4j": {
+       "attempt": 1,
+       "success": 1,
+       "failure": 0
+      },
+      "pg": {
+       "attempt": 2,
+       "success": 2,
+       "failure": 0
+      }
+     },
+     "degraded": []
+    },
+    "sorting_sources": {
+     "chunk_pick_vectors": {
+      "expected_chunks": 10,
+      "observer_bound": true,
+      "observed_calls": [
+       {
+        "stage": "entities",
+        "collection": "chunks",
+        "vectors_requested": 65,
+        "vectors_effective": 65,
+        "missing_total": 0,
+        "missing_sample": [],
+        "mismatched_total": 0,
+        "mismatched_sample": [],
+        "unusable_total": 0,
+        "unusable_sample": [],
+        "points_returned_raw": 65,
+        "retrieve_failed": false,
+        "complete": true
+       },
+       {
+        "stage": "relations",
+        "collection": "chunks",
+        "vectors_requested": 34,
+        "vectors_effective": 34,
+        "missing_total": 0,
+        "missing_sample": [],
+        "mismatched_total": 0,
+        "mismatched_sample": [],
+        "unusable_total": 0,
+        "unusable_sample": [],
+        "points_returned_raw": 34,
+        "retrieve_failed": false,
+        "complete": true
+       }
+      ],
+      "vectors_requested": 99,
+      "vectors_effective": 99,
+      "missing_total": 0,
+      "mismatched_total": 0,
+      "unusable_total": 0,
+      "points_returned_raw": 99,
+      "vector_backed": true
+     },
+     "chunk_pick": "vector-similarity"
+    },
+    "degraded": [],
+    "keywords": {
+     "high_level": [
+      "排放标准要求",
+      "监测点位要求"
+     ],
+     "low_level": [
+      "GB 18466-2005",
+      "污水排放",
+      "执行标准",
+      "监测点位"
+     ]
+    },
+    "stage_completeness": [
+     {
+      "stage": "entities",
+      "complete": true,
+      "vectors_requested": 65,
+      "vectors_effective": 65
+     },
+     {
+      "stage": "relations",
+      "complete": true,
+      "vectors_requested": 34,
+      "vectors_effective": 34
+     }
+    ]
+   },
+   "targets_requested": [
+    {
+     "code": "GB18466",
+     "version": "2005"
+    }
+   ],
+   "targets_resolved": [
+    {
+     "code": "GB18466",
+     "version": "2005",
+     "docs": [
+      "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+     ],
+     "versions": [
+      "2005"
+     ]
+    }
+   ],
+   "typed_targets": [
+    {
+     "target_type": "doc",
+     "workspace": "default",
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "doc_name": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf",
+     "self_code": "GB18466",
+     "self_code_version": "2005",
+     "discovery": "code_exact",
+     "membership_basis": null,
+     "citation": {
+      "kind": "catalog_row",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+     },
+     "citation_verified": true
+    }
+   ],
+   "candidates": [
+    {
+     "workspace": "default",
+     "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-007",
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-007",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "heading": "6.2 大气取样与监测 公 告",
+       "chunk_order": 7,
+       "discovery": "keyword_core_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.0009216589969582856
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-007",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466 - 2005",
+        "edge:GB 18466 - 2005|污泥",
+        "edge:GB 18466 - 2005|县级以上人民政府环境保护行政主管部门"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 9,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 9,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "ccc3167b583b7cd1811b654660d8d7b9c677662e3dd629ffa11b42ac7da5eca7",
+     "content_len": 879,
+     "content": "## 6.2 大气取样与监测\n6.2.1 污水处理站大气监测点的布置方法与采样方法按 GB 16297 中附录 C 和 HJ/T 55 的有关规定执行。\n6.2.2 采样频率，每 2 小时采样一次，共采集 4 次，取其最大测定值。每季度监测一次。\n6.2.3 监测分析方法按表 6 执行。\n<table id=\"tb-68a03b50e1ba1ffc6a0116529f694fe1-0006\" format=\"html\"><tr><td>序号</td><td>控制项目</td><td>测定方法</td><td>方法来源</td></tr><tr><td>1</td><td>氨</td><td>次氯酸钠-水杨酸分光光度法</td><td>GB/T 14679</td></tr><tr><td>2</td><td>硫化氢</td><td>气相色谱法</td><td>GB/T 14678</td></tr><tr><td>3</td><td>臭气浓度(无量纲)</td><td>三点比较式臭袋法</td><td>GB/T 14675</td></tr><tr><td>4</td><td>氯气</td><td>甲基橙分光光度法</td><td>HJ/T 30</td></tr><tr><td>5</td><td>甲烷</td><td>气相色谱法</td><td>CJ/T 3037</td></tr></table>\n\n## 6.3 污泥取样与监测\n6.3.1 取样方法，采用多点取样，样品应有代表性，样品重量不小于 $1 \\, kg$ 。清掏前监测。\nGB 18466 — 2005\n续表\n6.3.2 监测分析方法见附录 A、附录 B、附录 C、附录 D 和附录 E。\n\n## 7 标准的实施与监督\n7.1 本标准由县级以上人民政府环境保护行政主管部门负责监督实施。\n7.2 省、自治区、直辖市人民政府对执行本标准不能达到本地区环境功能要求时，可以根据总量控制要求和环境影响评价结果制定严于本标准的地方污染物排放标准。\nGB 18466 — 2005",
+     "file_path": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002",
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466 - 2005",
+        "edge:GB 18466 - 2005|氨氮",
+        "edge:GB 18466 - 2005|pH",
+        "edge:GB 18466 - 2005|总汞",
+        "edge:GB 18466 - 2005|石油类",
+        "edge:GB 18466 - 2005|六价铬",
+        "edge:GB 18466 - 2005|综合医疗机构",
+        "edge:GB 18466 - 2005|粪大肠菌群数",
+        "edge:GB 18466 - 2005|总铬",
+        "edge:GB 18466 - 2005|总镉",
+        "edge:GB 18466 - 2005|阴离子表面活性剂",
+        "edge:GB 18466 - 2005|总铅",
+        "edge:GB 18466 - 2005|总余氯",
+        "edge:GB 18466 - 2005|化学需氧量(COD)",
+        "edge:GB 18466 - 2005|总银",
+        "edge:GB 18466 - 2005|挥发酚",
+        "edge:GB 18466 - 2005|动植物油",
+        "edge:GB 18466 - 2005|悬浮物(SS)",
+        "edge:GB 18466 - 2005|色度",
+        "edge:GB 18466 - 2005|总砷",
+        "edge:GB 18466 - 2005|总氰化物",
+        "edge:GB 18466 - 2005|含氯消毒剂",
+        "edge:GB 18466 - 2005|肠道致病菌",
+        "edge:GB 18466 - 2005|肠道病毒",
+        "edge:GB 18466 - 2005|生化需氧量(BOD)",
+        "edge:GB 18466 - 2005|脱氯处理",
+        "edge:GB 18466 - 2005|GB 3838",
+        "edge:GB 18466 - 2005|GB 3097",
+        "edge:GB 18466 - 2005|带传染病房的综合医疗机构",
+        "edge:GB 18466 - 2005|总 β",
+        "edge:GB 18466 - 2005|总 α"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 0,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 0,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "4d8a9d940178e437a113b08ca7219a612fa971ffabc2faa0793177e74b44fd7b",
+     "content_len": 2373,
+     "content": "GB 18466 — 2005\n<table id=\"tb-68a03b50e1ba1ffc6a0116529f694fe1-0002\" format=\"html\"><tr><td>序号</td><td>控制项目</td><td>排放标准</td><td>预处理标准</td></tr><tr><td>1</td><td>粪大肠菌群数/(MPN/L)</td><td>500</td><td>5 000</td></tr><tr><td>2</td><td>肠道致病菌</td><td>不得检出</td><td>—</td></tr><tr><td>3</td><td>肠道病毒</td><td>不得检出</td><td>—</td></tr><tr><td>4</td><td>pH</td><td>6~9</td><td>6~9</td></tr><tr><td rowspan=\"3\">5</td><td>化学需氧量(COD)</td><td></td><td></td></tr><tr><td>浓度/(mg/L)</td><td>60</td><td>250</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>60</td><td>250</td></tr><tr><td rowspan=\"3\">6</td><td>生化需氧量(BOD)</td><td></td><td></td></tr><tr><td>浓度/(mg/L)</td><td>20</td><td>100</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>20</td><td>100</td></tr><tr><td rowspan=\"3\">7</td><td>悬浮物(SS)</td><td></td><td></td></tr><tr><td>浓度/(mg/L)</td><td>20</td><td>60</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>20</td><td>60</td></tr><tr><td>8</td><td>氨氮/(mg/L)</td><td>15</td><td>—</td></tr><tr><td>9</td><td>动植物油/(mg/L)</td><td>5</td><td>20</td></tr><tr><td>10</td><td>石油类/(mg/L)</td><td>5</td><td>20</td></tr><tr><td>11</td><td>阴离子表面活性剂/(mg/L)</td><td>5</td><td>10</td></tr><tr><td>12</td><td>色度/(稀释倍数)</td><td>30</td><td>—</td></tr><tr><td>13</td><td>挥发酚/(mg/L)</td><td>0.5</td><td>1.0</td></tr><tr><td>14</td><td>总氰化物/(mg/L)</td><td>0.5</td><td>0.5</td></tr><tr><td>15</td><td>总汞/(mg/L)</td><td>0.05</td><td>0.05</td></tr><tr><td>16</td><td>总镉/(mg/L)</td><td>0.1</td><td>0.1</td></tr><tr><td>17</td><td>总铬/(mg/L)</td><td>1.5</td><td>1.5</td></tr><tr><td>18</td><td>六价铬/(mg/L)</td><td>0.5</td><td>0.5</td></tr><tr><td>19</td><td>总砷/(mg/L)</td><td>0.5</td><td>0.5</td></tr><tr><td>20</td><td>总铅/(mg/L)</td><td>1.0</td><td>1.0</td></tr><tr><td>21</td><td>总银/(mg/L)</td><td>0.5</td><td>0.5</td></tr><tr><td>22</td><td>总α/(Bq/L)</td><td>1</td><td>1</td></tr><tr><td>23</td><td>总β/(Bq/L)</td><td>10</td><td>10</td></tr><tr><td>24</td><td>总余氯 $^{1),2)}$ /(mg/L)</td><td>0.5</td><td>—</td></tr><tr><td colspan=\"4\">注:1)采用含氯消毒剂消毒的工艺控制要求为:排放标准:消毒接触池接触时间≥1 h,接触池出口总余氯3~10 mg/L。预处理标准:消毒接触池接触时间≥1 h,接触池出口总余氯2~8 mg/L。2)采用其他消毒剂对总余氯不做要求。</td></tr></table>\n4.1.3 县级以下或20张床位以下的综合医疗机构和其他所有医疗机构污水经消毒处理后方可排放。\n4.1.4 禁止向 GB 3838 I、Ⅱ类水域和Ⅲ类水域的饮用水保护区和游泳区，GB 3097 一、二类海域直接排放医疗机构污水。\nGB 18466 — 2005\n4.1.5 带传染病房的综合医疗机构，应将传染病房污水与非传染病房污水分开。传染病房的污水、粪便经过消毒后方可与其他污水合并处理。\n4.1.6 采用含氯消毒剂进行消毒的医疗机构污水，若直接排入地表水体和海域，应进行脱氯处理，使总余氯小于0.5 mg/L。",
+     "file_path": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000",
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466-2005",
+        "entity:医疗机构污水排放要求",
+        "entity:GB 18466-2001",
+        "entity:GB 8978-1996",
+        "entity:污水综合排放标准",
+        "entity:医疗机构水污染物排放标准",
+        "edge:GB 18466-2005|医疗机构水污染物排放标准",
+        "edge:GB 18466-2005|GB 8978-1996",
+        "edge:中华人民共和国海洋环境保护法|医疗机构水污染物排放标准",
+        "edge:GB 18466-2005|国家质量监督检验检疫总局",
+        "edge:GB 18466-2005|中国环境科学出版社",
+        "edge:GB 18466-2005|国家环境保护总局",
+        "edge:中华人民共和国水污染防治法|医疗机构水污染物排放标准",
+        "edge:GB 18466-2005|国家环境保护总局科技标准司",
+        "edge:GB 18466-2001|GB 18466-2005",
+        "edge:GB 18466-2005|国家环境保护总局网站",
+        "edge:GB 18466-2005|中国环境标准网",
+        "edge:中华人民共和国大气污染防治法|医疗机构水污染物排放标准",
+        "edge:GB 8978-1996|污水综合排放标准",
+        "edge:中华人民共和国环境保护法|医疗机构水污染物排放标准",
+        "edge:医疗机构|医疗机构水污染物排放标准",
+        "edge:医疗机构水污染物排放标准|处理工艺与消毒要求",
+        "edge:医疗机构水污染物排放标准|粪大肠菌群检验方法",
+        "edge:医疗机构水污染物排放标准|沙门氏菌检验方法",
+        "edge:医疗机构水污染物排放标准|取样与监测",
+        "edge:医疗机构水污染物排放标准|废气排放要求",
+        "edge:医疗机构水污染物排放标准|志贺氏菌检验方法",
+        "edge:医疗机构水污染物排放标准|污泥控制与处置",
+        "edge:医疗机构水污染物排放标准|标准的实施与监督",
+        "edge:中国疾病预防控制中心|医疗机构水污染物排放标准",
+        "edge:北京市环境保护科学研究院|医疗机构水污染物排放标准",
+        "edge:中华人民共和国传染病防治法|医疗机构水污染物排放标准",
+        "edge:医疗机构水污染物排放标准|结核杆菌检验方法",
+        "edge:医疗机构水污染物排放标准|单位排放负荷计算方法",
+        "edge:医疗机构水污染物排放标准|蛔虫卵检验方法",
+        "edge:医疗机构水污染物排放标准|污水排放要求",
+        "edge:GB 18466-2001|医疗机构污水排放要求"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 1,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 1,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "6d257224b304446f48b66380f090f1d23865bb564f962ab30a6270e60cfd0fbe",
+     "content_len": 2199,
+     "content": "# 中华人民共和国国家标准\nGB 18466 — 2005\n代替 GB 18466—2001\n部分代替 GB 8978—1996\n\n# 医疗机构水污染物排放标准\n\n# Discharge standard of water pollutants for medical organization\n2005-07-27 发布\n2006-01-01 实施\n国家环境保护总局\n国家质量监督检验检疫总局\n发布\nICS 13.060.30\nZ 60\nGB\n\n# 中华人民共和国 国家标准 医疗机构水污染物排放标准 GB 18466—2005\n中国环境科学出版社出版发行\n(100062 北京崇文区广渠门内大街 16 号)\n网址：http://www.cesp.cn\n电子信箱：bianji4@cesp.cn\n电话：010—67112738 传真：010—67112738\n印刷厂印刷\n版权专有 违者必究\n\\*\n2005 年 9 月第 1 版 开本 880 × 1230 1/16\n2005年9月第1次印刷\n印张 2.25\n印数 1—4000\n字数 75 千字\n统一书号：1380209.028\n定价：24.00元\nGB 18466—2005\n\n# 国家环境保护总局\n\n# 公 告\n2005 年 第 35 号\n为贯彻《中华人民共和国环境保护法》，加强对医疗机构污水、污水处理站废气、污泥排放的控制和管理，预防和控制传染病的发生和流行，保障人体健康，加强环境管理，现批准《医疗机构水污染物排放标准》为国家污染物排放标准，并由我局和国家质量监督检验检疫总局联合发布。\n标准编号、名称如下：\nGB 18466—2005 医疗机构水污染物排放标准\n本标准自实施之日起，代替《污水综合排放标准》（GB 8978—1996）中有关医疗机构水污染物排放标准部分，并取代《医疗机构污水排放要求》（GB 18466—2001）。\n上述标准为强制性标准，由中国环境科学出版社出版，自2006年1月1日起实施。\n标准信息可在国家环境保护总局网站(www.sepa.gov.cn)和中国环境标准网站(www.es.org.cn)上查询。\n特此公告。\n2005年7月27日\n\n## 目次\n前言 …… IV\n1 范围 …… 1\n2 规范性引用文件 …… 1\n3 术语和定义 …… 1\n4 技术内容 …… 1\n4.1 污水排放要求 …… 1\n4.2 废气排放要求 …… 4\n4.3 污泥控制与处置 …… 4\n5 处理工艺与消毒要求 …… 4\n6 取样与监测 …… 5\n6.1 污水取样与监测 …… 5\n6.2 大气取样与监测 …… 6\n6.3 污泥取样与监测 …… 6\n7 标准的实施与监督 …… 7\n附录 A（规范性附录） 医疗机构污水和污泥中粪大肠菌群的检验方法 …… 8\n附录 B（规范性附录） 医疗机构污水和污泥中沙门氏菌的检验方法 …… 15\n附录 C（规范性附录） 医疗机构污水及污泥中志贺氏菌的检验方法 …… 19\n附录 D（标准的附录） 医疗机构污泥中蛔虫卵的检验方法 …… 22\n附录 E（规范性附录） 医疗机构污水和污泥中结核杆菌的检验方法 …… 24\n附录 F（规范性附录） 医疗机构污水污染物（COD、BOD、SS）单位排放负荷计算方法 …… 27\nGB 18466 — 2005\n\n## 前言\n为贯彻《中华人民共和国环境保护法》、《中华人民共和国水污染防治法》、《中华人民共和国海洋环境保护法》、《中华人民共和国大气污染防治法》、《中华人民共和国传染病防治法》，加强对医疗机构污水、污水处理站废气、污泥排放的控制和管理，预防和控制传染病的发生和流行，保障人体健康，维护良好的生态环境，制定本标准。\n本标准规定了医疗机构污水及污水处理站产生的废气和污泥的污染物控制项目及其排放限值、处理工艺与消毒要求、取样与监测和标准的实施与监督等。\n本标准自实施之日起，代替 GB 8978—1996《污水综合排放标准》中有关医疗机构水污染物排放标准部分，并取代 GB 18466—2001《医疗机构污水排放要求》。新、扩、改医疗机构自本标准实施之日起按本标准实施管理，现有医疗机构在 2007 年 12 月 31 日前达到本标准要求。\n本标准的附录 A、附录 B、附录 C、附录 D、附录 E 和附录 F 为规范性附录。\n本标准为首次发布。\n本标准由国家环境保护总局科技标准司提出并归口。\n本标准委托北京市环境保护科学研究院和中国疾病预防控制中心起草。\n本标准由国家环境保护总局2005年7月27日批准。\n本标准 2006 年 1 月 1 日起实施。\n本标准由国家环境保护总局负责解释。\nGB 18466 — 2005\n\n## 医疗机构水污染物排放标准\n\n## 1 范围\n本标准规定了医疗机构污水、污水处理站产生的废气、污泥的污染物控制项目及其排放和控制限值、处理工艺和消毒要求、取样与监测和标准的实施与监督。\n本标准适用于医疗机构污水、污水处理站产生污泥及废气排放的控制，医疗机构建设项目的环境影响评价、环境保护设施设计、竣工验收及验收后的排放管理。当医疗机构的办公区、非医疗生活区等污水与病区污水合流收集时，其综合污水排放均执行本标准。建有分流污水收集系统的医疗机构，其非病区生活区污水排放执行 GB 8978 的相关规定。",
+     "file_path": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466 - 2005",
+        "edge:GB 18466 - 2005|表1",
+        "edge:GB 18466 - 2005|表2"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 2,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 2,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "8d6828de6ebc336b89a3ece1cf868b3c180756b1c4aa8d6cd0aae66c905faf9c",
+     "content_len": 2471,
+     "content": "## 2 规范性引用文件\n下列标准和本标准表 5、表 6 所列分析方法标准及规范所含条文在本标准中被引用即构成为本标准的条文，与本标准同效。当上述标准和规范被修订时，应使用其最新版本。\nGB 8978 污水综合排放标准\nGB 3838 地表水环境质量标准\nGB 3097 海水水质标准\nGB 16297 大气污染物综合排放标准\nHJ/T 55 大气污染物无组织排放监测技术导则\nHJ/T 91 地表水和污水检测技术规范\n\n## 3 术语和定义\n本标准采用下列定义。\n3.1 医疗机构 medical organization\n指从事疾病诊断、治疗活动的医院、卫生院、疗养院、门诊部、诊所、卫生急救站等。\n3.2 医疗机构污水 medical organization wastewater\n指医疗机构门诊、病房、手术室、各类检验室、病理解剖室、放射室、洗衣房、太平间等处排出的诊疗、生活及粪便污水。当医疗机构其他污水与上述污水混合排出时一律视为医疗机构污水。\n\n## 3.3 污泥 sludge\n指医疗机构污水处理过程中产生的栅渣、沉淀污泥和化粪池污泥。\n\n## 3.4 废气 waste gas\n指医疗机构污水处理过程中产生的有害气体。\n\n## 4 技术内容\n\n## 4.1 污水排放要求\n4.1.1 传染病和结核病医疗机构污水排放一律执行表1的规定。\n4.1.2 县级及县级以上或 20 张床位及以上的综合医疗机构和其他医疗机构污水排放执行表 2 的规定。直接或间接排入地表水体和海域的污水执行排放标准，排入终端已建有正常运行城镇二级污水处理厂的下水道的污水，执行预处理标准。\nGB 18466 — 2005\n<table id=\"tb-68a03b50e1ba1ffc6a0116529f694fe1-0001\" format=\"html\"><tr><td>序号</td><td>控制项目</td><td>标准值</td></tr><tr><td>1</td><td>粪大肠菌群数/(MPN/L)</td><td>100</td></tr><tr><td>2</td><td>肠道致病菌</td><td>不得检出</td></tr><tr><td>3</td><td>肠道病毒</td><td>不得检出</td></tr><tr><td>4</td><td>结核杆菌</td><td>不得检出</td></tr><tr><td>5</td><td>pH</td><td>6~9</td></tr><tr><td rowspan=\"3\">6</td><td>化学需氧量(COD)</td><td></td></tr><tr><td>浓度/(mg/L)</td><td>60</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>60</td></tr><tr><td rowspan=\"3\">7</td><td>生化需氧量(BOD)</td><td></td></tr><tr><td>浓度/(mg/L)</td><td>20</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>20</td></tr><tr><td rowspan=\"3\">8</td><td>悬浮物(SS)</td><td></td></tr><tr><td>浓度/(mg/L)</td><td>20</td></tr><tr><td>最高允许排放负荷[g/(床位·d)]</td><td>20</td></tr><tr><td>9</td><td>氨氮/(mg/L)</td><td>15</td></tr><tr><td>10</td><td>动植物油/(mg/L)</td><td>5</td></tr><tr><td>11</td><td>石油类/(mg/L)</td><td>5</td></tr><tr><td>12</td><td>阴离子表面活性剂/(mg/L)</td><td>5</td></tr><tr><td>13</td><td>色度/(稀释倍数)</td><td>30</td></tr><tr><td>14</td><td>挥发酚/(mg/L)</td><td>0.5</td></tr><tr><td>15</td><td>总氰化物/(mg/L)</td><td>0.5</td></tr><tr><td>16</td><td>总汞/(mg/L)</td><td>0.05</td></tr><tr><td>17</td><td>总镉/(mg/L)</td><td>0.1</td></tr><tr><td>18</td><td>总铬/(mg/L)</td><td>1.5</td></tr><tr><td>19</td><td>六价铬/(mg/L)</td><td>0.5</td></tr><tr><td>20</td><td>总砷/(mg/L)</td><td>0.5</td></tr><tr><td>21</td><td>总铅/(mg/L)</td><td>1.0</td></tr><tr><td>22</td><td>总银/(mg/L)</td><td>0.5</td></tr><tr><td>23</td><td>总α/(Bq/L)</td><td>1</td></tr><tr><td>24</td><td>总β/(Bq/L)</td><td>10</td></tr><tr><td>25</td><td>总余氯 $^{1),2)}$ /(mg/L)(直接排入水体的要求)</td><td>0.5</td></tr><tr><td colspan=\"3\">注:1)采用含氯消毒剂消毒的工艺控制要求为:消毒接触池的接触时间≥1.5h,接触池出口总余氯6.5~10mg/L。2)采用其他消毒剂对总余氯不做要求。</td></tr></table>",
+     "file_path": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-017",
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-017",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466 - 2005"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 7,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 7,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "b4126d8d882b53b00470772b32bd8540416c2c721a7d7f44d4051d31c75717d7",
+     "content_len": 1312,
+     "content": "<table id=\"tb-68a03b50e1ba1ffc6a0116529f694fe1-0008\" format=\"html\"><tr><td>1</td><td>4</td><td>3</td><td>17</td><td>3</td><td>4</td><td>3</td><td>32</td><td>5</td><td>4</td><td>3</td><td>280</td></tr><tr><td>1</td><td>4</td><td>4</td><td>19</td><td>3</td><td>4</td><td>4</td><td>36</td><td>5</td><td>4</td><td>4</td><td>350</td></tr><tr><td>1</td><td>4</td><td>5</td><td>22</td><td>3</td><td>4</td><td>5</td><td>40</td><td>5</td><td>4</td><td>5</td><td>430</td></tr><tr><td>1</td><td>5</td><td>0</td><td>13</td><td>3</td><td>5</td><td>0</td><td>25</td><td>5</td><td>5</td><td>0</td><td>240</td></tr><tr><td>1</td><td>5</td><td>1</td><td>15</td><td>3</td><td>5</td><td>1</td><td>29</td><td>5</td><td>5</td><td>1</td><td>350</td></tr><tr><td>1</td><td>5</td><td>2</td><td>17</td><td>3</td><td>5</td><td>2</td><td>32</td><td>5</td><td>5</td><td>2</td><td>540</td></tr><tr><td>1</td><td>5</td><td>3</td><td>19</td><td>3</td><td>5</td><td>3</td><td>37</td><td>5</td><td>5</td><td>3</td><td>920</td></tr><tr><td>1</td><td>5</td><td>4</td><td>22</td><td>3</td><td>5</td><td>4</td><td>41</td><td>5</td><td>5</td><td>4</td><td>1 600</td></tr><tr><td>1</td><td>5</td><td>5</td><td>24</td><td>3</td><td>5</td><td>5</td><td>45</td><td>5</td><td>5</td><td>5</td><td>&gt;1 600</td></tr></table>\nGB 18466 — 2005\nGB 18466 — 2005",
+     "file_path": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf"
+    }
+   ],
+   "usable": [
+    {
+     "workspace": "default",
+     "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-007",
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-007",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "heading": "6.2 大气取样与监测 公 告",
+       "chunk_order": 7,
+       "discovery": "keyword_core_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.0009216589969582856
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-007",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466 - 2005",
+        "edge:GB 18466 - 2005|污泥",
+        "edge:GB 18466 - 2005|县级以上人民政府环境保护行政主管部门"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 9,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 9,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "ccc3167b583b7cd1811b654660d8d7b9c677662e3dd629ffa11b42ac7da5eca7",
+     "content_len": 879,
+     "content": "## 6.2 大气取样与监测\n6.2.1 污水处理站大气监测点的布置方法与采样方法按 GB 16297 中附录 C 和 HJ/T 55 的有关规定执行。\n6.2.2 采样频率，每 2 小时采样一次，共采集 4 次，取其最大测定值。每季度监测一次。\n6.2.3 监测分析方法按表 6 执行。\n<table id=\"tb-68a03b50e1ba1ffc6a0116529f694fe1-0006\" format=\"html\"><tr><td>序号</td><td>控制项目</td><td>测定方法</td><td>方法来源</td></tr><tr><td>1</td><td>氨</td><td>次氯酸钠-水杨酸分光光度法</td><td>GB/T 14679</td></tr><tr><td>2</td><td>硫化氢</td><td>气相色谱法</td><td>GB/T 14678</td></tr><tr><td>3</td><td>臭气浓度(无量纲)</td><td>三点比较式臭袋法</td><td>GB/T 14675</td></tr><tr><td>4</td><td>氯气</td><td>甲基橙分光光度法</td><td>HJ/T 30</td></tr><tr><td>5</td><td>甲烷</td><td>气相色谱法</td><td>CJ/T 3037</td></tr></table>\n\n## 6.3 污泥取样与监测\n6.3.1 取样方法，采用多点取样，样品应有代表性，样品重量不小于 $1 \\, kg$ 。清掏前监测。\nGB 18466 — 2005\n续表\n6.3.2 监测分析方法见附录 A、附录 B、附录 C、附录 D 和附录 E。\n\n## 7 标准的实施与监督\n7.1 本标准由县级以上人民政府环境保护行政主管部门负责监督实施。\n7.2 省、自治区、直辖市人民政府对执行本标准不能达到本地区环境功能要求时，可以根据总量控制要求和环境影响评价结果制定严于本标准的地方污染物排放标准。\nGB 18466 — 2005",
+     "file_path": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002",
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466 - 2005",
+        "edge:GB 18466 - 2005|氨氮",
+        "edge:GB 18466 - 2005|pH",
+        "edge:GB 18466 - 2005|总汞",
+        "edge:GB 18466 - 2005|石油类",
+        "edge:GB 18466 - 2005|六价铬",
+        "edge:GB 18466 - 2005|综合医疗机构",
+        "edge:GB 18466 - 2005|粪大肠菌群数",
+        "edge:GB 18466 - 2005|总铬",
+        "edge:GB 18466 - 2005|总镉",
+        "edge:GB 18466 - 2005|阴离子表面活性剂",
+        "edge:GB 18466 - 2005|总铅",
+        "edge:GB 18466 - 2005|总余氯",
+        "edge:GB 18466 - 2005|化学需氧量(COD)",
+        "edge:GB 18466 - 2005|总银",
+        "edge:GB 18466 - 2005|挥发酚",
+        "edge:GB 18466 - 2005|动植物油",
+        "edge:GB 18466 - 2005|悬浮物(SS)",
+        "edge:GB 18466 - 2005|色度",
+        "edge:GB 18466 - 2005|总砷",
+        "edge:GB 18466 - 2005|总氰化物",
+        "edge:GB 18466 - 2005|含氯消毒剂",
+        "edge:GB 18466 - 2005|肠道致病菌",
+        "edge:GB 18466 - 2005|肠道病毒",
+        "edge:GB 18466 - 2005|生化需氧量(BOD)",
+        "edge:GB 18466 - 2005|脱氯处理",
+        "edge:GB 18466 - 2005|GB 3838",
+        "edge:GB 18466 - 2005|GB 3097",
+        "edge:GB 18466 - 2005|带传染病房的综合医疗机构",
+        "edge:GB 18466 - 2005|总 β",
+        "edge:GB 18466 - 2005|总 α"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 0,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 0,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "4d8a9d940178e437a113b08ca7219a612fa971ffabc2faa0793177e74b44fd7b",
+     "content_len": 2373,
+     "content": "GB 18466 — 2005\n<table id=\"tb-68a03b50e1ba1ffc6a0116529f694fe1-0002\" format=\"html\"><tr><td>序号</td><td>控制项目</td><td>排放标准</td><td>预处理标准</td></tr><tr><td>1</td><td>粪大肠菌群数/(MPN/L)</td><td>500</td><td>5 000</td></tr><tr><td>2</td><td>肠道致病菌</td><td>不得检出</td><td>—</td></tr><tr><td>3</td><td>肠道病毒</td><td>不得检出</td><td>—</td></tr><tr><td>4</td><td>pH</td><td>6~9</td><td>6~9</td></tr><tr><td rowspan=\"3\">5</td><td>化学需氧量(COD)</td><td></td><td></td></tr><tr><td>浓度/(mg/L)</td><td>60</td><td>250</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>60</td><td>250</td></tr><tr><td rowspan=\"3\">6</td><td>生化需氧量(BOD)</td><td></td><td></td></tr><tr><td>浓度/(mg/L)</td><td>20</td><td>100</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>20</td><td>100</td></tr><tr><td rowspan=\"3\">7</td><td>悬浮物(SS)</td><td></td><td></td></tr><tr><td>浓度/(mg/L)</td><td>20</td><td>60</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>20</td><td>60</td></tr><tr><td>8</td><td>氨氮/(mg/L)</td><td>15</td><td>—</td></tr><tr><td>9</td><td>动植物油/(mg/L)</td><td>5</td><td>20</td></tr><tr><td>10</td><td>石油类/(mg/L)</td><td>5</td><td>20</td></tr><tr><td>11</td><td>阴离子表面活性剂/(mg/L)</td><td>5</td><td>10</td></tr><tr><td>12</td><td>色度/(稀释倍数)</td><td>30</td><td>—</td></tr><tr><td>13</td><td>挥发酚/(mg/L)</td><td>0.5</td><td>1.0</td></tr><tr><td>14</td><td>总氰化物/(mg/L)</td><td>0.5</td><td>0.5</td></tr><tr><td>15</td><td>总汞/(mg/L)</td><td>0.05</td><td>0.05</td></tr><tr><td>16</td><td>总镉/(mg/L)</td><td>0.1</td><td>0.1</td></tr><tr><td>17</td><td>总铬/(mg/L)</td><td>1.5</td><td>1.5</td></tr><tr><td>18</td><td>六价铬/(mg/L)</td><td>0.5</td><td>0.5</td></tr><tr><td>19</td><td>总砷/(mg/L)</td><td>0.5</td><td>0.5</td></tr><tr><td>20</td><td>总铅/(mg/L)</td><td>1.0</td><td>1.0</td></tr><tr><td>21</td><td>总银/(mg/L)</td><td>0.5</td><td>0.5</td></tr><tr><td>22</td><td>总α/(Bq/L)</td><td>1</td><td>1</td></tr><tr><td>23</td><td>总β/(Bq/L)</td><td>10</td><td>10</td></tr><tr><td>24</td><td>总余氯 $^{1),2)}$ /(mg/L)</td><td>0.5</td><td>—</td></tr><tr><td colspan=\"4\">注:1)采用含氯消毒剂消毒的工艺控制要求为:排放标准:消毒接触池接触时间≥1 h,接触池出口总余氯3~10 mg/L。预处理标准:消毒接触池接触时间≥1 h,接触池出口总余氯2~8 mg/L。2)采用其他消毒剂对总余氯不做要求。</td></tr></table>\n4.1.3 县级以下或20张床位以下的综合医疗机构和其他所有医疗机构污水经消毒处理后方可排放。\n4.1.4 禁止向 GB 3838 I、Ⅱ类水域和Ⅲ类水域的饮用水保护区和游泳区，GB 3097 一、二类海域直接排放医疗机构污水。\nGB 18466 — 2005\n4.1.5 带传染病房的综合医疗机构，应将传染病房污水与非传染病房污水分开。传染病房的污水、粪便经过消毒后方可与其他污水合并处理。\n4.1.6 采用含氯消毒剂进行消毒的医疗机构污水，若直接排入地表水体和海域，应进行脱氯处理，使总余氯小于0.5 mg/L。",
+     "file_path": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000",
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466-2005",
+        "entity:医疗机构污水排放要求",
+        "entity:GB 18466-2001",
+        "entity:GB 8978-1996",
+        "entity:污水综合排放标准",
+        "entity:医疗机构水污染物排放标准",
+        "edge:GB 18466-2005|医疗机构水污染物排放标准",
+        "edge:GB 18466-2005|GB 8978-1996",
+        "edge:中华人民共和国海洋环境保护法|医疗机构水污染物排放标准",
+        "edge:GB 18466-2005|国家质量监督检验检疫总局",
+        "edge:GB 18466-2005|中国环境科学出版社",
+        "edge:GB 18466-2005|国家环境保护总局",
+        "edge:中华人民共和国水污染防治法|医疗机构水污染物排放标准",
+        "edge:GB 18466-2005|国家环境保护总局科技标准司",
+        "edge:GB 18466-2001|GB 18466-2005",
+        "edge:GB 18466-2005|国家环境保护总局网站",
+        "edge:GB 18466-2005|中国环境标准网",
+        "edge:中华人民共和国大气污染防治法|医疗机构水污染物排放标准",
+        "edge:GB 8978-1996|污水综合排放标准",
+        "edge:中华人民共和国环境保护法|医疗机构水污染物排放标准",
+        "edge:医疗机构|医疗机构水污染物排放标准",
+        "edge:医疗机构水污染物排放标准|处理工艺与消毒要求",
+        "edge:医疗机构水污染物排放标准|粪大肠菌群检验方法",
+        "edge:医疗机构水污染物排放标准|沙门氏菌检验方法",
+        "edge:医疗机构水污染物排放标准|取样与监测",
+        "edge:医疗机构水污染物排放标准|废气排放要求",
+        "edge:医疗机构水污染物排放标准|志贺氏菌检验方法",
+        "edge:医疗机构水污染物排放标准|污泥控制与处置",
+        "edge:医疗机构水污染物排放标准|标准的实施与监督",
+        "edge:中国疾病预防控制中心|医疗机构水污染物排放标准",
+        "edge:北京市环境保护科学研究院|医疗机构水污染物排放标准",
+        "edge:中华人民共和国传染病防治法|医疗机构水污染物排放标准",
+        "edge:医疗机构水污染物排放标准|结核杆菌检验方法",
+        "edge:医疗机构水污染物排放标准|单位排放负荷计算方法",
+        "edge:医疗机构水污染物排放标准|蛔虫卵检验方法",
+        "edge:医疗机构水污染物排放标准|污水排放要求",
+        "edge:GB 18466-2001|医疗机构污水排放要求"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 1,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 1,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "6d257224b304446f48b66380f090f1d23865bb564f962ab30a6270e60cfd0fbe",
+     "content_len": 2199,
+     "content": "# 中华人民共和国国家标准\nGB 18466 — 2005\n代替 GB 18466—2001\n部分代替 GB 8978—1996\n\n# 医疗机构水污染物排放标准\n\n# Discharge standard of water pollutants for medical organization\n2005-07-27 发布\n2006-01-01 实施\n国家环境保护总局\n国家质量监督检验检疫总局\n发布\nICS 13.060.30\nZ 60\nGB\n\n# 中华人民共和国 国家标准 医疗机构水污染物排放标准 GB 18466—2005\n中国环境科学出版社出版发行\n(100062 北京崇文区广渠门内大街 16 号)\n网址：http://www.cesp.cn\n电子信箱：bianji4@cesp.cn\n电话：010—67112738 传真：010—67112738\n印刷厂印刷\n版权专有 违者必究\n\\*\n2005 年 9 月第 1 版 开本 880 × 1230 1/16\n2005年9月第1次印刷\n印张 2.25\n印数 1—4000\n字数 75 千字\n统一书号：1380209.028\n定价：24.00元\nGB 18466—2005\n\n# 国家环境保护总局\n\n# 公 告\n2005 年 第 35 号\n为贯彻《中华人民共和国环境保护法》，加强对医疗机构污水、污水处理站废气、污泥排放的控制和管理，预防和控制传染病的发生和流行，保障人体健康，加强环境管理，现批准《医疗机构水污染物排放标准》为国家污染物排放标准，并由我局和国家质量监督检验检疫总局联合发布。\n标准编号、名称如下：\nGB 18466—2005 医疗机构水污染物排放标准\n本标准自实施之日起，代替《污水综合排放标准》（GB 8978—1996）中有关医疗机构水污染物排放标准部分，并取代《医疗机构污水排放要求》（GB 18466—2001）。\n上述标准为强制性标准，由中国环境科学出版社出版，自2006年1月1日起实施。\n标准信息可在国家环境保护总局网站(www.sepa.gov.cn)和中国环境标准网站(www.es.org.cn)上查询。\n特此公告。\n2005年7月27日\n\n## 目次\n前言 …… IV\n1 范围 …… 1\n2 规范性引用文件 …… 1\n3 术语和定义 …… 1\n4 技术内容 …… 1\n4.1 污水排放要求 …… 1\n4.2 废气排放要求 …… 4\n4.3 污泥控制与处置 …… 4\n5 处理工艺与消毒要求 …… 4\n6 取样与监测 …… 5\n6.1 污水取样与监测 …… 5\n6.2 大气取样与监测 …… 6\n6.3 污泥取样与监测 …… 6\n7 标准的实施与监督 …… 7\n附录 A（规范性附录） 医疗机构污水和污泥中粪大肠菌群的检验方法 …… 8\n附录 B（规范性附录） 医疗机构污水和污泥中沙门氏菌的检验方法 …… 15\n附录 C（规范性附录） 医疗机构污水及污泥中志贺氏菌的检验方法 …… 19\n附录 D（标准的附录） 医疗机构污泥中蛔虫卵的检验方法 …… 22\n附录 E（规范性附录） 医疗机构污水和污泥中结核杆菌的检验方法 …… 24\n附录 F（规范性附录） 医疗机构污水污染物（COD、BOD、SS）单位排放负荷计算方法 …… 27\nGB 18466 — 2005\n\n## 前言\n为贯彻《中华人民共和国环境保护法》、《中华人民共和国水污染防治法》、《中华人民共和国海洋环境保护法》、《中华人民共和国大气污染防治法》、《中华人民共和国传染病防治法》，加强对医疗机构污水、污水处理站废气、污泥排放的控制和管理，预防和控制传染病的发生和流行，保障人体健康，维护良好的生态环境，制定本标准。\n本标准规定了医疗机构污水及污水处理站产生的废气和污泥的污染物控制项目及其排放限值、处理工艺与消毒要求、取样与监测和标准的实施与监督等。\n本标准自实施之日起，代替 GB 8978—1996《污水综合排放标准》中有关医疗机构水污染物排放标准部分，并取代 GB 18466—2001《医疗机构污水排放要求》。新、扩、改医疗机构自本标准实施之日起按本标准实施管理，现有医疗机构在 2007 年 12 月 31 日前达到本标准要求。\n本标准的附录 A、附录 B、附录 C、附录 D、附录 E 和附录 F 为规范性附录。\n本标准为首次发布。\n本标准由国家环境保护总局科技标准司提出并归口。\n本标准委托北京市环境保护科学研究院和中国疾病预防控制中心起草。\n本标准由国家环境保护总局2005年7月27日批准。\n本标准 2006 年 1 月 1 日起实施。\n本标准由国家环境保护总局负责解释。\nGB 18466 — 2005\n\n## 医疗机构水污染物排放标准\n\n## 1 范围\n本标准规定了医疗机构污水、污水处理站产生的废气、污泥的污染物控制项目及其排放和控制限值、处理工艺和消毒要求、取样与监测和标准的实施与监督。\n本标准适用于医疗机构污水、污水处理站产生污泥及废气排放的控制，医疗机构建设项目的环境影响评价、环境保护设施设计、竣工验收及验收后的排放管理。当医疗机构的办公区、非医疗生活区等污水与病区污水合流收集时，其综合污水排放均执行本标准。建有分流污水收集系统的医疗机构，其非病区生活区污水排放执行 GB 8978 的相关规定。",
+     "file_path": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466 - 2005",
+        "edge:GB 18466 - 2005|表1",
+        "edge:GB 18466 - 2005|表2"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 2,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 2,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "8d6828de6ebc336b89a3ece1cf868b3c180756b1c4aa8d6cd0aae66c905faf9c",
+     "content_len": 2471,
+     "content": "## 2 规范性引用文件\n下列标准和本标准表 5、表 6 所列分析方法标准及规范所含条文在本标准中被引用即构成为本标准的条文，与本标准同效。当上述标准和规范被修订时，应使用其最新版本。\nGB 8978 污水综合排放标准\nGB 3838 地表水环境质量标准\nGB 3097 海水水质标准\nGB 16297 大气污染物综合排放标准\nHJ/T 55 大气污染物无组织排放监测技术导则\nHJ/T 91 地表水和污水检测技术规范\n\n## 3 术语和定义\n本标准采用下列定义。\n3.1 医疗机构 medical organization\n指从事疾病诊断、治疗活动的医院、卫生院、疗养院、门诊部、诊所、卫生急救站等。\n3.2 医疗机构污水 medical organization wastewater\n指医疗机构门诊、病房、手术室、各类检验室、病理解剖室、放射室、洗衣房、太平间等处排出的诊疗、生活及粪便污水。当医疗机构其他污水与上述污水混合排出时一律视为医疗机构污水。\n\n## 3.3 污泥 sludge\n指医疗机构污水处理过程中产生的栅渣、沉淀污泥和化粪池污泥。\n\n## 3.4 废气 waste gas\n指医疗机构污水处理过程中产生的有害气体。\n\n## 4 技术内容\n\n## 4.1 污水排放要求\n4.1.1 传染病和结核病医疗机构污水排放一律执行表1的规定。\n4.1.2 县级及县级以上或 20 张床位及以上的综合医疗机构和其他医疗机构污水排放执行表 2 的规定。直接或间接排入地表水体和海域的污水执行排放标准，排入终端已建有正常运行城镇二级污水处理厂的下水道的污水，执行预处理标准。\nGB 18466 — 2005\n<table id=\"tb-68a03b50e1ba1ffc6a0116529f694fe1-0001\" format=\"html\"><tr><td>序号</td><td>控制项目</td><td>标准值</td></tr><tr><td>1</td><td>粪大肠菌群数/(MPN/L)</td><td>100</td></tr><tr><td>2</td><td>肠道致病菌</td><td>不得检出</td></tr><tr><td>3</td><td>肠道病毒</td><td>不得检出</td></tr><tr><td>4</td><td>结核杆菌</td><td>不得检出</td></tr><tr><td>5</td><td>pH</td><td>6~9</td></tr><tr><td rowspan=\"3\">6</td><td>化学需氧量(COD)</td><td></td></tr><tr><td>浓度/(mg/L)</td><td>60</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>60</td></tr><tr><td rowspan=\"3\">7</td><td>生化需氧量(BOD)</td><td></td></tr><tr><td>浓度/(mg/L)</td><td>20</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>20</td></tr><tr><td rowspan=\"3\">8</td><td>悬浮物(SS)</td><td></td></tr><tr><td>浓度/(mg/L)</td><td>20</td></tr><tr><td>最高允许排放负荷[g/(床位·d)]</td><td>20</td></tr><tr><td>9</td><td>氨氮/(mg/L)</td><td>15</td></tr><tr><td>10</td><td>动植物油/(mg/L)</td><td>5</td></tr><tr><td>11</td><td>石油类/(mg/L)</td><td>5</td></tr><tr><td>12</td><td>阴离子表面活性剂/(mg/L)</td><td>5</td></tr><tr><td>13</td><td>色度/(稀释倍数)</td><td>30</td></tr><tr><td>14</td><td>挥发酚/(mg/L)</td><td>0.5</td></tr><tr><td>15</td><td>总氰化物/(mg/L)</td><td>0.5</td></tr><tr><td>16</td><td>总汞/(mg/L)</td><td>0.05</td></tr><tr><td>17</td><td>总镉/(mg/L)</td><td>0.1</td></tr><tr><td>18</td><td>总铬/(mg/L)</td><td>1.5</td></tr><tr><td>19</td><td>六价铬/(mg/L)</td><td>0.5</td></tr><tr><td>20</td><td>总砷/(mg/L)</td><td>0.5</td></tr><tr><td>21</td><td>总铅/(mg/L)</td><td>1.0</td></tr><tr><td>22</td><td>总银/(mg/L)</td><td>0.5</td></tr><tr><td>23</td><td>总α/(Bq/L)</td><td>1</td></tr><tr><td>24</td><td>总β/(Bq/L)</td><td>10</td></tr><tr><td>25</td><td>总余氯 $^{1),2)}$ /(mg/L)(直接排入水体的要求)</td><td>0.5</td></tr><tr><td colspan=\"3\">注:1)采用含氯消毒剂消毒的工艺控制要求为:消毒接触池的接触时间≥1.5h,接触池出口总余氯6.5~10mg/L。2)采用其他消毒剂对总余氯不做要求。</td></tr></table>",
+     "file_path": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-017",
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-017",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466 - 2005"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 7,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 7,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "b4126d8d882b53b00470772b32bd8540416c2c721a7d7f44d4051d31c75717d7",
+     "content_len": 1312,
+     "content": "<table id=\"tb-68a03b50e1ba1ffc6a0116529f694fe1-0008\" format=\"html\"><tr><td>1</td><td>4</td><td>3</td><td>17</td><td>3</td><td>4</td><td>3</td><td>32</td><td>5</td><td>4</td><td>3</td><td>280</td></tr><tr><td>1</td><td>4</td><td>4</td><td>19</td><td>3</td><td>4</td><td>4</td><td>36</td><td>5</td><td>4</td><td>4</td><td>350</td></tr><tr><td>1</td><td>4</td><td>5</td><td>22</td><td>3</td><td>4</td><td>5</td><td>40</td><td>5</td><td>4</td><td>5</td><td>430</td></tr><tr><td>1</td><td>5</td><td>0</td><td>13</td><td>3</td><td>5</td><td>0</td><td>25</td><td>5</td><td>5</td><td>0</td><td>240</td></tr><tr><td>1</td><td>5</td><td>1</td><td>15</td><td>3</td><td>5</td><td>1</td><td>29</td><td>5</td><td>5</td><td>1</td><td>350</td></tr><tr><td>1</td><td>5</td><td>2</td><td>17</td><td>3</td><td>5</td><td>2</td><td>32</td><td>5</td><td>5</td><td>2</td><td>540</td></tr><tr><td>1</td><td>5</td><td>3</td><td>19</td><td>3</td><td>5</td><td>3</td><td>37</td><td>5</td><td>5</td><td>3</td><td>920</td></tr><tr><td>1</td><td>5</td><td>4</td><td>22</td><td>3</td><td>5</td><td>4</td><td>41</td><td>5</td><td>5</td><td>4</td><td>1 600</td></tr><tr><td>1</td><td>5</td><td>5</td><td>24</td><td>3</td><td>5</td><td>5</td><td>45</td><td>5</td><td>5</td><td>5</td><td>&gt;1 600</td></tr></table>\nGB 18466 — 2005\nGB 18466 — 2005",
+     "file_path": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf"
+    }
+   ],
+   "rejected": [
+    {
+     "workspace": "default",
+     "chunk_id": "doc-9bb11e5d3809e590259aef28fb61062b-chunk-003",
+     "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-9bb11e5d3809e590259aef28fb61062b-chunk-003",
+       "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466-2005",
+        "edge:GB 18466-2005|表1",
+        "edge:GB 18466-2005|表2"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 3,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 3,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       },
+       "constraint_rejected": "doc doc-9bb11e5d3809e590259aef28fb61062b is not a RESOLVED requested target; a nearby version/other document is never substituted"
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "807e0a5248a0862686671e15ab26f537b2c02a911a81325ba18cb02fa0c1ba51",
+     "content_len": 3361,
+     "content": "## 4.1.1 传染病和结核病医疗机构污水排放一律执行表 1 的规定。\n4.1.2 20 张床位及以上的综合医疗机构和其他医疗机构污水排放执行表 2 的规定。排入地表水体和海域的污水执行排放标准，排入终端已建有正常运行城镇二级污水处理厂的下水道的污水，执行预处理标准。\n<table id=\"tb-9bb11e5d3809e590259aef28fb61062b-0001\" format=\"html\"><tr><td>序号</td><td>控制项目</td><td colspan=\"2\">标准值</td></tr><tr><td>1</td><td>粪大肠菌群数/(MPN/L)</td><td colspan=\"2\">100</td></tr><tr><td>2</td><td>肠道致病菌</td><td colspan=\"2\">不得检出</td></tr><tr><td>3</td><td>肠道病毒</td><td colspan=\"2\">不得检出</td></tr><tr><td>4</td><td>结核杆菌</td><td colspan=\"2\">不得检出</td></tr><tr><td>5</td><td>pH</td><td colspan=\"2\">6~9</td></tr><tr><td rowspan=\"3\">6</td><td>化学需氧量(COD)</td><td colspan=\"2\"></td></tr><tr><td>浓度/(mg/L)</td><td colspan=\"2\">60</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td colspan=\"2\">60</td></tr><tr><td rowspan=\"3\">7</td><td>生化需氧量(BOD)</td><td colspan=\"2\"></td></tr><tr><td>浓度/(mg/L)</td><td colspan=\"2\">20</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td colspan=\"2\">20</td></tr><tr><td rowspan=\"3\">8</td><td>悬浮物(SS)</td><td colspan=\"2\"></td></tr><tr><td>浓度/(mg/L)</td><td colspan=\"2\">20</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td colspan=\"2\">20</td></tr><tr><td>9</td><td>氨氮/(mg/L)</td><td colspan=\"2\">15</td></tr><tr><td>10</td><td>动植物油/(mg/L)</td><td colspan=\"2\">5</td></tr><tr><td>11</td><td>石油类/(mg/L)</td><td colspan=\"2\">5</td></tr><tr><td>12</td><td>阴离子表面活性剂/(mg/L)</td><td colspan=\"2\">5</td></tr><tr><td>13</td><td>色度/(稀释倍数)</td><td colspan=\"2\">30</td></tr><tr><td>14</td><td>挥发酚/(mg/L)</td><td colspan=\"2\">0.5</td></tr><tr><td>15</td><td>总氰化物/(mg/L)</td><td colspan=\"2\">0.5</td></tr><tr><td>16</td><td>总汞/(mg/L)</td><td colspan=\"2\">0.05</td></tr><tr><td>17</td><td>总镉/(mg/L)</td><td colspan=\"2\">0.1</td></tr><tr><td>18</td><td>总铬/(mg/L)</td><td colspan=\"2\">1.5</td></tr><tr><td>19</td><td>六价铬/(mg/L)</td><td colspan=\"2\">0.5</td></tr><tr><td>20</td><td>总砷/(mg/L)</td><td colspan=\"2\">0.5</td></tr><tr><td>21</td><td>总铅/(mg/L)</td><td colspan=\"2\">1.0</td></tr><tr><td>22</td><td>总银/(mg/L)</td><td colspan=\"2\">0.5</td></tr><tr><td>23</td><td>总α放射性/(Bq/L)</td><td colspan=\"2\">1</td></tr><tr><td>24</td><td>总β放射性/(Bq/L)</td><td colspan=\"2\">10</td></tr><tr><td rowspan=\"2\">25</td><td rowspan=\"2\">总余氯(总氯) $^{1)}$ /(mg/L)</td><td>总排口(排入水体的要求)</td><td>0.5</td></tr><tr><td>接触池出口</td><td>6.5~10且消毒接触池的接触时间≥1.5h</td></tr><tr><td>26</td><td>斑马鱼卵急性毒性(稀释倍数) $^{2)}$ (排入水体的要求)</td><td colspan=\"2\">6</td></tr><tr><td colspan=\"4\">注: $^{1)}$ 仅适用于采用含氯消毒剂的消毒工艺,不适用于其他消毒工艺。 $^{2)}$ 综合毒性表征指标,以最低无效应稀释倍数来表示,在26°C±1°C的条件下培养48h,不少于90%的斑马鱼卵存活时水样的最低稀释倍数。</td></tr></table>\nGB 18466—2005\n<table id=\"tb-9bb11e5d3809e590259aef28fb61062b-0002\" format=\"html\"><tr><td>序号</td><td>控制项目</td><td>排放标准</td><td colspan=\"3\">预处理标准</td></tr><tr><td>1</td><td>粪大肠菌群数/(MPN/L)</td><td>500</td><td colspan=\"3\">5 000</td></tr><tr><td>2</td><td>肠道致病菌</td><td>不得检出</td><td colspan=\"3\">—</td></tr><tr><td>3</td><td>肠道病毒</td><td>不得检出</td><td colspan=\"3\">—</td></tr><tr><td>4</td><td>pH</td><td>6~9</td><td colspan=\"3\">6~9</td></tr><tr><td rowspan=\"3\">5</td><td>化学需氧量(COD)</td><td></td><td colspan=\"3\"></td></tr><tr><td>浓度/(mg/L)</td><td>60</td><td colspan=\"3\">250</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>60</td><td colspan=\"3\">250</td></tr><tr><td rowspan=\"3\">6</td><td>生化需氧量(BOD)</td><td></td><td colspan=\"3\"></td></tr><tr><td>浓度/(mg/L)</td><td>20</td><td colspan=\"3\">100</td></tr><tr><td>最高允许排放负荷/[g/(床位·d)]</td><td>20</td><td colspan=\"3\">100</td></tr></table>",
+     "file_path": "water-03_生态环境部_医疗机构水污染物排放标准_含2026修改单.pdf",
+     "rejected_reason": "doc doc-9bb11e5d3809e590259aef28fb61062b is not a RESOLVED requested target; a nearby version/other document is never substituted"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-9bb11e5d3809e590259aef28fb61062b-chunk-000",
+     "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-9bb11e5d3809e590259aef28fb61062b-chunk-000",
+       "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466-2005",
+        "entity:GB 18466-2001",
+        "entity:GB 8978-1996",
+        "entity:医疗机构水污染物排放标准",
+        "edge:GB 18466-2005|医疗机构水污染物排放标准",
+        "edge:GB 18466-2005|GB 8978-1996",
+        "edge:GB 18466-2005|中华人民共和国海洋环境保护法",
+        "edge:GB 18466-2005|中华人民共和国水污染防治法",
+        "edge:GB 18466-2005|中华人民共和国大气污染防治法",
+        "edge:GB 18466-2005|中华人民共和国环境保护法",
+        "edge:GB 18466-2005|医疗机构污泥中蛔虫卵的检验方法",
+        "edge:GB 18466-2005|污水处理站",
+        "edge:GB 18466-2005|医疗机构",
+        "edge:GB 18466-2005|国家质量监督检验检疫总局",
+        "edge:GB 18466-2005|处理工艺与消毒要求",
+        "edge:GB 18466-2005|医疗机构污水和污泥中结核杆菌的检验方法",
+        "edge:GB 18466-2005|平急两用公共基础设施",
+        "edge:GB 18466-2005|取样与监测",
+        "edge:GB 18466-2005|生态环境部环境标准研究所",
+        "edge:GB 18466-2005|水污染物排放控制要求",
+        "edge:GB 18466-2005|国家环境保护总局",
+        "edge:GB 18466-2005|医疗机构污水污染物单位排放负荷计算方法",
+        "edge:GB 18466-2005|国家环境保护总局科技标准司",
+        "edge:GB 18466-2005|附录F(COD、BOD、SS单位排放负荷计算方法)",
+        "edge:GB 18466-2005|标准的实施与监督",
+        "edge:GB 18466-2005|北京市环境保护科学研究院",
+        "edge:GB 18466-2005|中国疾病预防控制中心",
+        "edge:GB 18466-2001|GB 18466-2005",
+        "edge:GB 18466-2005|中华人民共和国传染病防治法",
+        "edge:GB 18466-2005|附录B(沙门氏菌检验方法)",
+        "edge:GB 18466-2005|附录A(粪大肠菌群检验方法)",
+        "edge:GB 18466-2005|附录E(结核杆菌检验方法)",
+        "edge:GB 18466-2005|附录C(志贺氏菌检验方法)",
+        "edge:GB 18466-2005|附录D(蛔虫卵检验方法)",
+        "edge:GB 18466-2005|医疗机构污水和污泥中志贺氏菌的检验方法",
+        "edge:GB 18466-2005|医疗机构污水和污泥中沙门氏菌的检验方法",
+        "edge:GB 18466-2005|传染病",
+        "edge:GB 18466-2005|医疗机构污泥中粪大肠菌群的检验方法",
+        "edge:GB 18466-2005|污泥控制要求",
+        "edge:GB 18466-2005|大气污染物控制要求",
+        "edge:GB 8978-1996|医疗机构"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 4,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 4,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       },
+       "constraint_rejected": "doc doc-9bb11e5d3809e590259aef28fb61062b is not a RESOLVED requested target; a nearby version/other document is never substituted"
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "fee0683f06455111680c80d8467c4233a1b351a214fa7a88c9fd884f0edacd23",
+     "content_len": 1523,
+     "content": "# 中 华 人 民 共 和 国 国 家 标 准\nGB 18466—2005（含2026年修改单）\n代替 GB 18466—2001\n部分代替 GB 8978—1996\n\n# 医疗机构水污染物排放标准\n\n# Discharge standard of water pollutants for medical organization\n本电子版为正式标准文件，由生态环境部环境标准研究所审校排版。\n2005-07-27 发布\n2006-01-01 实施\n国 家 环 境 保 护 总 局\n国家质量监督检验检疫总局\n发 布\nICS 13.060.30 CCS Z 68\nGB\n\n## 目 次\n前言....II\n1 范围....1\n2 规范性引用文件....1\n3 术语和定义....2\n4 技术内容....3\n5 处理工艺与消毒要求....6\n6 取样与监测....7\n7 标准的实施与监督....9\n附录 A（规范性附录）医疗机构污泥中粪大肠菌群的检验方法....10\n附录 B（规范性附录）医疗机构污水和污泥中沙门氏菌的检验方法....15\n附录 C（规范性附录）医疗机构污水和污泥中志贺氏菌的检验方法....20\n附录 D（规范性附录）医疗机构污泥中蛔虫卵的检验方法....23\n附录 E（规范性附录）医疗机构污水和污泥中结核杆菌的检验方法....26\n附录 F（规范性附录）医疗机构污水污染物（COD、BOD、SS）单位排放负荷计算方法....29\nGB 18466—2005\n\n## 前 言\n为贯彻《中华人民共和国环境保护法》、《中华人民共和国水污染防治法》、《中华人民共和国海洋环境保护法》、《中华人民共和国大气污染防治法》、《中华人民共和国传染病防治法》，加强对医疗机构污水、污水处理站废气、污泥排放的控制和管理，预防和控制传染病的发生和流行，保障人体健康，维护良好的生态环境，制定本标准。\n本标准规定了医疗机构污水及污水处理站产生的废气和污泥的污染物控制项目及其排放限值、处理工艺与消毒要求、取样与监测和标准的实施与监督等。\n本标准自实施之日起，代替GB 8978—1996《污水综合排放标准》中有关医疗机构水污染物排放标准部分，并取代GB 18466—2001《医疗机构污水排放要求》。新、扩、改医疗机构自本标准实施之日起按本标准实施管理，现有医疗机构在2007 年 12月 31日前达到本标准要求。\n本标准的附录 A、附录 B、附录 C、附录 D、附录 E 和附录 F 为规范性附录。\n本标准为首次发布。\n本标准由国家环境保护总局科技标准司提出并归口。\n本标准委托北京市环境保护科学研究院和中国疾病预防控制中心起草。\n本标准由国家环境保护总局2005 年7月 27 日批准。\n本标准 2006年1月1日起实施。\n本标准由国家环境保护总局负责解释。\nGB 18466—2005\n\n# 医疗机构水污染物排放标准\n\n## 1 范围\n本标准规定了医疗机构的水污染物排放控制要求，以及污水处理站排放的大气污染物和产生污泥的控制要求，并规定了相应的处理工艺和消毒要求、取样与监测和标准的实施与监督。\n本标准适用于医疗机构污水排放的控制以及污水处理站产生污泥及废气排放的控制，医疗机构建设项目的环境影响评价、环境保护设施设计、竣工环境保护设施验收、排污许可证核发及其投产后的排放管理。当医疗机构的办公区、非医疗生活区等污水与病区污水合流收集时，其综合污水排放均执行本标准。建有分流污水收集系统的医疗机构，其非病区生活区污水排放执行GB 8978的相关规定。\n本标准也适用于重大疫情防控期间具有隔离功能或应急医疗服务功能的“平急两用”公共基础设施。",
+     "file_path": "water-03_生态环境部_医疗机构水污染物排放标准_含2026修改单.pdf",
+     "rejected_reason": "doc doc-9bb11e5d3809e590259aef28fb61062b is not a RESOLVED requested target; a nearby version/other document is never substituted"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-9bb11e5d3809e590259aef28fb61062b-chunk-005",
+     "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-9bb11e5d3809e590259aef28fb61062b-chunk-005",
+       "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466-2005",
+        "entity:GB8978",
+        "edge:GB 18466-2005|表1",
+        "edge:GB 18466-2005|表2",
+        "edge:GB 18466-2005|六价铬",
+        "edge:GB 18466-2005|综合医疗机构",
+        "edge:GB 18466-2005|总铬",
+        "edge:GB 18466-2005|总镉",
+        "edge:GB 18466-2005|总铅",
+        "edge:GB 18466-2005|总银",
+        "edge:GB 18466-2005|总砷",
+        "edge:GB 18466-2005|总余氯(总氯)",
+        "edge:GB 18466-2005|平急两用公共基础设施",
+        "edge:GB 18466-2005|斑马鱼卵急性毒性",
+        "edge:GB 18466-2005|总α放射性",
+        "edge:GB 18466-2005|总β放射性",
+        "edge:GB 18466-2005|传染病区(感染性疾病门诊、传染病房)",
+        "edge:GB 18466-2005|传染病、结核病医疗机构",
+        "edge:GB 18466-2005|GB 3838",
+        "edge:GB 18466-2005|GB 3097",
+        "edge:GB8978|平急两用公共基础设施"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 5,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 5,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       },
+       "constraint_rejected": "doc doc-9bb11e5d3809e590259aef28fb61062b is not a RESOLVED requested target; a nearby version/other document is never substituted"
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "ff0d35162732e7695e8dc7c0d354fb68ea83980eabceb80cab232006ba81ae43",
+     "content_len": 1740,
+     "content": "<table id=\"tb-9bb11e5d3809e590259aef28fb61062b-0002\" format=\"html\"><tr><td>16</td><td>总镉/(mg/L)</td><td colspan=\"2\">0.1</td><td colspan=\"2\">0.1</td></tr><tr><td>17</td><td>总铬/(mg/L)</td><td colspan=\"2\">1.5</td><td colspan=\"2\">1.5</td></tr><tr><td>18</td><td>六价铬/(mg/L)</td><td colspan=\"2\">0.5</td><td colspan=\"2\">0.5</td></tr><tr><td>19</td><td>总砷/(mg/L)</td><td colspan=\"2\">0.5</td><td colspan=\"2\">0.5</td></tr><tr><td>20</td><td>总铅/(mg/L)</td><td colspan=\"2\">1.0</td><td colspan=\"2\">1.0</td></tr><tr><td>21</td><td>总银/(mg/L)</td><td colspan=\"2\">0.5</td><td colspan=\"2\">0.5</td></tr><tr><td>22</td><td>总α放射性/(Bq/L)</td><td colspan=\"2\">1</td><td colspan=\"2\">1</td></tr><tr><td>23</td><td>总β放射性/(Bq/L)</td><td colspan=\"2\">10</td><td colspan=\"2\">10</td></tr><tr><td rowspan=\"2\">24</td><td rowspan=\"2\">总余氯(总氯) $^{1)}$ /(mg/L)</td><td>总排口</td><td>0.5</td><td>总排口</td><td>—</td></tr><tr><td>接触池出口</td><td>3~10且消毒接触池的接触时间≥1.0h</td><td>接触池出口</td><td>2~8且消毒接触池的接触时间≥1.0h</td></tr><tr><td>25</td><td>斑马鱼卵急性毒性(稀释倍数) $^{2)}$ </td><td colspan=\"2\">6</td><td colspan=\"2\">—</td></tr><tr><td colspan=\"6\">注: $^{1)}$ 仅适用于采用含氯消毒剂的消毒工艺,不适用于其他消毒工艺。 $^{2)}$ 综合毒性表征指标,以最低无效应稀释倍数来表示,在26°C±1°C的条件下培养48h,不少于90%的斑马鱼卵存活时水样的最低稀释倍数。</td></tr></table>\nGB 18466—2005\n4.1.3 20 张床位以下的综合医疗机构和其他所有医疗机构污水应经消毒处理，且满足表 2 中粪大肠菌群数的排放限值要求后方可排放；采用含氯消毒剂时，还应满足表 2中总余氯的排放限值要求和工艺控制要求；后续宜接入市政管网或自行净化处理。\n4.1.4 禁止向GB 3838 Ⅰ、Ⅱ类水域和Ⅲ类水域的饮用水保护区和游泳区，GB 3097一、二类海域直接排放医疗机构污水。\n4.1.5 传染病、结核病医疗机构，以及综合医疗机构和其他医疗机构的传染病区（感染性疾病门诊、传染病房）污水在进入污水处理系统前应分流并进行预消毒处理，满足表 1中粪大肠菌群数的排放限值要求，采用含氯消毒剂时，还应满足表1中总余氯的排放限值要求和工艺控制要求；未将传染病区污水分流并进行预消毒的综合医疗机构和其他医疗机构，污水排放执行表 1 的规定。\n4.1.6 重大疫情防控期间，具有隔离功能或应急医疗服务功能的“平急两用”公共基础设施，污水应经消毒处理且满足表 1中粪大肠菌群数的排放限值要求，采用含氯消毒剂时，还应满足表 1 中总余氯的排放限值要求和工艺控制要求；同时还应控制表 1中第5～24 项指标，排放限值按 GB8978 执行。",
+     "file_path": "water-03_生态环境部_医疗机构水污染物排放标准_含2026修改单.pdf",
+     "rejected_reason": "doc doc-9bb11e5d3809e590259aef28fb61062b is not a RESOLVED requested target; a nearby version/other document is never substituted"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-30cc8c5a085a96f9e00e57e0ad3a6da4-chunk-010",
+     "doc_id": "doc-30cc8c5a085a96f9e00e57e0ad3a6da4",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-30cc8c5a085a96f9e00e57e0ad3a6da4-chunk-010",
+       "doc_id": "doc-30cc8c5a085a96f9e00e57e0ad3a6da4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 15562.1",
+        "edge:GB 15562.1|排污口"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 6,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 6,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       },
+       "constraint_rejected": "doc doc-30cc8c5a085a96f9e00e57e0ad3a6da4 is not a RESOLVED requested target; a nearby version/other document is never substituted"
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "ed5ddf19f6c182ad63c97daf6d8081eeeba0ff335cb7bba440d84f1a29c5edb3",
+     "content_len": 369,
+     "content": "## 6 污水排放口规范化要求\n6.1 排污单位应按照GB 15562.1、HJ 1297 的有关规定，规范化建设排污口。\n6.2 污染雨水应当收集处理，并达到本标准规定的排放限值后从排污单位污水总排放口排放，不得从雨水排放口排放。\n\n## 7 实施与监督\n7.1 本标准由生态环境主管部门负责监督实施。\n7.2 排污单位是实施排放标准的责任主体，应采取必要措施，达到本标准规定的污染物排放控制要求。7.3 各级生态环境主管部门在对排污单位进行执法检查时，可以现场即时采样或监测的结果作为判定排污行为是否符合排放标准以及实施相关生态环境保护管理措施的依据。在发现排污单位用水或排水量有异常增加的情况下，应核定排污单位的实际产品产量和排水量，按本标准的规定，将实测水污染物排放浓度换算为水污染物基准排水量排放浓度。\nGB 4287—2026",
+     "file_path": "water-14_生态环境部_纺织工业水污染物排放标准_GB4287-2026.pdf",
+     "rejected_reason": "doc doc-30cc8c5a085a96f9e00e57e0ad3a6da4 is not a RESOLVED requested target; a nearby version/other document is never substituted"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996",
+        "entity:污水综合排放标准",
+        "edge:GB 8978-1996|污水综合排放标准",
+        "edge:中华人民共和国海洋环境保护法|污水综合排放标准",
+        "edge:中华人民共和国水污染防治法|污水综合排放标准",
+        "edge:二级标准|污水综合排放标准",
+        "edge:GB 8978-1996|GB 8978-88",
+        "edge:一级标准|污水综合排放标准",
+        "edge:中华人民共和国环境保护法|污水综合排放标准",
+        "edge:一切排污单位|污水综合排放标准",
+        "edge:污水|污水综合排放标准",
+        "edge:三级标准|污水综合排放标准",
+        "edge:其他排污单位|污水综合排放标准",
+        "edge:国家环境保护局|污水综合排放标准",
+        "edge:排水量|污水综合排放标准",
+        "edge:GB 3838-88地面水环境质量标准|污水综合排放标准",
+        "edge:GB 3097-82海水水质标准|污水综合排放标准",
+        "edge:污水综合排放标准|环境影响评价报告书",
+        "edge:污水综合排放标准|第二类污染物",
+        "edge:污水综合排放标准|第一类污染物",
+        "edge:GB15581-95烧碱、聚氯乙烯工业水污染物排放标准|污水综合排放标准",
+        "edge:GB15580-95磷肥工业水污染物排放标准|污水综合排放标准",
+        "edge:GB14470.1～14470.3-93和GB4274～4279-84兵器工业水污染物排放标准|污水综合排放标准",
+        "edge:GB14374-93航天推进剂水污染物排放标准|污水综合排放标准",
+        "edge:GB13456-92钢铁工业水污染物排放标准|污水综合排放标准",
+        "edge:GB13458-92合成氨工业水污染物排放标准|污水综合排放标准",
+        "edge:GB13457-92肉类加工工业水污染物排放标准|污水综合排放标准",
+        "edge:GB4287-92纺织染整工业水污染物排放标准|污水综合排放标准",
+        "edge:GB4914-85海洋石油开发工业含油污水排放标准|污水综合排放标准",
+        "edge:GB4286-84船舶工业污染物排放标准|污水综合排放标准",
+        "edge:GB3552-83船舶污染物排放标准|污水综合排放标准",
+        "edge:GB3544-92造纸工业水污染物排放标准|污水综合排放标准",
+        "edge:GB 8703-88辐射防护规定|污水综合排放标准"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 8,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 8,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       },
+       "constraint_rejected": "doc doc-b45c510232ed4d2452b0f5b2a13434e4 is not a RESOLVED requested target; a nearby version/other document is never substituted"
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "edd0690d291ae883182e80778116d2d446cf9fa62f017495f5faf3993a0b1317",
+     "content_len": 2015,
+     "content": "# 中华人民共和国国家标准\nGB 8978—1996\n\n# 污水综合排放标准\n代替 GB 8978—88\nIntegrated wastewater discharge standard\n为贯彻《中华人民共和国环境保护法》、《中华人民共和国水污染防治法》和《中华人民共和国海洋环境保护法》，控制水污染，保护江河、湖泊、运河、渠道、水库和海洋等地面水以及地下水水质的良好状态，保障人体健康，维护生态平衡，促进国民经济和城乡建设的发展，特制定本标准。\n\n## 1 主题内容与适用范围\n\n## 1.1 主题内容\n本标准按照污水排放去向,分年限规定了69种水污染物最高允许排放浓度及部分行业最高允许排水量。\n\n## 1.2 适用范围\n本标准适用于现有单位水污染物的排放管理，以及建设项目的环境影响评价、建设项目环境保护设施设计、竣工验收及其投产后的排放管理。\n按照国家综合排放标准与国家行业排放标准不交叉执行的原则，造纸工业执行GB3544—92《造纸工业水污染物排放标准》，船舶执行GB3552—83《船舶污染物排放标准》，船舶工业执行GB4286—84《船舶工业污染物排放标准》，海洋石油开发工业执行GB4914—85《海洋石油开发工业含油污水排放标准》，纺织染整工业执行GB4287—92《纺织染整工业水污染物排放标准》，肉类加工工业执行GB13457—92《肉类加工工业水污染物排放标准》，合成氨工业执行GB13458—92《合成氨工业水污染物排放标准》，钢铁工业执行GB13456—92《钢铁工业水污染物排放标准》，航天推进剂使用执行GB14374—93《航天推进剂水污染物排放标准》，兵器工业执行GB14470.1～14470.3—93和GB4274～4279—84《兵器工业水污染物排放标准》，磷肥工业执行GB15580—95《磷肥工业水污染物排放标准》，烧碱、聚氯乙烯工业执行GB15581—95《烧碱、聚氯乙烯工业水污染物排放标准》，其他水污染物排放均执行本标准。\n1.3 本标准颁布后，新增加国家行业水污染物排放标准的行业，按其适用范围执行相应的国家水污染物行业标准，不再执行本标准。\n\n## 2 引用标准\n下列标准所包含的条文,通过在本标准中引用而构成为本标准的条文。本标准出版时,所示版本均为有效。所有标准都会被修订,使用本标准的各方应探讨使用下列标准最新版本的可能性。\nGB 3097—82 海水水质标准\nGB 3838—88 地面水环境质量标准\nGB 8703—88 辐射防护规定\n\n## 3 定义\n\n## 3.1 污水\n指在生产与生活活动中排放的水的总称。\n国家环境保护局1996-10-04批准\n1998-01-01 实施\n\n## 3.2 排水量\n指在生产过程中直接用于工艺生产的水的排放量。不包括间接冷却水、厂区锅炉、电站排水。\n\n## 3.3 一切排污单位\n指本标准适用范围所包括的一切排污单位。\n\n## 3.4 其他排污单位\n指在某一控制项目中，除所列行业外的一切排污单位。\n\n## 4 技术内容\n\n## 4.1 标准分级\n4.1.1 排入 GB 3838Ⅲ类水域(划定的保护区和游泳区除外)和排入 GB 3097 中二类海域的污水,执行一级标准。\n4.1.2 排入 GB 3838 中 N、V 类水域和排入 GB 3097 中三类海域的污水，执行二级标准。\n4.1.3 排入设置二级污水处理厂的城镇排水系统的污水，执行三级标准。\n4.1.4 排入未设置二级污水处理厂的城镇排水系统的污水，必须根据排水系统出水受纳水域的功能要求，分别执行 4.1.1 和 4.1.2 的规定。\n4.1.5 GB 3838 中 I、Ⅱ类水域和Ⅲ类水域中划定的保护区，GB 3097 中一类海域，禁止新建排污口，现有排污口应按水体功能要求，实行污染物总量控制，以保证受纳水体水质符合规定用途的水质标准。\n4.2 标准值\n4.2.1 本标准将排放的污染物按其性质及控制方式分为二类。\n4.2.1.1 第一类污染物:不分行业和污水排放方式,也不分受纳水体的功能类别,一律在车间或车间处理设施排放口采样,其最高允许排放浓度必须达到本标准要求(采矿行业的尾矿坝出水口不得视为车间排放口)。\n4.2.1.2 第二类污染物: 在排污单位排放口采样, 其最高允许排放浓度必须达到本标准要求。\n4.2.2 本标准按年限规定了第一类污染物和第二类污染物最高允许排放浓度及部分行业最高允许排水量，分别为：\n4.2.2.1 1997年12月31日之前建设(包括改、扩建)的单位,水污染物的排放必须同时执行表1、表2、表3的规定。\n4.2.2.2 1998年1月1日起建设(包括改、扩建)的单位,水污染物的排放必须同时执行表1、表4、表5的规定。\n4.2.2.3 建设(包括改、扩建)单位的建设时间,以环境影响评价报告书(表)批准日期为准划分。",
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "rejected_reason": "doc doc-b45c510232ed4d2452b0f5b2a13434e4 is not a RESOLVED requested target; a nearby version/other document is never substituted"
+    }
+   ],
+   "budget": {
+    "limit": 40,
+    "kept": 5,
+    "truncated": [],
+    "rule": "no truncation"
+   },
+   "status": "ok",
+   "degraded": [],
+   "notes": [],
+   "allowed_set_basis": {
+    "resolved_code_targets": [
+     [
+      "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+     ]
+    ],
+    "verified_attributions": []
+   },
+   "verify": {
+    "requested": 10,
+    "verified": 10,
+    "missing": 0,
+    "attribution_conflict": 0
+   }
+  }
+ ],
+ "finished_at": "2026-10-08T13:26:09+0800"
+}

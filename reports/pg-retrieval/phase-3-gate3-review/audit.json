@@ -1,0 +1,118 @@
+{
+  "submitted_ledger_entries_verified": 62,
+  "submitted_manifest_sha": "0f406e9a89e88f1d8317ec73aaf5874ba96675b2cbe2ced6b0d56ac3ca84de0c",
+  "unchanged_answer_code_vs_prior_review": true,
+  "runs": [
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-syn4-hy3/answer-runtime-latest.json",
+      "sha256": "eb5c6e649da22810be3f7755955fbf2ed769982918dfc360eb3db4702e1d949e",
+      "model": "hy3",
+      "latency_ms": 22109,
+      "coverage": "partial",
+      "model_status": "model_failure",
+      "answer_items": 0,
+      "one_call": true,
+      "request_matches_prep": true,
+      "identity_equal_and_frozen": true,
+      "source_rereads": 8,
+      "env_sha": "dffdc04f91c21b1e0c8c17776b100c224952aca9a648e91f7b97b171240e5bae"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-syn5/answer-runtime-latest.json",
+      "sha256": "471bee4608e90e770f7f4dd4aec8eb7e945bc075b4d05b2e30da413b6d6d92a4",
+      "model": "hy3",
+      "latency_ms": 41354,
+      "coverage": "partial",
+      "model_status": "model_failure",
+      "answer_items": 0,
+      "one_call": true,
+      "request_matches_prep": true,
+      "identity_equal_and_frozen": true,
+      "source_rereads": 8,
+      "env_sha": "dffdc04f91c21b1e0c8c17776b100c224952aca9a648e91f7b97b171240e5bae"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-syn6/answer-runtime-latest.json",
+      "sha256": "d6400fa80e1405de89cb9c02fb4fd03ee7c91a9190e819d8fe0e272520e8bd29",
+      "model": "hy3",
+      "latency_ms": 45159,
+      "coverage": "complete",
+      "model_status": "ok",
+      "answer_items": 2,
+      "one_call": true,
+      "request_matches_prep": true,
+      "identity_equal_and_frozen": true,
+      "source_rereads": 8,
+      "env_sha": "dffdc04f91c21b1e0c8c17776b100c224952aca9a648e91f7b97b171240e5bae"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-syn7/answer-runtime-latest.json",
+      "sha256": "8f01ef15f967d01614db2ca383e5b68321e2ff6dde0d1c41f7af14a44021f1c3",
+      "model": "hy3",
+      "latency_ms": 28872,
+      "coverage": "partial",
+      "model_status": "model_failure",
+      "answer_items": 0,
+      "one_call": true,
+      "request_matches_prep": true,
+      "identity_equal_and_frozen": true,
+      "source_rereads": 8,
+      "env_sha": "dffdc04f91c21b1e0c8c17776b100c224952aca9a648e91f7b97b171240e5bae"
+    }
+  ],
+  "semantic_reviews": [
+    {
+      "edition": "GB3838-2002",
+      "claim": "对应地表水上述五类水域功能，将地表水环境质量标准基本项目标准值分为五类，不同功能类别分别执行相应类别的标准值。",
+      "raw_claim_span_supported": true,
+      "source_block_file": "/Users/acerola/Dev/Python/RAG/LightRAG/inputs/__parsed__/water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf.parsed/water-04_生态环境部_地表水环境质量标准_GB3838-2002.blocks.jsonl",
+      "source_segments": [
+        {
+          "unit_id": "7b4770667908af51eb321bd82c89aaf7",
+          "rel_start": 208,
+          "rel_end": 363
+        }
+      ],
+      "claim_source_class": "chapter_3_water_function_quality_classification",
+      "environmental_medium": "地表水",
+      "semantic_judgment": "accepted for environmental-medium identification only",
+      "normative_chapter7_or_mandatory_limit_inference_allowed": null,
+      "independent_gold_scope_quote_verified": true,
+      "gold_scope_unit": "1be5a15442ef9d0368b3e1367a03a2fb"
+    },
+    {
+      "edition": "GB3095-2012",
+      "claim": "以下为环境空气中部分污染物参考浓度限值。",
+      "raw_claim_span_supported": true,
+      "source_block_file": "/Users/acerola/Dev/Python/RAG/LightRAG/inputs/__parsed__/air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf.parsed/air-02_生态环境部_环境空气质量标准_GB3095-2012.blocks.jsonl",
+      "source_segments": [
+        {
+          "unit_id": "8d717f7bab4184537990a86fdd9aba21",
+          "rel_start": 0,
+          "rel_end": 1112
+        },
+        {
+          "unit_id": "d9c1681fcfbfd2f48e654d5692f28b30",
+          "rel_start": 0,
+          "rel_end": 16
+        },
+        {
+          "unit_id": "c45552d0a5d96a5541e6ea2588a6ccc2",
+          "rel_start": 95,
+          "rel_end": 238
+        }
+      ],
+      "claim_source_class": "informative_appendix_A_intro",
+      "environmental_medium": "环境空气",
+      "semantic_judgment": "accepted for environmental-medium identification only",
+      "normative_chapter7_or_mandatory_limit_inference_allowed": false,
+      "independent_gold_scope_quote_verified": true,
+      "gold_scope_unit": "6291e97f42b5eed29d234cf1e96ed724"
+    }
+  ],
+  "all_hy3_outcomes": "1 application-complete and 3 contract refusals across all 4 requests; diagnostic trio syn5/6/7 is 1 of 3. No population success-rate estimate.",
+  "new_reviewer_db_or_model_calls": 0,
+  "repeated_code_tests": 0,
+  "gold_changed": false,
+  "historical_runtime_changed": false
+}

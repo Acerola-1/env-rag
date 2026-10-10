@@ -1,0 +1,190 @@
+{
+  "offline": {
+    "missing_verified_flag_accepted": {
+      "query_id": "q",
+      "kind": "prose",
+      "workspace": "default",
+      "catalog_snapshot_id": "s",
+      "source_snapshot_id": "f",
+      "scope_ids": [],
+      "members_total": 1,
+      "members_processed": 1,
+      "items": [
+        {
+          "citation": {
+            "quote": "x"
+          }
+        }
+      ],
+      "coverage_status": "complete",
+      "warnings": [],
+      "fail_stage": "",
+      "predicate": null,
+      "read_token": null,
+      "model_calls": []
+    },
+    "cross_chapter_continuation": [
+      {
+        "number": "1",
+        "status": "confirmed",
+        "fragments": [
+          "base4",
+          "continuation7"
+        ]
+      }
+    ],
+    "final_page_snapshot_replaced": {
+      "result": {
+        "query_id": "doc-enum-d134f5c4375b",
+        "kind": "document",
+        "workspace": "default",
+        "catalog_snapshot_id": "s1",
+        "source_snapshot_id": "s1",
+        "scope_ids": [],
+        "members_total": 1,
+        "members_processed": 1,
+        "items": [
+          {
+            "doc_id": "d1",
+            "doc_name": "a",
+            "title": "A",
+            "title_confidence": "extracted",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "other",
+            "unknown_fields": [],
+            "citation": {
+              "kind": "catalog_row",
+              "snapshot_id": "s1",
+              "doc_id": "d1",
+              "doc_name": "a"
+            },
+            "citation_verified": true
+          }
+        ],
+        "coverage_status": "complete",
+        "warnings": [],
+        "fail_stage": "",
+        "predicate": "TRUE",
+        "read_token": "1d23b41f0e4709c261ab6c48718247869dcd540fca07e060259ca4c7943a65f8",
+        "model_calls": []
+      },
+      "current_snapshot": "s2",
+      "active_snapshot_checks": 1
+    },
+    "no_chunk_text_processed_complete": {
+      "query_id": "prose-aebc58f61d8e",
+      "kind": "prose",
+      "workspace": "default",
+      "catalog_snapshot_id": "s",
+      "source_snapshot_id": "f",
+      "scope_ids": [
+        "scope"
+      ],
+      "members_total": 1,
+      "members_processed": 1,
+      "items": [],
+      "coverage_status": "complete",
+      "warnings": [
+        "unit u has no readable chunk text"
+      ],
+      "fail_stage": "",
+      "predicate": null,
+      "read_token": null,
+      "model_calls": []
+    },
+    "requires_span_not_enforced": {
+      "result": {
+        "query_id": "prose-90a9b2e2abbd",
+        "kind": "prose",
+        "workspace": "default",
+        "catalog_snapshot_id": "s",
+        "source_snapshot_id": "f",
+        "scope_ids": [
+          "scope"
+        ],
+        "members_total": 1,
+        "members_processed": 1,
+        "items": [],
+        "coverage_status": "complete",
+        "warnings": [],
+        "fail_stage": "",
+        "predicate": null,
+        "read_token": null,
+        "model_calls": []
+      },
+      "read_text": "Annex 4\n未定位子条款\nAnnex 5\n范围外内容",
+      "catalog_requires_span": true
+    },
+    "old_snapshot_empty_complete": {
+      "query_id": "prose-feb82c7a6be3",
+      "kind": "prose",
+      "workspace": "default",
+      "catalog_snapshot_id": "old",
+      "source_snapshot_id": "f",
+      "scope_ids": [
+        "scope"
+      ],
+      "members_total": 0,
+      "members_processed": 0,
+      "items": [],
+      "coverage_status": "complete",
+      "warnings": [],
+      "fail_stage": "",
+      "predicate": null,
+      "read_token": null,
+      "model_calls": []
+    },
+    "first_duplicate_discards_tail": [
+      {
+        "clause": "4.1.1",
+        "text": "4.1.1 条款开始但chunk在此截断",
+        "citation": {
+          "kind": "char_span",
+          "char_start": 0,
+          "char_end": 21,
+          "quote": "4.1.1 条款开始但chunk在此截断"
+        },
+        "citation_verified": true,
+        "source": "regex_clause_split"
+      }
+    ],
+    "unnumbered_table_empty_complete": {
+      "query_id": "table-ec43b5c78ba9",
+      "kind": "table",
+      "workspace": "default",
+      "catalog_snapshot_id": "s",
+      "source_snapshot_id": "f",
+      "scope_ids": [
+        "tb-x"
+      ],
+      "members_total": 1,
+      "members_processed": 1,
+      "items": [],
+      "coverage_status": "complete",
+      "warnings": [],
+      "fail_stage": "",
+      "predicate": null,
+      "read_token": null,
+      "model_calls": []
+    },
+    "model_missing_quote_accepted": {
+      "items": [
+        {
+          "text": "unsupported claim",
+          "citation": {},
+          "citation_verified": true
+        }
+      ],
+      "error": null
+    }
+  },
+  "code_sha256": {
+    "src/env_rag_final/enumerate_/__init__.py": "af3320e0bb82b78a6d71ead627a2611f41f8a37ea1c94f68d47c0fa1d746dddc",
+    "src/env_rag_final/enumerate_/contract.py": "178a82e17068fe6c6bda65e08cfce40d482395e554ffe453bcfdccae3085c8ce",
+    "src/env_rag_final/enumerate_/doc_enum.py": "66dc1b4cb5a73bb843dd30d06d92ea2a11d6409dc68fb0e40826e049f5af1726",
+    "src/env_rag_final/enumerate_/prose_enum.py": "d75104ed9f65ac0c02175db28e8bab842efcca96df615a514fb31a461ba3f70d",
+    "src/env_rag_final/enumerate_/table_enum.py": "a8d158bcda2a9a06d020345f60b7fb70baf2af461b5204b6c95be8f85c97c16d",
+    "src/env_rag_final/enumerate_/tables.py": "6460082d3ecd9bbefe535ad171523058a650c0a48514f02730b8d74e3b715ba0"
+  }
+}

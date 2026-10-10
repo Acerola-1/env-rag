@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "equations": {
+    "eq-c732f5b06bc4789815765976dc573900-0001": {
+      "id": "eq-c732f5b06bc4789815765976dc573900-0001",
+      "blockid": "a6460203680d4d0993a6dba1146ba58c",
+      "heading": "预处理、浸车和 REESS 充电条件",
+      "parent_headings": [
+        "RC.3.2 额定 REESS 电压"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{UF} _ {j} \\left(d _ {j}\\right) = 1 - \\exp \\left\\{- \\left(\\sum_ {i = 1} ^ {k} C _ {i} \\times \\left(\\frac {d _ {j}}{d _ {n}}\\right) ^ {i}\\right) \\right\\} - \\sum_ {l = 1} ^ {j - 1} \\mathrm{UF} _ {l}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/34"
+    }
+  }
+}

@@ -1,0 +1,184 @@
+{
+ "generation": "phase-4-improvement-3",
+ "files_scanned": 23,
+ "scanned": [
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3/protected-recheck.json",
+   "sha256": "00dbf4faf51048aee1f5c7b3fd0189b2f5fc58477fbf9ffb28f3e4f458318a35"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3/pytest-assessment-frozen.txt",
+   "sha256": "37ea6c8a3bb620e86d3776fce0a6601d4ecff9c54cffb95cb5b91b7126b92910"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3/pytest-engineering.txt",
+   "sha256": "65f633f5d55c14aa90e2179cb15b98dc9bd03d36f3343982bde147899c054f90"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3/pytest-frozen-improvements.txt",
+   "sha256": "2e5fbb3500e435fe276df5629ee52624867e00e39eea517396e0dfcb832c8386"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3/pytest-matrix.txt",
+   "sha256": "65b8c9cb95b36b565fb1855dc0370e20447ab60e12de6aefc6dfbeb161a087fa"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3/pytest-scorer-selftests.txt",
+   "sha256": "b48134e8e28211252c1615cce0a4fc8fdd5500cad5a2cdcc8b3953ab545a05e7"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3/replay_union_offline.py",
+   "sha256": "b767a244d1e7a321904efbeef26867d1173813561662868d014f2deb5a7444d7"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3/replays/file-enum-001-local/answer-runtime-latest.json",
+   "sha256": "6fbfe741496df7cc47ac347ac6ea8ff3df7fda11331a2f86ef3337b7db963f8f"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3/replays/file-enum-002-local-pagesize2/answer-runtime-latest.json",
+   "sha256": "b9342092e3db6e969a2318ad1076ba0af657e263b26849240c6452576946ece9"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3/replays/file-enum-002-local/answer-runtime-latest.json",
+   "sha256": "f166c6b0f50b0a9a572140ff3236e2d69c12cbbb5c5f4612d0f9ed33c98b5a1f"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3/replays/file-enum-005-local-searchid-variant/answer-runtime-latest.json",
+   "sha256": "fed5071e0674658a28b54f4cd0a051297ccc7ef037d0d8e63c956722461d51f2"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3/replays/file-enum-005-local/answer-runtime-latest.json",
+   "sha256": "5f73c5bf66c21050896eada804edc22028046de7018f6943e1ca0fe693a5b142"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3/replays/file-enum-005-pg/answer-runtime-latest.json",
+   "sha256": "e6497ffd2f55f603e5495b73190fff23e51f3ee64d096b322b55612d76b4cc81"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3/report.md",
+   "sha256": "265d652dee58a681e2becd696f11369fbde0d38e35ae0a61603972f68a8c41a1"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3/sha-before-after.json",
+   "sha256": "c4b229c9a58bdcf090bbeee0ea69325b401d9ac30335cb61980f8cd40f7ff66d"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3/union-reconcile.json",
+   "sha256": "b95db77a20a9505f86de1637f40804d5040c8f57388378105e0708b10b1a74c3"
+  },
+  {
+   "path": "src/env_rag_final/answer.py",
+   "sha256": "65eefd79a01414d678a8d9e5e2155158870e6de9856db2125a871d29b7e72df3"
+  },
+  {
+   "path": "src/env_rag_final/search/expand.py",
+   "sha256": "b004c9fa75baadc6b6716dca643e54ae1a3d1a2f61850aa4fa9af571172bd2ef"
+  },
+  {
+   "path": "src/env_rag_final/search/query.py",
+   "sha256": "25bed96d082198001bfb5502d15a6ff9890863c494ec2bfdac6adcb1812e7712"
+  },
+  {
+   "path": "src/env_rag_final/enumerate_/doc_enum.py",
+   "sha256": "e553d05235b683b83206704df69cb18c0bccd97145b54a6fe35f8a024d893ed2"
+  },
+  {
+   "path": "tests/test_phase4_improvement3_union_enumeration.py",
+   "sha256": "8c294b78e8217972626a12e2df4aa21fe5df5504d3e2a2c80f208b399ec62ddc"
+  },
+  {
+   "path": "tests/test_gate2_acceptance.py",
+   "sha256": "1f2813941453ab6323907beca691258f67f645f8012879362434fa99c7f54ee9"
+  },
+  {
+   "path": "tests/test_gate2_rereview.py",
+   "sha256": "9c34c53c10889ab0778671cb7faf2d124d2b497170e102c4af5259c2ee0329f3"
+  }
+ ],
+ "broad_pattern_hits_reviewed": [
+  {
+   "raw": {
+    "path": "src/env_rag_final/answer.py",
+    "line": 787,
+    "match": "api_key…"
+   },
+   "classification": "代码中的配置键名/守卫文案（answer 拒绝 None Bearer 的既有守卫），非值"
+  },
+  {
+   "raw": {
+    "path": "src/env_rag_final/answer.py",
+    "line": 787,
+    "match": "API_KEY…"
+   },
+   "classification": "代码中的配置键名/守卫文案（answer 拒绝 None Bearer 的既有守卫），非值"
+  },
+  {
+   "raw": {
+    "path": "src/env_rag_final/answer.py",
+    "line": 788,
+    "match": "api_key…"
+   },
+   "classification": "代码中的配置键名/守卫文案（answer 拒绝 None Bearer 的既有守卫），非值"
+  },
+  {
+   "raw": {
+    "path": "src/env_rag_final/answer.py",
+    "line": 789,
+    "match": "API_KEY…"
+   },
+   "classification": "代码中的配置键名/守卫文案（answer 拒绝 None Bearer 的既有守卫），非值"
+  },
+  {
+   "raw": {
+    "path": "src/env_rag_final/answer.py",
+    "line": 790,
+    "match": "api_key…"
+   },
+   "classification": "代码中的配置键名/守卫文案（answer 拒绝 None Bearer 的既有守卫），非值"
+  },
+  {
+   "raw": {
+    "path": "src/env_rag_final/answer.py",
+    "line": 2396,
+    "match": "API_KEY…"
+   },
+   "classification": "代码中的配置键名/守卫文案（answer 拒绝 None Bearer 的既有守卫），非值"
+  },
+  {
+   "raw": {
+    "path": "src/env_rag_final/answer.py",
+    "line": 2480,
+    "match": "password…"
+   },
+   "classification": "asyncpg 连接参数名，非值"
+  },
+  {
+   "raw": {
+    "path": "src/env_rag_final/answer.py",
+    "line": 2480,
+    "match": "PASSWORD…"
+   },
+   "classification": "asyncpg 连接参数名，非值"
+  },
+  {
+   "raw": {
+    "path": "src/env_rag_final/search/expand.py",
+    "line": 174,
+    "match": "password…"
+   },
+   "classification": "asyncpg 连接参数名，非值"
+  },
+  {
+   "raw": {
+    "path": "src/env_rag_final/search/expand.py",
+    "line": 174,
+    "match": "PASSWORD…"
+   },
+   "classification": "asyncpg 连接参数名，非值"
+  }
+ ],
+ "value_pattern_hits_reviewed": [],
+ "residual_credentials": [],
+ "env_file_read": false,
+ "note": "两轮模式+逐条定性：命中全部为代码配置键名/公开 doc_id/冻结校验值；真实凭证 0"
+}

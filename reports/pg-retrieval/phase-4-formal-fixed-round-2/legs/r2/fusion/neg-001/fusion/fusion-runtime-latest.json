@@ -1,0 +1,130 @@
+{
+ "task": "5.3 two-path candidate fusion (read-only, guarded)",
+ "started_at": "2026-10-09T21:17:43+0800",
+ "pg_only_switch": false,
+ "frozen_contract": {
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8"
+ },
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "results": [
+  {
+   "query_id": "neg-001",
+   "query": "GB 3095-1996 的二级标准年均限值是多少？",
+   "workspace": "default",
+   "pg": {
+    "status": "missing",
+    "search_id": "872d689343a9cbb6",
+    "catalog_snapshot_id": "4919b3938ad93747",
+    "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "discovery_total": 0,
+    "discovery_captured": true,
+    "chunks": 0,
+    "stale_state": "current",
+    "notes": [
+     "requested GB3095-1996 is not in the corpus (2 other version(s) exist: ['2012', '2026']); another version is NOT substituted",
+     "requested target(s) missing: GB3095-1996; resolved evidence for other requested targets is retained above, but keyword candidates never substitute a missing requested target"
+    ],
+    "trace_stages": [
+     "code_exact"
+    ],
+    "sql_statements": {
+     "fetchrow": 8,
+     "fetch": 10
+    },
+    "trace": [
+     {
+      "stage": "code_exact",
+      "code": "GB3095",
+      "version_requested": "1996",
+      "strict": false,
+      "hits": 2,
+      "version_matched": 0
+     }
+    ]
+   },
+   "local": {
+    "ran": false,
+    "skipped_reason": "all requested targets missing; local call skipped (nearby versions can never substitute a missing target)",
+    "error": null,
+    "receipts": null
+   },
+   "targets_requested": [
+    {
+     "code": "GB3095",
+     "version": "1996"
+    }
+   ],
+   "targets_resolved": [],
+   "typed_targets": [],
+   "candidates": [],
+   "usable": [],
+   "rejected": [],
+   "budget": {
+    "limit": 40,
+    "kept": 0,
+    "truncated": [],
+    "rule": "no truncation"
+   },
+   "status": "missing",
+   "degraded": [],
+   "notes": [
+    "requested target(s) missing: GB3095-1996; resolved evidence for other requested targets is retained, but a missing target is never substituted"
+   ],
+   "allowed_set_basis": {
+    "resolved_code_targets": [],
+    "verified_attributions": []
+   },
+   "verify": {
+    "requested": 0,
+    "verified": 0,
+    "missing": 0,
+    "attribution_conflict": 0
+   }
+  }
+ ],
+ "finished_at": "2026-10-09T21:17:45+0800"
+}

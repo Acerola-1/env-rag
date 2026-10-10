@@ -1,0 +1,54 @@
+{
+  "review_date": "2026-10-08",
+  "checkpoint": "6.1 rev3",
+  "accepted": false,
+  "gate3_maintained": true,
+  "network_evaluation_started": false,
+  "submitted_tests_passed": 450,
+  "frozen_and_own_subset_passed": 67,
+  "r4_matrix": {
+    "total": 4,
+    "failed": 3,
+    "passed": 1
+  },
+  "remaining_groups": [
+    "S1 exception tri-state and current-qid receipt",
+    "S2 actual temperature equality"
+  ],
+  "reviewer_real_requests": 0,
+  "production_writes": 0,
+  "submitted_source_changed_by_reviewer": false,
+  "checks": {
+    "ruff": "passed",
+    "format": "passed",
+    "openspec_strict": "passed",
+    "diff": "passed",
+    "actual_secret_matches": 0
+  },
+  "coverage": {
+    "total_files": 629,
+    "reviewed_files": 3,
+    "skipped_files": 626,
+    "coverage_rate": 0.0047694753577106515,
+    "all_entries_accounted_for": true
+  },
+  "sha256": {
+    "reports/pg-retrieval/phase-4-6.1-review-r4/ocr-rules.json": "4d64af2a54295d6add0e364446deb44dee460804213a115af0a39024b7c13395",
+    "reports/pg-retrieval/phase-4-6.1-review-r4/ruff-format.txt": "38f0dfe1a7daff274f5b6f83c4ee23fa63c25f59af378bb179f62bf8ce90eaf8",
+    "reports/pg-retrieval/phase-4-6.1-review-r4/audit.json": "451ce74bf935cef5a73b1b089ad15b153a7fdf2ecf94e8f023a042b24e0930a3",
+    "reports/pg-retrieval/phase-4-6.1-review-r4/ocr-preview.json": "097fbd9a66bada3267ed3107aa0af7e00fb638e42449184c1ab3c8eb23015ae4",
+    "reports/pg-retrieval/phase-4-6.1-review-r4/ruff-check.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "reports/pg-retrieval/phase-4-6.1-review-r4/comments.json": "1cface5c93d5cfd85faadae651803a19fd0c87bf8ede660b57910e939b0761bb",
+    "reports/pg-retrieval/phase-4-6.1-review-r4/openspec-check.txt": "4693ceda9e27e58fa59b2c9dbba2ff1cf729bd8067915263151894179518ba7c",
+    "reports/pg-retrieval/phase-4-6.1-review-r4/coverage.json": "f7d24e02b8519124bb066f216ae08d287f81a85b41ef41e0bcfd38e6f083e964",
+    "reports/pg-retrieval/phase-4-6.1-review-r4/credential-scan.json": "c626744bd338a187c3aeae6cb46254585633918a346d7a99b26e4e3d061f454a",
+    "reports/pg-retrieval/phase-4-6.1-review-r4/independent-tests.txt": "539f42bc017f327d8f43753522152093f3e0912d781e062406aca69c714965a4",
+    "reports/pg-retrieval/phase-4-6.1-review-r4/review.md": "077947e47ed3064494bf3530ddb84e5d94e1fe01f74380ae707c0d787c6389cf",
+    "reports/pg-retrieval/phase-4-6.1-review-r4/submitted-suite.txt": "df9014bfaf22589832f5ee9cef8c6ff73a602fe98da8e53a5af504c99c869a71",
+    "reports/pg-retrieval/phase-4-6.1-review-r4/diff-check.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_evaluation_review_r4.py": "4522b2f09073eb550affb0e32b778c79e857b739b1f6ec07d912d84f29e43942",
+    "src/env_rag_final/evaluation.py": "7523be48a169286d699e61624554b5c1065d3fb5e385cd8e81dced81c0d5b777",
+    "src/env_rag_final/cli.py": "0411618302a2eab098f5a42c89210b8cdffe405f08092203f5744c951261d15c",
+    "openspec/changes/add-pg-scoped-retrieval/handoff-phase-4-6.1-fixes-r4.md": "6b3bf2b7da188de0663e678e7d7b623197b7a8fcc854e37a993fa5a7fd9d9642"
+  }
+}

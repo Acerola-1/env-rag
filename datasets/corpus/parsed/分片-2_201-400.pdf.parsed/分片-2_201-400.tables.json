@@ -1,0 +1,585 @@
+{
+  "version": "1.0",
+  "tables": {
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0001": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0001",
+      "blockid": "c0bca4365e41986a378280f772b7a43c",
+      "heading": "DF.4.1 数据交换",
+      "parent_headings": [
+        "DE.4.4 市区、市郊和高速路段窗口"
+      ],
+      "dimension": [
+        97,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>行</td><td>参数</td><td>说明/单位</td></tr><tr><td>1</td><td>测试编号</td><td>编号</td></tr><tr><td>2</td><td>测试日期</td><td>日,月,年</td></tr><tr><td>3</td><td>监管机构</td><td>机构名</td></tr><tr><td>4</td><td>测试地点</td><td>城市,国家</td></tr><tr><td>5</td><td>监管人员</td><td>姓名</td></tr><tr><td>6</td><td>车辆驾驶员</td><td>姓名</td></tr><tr><td>7</td><td>车辆类型</td><td>客车/货车种类</td></tr><tr><td>8</td><td>车辆生产企业</td><td>名称</td></tr><tr><td>9</td><td>车辆型号</td><td>年</td></tr><tr><td>10</td><td>车辆编号</td><td>VIN号</td></tr><tr><td>11</td><td>测试开始时的里程表读数</td><td>km</td></tr><tr><td>12</td><td>测试结束时的里程表读数</td><td>km</td></tr><tr><td>13</td><td>车辆分类</td><td>M/N</td></tr><tr><td>14</td><td>型式检验排放限值</td><td>中国第六阶段</td></tr><tr><td>15</td><td>发动机型号</td><td>例如,点燃式、压燃式</td></tr><tr><td>16</td><td>发动机标定功率</td><td>kW</td></tr><tr><td>17</td><td>最大扭矩</td><td>Nm</td></tr><tr><td>18</td><td>发动机排量</td><td>L</td></tr><tr><td>19</td><td>传动方式</td><td>例如,手动、自动</td></tr><tr><td>20</td><td>前进挡挡位数</td><td>#</td></tr><tr><td>21</td><td>燃料</td><td>例如,汽油、柴油、NG等</td></tr><tr><td>22</td><td>润滑油</td><td>商品标签</td></tr><tr><td>23</td><td>车轮尺寸</td><td>宽/高/轮毂直径</td></tr><tr><td>24</td><td>前后车轴轮胎胎压</td><td>bar,bar</td></tr><tr><td>25</td><td>道路负载系数</td><td> $F_0,F_1,F_2$ </td></tr><tr><td>26</td><td>型式认证循环</td><td>WLTC</td></tr><tr><td>27</td><td>型式检验 $CO_2$ 排放</td><td>g/km</td></tr><tr><td>28</td><td>低速段 $CO_2$ 排放</td><td>g/km</td></tr><tr><td>29</td><td>中速段 $CO_2$ 排放</td><td>g/km</td></tr><tr><td>30</td><td>高速段 $CO_2$ 排放</td><td>g/km</td></tr><tr><td>31</td><td>超高速段 $CO_2$ 排放</td><td>g/km</td></tr><tr><td>32</td><td>车辆测试质量(1)</td><td>kg,%(2)</td></tr><tr><td>33</td><td>PEMS生产厂</td><td>名称</td></tr><tr><td>34</td><td>PEMS类型</td><td>PEMS名称</td></tr><tr><td>35</td><td>PEMS序列号</td><td>序列号</td></tr><tr><td>36</td><td>PEMS 电源</td><td>例如,电池类型</td></tr><tr><td>37</td><td>气体分析仪生产厂</td><td>名称</td></tr><tr><td>38</td><td>气体分析仪类型</td><td>类型</td></tr><tr><td>39</td><td>气体分析仪序列号</td><td>序列号</td></tr><tr><td> $40~50^{(3)}$ </td><td>...</td><td></td></tr><tr><td>51</td><td>EFM 生产厂 $^{(4)}$ </td><td>名称</td></tr><tr><td>52</td><td>EFM 传感器类型 $^{(4)}$ </td><td>工作原理</td></tr><tr><td>53</td><td>EFM 序列号 $^{(4)}$ </td><td>序列号</td></tr><tr><td>54</td><td>排气流量数据来源</td><td>EFM/ECU/传感器</td></tr><tr><td>55</td><td>空气压力传感器</td><td>类型,生产厂</td></tr><tr><td>56</td><td>测试日期</td><td>日,月,年</td></tr><tr><td>57</td><td>预测试开始时间</td><td>时:分</td></tr><tr><td>58</td><td>车辆行程开始时间</td><td>时:分</td></tr><tr><td>59</td><td>后测试开始时间</td><td>时:分</td></tr><tr><td>60</td><td>预测试结束时间</td><td>时:分</td></tr><tr><td>61</td><td>车辆行程结束时间</td><td>时:分</td></tr><tr><td>62</td><td>后测试结束时间</td><td>时:分</td></tr><tr><td> $63~70^{(5)}$ </td><td>...</td><td></td></tr><tr><td>71</td><td>时间修正: $O_2$ 偏移</td><td>s</td></tr><tr><td>72</td><td>时间修正:PN 偏移</td><td>s</td></tr><tr><td>73</td><td>时间修正:CO 偏移</td><td>s</td></tr><tr><td>74</td><td>时间修正: $CO_2$ 偏移</td><td>s</td></tr><tr><td>75</td><td>时间修正:NO 偏移</td><td>s</td></tr><tr><td>76</td><td>时间修正: $NO_2$ 偏移</td><td>s</td></tr><tr><td>77</td><td>时间修正:排气流量偏移</td><td>s</td></tr><tr><td>78</td><td>量程标定基准值 $O_2$ </td><td>%</td></tr><tr><td>79</td><td>量程标定基准值PN</td><td>个</td></tr><tr><td>80</td><td>量程标定基准值CO</td><td>ppm</td></tr><tr><td>81</td><td>量程标定基准值 $CO_2$ </td><td>%</td></tr><tr><td>82</td><td>量程标定基准值NO</td><td>ppm</td></tr><tr><td>83</td><td>量程标定基准值 $NO_2$ </td><td>ppm</td></tr><tr><td> $84~95^{(5)}$ </td><td>...</td><td></td></tr><tr><td>96</td><td>预测试零气响应 $O_2$ </td><td>%</td></tr><tr><td>97</td><td>预测试零气响应PN</td><td>个</td></tr><tr><td>98</td><td>预测试零气响应CO</td><td>ppm</td></tr><tr><td>99</td><td>预测试零气响应 $CO_2$ </td><td>%</td></tr><tr><td>100</td><td>预测试零气响应NO</td><td>ppm</td></tr><tr><td>101</td><td>预测试零气响应 $NO_2$ </td><td>ppm</td></tr><tr><td>102</td><td>预测试标准气响应 $O_2$ </td><td>%</td></tr><tr><td>103</td><td>预测试标准气响应PN</td><td>个</td></tr><tr><td>104</td><td>预测试标准气响应CO</td><td>ppm</td></tr><tr><td>105</td><td>预测试标准气响应 $CO_2$ </td><td>%</td></tr><tr><td>106</td><td>预测试标准气响应NO</td><td>ppm</td></tr><tr><td>107</td><td>预测试标准气响应 $NO_2$ </td><td>ppm</td></tr><tr><td>108</td><td>后测试零气响应 $O_2$ </td><td>%</td></tr><tr><td>109</td><td>后测试零气响应PN</td><td>个</td></tr><tr><td>110</td><td>后测试零气响应CO</td><td>ppm</td></tr><tr><td>111</td><td>后测试零气响应 $CO_2$ </td><td>%</td></tr><tr><td>112</td><td>后测试零气响应NO</td><td>ppm</td></tr><tr><td>113</td><td>后测试零气响应 $NO_2$ </td><td>ppm</td></tr><tr><td>114</td><td>后测试标准气响应 $O_2$ </td><td>%</td></tr><tr><td>115</td><td>后测试标准气响应PN</td><td>个</td></tr><tr><td>116</td><td>后测试标准气响应CO</td><td>ppm</td></tr><tr><td>117</td><td>后测试标准气响应 $CO_2$ </td><td>%</td></tr><tr><td>118</td><td>后测试标准气响应NO</td><td>ppm</td></tr><tr><td>119</td><td>后测试标准气响应 $NO_2$ </td><td>ppm</td></tr><tr><td>120</td><td>PEMS验证——PN结果</td><td>个/km, % (6)</td></tr><tr><td>121</td><td>PEMS验证——CO结果</td><td>mg/km, % (6)</td></tr><tr><td>122</td><td>PEMS验证—— $CO_2$ 结果</td><td>g/km, % (6)</td></tr><tr><td>123......(7)</td><td>PEMS验证—— $NO_x$ 结果......(7)</td><td>mg/km, % (6)......(7)</td></tr><tr><td colspan=\"3\">(1)实际道路测试时车辆质量,包括驾驶员质量和PEMS系统的质量。(2)表示与车辆总质量的偏差。(3)预留,使用了多组分析仪时,分析仪生产厂及序列号等其他信息。预留行号仅为示例;在完整的数据报告文件中,不应有空白行。(4)当排气流量由EFM测得时,必须填。(5)如需要,可在此填入其他信息。(6)不是必须进行PEMS验证;基于里程的排放由PEMS测得;百分号表示与实验室基准值的偏差。(7)可在第195行前加入其他参数来表征和描述测试。</td></tr></table>",
+      "caption": "表 DF.1 数据交换格式",
+      "footnotes": [],
+      "self_ref": "content_list.json#/78"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0002": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0002",
+      "blockid": "c0bca4365e41986a378280f772b7a43c",
+      "heading": "DF.4.1 数据交换",
+      "parent_headings": [
+        "DE.4.4 市区、市郊和高速路段窗口"
+      ],
+      "dimension": [
+        48,
+        5
+      ],
+      "format": "html",
+      "content": "<table><tr><td>行</td><td>198</td><td> $199^{(1)}$ </td><td>200</td><td>201</td></tr><tr><td></td><td>时间</td><td>行程</td><td>s</td><td> $^{(2)}$ </td></tr><tr><td></td><td> $车速^{(3)}$ </td><td>传感器</td><td>km/h</td><td> $^{(2)}$ </td></tr><tr><td></td><td> $车速^{(3)}$ </td><td>GPS</td><td>km/h</td><td> $^{(2)}$ </td></tr><tr><td></td><td> $车速^{(3)}$ </td><td>ECU</td><td>km/h</td><td> $^{(2)}$ </td></tr><tr><td></td><td>纬度</td><td>GPS</td><td> $(^{\\circ})(')'(\")$ </td><td> $^{(2)}$ </td></tr><tr><td></td><td>经度</td><td>GPS</td><td> $(^{\\circ})(')'(\")$ </td><td> $^{(2)}$ </td></tr><tr><td></td><td>海拔</td><td>GPS</td><td>m</td><td> $^{(2)}$ </td></tr><tr><td></td><td>海拔</td><td>传感器</td><td>m</td><td> $^{(2)}$ </td></tr><tr><td></td><td>环境压力</td><td>传感器</td><td>kPa</td><td> $^{(2)}$ </td></tr><tr><td></td><td>环境温度</td><td>传感器</td><td>K</td><td> $^{(2)}$ </td></tr><tr><td></td><td>环境湿度</td><td>传感器</td><td>g/kg, %</td><td> $^{(2)}$ </td></tr><tr><td></td><td>CO浓度</td><td>分析仪</td><td>ppm</td><td> $^{(2)}$ </td></tr><tr><td></td><td> $CO_{2}$ 浓度</td><td>分析仪</td><td>ppm</td><td> $^{(2)}$ </td></tr><tr><td></td><td> $NO_{x}$ 浓度</td><td>分析仪</td><td>ppm</td><td> $^{(2)}$ </td></tr><tr><td></td><td>NO浓度</td><td>分析仪</td><td>ppm</td><td> $^{(2)}$ </td></tr><tr><td></td><td> $NO_{2}$ 浓度</td><td>分析仪</td><td>ppm</td><td> $^{(2)}$ </td></tr><tr><td></td><td> $O_{2}$ 浓度</td><td>分析仪</td><td>ppm</td><td> $^{(2)}$ </td></tr><tr><td></td><td>PN浓度</td><td>分析仪</td><td>ppm</td><td> $^{(2)}$ </td></tr><tr><td></td><td>排气质量流量</td><td>EFM</td><td>kg/s</td><td> $^{(2)}$ </td></tr><tr><td></td><td>EFM排气温度</td><td>EFM</td><td>K</td><td> $^{(2)}$ </td></tr><tr><td></td><td>排气质量流量</td><td>传感器</td><td>kg/s</td><td> $^{(2)}$ </td></tr><tr><td></td><td>排气质量流量</td><td>ECU</td><td>kg/s</td><td> $^{(2)}$ </td></tr><tr><td></td><td>CO质量</td><td>分析仪</td><td>g/s</td><td> $^{(2)}$ </td></tr><tr><td></td><td> $CO_2$ 质量</td><td>分析仪</td><td>g/s</td><td> $^{(2)}$ </td></tr><tr><td></td><td> $NO_x$ 质量</td><td>分析仪</td><td>g/s</td><td> $^{(2)}$ </td></tr><tr><td></td><td>NO质量</td><td>分析仪</td><td>g/s</td><td> $^{(2)}$ </td></tr><tr><td></td><td> $NO_2$ 质量</td><td>分析仪</td><td>g/s</td><td> $^{(2)}$ </td></tr><tr><td></td><td> $O_2$ 质量</td><td>分析仪</td><td>g/s</td><td> $^{(2)}$ </td></tr><tr><td></td><td>PN</td><td>分析仪</td><td>g/s</td><td> $^{(2)}$ </td></tr><tr><td></td><td>气体测试状态</td><td>PEMS</td><td>开启(1);关闭(2);故障(&gt;1)</td><td> $^{(2)}$ </td></tr><tr><td></td><td>发动机转速</td><td>ECU</td><td>r/min</td><td> $^{(2)}$ </td></tr><tr><td></td><td>发动机扭矩</td><td>ECU</td><td>Nm</td><td> $^{(2)}$ </td></tr><tr><td></td><td>驱动轴扭矩</td><td>ECU</td><td>Nm</td><td> $^{(2)}$ </td></tr><tr><td></td><td>车轮转速</td><td>ECU</td><td>rad/s</td><td> $^{(2)}$ </td></tr><tr><td></td><td>燃油消耗率</td><td>ECU</td><td>g/s</td><td> $^{(2)}$ </td></tr><tr><td></td><td>发动机燃油流量</td><td>ECU</td><td>g/s</td><td> $^{(2)}$ </td></tr><tr><td></td><td>发动机进气流量</td><td>ECU</td><td>g/s</td><td> $^{(2)}$ </td></tr><tr><td></td><td>冷却液温度</td><td>ECU</td><td>K或°C</td><td> $^{(2)}$ </td></tr><tr><td></td><td>机油温度</td><td>ECU</td><td>K或°C</td><td> $^{(2)}$ </td></tr><tr><td></td><td>再生状态</td><td>ECU</td><td>—</td><td> $^{(2)}$ </td></tr><tr><td></td><td>油门踏板位置</td><td>ECU</td><td>%</td><td> $^{(2)}$ </td></tr><tr><td></td><td>车辆状态</td><td>ECU</td><td>故障(1),正常(0)</td><td> $^{(2)}$ </td></tr><tr><td></td><td>扭矩百分比</td><td>ECU</td><td>%</td><td> $^{(2)}$ </td></tr><tr><td></td><td>摩擦扭矩百分比</td><td>ECU</td><td>%</td><td> $^{(2)}$ </td></tr><tr><td></td><td>充电状态</td><td>ECU</td><td>%</td><td> $^{(2)}$ </td></tr><tr><td></td><td>... $^{(4)}$ </td><td>... $^{(4)}$ </td><td>... $^{(4)}$ </td><td>... $^{(2)(4)}$ </td></tr><tr><td colspan=\"5\"> $^{(1)}$ 如果第198行包含这一列参数,则可省略。 $^{(2)}$ 自第201行至数据最后包含的实际值。 $^{(3)}$ 应使用至少一种方法得到。 $^{(4)}$ 可加入其他参数来表征和描述测试。</td></tr></table>",
+      "caption": "表 DF.2 数据交换文件的主体",
+      "footnotes": [],
+      "self_ref": "content_list.json#/85"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0003": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0003",
+      "blockid": "439c24fc8d8030a3fe119011393c2ba4",
+      "heading": "DF.4.2.1 中间结果",
+      "parent_headings": [
+        "DE.4.4 市区、市郊和高速路段窗口"
+      ],
+      "dimension": [
+        83,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>行</td><td>参数</td><td>说明/单位</td></tr><tr><td>1</td><td>总试验里程</td><td>km</td></tr><tr><td>2</td><td>总试验时间</td><td>h: min: s</td></tr><tr><td>3</td><td>总车辆停留时间</td><td>min: s</td></tr><tr><td>4</td><td>试验平均速度</td><td>km/h</td></tr><tr><td>5</td><td>试验最高速度</td><td>km/h</td></tr><tr><td>6</td><td>平均CO浓度</td><td>ppm</td></tr><tr><td>7</td><td>平均 $CO_2$ 浓度</td><td>ppm</td></tr><tr><td>8</td><td>平均 $NO_x$ 浓度</td><td>ppm</td></tr><tr><td>9</td><td>平均PN浓度</td><td>ppm</td></tr><tr><td>10</td><td>平均排气质量流量</td><td>kg/s</td></tr><tr><td>11</td><td>平均排气温度</td><td>K</td></tr><tr><td>12</td><td>最大排气温度</td><td>K</td></tr><tr><td>13</td><td>累计CO质量</td><td>g</td></tr><tr><td>14</td><td>累计 $CO_2$ 质量</td><td>g</td></tr><tr><td>15</td><td>累计 $NO_x$ 质量</td><td>g</td></tr><tr><td>16</td><td>累计PN</td><td>个</td></tr><tr><td>17</td><td>试验总CO排放</td><td>mg/km</td></tr><tr><td>18</td><td>试验总 $CO_2$ 排放</td><td>g/km</td></tr><tr><td>19</td><td>试验总 $NO_x$ 排放</td><td>mg/km</td></tr><tr><td>20</td><td>试验总PN排放</td><td>个/km</td></tr><tr><td>21</td><td>市区里程</td><td>km</td></tr><tr><td>22</td><td>市区时间</td><td>h: min: s</td></tr><tr><td>23</td><td>市区车辆停留时间</td><td>min: s</td></tr><tr><td>24</td><td>市区平均速度</td><td>km/h</td></tr><tr><td>25</td><td>市区最大速度</td><td>km/h</td></tr><tr><td>26</td><td>市区平均CO浓度</td><td>ppm</td></tr><tr><td>27</td><td>市区平均 $CO_2$ 浓度</td><td>ppm</td></tr><tr><td>28</td><td>市区平均 $NO_x$ 浓度</td><td>ppm</td></tr><tr><td>29</td><td>市区平均PN浓度</td><td>ppm</td></tr><tr><td>30</td><td>市区平均排气质量流量</td><td>kg/s</td></tr><tr><td>31</td><td>市区平均排气温度</td><td>K</td></tr><tr><td>32</td><td>市区最大排气温度</td><td>K</td></tr><tr><td>33</td><td>市区累计CO质量</td><td>g</td></tr><tr><td>34</td><td>市区累计 $CO_2$ 质量</td><td>g</td></tr><tr><td>35</td><td>市区累计 $NO_x$ 质量</td><td>g</td></tr><tr><td>36</td><td>市区累计PN</td><td>个</td></tr><tr><td>37</td><td>市区总CO排放</td><td>mg/km</td></tr><tr><td>38</td><td>市区总 $CO_2$ 排放</td><td>g/km</td></tr><tr><td>39</td><td>市区总 $NO_x$ 排放</td><td>mg/km</td></tr><tr><td>40</td><td>市区总PN排放</td><td>个/km</td></tr><tr><td>41</td><td>市郊里程</td><td>km</td></tr><tr><td>42</td><td>市郊时间</td><td>h: min: s</td></tr><tr><td>43</td><td>市郊车辆停留时间</td><td>min: s</td></tr><tr><td>44</td><td>市郊平均速度</td><td>km/h</td></tr><tr><td>45</td><td>市郊最大速度</td><td>km/h</td></tr><tr><td>46</td><td>市郊平均CO浓度</td><td>ppm</td></tr><tr><td>47</td><td>市郊平均 $CO_2$ 浓度</td><td>ppm</td></tr><tr><td>48</td><td>市郊平均 $NO_x$ 浓度</td><td>ppm</td></tr><tr><td>49</td><td>市郊平均PN浓度</td><td>ppm</td></tr><tr><td>50</td><td>市郊平均排气质量流量</td><td>kg/s</td></tr><tr><td>51</td><td>市郊平均排气温度</td><td>K</td></tr><tr><td>52</td><td>市郊最大排气温度</td><td>K</td></tr><tr><td>53</td><td>市郊累计CO质量</td><td>g</td></tr><tr><td>54</td><td>市郊累计 $CO_2$ 质量</td><td>g</td></tr><tr><td>55</td><td>市郊累计 $NO_x$ 质量</td><td>g</td></tr><tr><td>56</td><td>市郊累计PN</td><td>个</td></tr><tr><td>57</td><td>市郊总CO排放</td><td>mg/km</td></tr><tr><td>58</td><td>市郊总 $CO_2$ 排放</td><td>g/km</td></tr><tr><td>59</td><td>市郊总 $NO_x$ 排放</td><td>mg/km</td></tr><tr><td>60</td><td>市郊总PN排放</td><td>个/km</td></tr><tr><td>61</td><td>高速里程</td><td>km</td></tr><tr><td>62</td><td>高速时间</td><td>h:min:s</td></tr><tr><td>63</td><td>高速车辆停留时间</td><td>min:s</td></tr><tr><td>64</td><td>高速平均速度</td><td>km/h</td></tr><tr><td>65</td><td>高速最大速度</td><td>km/h</td></tr><tr><td>66</td><td>高速平均CO浓度</td><td>ppm</td></tr><tr><td>67</td><td>高速平均 $CO_2$ 浓度</td><td>ppm</td></tr><tr><td>68</td><td>高速平均 $NO_x$ 浓度</td><td>ppm</td></tr><tr><td>69</td><td>高速平均PN浓度</td><td>ppm</td></tr><tr><td>70</td><td>高速平均排气质量流量</td><td>kg/s</td></tr><tr><td>71</td><td>高速平均排气温度</td><td>K</td></tr><tr><td>72</td><td>高速最大排气温度</td><td>K</td></tr><tr><td>73</td><td>高速累计CO质量</td><td>g</td></tr><tr><td>74</td><td>高速累计 $CO_2$ 质量</td><td>g</td></tr><tr><td>75</td><td>高速累计 $NO_x$ 质量</td><td>g</td></tr><tr><td>76</td><td>高速累计PN</td><td>个</td></tr><tr><td>77</td><td>高速总CO排放</td><td>mg/km</td></tr><tr><td>78</td><td>高速总 $CO_2$ 排放</td><td>g/km</td></tr><tr><td>79</td><td>高速总 $NO_x$ 排放</td><td>mg/km</td></tr><tr><td>80</td><td>高速总PN排放</td><td>个/km</td></tr><tr><td>......(1)</td><td>......(1)</td><td>......(1)</td></tr><tr><td colspan=\"3\">(1)可加入其他参数来表征和描述测试。</td></tr></table>",
+      "caption": "表 DF.3 报告文件#1——中间结果汇总参数",
+      "footnotes": [
+        "续表"
+      ],
+      "self_ref": "content_list.json#/91"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0004": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0004",
+      "blockid": "439c24fc8d8030a3fe119011393c2ba4",
+      "heading": "DF.4.2.1 中间结果",
+      "parent_headings": [
+        "DE.4.4 市区、市郊和高速路段窗口"
+      ],
+      "dimension": [
+        14,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>行</td><td>参数</td><td>单位</td></tr><tr><td>1</td><td> $CO_{2}$ 基准质量</td><td>g</td></tr><tr><td>2</td><td> $CO_{2}$ 特征曲线系数  $a_{1}$ </td><td></td></tr><tr><td>3</td><td> $CO_{2}$ 特征曲线系数  $b_{1}$ </td><td></td></tr><tr><td>4</td><td> $CO_{2}$ 特征曲线系数  $a_{2}$ </td><td></td></tr><tr><td>5</td><td> $CO_{2}$ 特征曲线系数  $b_{2}$ </td><td></td></tr><tr><td>6</td><td>加权函数系数  $k_{11}$ </td><td></td></tr><tr><td>7</td><td>加权函数系数  $k_{12}$ </td><td></td></tr><tr><td>8</td><td>加权函数系数  $k_{22}=k_{21}$ </td><td></td></tr><tr><td>9</td><td>一次公差  $tol_1$ </td><td>%</td></tr><tr><td>10</td><td>二次公差  $tol_2$ </td><td>%</td></tr><tr><td>11</td><td>计算软件及其版本</td><td>(如,EMROAD 5.8)</td></tr><tr><td> $\\dots\\dots^{(1)}$ </td><td> $\\dots\\dots^{(1)}$ </td><td> $\\dots\\dots^{(1)}$ </td></tr><tr><td colspan=\"3\"> $^{(1)}$ 可在第95行前加入其他参数来表征和描述测试。</td></tr></table>",
+      "caption": "DF.4.2.2 数据分析结果",
+      "footnotes": [],
+      "self_ref": "content_list.json#/98"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0005": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0005",
+      "blockid": "439c24fc8d8030a3fe119011393c2ba4",
+      "heading": "DF.4.2.1 中间结果",
+      "parent_headings": [
+        "DE.4.4 市区、市郊和高速路段窗口"
+      ],
+      "dimension": [
+        46,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>行</td><td>参数</td><td>单位</td></tr><tr><td>101</td><td>窗口个数</td><td></td></tr><tr><td>102</td><td>市区窗口个数</td><td></td></tr><tr><td>103</td><td>市郊窗口个数</td><td></td></tr><tr><td>104</td><td>高速窗口个数</td><td></td></tr><tr><td>105</td><td>市区窗口分担率</td><td>%</td></tr><tr><td>106</td><td>市郊窗口分担率</td><td>%</td></tr><tr><td>107</td><td>高速窗口分担率</td><td>%</td></tr><tr><td>108</td><td>市区窗口分担率是否&gt;15%</td><td>(1=是,0=否)</td></tr><tr><td>109</td><td>市郊窗口分担率是否&gt;15%</td><td>(1=是,0=否)</td></tr><tr><td>110</td><td>高速窗口分担率是否&gt;15%</td><td>(1=是,0=否)</td></tr><tr><td>111</td><td> $\\pm tol_1$ 窗口个数</td><td></td></tr><tr><td>112</td><td> $\\pm tol_1$ 市区窗口个数</td><td></td></tr><tr><td>113</td><td> $\\pm tol_1$ 市郊窗口个数</td><td></td></tr><tr><td>114</td><td> $\\pm tol_1$ 高速窗口个数</td><td></td></tr><tr><td>115</td><td> $\\pm tol_2$ 窗口个数</td><td></td></tr><tr><td>116</td><td> $\\pm tol_2$ 市区窗口个数</td><td></td></tr><tr><td>117</td><td> $\\pm tol_2$ 市郊窗口个数</td><td></td></tr><tr><td>118</td><td> $\\pm tol_2$ 高速窗口个数</td><td></td></tr><tr><td>119</td><td> $\\pm tol_1$ 市区窗口分担率</td><td>%</td></tr><tr><td>120</td><td> $\\pm tol_1$ 市郊窗口分担率</td><td>%</td></tr><tr><td>121</td><td> $\\pm tol_1$ 高速窗口分担率</td><td>%</td></tr><tr><td>122</td><td> $\\pm tol_1$ 市区窗口分担率是否&gt;50%</td><td>(1=是,0=否)</td></tr><tr><td>123</td><td> $\\pm tol_1$ 市郊窗口分担率是否&gt;50%</td><td>(1=是,0=否)</td></tr><tr><td>124</td><td> $\\pm tol_1$ 高速窗口分担率是否&gt;50%</td><td>(1=是,0=否)</td></tr><tr><td>125</td><td>所有窗口平均严格程度指数</td><td>%</td></tr><tr><td>126</td><td>市区窗口平均严格程度指数</td><td>%</td></tr><tr><td>127</td><td>市郊窗口平均严格程度指数</td><td>%</td></tr><tr><td>128</td><td>高速窗口平均严格程度指数</td><td>%</td></tr><tr><td>129</td><td>市区窗口加权CO排放</td><td>mg/km</td></tr><tr><td>130</td><td>市郊窗口加权CO排放</td><td>mg/km</td></tr><tr><td>131</td><td>高速窗口加权CO排放</td><td>mg/km</td></tr><tr><td>132</td><td>市区窗口加权NOx排放</td><td>mg/km</td></tr><tr><td>133</td><td>市郊窗口加权NOx排放</td><td>mg/km</td></tr><tr><td>134</td><td>高速窗口加权NOx排放</td><td>mg/km</td></tr><tr><td>135</td><td>市区窗口加权 NO 排放</td><td>mg/km</td></tr><tr><td>136</td><td>市郊窗口加权 NO 排放</td><td>mg/km</td></tr><tr><td>137</td><td>高速窗口加权 NO 排放</td><td>mg/km</td></tr><tr><td>138</td><td>市区窗口加权  $NO_{2}$  排放</td><td>mg/km</td></tr><tr><td>139</td><td>市郊窗口加权  $NO_{2}$  排放</td><td>mg/km</td></tr><tr><td>140</td><td>高速窗口加权  $NO_{2}$  排放</td><td>mg/km</td></tr><tr><td>141</td><td>市区窗口加权 PN 排放</td><td>个/km</td></tr><tr><td>142</td><td>市郊窗口加权 PN 排放</td><td>个/km</td></tr><tr><td>143</td><td>高速窗口加权 PN 排放</td><td>个/km</td></tr><tr><td> $\\dots\\dots^{(1)}$ </td><td> $\\dots\\dots^{(1)}$ </td><td> $\\dots\\dots^{(1)}$ </td></tr><tr><td colspan=\"3\"> $^{(1)}$ 可在第 195 行前加入其他参数来表征和描述测试。</td></tr></table>",
+      "caption": "表 DF.5a 报告文件#2表头——平均窗口法的数据分析的结果",
+      "footnotes": [],
+      "self_ref": "content_list.json#/102"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0006": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0006",
+      "blockid": "439c24fc8d8030a3fe119011393c2ba4",
+      "heading": "DF.4.2.1 中间结果",
+      "parent_headings": [
+        "DE.4.4 市区、市郊和高速路段窗口"
+      ],
+      "dimension": [
+        6,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>行</td><td>参数</td><td>单位</td></tr><tr><td>201</td><td>全程 CO 排放</td><td>mg/km</td></tr><tr><td>202</td><td>全程  $NO_x$  排放</td><td>mg/km</td></tr><tr><td>203</td><td>全程 PN 排放</td><td>个/km</td></tr><tr><td> $\\dots\\dots^{(1)}$ </td><td> $\\dots\\dots^{(1)}$ </td><td> $\\dots\\dots^{(1)}$ </td></tr><tr><td colspan=\"3\"> $^{(1)}$ 可加入其他参数。</td></tr></table>",
+      "caption": "表 DF.5b 报告文件#2表头——平均窗口法的最终排放结果",
+      "footnotes": [],
+      "self_ref": "content_list.json#/106"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0007": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0007",
+      "blockid": "439c24fc8d8030a3fe119011393c2ba4",
+      "heading": "DF.4.2.1 中间结果",
+      "parent_headings": [
+        "DE.4.4 市区、市郊和高速路段窗口"
+      ],
+      "dimension": [
+        24,
+        5
+      ],
+      "format": "html",
+      "content": "<table><tr><td>行</td><td>498</td><td>499</td><td>500</td><td>501</td></tr><tr><td></td><td>窗口开始时间</td><td></td><td>s</td><td> $\\dots\\dots^{(1)}$ </td></tr><tr><td></td><td>窗口结束时间</td><td></td><td>s</td><td> $\\dots\\dots^{(1)}$ </td></tr><tr><td></td><td>窗口时间</td><td></td><td>s</td><td> $\\dots\\dots^{(1)}$ </td></tr><tr><td></td><td>窗口距离</td><td>数据来源(1=GPS,2=ECU,3=传感器)</td><td>km</td><td> $\\dots\\dots^{(1)}$ </td></tr><tr><td></td><td>窗口CO排放</td><td></td><td>g</td><td> $\\dots\\dots^{(1)}$ </td></tr><tr><td></td><td>窗口 $CO_2$ 排放</td><td></td><td>g</td><td> $\\dots\\dots^{(1)}$ </td></tr><tr><td></td><td>窗口 $NO_x$ 排放</td><td></td><td>g</td><td> $\\dots\\dots^{(1)}$ </td></tr><tr><td></td><td>窗口NO排放</td><td></td><td>g</td><td> $\\dots\\dots^{(1)}$ </td></tr><tr><td></td><td>窗口 $NO_2$ 排放</td><td></td><td>g</td><td> $\\dots\\dots^{(1)}$ </td></tr><tr><td></td><td>窗口 $O_2$ 排放</td><td></td><td>g</td><td> $\\dots\\dots^{(1)}$ </td></tr><tr><td></td><td>窗口PN排放</td><td></td><td>g</td><td> $\\dots\\dots^{(1)}$ </td></tr><tr><td></td><td>窗口CO排放</td><td></td><td>mg/km</td><td> $\\dots\\dots^{(1)}$ </td></tr><tr><td></td><td>窗口 $CO_2$ 排放</td><td></td><td>g/km</td><td> $\\dots\\dots^{(1)}$ </td></tr><tr><td></td><td>窗口 $NO_x$ 排放</td><td></td><td>mg/km</td><td> $\\dots\\dots^{(1)}$ </td></tr><tr><td></td><td>窗口NO排放</td><td></td><td>mg/km</td><td> $\\dots\\dots^{(1)}$ </td></tr><tr><td></td><td>窗口 $NO_2$ 排放</td><td></td><td>mg/km</td><td> $\\dots\\dots^{(1)}$ </td></tr><tr><td></td><td>窗口 $O_2$ 排放</td><td></td><td>mg/km</td><td> $\\dots\\dots^{(1)}$ </td></tr><tr><td></td><td>窗口PN排放</td><td></td><td>个/km</td><td> $\\dots\\dots^{(1)}$ </td></tr><tr><td></td><td> $CO_2$ 特征曲线窗口距离 $h_j$ </td><td></td><td>%</td><td> $\\dots\\dots^{(1)}$ </td></tr><tr><td></td><td>窗口加权系数 $w_j$ </td><td></td><td>—</td><td> $\\dots\\dots^{(1)}$ </td></tr><tr><td></td><td>窗口平均车速</td><td>数据来源(1=GPS,2=ECU,3=传感器)</td><td>km/h</td><td> $\\dots\\dots^{(1)}$ </td></tr><tr><td></td><td> $\\dots\\dots^{(2)}$ </td><td> $\\dots\\dots^{(2)}$ </td><td> $\\dots\\dots^{(2)}$ </td><td> $\\dots\\dots^{(1)(2)}$ </td></tr><tr><td colspan=\"5\"> $^{(1)}$ 自第201行至数据最后包含的实际值。 $^{(2)}$ 可加入其他表征窗口特征的参数。</td></tr></table>",
+      "caption": "表 DF.6 报告文件#2的主体——平均窗口法的数据分析方法结果",
+      "footnotes": [],
+      "self_ref": "content_list.json#/107"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0008": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0008",
+      "blockid": "90ffcde427d27e2ecf323b191e289b8e",
+      "heading": "DG.2 符号",
+      "parent_headings": [
+        "行程动力学特性的校验"
+      ],
+      "dimension": [
+        23,
+        2
+      ],
+      "format": "html",
+      "content": "<table><tr><td>RPA</td><td>相对正加速度;</td></tr><tr><td>T4253</td><td>表示4253数字滤波器;</td></tr><tr><td>(i)</td><td>指数,指时间步长;</td></tr><tr><td>(j)</td><td>指数,指正加速度数据集合的时间步长;</td></tr><tr><td>(k)</td><td>指数,指类别(t=全部;u=市区;r=市郊;m=高速路段);</td></tr><tr><td>a</td><td>加速度,m/s2;</td></tr><tr><td>ai</td><td>时间步长i的加速度,m/s2;</td></tr><tr><td>apos</td><td>大于0.1m/s2的正加速度,m/s2;</td></tr><tr><td>apos,i,k</td><td>考虑市区、市郊及高速路段,时间步长i中大于0.1m/s2的正加速度,m/s2;</td></tr><tr><td>ares</td><td>加速度分辨率,m/s2;</td></tr><tr><td>di</td><td>时间步长i内的行驶距离,m;</td></tr><tr><td>di,k</td><td>考虑市区、市郊及高速路段,时间步长i中覆盖的距离,m;</td></tr><tr><td>Mk</td><td>正加速度大于0.1m/s2的市区、市郊及高速路段的样本数;</td></tr><tr><td>Nk</td><td>市区、市郊、高速路段和全部行程的样本总数;</td></tr><tr><td>RPAk</td><td>市区、市郊、高速路段的相对正加速度,m/s2或kW·s/(kg×km);</td></tr><tr><td>tk</td><td>市区、市郊、高速路段及全部行程的持续时间,s;</td></tr><tr><td>v</td><td>车速,km/h;</td></tr><tr><td>vi</td><td>时间步长i的实际车速,km/h;</td></tr><tr><td>vi,k</td><td>考虑市区、市郊及高速路段,时间步长i中的实际车速,km/h;</td></tr><tr><td>(v·a)i</td><td>时间步长i中实际车速乘以加速度,m2/s3或W/kg;</td></tr><tr><td>(v·apos)j,k</td><td>市区、市郊及高速路段,时间步长j中的实际车速与大于0.1m/s2的正加速度的乘积,m2/s3或W/kg;</td></tr><tr><td>(v·apos)k-[95]</td><td>市区、市郊、高速路段中车速与大于0.1m/s2正加速度乘积的第95个百分位,m2/s3或W/kg;</td></tr><tr><td> $\\overline{v}_{k}$ </td><td>市区、市郊、高速路段的平均车速,km/h。</td></tr></table>",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/119"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0009": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0009",
+      "blockid": "e425665c0df037d70d3d3adcc72d0753",
+      "heading": "DH.2 符号参数和单位",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "dimension": [
+        27,
+        2
+      ],
+      "format": "html",
+      "content": "<table><tr><td>d(0)</td><td>行程开始时的距离,m</td></tr><tr><td>d</td><td>在所考虑离散路径点的累计已行驶距离,m</td></tr><tr><td> $d_0$ </td><td>刚好在相应路径点d之前测量的累计已行驶距离,m</td></tr><tr><td> $d_1$ </td><td>刚好在相应路径点d之后测量的累计已行驶距离,m</td></tr><tr><td> $d_a$ </td><td>d(0)[m]处的参照路径点</td></tr><tr><td> $d_e$ </td><td>最后一个离散路径点之前的累计已行驶距离,m</td></tr><tr><td> $d_i$ </td><td>瞬时距离,m</td></tr><tr><td> $d_{\\text{tot}}$ </td><td>总测试距离,m</td></tr><tr><td>h(0)</td><td>行程开始时数据质量筛选和原则核实之后的车辆海拔高度,m</td></tr><tr><td>h(t)</td><td>在t点实施数据质量筛选和原则核实之后的车辆海拔高度,m</td></tr><tr><td>h(d)</td><td>在路径点d的车辆海拔高度,m</td></tr><tr><td>h(t-1)</td><td>在t-1点实施数据质量筛选和原则核实之后的车辆海拔高度,m</td></tr><tr><td> $h_{\\text{corr}}(0)$ </td><td>刚好在相应路径点d之前的校正海拔高度,m</td></tr><tr><td> $h_{\\text{corr}}(1)$ </td><td>刚好在相应路径点d之后的校正海拔高度,m</td></tr><tr><td> $h_{\\text{corr}}(t)$ </td><td>在数据点t的校正瞬时车辆海拔高度,m</td></tr><tr><td> $h_{\\text{corr}}(t-1)$ </td><td>在数据点t-1的校正瞬时车辆高度海拔高度,m</td></tr><tr><td> $h_{\\text{GPS},i}$ </td><td>用GPS测量的瞬时车辆海拔高度,m</td></tr><tr><td> $h_{\\text{GPS}}(t)$ </td><td>在数据点t用GPS测量的瞬时车辆海拔高度,m</td></tr><tr><td> $h_{\\text{int}}(d)$ </td><td>在所考虑离散路径点d的插补海拔高度,m</td></tr><tr><td> $h_{\\text{int,sm,1}}(d)$ </td><td>在所考虑离散路径点d实施第一次平整运行之后的光滑后的海拔高度,m</td></tr><tr><td> $h_{\\text{map}}(t)$ </td><td>在数据点t基于等高线地形图的车辆海拔高度,m</td></tr><tr><td> $\\text{road}_{\\text{grade},1}(d)$ </td><td>第一次光滑处理后在所考虑离散路径点d处的道路坡度,m/m</td></tr><tr><td> $\\text{road}_{\\text{grade},2}(d)$ </td><td>第二次光滑处理后在所考虑离散路径点d处的道路坡度,m/m</td></tr><tr><td>t</td><td>自测试开始起经历的时间,s</td></tr><tr><td> $t_0$ </td><td>相应路径点d之前时已经历的测量时间,s</td></tr><tr><td> $v_i$ </td><td>瞬时车辆速度,km/h</td></tr><tr><td>v(t)</td><td>在数据点t的车辆速度,km/h</td></tr></table>",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/175"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0010": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0010",
+      "blockid": "66f6510efba1a1b284a15bd3c39a88e5",
+      "heading": "DH.5.3.3 最终结果计算",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "dimension": [
+        33,
+        8
+      ],
+      "format": "html",
+      "content": "<table><tr><td>时间 t/s</td><td> $v(t)/(km/h)$ </td><td> $h_{GPS}(t)/m$ </td><td> $h_{map}(t)/m$ </td><td> $h(t)/m$ </td><td> $H_{corr}(t)/m$ </td><td> $d_i/m$ </td><td>累计 d/m</td></tr><tr><td>0</td><td>0.00</td><td>122.7</td><td>129.0</td><td>122.7</td><td>122.7</td><td>0.0</td><td>0.0</td></tr><tr><td>1</td><td>0.00</td><td>122.8</td><td>129.0</td><td>122.8</td><td>122.7</td><td>0.0</td><td>0.0</td></tr><tr><td>2</td><td>0.00</td><td>—</td><td>129.1</td><td>123.6</td><td>122.7</td><td>0.0</td><td>0.0</td></tr><tr><td>3</td><td>0.00</td><td>—</td><td>129.2</td><td>124.3</td><td>122.7</td><td>0.0</td><td>0.0</td></tr><tr><td>4</td><td>0.00</td><td>125.1</td><td>129.0</td><td>125.1</td><td>122.7</td><td>0.0</td><td>0.0</td></tr><tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr><tr><td>18</td><td>0.00</td><td>120.2</td><td>129.4</td><td>120.2</td><td>120.2</td><td>0.0</td><td>0.0</td></tr><tr><td>19</td><td>0.32</td><td>120.2</td><td>129.4</td><td>120.2</td><td>120.2</td><td>0.1</td><td>0.1</td></tr><tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr><tr><td>37</td><td>24.31</td><td>120.9</td><td>132.7</td><td>120.9</td><td>120.9</td><td>6.8</td><td>117.9</td></tr><tr><td>38</td><td>28.18</td><td>121.2</td><td>133.0</td><td>121.2</td><td>121.2</td><td>7.8</td><td>125.7</td></tr><tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr><tr><td>46</td><td>13.52</td><td>121.4</td><td>131.9</td><td>121.4</td><td>121.4</td><td>3.8</td><td>193.4</td></tr><tr><td>47</td><td>38.48</td><td>120.7</td><td>131.5</td><td>120.7</td><td>120.7</td><td>10.7</td><td>204.1</td></tr><tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr><tr><td>56</td><td>42.67</td><td>119.8</td><td>125.2</td><td>119.8</td><td>119.8</td><td>11.9</td><td>308.4</td></tr><tr><td>57</td><td>41.70</td><td>119.7</td><td>124.8</td><td>119.7</td><td>119.7</td><td>11.6</td><td>320.0</td></tr><tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr><tr><td>110</td><td>10.95</td><td>125.2</td><td>132.2</td><td>125.2</td><td>125.2</td><td>3.0</td><td>509.0</td></tr><tr><td>111</td><td>11.75</td><td>100.8</td><td>132.3</td><td>100.8</td><td>125.2</td><td>3.3</td><td>512.2</td></tr><tr><td>112</td><td>13.52</td><td>0.0</td><td>132.4</td><td>132.4</td><td>125.2</td><td>3.8</td><td>516.0</td></tr><tr><td>113</td><td>14.01</td><td>0.0</td><td>132.5</td><td>132.5</td><td>132.5</td><td>3.9</td><td>519.9</td></tr><tr><td>114</td><td>13.36</td><td>24.30</td><td>132.6</td><td>132.6</td><td>132.6</td><td>3.7</td><td>523.6</td></tr><tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td></td></tr><tr><td>149</td><td>39.93</td><td>123.6</td><td>129.6</td><td>123.6</td><td>123.6</td><td>11.1</td><td>719.2</td></tr><tr><td>150</td><td>39.61</td><td>123.4</td><td>129.5</td><td>123.4</td><td>123.4</td><td>11.0</td><td>730.2</td></tr><tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td></td></tr><tr><td>157</td><td>14.81</td><td>121.3</td><td>126.1</td><td>121.3</td><td>121.3</td><td>4.1</td><td>792.1</td></tr><tr><td>158</td><td>14.19</td><td>121.2</td><td>126.2</td><td>121.2</td><td>121.2</td><td>3.9</td><td>796.1</td></tr><tr><td>159</td><td>10.00</td><td>128.5</td><td>126.1</td><td>128.5</td><td>121.2</td><td>2.8</td><td>798.8</td></tr><tr><td>160</td><td>4.10</td><td>130.6</td><td>126.0</td><td>130.6</td><td>121.2</td><td>1.2</td><td>800.0</td></tr><tr><td colspan=\"8\">注:—表示数据缺失。</td></tr></table>",
+      "caption": "表 DH.1 瞬时车辆高度数据的校正",
+      "footnotes": [],
+      "self_ref": "content_list.json#/303"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0011": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0011",
+      "blockid": "66f6510efba1a1b284a15bd3c39a88e5",
+      "heading": "DH.5.3.3 最终结果计算",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "dimension": [
+        15,
+        10
+      ],
+      "format": "html",
+      "content": "<table><tr><td>d/m</td><td> $t_0/s$ </td><td> $d_0/m$ </td><td> $d_1/m$ </td><td> $h_0/m$ </td><td> $h_1/m$ </td><td> $h_{int}(d)/m$ </td><td> $road_{grade,1}(d)/(m/m)$ </td><td> $h_{int,SM,1}(d)/m$ </td><td> $road_{grade,2}(d)/(m/m)$ </td></tr><tr><td>0</td><td>18</td><td>0.0</td><td>0.1</td><td>120.3</td><td>120.4</td><td>120.3</td><td>0.0035</td><td>120.3</td><td>-0.0015</td></tr><tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr><tr><td>120</td><td>37</td><td>117.9</td><td>125.7</td><td>120.9</td><td>121.2</td><td>121.0</td><td>-0.0019</td><td>120.2</td><td>0.0035</td></tr><tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr><tr><td>200</td><td>46</td><td>193.4</td><td>204.1</td><td>121.4</td><td>120.7</td><td>121.0</td><td>-0.0040</td><td>120.0</td><td>0.0051</td></tr><tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr><tr><td>320</td><td>56</td><td>308.4</td><td>320.0</td><td>119.8</td><td>119.7</td><td>119.7</td><td>0.0288</td><td>121.4</td><td>0.0088</td></tr><tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr><tr><td>520</td><td>113</td><td>519.9</td><td>523.6</td><td>132.5</td><td>132.6</td><td>132.5</td><td>0.0097</td><td>123.7</td><td>0.0037</td></tr><tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr><tr><td>720</td><td>149</td><td>719.2</td><td>730.2</td><td>123.6</td><td>123.4</td><td>123.6</td><td>-0.0405</td><td>122.9</td><td>-0.0086</td></tr><tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr><tr><td>798</td><td>158</td><td>796.1</td><td>798.8</td><td>121.2</td><td>121.2</td><td>121.2</td><td>-0.0219</td><td>121.3</td><td>-0.0151</td></tr><tr><td>799</td><td>159</td><td>798.8</td><td>800.0</td><td>121.2</td><td>121.2</td><td>121.2</td><td>-0.0220</td><td>121.3</td><td>-0.0152</td></tr></table>",
+      "caption": "表 DH.2 计算道路坡度",
+      "footnotes": [],
+      "self_ref": "content_list.json#/307"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0012": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0012",
+      "blockid": "b2b955bdd39394dc3ac9c5a2aaf75d03",
+      "heading": "DI.2 符号、参数和单位",
+      "parent_headings": [
+        "（规范性附件）OVC-HEV车辆行程状态校验和最终 RDE排放的计算"
+      ],
+      "dimension": [
+        7,
+        2
+      ],
+      "format": "html",
+      "content": "<table><tr><td> $M_{\\text{t}}$ </td><td>整个行程中的加权气体污染物比排放量,mg/km;或者加权颗粒物数量比排放量,数量/km。</td></tr><tr><td> $m_{\\text{t}}$ </td><td>整个行程中的气体污染物排放质量,g;或者颗粒物数量排放,数量。</td></tr><tr><td> $m_{\\text{t,CO}_2}$ </td><td>整个行程的 $CO_2$ 排放量,g。</td></tr><tr><td> $M_{\\text{u}}$ </td><td>市区行程部分的加权气体污染物比排放量,mg/km;或者加权颗粒物数量比排放量,数量/km。</td></tr><tr><td> $m_{\\text{u}}$ </td><td>市区行程部分的气体污染物排放质量,g;或者颗粒物数量排放,数量。</td></tr><tr><td> $m_{\\text{u,CO}_2}$ </td><td>整个行程的 $CO_2$ 排放量,g。</td></tr><tr><td> $M_{\\text{WLTC,CO}_2}$ </td><td>WLTC循环中,电量保持模式下的 $CO_2$ 比排放,g/km。</td></tr></table>",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/319"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0013": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0013",
+      "blockid": "7087174a6e6261ab96a9afd1c0db965c",
+      "heading": "E.3 试验条件",
+      "parent_headings": [
+        "（规范性附录）曲轴箱污染物排放试验（Ⅲ型试验）"
+      ],
+      "dimension": [
+        4,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>工况号</td><td>车速/(km/h)</td><td>底盘测功机吸收的功率</td></tr><tr><td>1</td><td>怠速</td><td>无</td></tr><tr><td>2</td><td>50±2(3挡或前进挡)</td><td>相当于I型试验50km/h下的调整状况</td></tr><tr><td>3</td><td>50±2(3挡或前进挡)</td><td>第2号工况的设定值乘以系数1.7</td></tr></table>",
+      "caption": "表 E.1 运转工况",
+      "footnotes": [],
+      "self_ref": "content_list.json#/353"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0014": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0014",
+      "blockid": "eb315c6c5572433a7fa2b09c77ded98e",
+      "heading": "F.6.9 高温底盘测功机试验",
+      "parent_headings": [
+        "（规范性附录）蒸发污染物排放试验（Ⅳ型试验）"
+      ],
+      "dimension": [
+        6,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>蒸发排放控制系统</td><td>汽车类型</td><td>进入高温行驶时的电池电荷状态</td></tr><tr><td rowspan=\"2\">整体系统及双炭罐非整体系统</td><td>NOVC-HEV</td><td>经过测试循环全周期低速+中速+高速+高速,电池达到电量保持情况</td></tr><tr><td>OVC-HEV</td><td>车外充电到电池电荷最高水平状态</td></tr><tr><td rowspan=\"2\">NIRCO</td><td>NOVC-HEV</td><td>经过测试循环全周期低速+中速+高速+高速,电池达到电量保持情况</td></tr><tr><td>OVC-HEV</td><td>经过测试循环全周期低速+中速+高速+高速,电池达到电量保持情况</td></tr><tr><td colspan=\"3\">注:表中给出了型式检验试验时的电池电荷要求,环境保护主管部门可以在该车的任何电池电荷充电状态(最高、最低和任何在其中间的任何点)执行型式检验确认以及在用符合性测试。</td></tr></table>",
+      "caption": "表 F.1 高温底盘测功机行驶期间电池操作模式",
+      "footnotes": [],
+      "self_ref": "content_list.json#/569"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0015": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0015",
+      "blockid": "7ece4cfdd7fe443451e4d56ed1d3cbae",
+      "heading": "FA.4 碳氢化合物分析仪的标定",
+      "parent_headings": [
+        "（规范性附件）蒸发排放试验设备的标定"
+      ],
+      "dimension": [
+        27,
+        5
+      ],
+      "format": "html",
+      "content": "<table><tr><td colspan=\"2\">时间/h</td><td rowspan=\"2\">温度/°C</td><td>时间/h</td><td rowspan=\"2\">温度/°C</td></tr><tr><td>标定</td><td>试验</td><td>试验</td></tr><tr><td>0</td><td>0/24</td><td>20.0</td><td>25</td><td>20.2</td></tr><tr><td>1</td><td>1</td><td>20.2</td><td>26</td><td>20.5</td></tr><tr><td>2</td><td>2</td><td>20.5</td><td>27</td><td>21.2</td></tr><tr><td>3</td><td>3</td><td>21.2</td><td>28</td><td>23.1</td></tr><tr><td>4</td><td>4</td><td>23.1</td><td>29</td><td>25.1</td></tr><tr><td>5</td><td>5</td><td>25.1</td><td>30</td><td>27.2</td></tr><tr><td>6</td><td>6</td><td>27.2</td><td>31</td><td>29.8</td></tr><tr><td>7</td><td>7</td><td>29.8</td><td>32</td><td>31.8</td></tr><tr><td>8</td><td>8</td><td>31.8</td><td>33</td><td>33.3</td></tr><tr><td>9</td><td>9</td><td>33.3</td><td>34</td><td>34.4</td></tr><tr><td>10</td><td>10</td><td>34.4</td><td>35</td><td>35.0</td></tr><tr><td>11</td><td>11</td><td>35.0</td><td>36</td><td>34.7</td></tr><tr><td>12</td><td>12</td><td>34.7</td><td>37</td><td>33.8</td></tr><tr><td>13</td><td>13</td><td>33.8</td><td>38</td><td>32.0</td></tr><tr><td>14</td><td>14</td><td>32.0</td><td>39</td><td>30.0</td></tr><tr><td>15</td><td>15</td><td>30.0</td><td>40</td><td>28.4</td></tr><tr><td>16</td><td>16</td><td>28.4</td><td>41</td><td>26.9</td></tr><tr><td>17</td><td>17</td><td>26.9</td><td>42</td><td>25.2</td></tr><tr><td>18</td><td>18</td><td>25.2</td><td>43</td><td>24.0</td></tr><tr><td>19</td><td>19</td><td>24.0</td><td>44</td><td>23.0</td></tr><tr><td>20</td><td>20</td><td>23.0</td><td>45</td><td>22.0</td></tr><tr><td>21</td><td>21</td><td>22.0</td><td>46</td><td>20.8</td></tr><tr><td>22</td><td>22</td><td>20.8</td><td>47</td><td>20.2</td></tr><tr><td>23</td><td>23</td><td>20.2</td><td>48</td><td>20.0</td></tr><tr><td>24/00</td><td>24</td><td>20.0</td><td></td><td></td></tr></table>",
+      "caption": "FB.1 密闭室标定和昼夜换气排放试验用密闭室昼夜环境温度变化表按表 FB.1的规定执行。",
+      "footnotes": [],
+      "self_ref": "content_list.json#/751"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0016": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0016",
+      "blockid": "7ece4cfdd7fe443451e4d56ed1d3cbae",
+      "heading": "FA.4 碳氢化合物分析仪的标定",
+      "parent_headings": [
+        "（规范性附件）蒸发排放试验设备的标定"
+      ],
+      "dimension": [
+        14,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td>时间/h</td><td>温度/°C</td><td>时间/h</td><td>温度/°C</td></tr><tr><td>0</td><td>35.6</td><td>13</td><td>22.9</td></tr><tr><td>1</td><td>35.3</td><td>14</td><td>22.6</td></tr><tr><td>2</td><td>34.5</td><td>15</td><td>22.2</td></tr><tr><td>3</td><td>33.2</td><td>16</td><td>22.5</td></tr><tr><td>4</td><td>31.4</td><td>17</td><td>24.2</td></tr><tr><td>5</td><td>29.7</td><td>18</td><td>26.8</td></tr><tr><td>6</td><td>28.2</td><td>19</td><td>29.6</td></tr><tr><td>7</td><td>27.2</td><td>20</td><td>31.9</td></tr><tr><td>8</td><td>26.1</td><td>21</td><td>33.9</td></tr><tr><td>9</td><td>25.1</td><td>22</td><td>35.1</td></tr><tr><td>10</td><td>24.3</td><td>23</td><td>35.4</td></tr><tr><td>11</td><td>23.7</td><td>24</td><td>35.6</td></tr><tr><td>12</td><td>23.3</td><td></td><td></td></tr></table>",
+      "caption": "表 FB.2 密闭室标定用替代昼夜环境温度变化表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/755"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0017": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0017",
+      "blockid": "c296196a53f86269cb534b5bf39b09bc",
+      "heading": "G.2.4.1 运行循环",
+      "parent_headings": [
+        "（规范性附录）污染控制装置耐久性试验（Ⅴ型试验）"
+      ],
+      "dimension": [
+        12,
+        2
+      ],
+      "format": "html",
+      "content": "<table><tr><td>循环</td><td>最高车速/(km/h)</td></tr><tr><td>1</td><td>64</td></tr><tr><td>2</td><td>48</td></tr><tr><td>3</td><td>64</td></tr><tr><td>4</td><td>64</td></tr><tr><td>5</td><td>56</td></tr><tr><td>6</td><td>48</td></tr><tr><td>7</td><td>56</td></tr><tr><td>8</td><td>72</td></tr><tr><td>9</td><td>56</td></tr><tr><td>10</td><td>89</td></tr><tr><td>11</td><td>113</td></tr></table>",
+      "caption": "表 G.1 每循环的最高车速",
+      "footnotes": [],
+      "self_ref": "content_list.json#/783"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0018": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0018",
+      "blockid": "7c32c478a6e537431a378d6a4139c021",
+      "heading": "GA.2 催化器温度控制",
+      "parent_headings": [
+        "标准台架循环（SBC）"
+      ],
+      "dimension": [
+        5,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>时间/s</td><td>发动机空燃比</td><td>二次空气喷射</td></tr><tr><td>1~40</td><td>理论空燃比(通过发动机转速、负荷、点火正时的控制来实现催化器最低温度为800°C)</td><td>无</td></tr><tr><td>41~45</td><td>“浓”(选择A/F比值,以实现催化器温度在整个循环内最高为890°C,或比较低的控制温度高90°C)</td><td>无</td></tr><tr><td>46~55</td><td>“浓”(选择A/F比值,以实现催化器温度在整个循环内最高为890°C,或比较低的控制温度高90°C)</td><td>3%±0.1%</td></tr><tr><td>56~60</td><td>理论空燃比(通过发动机转速、负荷、点火正时的控制来实现催化器最低温度为800°C)</td><td>3%±0.1%</td></tr></table>",
+      "caption": "表 GA.1 标准台架循环（SBC）",
+      "footnotes": [],
+      "self_ref": "content_list.json#/908"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0019": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0019",
+      "blockid": "5cfe3dc8263f0ef8355d3677dc562de1",
+      "heading": "GC.1 概述",
+      "parent_headings": [
+        "（规范性附件）柴油机标准台架循环（SDBC）"
+      ],
+      "dimension": [
+        81,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>圈数</td><td>说明</td><td>典型加速度/(m/s2)</td></tr><tr><td>1</td><td>(起动发动机)怠速 10 s</td><td>0</td></tr><tr><td>1</td><td>平稳加速至 48 km/h</td><td>1.79</td></tr><tr><td>1</td><td>以 48 km/h 速度巡航至 1/4 圈</td><td>0</td></tr><tr><td>1</td><td>平稳减速至 32 km/h</td><td>-2.23</td></tr><tr><td>1</td><td>平稳加速至 48 km/h</td><td>1.79</td></tr><tr><td>1</td><td>以 48 km/h 速度巡航至 1/4 圈</td><td>0</td></tr><tr><td>1</td><td>平稳减速至停止</td><td>-2.23</td></tr><tr><td>1</td><td>怠速 5 s</td><td>0</td></tr><tr><td>1</td><td>平稳加速至 56 km/h</td><td>1.79</td></tr><tr><td>1</td><td>以 56 km/h 速度巡航至 1/4 圈</td><td>0</td></tr><tr><td>1</td><td>平稳减速至 40 km/h</td><td>-2.23</td></tr><tr><td>1</td><td>平稳加速至 56 km/h</td><td>1.79</td></tr><tr><td>1</td><td>以 56 km/h 速度巡航至 1/4 圈</td><td>0</td></tr><tr><td>1</td><td>平稳减速至停止</td><td>-2.23</td></tr><tr><td>2</td><td>怠速 10 s</td><td>0</td></tr><tr><td>2</td><td>平稳加速至 64 km/h</td><td>1.34</td></tr><tr><td>2</td><td>以 64 km/h 速度巡航至 1/4 圈</td><td>0</td></tr><tr><td>2</td><td>平稳减速至 48 km/h</td><td>-2.23</td></tr><tr><td>2</td><td>平稳加速至 64 km/h</td><td>1.34</td></tr><tr><td>2</td><td>以 64 km/h 速度巡航至 1/4 圈</td><td>0</td></tr><tr><td>2</td><td>平稳减速至停止</td><td>-2.23</td></tr><tr><td>2</td><td>怠速 5 s</td><td>0</td></tr><tr><td>2</td><td>平稳加速至 72 km/h</td><td>1.34</td></tr><tr><td>2</td><td>以 72 km/h 速度巡航至 1/4 圈</td><td>0</td></tr><tr><td>2</td><td>平稳减速至 56 km/h</td><td>-2.23</td></tr><tr><td>2</td><td>平稳加速至 72 km/h</td><td>1.34</td></tr><tr><td>2</td><td>以 72 km/h 速度巡航至 1/4 圈</td><td>0</td></tr><tr><td>2</td><td>平稳减速至停止</td><td>-2.23</td></tr><tr><td>3</td><td>怠速 10 s</td><td>0</td></tr><tr><td>3</td><td>急加速至 88 km/h</td><td>1.79</td></tr><tr><td>3</td><td>以 88 km/h 速度巡航至 1/4 圈</td><td>0</td></tr><tr><td>3</td><td>平稳减速至 72 km/h</td><td>-2.23</td></tr><tr><td>3</td><td>平稳加速至88km/h</td><td>0.89</td></tr><tr><td>3</td><td>以88km/h速度巡航至1/4圈</td><td>0</td></tr><tr><td>3</td><td>平稳减速至72km/h</td><td>-2.23</td></tr><tr><td>3</td><td>平稳加速至97km/h</td><td>0.89</td></tr><tr><td>3</td><td>以97km/h速度巡航至1/4圈</td><td>0</td></tr><tr><td>3</td><td>平稳减速至80km/h</td><td>-2.23</td></tr><tr><td>3</td><td>平稳加速至97km/h</td><td>0.89</td></tr><tr><td>3</td><td>以97km/h速度巡航至1/4圈</td><td>0</td></tr><tr><td>3</td><td>平稳减速至停止</td><td>-1.79</td></tr><tr><td>4</td><td>怠速10s</td><td>0</td></tr><tr><td>4</td><td>急加速至129km/h</td><td>1.34</td></tr><tr><td>4</td><td>减速至113km/h</td><td>-0.45</td></tr><tr><td>4</td><td>以113km/h速度巡航至1/2圈</td><td>0</td></tr><tr><td>4</td><td>平稳减速至80km/h</td><td>-1.34</td></tr><tr><td>4</td><td>平稳加速至105km/h</td><td>0.89</td></tr><tr><td>4</td><td>以105km/h速度巡航至1/2圈</td><td>0</td></tr><tr><td>4</td><td>平稳减速至80km/h</td><td>-1.34</td></tr><tr><td>5</td><td>平稳加速至121km/h</td><td>0.45</td></tr><tr><td>5</td><td>以121km/h速度巡航至1/2圈</td><td>0</td></tr><tr><td>5</td><td>平稳减速至80km/h</td><td>-1.34</td></tr><tr><td>5</td><td>缓慢加速至113km/h</td><td>0.45</td></tr><tr><td>5</td><td>以113km/h速度巡航至1/2圈</td><td>0</td></tr><tr><td>5</td><td>平稳减速至80km/h</td><td>-1.34</td></tr><tr><td>6</td><td>平稳加速至113km/h</td><td>0.89</td></tr><tr><td>6</td><td>减速至97km/h</td><td>-0.45</td></tr><tr><td>6</td><td>以97km/h速度巡航至1/2圈</td><td>0</td></tr><tr><td>6</td><td>平稳减速至80km/h</td><td>-1.79</td></tr><tr><td>6</td><td>平稳加速至104km/h</td><td>0.45</td></tr><tr><td>6</td><td>以104km/h速度巡航至1/2圈</td><td>0</td></tr><tr><td>6</td><td>平稳减速至停止</td><td>-1.79</td></tr><tr><td>7</td><td>怠速45s</td><td>0</td></tr><tr><td>7</td><td>急加速至88km/h</td><td>1.79</td></tr><tr><td>7</td><td>以88km/h速度巡航至1/4圈</td><td>0</td></tr><tr><td>7</td><td>平稳减速至64km/h</td><td>-2.23</td></tr><tr><td>7</td><td>平稳加速至88km/h</td><td>0.89</td></tr><tr><td>7</td><td>以88km/h速度巡航至1/4圈</td><td>0</td></tr><tr><td>7</td><td>平稳减速至64km/h</td><td>-2.23</td></tr><tr><td>7</td><td>平稳加速至80km/h</td><td>0.89</td></tr><tr><td>7</td><td>以80km/h速度巡航至1/4圈</td><td>0</td></tr><tr><td>7</td><td>平稳减速至64km/h</td><td>-2.23</td></tr><tr><td>7</td><td>平稳加速至80km/h</td><td>0.89</td></tr><tr><td>7</td><td>以80km/h速度巡航至1/4圈</td><td>0</td></tr><tr><td>7</td><td>平稳减速至64km/h</td><td>-2.23</td></tr><tr><td>7</td><td>平稳加速至80km/h</td><td>0.88</td></tr><tr><td>7</td><td>以80km/h速度巡航至1/4圈</td><td>0</td></tr><tr><td>7</td><td>平稳减速至64km/h</td><td>-2.23</td></tr><tr><td>7</td><td>平稳加速至80km/h</td><td>0.89</td></tr><tr><td>7</td><td>以80km/h速度巡航至1/4圈</td><td>0</td></tr></table>",
+      "caption": "表 GC.1 标准道路循环（SRC）",
+      "footnotes": [],
+      "self_ref": "content_list.json#/967"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0020": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0020",
+      "blockid": "743f39e5c81c0fe126a692d4eb864154",
+      "heading": "H.2.1.1 试验结果判定",
+      "parent_headings": [
+        "（规范性附件）柴油机标准台架循环（SDBC）"
+      ],
+      "dimension": [
+        3,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>试验</td><td>判断标准</td><td>污染物排放</td></tr><tr><td>第一次试验</td><td>三种污染物排放结果</td><td>&lt;限值×0.9</td></tr><tr><td>第二次试验</td><td>第一次和第二次试验结果算术平均值</td><td>&lt;限值×1.0</td></tr></table>",
+      "caption": "表 H.1 Ⅵ型试验判定准则",
+      "footnotes": [],
+      "self_ref": "content_list.json#/991"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0021": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0021",
+      "blockid": "447f5f33a69c7bfb488a7ed4d1dcd6b2",
+      "heading": "I.5.7.9 非整体控制系统及非整体仅控制加油排放炭罐系统（NIRCO）的处理行驶",
+      "parent_headings": [
+        "（规范性附录）加油过程污染物排放试验（Ⅶ型试验）"
+      ],
+      "dimension": [
+        9,
+        5
+      ],
+      "format": "html",
+      "content": "<table><tr><td>燃油管/个</td><td>炭罐/个</td><td>手工操作切换油箱</td><td>脱附阀/个</td><td>指令说明</td></tr><tr><td rowspan=\"4\">1</td><td>1</td><td>有</td><td>1</td><td>执行完与第1个油箱的所有程序后,操作切换油箱,回到程序I.5.10.1.1,重新开始相同的测试</td></tr><tr><td>1</td><td>无</td><td>1</td><td>将2个油箱假设是1个大油箱,进行加油污染物排放试验</td></tr><tr><td>2</td><td>有</td><td>2</td><td>执行完与第1个油箱的所有程序后,操作切换油箱,回到程序I.5.7,对第2个油箱进行加油污染物排放测试</td></tr><tr><td>2</td><td>无</td><td>2</td><td>将2个油箱假设是1个大油箱,进行加油污染物排放试验</td></tr><tr><td rowspan=\"4\">2</td><td>1</td><td>有</td><td>1</td><td>执行完与第1个油箱的所有程序后,操作交换油箱阀,回到程序I.5.10.1.1,重新开始相同的测试,使用第2个燃油管对第2个油箱加油</td></tr><tr><td>1</td><td>无</td><td>1</td><td>假设2个油箱是1个大油箱,进行加油污染物排放试验。回到程序I.5.10.1.1,重新开始相同的测试,使用第2个燃油管对第2个油箱加油继续试验</td></tr><tr><td>2</td><td>有</td><td>2</td><td>执行完与第1个油箱的所有程序后,操作切换油箱,回到程序I.5.7,使用第2个燃油管对第2个油箱进行加油继续测试</td></tr><tr><td>2</td><td>无</td><td>2</td><td>将2个油箱假设是1个大油箱,进行加油污染物排放试验。执行完与第1个油箱的所有程序后,回到程序I.5.7,使用第2个燃油管对第2个油箱进行加油继续测试</td></tr></table>",
+      "caption": "表 I.1 双油箱整体式炭罐系统车辆的加油污染物排放测试要求",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1294"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0022": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0022",
+      "blockid": "8bea7a5bce33cf123923c3267a87a796",
+      "heading": "I.5.10.2 非整体仅控制加油排放炭罐系统（NIRCO）",
+      "parent_headings": [
+        "（规范性附录）加油过程污染物排放试验（Ⅶ型试验）"
+      ],
+      "dimension": [
+        9,
+        5
+      ],
+      "format": "html",
+      "content": "<table><tr><td>燃油管/个</td><td>炭罐/个</td><td>手工操作切换油箱</td><td>脱附阀/个</td><td>指令说明</td></tr><tr><td rowspan=\"4\">1</td><td>1</td><td>有</td><td>1</td><td>执行完与第1个油箱所有程序后,操作切换油箱,回到程序I.5.10.2.1,重新开始相同的测试</td></tr><tr><td>1</td><td>无</td><td>1</td><td>将2个油箱假设是1个大油箱,进行加油污染物排放试验</td></tr><tr><td>2</td><td>有</td><td>2</td><td>执行完与第1个油箱的所有程序后,操作切换油箱,回到程序I.5.7,对第2个油箱进行加油污染物排放测试</td></tr><tr><td>2</td><td>无</td><td>2</td><td>将2个油箱假设是1个大油箱,进行加油污染物排放试验</td></tr><tr><td rowspan=\"4\">2</td><td>1</td><td>有</td><td>1</td><td>执行完与第1个油箱的所有程序后,操作切换油箱,回到程序I.5.10.2.1,重新开始相同的测试,使用第2个燃油管对第2个油箱加油</td></tr><tr><td>1</td><td>无</td><td>1</td><td>将2个油箱假设是1个大油箱,进行加油污染物排放试验。回到程序I.5.10.2.1,重新开始相同的测试,使用第2个燃油管对第2个油箱加油继续试验</td></tr><tr><td>2</td><td>有</td><td>2</td><td>执行完与第1个油箱的所有程序后,操作切换油箱,回到程序I.5.7,使用第2个燃油管对第2个油箱进行加油继续测试</td></tr><tr><td>2</td><td>无</td><td>2</td><td>将2个油箱假设是1个大油箱,进行加油污染物排放试验。执行完与第1个油箱的所有程序后,回到程序I.5.7,使用第2个燃油管对第2个油箱进行加油继续测试</td></tr></table>",
+      "caption": "表 I.2 双油箱非整体式仅控制加油排放炭罐系统车辆测试要求",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1317"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0023": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0023",
+      "blockid": "ede595cbcddd2917043a6254f2b688fc",
+      "heading": "J.3.8 OBD 阈值",
+      "parent_headings": [
+        "车载诊断（OBD）系统"
+      ],
+      "dimension": [
+        5,
+        6
+      ],
+      "format": "html",
+      "content": "<table><tr><td colspan=\"2\"></td><td>测试质量(TM)/kg</td><td>一氧化碳(CO)/(g/km)</td><td>非甲烷碳氢化合物+氮氧化物(NMHC+NOx)/(g/km)</td><td>颗粒物(PM)/(g/km)</td></tr><tr><td colspan=\"2\">第一类车</td><td>全部</td><td>1.900</td><td>0.260</td><td>0.012</td></tr><tr><td rowspan=\"3\">第二类车</td><td>I</td><td>TM≤1305</td><td>1.900</td><td>0.260</td><td>0.012</td></tr><tr><td>II</td><td>1305&lt;TM≤1760</td><td>3.400</td><td>0.335</td><td>0.012</td></tr><tr><td>III</td><td>1760&lt;TM</td><td>4.300</td><td>0.390</td><td>0.012</td></tr></table>",
+      "caption": "表 J.1 OBD 阈值",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1721"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0024": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0024",
+      "blockid": "e6432e128092ff6efee7ca154225363b",
+      "heading": "K.2 汽车排放试验所用液体燃料的技术要求",
+      "parent_headings": [
+        "OBD系统系族的基本特征"
+      ],
+      "dimension": [
+        26,
+        5
+      ],
+      "format": "html",
+      "content": "<table><tr><td colspan=\"2\">项目</td><td colspan=\"2\">技术指标</td><td>试验方法</td></tr><tr><td rowspan=\"3\">抗爆性:研究法辛烷值(RON)抗爆指数(RON+MON)/2</td><td rowspan=\"3\">≥</td><td colspan=\"2\"></td><td rowspan=\"3\">GB/T 5487GB/T 503、GB/T 5487</td></tr><tr><td>92~94</td><td>95~98</td></tr><tr><td>87</td><td>90</td></tr><tr><td colspan=\"2\">密度(1)(20°C)/(kg/m3)</td><td>735~755</td><td>745~760</td><td>GB/T 1884、GB/T 1885</td></tr><tr><td>馏程:10%蒸发温度/°C50%蒸发温度/°C90%蒸发温度/°C终馏点/°C残留量(体积分数)/%</td><td rowspan=\"2\">≤</td><td colspan=\"2\">50~6590~105150~165190~2002</td><td>GB/T 6536</td></tr><tr><td>蒸气压/(kPa)</td><td colspan=\"2\">56~60</td><td>GB/T 8017、SH/T 0794(2)</td></tr><tr><td>胶质含量/(mg/100mL)</td><td rowspan=\"3\">≤</td><td colspan=\"2\"></td><td></td></tr><tr><td>未洗溶剂胶质</td><td colspan=\"2\">30</td><td>GB/T 8019</td></tr><tr><td>溶剂洗胶质含量</td><td colspan=\"2\">3</td><td></td></tr><tr><td>诱导期/min</td><td>≥</td><td colspan=\"2\">960</td><td>GB/T 8018</td></tr><tr><td>硫含量/(mg/kg)</td><td rowspan=\"2\">≤</td><td colspan=\"2\">10</td><td>SH/T 0689</td></tr><tr><td>博士试验</td><td colspan=\"2\">通过</td><td>NB/SH/T 0174</td></tr><tr><td>铜片腐蚀(50°C,3h)/级</td><td rowspan=\"3\">≤</td><td colspan=\"2\">1</td><td>GB/T 5096</td></tr><tr><td>水溶性酸或碱</td><td colspan=\"2\">无</td><td>GB/T 259</td></tr><tr><td>机械杂质及水分(3)</td><td colspan=\"2\">无</td><td>目测</td></tr><tr><td>苯含量(体积分数)/%</td><td rowspan=\"3\">≤</td><td colspan=\"2\">0.8</td><td>SH/T 0713</td></tr><tr><td>芳烃含量(4)(体积分数)/%</td><td>27~32</td><td>30~35</td><td>GB/T 30519</td></tr><tr><td>烯烃含量(4)(体积分数)/%</td><td colspan=\"2\">10~15</td><td>GB/T 30519</td></tr><tr><td>氧含量(质量分数)/%</td><td>≤</td><td colspan=\"2\">2.7</td><td>NB/SH/T 0663</td></tr><tr><td>甲醇含量(5)(质量分数)/%</td><td>≤</td><td colspan=\"2\">0.3</td><td>NB/SH/T 0663</td></tr><tr><td>铅含量(5)/(g/L)</td><td>≤</td><td colspan=\"2\">0.005</td><td>GB/T 8020</td></tr><tr><td>铁含量(5)/(g/L)</td><td>≤</td><td colspan=\"2\">0.01</td><td>SH/T 0712</td></tr><tr><td>锰含量(5)/(g/L)</td><td>≤</td><td colspan=\"2\">0.002</td><td>SH/T 0711</td></tr><tr><td>磷含量(5)/(g/L)</td><td>≤</td><td colspan=\"2\">0.0002</td><td>SH/T 0020</td></tr><tr><td colspan=\"5\">(1)允许采用SH/T 0604,在有异议时,以GB/T 1884和GB/T 1885的测定结果为准。(2)在有异议时,以供应商或中转站留样为检测样品,仲裁方法双方约定。(3)将试样注入100ml玻璃量筒中观察,应透明,没有悬浮和沉降的机械杂质和水分。在有异议时,以GB/T 511和GB/T 260测定结果为准。(4)也可采用GB/T 11132、GB/T 28768,在有异议时,以GB/T 30519的测定结果为准。(5)不得人为加入,同时不得人为加入乙醇、甲缩醛、苯胺类、卤素以及含磷、含硅等化合物。</td></tr></table>",
+      "caption": "表 K.1 基准汽油的技术要求",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3046"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0025": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0025",
+      "blockid": "e6432e128092ff6efee7ca154225363b",
+      "heading": "K.2 汽车排放试验所用液体燃料的技术要求",
+      "parent_headings": [
+        "OBD系统系族的基本特征"
+      ],
+      "dimension": [
+        27,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td>项目</td><td colspan=\"2\">技术指标</td><td>试验方法</td></tr><tr><td rowspan=\"2\">抗爆性:研究法辛烷值(RON)抗爆指数(RON+MON)/2 ≥</td><td>92~94</td><td>95~98</td><td rowspan=\"2\">GB/T 5487GB/T 503、GB/T 5487</td></tr><tr><td>87</td><td>90</td></tr><tr><td>密度(1)(20°C)/(kg/m3)</td><td>730~750</td><td>735~750</td><td>GB/T 1884、GB/T 1885</td></tr><tr><td rowspan=\"5\">馏程:10%蒸发温度/°C50%蒸发温度/°C90%蒸发温度/°C终馏点/°C残留量(体积分数)/% ≤</td><td colspan=\"2\">45~55</td><td rowspan=\"5\">GB/T 6536</td></tr><tr><td>85~100</td><td>80~95</td></tr><tr><td>150~165</td><td>145~160</td></tr><tr><td>190~200</td><td>185~195</td></tr><tr><td colspan=\"2\">2</td></tr><tr><td>蒸气压(2)/(kPa)</td><td colspan=\"2\">65~80</td><td>GB/T 8017、SH/T 0794</td></tr><tr><td>胶质含量/(mg/100 ml)未洗溶剂胶质溶剂洗胶质含量</td><td colspan=\"2\">303</td><td>GB/T 8019</td></tr><tr><td>诱导期/min ≥</td><td colspan=\"2\">960</td><td>GB/T 8018</td></tr><tr><td>硫含量/(mg/kg) ≤</td><td colspan=\"2\">10</td><td>SH/T 0689</td></tr><tr><td>博士试验</td><td colspan=\"2\">通过</td><td>NB/SH/T 0174</td></tr><tr><td>铜片腐蚀(50°C,3h)/级 ≤</td><td colspan=\"2\">1</td><td>GB/T 5096</td></tr><tr><td>水溶性酸或碱</td><td colspan=\"2\">无</td><td>GB/T 259</td></tr><tr><td rowspan=\"2\">机械杂质及水分(3)苯含量(体积分数)/% ≤</td><td colspan=\"2\">无</td><td>目测</td></tr><tr><td colspan=\"2\">0.8</td><td>SH/T 0713</td></tr><tr><td>芳烃含量(4)(体积分数)/%</td><td>27~32</td><td>30~35</td><td>GB/T 30519</td></tr><tr><td>烯烃含量(4)(体积分数)/%</td><td>10~15</td><td>5~12</td><td>GB/T 30519</td></tr><tr><td>氧含量(质量分数)/% ≤</td><td colspan=\"2\">2.7</td><td>NB/SH/T 0663</td></tr><tr><td>甲醇含量(5)(质量分数)/% ≤</td><td colspan=\"2\">0.3</td><td>NB/SH/T 0663</td></tr><tr><td>铅含量(5)/(g/L) ≤</td><td colspan=\"2\">0.005</td><td>GB/T 8020</td></tr><tr><td>铁含量(5)/(g/L) ≤</td><td colspan=\"2\">0.01</td><td>SH/T 0712</td></tr><tr><td>锰含量(5)/(g/L) ≤</td><td colspan=\"2\">0.002</td><td>SH/T 0711</td></tr><tr><td>磷含量(5)/(g/L) ≤</td><td colspan=\"2\">0.0002</td><td>SH/T 0020</td></tr><tr><td colspan=\"4\">(1)允许采用SH/T 0604,在有异议时,以GB/T 1884和GB/T 1885的测定结果为准。(2)如果出现仲裁,以供应商或中转站留样为检测样品,仲裁方法双方约定。(3)将试样注入100ml玻璃量筒中观察,应透明,没有悬浮和沉降的机械杂质和水分。在有异议时,以GB/T 511和GB/T 260测定结果为准。(4)也可采用GB/T 11132、GB/T 28768,在有异议时,以GB/T 30519的测定结果为准。(5)不得人为加入,同时不得人为加入乙醇、甲缩醛、苯胺类、卤素以及含磷、含硅等化合物。</td></tr></table>",
+      "caption": "K.2.2 点燃式发动机汽车低温试验用液体燃料的技术要求（表 K.2）",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3049"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0026": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0026",
+      "blockid": "e6432e128092ff6efee7ca154225363b",
+      "heading": "K.2 汽车排放试验所用液体燃料的技术要求",
+      "parent_headings": [
+        "OBD系统系族的基本特征"
+      ],
+      "dimension": [
+        20,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>项目</td><td>技术指标</td><td>试验方法</td></tr><tr><td>十六烷值</td><td>52~54</td><td>GB/T 386</td></tr><tr><td>密度(20°C)(1)/(kg/cm3)</td><td>828~834</td><td>GB/T 1884, GB/T 1885</td></tr><tr><td>馏程:50%馏出温度/°C90%馏出温度/°C95%馏出温度/°C</td><td>245~300315~335325~350</td><td>GB/T 6536</td></tr><tr><td>氧化安定性,总不溶物/(mg/100 mL) ≤</td><td>2.5</td><td>SH/T 0175</td></tr><tr><td>硫含量/(mg/kg) ≤</td><td>10</td><td>SH/T 0689</td></tr><tr><td>酸度/(mgKOH/100 mL) ≤</td><td>7</td><td>GB/T 258</td></tr><tr><td>10%蒸余物残炭(2)(质量分数)/% ≤</td><td>0.3</td><td>GB/T 268</td></tr><tr><td>灰分(质量分数)/% ≤</td><td>0.01</td><td>GB/T 508</td></tr><tr><td>铜片腐蚀(50°C,3 h)/级 ≤</td><td>1</td><td>GB/T 5096</td></tr><tr><td>水分(3)(质量分数)/% ≤</td><td>0.02</td><td>SH/T 0246</td></tr><tr><td>机械杂质(4)</td><td>无</td><td>GB/T 511</td></tr><tr><td>运动黏度(20°C)/(mm2/s)</td><td>2.0~7.5</td><td>GB/T 265</td></tr><tr><td>冷滤点/°C不高于</td><td>-10</td><td>SH/T 0248</td></tr><tr><td>闪点(闭口)/°C不低于</td><td>55</td><td>GB/T 261</td></tr><tr><td>多环芳烃(质量分数)/% ≤</td><td>4</td><td>SH/T 0606</td></tr><tr><td>润滑性校正磨斑直径(60°C)/μm ≤</td><td>420</td><td>SH/T 0765</td></tr><tr><td>脂肪酸甲酯(5)(体积分数)/% ≤</td><td>0.5</td><td>GB/T 23801</td></tr><tr><td>总污染物含量/(mg/kg) ≤</td><td>24</td><td>GB/T 33400</td></tr><tr><td colspan=\"3\">(1)允许采用SH/T 0604,在有异议时,以GB/T 1884和GB/T 1885的测定结果为准。(2)若柴油中含有硝酸酯型十六烷值改进剂,10%蒸余物残炭的测定,应用不加硝酸酯的基础燃料进行。柴油中是否加有硝酸酯型十六烷值改进剂的检验方法见GB 19147附录B。(3)可用目测法,即将试样注入100ml玻璃量筒中,在室温(20±5°C)下观察,应透明,没有悬浮和沉降的水分。在有异议时,以SH/T 0246测定结果为准。(4)可用目测法,即将试样注入100ml玻璃量筒中,在室温(20±5°C)下观察,应透明,没有悬浮和沉降的机械杂质。在有异议时,以GB/T 511测定结果为准。(5)不得人为加入。同时不得人为加入生物柴油、酸性和金属润滑性改进剂和任何可导致车辆无法正常运行的添加剂和污染物。</td></tr></table>",
+      "caption": "表 K.3 基准柴油的技术要求",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3050"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0027": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0027",
+      "blockid": "25c28d10779e9a7b0c64358225f3b480",
+      "heading": "K.3.1 LPG基准燃料的技术参数（表 K.4）",
+      "parent_headings": [
+        "OBD系统系族的基本特征"
+      ],
+      "dimension": [
+        14,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td></td><td>燃料A</td><td>燃料B</td><td>试验方法</td></tr><tr><td>组分,(体积分数)/%</td><td></td><td></td><td>SH/T 0614</td></tr><tr><td> $C_3$ —含量</td><td> $30 \\pm 2$ </td><td> $85 \\pm 2$ </td><td></td></tr><tr><td> $C_4$ —含量</td><td>余量</td><td>余量</td><td></td></tr><tr><td> $<C_3, >C_4$ </td><td> $\\leqslant 2$ </td><td> $\\leqslant 2$ </td><td></td></tr><tr><td>烯烃,(体积分数)/%</td><td> $\\leqslant 12$ </td><td> $\\leqslant 15$ </td><td></td></tr><tr><td>蒸发残余物/(mg/kg)</td><td> $\\leqslant 50$ </td><td> $\\leqslant 50$ </td><td>SY/T 7509</td></tr><tr><td>含水量</td><td>无</td><td>无</td><td>目测</td></tr><tr><td>硫总含量/(mg/kg)</td><td> $\\leqslant 10$ </td><td> $\\leqslant 10$ </td><td>SH/T 0222</td></tr><tr><td>硫化氢</td><td>无</td><td>无</td><td></td></tr><tr><td>铜片腐蚀</td><td>1级</td><td>1级</td><td>SH/T 0232(1)</td></tr><tr><td>臭味</td><td>特征</td><td>特征</td><td></td></tr><tr><td>马达法辛烷值</td><td> $\\geqslant 89$ </td><td> $\\geqslant 89$ </td><td>GB/T 12576</td></tr><tr><td colspan=\"4\">(1)如果样品含有腐蚀抑制剂,或其他减少铜片腐蚀性的化学制品,此方法不能准确地确定是否存在腐蚀物质。因此,禁止添加单纯为了使试验方法造成偏差的误差。</td></tr></table>",
+      "caption": "表 K.4 LPG 基准燃料的技术参数",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3056"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0028": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0028",
+      "blockid": "25c28d10779e9a7b0c64358225f3b480",
+      "heading": "K.3.1 LPG基准燃料的技术参数（表 K.4）",
+      "parent_headings": [
+        "OBD系统系族的基本特征"
+      ],
+      "dimension": [
+        17,
+        5
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">特性</td><td rowspan=\"2\">基础</td><td colspan=\"2\">限值</td><td rowspan=\"2\">试验方法</td></tr><tr><td>最小</td><td>最大</td></tr><tr><td colspan=\"5\">基准燃料 G20</td></tr><tr><td>组分:</td><td></td><td></td><td></td><td></td></tr><tr><td>甲烷,(摩尔分数)/%</td><td>100</td><td colspan=\"2\">99~100</td><td>GB/T 13610</td></tr><tr><td>余量 $^{(1)}$ ,(摩尔分数)/%</td><td>—</td><td colspan=\"2\">≤1</td><td>GB/T 13610</td></tr><tr><td>N2,(摩尔分数)/%</td><td></td><td colspan=\"2\"></td><td>GB/T 13610</td></tr><tr><td>硫含量/(mg/m3) $^{(2)}$ </td><td>—</td><td colspan=\"2\">≤10</td><td>GB/T 11060.4</td></tr><tr><td>Wobbe 指数(净)/(MJ/m) $^{(3)}$ </td><td>48.2</td><td colspan=\"2\">47.2~49.2</td><td></td></tr><tr><td colspan=\"5\">基准燃料 G25</td></tr><tr><td>组分:</td><td></td><td></td><td></td><td></td></tr><tr><td>甲烷,(摩尔分数)/%</td><td>86</td><td colspan=\"2\">84~88</td><td>GB/T 13610</td></tr><tr><td>余量,(摩尔分数)/%</td><td>—</td><td colspan=\"2\">≤1</td><td>GB/T 13610</td></tr><tr><td>N2,(摩尔分数)/%</td><td>14</td><td colspan=\"2\">12~16</td><td>GB/T 13610</td></tr><tr><td>硫含量/(mg/m3) $^{(2)}$ </td><td>—</td><td colspan=\"2\">≤10</td><td>GB/T 11060.4</td></tr><tr><td>Wobbe 指数(净)/(MJ/m) $^{(3)}$ </td><td>39.4</td><td colspan=\"2\">38.2~40.6</td><td></td></tr><tr><td colspan=\"5\"> $^{(1)}$ 惰性成分(不是 N2)+C2+C2+。 $^{(2)}$ 在 293.2K(20°C)和 101.3 kPa 状态下测定的值。 $^{(3)}$ 在 273.2K(0°C)和 101.3 kPa 状态下测定的值。</td></tr></table>",
+      "caption": "表 K.5 NG 基准燃料的技术参数",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3061"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0029": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0029",
+      "blockid": "7272307cd3cdc1c5f185442891de10c2",
+      "heading": "L.3.1.1 源车应采用附录 K中两种极端基准燃料进行Ⅰ型试验。",
+      "parent_headings": [
+        "燃用液化石油气（LPG）或天然气（NG）汽车的特殊要求"
+      ],
+      "dimension": [
+        5,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>燃料类型</td><td>基准燃料</td><td>计算“r”</td></tr><tr><td rowspan=\"2\">LPG和汽油或仅用LPG</td><td>燃料A</td><td rowspan=\"2\">r=B/A</td></tr><tr><td>燃料B</td></tr><tr><td rowspan=\"2\">NG和汽油或仅用NG</td><td> $G_{20}$ </td><td rowspan=\"2\">r=G25/G20</td></tr><tr><td> $G_{25}$ </td></tr></table>",
+      "caption": "表 L.1 排放结果比 r",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3093"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0030": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0030",
+      "blockid": "a88cd21c6dddf12d62221adacaf75ffe",
+      "heading": "O.3.5 抽样数量",
+      "parent_headings": [
+        "在用符合性"
+      ],
+      "dimension": [
+        4,
+        2
+      ],
+      "format": "html",
+      "content": "<table><tr><td>销售量/辆——每年度(对于排气排放)——抽样周期内某一 OBD 系族的汽车</td><td>抽样的组数</td></tr><tr><td>不超过 100 000</td><td>1</td></tr><tr><td>100 001~200 000</td><td>2</td></tr><tr><td>超过 200 000</td><td>3</td></tr></table>",
+      "caption": "表 O.1 在用符合性检查的抽样组数",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3409"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0031": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0031",
+      "blockid": "ebb1a615b292047c964a6bef9eb8a372",
+      "heading": "附 件 OB",
+      "parent_headings": [
+        "在用符合性"
+      ],
+      "dimension": [
+        11,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">样本数,n</td><td colspan=\"2\">超标车辆数</td></tr><tr><td>合格判定</td><td>不合格判定</td></tr><tr><td>3</td><td>—</td><td>3</td></tr><tr><td>4</td><td>0</td><td>4</td></tr><tr><td>5</td><td>0</td><td>4</td></tr><tr><td>6</td><td>1</td><td>4</td></tr><tr><td>7</td><td>1</td><td>4</td></tr><tr><td>8</td><td>2</td><td>4</td></tr><tr><td>9</td><td>2</td><td>4</td></tr><tr><td>10</td><td>3</td><td>4</td></tr><tr><td colspan=\"3\">注:表中的合格和不合格判定数是根据ISO 8422—1991计算的。</td></tr></table>",
+      "caption": "表 OB.1 抽样计划的合格和不合格判定数（最小样本数：3）",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3512"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0032": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0032",
+      "blockid": "aebd076124948efa311d986f3e0dca42",
+      "heading": "R.3.1 电参数的单位、精度和分辨率",
+      "parent_headings": [
+        "混合动力电动汽车（HEV）试验"
+      ],
+      "dimension": [
+        5,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td>参数</td><td>单位</td><td>精度</td><td>分辨率</td></tr><tr><td>电能 $^{(1)}$ </td><td>Wh</td><td>±1%</td><td>0.001 kWh $^{(2)}$ </td></tr><tr><td>电流</td><td>A</td><td>±0.3% FSD或读数的±1% $^{(3,4)}$ </td><td>0.1A</td></tr><tr><td>电压</td><td>V</td><td>±0.3% FSD或读数的±1% $^{(3)}$ </td><td>0.1V</td></tr><tr><td colspan=\"4\"> $^{(1)}$ 设备:可检测动态变化的静态读数表。 $^{(2)}$ 交流电能表,符合IEC 62053-21 Class1标准或等效级别。 $^{(3)}$ 取较大者。 $^{(4)}$ 电流积分频率20 Hz或更高。</td></tr></table>",
+      "caption": "表 R.1 测量精度",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3681"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0033": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0033",
+      "blockid": "78acb943ee0eb7d500b100b5943ab4d8",
+      "heading": "R.3.3 其他相关参数单位和精度",
+      "parent_headings": [
+        "混合动力电动汽车（HEV）试验"
+      ],
+      "dimension": [
+        5,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>参数</td><td>单位</td><td>最终测试结果的处理要求</td></tr><tr><td> $M_{\\text{CO}_2,\\ \\text{CS}(\\text{, p})}^{(1)},\\ M_{\\text{CO}_2,\\ \\text{CD}},\\ M_{\\text{CO}_2,\\ \\text{weighted}}$ </td><td>g/km</td><td>修约到整数</td></tr><tr><td> $\\text{EC}_{(\\text{p})}^{(1)},\\ \\text{EC}$ </td><td>Wh/km</td><td>修约到整数</td></tr><tr><td>E</td><td>kWh</td><td>修约到小数点后1位</td></tr><tr><td colspan=\"3\"> $^{(1)}$ (p)表示一定的试验阶段,可以是单个速度段、速度段的组合或整个循环。</td></tr></table>",
+      "caption": "表 R.2 其他相关参数的单位和精度",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3688"
+    },
+    "tb-5b1886b7d0c64429a3537f24b65418c1-0034": {
+      "id": "tb-5b1886b7d0c64429a3537f24b65418c1-0034",
+      "blockid": "687d2813236bbee2a1c32bdfedbe1dc5",
+      "heading": "R.6.1.1 电量保持模式下排放量计算",
+      "parent_headings": [
+        "混合动力电动汽车（HEV）试验"
+      ],
+      "dimension": [
+        11,
+        5
+      ],
+      "format": "html",
+      "content": "<table><tr><td>来源</td><td>输入</td><td>过程</td><td>输出</td><td>步骤编号</td></tr><tr><td>附录C</td><td>原始结果</td><td>电量保持模式的排放计算,附件CE.3~CE.3.2.2</td><td> $M_{i,\\text{CS,p,1}}$ , g/km $M_{\\text{CO}_2,\\text{CS,p,1}}$ , g/km</td><td>1</td></tr><tr><td>本表步骤1</td><td> $M_{i,\\text{CS,p,1}}$ , g/km $M_{\\text{CO}_2,\\text{CS,p,1}}$ , g/km</td><td>电量保持模式下综合排放量计算: $M_{i,\\text{CS,c,2}} = \\frac{\\sum_{\\text{p}} M_{i,\\text{CS,p,1}} \\times d_{\\text{p}}}{\\sum_{\\text{p}} d_{\\text{p}}}$  $M_{\\text{CO}_2,\\text{CS,c,2}} = \\frac{\\sum_{\\text{p}} M_{\\text{CO}_2,\\text{CS,p,1}} \\times d_{\\text{p}}}{\\sum_{\\text{p}} d_{\\text{p}}}$ 式中: $M_{i,\\text{CS,c,2}}$ ——电量保持模式下整个循环各污染物的排放量; $M_{\\text{CO}_2,\\text{CS,c,2}}$ ——电量保持模式下整个循环的 $\\text{CO}_2$ 排放量; $d_{\\text{p}}$ ——循环中各速度段p的行驶距离</td><td> $M_{i,\\text{CS,c,2}}$ , g/km $M_{\\text{CO}_2,\\text{CS,c,2}}$ , g/km</td><td>2</td></tr><tr><td>本表步骤1和步骤2</td><td> $M_{\\text{CO}_2,\\text{CS,p,1}}$ , g/km $M_{\\text{CO}_2,\\text{CS,c,2}}$ , g/km</td><td>REESS电量变化修正附录R中R.6.1.1.2~R.6.1.1.5</td><td> $M_{\\text{CO}_2,\\text{CS,p,3}}$ , g/km $M_{\\text{CO}_2,\\text{CS,c,3}}$ , g/km</td><td>3</td></tr><tr><td>本表步骤2和步骤3</td><td> $M_{i,\\text{CS,c,2}}$ , g/km $M_{\\text{CO}_2,\\text{CS,c,3}}$ , g/km</td><td>附录Q,对所有装有周期性再生系统车辆的电量保持模式下的排放使用系数 $K_i$ 进行修正 $M_{i,\\text{CS,c,4}} = K_i \\times M_{i,\\text{CS,c,2}}$ 或 $M_{i,\\text{CS,c,4}} = K_i + M_{i,\\text{CS,c,2}}$  $M_{\\text{CO}_2,\\text{CS,c,4}} = K_{\\text{CO}_2,Ki} \\times M_{\\text{CO}_2,\\text{CS,c,3}}$ 或 $M_{\\text{CO}_2,\\text{CS,c,4}} = K_{\\text{CO}_2,Ki} + M_{\\text{CO}_2,\\text{CS,c,3}}$ 如果不需 $K_i$ 修正,则 $M_{i,\\text{CS,c,4}} = M_{i,\\text{CS,c,2}}$  $M_{\\text{CO}_2,\\text{CS,c,4}} = M_{\\text{CO}_2,\\text{CS,c,3}}$ </td><td> $M_{i,\\text{CS,c,4}}$ , g/km $M_{\\text{CO}_2,\\text{CS,c,4}}$ , g/km</td><td>4a</td></tr><tr><td>本表步骤3和步骤4a</td><td> $M_{\\text{CO}_2,\\text{CS,p,3}}$ , g/km $M_{\\text{CO}_2,\\text{CS,c,3}}$ , g/km $M_{\\text{CO}_2,\\text{CS,c,4}}$ , g/km</td><td>将各速度段 $\\text{CO}_2$ 排放按照综合排放进行修正: $M_{\\text{CO}_2,\\text{CS,p,4}} = M_{\\text{CO}_2,\\text{CS,p,3}} \\times \\text{AF}_{\\text{Ki}}$ 式中: $\\text{AF}_{\\text{Ki}} = \\frac{M_{\\text{CO}_2,\\text{c,4}}}{M_{\\text{CO}_2,\\text{c,3}}}$ 如果 $K_i$ 不适用: $M_{\\text{CO}_2,\\text{CS,p,4}} = M_{\\text{CO}_2,\\text{CS,p,3}}$ </td><td> $M_{\\text{CO}_2,\\text{CS,p,4}}$ , g/km</td><td>4b</td></tr><tr><td>本表步骤4</td><td> $M_{i,\\text{CS,c,4}}$ , g/km $M_{\\text{CO}_2,\\text{CS,p,4}}$ , g/km $M_{\\text{CO}_2,\\text{CS,c,4}}$ , g/km</td><td> $M_{i,\\text{CS,c,5}} = \\text{DF} \\times M_{i,\\text{CS,c,4}}$ 或 $M_{i,\\text{CS,c,5}} = \\text{ADF} + M_{i,\\text{CS,c,4}}$  $M_{\\text{CO}_2,\\text{CS,c,5}} = M_{\\text{CO}_2,\\text{CS,c,4}}$  $M_{\\text{CO}_2,\\text{CS,p,5}} = M_{\\text{CO}_2,\\text{CS,p,4}}$ </td><td> $M_{i,\\text{CS,c,5}}$ , g/km $M_{\\text{CO}_2,\\text{CS,c,5}}$ , g/km $M_{\\text{CO}_2,\\text{CS,p,5}}$ , g/km</td><td>5“单次试验结果”</td></tr><tr><td>本表步骤5</td><td>对于每次测试: $M_{i,CS,c,5}$ ,g/km $M_{CO_2,CS,c,5}$ ,g/km $M_{CO_2,CS,p,5}$ ,g/km</td><td>附录C中C.1.1.2~C.1.1.2.3规定的测试平均值和信息公开值</td><td> $M_{i,CS,c,6}$ ,g/km $M_{CO_2,CS,c,6}$ ,g/km $M_{CO_2,CS,p,6}$ ,g/km $M_{CO_2,CS,c,declared}$ ,g/km</td><td>6“试验车I型试验 $M_{i,CS}$ 结果”</td></tr><tr><td>本表步骤6</td><td> $M_{CO_2,CS,c,6}$ ,g/km $M_{CO_2,CS,p,6}$ ,g/km $M_{CO_2,CS,c,declared}$ ,g/km</td><td>排放结果修约附录C中C.1.1.2.4且: $M_{CO_2,CS,c,7}=M_{CO_2,CS,c,declared}$ </td><td> $M_{CO_2,CS,c,7}$ ,g/km $M_{CO_2,CS,p,7}$ ,g/km</td><td>7“试验车I型试验 $M_{CO_2,CS}$ 结果”</td></tr><tr><td>本表步骤6和步骤7</td><td>对于每辆测试车辆H和车辆L: $M_{i,CS,c,6}$ ,g/km $M_{CO_2,CS,c,7}$ ,g/km $M_{CO_2,CS,p,7}$ ,g/km</td><td>如果除测试车辆H外还测试了车辆L,应分别列出车辆H和车辆L的结果,计算车辆L和车辆H的结果的平均值,记为 $M_{i,CS,c}$ 如没有测试车辆L,则 $M_{i,CS,c}=M_{i,CS,c,6}$ 从步骤7可得 $CO_2$ 的值 $CO_2$ 值应精确到小数点后两位</td><td> $M_{i,CS,c}$ ,g/km $M_{CO_2,CS,c,H}$ ,g/km $M_{CO_2,CS,p,H}$ ,g/km如果测试了车辆L: $M_{CO_2,CS,c,L}$ ,g/km $M_{CO_2,CS,p,L}$ ,g/km</td><td>8“插值系族结果”最终排放结果</td></tr><tr><td>本表步骤8</td><td> $M_{CO_2,CS,c,H}$ ,g/km $M_{CO_2,CS,p,H}$ ,g/km如果测试了车辆L: $M_{CO_2,CS,c,L}$ ,g/km $M_{CO_2,CS,p,L}$ ,g/km</td><td>对插值系族中的某一车辆,根据附录R中R.6.5.4.1计算 $CO_2$ 排放应根据表R.2给出 $CO_2$ 结果</td><td> $M_{CO_2,CS,c,ind}$ ,g/km $M_{CO_2,CS,p,ind}$ ,g/km</td><td>9“某一车辆结果”最终 $CO_2$ 结果</td></tr></table>",
+      "caption": "表 R.3 电量保持模式下气态污染物及 $\\mathsf { C O } _ { 2 }$ 最终结果的计算",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3812"
+    }
+  }
+}

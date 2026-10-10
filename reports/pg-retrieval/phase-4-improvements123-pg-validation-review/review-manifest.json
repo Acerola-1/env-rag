@@ -1,0 +1,32 @@
+{
+  "generation": "phase-4-improvements123-pg-validation-review",
+  "decision": "five-leg PG live batch accepted; bounded four-local follow-up approved",
+  "files": {
+    "reports/pg-retrieval/phase-4-improvements123-pg-validation-review/ruff.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "reports/pg-retrieval/phase-4-improvements123-pg-validation-review/sensitive-scan.json": "b8d59f55bae35afd33cf32e37a4fd5001527894db930d69a728c99aaffd1c781",
+    "reports/pg-retrieval/phase-4-improvements123-pg-validation-review/verify_offline.py": "d1fedddb95a8c04b37f3b5ce5e2ba724d34543c692873a7bbac065f83fb56973",
+    "reports/pg-retrieval/phase-4-improvements123-pg-validation-review/offline-verification.json": "d79799eef4b380b5f11204b878bcfa8fdad1c9d622a773a4a32f1520c2890626",
+    "reports/pg-retrieval/phase-4-improvements123-pg-validation-review/protected-recheck.json": "5cc41845ad568810db530860e4475e58aca15491bda0380e6c29ad025449c7b9",
+    "reports/pg-retrieval/phase-4-improvements123-pg-validation-review/diff.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/pg-retrieval/phase-4-improvements123-pg-validation-review/validation.json": "d9fb2dc7975abfaff788dacf0ab4ca7548395fd1eed06bdab29023d370975d9a",
+    "reports/pg-retrieval/phase-4-improvements123-pg-validation-review/format.txt": "3bc53bf3e981a98a34a852e175bf9b77af841edea74fca595d9aedcbaf9a4938",
+    "reports/pg-retrieval/phase-4-improvements123-pg-validation-review/review.md": "65d91f098294960c09bb86864006f7a804ed7828093b46ea3863193834e7860b",
+    "reports/pg-retrieval/phase-4-improvements123-pg-validation-review/run_local_validation.py": "f04a27b9cbbe0ca27307833e1b34ea498b35ccf62c9f00adaf742e6b0a52bec0",
+    "reports/pg-retrieval/phase-4-improvements123-pg-validation-review/openspec.txt": "4693ceda9e27e58fa59b2c9dbba2ff1cf729bd8067915263151894179518ba7c",
+    "reports/pg-retrieval/phase-4-improvements123-pg-validation-review/local-validation-dry-run/execution-matrix.json": "26376fe4bfb1870ebb4c8a29dd61479c95cf2b477eba1f12e465708273dce7f9",
+    "reports/pg-retrieval/phase-4-improvements123-pg-validation-review/local-validation-dry-run/budget-upper-bounds.json": "c971b5cafcc8bf837d6ce24848f322da02bc5fb503e75dd1cabecdb56ceb461e",
+    "openspec/changes/add-pg-scoped-retrieval/handoff-phase-4-improvements123-local-validation.md": "64ae148fadc45037b9c332b229f019c00bfdaa0e3259e800278217df1396065d",
+    "reports/pg-retrieval/phase-4/phase-4-config-anchor-improvements123-local-r1.json": "038e8b60a00144dbd408ad4ce26d31526399414d3243ead5a6e1e23a09309eb3",
+    "reports/pg-retrieval/phase-4/improvements123-local-validation-budget.json": "5e6f456fba06f233672b280804bd236080891a2dd54dc97a441e6912cfa102ef"
+  },
+  "unchanged_source_anchors": {
+    "src/env_rag_final/search/expand.py": "7ce0a67ca9f325ec0263a54cd4850cc188ce8987f65c94666b3b6a464d28b5c1",
+    "src/env_rag_final/enumerate_/doc_enum.py": "495efb96f9ecb2f63fff73748e9686a9714090db886bb7ff28d27dde0d172944",
+    "src/env_rag_final/answer.py": "98328f7f18540b82ed5dc2798c4bc94957357b8ed8f76ccb37e3bf63c7c565df",
+    "src/env_rag_final/search/query.py": "25bed96d082198001bfb5502d15a6ff9890863c494ec2bfdac6adcb1812e7712",
+    "src/env_rag_final/evaluation.py": "a42d5c68952e40627a395f023650eae89f59a0527ac0208f45c90ea0f8dd7529",
+    "tests/test_phase4_improvement3_union_enumeration.py": "7857e7912c73e3fdd5a80a901649028932f8dd261727487bcf6b5755a69743f8"
+  },
+  "reviewer_real_requests": 0,
+  "database_writes": 0
+}

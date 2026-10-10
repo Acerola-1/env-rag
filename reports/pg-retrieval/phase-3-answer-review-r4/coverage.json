@@ -1,0 +1,3405 @@
+{
+  "total_files": 965,
+  "reviewable_count": 565,
+  "reviewed_count": 2,
+  "skipped_count": 563,
+  "coverage_rate": 0.0035398230088495575,
+  "manual_context": [
+    "test_answer.py new positives and fixtures",
+    "frozen test_answer_review_r1/r2/r3.py",
+    "new test_answer_review_r4.py",
+    "answer report/manifest and preceding handoff"
+  ],
+  "entries": [
+    {
+      "path": "pyproject.toml",
+      "status": "modified",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/cli.py",
+      "status": "modified",
+      "disposition": "reviewed",
+      "reason": "Current 5.5 code/caller/task context"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/.openspec.yaml",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "openspec/changes/archive/.gitkeep",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "openspec/config.yaml",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "openspec/specs/.gitkeep",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/run-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/sample-set.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/schema.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/search-probes.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/run-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/sample-set.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/schema.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/search-probes.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/run-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/sample-set.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/schema.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/search-probes.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/fingerprint-check.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/independent-verification.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/re-review-evidence.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/recheck-a",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/verify_gate0.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/counterexamples-offline.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/cli-0.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/cli-1.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/cli-2.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/model-ambiguous.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/model-live.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/model-verification.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/replay-before-fix.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/replay.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/replay.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/review-comments.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/review-coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/verify_model.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/replay-live.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/replay-offline.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/replay.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/review-comments.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/review-coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/submitted-records-recovered.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/submitted-runs-original.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/reproduce.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/replay.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/replay.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/review-comments.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/review-coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-comments.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/submitted-prose-vs-original.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/submitted-table-citations.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/benchmark.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/citation-audit.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/citation-reread.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/cli-checks.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/cli-citation-audit.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/cli-citation-reread.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/cli-replay.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/cli-runs.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/code-audit.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/code-audit.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/counterexamples-full.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/counters.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/coverage-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/final-source.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/final-source.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/guard-probes.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/guard-probes.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/initial-hashes.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/manifest.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/metrics-audit.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/metrics-audit.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/replay.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/replay.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/tokenizer-probes.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/gold-review.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/gold-source-proof.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/gold_source_proof.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/raw-gold-materials.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/cli-amendment-docs.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/cli-chapter3.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/cli-commands.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/cli-two-version-docs.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/final-source-check.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/gold-review-v2.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/replay.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/replay.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/review-comments.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/review-coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/replay.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/replay.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-comments.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/benchmark.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/citation-reread.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/cli-chapter3.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/cli-file-bench.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/cli-missing-clause.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/coverage-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/files-and-final-source.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/files-and-final-source.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/finalize-manifest.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/gold-review-v3.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/index-readonly.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/index-readonly.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/replay.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/replay.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/review-materials.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/tokenizer-probes.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/benchmark.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/citation-reread.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/cli-file-bench.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/cli-prose006.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/coverage-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/final-source.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/final-source.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/gold-review-v4.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/gold-review.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/gold-verifier.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/manifest.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/replay.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/replay.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/scope-cause-and-final-source.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/scope-cause.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/tokenizer-probes.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/benchmark.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/citation-reread.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/counterexamples-full.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/counters.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/coverage-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/final-source.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/final-source.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/freeze-gold.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/gold-approved.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/gold-freeze-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/gold-review-v5.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/gold-review.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/index-readonly.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/index-readonly.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/manifest.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/quality-observation.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/replay.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/replay.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/tokenizer-probes.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/benchmark.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/citation-audit.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/citation-reread.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/cli-replay.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/cli-runs.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/counterexamples-full.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/counters.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/coverage-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/final-source.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/final-source.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/index-readonly.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/initial-hashes.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/manifest.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/metrics-audit.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/metrics-audit.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/replay.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/replay.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/tokenizer-probes.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/benchmark.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/citation-audit.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/citation-reread.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/counterexamples-full.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/counters.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/coverage-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/final-source.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/final-source.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/initial-hashes.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/manifest.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/metrics-audit.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/metrics-audit.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/replay.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/replay.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/requires-span-live.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/requires-span-live.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/tokenizer-probes.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/benchmark.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/citation-audit.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/citation-reread.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/counterexamples-full.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/counters.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/coverage-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/final-source.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/final-source.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/initial-hashes.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/manifest.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/metrics-audit.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/metrics-audit.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/replay.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/replay.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/tokenizer-probes.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/benchmark.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/citation-audit.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/citation-reread.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/counterexamples-full.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/counters.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/coverage-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/final-source.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/final-source.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/initial-hashes.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/manifest.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/metrics-audit.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/metrics-audit.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/replay.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/replay.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/tokenizer-probes.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review_gold.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/run-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/sample-set.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/schema.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/search-probes.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/builder-change-counterexample.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/live-verification.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/offline-counterexamples.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/re-review-evidence.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/table-link-counterexample.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/v4-live-verification.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/v4-submitted-build-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1/build-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1/structure-samples.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/bench-r2.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/bench-r3.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/bench-r4.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/bench-r5.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/bench-r6.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/bench-r7.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/bench-r8.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/bench-r9.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/explain-evidence.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/gold-candidates.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/index-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/r3-cli/cli-chapter3.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/r3-cli/cli-missing-clause.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/selfcheck-machinery.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/tokenizer-probes.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-enums/answer-runtime-20261007T141917.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-enums/answer-runtime-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-fusion-syn/fusion-runtime-20261007T142642.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-fusion-syn/fusion-runtime-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-fusion/fusion-runtime-20261007T141832.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-fusion/fusion-runtime-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-r2/answer-runtime-20261007T150355.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-r2/answer-runtime-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-review-r2/coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-review-r2/credential-scan.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-review-r2/evidence-audit.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-review-r2/findings.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-review-r2/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-review-r2/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-review-r2/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-review-r3/coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-review-r3/credential-scan.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-review-r3/evidence-audit.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-review-r3/findings.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-review-r3/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-review-r3/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-review-r3/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-review-r4/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-review/audit_evidence.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-review/coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-review/credential-scan.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-review/evidence-audit.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-review/findings.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-review/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-review/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-review/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-syn-check/answer-runtime-20261007T141945.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-syn-check/answer-runtime-20261007T142413.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-syn-check/answer-runtime-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-syn-check/formal-expand-control.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-syn/answer-runtime-20261007T142726.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-syn/answer-runtime-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-syn2/answer-runtime-20261007T142803.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-syn2/answer-runtime-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-syn4-check/answer-runtime-20261007T142701.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-syn4-check/answer-runtime-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer/answer-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer/answer-runtime-20261007T141843.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer/answer-runtime-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-r2-f1/fusion-runtime-20261007T082154.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-r2-f1/fusion-runtime-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-r2/fusion-runtime-20261007T082054.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-r2/fusion-runtime-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-review-r2/coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-review-r2/findings.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-review-r2/formal-cli/fusion-runtime-20261007T082632.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-review-r2/formal-cli/fusion-runtime-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-review-r2/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-review-r2/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-review-r2/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-review-r3/coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-review-r3/findings.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-review-r3/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-review-r3/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-review-r3/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-review-r4/coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-review-r4/findings.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-review-r4/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-review-r4/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-review-r4/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-review/coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-review/findings.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-review/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-review/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-review/read-only-probes.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-review/read-only-probes.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-review/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-smoke/fusion-runtime-20261007T080259.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion-smoke/fusion-runtime-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion/fusion-manifest-r2.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion/fusion-manifest-r3.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion/fusion-manifest-r4.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion/fusion-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion/fusion-runtime-20261007T080315.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-fusion/fusion-runtime-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r2/local-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r2/local-runtime-20261007T000458.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r2/local-runtime-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r3/local-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r3/local-runtime-20261007T005429.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r3/local-runtime-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r4/local-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r4/local-runtime-20261007T012421.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r4/local-runtime-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r5/local-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r5/local-runtime-20261007T021220.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r5/local-runtime-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r2/coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r2/findings.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r2/live-inventory.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r2/live-inventory.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r2/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r2/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r2/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r2/static-evidence.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/findings.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/live-inventory.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/live-inventory.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/static-evidence.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/submitted-runtime-audit.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r4/coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r4/findings.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r4/live-inventory.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r4/live-inventory.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r4/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r4/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r4/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r4/static-evidence.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r4/submitted-runtime-audit.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r5/coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r5/findings.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r5/formal-cli/local-runtime-20261007T021839.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r5/formal-cli/local-runtime-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r5/live-inventory.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r5/live-inventory.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r5/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r5/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r5/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r5/source-reread.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r5/static-evidence.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/findings.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/live-inventory.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/live-inventory.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/static-evidence.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/submission-jsonl-audit.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local/local-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local/local-runtime-20261006T221622.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local/local-runtime-20261006T221804.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local/local-runtime-20261006T221837.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local/local-runtime-20261006T222510.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local/local-runtime-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r3/compat-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r3/compat-run-record-compat-c747236f3cde.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r3/compat-runtime-probes-20261006T185724.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r3/compat-runtime-probes-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r4/compat-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r4/compat-run-record-compat-6ac185c09ad6.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r4/compat-runtime-probes-20261006T203207.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r4/compat-runtime-probes-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r5/compat-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r5/compat-run-record-compat-f17917f2f455.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r5/compat-runtime-probes-20261006T210250.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r5/compat-runtime-probes-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-r2/rerank-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-r2/rerank-runtime-20261007T115613.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-r2/rerank-runtime-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-r3/rerank-derived-metadata.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-r3/rerank-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-r4/rerank-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review-r2/coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review-r2/evidence-audit.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review-r2/findings.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review-r2/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review-r2/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review-r2/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review-r2/unit-type-probe.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review-r2/unit-type-probe.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review-r3/coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review-r3/evidence-audit.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review-r3/findings.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review-r3/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review-r3/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review-r3/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review-r4/coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review-r4/findings.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review-r4/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review-r4/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review-r4/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review/coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review/evidence-audit.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review/findings.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank-review/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank/rerank-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank/rerank-runtime-20261007T085918.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank/rerank-runtime-20261007T090036.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-rerank/rerank-runtime-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r2/coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r2/independent-runtime.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r2/independent-runtime.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r2/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r2/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r2/old-count-test-audit.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r2/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r3/coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r3/independent-runtime.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r3/independent-runtime.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r3/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r3/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r3/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r4/coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r4/formal-cli/compat-run-record-compat-d191627fe5e9.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r4/formal-cli/compat-runtime-probes-20261006T204516.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r4/formal-cli/compat-runtime-probes-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r4/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r4/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r4/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/database-inventory-readonly.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/formal-cli/compat-run-record-compat-1d137f8354a2.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/formal-cli/compat-runtime-probes-20261006T211251.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/formal-cli/compat-runtime-probes-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/partial-live-review.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/partial-live-verification.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/partial-live/compat-run-record-compat-05cfc6e51e4a.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/partial-live/compat-runtime-probes-20261006T211650.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/partial-live/compat-runtime-probes-20261006T211651.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/partial-live/compat-runtime-probes-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/wheel-verification.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review/coverage.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review/independent-runtime-initial-partial.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review/independent-runtime.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review/independent-runtime.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review/ocr-preview.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review/ocr-rules.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review/review-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-manifest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-runtime-probes-20261006T172624.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-runtime-probes-20261006T172734.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-runtime-probes-20261006T173148.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-runtime-probes-20261006T173259.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-runtime-probes-20261006T173629.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-runtime-probes-20261006T173701.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-runtime-probes-20261006T173804.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-runtime-probes-20261006T173924.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-runtime-probes-20261006T174203.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-runtime-probes-20261006T174517.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-runtime-probes-latest.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-runtime-probes.json",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/answer.py",
+      "status": "added",
+      "disposition": "reviewed",
+      "reason": "Current 5.5 code/caller/task context"
+    },
+    {
+      "path": "src/env_rag_final/audit/__init__.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/audit/collect.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/audit/compat.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/audit/identity.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/audit/lexical.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/audit/pg.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/audit/probes.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/audit/samples.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/audit/snapshot.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/catalog/__init__.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/catalog/builder.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/catalog/lexical_norm.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/catalog/metadata.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/catalog/schema.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/catalog/scopes.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/catalog/source.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/catalog/units.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/compat_runtime.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/__init__.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/contract.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/doc_enum.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/prose_enum.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/table_enum.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/tables.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/fusion.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/local_adapter.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/rerank.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/search/__init__.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/search/clean.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/search/eval.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/search/expand.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/search/gold.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/search/index.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/search/probe.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/search/query.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    },
+    {
+      "path": "src/env_rag_final/search/tokenizer.py",
+      "status": "added",
+      "disposition": "skipped",
+      "reason": "Outside bounded 5.5 increment; previous accepted components and historical artifacts not re-audited."
+    }
+  ]
+}

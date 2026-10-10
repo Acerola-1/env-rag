@@ -1,0 +1,908 @@
+--- reports/pg-retrieval/phase-4-scoring-readiness/assess_two_rounds.py	2026-10-09 13:39:33
++++ reports/pg-retrieval/phase-4-scoring-readiness-r2/assess_two_rounds.py	2026-10-09 17:32:10
+@@ -107,6 +107,7 @@
+ 
+ import argparse
+ import hashlib
++import os
+ import json
+ import re
+ import statistics
+@@ -172,12 +173,45 @@
+ ROUND_TAG = "r1"
+ RUN_MANIFEST_NAME = "pilot-manifest.json"
+ GEN_ROUND: int | None = None
++
++# --- S1 (r2): required lineage, consumed-artifact registry ------------------
++# A deleted key may not turn into "skip the comparison": the accepted lineage
++# is enumerated structurally first, then SHA-compared.
++REQUIRED_CODE_ANCHORS = {
++    "answer.py",
++    "fusion.py",
++    "rerank.py",
++    "local_adapter.py",
++    "compat_runtime.py",
++    "synthesis_system_prompt_sha256",
++}
++REQUIRED_EVAL_ANCHORS = {
++    "src/env_rag_final/evaluation.py",
++    "src/env_rag_final/cli.py",
++    "src/env_rag_final/search/expand.py",
++    "src/env_rag_final/search/query.py",
++    "src/env_rag_final/enumerate_/doc_enum.py",
++    "src/env_rag_final/enumerate_/prose_enum.py",
++}
++_HEX64 = re.compile(r"^[0-9a-f]{64}$")
++CONSUMED: set = set()  # absolute paths actually READ in generation mode
+ 
+ 
++def _consume(p) -> None:
++    if _generation_mode():
++        CONSUMED.add(str(Path(p).resolve()))
++
++
+ def configure_generation(
+     run_dir: Path, round_no: int, anchor_path: Path, manifest_name: str
+ ) -> None:
++    """Every generation starts from a clean binding: no leaked records,
++    mapping or consumed registry from a previous round/directory."""
+     global ROUND1, ANCHOR_PATH, FROZEN_IDENTITY, MODE, ROUND_TAG, RUN_MANIFEST_NAME, GEN_ROUND
++    global CONSUMED, REVIEW_RECORDS, REVIEW_RECORDS_PATH, MAPPING, MAPPING_REJECTED
++    CONSUMED = set()
++    REVIEW_RECORDS, REVIEW_RECORDS_PATH = {}, None
++    MAPPING, MAPPING_REJECTED = None, []
+     ROUND1 = Path(run_dir)
+     ANCHOR_PATH = Path(anchor_path)
+     try:
+@@ -371,24 +405,159 @@
+         if computed != frozen_art:
+             problems.append("parsed blocks/tables bytes differ from the Gate-0 frozen component")
+ 
++    if _generation_mode():
++        problems.extend(_generation_verify(man))
+     report["problems"] = problems
+     report["ok"] = not problems
+     return report
+ 
+ 
++_COUNT_KEYS = [
++    "lightrag_doc_full",
++    "lightrag_doc_chunks",
++    "lightrag_doc_status",
++    "lightrag_llm_cache",
++    "lightrag_entity_chunks",
++    "lightrag_full_entities",
++    "lightrag_full_relations",
++    "lightrag_relation_chunks",
++]
++
++
++def _generation_verify(man) -> list:
++    """S1 r2: the generation input contract as ONE uniform structural check —
++    consumed coverage, identity fields, lineage keys, unique gold matrix.
++    Never relaxes the compat rules."""
++    problems: list = []
++    anchor = _load_anchor()
++    terminal = json.loads((ROUND1 / "eval-runtime-latest.json").read_text(encoding="utf-8"))
++    fi = anchor["frozen_identity"]
++    ca = anchor.get("code_anchors") or {}
++    eva = anchor.get("evaluation_code_anchors") or {}
++    # required keys present BEFORE any comparison — deletion is refusal, not skip
++    miss = sorted(REQUIRED_CODE_ANCHORS - set(ca))
++    if miss:
++        problems.append(f"anchor code_anchors missing required keys: {miss}")
++    miss2 = sorted(REQUIRED_EVAL_ANCHORS - set(eva))
++    if miss2:
++        problems.append(f"anchor evaluation_code_anchors missing required keys: {miss2}")
++    for k, v in ca.items():
++        if k == "synthesis_system_prompt_sha256":
++            if not (isinstance(v, str) and _HEX64.match(v)):
++                problems.append("anchor prompt key malformed")
++            continue
++        if k.endswith(".py") and not (isinstance(v, str) and _HEX64.match(v)):
++            problems.append(f"anchor code_anchors[{k}] malformed")
++    # identity: every frozen field actual-valued; env and counts included
++    pre = terminal["identity_before"]
++    post = terminal.get("identity_after") or {}
++    for side, ident in (("pre", pre), ("post", post)):
++        if not ident:
++            continue
++        if not ident.get("env_sha"):
++            problems.append(f"{side}-identity env_sha missing")
++        if not ident.get("counts"):
++            problems.append(f"{side}-identity counts missing")
++    if post:
++        if pre.get("env_sha") != post.get("env_sha"):
++            problems.append("env_sha drifts between pre and post identity")
++        gen_env = (anchor.get("generation") or {}).get("env_sha256")
++        if gen_env:
++            for side, ident in (("pre", pre), ("post", post)):
++                if ident.get("env_sha") != gen_env:
++                    problems.append(
++                        f"{side}-identity env_sha disagrees with the approved env anchor"
++                    )
++        if pre.get("counts") != post.get("counts"):
++            problems.append("counts drift between pre and post identity")
++        eight = fi.get("eight_table_counts")
++        if eight:
++            want = dict(zip(_COUNT_KEYS, eight))
++            for side, ident in (("pre", pre), ("post", post)):
++                gotc = ident.get("counts") or {}
++                if {k: gotc.get(k) for k in _COUNT_KEYS} != want:
++                    problems.append(
++                        f"{side}-counts disagree with the approved anchor frozen counts"
++                    )
++    # unique gold matrix (not just 93+30 counts)
++    gold = json.loads(GOLD_PATH.read_text(encoding="utf-8"))  # fixed, SHA-verified
++    qcat = {q["query_id"]: q.get("category") for q in gold["questions"]}
++    cc = {c["counter_id"] for c in gold["counter_examples"]}
++    expected = {(qid, path) for qid in qcat for path in POSITIVE_PATHS} | {
++        (cid, path) for cid in cc for path in POSITIVE_PATHS
++    }
++    seen = set()
++    for r in terminal["results"]:
++        key = (r["query_id"], r["path"])
++        if key in seen:
++            problems.append(f"duplicate terminal key {key}")
++            continue
++        seen.add(key)
++        ic = bool(r.get("is_counter"))
++        if ic != (key[0] in cc):
++            problems.append(f"is_counter mismatch for {key}")
++        if not ic and r.get("category") != qcat.get(key[0]):
++            problems.append(f"category mismatch for {key}")
++    if seen != expected or len(terminal["results"]) != 123:
++        problems.append(
++            f"terminal must cover exactly the unique 31x3+10x3 matrix; got {len(seen)} unique / {len(terminal['results'])} rows"
++        )
++    # consumed coverage: every artifact this generation will READ must be in
++    # the bound manifest — walking only manifest entries is NOT enough
++    man_paths = {str((REPO / rel).resolve()) for rel in man}
++    required_reads = {str((ROUND1 / "eval-runtime-latest.json").resolve())}
++    for r in terminal["results"]:
++        qid, path = r["query_id"], r["path"]
++        for relp in (
++            ROUND1 / "legs" / ROUND_TAG / path / qid / "answer" / "answer-runtime-latest.json",
++            ROUND1 / "legs" / ROUND_TAG / path / qid / "fusion" / "fusion-runtime-latest.json",
++            ROUND1 / "inputs" / "local" / f"{qid}-fusion.json",
++        ):
++            if Path(relp).exists():
++                required_reads.add(str(Path(relp).resolve()))
++    for inp in (ROUND1 / "inputs").rglob("*.json"):
++        required_reads.add(str(inp.resolve()))
++    unreg = sorted(required_reads - man_paths)
++    if unreg:
++        problems.append(
++            f"consumed artifacts missing from bound manifest: {len(unreg)} (e.g. {unreg[:2]})"
++        )
++    return problems
++
++
+ # ---------------------------------------------------------------------------
+ # 2. artifact loading + citation re-verification (contract-faithful + identity)
+ # ---------------------------------------------------------------------------
++
++
++def _bind_leg_identity(kind: str, qid: str, res: dict) -> None:
++    """generation mode: a placed artifact must bind THIS question (and this
++    workspace) — never consume another question's first results row."""
++    if not _generation_mode():
++        return
++    got_q = res.get("query_id")
++    if got_q is not None and got_q != qid:
++        raise InputIntegrityError(
++            f"{kind} artifact query_id {got_q!r} bound to wrong question {qid!r}"
++        )
++    got_ws = res.get("workspace")
++    if got_ws is not None and FROZEN_IDENTITY and got_ws != FROZEN_IDENTITY.get("workspace"):
++        raise InputIntegrityError(
++            f"{kind} artifact workspace {got_ws!r} foreign to bound generation"
++        )
+ 
+ 
+ def load_terminal() -> dict:
+-    return json.loads((ROUND1 / "eval-runtime-latest.json").read_text(encoding="utf-8"))
++    p = ROUND1 / "eval-runtime-latest.json"
++    _consume(p)
++    return json.loads(p.read_text(encoding="utf-8"))
+ 
+ 
+ def answer_items(path: str, qid: str) -> tuple[list, dict]:
+     p = ROUND1 / "legs" / ROUND_TAG / path / qid / "answer" / "answer-runtime-latest.json"
+     if not p.exists():
+         return [], {"runtime": "absent"}
++    _consume(p)
+     d = json.loads(p.read_text(encoding="utf-8"))
+     if d.get("failure"):
+         return [], {"runtime": "failure", "detail": d["failure"]}
+@@ -396,6 +565,7 @@
+     if not results:
+         return [], {"runtime": "no-results"}
+     res = results[0]
++    _bind_leg_identity("answer", qid, res)
+     items = (res.get("answer") or {}).get("items") or []
+     meta = {
+         "runtime": "ok",
+@@ -1221,9 +1391,21 @@
+ 
+ 
+ def load_review_records(path: Path) -> dict:
++    """S2 r2: ONE binding-validation entry. WRONG-ROUND submissions are refused
++    (a round-2 verdict must never be applied to a round-1 run by silently
++    "not matching"); duplicate/conflicting keys, malformed fields and unnamed
++    reviewers are refused. Missing record = PENDING later; that is the only
++    leniency."""
+     global REVIEW_RECORDS, REVIEW_RECORDS_PATH
+     data = json.loads(Path(path).read_text(encoding="utf-8"))
++    if data.get("schema") != "manual-review-records/r1":
++        raise InputIntegrityError(f"review records schema unsupported: {data.get('schema')!r}")
+     REVIEW_RECORDS_PATH = Path(path)
++    _consume(path)
++    gold = json.loads(GOLD_PATH.read_text(encoding="utf-8"))
++    valid_ids = {q["query_id"] for q in gold["questions"]} | {
++        c["counter_id"] for c in gold["counter_examples"]
++    }
+     recs = {}
+     for rec in data.get("records") or []:
+         missing = {
+@@ -1252,7 +1434,39 @@
+             )
+         if not isinstance(rec["round"], int) or rec["round"] < 1:
+             raise InputIntegrityError(f"review record round invalid: {rec['round']!r}")
+-        recs[(rec["round"], rec["qid"], rec["path"])] = rec
++        if rec["round"] != GEN_ROUND:
++            raise InputIntegrityError(
++                f"review record bound to round {rec['round']} while scoring r{GEN_ROUND} — "
++                "rounds must not borrow each other's verdicts"
++            )
++        if rec["qid"] not in valid_ids or rec["path"] not in POSITIVE_PATHS:
++            raise InputIntegrityError(
++                f"review record key not in the bound matrix: {rec['qid']}/{rec['path']}"
++            )
++        if not isinstance(rec["reviewer"], str) or not rec["reviewer"].strip():
++            raise InputIntegrityError("review record needs a named reviewer")
++        if not isinstance(rec["reason"], str) or not rec["reason"].strip():
++            raise InputIntegrityError("review record needs a reason")
++        if not isinstance(rec["checked_items"], list) or any(
++            not isinstance(x, str) for x in rec["checked_items"]
++        ):
++            raise InputIntegrityError("review record checked_items must be a list of strings")
++        if rec["verdict"] == "PASS" and not rec["checked_items"]:
++            raise InputIntegrityError("PASS record must list the items actually audited")
++        if not (
++            isinstance(rec["answer_runtime_sha256"], str)
++            and _HEX64.match(rec["answer_runtime_sha256"])
++        ):
++            raise InputIntegrityError("review record answer_runtime_sha256 malformed")
++        if "response_evidence_sha256" in rec and not (
++            isinstance(rec["response_evidence_sha256"], str)
++            and _HEX64.match(rec["response_evidence_sha256"])
++        ):
++            raise InputIntegrityError("review record response_evidence_sha256 malformed")
++        key = (rec["round"], rec["qid"], rec["path"])
++        if key in recs:
++            raise InputIntegrityError(f"duplicate/conflicting review record for {key}")
++        recs[key] = rec
+     REVIEW_RECORDS = recs
+     return recs
+ 
+@@ -1405,6 +1619,39 @@
+     return ("PENDING", "unclassified", f"judgement={j}")
+ 
+ 
++def _hard_positive_failure(v_out: dict) -> str | None:
++    """S2 r2: facts that a manual PASS can NEVER override, computed BEFORE the
++    manual layer (a synthesis judgement pinned to pending must not dodge
++    them): budget/runtime failure, coverage not complete, zero delivery on an
++    ok runtime, missing/extra/foreign set violations, citation verification
++    failures that are not pure masking."""
++    det = []
++    if v_out.get("budget_failure"):
++        det.append(f"budget_failure={v_out['budget_failure']}")
++    rt = v_out.get("runtime")
++    if rt not in ("ok", None, "absent"):
++        det.append(f"runtime={rt}")
++    if rt == "ok":
++        cov = v_out.get("coverage")
++        if cov != "complete":
++            det.append(f"coverage={cov}（非 complete）")
++        n = v_out.get("delivered")
++        n_items = n if isinstance(n, int) else (len(n) if n else 0)
++        if n_items == 0:
++            det.append("0 交付——raw 正确不等于应用完成")
++        for k in ("missing", "extra", "extra_rows", "extra_out_of_scope", "extra_in_scope"):
++            if v_out.get(k):
++                det.append(f"{k}={v_out[k]}")
++        if v_out.get("foreign_table_docs"):
++            det.append(f"foreign_docs={v_out['foreign_table_docs'][:2]}")
++        if (
++            v_out.get("unverified_citations")
++            and v_out.get("judgement") != "pending_artifact_masking"
++        ):
++            det.append(f"unverified_citations={len(v_out['unverified_citations'])}")
++    return "; ".join(det) or None
++
++
+ def finalize_positive(v_out: dict, manual: dict | None) -> dict:
+     """A6: canonical final_status. A decisive whole-question failure can never
+     be softened to PENDING by an item-level unknown; PENDING only when nothing
+@@ -1426,6 +1673,30 @@
+             return v_out
+         if manual["verdict"] == "PASS":
+             m_status, m_basis, m_reason = _mechanical_positive(v_out)
++            hard = _hard_positive_failure(v_out)
++            if hard is not None:
++                v_out["final_status"] = "FAIL"
++                v_out["final_basis"] = "hard_failure_before_manual"
++                v_out["final_reason"] = (
++                    f"{hard}；PASS 记录不能把整题升级（部分真实片段保留为诊断，不折算通过）"
++                )
++                v_out["manual_pass_refused"] = hard
++                return v_out
++            if j not in _POS_PENDING | {"synthesis_pending_human_review"}:
++                v_out["final_status"] = m_status
++                v_out["final_basis"] = m_basis
++                v_out["final_reason"] = m_reason + "; 未知 judgement 不允许任意 PASS"
++                return v_out
++            if j == "synthesis_pending_human_review" and not (
++                {"semantic_answer", "whole_question_semantics"}
++                & set(manual.get("checked_items") or [])
++            ):
++                v_out["final_status"] = "PENDING"
++                v_out["final_basis"] = "evidence_gap"
++                v_out["final_reason"] = (
++                    m_reason + "; 合成 PASS 须具名整题语义审查（semantic_answer）"
++                )
++                return v_out
+             delivered = v_out.get("delivered")
+             n_items = (
+                 delivered if isinstance(delivered, int) else (len(delivered) if delivered else 0)
+@@ -1661,6 +1932,10 @@
+         elif mech == "PENDING":
+             if not (rec.get("checked_items") or []):
+                 v_out["manual_pass_refused"] = "PASS 记录未列已核项，行保留 PENDING"
++            elif v_out.get("all_citations_verified") is False or (v_out.get("delivered") == 0):
++                v_out["manual_pass_refused"] = (
++                    "反例 PASS 记录不能覆盖引用失败/0 交付（raw 正确≠应用完成）"
++                )
+             else:
+                 v_out["final_status"] = "PASS"
+                 v_out["final_basis"] = "manual_record_audited_gap"
+@@ -1685,7 +1960,9 @@
+     p = ROUND1 / "legs" / ROUND_TAG / path / qid / "fusion" / "fusion-runtime-latest.json"
+     if not p.exists():
+         return None
++    _consume(p)
+     r0 = json.loads(p.read_text(encoding="utf-8")).get("results", [{}])[0]
++    _bind_leg_identity("fusion", qid, r0)
+     cands, tt = r0.get("candidates"), r0.get("typed_targets")
+     if not isinstance(cands, list) or not isinstance(tt, list):
+         return None
+@@ -1693,6 +1970,15 @@
+     if pgblk.get("discovery_captured") is False:
+         return None
+     chunk_docs = [c.get("doc_id") for c in cands if isinstance(c, dict) and c.get("doc_id")]
++    chunk_ids = [
++        {
++            "workspace": c.get("workspace"),
++            "doc_id": c.get("doc_id"),
++            "chunk_id": c.get("chunk_id"),
++        }
++        for c in cands
++        if isinstance(c, dict) and c.get("chunk_id")
++    ]
+     typed = []
+     for t in tt:
+         if isinstance(t, dict) and t.get("doc_id"):
+@@ -1704,7 +1990,7 @@
+                     "discovery": t.get("discovery"),
+                 }
+             )
+-    return {"chunk_docs": chunk_docs, "typed": typed}
++    return {"chunk_docs": chunk_docs, "chunk_ids": chunk_ids, "typed": typed}
+ 
+ 
+ def pre_expansion_docs(qid: str, path: str) -> list | None:
+@@ -1729,10 +2015,36 @@
+     p = ROUND1 / "inputs" / "local" / f"{qid}-fusion.json"
+     if not p.exists():
+         return None
+-    r0 = json.loads(p.read_text(encoding="utf-8")).get("results", [{}])[0]
++    _consume(p)
++    d = json.loads(p.read_text(encoding="utf-8"))
++    r0 = d.get("results", [{}])[0]
++    _bind_leg_identity("local-input", qid, r0)
+     return [u.get("doc_id") for u in r0.get("usable") or [] if u.get("doc_id")]
+ 
+ 
++def local_discovery_identities(qid: str):
++    """raw (workspace, doc_id, chunk_id) of verified pre-expansion local
++    discovery, or None when the artifact/shape is unavailable."""
++    p = ROUND1 / "inputs" / "local" / f"{qid}-fusion.json"
++    if not p.exists():
++        return None
++    _consume(p)
++    d = json.loads(p.read_text(encoding="utf-8"))
++    r0 = d.get("results", [{}])[0]
++    _bind_leg_identity("local-input", qid, r0)
++    out = []
++    for u in r0.get("usable") or []:
++        if isinstance(u, dict) and u.get("chunk_id"):
++            out.append(
++                {
++                    "workspace": u.get("workspace"),
++                    "doc_id": u.get("doc_id"),
++                    "chunk_id": u.get("chunk_id"),
++                }
++            )
++    return out
++
++
+ def recall_report(gold: dict) -> dict:
+     """A5: chunk-ordered and typed segments reported SEPARATELY. There is no
+     saved global ordering across the two segments, so no unified recall@20 is
+@@ -1843,51 +2155,103 @@
+                 {"unit_id": e.get("unit_id"), "reason": "incomplete composite key/evidence"}
+             )
+             continue
+-        good[e["unit_id"]] = e
+-    MAPPING = {"units": good, "rejected": rejected, "manifest_sha": sha(Path(path))}
++        # S3 r2: FULL composite key (workspace, doc, snapshot, unit) — the
++        # same unit_id on two documents must never overwrite each other.
++        comp = (e["workspace"], e["doc_id"], e["snapshot_id"], e["unit_id"])
++        if comp in good and good[comp] != e:
++            raise InputIntegrityError(
++                f"conflicting duplicate mapping entry for {comp[3]}@{comp[1]}"
++            )
++        good[comp] = e
++    units_by_id = {}
++    for c in good:
++        units_by_id.setdefault(c[3], []).append(c)
++    MAPPING = {
++        "index": good,
++        "units": units_by_id,
++        "rejected": rejected,
++        "manifest_sha": sha(Path(path)),
++    }
+     MAPPING_REJECTED = rejected
+     return MAPPING
+ 
+ 
+ def typed_evidence_recall(gold: dict) -> dict | None:
+     """Generation-mode typed EVIDENCE (unit-level) recall over PRE-EXPANSION
+-    discovery only. mapping absent/empty/unit unmapped -> pending, never a
+-    guessed hit. Enumeration answers/rerank/expansion never feed this number;
+-    explicit zero discovery yields 0 against a non-empty expectation."""
++    discovery only — S3 r2: a unit is hit by its OWN identity (a discovered
++    chunk that is actually inside the mapped unit's chunk_ids, or a typed
++    target carrying that unit/scope identity), NEVER by "its document was
++    discovered". mapping absent -> None (compat keeps pending). Unmapped
++    expected units stay in the question's expectation; any unresolved unit
++    makes the published metric null (pending) — the known parts are listed
++    but a shrunk denominator can never produce a perfect score.
++    Enumeration answers/rerank/expansion never feed this number."""
+     if not _generation_mode() or MAPPING is None:
+         return None
++    ident = FROZEN_IDENTITY or {}
++    ws, snap = ident.get("workspace"), ident.get("catalog_snapshot_id")
+     per_q = {}
+     for q in gold["questions"]:
+         targets = [
+-            t for t in (q.get("gold") or {}).get("target_evidence") or [] if t.get("unit_id")
++            t
++            for t in (q.get("gold") or {}).get("target_evidence") or []
++            if isinstance(t, dict) and t.get("unit_id")
+         ]
+         if not targets:
+             continue
+-        expected_units = {t["unit_id"] for t in targets}
+         row = {}
+         for path in POSITIVE_PATHS:
+-            docs = pre_expansion_docs(q["query_id"], path)
+-            if docs is None:
+-                row[path] = "pending_no_artifact"
+-                continue
+-            covered, missed, pending = set(), set(), set()
+-            for uid in expected_units:
+-                ent = MAPPING["units"].get(uid)
++            typed = []
++            if path in ("pg", "fusion"):
++                seg = _fusion_segments(q["query_id"], path)
++                if seg is None:
++                    row[path] = "pending_no_artifact"
++                    continue
++                chunks = seg["chunk_ids"]
++                typed = seg["typed"]
++            else:
++                ids = local_discovery_identities(q["query_id"])
++                if ids is None:
++                    row[path] = "pending_no_artifact"
++                    continue
++                chunks = ids
++            chunk_set = {(c.get("workspace"), c.get("doc_id"), c.get("chunk_id")) for c in chunks}
++            covered, missed, pending = [], [], []
++            for tt in targets:
++                comp = (tt.get("workspace", ws), tt.get("doc_id"), snap, tt["unit_id"])
++                ent = MAPPING["index"].get(comp)
+                 if ent is None:
+-                    pending.add(uid)
++                    pending.append(comp[3])
+                     continue
+-                # a unit is hit when its doc appears in PRE-EXPANSION discovery
+-                if ent.get("doc_id") in docs:
+-                    covered.add(uid)
+-                else:
+-                    missed.add(uid)
+-            denom = covered | missed
++                hit = any(
++                    w == comp[0] and d == comp[1] and cid in set(ent.get("chunk_ids") or [])
++                    for (w, d, cid) in chunk_set
++                )
++                if not hit and typed:
++                    hit = any(
++                        (x.get("unit_id") == comp[3] and x.get("doc_id") == comp[1])
++                        or (
++                            x.get("scope_id")
++                            and any(
++                                s.get("scope_id") == x["scope_id"] for s in ent.get("scopes") or []
++                            )
++                        )
++                        for x in typed
++                    )
++                (covered if hit else missed).append(comp[3])
++            unresolved = bool(pending)
++            denom = len(covered) + len(missed) + len(pending)
+             row[path] = {
+-                "typed_evidence_recall": round(len(covered) / len(denom), 3) if denom else 0.0,
++                "typed_evidence_recall": None
++                if unresolved
++                else (round(len(covered) / denom, 3) if denom else 0.0),
+                 "covered": sorted(covered),
+                 "missed": sorted(missed),
+                 "pending_unmapped": sorted(pending),
+-                "explicit_zero_discovery": len(docs) == 0,
++                "published_basis": "存在未解析 unit——发布指标置 null(pending)，已知分列但不缩分母"
++                if unresolved
++                else "期望 unit 全部按组合身份解析",
++                "explicit_zero_discovery": len(chunk_set) == 0 and not typed,
+                 "backfill": "枚举/展开/精排结果一律不参与",
+             }
+         per_q[q["query_id"]] = row
+@@ -1895,7 +2259,8 @@
+         "per_question": per_q,
+         "manifest_sha256": MAPPING["manifest_sha"],
+         "rejected_entries": MAPPING_REJECTED,
+-        "note": "只取发现段（typed+chunk docs 的 doc 存在性）；缺映射显式 pending；空表拒绝当完整",
++        "note": "unit 命中=发现 chunk 真在该 unit 的 chunk_ids 内，或 typed 目标自带该 unit/scope 身份；"
++        "typed-doc 发现只算文档存在，不自动命中其 unit；缺映射 pending；跨 workspace 条目加载即拒",
+     }
+ 
+ 
+@@ -2036,81 +2401,26 @@
+     )
+ 
+ 
+-def main(argv=()) -> None:
+-    """Default (no argv) = Round-1 compat: byte-for-function identical to the
+-    accepted r3 scorer, including the frozen review matrices calling main()
+-    directly. Generation binding is opt-in via explicit CLI arguments only."""
+-    ap = argparse.ArgumentParser(description="phase-4 scoring readiness copy (compat by default)")
+-    ap.add_argument("--run-dir", help="generation mode: this run's report dir")
+-    ap.add_argument("--round", type=int, help="generation mode: actual round number (r{N} tag)")
+-    ap.add_argument("--anchor", help="generation mode: the APPROVED anchor for this lineage")
+-    ap.add_argument(
+-        "--manifest", default="pilot-manifest.json", help="generation mode: run manifest file name"
+-    )
+-    ap.add_argument("--records", help="generation mode: bound human review records")
+-    ap.add_argument("--mapping", help="generation mode: unit-mapping manifest")
+-    ap.add_argument("--out", help="generation mode: adjudication output path")
+-    args = ap.parse_args(argv)
++def _load_gold_by():
++    gold = json.loads(GOLD_PATH.read_text(encoding="utf-8"))
++    gold_by = {q["query_id"]: q for q in gold["questions"]}
++    for c in gold["counter_examples"]:
++        gold_by[c["counter_id"]] = {
++            "query_id": c["counter_id"],
++            "category": None,
++            "target_docs": [],
++            "gold": {},
++            "counter": c,
++        }
++    return gold, gold_by
+ 
+-    if args.run_dir:
+-        if not args.round or not args.anchor:
+-            raise SystemExit("--run-dir requires --round and --anchor (generation binding)")
+-        out_dir = (
+-            Path(args.out) if args.out else Path(args.run_dir) / f"adjudication-r{args.round}.json"
+-        )
+-        configure_generation(Path(args.run_dir), args.round, Path(args.anchor), args.manifest)
+-        gen_mode = True
+-    else:
+-        out_dir = Path(__file__).resolve().parent
+-        gen_mode = False
+ 
+-    # R3: a single reject boundary covering verification AND every pre-scoring
+-    # read/parse. Any ordinary exception here writes the sanitized input
+-    # rejection diagnostic and raises non-zero WITHOUT producing an
+-    # adjudication. SystemExit/KeyboardInterrupt are left untouched.
+-    rej_dir = out_dir if out_dir.is_dir() else out_dir.parent
+-    if gen_mode and out_dir.exists():
+-        # generation outputs land in EMPTY space only — never overwrite a
+-        # previous adjudication ("输出目录空是必须条件")
+-        raise SystemExit(f"generation adjudication output already exists: {out_dir}")
+-    try:
+-        if args.records:
+-            load_review_records(Path(args.records))
+-        if args.mapping:
+-            load_mapping_manifest(Path(args.mapping))
+-        verification = verify_inputs()
+-        if not verification["ok"]:
+-            _write_rejection(rej_dir, verification["problems"])
+-            raise InputIntegrityError(
+-                "assessment inputs failed integrity verification: "
+-                + "; ".join(verification["problems"])
+-            )
+-        gold = json.loads(GOLD_PATH.read_text(encoding="utf-8"))
+-        gold_by = {q["query_id"]: q for q in gold["questions"]}
+-        for c in gold["counter_examples"]:
+-            gold_by[c["counter_id"]] = {
+-                "query_id": c["counter_id"],
+-                "category": None,
+-                "target_docs": [],
+-                "gold": {},
+-                "counter": c,
+-            }
+-        terminal = load_terminal()
+-        doc_reg = doc_registry()
+-        issued_legs = answer_issued_by_leg(terminal)
+-        table13 = next(
+-            (q["gold"].get("expected_items") or [])
+-            for q in gold["questions"]
+-            if q["query_id"] == "table-enum-001"
+-        )
+-    except InputIntegrityError:
+-        raise
+-    except Exception as exc:  # noqa: BLE001 — the one unified reject path
+-        _write_rejection(rej_dir, ["input verification/read/parse error before scoring"], exc)
+-        raise InputIntegrityError(
+-            f"assessment inputs unreadable before scoring: {type(exc).__name__}: {_sanitize(str(exc))[:200]}"
+-        ) from exc
+-
++def _score_legs(terminal: dict, gold_by: dict, doc_reg: dict, issued_legs: dict) -> list:
++    table13 = next(
++        (q["gold"].get("expected_items") or [])
++        for q in json.loads(GOLD_PATH.read_text(encoding="utf-8"))["questions"]
++        if q["query_id"] == "table-enum-001"
++    )
+     verdicts = []
+     for r in terminal["results"]:
+         qid = r["query_id"]
+@@ -2167,16 +2477,14 @@
+                 }
+             v_out = finalize_positive(v, manual)
+         verdicts.append(v_out)
++    return verdicts
+ 
+-    recall = recall_report(gold)
+-    typed = typed_evidence_recall(gold)
+-    if typed is not None:
+-        recall["typed_evidence_recall"] = typed
+-    ledger = ledger_corrections(terminal)
+-    results = {
+-        "schema": "phase-4-generation-assessment/r1" if gen_mode else "round-1-assessment/r3",
++
++def _assemble_results(verdicts, verification, recall, ledger, gen_mode) -> dict:
++    return {
++        "schema": "phase-4-generation-assessment/r2" if gen_mode else "round-1-assessment/r3",
+         "supersedes": (
+-            ""
++            f"this adjudication supersedes nothing; bound to {ROUND1} r{GEN_ROUND}"
+             if gen_mode
+             else "reports/pg-retrieval/phase-4-round-1-assessment/ (r1 机械 verdicts) 与 phase-4-round-1-assessment-r2/ (r2 层) 均保留作历史；本 r3 为最终裁决代次"
+         ),
+@@ -2187,7 +2495,7 @@
+         "ledger_and_timing": ledger,
+         "policy_notes": {
+             "final_layering": "final_status 从整题决定性证据出发：投影/集合/合同/覆盖/人工失败优先；掩码等细项 unknown 单列不软化整题结论",
+-            "recall": "typed 与 chunk 分段呈现，无统一 @20 声明；typed 证据召回 pending；旧均值撤下",
++            "recall": "typed 与 chunk 分段呈现，无统一 @20 声明；typed 证据召回按组合身份；旧均值撤下",
+             "source_qualification": "workspace/snapshot/doc 身份经冻结守卫+SHA 守卫输入独立核对后方为 verified；catalog 名称须经独立输入证据定位",
+             "declaration_support": "R1：所交付全文须由声明的原始 unit 跨度/按声明顺序的跨 unit segments 完整回读（空白归一包含，非 LLM）；item.doc_id 与 citation.doc_id 必须一致；两种金标形状的编号都绑定 item.clause",
+             "counter_layering": "R2：整题裁决=冻结行为合同是否达成（主 agent 2026-10-08 裁决表）；'无 false complete/额度闸门拒绝/本腿未见外 workspace'等安全观测单列于 local_safety_observations，不折算整题 PASS；runtime 失败/工件缺失为第三类",
+@@ -2195,23 +2503,161 @@
+             "expected_routing": "expected 仅事后对照，从不路由；反例判实际行为",
+         },
+     }
+-    if gen_mode:
+-        results["supersedes"] = (
+-            f"this adjudication supersedes nothing; it is bound to {ROUND1} r{GEN_ROUND}"
++
++
++def _write_rejection_unique(rej_dir: Path, problems, exc=None) -> Path:
++    """S4: publish a refusal diagnostic WITHOUT overwriting another
++    generation's/round's diagnostics in the same directory."""
++    cand = rej_dir / "input-rejection.json"
++    n = 1
++    while cand.exists():
++        cand = rej_dir / f"input-rejection-{n}.json"
++        n += 1
++    diag = {
++        "schema": "assessment-input-rejection/r2",
++        "problems": [_sanitize(p)[:300] for p in problems],
++    }
++    if exc is not None:
++        diag["exception"] = {"type": type(exc).__name__, "message": _sanitize(str(exc))[:300]}
++    cand.write_text(json.dumps(diag, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
++    return cand
++
++
++def _atomic_publish(out_file: Path, text: str) -> None:
++    tmp = out_file.with_name(out_file.name + ".partial")
++    tmp.write_text(text, encoding="utf-8")
++    os.replace(tmp, out_file)
++
++
++def main(argv=()) -> None:
++    """Default (no argv) = Round-1 compat, byte-for-function identical to the
++    accepted r3 scorer (frozen matrices call main() directly). Generation
++    binding is opt-in via explicit CLI arguments only; S4 makes the WHOLE
++    generation flow share one rejection boundary that covers records/mapping
++    loading, input verification, every artifact read/parse, scoring, recall,
++    ledger and result assembly — any ordinary exception (InputIntegrityError
++    included) publishes a sanitized diagnostic and never an adjudication."""
++    ap = argparse.ArgumentParser(description="phase-4 scoring readiness copy (compat by default)")
++    ap.add_argument("--run-dir", help="generation mode: this run's report dir")
++    ap.add_argument("--round", type=int, help="generation mode: actual round number (r{N} tag)")
++    ap.add_argument("--anchor", help="generation mode: the APPROVED anchor for this lineage")
++    ap.add_argument(
++        "--manifest", default="pilot-manifest.json", help="generation mode: run manifest file name"
++    )
++    ap.add_argument("--records", help="generation mode: bound human review records")
++    ap.add_argument("--mapping", help="generation mode: unit-mapping manifest")
++    ap.add_argument("--out", help="generation mode: adjudication output path")
++    args = ap.parse_args(argv)
++
++    if args.run_dir:
++        # ---------------- generation mode: single owning failure boundary ----
++        if not args.round or not args.anchor:
++            raise SystemExit("--run-dir requires --round and --anchor (generation binding)")
++        out_file = (
++            Path(args.out) if args.out else Path(args.run_dir) / f"adjudication-r{args.round}.json"
+         )
+-        results["generation_binding"] = {
+-            "run_dir": str(ROUND1),
+-            "round": GEN_ROUND,
+-            "anchor": str(ANCHOR_PATH),
+-            "anchor_sha256": sha(ANCHOR_PATH),
+-            "run_manifest": RUN_MANIFEST_NAME,
+-            "manual_records": str(REVIEW_RECORDS_PATH) if REVIEW_RECORDS_PATH else None,
+-            "manual_records_sha256": sha(REVIEW_RECORDS_PATH) if REVIEW_RECORDS_PATH else None,
+-            "records_bound": sum(1 for v in verdicts if "manual_review" in v),
+-            "mapping_manifest_sha256": (MAPPING or {}).get("manifest_sha"),
+-        }
+-    out_file = out_dir if args.run_dir else out_dir / "adjudication.json"
+-    out_file.write_text(json.dumps(results, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
++        if out_file.exists():
++            raise SystemExit(f"generation adjudication output already exists: {out_file}")
++        configure_generation(Path(args.run_dir), args.round, Path(args.anchor), args.manifest)
++        rej_dir = out_file.parent
++        try:
++            if args.records:
++                load_review_records(Path(args.records))
++            if args.mapping:
++                load_mapping_manifest(Path(args.mapping))
++            verification = verify_inputs()
++            if not verification["ok"]:
++                _write_rejection_unique(rej_dir, verification["problems"])
++                raise InputIntegrityError(
++                    "assessment inputs failed integrity verification: "
++                    + "; ".join(verification["problems"])
++                )
++            gold, gold_by = _load_gold_by()
++            terminal = load_terminal()
++            doc_reg = doc_registry()
++            issued_legs = answer_issued_by_leg(terminal)
++            verdicts = _score_legs(terminal, gold_by, doc_reg, issued_legs)
++            # S1: every file actually consumed must be bound by the manifest
++            man = json.loads((ROUND1 / RUN_MANIFEST_NAME).read_text(encoding="utf-8"))["files"]
++            bound = {str((REPO / k).resolve()) for k in man}  # absolute k stays k
++            # explicit attachments (anchor/records/mapping) bind by CLI argument
++            # with their SHA recorded in generation_binding — they live outside
++            # the run directory by design and are not run-manifest artifacts.
++            attachments = {
++                str(Path(ANCHOR_PATH).resolve()),
++                str(REVIEW_RECORDS_PATH.resolve()) if REVIEW_RECORDS_PATH else None,
++                str(Path(args.mapping).resolve()) if args.mapping else None,
++            } - {None}
++            unbound = sorted(p for p in CONSUMED if p not in bound | attachments)
++            if unbound:
++                raise InputIntegrityError(
++                    f"consumed artifacts not bound by manifest: {len(unbound)} (e.g. {unbound[:2]})"
++                )
++            recall = recall_report(gold)
++            typed = typed_evidence_recall(gold)
++            if typed is not None:
++                recall["typed_evidence_recall"] = typed
++            ledger = ledger_corrections(terminal)
++            results = _assemble_results(verdicts, verification, recall, ledger, gen_mode=True)
++            results["generation_binding"] = {
++                "run_dir": str(ROUND1),
++                "round": GEN_ROUND,
++                "anchor": str(ANCHOR_PATH),
++                "anchor_sha256": sha(ANCHOR_PATH),
++                "run_manifest": RUN_MANIFEST_NAME,
++                "manual_records": str(REVIEW_RECORDS_PATH) if REVIEW_RECORDS_PATH else None,
++                "manual_records_sha256": sha(REVIEW_RECORDS_PATH) if REVIEW_RECORDS_PATH else None,
++                "records_bound": sum(1 for v in verdicts if "manual_review" in v),
++                "mapping_manifest_sha256": (MAPPING or {}).get("manifest_sha"),
++                "consumed_files": len(CONSUMED),
++            }
++            _atomic_publish(out_file, json.dumps(results, ensure_ascii=False, indent=1) + "\n")
++        except (SystemExit, KeyboardInterrupt):
++            raise
++        except Exception as exc:  # noqa: BLE001 — the ONE generation boundary
++            if not any(rej_dir.glob("input-rejection*.json")):
++                _write_rejection_unique(rej_dir, ["generation flow failed before publish"], exc)
++            raise InputIntegrityError(
++                f"generation assessment rejected: {type(exc).__name__}: {_sanitize(str(exc))[:200]}"
++            ) from exc
++        print("rows:", len(verdicts))
++        print(json.dumps(results["summary"]["totals"], ensure_ascii=False))
++        print("inputs ok: True | manifest entries:", verification["manifest"]["entries"])
++        return
++
++    # ---------------- Round-1 compat: accepted r3 flow, untouched ------------
++    out_dir = Path(__file__).resolve().parent
++    rej_dir = out_dir
++    try:
++        verification = verify_inputs()
++        if not verification["ok"]:
++            _write_rejection(rej_dir, verification["problems"])
++            raise InputIntegrityError(
++                "assessment inputs failed integrity verification: "
++                + "; ".join(verification["problems"])
++            )
++        gold, gold_by = _load_gold_by()
++        terminal = load_terminal()
++        doc_reg = doc_registry()
++        issued_legs = answer_issued_by_leg(terminal)
++    except InputIntegrityError:
++        raise
++    except Exception as exc:  # noqa: BLE001 — the one unified reject path
++        _write_rejection(rej_dir, ["input verification/read/parse error before scoring"], exc)
++        raise InputIntegrityError(
++            f"assessment inputs unreadable before scoring: {type(exc).__name__}: {_sanitize(str(exc))[:200]}"
++        ) from exc
++
++    verdicts = _score_legs(terminal, gold_by, doc_reg, issued_legs)
++    recall = recall_report(gold)
++    typed = typed_evidence_recall(gold)
++    if typed is not None:
++        recall["typed_evidence_recall"] = typed
++    ledger = ledger_corrections(terminal)
++    results = _assemble_results(verdicts, verification, recall, ledger, gen_mode=False)
++    (out_dir / "adjudication.json").write_text(
++        json.dumps(results, ensure_ascii=False, indent=1) + "\n", encoding="utf-8"
++    )
+     print("rows:", len(verdicts))
+     print(json.dumps(results["summary"]["totals"], ensure_ascii=False))
+     byj = defaultdict(int)
+@@ -2221,14 +2667,15 @@
+     print(
+         "inputs ok:", verification["ok"], "| manifest entries:", verification["manifest"]["entries"]
+     )
+-    ref_key = "refusals" if gen_mode else "refusals_round1"
+     print(
+         "ledger diffs:",
+         len(ledger["reserved_vs_issued_diffs"]),
+         "| refusals:",
+-        len(ledger[ref_key]["events"]),
++        len(ledger["refusals_round1"]["events"]),
+         "| recorded total s:",
+         ledger["recorded_total_sum_s"],
++        "| wall span s:",
++        ledger["wall_artifact_mtime_span_s"],
+     )
+ 
+ 

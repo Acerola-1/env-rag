@@ -1,0 +1,1712 @@
+{
+ "task": "5.4 joint rerank over fused candidates (bounded, recorded)",
+ "started_at": "2026-10-09T21:00:20+0800",
+ "service_contract": {
+  "endpoint": "{host}/v1/rerank (POST)",
+  "request": [
+   "model",
+   "query",
+   "documents",
+   "top_n",
+   "return_documents=false"
+  ],
+  "response": [
+   "id",
+   "results[{index, relevance_score}]",
+   "meta.tokens"
+  ],
+  "errors": {
+   "401/403": "auth",
+   "429": "rate limit",
+   "5xx": "service"
+  }
+ },
+ "input_budget": 40,
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "results": [
+  {
+   "query_id": "table-enum-003",
+   "query": "GB 14554-93 表 2 及其续表列出的排放标准值项目有哪些？",
+   "workspace": "default",
+   "skipped": null,
+   "inputs": [
+    {
+     "input_index": 0,
+     "workspace": "default",
+     "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-001",
+     "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+     "content_sha256": "433d68250417974430c7a3936baca3c8f1019c379a9d764b03c64a105feb631a",
+     "content_len": 3271,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-001",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "heading": "4.2.2 恶臭污染物排放标准值，见表2。 Emission standards for odor pollutants",
+       "chunk_order": 1,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 3.6000001430511475
+       }
+      },
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-001",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "heading": "4.2.2 恶臭污染物排放标准值，见表2。",
+       "chunk_order": null,
+       "unit_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "table_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+        ]
+       },
+       "discovery": "table_range_binding",
+       "citation_verified": true,
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-001",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "heading": "4.2.2 恶臭污染物排放标准值，见表2。",
+       "chunk_order": null,
+       "unit_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+        ]
+       },
+       "discovery": "table_range_binding",
+       "citation_verified": true,
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-001",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "heading": "4.2.2 恶臭污染物排放标准值，见表2。",
+       "chunk_order": null,
+       "unit_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+        ]
+       },
+       "discovery": "table_range_binding",
+       "citation_verified": true,
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-001",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 14554-93",
+        "edge:GB 14554-93|恶臭污染物排放标准值"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 1,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 1,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "aee7cb361b386096cc7fbe78c15bc61e",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "aee7cb361b386096cc7fbe78c15bc61e",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "433d68250417974430c7a3936baca3c8f1019c379a9d764b03c64a105feb631a"
+    },
+    {
+     "input_index": 1,
+     "workspace": "default",
+     "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-002",
+     "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+     "content_sha256": "61abd4123f70312731dc422ca2f1a78e8813e6cf8ee40abf7d79744aeb0d5258",
+     "content_len": 1371,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-002",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "heading": "5 标准的实施 Emission standards for odor pollutants",
+       "chunk_order": 2,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.600000023841858
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-002",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 14554-93",
+        "edge:GB 14554-93|恶臭污染物"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 2,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 2,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "06c8fcdf6b14c2a757d6fd25aa35fd32",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "06c8fcdf6b14c2a757d6fd25aa35fd32",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "25d3834661347d6459811f9235fc0ae6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "25d3834661347d6459811f9235fc0ae6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "35d35c14e21ca49989d59ed9256022e1",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "35d35c14e21ca49989d59ed9256022e1",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "67d756afdf2f9a167dceb8b7c1403fc9",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "67d756afdf2f9a167dceb8b7c1403fc9",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "b778cd8c144c507ac0aa8d6c0411b94a",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "b778cd8c144c507ac0aa8d6c0411b94a",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "e804138c5bec6ddb8c260963d24dd1f9",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "e804138c5bec6ddb8c260963d24dd1f9",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "f8d9c613e4e30a0f9512fcf120bcd717",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "f8d9c613e4e30a0f9512fcf120bcd717",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "fddfc5dfb71d71461c3e7823cd7e3820",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "fddfc5dfb71d71461c3e7823cd7e3820",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-d6d711b0614234635955480a53f52a10-0005",
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0005",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "table_id": "tb-d6d711b0614234635955480a53f52a10-0005",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "61abd4123f70312731dc422ca2f1a78e8813e6cf8ee40abf7d79744aeb0d5258"
+    },
+    {
+     "input_index": 2,
+     "workspace": "default",
+     "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-000",
+     "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+     "content_sha256": "5105712d32152815c603778445fa2cfbd786e61d99289556eac1410bb6403f39",
+     "content_len": 2690,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-000",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "heading": "中华人民共和国国家标准",
+       "chunk_order": 0,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.399999976158142
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-000",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GBJ 4-73",
+        "edge:GBJ 4-73|恶臭污染物排放标准"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 0,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 0,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "02b195ef80c3842d514f2a15e323eb82",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "02b195ef80c3842d514f2a15e323eb82",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "0504df9432c2f56ccb4c39c60764d117",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "0504df9432c2f56ccb4c39c60764d117",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "29de4a334ddbe1b059b26afdc6e308ce",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "29de4a334ddbe1b059b26afdc6e308ce",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "4475034b8a8e6b7740bec56f8c549224",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "4475034b8a8e6b7740bec56f8c549224",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "5e224b7020d957c07d103460d0ff2229",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "5e224b7020d957c07d103460d0ff2229",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "6ab6ca099eef3bf6412275332ffcbaaf",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "6ab6ca099eef3bf6412275332ffcbaaf",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "6ffc01f8743d52c084fd0a65431547da",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "6ffc01f8743d52c084fd0a65431547da",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "806432ac576fa1a0aee04051be093cf7",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "806432ac576fa1a0aee04051be093cf7",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "8a7256359291e2a07d27a1c00628abf6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "8a7256359291e2a07d27a1c00628abf6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "8c3916b521e53511a8d0966c8371efb0",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "8c3916b521e53511a8d0966c8371efb0",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "ac46d20afd5ec4c7c7d85c171651b6d6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "ac46d20afd5ec4c7c7d85c171651b6d6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "b341c9c37af647054771f9c62ac6eba5",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "b341c9c37af647054771f9c62ac6eba5",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "d9ead1de90c8e67959ccb2b4a67cac4a",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "d9ead1de90c8e67959ccb2b4a67cac4a",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "e734eff1644cde86544b275839e43c9d",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "e734eff1644cde86544b275839e43c9d",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-d6d711b0614234635955480a53f52a10-0001",
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0001",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "table_id": "tb-d6d711b0614234635955480a53f52a10-0001",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "5105712d32152815c603778445fa2cfbd786e61d99289556eac1410bb6403f39"
+    }
+   ],
+   "call": {
+    "service": "rerank",
+    "operation": "rerank",
+    "endpoint": "/v1/rerank",
+    "url_path_used": "configured-endpoint",
+    "model": "Qwen/Qwen3-Reranker-4B",
+    "documents_sent": 3,
+    "chars_sent": 7332,
+    "elapsed_ms": 938,
+    "status_code": 200,
+    "status": "success",
+    "response_evidence": {
+     "id": "01a120c014437dc490ffce78cf544740",
+     "results_len": 3
+    },
+    "raw_response": {
+     "id": "01a120c014437dc490ffce78cf544740",
+     "results": [
+      {
+       "index": 0,
+       "document": null,
+       "relevance_score": 0.998144268989563
+      },
+      {
+       "index": 2,
+       "document": null,
+       "relevance_score": 0.9302740693092346
+      },
+      {
+       "index": 1,
+       "document": null,
+       "relevance_score": 0.8153383731842041
+      }
+     ],
+     "meta": {
+      "tokens": "<redacted>",
+      "billed_units": {
+       "input_tokens": "<redacted>",
+       "output_tokens": "<redacted>",
+       "image_tokens": "<redacted>",
+       "search_units": 0,
+       "classifications": 0
+      }
+     }
+    }
+   },
+   "ordered": [
+    {
+     "input_index": 0,
+     "workspace": "default",
+     "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-001",
+     "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+     "content_sha256": "433d68250417974430c7a3936baca3c8f1019c379a9d764b03c64a105feb631a",
+     "rerank_score": 0.998144268989563,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-001",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "heading": "4.2.2 恶臭污染物排放标准值，见表2。 Emission standards for odor pollutants",
+       "chunk_order": 1,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 3.6000001430511475
+       }
+      },
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-001",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "heading": "4.2.2 恶臭污染物排放标准值，见表2。",
+       "chunk_order": null,
+       "unit_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "table_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+        ]
+       },
+       "discovery": "table_range_binding",
+       "citation_verified": true,
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-001",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "heading": "4.2.2 恶臭污染物排放标准值，见表2。",
+       "chunk_order": null,
+       "unit_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+        ]
+       },
+       "discovery": "table_range_binding",
+       "citation_verified": true,
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-001",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "heading": "4.2.2 恶臭污染物排放标准值，见表2。",
+       "chunk_order": null,
+       "unit_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+        ]
+       },
+       "discovery": "table_range_binding",
+       "citation_verified": true,
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-001",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 14554-93",
+        "edge:GB 14554-93|恶臭污染物排放标准值"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 1,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 1,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "aee7cb361b386096cc7fbe78c15bc61e",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "aee7cb361b386096cc7fbe78c15bc61e",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 2,
+     "workspace": "default",
+     "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-000",
+     "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+     "content_sha256": "5105712d32152815c603778445fa2cfbd786e61d99289556eac1410bb6403f39",
+     "rerank_score": 0.9302740693092346,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-000",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "heading": "中华人民共和国国家标准",
+       "chunk_order": 0,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.399999976158142
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-000",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GBJ 4-73",
+        "edge:GBJ 4-73|恶臭污染物排放标准"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 0,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 0,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "02b195ef80c3842d514f2a15e323eb82",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "02b195ef80c3842d514f2a15e323eb82",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "0504df9432c2f56ccb4c39c60764d117",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "0504df9432c2f56ccb4c39c60764d117",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "29de4a334ddbe1b059b26afdc6e308ce",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "29de4a334ddbe1b059b26afdc6e308ce",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "4475034b8a8e6b7740bec56f8c549224",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "4475034b8a8e6b7740bec56f8c549224",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "5e224b7020d957c07d103460d0ff2229",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "5e224b7020d957c07d103460d0ff2229",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "6ab6ca099eef3bf6412275332ffcbaaf",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "6ab6ca099eef3bf6412275332ffcbaaf",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "6ffc01f8743d52c084fd0a65431547da",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "6ffc01f8743d52c084fd0a65431547da",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "806432ac576fa1a0aee04051be093cf7",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "806432ac576fa1a0aee04051be093cf7",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "8a7256359291e2a07d27a1c00628abf6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "8a7256359291e2a07d27a1c00628abf6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "8c3916b521e53511a8d0966c8371efb0",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "8c3916b521e53511a8d0966c8371efb0",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "ac46d20afd5ec4c7c7d85c171651b6d6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "ac46d20afd5ec4c7c7d85c171651b6d6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "b341c9c37af647054771f9c62ac6eba5",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "b341c9c37af647054771f9c62ac6eba5",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "d9ead1de90c8e67959ccb2b4a67cac4a",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "d9ead1de90c8e67959ccb2b4a67cac4a",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "e734eff1644cde86544b275839e43c9d",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "e734eff1644cde86544b275839e43c9d",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-d6d711b0614234635955480a53f52a10-0001",
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0001",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "table_id": "tb-d6d711b0614234635955480a53f52a10-0001",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 1,
+     "workspace": "default",
+     "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-002",
+     "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+     "content_sha256": "61abd4123f70312731dc422ca2f1a78e8813e6cf8ee40abf7d79744aeb0d5258",
+     "rerank_score": 0.8153383731842041,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-002",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "heading": "5 标准的实施 Emission standards for odor pollutants",
+       "chunk_order": 2,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.600000023841858
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-002",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 14554-93",
+        "edge:GB 14554-93|恶臭污染物"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 2,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 2,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "06c8fcdf6b14c2a757d6fd25aa35fd32",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "06c8fcdf6b14c2a757d6fd25aa35fd32",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "25d3834661347d6459811f9235fc0ae6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "25d3834661347d6459811f9235fc0ae6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "35d35c14e21ca49989d59ed9256022e1",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "35d35c14e21ca49989d59ed9256022e1",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "67d756afdf2f9a167dceb8b7c1403fc9",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "67d756afdf2f9a167dceb8b7c1403fc9",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "b778cd8c144c507ac0aa8d6c0411b94a",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "b778cd8c144c507ac0aa8d6c0411b94a",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "e804138c5bec6ddb8c260963d24dd1f9",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "e804138c5bec6ddb8c260963d24dd1f9",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "f8d9c613e4e30a0f9512fcf120bcd717",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "f8d9c613e4e30a0f9512fcf120bcd717",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "fddfc5dfb71d71461c3e7823cd7e3820",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "unit_id": "fddfc5dfb71d71461c3e7823cd7e3820",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-d6d711b0614234635955480a53f52a10-0005",
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0005",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+        "table_id": "tb-d6d711b0614234635955480a53f52a10-0005",
+        "chunk_ids": [
+         "doc-d6d711b0614234635955480a53f52a10-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    }
+   ],
+   "degraded": [],
+   "status": "ok",
+   "typed_targets": [
+    {
+     "target_type": "doc",
+     "workspace": "default",
+     "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+     "doc_name": "air-06_生态环境部_恶臭污染物排放标准_GB14554-93.pdf",
+     "self_code": "GB14554",
+     "self_code_version": "93",
+     "discovery": "code_exact",
+     "membership_basis": null,
+     "citation": {
+      "kind": "catalog_row",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10"
+     },
+     "citation_verified": true
+    },
+    {
+     "target_type": "table_unit",
+     "workspace": "default",
+     "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+     "unit_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+     "heading": "4.2.2 恶臭污染物排放标准值，见表2。",
+     "chunk_ids": [
+      "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+     ],
+     "discovery": "table_range_binding",
+     "scope_status": null,
+     "membership_basis": null,
+     "citation": {
+      "kind": "table_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+      "chunk_ids": [
+       "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+      ]
+     }
+    },
+    {
+     "target_type": "table_unit",
+     "workspace": "default",
+     "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+     "unit_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+     "heading": "4.2.2 恶臭污染物排放标准值，见表2。",
+     "chunk_ids": [
+      "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+     ],
+     "discovery": "table_range_binding",
+     "scope_status": null,
+     "membership_basis": null,
+     "citation": {
+      "kind": "table_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+      "chunk_ids": [
+       "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+      ]
+     }
+    },
+    {
+     "target_type": "table_unit",
+     "workspace": "default",
+     "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+     "unit_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+     "heading": "4.2.2 恶臭污染物排放标准值，见表2。",
+     "chunk_ids": [
+      "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+     ],
+     "discovery": "table_range_binding",
+     "scope_status": null,
+     "membership_basis": null,
+     "citation": {
+      "kind": "table_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+      "chunk_ids": [
+       "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+      ]
+     }
+    }
+   ],
+   "path_enrichment": [
+    "association completion: 2 table fragment path(s) and 23 non-table (block/source_unit) path(s) from unit_chunk_links JOIN source_units by actual unit_kind (replay paths predate the 5.3-F2 fix); no id/locator/kind guessed"
+   ],
+   "source_verification": {
+    "candidates_checked": 3,
+    "verified": 3,
+    "problems": []
+   },
+   "skipped_inputs": []
+  }
+ ],
+ "finished_at": "2026-10-09T21:00:22+0800"
+}

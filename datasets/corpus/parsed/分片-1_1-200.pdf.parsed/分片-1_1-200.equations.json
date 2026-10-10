@@ -1,0 +1,3489 @@
+{
+  "version": "1.0",
+  "equations": {
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0001": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0001",
+      "blockid": "7f54f1ee936859a0c210d24872724cec",
+      "heading": "6.1.4 总传动比",
+      "parent_headings": [
+        "轻型汽车污染物排放限值及测量方法（中国第六阶段）"
+      ],
+      "format": "latex",
+      "content": "E = \\frac {V _ {2} - V _ {1}}{V _ {1}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/437"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0002": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0002",
+      "blockid": "1dfbe936254f5175e20c5ba40447e46f",
+      "heading": "C.1.1.2.4.1 各速度段 ${ \\mathsf { C } } 0 _ { 2 }$ 排放",
+      "parent_headings": [
+        "常温下冷起动后排气污染物排放试验（Ⅰ型试验）"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{CO} _ {2 -} \\mathrm{AF} = \\frac {\\text {声明值}}{\\text {各速度段综合值}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1269"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0003": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0003",
+      "blockid": "1dfbe936254f5175e20c5ba40447e46f",
+      "heading": "C.1.1.2.4.1 各速度段 ${ \\mathsf { C } } 0 _ { 2 }$ 排放",
+      "parent_headings": [
+        "常温下冷起动后排气污染物排放试验（Ⅰ型试验）"
+      ],
+      "format": "latex",
+      "content": "\\text {各速度段综合值} = \\frac {\\mathrm{CO} _ {2 \\mathrm{aveL}} \\times D _ {\\mathrm{L}} + \\mathrm{CO} _ {2 \\mathrm{aveM}} \\times D _ {\\mathrm{M}} + \\mathrm{CO} _ {2 \\mathrm{aveH}} \\times D _ {\\mathrm{H}} + \\mathrm{CO} _ {2 \\mathrm{aveEXH}} \\times D _ {\\mathrm{EXH}}}{D _ {\\mathrm{L}} + D _ {\\mathrm{M}} + D _ {\\mathrm{H}} + D _ {\\mathrm{EXH}}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1270"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0004": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0004",
+      "blockid": "d714e2681cb331b90a7dfe1bb807cae3",
+      "heading": "C.1.2.2.2.1 试验室",
+      "parent_headings": [
+        "常温下冷起动后排气污染物排放试验（Ⅰ型试验）"
+      ],
+      "format": "latex",
+      "content": "5. 5 \\leqslant H (\\text {水/干空气}) \\leqslant 1 2. 2 。",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1314"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0005": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0005",
+      "blockid": "7760e1255ab3686f7863438dcd87fae1",
+      "heading": "CA.4.2 缩减程序",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "a _ {\\mathrm{orig} _ {i}} = \\frac {v _ {i + 1} - v _ {i}}{3 . 6}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1601"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0006": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0006",
+      "blockid": "e728c762e74fe3c06ce536b099139cb6",
+      "heading": "CA.4.2.1.1 1 533～1 724 s 修改方法",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "v _ {\\mathrm{dsc} _ {i + 1}} = v _ {\\mathrm{dsc} _ {i}} + a _ {\\mathrm{orig} _ {i}} \\times \\left(1 - f _ {\\mathrm{dsc}}\\right) \\times 3. 6",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1607"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0007": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0007",
+      "blockid": "cec1932026d88301477efd276f3bdf2e",
+      "heading": "CA.4.2.1.2 1 725～1 762 s 修改方法",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "f _ {\\text { corr\\_dec }} = \\frac {v _ {\\text { dsc\\_1724}} - 8 2 . 6}{v _ {\\text { orig\\_1724}} - 8 2 . 6}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1614"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0008": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0008",
+      "blockid": "cec1932026d88301477efd276f3bdf2e",
+      "heading": "CA.4.2.1.2 1 725～1 762 s 修改方法",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "v _ {\\mathrm{dsc} _ {i}} = v _ {\\mathrm{dsc} _ {i - 1}} + a _ {\\text { orig } _ {i - 1}} \\times f _ {\\text { corr\\_dec }} \\times 3. 6",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1617"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0009": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0009",
+      "blockid": "d351c71b6e5c77b6c76b0e11be99fbe4",
+      "heading": "CA.4.3 尺度缩减因子的计算",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "r _ {\\max} = \\frac {P _ {\\text { req,max }}}{P _ {\\text { rated }}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1621"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0010": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0010",
+      "blockid": "d351c71b6e5c77b6c76b0e11be99fbe4",
+      "heading": "CA.4.3 尺度缩减因子的计算",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "P _ {\\text { req,max }} = \\frac {(f _ {0} \\times v) + (f _ {1} \\times v ^ {2}) + (f _ {2} \\times v ^ {3}) + (1 . 0 3 \\times \\mathrm{TM} \\times v \\times a)}{3 6 0 0}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1623"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0011": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0011",
+      "blockid": "40f640b2fae1cd7e22066aff0ee2e23b",
+      "heading": "CA.5.2.1 确认各个阶段里程差异",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "d _ {\\text { medium }} = \\sum \\frac {\\left(v _ {i} + v _ {i - 1}\\right)}{2 \\times 3 . 6} \\times \\left(t _ {i} - t _ {i - 1}\\right), i = 5 9 1 \\sim 1 0 2 2",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1648"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0012": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0012",
+      "blockid": "40f640b2fae1cd7e22066aff0ee2e23b",
+      "heading": "CA.5.2.1 确认各个阶段里程差异",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "d _ {\\text { high }} = \\sum \\frac {(v _ {i} + v _ {i - 1})}{2 \\times 3 . 6} \\times (t _ {i} - t _ {i - 1}), i = 1 0 2 4 \\sim 1 4 7 7",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1651"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0013": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0013",
+      "blockid": "40f640b2fae1cd7e22066aff0ee2e23b",
+      "heading": "CA.5.2.1 确认各个阶段里程差异",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "d _ {\\text {exhigh}} = \\sum \\frac {(v _ {i} + v _ {i - 1})}{2 \\times 3 . 6} \\times (t _ {i} - t _ {i - 1}), i = 1 4 7 9 \\sim 1 8 0 0",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1654"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0014": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0014",
+      "blockid": "ea8f8b4979879c3cca11a5aa75357001",
+      "heading": "CA.5.2.2.1 中速段时间补偿",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "\\Delta t _ {\\text { medium }} = \\frac {d _ {\\text { base,medium }} - d _ {\\text { cap,medium }}}{V _ {\\text { cap }}} \\times 3. 6",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1659"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0015": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0015",
+      "blockid": "aca895f4d2dd841de47861e7ce04c75b",
+      "heading": "CA.5.2.2.2 高速段补偿时间",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "\\Delta t _ {\\text { high }} = \\frac {d _ {\\text { base,high }} - d _ {\\text { cap,high }}}{V _ {\\text { cap }}} \\times 3. 6",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1663"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0016": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0016",
+      "blockid": "aca895f4d2dd841de47861e7ce04c75b",
+      "heading": "CA.5.2.2.2 高速段补偿时间",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "\\Delta t _ {\\mathrm{exhigh}} = \\frac {d _ {\\mathrm{base,exhigh}} - d _ {\\mathrm{cap,exhigh}}}{V _ {\\mathrm{cap}}} \\times 3. 6",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1666"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0017": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0017",
+      "blockid": "1fc0c10f2d36d744d57dd48e4824c3fb",
+      "heading": "CA.5.2.3 确定修正循环",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "v _ {\\text { max,high }} <   = v _ {\\text { cap }} <   v _ {\\text { max,exhigh }}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1691"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0018": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0018",
+      "blockid": "f39f69bca5d63d6baa15b4bc52e2dc90",
+      "heading": "CB.2 数据和预处理计算",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "n _ {\\max \\_ 9 5} = 1. 1 \\times \\left[ n _ {\\text {idle}} + 0. 1 2 5 \\times \\left(n _ {\\text {rated}} - n _ {\\text {idle}}\\right) \\right] \\times \\frac {\\mathrm{ndv} _ {2}}{\\mathrm{ndv} _ {3}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1722"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0019": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0019",
+      "blockid": "f39f69bca5d63d6baa15b4bc52e2dc90",
+      "heading": "CB.2 数据和预处理计算",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "n _ {\\max} \\left(\\mathrm{ng} _ {\\mathrm{vmax}}\\right) = \\mathrm{ndv} \\left(\\mathrm{ng} _ {\\mathrm{vmax}}\\right) \\times v _ {\\max, \\text {cycle}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1723"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0020": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0020",
+      "blockid": "f39f69bca5d63d6baa15b4bc52e2dc90",
+      "heading": "CB.2 数据和预处理计算",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "P _ {\\text { required }} = \\frac {f _ {0} \\times v _ {\\max} + f _ {1} \\times v _ {\\max} ^ {2} + f _ {2} \\times v _ {\\max} ^ {3}}{3 6 0 0}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1739"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0021": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0021",
+      "blockid": "f39f69bca5d63d6baa15b4bc52e2dc90",
+      "heading": "CB.2 数据和预处理计算",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "n _ {\\mathrm{ng}} = \\mathrm{ndv} _ {\\mathrm{ng}} \\times v _ {\\mathrm{max}} (\\mathrm{ng})",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1742"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0022": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0022",
+      "blockid": "f39f69bca5d63d6baa15b4bc52e2dc90",
+      "heading": "CB.2 数据和预处理计算",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "n _ {\\mathrm{ng} - 1} = \\mathrm{ndv} _ {\\mathrm{ng} - 1} \\times v _ {\\max} (\\mathrm{ng} - 1)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1743"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0023": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0023",
+      "blockid": "f39f69bca5d63d6baa15b4bc52e2dc90",
+      "heading": "CB.2 数据和预处理计算",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "\\left(\\mathrm{ndv} _ {1} / \\mathrm{ndv} \\left(\\mathrm{ng} _ {\\max}\\right)\\right) \\times \\left(v _ {\\max} \\times \\mathrm{ndv} \\left(\\mathrm{ng} _ {\\operatorname * {v m a x}}\\right) / n _ {\\text {rated}}\\right) > 7; \\tag {3}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1752"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0024": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0024",
+      "blockid": "f39f69bca5d63d6baa15b4bc52e2dc90",
+      "heading": "CB.2 数据和预处理计算",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "\\left(\\mathrm{ndv} _ {2} / \\mathrm{ndv} \\left(\\mathrm{ng} _ {\\max}\\right)\\right) \\times \\left(v _ {\\max} \\times \\mathrm{ndv} \\left(\\mathrm{ng} _ {\\mathrm{v} \\max}\\right) / n _ {\\text {rated}}\\right) > 4; \\tag {4}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1753"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0025": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0025",
+      "blockid": "f39f69bca5d63d6baa15b4bc52e2dc90",
+      "heading": "CB.2 数据和预处理计算",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{RM} + (\\mathrm{MC} - \\mathrm{RM}) \\times 0. 2 8 \\text {(对M类车辆该载荷系数是0.15)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1755"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0026": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0026",
+      "blockid": "f39f69bca5d63d6baa15b4bc52e2dc90",
+      "heading": "CB.2 数据和预处理计算",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "n _ {\\text { min\\_drive }} = n _ {\\text { idle }} + 0. 1 2 5 \\times \\left(n _ {\\text { rated }} - n _ {\\text { idle }}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1766"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0027": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0027",
+      "blockid": "464f29bfa5bb449ee0eb8689cb2ae274",
+      "heading": "CB.3.1 计算需求功率",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "P _ {\\text { required }, j} = \\left(\\frac {f _ {0} \\times v _ {j} + f _ {1} \\times v _ {j} ^ {2} + f _ {2} \\times v _ {j} ^ {3}}{3 6 0 0}\\right) + \\frac {k r \\times a _ {j} \\times v _ {j} \\times \\mathrm{TM}}{3 6 0 0}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1772"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0028": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0028",
+      "blockid": "22084c0f66856939415e6e790ef3eee7",
+      "heading": "CB.3.2 确定发动机转速",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "n _ {i, j} = \\mathrm{ndv} _ {i} \\times v _ {j}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1780"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0029": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0029",
+      "blockid": "b53902485028815a37629235114c0b56",
+      "heading": "CB.3.4 可用功率计算",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "P _ {\\text { available } i, j} = P _ {\\text { wot }} \\left(n _ {i, j}\\right) \\times \\left[ 1 - (\\mathrm{SM} + \\mathrm{ASM}) \\right]",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1790"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0030": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0030",
+      "blockid": "b53902485028815a37629235114c0b56",
+      "heading": "CB.3.4 可用功率计算",
+      "parent_headings": [
+        "Ⅰ型试验用测试循环及分解"
+      ],
+      "format": "latex",
+      "content": "\\text {如果} n > n _ {\\mathrm{start}}, \\mathrm{ASM} = \\mathrm{ASM} _ {0} \\times \\exp [ \\ln (0. 0 0 5 / \\mathrm{ASM} _ {0}) \\times (n _ {\\mathrm{start}} - n) / (n _ {\\mathrm{start}} - n _ {\\mathrm{end}}) ] 。",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1798"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0031": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0031",
+      "blockid": "1ffe103c592652012423389815e1fd57",
+      "heading": "CC.3.2.3 湍流",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "T u = \\frac {u ^ {\\prime}}{U _ {\\infty}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1941"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0032": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0032",
+      "blockid": "3830f87ec1251bd8aab154d77d94e4b6",
+      "heading": "CC.3.2.4 固体阻塞比",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\varepsilon_ {\\mathrm{sb}} = \\frac {A _ {\\mathrm{f}}}{A _ {\\mathrm{nozzle}}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1947"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0033": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0033",
+      "blockid": "b19cca33456ee98a3029148bc87387ac",
+      "heading": "CC.3.2.8 大气压力",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\sigma \\left(\\frac {\\Delta P _ {\\mathrm{t}}}{q}\\right) \\leqslant 0. 0 2",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1959"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0034": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0034",
+      "blockid": "b19cca33456ee98a3029148bc87387ac",
+      "heading": "CC.3.2.8 大气压力",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\left| c _ {p _ {x = + 3 \\mathrm{m}}} - c _ {p _ {x = - 3 \\mathrm{m}}} \\right| \\leqslant 0. 0 2",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1964"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0035": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0035",
+      "blockid": "81d3d56278d6d2924b9bcddcf563b888",
+      "heading": "CC.3.2.9 边界层厚度",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\delta_ {9 9} (x = 0 \\mathrm{m}) \\leqslant 3 0 \\mathrm{mm}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1970"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0036": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0036",
+      "blockid": "21810858ac49b6fc64eee0b29df4fb69",
+      "heading": "CC.3.2.10 约束阻塞比",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\varepsilon_ {\\mathrm{restr}} = \\frac {A _ {\\mathrm{restr}}}{A _ {\\mathrm{f}}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1974"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0037": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0037",
+      "blockid": "a1106f53dae91117785b18b7e7f8bf25",
+      "heading": "CC.4.2.2.3.1 轮胎压力调节",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\Delta p _ {\\mathrm{t}} = 0. 8 \\times \\left(T _ {\\mathrm{soak}} - T _ {\\mathrm{amb}}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2076"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0038": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0038",
+      "blockid": "fc6fb49bf753c8905360033f1b0c6dc9",
+      "heading": "CC.4.3.1.4 通过滑行时间确定道路载荷",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "p _ {j} = \\frac {h \\times \\sigma_ {j}}{\\sqrt {n} \\times \\Delta t _ {j}} \\leqslant 0. 0 3",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2111"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0039": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0039",
+      "blockid": "fc6fb49bf753c8905360033f1b0c6dc9",
+      "heading": "CC.4.3.1.4 通过滑行时间确定道路载荷",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\Delta t _ {j} = \\frac {n}{\\sum_ {i = 1} ^ {n} \\frac {1}{\\Delta t _ {j i}}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2121"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0040": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0040",
+      "blockid": "fc6fb49bf753c8905360033f1b0c6dc9",
+      "heading": "CC.4.3.1.4 通过滑行时间确定道路载荷",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\Delta t _ {j i} = \\frac {2}{\\left(\\frac {1}{\\Delta t _ {j a i}}\\right) + \\left(\\frac {1}{\\Delta t _ {j b i}}\\right)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2123"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0041": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0041",
+      "blockid": "fc6fb49bf753c8905360033f1b0c6dc9",
+      "heading": "CC.4.3.1.4 通过滑行时间确定道路载荷",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\sigma_ {j} = \\sqrt {\\frac {1}{n - 1} \\sum_ {i = 1} ^ {n} \\left(\\Delta t _ {j i} - \\Delta t _ {j}\\right) ^ {2}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2126"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0042": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0042",
+      "blockid": "fc6fb49bf753c8905360033f1b0c6dc9",
+      "heading": "CC.4.3.1.4 通过滑行时间确定道路载荷",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "F _ {j} = \\frac {1}{3 . 6} \\times \\left(m _ {\\mathrm{av}} + m _ {\\mathrm{r}}\\right) \\times \\frac {2 \\times \\Delta v}{\\Delta t _ {j}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2133"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0043": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0043",
+      "blockid": "fc6fb49bf753c8905360033f1b0c6dc9",
+      "heading": "CC.4.3.1.4 通过滑行时间确定道路载荷",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\Delta t _ {j} = \\frac {2}{\\frac {1}{\\Delta t _ {j a}} + \\frac {1}{\\Delta t _ {j b}}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2135"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0044": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0044",
+      "blockid": "fc6fb49bf753c8905360033f1b0c6dc9",
+      "heading": "CC.4.3.1.4 通过滑行时间确定道路载荷",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\Delta t _ {j \\mathrm{a}} = \\frac {1}{n} \\sum_ {i = 1} ^ {n} \\Delta t _ {j \\mathrm{ai}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2139"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0045": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0045",
+      "blockid": "fc6fb49bf753c8905360033f1b0c6dc9",
+      "heading": "CC.4.3.1.4 通过滑行时间确定道路载荷",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\Delta t _ {j b} = \\frac {1}{n} \\sum_ {i = 1} ^ {n} \\Delta t _ {j b i}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2140"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0046": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0046",
+      "blockid": "7ee56ac09d3c61e7163d4d5e35d12f9b",
+      "heading": "CC.4.3.2.5.1 通用形式",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "m _ {\\mathrm{e}} \\left(\\frac {\\mathrm{d} v}{\\mathrm{d} t}\\right) = D _ {\\text { mech }} + D _ {\\text { aero }} + D _ {\\text { grav }}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2174"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0047": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0047",
+      "blockid": "7ee56ac09d3c61e7163d4d5e35d12f9b",
+      "heading": "CC.4.3.2.5.1 通用形式",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "D _ {\\mathrm{mech}} = D _ {\\mathrm{tyre}} + D _ {\\mathrm{f}} + D _ {\\mathrm{r}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2176"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0048": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0048",
+      "blockid": "7ee56ac09d3c61e7163d4d5e35d12f9b",
+      "heading": "CC.4.3.2.5.1 通用形式",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "D _ {\\mathrm{aero}} = \\left(\\frac {1}{2}\\right) \\rho C _ {\\mathrm{D}} (Y) A _ {\\mathrm{f}} v _ {\\mathrm{r}} ^ {2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2177"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0049": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0049",
+      "blockid": "7ee56ac09d3c61e7163d4d5e35d12f9b",
+      "heading": "CC.4.3.2.5.1 通用形式",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "D _ {\\text { grav }} = m \\times g \\times \\left(\\frac {\\mathrm{d} h}{\\mathrm{d} s}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2178"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0050": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0050",
+      "blockid": "445915bf978c43477e99cce9799d4763",
+      "heading": "CC.4.3.2.5.2 机械阻力模拟",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "D _ {\\mathrm{mech}} = A _ {\\mathrm{m}} + B _ {\\mathrm{m}} v + C _ {\\mathrm{m}} v ^ {2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2182"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0051": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0051",
+      "blockid": "c0a4aacf8b1a2985c11de0aca3d5a40d",
+      "heading": "CC.4.3.2.5.3 空气动力学阻力模拟",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "C _ {\\mathrm{D}} (Y) = a _ {0} + a _ {1} Y + a _ {2} Y ^ {2} + a _ {3} Y ^ {3} + a _ {4} Y ^ {4}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2190"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0052": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0052",
+      "blockid": "c0a4aacf8b1a2985c11de0aca3d5a40d",
+      "heading": "CC.4.3.2.5.3 空气动力学阻力模拟",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\begin{array}{c} a _ {0} \\sim a _ {4} \\\\ Y \\end{array}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2191"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0053": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0053",
+      "blockid": "c0a4aacf8b1a2985c11de0aca3d5a40d",
+      "heading": "CC.4.3.2.5.3 空气动力学阻力模拟",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "D _ {\\mathrm{aero}} = \\left(\\frac {1}{2}\\right) \\times \\rho \\times A _ {\\mathrm{f}} \\times v _ {\\mathrm{r}} ^ {2} \\times C _ {\\mathrm{D}} (Y)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2195"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0054": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0054",
+      "blockid": "c0a4aacf8b1a2985c11de0aca3d5a40d",
+      "heading": "CC.4.3.2.5.3 空气动力学阻力模拟",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "D _ {\\mathrm{aero}} = \\left(\\frac {1}{2}\\right) \\times \\rho \\times A _ {\\mathrm{f}} \\times v _ {\\mathrm{r}} ^ {2} \\left(a _ {0} + a _ {1} Y + a _ {2} Y ^ {2} + a _ {3} Y ^ {3} + a _ {4} Y ^ {4}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2196"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0055": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0055",
+      "blockid": "af73918bf24b2f95a99bc8e2e4066a20",
+      "heading": "CC.4.3.2.5.4 最终运动方程",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "m _ {\\mathrm{e}} \\left(\\frac {\\mathrm{d} v}{\\mathrm{d} t}\\right) = A _ {\\mathrm{m}} + B _ {\\mathrm{m}} v + C _ {\\mathrm{m}} v ^ {2} + \\left(\\frac {1}{2}\\right) \\times \\rho \\times A _ {\\mathrm{f}} \\times v _ {\\mathrm{r}} ^ {2} \\left(a _ {0} + a _ {1} Y + a _ {2} Y ^ {2} + a _ {3} Y ^ {3} + a _ {4} Y ^ {4}\\right) + \\left(m \\times g \\times \\frac {\\mathrm{d} h}{\\mathrm{d} s}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2199"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0056": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0056",
+      "blockid": "3d1cc8756441a1f54b25c77615897d37",
+      "heading": "CC.4.3.2.6.10 车载风速仪法的统计准则",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\Delta F _ {i} \\left(v _ {j}\\right) / F \\left(v _ {j}\\right) \\leqslant \\frac {0 . 0 3}{\\sqrt {n - 1}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2224"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0057": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0057",
+      "blockid": "4c3c7330d8f56a2dc6fe4277f554f83d",
+      "heading": "CC.4.4.3.1 计算过程",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "v _ {j m} = \\frac {1}{k} \\sum_ {i = 1} ^ {k} v _ {j i}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2256"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0058": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0058",
+      "blockid": "4c3c7330d8f56a2dc6fe4277f554f83d",
+      "heading": "CC.4.4.3.1 计算过程",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "C _ {j m} = \\frac {1}{k} \\sum_ {i = 1} ^ {k} C _ {j i} - C _ {j s}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2257"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0059": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0059",
+      "blockid": "4c3c7330d8f56a2dc6fe4277f554f83d",
+      "heading": "CC.4.4.3.1 计算过程",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "C _ {j s} = \\left(m _ {\\mathrm{st}} + m _ {\\mathrm{r}}\\right) \\times \\alpha_ {j} r _ {j}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2262"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0060": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0060",
+      "blockid": "4c3c7330d8f56a2dc6fe4277f554f83d",
+      "heading": "CC.4.4.3.1 计算过程",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\frac {1}{k} \\sum_ {i = 1} ^ {k} C _ {j i}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2266"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0061": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0061",
+      "blockid": "4c3c7330d8f56a2dc6fe4277f554f83d",
+      "heading": "CC.4.4.3.1 计算过程",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "r _ {j} = \\frac {1}{3 . 6} \\times \\frac {v _ {j m}}{2 \\times \\pi n}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2269"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0062": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0062",
+      "blockid": "4c3c7330d8f56a2dc6fe4277f554f83d",
+      "heading": "CC.4.4.3.1 计算过程",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\alpha_ {j} = \\frac {1}{3 . 6} \\times \\frac {k \\sum_ {i = 1} ^ {k} t _ {i} v _ {j i} - \\sum_ {i = 1} ^ {k} t _ {i} \\sum_ {i = 1} ^ {k} v _ {j i}}{k \\times \\sum_ {i = 1} ^ {k} t _ {i} ^ {2} - \\left[ \\sum_ {i = 1} ^ {k} t _ {i} \\right] ^ {2}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2272"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0063": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0063",
+      "blockid": "051686fa66f648c5e34d782a6cdb7c00",
+      "heading": "CC.4.4.3.2 测量精度",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\rho_ {j} = \\frac {h \\times s}{\\sqrt {n}} \\times \\frac {1 0 0}{\\overline {{{C _ {j}}}}} \\leqslant 0. 0 3",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2276"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0064": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0064",
+      "blockid": "051686fa66f648c5e34d782a6cdb7c00",
+      "heading": "CC.4.4.3.2 测量精度",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\overline {{C _ {j}}} = \\frac {1}{n} \\sum_ {i = 1} ^ {n} C _ {j m i}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2279"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0065": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0065",
+      "blockid": "051686fa66f648c5e34d782a6cdb7c00",
+      "heading": "CC.4.4.3.2 测量精度",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "C _ {j m i} = \\frac {1}{2} \\times \\left(C _ {j m a i} + C _ {j m b i}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2281"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0066": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0066",
+      "blockid": "051686fa66f648c5e34d782a6cdb7c00",
+      "heading": "CC.4.4.3.2 测量精度",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "s = \\sqrt {\\frac {1}{k - 1} \\sum_ {i = 1} ^ {k} \\left(C _ {j m i} - \\overline {{C _ {j}}}\\right) ^ {2}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2283"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0067": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0067",
+      "blockid": "e5496b0ab6a38a2e80816ebeeb4e1bbb",
+      "heading": "CC.4.4.3.3 平均车速测量的有效性",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\overline {{v _ {j}}} = \\frac {1}{n} \\sum_ {i = 1} ^ {n} v _ {j m i}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2287"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0068": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0068",
+      "blockid": "e5496b0ab6a38a2e80816ebeeb4e1bbb",
+      "heading": "CC.4.4.3.3 平均车速测量的有效性",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "v _ {j m i} = \\frac {1}{2} \\times \\left(v _ {j m a i} + v _ {j m b i}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2290"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0069": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0069",
+      "blockid": "fecf6206588ec2086651594c35214bea",
+      "heading": "CC.4.4.4 行驶阻力曲线的测定",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "V _ {j m} = 1 / 2 \\times \\left(v _ {j m \\mathrm{a}} + v _ {j m \\mathrm{b}}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2294"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0070": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0070",
+      "blockid": "fecf6206588ec2086651594c35214bea",
+      "heading": "CC.4.4.4 行驶阻力曲线的测定",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "C _ {j m} = 1 / 2 \\times \\left(C _ {j m a} + C _ {j m b}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2295"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0071": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0071",
+      "blockid": "f8323de654d38a388a969a7d8ce91aae",
+      "heading": "CC.4.5.1 空气阻力修正因子",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "K _ {2} = \\frac {T}{2 9 3} \\times \\frac {1 0 0}{P}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2302"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0072": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0072",
+      "blockid": "1ff91f6c1523f2787277f456bd22247b",
+      "heading": "CC.4.5.2 滚动阻力修正因子",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "K _ {0} = 8. 6 \\times 1 0 ^ {- 3} \\mathrm{K} ^ {- 1}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2307"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0073": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0073",
+      "blockid": "e1d6d3547efdf0785e029161bcffe755",
+      "heading": "CC.4.5.3.1 固定式风速仪风速修正",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "w _ {1} = 3. 6 ^ {2} \\times f _ {2} \\times v _ {w} ^ {2} \\text {或} w _ {2} = 3. 6 ^ {2} \\times c _ {2} \\times v _ {w} ^ {2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2312"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0074": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0074",
+      "blockid": "4b453535519bb1a1bc77d5b3cc37010f",
+      "heading": "CC.4.5.4 测试质量修正因子",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "K _ {1} = f _ {0} \\times \\left(1 - \\frac {\\mathrm{TM} _ {\\mathrm{H}}}{m _ {\\mathrm{av}}}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2324"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0075": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0075",
+      "blockid": "b2a75cf3895458c71048933dd8c26bab",
+      "heading": "CC.4.5.5 道路载荷曲线修正",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "F ^ {*} = \\left[ \\left(f _ {0} - w _ {1} - K _ {1}\\right) + f _ {1} v \\right] \\times \\left[ 1 + K _ {0} (T - 2 0) \\right] + K _ {2} f _ {2} v ^ {2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2330"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0076": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0076",
+      "blockid": "f23a4c5508a29b38d92018572a9a58dd",
+      "heading": "CC.4.5.5.2.1 修正到基准状态",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "C ^ {*} = \\left[ \\left(c _ {0} - w _ {2} - K _ {1}\\right) + c _ {1} v \\right] \\times \\left[ 1 + K _ {0} (T - 2 0) \\right] + K _ {2} c _ {2} v ^ {2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2344"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0077": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0077",
+      "blockid": "6f00eb430bb2549312d84a626fc5780f",
+      "heading": "CC.4.5.5.2.2 扭矩仪安装修正",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "c _ {2 \\text { corr }} = K _ {2} \\times c _ {2} \\times \\left[ 1 + \\Delta \\left(C _ {D} \\times A _ {\\mathrm{f}}\\right) / \\left(C _ {D ^ {\\prime}} \\times A _ {\\mathrm{f} ^ {\\prime}}\\right) \\right]",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2358"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0078": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0078",
+      "blockid": "6f00eb430bb2549312d84a626fc5780f",
+      "heading": "CC.4.5.5.2.2 扭矩仪安装修正",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\Delta \\left(C _ {D} \\times A _ {\\mathrm{f}}\\right) = \\left(C _ {D} \\times A _ {\\mathrm{f}}\\right) - \\left(C _ {D ^ {\\prime}} \\times A _ {\\mathrm {f^ {\\prime}}}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2362"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0079": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0079",
+      "blockid": "875749b7a7eb58ae1ca176b1b0dc1131",
+      "heading": "CC.5.1 基于道路载荷矩阵系族中典型车辆计算道路载荷的方法",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "F _ {\\mathrm{c}} = f _ {0} + f _ {1} \\times v + f _ {2} \\times v ^ {2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2374"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0080": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0080",
+      "blockid": "875749b7a7eb58ae1ca176b1b0dc1131",
+      "heading": "CC.5.1 基于道路载荷矩阵系族中典型车辆计算道路载荷的方法",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\begin{array}{r l} & f _ {0} = \\max \\left\\{\\left[ 0. 0 5 \\times f _ {0 r} + 0. 9 5 \\times \\left(f _ {0 r} \\times \\mathrm{TM} / \\mathrm{TM} _ {\\mathrm{r}} + \\left(\\mathrm{RR} - \\mathrm{RR} _ {\\mathrm{r}}\\right) \\times 9. 8 1 \\times \\mathrm{TM} / 1 0 0 0\\right) \\right], \\right. \\\\ & \\left. \\left[ 0. 2 \\times f _ {0 r} + 0. 8 \\times \\left(f _ {0 r} \\times \\mathrm{TM} / \\mathrm{TM} _ {\\mathrm{r}} + \\left(\\mathrm{RR} - \\mathrm{RR} _ {\\mathrm{r}}\\right) \\times 9. 8 1 \\times \\mathrm{TM} / 1 0 0 0\\right) \\right] \\right\\} \\end{array}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2377"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0081": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0081",
+      "blockid": "875749b7a7eb58ae1ca176b1b0dc1131",
+      "heading": "CC.5.1 基于道路载荷矩阵系族中典型车辆计算道路载荷的方法",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "f _ {2} = \\max \\left\\{\\left(0. 0 5 \\times f _ {2 r} + 0. 9 5 \\times f _ {2 r} \\times A _ {\\mathrm{f}} / A _ {\\mathrm{fr}}\\right), \\left(0. 2 \\times f _ {2 r} + 0. 8 \\times f _ {2 r} \\times A _ {\\mathrm{f}} / A _ {\\mathrm{fr}}\\right) \\right\\}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2381"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0082": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0082",
+      "blockid": "875749b7a7eb58ae1ca176b1b0dc1131",
+      "heading": "CC.5.1 基于道路载荷矩阵系族中典型车辆计算道路载荷的方法",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "C _ {\\mathrm{c}} = c _ {0} + c _ {1} \\times v + c _ {2} \\times v ^ {2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2394"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0083": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0083",
+      "blockid": "875749b7a7eb58ae1ca176b1b0dc1131",
+      "heading": "CC.5.1 基于道路载荷矩阵系族中典型车辆计算道路载荷的方法",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "c _ {0} = r ^ {\\prime} / 1. 0 2 \\times \\max \\left\\{\\left[ 0. 0 5 \\times 1. 0 2 \\times c _ {0 \\mathrm{r}} / r ^ {\\prime} + 0. 9 5 \\times \\left(1. 0 2 \\times c _ {\\mathrm{ro}} / r ^ {\\prime} \\times \\mathrm{TM} / \\mathrm{TM} _ {\\mathrm{r}} + \\left(\\mathrm{RR} - \\mathrm{RR} _ {\\mathrm{r}}\\right) \\times 9. 8 1 \\times \\mathrm{TM} / 1 0 0 0\\right) \\right], \\right.",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2397"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0084": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0084",
+      "blockid": "875749b7a7eb58ae1ca176b1b0dc1131",
+      "heading": "CC.5.1 基于道路载荷矩阵系族中典型车辆计算道路载荷的方法",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "[ 0. 2 \\times 1. 0 2 \\times c _ {0 \\mathrm{r}} / r ^ {\\prime} + 0. 8 \\times (1. 0 2 \\times c _ {0 \\mathrm{r}} / r ^ {\\prime} \\times \\mathrm{TM} / \\mathrm{TM} _ {\\mathrm{r}} + (\\mathrm{RR} - \\mathrm{RR} _ {\\mathrm{r}}) \\times 9. 8 1 \\times \\mathrm{TM} / 1 0 0 0) ] \\}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2398"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0085": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0085",
+      "blockid": "875749b7a7eb58ae1ca176b1b0dc1131",
+      "heading": "CC.5.1 基于道路载荷矩阵系族中典型车辆计算道路载荷的方法",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "c _ {2} = r ^ {\\prime} / 1. 0 2 \\times \\max \\left\\{\\left(0. 0 5 \\times 1. 0 2 \\times c _ {2 \\mathrm{r}} / r ^ {\\prime} + 0. 9 5 \\times 1. 0 2 \\times c _ {2 \\mathrm{r}} / r ^ {\\prime} \\times A _ {\\mathrm{f}} / A _ {\\mathrm{fr}}\\right), \\right.",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2402"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0086": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0086",
+      "blockid": "875749b7a7eb58ae1ca176b1b0dc1131",
+      "heading": "CC.5.1 基于道路载荷矩阵系族中典型车辆计算道路载荷的方法",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\left. \\left(0. 2 \\times 1. 0 2 \\times c _ {2 \\mathrm{r}} / r ^ {\\prime} + 0. 8 \\times 1. 0 2 \\times c _ {2 \\mathrm{r}} / r ^ {\\prime} \\times A _ {\\mathrm{f}} / A _ {\\mathrm{fr}}\\right) \\right\\}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2403"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0087": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0087",
+      "blockid": "e11967c6f7f63c239822e4ec998550d4",
+      "heading": "CC.5.2.2 按下式计算默认道路载荷",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "F _ {\\mathrm{c}} = f _ {0} + f _ {1} \\times v + f _ {2} \\times v ^ {2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2417"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0088": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0088",
+      "blockid": "e11967c6f7f63c239822e4ec998550d4",
+      "heading": "CC.5.2.2 按下式计算默认道路载荷",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "f _ {0} = 0. 1 4 0 \\times \\mathrm{TM}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2420"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0089": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0089",
+      "blockid": "e11967c6f7f63c239822e4ec998550d4",
+      "heading": "CC.5.2.2 按下式计算默认道路载荷",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "f _ {2} = (2. 8 \\times 1 0 ^ {- 6} \\times \\mathrm{TM}) + (0. 0 1 7 0 \\times W \\times H)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2423"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0090": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0090",
+      "blockid": "2817334c8f1ed73dfc62255d7e875100",
+      "heading": "CC.6.2.4 有效性标准",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\varepsilon_ {k} = \\frac {E _ {k , \\mathrm{WTM}}}{E _ {k , \\mathrm{coastdown}}} - 1",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2447"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0091": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0091",
+      "blockid": "2817334c8f1ed73dfc62255d7e875100",
+      "heading": "CC.6.2.4 有效性标准",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\overline {{x}} = \\left| \\frac {\\varepsilon_ {1} + \\varepsilon_ {2} + \\varepsilon_ {3}}{3} \\right|",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2452"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0092": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0092",
+      "blockid": "6362697f17f6d363cdeb4aca8cfff94c",
+      "heading": "CC.6.5.2.1 预处理",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "F _ {d} = a _ {d} + b _ {d} \\times v + c _ {d} \\times v ^ {2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2500"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0093": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0093",
+      "blockid": "6362697f17f6d363cdeb4aca8cfff94c",
+      "heading": "CC.6.5.2.1 预处理",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "c _ {d} = \\left(C _ {D} \\times A _ {\\mathrm{f}}\\right) \\times \\frac {\\rho_ {0}}{2} \\times \\frac {1}{3 . 6 ^ {2}} 。",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2503"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0094": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0094",
+      "blockid": "34c4972ad4338365fcb174f0a3e429a3",
+      "heading": "CC.6.5.2.3 减速下的测量程序",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "f _ {j \\text { Dyno }} = f _ {j \\text { Decel }} - c _ {d} \\times v _ {j} ^ {2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2516"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0095": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0095",
+      "blockid": "10a145835c7b105e911252262251eae5",
+      "heading": "CC.6.6.3 底盘测功机滚筒曲面修正",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "f _ {j} = f _ {j \\text {Dyno}} \\times c _ {1} \\times \\sqrt {\\frac {1}{\\frac {R _ {\\text {Wheel}}}{R _ {\\text {Dyno}}} \\times c _ {2} + 1}} + f _ {j \\text {Dyno}} \\times \\left(1 - c _ {1}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2550"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0096": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0096",
+      "blockid": "10a145835c7b105e911252262251eae5",
+      "heading": "CC.6.6.3 底盘测功机滚筒曲面修正",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "f _ {j} = f _ {j \\text {Dyno}} \\times \\sqrt {\\frac {1}{\\frac {R _ {\\text {Wheel}}}{R _ {\\text {Dyno}}} \\times 0 . 2 + 1}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2558"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0097": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0097",
+      "blockid": "afed18faaae124c3dd0bbaaa39a788c4",
+      "heading": "CC.6.7.1 平带和底盘测功机试验结果修正",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "F _ {D j} = \\left(f _ {j} - K _ {1}\\right) \\times \\left[ 1 + K _ {0} (T - 2 9 3) \\right]",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2564"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0098": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0098",
+      "blockid": "73ccdf949f821db1922aaa09bbda8436",
+      "heading": "CC.6.7.2 空气动力学阻力",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "F _ {A j} = \\left(C _ {D} \\times A _ {\\mathrm{f}}\\right) _ {j} \\times \\frac {\\rho_ {0}}{2} \\times \\frac {V _ {j} ^ {2}}{3 . 6 ^ {2}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2572"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0099": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0099",
+      "blockid": "777f58f5a421cdb893347626a88c5da4",
+      "heading": "CC.6.7.3 道路载荷值计算",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "F _ {j} ^ {*} = F _ {D j} + F _ {A j}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2579"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0100": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0100",
+      "blockid": "f0540895995436ce0fdf9a5b2a885e8f",
+      "heading": "CC.7.3.4.2 替代的预热程序",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "f _ {0 \\mathrm{a}} = f _ {0} + A _ {\\mathrm {d\\_alt}} - A _ {\\mathrm {d\\_WLTC}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2614"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0101": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0101",
+      "blockid": "f0540895995436ce0fdf9a5b2a885e8f",
+      "heading": "CC.7.3.4.2 替代的预热程序",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "f _ {1 \\mathrm{a}} = f _ {1} + B _ {\\mathrm {d\\_alt}} - B _ {\\mathrm {d\\_WLTC}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2615"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0102": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0102",
+      "blockid": "f0540895995436ce0fdf9a5b2a885e8f",
+      "heading": "CC.7.3.4.2 替代的预热程序",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "f _ {2 \\mathrm{a}} = f _ {2} + C _ {\\mathrm {d\\_alt}} - C _ {\\mathrm {d\\_WLTC}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2616"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0103": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0103",
+      "blockid": "c58f2ecfae56ff3821c216f2fc8301fb",
+      "heading": "CC.8.1.1 设定初始载荷",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "F _ {d} = A _ {d} + B _ {d} v + C _ {d} v ^ {2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2629"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0104": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0104",
+      "blockid": "ad5fb474543dd3eee7851a001ddfc4e0",
+      "heading": "CC.8.1.3 校核",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "F _ {t j} = A _ {t} + B _ {t} v _ {j} + C _ {t} v _ {j} ^ {2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2642"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0105": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0105",
+      "blockid": "ad5fb474543dd3eee7851a001ddfc4e0",
+      "heading": "CC.8.1.3 校核",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "F _ {m j} = \\frac {1}{3 . 6} \\times \\left(\\mathrm{TM} + m _ {\\mathrm{r}}\\right) \\times \\frac {2 \\times \\Delta v}{\\Delta t _ {j}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2647"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0106": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0106",
+      "blockid": "ad5fb474543dd3eee7851a001ddfc4e0",
+      "heading": "CC.8.1.3 校核",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "F _ {s} = A _ {s} + B _ {s} \\times v + C _ {s} \\times v ^ {2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2655"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0107": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0107",
+      "blockid": "ad5fb474543dd3eee7851a001ddfc4e0",
+      "heading": "CC.8.1.3 校核",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "F _ {s j} = A _ {s} + B _ {s} \\times v _ {j} + C _ {s} \\times v _ {j} ^ {2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2657"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0108": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0108",
+      "blockid": "ad5fb474543dd3eee7851a001ddfc4e0",
+      "heading": "CC.8.1.3 校核",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "A = A _ {t} - \\frac {\\sum_ {n = 2} ^ {4} \\left(A _ {S _ {n}} - A _ {d _ {n}}\\right)}{3}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2662"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0109": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0109",
+      "blockid": "ad5fb474543dd3eee7851a001ddfc4e0",
+      "heading": "CC.8.1.3 校核",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "B = B _ {t} - \\frac {\\sum_ {n = 2} ^ {4} \\left(B _ {S _ {n}} - B _ {d _ {n}}\\right)}{3}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2663"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0110": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0110",
+      "blockid": "ad5fb474543dd3eee7851a001ddfc4e0",
+      "heading": "CC.8.1.3 校核",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "C = C _ {t} - \\frac {\\sum_ {n = 2} ^ {4} \\left(C _ {S _ {n}} - C _ {d _ {n}}\\right)}{3}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2664"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0111": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0111",
+      "blockid": "ad5fb474543dd3eee7851a001ddfc4e0",
+      "heading": "CC.8.1.3 校核",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "A _ {d _ {n}} \\text {、} B _ {d _ {n}} \\text {、} C _ {d _ {n}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2669"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0112": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0112",
+      "blockid": "4abab3afaa14cc95085bd9f8694efc52",
+      "heading": "CC.8.1.4 调整",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\begin{array}{r l} F _ {d j} ^ {*} & = F _ {d j} - F _ {j} = F _ {d j} - F _ {s j} + F _ {t j} \\\\ & = \\left(A _ {d} + B _ {d} v _ {j} + C _ {d} v _ {j} ^ {2}\\right) - \\left(A _ {s} + B _ {s} v _ {j} + C _ {s} v _ {j} ^ {2}\\right) + \\left(A _ {t} + B _ {t} v _ {j} + C _ {t} v _ {j} ^ {2}\\right) \\\\ & = \\left(A _ {d} + A _ {t} - A _ {s}\\right) + \\left(B _ {d} + B _ {t} - B _ {s}\\right) v _ {j} + \\left(C _ {d} + C _ {t} - C _ {s}\\right) v _ {j} ^ {2} \\end{array}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2676"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0113": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0113",
+      "blockid": "4abab3afaa14cc95085bd9f8694efc52",
+      "heading": "CC.8.1.4 调整",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\begin{array}{l} A _ {d} ^ {*} = \\left(A _ {d} + A _ {t} - A _ {s}\\right) \\\\ B _ {d} ^ {*} = \\left(B _ {d} + B _ {t} - B _ {s}\\right) \\\\ C _ {d} ^ {*} = \\left(C _ {d} + C _ {t} - C _ {s}\\right) \\end{array}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2678"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0114": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0114",
+      "blockid": "1f43fc3ad4c487cc8b35931dac476b31",
+      "heading": "CC.8.2.1 初始载荷设定",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "F _ {d} = A _ {d} + B _ {d} v + C _ {d} v ^ {2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2692"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0115": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0115",
+      "blockid": "268df601cd07daef27918c882ab42331",
+      "heading": "CC.8.2.2 车轮扭矩测量",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "C _ {t} ^ {*} = a _ {t} + b _ {t} \\times v _ {j} + c _ {t} \\times v _ {j} ^ {2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2706"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0116": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0116",
+      "blockid": "268df601cd07daef27918c882ab42331",
+      "heading": "CC.8.2.2 车轮扭矩测量",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "C _ {s} ^ {*} = C _ {0 s} + C _ {1 s} \\times v _ {j} + C _ {2 s} \\times v _ {j} ^ {2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2708"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0117": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0117",
+      "blockid": "2cbe7df65d09ae8417463fde9d44e3e8",
+      "heading": "CC.8.2.3.3 底盘测功机的设定调整",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "\\begin{array}{r l} F _ {d j} ^ {*} & = F _ {d j} - \\frac {F _ {e j}}{r ^ {\\prime}} = F _ {d j} - \\frac {F _ {s j}}{r ^ {\\prime}} + \\frac {F _ {t j}}{r ^ {\\prime}} \\\\ & = \\left(A _ {d} + B _ {d} v _ {j} + C _ {d} v _ {j} ^ {2}\\right) - \\frac {\\left(a _ {s} + b _ {s} \\times v _ {j} + c _ {s} \\times v _ {j} ^ {2}\\right)}{r ^ {\\prime}} + \\frac {\\left(a _ {t} + b _ {t} \\times v _ {j} + c _ {t} \\times v _ {j} ^ {2}\\right)}{r ^ {\\prime}} \\\\ & = \\left\\{A _ {d} + \\frac {\\left(a _ {t} - a _ {s}\\right)}{r ^ {\\prime}} \\right\\} + \\left\\{B _ {d} + \\frac {\\left(b _ {t} - b _ {s}\\right)}{r ^ {\\prime}} \\right\\} v _ {j} + \\left\\{C _ {d} + \\frac {\\left(c _ {t} - c _ {s}\\right)}{r ^ {\\prime}} \\right\\} v _ {j} ^ {2} \\end{array}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2715"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0118": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0118",
+      "blockid": "2cbe7df65d09ae8417463fde9d44e3e8",
+      "heading": "CC.8.2.3.3 底盘测功机的设定调整",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "A _ {d} ^ {*} = A _ {d} + \\frac {(a _ {t} - a _ {s})}{r ^ {\\prime}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2717"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0119": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0119",
+      "blockid": "2cbe7df65d09ae8417463fde9d44e3e8",
+      "heading": "CC.8.2.3.3 底盘测功机的设定调整",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "B _ {d} ^ {*} = B _ {d} + \\frac {(b _ {t} - b _ {s})}{r ^ {\\prime}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2718"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0120": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0120",
+      "blockid": "2cbe7df65d09ae8417463fde9d44e3e8",
+      "heading": "CC.8.2.3.3 底盘测功机的设定调整",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "C _ {d} ^ {*} = C _ {d} + \\frac {\\left(c _ {t} - c _ {s}\\right)}{r ^ {\\prime}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2720"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0121": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0121",
+      "blockid": "2cbe7df65d09ae8417463fde9d44e3e8",
+      "heading": "CC.8.2.3.3 底盘测功机的设定调整",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "F _ {e j}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2721"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0122": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0122",
+      "blockid": "2cbe7df65d09ae8417463fde9d44e3e8",
+      "heading": "CC.8.2.3.3 底盘测功机的设定调整",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "F _ {s j}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2724"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0123": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0123",
+      "blockid": "2cbe7df65d09ae8417463fde9d44e3e8",
+      "heading": "CC.8.2.3.3 底盘测功机的设定调整",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "F _ {t j}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2726"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0124": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0124",
+      "blockid": "ac8abaf7cba294eaedda73d62aeee2ab",
+      "heading": "CC.8.2.4 车辆行驶阻力系数和道路载荷系数 $\\mathbf { \\Delta } f _ { 0 } ,$ 、 $f _ { 1 }$ 和 $f _ { 2 }$ 的转换",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "f _ {0} = \\frac {c _ {0}}{r} \\times 1. 0 2",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2735"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0125": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0125",
+      "blockid": "ac8abaf7cba294eaedda73d62aeee2ab",
+      "heading": "CC.8.2.4 车辆行驶阻力系数和道路载荷系数 $\\mathbf { \\Delta } f _ { 0 } ,$ 、 $f _ { 1 }$ 和 $f _ { 2 }$ 的转换",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "f _ {1} = \\frac {c _ {1}}{r} \\times 1. 0 2",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2736"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0126": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0126",
+      "blockid": "ac8abaf7cba294eaedda73d62aeee2ab",
+      "heading": "CC.8.2.4 车辆行驶阻力系数和道路载荷系数 $\\mathbf { \\Delta } f _ { 0 } ,$ 、 $f _ { 1 }$ 和 $f _ { 2 }$ 的转换",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "f _ {2} = \\frac {c _ {2}}{r} \\times 1. 0 2",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2737"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0127": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0127",
+      "blockid": "ac8abaf7cba294eaedda73d62aeee2ab",
+      "heading": "CC.8.2.4 车辆行驶阻力系数和道路载荷系数 $\\mathbf { \\Delta } f _ { 0 } ,$ 、 $f _ { 1 }$ 和 $f _ { 2 }$ 的转换",
+      "parent_headings": [
+        "道路载荷测量与测功机设定"
+      ],
+      "format": "latex",
+      "content": "F _ {j} = \\frac {1}{3 . 6} \\times \\left(\\mathrm{TM} + m _ {\\mathrm{r}}\\right) \\times \\frac {\\Delta v}{\\Delta t _ {j}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2745"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0128": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0128",
+      "blockid": "d8e3d4a1955c986af5351d05db6ac529",
+      "heading": "CD.3.4.1 一般要求",
+      "parent_headings": [
+        "附 件 CD（规范性附件）测试设备与校准"
+      ],
+      "format": "latex",
+      "content": "V _ {0} = \\frac {Q _ {\\mathrm{s}}}{n} \\times \\frac {T _ {\\mathrm{p}}}{2 7 3 . 1 5} \\times \\frac {1 0 1 . 3 2 5}{P _ {\\mathrm{p}}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2927"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0129": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0129",
+      "blockid": "d8e3d4a1955c986af5351d05db6ac529",
+      "heading": "CD.3.4.1 一般要求",
+      "parent_headings": [
+        "附 件 CD（规范性附件）测试设备与校准"
+      ],
+      "format": "latex",
+      "content": "x _ {0} = \\frac {1}{n} \\sqrt {\\frac {\\Delta P _ {\\mathrm{p}}}{P _ {\\mathrm{e}}}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2934"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0130": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0130",
+      "blockid": "d8e3d4a1955c986af5351d05db6ac529",
+      "heading": "CD.3.4.1 一般要求",
+      "parent_headings": [
+        "附 件 CD（规范性附件）测试设备与校准"
+      ],
+      "format": "latex",
+      "content": "\\begin{array}{l} {V _ {0} = D _ {0} - M \\times x _ {0}} \\\\ {n = A - B \\times \\Delta P _ {\\mathrm{p}}} \\end{array}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2939"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0131": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0131",
+      "blockid": "9987af3f9ca502044a3d5ed52a4f529e",
+      "heading": "CD.3.4.3 临界流量文丘里管标定（CFV）",
+      "parent_headings": [
+        "附 件 CD（规范性附件）测试设备与校准"
+      ],
+      "format": "latex",
+      "content": "Q _ {\\mathrm{s}} = \\frac {K _ {\\mathrm{v}} P}{\\sqrt {T}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2948"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0132": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0132",
+      "blockid": "9987af3f9ca502044a3d5ed52a4f529e",
+      "heading": "CD.3.4.3 临界流量文丘里管标定（CFV）",
+      "parent_headings": [
+        "附 件 CD（规范性附件）测试设备与校准"
+      ],
+      "format": "latex",
+      "content": "K _ {\\mathrm{v}} = \\frac {Q _ {\\mathrm{s}} \\sqrt {T _ {\\mathrm{v}}}}{P _ {\\mathrm{v}}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2971"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0133": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0133",
+      "blockid": "59a8031990bf6b1c71f18c9bee2072da",
+      "heading": "CD.3.4.4 亚音速文丘里标定（SSV）",
+      "parent_headings": [
+        "附 件 CD（规范性附件）测试设备与校准"
+      ],
+      "format": "latex",
+      "content": "C _ {\\mathrm{d}} = \\frac {Q _ {\\mathrm{SSV}}}{d _ {\\mathrm{V}} ^ {2} \\times p _ {\\mathrm{p}} \\times \\sqrt {\\left\\{\\frac {1}{T} \\times \\left(r _ {\\mathrm{p}} ^ {1 . 4 2 6} - r _ {\\mathrm{p}} ^ {1 . 7 1 3}\\right) \\times \\left(\\frac {1}{1 - r _ {D} ^ {4} \\times r _ {\\mathrm{p}} ^ {1 . 4 2 6}}\\right) \\right\\}}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2982"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0134": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0134",
+      "blockid": "59a8031990bf6b1c71f18c9bee2072da",
+      "heading": "CD.3.4.4 亚音速文丘里标定（SSV）",
+      "parent_headings": [
+        "附 件 CD（规范性附件）测试设备与校准"
+      ],
+      "format": "latex",
+      "content": "r _ {\\mathrm{p}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2986"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0135": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0135",
+      "blockid": "59a8031990bf6b1c71f18c9bee2072da",
+      "heading": "CD.3.4.4 亚音速文丘里标定（SSV）",
+      "parent_headings": [
+        "附 件 CD（规范性附件）测试设备与校准"
+      ],
+      "format": "latex",
+      "content": "R e = A _ {1} \\times \\frac {Q _ {\\mathrm{SSV}}}{d _ {\\mathrm{v}} \\times \\mu}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/2992"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0136": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0136",
+      "blockid": "d4b361993c5e4a3e5241ba29d6cde0e3",
+      "heading": "CD.3.4.5.7 标定程序",
+      "parent_headings": [
+        "附 件 CD（规范性附件）测试设备与校准"
+      ],
+      "format": "latex",
+      "content": "K _ {\\mathrm{v}} = \\frac {Q _ {\\text { reference }}}{Q _ {\\mathrm{s}}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3026"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0137": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0137",
+      "blockid": "4d7a987c30005ce3ad545d2fa5e57c87",
+      "heading": "CD.4.2.2.3 消除静电的影响",
+      "parent_headings": [
+        "附 件 CD（规范性附件）测试设备与校准"
+      ],
+      "format": "latex",
+      "content": "m _ {\\mathrm{f}} = m _ {\\text {uncorr}} \\times \\binom{1 - \\frac {\\rho_ {\\mathrm{a}}}{\\rho_ {\\mathrm{w}}}}{\\frac {1 - \\frac {\\rho_ {\\mathrm{a}}}{\\rho_ {\\mathrm{f}}}}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3214"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0138": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0138",
+      "blockid": "4d7a987c30005ce3ad545d2fa5e57c87",
+      "heading": "CD.4.2.2.3 消除静电的影响",
+      "parent_headings": [
+        "附 件 CD（规范性附件）测试设备与校准"
+      ],
+      "format": "latex",
+      "content": "\\rho_ {\\mathrm{a}} = \\frac {p _ {\\mathrm{b}} \\times M _ {\\mathrm{mix}}}{R \\times T _ {\\mathrm{a}}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3221"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0139": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0139",
+      "blockid": "4d7a987c30005ce3ad545d2fa5e57c87",
+      "heading": "CD.4.2.2.3 消除静电的影响",
+      "parent_headings": [
+        "附 件 CD（规范性附件）测试设备与校准"
+      ],
+      "format": "latex",
+      "content": "f _ {r} \\left(d _ {i}\\right) = \\frac {N _ {\\text { in }} \\left(d _ {i}\\right)}{N _ {\\text { out }} \\left(d _ {i}\\right)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3261"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0140": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0140",
+      "blockid": "4d7a987c30005ce3ad545d2fa5e57c87",
+      "heading": "CD.4.2.2.3 消除静电的影响",
+      "parent_headings": [
+        "附 件 CD（规范性附件）测试设备与校准"
+      ],
+      "format": "latex",
+      "content": "\\overline {{f _ {r}}} = \\frac {f _ {r} (3 0 \\mathrm{nm}) + f _ {r} (5 0 \\mathrm{nm}) + f _ {r} (1 0 0 \\mathrm{nm})}{3}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3269"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0141": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0141",
+      "blockid": "425c74ca8e436321471f2259a50e0b5d",
+      "heading": "CD.5.5 $\\mathrm { N O } _ { x }$ 转换器效率试验",
+      "parent_headings": [
+        "附 件 CD（规范性附件）测试设备与校准"
+      ],
+      "format": "latex",
+      "content": "\\text{效率} (\\%) = \\left(1 + \\frac {a - b}{c - d}\\right) \\times 100",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3344"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0142": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0142",
+      "blockid": "390118d8115265438b553f59f06c77c4",
+      "heading": "CD.5.7.2 挥发性粒子去除器的标定和确认",
+      "parent_headings": [
+        "附 件 CD（规范性附件）测试设备与校准"
+      ],
+      "format": "latex",
+      "content": "f _ {r} \\left(d _ {i}\\right) = \\frac {N _ {\\text { in }} \\left(d _ {i}\\right)}{N _ {\\text { out }} \\left(d _ {i}\\right)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3369"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0143": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0143",
+      "blockid": "390118d8115265438b553f59f06c77c4",
+      "heading": "CD.5.7.2 挥发性粒子去除器的标定和确认",
+      "parent_headings": [
+        "附 件 CD（规范性附件）测试设备与校准"
+      ],
+      "format": "latex",
+      "content": "\\overline {{{f _ {r}}}} = \\frac {f _ {r} (3 0 \\mathrm{nm}) + f _ {r} (5 0 \\mathrm{nm}) + f _ {r} (1 0 0 \\mathrm{nm})}{3}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3375"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0144": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0144",
+      "blockid": "390118d8115265438b553f59f06c77c4",
+      "heading": "CD.5.7.2 挥发性粒子去除器的标定和确认",
+      "parent_headings": [
+        "附 件 CD（规范性附件）测试设备与校准"
+      ],
+      "format": "latex",
+      "content": "\\overline {{f _ {r}}} = \\frac {N _ {\\mathrm{in}}}{N _ {\\mathrm{out}}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3377"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0145": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0145",
+      "blockid": "560e499f98d56e8d8a9e5bf80e151c53",
+      "heading": "CE.2.2 使用容积泵（PDP）的稀释排气体积计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "V = V _ {0} \\times N",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3491"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0146": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0146",
+      "blockid": "560e499f98d56e8d8a9e5bf80e151c53",
+      "heading": "CE.2.2 使用容积泵（PDP）的稀释排气体积计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "V _ {\\text { mix }} = V \\times K _ {1} \\times \\left(\\frac {P _ {\\mathrm{B}} - P _ {1}}{T _ {\\mathrm{p}}}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3496"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0147": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0147",
+      "blockid": "c3e418a0897fbd45b81f3b81bc76ddc1",
+      "heading": "CE.3.1 一般要求",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "\\rho_ {\\mathrm{THC}} = \\frac {\\mathrm{MW} _ {\\mathrm{C}} + \\frac {\\mathrm{H}}{\\mathrm{C}} \\times \\mathrm{MW} _ {\\mathrm{H}} + \\frac {\\mathrm{O}}{\\mathrm{C}} \\times \\mathrm{MW} _ {\\mathrm{O}}}{V _ {\\mathrm{M}}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3511"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0148": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0148",
+      "blockid": "b34872802f385d0fecc1bb2d718e157e",
+      "heading": "CE.3.2.1 使用下式计算各速度段的气态污染物质量排放",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "M _ {i, \\text { phase }} = \\frac {V _ {\\text { mix,phase }} \\times \\rho_ {i} \\times k _ {\\text { Hphase }} \\times C _ {i , \\text { phase }} \\times 1 0 ^ {- 6}}{d _ {\\text { phase }}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3523"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0149": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0149",
+      "blockid": "b34872802f385d0fecc1bb2d718e157e",
+      "heading": "CE.3.2.1 使用下式计算各速度段的气态污染物质量排放",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "C _ {i} = C _ {\\mathrm{e}} - C _ {\\mathrm{d}} \\times \\left(1 - \\frac {1}{\\mathrm{DF}}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3531"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0150": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0150",
+      "blockid": "b34872802f385d0fecc1bb2d718e157e",
+      "heading": "CE.3.2.1 使用下式计算各速度段的气态污染物质量排放",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "\\overline {{{C _ {i}}}} = \\frac {\\sum_ {\\text { phase } = 1} ^ {n} (C _ {i , \\text { phase }} \\times V _ {\\text { mix,phase }})}{\\sum_ {\\text { phase } = 1} ^ {n} V _ {\\text { mix,phase }}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3544"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0151": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0151",
+      "blockid": "b34872802f385d0fecc1bb2d718e157e",
+      "heading": "CE.3.2.1 使用下式计算各速度段的气态污染物质量排放",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{DF} = \\frac {X}{C _ {\\mathrm{CO} _ {2}} + \\left(C _ {\\mathrm{HC}} + C _ {\\mathrm{CO}}\\right) \\times 1 0 ^ {- 4}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3549"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0152": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0152",
+      "blockid": "b34872802f385d0fecc1bb2d718e157e",
+      "heading": "CE.3.2.1 使用下式计算各速度段的气态污染物质量排放",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "X = 1 0 0 \\times \\frac {x}{x + \\frac {y}{2} + 3 . 7 6 \\left(x + \\frac {y}{4} - \\frac {z}{2}\\right)};",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3553"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0153": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0153",
+      "blockid": "b34872802f385d0fecc1bb2d718e157e",
+      "heading": "CE.3.2.1 使用下式计算各速度段的气态污染物质量排放",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "C _ {\\mathrm{NMHC}} = C _ {\\mathrm{THC}} - \\left(R _ {\\mathrm {fCH_ {4}}} \\times C _ {\\mathrm {CH_ {4}}}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3559"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0154": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0154",
+      "blockid": "b34872802f385d0fecc1bb2d718e157e",
+      "heading": "CE.3.2.1 使用下式计算各速度段的气态污染物质量排放",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "C _ {\\mathrm{CH} _ {4}} = \\frac {C _ {\\mathrm{HC(w/NMC)}} - C _ {\\mathrm{HC(w/oNMC)}} \\times \\left(1 - E _ {\\mathrm{E}}\\right)}{R _ {\\mathrm{f}} \\times \\left(E _ {\\mathrm{E}} - E _ {\\mathrm{M}}\\right)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3571"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0155": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0155",
+      "blockid": "b34872802f385d0fecc1bb2d718e157e",
+      "heading": "CE.3.2.1 使用下式计算各速度段的气态污染物质量排放",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "C _ {\\mathrm{NMHC}} = \\frac {C _ {\\mathrm{HC(w/oNMC)}} \\times \\left(1 - E _ {\\mathrm{M}}\\right) - C _ {\\mathrm{HC(w/NMC)}}}{E _ {\\mathrm{E}} - E _ {\\mathrm{M}}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3572"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0156": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0156",
+      "blockid": "b34872802f385d0fecc1bb2d718e157e",
+      "heading": "CE.3.2.1 使用下式计算各速度段的气态污染物质量排放",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "C _ {\\mathrm{CH} _ {4}} = \\frac {C _ {\\mathrm{HC(w/NMC)}} \\times R _ {\\mathrm{f}} \\times \\left(1 - E _ {\\mathrm{M}}\\right) - C _ {\\mathrm{HC(w/oNMC)}} \\times \\left(1 - E _ {\\mathrm{E}}\\right)}{R _ {\\mathrm{f}} \\times \\left(E _ {\\mathrm{E}} - E _ {\\mathrm{M}}\\right)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3575"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0157": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0157",
+      "blockid": "b34872802f385d0fecc1bb2d718e157e",
+      "heading": "CE.3.2.1 使用下式计算各速度段的气态污染物质量排放",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "C _ {\\mathrm{NMHC}} = \\frac {C _ {\\mathrm{HC(w/oNMC)}} \\times \\left(1 - E _ {\\mathrm{M}}\\right) - C _ {\\mathrm{HC(w/NMC)}} \\times R _ {\\mathrm{f}} \\times \\left(1 - E _ {\\mathrm{M}}\\right)}{E _ {\\mathrm{E}} - E _ {\\mathrm{M}}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3576"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0158": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0158",
+      "blockid": "589e1c1733070f9d2946bd17a541b069",
+      "heading": "CE.3.2.1.1.3.3.1 甲烷转换效率 $E _ { w }$",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "E _ {\\mathrm{M}} = 1 - \\frac {C _ {\\mathrm{HC(w/NMC)}}}{C _ {\\mathrm{HC(w/oNMC)}}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3589"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0159": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0159",
+      "blockid": "a8197ac815ed9be268ba98f1d02e7f2a",
+      "heading": "CE.3.2.1.1.3.3.2 乙烷转换效率 $E _ { \\tt E }$",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "E _ {\\mathrm{E}} = 1 - \\frac {C _ {\\mathrm{HC(w/NMC)}}}{C _ {\\mathrm{HC(w/oNMC)}}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3594"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0160": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0160",
+      "blockid": "a8197ac815ed9be268ba98f1d02e7f2a",
+      "heading": "CE.3.2.1.1.3.3.2 乙烷转换效率 $E _ { \\tt E }$",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "C _ {\\mathrm{CH} _ {4}} = C _ {\\mathrm{HC(w/NMC)}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3600"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0161": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0161",
+      "blockid": "a8197ac815ed9be268ba98f1d02e7f2a",
+      "heading": "CE.3.2.1.1.3.3.2 乙烷转换效率 $E _ { \\tt E }$",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "C _ {\\mathrm{NMHC}} = C _ {\\mathrm{HC(w/oNMC)}} - C _ {\\mathrm{HC(w/NMC)}} \\times R _ {\\mathrm{f}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3601"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0162": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0162",
+      "blockid": "53cd5d44bc51813a385244e6ac8a96b2",
+      "heading": "CE.3.2.1.1.4 流量加权算术平均浓度计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "C _ {\\mathrm{e}} = \\frac {\\sum_ {i = 1} ^ {n} q _ {\\mathrm{VCVS}} (i) \\times \\Delta t \\times C (i)}{V}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3606"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0163": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0163",
+      "blockid": "1b9a2fee4d2fcd6a9b821d1442107479",
+      "heading": "CE.3.2.1.2 NO 湿度修正系数的计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "k _ {H} = \\frac {1}{1 - 0 . 0 3 2 9 \\times (H - 1 0 . 7 1)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3614"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0164": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0164",
+      "blockid": "1b9a2fee4d2fcd6a9b821d1442107479",
+      "heading": "CE.3.2.1.2 NO 湿度修正系数的计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "H = \\frac {6 . 2 1 1 \\times R _ {\\mathrm{a}} \\times P _ {\\mathrm{d}}}{P _ {\\mathrm{B}} - P _ {\\mathrm{d}} \\times R _ {\\mathrm{a}} \\times 1 0 ^ {- 2}};",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3616"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0165": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0165",
+      "blockid": "ddf7175f4ebb67be21039f327f19335a",
+      "heading": "CE.3.2.1.3 根据 NO 和 NO 确定 NO 浓度",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "C _ {\\mathrm{e}} = \\frac {\\int_ {t _ {1}} ^ {t _ {2}} C _ {\\mathrm{NO}} \\mathrm{d} t}{t _ {2} - t _ {1}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3629"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0166": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0166",
+      "blockid": "ddf7175f4ebb67be21039f327f19335a",
+      "heading": "CE.3.2.1.3 根据 NO 和 NO 确定 NO 浓度",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "C _ {\\mathrm{e}} = \\frac {\\int_ {t _ {1}} ^ {t _ {2}} C _ {\\mathrm{NO} _ {2}} \\mathrm{d} t}{t _ {2} - t _ {1}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3637"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0167": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0167",
+      "blockid": "a2a932ec823360811c28336f55f56c02",
+      "heading": "CE.3.2.1.3.3 N O 浓度",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "C _ {\\mathrm{N} _ {2} \\mathrm{O}} = \\text { 峰面积 } _ {\\mathrm{sample}} \\times R _ {\\mathrm{fN} _ {2} \\mathrm{O}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3643"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0168": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0168",
+      "blockid": "a2a932ec823360811c28336f55f56c02",
+      "heading": "CE.3.2.1.3.3 N O 浓度",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "R _ {\\mathrm{fN} _ {2} \\mathrm{O}} = \\frac {C _ {\\mathrm{N} _ {2} \\mathrm{O} , \\text { standard }}}{\\text { 峰面积 } _ {\\text { standard }}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3646"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0169": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0169",
+      "blockid": "b8f638cc68b9dc479ad27fd56d091d14",
+      "heading": "CE.3.2.2 压燃式发动机 THC 的确定",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "C _ {\\mathrm{e}} = \\frac {\\int_ {t _ {1}} ^ {t _ {2}} C _ {\\mathrm{HC}} \\mathrm{d} t}{t _ {2} - t _ {1}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3649"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0170": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0170",
+      "blockid": "093c010e7d9a2c6125b4c52d12529aae",
+      "heading": "CE.3.2.3.2.2.2 车辆的滚动阻力",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{RR} _ {x} = \\mathrm{RR} _ {x, \\mathrm{FA}} \\times \\mathrm{mp} _ {x, \\mathrm{FA}} + \\mathrm{RR} _ {x, \\mathrm{RA}} \\times \\left(1 - \\mathrm{mp} _ {x, \\mathrm{FA}}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3670"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0171": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0171",
+      "blockid": "669b58b2533b3b1609107cf56c58bf6a",
+      "heading": "CE.3.2.3.2.2.3 插值系族内各车辆的空气动力学阻力",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "\\Delta \\left(C _ {\\mathrm{D}} \\times A _ {\\mathrm{f}}\\right) _ {\\mathrm{ind}} = \\sum_ {i = 1} ^ {n} \\Delta \\left(C _ {\\mathrm{D}} \\times A _ {\\mathrm{f}}\\right) _ {i}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3692"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0172": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0172",
+      "blockid": "0e46bb174abaf864f9ef2e06a7d858ae",
+      "heading": "CE.3.2.3.2.2.4 CO 插值系族中各车辆道路载荷的计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "F _ {\\mathrm{L}} (v) = f _ {0, \\mathrm{L}} ^ {*} + f _ {1, \\mathrm{H}} \\times v + f _ {2, \\mathrm{L}} ^ {*} \\times v ^ {2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3705"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0173": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0173",
+      "blockid": "0e46bb174abaf864f9ef2e06a7d858ae",
+      "heading": "CE.3.2.3.2.2.4 CO 插值系族中各车辆道路载荷的计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "f _ {0, \\text {ind}} = f _ {0, \\mathrm{H}} - \\Delta f _ {0} \\times \\frac {\\left(\\mathrm{TM} _ {\\mathrm{H}} \\times \\mathrm{RR} _ {\\mathrm{H}} - \\mathrm{TM} _ {\\text {ind}} \\times \\mathrm{RR} _ {\\text {ind}}\\right)}{\\left(\\mathrm{TM} _ {\\mathrm{H}} \\times \\mathrm{RR} _ {\\mathrm{H}} - \\mathrm{TM} _ {\\mathrm{L}} \\times \\mathrm{RR} _ {\\mathrm{L}}\\right)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3707"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0174": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0174",
+      "blockid": "0e46bb174abaf864f9ef2e06a7d858ae",
+      "heading": "CE.3.2.3.2.2.4 CO 插值系族中各车辆道路载荷的计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "f _ {0, \\mathrm{ind}} = f _ {0, \\mathrm{H}} - \\Delta f _ {0}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3709"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0175": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0175",
+      "blockid": "0e46bb174abaf864f9ef2e06a7d858ae",
+      "heading": "CE.3.2.3.2.2.4 CO 插值系族中各车辆道路载荷的计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "f _ {1, \\text { ind }} = f _ {1, \\text { H }}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3710"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0176": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0176",
+      "blockid": "0e46bb174abaf864f9ef2e06a7d858ae",
+      "heading": "CE.3.2.3.2.2.4 CO 插值系族中各车辆道路载荷的计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "f _ {2, \\text { ind }} = f _ {2, \\mathrm{H}} - \\Delta f _ {2} \\frac {\\left(\\Delta \\left[ C _ {\\mathrm{D}} \\times A _ {\\mathrm{f}} \\right] _ {\\mathrm{LH}} - \\Delta \\left[ C _ {\\mathrm{D}} \\times A _ {\\mathrm{f}} \\right] _ {\\text { ind }}\\right)}{\\left(\\Delta \\left[ C _ {\\mathrm{D}} \\times A _ {f} \\right] _ {\\mathrm{LH}}\\right)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3711"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0177": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0177",
+      "blockid": "0e46bb174abaf864f9ef2e06a7d858ae",
+      "heading": "CE.3.2.3.2.2.4 CO 插值系族中各车辆道路载荷的计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "f _ {2, \\mathrm{ind}} = f _ {2, \\mathrm{H}} - \\Delta f _ {2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3713"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0178": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0178",
+      "blockid": "0e46bb174abaf864f9ef2e06a7d858ae",
+      "heading": "CE.3.2.3.2.2.4 CO 插值系族中各车辆道路载荷的计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "\\Delta f _ {0} = f _ {0, \\mathrm{H}} - f _ {0, \\mathrm{L}} ^ {*}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3715"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0179": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0179",
+      "blockid": "0e46bb174abaf864f9ef2e06a7d858ae",
+      "heading": "CE.3.2.3.2.2.4 CO 插值系族中各车辆道路载荷的计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "\\Delta f _ {2} = f _ {2, \\mathrm{H}} - f _ {2, \\mathrm{L}} ^ {*}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3716"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0180": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0180",
+      "blockid": "bcd3e82d757b59bafaeeade2dcefe215",
+      "heading": "CE.3.2.3.2.4 利用插值法计算插值系族中某个车辆的 ${ \\mathsf { C } } 0 _ { 2 }$ 排放",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2}, \\text { ind,p }} = M _ {\\mathrm{CO} _ {2}, \\mathrm{L,p}} + \\left(\\frac {E _ {3 , \\mathrm{p}} - E _ {1 , \\mathrm{p}}}{E _ {2 , \\mathrm{p}} - E _ {1 , \\mathrm{p}}}\\right) \\times \\left(M _ {\\mathrm{CO} _ {2}, \\mathrm{H,p}} - M _ {\\mathrm{CO} _ {2}, \\mathrm{L,p}}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3727"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0181": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0181",
+      "blockid": "bcd3e82d757b59bafaeeade2dcefe215",
+      "heading": "CE.3.2.3.2.4 利用插值法计算插值系族中某个车辆的 ${ \\mathsf { C } } 0 _ { 2 }$ 排放",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2}, \\mathrm{ind}} = M _ {\\mathrm{CO} _ {2}, \\mathrm{L}} + \\left(\\frac {E _ {3} - E _ {1}}{E _ {2} - E _ {1}}\\right) \\times \\left(M _ {\\mathrm{CO} _ {2}, \\mathrm{H}} - M _ {\\mathrm{CO} _ {2}, \\mathrm{L}}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3729"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0182": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0182",
+      "blockid": "e5de48ba0bbaf8afe1c29844fa13c83a",
+      "heading": "CE.3.2.4.1.1.2 某个车辆的滚动阻力",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{RR} _ {x} = \\mathrm{RR} _ {x, \\mathrm{FA}} \\times \\mathrm{mp} _ {x, \\mathrm{FA}} + \\mathrm{RR} _ {x, \\mathrm{RA}} \\times \\left(1 - \\mathrm{mp} _ {x, \\mathrm{FA}}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3744"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0183": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0183",
+      "blockid": "1591a7613bcabb2d4f2ea76e28c7bb95",
+      "heading": "CE.3.3.1 颗粒物排放质量计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{PM} = \\frac {\\left(V _ {\\mathrm{mix}} + V _ {\\mathrm{ep}}\\right) \\times P _ {\\mathrm{e}}}{V _ {\\mathrm{ep}} \\times d}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3761"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0184": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0184",
+      "blockid": "1591a7613bcabb2d4f2ea76e28c7bb95",
+      "heading": "CE.3.3.1 颗粒物排放质量计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{PM} = \\frac {V _ {\\mathrm{mix}} \\times P _ {\\mathrm{e}}}{V _ {\\mathrm{ep}} \\times d}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3763"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0185": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0185",
+      "blockid": "1591a7613bcabb2d4f2ea76e28c7bb95",
+      "heading": "CE.3.3.1 颗粒物排放质量计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{PM} = \\left\\{\\frac {P _ {\\mathrm{e}}}{V _ {\\mathrm{ep}}} - \\left[ \\frac {P _ {\\mathrm{a}}}{V _ {\\mathrm{ap}}} \\times \\left(1 - \\frac {1}{\\mathrm{DF}}\\right) \\right] \\right\\} \\times \\frac {\\left(V _ {\\mathrm{mix}} + V _ {\\mathrm{ep}}\\right)}{d}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3770"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0186": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0186",
+      "blockid": "1591a7613bcabb2d4f2ea76e28c7bb95",
+      "heading": "CE.3.3.1 颗粒物排放质量计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{PM} = \\left\\{\\frac {P _ {\\mathrm{e}}}{V _ {\\mathrm{ep}}} - \\left[ \\frac {P _ {\\mathrm{a}}}{V _ {\\mathrm{ap}}} \\times \\left(1 - \\frac {1}{\\mathrm{DF}}\\right) \\right] \\right\\} \\times \\frac {(V _ {\\mathrm{mix}})}{d}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3772"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0187": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0187",
+      "blockid": "1591a7613bcabb2d4f2ea76e28c7bb95",
+      "heading": "CE.3.3.1 颗粒物排放质量计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "V _ {\\mathrm{ep}} = V _ {\\mathrm{set}} - V _ {\\mathrm{ssd}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3778"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0188": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0188",
+      "blockid": "1591a7613bcabb2d4f2ea76e28c7bb95",
+      "heading": "CE.3.3.1 颗粒物排放质量计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "V _ {\\mathrm{mix}} = V _ {\\mathrm{mixindicated}} + V _ {\\mathrm{ep}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3783"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0189": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0189",
+      "blockid": "776b53f13b493336c18fce0317eae28b",
+      "heading": "CE.4 颗粒物数量（PN）计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{PN} = \\frac {V \\times k \\times \\left(\\overline {{C _ {\\mathrm{s}}}} \\times \\overline {{f _ {\\mathrm{r}}}} - C _ {\\mathrm{b}} \\times \\overline {{f _ {\\mathrm{rb}}}}\\right) \\times 1 0 ^ {3}}{d}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3789"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0190": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0190",
+      "blockid": "776b53f13b493336c18fce0317eae28b",
+      "heading": "CE.4 颗粒物数量（PN）计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "\\overline {{C}} = \\frac {\\sum_ {i = 1} ^ {n} C _ {i}}{n}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3799"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0191": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0191",
+      "blockid": "776b53f13b493336c18fce0317eae28b",
+      "heading": "CE.4 颗粒物数量（PN）计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "n = t \\times f",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3801"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0192": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0192",
+      "blockid": "564ab3a5e868d2bede05fe7b8baf9250",
+      "heading": "CE.5 循环需求能量计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "E = \\sum_ {t _ {\\mathrm{start}}} ^ {t _ {\\mathrm{end}}} E _ {i}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3808"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0193": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0193",
+      "blockid": "564ab3a5e868d2bede05fe7b8baf9250",
+      "heading": "CE.5 循环需求能量计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "F _ {i} = f _ {0} + f _ {1} \\times \\left(\\frac {v _ {i} + v _ {i - 1}}{2}\\right) + f _ {2} \\times \\frac {\\left(v _ {i} + v _ {i - 1}\\right) ^ {2}}{4} + (1. 0 3 \\times \\mathrm{TM}) \\times a _ {i}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3817"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0194": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0194",
+      "blockid": "564ab3a5e868d2bede05fe7b8baf9250",
+      "heading": "CE.5 循环需求能量计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "d _ {i} = \\frac {\\left(v _ {i} + v _ {i - 1}\\right)}{2 \\times 3 . 6} \\times \\left(t _ {i} - t _ {i - 1}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3823"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0195": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0195",
+      "blockid": "564ab3a5e868d2bede05fe7b8baf9250",
+      "heading": "CE.5 循环需求能量计算",
+      "parent_headings": [
+        "排放量计算"
+      ],
+      "format": "latex",
+      "content": "a _ {i} = \\frac {v _ {i} - v _ {i - 1}}{3 . 6 \\times (t _ {i} - t _ {i - 1})}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3828"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0196": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0196",
+      "blockid": "0a97839436ae707b1cf54eed1c690815",
+      "heading": "CF.3.4.1 修正准则 c 的计算",
+      "parent_headings": [
+        "（规范性附件）电力供应系统监测测试程序"
+      ],
+      "format": "latex",
+      "content": "c = \\left| \\frac {\\Delta E _ {\\mathrm{REESS}}}{E _ {\\mathrm{fuel}}} \\right|",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3867"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0197": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0197",
+      "blockid": "0a97839436ae707b1cf54eed1c690815",
+      "heading": "CF.3.4.1 修正准则 c 的计算",
+      "parent_headings": [
+        "（规范性附件）电力供应系统监测测试程序"
+      ],
+      "format": "latex",
+      "content": "E _ {\\mathrm{fuel}} = 1 0 \\times \\mathrm{HV} \\times \\mathrm{FC} _ {\\mathrm{nb}} \\times d",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3870"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0198": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0198",
+      "blockid": "5abc294041a03be4bb63373b616dfa85",
+      "heading": "CF.4 修正函数的应用",
+      "parent_headings": [
+        "（规范性附件）电力供应系统监测测试程序"
+      ],
+      "format": "latex",
+      "content": "\\Delta E _ {\\mathrm{REESS}, \\mathrm{j}} = \\sum_ {i = 1} ^ {n} \\Delta E _ {\\mathrm{REESS}, \\mathrm{j}, \\mathrm{i}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3892"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0199": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0199",
+      "blockid": "5abc294041a03be4bb63373b616dfa85",
+      "heading": "CF.4 修正函数的应用",
+      "parent_headings": [
+        "（规范性附件）电力供应系统监测测试程序"
+      ],
+      "format": "latex",
+      "content": "\\Delta E _ {\\text { REESS }, j, i} = \\frac {1}{3 6 0 0} \\times U _ {\\text { REESS }} \\times \\int_ {t _ {0}} ^ {t _ {\\text { end }}} I (t) _ {j, i} d t",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3895"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0200": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0200",
+      "blockid": "5abc294041a03be4bb63373b616dfa85",
+      "heading": "CF.4 修正函数的应用",
+      "parent_headings": [
+        "（规范性附件）电力供应系统监测测试程序"
+      ],
+      "format": "latex",
+      "content": "\\Delta M _ {\\mathrm{CO} _ {2}, j} = 0. 0 0 3 6 \\times \\Delta E _ {\\text { REESS }, j} \\times \\frac {1}{\\eta_ {\\text { alternator }}} \\times \\text { Willans } _ {\\text { factor }} \\times \\frac {1}{d _ {j}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3909"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0201": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0201",
+      "blockid": "5abc294041a03be4bb63373b616dfa85",
+      "heading": "CF.4 修正函数的应用",
+      "parent_headings": [
+        "（规范性附件）电力供应系统监测测试程序"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2}, \\mathrm{p}, 3} = M _ {\\mathrm{CO} _ {2}, \\mathrm{p}, 2} - \\Delta M _ {\\mathrm{CO} _ {2}, j}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3918"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0202": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0202",
+      "blockid": "5abc294041a03be4bb63373b616dfa85",
+      "heading": "CF.4 修正函数的应用",
+      "parent_headings": [
+        "（规范性附件）电力供应系统监测测试程序"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2}, \\mathrm{c}, 3} = M _ {\\mathrm{CO} _ {2}, \\mathrm{c}, 2} - \\Delta M _ {\\mathrm{CO} _ {2}, j}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3919"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0203": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0203",
+      "blockid": "55fd3ead53469ad9a3033424b46158c3",
+      "heading": "D.2 术语和定义",
+      "parent_headings": [
+        "（规范性附录）实际行驶污染物排放试验（Ⅱ型试验）"
+      ],
+      "format": "latex",
+      "content": "a _ {0} = \\overline {{{y}}} - (a _ {1} \\times \\overline {{{x}}})",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3936"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0204": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0204",
+      "blockid": "55fd3ead53469ad9a3033424b46158c3",
+      "heading": "D.2 术语和定义",
+      "parent_headings": [
+        "（规范性附录）实际行驶污染物排放试验（Ⅱ型试验）"
+      ],
+      "format": "latex",
+      "content": "r ^ {2} = 1 - \\frac {\\sum_ {i = 1} ^ {n} [ y _ {i} - a _ {0} - (a _ {1} \\times x _ {i}) ] ^ {2}}{\\sum_ {i = 1} ^ {n} (y _ {i} - \\overline {{y}}) ^ {2}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3941"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0205": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0205",
+      "blockid": "55fd3ead53469ad9a3033424b46158c3",
+      "heading": "D.2 术语和定义",
+      "parent_headings": [
+        "（规范性附录）实际行驶污染物排放试验（Ⅱ型试验）"
+      ],
+      "format": "latex",
+      "content": "r = \\frac {\\sum_ {i = 1} ^ {n - 1} \\left(x _ {i} - \\bar {x}\\right) \\times \\left(y _ {i} - \\bar {y}\\right)}{\\sqrt {\\sum_ {i = 1} ^ {n - 1} \\left(x _ {i} - \\bar {x}\\right) ^ {2}} \\times \\sqrt {\\sum_ {i = 1} ^ {n - 1} \\left(y _ {i} - \\bar {y}\\right) ^ {2}}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3949"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0206": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0206",
+      "blockid": "55fd3ead53469ad9a3033424b46158c3",
+      "heading": "D.2 术语和定义",
+      "parent_headings": [
+        "（规范性附录）实际行驶污染物排放试验（Ⅱ型试验）"
+      ],
+      "format": "latex",
+      "content": "x _ {\\mathrm{rms}} = \\sqrt {\\frac {1}{n} \\left(x _ {1} ^ {2} + x _ {2} ^ {2} + \\cdots + x _ {n} ^ {2}\\right)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3966"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0207": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0207",
+      "blockid": "55fd3ead53469ad9a3033424b46158c3",
+      "heading": "D.2 术语和定义",
+      "parent_headings": [
+        "（规范性附录）实际行驶污染物排放试验（Ⅱ型试验）"
+      ],
+      "format": "latex",
+      "content": "a _ {1} = \\frac {\\sum_ {i = 1} ^ {n} \\left(y _ {i} - \\bar {y}\\right) \\times \\left(x _ {i} - \\bar {x}\\right)}{\\sum_ {i = 1} ^ {n} \\left(x _ {i} - \\bar {x}\\right) ^ {2}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3974"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0208": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0208",
+      "blockid": "55fd3ead53469ad9a3033424b46158c3",
+      "heading": "D.2 术语和定义",
+      "parent_headings": [
+        "（规范性附录）实际行驶污染物排放试验（Ⅱ型试验）"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{SEE} = \\frac {1}{x _ {\\max}} \\times \\sqrt {\\frac {\\sum_ {i = 1} ^ {n} \\left(y _ {i} - \\dot {y}\\right) ^ {2}}{(n - 2)}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3981"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0209": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0209",
+      "blockid": "f41683ce87cdf274a75f684d5657e752",
+      "heading": "DA.3.1 PEMS 泄漏检查",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "\\Delta p = \\frac {p _ {\\mathrm{e}}}{V _ {\\mathrm{s}}} \\times q _ {\\mathrm{vs}} \\times 0. 0 0 5",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4119"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0210": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0210",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{CO} _ {2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4169"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0211": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0211",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{CO} _ {2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4170"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0212": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0212",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "D",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4171"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0213": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0213",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "D e",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4172"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0214": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0214",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "E",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4173"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0215": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0215",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "E _ {\\mathrm{CO} _ {2}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4174"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0216": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0216",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "E _ {\\mathrm{E}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4175"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0217": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0217",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "E _ {\\mathrm{H,O}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4176"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0218": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0218",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "E _ {0},",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4177"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0219": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0219",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "F",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4178"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0220": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0220",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "^ \\circ \\mathrm{C}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4179"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0221": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0221",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{gH} _ {2} \\mathrm{O} / \\mathrm{kg}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4180"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0222": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0222",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "H \\mathrm{m}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4181"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0223": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0223",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{NO} _ {x, \\text { dry }}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4182"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0224": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0224",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{NO} _ {x, \\mathrm{m}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4183"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0225": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0225",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{NO} _ {x}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4184"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0226": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0226",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{NO} _ {x, \\text { ref }}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4185"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0227": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0227",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{NO} _ {x}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4186"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0228": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0228",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{NO} _ {x}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4187"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0229": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0229",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{ppmC} _ {1}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4188"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0230": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0230",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "r ^ {2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4189"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0231": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0231",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "t _ {0}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4190"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0232": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0232",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "t _ {1 0}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4191"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0233": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0233",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "t _ {5 0}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4192"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0234": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0234",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "t _ {9 0}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4193"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0235": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0235",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "x",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4194"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0236": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0236",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "x _ {\\mathrm{min}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4195"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0237": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0237",
+      "blockid": "1355d02222a2639ab96aa61a41fb1f41",
+      "heading": "DB.2 缩略语",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "y",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4196"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0238": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0238",
+      "blockid": "af3ba43c529adfd5953b6e19b293b56e",
+      "heading": "DB.3.4.2 通用程序",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "y = a _ {1} x + a _ {0}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4224"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0239": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0239",
+      "blockid": "d61c3f7fd74e1237fd5d55ea0d9d4f23",
+      "heading": "（i） $\\mathrm { C O } _ { 2 }$ 熄光检查",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "E _ {\\mathrm{CO} _ {2}} = \\left[ 1 - \\frac {C \\times A}{(D \\times A) - (D \\times B)} \\right] \\times 1 0 0",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4283"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0240": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0240",
+      "blockid": "8593078c89576b483e73271ea616a994",
+      "heading": "（ii）水熄光检查",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "H = \\frac {G}{E} \\times 1 0 0",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4294"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0241": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0241",
+      "blockid": "8593078c89576b483e73271ea616a994",
+      "heading": "（ii）水熄光检查",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "D _ {\\mathrm{e}} = D \\times \\left(1 - \\frac {H}{1 0 0}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4296"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0242": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0242",
+      "blockid": "8593078c89576b483e73271ea616a994",
+      "heading": "（ii）水熄光检查",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "H _ {\\mathrm{m}} = 0. 9 \\times A",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4298"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0243": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0243",
+      "blockid": "8593078c89576b483e73271ea616a994",
+      "heading": "（ii）水熄光检查",
+      "parent_headings": [
+        "使用便携式排放测试系统（PEMS）进行车辆排放测试的程序"
+      ],
+      "format": "latex",
+      "content": "E _ {\\mathrm{H} _ {2} \\mathrm{O}} = \\frac {D _ {\\mathrm{e}} - C}{D _ {\\mathrm{e}}} \\times \\frac {H _ {\\mathrm{m}}}{H}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4300"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0244": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0244",
+      "blockid": "a86f452758f00b0db793bdbcaa5ec265",
+      "heading": "DC.3.2 验证程序",
+      "parent_headings": [
+        "（规范性附件）PEMS和不可溯源的排气质量流量的验证"
+      ],
+      "format": "latex",
+      "content": "y = a _ {1} x + a _ {0}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4440"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0245": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0245",
+      "blockid": "93505336146456e8f19a47dbce47ac58",
+      "heading": "DD.2.1 污染物浓度的时间校正",
+      "parent_headings": [
+        "（规范性附件）PEMS和不可溯源的排气质量流量的验证"
+      ],
+      "format": "latex",
+      "content": "\\mathcal {C} _ {i, \\mathrm{c}} (t - \\Delta t _ {t, i}) = \\mathcal {C} _ {i, \\mathrm{r}} (t)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4465"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0246": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0246",
+      "blockid": "8c2b7d15ad2304a12b8c1cc673490714",
+      "heading": "DD.2.2 排气质量流量的时间校正",
+      "parent_headings": [
+        "（规范性附件）PEMS和不可溯源的排气质量流量的验证"
+      ],
+      "format": "latex",
+      "content": "q _ {\\mathrm{m,c}} \\left(t - \\Delta t _ {t, \\mathrm{m}}\\right) = q _ {\\mathrm{m,r}} (t)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4471"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0247": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0247",
+      "blockid": "545086ad9ba2bee0b892fac487458537",
+      "heading": "DD.7.1 干-湿基修正",
+      "parent_headings": [
+        "（规范性附件）PEMS和不可溯源的排气质量流量的验证"
+      ],
+      "format": "latex",
+      "content": "c _ {\\mathrm{wet}} = k _ {\\mathrm{w}} \\times c _ {\\mathrm{dry}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4501"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0248": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0248",
+      "blockid": "545086ad9ba2bee0b892fac487458537",
+      "heading": "DD.7.1 干-湿基修正",
+      "parent_headings": [
+        "（规范性附件）PEMS和不可溯源的排气质量流量的验证"
+      ],
+      "format": "latex",
+      "content": "k _ {\\mathrm{w}} = \\left(\\frac {1}{1 + \\alpha \\times 0 . 0 0 5 \\left(c _ {\\mathrm{CO} _ {2}} + c _ {\\mathrm{CO}}\\right)} - k _ {\\mathrm{wl}}\\right) \\times 1. 0 0 0",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4506"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0249": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0249",
+      "blockid": "545086ad9ba2bee0b892fac487458537",
+      "heading": "DD.7.1 干-湿基修正",
+      "parent_headings": [
+        "（规范性附件）PEMS和不可溯源的排气质量流量的验证"
+      ],
+      "format": "latex",
+      "content": "k _ {\\mathrm{w} 1} = \\frac {1 . 6 0 8 \\times H _ {\\mathrm{a}}}{1 0 0 0 + (1 . 6 0 8 \\times H _ {\\mathrm{a}})};",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4508"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0250": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0250",
+      "blockid": "987f8c1e76ca7b9bda05e507f4fa9299",
+      "heading": "DD.8.2 使用空气质量流量和燃油质量流量计算排气质量流量",
+      "parent_headings": [
+        "（规范性附件）PEMS和不可溯源的排气质量流量的验证"
+      ],
+      "format": "latex",
+      "content": "q _ {\\mathrm{mew}, i} = q _ {\\mathrm{maw}, i} + q _ {\\mathrm{mf}, i}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4522"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0251": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0251",
+      "blockid": "d70b9ee02b5e800e2a4ebf7dd136a239",
+      "heading": "DD.8.3 使用空气质量流量和空燃比计算排气质量流量",
+      "parent_headings": [
+        "（规范性附件）PEMS和不可溯源的排气质量流量的验证"
+      ],
+      "format": "latex",
+      "content": "q _ {\\mathrm{mew}, i} = q _ {\\mathrm{maw}, i} \\times \\left(1 + \\frac {1}{\\mathrm{A} / \\mathrm{F} _ {\\mathrm{st}} \\times \\lambda_ {i}}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4529"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0252": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0252",
+      "blockid": "d70b9ee02b5e800e2a4ebf7dd136a239",
+      "heading": "DD.8.3 使用空气质量流量和空燃比计算排气质量流量",
+      "parent_headings": [
+        "（规范性附件）PEMS和不可溯源的排气质量流量的验证"
+      ],
+      "format": "latex",
+      "content": "1 3 8. 0 \\times \\left(1 + \\frac {\\alpha}{4} - \\frac {\\varepsilon}{2} + \\gamma\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4531"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0253": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0253",
+      "blockid": "d70b9ee02b5e800e2a4ebf7dd136a239",
+      "heading": "DD.8.3 使用空气质量流量和空燃比计算排气质量流量",
+      "parent_headings": [
+        "（规范性附件）PEMS和不可溯源的排气质量流量的验证"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{A} / \\mathrm{F} _ {\\mathrm{st}} = \\frac {(4 2)}{1 2 . 0 1 1 + 1 . 0 0 8 \\times \\alpha + 1 5 . 9 9 9 4 \\times \\varepsilon + 1 4 . 0 0 6 7 \\times \\delta + 3 2 . 0 6 7 5 \\times \\gamma}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4532"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0254": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0254",
+      "blockid": "d70b9ee02b5e800e2a4ebf7dd136a239",
+      "heading": "DD.8.3 使用空气质量流量和空燃比计算排气质量流量",
+      "parent_headings": [
+        "（规范性附件）PEMS和不可溯源的排气质量流量的验证"
+      ],
+      "format": "latex",
+      "content": "\\lambda_ {i} = \\frac {\\left(1 0 0 - \\frac {c _ {\\mathrm{CO}} \\times 1 0 ^ {- 4}}{2} - c _ {\\mathrm{HC} _ {\\mathrm{w}}} \\times 1 0 ^ {- 4}\\right) + \\left(\\frac {\\alpha}{4} \\times \\frac {1 - \\frac {2 \\times c _ {\\mathrm{CO}} \\times 1 0 ^ {- 4}}{3 . 6 \\times c _ {\\mathrm{CO} _ {2}}}}{1 + \\frac {c _ {\\mathrm{CO}} \\times 1 0 ^ {- 4}}{3 . 6 \\times c _ {\\mathrm{CO} _ {2}}}} - \\frac {\\varepsilon}{2} - \\frac {\\delta}{2}\\right) \\times \\left(c _ {\\mathrm{CO} _ {2}} + c _ {\\mathrm{CO}} \\times 1 0 ^ {- 4}\\right)}{4 . 7 6 4 \\times \\left(1 + \\frac {\\alpha}{4} - \\frac {\\varepsilon}{2} + \\gamma\\right) \\times \\left(c _ {\\mathrm{CO} _ {2}} + c _ {\\mathrm{CO}} \\times 1 0 ^ {- 4} + c _ {\\mathrm{HCw}} \\times 1 0 ^ {- 4}\\right)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4533"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0255": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0255",
+      "blockid": "c3c5d33092104a3dde0a1373fd0c5544",
+      "heading": "DD.8.4 根据燃油质量流量和空燃比计算排气质量流量",
+      "parent_headings": [
+        "（规范性附件）PEMS和不可溯源的排气质量流量的验证"
+      ],
+      "format": "latex",
+      "content": "q _ {\\mathrm{mew}, i} = q _ {\\mathrm{mf}, i} \\times \\left(1 + \\mathrm {A/ F_ {st}} \\times \\lambda_ {i}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4551"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0256": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0256",
+      "blockid": "df78b295e8e8e8ef3076fe22571a3351",
+      "heading": "DD.9 计算瞬时质量排放",
+      "parent_headings": [
+        "（规范性附件）PEMS和不可溯源的排气质量流量的验证"
+      ],
+      "format": "latex",
+      "content": "m _ {\\mathrm{gas}, i} = \\frac {\\rho_ {\\mathrm{gas} , i}}{\\rho_ {\\mathrm{gas} , e}} \\times c _ {\\mathrm{gas}, i} \\times q _ {\\mathrm{mew}, i} \\times 1 0 ^ {- 3}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4555"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0257": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0257",
+      "blockid": "dfcfd7862e8bf6534c037570f6ec7587",
+      "heading": "DD.10 瞬时颗粒物数量排放计算",
+      "parent_headings": [
+        "（规范性附件）PEMS和不可溯源的排气质量流量的验证"
+      ],
+      "format": "latex",
+      "content": "m _ {\\mathrm{PN}, i} = c _ {\\mathrm{PN}, i} q _ {\\mathrm{mew}, i} / \\rho_ {\\mathrm{e}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4565"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0258": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0258",
+      "blockid": "8633e1138fb0c88eabdada72bf813b59",
+      "heading": "DE.3.1 平均窗口的定义",
+      "parent_headings": [
+        "移动平均窗口法"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2}} \\left(t _ {2, j}\\right) - M _ {\\mathrm{CO} _ {2}} \\left(t _ {1, j}\\right) \\geqslant M _ {\\mathrm{CO} _ {2}, \\text { ref }}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4605"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0259": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0259",
+      "blockid": "8633e1138fb0c88eabdada72bf813b59",
+      "heading": "DE.3.1 平均窗口的定义",
+      "parent_headings": [
+        "移动平均窗口法"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2}, \\text { ref }}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4607"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0260": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0260",
+      "blockid": "8633e1138fb0c88eabdada72bf813b59",
+      "heading": "DE.3.1 平均窗口的定义",
+      "parent_headings": [
+        "移动平均窗口法"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2}} \\left(t _ {2, j} - \\Delta t\\right) - M _ {\\mathrm{CO} _ {2}} \\left(t _ {1, j}\\right) <   M _ {\\mathrm{CO} _ {2}, \\text { ref }} \\leqslant M _ {\\mathrm{CO} _ {2}} \\left(t _ {2, j}\\right) - M _ {\\mathrm{CO} _ {2}} \\left(t _ {1, j}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4610"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0261": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0261",
+      "blockid": "275d79ac25e589a54f04b659207501fc",
+      "heading": "DE.4.2 CO 特性曲线的参考点",
+      "parent_headings": [
+        "移动平均窗口法"
+      ],
+      "format": "latex",
+      "content": "P _ {1}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4624"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0262": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0262",
+      "blockid": "275d79ac25e589a54f04b659207501fc",
+      "heading": "DE.4.2 CO 特性曲线的参考点",
+      "parent_headings": [
+        "移动平均窗口法"
+      ],
+      "format": "latex",
+      "content": "\\mathsf {P} _ {3}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4631"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0263": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0263",
+      "blockid": "c280d1b5d13bb9ab2e422a61773264d5",
+      "heading": "DE.4.3 ${ \\mathsf { C } } 0 _ { 2 }$ 特性曲线定义",
+      "parent_headings": [
+        "移动平均窗口法"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2}, \\mathrm{a,cc}} (\\overline {{v}}) = a _ {1} \\overline {{v}} + b _ {1}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4638"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0264": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0264",
+      "blockid": "c280d1b5d13bb9ab2e422a61773264d5",
+      "heading": "DE.4.3 ${ \\mathsf { C } } 0 _ { 2 }$ 特性曲线定义",
+      "parent_headings": [
+        "移动平均窗口法"
+      ],
+      "format": "latex",
+      "content": "a _ {1} = \\frac {\\left(M _ {\\mathrm{CO} _ {2} , \\mathrm{d} , \\mathrm{P} _ {2}} - M _ {\\mathrm{CO} _ {2} , \\mathrm{d} , \\mathrm{P} _ {1}}\\right)}{\\bar {V} _ {\\mathrm{p} _ {2}} - \\bar {V} _ {\\mathrm{p} _ {1}}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4639"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0265": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0265",
+      "blockid": "c280d1b5d13bb9ab2e422a61773264d5",
+      "heading": "DE.4.3 ${ \\mathsf { C } } 0 _ { 2 }$ 特性曲线定义",
+      "parent_headings": [
+        "移动平均窗口法"
+      ],
+      "format": "latex",
+      "content": "b _ {1} = \\left(M _ {\\mathrm{CO} _ {2}, \\mathrm{d}, \\mathrm{P} _ {1}} - a _ {1} \\overline {{V}} _ {\\mathrm{p} _ {1}}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4640"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0266": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0266",
+      "blockid": "c280d1b5d13bb9ab2e422a61773264d5",
+      "heading": "DE.4.3 ${ \\mathsf { C } } 0 _ { 2 }$ 特性曲线定义",
+      "parent_headings": [
+        "移动平均窗口法"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2}, \\mathrm{a,cc}} (\\overline {{v}}) = a _ {2} \\overline {{v}} + b _ {2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4642"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0267": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0267",
+      "blockid": "c280d1b5d13bb9ab2e422a61773264d5",
+      "heading": "DE.4.3 ${ \\mathsf { C } } 0 _ { 2 }$ 特性曲线定义",
+      "parent_headings": [
+        "移动平均窗口法"
+      ],
+      "format": "latex",
+      "content": "a _ {2} = \\frac {\\left(M _ {\\mathrm{CO} _ {2} , \\mathrm{d} , \\mathrm{P} _ {3}} - M _ {\\mathrm{CO} _ {2} , \\mathrm{d} , \\mathrm{P} _ {2}}\\right)}{\\overline {{V}} _ {\\mathrm{p} _ {3}} - \\overline {{V}} _ {\\mathrm{p} _ {2}}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4643"
+    },
+    "eq-e48b9ef7fd5c2049d28342dec28aecfb-0268": {
+      "id": "eq-e48b9ef7fd5c2049d28342dec28aecfb-0268",
+      "blockid": "c280d1b5d13bb9ab2e422a61773264d5",
+      "heading": "DE.4.3 ${ \\mathsf { C } } 0 _ { 2 }$ 特性曲线定义",
+      "parent_headings": [
+        "移动平均窗口法"
+      ],
+      "format": "latex",
+      "content": "b _ {2} = \\left(M _ {\\mathrm{CO} _ {2}, \\mathrm{d}, \\mathrm{P} _ {2}} - a _ {2} \\bar {V} _ {\\mathrm{p} _ {2}}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/4644"
+    }
+  }
+}

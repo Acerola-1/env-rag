@@ -1,0 +1,13 @@
+{
+ "schema": "improvement-1-errata",
+ "entries": [
+  {
+   "id": "neg-010-pg-http",
+   "scope": "reviewer 勘误（主 agent 2026-10-08）",
+   "historical_statement": "round-1 报告/评分历史行将 neg-010 pg 记为『model_failure/条件不足、HTTP 未发出、0 交付』",
+   "corrected": "账本凭证：r1/pg/neg-010 answer_llm 实发 1 次（HTTP 200），随后合同拒收致 model_failure，整题 FAIL 结论不变",
+   "handling": "历史 adjudication/报告字段不改写（评分 r3 已验收基线保持字节不变）；仅在本新代次台账登记",
+   "evidence": "reports/pg-retrieval/phase-4-round-1/eval-runtime-latest.json budget_snapshot_end events: service=answer_llm kind=issued where=r1/pg/neg-010"
+  }
+ ]
+}

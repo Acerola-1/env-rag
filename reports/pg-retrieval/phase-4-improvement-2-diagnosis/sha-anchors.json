@@ -1,0 +1,26 @@
+{
+ "note": "诊断代次锚：仅记录当前已验收改进组1代码与只读输入指纹；未改任何源码",
+ "production_sources": {
+  "src/env_rag_final/evaluation.py": "5a41ee1b58cf3ec054b501cc2fc27abb7f4149b501744c6b8eb29668ef0bc657",
+  "src/env_rag_final/answer.py": "fef50024dd1a4f1e91eeb4b5eca0f1c59f7a2f545ce40ab88c946141b1fb5d8b",
+  "src/env_rag_final/search/expand.py": "d328e76b049703aa7e872b567a67d01a38f3a7dcd3dbfec5c2e8f8aabfe97ace",
+  "src/env_rag_final/enumerate_/prose_enum.py": "ad98184ea145aae0ae0f024f0edb7bcdf1ae180bc63194a0d4888f477cf0057e",
+  "src/env_rag_final/enumerate_/table_enum.py": "8ee22a41888849402a7ce3bde795f72dccbea0757c3f249eb8f6f0daa2d0ebe8",
+  "src/env_rag_final/local_adapter.py": "0bbad9764856250085b5cefb90c9d56933bfd2f6e9ed5ed796fdd93bdf2da7e3",
+  "src/env_rag_final/fusion.py": "be1cd4c586596468efda7b9483903a407f0e214fc35e7a83355ad304ef94127e"
+ },
+ "read_only_inputs": {
+  "inputs/local/prose-enum-001-fusion.json": "907697a5987244135e2df22c83e235cb632958fe4325691bd3b879a59b81bc77",
+  "inputs/local/prose-enum-001-rerank.json": "aad4ba036d8aba315f57c20cef1faf545571f0b7aec5c7e630c94892a164d301",
+  "legs/r1/local/prose-enum-001/answer/answer-runtime-latest.json": "4a9192e1aa708bb9cc950b3f26aaf6484feb14064f13c834d0d63c95ddda6324",
+  "inputs/local/prose-enum-006-fusion.json": "c619e384f517a69f8b091e617e5da713c4e5891be3b3126df2395b257b43732a",
+  "inputs/local/prose-enum-006-rerank.json": "9284ca401b383aa280b2ed56d07d02c53540674fcda863b4b0630fa2399472d5",
+  "legs/r1/local/prose-enum-006/answer/answer-runtime-latest.json": "4f69413e90986abbde6e2d7846f6599b0a90231ed017f6fe72d0d4dc98262f87",
+  "inputs/local/neg-004-fusion.json": "72a9cfbf1187eeb8772a77454e7f49e7fa821f7b7ef1ea95a81e733e88f381e3",
+  "inputs/local/neg-004-rerank.json": "586c76d6fa42fd1503327ea0f1cfcf33f9d2c30f532aa43d1b78a9cfbbc9230f",
+  "legs/r1/local/neg-004/answer/answer-runtime-latest.json": "51b5cecb0a997caceacbf0bd7f9d7b4791fa5678168c7478b117f06baa8512a5",
+  "inputs/local/table-enum-001-fusion.json": "f7725cd619d99e20e6274172aca15033dd93181b907fe9d524dca3c75353088c",
+  "inputs/local/table-enum-001-rerank.json": "4464a151238c7f3cc4cb518b25cc3bfd098ce8535c77e798178d226484d5beb1",
+  "legs/r1/local/table-enum-001/answer/answer-runtime-latest.json": "b2c2fb3acd504207d4fa8b2b82c5ef78cf805132dae3ca886bd1d4bc3a663009"
+ }
+}

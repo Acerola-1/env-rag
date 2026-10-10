@@ -1,0 +1,113 @@
+{
+  "review_date": "2026-10-06",
+  "gate": "Gate2 re-review",
+  "result": "not passed",
+  "original13_tests": {
+    "passed": 13,
+    "source_unchanged": true
+  },
+  "tests": {
+    "before_new_counterexamples": {
+      "passed": 141,
+      "failed": 0
+    },
+    "final": {
+      "passed": 141,
+      "failed": 11
+    },
+    "evidence": "test-results.txt"
+  },
+  "checks": {
+    "ruff_check": "passed",
+    "ruff_format": "44 files passed",
+    "openspec_strict": "passed",
+    "git_diff_check": "passed",
+    "credential_leaks": 0
+  },
+  "live_evidence": {
+    "production_queries": 24,
+    "formal_cli_queries": 3,
+    "readonly": true,
+    "model_calls": 0,
+    "db_writes": 0
+  },
+  "source_after_all_cli": {
+    "public_counts": {
+      "doc_full": 221,
+      "doc_chunks": 5709,
+      "doc_status": 279,
+      "llm_cache": 16514,
+      "entity_chunks": 65527,
+      "full_entities": 221,
+      "full_relations": 221,
+      "relation_chunks": 119575
+    },
+    "catalog": {
+      "state": "current",
+      "active_run_id": "c15c741742394320",
+      "active_snapshot_id": "4919b3938ad93747",
+      "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "expected_recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "live_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "stored_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "action": ""
+    },
+    "search": {
+      "state": "current",
+      "search_id": "e3cb2a39dee53d9d",
+      "catalog_snapshot_id": "4919b3938ad93747",
+      "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+      "vocab_sha": "66edabd3b268b0fcbc6cf50c4a1ac0c066b4e7a0dc2041a3d9873e59d7f42003",
+      "index_recipe": "phase-2-v2-local-caption-identity-guard",
+      "expected_search_id": "e3cb2a39dee53d9d",
+      "reasons": []
+    },
+    "readonly": true,
+    "model_calls": 0,
+    "matches_before_all_replays": true
+  },
+  "gold": {
+    "version": "v2-gate2-corrected",
+    "questions_reexamined": 31,
+    "negative_expectations_reexamined": 10,
+    "formal_gold_frozen": false,
+    "metrics_approved": false,
+    "toc_target_errors": 3,
+    "review": "gold-review-v2.json"
+  },
+  "coverage": {
+    "total_files": 128,
+    "reviewed_files": 13,
+    "skipped_files": 115,
+    "coverage_rate": 0.1015625,
+    "accounted_for_rate": 1.0,
+    "excluded_count": 78,
+    "extra_manual_review": [
+      "tests/test_gate2_rereview.py",
+      "enumerate_/table_enum.py and tables.py sequence handling",
+      "31 gold revisions and10 expectations",
+      "real24 production reads and3 formal CLI runs"
+    ]
+  },
+  "source_sha256": {
+    "src/env_rag_final/cli.py": "14b8a492d9b412fa9885b41c4d4834dae889a012cb3d67be0ec06d8cc59f9f58",
+    "src/env_rag_final/enumerate_/table_enum.py": "8ee22a41888849402a7ce3bde795f72dccbea0757c3f249eb8f6f0daa2d0ebe8",
+    "src/env_rag_final/enumerate_/tables.py": "3f24d09271e45a5b16f46e46088e2a4830c41309636fddc2b62ea8f7ab6f90a0",
+    "src/env_rag_final/search/__init__.py": "5e1c975ee7c2d4fe82a1f9704122a8b92c72cd960053b50c9433a8041802e0b2",
+    "src/env_rag_final/search/clean.py": "316ff69e1ff00f6318d94ce993a6b0b0b23beffe74c7a7249786d407bf89056b",
+    "src/env_rag_final/search/eval.py": "06e78b727895a4777b05f80e59e4c2f172f9e92d90f2f32132b560ddd0cea8ca",
+    "src/env_rag_final/search/expand.py": "3454325886fda880e6f82a06477bd34be3cb91897275f92428e8a6cbd0ab8dae",
+    "src/env_rag_final/search/gold.py": "a7d3cee9818031d27fe9a57e08d0aa976eebba6c9f1f524a9ae1642e25594b1f",
+    "src/env_rag_final/search/index.py": "77a3619f7ee70062f50690d8d5fd5fbf3c4529a8eab8440fbb2d1c7555d2b6fc",
+    "src/env_rag_final/search/probe.py": "18137f65f1b72771ab381e33b7b558e3f6171492cca6b8b343431a5e1b6c3ba3",
+    "src/env_rag_final/search/query.py": "b7eb185d21c6531b1fb23b7ca22fb732af167be7be314edb5c9307abf90bad24",
+    "src/env_rag_final/search/tokenizer.py": "9211700b07bec289ed6c819bfab21678cdcca1e68a33d5fb1265b00bb05b65e5",
+    "src/env_rag_final/search/vocab/base.txt": "e57d3893e8e68a89df3908959aecbc3791abadfc637155631c3876cf821d5ec6",
+    "src/env_rag_final/search/vocab/stopwords.txt": "7258ab4649c3e42768791b2d483023913826c4f99b6593d5dd683a98916afe1a",
+    "src/env_rag_final/search/vocab/synonyms.txt": "ad5488268beac3a039b83e43ab62dec374ab43f9718d6178b71da6e162c5a162",
+    "tests/test_gate2_acceptance.py": "9fa939a8e66c12da60d618250b614863701b84321a7a7e0cd6f10d2b45362fa5",
+    "tests/test_gate2_rereview.py": "92190b2f57f7b08e9633dff79f63ed4650876b6a5480b996bbc3d74c213a80d7",
+    "tests/test_search_guards.py": "808a8cc0b96e9f1ac186d7235904e53abac5d7d1407c97c868cca70e6105a622"
+  },
+  "next": "handoff-phase-2-fixes-r2.md;do not enter Phase3"
+}

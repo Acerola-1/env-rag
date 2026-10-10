@@ -1,0 +1,85 @@
+........................................................................ [ 26%]
+.....................................FF................................. [ 52%]
+........................................................................ [ 78%]
+............................................................             [100%]
+=================================== FAILURES ===================================
+______________ test_malformed_gold_has_zero_call_failure_terminal ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x117e35730>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-402/test_malformed_gold_has_zero_c0')
+
+    def test_malformed_gold_has_zero_call_failure_terminal(monkeypatch, tmp_path):
+        accepted._install_local(monkeypatch, tmp_path, base._pg_result())
+        fu.GOLD_PATH.write_text("{malformed JSON")
+        captures = []
+    
+        async def capture(values):
+            captures.append(True)
+            return base._identity()
+    
+        monkeypatch.setattr(fu, "_capture_identity", capture)
+        with pytest.raises((AdapterError, json.JSONDecodeError)):
+            asyncio.run(fu.run_fusion(tmp_path, ["q-merge"]))
+        assert captures == [], "gold parse rejection must precede backend calls"
+        path = tmp_path / "fusion-runtime-latest.json"
+>       assert path.exists(), "gold JSON parse failure requires a failure terminal"
+E       AssertionError: gold JSON parse failure requires a failure terminal
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-402/test_malformed_gold_has_zero_c0/fusion-runtime-latest.json').exists
+
+tests/test_fusion_review_r2.py:28: AssertionError
+______ test_second_query_pg_failure_does_not_borrow_first_local_receipts _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x117ddbb60>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-402/test_second_query_pg_failure_d0')
+
+    def test_second_query_pg_failure_does_not_borrow_first_local_receipts(monkeypatch, tmp_path):
+        pg = base._pg_result()
+        accepted._install_local(monkeypatch, tmp_path, pg)
+        local_calls = []
+    
+        class Impl:
+            async def fetch(self, question, query_id=None, **kwargs):
+                local_calls.append(query_id)
+                result = base._local_result()
+                result.call_records = [
+                    {
+                        "service": "llm",
+                        "operation": "keyword_extraction",
+                        "status": "success",
+                        "query_id": query_id,
+                    }
+                ]
+                return result
+    
+        monkeypatch.setattr(fu, "LocalCandidateAdapter", lambda *args, **kwargs: Impl())
+        calls = []
+    
+        async def discovery(conn, question, **kwargs):
+            calls.append(question)
+            if len(calls) == 2:
+                raise TimeoutError("second query PG discovery timed out before local")
+            return pg
+    
+        monkeypatch.setattr("env_rag_final.search.query.run_query", discovery)
+        with pytest.raises(AdapterError):
+            asyncio.run(fu.run_fusion(tmp_path, ["q-merge", "q-dual"]))
+        assert local_calls == ["q-merge"]
+        terminal = json.loads((tmp_path / "fusion-runtime-latest.json").read_text())
+        assert len(terminal["results"]) == 1
+        assert terminal["identity_after"]["matches_frozen"]
+        assert "second query PG discovery" in terminal["failure"]["detail"]
+        receipts = terminal["failure_service_records"]
+>       assert receipts["query_id"] == "q-dual", "failure ledger belongs to current query"
+E       AssertionError: failure ledger belongs to current query
+E       assert 'q-merge' == 'q-dual'
+E         
+E         - q-dual
+E         + q-merge
+
+tests/test_fusion_review_r2.py:72: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_fusion_review_r2.py::test_malformed_gold_has_zero_call_failure_terminal
+FAILED tests/test_fusion_review_r2.py::test_second_query_pg_failure_does_not_borrow_first_local_receipts
+2 failed, 274 passed in 10.34s

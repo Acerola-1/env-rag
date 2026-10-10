@@ -1,0 +1,102 @@
+{
+ "query_id": "search-acc0b06490c2",
+ "workspace": "default",
+ "status": "ok",
+ "search_id": "e3cb2a39dee53d9d",
+ "catalog_snapshot_id": "4919b3938ad93747",
+ "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+ "parsed_code": {
+  "raw": "GB18466-2005",
+  "code": "GB18466",
+  "version": "2005"
+ },
+ "parsed_codes": [
+  {
+   "raw": "GB18466-2005",
+   "code": "GB18466",
+   "version": "2005"
+  }
+ ],
+ "query_text": "库内有哪些 GB18466-2005 的文档（含修改单）",
+ "candidates": [],
+ "notes": [],
+ "trace": [
+  {
+   "stage": "code_exact",
+   "code": "GB18466",
+   "version_requested": "2005",
+   "strict": false,
+   "hits": 1,
+   "version_matched": 1,
+   "selected_versions": [
+    "2005"
+   ],
+   "selected_docs": [
+    "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+   ]
+  },
+  {
+   "stage": "doc_attribution",
+   "codes": [
+    "gb18466"
+   ],
+   "emitted": 2,
+   "note": "name/title-explicit code attribution; no self_code fabricated"
+  },
+  {
+   "stage": "keyword_and",
+   "tsquery": "'修改单'",
+   "top_k": 20,
+   "restricted_to_code_docs": [
+    "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+   ],
+   "doc_hits": 0,
+   "chunk_hits": 0,
+   "elapsed_ms": 1
+  },
+  {
+   "stage": "keyword_and_diagnostics",
+   "per_term": [
+    {
+     "term": "修改单",
+     "chunk_hits": 0
+    }
+   ],
+   "absent_terms": [
+    "修改单"
+   ]
+  },
+  {
+   "stage": "keyword_no_terms_present",
+   "skipped_terms": [
+    "修改单"
+   ],
+   "note": "no term (or its synonyms) occurs in the index at all"
+  },
+  {
+   "stage": "keyword_or_original",
+   "tsquery": "'修改单'",
+   "chunk_hits": 0,
+   "note": "OR over the original terms also returned nothing"
+  },
+  {
+   "stage": "document_enumeration",
+   "predicate": "(self_code = $3 AND self_code_version IN ($4, $5)) AND (doc_name LIKE '%' || $6 || '%')",
+   "predicate_args": [
+    "GB18466",
+    "05",
+    "2005",
+    "修改单"
+   ],
+   "workspace": "default",
+   "members_total": 0,
+   "members_processed": 0,
+   "coverage_status": "complete",
+   "read_token": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+   "fail_stage": "",
+   "warnings": [],
+   "note": "full paged enumeration with the complete strong predicate — not top-k ranked discovery, not the whole corpus"
+  }
+ ],
+ "elapsed_ms": 1683
+}

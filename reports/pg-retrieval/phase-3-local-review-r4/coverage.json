@@ -1,0 +1,4779 @@
+{
+  "total_files": 680,
+  "reviewed_files": 10,
+  "skipped_files": 670,
+  "entries": [
+    {
+      "path": "pyproject.toml",
+      "git_status": "modified",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "既有配置/依赖锁/日志，N1–N3范围外；安装wheel另核验"
+    },
+    {
+      "path": "src/env_rag_final/cli.py",
+      "git_status": "modified",
+      "ocr_group": "reviewable_files",
+      "review_status": "reviewed",
+      "reason": "未变的local统计/失败分支上下文及SHA"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/.openspec.yaml",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/archive/.gitkeep",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/config.yaml",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/specs/.gitkeep",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/run-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/sample-set.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/schema.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/search-probes.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/run-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/sample-set.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/schema.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/search-probes.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/run-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/sample-set.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/schema.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/search-probes.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/fingerprint-check.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/independent-verification.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/re-review-evidence.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/recheck-a",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/verify_gate0.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/counterexamples-offline.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/cli-0.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/cli-1.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/cli-2.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/model-ambiguous.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/model-live.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/model-verification.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/ocr-preview.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/ocr-rules.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/replay-before-fix.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/replay.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/replay.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/review-comments.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/review-coverage.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/review-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/verify_model.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/ocr-preview.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/ocr-rules.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/ocr-preview.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/ocr-rules.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/replay-live.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/replay-offline.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/replay.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/review-comments.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/review-coverage.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/review-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/submitted-records-recovered.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/submitted-runs-original.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/reproduce.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/ocr-preview.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/ocr-rules.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/replay.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/replay.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/review-comments.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/review-coverage.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/review-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-comments.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-coverage.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/submitted-prose-vs-original.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/submitted-table-citations.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/benchmark.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/citation-audit.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/citation-reread.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/cli-checks.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/cli-citation-audit.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/cli-citation-reread.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/cli-replay.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/cli-runs.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/code-audit.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/code-audit.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/counterexamples-full.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/counters.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/coverage-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/final-source.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/final-source.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/guard-probes.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/guard-probes.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/initial-hashes.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/manifest.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/metrics-audit.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/metrics-audit.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/ocr-preview.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/ocr-rules.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/replay.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/replay.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/review-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/tokenizer-probes.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/gold-review.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/gold-source-proof.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/gold_source_proof.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/ocr-preview.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/ocr-rules.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/raw-gold-materials.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/cli-amendment-docs.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/cli-chapter3.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/cli-commands.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/cli-two-version-docs.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/final-source-check.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/gold-review-v2.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/ocr-preview.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/ocr-rules.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/replay.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/replay.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/review-comments.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/review-coverage.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/review-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/replay.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/replay.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-comments.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-coverage.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/benchmark.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/citation-reread.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/cli-chapter3.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/cli-file-bench.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/cli-missing-clause.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/coverage-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/files-and-final-source.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/files-and-final-source.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/finalize-manifest.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/gold-review-v3.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/index-readonly.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/index-readonly.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/ocr-preview.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/ocr-rules.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/replay.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/replay.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/review-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/review-materials.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/tokenizer-probes.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/benchmark.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/citation-reread.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/cli-file-bench.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/cli-prose006.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/coverage-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/final-source.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/final-source.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/gold-review-v4.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/gold-review.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/gold-verifier.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/manifest.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/ocr-preview.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/ocr-rules.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/replay.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/replay.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/review-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/scope-cause-and-final-source.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/scope-cause.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/tokenizer-probes.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/benchmark.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/citation-reread.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/counterexamples-full.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/counters.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/coverage-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/final-source.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/final-source.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/freeze-gold.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/gold-approved.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/gold-freeze-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/gold-review-v5.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/gold-review.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/index-readonly.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/index-readonly.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/manifest.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/ocr-preview.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/ocr-rules.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/quality-observation.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/replay.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/replay.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/review-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/tokenizer-probes.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/benchmark.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/citation-audit.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/citation-reread.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/cli-replay.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/cli-runs.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/counterexamples-full.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/counters.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/coverage-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/final-source.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/final-source.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/index-readonly.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/initial-hashes.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/manifest.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/metrics-audit.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/metrics-audit.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/ocr-preview.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/ocr-rules.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/replay.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/replay.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/review-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/tokenizer-probes.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/benchmark.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/citation-audit.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/citation-reread.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/counterexamples-full.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/counters.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/coverage-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/final-source.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/final-source.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/initial-hashes.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/manifest.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/metrics-audit.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/metrics-audit.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/ocr-preview.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/ocr-rules.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/replay.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/replay.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/requires-span-live.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/requires-span-live.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/review-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/tokenizer-probes.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/benchmark.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/citation-audit.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/citation-reread.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/counterexamples-full.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/counters.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/coverage-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/final-source.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/final-source.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/initial-hashes.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/manifest.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/metrics-audit.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/metrics-audit.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/ocr-preview.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/ocr-rules.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/replay.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/replay.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/review-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/tokenizer-probes.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/benchmark.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/citation-audit.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/citation-reread.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/counterexamples-full.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/counters.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/coverage-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/final-source.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/final-source.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/initial-hashes.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/manifest.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/metrics-audit.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/metrics-audit.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/ocr-preview.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/ocr-rules.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/replay.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/replay.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/review-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/tokenizer-probes.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review_gold.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/run-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/sample-set.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/schema.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/search-probes.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/builder-change-counterexample.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/live-verification.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/offline-counterexamples.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/re-review-evidence.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/table-link-counterexample.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/v4-live-verification.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/v4-submitted-build-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1/build-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1/structure-samples.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/bench-r2.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/bench-r3.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/bench-r4.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/bench-r5.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/bench-r6.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/bench-r7.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/bench-r8.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/bench-r9.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/explain-evidence.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/gold-candidates.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/index-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/r3-cli/cli-chapter3.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/r3-cli/cli-missing-clause.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/selfcheck-machinery.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/tokenizer-probes.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r2/local-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r2/local-runtime-20261007T000458.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r2/local-runtime-latest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r3/local-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r3/local-runtime-20261007T005429.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r3/local-runtime-latest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r4/local-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "reviewed",
+      "reason": "提交五项SHA与身份/调用声明"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r4/local-runtime-20261007T012421.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "同代次日期/JSONL重复证据，以当前latest和manifest核验为准"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r4/local-runtime-latest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "reviewed",
+      "reason": "逐题记录/覆盖字段核对"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r2/coverage.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r2/findings.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r2/live-inventory.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r2/live-inventory.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r2/ocr-preview.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r2/ocr-rules.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r2/review-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r2/static-evidence.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/coverage.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/findings.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/live-inventory.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/live-inventory.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/ocr-preview.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/ocr-rules.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/review-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/static-evidence.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/submitted-runtime-audit.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r4/ocr-preview.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮审查工具元数据，非提交功能实现"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/coverage.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/findings.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/live-inventory.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/live-inventory.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/ocr-preview.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/ocr-rules.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/review-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/static-evidence.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/submission-jsonl-audit.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local/local-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local/local-runtime-20261006T221622.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local/local-runtime-20261006T221804.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local/local-runtime-20261006T221837.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local/local-runtime-20261006T222510.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local/local-runtime-latest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r3/compat-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r3/compat-run-record-compat-c747236f3cde.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r3/compat-runtime-probes-20261006T185724.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r3/compat-runtime-probes-latest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r4/compat-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r4/compat-run-record-compat-6ac185c09ad6.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r4/compat-runtime-probes-20261006T203207.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r4/compat-runtime-probes-latest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r5/compat-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r5/compat-run-record-compat-f17917f2f455.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r5/compat-runtime-probes-20261006T210250.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r5/compat-runtime-probes-latest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r2/coverage.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r2/independent-runtime.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r2/independent-runtime.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r2/ocr-preview.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r2/ocr-rules.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r2/old-count-test-audit.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r2/review-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r3/coverage.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r3/independent-runtime.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r3/independent-runtime.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r3/ocr-preview.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r3/ocr-rules.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r3/review-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r4/coverage.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r4/formal-cli/compat-run-record-compat-d191627fe5e9.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r4/formal-cli/compat-runtime-probes-20261006T204516.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r4/formal-cli/compat-runtime-probes-latest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r4/ocr-preview.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r4/ocr-rules.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r4/review-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/coverage.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/database-inventory-readonly.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/formal-cli/compat-run-record-compat-1d137f8354a2.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/formal-cli/compat-runtime-probes-20261006T211251.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/formal-cli/compat-runtime-probes-latest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/ocr-preview.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/ocr-rules.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/partial-live-review.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/partial-live-verification.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/partial-live/compat-run-record-compat-05cfc6e51e4a.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/partial-live/compat-runtime-probes-20261006T211650.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/partial-live/compat-runtime-probes-20261006T211651.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/partial-live/compat-runtime-probes-latest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/review-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/wheel-verification.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review/coverage.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review/independent-runtime-initial-partial.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review/independent-runtime.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review/independent-runtime.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review/ocr-preview.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review/ocr-rules.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review/review-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-manifest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-runtime-probes-20261006T172624.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-runtime-probes-20261006T172734.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-runtime-probes-20261006T173148.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-runtime-probes-20261006T173259.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-runtime-probes-20261006T173629.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-runtime-probes-20261006T173701.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-runtime-probes-20261006T173804.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-runtime-probes-20261006T173924.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-runtime-probes-20261006T174203.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-runtime-probes-20261006T174517.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-runtime-probes-latest.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compat-runtime-probes.json",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "src/env_rag_final/audit/__init__.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/audit/collect.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/audit/compat.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/audit/identity.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/audit/lexical.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/audit/pg.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/audit/probes.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/audit/samples.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/audit/snapshot.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/catalog/__init__.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/catalog/builder.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/catalog/lexical_norm.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/catalog/metadata.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/catalog/schema.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/catalog/scopes.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/catalog/source.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/catalog/units.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/compat_runtime.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/__init__.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/contract.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/doc_enum.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/prose_enum.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/table_enum.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/tables.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/local_adapter.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "reviewed",
+      "reason": "本轮N1–N3更改与必要调用链"
+    },
+    {
+      "path": "src/env_rag_final/search/__init__.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/search/clean.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/search/eval.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/search/expand.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/search/gold.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/search/index.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/search/probe.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/search/query.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/search/tokenizer.py",
+      "git_status": "added",
+      "ocr_group": "reviewable_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "README.md",
+      "git_status": "modified",
+      "ocr_group": "excluded_files",
+      "review_status": "reviewed",
+      "reason": "当前检查点状态更新"
+    },
+    {
+      "path": "uv.lock",
+      "git_status": "modified",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "既有配置/依赖锁/日志，N1–N3范围外；安装wheel另核验"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/README.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/design.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-0-fixes.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-0.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-1-enumeration-fixes-r2.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-1-enumeration-fixes-r3.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-1-enumeration-fixes.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-1-enumeration.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-1-fixes.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-1.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-2-fixes-r2.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-2-fixes-r3.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-2-fixes-r4.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-2-fixes-r5.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-2-fixes-r6.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-2-fixes-r7.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-2-fixes-r8.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-2-fixes-r9.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-2-fixes.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-2.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-3-5.2-fixes-r2.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-3-5.2-fixes-r3.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-3-5.2-fixes.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-3-5.2.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-3-fixes-r2.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-3-fixes-r3.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-3-fixes-r4.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-3-fixes.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-3.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/proposal.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/specs/corpus-evidence-catalog/spec.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/specs/pg-scoped-retrieval/spec.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/specs/retrieval-evaluation/spec.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/specs/retrieval-fusion/spec.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "总体计划与历史交接，本轮仅N1–N3，不推进后续阶段"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/tasks.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "reviewed",
+      "reason": "仅当前5.2状态及后续边界"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/audit.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/compatibility.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/inventory.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/mapping-samples.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/audit.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/changelog-vs-first-run.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/compatibility.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/inventory.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/mapping-samples.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/audit.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/compatibility.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/inventory.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/mapping-samples.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/review.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/model-live-cli.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/review.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/submitted-report.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/submitted-tasks.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/test-results.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/review.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/submitted-report.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/acceptance-results.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/all-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/review.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/submitted-report.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/submitted-runs.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/submitted-enumeration-runs.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/submitted-report.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/benchmark-runs.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/cli-category.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/cli-prose-direct.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/cli-table_top1.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/counters-output.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/phase-2-report-before-final.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/readme-before-final.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/replay-output.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/review.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/tasks-before-final.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/final-review/test-results.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/independent-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/independent-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/review.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/submitted-fixes-report.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/submitted-tasks.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/test-results.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/benchmark-runs.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/counterexample-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/review.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/test-results.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/benchmark-runs.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/new-counterexamples.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/review.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/submitted-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/test-results.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/benchmark-runs.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/new-counterexamples.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/review.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/submitted-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/test-results.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/benchmark-runs.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/cli-category.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/cli-table_top1.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/counters-output.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/new-counterexamples.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/replay-output.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/review.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/test-results-with-counterexample.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r6/test-results.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/benchmark-runs.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/counters-output.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/new-counterexamples.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/replay-output.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/review.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/submitted-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r7/test-results.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/benchmark-runs.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/counters-output.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/new-counterexamples.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/replay-output.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/review.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/submitted-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r8/test-results.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/benchmark-runs.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/counters-output.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/new-counterexamples.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/replay-output.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/review.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/submitted-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r9/test-results.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/submitted-report.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/submitted-tasks.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/test-results.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/audit.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/compatibility.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/inventory.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/mapping-samples.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/review.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/v4-submitted-structure-report.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1/enumeration-runs.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1/report.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1/structure-report.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/counterexamples-r2.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/counterexamples.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/failure-cases.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/replay-r2.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/report-gate2-fixes-r2.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/report-gate2-fixes-r3.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/report-gate2-fixes-r4.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/report-gate2-fixes-r5.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/report-gate2-fixes-r6.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/report-gate2-fixes-r7.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/report-gate2-fixes-r8.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/report-gate2-fixes-r9.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/report-gate2-fixes.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/report.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/search-runs.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r2/local-candidates-latest.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r2/local-runtime.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r3/local-candidates-latest.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r3/local-runtime.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r4/local-candidates-latest.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "同代次日期/JSONL重复证据，以当前latest和manifest核验为准"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-r4/local-runtime.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "reviewed",
+      "reason": "本轮报告与实现/用例对照"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r2/acceptance-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r2/all-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r2/diff-check.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r2/openspec-check.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r2/review.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r2/ruff-check.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r2/ruff-format.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r2/submitted-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/acceptance-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/all-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/diff-check.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/openspec-check.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/review.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/ruff-check.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/ruff-format.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review-r3/submitted-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/acceptance-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/all-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/diff-check.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/openspec-check.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/review.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/ruff-check.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local-review/ruff-format.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local/local-candidates-latest.jsonl",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-local/local-runtime.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r3/compatibility-runtime.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r4/compatibility-runtime.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-r5/compatibility-runtime.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r2/acceptance-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r2/all-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r2/diff-check.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r2/independent-runtime-output.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r2/openspec-check.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r2/review.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r2/ruff-check.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r2/ruff-format.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r3/acceptance-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r3/all-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r3/diff-check.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r3/independent-runtime-output.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r3/openspec-check.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r3/review.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r3/ruff-check.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r3/ruff-format.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r4/acceptance-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r4/all-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r4/diff-check.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r4/formal-cli-output.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r4/openspec-check.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r4/review.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r4/ruff-check.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r4/ruff-format.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/all-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/diff-check.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/formal-cli-output.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/openspec-check.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/partial-live-output.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/review.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/ruff-check.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review-r5/ruff-format.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review/acceptance-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review/all-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review/checks.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review/independent-runtime-output.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review/review.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-review/submitted-tests.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3/compatibility-runtime.md",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "历史阶段运行/审查交付，不重新验收已通过阶段"
+    },
+    {
+      "path": "src/env_rag_final/search/vocab/base.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/search/vocab/stopwords.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "src/env_rag_final/search/vocab/synonyms.txt",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "tests/test_audit_fixtures.py",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "tests/test_catalog_phase1.py",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "tests/test_enumeration.py",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "tests/test_gate1_acceptance.py",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "tests/test_gate2_acceptance.py",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "tests/test_gate2_rereview.py",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "tests/test_gate2_review_r3.py",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "tests/test_gate2_review_r4.py",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "tests/test_gate2_review_r5.py",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "tests/test_gate2_review_r6.py",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "tests/test_gate2_review_r7.py",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "tests/test_gate2_review_r8.py",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "tests/test_gate2_review_r9.py",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "tests/test_local_adapter.py",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "tests/test_local_adapter_review.py",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "reviewed",
+      "reason": "原10项与SHA核验"
+    },
+    {
+      "path": "tests/test_local_adapter_review_r2.py",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "reviewed",
+      "reason": "原8项与SHA、fixture接缝核验"
+    },
+    {
+      "path": "tests/test_local_adapter_review_r3.py",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "reviewed",
+      "reason": "原6项与SHA、N1–N3修复对照"
+    },
+    {
+      "path": "tests/test_phase3_compat_review.py",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "tests/test_phase3_compat_review_r2.py",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "tests/test_phase3_compat_review_r3.py",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "tests/test_phase3_compat_review_r4.py",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "tests/test_phase3_compat_review_r5.py",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "tests/test_search_guards.py",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    },
+    {
+      "path": "tests/test_search_phase2.py",
+      "git_status": "added",
+      "ocr_group": "excluded_files",
+      "review_status": "skipped",
+      "reason": "本轮N1–N3范围外既有实现/断言，完整测试保留；5.1 SHA另核验"
+    }
+  ],
+  "additional_context": [
+    "installed Qdrant get_vectors_by_ids ID mapping/vector filter",
+    "installed VECTOR helper fallback",
+    "previous N1–N3 review and contract",
+    "compat_runtime readonly identity APIs"
+  ],
+  "new_review_artifacts": [
+    "tests/test_local_adapter_review_r4.py",
+    "current review/evidence/checks",
+    "handoff-phase-3-5.2-fixes-r4.md"
+  ],
+  "coverage_rate": 0.014705882352941176
+}

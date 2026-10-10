@@ -1,0 +1,197 @@
+{
+  "read_only": true,
+  "storage_initialize_calls": 0,
+  "model_calls": 0,
+  "before": {
+    "when": "before",
+    "public_counts": {
+      "lightrag_doc_full": 221,
+      "lightrag_doc_chunks": 5709,
+      "lightrag_doc_status": 279,
+      "lightrag_llm_cache": 16514,
+      "lightrag_entity_chunks": 65527,
+      "lightrag_full_entities": 221,
+      "lightrag_full_relations": 221,
+      "lightrag_relation_chunks": 119575
+    },
+    "catalog_active": {
+      "run_id": "c15c741742394320",
+      "snapshot_id": "4919b3938ad93747"
+    },
+    "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "search_active": "872d689343a9cbb6",
+    "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+    "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+  },
+  "frozen_problems_before": [],
+  "qdrant": {
+    "lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d": {
+      "points_count": 5709,
+      "vectors": {
+        "size": 2560,
+        "distance": "Cosine",
+        "hnsw_config": null,
+        "quantization_config": null,
+        "on_disk": null,
+        "memory": null,
+        "datatype": null,
+        "multivector_config": null
+      },
+      "payload_schema": {
+        "workspace_id": {
+          "data_type": "keyword",
+          "params": {
+            "type": "keyword",
+            "is_tenant": true,
+            "on_disk": null,
+            "memory": null,
+            "enable_hnsw": null,
+            "prefix": null
+          },
+          "points": 5709
+        }
+      }
+    },
+    "lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d": {
+      "points_count": 65526,
+      "vectors": {
+        "size": 2560,
+        "distance": "Cosine",
+        "hnsw_config": null,
+        "quantization_config": null,
+        "on_disk": null,
+        "memory": null,
+        "datatype": null,
+        "multivector_config": null
+      },
+      "payload_schema": {
+        "workspace_id": {
+          "data_type": "keyword",
+          "params": {
+            "type": "keyword",
+            "is_tenant": true,
+            "on_disk": null,
+            "memory": null,
+            "enable_hnsw": null,
+            "prefix": null
+          },
+          "points": 65526
+        }
+      }
+    },
+    "lightrag_vdb_relationships_qwen_qwen3_embedding_4b_2560d": {
+      "points_count": 119574,
+      "vectors": {
+        "size": 2560,
+        "distance": "Cosine",
+        "hnsw_config": null,
+        "quantization_config": null,
+        "on_disk": null,
+        "memory": null,
+        "datatype": null,
+        "multivector_config": null
+      },
+      "payload_schema": {
+        "workspace_id": {
+          "data_type": "keyword",
+          "params": {
+            "type": "keyword",
+            "is_tenant": true,
+            "on_disk": null,
+            "memory": null,
+            "enable_hnsw": null,
+            "prefix": null
+          },
+          "points": 119574
+        }
+      }
+    }
+  },
+  "neo4j": {
+    "nodes": 66069,
+    "relationships": 121819,
+    "indexes": [
+      {
+        "name": "entity_id_fulltext_idx_base",
+        "state": "ONLINE",
+        "type": "FULLTEXT",
+        "labelsOrTypes": [
+          "base"
+        ],
+        "properties": [
+          "entity_id"
+        ]
+      },
+      {
+        "name": "entity_id_fulltext_idx_default",
+        "state": "ONLINE",
+        "type": "FULLTEXT",
+        "labelsOrTypes": [
+          "default"
+        ],
+        "properties": [
+          "entity_id"
+        ]
+      },
+      {
+        "name": "index_343aff4e",
+        "state": "ONLINE",
+        "type": "LOOKUP",
+        "labelsOrTypes": null,
+        "properties": null
+      },
+      {
+        "name": "index_599f5995",
+        "state": "ONLINE",
+        "type": "RANGE",
+        "labelsOrTypes": [
+          "default"
+        ],
+        "properties": [
+          "entity_id"
+        ]
+      },
+      {
+        "name": "index_f5e5c6f5",
+        "state": "ONLINE",
+        "type": "RANGE",
+        "labelsOrTypes": [
+          "base"
+        ],
+        "properties": [
+          "entity_id"
+        ]
+      },
+      {
+        "name": "index_f7700477",
+        "state": "ONLINE",
+        "type": "LOOKUP",
+        "labelsOrTypes": null,
+        "properties": null
+      }
+    ]
+  },
+  "after": {
+    "when": "after",
+    "public_counts": {
+      "lightrag_doc_full": 221,
+      "lightrag_doc_chunks": 5709,
+      "lightrag_doc_status": 279,
+      "lightrag_llm_cache": 16514,
+      "lightrag_entity_chunks": 65527,
+      "lightrag_full_entities": 221,
+      "lightrag_full_relations": 221,
+      "lightrag_relation_chunks": 119575
+    },
+    "catalog_active": {
+      "run_id": "c15c741742394320",
+      "snapshot_id": "4919b3938ad93747"
+    },
+    "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "search_active": "872d689343a9cbb6",
+    "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+    "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+  },
+  "frozen_problems_after": [],
+  "drift": []
+}

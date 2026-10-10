@@ -1,0 +1,51 @@
+{
+ "task": "5.1 runtime compatibility (rev 3, D1-D4 remediation final clean run)",
+ "generated_at": "2026-10-06T19:01:47+0800",
+ "command_run": "uv run python -m env_rag_final.compat_runtime --report-dir reports/pg-retrieval/phase-3-r3",
+ "probe_run_id": "compat-c747236f3cde",
+ "files_sha256": {
+  "src/env_rag_final/compat_runtime.py": "0717b2295ed53a76cbdaff1e2e34eb6f0d1705f9b5d1097f661475484662c238",
+  "reports/pg-retrieval/phase-3-r3/compatibility-runtime.md": "87f4775e3925919d0509c09261e70c7dfb5b0d3dd53670ea7d7a69f48e5d7ac1",
+  "reports/pg-retrieval/phase-3-r3/compat-runtime-probes-latest.json": "25b53d7ed4e37ee5508a30b9038e50ceb0198e568bcf196c6a131434faffec22",
+  "reports/pg-retrieval/gate-2/review-r5/gold-approved.json": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "tests/test_phase3_compat_review_r3.py": "0947a117d0765adcfe939d208e9cdb3bc91a15e59f968088f00e401248956069"
+ },
+ "environment": {
+  "release": "lightrag-hku 1.5.7 (uv.lock)",
+  "python": "3.12 (.venv site-packages only)",
+  "scratch_database": "per-run unique name + probe_ownership(run_id, secret, db_oid); three-part OID verification; no terminate-by-name; private 0600 recovery record per run",
+  "production_database": "rag (read-only identity guards before/after incl. catalog run + env sha drift; never initialized by LightRAG)",
+  "model_calls": 0,
+  "embedding_service_calls": 0
+ },
+ "frozen_inputs": {
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_snapshot_id": "4919b3938ad93747",
+  "catalog_run_id": "c15c741742394320",
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "public_counts": {
+   "doc_full": 221,
+   "doc_chunks": 5709,
+   "doc_status": 279,
+   "llm_cache": 16514,
+   "entity_chunks": 65527,
+   "full_entities": 221,
+   "full_relations": 221,
+   "relation_chunks": 119575
+  }
+ },
+ "live_rejection_proofs": {
+  "D1_tampered_marker_oid": "refused (ownership marker mismatch); DB intact; 0 sessions terminated; repaired marker -> dropped",
+  "D1_foreign_session": "refused (1 foreign session refusing cleanup); 0 terminated; after leave -> dropped",
+  "D2_pre_guard_wrong_catalog_run": "refused before acquire; leftover probe dbs = []",
+  "D2_env_sha_drift": "post-guard refused: .env sha changed",
+  "D3_post_capture_error": "refused; failure report stage=after-capture-error; cleanup executed; recovery record present",
+  "D4_probe_contract_violation": "whole run failed (required OK got FAIL); failure recorded; cleanup done; no finished_at"
+ },
+ "tests": {
+  "total": 208,
+  "r3_new": 19,
+  "note": "208 passed; no assertion deleted/xfail/weakened"
+ }
+}

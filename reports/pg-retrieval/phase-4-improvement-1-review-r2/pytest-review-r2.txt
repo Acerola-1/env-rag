@@ -1,0 +1,54 @@
+FF.                                                                      [100%]
+=================================== FAILURES ===================================
+________ test_caption_cannot_reset_attributed_embedded_table[\u8868 1] _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x113458e00>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-729/test_caption_cannot_reset_attr0')
+caption = '表 1'
+
+    @pytest.mark.parametrize("caption", ["表 1", "## 表 1 限值"])
+    def test_caption_cannot_reset_attributed_embedded_table(monkeypatch, tmp_path, caption):
+        text = (
+            "## 4 章规定\n4.1 本条限值见下表：\n"
+            f"{caption}\n"
+            '<table id="tb-o"><tr><td>总汞</td><td>0.05</td></tr></table>\n'
+            "本条补充要求：每日监测一次。\n4.2 下一条独立要求。"
+        )
+        conn, question, fp, rp = own._own_fixture(tmp_path, monkeypatch, {"own-u1": text})
+        report = own._own_run(monkeypatch, tmp_path, conn, question, fp, rp)
+        out = report["results"][0]
+        items = out["answer"]["items"]
+        if out["coverage_status"] == "complete":
+            clause = next(it for it in items if it.get("clause") == "4.1")
+>           assert "总汞" in clause["text"] and "0.05" in clause["text"]
+E           AssertionError: assert ('总汞' in '4.1 本条限值见下表：\n表 1')
+
+reports/pg-retrieval/phase-4-improvement-1-review-r2/test_improvement1_review_r2.py:30: AssertionError
+_ test_caption_cannot_reset_attributed_embedded_table[## \u8868 1 \u9650\u503c] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11345b3e0>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-729/test_caption_cannot_reset_attr1')
+caption = '## 表 1 限值'
+
+    @pytest.mark.parametrize("caption", ["表 1", "## 表 1 限值"])
+    def test_caption_cannot_reset_attributed_embedded_table(monkeypatch, tmp_path, caption):
+        text = (
+            "## 4 章规定\n4.1 本条限值见下表：\n"
+            f"{caption}\n"
+            '<table id="tb-o"><tr><td>总汞</td><td>0.05</td></tr></table>\n'
+            "本条补充要求：每日监测一次。\n4.2 下一条独立要求。"
+        )
+        conn, question, fp, rp = own._own_fixture(tmp_path, monkeypatch, {"own-u1": text})
+        report = own._own_run(monkeypatch, tmp_path, conn, question, fp, rp)
+        out = report["results"][0]
+        items = out["answer"]["items"]
+        if out["coverage_status"] == "complete":
+            clause = next(it for it in items if it.get("clause") == "4.1")
+>           assert "总汞" in clause["text"] and "0.05" in clause["text"]
+E           AssertionError: assert ('总汞' in '4.1 本条限值见下表：\n## 表 1 限值')
+
+reports/pg-retrieval/phase-4-improvement-1-review-r2/test_improvement1_review_r2.py:30: AssertionError
+=========================== short test summary info ============================
+FAILED reports/pg-retrieval/phase-4-improvement-1-review-r2/test_improvement1_review_r2.py::test_caption_cannot_reset_attributed_embedded_table[\u8868 1]
+FAILED reports/pg-retrieval/phase-4-improvement-1-review-r2/test_improvement1_review_r2.py::test_caption_cannot_reset_attributed_embedded_table[## \u8868 1 \u9650\u503c]
+2 failed, 1 passed in 1.18s

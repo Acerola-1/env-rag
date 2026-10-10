@@ -1,0 +1,557 @@
+{
+  "positive_questions_with_explicit_codes": 28,
+  "code_version_route_checks": 30,
+  "passed": 30,
+  "accuracy": 1.0,
+  "checks": [
+    {
+      "query_id": "fact-001",
+      "requested": {
+        "raw": "GB 3095-2012",
+        "code": "GB3095",
+        "version": "2012"
+      },
+      "selected_docs": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      ],
+      "expected_docs": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      ],
+      "selected_versions": [
+        "2012"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "fact-002",
+      "requested": {
+        "raw": "GB 8978-1996",
+        "code": "GB8978",
+        "version": "1996"
+      },
+      "selected_docs": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4"
+      ],
+      "expected_docs": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4"
+      ],
+      "selected_versions": [
+        "1996"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "fact-003",
+      "requested": {
+        "raw": "GB 18466-2005",
+        "code": "GB18466",
+        "version": "2005"
+      },
+      "selected_docs": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+      ],
+      "expected_docs": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+      ],
+      "selected_versions": [
+        "2005"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "fact-004",
+      "requested": {
+        "raw": "GB 3838-2002",
+        "code": "GB3838",
+        "version": "2002"
+      },
+      "selected_docs": [
+        "doc-91f9049decde09153368d4b69f280e78"
+      ],
+      "expected_docs": [
+        "doc-91f9049decde09153368d4b69f280e78"
+      ],
+      "selected_versions": [
+        "2002"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "fact-005",
+      "requested": {
+        "raw": "GB 14554-93",
+        "code": "GB14554",
+        "version": "93"
+      },
+      "selected_docs": [
+        "doc-d6d711b0614234635955480a53f52a10"
+      ],
+      "expected_docs": [
+        "doc-d6d711b0614234635955480a53f52a10"
+      ],
+      "selected_versions": [
+        "93"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "fact-006",
+      "requested": {
+        "raw": "GB 3095-2012",
+        "code": "GB3095",
+        "version": "2012"
+      },
+      "selected_docs": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      ],
+      "expected_docs": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      ],
+      "selected_versions": [
+        "2012"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "fact-007",
+      "requested": {
+        "raw": "GB 8978-1996",
+        "code": "GB8978",
+        "version": "1996"
+      },
+      "selected_docs": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4"
+      ],
+      "expected_docs": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4"
+      ],
+      "selected_versions": [
+        "1996"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "file-enum-001",
+      "requested": {
+        "raw": "GB 3095",
+        "code": "GB3095",
+        "version": null
+      },
+      "selected_docs": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1"
+      ],
+      "expected_docs": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1"
+      ],
+      "selected_versions": [
+        "2012",
+        "2026"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "file-enum-005",
+      "requested": {
+        "raw": "GB 18466-2005",
+        "code": "GB18466",
+        "version": "2005"
+      },
+      "selected_docs": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+      ],
+      "expected_docs": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "doc-9bb11e5d3809e590259aef28fb61062b",
+        "doc-b423a0e3331541588988fd34496c349d"
+      ],
+      "selected_versions": [
+        "2005"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "file-enum-006",
+      "requested": {
+        "raw": "GB 3838",
+        "code": "GB3838",
+        "version": null
+      },
+      "selected_docs": [
+        "doc-91f9049decde09153368d4b69f280e78"
+      ],
+      "expected_docs": [
+        "doc-91f9049decde09153368d4b69f280e78"
+      ],
+      "selected_versions": [
+        "2002"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "prose-enum-001",
+      "requested": {
+        "raw": "GB 18466-2005",
+        "code": "GB18466",
+        "version": "2005"
+      },
+      "selected_docs": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+      ],
+      "expected_docs": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+      ],
+      "selected_versions": [
+        "2005"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "prose-enum-002",
+      "requested": {
+        "raw": "GB 18466-2005",
+        "code": "GB18466",
+        "version": "2005"
+      },
+      "selected_docs": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+      ],
+      "expected_docs": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+      ],
+      "selected_versions": [
+        "2005"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "prose-enum-003",
+      "requested": {
+        "raw": "GB 8978-1996",
+        "code": "GB8978",
+        "version": "1996"
+      },
+      "selected_docs": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4"
+      ],
+      "expected_docs": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4"
+      ],
+      "selected_versions": [
+        "1996"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "prose-enum-004",
+      "requested": {
+        "raw": "GB 3838-2002",
+        "code": "GB3838",
+        "version": "2002"
+      },
+      "selected_docs": [
+        "doc-91f9049decde09153368d4b69f280e78"
+      ],
+      "expected_docs": [
+        "doc-91f9049decde09153368d4b69f280e78"
+      ],
+      "selected_versions": [
+        "2002"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "prose-enum-005",
+      "requested": {
+        "raw": "GB 14554-93",
+        "code": "GB14554",
+        "version": "93"
+      },
+      "selected_docs": [
+        "doc-d6d711b0614234635955480a53f52a10"
+      ],
+      "expected_docs": [
+        "doc-d6d711b0614234635955480a53f52a10"
+      ],
+      "selected_versions": [
+        "93"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "prose-enum-006",
+      "requested": {
+        "raw": "GB 3095-2012",
+        "code": "GB3095",
+        "version": "2012"
+      },
+      "selected_docs": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      ],
+      "expected_docs": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      ],
+      "selected_versions": [
+        "2012"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "table-enum-001",
+      "requested": {
+        "raw": "GB 8978-1996",
+        "code": "GB8978",
+        "version": "1996"
+      },
+      "selected_docs": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4"
+      ],
+      "expected_docs": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4"
+      ],
+      "selected_versions": [
+        "1996"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "table-enum-002",
+      "requested": {
+        "raw": "GB 3095-2012",
+        "code": "GB3095",
+        "version": "2012"
+      },
+      "selected_docs": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      ],
+      "expected_docs": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      ],
+      "selected_versions": [
+        "2012"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "table-enum-003",
+      "requested": {
+        "raw": "GB 14554-93",
+        "code": "GB14554",
+        "version": "93"
+      },
+      "selected_docs": [
+        "doc-d6d711b0614234635955480a53f52a10"
+      ],
+      "expected_docs": [
+        "doc-d6d711b0614234635955480a53f52a10"
+      ],
+      "selected_versions": [
+        "93"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "table-enum-004",
+      "requested": {
+        "raw": "GB 3838-2002",
+        "code": "GB3838",
+        "version": "2002"
+      },
+      "selected_docs": [
+        "doc-91f9049decde09153368d4b69f280e78"
+      ],
+      "expected_docs": [
+        "doc-91f9049decde09153368d4b69f280e78"
+      ],
+      "selected_versions": [
+        "2002"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "table-enum-005",
+      "requested": {
+        "raw": "GB 18466-2005",
+        "code": "GB18466",
+        "version": "2005"
+      },
+      "selected_docs": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+      ],
+      "expected_docs": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+      ],
+      "selected_versions": [
+        "2005"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "table-enum-006",
+      "requested": {
+        "raw": "GB 3095-2012",
+        "code": "GB3095",
+        "version": "2012"
+      },
+      "selected_docs": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      ],
+      "expected_docs": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      ],
+      "selected_versions": [
+        "2012"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "syn-001",
+      "requested": {
+        "raw": "GB 3095-2012",
+        "code": "GB3095",
+        "version": "2012"
+      },
+      "selected_docs": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      ],
+      "expected_docs": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1"
+      ],
+      "selected_versions": [
+        "2012"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "syn-001",
+      "requested": {
+        "raw": "GB 3095-2026",
+        "code": "GB3095",
+        "version": "2026"
+      },
+      "selected_docs": [
+        "doc-4c883d21fa02a53189e0911c3d59d1d1"
+      ],
+      "expected_docs": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1"
+      ],
+      "selected_versions": [
+        "2026"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "syn-002",
+      "requested": {
+        "raw": "GB 18466-2005",
+        "code": "GB18466",
+        "version": "2005"
+      },
+      "selected_docs": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+      ],
+      "expected_docs": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+      ],
+      "selected_versions": [
+        "2005"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "syn-003",
+      "requested": {
+        "raw": "GB 8978-1996",
+        "code": "GB8978",
+        "version": "1996"
+      },
+      "selected_docs": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4"
+      ],
+      "expected_docs": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4"
+      ],
+      "selected_versions": [
+        "1996"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "syn-004",
+      "requested": {
+        "raw": "GB 3838-2002",
+        "code": "GB3838",
+        "version": "2002"
+      },
+      "selected_docs": [
+        "doc-91f9049decde09153368d4b69f280e78"
+      ],
+      "expected_docs": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "doc-91f9049decde09153368d4b69f280e78"
+      ],
+      "selected_versions": [
+        "2002"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "syn-004",
+      "requested": {
+        "raw": "GB 3095-2012",
+        "code": "GB3095",
+        "version": "2012"
+      },
+      "selected_docs": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      ],
+      "expected_docs": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "doc-91f9049decde09153368d4b69f280e78"
+      ],
+      "selected_versions": [
+        "2012"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "syn-005",
+      "requested": {
+        "raw": "GB 18466-2005",
+        "code": "GB18466",
+        "version": "2005"
+      },
+      "selected_docs": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+      ],
+      "expected_docs": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+      ],
+      "selected_versions": [
+        "2005"
+      ],
+      "passed": true
+    },
+    {
+      "query_id": "syn-006",
+      "requested": {
+        "raw": "GB 8978-1996",
+        "code": "GB8978",
+        "version": "1996"
+      },
+      "selected_docs": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4"
+      ],
+      "expected_docs": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4"
+      ],
+      "selected_versions": [
+        "1996"
+      ],
+      "passed": true
+    }
+  ]
+}

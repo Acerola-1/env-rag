@@ -1,0 +1,239 @@
+{
+  "version": "1.0",
+  "equations": {
+    "eq-64d67950d80445ca374bea49d8f39322-0001": {
+      "id": "eq-64d67950d80445ca374bea49d8f39322-0001",
+      "blockid": "b2139da23d44013f115d3b862625c656",
+      "heading": "4) Sediment Evaluation",
+      "parent_headings": [
+        "WATER QUALITY CONTROL PLAN FOR ENCLOSED BAYS AND ESTUARIES OF CALIFORNIA"
+      ],
+      "format": "latex",
+      "content": "\\text { Equation   4 } \\quad T _ {\\text { Sed }} = (T _ {\\text { Tis }}) / (\\text { BSAF })",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/287"
+    },
+    "eq-64d67950d80445ca374bea49d8f39322-0002": {
+      "id": "eq-64d67950d80445ca374bea49d8f39322-0002",
+      "blockid": "f065daf928590e60b3ed71b7b6ffe4e8",
+      "heading": "3) Chemical Exposure Evaluation",
+      "parent_headings": [
+        "WATER QUALITY CONTROL PLAN FOR ENCLOSED BAYS AND ESTUARIES OF CALIFORNIA"
+      ],
+      "format": "latex",
+      "content": "\\text { Equation   5 } \\quad C _ {\\text { Est }} / C _ {\\text { Tis }} = \\text { Site   Linkage   Factor }",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/352"
+    },
+    "eq-64d67950d80445ca374bea49d8f39322-0003": {
+      "id": "eq-64d67950d80445ca374bea49d8f39322-0003",
+      "blockid": "f065daf928590e60b3ed71b7b6ffe4e8",
+      "heading": "3) Chemical Exposure Evaluation",
+      "parent_headings": [
+        "WATER QUALITY CONTROL PLAN FOR ENCLOSED BAYS AND ESTUARIES OF CALIFORNIA"
+      ],
+      "format": "latex",
+      "content": "\\text { Equation   6 } \\quad C _ {\\text { Esti }} = \\sum C _ {\\text { Sed }} \\times B S A F _ {i} \\times S U F _ {i}.",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/357"
+    },
+    "eq-64d67950d80445ca374bea49d8f39322-0004": {
+      "id": "eq-64d67950d80445ca374bea49d8f39322-0004",
+      "blockid": "6431936c0e5646195642f64b715b3b94",
+      "heading": "5) Calculation of BSAF",
+      "parent_headings": [
+        "WATER QUALITY CONTROL PLAN FOR ENCLOSED BAYS AND ESTUARIES OF CALIFORNIA"
+      ],
+      "format": "latex",
+      "content": "6) \\quad \\text { Calculation   of   Site   Linkage   Distribution }",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/382"
+    },
+    "eq-64d67950d80445ca374bea49d8f39322-0005": {
+      "id": "eq-64d67950d80445ca374bea49d8f39322-0005",
+      "blockid": "95a2ed4772f26de908fd971eea34355a",
+      "heading": "Model Constants",
+      "parent_headings": [
+        "APPENDIX A-8: BIOACCUMULATION MODEL COMPONENTS"
+      ],
+      "format": "latex",
+      "content": "\\log K _ {\\mathrm{OW}} E _ {T} = \\log K _ {\\mathrm{OW}} D _ {T} - \\frac {\\varDelta U _ {o w}}{\\ln (1 0) * R} * \\left(\\frac {1}{E _ {T}} - \\frac {1}{D _ {T}}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/711"
+    },
+    "eq-64d67950d80445ca374bea49d8f39322-0006": {
+      "id": "eq-64d67950d80445ca374bea49d8f39322-0006",
+      "blockid": "95a2ed4772f26de908fd971eea34355a",
+      "heading": "Model Constants",
+      "parent_headings": [
+        "APPENDIX A-8: BIOACCUMULATION MODEL COMPONENTS"
+      ],
+      "format": "latex",
+      "content": "K _ {O W} S = K _ {O W} T \\times 1 0 ^ {(S P C \\cdot V h \\cdot M C S \\cdot S a l / 3 5)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/719"
+    },
+    "eq-64d67950d80445ca374bea49d8f39322-0007": {
+      "id": "eq-64d67950d80445ca374bea49d8f39322-0007",
+      "blockid": "95a2ed4772f26de908fd971eea34355a",
+      "heading": "Model Constants",
+      "parent_headings": [
+        "APPENDIX A-8: BIOACCUMULATION MODEL COMPONENTS"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{SPC} = \\text { the   Setschenow   proportionality   constant } (0. 0 0 1 8 \\mathrm{L} / \\mathrm{cm} ^ {3})",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/721"
+    },
+    "eq-64d67950d80445ca374bea49d8f39322-0008": {
+      "id": "eq-64d67950d80445ca374bea49d8f39322-0008",
+      "blockid": "ee9b1b1d6cc35a0ec60e91efcc617889",
+      "heading": "Abiotic site-specific input parameters",
+      "parent_headings": [
+        "APPENDIX A-8: BIOACCUMULATION MODEL COMPONENTS"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{phi} = 1 / (1 + \\mathrm{POCw} ^ {*} \\mathrm{dPOC} ^ {*} \\text {alphapoc} ^ {*} \\mathrm{K} _ {\\mathrm{ow}} \\mathrm{S} + \\mathrm{DOCw} ^ {*} \\mathrm{dDOC} ^ {*} \\text {alphadoc} ^ {*} \\mathrm{K} _ {\\mathrm{ow}} \\mathrm{S})",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/760"
+    },
+    "eq-64d67950d80445ca374bea49d8f39322-0009": {
+      "id": "eq-64d67950d80445ca374bea49d8f39322-0009",
+      "blockid": "ee9b1b1d6cc35a0ec60e91efcc617889",
+      "heading": "Abiotic site-specific input parameters",
+      "parent_headings": [
+        "APPENDIX A-8: BIOACCUMULATION MODEL COMPONENTS"
+      ],
+      "format": "latex",
+      "content": "\\text { Estimated   cwatD } = \\text { csed } / (\\text { TOC } ^ {*} K _ {\\text { oc }} ^ {*} 8)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/762"
+    },
+    "eq-64d67950d80445ca374bea49d8f39322-0010": {
+      "id": "eq-64d67950d80445ca374bea49d8f39322-0010",
+      "blockid": "d4e49ed6e7e616458b8321e72a9a208a",
+      "heading": "Organism-specific parameters",
+      "parent_headings": [
+        "APPENDIX A-8: BIOACCUMULATION MODEL COMPONENTS"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{Gv} = \\text { g   i   l   l   v   e   n   t   i   l   a   t   i   o   n   r   a   t   e   (L   /   d   a   y) }",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/765"
+    },
+    "eq-64d67950d80445ca374bea49d8f39322-0011": {
+      "id": "eq-64d67950d80445ca374bea49d8f39322-0011",
+      "blockid": "d4e49ed6e7e616458b8321e72a9a208a",
+      "heading": "Organism-specific parameters",
+      "parent_headings": [
+        "APPENDIX A-8: BIOACCUMULATION MODEL COMPONENTS"
+      ],
+      "format": "latex",
+      "content": "\\text { lipid } = \\text { tissue   lipid   content } (\\%)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/766"
+    },
+    "eq-64d67950d80445ca374bea49d8f39322-0012": {
+      "id": "eq-64d67950d80445ca374bea49d8f39322-0012",
+      "blockid": "18facadfc6f1b2d528bc41266a6366c6",
+      "heading": "Site Linkage Determination",
+      "parent_headings": [
+        "APPENDIX A-8: BIOACCUMULATION MODEL COMPONENTS"
+      ],
+      "format": "latex",
+      "content": "C _ {E s t, i} = \\Sigma C _ {S e d} \\times S U F _ {i} \\times B S A F _ {i}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/811"
+    },
+    "eq-64d67950d80445ca374bea49d8f39322-0013": {
+      "id": "eq-64d67950d80445ca374bea49d8f39322-0013",
+      "blockid": "18facadfc6f1b2d528bc41266a6366c6",
+      "heading": "Site Linkage Determination",
+      "parent_headings": [
+        "APPENDIX A-8: BIOACCUMULATION MODEL COMPONENTS"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{BSAFSD} = \\mathrm {CVBSAF^ {*} BSAF}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/817"
+    },
+    "eq-64d67950d80445ca374bea49d8f39322-0014": {
+      "id": "eq-64d67950d80445ca374bea49d8f39322-0014",
+      "blockid": "18facadfc6f1b2d528bc41266a6366c6",
+      "heading": "Site Linkage Determination",
+      "parent_headings": [
+        "APPENDIX A-8: BIOACCUMULATION MODEL COMPONENTS"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{CVBSAF} = 0. 7 8 2",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/818"
+    },
+    "eq-64d67950d80445ca374bea49d8f39322-0015": {
+      "id": "eq-64d67950d80445ca374bea49d8f39322-0015",
+      "blockid": "18facadfc6f1b2d528bc41266a6366c6",
+      "heading": "Site Linkage Determination",
+      "parent_headings": [
+        "APPENDIX A-8: BIOACCUMULATION MODEL COMPONENTS"
+      ],
+      "format": "latex",
+      "content": "S D = \\sqrt {(m ^ {2}) (e ^ {\\sigma^ {2}} - 1)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/820"
+    },
+    "eq-64d67950d80445ca374bea49d8f39322-0016": {
+      "id": "eq-64d67950d80445ca374bea49d8f39322-0016",
+      "blockid": "18facadfc6f1b2d528bc41266a6366c6",
+      "heading": "Site Linkage Determination",
+      "parent_headings": [
+        "APPENDIX A-8: BIOACCUMULATION MODEL COMPONENTS"
+      ],
+      "format": "latex",
+      "content": "C V = \\frac {\\sqrt {(m ^ {2}) (e ^ {\\sigma^ {2}} - 1)}}{m} = \\sqrt {(e ^ {\\sigma^ {2}} - 1)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/821"
+    },
+    "eq-64d67950d80445ca374bea49d8f39322-0017": {
+      "id": "eq-64d67950d80445ca374bea49d8f39322-0017",
+      "blockid": "18facadfc6f1b2d528bc41266a6366c6",
+      "heading": "Site Linkage Determination",
+      "parent_headings": [
+        "APPENDIX A-8: BIOACCUMULATION MODEL COMPONENTS"
+      ],
+      "format": "latex",
+      "content": "m = \\text { mean   (this   value   cancels   out) }",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/823"
+    },
+    "eq-64d67950d80445ca374bea49d8f39322-0018": {
+      "id": "eq-64d67950d80445ca374bea49d8f39322-0018",
+      "blockid": "18facadfc6f1b2d528bc41266a6366c6",
+      "heading": "Site Linkage Determination",
+      "parent_headings": [
+        "APPENDIX A-8: BIOACCUMULATION MODEL COMPONENTS"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{CV} = \\text { coefficient   of   variation }",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/824"
+    }
+  }
+}

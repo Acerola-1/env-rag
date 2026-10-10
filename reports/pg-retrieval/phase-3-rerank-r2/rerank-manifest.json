@@ -1,0 +1,43 @@
+{
+ "task": "5.4 joint rerank (rev 2, R1-R4 remediation: verified replay, full provenance, unified failure terminals, sanitized raw evidence)",
+ "generated_at": "2026-10-07T12:40:00+0800",
+ "command_run": "uv run env-rag-final rerank-candidates --query-id fact-002 --fused-report reports/pg-retrieval/phase-3-fusion/fusion-runtime-latest.json --report-dir reports/pg-retrieval/phase-3-rerank-r2",
+ "history": "first generation reports/pg-retrieval/phase-3-rerank/ (200-success + 404-failure receipts) retained; review reports/pg-retrieval/phase-3-rerank-review/review.md (14 failed)",
+ "files_sha256": {
+  "src/env_rag_final/rerank.py": "016c37bcebe8f58d6ca6b08c516e3c2c8fc753143e3ad72c4eaa2375056e8509",
+  "src/env_rag_final/cli.py": "9b4fee387dd16136f3590a713b0cbe7d979c5e87fcf44ccdce6b0cd1c073dc6a",
+  "tests/test_rerank.py": "b2a30c250915f6012ca49ba7c09bcd24508bb8f4dacb47e52b8bb3d0555d4121",
+  "tests/test_rerank_review_r1.py": "303906859bf4c8199c11cac2c2c698250cca85d70b5380483bd34fc96908c34e",
+  "reports/pg-retrieval/phase-3-rerank-r2/rerank-runtime-latest.json": "4ad5a56f14acf6debd17dbc16f3836c767322b0b1779ab166f873dfce044227c",
+  "reports/pg-retrieval/phase-3-rerank-r2/rerank-inputs.jsonl": "946b4e9af0b1677ef7a604088e6c1d804f198f451db7e0eef31ceec05be10853",
+  "reports/pg-retrieval/phase-3-rerank-r2/rerank-runs.jsonl": "dfdb1433f2f3611a200cee621b760a4158efea2be061556ba5363dd257340413",
+  "reports/pg-retrieval/phase-3-rerank-r2/rerank-report.md": "3ddf28335ceb74596be5f5fe2619e97581a3f54184bba4e02b6c6ceb726a931d"
+ },
+ "fixes": {
+  "R1": "replay identity binding (_verify_replay_binding: replay identity_after vs live capture, field by field); per-candidate CURRENT-source verification (row exists, workspace, verified flag, doc attribution, byte-identical text — recomputed SHA over tampered text refused); any missing-text candidate degrades the WHOLE query (never a silently reduced set claiming ok)",
+  "R2": "typed_targets carried through independently (never scored as chunks); _fallback_ordered keeps the SAME full identity (workspace/chunk/doc/SHA/all paths) on degraded entries as success; _enrich_table_paths completes missing table-fragment identity from the REAL env_rag.unit_chunk_links mapping (additive, basis recorded, nothing guessed)",
+  "R3": "5.3 unified pre-flight terminal inherited (gold read/parse/structure, unknown ids, config + API-key presence, SHA, fused read/parse — all zero-contact failures write the terminal; ordinary-Exception fallback; BaseException never caught); live per-query call receipt published at HTTP exchange completion (response-validation crashes can no longer lose the receipt; new query resets live first); overflow-safe score validation (_finite_score catches OverflowError; _validate_response_safe turns any validation crash into an explicit rejection)",
+  "R4": "sanitized RAW response saved (call.raw_response: id/results[index,score]/meta) enabling independent re-derivation of the ordering; _sanitize_evidence scrubs configured keys/passwords/tokens and sensitive fields from ALL persisted evidence (401 echoed key -> <redacted>) while keeping failure status/type/reason; CLI rerank branch formatted"
+ },
+ "real_run_r2": {
+  "query_id": "fact-002",
+  "inputs": 10,
+  "source_verification": {"checked": 10, "verified": 10, "problems": 0},
+  "path_enrichment": "41 paths enriched from env_rag.unit_chunk_links (tb-...-0001/0002/0003 present)",
+  "call": {"http": 200, "elapsed_ms": 997, "documents_sent": 10, "chars_sent": 16441, "url_path_used": "configured-endpoint"},
+  "raw_response_saved": true,
+  "independent_recheck": "sorting raw results by (-score, index) reproduces the published ordered list exactly; all scores finite",
+  "typed_targets": 3,
+  "identity": {"before": true, "after": true, "drift": []}
+ },
+ "verification": {
+  "independent_r1": "14/14 (test_rerank_review_r1.py)",
+  "matrix": "16/16 semantics preserved (fixtures updated per handoff allowance: recomputable SHAs + explicit fake read-only PG rows; no assertion removed/weakened)",
+  "full_suite": 309,
+  "retrieval_reruns": 0,
+  "real_rerank_calls": "exactly one (the r2 generation above); the 200/404 history stays in phase-3-rerank/"
+ },
+ "resource_evidence": {"answer_llm_calls": 0, "cache_writes": 0, "db_writes": 0, "initializations": 0, "rebuilds": 0},
+ "checks": {"ruff": "pass", "ruff_format": "pass (incl. CLI)", "openspec_strict": "valid", "diff_check": "pass", "credential_scan": "0 hits"},
+ "next": "stop at the 5.4 checkpoint for main-agent review; 5.5/5.6/Gate3 not entered"
+}

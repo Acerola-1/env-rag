@@ -1,0 +1,214 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-09T21:05:22+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "neg-009"
+ ],
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-formal-fixed-round-1/inputs/local/neg-009-rerank.json",
+   "sha256": "e1d1c4c4c81ff064ef385af605cfa8432e4c7852a114d2054fc0ffeb0ae36146",
+   "task": null,
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": []
+  },
+  "fused_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-formal-fixed-round-1/inputs/local/neg-009-fusion.json",
+   "sha256": "dc8889876bfaaea0839e5922df00d08b70e34211afc90e2b00ea9a61834e87c8",
+   "task": "Phase 4 round 1 evaluation input (path=local)",
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": [
+    "neg-009"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "model_calls_used": 0,
+ "results": [
+  {
+   "query_id": "neg-009",
+   "query": "water-58_ca-resolution-96-079-approved-1997.pdf 的内容在库内可检索吗？",
+   "category": "file_enum",
+   "workspace": "default",
+   "coverage_status": "partial",
+   "fail_stage": "",
+   "flags": [
+    "no rerank replay for this query id — scope priority falls back to fusion path order, explicitly recorded (no fabricated scores)",
+    "zero-item enumeration is never reported as complete"
+   ],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "absent",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 0,
+    "typed_targets": [],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 10,
+    "selected_docs": [
+     "doc-6de7474ac15a7b64dabcd0cae85aa39c",
+     "doc-72cb5b60154069707412101363fd6824",
+     "doc-d09016b8ae7826871dca96d80665df8a",
+     "doc-cb09e15ea45fc70eecddef21a5d01e78",
+     "doc-f3e5b5f1d40628db37d4660b819456b7",
+     "doc-2c3abd0a0e027298132c3e94353c367d",
+     "doc-e4742da98833acf669a251576ab177e8",
+     "doc-6044f19a8fe17ea155c7a49abecffba3"
+    ],
+    "priority": [
+     {
+      "doc_id": "doc-6de7474ac15a7b64dabcd0cae85aa39c",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-72cb5b60154069707412101363fd6824",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-d09016b8ae7826871dca96d80665df8a",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-cb09e15ea45fc70eecddef21a5d01e78",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-f3e5b5f1d40628db37d4660b819456b7",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-2c3abd0a0e027298132c3e94353c367d",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-e4742da98833acf669a251576ab177e8",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-6044f19a8fe17ea155c7a49abecffba3",
+      "rerank_rank_or_none": null
+     }
+    ],
+    "target_confirmation": {
+     "skipped": "file enumeration lists documents by metadata predicate — the identity gate must not bound the listing"
+    },
+    "basis": "confirmed canonical target identity defines the answer scope (improvement-2); discovery/top-k/rerank order never bound or promote membership — unconfirmed documents are excluded with recorded reasons and cannot enter the answer"
+   },
+   "expansions": [
+    {
+     "stage": "document_enumeration",
+     "predicate": "(doc_name LIKE '%' || $3 || '%')",
+     "predicate_args": [
+      "可检索吗"
+     ],
+     "workspace": "default",
+     "catalog_snapshot_id": "4919b3938ad93747",
+     "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+     "identity_source": "observed catalog rows via the guarded workspace+snapshot connection (separate from any replayed PG search identity)",
+     "attribution_branch": false,
+     "attribution_added": 0,
+     "related_matches": 0,
+     "related_evidence": 0,
+     "overlap_evidence": [],
+     "overlap_canonical": [],
+     "related_excluded": [],
+     "base_total": 0,
+     "base_processed": 0,
+     "base_coverage": "complete",
+     "related_total": 0,
+     "related_processed": 0,
+     "related_coverage": "not-requested",
+     "related_warnings": [
+      ""
+     ],
+     "related_request_note": "",
+     "union_total": 0,
+     "union_processed": 0,
+     "publication_guard": "stable",
+     "members_total": 0,
+     "members_processed": 0,
+     "coverage_status": "complete",
+     "read_token": "<redacted>",
+     "fail_stage": "",
+     "warnings": [],
+     "note": "full paged base enumeration UNION the same-snapshot catalog attribution scan — not top-k ranked discovery, not the search index; members_total/processed describe the FINAL matched union"
+    }
+   ],
+   "answer": {
+    "mode": "deterministic",
+    "generated_by": "enumerate/expand entries",
+    "items": []
+   },
+   "reverification": {
+    "items_checked": 0,
+    "problems": [],
+    "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+   },
+   "model": null,
+   "status": "partial"
+  }
+ ]
+}

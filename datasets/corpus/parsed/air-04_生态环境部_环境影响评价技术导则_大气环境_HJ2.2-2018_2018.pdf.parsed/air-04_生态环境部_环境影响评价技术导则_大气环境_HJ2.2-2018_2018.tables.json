@@ -1,0 +1,772 @@
+{
+  "version": "1.0",
+  "tables": {
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0001": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0001",
+      "blockid": "79f11f408c4bcf9d6ba550cd2916cde4",
+      "heading": "5.1 环境影响识别与评价因子筛选",
+      "parent_headings": [
+        "环境影响评价技术导则 大气环境"
+      ],
+      "dimension": [
+        4,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>类别</td><td>污染物排放量/(t/a)</td><td>二次污染物评价因子</td></tr><tr><td>建设项目</td><td> $SO_{2} + NO_{x} \\geqslant 500$ </td><td> $PM_{2.5}$ </td></tr><tr><td rowspan=\"2\">规划项目</td><td> $SO_{2} + NO_{x} \\geqslant 500$ </td><td> $PM_{2.5}$ </td></tr><tr><td> $NO_{x} + VOCs \\geqslant 2000$ </td><td> $O_{3}$ </td></tr></table>",
+      "caption": "表 1 二次污染物评价因子筛选",
+      "footnotes": [],
+      "self_ref": "content_list.json#/112"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0002": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0002",
+      "blockid": "a3e86a67432f1a10d219b845ba429c5b",
+      "heading": "5.3.2 评价工作分级方法",
+      "parent_headings": [
+        "环境影响评价技术导则 大气环境"
+      ],
+      "dimension": [
+        4,
+        2
+      ],
+      "format": "html",
+      "content": "<table><tr><td>评价工作等级</td><td>评价工作分级判据</td></tr><tr><td>一级评价</td><td> $P_{\\max} \\geqslant 10\\%$ </td></tr><tr><td>二级评价</td><td> $1\\% \\leqslant P_{\\max} < 10\\%$ </td></tr><tr><td>三级评价</td><td> $P_{\\max} < 1\\%$ </td></tr></table>",
+      "caption": "表 2 评价等级判别表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/129"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0003": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0003",
+      "blockid": "1915675a41929f32862b8204281262e3",
+      "heading": "8.5 预测模型",
+      "parent_headings": [
+        "环境影响评价技术导则 大气环境"
+      ],
+      "dimension": [
+        8,
+        8
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">模型名称</td><td rowspan=\"2\">适用污染源</td><td rowspan=\"2\">适用排放形式</td><td rowspan=\"2\">推荐预测范围</td><td colspan=\"3\">模拟污染物</td><td rowspan=\"2\">其他特性</td></tr><tr><td>一次污染物</td><td>二次 $PM_{2.5}$ </td><td> $O_3$ </td></tr><tr><td>AERMOD</td><td rowspan=\"2\">点源、面源、线源、体源</td><td rowspan=\"4\">连续源、间断源</td><td rowspan=\"4\">局地尺度(≤50 km)</td><td rowspan=\"4\">模型模拟法</td><td rowspan=\"4\">系数法</td><td rowspan=\"4\">不支持</td><td rowspan=\"4\">—</td></tr><tr><td>ADMS</td></tr><tr><td>AUSTAL2000</td><td>烟塔合一源</td></tr><tr><td>EDMS/AEDT</td><td>机场源</td></tr><tr><td>CALPUFF</td><td>点源、面源、线源、体源</td><td>连续源、间断源</td><td>城市尺度(50 km到几百km)</td><td>模型模拟法</td><td>模型模拟法</td><td>不支持</td><td>局地尺度特殊风场,包括长期静、小风和岸边熏烟</td></tr><tr><td>区域光化学网格模型</td><td>网格源</td><td>连续源、间断源</td><td>区域尺度(几百km)</td><td>模型模拟法</td><td>模型模拟法</td><td>模型模拟法</td><td>模拟复杂化学反应</td></tr></table>",
+      "caption": "表 3 推荐模型适用范围",
+      "footnotes": [],
+      "self_ref": "content_list.json#/241"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0004": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0004",
+      "blockid": "2bdf8daae80e4509ea8d65a350c9461c",
+      "heading": "8.5.3 推荐模型使用要求",
+      "parent_headings": [
+        "环境影响评价技术导则 大气环境"
+      ],
+      "dimension": [
+        5,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td colspan=\"2\">污染物排放量/(t/a)</td><td>预测因子</td><td>二次污染物预测方法</td></tr><tr><td>建设项目</td><td> $SO_{2}+NO_{x} \\geqslant 500$ </td><td> $PM_{2.5}$ </td><td>AERMOD/ADMS(系数法)或CALPUFF(模型模拟法)</td></tr><tr><td rowspan=\"3\">规划项目</td><td> $500 \\leqslant SO_{2} + NO_{x} < 2000$ </td><td> $PM_{2.5}$ </td><td>AERMOD/ADMS(系数法)或CALPUFF(模型模拟法)</td></tr><tr><td> $SO_{2}+NO_{x} \\geqslant 2000$ </td><td> $PM_{2.5}$ </td><td>网格模型(模型模拟法)</td></tr><tr><td> $NO_{x}+VOC_{s} \\geqslant 2000$ </td><td> $O_{3}$ </td><td>网格模型(模型模拟法)</td></tr></table>",
+      "caption": "表 4 二次污染物预测方法",
+      "footnotes": [],
+      "self_ref": "content_list.json#/255"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0005": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0005",
+      "blockid": "fcbb72005177b22b7d3371d75e1fb8a9",
+      "heading": "8.7.5 大气环境防护距离",
+      "parent_headings": [
+        "环境影响评价技术导则 大气环境"
+      ],
+      "dimension": [
+        9,
+        5
+      ],
+      "format": "html",
+      "content": "<table><tr><td>评价对象</td><td>污染源</td><td>污染源排放形式</td><td>预测内容</td><td>评价内容</td></tr><tr><td rowspan=\"3\">达标区评价项目</td><td>新增污染源</td><td>正常排放</td><td>短期浓度长期浓度</td><td>最大浓度占标率</td></tr><tr><td>新增污染源—“以新带老”污染源(如有)—区域削减污染源(如有)+其他在建、拟建污染源(如有)</td><td>正常排放</td><td>短期浓度长期浓度</td><td>叠加环境质量现状浓度后的保证率日平均质量浓度和年平均质量浓度的占标率,或短期浓度的达标情况</td></tr><tr><td>新增污染源</td><td>非正常排放</td><td>1h平均质量浓度</td><td>最大浓度占标率</td></tr><tr><td rowspan=\"3\">不达标区评价项目</td><td>新增污染源</td><td>正常排放</td><td>短期浓度长期浓度</td><td>最大浓度占标率</td></tr><tr><td>新增污染源—“以新带老”污染源(如有)—区域削减污染源(如有)+其他在建、拟建的污染源(如有)</td><td>正常排放</td><td>短期浓度长期浓度</td><td>叠加达标规划目标浓度后的保证率日平均质量浓度和年平均质量浓度的占标率,或短期浓度的达标情况;评价年平均质量浓度变化率</td></tr><tr><td>新增污染源</td><td>非正常排放</td><td>1h平均质量浓度</td><td>最大浓度占标率</td></tr><tr><td>区域规划</td><td>不同规划期/规划方案污染源</td><td>正常排放</td><td>短期浓度长期浓度</td><td>保证率日平均质量浓度和年平均质量浓度的占标率,年平均质量浓度变化率</td></tr><tr><td>大气环境防护距离</td><td>新增污染源—“以新带老”污染源(如有)+项目全厂现有污染源</td><td>正常排放</td><td>短期浓度</td><td>大气环境防护距离</td></tr></table>",
+      "caption": "表 5 预测内容和评价要求",
+      "footnotes": [],
+      "self_ref": "content_list.json#/288"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0006": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0006",
+      "blockid": "dae190f41399b97c4b221b635d2debca",
+      "heading": "A.2 推荐模型清单",
+      "parent_headings": [
+        "附录A（规范性附录）推荐模型清单"
+      ],
+      "dimension": [
+        9,
+        8
+      ],
+      "format": "html",
+      "content": "<table><tr><td>模型名称</td><td>适用性</td><td>适用污染源</td><td>适用排放形式</td><td>推荐预测范围</td><td>适用污染物</td><td>输出结果</td><td>其他特性</td></tr><tr><td>AERSCREEN</td><td>用于评价等级及评价范围判定</td><td>点源(含火炬源)、面源(矩形或圆形)、体源</td><td>连续源</td><td rowspan=\"5\">局地尺度(≤50km)</td><td rowspan=\"5\">一次污染物、二次 $PM_{2.5}$ (系数法)</td><td>短期浓度最大值及对应距离</td><td>可以模拟熏烟和建筑物下洗</td></tr><tr><td>AERMOD</td><td rowspan=\"6\">用于进一步预测</td><td>点源(含火炬源)、面源、线源、体源</td><td rowspan=\"5\">连续源、间断源</td><td rowspan=\"6\">短期和长期平均质量浓度及分布</td><td>可以模拟建筑物下洗、干湿沉降</td></tr><tr><td>ADMS</td><td>点源、面源、线源、体源、网格源</td><td>可以模拟建筑物下洗、干湿沉降,包含街道窄谷模型</td></tr><tr><td>AUSTAL2000</td><td>烟塔合一源</td><td>可以模拟建筑物下洗</td></tr><tr><td>EDMS/AEDT</td><td>机场源</td><td>可以模拟建筑物下洗、干湿沉降</td></tr><tr><td>CALPUFF</td><td>点源、面源、线源、体源</td><td>城市尺度(50km到几百km)</td><td>一次污染物和二次 $PM_{2.5}$ </td><td>可以用于特殊风场,包括长期静、小风和岸边熏烟</td></tr><tr><td>光化学网格模型(CMAQ或类似模型)</td><td>网格源</td><td>连续源、间断源</td><td>区域尺度(几百km)</td><td>一次污染物和二次 $PM_{2.5}$ 、 $O_3$ </td><td>网格化模型,可以模拟复杂化学反应及气象条件对污染物浓度的影响等</td></tr><tr><td colspan=\"8\">注1:生态环境部模型管理部门推荐的其他模型,按相应推荐模型适用情况进行选择。注2:对光化学网格模型(CMAQ或类似的模型),在应用前应根据应用案例提供必要的验证结果。</td></tr></table>",
+      "caption": "表A.1 推荐模型适用情况表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/423"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0007": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0007",
+      "blockid": "823d9857df2f724f7bfa42ca5858386c",
+      "heading": "C.1.1 评价因子和评价标准筛选",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        2,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td>评价因子</td><td>平均时段</td><td>标准值/( $\\mu g/m^{3}$ )</td><td>标准来源</td></tr><tr><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表 C. 1 评价因子和评价标准表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/513"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0008": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0008",
+      "blockid": "90e5829902fcc42e2438d87268ab781f",
+      "heading": "C.1.3 估算模型参数",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        12,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td colspan=\"2\">参数</td><td>取值</td></tr><tr><td rowspan=\"2\">城市/农村选项</td><td>城市/农村</td><td></td></tr><tr><td>人口数(城市选项时)</td><td></td></tr><tr><td colspan=\"2\">最高环境温度/°C</td><td></td></tr><tr><td colspan=\"2\">最低环境温度/°C</td><td></td></tr><tr><td colspan=\"2\">土地利用类型</td><td></td></tr><tr><td colspan=\"2\">区域湿度条件</td><td></td></tr><tr><td rowspan=\"2\">是否考虑地形</td><td>考虑地形</td><td>□是 □否</td></tr><tr><td>地形数据分辨率/m</td><td></td></tr><tr><td rowspan=\"3\">是否考虑岸线熏烟</td><td>考虑岸线熏烟</td><td>□是 □否</td></tr><tr><td>岸线距离/km</td><td></td></tr><tr><td>岸线方向/°</td><td></td></tr></table>",
+      "caption": "表C. 2 估算模型参数表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/518"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0009": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0009",
+      "blockid": "3afa0148970a482482b6817ed9a9600a",
+      "heading": "C.1.4 主要污染源估算模型计算结果",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        7,
+        7
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">下风向距离/m</td><td colspan=\"2\">污染源1</td><td colspan=\"2\">污染源2</td><td colspan=\"2\">污染源...</td></tr><tr><td>预测质量浓度/ $\\left( {\\mu g/{\\mathrm{m}}^{3}}\\right)$ </td><td>占标率/%</td><td>预测质量浓度/ $\\left( {\\mu g/{\\mathrm{m}}^{3}}\\right)$ </td><td>占标率/%</td><td>预测质量浓度/ $\\left( {\\mu g/{\\mathrm{m}}^{3}}\\right)$ </td><td>占标率/%</td></tr><tr><td>50</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>75</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>......</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>下风向最大质量浓度及占标率/%</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td> ${D}_{10}\\%$ 最远距离/m</td><td colspan=\"2\"></td><td colspan=\"2\"></td><td colspan=\"2\"></td></tr></table>",
+      "caption": "表 C. 3 主要污染源估算模型计算结果表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/520"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0010": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0010",
+      "blockid": "ef0f90904cd0c85d676716c17ba94a18",
+      "heading": "C.2 环境空气保护目标",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        3,
+        8
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">名称</td><td colspan=\"2\">坐标/m</td><td rowspan=\"2\">保护对象</td><td rowspan=\"2\">保护内容</td><td rowspan=\"2\">环境功能区</td><td rowspan=\"2\">相对厂址方位</td><td rowspan=\"2\">相对厂界距离/m</td></tr><tr><td>X</td><td>Y</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表C. 4 环境空气保护目标",
+      "footnotes": [],
+      "self_ref": "content_list.json#/526"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0011": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0011",
+      "blockid": "6e02ea0beb72c888ad78e471b9b3ac52",
+      "heading": "C.3.1 空气质量达标区判定",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        3,
+        6
+      ],
+      "format": "html",
+      "content": "<table><tr><td>污染物</td><td>年评价指标</td><td>现状浓度/ $\\left( {\\mu g/m^3}\\right)$ </td><td>标准值/ $\\left( {\\mu g/m^3}\\right)$ </td><td>占标率/%</td><td>达标情况</td></tr><tr><td rowspan=\"2\"></td><td>年平均质量浓度</td><td></td><td></td><td></td><td rowspan=\"2\"></td></tr><tr><td>百分位数日平均或8h平均质量浓度</td><td></td><td></td><td></td></tr></table>",
+      "caption": "表C. 5 区域空气质量现状评价表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/530"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0012": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0012",
+      "blockid": "63d266a6859077a7b698dac5c5472465",
+      "heading": "C.3.2 基本污染物环境质量现状",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        4,
+        10
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">点位名称</td><td colspan=\"2\">监测点坐标/m</td><td rowspan=\"2\">污染物</td><td rowspan=\"2\">年评价指标</td><td rowspan=\"2\">评价标准/ $\\left( {\\mu g/{\\mathrm{m}}^{3}}\\right)$ </td><td rowspan=\"2\">现状浓度/ $\\left( {\\mu g/{\\mathrm{m}}^{3}}\\right)$ </td><td rowspan=\"2\">最大浓度占标率/%</td><td rowspan=\"2\">超标频率/%</td><td rowspan=\"2\">达标情况</td></tr><tr><td>X</td><td>Y</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表C. 6 基本污染物环境质量现状",
+      "footnotes": [],
+      "self_ref": "content_list.json#/533"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0013": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0013",
+      "blockid": "a0abdbaf7a1333de21500575ce45b244",
+      "heading": "C.3.3 其他污染物环境质量现状",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        3,
+        7
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">监测点名称</td><td colspan=\"2\">监测点坐标/m</td><td rowspan=\"2\">监测因子</td><td rowspan=\"2\">监测时段</td><td rowspan=\"2\">相对厂址方位</td><td rowspan=\"2\">相对厂界距离/m</td></tr><tr><td>X</td><td>Y</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表 C. 7 其他污染物补充监测点位基本信息",
+      "footnotes": [],
+      "self_ref": "content_list.json#/538"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0014": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0014",
+      "blockid": "a0abdbaf7a1333de21500575ce45b244",
+      "heading": "C.3.3 其他污染物环境质量现状",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        3,
+        10
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">监测点位</td><td colspan=\"2\">监测点坐标/m</td><td rowspan=\"2\">污染物</td><td rowspan=\"2\">平均时间</td><td rowspan=\"2\">评价标准/ $\\left( {\\mu g/{m}^{3}}\\right)$ </td><td rowspan=\"2\">监测浓度范围/ $\\left( {\\mu g/{m}^{3}}\\right)$ </td><td rowspan=\"2\">最大浓度占标率/%</td><td rowspan=\"2\">超标率/%</td><td rowspan=\"2\">达标情况</td></tr><tr><td>X</td><td>Y</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表 C. 8 其他污染物环境质量现状（监测结果）表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/539"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0015": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0015",
+      "blockid": "fdbe206c522ea8fe8d482bd791e4762f",
+      "heading": "C.4.1 点源调查内容",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        3,
+        14
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">编号</td><td rowspan=\"2\">名称</td><td colspan=\"2\">排气筒底部中心坐标 /m</td><td rowspan=\"2\">排气筒底部海拔高度 /m</td><td rowspan=\"2\">排气筒高度/m</td><td rowspan=\"2\">排气筒出口内径/m</td><td rowspan=\"2\">烟气流速 /(m/s)</td><td rowspan=\"2\">烟气温度/°C</td><td rowspan=\"2\">年排放小时数 /h</td><td rowspan=\"2\">排放工况</td><td colspan=\"3\">污染物排放速率 /(kg/h)</td></tr><tr><td>X</td><td>Y</td><td>污染物1</td><td>污染物2</td><td>...</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表C. 9 点源参数表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/552"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0016": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0016",
+      "blockid": "ac22907ab6ce72d8428b30826a5b80d3",
+      "heading": "C.4.2 面源调查内容",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        3,
+        14
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">编号</td><td rowspan=\"2\">名称</td><td colspan=\"2\">面源起点坐标/m</td><td rowspan=\"2\">面源海拔高度/m</td><td rowspan=\"2\">面源长度/m</td><td rowspan=\"2\">面源宽度/m</td><td rowspan=\"2\">与正北向夹角/°。</td><td rowspan=\"2\">面源有效排放高度/m</td><td rowspan=\"2\">年排放小时数/h</td><td rowspan=\"2\">排放工况</td><td colspan=\"3\">污染物排放速率/(kg/h)</td></tr><tr><td>X</td><td>Y</td><td>污染物1</td><td>污染物2</td><td>...</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表C. 10 矩形面源参数表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/568"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0017": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0017",
+      "blockid": "ac22907ab6ce72d8428b30826a5b80d3",
+      "heading": "C.4.2 面源调查内容",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        3,
+        11
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">编号</td><td rowspan=\"2\">名称</td><td colspan=\"2\">面源各顶点坐标/m</td><td rowspan=\"2\">面源海拔高度/m</td><td rowspan=\"2\">面源有效排放高度/m</td><td rowspan=\"2\">年排放小时数/h</td><td rowspan=\"2\">排放工况</td><td colspan=\"3\">污染物排放速率/(kg/h)</td></tr><tr><td>X</td><td>Y</td><td>污染物1</td><td>污染物2</td><td>...</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表C. 11 多边形面源参数表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/569"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0018": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0018",
+      "blockid": "ac22907ab6ce72d8428b30826a5b80d3",
+      "heading": "C.4.2 面源调查内容",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        3,
+        13
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">编号</td><td rowspan=\"2\">名称</td><td colspan=\"2\">面源中心点坐标/m</td><td rowspan=\"2\">面源海拔高度/m</td><td rowspan=\"2\">面源半径/m</td><td rowspan=\"2\">顶点数或边数(可选)</td><td rowspan=\"2\">面源有效排放高度/m</td><td rowspan=\"2\">年排放小时数/h</td><td rowspan=\"2\">排放工况</td><td colspan=\"3\">污染物排放速率/(kg/h)</td></tr><tr><td>X</td><td>Y</td><td>污染物1</td><td>污染物2</td><td>...</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表 C. 12 （近）圆形面源参数表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/570"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0019": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0019",
+      "blockid": "e8f916a53dffa9e5377877c6e45aab91",
+      "heading": "C.4.3 体源调查内容",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        4,
+        2
+      ],
+      "format": "html",
+      "content": "<table><tr><td>源类型</td><td>初始横向扩散参数</td></tr><tr><td>单个源</td><td> $\\sigma_{y0}$ =边长/4.3</td></tr><tr><td>连续划分的体源(见图C.4)</td><td> $\\sigma_{y0}$ =边长/2.15</td></tr><tr><td>间隔划分的体源(见图C.5)</td><td> $\\sigma_{y0}$ =两个相邻间隔中心点的距离/2.15</td></tr></table>",
+      "caption": "表 C. 13 体源初始横向扩散参数的估算",
+      "footnotes": [],
+      "self_ref": "content_list.json#/582"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0020": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0020",
+      "blockid": "e8f916a53dffa9e5377877c6e45aab91",
+      "heading": "C.4.3 体源调查内容",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        4,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td colspan=\"2\">源位置</td><td>初始垂直扩散参数</td></tr><tr><td colspan=\"2\">源基底处地形高度  $H_0 \\approx 0$ </td><td> $\\sigma_{z0}$ =源的高度/2.15</td></tr><tr><td rowspan=\"2\">源基底处地形高度  $H_0 > 0$ </td><td>在建筑物上,或邻近建筑物</td><td> $\\sigma_{z0}$ =建筑物高度/2.15</td></tr><tr><td>不在建筑物上,或不邻近建筑物</td><td> $\\sigma_{z0}$ =源的高度/4.3</td></tr></table>",
+      "caption": "表 C. 14 体源初始垂直扩散参数的估算",
+      "footnotes": [],
+      "self_ref": "content_list.json#/585"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0021": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0021",
+      "blockid": "e8f916a53dffa9e5377877c6e45aab91",
+      "heading": "C.4.3 体源调查内容",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        3,
+        14
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">编号</td><td rowspan=\"2\">名称</td><td colspan=\"2\">体源中心点坐标/m</td><td rowspan=\"2\">体源海拔高度/m</td><td rowspan=\"2\">体源边长/m</td><td rowspan=\"2\">体源有效高度/m</td><td rowspan=\"2\">年排放小时数/h</td><td rowspan=\"2\">排放工况</td><td colspan=\"2\">初始扩散参数/m</td><td colspan=\"3\">污染物排放速率/(kg/h)</td></tr><tr><td>X</td><td>Y</td><td>横向</td><td>垂直</td><td>污染物1</td><td>污染物2</td><td>...</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表 C. 15 体源参数表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/586"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0022": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0022",
+      "blockid": "9255fc7a1fe099bbb36aad187e322e77",
+      "heading": "C.4.4 线源调查内容",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        3,
+        11
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">编号</td><td rowspan=\"2\">名称</td><td colspan=\"2\">各段顶点坐标/m</td><td rowspan=\"2\">线源宽度/m</td><td rowspan=\"2\">线源海拔高度/m</td><td rowspan=\"2\">有效排放高度/m</td><td rowspan=\"2\">街道街谷高度/m</td><td colspan=\"3\">污染物排放速率/[kg/(km·h)]</td></tr><tr><td>X</td><td>Y</td><td>污染物1</td><td>污染物2</td><td>...</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表 C. 16 线源参数表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/592"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0023": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0023",
+      "blockid": "e1e6da49fbee03c1092a7f408d2dfef6",
+      "heading": "C.4.5 火炬源调查内容",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        3,
+        17
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">编号</td><td rowspan=\"2\">名称</td><td colspan=\"2\">坐标/m</td><td rowspan=\"2\">底部海拔高度/m</td><td rowspan=\"2\">火炬等效高度/m</td><td rowspan=\"2\">等效出口内径/m</td><td rowspan=\"2\">烟气温度/°C</td><td rowspan=\"2\">等效烟气流速/(m/s)</td><td rowspan=\"2\">年排放小时数/h</td><td rowspan=\"2\">排放工况</td><td colspan=\"3\">燃烧物质及热释放速率</td><td colspan=\"3\">污染物排放速率/(kg/h)</td></tr><tr><td>X</td><td>Y</td><td>燃烧物质</td><td>燃烧速率/(kg/h)</td><td>总热释放速率/(cal/s)</td><td>污染物1</td><td>污染物2</td><td>...</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表 C. 17 火炬源参数表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/608"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0024": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0024",
+      "blockid": "6fa914070f50f85967f7e3047a60aea1",
+      "heading": "C.4.6 烟塔合一排放源调查内容",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        3,
+        16
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">编号</td><td rowspan=\"2\">名称</td><td colspan=\"2\">坐标/m</td><td rowspan=\"2\">底部海拔高度/m</td><td rowspan=\"2\">冷却塔高度/m</td><td rowspan=\"2\">冷却塔出口内径/m</td><td rowspan=\"2\">烟气流速/(m/s)</td><td rowspan=\"2\">烟气温度/°C</td><td rowspan=\"2\">烟气液态含水量/(kg/kg)</td><td rowspan=\"2\">烟气相对湿度/%</td><td rowspan=\"2\">年排放小时数/h</td><td rowspan=\"2\">排放工况</td><td colspan=\"3\">污染物排放速率/(kg/h)</td></tr><tr><td>X</td><td>Y</td><td>污染物1</td><td>污染物2</td><td>...</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表 C. 18 烟塔合一排放源参数表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/618"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0025": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0025",
+      "blockid": "8bd9a423272fbb92d264a4e499c7c40d",
+      "heading": "C.4.7 城市道路源调查内容",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        5,
+        9
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">路段名称</td><td rowspan=\"2\">典型时段</td><td colspan=\"3\">平均车流量 /(辆/h)</td><td colspan=\"4\">污染物排放速率 /(kg/km.h)</td></tr><tr><td>大型车</td><td>中型车</td><td>小型车</td><td>NOx</td><td>CO</td><td>THC</td><td>其他污染物</td></tr><tr><td rowspan=\"3\"></td><td>近期</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>中期</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>远期</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表C. 19 城市道路交通流量及污染物排放量",
+      "footnotes": [],
+      "self_ref": "content_list.json#/621"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0026": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0026",
+      "blockid": "056f6efd6c99fd709575ea54e60b72cc",
+      "heading": "C.4.8 机场源调查内容",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        3,
+        10
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">不同飞行阶段</td><td colspan=\"2\">跑道面源起点坐标/m</td><td rowspan=\"2\">有效排放高度/m</td><td rowspan=\"2\">面源宽度/m</td><td rowspan=\"2\">面源长度/m</td><td rowspan=\"2\">与正北向夹角/°</td><td colspan=\"3\">污染物排放速率/(kg/m2·h)</td></tr><tr><td>X</td><td>Y</td><td>污染物1</td><td>污染物2</td><td>...</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表C. 20机场跑道排放源参数表",
+      "footnotes": [
+        "b）机场其他排放源调查内容参考C.4.1-C.4.4中要求。"
+      ],
+      "self_ref": "content_list.json#/626"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0027": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0027",
+      "blockid": "9a5a0c677f06af9a4f0d06f3ef60d299",
+      "heading": "C.4.9 周期性排放系数",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        10,
+        13
+      ],
+      "format": "html",
+      "content": "<table><tr><td>季节</td><td>春</td><td>夏</td><td>秋</td><td>冬</td><td rowspan=\"2\" colspan=\"8\"></td></tr><tr><td>排放系数</td><td></td><td></td><td></td><td></td></tr><tr><td>月份</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr><tr><td>排放系数</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>星期</td><td>日</td><td>一</td><td>二</td><td>三</td><td>四</td><td>五</td><td>六</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>排放系数</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>小时</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr><tr><td>排放系数</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>小时</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr><tr><td>排放系数</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表C. 21 污染源周期性排放系数表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/629"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0028": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0028",
+      "blockid": "095cdfe9ebb3aabc6ae44a7943d33381",
+      "heading": "C.4.10 非正常排放调查内容",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        2,
+        6
+      ],
+      "format": "html",
+      "content": "<table><tr><td>非正常排放源</td><td>非正常排放原因</td><td>污染物</td><td>非正常排放速率/(kg/h)</td><td>单次持续时间/h</td><td>年发生频次/次</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表C. 22 非正常排放参数表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/632"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0029": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0029",
+      "blockid": "39c7879dc1cbff14e4cf9ac338d9fe62",
+      "heading": "C.4.11 拟被替代源调查内容",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        3,
+        8
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">被替代污染源</td><td colspan=\"2\">坐标/m</td><td rowspan=\"2\">年排放时间/h</td><td colspan=\"3\">污染物年排放量/(t/a)</td><td rowspan=\"2\">拟被替代时间</td></tr><tr><td>X</td><td>Y</td><td>污染物1</td><td>污染物2</td><td>...</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表 C. 23 拟被替代源基本情况表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/636"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0030": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0030",
+      "blockid": "c77d0f98b1e9412c57d18e614eaf80e2",
+      "heading": "C.5.2 气象数据",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        3,
+        9
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">气象站名称</td><td rowspan=\"2\">气象站编号</td><td rowspan=\"2\">气象站等级</td><td colspan=\"2\">气象站坐标/m</td><td rowspan=\"2\">相对距离/m</td><td rowspan=\"2\">海拔高度/m</td><td rowspan=\"2\">数据年份</td><td rowspan=\"2\">气象要素</td></tr><tr><td>X</td><td>Y</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表 C. 24 观测气象数据信息",
+      "footnotes": [],
+      "self_ref": "content_list.json#/643"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0031": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0031",
+      "blockid": "c77d0f98b1e9412c57d18e614eaf80e2",
+      "heading": "C.5.2 气象数据",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        3,
+        6
+      ],
+      "format": "html",
+      "content": "<table><tr><td colspan=\"2\">模拟点坐标/m</td><td rowspan=\"2\">相对距离/m</td><td rowspan=\"2\">数据年份</td><td rowspan=\"2\">模拟气象要素</td><td rowspan=\"2\">模拟方式</td></tr><tr><td>X</td><td>Y</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表 C. 25 模拟气象数据信息",
+      "footnotes": [],
+      "self_ref": "content_list.json#/644"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0032": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0032",
+      "blockid": "9a2988e05ab720758ae6ebb64212ba3e",
+      "heading": "C.5.6 项目环境影响评价预测结果",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        3,
+        7
+      ],
+      "format": "html",
+      "content": "<table><tr><td>污染物</td><td>预测点</td><td>平均时段</td><td>最大贡献值/ (μg/m3)</td><td>出现时间</td><td>占标率/%</td><td>达标情况</td></tr><tr><td rowspan=\"2\"></td><td>环境空气保护目标名称</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>区域最大落地浓度</td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表C. 26本项目贡献质量浓度预测结果表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/659"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0033": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0033",
+      "blockid": "9a2988e05ab720758ae6ebb64212ba3e",
+      "heading": "C.5.6 项目环境影响评价预测结果",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        3,
+        9
+      ],
+      "format": "html",
+      "content": "<table><tr><td>污染物</td><td>预测点</td><td>平均时段</td><td>贡献值/ (μg/m3)</td><td>占标率/%</td><td>现状浓度/ (μg/m3)</td><td>叠加后浓度 / (μg/m3)</td><td>占标率/ %</td><td>达标情况</td></tr><tr><td rowspan=\"2\"></td><td>环境空气保护目标名称</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>区域最大落地浓度</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表 C. 27 叠加后环境质量浓度预测结果表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/660"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0034": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0034",
+      "blockid": "9a2988e05ab720758ae6ebb64212ba3e",
+      "heading": "C.5.6 项目环境影响评价预测结果",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        2,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>污染物</td><td>年均浓度增量最大值/(μg/m3)</td><td>占标率/%</td></tr><tr><td></td><td></td><td></td></tr></table>",
+      "caption": "表 C. 28 年平均质量浓度增量预测结果表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/663"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0035": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0035",
+      "blockid": "6e96806845ec65a162d7e6db3b553204",
+      "heading": "C.5.7 区域规划预测结果",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        3,
+        9
+      ],
+      "format": "html",
+      "content": "<table><tr><td>污染物</td><td>预测点</td><td>平均时段</td><td>最大贡献值/ $\\left( {\\mu g/m^3}\\right)$ </td><td>占标率/%</td><td>现状浓度/ $\\left( {\\mu g/m^3}\\right)$ </td><td>叠加后浓度/ $\\left( {\\mu g/m^3}\\right)$ </td><td>占标率/%</td><td>达标情况</td></tr><tr><td></td><td>环境空气保护目标名称</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td>区域最大落地浓度点</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表 C. 29 区域规划环境影响预测结果表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/666"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0036": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0036",
+      "blockid": "acfaf89df520d78b15a7aa4249da4d37",
+      "heading": "C.5.10 污染治理设施与预防措施方案比选结果表",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        3,
+        9
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">比选方案名称</td><td rowspan=\"2\">主要污染治理设施与预防措施</td><td rowspan=\"2\">污染源排放方式</td><td rowspan=\"2\">排放强度/(kg/a)</td><td colspan=\"4\">叠加后浓度</td></tr><tr><td>保证率日平均质量浓度/( $\\mu g/m^3$ )</td><td>占标率/%</td><td>年平均质量浓度/( $\\mu g/m^3$ )</td><td>占标率/%</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表 C. 30 污染治理设施与预防措施方案比选结果表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/672"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0037": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0037",
+      "blockid": "54b971d8b55b5b3ff335f27f93912b48",
+      "heading": "C.6.1 有组织排放量核算",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        22,
+        6
+      ],
+      "format": "html",
+      "content": "<table><tr><td>序号</td><td>排放口编号</td><td>污染物</td><td>核算排放浓度/ $\\left( {\\mu g/m^3}\\right)$ </td><td>核算排放速率/ $(kg/h)$ </td><td>核算年排放量/ $(t/a)$ </td></tr><tr><td colspan=\"6\">主要排放口</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan=\"2\" rowspan=\"2\">主要排放口合计</td><td colspan=\"3\"> $SO_2$ </td><td></td></tr><tr><td colspan=\"3\"> $NO_x$ 颗粒物</td><td></td></tr><tr><td colspan=\"2\" rowspan=\"2\"></td><td colspan=\"3\">VOCs</td><td></td></tr><tr><td colspan=\"3\">......</td><td></td></tr><tr><td colspan=\"6\">一般排放口</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td>/</td></tr><tr><td></td><td>......</td><td>......</td><td>......</td><td>......</td><td>/</td></tr><tr><td colspan=\"2\" rowspan=\"5\">一般排放口合计</td><td colspan=\"3\"> $SO_2$ </td><td></td></tr><tr><td colspan=\"3\"> $NO_x$ </td><td></td></tr><tr><td colspan=\"3\">颗粒物</td><td></td></tr><tr><td colspan=\"3\">VOCs</td><td></td></tr><tr><td colspan=\"3\">......</td><td></td></tr><tr><td colspan=\"6\">有组织排放总计</td></tr><tr><td colspan=\"2\" rowspan=\"5\">有组织排放总计</td><td colspan=\"3\"> $SO_2$ </td><td></td></tr><tr><td colspan=\"3\"> $NO_x$ </td><td></td></tr><tr><td colspan=\"3\">颗粒物</td><td></td></tr><tr><td colspan=\"3\">VOCs</td><td></td></tr><tr><td colspan=\"3\">......</td><td></td></tr></table>",
+      "caption": "表 C. 31 大气污染物有组织排放量核算表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/675"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0038": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0038",
+      "blockid": "96d14555846cb159ebac057caa038920",
+      "heading": "C.6.2 无组织排放量核算",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        10,
+        8
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">排放口编号</td><td rowspan=\"2\">产污环节</td><td rowspan=\"2\">污染物</td><td rowspan=\"2\">主要污染防治措施</td><td colspan=\"2\">国家或地方污染物排放标准</td><td rowspan=\"2\">年排放量/(t/a)</td></tr><tr><td>标准名称</td><td>浓度限值/ $\\left( {\\mu g/m^3}\\right)$ </td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td>......</td><td>......</td><td>......</td><td>......</td><td>......</td><td>......</td></tr><tr><td colspan=\"8\">无组织排放总计</td></tr><tr><td rowspan=\"5\" colspan=\"4\">无组织排放总计</td><td colspan=\"2\"> $SO_2$ </td><td colspan=\"2\"></td></tr><tr><td colspan=\"2\"> $NO_x$ </td><td colspan=\"2\"></td></tr><tr><td colspan=\"2\">颗粒物</td><td colspan=\"2\"></td></tr><tr><td colspan=\"2\">VOCs</td><td colspan=\"2\"></td></tr><tr><td colspan=\"2\">......</td><td colspan=\"2\"></td></tr></table>",
+      "caption": "表 C. 32 大气污染物无组织排放量核算表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/680"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0039": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0039",
+      "blockid": "96d14555846cb159ebac057caa038920",
+      "heading": "C.6.2 无组织排放量核算",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        6,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>序号</td><td>污染物</td><td>年排放量/(t/a)</td></tr><tr><td>1</td><td> $SO_{2}$ </td><td></td></tr><tr><td>2</td><td> $NO_{x}$ </td><td></td></tr><tr><td>3</td><td>颗粒物</td><td></td></tr><tr><td>4</td><td>VOCs</td><td></td></tr><tr><td>5</td><td>......</td><td></td></tr></table>",
+      "caption": "表C. 33 大气污染物年排放量核算表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/683"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0040": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0040",
+      "blockid": "b9ceabefe194a377f7d76c8a86018615",
+      "heading": "C.6.4 非正常排放量核算",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        2,
+        9
+      ],
+      "format": "html",
+      "content": "<table><tr><td>序号</td><td>污染源</td><td>非正常排放原因</td><td>污染物</td><td>非正常排放浓度/(μg/m3)</td><td>非正常排放速率/(kg/h)</td><td>单次持续时间/h</td><td>年发生频次/次</td><td>应对措施</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表C. 34 污染源非正常排放量核算表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/685"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0041": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0041",
+      "blockid": "c38d735b52c2089bf4ed895586a8c134",
+      "heading": "C.7 自行监测计划",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        2,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td>监测点位</td><td>监测指标</td><td>监测频次</td><td>执行排放标准</td></tr><tr><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表 C. 35 有组织废气监测方案",
+      "footnotes": [],
+      "self_ref": "content_list.json#/688"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0042": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0042",
+      "blockid": "c38d735b52c2089bf4ed895586a8c134",
+      "heading": "C.7 自行监测计划",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        2,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td>监测点位</td><td>监测指标</td><td>监测频次</td><td>执行排放标准</td></tr><tr><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表 C. 36 无组织废气监测计划表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/689"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0043": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0043",
+      "blockid": "c38d735b52c2089bf4ed895586a8c134",
+      "heading": "C.7 自行监测计划",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        2,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td>监测点位</td><td>监测指标</td><td>监测频次</td><td>执行环境质量标准</td></tr><tr><td></td><td></td><td></td><td></td></tr></table>",
+      "caption": "表 C. 37 环境质量监测计划表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/690"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0044": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0044",
+      "blockid": "b0327be346c7e05001bb0a215209bd7d",
+      "heading": "C.8.1 估算模型相关文件（电子版）",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        26,
+        5
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">编号</td><td rowspan=\"2\">污染物名称</td><td colspan=\"3\">标准值/(μg/m3)</td></tr><tr><td>1 h平均</td><td>8 h平均</td><td>日平均</td></tr><tr><td>1</td><td>氨</td><td>200</td><td></td><td></td></tr><tr><td>2</td><td>苯</td><td>110</td><td></td><td></td></tr><tr><td>3</td><td>苯胺</td><td>100</td><td></td><td>30</td></tr><tr><td>4</td><td>苯乙烯</td><td>10</td><td></td><td></td></tr><tr><td>5</td><td>吡啶</td><td>80</td><td></td><td></td></tr><tr><td>6</td><td>丙酮</td><td>800</td><td></td><td></td></tr><tr><td>7</td><td>丙烯腈</td><td>50</td><td></td><td></td></tr><tr><td>8</td><td>丙烯醛</td><td>100</td><td></td><td></td></tr><tr><td>9</td><td>二甲苯</td><td>200</td><td></td><td></td></tr><tr><td>10</td><td>二硫化碳</td><td>40</td><td></td><td></td></tr><tr><td>11</td><td>环氧氯丙烷</td><td>200</td><td></td><td></td></tr><tr><td>12</td><td>甲苯</td><td>200</td><td></td><td></td></tr><tr><td>13</td><td>甲醇</td><td>3000</td><td></td><td>1000</td></tr><tr><td>14</td><td>甲醛</td><td>50</td><td></td><td></td></tr><tr><td>15</td><td>硫化氢</td><td>10</td><td></td><td></td></tr><tr><td>16</td><td>硫酸</td><td>300</td><td></td><td>100</td></tr><tr><td>17</td><td>氯</td><td>100</td><td></td><td>30</td></tr><tr><td>18</td><td>氯丁二烯</td><td>100</td><td></td><td></td></tr><tr><td>19</td><td>氯化氢</td><td>50</td><td></td><td>15</td></tr><tr><td>20</td><td>锰及其化合物(以MnO2计)</td><td></td><td></td><td>10</td></tr><tr><td>21</td><td>五氧化二磷</td><td>150</td><td></td><td>50</td></tr><tr><td>22</td><td>硝基苯</td><td>10</td><td></td><td></td></tr><tr><td>23</td><td>乙醛</td><td>10</td><td></td><td></td></tr><tr><td>24</td><td>总挥发性有机物(TVOC)</td><td></td><td>600</td><td></td></tr></table>",
+      "caption": "附录D",
+      "footnotes": [],
+      "self_ref": "content_list.json#/700"
+    },
+    "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0045": {
+      "id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0045",
+      "blockid": "1361957ce8658beae47f938af9249e96",
+      "heading": "建设项目大气环境影响评价自查表",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "dimension": [
+        26,
+        12
+      ],
+      "format": "html",
+      "content": "<table><tr><td colspan=\"2\">工作内容</td><td colspan=\"10\">自查项目</td></tr><tr><td rowspan=\"2\">评价等级与范围</td><td>评价等级</td><td colspan=\"3\">一级☐</td><td colspan=\"3\">二级☐</td><td colspan=\"4\">三级☐</td></tr><tr><td>评价范围</td><td colspan=\"3\">边长=50km☐</td><td colspan=\"3\">边长5~50km☐</td><td colspan=\"4\">边长=5 km☐</td></tr><tr><td rowspan=\"2\">评价因子</td><td>SO2+NOx排放量</td><td>≥ 2000t/a☐</td><td colspan=\"5\">500~2000t/a☐</td><td colspan=\"4\">&lt;500 t/a☐</td></tr><tr><td>评价因子</td><td colspan=\"4\">基本污染物( )其他污染物( )</td><td colspan=\"6\">包括二次PM2.5☐不包括二次PM2.5☐</td></tr><tr><td>评价标准</td><td>评价标准</td><td colspan=\"2\">国家标准☐</td><td colspan=\"2\">地方标准☐</td><td colspan=\"3\">附录D☐</td><td colspan=\"3\">其他标准☐</td></tr><tr><td rowspan=\"4\">现状评价</td><td>环境功能区</td><td colspan=\"3\">一类区☐</td><td colspan=\"3\">二类区☐</td><td colspan=\"4\">一类区和二类区☐</td></tr><tr><td>评价基准年</td><td colspan=\"10\">( )年</td></tr><tr><td>环境空气质量现状调查数据来源</td><td colspan=\"3\">长期例行监测数据☐</td><td colspan=\"3\">主管部门发布的数据☐</td><td colspan=\"4\">现状补充监测☐</td></tr><tr><td>现状评价</td><td colspan=\"4\">达标区☐</td><td colspan=\"6\">不达标区☐</td></tr><tr><td>污染源调查</td><td>调查内容</td><td colspan=\"2\">本项目正常排放源 ☐本项目非正常排放源 ☐现有污染源 ☐</td><td colspan=\"2\">拟替代的污染源☐</td><td colspan=\"3\">其他在建、拟建项目污染源☐</td><td colspan=\"3\">区域污染源☐</td></tr><tr><td rowspan=\"9\">大气环境影响预测与评价</td><td>预测模型</td><td>AERMOD☐</td><td>ADMS☐</td><td>AUSTAL2000☐</td><td>EDMS/AEDT☐</td><td colspan=\"2\">CALPUFF☐</td><td>网格模型☐</td><td colspan=\"3\">其他☐</td></tr><tr><td>预测范围</td><td colspan=\"2\">边长≥ 50km☐</td><td colspan=\"4\">边长5~50km☐</td><td colspan=\"4\">边长=5 km☐</td></tr><tr><td>预测因子</td><td colspan=\"4\">预测因子( )</td><td colspan=\"6\">包括二次PM2.5 ☐不包括二次PM2.5 ☐</td></tr><tr><td>正常排放短期浓度贡献值</td><td colspan=\"4\">C本项目最大占标率≤100%☐</td><td colspan=\"6\">C本项目最大占标率&gt;100%☐</td></tr><tr><td rowspan=\"2\">正常排放年均浓度贡献值</td><td>一类区</td><td colspan=\"3\">C本项目最大占标率≤10%☐</td><td colspan=\"6\">C本项目最大标率&gt;10%☐</td></tr><tr><td>二类区</td><td colspan=\"3\">C本项目最大占标率≤30%☐</td><td colspan=\"6\">C本项目最大标率&gt;30%☐</td></tr><tr><td>非正常排放1h浓度贡献值</td><td colspan=\"2\">非正常持续时长()h</td><td colspan=\"3\">C非正常占标率≤100%☐</td><td colspan=\"5\">C非正常占标率&gt;100%☐</td></tr><tr><td>保证率日平均浓度和年平均浓度叠加值</td><td colspan=\"3\">C叠加达标☐</td><td colspan=\"7\">C叠加不达标☐</td></tr><tr><td>区域环境质量的整体变化情况</td><td colspan=\"3\">k≤-20%☐</td><td colspan=\"7\">k&gt;-20%☐</td></tr><tr><td rowspan=\"2\">环境监测计划</td><td>污染源监测</td><td colspan=\"3\">监测因子:( )</td><td colspan=\"4\">有组织废气监测☐无组织废气监测☐</td><td colspan=\"3\">无监测☐</td></tr><tr><td>环境质量监测</td><td colspan=\"3\">监测因子:( )</td><td colspan=\"4\">监测点位数( )</td><td colspan=\"3\">无监测☐</td></tr><tr><td rowspan=\"3\">评价结论</td><td>环境影响</td><td colspan=\"10\">可以接受☐ 不可以接受☐</td></tr><tr><td>大气环境防护距离</td><td colspan=\"10\">距( )厂界最远( )m</td></tr><tr><td>污染源年排放量</td><td>SO2:( ) t/a</td><td colspan=\"3\">NOx:( ) t/a</td><td colspan=\"2\">颗粒物:( ) t/a</td><td colspan=\"4\">VOCs:( ) t/a</td></tr><tr><td colspan=\"12\">注:“☐”为勾选项,填“√”;“( )”为内容填写项</td></tr></table>",
+      "caption": "表 E. 1 建设项目大气环境影响评价自查表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/706"
+    }
+  }
+}

@@ -1,0 +1,375 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-09T20:54:44+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "fact-003"
+ ],
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-formal-fixed-round-1/inputs/fusion/fact-003-rerank.json",
+   "sha256": "5af6c339dca285861eb6f89eea6cf1b471e3304788ae0d32cd4099ab3d743e7b",
+   "task": "5.4 joint rerank over fused candidates (bounded, recorded)",
+   "started_at": "2026-10-09T20:54:43+0800",
+   "finished_at": "2026-10-09T20:54:44+0800",
+   "query_ids": [
+    "fact-003"
+   ]
+  },
+  "fused_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-formal-fixed-round-1/inputs/fusion/fact-003-fusion.json",
+   "sha256": "059c2a5223aae15a0a261c77eeb4b4d767409870215f5a072be4fe58626274bb",
+   "task": "Phase 4 round 1 evaluation input (path=fusion)",
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": [
+    "fact-003"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "model_calls_used": 0,
+ "results": [
+  {
+   "query_id": "fact-003",
+   "query": "GB 18466-2005 中“医疗机构污水”的定义是什么？",
+   "category": "fact",
+   "workspace": "default",
+   "coverage_status": "complete",
+   "fail_stage": "",
+   "flags": [],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "ok",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 3,
+    "typed_targets": [
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "doc_name": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf",
+      "self_code": "GB18466",
+      "self_code_version": "2005",
+      "discovery": "code_exact",
+      "membership_basis": null,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+      },
+      "citation_verified": true
+     }
+    ],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 4,
+    "selected_docs": [
+     "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+    ],
+    "priority": [
+     {
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "rerank_rank_or_none": 0
+     }
+    ],
+    "target_confirmation": {
+     "request_branches": [
+      {
+       "code": "GB18466",
+       "version": "2005"
+      }
+     ],
+     "branch_source": "local parse of the question",
+     "identity_source": "catalog documents rows (self_code/self_code_version) read through the guarded workspace+catalog-snapshot connection",
+     "allowed": [
+      "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+     ],
+     "allowed_basis": {
+      "doc-68a03b50e1ba1ffc6a0116529f694fe1": "canonical GB18466-2005 matches requested branch GB18466-2005 (catalog documents row via the guarded workspace+snapshot)"
+     },
+     "rejected": [],
+     "unresolved": [],
+     "unconfirmed_branches": [],
+     "rule": "discovery never defines the answer scope; a typed label or a replay-declared name is an audit clue, never canonical identity"
+    },
+    "basis": "confirmed canonical target identity defines the answer scope (improvement-2); discovery/top-k/rerank order never bound or promote membership — unconfirmed documents are excluded with recorded reasons and cannot enter the answer"
+   },
+   "expansions": [
+    {
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "kind": "prose",
+     "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:4.1",
+     "requested_clauses": null,
+     "missing_requested_clauses": [],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "read_status": "complete",
+     "fail_stage": "",
+     "units_read": 1,
+     "unit_ids": [
+      "ef6868c7bc693df8da996208421b815d"
+     ],
+     "chunk_ids": [
+      "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+      "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+     ],
+     "items_count": 6,
+     "warnings": [],
+     "boundary_ambiguities": [],
+     "selected": true
+    }
+   ],
+   "answer": {
+    "mode": "deterministic",
+    "generated_by": "enumerate/expand entries",
+    "items": [
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:4.1",
+      "clause": "4.1.1",
+      "text": "4.1.1 传染病和结核病医疗机构污水排放一律执行表1的规定。",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 14,
+       "char_end": 46,
+       "quote": "4.1.1 传染病和结核病医疗机构污水排放一律执行表1的规定。",
+       "unit_rel_start": 14,
+       "unit_rel_end": 46,
+       "unit_id": "ef6868c7bc693df8da996208421b815d",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "ef6868c7bc693df8da996208421b815d",
+        "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+       ],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:4.1",
+      "clause": "4.1.2",
+      "text": "4.1.2 县级及县级以上或 20 张床位及以上的综合医疗机构和其他医疗机构污水排放执行表 2 的规定。直接或间接排入地表水体和海域的污水执行排放标准，排入终端已建有正常运行城镇二级污水处理厂的下水道的污水，执行预处理标准。\nGB 18466 — 2005",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 46,
+       "char_end": 175,
+       "quote": "4.1.2 县级及县级以上或 20 张床位及以上的综合医疗机构和其他医疗机构污水排放执行表 2 的规定。直接或间接排入地表水体和海域的污水执行排放标准，排入终端已建有正常运行城镇二级污水处理厂的下水道的污水，执行预处理标准。\nGB 1846",
+       "unit_rel_start": 46,
+       "unit_rel_end": 175,
+       "unit_id": "ef6868c7bc693df8da996208421b815d",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "ef6868c7bc693df8da996208421b815d",
+        "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+       ],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:4.1",
+      "clause": "4.1.3",
+      "text": "4.1.3 县级以下或20张床位以下的综合医疗机构和其他所有医疗机构污水经消毒处理后方可排放。",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 4055,
+       "char_end": 4103,
+       "quote": "4.1.3 县级以下或20张床位以下的综合医疗机构和其他所有医疗机构污水经消毒处理后方可排放。",
+       "unit_rel_start": 4055,
+       "unit_rel_end": 4103,
+       "unit_id": "ef6868c7bc693df8da996208421b815d",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "ef6868c7bc693df8da996208421b815d",
+        "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+       ],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:4.1",
+      "clause": "4.1.4",
+      "text": "4.1.4 禁止向 GB 3838 I、Ⅱ类水域和Ⅲ类水域的饮用水保护区和游泳区，GB 3097 一、二类海域直接排放医疗机构污水。\nGB 18466 — 2005",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 4103,
+       "char_end": 4186,
+       "quote": "4.1.4 禁止向 GB 3838 I、Ⅱ类水域和Ⅲ类水域的饮用水保护区和游泳区，GB 3097 一、二类海域直接排放医疗机构污水。\nGB 18466 — 2005",
+       "unit_rel_start": 4103,
+       "unit_rel_end": 4186,
+       "unit_id": "ef6868c7bc693df8da996208421b815d",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "ef6868c7bc693df8da996208421b815d",
+        "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+       ],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:4.1",
+      "clause": "4.1.6",
+      "text": "4.1.6 采用含氯消毒剂进行消毒的医疗机构污水，若直接排入地表水体和海域，应进行脱氯处理，使总余氯小于0.5 mg/L。",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 4252,
+       "char_end": 4313,
+       "quote": "4.1.6 采用含氯消毒剂进行消毒的医疗机构污水，若直接排入地表水体和海域，应进行脱氯处理，使总余氯小于0.5 mg/L。",
+       "unit_rel_start": 4252,
+       "unit_rel_end": 4313,
+       "unit_id": "ef6868c7bc693df8da996208421b815d",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "ef6868c7bc693df8da996208421b815d",
+        "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+       ],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     }
+    ],
+    "selection": {
+     "terms": [
+      "医疗机构污水",
+      "定义",
+      "医疗",
+      "疗机",
+      "机构",
+      "构污",
+      "污水"
+     ],
+     "candidates": 6,
+     "kept": 5,
+     "rule": "rows/items whose raw text contains the most subject terms of the QUESTION (never gold text); ties keep every match"
+    },
+    "unit_blockers": []
+   },
+   "reverification": {
+    "items_checked": 6,
+    "problems": [],
+    "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+   },
+   "model": null,
+   "status": "ok"
+  }
+ ]
+}

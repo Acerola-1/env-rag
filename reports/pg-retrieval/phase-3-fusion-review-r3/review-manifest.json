@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-07",
+  "task": "5.3",
+  "accepted": false,
+  "remaining": [
+    "F3-a generic preflight exception terminal"
+  ],
+  "F3_b_accepted": true,
+  "prior_accepted_groups": [
+    "F1",
+    "F2",
+    "F4"
+  ],
+  "tests": {
+    "passed": 276,
+    "failed": 3
+  },
+  "submitted_sha_matches": {
+    "src/env_rag_final/fusion.py": true,
+    "src/env_rag_final/cli.py": true,
+    "tests/test_fusion.py": true,
+    "tests/test_fusion_review_r1.py": true,
+    "tests/test_fusion_review_r2.py": true,
+    "reports/pg-retrieval/gate-2/review-r5/gold-approved.json": true
+  },
+  "prior_frozen_sha_matches": {
+    "tests/test_fusion_review_r2.py": true
+  },
+  "reviewer_model_calls": 0,
+  "reviewer_backend_calls": 0,
+  "implementation_modified_by_reviewer": false,
+  "old_assertions_modified_by_reviewer": false,
+  "real_evidence_reused": "phase-3-fusion-review-r2/formal-cli accepted PG-only run; not refreshed this turn",
+  "checks": {
+    "ruff": true,
+    "format": true,
+    "openspec_strict": true,
+    "diff": true
+  },
+  "next_only": "5.3 F3-a isolated tests",
+  "scope": {
+    "total_files": 474,
+    "reviewed_files": 1,
+    "skipped_files": 473,
+    "coverage_rate": 0.002109704641350211
+  },
+  "credential_scan_leaks": [],
+  "artifact_sha256": {
+    "reports/pg-retrieval/phase-3-fusion-review-r3/ocr-rules.json": "091b0f5e47d06aabf99fccb7d6f1b46316693b40c1f0f7d3ac10b3cde1ac6bdc",
+    "reports/pg-retrieval/phase-3-fusion-review-r3/ruff-format.txt": "d155c06380b499611095faab8468f2f9644bac07b83f891746876dd09785a0e5",
+    "reports/pg-retrieval/phase-3-fusion-review-r3/ocr-preview.json": "0f6092ab0d3438b788c06ca662387599bea958f47e8681928202be87f1b0f996",
+    "reports/pg-retrieval/phase-3-fusion-review-r3/ruff-check.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "reports/pg-retrieval/phase-3-fusion-review-r3/final-tests.txt": "73ee31e617f77e0e2545c36af2f358b16ef3e5d4e3fe4071fba97682f8a3ad80",
+    "reports/pg-retrieval/phase-3-fusion-review-r3/findings.json": "73399e3ed6eabc50a836e9fe0318cf959ad30dc950cb07d73af35fc92c4add79",
+    "reports/pg-retrieval/phase-3-fusion-review-r3/openspec-check.txt": "4693ceda9e27e58fa59b2c9dbba2ff1cf729bd8067915263151894179518ba7c",
+    "reports/pg-retrieval/phase-3-fusion-review-r3/coverage.json": "c827f36ddbbf3e5b26d1fe2be0d6c568be46d0f6f155e993afb80e45bca978d0",
+    "reports/pg-retrieval/phase-3-fusion-review-r3/review.md": "cf50e7075cc861601e17c045135060fbe58d485fc0e8a0f3efcc0f19763a8482",
+    "reports/pg-retrieval/phase-3-fusion-review-r3/diff-check.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_fusion_review_r3.py": "a90f73fbcc3be10d2ead43be02f5080499ae4b66b8ef21a65de02fd72ac26836",
+    "openspec/changes/add-pg-scoped-retrieval/handoff-phase-3-5.3-fixes-r3.md": "dd8e169d4b040985ace5a6833efe74d99875c9edda6d8af6933c5c84452e8699"
+  }
+}

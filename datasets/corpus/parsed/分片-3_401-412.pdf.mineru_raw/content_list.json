@@ -1,0 +1,2702 @@
+[
+    {
+        "type": "text",
+        "text": "附 件 RB",
+        "text_level": 1,
+        "bbox": [
+            467,
+            155,
+            566,
+            171
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "（规范性附件）基于 REESS 电量变化的修正程序",
+        "text_level": 1,
+        "bbox": [
+            388,
+            174,
+            643,
+            209
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "本附件规定了基于所有 REESS 电量变化，对 NOVC-HEV 和 OVC-HEV 电量保持模式下的Ⅰ型试验$\\mathrm { C O } _ { 2 }$ 排放进行修正的程序。",
+        "bbox": [
+            114,
+            247,
+            915,
+            282
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "RB.1 一般要求",
+        "text_level": 2,
+        "bbox": [
+            114,
+            303,
+            243,
+            318
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "RB.1.1 修正适用条件",
+        "text_level": 2,
+        "bbox": [
+            114,
+            341,
+            292,
+            356
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "RB.1.1.1 应对 NOVC-HEV 和 OVC-HEV 的 $\\mathrm { C O } _ { 2 }$ 排放进行修正。",
+        "bbox": [
+            114,
+            359,
+            610,
+            374
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "RB.1.1.2 如果根据 RB.1.1.3 或 RB.1.1.4，进行 NOVC-HEV 和 OVC-HEV 的 $\\mathrm { C O } _ { 2 }$ 排放修正，则应按照R.5.2.4.5 计算电量保持Ⅰ型试验的 REESS 电量变化E<sub>REESS,CS</sub>。",
+        "bbox": [
+            112,
+            376,
+            914,
+            412
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "RB.1.1.3 如果 $\\Delta E _ { \\mathrm { R E E S S , C S } }$ 为负 REESS 放电，当 RB.1.2 计算的修正标准 c大于 0.005时应进行修正。",
+        "bbox": [
+            114,
+            414,
+            870,
+            430
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "RB.1.1.4 如果下列条件满足，可不进行修正：",
+        "bbox": [
+            114,
+            432,
+            470,
+            448
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "E<sub>REESS,CS</sub> 为正 REESS 充电且 RB.1.2 计算的修正标准 c 大于 0.005；",
+        "bbox": [
+            147,
+            451,
+            709,
+            468
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "RB.1.2 计算的修正标准 c 小于 0.005；",
+        "bbox": [
+            149,
+            470,
+            475,
+            486
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "生产企业能够通过测试向环境保护主管部门证明： $\\Delta E _ { \\mathrm { R E E S S , C S } } $ 量保持 $\\mathrm { C O } _ { 2 }$ 无关。",
+        "bbox": [
+            147,
+            489,
+            825,
+            504
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "RB.1.2 修正标准 c 是 REESS 电量变化E<sub>R</sub> $\\mathrm { E E S S , C S }$ 的绝对值和燃料能量当量之比，应由下式计算：",
+        "bbox": [
+            112,
+            507,
+            855,
+            523
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "text": "$$\nc = \\frac {\\left| \\Delta E _ {\\text { REESS,CS }} \\right|}{E _ {\\text { fuel,CS }}}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            458,
+            533,
+            571,
+            571
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "式中： $\\Delta E _ { \\mathrm { R E E S S , C S } }$ — 依据 RB.1.1.2 电量保持模式下 REESS 的电量变化，Wh；",
+        "bbox": [
+            114,
+            580,
+            776,
+            596
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "$E _ { \\mathrm { f u e l , C S } }$ ——依据 RB.1.1.1 电量保持模式下所消耗燃料的能量当量，Wh。",
+        "bbox": [
+            181,
+            596,
+            801,
+            612
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "RB.1.2.1 NOVC-HEV 和 OVC-HEV 电量保持模式下的燃料能量当量",
+        "text_level": 2,
+        "bbox": [
+            114,
+            614,
+            610,
+            629
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "NOVC-HEV 和 OVC-HEV 在电量保持模式下消耗的燃料能量当量应由下式计算：",
+        "bbox": [
+            147,
+            632,
+            771,
+            648
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "equation",
+        "text": "$$\nE _ {\\mathrm{fuel,CS}} = 1 0 \\times \\mathrm{HV} \\times \\mathrm{FC} _ {\\mathrm{CS,nb}} \\times d _ {\\mathrm{CS}}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            401,
+            658,
+            628,
+            677
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "式中： $E _ { \\mathrm { f u e l , C S } }$ 电量保持Ⅰ型测试在 WLTC 测试循环中消耗的燃料当量能量，Wh；",
+        "bbox": [
+            114,
+            686,
+            808,
+            702
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "HV ——参照表 CF.1，热值，kWh/L；",
+        "bbox": [
+            181,
+            703,
+            515,
+            718
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "$d _ { \\mathrm { C S } }$ ——WLTC 测试循环行驶的距离，km；",
+        "bbox": [
+            181,
+            719,
+            554,
+            734
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "10 单位转换到 Wh 的系数；",
+        "bbox": [
+            183,
+            736,
+            480,
+            750
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "$\\mathrm { F C } _ { \\mathrm { C S , n b } }$ ——I 型测试未进行能量平衡修正的燃油消耗量，l/100km，按以下公式进行计算：",
+        "bbox": [
+            181,
+            751,
+            887,
+            766
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "汽油车： $\\mathrm { F C } _ { \\mathrm { c S , n b } } = \\left( \\frac { 0 . 1 1 5 5 } { \\rho } \\right) \\times \\left[ \\left( 0 . 8 6 6 \\times M _ { \\mathrm { H C } } \\right) + \\left( 0 . 4 2 9 \\times M _ { \\mathrm { c o } } \\right) + \\left( 0 . 2 7 3 \\times M _ { \\mathrm { c o } _ { 2 } } \\right) \\right]$",
+        "bbox": [
+            216,
+            776,
+            806,
+            812
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "柴油车： $\\mathrm { F C } _ { \\mathrm { c S , n b } } = \\left( \\frac { 0 . 1 1 5 6 } { \\rho } \\right) \\times \\left[ \\left( 0 . 8 6 5 \\times M _ { \\mathrm { H C } } \\right) + \\left( 0 . 4 2 9 \\times M _ { \\mathrm { C O } } \\right) + \\left( 0 . 2 7 3 \\times M _ { \\mathrm { C O } _ { 2 } } \\right) \\right]$",
+        "bbox": [
+            218,
+            833,
+            806,
+            868
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "式中： $M _ { \\mathrm { H C } }$ ——表 R.3 第二步 HC 综合排放值，g/km；",
+        "bbox": [
+            115,
+            879,
+            569,
+            895
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "$M _ { \\mathrm { C O } }$ ——表 R.3 第二步 CO 综合排放值， $\\mathrm { { g } / k m }$",
+        "bbox": [
+            181,
+            896,
+            569,
+            910
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "header",
+        "text": "GB 18352.6—2016",
+        "bbox": [
+            744,
+            85,
+            915,
+            99
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "page_number",
+        "text": "393",
+        "bbox": [
+            863,
+            917,
+            895,
+            931
+        ],
+        "page_idx": 0
+    },
+    {
+        "type": "text",
+        "text": "$M _ { \\mathrm { C O _ { 2 } } }$ 2 ——表 R.3 第二步 $\\mathrm { C O } _ { 2 }$ 综合排放值， $\\mathrm { { g } / k m }$",
+        "bbox": [
+            147,
+            117,
+            539,
+            131
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "$\\rho$ ——试验燃料密度，kg/L。",
+        "bbox": [
+            147,
+            134,
+            413,
+            149
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "RB.2 修正系数的计算",
+        "text_level": 2,
+        "bbox": [
+            78,
+            168,
+            260,
+            185
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "RB.2.1 $\\mathrm { C O } _ { 2 }$ 排放修正系数 $K _ { \\mathsf { C O } _ { 2 } ; }$ ，以及具体阶段的修正系数 $K _ { \\mathrm { C O } _ { 2 } , \\mathrm { P } }$ 都应基于电量保持Ⅰ型试验确定。",
+        "bbox": [
+            78,
+            206,
+            838,
+            222
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "如果在确定 NOVC-HEV 和 OVC-HEV 的 $\\mathrm { C O } _ { 2 }$ 排放修正系数时测试了车辆 H，则该修正系数可适用于插值系族内所有车辆。",
+        "bbox": [
+            78,
+            225,
+            880,
+            259
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "RB.2.2 修正系数应通过 RB.3 规定的电量保持Ⅰ型试验确定。生产企业进行的测试次数应大于或等于 5次。",
+        "bbox": [
+            78,
+            262,
+            880,
+            294
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "在测试前，可以根据生产企业建议和 RB.3 规定设置 REESS 的电量状态。该设置只能以完成电量保持Ⅰ型试验修正程序为目的，且事前应得到环境保护主管部门允许。",
+        "bbox": [
+            78,
+            299,
+            880,
+            332
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "该组测量值应满足下列条件：",
+        "bbox": [
+            115,
+            336,
+            342,
+            351
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "（a）该组测量应至少分别包含一次 $\\Delta E _ { \\mathrm { R E E S S , C S } } { \\leqslant } 0$ 和一次 $\\Delta E _ { \\mathrm { R E E S S , C S } } { > } 0$ 的测试。",
+        "bbox": [
+            115,
+            354,
+            707,
+            370
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "（b）拥有最高负电量变化和拥有最高正电量变化的两个测试，其 $M _ { \\mathrm { C O _ { \\gamma } } }$ 之差应大于或等于 $5 \\mathrm { g / k m }$",
+        "bbox": [
+            114,
+            373,
+            858,
+            388
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "确定 $K _ { \\mathsf { C O } _ { \\gamma } }$ 时，如果除（a）和（b）外还满足下列标准，则测试次数可减少到 3次。",
+        "bbox": [
+            115,
+            391,
+            752,
+            407
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "（c）任何两次连续测试中由电量变化转换为 $M _ { \\mathrm { C O _ { 7 } } }$ 的值都小于或等于 10 g/km。",
+        "bbox": [
+            115,
+            409,
+            712,
+            425
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "（d）除（b）之外，拥有最高负电量变化和拥有最高正电量变化的两个测试都应在下式定义的区域之外：",
+        "bbox": [
+            80,
+            429,
+            880,
+            463
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "equation",
+        "text": "$$\n- 0. 0 1 \\leqslant \\frac {\\Delta E _ {\\mathrm{REESS}}}{E _ {\\mathrm{fuel}}} \\leqslant + 0. 0 1\n$$",
+        "text_format": "latex",
+        "bbox": [
+            386,
+            466,
+            573,
+            500
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "式中： $E _ { \\mathrm { f u e l } } - $ 计算得到燃料能量当量，Wh。",
+        "bbox": [
+            80,
+            502,
+            442,
+            518
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "（e）拥有最高负电量变化的测试和中间值的 $M _ { \\mathrm { C O _ { 2 } } }$ 之差与中间值和拥有最高正电量变化的测试之间的$M _ { \\mathrm { C O _ { 2 } } }$ 之差，应大致相同并且最好位于（d）定义的区域内。",
+        "bbox": [
+            78,
+            520,
+            880,
+            556
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "生产企业在使用修正系数之前应交由环境保护主管部门审查和同意。",
+        "bbox": [
+            115,
+            558,
+            643,
+            574
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "如果一系列测试中至少 5 次没有满足标准（a）或标准（b），生产企业应向环境保护主管部门进行解释说明。如果环境保护主管部门认为解释理由不充分，可要求进行追加测试。如果追加测试后仍不满足标准，环境保护主管部门将基于测试结果确定保守的替代修正系数。",
+        "bbox": [
+            78,
+            576,
+            880,
+            630
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "该系列Ⅰ型试验结果应符合 5.3.1.4要求。气态污染物、颗粒物质量和粒子数量排放不适用本附件修正程序。",
+        "bbox": [
+            80,
+            632,
+            880,
+            665
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "RB.2.3 修正系数 $K _ { \\infty _ { 2 } }$",
+        "text_level": 2,
+        "bbox": [
+            80,
+            669,
+            247,
+            684
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "对于 OVC-HEV 和 NOVC-HEV 车辆， $\\mathrm { C O } _ { 2 }$ 排放修正系数 $K _ { \\mathsf { C O } _ { \\gamma } }$ 按下式计算：",
+        "bbox": [
+            114,
+            687,
+            690,
+            703
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "equation",
+        "text": "$$\nK _ {\\mathrm{CO} _ {2}} = \\frac {\\sum_ {n = 1} ^ {n _ {\\mathrm{CS}}} \\left[ \\left(\\mathrm{EC} _ {\\mathrm{CS} , n} - \\mathrm{EC} _ {\\mathrm{CS} , \\text {avg}}\\right) \\times \\left(M _ {\\mathrm{CO} _ {2} , \\mathrm{CS} , \\mathrm{nb} , n} - M _ {\\mathrm{CO} _ {2} , \\mathrm{CS} , \\mathrm{nb} , \\text {avg}}\\right) \\right]}{\\sum_ {n = 1} ^ {n _ {\\mathrm{CS}}} \\left(\\mathrm{EC} _ {\\mathrm{CS} , n} - \\mathrm{EC} _ {\\mathrm{CS} , \\text {avg}}\\right) ^ {2}}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            263,
+            709,
+            694,
+            777
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "式中： $K _ { \\mathrm { C O } _ { 2 } } \\qquad \\longrightarrow \\mathrm { C O } _ { 2 }$ 排放修正系数， $\\mathrm { ( \\mathbf { g } / k m ) / \\hbar ( \\mathbf { W } h / k m ) }$ ；",
+        "bbox": [
+            78,
+            778,
+            571,
+            795
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "$\\operatorname { E C } _ { \\operatorname { C S } , n }$ ——第 n 次电量保持模式下的电量消耗，Wh/km，由下列公式计算：",
+        "bbox": [
+            147,
+            796,
+            741,
+            810
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\mathrm{EC} _ {\\mathrm{CS}, n} = \\frac {\\Delta E _ {\\mathrm{REESS,CS} , n}}{d _ {\\mathrm{CS} , n}}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            403,
+            821,
+            557,
+            857
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "$\\Delta E _ { \\mathrm { R E E S S , C S } , n }$ ——第 n次电量保持模式下的电量变化（依据 RB.1.1.2），Wh；",
+        "bbox": [
+            147,
+            868,
+            741,
+            883
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "$d _ { \\mathrm { C S } , n }$ ——第 n次电量保持Ⅰ型试验中行驶的距离，km；",
+        "bbox": [
+            147,
+            884,
+            645,
+            898
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "text",
+        "text": "$\\mathrm { E C } _ { \\mathrm { C S , a v g } }$ $- n _ { \\mathrm { C S } }$ 次测试的电量保持模式下的平均电量消耗，Wh/km，由下式计算：",
+        "bbox": [
+            147,
+            900,
+            823,
+            916
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "header",
+        "text": "GB 18352.6—2016",
+        "bbox": [
+            80,
+            85,
+            258,
+            99
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "page_number",
+        "text": "394",
+        "bbox": [
+            100,
+            917,
+            132,
+            931
+        ],
+        "page_idx": 1
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\mathrm{EC} _ {\\mathrm{CS}, \\text { avg }} = \\frac {1}{n _ {\\mathrm{CS}}} \\times \\sum_ {n = 1} ^ {n _ {\\mathrm{CS}}} \\mathrm{EC} _ {\\mathrm{CS}, n}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            421,
+            129,
+            606,
+            162
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "n ——测试的序号；",
+        "bbox": [
+            181,
+            173,
+            431,
+            187
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "$n _ { \\mathrm { C S } }$ 测试的总次数；",
+        "bbox": [
+            181,
+            189,
+            445,
+            204
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "——未经能量平衡修正的第 n 次电量保持模式下 $\\mathrm { C O } _ { 2 }$ 排放（根据表 R.3 步骤 2 计$M _ { \\mathrm { { C O } _ { 2 } , C S , n b , n } }$ 算），g/km；",
+        "bbox": [
+            179,
+            205,
+            914,
+            235
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "equation",
+        "text": "$$\nM _ {\\mathrm{CO} _ {2}, \\mathrm{CS,nb,avg}}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            184,
+            246,
+            277,
+            262
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "—基于 $\\mathrm { C O } _ { 2 }$ 排放， $n _ { \\mathrm { C S } }$ 次电量保持模式下 $\\mathrm { C O } _ { 2 }$ 排放的算术平均值，该数值未经能量平衡修正， $\\mathrm { { g } / k m }$ ，由下式计算：",
+        "bbox": [
+            322,
+            237,
+            915,
+            269
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "equation",
+        "text": "$$\nM _ {\\mathrm{CO} _ {2}, \\mathrm{CS,nb,avg}} = \\frac {1}{n _ {\\mathrm{CS}}} \\times \\sum_ {n = 1} ^ {n _ {\\mathrm{CS}}} M _ {\\mathrm{CO} _ {2}, \\mathrm{CS,nb}, n} 。\n$$",
+        "text_format": "latex",
+        "bbox": [
+            384,
+            281,
+            638,
+            317
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "$\\mathrm { C O } _ { 2 }$ 排放修正系数应保留 4 位有效数字。 $\\mathrm { C O } _ { 2 }$ 排放修正系数的统计学显著性应由环境保护主管部门评估。",
+        "bbox": [
+            114,
+            326,
+            915,
+            362
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "RB.2.3.1 各个速度段 CO2 排放修正系数可以使用整个循环系数。",
+        "bbox": [
+            112,
+            363,
+            618,
+            379
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "RB.2.3.2 在不违反 RB.2.2 前提下，应生产企业要求且环境保护主管部门允许，可为每一个单独的速度段确定独立的 $\\mathrm { C O } _ { 2 }$ 排放修正系数 $K _ { \\mathrm { C O } _ { 2 } , \\mathfrak { p } \\circ }$ 此时，每个单独速度段均应满足 RB.2.2 的要求，且 RB.2.3.1 应对每个单独速度段单独确定修正系数。",
+        "bbox": [
+            112,
+            382,
+            917,
+            436
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "RB.3 确定修正系数的测试程序",
+        "text_level": 2,
+        "bbox": [
+            114,
+            456,
+            366,
+            472
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "RB.3.1 OVC-HEV 车辆",
+        "text_level": 2,
+        "bbox": [
+            114,
+            493,
+            287,
+            508
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "对于 OVC-HEV 车辆，应选用图 RB.1 中的测试流程之一，用于测量 RB.2 中确定修正系数时所需的数值。",
+        "bbox": [
+            112,
+            511,
+            915,
+            546
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "image",
+        "img_path": "images/5f2b429154ccf89ceaa3014cae76a9b8b4a932f57097c8df5bf771987a4b2e7e.jpg",
+        "image_caption": [
+            "图 RB.1 OVC-HEV 测试流程"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            337,
+            546,
+            690,
+            765
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "RB.3.1.1 选项 1 测试流程",
+        "text_level": 2,
+        "bbox": [
+            114,
+            808,
+            322,
+            824
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "RB.3.1.1.1 预处理和浸车",
+        "text_level": 2,
+        "bbox": [
+            114,
+            827,
+            319,
+            841
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "预处理和浸车按附件 RD 中 RD.2.1 进行。",
+        "bbox": [
+            149,
+            845,
+            470,
+            860
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "RB.3.1.1.2 REESS 调整",
+        "text_level": 2,
+        "bbox": [
+            114,
+            864,
+            297,
+            879
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "在 RB.3.1.1.3 的测试程序前，生产企业可调整 REESS。生产企业应提供证据表明调整后可符合RB.3.1.1.3 中测试开始的要求。",
+        "bbox": [
+            112,
+            882,
+            915,
+            916
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "header",
+        "text": "GB 18352.6—2016",
+        "bbox": [
+            744,
+            85,
+            915,
+            99
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "page_number",
+        "text": "395",
+        "bbox": [
+            863,
+            917,
+            897,
+            931
+        ],
+        "page_idx": 2
+    },
+    {
+        "type": "text",
+        "text": "RB.3.1.1.3 测试程序",
+        "text_level": 2,
+        "bbox": [
+            80,
+            118,
+            248,
+            133
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "RB.3.1.1.3.1 驾驶模式应根据附件 RF 中 RF.3 进行选择。",
+        "bbox": [
+            78,
+            137,
+            517,
+            152
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "RB.3.1.1.3.2 测试时，车辆应运行 R.4.1 规定的 WLTC 测试循环。",
+        "bbox": [
+            78,
+            155,
+            584,
+            171
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "RB.3.1.1.3.3 除非本附录另有说明，车辆应根据附录 C 的Ⅰ型试验程序进行测试。",
+        "bbox": [
+            78,
+            174,
+            712,
+            189
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "RB.3.1.1.3.4 为了得到修正系数，需要进行符合要求的一组适用 WLTC 测试循环，此时测试后可连续进行若干符合 RB.2.2 要求的测试循环，该循环流程由 RB.3.1.1.1～RB.3.1.1.3 组成。",
+        "bbox": [
+            78,
+            192,
+            880,
+            227
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "RB.3.1.2 选项 2 测试流程",
+        "text_level": 2,
+        "bbox": [
+            80,
+            229,
+            289,
+            244
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "RB.3.1.2.1 预处理",
+        "text_level": 2,
+        "bbox": [
+            80,
+            248,
+            231,
+            263
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "测试车辆应根据 RD.2.1.1 或 RD.2.1.2 款进行预处理。",
+        "bbox": [
+            114,
+            266,
+            524,
+            282
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "RB.3.1.2.2 REESS 调整",
+        "text_level": 2,
+        "bbox": [
+            80,
+            285,
+            260,
+            300
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "预处理后，应省略 RD.2.1.3的浸车，允许在 60min 内对 REESS 进行调整。每个循环之间的中断时间要求相同。中断结束后，应立即按照 RB.3.1.2.3 的要求继续试验。",
+        "bbox": [
+            80,
+            303,
+            880,
+            338
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "为保证起动条件相同，经生产企业要求，可以在 REESS 调整前进行一个额外的暖机程序。如果应用了该条款，则每次驱动的循环前都应加入这一暖机程序。",
+        "bbox": [
+            78,
+            340,
+            880,
+            375
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "RB.3.1.2.3 测试程序",
+        "text_level": 2,
+        "bbox": [
+            80,
+            378,
+            247,
+            393
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "RB.3.1.2.3.1 驾驶模式应根据 RF.3 选择。",
+        "bbox": [
+            80,
+            395,
+            400,
+            412
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "RB.3.1.2.3.2 测试时，车辆应行驶 R.4.1 规定的 WLTC 测试循环。",
+        "bbox": [
+            78,
+            414,
+            584,
+            430
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "RB.3.1.2.3.3 除非本附录另有说明， 车辆应根据附录 C 的Ⅰ型试验程序进行测试。",
+        "bbox": [
+            78,
+            432,
+            712,
+            449
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "RB.3.1.2.3.4 为了得到修正系数，需要进行符合要求的一组适用 WLTC 测试循环，此时测试后可连续进行若干符合 RB.2.2 要求的测试循环，该循环流程由 RB.3.1.1.1～RB.3.1.1.3 组成。",
+        "bbox": [
+            78,
+            451,
+            880,
+            487
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "RB.3.2 NOVC-HEV 车辆",
+        "text_level": 2,
+        "bbox": [
+            80,
+            498,
+            263,
+            514
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "对于NOVC-HEV 车辆，应选用图 RB.2 中的测试流程之一，用于测量 RB.2 中确定修正系数时所需的数值。",
+        "bbox": [
+            80,
+            525,
+            880,
+            561
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "image",
+        "img_path": "images/7bb88b9055fb15adbba0368241da7c03a94deeb50c0c9ba13335ba2069e2613f.jpg",
+        "image_caption": [
+            "图 RB.2 NOVC-HEV 测试流程"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            282,
+            558,
+            668,
+            813
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "RB.3.2.1 选项 1 测试流程",
+        "text_level": 2,
+        "bbox": [
+            78,
+            859,
+            287,
+            875
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "RB.3.2.1.1 预处理和浸车",
+        "text_level": 2,
+        "bbox": [
+            80,
+            878,
+            284,
+            892
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "预处理和浸车应根据 R.5.3.1进行。",
+        "bbox": [
+            115,
+            896,
+            386,
+            912
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "header",
+        "text": "GB 18352.6—2016",
+        "bbox": [
+            80,
+            85,
+            258,
+            99
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "page_number",
+        "text": "396",
+        "bbox": [
+            102,
+            917,
+            132,
+            931
+        ],
+        "page_idx": 3
+    },
+    {
+        "type": "text",
+        "text": "RB.3.2.1.2 REESS 调整",
+        "text_level": 2,
+        "bbox": [
+            115,
+            118,
+            295,
+            133
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "在 RB.3.2.1.3 的测试程序前，生产企业可调整 REESS。生产企业应提供证据表明调整后可符合RB.3.2.1.3 中测试开始的要求。",
+        "bbox": [
+            114,
+            137,
+            914,
+            170
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "RB.3.2.1.3 测试程序",
+        "text_level": 2,
+        "bbox": [
+            115,
+            174,
+            282,
+            189
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "RB.3.2.1.3.1 驾驶模式应根据 $\\mathrm { R F } . 3$ 选择。",
+        "bbox": [
+            114,
+            193,
+            433,
+            206
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "RB.3.2.1.3.2 测试时，车辆应行驶 R.4.1 规定的 WLTC 测试循环。",
+        "bbox": [
+            114,
+            211,
+            616,
+            225
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "RB.3.2.1.3.3 除非本附件另有说明，车辆应根据附录 C 的电量保持Ⅰ型试验程序进行测试。",
+        "bbox": [
+            114,
+            229,
+            816,
+            244
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "RB.3.2.1.3.4 为了得到修正系数，需要进行符合要求的 WLTC 测试循环组合，此时测试后可连续进行若干符合 RB.2.2 要求的测试循环，该循环流程由 RB.3.2.1.1～RB.3.2.1.3 组成。",
+        "bbox": [
+            114,
+            247,
+            914,
+            282
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "RB.3.2.2 选项 2 测试流程",
+        "text_level": 2,
+        "bbox": [
+            115,
+            285,
+            321,
+            300
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "RB.3.2.2.1 预处理",
+        "text_level": 2,
+        "bbox": [
+            115,
+            304,
+            265,
+            318
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "测试车辆应根据 R.5.3.1.1进行预处理。",
+        "bbox": [
+            149,
+            322,
+            450,
+            338
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "RB.3.2.2.2 REESS 调整",
+        "text_level": 2,
+        "bbox": [
+            115,
+            341,
+            295,
+            356
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "预处理后，应省略 R.5.3.1.2的浸车，允许在 60min 内对 REESS 进行调整。每个循环之间的中断时间要求均相同。中断结束后，应立即按照 RB.3.2.2.3的要求继续试验。",
+        "bbox": [
+            115,
+            359,
+            914,
+            394
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "为保证起动条件相同，经生产企业要求，可以在 REESS 调整前进行一个额外的暖机程序。如果应用了该条款，则每次驱动的循环前都应加入此暖机程序。",
+        "bbox": [
+            115,
+            395,
+            915,
+            430
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "RB.3.2.2.3 测试程序",
+        "text_level": 2,
+        "bbox": [
+            115,
+            432,
+            282,
+            448
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "RB.3.2.2.3.1 驾驶模式应根据 RF.3 进行选择。",
+        "bbox": [
+            114,
+            451,
+            468,
+            467
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "RB.3.2.2.3.2 测试时，车辆应行驶 R.4.1规定的 WLTC 测试循环。",
+        "bbox": [
+            114,
+            470,
+            618,
+            486
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "RB.3.2.2.3.3 除非本附录另有说明，车辆应根据附录 C 的Ⅰ型试验程序进行测试。",
+        "bbox": [
+            114,
+            489,
+            746,
+            504
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "RB.3.2.2.3.4 为了得到修正系数，需要进行符合要求的 WLTC 测试循环组合，此时测试后可连续进行若干符合 RB.2.2 要求的测试循环，该循环流程由 RB.3.2.2.2～RB.3.2.2.3 组成。",
+        "bbox": [
+            114,
+            507,
+            915,
+            541
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "header",
+        "text": "GB 18352.6—2016",
+        "bbox": [
+            744,
+            85,
+            915,
+            99
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "page_number",
+        "text": "397",
+        "bbox": [
+            863,
+            917,
+            895,
+            931
+        ],
+        "page_idx": 4
+    },
+    {
+        "type": "text",
+        "text": "附 件 RC",
+        "text_level": 1,
+        "bbox": [
+            431,
+            155,
+            529,
+            171
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "（规范性附件）",
+        "text_level": 1,
+        "bbox": [
+            421,
+            173,
+            532,
+            190
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "REESS电流及电压的确定",
+        "text_level": 1,
+        "bbox": [
+            379,
+            192,
+            579,
+            208
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "RC.1 概述",
+        "text_level": 2,
+        "bbox": [
+            80,
+            248,
+            173,
+            263
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "RC.1.1 本附件规定了确定 NOVC-HEV 和 OVC-HEV 的 REESS 电流和电压的测试方法和设备。",
+        "bbox": [
+            78,
+            285,
+            813,
+            300
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "RC.1.2 REESS 电流和电压的测量应在与测试同时开始，并且在车辆完成测试后立即结束。",
+        "bbox": [
+            78,
+            303,
+            779,
+            319
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "RC.1.3 每个阶段的 REESS 电流和电压都应进行测量。",
+        "bbox": [
+            78,
+            322,
+            502,
+            338
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "RC.1.4 生产企业在以下情况应向环境保护主管部门提交测量 REESS 电压和电流的设备清单（包括仪器制造厂、型号、序列号、最后校准日期（如适用））：",
+        "bbox": [
+            78,
+            340,
+            880,
+            375
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "（a）附录 R中 R.5规定的Ⅰ型试验时；",
+        "bbox": [
+            115,
+            376,
+            415,
+            394
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "（b）附件 RB 确定修正系数的程序时（如适用）；",
+        "bbox": [
+            115,
+            395,
+            489,
+            412
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "（c）可能要求的任意程序时。",
+        "bbox": [
+            115,
+            414,
+            342,
+            430
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "RC.2 REESS 电流",
+        "text_level": 2,
+        "bbox": [
+            80,
+            451,
+            221,
+            468
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "定义 REESS 消耗时的电流为负值。",
+        "bbox": [
+            115,
+            489,
+            386,
+            505
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "RC.2.1 外部 REESS 电流测量",
+        "text_level": 2,
+        "bbox": [
+            80,
+            516,
+            309,
+            533
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "RC.2.1.1 REESS 电流应在测试中使用夹装式或密闭式电流传感器测量。电流测量系统精度应满足本附件表 R.1 规定的要求。电流传感器应能够读出发动机起动时的峰值电流，并且能够在测量点的温度条件下工作。",
+        "bbox": [
+            78,
+            544,
+            880,
+            596
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "RC.2.1.2 电流传感器应通过任一直接连接到 REESS 的电缆对 REESS 电流进行测量。所测电流应为REESS 总电流。",
+        "bbox": [
+            78,
+            600,
+            880,
+            634
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "有屏蔽线的情况下，应根据环境保护主管部门的要求进行适当处理。",
+        "bbox": [
+            115,
+            636,
+            642,
+            653
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "为了使用外部测量设备更方便地测量 REESS 电流，生产企业应在车上提供合适、安全和方便的连接点。如果没有该连接点，则生产企业有义务支持环境保护主管部门，将电流传感器连接到可以符合上述要求的与 REESS 直接相连的电缆上。",
+        "bbox": [
+            78,
+            655,
+            880,
+            709
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "RC.2.1.3 电流传感器的最小频率取样应为 20Hz。测得的电流应按照时间积分，得到 Q 的测量值，单位为 Ah。该积分可在电流测量设备中直接完成。",
+        "bbox": [
+            78,
+            711,
+            880,
+            746
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "RC.2.2 车辆车载 REESS 电流数据",
+        "text_level": 2,
+        "bbox": [
+            80,
+            757,
+            346,
+            774
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "生产企业可使用车载电流测量数据替代RC.2.1，同时应向环境保护主管部门证明这些数据的精确性。",
+        "bbox": [
+            114,
+            785,
+            877,
+            802
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "RC.3 REESS 电压",
+        "text_level": 2,
+        "bbox": [
+            80,
+            822,
+            221,
+            838
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "RC.3.1 外部 REESS 电压测量",
+        "text_level": 2,
+        "bbox": [
+            80,
+            869,
+            309,
+            884
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "附录 R中 R.5规定的测试过程中，应使用符合 R.3.1 规定精度要求的设备测量 REESS 电压。生产企",
+        "bbox": [
+            114,
+            896,
+            882,
+            913
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "header",
+        "text": "GB 18352.6—2016",
+        "bbox": [
+            82,
+            85,
+            257,
+            99
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "page_number",
+        "text": "398",
+        "bbox": [
+            100,
+            917,
+            132,
+            931
+        ],
+        "page_idx": 5
+    },
+    {
+        "type": "text",
+        "text": "业环境保护主管部门用外部测量设备测量 REESS 电压时，生产企业应提供相应的帮助。",
+        "bbox": [
+            114,
+            118,
+            791,
+            135
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "RC.3.2 额定 REESS 电压",
+        "text_level": 2,
+        "bbox": [
+            114,
+            146,
+            310,
+            162
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "对于NOVC-HEV和OVC-HEV，可使用根据DIN EN 60 050-482确定的额定REESS电压。由于RC.3.2的应用，RC.3.1 的规定不适用。",
+        "bbox": [
+            114,
+            174,
+            917,
+            209
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "RC.3.3 车辆车载 REESS 电压数据",
+        "text_level": 2,
+        "bbox": [
+            114,
+            219,
+            379,
+            236
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "生产企业可使用车载电压测量数据替代 RC.3.1 和 RC.3.2，同时应向环境保护主管部门证明这些数据的精确性。",
+        "bbox": [
+            114,
+            247,
+            915,
+            284
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "image",
+        "img_path": "images/036242d5ec940010384e8388afae1817c0d27743189841b8d81b41a01c82881a.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            188,
+            285,
+            776,
+            813
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "header",
+        "text": "GB 18352.6—2016",
+        "bbox": [
+            744,
+            85,
+            915,
+            99
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "page_number",
+        "text": "399",
+        "bbox": [
+            863,
+            917,
+            895,
+            931
+        ],
+        "page_idx": 6
+    },
+    {
+        "type": "text",
+        "text": "附 件 RD",
+        "text_level": 1,
+        "bbox": [
+            431,
+            155,
+            529,
+            171
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "（规范性附件）",
+        "bbox": [
+            421,
+            174,
+            532,
+            190
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "预处理、浸车和 REESS充电条件",
+        "bbox": [
+            352,
+            192,
+            608,
+            208
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "RD.1 本附件规定了 OVC-HEV 车辆测试时，REESS 和内燃机的预处理程序。",
+        "bbox": [
+            78,
+            247,
+            670,
+            263
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "RD.2 OVC-HEV 预处理和浸车",
+        "bbox": [
+            80,
+            267,
+            327,
+            282
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "RD.2.1 从电量保持模式开始时的预处理和浸车程序",
+        "bbox": [
+            80,
+            285,
+            485,
+            300
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "RD.2.1.1 车辆应至少行驶一个 WLTC 循环以完成内燃机预处理。在预处理时，应同时测量 REESS 的电平衡状态。当符合 R.5.2.4.5的终止判定条件时，在 WLTC 结束时终止预处理。",
+        "bbox": [
+            78,
+            303,
+            880,
+            338
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "RD.2.1.2 作为 RD.2.1.1的替代方法，应生产企业要求且环境保护主管部门允许，电量保持Ⅰ型试验中的REESS 制造厂电量状态可以根据生产企业建议进行设置。",
+        "bbox": [
+            80,
+            340,
+            880,
+            375
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "在这种情况下，应该进行与附录 C 中 C.1.2.6 适用于传统车辆相同的预处理程序，预处理周期应符合 R.5.2.4.5 的终止判定条件。",
+        "bbox": [
+            80,
+            376,
+            880,
+            413
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "RD.2.1.3 车辆浸车应根据附录 C.1.2.7 进行。",
+        "bbox": [
+            80,
+            414,
+            426,
+            430
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "RD.2.2 从电量消耗模式开始时的预处理和浸车程序",
+        "bbox": [
+            80,
+            432,
+            485,
+            449
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "RD.2.2.1 车辆应至少行驶一个 WLTC 循环以完成内燃机预处理。在预处理时， 应同时测量 REESS 的电平衡状态。当符合 R.5.2.4.5的终止判定条件时，在 WLTC 结束时终止预处理。",
+        "bbox": [
+            80,
+            451,
+            880,
+            486
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "RD.2.2.2 车辆浸车应根据附录 C.1.2.7 款进行。Ⅰ型车辆测试预处理的车辆不得使用强制冷却。浸车期间，REESS 应进行正常充电。",
+        "bbox": [
+            80,
+            489,
+            880,
+            523
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "RD.2.2.3 正常充电的应用",
+        "bbox": [
+            80,
+            526,
+            287,
+            541
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "RD.2.2.3.1 REESS 应在附录 C 中 C.1.2.2.2.2 规定的环境温度下，使用下列方式之一进行充电：",
+        "bbox": [
+            80,
+            544,
+            806,
+            560
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "（a）车载充电器（如装有）；或",
+        "bbox": [
+            115,
+            563,
+            361,
+            577
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "（b）由生产企业建议的外接充电器，使用正常充电模式。",
+        "bbox": [
+            115,
+            581,
+            556,
+            596
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "上文所述的充电程序不包括任何自动或手动启动的特殊充电程序，如均衡充电模式或维护模式。生产企业应声明，在测试过程中没有进行特殊充电程序。",
+        "bbox": [
+            80,
+            600,
+            880,
+            634
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "RD.2.2.3.2 充电结束标准",
+        "text_level": 2,
+        "bbox": [
+            80,
+            637,
+            282,
+            652
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "当车载或外部仪器显示 REESS 已完全充电时，判定为充电完成。",
+        "bbox": [
+            115,
+            655,
+            616,
+            671
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "header",
+        "text": "GB 18352.6—2016",
+        "bbox": [
+            82,
+            85,
+            257,
+            99
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "page_number",
+        "text": "400",
+        "bbox": [
+            102,
+            917,
+            134,
+            931
+        ],
+        "page_idx": 7
+    },
+    {
+        "type": "text",
+        "text": "附 件 RE",
+        "text_level": 1,
+        "bbox": [
+            465,
+            155,
+            566,
+            171
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "（规范性附件）",
+        "bbox": [
+            455,
+            174,
+            568,
+            190
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "OVC-HEV 纯电利用系数（UF）",
+        "bbox": [
+            396,
+            192,
+            621,
+            208
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "RE.1 本附件规定的方法，是按照 SAE J2841 2010 年 9 月，Issued 2009-03，Revised 2010-09），基于驾驶习惯统计数据的纯电利用系数曲线方法。",
+        "bbox": [
+            112,
+            247,
+            915,
+            282
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "RE.2 UF为纯电利用系数，对于某一时间段j，应根据表 RE.1 参数及下式进行计算：",
+        "bbox": [
+            114,
+            285,
+            771,
+            300
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\mathrm{UF} _ {j} \\left(d _ {j}\\right) = 1 - \\exp \\left\\{- \\left(\\sum_ {i = 1} ^ {k} C _ {i} \\times \\left(\\frac {d _ {j}}{d _ {n}}\\right) ^ {i}\\right) \\right\\} - \\sum_ {l = 1} ^ {j - 1} \\mathrm{UF} _ {l}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            347,
+            307,
+            678,
+            351
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "式中： $\\mathrm { U F } _ { j }$ ——时间段j 的纯电利用系数；",
+        "bbox": [
+            114,
+            357,
+            490,
+            374
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "$d _ { j }$ ——时间段j 结束时测得的行驶距离，km；",
+        "bbox": [
+            181,
+            374,
+            581,
+            390
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "$C _ { i }$ ——第 i 个系数（见表 RE.1）；",
+        "bbox": [
+            181,
+            390,
+            485,
+            406
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "$d _ { n }$ 两次充电间最大里程（见表 RE.1），km；",
+        "bbox": [
+            181,
+            406,
+            598,
+            422
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "$k$ 指数参数的个数；",
+        "bbox": [
+            181,
+            422,
+            423,
+            438
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "equation",
+        "text": "$$\n\\begin{array}{c} j \\\\ i \\end{array}\n$$",
+        "text_format": "latex",
+        "bbox": [
+            179,
+            439,
+            200,
+            468
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "j 涉及的时间段的个数；",
+        "bbox": [
+            179,
+            439,
+            458,
+            455
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "i 涉及的术语/系数的编号；",
+        "bbox": [
+            179,
+            454,
+            480,
+            470
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "$\\sum _ { l = 1 } ^ { j - 1 } \\mathrm { U F } _ { l }$ 截至j−1 个时间段的利用系数的累积值。",
+        "bbox": [
+            184,
+            472,
+            596,
+            506
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "table",
+        "img_path": "images/64182d6e2e08426a9a4aa4f40cd3b725ded62d507be47819c050d5ec674b3096.jpg",
+        "table_caption": [
+            "表 RE.1 UF 确定参数"
+        ],
+        "table_footnote": [],
+        "table_body": "<table><tr><td>参数</td><td>值</td></tr><tr><td> $d_n$ </td><td>400 km</td></tr><tr><td> $C_1$ </td><td>4.58</td></tr><tr><td> $C_2$ </td><td>16.32</td></tr><tr><td> $C_3$ </td><td>-29.54</td></tr><tr><td> $C_4$ </td><td>-37.03</td></tr><tr><td> $C_5$ </td><td>54.03</td></tr><tr><td> $C_6$ </td><td>92.06</td></tr><tr><td> $C_7$ </td><td>-14.69</td></tr><tr><td> $C_8$ </td><td>-158.49</td></tr><tr><td> $C_9$ </td><td>-22.98</td></tr><tr><td> $C_{10}$ </td><td>110</td></tr></table>",
+        "bbox": [
+            233,
+            537,
+            796,
+            741
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "header",
+        "text": "GB 18352.6—2016",
+        "bbox": [
+            744,
+            85,
+            915,
+            99
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "page_number",
+        "text": "401",
+        "bbox": [
+            863,
+            917,
+            895,
+            931
+        ],
+        "page_idx": 8
+    },
+    {
+        "type": "text",
+        "text": "附 件 RF",
+        "text_level": 1,
+        "bbox": [
+            431,
+            155,
+            531,
+            172
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "（规范性附件）",
+        "text_level": 1,
+        "bbox": [
+            418,
+            173,
+            534,
+            190
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "驾驶模式的选择",
+        "text_level": 1,
+        "bbox": [
+            413,
+            191,
+            549,
+            209
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "RF.1 一般要求",
+        "text_level": 2,
+        "bbox": [
+            78,
+            247,
+            208,
+            263
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "RF.1.1 生产企业应根据附件 RF 中 RF.2～RF.3 规定为Ⅰ型试验选择驾驶模式，该模式应可以使车辆在附录 C 中 C.1.2.6.6规定的速度公差范围内跟随测试循环。",
+        "bbox": [
+            78,
+            284,
+            882,
+            319
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "RF.1.2 生产企业应向环境保护主管部门提供关于下列情况的证明：",
+        "bbox": [
+            78,
+            321,
+            601,
+            338
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "（a）主要模式的适用条件；",
+        "bbox": [
+            114,
+            340,
+            324,
+            357
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "（b）最高车速；",
+        "bbox": [
+            115,
+            359,
+            238,
+            375
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "（c）在所有模式下燃油消耗量和 $\\mathrm { C O } _ { 2 }$ 排放（如适用）的最佳和最恶劣情况（模拟附录 C 中C.1.2.6.5.2.4），及其证明资料；",
+        "bbox": [
+            78,
+            376,
+            880,
+            414
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "（d）最高电量消耗模式；",
+        "bbox": [
+            115,
+            414,
+            307,
+            431
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "（e）循环能量需求（根据附件 CE 中 CE.5，其中目标车速由实际车速替代）。",
+        "bbox": [
+            114,
+            432,
+            705,
+            450
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "RF.1.3 专用驾驶模式，例如，“山地模式”和“维护模式”等非日常运行模式，如果只用于一些特殊用途，则不予考虑。",
+        "bbox": [
+            78,
+            451,
+            880,
+            488
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "RF.2 装有驾驶模式选择功能的 OVC-HEV的电量消耗模式测试",
+        "text_level": 2,
+        "bbox": [
+            78,
+            506,
+            561,
+            524
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "对于装有驾驶模式选择功能的车辆，电量消耗Ⅰ型试验的运行模式应根据以下规定选择。",
+        "bbox": [
+            112,
+            544,
+            803,
+            561
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "RF.2.1 如果有主模式，且该模式可以使车辆在电量消耗模式测试时跟随参考测试循环曲线，则应选择该模式。",
+        "bbox": [
+            78,
+            562,
+            880,
+            598
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "RF.2.2 如果没有主模式，或有主模式，但该模式不能使车辆在电量消耗模式测试时跟随参考测试循环曲线，则运行模式应按照以下规定选择：",
+        "bbox": [
+            78,
+            599,
+            882,
+            634
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "（a）如果只有一个可选模式可在电量消耗模式下跟随参考测试循环，则应选择该模式；",
+        "bbox": [
+            114,
+            636,
+            784,
+            653
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "（b）如果有多个模式可以在电量消耗模式下跟随参考测试循环曲线，则应选择电量消耗最高的模式。",
+        "bbox": [
+            78,
+            655,
+            880,
+            690
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "RF.2.3 根据 RF.2.1 和 RF.2.2，如果没有任何模式可以使车辆跟随参考测试循环曲线，则参考测试循环应根据附件 CA 中 CA.5 进行修正：",
+        "bbox": [
+            78,
+            692,
+            882,
+            728
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "（a）如果有主模式，且该模式可以使车辆在电量消耗模式测试时跟随修改后的参考测试循环曲线，则应选择该模式。",
+        "bbox": [
+            78,
+            728,
+            873,
+            764
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "（b）如果没有主模式但有其他模式，且该模式可以使车辆在电量消耗运行条件下跟随修改后的参考测试循环曲线，则应选择这些模式中电量消耗最高的模式。",
+        "bbox": [
+            78,
+            766,
+            882,
+            802
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "text",
+        "text": "（c）如果没有任何模式可以使车辆在电量消耗运行条件下跟随修改后的参考测试循环曲线，则应确定拥有最高循环能量需求的一个或多个模式，并从中选出最高电量消耗的模式。",
+        "bbox": [
+            78,
+            803,
+            882,
+            840
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "header",
+        "text": "GB 18352.6—2016",
+        "bbox": [
+            80,
+            85,
+            258,
+            101
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "page_number",
+        "text": "402",
+        "bbox": [
+            100,
+            917,
+            134,
+            931
+        ],
+        "page_idx": 9
+    },
+    {
+        "type": "image",
+        "img_path": "images/1d7e1d201a4c30b242b990c10b37963ce1c749cf0325f869c7819ef9791ddb4d.jpg",
+        "image_caption": [
+            "图 RF.1 CD 运行条件下的驾驶模式选择",
+            "RF.3 装有驾驶模式选择功能的 OVC-HEV和 NOVC-HEV的电量保持模式测试"
+        ],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            139,
+            131,
+            878,
+            502
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "对于装有驾驶模式选择功能的车辆，电量保持Ⅰ型试验的运行模式应根据以下规定选择。",
+        "bbox": [
+            147,
+            600,
+            835,
+            615
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "RF.3.1 如果有主模式，且该模式可以使车辆在电量保持模式测试时跟随参考测试循环曲线，则应选择该模式。",
+        "bbox": [
+            114,
+            618,
+            914,
+            653
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "RF.3.2 如果没有主模式，或有主模式，但该模式不能使车辆在电量保持模式测试时跟随参考测试循环曲线，则运行模式应按照下列条件选择：",
+        "bbox": [
+            114,
+            655,
+            915,
+            690
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "（a）如果只有一个可选模式可在电量保持模式下跟随参考测试循环，则应选择该模式；",
+        "bbox": [
+            149,
+            692,
+            816,
+            708
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "（b）如果有多个模式可以跟随参考测试循环曲线，则生产企业可以选择仅在燃油消耗最高模式下测试，或同时选择最省油模式和燃油消耗最高模式，并将测试结果算数平均。",
+        "bbox": [
+            114,
+            711,
+            915,
+            745
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "RF.3.3 如果根据 RF.3.1 和 RF.3.2，如果没有任何模式可以使车辆跟随参考测试循环曲线，则应根据附件 CA 中 CA.5 采用修正的试验循环：",
+        "bbox": [
+            112,
+            747,
+            914,
+            783
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "（a）如果有主模式，且该模式可以使车辆在电量保持模式测试时跟随修改后的参考测试循环曲线，则应选择该模式。",
+        "bbox": [
+            114,
+            785,
+            905,
+            819
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "（b）如果没有主模式但有其他模式，且其他模式可以使车辆在电量保持运行条件下跟随修改后的参考测试循环曲线，则应选择这些模式中的油耗消耗最高模式。",
+        "bbox": [
+            114,
+            822,
+            915,
+            857
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "text",
+        "text": "（c）如果没有模式可以使车辆在电量保持运行条件下跟随修改的参考测试循环曲线，应确定拥有最高循环能量需求的一个模式或多个模式，并从中选出燃油消耗最高模式。",
+        "bbox": [
+            114,
+            859,
+            915,
+            895
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "header",
+        "text": "GB 18352.6—2016",
+        "bbox": [
+            744,
+            85,
+            915,
+            99
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "page_number",
+        "text": "403",
+        "bbox": [
+            863,
+            917,
+            895,
+            931
+        ],
+        "page_idx": 10
+    },
+    {
+        "type": "image",
+        "img_path": "images/a65633173b9bc0b6bae580fcc70dae03019876de6cf0db24a6914ff728ce02aa.jpg",
+        "image_caption": [],
+        "image_footnote": [],
+        "content": "",
+        "bbox": [
+            99,
+            135,
+            870,
+            564
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "header",
+        "text": "GB 18352.6—2016",
+        "bbox": [
+            82,
+            85,
+            258,
+            99
+        ],
+        "page_idx": 11
+    },
+    {
+        "type": "page_number",
+        "text": "404",
+        "bbox": [
+            102,
+            917,
+            132,
+            931
+        ],
+        "page_idx": 11
+    }
+]

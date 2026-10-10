@@ -1,0 +1,216 @@
+...FFFFFFFFFFFF.FF                                                       [100%]
+=================================== FAILURES ===================================
+__________________ test_string_gold_binds_declared_clause_too __________________
+
+    def test_string_gold_binds_declared_clause_too():
+        items, meta = assess.answer_items("pg", "prose-enum-001")
+        bad = copy.deepcopy(items)
+        bad[0]["clause"] = "9.9.9"
+>       assert score("prose-enum-001", bad, meta)["final_status"] == "FAIL"
+E       AssertionError: assert 'PASS' == 'FAIL'
+E         
+E         - FAIL
+E         + PASS
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:61: AssertionError
+________ test_real_quote_cannot_support_appended_fabricated_answer_text ________
+
+    def test_real_quote_cannot_support_appended_fabricated_answer_text():
+        items, meta = assess.answer_items("pg", "prose-enum-001")
+        bad = copy.deepcopy(items)
+        bad[0]["text"] += "停车场允许无条件排放污水。"
+>       assert score("prose-enum-001", bad, meta)["final_status"] == "FAIL"
+E       AssertionError: assert 'PASS' == 'FAIL'
+E         
+E         - FAIL
+E         + PASS
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:68: AssertionError
+______ test_declared_item_doc_and_citation_doc_must_agree[prose-enum-001] ______
+
+qid = 'prose-enum-001'
+
+    @pytest.mark.parametrize("qid", ["prose-enum-001", "table-enum-001"])
+    def test_declared_item_doc_and_citation_doc_must_agree(qid):
+        items, meta = assess.answer_items("pg", qid)
+        bad = copy.deepcopy(items)
+        bad[0]["doc_id"] = "doc-not-the-source"
+>       assert score(qid, bad, meta)["final_status"] == "FAIL"
+E       AssertionError: assert 'PASS' == 'FAIL'
+E         
+E         - FAIL
+E         + PASS
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:76: AssertionError
+______ test_declared_item_doc_and_citation_doc_must_agree[table-enum-001] ______
+
+qid = 'table-enum-001'
+
+    @pytest.mark.parametrize("qid", ["prose-enum-001", "table-enum-001"])
+    def test_declared_item_doc_and_citation_doc_must_agree(qid):
+        items, meta = assess.answer_items("pg", qid)
+        bad = copy.deepcopy(items)
+        bad[0]["doc_id"] = "doc-not-the-source"
+>       assert score(qid, bad, meta)["final_status"] == "FAIL"
+E       AssertionError: assert 'PASS' == 'FAIL'
+E         
+E         - FAIL
+E         + PASS
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:76: AssertionError
+____ test_actual_cross_unit_delivery_is_not_supported_by_its_declared_order ____
+
+    def test_actual_cross_unit_delivery_is_not_supported_by_its_declared_order():
+        qid = "prose-enum-003"
+        items, meta = assess.answer_items("pg", qid)
+        item = next(i for i in items if i["clause"] == "4.3.4")
+        citation = item["citation"]
+        parsed = assess.an._doc_parsed_dir(REGISTRY[citation["doc_id"]]["file_path"])
+        pieces = []
+        for seg in citation["unit_segments"]:
+            raw = assess.an._unit_text_from_blocks(parsed, seg["unit_id"])
+            pieces.append(raw[seg["rel_start"] : seg["rel_end"]])
+        # Independent position-level proof using the original unedited artifact.
+        assert assess.norm(item["text"]) not in assess.norm("".join(pieces))
+>       assert score(qid, items, meta)["final_status"] != "PASS"
+E       AssertionError: assert 'PASS' != 'PASS'
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:91: AssertionError
+_________ test_failed_counter_leg_is_not_a_successful_missing_response _________
+
+    def test_failed_counter_leg_is_not_a_successful_missing_response():
+        v = {
+            "judgement": "no_answer_artifact",
+            "runtime": "failure",
+            "coverage": "partial",
+            "delivered": 0,
+            "counter_expected_status": "missing",
+        }
+>       assert assess.finalize_counter(v)["final_status"] != "PASS"
+E       AssertionError: assert 'PASS' != 'PASS'
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:102: AssertionError
+__________ test_observed_empty_leg_is_not_proof_of_isolation_contract __________
+
+    def test_observed_empty_leg_is_not_proof_of_isolation_contract():
+>       assert canonical_row("neg-002")["final_status"] == "PENDING"
+E       AssertionError: assert 'PASS' == 'PENDING'
+E         
+E         - PENDING
+E         + PASS
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:106: AssertionError
+______ test_guard_budget_refusal_is_not_completed_member_budget_contract _______
+
+    def test_guard_budget_refusal_is_not_completed_member_budget_contract():
+        row = canonical_row("neg-008")
+        assert row["coverage"] is None
+>       assert row["final_status"] == "PENDING"
+E       AssertionError: assert 'PASS' == 'PENDING'
+E         
+E         - PENDING
+E         + PASS
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:112: AssertionError
+______________ test_partial_is_not_the_frozen_ambiguous_behaviour ______________
+
+    def test_partial_is_not_the_frozen_ambiguous_behaviour():
+        row = canonical_row("neg-007")
+        assert row["coverage"] == "partial"
+>       assert row["final_status"] == "FAIL"
+E       AssertionError: assert 'PASS' == 'FAIL'
+E         
+E         - FAIL
+E         + PASS
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:118: AssertionError
+___ test_known_unanswered_expected_answer_is_whole_question_failure[neg-009] ___
+
+qid = 'neg-009'
+
+    @pytest.mark.parametrize("qid", ["neg-009", "neg-010"])
+    def test_known_unanswered_expected_answer_is_whole_question_failure(qid):
+        row = canonical_row(qid)
+        assert row["delivered"] == 0
+>       assert row["final_status"] == "FAIL"
+E       AssertionError: assert 'PENDING' == 'FAIL'
+E         
+E         - FAIL
+E         + PENDING
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:125: AssertionError
+___ test_known_unanswered_expected_answer_is_whole_question_failure[neg-010] ___
+
+qid = 'neg-010'
+
+    @pytest.mark.parametrize("qid", ["neg-009", "neg-010"])
+    def test_known_unanswered_expected_answer_is_whole_question_failure(qid):
+        row = canonical_row(qid)
+        assert row["delivered"] == 0
+>       assert row["final_status"] == "FAIL"
+E       AssertionError: assert 'PENDING' == 'FAIL'
+E         
+E         - FAIL
+E         + PENDING
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:125: AssertionError
+_ test_true_but_off_topic_neg010_fragments_do_not_answer_replacement_relation __
+
+    def test_true_but_off_topic_neg010_fragments_do_not_answer_replacement_relation():
+        row = canonical_row("neg-010", "fusion")
+        assert row["delivered"] == 4
+>       assert row["final_status"] == "FAIL"
+E       AssertionError: assert 'PENDING' == 'FAIL'
+E         
+E         - FAIL
+E         + PENDING
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:131: AssertionError
+___________ test_post_identity_is_mandatory_even_for_a_finished_run ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x113875820>
+
+    def test_post_identity_is_mandatory_even_for_a_finished_run(monkeypatch):
+        terminal = copy.deepcopy(assess.load_terminal())
+        terminal.pop("identity_after")
+        assert terminal["finished_at"]
+        monkeypatch.setattr(assess, "load_terminal", lambda: terminal)
+>       assert assess.verify_inputs()["ok"] is False
+E       assert True is False
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:145: AssertionError
+_____ test_corrupt_manifest_has_rejection_diagnostic_without_adjudication ______
+
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-679/test_corrupt_manifest_has_reje0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11386d9d0>
+
+    def test_corrupt_manifest_has_rejection_diagnostic_without_adjudication(tmp_path, monkeypatch):
+        run = tmp_path / "run"
+        run.mkdir()
+        (run / "pilot-manifest.json").write_text("{ corrupt json")
+        monkeypatch.setattr(assess, "ROUND1", run)
+        monkeypatch.setattr(assess, "__file__", str(tmp_path / "assess_round1.py"))
+        with pytest.raises(Exception):
+            assess.main()
+>       assert (tmp_path / "input-rejection.json").exists()
+E       AssertionError: assert False
+E        +  where False = exists()
+E        +    where exists = (PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-679/test_corrupt_manifest_has_reje0') / 'input-rejection.json').exists
+
+reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py:156: AssertionError
+=========================== short test summary info ============================
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_string_gold_binds_declared_clause_too
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_real_quote_cannot_support_appended_fabricated_answer_text
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_declared_item_doc_and_citation_doc_must_agree[prose-enum-001]
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_declared_item_doc_and_citation_doc_must_agree[table-enum-001]
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_actual_cross_unit_delivery_is_not_supported_by_its_declared_order
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_failed_counter_leg_is_not_a_successful_missing_response
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_observed_empty_leg_is_not_proof_of_isolation_contract
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_guard_budget_refusal_is_not_completed_member_budget_contract
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_partial_is_not_the_frozen_ambiguous_behaviour
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_known_unanswered_expected_answer_is_whole_question_failure[neg-009]
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_known_unanswered_expected_answer_is_whole_question_failure[neg-010]
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_true_but_off_topic_neg010_fragments_do_not_answer_replacement_relation
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_post_identity_is_mandatory_even_for_a_finished_run
+FAILED reports/pg-retrieval/phase-4-round-1-assessment-review-r2/test_assessment_review_r2.py::test_corrupt_manifest_has_rejection_diagnostic_without_adjudication
+14 failed, 4 passed in 1.80s

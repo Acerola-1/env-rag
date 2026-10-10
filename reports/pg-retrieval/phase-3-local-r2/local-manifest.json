@@ -1,0 +1,69 @@
+{
+ "task": "5.2 real local candidate adapter (rev 2, L1-L5 remediation, read-only)",
+ "generated_at": "2026-10-07T00:06:02+0800",
+ "command_run": "uv run env-rag-final lightrag-local --query-id fact-001,fact-002,syn-001,neg-001 --report-dir reports/pg-retrieval/phase-3-local-r2",
+ "files_sha256": {
+  "src/env_rag_final/local_adapter.py": "264da8f64d180eb1eb3856c41be7451dc5f97154e4eca2d231139312b1192a40",
+  "src/env_rag_final/cli.py": "cb4ddcb025d3e17e484099ddcbaab4fdcaed2e3aa7bc3054885752d7da11c023",
+  "reports/pg-retrieval/phase-3-local-r2/local-runtime-latest.json": "bd8486f2ef8fed8cc6fe79dd80c8a67a7b26aeddb5e228ec1d5892fe0129cdd9",
+  "reports/pg-retrieval/gate-2/review-r5/gold-approved.json": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "tests/test_local_adapter_review.py": "88c9d115dceef69fb02d5e51b272995597249545e853811e2ffdaf70661416c9"
+ },
+ "release": {
+  "lightrag_hku": "1.5.7",
+  "wheel_record_mismatches": 0
+ },
+ "fixes": {
+  "L1_no_initialize": "release storage classes bound read-only (no initialize(), no create_payload_index / CREATE INDEX / create / migrate); collection existence + dim + workspace index verified via native reads; missing/incompatible -> AdapterError",
+  "L2_release_candidate_fns": "_find_related_text_unit_from_entities/_from_relations with ReadOnlyPGTextChunks + real chunks vdb; edge endpoints read from src_tgt; provenance keeps ALL entity/edge paths (no overwrite); discovery budget related_chunk_number, final budget chunk_top_k documented",
+  "L3_guards": "pre-flight: config guard (model/dim/workspace mapping/env overrides) BEFORE any connection; frozen gold SHA read+compared; run_frozen captures real source/catalog/search/gold/env before and drift-checks after; unknown query_id rejected before any call",
+  "L4_service_boundary": "every real call recorded attempt/success/failure + latency; VECTOR helper's swallowed embedding failure surfaced via boundary-wrapped embed -> sorting_source=truncation-fallback + degraded; counters per-request and only for actual executions (empty path = 0)",
+  "L5_close_only": "resources registered at construction; cleanup verifies pending write queues EMPTY then client.close()/driver.close()/finalize; close failures recorded, never skip the rest"
+ },
+ "service_call_totals": {
+  "by_service": {
+   "llm": {
+    "attempt": 4,
+    "success": 4,
+    "failure": 0
+   },
+   "embedding": {
+    "attempt": 13,
+    "success": 13,
+    "failure": 0
+   },
+   "neo4j": {
+    "attempt": 4,
+    "success": 4,
+    "failure": 0
+   },
+   "pg": {
+    "attempt": 17,
+    "success": 17,
+    "failure": 0
+   }
+  }
+ },
+ "identity_guards": {
+  "identity_before_matches_frozen": true,
+  "identity_after_matches_frozen": true,
+  "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "llm_cache_rows_after": 16514
+ },
+ "verification": {
+  "candidates_total": 40,
+  "candidates_verified": 40,
+  "answer_llm_calls": 0,
+  "counter_expectation_preserved": [
+   {
+    "type": "absent_version",
+    "expected_status": "missing"
+   }
+  ]
+ },
+ "tests": {
+  "total": 238,
+  "review10": "10/10 pass",
+  "note": "238 passed; no assertion deleted/xfail/weakened"
+ }
+}

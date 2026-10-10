@@ -1,0 +1,20 @@
+[
+  {
+    "id": "D1",
+    "path": "src/env_rag_final/rerank.py",
+    "start_line": 835,
+    "end_line": 838,
+    "severity": "high",
+    "category": "bug",
+    "content": "Owning entry reads root catalog_snapshot_id, but accepted real 5.3 results keep it under pg.catalog_snapshot_id. Real-shaped replay skips enrichment entirely; correct manual derivation is not owning-path evidence."
+  },
+  {
+    "id": "D2",
+    "path": "src/env_rag_final/rerank.py",
+    "start_line": 370,
+    "end_line": 385,
+    "severity": "medium",
+    "category": "bug",
+    "content": "Canonical repair replayed_* and basis are created internally then discarded by _rerank_inputs, so the persisted terminal cannot trace original values and repair evidence."
+  }
+]

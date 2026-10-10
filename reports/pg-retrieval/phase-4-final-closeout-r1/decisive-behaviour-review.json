@@ -1,0 +1,146 @@
+{
+  "gold_sha256": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "frozen_counter": {
+    "counter_id": "neg-005",
+    "type": "same_number_different_docs",
+    "question": "GB 3838-2002 的表 1 与 GB 3095-2012 的表 1 是同一张表吗？",
+    "expected_behavior": "逻辑表身份含文档+章节+表号，跨文档不合并",
+    "expected_status": "ambiguous",
+    "review_status": "expectation_reviewed"
+  },
+  "reviewed_cases": [
+    {
+      "round": 1,
+      "path": "pg",
+      "frozen_expected_status": "ambiguous",
+      "observed_coverage": "complete",
+      "delivered_rows": 38,
+      "docs_cited": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "doc-91f9049decde09153368d4b69f280e78"
+      ],
+      "scorer_final_status": "FAIL",
+      "runtime_file": "reports/pg-retrieval/phase-4-formal-fixed-round-1/legs/r1/pg/neg-005/answer/answer-runtime-latest.json",
+      "runtime_sha256": "dc31f0dfc1d159daaa56fc9f683c87ce0a93ce423cfef9acc5b57e30a13c4f9e",
+      "main_reviewer": "Codex primary agent",
+      "review": "inspected actual runtime and fixed gold; confirmed false complete; no inference of table-ID conflation",
+      "raw_runtime_coverage_checked": true,
+      "raw_answer_count_checked": true,
+      "independent_raw_item_doc_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "doc-91f9049decde09153368d4b69f280e78"
+      ]
+    },
+    {
+      "round": 1,
+      "path": "local",
+      "frozen_expected_status": "ambiguous",
+      "observed_coverage": "complete",
+      "delivered_rows": 38,
+      "docs_cited": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "doc-91f9049decde09153368d4b69f280e78"
+      ],
+      "scorer_final_status": "FAIL",
+      "runtime_file": "reports/pg-retrieval/phase-4-formal-fixed-round-1/legs/r1/local/neg-005/answer/answer-runtime-latest.json",
+      "runtime_sha256": "136155eae779d6cd94ea8d5f5c25ddebd95e99a4be2ff6a2a3e23054238c3b09",
+      "main_reviewer": "Codex primary agent",
+      "review": "inspected actual runtime and fixed gold; confirmed false complete; no inference of table-ID conflation",
+      "raw_runtime_coverage_checked": true,
+      "raw_answer_count_checked": true,
+      "independent_raw_item_doc_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "doc-91f9049decde09153368d4b69f280e78"
+      ]
+    },
+    {
+      "round": 1,
+      "path": "fusion",
+      "frozen_expected_status": "ambiguous",
+      "observed_coverage": "complete",
+      "delivered_rows": 38,
+      "docs_cited": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "doc-91f9049decde09153368d4b69f280e78"
+      ],
+      "scorer_final_status": "FAIL",
+      "runtime_file": "reports/pg-retrieval/phase-4-formal-fixed-round-1/legs/r1/fusion/neg-005/answer/answer-runtime-latest.json",
+      "runtime_sha256": "aed189e05cad87e2e92e494961f13c927db65bcb286db5a064044ce0809b9212",
+      "main_reviewer": "Codex primary agent",
+      "review": "inspected actual runtime and fixed gold; confirmed false complete; no inference of table-ID conflation",
+      "raw_runtime_coverage_checked": true,
+      "raw_answer_count_checked": true,
+      "independent_raw_item_doc_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "doc-91f9049decde09153368d4b69f280e78"
+      ]
+    },
+    {
+      "round": 2,
+      "path": "pg",
+      "frozen_expected_status": "ambiguous",
+      "observed_coverage": "complete",
+      "delivered_rows": 38,
+      "docs_cited": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "doc-91f9049decde09153368d4b69f280e78"
+      ],
+      "scorer_final_status": "FAIL",
+      "runtime_file": "reports/pg-retrieval/phase-4-formal-fixed-round-2/legs/r2/pg/neg-005/answer/answer-runtime-latest.json",
+      "runtime_sha256": "8c22578a178bc390594daeeea12113f0fffa1a36841e398f6ba9b016077180f7",
+      "main_reviewer": "Codex primary agent",
+      "review": "inspected actual runtime and fixed gold; confirmed false complete; no inference of table-ID conflation",
+      "raw_runtime_coverage_checked": true,
+      "raw_answer_count_checked": true,
+      "independent_raw_item_doc_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "doc-91f9049decde09153368d4b69f280e78"
+      ]
+    },
+    {
+      "round": 2,
+      "path": "local",
+      "frozen_expected_status": "ambiguous",
+      "observed_coverage": "complete",
+      "delivered_rows": 38,
+      "docs_cited": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "doc-91f9049decde09153368d4b69f280e78"
+      ],
+      "scorer_final_status": "FAIL",
+      "runtime_file": "reports/pg-retrieval/phase-4-formal-fixed-round-2/legs/r2/local/neg-005/answer/answer-runtime-latest.json",
+      "runtime_sha256": "cbe68bfb7a3bc75b7902f0fc5a0c5536c4391bd62f02d216df0fff9fdd48dc68",
+      "main_reviewer": "Codex primary agent",
+      "review": "inspected actual runtime and fixed gold; confirmed false complete; no inference of table-ID conflation",
+      "raw_runtime_coverage_checked": true,
+      "raw_answer_count_checked": true,
+      "independent_raw_item_doc_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "doc-91f9049decde09153368d4b69f280e78"
+      ]
+    },
+    {
+      "round": 2,
+      "path": "fusion",
+      "frozen_expected_status": "ambiguous",
+      "observed_coverage": "complete",
+      "delivered_rows": 38,
+      "docs_cited": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "doc-91f9049decde09153368d4b69f280e78"
+      ],
+      "scorer_final_status": "FAIL",
+      "runtime_file": "reports/pg-retrieval/phase-4-formal-fixed-round-2/legs/r2/fusion/neg-005/answer/answer-runtime-latest.json",
+      "runtime_sha256": "860d193dde6079838250fbdbf099c854dea88092b1e825c04cfb3362ca57cb17",
+      "main_reviewer": "Codex primary agent",
+      "review": "inspected actual runtime and fixed gold; confirmed false complete; no inference of table-ID conflation",
+      "raw_runtime_coverage_checked": true,
+      "raw_answer_count_checked": true,
+      "independent_raw_item_doc_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "doc-91f9049decde09153368d4b69f280e78"
+      ]
+    }
+  ],
+  "coverage": "Decisive negative cases only; other pending rows are not claimed manually approved"
+}

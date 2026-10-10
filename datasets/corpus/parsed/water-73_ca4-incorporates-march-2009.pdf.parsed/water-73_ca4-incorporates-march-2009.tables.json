@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "tables": {
+    "tb-4579692b627039da7dfa2e3818868836-0001": {
+      "id": "tb-4579692b627039da7dfa2e3818868836-0001",
+      "blockid": "ff3aa54ea36b4d1eb7456d5ac67db371",
+      "heading": "Preface/Uncategorized",
+      "parent_headings": [],
+      "dimension": [
+        7,
+        2
+      ],
+      "format": "html",
+      "content": "<table><tr><td>WATERBODY</td><td>30-DAY AVERAGE OBJECTIVE</td></tr><tr><td>Los Angeles River,Reach 5 (Sepulveda Basin)</td><td>ELS Present (from April 1 – September 30) $CCC = \\left( \\frac{0.0676}{1 + 10^{7.688-pH}} + \\frac{2.912}{1 + 10^{pH-7.688}} \\right) * 0.854 * MIN(2.85,2.85 * 10^{0.028*(25-T)})$ ELS Absent (from October 1 – March 31) $CCC = \\left( \\frac{0.0676}{1 + 10^{7.688-pH}} + \\frac{2.912}{1 + 10^{pH-7.688}} \\right) * 0.854 * 2.85 * 10^{0.028*(25-Max(T,7))}$ </td></tr><tr><td>Los Angeles River,Reach 4 (Sepulveda Dam to Riverside Drive)</td><td>ELS Absent (year round) $CCC = \\left( \\frac{0.0676}{1 + 10^{7.688-pH}} + \\frac{2.912}{1 + 10^{pH-7.688}} \\right) * 0.854 * 2.85 * 10^{0.028*(25-Max(T,7))}$ </td></tr><tr><td>Los AngelesRiver,Reach 3 (Riverside Drive to Figueroa Street)</td><td>ELS Present (from April 1 – September 30) $CCC = \\left( \\frac{0.0676}{1 + 10^{7.688-pH}} + \\frac{2.912}{1 + 10^{pH-7.688}} \\right) * 0.854 * MIN(2.85,2.85 * 10^{0.28*(25-T)})$ ELS Absent (from October 1 – March 31) $CCC = \\left( \\frac{0.0676}{1 + 10^{7.688-pH}} + \\frac{2.912}{1 + 10^{pH-7.688}} \\right) * 0.854 * 2.85 * 10^{ 0.028*(25-Max(T,7))}$ </td></tr><tr><td>Burbank Western Wash (Burbank Water Reclamation Plant to confluence with LA River)</td><td>ELS Absent (year round) $CCC = \\left( \\frac{0.0676}{1 + 10^{7.688-pH}} + \\frac{2.912}{1 + 10^{pH-7.688}} \\right) * 0.92 * 2.03 * 10^{0.028*(25-Max(T,7))}$ </td></tr><tr><td>San Gabriel River,Reaches 2 and 3 (Confluence with San Jose Creek to Firestone Blvd.) (including all San Jose Creek WRP discharges)</td><td>ELS Present (from April 1 – September 30) $CCC = \\left( \\frac{0.0676}{1 + 10^{7.688-pH}} + \\frac{2.912}{1 + 10^{pH-7.688}} \\right) * 0.89 * MIN(2.85,2.37 * 10^{0.028*(25-T)})$ ELS Absent (from October 1 – March 31) $CCC = \\left( \\frac{0.0676}{1 + 10^{7.688-pH}} + \\frac{2.912}{1 + 10^{pH-7.688}} \\right) * 0.89 * 2.37 * 10^{0.028*(25-Max(T,7))}$ </td></tr><tr><td>San Gabriel River,Reach 1 (Firestone Blvd. to Willow St. or start of estuary)</td><td>ELS Absent (year round) $CCC = \\left( \\frac{0.0676}{1 + 10^{7.688-pH}} + \\frac{2.912}{1 + 10^{pH-7.688}} \\right) * 0.854 * 3.34 * 10^{0.028*(25-Max(T,7))}$ </td></tr></table>",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/12"
+    }
+  }
+}

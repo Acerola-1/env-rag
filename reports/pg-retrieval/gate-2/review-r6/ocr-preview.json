@@ -1,0 +1,2027 @@
+{
+  "schema_version": "1",
+  "mode": "workspace",
+  "repository": "/Users/acerola/Dev/Python/RAG/env-rag-final",
+  "total_files": 317,
+  "reviewable_count": 206,
+  "excluded_count": 111,
+  "total_insertions": 208037,
+  "total_deletions": 4,
+  "reviewable_files": [
+    {
+      "path": "pyproject.toml",
+      "status": "modified",
+      "insertions": 1,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/cli.py",
+      "status": "modified",
+      "insertions": 460,
+      "deletions": 1
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/.openspec.yaml",
+      "status": "added",
+      "insertions": 2,
+      "deletions": 0
+    },
+    {
+      "path": "openspec/changes/archive/.gitkeep",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "openspec/config.yaml",
+      "status": "added",
+      "insertions": 28,
+      "deletions": 0
+    },
+    {
+      "path": "openspec/specs/.gitkeep",
+      "status": "added",
+      "insertions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/run-manifest.json",
+      "status": "added",
+      "insertions": 110,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/sample-set.json",
+      "status": "added",
+      "insertions": 1801,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/schema.json",
+      "status": "added",
+      "insertions": 387,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/search-probes.json",
+      "status": "added",
+      "insertions": 158,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/run-manifest.json",
+      "status": "added",
+      "insertions": 102,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/sample-set.json",
+      "status": "added",
+      "insertions": 1617,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/schema.json",
+      "status": "added",
+      "insertions": 387,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/search-probes.json",
+      "status": "added",
+      "insertions": 158,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/run-manifest.json",
+      "status": "added",
+      "insertions": 110,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/sample-set.json",
+      "status": "added",
+      "insertions": 1801,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/schema.json",
+      "status": "added",
+      "insertions": 387,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/search-probes.json",
+      "status": "added",
+      "insertions": 158,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/fingerprint-check.json",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/independent-verification.json",
+      "status": "added",
+      "insertions": 450,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/re-review-evidence.json",
+      "status": "added",
+      "insertions": 66,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/recheck-a",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/verify_gate0.py",
+      "status": "added",
+      "insertions": 215,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/counterexamples-offline.json",
+      "status": "added",
+      "insertions": 190,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/cli-0.json",
+      "status": "added",
+      "insertions": 77,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/cli-1.json",
+      "status": "added",
+      "insertions": 166,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/cli-2.json",
+      "status": "added",
+      "insertions": 195,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/model-ambiguous.json",
+      "status": "added",
+      "insertions": 74,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/model-live.json",
+      "status": "added",
+      "insertions": 223,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/model-verification.json",
+      "status": "added",
+      "insertions": 80,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/ocr-preview.json",
+      "status": "added",
+      "insertions": 908,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/ocr-rules.json",
+      "status": "added",
+      "insertions": 21,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/replay-before-fix.json",
+      "status": "added",
+      "insertions": 2001,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/replay.json",
+      "status": "added",
+      "insertions": 2003,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/replay.py",
+      "status": "added",
+      "insertions": 218,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/review-comments.json",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/review-coverage.json",
+      "status": "added",
+      "insertions": 449,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/review-manifest.json",
+      "status": "added",
+      "insertions": 74,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/verify_model.py",
+      "status": "added",
+      "insertions": 91,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/ocr-preview.json",
+      "status": "added",
+      "insertions": 654,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/ocr-rules.json",
+      "status": "added",
+      "insertions": 21,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/ocr-preview.json",
+      "status": "added",
+      "insertions": 736,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/ocr-rules.json",
+      "status": "added",
+      "insertions": 21,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/replay-live.json",
+      "status": "added",
+      "insertions": 1295,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/replay-offline.json",
+      "status": "added",
+      "insertions": 200,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/replay.py",
+      "status": "added",
+      "insertions": 454,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/review-comments.json",
+      "status": "added",
+      "insertions": 56,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/review-coverage.json",
+      "status": "added",
+      "insertions": 429,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/review-manifest.json",
+      "status": "added",
+      "insertions": 98,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/submitted-records-recovered.json",
+      "status": "added",
+      "insertions": 905,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/submitted-runs-original.json",
+      "status": "added",
+      "insertions": 903,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/reproduce.py",
+      "status": "added",
+      "insertions": 380,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/ocr-preview.json",
+      "status": "added",
+      "insertions": 817,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/ocr-rules.json",
+      "status": "added",
+      "insertions": 22,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/replay.json",
+      "status": "added",
+      "insertions": 1637,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/replay.py",
+      "status": "added",
+      "insertions": 174,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/review-comments.json",
+      "status": "added",
+      "insertions": 50,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/review-coverage.json",
+      "status": "added",
+      "insertions": 488,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/review-manifest.json",
+      "status": "added",
+      "insertions": 115,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-comments.json",
+      "status": "added",
+      "insertions": 58,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-coverage.json",
+      "status": "added",
+      "insertions": 369,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-manifest.json",
+      "status": "added",
+      "insertions": 66,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/submitted-prose-vs-original.json",
+      "status": "added",
+      "insertions": 128,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/submitted-table-citations.json",
+      "status": "added",
+      "insertions": 93,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/gold-review.json",
+      "status": "added",
+      "insertions": 2842,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/gold-source-proof.json",
+      "status": "added",
+      "insertions": 1576,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/gold_source_proof.py",
+      "status": "added",
+      "insertions": 144,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/ocr-preview.json",
+      "status": "added",
+      "insertions": 1180,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/ocr-rules.json",
+      "status": "added",
+      "insertions": 24,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/raw-gold-materials.json",
+      "status": "added",
+      "insertions": 26068,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/cli-amendment-docs.json",
+      "status": "added",
+      "insertions": 102,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/cli-chapter3.json",
+      "status": "added",
+      "insertions": 881,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/cli-commands.json",
+      "status": "added",
+      "insertions": 47,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/cli-two-version-docs.json",
+      "status": "added",
+      "insertions": 79,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/final-source-check.json",
+      "status": "added",
+      "insertions": 35,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/gold-review-v2.json",
+      "status": "added",
+      "insertions": 3045,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/ocr-preview.json",
+      "status": "added",
+      "insertions": 1328,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/ocr-rules.json",
+      "status": "added",
+      "insertions": 21,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/replay.json",
+      "status": "added",
+      "insertions": 11424,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/replay.py",
+      "status": "added",
+      "insertions": 117,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/review-comments.json",
+      "status": "added",
+      "insertions": 65,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/review-coverage.json",
+      "status": "added",
+      "insertions": 786,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/review-manifest.json",
+      "status": "added",
+      "insertions": 113,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/replay.json",
+      "status": "added",
+      "insertions": 6524,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/replay.py",
+      "status": "added",
+      "insertions": 109,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-comments.json",
+      "status": "added",
+      "insertions": 74,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-coverage.json",
+      "status": "added",
+      "insertions": 708,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-manifest.json",
+      "status": "added",
+      "insertions": 104,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/benchmark.json",
+      "status": "added",
+      "insertions": 1114,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/citation-reread.json",
+      "status": "added",
+      "insertions": 3640,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/cli-chapter3.json",
+      "status": "added",
+      "insertions": 152,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/cli-file-bench.json",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/cli-missing-clause.json",
+      "status": "added",
+      "insertions": 371,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/coverage-manifest.json",
+      "status": "added",
+      "insertions": 1860,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/files-and-final-source.json",
+      "status": "added",
+      "insertions": 912,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/files-and-final-source.py",
+      "status": "added",
+      "insertions": 82,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/finalize-manifest.py",
+      "status": "added",
+      "insertions": 161,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/gold-review-v3.json",
+      "status": "added",
+      "insertions": 1215,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/index-readonly.json",
+      "status": "added",
+      "insertions": 207,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/index-readonly.py",
+      "status": "added",
+      "insertions": 70,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/ocr-preview.json",
+      "status": "added",
+      "insertions": 1482,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/ocr-rules.json",
+      "status": "added",
+      "insertions": 20,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/replay.json",
+      "status": "added",
+      "insertions": 13249,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/replay.py",
+      "status": "added",
+      "insertions": 133,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/review-manifest.json",
+      "status": "added",
+      "insertions": 129,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/review-materials.py",
+      "status": "added",
+      "insertions": 115,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/tokenizer-probes.json",
+      "status": "added",
+      "insertions": 1833,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/benchmark.json",
+      "status": "added",
+      "insertions": 1048,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/citation-reread.json",
+      "status": "added",
+      "insertions": 3738,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/cli-file-bench.json",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/cli-prose006.json",
+      "status": "added",
+      "insertions": 311,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/coverage-manifest.json",
+      "status": "added",
+      "insertions": 2090,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/final-source.json",
+      "status": "added",
+      "insertions": 70,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/final-source.py",
+      "status": "added",
+      "insertions": 71,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/gold-review-v4.json",
+      "status": "added",
+      "insertions": 1139,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/gold-review.py",
+      "status": "added",
+      "insertions": 120,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/gold-verifier.json",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/manifest.py",
+      "status": "added",
+      "insertions": 171,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/ocr-preview.json",
+      "status": "added",
+      "insertions": 1663,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/ocr-rules.json",
+      "status": "added",
+      "insertions": 17,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/replay.json",
+      "status": "added",
+      "insertions": 13344,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/replay.py",
+      "status": "added",
+      "insertions": 133,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/review-manifest.json",
+      "status": "added",
+      "insertions": 133,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/scope-cause-and-final-source.json",
+      "status": "added",
+      "insertions": 594,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/scope-cause.py",
+      "status": "added",
+      "insertions": 135,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/tokenizer-probes.json",
+      "status": "added",
+      "insertions": 1833,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/benchmark.json",
+      "status": "added",
+      "insertions": 1232,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/citation-reread.json",
+      "status": "added",
+      "insertions": 4273,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/counterexamples-full.json",
+      "status": "added",
+      "insertions": 1969,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/counters.py",
+      "status": "added",
+      "insertions": 116,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/coverage-manifest.json",
+      "status": "added",
+      "insertions": 2314,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/final-source.json",
+      "status": "added",
+      "insertions": 70,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/final-source.py",
+      "status": "added",
+      "insertions": 71,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/freeze-gold.py",
+      "status": "added",
+      "insertions": 121,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/gold-approved.json",
+      "status": "added",
+      "insertions": 2255,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/gold-freeze-manifest.json",
+      "status": "added",
+      "insertions": 1058,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/gold-review-v5.json",
+      "status": "added",
+      "insertions": 1166,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/gold-review.py",
+      "status": "added",
+      "insertions": 129,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/index-readonly.json",
+      "status": "added",
+      "insertions": 207,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/index-readonly.py",
+      "status": "added",
+      "insertions": 70,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/manifest.py",
+      "status": "added",
+      "insertions": 173,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/ocr-preview.json",
+      "status": "added",
+      "insertions": 1839,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/ocr-rules.json",
+      "status": "added",
+      "insertions": 17,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/quality-observation.json",
+      "status": "added",
+      "insertions": 42,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/replay.json",
+      "status": "added",
+      "insertions": 16173,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/replay.py",
+      "status": "added",
+      "insertions": 133,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/review-manifest.json",
+      "status": "added",
+      "insertions": 135,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/tokenizer-probes.json",
+      "status": "added",
+      "insertions": 1833,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review_gold.py",
+      "status": "added",
+      "insertions": 199,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/run-manifest.json",
+      "status": "added",
+      "insertions": 62,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/sample-set.json",
+      "status": "added",
+      "insertions": 788,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/schema.json",
+      "status": "added",
+      "insertions": 387,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/search-probes.json",
+      "status": "added",
+      "insertions": 158,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/builder-change-counterexample.json",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/live-verification.json",
+      "status": "added",
+      "insertions": 130,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/offline-counterexamples.json",
+      "status": "added",
+      "insertions": 60,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/re-review-evidence.json",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/table-link-counterexample.json",
+      "status": "added",
+      "insertions": 16,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/v4-live-verification.json",
+      "status": "added",
+      "insertions": 144,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/v4-submitted-build-manifest.json",
+      "status": "added",
+      "insertions": 95,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1/build-manifest.json",
+      "status": "added",
+      "insertions": 113,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1/structure-samples.json",
+      "status": "added",
+      "insertions": 27,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/bench-r2.json",
+      "status": "added",
+      "insertions": 1114,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/bench-r3.json",
+      "status": "added",
+      "insertions": 1048,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/bench-r4.json",
+      "status": "added",
+      "insertions": 1232,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/bench-r5.json",
+      "status": "added",
+      "insertions": 1232,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/explain-evidence.json",
+      "status": "added",
+      "insertions": 32,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/gold-candidates.json",
+      "status": "added",
+      "insertions": 2178,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/index-manifest.json",
+      "status": "added",
+      "insertions": 127,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/r3-cli/cli-chapter3.json",
+      "status": "added",
+      "insertions": 328,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/r3-cli/cli-missing-clause.json",
+      "status": "added",
+      "insertions": 364,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/selfcheck-machinery.json",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/tokenizer-probes.json",
+      "status": "added",
+      "insertions": 1833,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/audit/__init__.py",
+      "status": "added",
+      "insertions": 9,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/audit/collect.py",
+      "status": "added",
+      "insertions": 1050,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/audit/compat.py",
+      "status": "added",
+      "insertions": 228,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/audit/identity.py",
+      "status": "added",
+      "insertions": 79,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/audit/lexical.py",
+      "status": "added",
+      "insertions": 60,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/audit/pg.py",
+      "status": "added",
+      "insertions": 133,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/audit/probes.py",
+      "status": "added",
+      "insertions": 127,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/audit/samples.py",
+      "status": "added",
+      "insertions": 635,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/audit/snapshot.py",
+      "status": "added",
+      "insertions": 136,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/catalog/__init__.py",
+      "status": "added",
+      "insertions": 41,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/catalog/builder.py",
+      "status": "added",
+      "insertions": 574,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/catalog/lexical_norm.py",
+      "status": "added",
+      "insertions": 64,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/catalog/metadata.py",
+      "status": "added",
+      "insertions": 229,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/catalog/schema.py",
+      "status": "added",
+      "insertions": 337,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/catalog/scopes.py",
+      "status": "added",
+      "insertions": 229,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/catalog/source.py",
+      "status": "added",
+      "insertions": 314,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/catalog/units.py",
+      "status": "added",
+      "insertions": 192,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/__init__.py",
+      "status": "added",
+      "insertions": 42,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/contract.py",
+      "status": "added",
+      "insertions": 118,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/doc_enum.py",
+      "status": "added",
+      "insertions": 257,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/prose_enum.py",
+      "status": "added",
+      "insertions": 633,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/table_enum.py",
+      "status": "added",
+      "insertions": 263,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/tables.py",
+      "status": "added",
+      "insertions": 358,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/search/__init__.py",
+      "status": "added",
+      "insertions": 1,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/search/clean.py",
+      "status": "added",
+      "insertions": 73,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/search/eval.py",
+      "status": "added",
+      "insertions": 686,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/search/expand.py",
+      "status": "added",
+      "insertions": 1106,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/search/gold.py",
+      "status": "added",
+      "insertions": 1495,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/search/index.py",
+      "status": "added",
+      "insertions": 519,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/search/probe.py",
+      "status": "added",
+      "insertions": 251,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/search/query.py",
+      "status": "added",
+      "insertions": 988,
+      "deletions": 0
+    },
+    {
+      "path": "src/env_rag_final/search/tokenizer.py",
+      "status": "added",
+      "insertions": 259,
+      "deletions": 0
+    }
+  ],
+  "excluded_files": [
+    {
+      "path": "README.md",
+      "status": "modified",
+      "insertions": 16,
+      "deletions": 3,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "uv.lock",
+      "status": "modified",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/README.md",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/design.md",
+      "status": "added",
+      "insertions": 168,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-0-fixes.md",
+      "status": "added",
+      "insertions": 19,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-0.md",
+      "status": "added",
+      "insertions": 65,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-1-enumeration-fixes-r2.md",
+      "status": "added",
+      "insertions": 25,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-1-enumeration-fixes-r3.md",
+      "status": "added",
+      "insertions": 22,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-1-enumeration-fixes.md",
+      "status": "added",
+      "insertions": 60,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-1-enumeration.md",
+      "status": "added",
+      "insertions": 60,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-1-fixes.md",
+      "status": "added",
+      "insertions": 23,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-1.md",
+      "status": "added",
+      "insertions": 43,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-2-fixes-r2.md",
+      "status": "added",
+      "insertions": 22,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-2-fixes-r3.md",
+      "status": "added",
+      "insertions": 15,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-2-fixes-r4.md",
+      "status": "added",
+      "insertions": 17,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-2-fixes-r5.md",
+      "status": "added",
+      "insertions": 14,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-2-fixes.md",
+      "status": "added",
+      "insertions": 29,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-2.md",
+      "status": "added",
+      "insertions": 31,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/proposal.md",
+      "status": "added",
+      "insertions": 35,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/specs/corpus-evidence-catalog/spec.md",
+      "status": "added",
+      "insertions": 57,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/specs/pg-scoped-retrieval/spec.md",
+      "status": "added",
+      "insertions": 53,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/specs/retrieval-evaluation/spec.md",
+      "status": "added",
+      "insertions": 37,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/specs/retrieval-fusion/spec.md",
+      "status": "added",
+      "insertions": 37,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/tasks.md",
+      "status": "added",
+      "insertions": 155,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/audit.md",
+      "status": "added",
+      "insertions": 90,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/compatibility.md",
+      "status": "added",
+      "insertions": 186,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/inventory.jsonl",
+      "status": "added",
+      "insertions": 279,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/mapping-samples.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/audit.md",
+      "status": "added",
+      "insertions": 90,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/changelog-vs-first-run.md",
+      "status": "added",
+      "insertions": 46,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/compatibility.md",
+      "status": "added",
+      "insertions": 186,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/inventory.jsonl",
+      "status": "added",
+      "insertions": 279,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/mapping-samples.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/audit.md",
+      "status": "added",
+      "insertions": 90,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/compatibility.md",
+      "status": "added",
+      "insertions": 186,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/inventory.jsonl",
+      "status": "added",
+      "insertions": 279,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/mapping-samples.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/review.md",
+      "status": "added",
+      "insertions": 97,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/model-live-cli.txt",
+      "status": "added",
+      "insertions": 233,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/review.md",
+      "status": "added",
+      "insertions": 48,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/submitted-report.md",
+      "status": "added",
+      "insertions": 190,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/submitted-tasks.md",
+      "status": "added",
+      "insertions": 92,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/test-results.txt",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/review.md",
+      "status": "added",
+      "insertions": 70,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/submitted-report.md",
+      "status": "added",
+      "insertions": 139,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/acceptance-results.txt",
+      "status": "added",
+      "insertions": 76,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/all-tests.txt",
+      "status": "added",
+      "insertions": 77,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/review.md",
+      "status": "added",
+      "insertions": 59,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/submitted-report.md",
+      "status": "added",
+      "insertions": 167,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/submitted-runs.jsonl",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review.md",
+      "status": "added",
+      "insertions": 73,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/submitted-enumeration-runs.jsonl",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/submitted-report.md",
+      "status": "added",
+      "insertions": 94,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/independent-tests.txt",
+      "status": "added",
+      "insertions": 324,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/independent-tests.txt",
+      "status": "added",
+      "insertions": 324,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/review.md",
+      "status": "added",
+      "insertions": 45,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/submitted-fixes-report.md",
+      "status": "added",
+      "insertions": 71,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/submitted-tasks.md",
+      "status": "added",
+      "insertions": 114,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/re-review/test-results.txt",
+      "status": "added",
+      "insertions": 365,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/benchmark-runs.jsonl",
+      "status": "added",
+      "insertions": 31,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/counterexample-tests.txt",
+      "status": "added",
+      "insertions": 252,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/review.md",
+      "status": "added",
+      "insertions": 89,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r3/test-results.txt",
+      "status": "added",
+      "insertions": 254,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/benchmark-runs.jsonl",
+      "status": "added",
+      "insertions": 31,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/new-counterexamples.txt",
+      "status": "added",
+      "insertions": 205,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/review.md",
+      "status": "added",
+      "insertions": 80,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/submitted-tests.txt",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r4/test-results.txt",
+      "status": "added",
+      "insertions": 207,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/benchmark-runs.jsonl",
+      "status": "added",
+      "insertions": 31,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/new-counterexamples.txt",
+      "status": "added",
+      "insertions": 108,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/review.md",
+      "status": "added",
+      "insertions": 69,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/submitted-tests.txt",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/test-results.txt",
+      "status": "added",
+      "insertions": 110,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review.md",
+      "status": "added",
+      "insertions": 52,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/submitted-report.md",
+      "status": "added",
+      "insertions": 61,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/submitted-tasks.md",
+      "status": "added",
+      "insertions": 104,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/test-results.txt",
+      "status": "added",
+      "insertions": 354,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/audit.md",
+      "status": "added",
+      "insertions": 102,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/compatibility.md",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/inventory.jsonl",
+      "status": "added",
+      "insertions": 279,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/mapping-samples.jsonl",
+      "status": "added",
+      "insertions": 6,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/review.md",
+      "status": "added",
+      "insertions": 114,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/v4-submitted-structure-report.md",
+      "status": "added",
+      "insertions": 62,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1/enumeration-runs.jsonl",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1/report.md",
+      "status": "added",
+      "insertions": 189,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1/structure-report.md",
+      "status": "added",
+      "insertions": 71,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/counterexamples-r2.jsonl",
+      "status": "added",
+      "insertions": 8,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/counterexamples.jsonl",
+      "status": "added",
+      "insertions": 4,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/failure-cases.md",
+      "status": "added",
+      "insertions": 42,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/replay-r2.jsonl",
+      "status": "added",
+      "insertions": 10,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/report-gate2-fixes-r2.md",
+      "status": "added",
+      "insertions": 60,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/report-gate2-fixes-r3.md",
+      "status": "added",
+      "insertions": 63,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/report-gate2-fixes-r4.md",
+      "status": "added",
+      "insertions": 51,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/report-gate2-fixes-r5.md",
+      "status": "added",
+      "insertions": 39,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/report-gate2-fixes.md",
+      "status": "added",
+      "insertions": 75,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/report.md",
+      "status": "added",
+      "insertions": 65,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-2/search-runs.jsonl",
+      "status": "added",
+      "insertions": 31,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "src/env_rag_final/search/vocab/base.txt",
+      "status": "added",
+      "insertions": 108,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "src/env_rag_final/search/vocab/stopwords.txt",
+      "status": "added",
+      "insertions": 73,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "src/env_rag_final/search/vocab/synonyms.txt",
+      "status": "added",
+      "insertions": 12,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "tests/test_audit_fixtures.py",
+      "status": "added",
+      "insertions": 516,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/test_catalog_phase1.py",
+      "status": "added",
+      "insertions": 891,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/test_enumeration.py",
+      "status": "added",
+      "insertions": 732,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/test_gate1_acceptance.py",
+      "status": "added",
+      "insertions": 342,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/test_gate2_acceptance.py",
+      "status": "added",
+      "insertions": 355,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/test_gate2_rereview.py",
+      "status": "added",
+      "insertions": 327,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/test_gate2_review_r3.py",
+      "status": "added",
+      "insertions": 220,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/test_gate2_review_r4.py",
+      "status": "added",
+      "insertions": 209,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/test_gate2_review_r5.py",
+      "status": "added",
+      "insertions": 100,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/test_search_guards.py",
+      "status": "added",
+      "insertions": 203,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    },
+    {
+      "path": "tests/test_search_phase2.py",
+      "status": "added",
+      "insertions": 428,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "id": "R1",
+    "path": "src/env_rag_final/search/query.py",
+    "start_line": 217,
+    "severity": "high",
+    "category": "bug",
+    "status": "open",
+    "content": "Unconditional doc_attribution adds related amendments/integrated versions to an exact self_code/original-standard request; real reads return3 documents where only original matches."
+  },
+  {
+    "id": "R2",
+    "path": "src/env_rag_final/search/expand.py",
+    "start_line": 314,
+    "severity": "high",
+    "category": "bug",
+    "status": "open",
+    "content": "AND between distinct version targets makes the file predicate impossible; amendment-set predicate excludes all3 desired documents. Both real CLI outputs are empty complete sets."
+  },
+  {
+    "id": "R3",
+    "path": "src/env_rag_final/search/expand.py",
+    "start_line": 414,
+    "severity": "high",
+    "category": "bug",
+    "status": "open",
+    "content": "Unfiltered clause extraction counts chapter headings as answer items; range parser selects first target/PM2.5 and does not propagate unconfirmed/error/partial to the result."
+  },
+  {
+    "id": "R4",
+    "path": "src/env_rag_final/enumerate_/tables.py",
+    "start_line": 339,
+    "severity": "high",
+    "category": "bug",
+    "status": "open",
+    "content": "Rowspan and average-time subrows repeat legitimate project numbers; comparing every row to1..N creates false missing-row degradation on complete real tables."
+  },
+  {
+    "id": "R5",
+    "path": "src/env_rag_final/search/gold.py",
+    "start_line": 104,
+    "severity": "high",
+    "category": "bug",
+    "status": "open",
+    "content": "First regex-matching block can be table of contents; current syn002 and both syn004 typed references target TOC instead of substantive body. Full table expected sets still missing."
+  },
+  {
+    "id": "R6",
+    "path": "src/env_rag_final/search/eval.py",
+    "start_line": 79,
+    "severity": "high",
+    "category": "bug",
+    "status": "open",
+    "content": "Evidence key loses workspace and eligibility never checks frozen source/catalog or stale result status; isolated production benchmark paths incorrectly score1.0."
+  },
+  {
+    "id": "R7",
+    "path": "src/env_rag_final/search/query.py",
+    "start_line": 666,
+    "severity": "high",
+    "category": "bug",
+    "status": "open",
+    "content": "OOV concept is removed in core_AND and an early hit prevents trying its known synonym; appended code adjacency probes are independently skipped by cases[:20]."
+  }
+]

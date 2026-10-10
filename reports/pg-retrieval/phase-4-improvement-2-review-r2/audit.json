@@ -1,0 +1,81 @@
+{
+  "submitted_sha": {
+    "src/env_rag_final/answer.py": true,
+    "src/env_rag_final/evaluation.py": true,
+    "tests/test_phase4_improvement2_target_confirmation.py": true
+  },
+  "manifests": {
+    "phase-4-round-1/pilot-manifest.json": {
+      "entries": 809,
+      "mismatches": []
+    },
+    "phase-4-round-1-assessment/pilot-manifest.json": {
+      "entries": 9,
+      "mismatches": []
+    },
+    "phase-4-round-1-assessment-r2/assessment-manifest.json": {
+      "entries": 4,
+      "mismatches": []
+    },
+    "phase-4-round-1-assessment-r3/assessment-manifest.json": {
+      "entries": 4,
+      "mismatches": []
+    },
+    "phase-4-improvement-1/improvement-1-manifest.json": {
+      "entries": 6,
+      "mismatches": []
+    },
+    "phase-4-improvement-1-review/review-manifest.json": {
+      "entries": 12,
+      "mismatches": []
+    },
+    "phase-4-improvement-1-r2/improvement-1-r2-manifest.json": {
+      "entries": 14,
+      "mismatches": []
+    },
+    "phase-4-improvement-1-review-r2/review-manifest.json": {
+      "entries": 15,
+      "mismatches": []
+    },
+    "phase-4-improvement-1-r3/improvement-1-r3-manifest.json": {
+      "entries": 9,
+      "mismatches": []
+    },
+    "phase-4-improvement-1-review-r3/review-manifest.json": {
+      "entries": 10,
+      "mismatches": []
+    },
+    "phase-4-improvement-2-diagnosis/improvement-2-manifest.json": {
+      "entries": 9,
+      "mismatches": []
+    },
+    "phase-4-improvement-2-diagnosis-review/review-manifest.json": {
+      "entries": 10,
+      "mismatches": []
+    },
+    "phase-4-improvement-2/improvement-2-manifest.json": {
+      "entries": 10,
+      "mismatches": []
+    },
+    "phase-4-improvement-2-review/review-manifest.json": {
+      "entries": 17,
+      "mismatches": []
+    },
+    "phase-4-improvement-2-r2/improvement-2-r2-manifest.json": {
+      "entries": 19,
+      "mismatches": []
+    }
+  },
+  "evidence_reproduced_equal": true,
+  "tests": {
+    "targeted": 44,
+    "engineering": 505,
+    "assessment_frozen": 35
+  },
+  "decision": "improvement_group2_accepted",
+  "reviewer_requests": {
+    "network": 0,
+    "database": 0,
+    "models": 0
+  }
+}

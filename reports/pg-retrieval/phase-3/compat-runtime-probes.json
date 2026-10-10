@@ -1,0 +1,120 @@
+{
+ "task": "5.1 runtime compatibility probes (isolated scratch DB)",
+ "release": "lightrag-hku 1.5.7 (uv.lock, site-packages only — no source workspace)",
+ "scratch_database": "lightrag_compat_probe",
+ "embedding_fixture": "deterministic numpy hash (4-dim) — interface shape only, NOT real semantic retrieval (that is 5.2)",
+ "llm_fixture": "deterministic async stub — no external model",
+ "production_database": "rag",
+ "started_at": "2026-10-06T14:55:41+0800",
+ "probe_first_pool": {
+  "call": "ClientManager.get_client(vector_storage=None)",
+  "elapsed_ms": 136,
+  "result": "OK — pool created without pgvector (enable_vector=False path)",
+  "tables_created_by_first_pool": [
+   "lightrag_doc_chunks",
+   "lightrag_doc_full",
+   "lightrag_doc_status",
+   "lightrag_entity_chunks",
+   "lightrag_full_entities",
+   "lightrag_full_relations",
+   "lightrag_llm_cache",
+   "lightrag_relation_chunks"
+  ],
+  "extensions": [
+   "plpgsql"
+  ],
+  "note": "first pool runs initdb()+check_tables() → CREATE TABLE/INDEX against the DSN's database (library-level write confirmed); vector_storage=None avoids the pgvector requirement"
+ },
+ "probe_full_initialize": {
+  "storages": [
+   "PGKVStorage",
+   "PGDocStatusStorage",
+   "NetworkXStorage"
+  ],
+  "tables_after": [
+   "lightrag_doc_chunks",
+   "lightrag_doc_full",
+   "lightrag_doc_status",
+   "lightrag_entity_chunks",
+   "lightrag_full_entities",
+   "lightrag_full_relations",
+   "lightrag_llm_cache",
+   "lightrag_relation_chunks"
+  ],
+  "extensions_after": [
+   "plpgsql"
+  ],
+  "rows_written_by_initialize": {},
+  "note": "full initialize creates the 8 LIGHTRAG_* tables in the scratch DB and writes pipeline/status rows — re-running initialize is idempotent (check_tables uses IF NOT EXISTS / column guards)"
+ },
+ "probe_sample_and_aquery": {
+  "chunk_rows": [
+   {
+    "workspace": "compat_e",
+    "chunk_id": "doc-2ab7b92cfb4b39d40db3bd37c33819fa-chunk-000",
+    "full_doc_id": "doc-2ab7b92cfb4b39d40db3bd37c33819fa",
+    "llm_cache_list": "[\"default:extract:fae814f498fddb64aba1d27a68040975\", \"default:extract:723abd03fdda9167bdad7e348d4b5cbd\"]"
+   }
+  ],
+  "doc_status": [
+   {
+    "workspace": "compat_e",
+    "doc_id_head": "doc-2ab7b92c",
+    "status": "processed"
+   },
+   {
+    "workspace": "compat_e",
+    "doc_id_head": "dup-9b2e8501",
+    "status": "failed"
+   }
+  ],
+  "llm_cache_rows": 2,
+  "llm_cache_columns": [],
+  "missing_chunk_lookup": {
+   "rows": 0,
+   "note": "missing id → 0 rows"
+  },
+  "aquery_data": {
+   "mode": "naive, only_need_context=True, enable_rerank=False",
+   "top_keys": [
+    "data",
+    "message",
+    "metadata",
+    "status"
+   ],
+   "chunks": [
+    {
+     "chunk_id": "doc-2ab7b92cfb4b39d40db3bd37c33819fa-chunk-000",
+     "file_path": "doc-a",
+     "reference_id": "1",
+     "content_head": "CompatProbe 测试文档。空气污染物浓度限值为60微克每立方米。"
+    }
+   ],
+   "references": [
+    {
+     "reference_id": "1",
+     "file_path": "doc-a"
+    }
+   ],
+   "note": "aquery_data returns REAL chunk ids (doc-…-chunk-NNN) matching lightrag_doc_chunks.id 1:1 — the fusion layer can align on workspace+chunk_id; reference_id is a display counter, NOT identity"
+  },
+  "same_doc_key_two_workspaces": {
+   "note": "doc-a chunk exists under both workspaces with DIFFERENT content and different chunk uuid suffixes are content-derived — same doc key + same content → same chunk id; different content → different id, so cross-workspace identity needs (workspace, id)"
+  }
+ },
+ "production_untouched": {
+  "database": "rag",
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "matches_frozen": true
+ },
+ "finished_at": "2026-10-06T14:55:43+0800"
+}

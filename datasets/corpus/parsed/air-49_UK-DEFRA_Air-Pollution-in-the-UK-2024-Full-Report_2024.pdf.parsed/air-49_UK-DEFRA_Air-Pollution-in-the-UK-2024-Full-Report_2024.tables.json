@@ -1,0 +1,289 @@
+{
+  "version": "1.0",
+  "tables": {
+    "tb-94c5cacd2f64ca6430dc5175d520f539-0001": {
+      "id": "tb-94c5cacd2f64ca6430dc5175d520f539-0001",
+      "blockid": "ba2de95e0a93c49b5e6b1d020ce15048",
+      "heading": "2.6 Local Authority Air Quality Management",
+      "parent_headings": [
+        "Air Pollution in the UK 2024"
+      ],
+      "dimension": [
+        7,
+        6
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Region</td><td>Total LAs</td><td>LAs with AQMAs</td><td>AQMAs for NO2</td><td>AQMAs for PM10</td><td>AQMAs for SO2</td></tr><tr><td>England (outside London)</td><td>263</td><td>159</td><td>352</td><td>20</td><td>4</td></tr><tr><td>London</td><td>33</td><td>33</td><td>35</td><td>28</td><td>0</td></tr><tr><td>Scotland</td><td>32</td><td>11</td><td>15</td><td>11</td><td>0</td></tr><tr><td>Wales</td><td>22</td><td>11</td><td>32</td><td>1</td><td>0</td></tr><tr><td>Northern Ireland</td><td>11</td><td>9</td><td>16</td><td>2</td><td>0</td></tr><tr><td>TOTAL</td><td>361</td><td>223</td><td>450</td><td>62</td><td>4</td></tr></table>",
+      "caption": "Table 2-1 Current UK-wide status of AQMAs (as of September 2025).",
+      "footnotes": [],
+      "self_ref": "content_list.json#/280"
+    },
+    "tb-94c5cacd2f64ca6430dc5175d520f539-0002": {
+      "id": "tb-94c5cacd2f64ca6430dc5175d520f539-0002",
+      "blockid": "ba2de95e0a93c49b5e6b1d020ce15048",
+      "heading": "2.6 Local Authority Air Quality Management",
+      "parent_headings": [
+        "Air Pollution in the UK 2024"
+      ],
+      "dimension": [
+        10,
+        6
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Source</td><td>England</td><td>Wales</td><td>Scotland</td><td>Northern Ireland</td><td>London</td></tr><tr><td>County or Unitary Authority Road</td><td>123</td><td>14</td><td>4</td><td>0</td><td>1</td></tr><tr><td>Domestic Heating</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr><tr><td>Strategic Road Network</td><td>23</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Industrial Source</td><td>7</td><td>1</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Mixture of Road Types</td><td>58</td><td>5</td><td>1</td><td>1</td><td>2</td></tr><tr><td>Not Defined</td><td>1</td><td>0</td><td>0</td><td>2</td><td>0</td></tr><tr><td>Road Transport (unspecified)</td><td>138</td><td>14</td><td>14</td><td>14</td><td>27</td></tr><tr><td>Transport and Industrial Source</td><td>11</td><td>0</td><td>1</td><td>0</td><td>4</td></tr><tr><td>Transport, Industrial and Domestic Sources</td><td>3</td><td>0</td><td>0</td><td>0</td><td>2</td></tr></table>",
+      "caption": "Table 2-2 Current UK Air Quality Management Areas by Source (as of September 2025)",
+      "footnotes": [
+        "Data from the UK-AIR website's AQMA summary page"
+      ],
+      "self_ref": "content_list.json#/284"
+    },
+    "tb-94c5cacd2f64ca6430dc5175d520f539-0003": {
+      "id": "tb-94c5cacd2f64ca6430dc5175d520f539-0003",
+      "blockid": "6b17b6f08410e5953717c2edb80c58e2",
+      "heading": "3.2.1 Current UK Air Quality Monitoring",
+      "parent_headings": [
+        "Air Pollution in the UK 2024"
+      ],
+      "dimension": [
+        18,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Network</td><td>Pollutants</td><td>Number of Sites operating in 2024</td></tr><tr><td>Automatic Urban and Rural Network (AURN)</td><td>CO,  $NO_x$ ,  $NO_2$ ,  $SO_2$ ,  $O_3$ ,  $PM_{10}$ ,  $PM_{2.5}$ .</td><td>172</td></tr><tr><td>Automatic London Network (part of AURN)</td><td>(Not all sites measure all these pollutants.)</td><td>15</td></tr><tr><td>UK Heavy Metals Network</td><td>Metals in  $PM_{10}$ , including: As, Cd, Co, Cr, Cu, Fe, Mn, Ni, Pb, Se, V, Zn.Measured deposition including: Al, As, Ba, Be, Cd, Co, Cr, Cs, Cu, Fe, Li, Mn, Mo, Ni, Pb, Rb, Sb, Sc, Se, Sn, Sr, Ti, U, V, W, Zn.Hg deposition</td><td>24</td></tr><tr><td>Non-Automatic Hydrocarbon Network</td><td>Benzene</td><td>35</td></tr><tr><td>Automatic Hydrocarbon Network</td><td>Range of volatile organic compounds (VOCs)</td><td>5</td></tr><tr><td>Polycyclic Aromatic Hydrocarbons (PAH) Network.</td><td>27 PAH species including benzo[a]pyrene</td><td>37</td></tr><tr><td>European Monitoring and Evaluation Programme (EMEP)</td><td>Wide range of parameters relating to air quality, precipitation, meteorology and composition of aerosol in  $PM_{10}$  and  $PM_{2.5}$ .</td><td>2</td></tr><tr><td>Particle Concentrations and Numbers (PCN) Network</td><td>Total particle number, concentration, size distribution, anions, elemental carbon, organic carbon, speciation of  $PM_{10}$  and  $PM_{2.5}$ .</td><td>4</td></tr><tr><td>Toxic Organic Micropollutants (TOMPs) Network</td><td>Range of toxic organics, including dioxins and dibenzofurans.</td><td>9</td></tr><tr><td>UK Eutrophying and Acidifying Pollutants:  $NO_{2}Net$  (rural diffusion tubes)</td><td> $NO_{2}$  (rural)</td><td>27</td></tr><tr><td>UK Eutrophying and Acidifying Pollutants: AGANet</td><td> $HNO_{3}$ , HONO,  $SO_{2}$ , Ca, Cl, Mg, Na,  $NO_{2}$ ,  $NO_{3}$  and  $SO_{4}$ </td><td>28</td></tr><tr><td>UK Eutrophying and Acidifying Pollutants: NAMN</td><td> $NH_{3}$  and/or  $NH_{4}^{+}$ </td><td>117</td></tr><tr><td>UK Eutrophying and Acidifying Pollutants: PrecipNet</td><td>Major ions i.e. those commonly found in rainwater -  $Ca^{2+}$ ,  $Mg^{2+}$ ,  $Na^{+}$ ,  $K^{+}$ ,  $NH_{4}^{+}$ ,  $SO_{4}^{2-}$ ,  $Cl^{-}$  and  $NO_{3}^{-}$ .</td><td>50</td></tr><tr><td>Black Carbon Network</td><td>Black Carbon</td><td>26</td></tr><tr><td>Upland Waters Monitoring Network</td><td>Chemical and biological species in water</td><td>10</td></tr><tr><td>Rural Mercury Network</td><td>Tekran analyser used to measure mercury in  $PM_{2.5}$ , reactive mercury and elemental mercury at Auchencorth Moss, and total gaseous mercury at Chilbolton Observatory.</td><td>2</td></tr><tr><td>UK Urban  $NO_{2}$  Network</td><td>Diffusion tubes with wind-protection membranes measuring  $NO_{2}$  monthly at urban traffic-related sites.</td><td>300</td></tr></table>",
+      "caption": "Table 3-1 The UK’s Air Quality Monitoring Networks in 2024",
+      "footnotes": [],
+      "self_ref": "content_list.json#/404"
+    },
+    "tb-94c5cacd2f64ca6430dc5175d520f539-0004": {
+      "id": "tb-94c5cacd2f64ca6430dc5175d520f539-0004",
+      "blockid": "2fbea3674e6c7628fe0481505643a800",
+      "heading": "3.2.1.1 The Automatic Urban and Rural Network (AURN)",
+      "parent_headings": [
+        "Air Pollution in the UK 2024"
+      ],
+      "dimension": [
+        6,
+        2
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Pollutant</td><td>Method used, including details of CEN Standard Methods</td></tr><tr><td> $O_3$ </td><td>EN 14625:2024 ‘Ambient air quality - standard method for the measurement of the concentration of ozone by ultraviolet photometry’ (CEN, 2024a)</td></tr><tr><td> $NO_2/NO_x$ </td><td>EN 14211:2024 ‘Ambient air quality - Standard method for the measurement of the concentration of nitrogen dioxide and nitrogen monoxide by chemiluminescence’ (CEN, 2024b)</td></tr><tr><td> $SO_2$ </td><td>EN 14212:2024 ‘Ambient air quality - Standard method for the measurement of the concentration of sulphur dioxide by UV fluorescence’ (CEN, 2024c)</td></tr><tr><td>CO</td><td>EN 14626:2024 ‘Ambient air quality - Standard method for the measurement of the concentration of carbon monoxide by non-dispersive infrared spectroscopy’ (CEN, 2024d)</td></tr><tr><td> $PM_{10}$ and $PM_{2.5}$ </td><td>EN 12341:2023 ‘Ambient air quality - Standard gravimetric measurement method for the determination of the  $PM_{10}$  or  $PM_{2.5}$  mass fraction of suspended particulate matter’ (BS EN, 2023)In 2024 the AURN used three methods which are equivalent to the reference method for one or both metrics: the FidasTM 200, an optical technique, the Beta-Attenuation Monitor (BAM), and gravimetric samplers that collect daily samples onto a filter for subsequent weighing (the reference method) at two sites only. Descriptions of these methods are given in the Glossary of this report.</td></tr></table>",
+      "caption": "Table 3-2 AURN Measurement Techniques",
+      "footnotes": [],
+      "self_ref": "content_list.json#/412"
+    },
+    "tb-94c5cacd2f64ca6430dc5175d520f539-0005": {
+      "id": "tb-94c5cacd2f64ca6430dc5175d520f539-0005",
+      "blockid": "58878aebd5eb8bc88f2177354924fa16",
+      "heading": "4.1 Definition of Zones",
+      "parent_headings": [
+        "4 Assessment of Compliance"
+      ],
+      "dimension": [
+        44,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Zone</td><td>Zone code</td><td>Zone type</td></tr><tr><td>Greater London Urban Area</td><td>UK0001</td><td>Agglomeration</td></tr><tr><td>West Midlands Urban Area</td><td>UK0002</td><td>Agglomeration</td></tr><tr><td>Greater Manchester Urban Area</td><td>UK0003</td><td>Agglomeration</td></tr><tr><td>West Yorkshire Urban Area</td><td>UK0004</td><td>Agglomeration</td></tr><tr><td>Tyneside</td><td>UK0005</td><td>Agglomeration</td></tr><tr><td>Liverpool Urban Area</td><td>UK0006</td><td>Agglomeration</td></tr><tr><td>Sheffield Urban Area</td><td>UK0007</td><td>Agglomeration</td></tr><tr><td>Nottingham Urban Area</td><td>UK0008</td><td>Agglomeration</td></tr><tr><td>Bristol Urban Area</td><td>UK0009</td><td>Agglomeration</td></tr><tr><td>Brighton/Worthing/Littlehampton</td><td>UK0010</td><td>Agglomeration</td></tr><tr><td>Leicester Urban Area</td><td>UK0011</td><td>Agglomeration</td></tr><tr><td>Portsmouth Urban Area</td><td>UK0012</td><td>Agglomeration</td></tr><tr><td>Teesside Urban Area</td><td>UK0013</td><td>Agglomeration</td></tr><tr><td>The Potteries</td><td>UK0014</td><td>Agglomeration</td></tr><tr><td>Bournemouth Urban Area</td><td>UK0015</td><td>Agglomeration</td></tr><tr><td>Reading/Wokingham Urban Area</td><td>UK0016</td><td>Agglomeration</td></tr><tr><td>Coventry/Bedworth</td><td>UK0017</td><td>Agglomeration</td></tr><tr><td>Kingston upon Hull</td><td>UK0018</td><td>Agglomeration</td></tr><tr><td>Southampton Urban Area</td><td>UK0019</td><td>Agglomeration</td></tr><tr><td>Birkenhead Urban Area</td><td>UK0020</td><td>Agglomeration</td></tr><tr><td>Southend Urban Area</td><td>UK0021</td><td>Agglomeration</td></tr><tr><td>Blackpool Urban Area</td><td>UK0022</td><td>Agglomeration</td></tr><tr><td>Preston Urban Area</td><td>UK0023</td><td>Agglomeration</td></tr><tr><td>Glasgow Urban Area</td><td>UK0024</td><td>Agglomeration</td></tr><tr><td>Edinburgh Urban Area</td><td>UK0025</td><td>Agglomeration</td></tr><tr><td>Cardiff Urban Area</td><td>UK0026</td><td>Agglomeration</td></tr><tr><td>Swansea Urban Area</td><td>UK0027</td><td>Agglomeration</td></tr><tr><td>Belfast Metropolitan Urban Area</td><td>UK0028</td><td>Agglomeration</td></tr><tr><td>Eastern</td><td>UK0029</td><td>Non-agglomeration</td></tr><tr><td>South West</td><td>UK0030</td><td>Non-agglomeration</td></tr><tr><td>South East</td><td>UK0031</td><td>Non-agglomeration</td></tr><tr><td>East Midlands</td><td>UK0032</td><td>Non-agglomeration</td></tr><tr><td>North West and Merseyside</td><td>UK0033</td><td>Non-agglomeration</td></tr><tr><td>Yorkshire and Humberside</td><td>UK0034</td><td>Non-agglomeration</td></tr><tr><td>West Midlands</td><td>UK0035</td><td>Non-agglomeration</td></tr><tr><td>North East</td><td>UK0036</td><td>Non-agglomeration</td></tr><tr><td>Central Scotland</td><td>UK0037</td><td>Non-agglomeration</td></tr><tr><td>North East Scotland</td><td>UK0038</td><td>Non-agglomeration</td></tr><tr><td>Highland</td><td>UK0039</td><td>Non-agglomeration</td></tr><tr><td>Scottish Borders</td><td>UK0040</td><td>Non-agglomeration</td></tr><tr><td>South Wales</td><td>UK0041</td><td>Non-agglomeration</td></tr><tr><td>North Wales</td><td>UK0042</td><td>Non-agglomeration</td></tr><tr><td>Northern Ireland</td><td>UK0043</td><td>Non-agglomeration</td></tr></table>",
+      "caption": "Table 4-1 UK Zones for Ambient Air Quality Reporting 2024",
+      "footnotes": [],
+      "self_ref": "content_list.json#/546"
+    },
+    "tb-94c5cacd2f64ca6430dc5175d520f539-0006": {
+      "id": "tb-94c5cacd2f64ca6430dc5175d520f539-0006",
+      "blockid": "f5078f99e2980b3c7f468b2f5783cad3",
+      "heading": "4.2.2 Compliance Summary",
+      "parent_headings": [
+        "4 Assessment of Compliance"
+      ],
+      "dimension": [
+        44,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Zone</td><td>NO2Limit Value for heath (1hr mean)</td><td>NO2Limit Value for health (annual mean)</td><td>NOxcritical level for vegetation (annual mean)</td></tr><tr><td>Greater London Urban Area</td><td>Compliant</td><td>Compliant</td><td>Not applicable</td></tr><tr><td>West Midlands Urban Area</td><td>Compliant</td><td>Exceedance [sup]</td><td>Not applicable</td></tr><tr><td>Greater Manchester Urban Area</td><td>Compliant</td><td>Exceedance [sup]</td><td>Not applicable</td></tr><tr><td>West Yorkshire Urban Area</td><td>Compliant</td><td>Compliant</td><td>Not applicable</td></tr><tr><td>Tyneside</td><td>Compliant</td><td>Compliant</td><td>Not applicable</td></tr><tr><td>Liverpool Urban Area</td><td>Compliant</td><td>Exceedance [sup]</td><td>Not applicable</td></tr><tr><td>Sheffield Urban Area</td><td>Compliant</td><td>Compliant</td><td>Not applicable</td></tr><tr><td>Nottingham Urban Area</td><td>Compliant</td><td>Compliant</td><td>Not applicable</td></tr><tr><td>Bristol Urban Area</td><td>Compliant</td><td>Exceedance [sup]</td><td>Not applicable</td></tr><tr><td>Brighton/Worthing/Littlehampton</td><td>Compliant</td><td>Compliant</td><td>Not applicable</td></tr><tr><td>Leicester Urban Area</td><td>Compliant</td><td>Compliant</td><td>Not applicable</td></tr><tr><td>Portsmouth Urban Area</td><td>Compliant</td><td>Compliant</td><td>Not applicable</td></tr><tr><td>Teesside Urban Area</td><td>Compliant</td><td>Compliant</td><td>Not applicable</td></tr><tr><td>The Potteries</td><td>Compliant</td><td>Compliant</td><td>Not applicable</td></tr><tr><td>Bournemouth Urban Area</td><td>Compliant</td><td>Compliant</td><td>Not applicable</td></tr><tr><td>Reading/Wokingham Urban Area</td><td>Compliant</td><td>Compliant</td><td>Not applicable</td></tr><tr><td>Coventry/Bedworth</td><td>Compliant</td><td>Exceedance [sup]</td><td>Not applicable</td></tr><tr><td>Kingston upon Hull</td><td>Compliant</td><td>Compliant</td><td>Not applicable</td></tr><tr><td>Southampton Urban Area</td><td>Compliant</td><td>Compliant</td><td>Not applicable</td></tr><tr><td>Birkenhead Urban Area</td><td>Compliant</td><td>Compliant</td><td>Not applicable</td></tr><tr><td>Southend Urban Area</td><td>Compliant</td><td>Compliant</td><td>Not applicable</td></tr><tr><td>Blackpool Urban Area</td><td>Compliant</td><td>Compliant</td><td>Not applicable</td></tr><tr><td>Preston Urban Area</td><td>Compliant</td><td>Compliant</td><td>Not applicable</td></tr><tr><td>Glasgow Urban Area</td><td>Compliant</td><td>Compliant</td><td>Not applicable</td></tr><tr><td>Edinburgh Urban Area</td><td>Compliant</td><td>Compliant</td><td>Not applicable</td></tr><tr><td>Cardiff Urban Area</td><td>Compliant</td><td>Compliant</td><td>Not applicable</td></tr><tr><td>Swansea Urban Area</td><td>Compliant</td><td>Compliant</td><td>Not applicable</td></tr><tr><td>Belfast Urban Area</td><td>Compliant</td><td>Compliant</td><td>Not applicable</td></tr><tr><td>Eastern</td><td>Compliant</td><td>Compliant</td><td>Compliant</td></tr><tr><td>South West</td><td>Compliant</td><td>Compliant</td><td>Compliant</td></tr><tr><td>South East</td><td>Compliant</td><td>Compliant</td><td>Compliant</td></tr><tr><td>East Midlands</td><td>Compliant</td><td>Compliant</td><td>Compliant</td></tr><tr><td>North West &amp; Merseyside</td><td>Compliant</td><td>Compliant</td><td>Compliant [sup]</td></tr><tr><td>Yorkshire and Humberside</td><td>Compliant</td><td>Compliant</td><td>Compliant</td></tr><tr><td>West Midlands</td><td>Compliant</td><td>Compliant</td><td>Compliant [sup]</td></tr><tr><td>North East</td><td>Compliant</td><td>Compliant</td><td>Compliant [sup]</td></tr><tr><td>Central Scotland</td><td>Compliant</td><td>Compliant</td><td>Compliant [sup]</td></tr><tr><td>North East Scotland</td><td>Compliant</td><td>Compliant</td><td>Compliant [sup]</td></tr><tr><td>Highland</td><td>Compliant</td><td>Compliant</td><td>Compliant [sup]</td></tr><tr><td>Scottish Borders</td><td>Compliant</td><td>Compliant</td><td>Compliant</td></tr><tr><td>South Wales</td><td>Compliant</td><td>Compliant</td><td>Compliant</td></tr><tr><td>North Wales</td><td>Compliant</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Northern Ireland</td><td>Compliant</td><td>Compliant</td><td>Compliant [sup]</td></tr></table>",
+      "caption": "Table 4-2 Results of Air Quality Assessment for Nitrogen Dioxide in 2024",
+      "footnotes": [
+        "The abbreviation [sup] indicates the compliance or exceedance was determined by supplementary assessment only."
+      ],
+      "self_ref": "content_list.json#/587"
+    },
+    "tb-94c5cacd2f64ca6430dc5175d520f539-0007": {
+      "id": "tb-94c5cacd2f64ca6430dc5175d520f539-0007",
+      "blockid": "f5078f99e2980b3c7f468b2f5783cad3",
+      "heading": "4.2.2 Compliance Summary",
+      "parent_headings": [
+        "4 Assessment of Compliance"
+      ],
+      "dimension": [
+        44,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Zone</td><td>PM10Limit Value (daily mean)</td><td>PM10Limit Value (annual mean)</td></tr><tr><td>Greater London Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>West Midlands Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Greater Manchester Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>West Yorkshire Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Tyneside</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Liverpool Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Sheffield Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Nottingham Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Bristol Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Brighton/Worthing/Littlehampton</td><td>Compliant [sup]</td><td>Compliant [sup]</td></tr><tr><td>Leicester Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Portsmouth Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Teesside Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>The Potteries</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Bournemouth Urban Area</td><td>Compliant [sup]</td><td>Compliant [sup]</td></tr><tr><td>Reading/Wokingham Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Coventry/Bedworth</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Kingston upon Hull</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Southampton Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Birkenhead Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Southend Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Blackpool Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Preston Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Glasgow Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Edinburgh Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Cardiff Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Swansea Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Belfast Metropolitan Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Eastern</td><td>Compliant</td><td>Compliant</td></tr><tr><td>South West</td><td>Compliant</td><td>Compliant</td></tr><tr><td>South East</td><td>Compliant</td><td>Compliant</td></tr><tr><td>East Midlands</td><td>Compliant</td><td>Compliant</td></tr><tr><td>North West and Merseyside</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Yorkshire and Humberside</td><td>Compliant</td><td>Compliant</td></tr><tr><td>West Midlands</td><td>Compliant</td><td>Compliant</td></tr><tr><td>North East</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Central Scotland</td><td>Compliant</td><td>Compliant</td></tr><tr><td>North East Scotland</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Highland</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Scottish Borders</td><td>Compliant [sup]</td><td>Compliant [sup]</td></tr><tr><td>South Wales</td><td>Compliant</td><td>Compliant</td></tr><tr><td>North Wales</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Northern Ireland</td><td>Compliant</td><td>Compliant</td></tr></table>",
+      "caption": "Table 4-3 Results of Air Quality Assessment for PM10 in 2024",
+      "footnotes": [
+        "The abbreviation [sup] indicates the compliance or exceedance was determined by supplementary assessment only"
+      ],
+      "self_ref": "content_list.json#/592"
+    },
+    "tb-94c5cacd2f64ca6430dc5175d520f539-0008": {
+      "id": "tb-94c5cacd2f64ca6430dc5175d520f539-0008",
+      "blockid": "f5078f99e2980b3c7f468b2f5783cad3",
+      "heading": "4.2.2 Compliance Summary",
+      "parent_headings": [
+        "4 Assessment of Compliance"
+      ],
+      "dimension": [
+        44,
+        2
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Zone</td><td>PM2.5 annual mean limit value</td></tr><tr><td>Greater London Urban Area</td><td>Compliant</td></tr><tr><td>West Midlands Urban Area</td><td>Compliant</td></tr><tr><td>Greater Manchester Urban Area</td><td>Compliant</td></tr><tr><td>West Yorkshire Urban Area</td><td>Compliant</td></tr><tr><td>Tyneside</td><td>Compliant</td></tr><tr><td>Liverpool Urban Area</td><td>Compliant</td></tr><tr><td>Sheffield Urban Area</td><td>Compliant</td></tr><tr><td>Nottingham Urban Area</td><td>Compliant</td></tr><tr><td>Bristol Urban Area</td><td>Compliant</td></tr><tr><td>Brighton/Worthing/Littlehampton</td><td>Compliant</td></tr><tr><td>Leicester Urban Area</td><td>Compliant</td></tr><tr><td>Portsmouth Urban Area</td><td>Compliant</td></tr><tr><td>Teesside Urban Area</td><td>Compliant</td></tr><tr><td>The Potteries</td><td>Compliant</td></tr><tr><td>Bournemouth Urban Area</td><td>Compliant</td></tr><tr><td>Reading/Wokingham Urban Area</td><td>Compliant</td></tr><tr><td>Coventry/Bedworth</td><td>Compliant</td></tr><tr><td>Kingston upon Hull</td><td>Compliant</td></tr><tr><td>Southampton Urban Area</td><td>Compliant</td></tr><tr><td>Birkenhead Urban Area</td><td>Compliant</td></tr><tr><td>Southend Urban Area</td><td>Compliant</td></tr><tr><td>Blackpool Urban Area</td><td>Compliant</td></tr><tr><td>Preston Urban Area</td><td>Compliant</td></tr><tr><td>Glasgow Urban Area</td><td>Compliant</td></tr><tr><td>Edinburgh Urban Area</td><td>Compliant</td></tr><tr><td>Cardiff Urban Area</td><td>Compliant</td></tr><tr><td>Swansea Urban Area</td><td>Compliant</td></tr><tr><td>Belfast Metropolitan Urban Area</td><td>Compliant</td></tr><tr><td>Eastern</td><td>Compliant</td></tr><tr><td>South West</td><td>Compliant</td></tr><tr><td>South East</td><td>Compliant</td></tr><tr><td>East Midlands</td><td>Compliant</td></tr><tr><td>North West and Merseyside</td><td>Compliant</td></tr><tr><td>Yorkshire and Humberside</td><td>Compliant</td></tr><tr><td>West Midlands</td><td>Compliant</td></tr><tr><td>North East</td><td>Compliant</td></tr><tr><td>Central Scotland</td><td>Compliant</td></tr><tr><td>North East Scotland</td><td>Compliant</td></tr><tr><td>Highland</td><td>Compliant</td></tr><tr><td>Scottish Borders</td><td>Compliant [sup]</td></tr><tr><td>South Wales</td><td>Compliant</td></tr><tr><td>North Wales</td><td>Compliant</td></tr><tr><td>Northern Ireland</td><td>Compliant</td></tr></table>",
+      "caption": "Table 4-4 Results of Air Quality Assessment for PM2.5 in 2024",
+      "footnotes": [
+        "The abbreviation [sup] indicates the compliance or exceedance was determined by supplementary assessment only."
+      ],
+      "self_ref": "content_list.json#/610"
+    },
+    "tb-94c5cacd2f64ca6430dc5175d520f539-0009": {
+      "id": "tb-94c5cacd2f64ca6430dc5175d520f539-0009",
+      "blockid": "f5078f99e2980b3c7f468b2f5783cad3",
+      "heading": "4.2.2 Compliance Summary",
+      "parent_headings": [
+        "4 Assessment of Compliance"
+      ],
+      "dimension": [
+        44,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Zone</td><td>O3 8h Mean Target Value for human health</td><td>O3 8h Mean Long-Term Objective for human health</td></tr><tr><td>Greater London Urban Area</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>West Midlands Urban Area</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>Greater Manchester Urban Area</td><td>Compliant [sup]</td><td>Exceedance [sup]</td></tr><tr><td>West Yorkshire Urban Area</td><td>Compliant [sup]</td><td>Exceedance [sup]</td></tr><tr><td>Tyneside</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Liverpool Urban Area</td><td>Compliant [sup]</td><td>Exceedance [sup]</td></tr><tr><td>Sheffield Urban Area</td><td>Compliant [sup]</td><td>Exceedance [sup]</td></tr><tr><td>Nottingham Urban Area</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>Bristol Urban Area</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>Brighton/Worthing/Littlehampton</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>Leicester Urban Area</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>Portsmouth Urban Area</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>Teesside Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>The Potteries</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>Bournemouth Urban Area</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>Reading/Wokingham Urban Area</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>Coventry/Bedworth</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>Kingston upon Hull</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Southampton Urban Area</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>Birkenhead Urban Area</td><td>Compliant [sup]</td><td>Exceedance [sup]</td></tr><tr><td>Southend Urban Area</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>Blackpool Urban Area</td><td>Compliant [sup]</td><td>Exceedance [sup]</td></tr><tr><td>Preston Urban Area</td><td>Compliant [sup]</td><td>Exceedance [sup]</td></tr><tr><td>Glasgow Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Edinburgh Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Cardiff Urban Area</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>Swansea Urban Area</td><td>Compliant [sup]</td><td>Exceedance [sup]</td></tr><tr><td>Belfast Metropolitan Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Eastern</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>South West</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>South East</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>East Midlands</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>North West and Merseyside</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>Yorkshire and Humberside</td><td>Compliant [sup]</td><td>Exceedance [sup]</td></tr><tr><td>West Midlands</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>North East</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Central Scotland</td><td>Compliant</td><td>Compliant</td></tr><tr><td>North East Scotland</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Highland</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Scottish Borders</td><td>Compliant</td><td>Compliant</td></tr><tr><td>South Wales</td><td>Compliant [sup]</td><td>Exceedance [sup]</td></tr><tr><td>North Wales</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>Northern Ireland</td><td>Compliant</td><td>Compliant</td></tr></table>",
+      "caption": "Table 4-5 Results of Air Quality Assessment for Ozone in 2024: 8-hour Mean Target Value and Long-Term Objective for Human Health",
+      "footnotes": [
+        "The abbreviation ‘[sup]’ indicates the compliance or exceedance was determined by supplementary assessment only."
+      ],
+      "self_ref": "content_list.json#/629"
+    },
+    "tb-94c5cacd2f64ca6430dc5175d520f539-0010": {
+      "id": "tb-94c5cacd2f64ca6430dc5175d520f539-0010",
+      "blockid": "f5078f99e2980b3c7f468b2f5783cad3",
+      "heading": "4.2.2 Compliance Summary",
+      "parent_headings": [
+        "4 Assessment of Compliance"
+      ],
+      "dimension": [
+        44,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Zone</td><td>O3 Target Value for vegetation (AOT40)</td><td>O3 Long-Term Objective for vegetation (AOT40)</td></tr><tr><td>Greater London Urban Area</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>West Midlands Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Greater Manchester Urban Area</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>West Yorkshire Urban Area</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>Tyneside</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Liverpool Urban Area</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>Sheffield Urban Area</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>Nottingham Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Bristol Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Brighton/Worthing/Littlehampton</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Leicester Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Portsmouth Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Teesside Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>The Potteries</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Bournemouth Urban Area</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>Reading/Wokingham Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Coventry/Bedworth</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Kingston upon Hull</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Southampton Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Birkenhead Urban Area</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>Southend Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Blackpool Urban Area</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>Preston Urban Area</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>Glasgow Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Edinburgh Urban Area</td><td>Compliant</td><td>Compliant [sup]</td></tr><tr><td>Cardiff Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Swansea Urban Area</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>Belfast Metropolitan Urban Area</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Eastern</td><td>Compliant</td><td>Compliant</td></tr><tr><td>South West</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>South East</td><td>Compliant</td><td>Exceedance</td></tr><tr><td>East Midlands</td><td>Compliant</td><td>Compliant</td></tr><tr><td>North West and Merseyside</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Yorkshire and Humberside</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>West Midlands</td><td>Compliant</td><td>Compliant</td></tr><tr><td>North East</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Central Scotland</td><td>Compliant</td><td>Compliant</td></tr><tr><td>North East Scotland</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Highland</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Scottish Borders</td><td>Compliant</td><td>Compliant</td></tr><tr><td>South Wales</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>North Wales</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Northern Ireland</td><td>Compliant</td><td>Compliant</td></tr></table>",
+      "caption": "Table 4-6 Results of Air Quality Assessment for Ozone in 2024: Target Value and Long-Term Objective Based On AOT40 Statistic, for Vegetation",
+      "footnotes": [
+        "The abbreviation ‘[sup]’ indicates that the compliance or exceedance was determined by supplementary assessment only."
+      ],
+      "self_ref": "content_list.json#/631"
+    },
+    "tb-94c5cacd2f64ca6430dc5175d520f539-0011": {
+      "id": "tb-94c5cacd2f64ca6430dc5175d520f539-0011",
+      "blockid": "f5078f99e2980b3c7f468b2f5783cad3",
+      "heading": "4.2.2 Compliance Summary",
+      "parent_headings": [
+        "4 Assessment of Compliance"
+      ],
+      "dimension": [
+        44,
+        5
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Zone</td><td>As Target Value</td><td>Cd Target Value</td><td>Ni Target Value</td><td>B[a]P Target Value</td></tr><tr><td>Greater London Urban Area</td><td>Compliant</td><td>Compliant</td><td>Compliant</td><td>Compliant</td></tr><tr><td>West Midlands Urban Area</td><td>Compliant</td><td>Compliant</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Greater Manchester Urban Area</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>West Yorkshire Urban Area</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>Tyneside</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>Liverpool Urban Area</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>Sheffield Urban Area</td><td>Compliant</td><td>Compliant</td><td>Exceedance [sup]</td><td>Compliant</td></tr><tr><td>Nottingham Urban Area</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>Bristol Urban Area</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>Brighton/Worthing/Littlehampton</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td></tr><tr><td>Leicester Urban Area</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td></tr><tr><td>Portsmouth Urban Area</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>Teesside Urban Area</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>The Potteries</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td></tr><tr><td>Bournemouth Urban Area</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td></tr><tr><td>Reading/Wokingham Urban Area</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td></tr><tr><td>Coventry/Bedworth</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td></tr><tr><td>Kingston upon Hull</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td></tr><tr><td>Southampton Urban Area</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>Birkenhead Urban Area</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td></tr><tr><td>Southend Urban Area</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td></tr><tr><td>Blackpool Urban Area</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td></tr><tr><td>Preston Urban Area</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>Glasgow Urban Area</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>Edinburgh Urban Area</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>Cardiff Urban Area</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>Swansea Urban Area</td><td>Compliant</td><td>Compliant</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Belfast Urban Area</td><td>Compliant</td><td>Compliant</td><td>Compliant</td><td>Compliant</td></tr><tr><td>Eastern</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>South West</td><td>Compliant</td><td>Compliant</td><td>Compliant</td><td>Compliant</td></tr><tr><td>South East</td><td>Compliant</td><td>Compliant</td><td>Compliant</td><td>Compliant</td></tr><tr><td>East Midlands</td><td>Compliant</td><td>Compliant</td><td>Compliant</td><td>Compliant</td></tr><tr><td>North West and Merseyside</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>Yorkshire and Humberside</td><td>Compliant</td><td>Compliant</td><td>Exceedance [sup]</td><td>Compliant</td></tr><tr><td>West Midlands</td><td>Compliant</td><td>Compliant</td><td>Compliant</td><td>Compliant [sup]</td></tr><tr><td>North East</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td></tr><tr><td>Central Scotland</td><td>Compliant</td><td>Compliant</td><td>Compliant</td><td>Compliant</td></tr><tr><td>North East Scotland</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td></tr><tr><td>Highland</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant</td></tr><tr><td>Scottish Borders</td><td>Compliant</td><td>Compliant</td><td>Compliant</td><td>Compliant [sup]</td></tr><tr><td>South Wales</td><td>Compliant</td><td>Compliant</td><td>Exceedance [sup]</td><td>Compliant</td></tr><tr><td>North Wales</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td></tr><tr><td>Northern Ireland</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant [sup]</td><td>Compliant</td></tr></table>",
+      "caption": "Table 4-7 Results of Air Quality Assessment for As, Cd, Ni and B[a]P in 2024",
+      "footnotes": [],
+      "self_ref": "content_list.json#/636"
+    },
+    "tb-94c5cacd2f64ca6430dc5175d520f539-0012": {
+      "id": "tb-94c5cacd2f64ca6430dc5175d520f539-0012",
+      "blockid": "b76a7cd7f3f1d8df0ee45e3cc51519f5",
+      "heading": "4.3 Comparison with Previous Years",
+      "parent_headings": [
+        "4 Assessment of Compliance"
+      ],
+      "dimension": [
+        18,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Year</td><td>Zones Exceeding NO2LV for health (1hr mean)</td><td>Zones Exceeding NO2LV for health (annual mean)</td><td>Additional zones which exceeded the annual mean LV but were covered by time extensions and were within the LV + MOT therefore compliant</td></tr><tr><td>2008</td><td>3 zones (London, Glasgow, N.E. Scotland)</td><td>40 zones</td><td>Not applicable</td></tr><tr><td>2009</td><td>2 zones (London, Glasgow)</td><td>40 zones</td><td>Not applicable</td></tr><tr><td>2010</td><td>3 zones (London, Teesside, Glasgow)</td><td>40 zones</td><td>Not applicable</td></tr><tr><td>2011</td><td>3 zones (London, Glasgow, South East)</td><td>35 zones</td><td>5 zones</td></tr><tr><td>2012</td><td>2 zones (London, South East)</td><td>34 zones</td><td>4 zones</td></tr><tr><td>2013</td><td>1 zone (London)</td><td>31 zones</td><td>7 zones</td></tr><tr><td>2014</td><td>2 zones (London, South Wales)</td><td>30 zones</td><td>8 zones</td></tr><tr><td>2015</td><td>2 zones (London, South Wales)</td><td>37 zones</td><td>2015 was the first year with no time extensions for NO2: hence the apparent increase in zones exceeding in 2015.</td></tr><tr><td>2016</td><td>2 zones (London, South Wales)</td><td>37 zones</td><td>All time extensions ended.</td></tr><tr><td>2017</td><td>2 zones (London, South Wales)</td><td>37 zones</td><td>All time extensions ended.</td></tr><tr><td>2018</td><td>2 zones (London, South Wales)</td><td>36 zones</td><td>All time extensions ended.</td></tr><tr><td>2019</td><td>1 zone (South Wales)</td><td>33 zones</td><td>All time extensions ended.</td></tr><tr><td>2020</td><td>None</td><td>5 zones</td><td>All time extensions ended.</td></tr><tr><td>2021</td><td>None</td><td>10 zones</td><td>All time extensions ended.</td></tr><tr><td>2022</td><td>None</td><td>9 zones</td><td>All time extensions ended.</td></tr><tr><td>2023</td><td>None</td><td>9 zones</td><td>All time extensions ended.</td></tr><tr><td>2024</td><td>None</td><td>5 zones</td><td>All time extensions ended.</td></tr></table>",
+      "caption": "Table 4-8 Non-Compliances with Limit Values for Nitrogen Dioxide, 2008 to 2024",
+      "footnotes": [],
+      "self_ref": "content_list.json#/647"
+    },
+    "tb-94c5cacd2f64ca6430dc5175d520f539-0013": {
+      "id": "tb-94c5cacd2f64ca6430dc5175d520f539-0013",
+      "blockid": "b76a7cd7f3f1d8df0ee45e3cc51519f5",
+      "heading": "4.3 Comparison with Previous Years",
+      "parent_headings": [
+        "4 Assessment of Compliance"
+      ],
+      "dimension": [
+        18,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Year</td><td> $PM_{10}$  LV (annual mean)</td><td> $PM_{10}$  LV (daily mean)</td><td>Additional Zones with Time Extensions, Compliant with AM LV + MOT after Subtraction of Natural Contribution</td></tr><tr><td>2008</td><td>None</td><td>2 zones (1 zone after subtraction of natural contribution)</td><td>Not applicable</td></tr><tr><td>2009</td><td>None</td><td>3 zones (1 zone after subtraction of natural contribution)</td><td>Not applicable</td></tr><tr><td>2010</td><td>None</td><td>None (after subtraction of natural contribution)</td><td>1 zone</td></tr><tr><td>2011</td><td>None</td><td>None (after subtraction of natural contribution)</td><td>1 zone</td></tr><tr><td>2012</td><td>None</td><td>None (after subtraction of natural contribution)</td><td>All time extensions ended.</td></tr><tr><td>2013</td><td>None</td><td>None (after subtraction of natural contribution)</td><td>All time extensions ended.</td></tr><tr><td>2014</td><td>None</td><td>None (after subtraction of natural contribution)</td><td>All time extensions ended.</td></tr><tr><td>2015</td><td>None</td><td>None (after subtraction of natural contribution)</td><td>All time extensions ended.</td></tr><tr><td>2016</td><td>None</td><td>None</td><td>All time extensions ended.</td></tr><tr><td>2017</td><td>None</td><td>None</td><td>All time extensions ended.</td></tr><tr><td>2018</td><td>None</td><td>None</td><td>All time extensions ended.</td></tr><tr><td>2019</td><td>None</td><td>None</td><td>All time extensions ended.</td></tr><tr><td>2020</td><td>None</td><td>None</td><td>All time extensions ended.</td></tr><tr><td>2021</td><td>None</td><td>None</td><td>All time extensions ended.</td></tr><tr><td>2022</td><td>None</td><td>None</td><td>All time extensions ended.</td></tr><tr><td>2023</td><td>None</td><td>None</td><td>All time extensions ended.</td></tr><tr><td>2024</td><td>None</td><td>None</td><td>All time extensions ended.</td></tr></table>",
+      "caption": "Table 4-9 Non-Compliances with the Limit Values for PM10, 2008 to 2024",
+      "footnotes": [],
+      "self_ref": "content_list.json#/649"
+    },
+    "tb-94c5cacd2f64ca6430dc5175d520f539-0014": {
+      "id": "tb-94c5cacd2f64ca6430dc5175d520f539-0014",
+      "blockid": "b76a7cd7f3f1d8df0ee45e3cc51519f5",
+      "heading": "4.3 Comparison with Previous Years",
+      "parent_headings": [
+        "4 Assessment of Compliance"
+      ],
+      "dimension": [
+        18,
+        2
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Year</td><td>PM $_{2.5}$  Annual Mean Limit Value (20 μg m $^{-3}$ ): number of non-compliant zones</td></tr><tr><td>2008</td><td>None</td></tr><tr><td>2009</td><td>None</td></tr><tr><td>2010</td><td>None</td></tr><tr><td>2011</td><td>None</td></tr><tr><td>2012</td><td>None</td></tr><tr><td>2013</td><td>None</td></tr><tr><td>2014</td><td>None</td></tr><tr><td>2015</td><td>None</td></tr><tr><td>2016</td><td>None</td></tr><tr><td>2017</td><td>None</td></tr><tr><td>2018</td><td>None</td></tr><tr><td>2019</td><td>None</td></tr><tr><td>2020</td><td>None</td></tr><tr><td>2021</td><td>None</td></tr><tr><td>2022</td><td>None</td></tr><tr><td>2023</td><td>None</td></tr><tr><td>2024</td><td>None</td></tr></table>",
+      "caption": "Table 4-10 Non-Compliances with the PM2.5 Annual Mean Limit Value 2008 to 2024",
+      "footnotes": [],
+      "self_ref": "content_list.json#/651"
+    },
+    "tb-94c5cacd2f64ca6430dc5175d520f539-0015": {
+      "id": "tb-94c5cacd2f64ca6430dc5175d520f539-0015",
+      "blockid": "b76a7cd7f3f1d8df0ee45e3cc51519f5",
+      "heading": "4.3 Comparison with Previous Years",
+      "parent_headings": [
+        "4 Assessment of Compliance"
+      ],
+      "dimension": [
+        18,
+        5
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Year</td><td>8-Hour Mean Target Value</td><td>AOT40 Target Value</td><td>8-Hour Mean LTO</td><td>AOT40 LTO</td></tr><tr><td>2008</td><td>1 zone measured (Eastern)</td><td>None</td><td>43 zones</td><td>41 zones</td></tr><tr><td>2009</td><td>None</td><td>None</td><td>39 zones</td><td>10 zones</td></tr><tr><td>2010</td><td>None</td><td>None</td><td>41 zones</td><td>6 zones</td></tr><tr><td>2011</td><td>None</td><td>None</td><td>43 zones</td><td>3 zones</td></tr><tr><td>2012</td><td>None</td><td>None</td><td>41 zones</td><td>3 zones</td></tr><tr><td>2013</td><td>None</td><td>None</td><td>33 zones</td><td>8 zones</td></tr><tr><td>2014</td><td>None</td><td>None</td><td>32 zones</td><td>3 zones</td></tr><tr><td>2015</td><td>None</td><td>None</td><td>43 zones</td><td>1 zone</td></tr><tr><td>2016</td><td>None</td><td>None</td><td>42 zones</td><td>5 zones</td></tr><tr><td>2017</td><td>None</td><td>None</td><td>34 zones</td><td>None</td></tr><tr><td>2018</td><td>None</td><td>None</td><td>43 zones</td><td>38 zones</td></tr><tr><td>2019</td><td>None</td><td>None</td><td>43 zones</td><td>6 zones</td></tr><tr><td>2020</td><td>None</td><td>None</td><td>40 zones</td><td>16 zones</td></tr><tr><td>2021</td><td>None</td><td>None</td><td>39 zones</td><td>1 zone</td></tr><tr><td>2022</td><td>None</td><td>None</td><td>43 zones</td><td>11 zones</td></tr><tr><td>2023</td><td>None</td><td>None</td><td>42 zones</td><td>30 zones</td></tr><tr><td>2024</td><td>None</td><td>None</td><td>31 zones</td><td>4 zones</td></tr></table>",
+      "caption": "Table 4-11 Exceedances of Target Values for Ozone (Health) and Long-Term Objectives, 2008 to 2024",
+      "footnotes": [],
+      "self_ref": "content_list.json#/664"
+    },
+    "tb-94c5cacd2f64ca6430dc5175d520f539-0016": {
+      "id": "tb-94c5cacd2f64ca6430dc5175d520f539-0016",
+      "blockid": "b76a7cd7f3f1d8df0ee45e3cc51519f5",
+      "heading": "4.3 Comparison with Previous Years",
+      "parent_headings": [
+        "4 Assessment of Compliance"
+      ],
+      "dimension": [
+        18,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Year</td><td>Ni</td><td>B[a]P</td></tr><tr><td>2008</td><td>2 (Swansea, South Wales)</td><td>6 (Yorks &amp; Humberside, Teesside, Northern Ireland, Swansea, South Wales, Belfast)</td></tr><tr><td>2009</td><td>2 (Swansea, South Wales)</td><td>6 (Yorks &amp; Humberside, Northern Ireland, Teesside, Swansea, North East, South Wales)</td></tr><tr><td>2010</td><td>2 (Swansea, South Wales)</td><td>8 (Yorks &amp; Humber, N. Ireland, Teesside, Belfast, W Midlands, North East, South Wales, North Wales.)</td></tr><tr><td>2011</td><td>2 (Swansea, South Wales)</td><td>7 (Yorks &amp; Humberside, N. Ireland, Teesside, Swansea, Belfast, North East, South Wales)</td></tr><tr><td>2012</td><td>2 (Swansea, South Wales)</td><td>8 (Yorks &amp; Humberside, Teesside, Swansea, Belfast, North East, South Wales, North Wales, N. Ireland.)</td></tr><tr><td>2013</td><td>2 (Swansea, South Wales)</td><td>6 (Yorks &amp; Humberside, Teesside, Swansea, East Midlands, North East, South Wales.)</td></tr><tr><td>2014</td><td>3 (Sheffield, Swansea, South Wales)</td><td>6 (Yorks &amp; Humberside, Teesside, Swansea, East Midlands, North East, and South Wales).</td></tr><tr><td>2015</td><td>2 (Swansea, South Wales)</td><td>5 (Yorks &amp; Humberside, Teesside, Swansea, North East and South Wales).</td></tr><tr><td>2016</td><td>3 (Sheffield, Swansea, South Wales)</td><td>4 (Yorks &amp; Humberside, Swansea, South Wales and Northern Ireland).</td></tr><tr><td>2017</td><td>None</td><td>3 (Yorks. &amp; Humberside, Swansea, South Wales)</td></tr><tr><td>2018</td><td>4 (Sheffield, Yorks. &amp; Humber., Swansea, South Wales)</td><td>3 (Yorks. &amp; Humberside, Swansea, South Wales)</td></tr><tr><td>2019</td><td>4 (Sheffield, Yorks. &amp; Humber., Swansea, South Wales)</td><td>3 (Yorks. &amp; Humberside, Swansea, South Wales)</td></tr><tr><td>2020</td><td>4 (Sheffield, Yorks. &amp; Humber., Swansea, South Wales)</td><td>3 (Yorks. &amp; Humberside, Swansea, South Wales)</td></tr><tr><td>2021</td><td>4 (Sheffield, Yorks. &amp; Humber., Swansea, South Wales)</td><td>2 (Swansea and South Wales)</td></tr><tr><td>2022</td><td>3 (Sheffield, Yorks. &amp; Humberside, South Wales)</td><td>2 (Swansea and South Wales)</td></tr><tr><td>2023</td><td>3 (Sheffield, Yorks. &amp; Humberside, South Wales)</td><td>2 (Swansea and South Wales)</td></tr><tr><td>2024</td><td>3 (Sheffield, Yorks &amp; Humberside, South Wales)</td><td>None</td></tr></table>",
+      "caption": "Table 4-12 Zones Exceeding Target Values for Ni and B[a]P, 2008 to 2024",
+      "footnotes": [],
+      "self_ref": "content_list.json#/666"
+    }
+  }
+}

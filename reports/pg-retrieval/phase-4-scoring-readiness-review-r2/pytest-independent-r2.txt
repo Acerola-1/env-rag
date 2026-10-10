@@ -1,0 +1,355 @@
+FFF.FF.FFF                                                               [100%]
+=================================== FAILURES ===================================
+____________ test_hard_partial_is_fail_without_manual_pass[missing] ____________
+
+ctx = (<module 'scoring_review_r2_target' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-sco.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-901/test_hard_partial_is_fail_with0')
+record_mode = 'missing'
+
+    @pytest.mark.parametrize("record_mode", ["missing", "PENDING"])
+    def test_hard_partial_is_fail_without_manual_pass(ctx, tmp_path, record_mode):
+        a, h = ctx
+        run, _ = synthesis_run(h, tmp_path, "partial")
+        records = None
+        if record_mode == "PENDING":
+            rec = h.record(
+                run,
+                1,
+                "pg",
+                "syn-002",
+                "PENDING",
+                "fixture: semantic reviewer has not decided",
+                response="sha",
+            )
+            records = h.write_records(tmp_path, [rec])
+        adj = invoke(a, h, tmp_path, run, records)
+        row = next(x for x in adj["rows"] if x["qid"] == "syn-002" and x["path"] == "pg")
+>       assert row["final_status"] == "FAIL", (
+            "known incomplete coverage is not an unresolved semantic gap"
+        )
+E       AssertionError: known incomplete coverage is not an unresolved semantic gap
+E       assert 'PENDING' == 'FAIL'
+E         
+E         - FAIL
+E         + PENDING
+
+reports/pg-retrieval/phase-4-scoring-readiness-review-r2/test_scoring_review_r2.py:85: AssertionError
+----------------------------- Captured stdout call -----------------------------
+rows: 123
+{"positive": {"FAIL": 92, "PENDING": 1}, "counter": {"PENDING": 21, "FAIL": 9}}
+inputs ok: True | manifest entries: 12
+____________ test_hard_partial_is_fail_without_manual_pass[PENDING] ____________
+
+ctx = (<module 'scoring_review_r2_target' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-sco.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-901/test_hard_partial_is_fail_with1')
+record_mode = 'PENDING'
+
+    @pytest.mark.parametrize("record_mode", ["missing", "PENDING"])
+    def test_hard_partial_is_fail_without_manual_pass(ctx, tmp_path, record_mode):
+        a, h = ctx
+        run, _ = synthesis_run(h, tmp_path, "partial")
+        records = None
+        if record_mode == "PENDING":
+            rec = h.record(
+                run,
+                1,
+                "pg",
+                "syn-002",
+                "PENDING",
+                "fixture: semantic reviewer has not decided",
+                response="sha",
+            )
+            records = h.write_records(tmp_path, [rec])
+        adj = invoke(a, h, tmp_path, run, records)
+        row = next(x for x in adj["rows"] if x["qid"] == "syn-002" and x["path"] == "pg")
+>       assert row["final_status"] == "FAIL", (
+            "known incomplete coverage is not an unresolved semantic gap"
+        )
+E       AssertionError: known incomplete coverage is not an unresolved semantic gap
+E       assert 'PENDING' == 'FAIL'
+E         
+E         - FAIL
+E         + PENDING
+
+reports/pg-retrieval/phase-4-scoring-readiness-review-r2/test_scoring_review_r2.py:85: AssertionError
+----------------------------- Captured stdout call -----------------------------
+rows: 123
+{"positive": {"FAIL": 92, "PENDING": 1}, "counter": {"PENDING": 21, "FAIL": 9}}
+inputs ok: True | manifest entries: 12
+______________ test_unverified_synthesis_is_fail_without_records _______________
+
+ctx = (<module 'scoring_review_r2_target' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-sco.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-901/test_unverified_synthesis_is_f0')
+
+    def test_unverified_synthesis_is_fail_without_records(ctx, tmp_path):
+        a, h = ctx
+        run, art = synthesis_run(h, tmp_path, "complete")
+        d = json.loads(art.read_text())
+        d["results"][0]["answer"]["items"][0]["citation"]["quote"] = "fabricated impossible quote"
+        art.write_text(json.dumps(d))
+        h.rewrite_manifest(run)
+        adj = invoke(a, h, tmp_path, run)
+        row = next(x for x in adj["rows"] if x["qid"] == "syn-002" and x["path"] == "pg")
+        assert row["unverified_citations"]
+>       assert row["final_status"] == "FAIL"
+E       AssertionError: assert 'PENDING' == 'FAIL'
+E         
+E         - FAIL
+E         + PENDING
+
+reports/pg-retrieval/phase-4-scoring-readiness-review-r2/test_scoring_review_r2.py:100: AssertionError
+----------------------------- Captured stdout call -----------------------------
+rows: 123
+{"positive": {"FAIL": 92, "PENDING": 1}, "counter": {"PENDING": 21, "FAIL": 9}}
+inputs ok: True | manifest entries: 12
+________ test_typed_target_identity_survives_actual_reader[table_unit] _________
+
+ctx = (<module 'scoring_review_r2_target' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-sco.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-901/test_typed_target_identity_sur0')
+kind = 'table_unit'
+
+    @pytest.mark.parametrize("kind", ["table_unit", "scope"])
+    def test_typed_target_identity_survives_actual_reader(ctx, tmp_path, kind):
+        a, h = ctx
+        run = h.build_run(tmp_path)
+        q = next(q for q in h.GOLD["questions"] if q["query_id"] == "fact-001")
+        ev = q["gold"]["target_evidence"][0]
+        fusion = run / "legs/r1/pg/fact-001/fusion/fusion-runtime-latest.json"
+        fusion.parent.mkdir(parents=True)
+        target = {
+            "target_type": kind,
+            "workspace": "default",
+            "doc_id": ev["doc_id"],
+            "citation_verified": True,
+        }
+        if kind == "table_unit":
+            target["unit_id"] = ev["unit_id"]
+            target["table_id"] = ev["unit_id"]
+        else:
+            target["scope_id"] = "fixture-scope"
+        fusion.write_text(
+            json.dumps(
+                {
+                    "results": [
+                        {
+                            "query_id": "fact-001",
+                            "workspace": "default",
+                            "candidates": [],
+                            "typed_targets": [target],
+                            "pg": {"discovery_captured": True},
+                        }
+                    ]
+                }
+            )
+        )
+        h.rewrite_manifest(run)
+        mapping = copy.deepcopy(h.MAPPING_FIXTURE)
+        mapping["entries"] = [
+            {
+                "workspace": "default",
+                "doc_id": ev["doc_id"],
+                "snapshot_id": "4919b3938ad93747",
+                "unit_id": ev["unit_id"],
+                "chunk_ids": ["fixture-target-chunk"],
+                "content_sha256": "a" * 64,
+                "scopes": [{"scope_id": "fixture-scope"}],
+            }
+        ]
+        p = h._write_mapping(tmp_path, mapping)
+        out = tmp_path / "adjudication-new.json"
+        a.main(
+            [
+                "--run-dir",
+                str(run),
+                "--round",
+                "1",
+                "--anchor",
+                str(h.ANCHOR),
+                "--out",
+                str(out),
+                "--mapping",
+                str(p),
+            ]
+        )
+        row = json.loads(out.read_text())["recall"]["typed_evidence_recall"]["per_question"][
+            "fact-001"
+        ]["pg"]
+>       assert row["typed_evidence_recall"] == 1.0 and ev["unit_id"] in row["covered"]
+E       assert (0.0 == 1.0)
+
+reports/pg-retrieval/phase-4-scoring-readiness-review-r2/test_scoring_review_r2.py:181: AssertionError
+----------------------------- Captured stdout call -----------------------------
+rows: 123
+{"positive": {"FAIL": 93}, "counter": {"PENDING": 21, "FAIL": 9}}
+inputs ok: True | manifest entries: 12
+___________ test_typed_target_identity_survives_actual_reader[scope] ___________
+
+ctx = (<module 'scoring_review_r2_target' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-sco.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-901/test_typed_target_identity_sur1')
+kind = 'scope'
+
+    @pytest.mark.parametrize("kind", ["table_unit", "scope"])
+    def test_typed_target_identity_survives_actual_reader(ctx, tmp_path, kind):
+        a, h = ctx
+        run = h.build_run(tmp_path)
+        q = next(q for q in h.GOLD["questions"] if q["query_id"] == "fact-001")
+        ev = q["gold"]["target_evidence"][0]
+        fusion = run / "legs/r1/pg/fact-001/fusion/fusion-runtime-latest.json"
+        fusion.parent.mkdir(parents=True)
+        target = {
+            "target_type": kind,
+            "workspace": "default",
+            "doc_id": ev["doc_id"],
+            "citation_verified": True,
+        }
+        if kind == "table_unit":
+            target["unit_id"] = ev["unit_id"]
+            target["table_id"] = ev["unit_id"]
+        else:
+            target["scope_id"] = "fixture-scope"
+        fusion.write_text(
+            json.dumps(
+                {
+                    "results": [
+                        {
+                            "query_id": "fact-001",
+                            "workspace": "default",
+                            "candidates": [],
+                            "typed_targets": [target],
+                            "pg": {"discovery_captured": True},
+                        }
+                    ]
+                }
+            )
+        )
+        h.rewrite_manifest(run)
+        mapping = copy.deepcopy(h.MAPPING_FIXTURE)
+        mapping["entries"] = [
+            {
+                "workspace": "default",
+                "doc_id": ev["doc_id"],
+                "snapshot_id": "4919b3938ad93747",
+                "unit_id": ev["unit_id"],
+                "chunk_ids": ["fixture-target-chunk"],
+                "content_sha256": "a" * 64,
+                "scopes": [{"scope_id": "fixture-scope"}],
+            }
+        ]
+        p = h._write_mapping(tmp_path, mapping)
+        out = tmp_path / "adjudication-new.json"
+        a.main(
+            [
+                "--run-dir",
+                str(run),
+                "--round",
+                "1",
+                "--anchor",
+                str(h.ANCHOR),
+                "--out",
+                str(out),
+                "--mapping",
+                str(p),
+            ]
+        )
+        row = json.loads(out.read_text())["recall"]["typed_evidence_recall"]["per_question"][
+            "fact-001"
+        ]["pg"]
+>       assert row["typed_evidence_recall"] == 1.0 and ev["unit_id"] in row["covered"]
+E       assert (0.0 == 1.0)
+
+reports/pg-retrieval/phase-4-scoring-readiness-review-r2/test_scoring_review_r2.py:181: AssertionError
+----------------------------- Captured stdout call -----------------------------
+rows: 123
+{"positive": {"FAIL": 93}, "counter": {"PENDING": 21, "FAIL": 9}}
+inputs ok: True | manifest entries: 12
+____________________ test_each_refusal_gets_new_diagnostic _____________________
+
+ctx = (<module 'scoring_review_r2_target' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-sco.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-901/test_each_refusal_gets_new_dia0')
+
+    def test_each_refusal_gets_new_diagnostic(ctx, tmp_path):
+        a, h = ctx
+        run, art = synthesis_run(h, tmp_path, "complete")
+        original = art.read_bytes()
+        art.write_text("{broken answer JSON")
+        h.rewrite_manifest(run)
+        with pytest.raises(a.InputIntegrityError):
+            invoke(a, h, tmp_path, run)
+        first = tmp_path / "input-rejection.json"
+        original_diag = first.read_bytes()
+        art.write_bytes(original)
+        h.rewrite_manifest(run)
+        rec = h.record(run, 1, "pg", "syn-002", response="sha")
+        rec["answer_runtime_sha256"] = "0" * 64
+        with pytest.raises(a.InputIntegrityError):
+            invoke(a, h, tmp_path, run, h.write_records(tmp_path, [rec]))
+        assert first.read_bytes() == original_diag
+        diagnostics = list(tmp_path.glob("input-rejection*.json"))
+>       assert len(diagnostics) == 2, "each failing invocation needs its own current diagnostic"
+E       AssertionError: each failing invocation needs its own current diagnostic
+E       assert 1 == 2
+E        +  where 1 = len([PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-901/test_each_refusal_gets_new_dia0/input-rejection.json')])
+
+reports/pg-retrieval/phase-4-scoring-readiness-review-r2/test_scoring_review_r2.py:250: AssertionError
+_______________ test_required_answer_identity_cannot_be_omitted ________________
+
+ctx = (<module 'scoring_review_r2_target' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-sco.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-901/test_required_answer_identity_0')
+
+    def test_required_answer_identity_cannot_be_omitted(ctx, tmp_path):
+        a, h = ctx
+        run = h.build_run(
+            tmp_path,
+            legs=[
+                (
+                    "pg",
+                    "prose-enum-002",
+                    h.PG_RUN / "legs/r1/pg/prose-enum-002/answer/answer-runtime-latest.json",
+                )
+            ],
+        )
+        art = run / "legs/r1/pg/prose-enum-002/answer/answer-runtime-latest.json"
+        d = json.loads(art.read_text())
+        del d["results"][0]["query_id"]
+        art.write_text(json.dumps(d))
+        h.rewrite_manifest(run)
+>       with pytest.raises(a.InputIntegrityError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE InputIntegrityError
+
+reports/pg-retrieval/phase-4-scoring-readiness-review-r2/test_scoring_review_r2.py:271: Failed
+----------------------------- Captured stdout call -----------------------------
+rows: 123
+{"positive": {"FAIL": 92, "PASS": 1}, "counter": {"PENDING": 21, "FAIL": 9}}
+inputs ok: True | manifest entries: 12
+________________ test_required_frozen_counts_cannot_be_omitted _________________
+
+ctx = (<module 'scoring_review_r2_target' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-sco.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-901/test_required_frozen_counts_ca0')
+
+    def test_required_frozen_counts_cannot_be_omitted(ctx, tmp_path):
+        a, h = ctx
+        run = h.build_run(tmp_path)
+        d = json.loads(h.ANCHOR.read_text())
+        del d["frozen_identity"]["eight_table_counts"]
+        anchor = tmp_path / "incomplete-approved-anchor.json"
+        anchor.write_text(json.dumps(d))
+>       with pytest.raises(a.InputIntegrityError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE InputIntegrityError
+
+reports/pg-retrieval/phase-4-scoring-readiness-review-r2/test_scoring_review_r2.py:283: Failed
+----------------------------- Captured stdout call -----------------------------
+rows: 123
+{"positive": {"FAIL": 93}, "counter": {"PENDING": 21, "FAIL": 9}}
+inputs ok: True | manifest entries: 11
+=========================== short test summary info ============================
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review-r2/test_scoring_review_r2.py::test_hard_partial_is_fail_without_manual_pass[missing]
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review-r2/test_scoring_review_r2.py::test_hard_partial_is_fail_without_manual_pass[PENDING]
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review-r2/test_scoring_review_r2.py::test_unverified_synthesis_is_fail_without_records
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review-r2/test_scoring_review_r2.py::test_typed_target_identity_survives_actual_reader[table_unit]
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review-r2/test_scoring_review_r2.py::test_typed_target_identity_survives_actual_reader[scope]
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review-r2/test_scoring_review_r2.py::test_each_refusal_gets_new_diagnostic
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review-r2/test_scoring_review_r2.py::test_required_answer_identity_cannot_be_omitted
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review-r2/test_scoring_review_r2.py::test_required_frozen_counts_cannot_be_omitted
+8 failed, 2 passed in 2.37s

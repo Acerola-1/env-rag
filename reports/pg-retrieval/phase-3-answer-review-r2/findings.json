@@ -1,0 +1,38 @@
+[
+  {
+    "id": "B1-table",
+    "path": "src/env_rag_final/answer.py",
+    "start_line": 728,
+    "end_line": 736,
+    "severity": "high",
+    "category": "bug",
+    "content": "Unknown unit g/m³, negative value -35, or hourly instead of annual mean survives partial token/unit checks as complete."
+  },
+  {
+    "id": "B1-prose",
+    "path": "src/env_rag_final/answer.py",
+    "start_line": 861,
+    "end_line": 865,
+    "severity": "high",
+    "category": "bug",
+    "content": "The prose branch validates only numeric tokens; a fabricated parking-lot permission claim attached to a real medical-wastewater quote is verified complete."
+  },
+  {
+    "id": "B2",
+    "path": "src/env_rag_final/answer.py",
+    "start_line": 1428,
+    "end_line": 1445,
+    "severity": "high",
+    "category": "bug",
+    "content": "Coverage only requires edition labels: two correct PM10 rows produce complete for a PM2.5 comparison question."
+  },
+  {
+    "id": "B3",
+    "path": "src/env_rag_final/answer.py",
+    "start_line": 800,
+    "end_line": 812,
+    "severity": "high",
+    "category": "bug",
+    "content": "Any dimensionless mention across caption/footnotes overrides the specific row unit; unrelated pH note converts total mercury mg/L into dimensionless complete."
+  }
+]

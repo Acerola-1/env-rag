@@ -1,0 +1,494 @@
+{
+  "readonly_production": true,
+  "real_model_calls": 0,
+  "real_embedding_calls": 0,
+  "release": "1.5.7",
+  "wheel_record": {
+    "python_files_checked": 172,
+    "mismatches": []
+  },
+  "production_before": {
+    "counts": {
+      "doc_full": 221,
+      "doc_chunks": 5709,
+      "doc_status": 279,
+      "llm_cache": 16514,
+      "entity_chunks": 65527,
+      "full_entities": 221,
+      "full_relations": 221,
+      "relation_chunks": 119575
+    },
+    "catalog": {
+      "state": "current",
+      "active_run_id": "c15c741742394320",
+      "active_snapshot_id": "4919b3938ad93747",
+      "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "expected_recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "live_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "stored_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "action": ""
+    },
+    "search": {
+      "state": "current",
+      "search_id": "872d689343a9cbb6",
+      "catalog_snapshot_id": "4919b3938ad93747",
+      "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+      "vocab_sha": "c3d0b6a6cf7d6af0758329bccea3bbbf432d73b20df4db42b768ae07446978cf",
+      "index_recipe": "phase-2-v2-local-caption-identity-guard",
+      "expected_search_id": "872d689343a9cbb6",
+      "reasons": []
+    },
+    "schema": {
+      "tables": [
+        "lightrag_doc_chunks",
+        "lightrag_doc_full",
+        "lightrag_doc_status",
+        "lightrag_entity_chunks",
+        "lightrag_full_entities",
+        "lightrag_full_relations",
+        "lightrag_graph_edges",
+        "lightrag_graph_nodes",
+        "lightrag_llm_cache",
+        "lightrag_relation_chunks"
+      ],
+      "graph_columns": [
+        {
+          "table_name": "lightrag_graph_edges",
+          "column_name": "workspace",
+          "data_type": "text",
+          "is_nullable": "NO"
+        },
+        {
+          "table_name": "lightrag_graph_edges",
+          "column_name": "namespace",
+          "data_type": "text",
+          "is_nullable": "NO"
+        },
+        {
+          "table_name": "lightrag_graph_edges",
+          "column_name": "src_id",
+          "data_type": "text",
+          "is_nullable": "NO"
+        },
+        {
+          "table_name": "lightrag_graph_edges",
+          "column_name": "tgt_id",
+          "data_type": "text",
+          "is_nullable": "NO"
+        },
+        {
+          "table_name": "lightrag_graph_edges",
+          "column_name": "properties",
+          "data_type": "jsonb",
+          "is_nullable": "NO"
+        },
+        {
+          "table_name": "lightrag_graph_edges",
+          "column_name": "updated_at",
+          "data_type": "timestamp with time zone",
+          "is_nullable": "NO"
+        },
+        {
+          "table_name": "lightrag_graph_nodes",
+          "column_name": "workspace",
+          "data_type": "text",
+          "is_nullable": "NO"
+        },
+        {
+          "table_name": "lightrag_graph_nodes",
+          "column_name": "namespace",
+          "data_type": "text",
+          "is_nullable": "NO"
+        },
+        {
+          "table_name": "lightrag_graph_nodes",
+          "column_name": "id",
+          "data_type": "text",
+          "is_nullable": "NO"
+        },
+        {
+          "table_name": "lightrag_graph_nodes",
+          "column_name": "properties",
+          "data_type": "jsonb",
+          "is_nullable": "NO"
+        },
+        {
+          "table_name": "lightrag_graph_nodes",
+          "column_name": "updated_at",
+          "data_type": "timestamp with time zone",
+          "is_nullable": "NO"
+        }
+      ],
+      "extensions": [
+        "plpgsql"
+      ],
+      "available_vector_age": [],
+      "graph_counts": {
+        "lightrag_graph_edges": 0,
+        "lightrag_graph_nodes": 0
+      }
+    }
+  },
+  "owned_scratch": {
+    "database": "env_rag_compat_review_0ba626d6",
+    "oid": 142987,
+    "ownership_marker": "codex-owned-5.1-review-33c1e7fff0d04a1487c18fa3b87e9e26"
+  },
+  "vector_flags": {
+    "None": false,
+    "NanoVectorDBStorage": false,
+    "QdrantVectorDBStorage": false,
+    "PGVectorStorage": true
+  },
+  "pool_retained_second_call": {
+    "same_object": true,
+    "calls": {
+      "initdb": 1,
+      "check_tables": 1
+    }
+  },
+  "pool_after_final_release": {
+    "calls": {
+      "initdb": 2,
+      "check_tables": 2
+    },
+    "reinitialized": true
+  },
+  "scratch_after_pool": {
+    "tables": [
+      "lightrag_doc_chunks",
+      "lightrag_doc_full",
+      "lightrag_doc_status",
+      "lightrag_entity_chunks",
+      "lightrag_full_entities",
+      "lightrag_full_relations",
+      "lightrag_llm_cache",
+      "lightrag_relation_chunks"
+    ],
+    "graph_columns": [],
+    "extensions": [
+      "plpgsql"
+    ],
+    "available_vector_age": [],
+    "graph_counts": {}
+  },
+  "plain_graph_fixture_get_node": true,
+  "scratch_with_plain_graph": {
+    "tables": [
+      "lightrag_doc_chunks",
+      "lightrag_doc_full",
+      "lightrag_doc_status",
+      "lightrag_entity_chunks",
+      "lightrag_full_entities",
+      "lightrag_full_relations",
+      "lightrag_graph_edges",
+      "lightrag_graph_nodes",
+      "lightrag_llm_cache",
+      "lightrag_relation_chunks"
+    ],
+    "graph_columns": [
+      {
+        "table_name": "lightrag_graph_edges",
+        "column_name": "workspace",
+        "data_type": "text",
+        "is_nullable": "NO"
+      },
+      {
+        "table_name": "lightrag_graph_edges",
+        "column_name": "namespace",
+        "data_type": "text",
+        "is_nullable": "NO"
+      },
+      {
+        "table_name": "lightrag_graph_edges",
+        "column_name": "src_id",
+        "data_type": "text",
+        "is_nullable": "NO"
+      },
+      {
+        "table_name": "lightrag_graph_edges",
+        "column_name": "tgt_id",
+        "data_type": "text",
+        "is_nullable": "NO"
+      },
+      {
+        "table_name": "lightrag_graph_edges",
+        "column_name": "properties",
+        "data_type": "jsonb",
+        "is_nullable": "NO"
+      },
+      {
+        "table_name": "lightrag_graph_edges",
+        "column_name": "updated_at",
+        "data_type": "timestamp with time zone",
+        "is_nullable": "NO"
+      },
+      {
+        "table_name": "lightrag_graph_nodes",
+        "column_name": "workspace",
+        "data_type": "text",
+        "is_nullable": "NO"
+      },
+      {
+        "table_name": "lightrag_graph_nodes",
+        "column_name": "namespace",
+        "data_type": "text",
+        "is_nullable": "NO"
+      },
+      {
+        "table_name": "lightrag_graph_nodes",
+        "column_name": "id",
+        "data_type": "text",
+        "is_nullable": "NO"
+      },
+      {
+        "table_name": "lightrag_graph_nodes",
+        "column_name": "properties",
+        "data_type": "jsonb",
+        "is_nullable": "NO"
+      },
+      {
+        "table_name": "lightrag_graph_nodes",
+        "column_name": "updated_at",
+        "data_type": "timestamp with time zone",
+        "is_nullable": "NO"
+      }
+    ],
+    "extensions": [
+      "plpgsql"
+    ],
+    "available_vector_age": [],
+    "graph_counts": {
+      "lightrag_graph_edges": 0,
+      "lightrag_graph_nodes": 1
+    }
+  },
+  "sample": {
+    "rows": [
+      {
+        "workspace": "review_a",
+        "id": "doc-2ab7b92cfb4b39d40db3bd37c33819fa-chunk-000",
+        "full_doc_id": "doc-2ab7b92cfb4b39d40db3bd37c33819fa",
+        "content": "Review fixture first content; concentration 60."
+      },
+      {
+        "workspace": "review_b",
+        "id": "doc-2ab7b92cfb4b39d40db3bd37c33819fa-chunk-000",
+        "full_doc_id": "doc-2ab7b92cfb4b39d40db3bd37c33819fa",
+        "content": "Review fixture alternate version; concentration 99."
+      }
+    ],
+    "statuses": [
+      {
+        "workspace": "review_a",
+        "id": "doc-2ab7b92cfb4b39d40db3bd37c33819fa",
+        "status": "processed"
+      },
+      {
+        "workspace": "review_b",
+        "id": "doc-2ab7b92cfb4b39d40db3bd37c33819fa",
+        "status": "processed"
+      }
+    ],
+    "queries": [
+      {
+        "workspace": "review_a",
+        "chunks": [
+          {
+            "reference_id": "1",
+            "content": "Review fixture first content; concentration 60.",
+            "file_path": "doc-a",
+            "chunk_id": "doc-2ab7b92cfb4b39d40db3bd37c33819fa-chunk-000"
+          }
+        ],
+        "status": "success"
+      },
+      {
+        "workspace": "review_b",
+        "chunks": [
+          {
+            "reference_id": "1",
+            "content": "Review fixture alternate version; concentration 99.",
+            "file_path": "doc-a",
+            "chunk_id": "doc-2ab7b92cfb4b39d40db3bd37c33819fa-chunk-000"
+          }
+        ],
+        "status": "success"
+      }
+    ],
+    "cache_columns": [
+      "workspace",
+      "id",
+      "original_prompt",
+      "return_value",
+      "chunk_id",
+      "cache_type",
+      "queryparam",
+      "create_time",
+      "update_time"
+    ],
+    "cache_types": [
+      {
+        "workspace": "review_a",
+        "cache_type": "extract",
+        "n": 2
+      },
+      {
+        "workspace": "review_b",
+        "cache_type": "extract",
+        "n": 2
+      }
+    ],
+    "missing_chunk": [
+      null
+    ],
+    "effective_workspaces": [
+      "review_a",
+      "review_b"
+    ],
+    "same_filename_same_chunk_id": true,
+    "different_content": true
+  },
+  "fixture_calls": {
+    "llm": 4,
+    "embedding": 4
+  },
+  "age_probe": {
+    "error_type": "UndefinedTableError",
+    "error": "relation \"ag_catalog.ag_graph\" does not exist"
+  },
+  "pgvector_probe": {
+    "error_type": "ValueError",
+    "error": "unknown type: public.vector"
+  },
+  "cleanup": {
+    "dropped": true,
+    "ownership_verified": true
+  },
+  "production_after": {
+    "counts": {
+      "doc_full": 221,
+      "doc_chunks": 5709,
+      "doc_status": 279,
+      "llm_cache": 16514,
+      "entity_chunks": 65527,
+      "full_entities": 221,
+      "full_relations": 221,
+      "relation_chunks": 119575
+    },
+    "catalog": {
+      "state": "current",
+      "active_run_id": "c15c741742394320",
+      "active_snapshot_id": "4919b3938ad93747",
+      "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "expected_recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "live_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "stored_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "action": ""
+    },
+    "search": {
+      "state": "current",
+      "search_id": "872d689343a9cbb6",
+      "catalog_snapshot_id": "4919b3938ad93747",
+      "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+      "vocab_sha": "c3d0b6a6cf7d6af0758329bccea3bbbf432d73b20df4db42b768ae07446978cf",
+      "index_recipe": "phase-2-v2-local-caption-identity-guard",
+      "expected_search_id": "872d689343a9cbb6",
+      "reasons": []
+    },
+    "schema": {
+      "tables": [
+        "lightrag_doc_chunks",
+        "lightrag_doc_full",
+        "lightrag_doc_status",
+        "lightrag_entity_chunks",
+        "lightrag_full_entities",
+        "lightrag_full_relations",
+        "lightrag_graph_edges",
+        "lightrag_graph_nodes",
+        "lightrag_llm_cache",
+        "lightrag_relation_chunks"
+      ],
+      "graph_columns": [
+        {
+          "table_name": "lightrag_graph_edges",
+          "column_name": "workspace",
+          "data_type": "text",
+          "is_nullable": "NO"
+        },
+        {
+          "table_name": "lightrag_graph_edges",
+          "column_name": "namespace",
+          "data_type": "text",
+          "is_nullable": "NO"
+        },
+        {
+          "table_name": "lightrag_graph_edges",
+          "column_name": "src_id",
+          "data_type": "text",
+          "is_nullable": "NO"
+        },
+        {
+          "table_name": "lightrag_graph_edges",
+          "column_name": "tgt_id",
+          "data_type": "text",
+          "is_nullable": "NO"
+        },
+        {
+          "table_name": "lightrag_graph_edges",
+          "column_name": "properties",
+          "data_type": "jsonb",
+          "is_nullable": "NO"
+        },
+        {
+          "table_name": "lightrag_graph_edges",
+          "column_name": "updated_at",
+          "data_type": "timestamp with time zone",
+          "is_nullable": "NO"
+        },
+        {
+          "table_name": "lightrag_graph_nodes",
+          "column_name": "workspace",
+          "data_type": "text",
+          "is_nullable": "NO"
+        },
+        {
+          "table_name": "lightrag_graph_nodes",
+          "column_name": "namespace",
+          "data_type": "text",
+          "is_nullable": "NO"
+        },
+        {
+          "table_name": "lightrag_graph_nodes",
+          "column_name": "id",
+          "data_type": "text",
+          "is_nullable": "NO"
+        },
+        {
+          "table_name": "lightrag_graph_nodes",
+          "column_name": "properties",
+          "data_type": "jsonb",
+          "is_nullable": "NO"
+        },
+        {
+          "table_name": "lightrag_graph_nodes",
+          "column_name": "updated_at",
+          "data_type": "timestamp with time zone",
+          "is_nullable": "NO"
+        }
+      ],
+      "extensions": [
+        "plpgsql"
+      ],
+      "available_vector_age": [],
+      "graph_counts": {
+        "lightrag_graph_edges": 0,
+        "lightrag_graph_nodes": 0
+      }
+    }
+  },
+  "production_unchanged": true,
+  "env_file_unchanged": true
+}

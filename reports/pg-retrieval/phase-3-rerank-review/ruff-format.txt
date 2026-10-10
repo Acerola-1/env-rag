@@ -1,0 +1,21 @@
+unformatted: File would be reformatted
+   --> src/env_rag_final/cli.py:496:30
+    |
+495 |     try:
+    -         report = asyncio.run(
+    -             run_rerank(report_dir, queries, fused_report_path=fused_path)
+    -         )
+496 +         report = asyncio.run(run_rerank(report_dir, queries, fused_report_path=fused_path))
+497 |     except Exception as error:
+--------------------------------------------------------------------------------
+502 |     statuses = {r["query_id"]: r["status"] for r in report["results"]}
+    -     print(f"Rerank OK: queries={len(report['results'])} ordered={ordered} "
+    -           f"degraded={degraded} skipped={skipped}")
+503 +     print(
+504 +         f"Rerank OK: queries={len(report['results'])} ordered={ordered} "
+505 +         f"degraded={degraded} skipped={skipped}"
+506 +     )
+507 |     print(f"  status: {_json.dumps(statuses)}")
+    |
+
+1 file would be reformatted, 262 files already formatted

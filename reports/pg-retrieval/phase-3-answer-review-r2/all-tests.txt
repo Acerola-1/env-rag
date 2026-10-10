@@ -1,0 +1,295 @@
+......................................FFFF.FF........................... [ 19%]
+........................................................................ [ 39%]
+........................................................................ [ 59%]
+........................................................................ [ 79%]
+........................................................................ [ 98%]
+....                                                                     [100%]
+=================================== FAILURES ===================================
+___________ test_full_measurement_relation_is_required[unknown-unit] ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1199bd880>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-528/test_full_measurement_relation0')
+claim = '2012版PM2.5年平均二级限值为35 g/m³'
+
+    @pytest.mark.parametrize(
+        "claim",
+        [
+            "2012版PM2.5年平均二级限值为35 g/m³",
+            "2012版PM2.5年平均二级限值为-35μg/m³",
+            "2012版PM2.5小时平均二级限值为35μg/m³",
+        ],
+        ids=["unknown-unit", "wrong-sign", "wrong-average-time"],
+    )
+    def test_full_measurement_relation_is_required(monkeypatch, tmp_path, claim):
+        conn, _ = fx._install(monkeypatch, tmp_path, [fx._gold_q("q-syn", fx.Q_SYN, "synthesis")])
+        fp, rp = fx._syn_replay(tmp_path)
+        payload = copy.deepcopy(fx._GOOD_SYN)
+        payload["items"][0]["claim"] = claim
+        report = asyncio.run(
+            an.run_answer(
+                tmp_path / "out",
+                ["q-syn"],
+                fused_report_path=fp,
+                rerank_report_path=rp,
+                values=fx.VALUES,
+                conn=conn,
+                transport=fx._model_transport(payload),
+                allow_model=True,
+            )
+        )
+        result = report["results"][0]
+>       assert result["coverage_status"] != "complete", result["answer"]
+E       AssertionError: {'mode': 'model', 'generated_by': 'one answer model call (fixture-answer-model-0005)', 'items': [{'kind': 'synthesis_c...nap-1'}, 'claim': '2026版PM2.5年平均二级限值收严为25μg/m³', 'quote': 'PM2.5 | 年平均 | 10 | 25', ...}], 'unverified_claims': [], ...}
+E       assert 'complete' != 'complete'
+
+tests/test_answer_review_r2.py:40: AssertionError
+____________ test_full_measurement_relation_is_required[wrong-sign] ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x117117260>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-528/test_full_measurement_relation1')
+claim = '2012版PM2.5年平均二级限值为-35μg/m³'
+
+    @pytest.mark.parametrize(
+        "claim",
+        [
+            "2012版PM2.5年平均二级限值为35 g/m³",
+            "2012版PM2.5年平均二级限值为-35μg/m³",
+            "2012版PM2.5小时平均二级限值为35μg/m³",
+        ],
+        ids=["unknown-unit", "wrong-sign", "wrong-average-time"],
+    )
+    def test_full_measurement_relation_is_required(monkeypatch, tmp_path, claim):
+        conn, _ = fx._install(monkeypatch, tmp_path, [fx._gold_q("q-syn", fx.Q_SYN, "synthesis")])
+        fp, rp = fx._syn_replay(tmp_path)
+        payload = copy.deepcopy(fx._GOOD_SYN)
+        payload["items"][0]["claim"] = claim
+        report = asyncio.run(
+            an.run_answer(
+                tmp_path / "out",
+                ["q-syn"],
+                fused_report_path=fp,
+                rerank_report_path=rp,
+                values=fx.VALUES,
+                conn=conn,
+                transport=fx._model_transport(payload),
+                allow_model=True,
+            )
+        )
+        result = report["results"][0]
+>       assert result["coverage_status"] != "complete", result["answer"]
+E       AssertionError: {'mode': 'model', 'generated_by': 'one answer model call (fixture-answer-model-0005)', 'items': [{'kind': 'synthesis_c...nap-1'}, 'claim': '2026版PM2.5年平均二级限值收严为25μg/m³', 'quote': 'PM2.5 | 年平均 | 10 | 25', ...}], 'unverified_claims': [], ...}
+E       assert 'complete' != 'complete'
+
+tests/test_answer_review_r2.py:40: AssertionError
+________ test_full_measurement_relation_is_required[wrong-average-time] ________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1199947a0>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-528/test_full_measurement_relation2')
+claim = '2012版PM2.5小时平均二级限值为35μg/m³'
+
+    @pytest.mark.parametrize(
+        "claim",
+        [
+            "2012版PM2.5年平均二级限值为35 g/m³",
+            "2012版PM2.5年平均二级限值为-35μg/m³",
+            "2012版PM2.5小时平均二级限值为35μg/m³",
+        ],
+        ids=["unknown-unit", "wrong-sign", "wrong-average-time"],
+    )
+    def test_full_measurement_relation_is_required(monkeypatch, tmp_path, claim):
+        conn, _ = fx._install(monkeypatch, tmp_path, [fx._gold_q("q-syn", fx.Q_SYN, "synthesis")])
+        fp, rp = fx._syn_replay(tmp_path)
+        payload = copy.deepcopy(fx._GOOD_SYN)
+        payload["items"][0]["claim"] = claim
+        report = asyncio.run(
+            an.run_answer(
+                tmp_path / "out",
+                ["q-syn"],
+                fused_report_path=fp,
+                rerank_report_path=rp,
+                values=fx.VALUES,
+                conn=conn,
+                transport=fx._model_transport(payload),
+                allow_model=True,
+            )
+        )
+        result = report["results"][0]
+>       assert result["coverage_status"] != "complete", result["answer"]
+E       AssertionError: {'mode': 'model', 'generated_by': 'one answer model call (fixture-answer-model-0005)', 'items': [{'kind': 'synthesis_c...nap-1'}, 'claim': '2026版PM2.5年平均二级限值收严为25μg/m³', 'quote': 'PM2.5 | 年平均 | 10 | 25', ...}], 'unverified_claims': [], ...}
+E       assert 'complete' != 'complete'
+
+tests/test_answer_review_r2.py:40: AssertionError
+______ test_requested_pollutant_cannot_be_replaced_by_other_verified_rows ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1199957f0>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-528/test_requested_pollutant_canno0')
+
+    def test_requested_pollutant_cannot_be_replaced_by_other_verified_rows(monkeypatch, tmp_path):
+        conn, _ = fx._install(monkeypatch, tmp_path, [fx._gold_q("q-syn", fx.Q_SYN, "synthesis")])
+        fp, rp = fx._syn_replay(tmp_path)
+        payload = {
+            "items": [
+                {
+                    "edition": f"gb3095-{year}",
+                    "claim": f"{year}版PM10年平均二级限值为70μg/m³",
+                    "quote": "PM10 | 年平均 | 50 | 70",
+                }
+                for year in ["2012", "2026"]
+            ]
+        }
+        report = asyncio.run(
+            an.run_answer(
+                tmp_path / "out",
+                ["q-syn"],
+                fused_report_path=fp,
+                rerank_report_path=rp,
+                values=fx.VALUES,
+                conn=conn,
+                transport=fx._model_transport(payload),
+                allow_model=True,
+            )
+        )
+        result = report["results"][0]
+>       assert result["coverage_status"] != "complete", result["answer"]
+E       AssertionError: {'mode': 'model', 'generated_by': 'one answer model call (fixture-answer-model-0005)', 'items': [{'kind': 'synthesis_c...: 'snap-1'}, 'claim': '2026版PM10年平均二级限值为70μg/m³', 'quote': 'PM10 | 年平均 | 50 | 70', ...}], 'unverified_claims': [], ...}
+E       assert 'complete' != 'complete'
+
+tests/test_answer_review_r2.py:70: AssertionError
+_______ test_prose_claim_support_through_formal_scope_read[prose-forged] _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1199bc2f0>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-528/test_prose_claim_support_throu1')
+fabricated = True
+
+    @pytest.mark.parametrize("fabricated", [False, True], ids=["prose-supported", "prose-forged"])
+    def test_prose_claim_support_through_formal_scope_read(monkeypatch, tmp_path, fabricated):
+        question = "对比 GB 3095-2012 与 GB 3095-2026 第3章的术语定义。"
+        conn, _ = fx._install(monkeypatch, tmp_path, [fx._gold_q("q-syn", question, "synthesis")])
+        for doc_id, year in [(fx.DOC_2012, "2012"), (fx.DOC_2026, "2026")]:
+            unit_id = f"block-{year}"
+            scope_id = f"{doc_id}:scope:3"
+            body = "3 术语和定义\n3.1 医疗机构污水 指医疗机构排放的污水。\n"
+            conn.cat["scopes"][(doc_id, "3")] = [
+                {
+                    "scope_id": scope_id,
+                    "scope_kind": "chapter",
+                    "title": "术语和定义",
+                    "number": "3",
+                    "confirm_status": "confirmed",
+                }
+            ]
+            conn.cat["scope_units"][scope_id] = [unit_id]
+            conn.cat["units"][(doc_id, unit_id)] = {
+                "unit_id": unit_id,
+                "unit_kind": "block",
+                "heading": "3",
+                "requires_span": False,
+                "content_length": len(body),
+                "locator": json.dumps({"blockid": unit_id}),
+            }
+            conn.cat["links"][(doc_id, unit_id)] = []
+            parsed = tmp_path / f"gb3095-{year}.pdf.parsed" / "x.blocks.jsonl"
+            parsed.write_text(
+                '{"meta":true}\n'
+                + json.dumps({"type": "content", "blockid": unit_id, "content": body})
+                + "\n"
+            )
+        fp, rp = fx._write_replay(
+            tmp_path,
+            [
+                fx._fused(
+                    "q-syn",
+                    question,
+                    [
+                        fx._usable(fx.CP12, fx.DOC_2012, fx.CHUNKS[fx.CP12]["content"]),
+                        fx._usable(fx.CP26, fx.DOC_2026, fx.CHUNKS[fx.CP26]["content"]),
+                    ],
+                )
+            ],
+            [],
+        )
+        quote = "3.1 医疗机构污水 指医疗机构排放的污水。"
+        payload = {
+            "items": [
+                {
+                    "edition": f"gb3095-{year}",
+                    "claim": "停车场允许无条件排放污水。" if fabricated else quote,
+                    "quote": quote,
+                }
+                for year in ["2012", "2026"]
+            ]
+        }
+        report = asyncio.run(
+            an.run_answer(
+                tmp_path / "out",
+                ["q-syn"],
+                fused_report_path=fp,
+                rerank_report_path=rp,
+                values=fx.VALUES,
+                conn=conn,
+                transport=fx._model_transport(payload),
+                allow_model=True,
+            )
+        )
+        result = report["results"][0]
+        assert report["model_calls_used"] == 1
+        assert result["reverification"]["items_checked"] == 2
+        assert result["reverification"]["problems"] == []
+        if fabricated:
+>           assert result["coverage_status"] != "complete", result["answer"]
+E           AssertionError: {'mode': 'model', 'generated_by': 'one answer model call (fixture-answer-model-0005)', 'items': [{'kind': 'synthesis_c...pshot_id': 'snap-1'}, 'claim': '停车场允许无条件排放污水。', 'quote': '3.1 医疗机构污水 指医疗机构排放的污水。', ...}], 'unverified_claims': [], ...}
+E           assert 'complete' != 'complete'
+
+tests/test_answer_review_r2.py:148: AssertionError
+______ test_row_unit_has_precedence_over_unrelated_dimensionless_caption _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1199be630>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-528/test_row_unit_has_precedence_o0')
+
+    def test_row_unit_has_precedence_over_unrelated_dimensionless_caption(monkeypatch, tmp_path):
+        conn, _ = fx._install(monkeypatch, tmp_path, [fx._gold_q("q-fact", fx.Q_FACT, "fact")])
+        caption = "表 1 第一类污染物最高允许排放浓度（pH为无量纲）"
+        conn.cat["table_units"][fx.DOC_8978][0]["caption"] = caption
+        path = tmp_path / "gb8978.pdf.parsed" / "x.tables.json"
+        tables = json.loads(path.read_text())
+        tables["tables"][fx.FRAG1]["caption"] = caption
+        path.write_text(json.dumps(tables, ensure_ascii=False))
+        fp, rp = fx._write_replay(
+            tmp_path,
+            [
+                fx._fused(
+                    "q-fact",
+                    fx.Q_FACT,
+                    [fx._usable(fx.C1, fx.DOC_8978, fx.CHUNKS[fx.C1]["content"])],
+                )
+            ],
+            [],
+        )
+        report = asyncio.run(
+            an.run_answer(
+                tmp_path / "out",
+                ["q-fact"],
+                fused_report_path=fp,
+                rerank_report_path=rp,
+                values=fx.VALUES,
+                conn=conn,
+                allow_model=False,
+            )
+        )
+        item = report["results"][0]["answer"]["items"][0]
+>       assert item["unit"] == "mg/L", item
+E       AssertionError: {'kind': 'table_row', 'doc_id': 'doc-8978', 'table_number': '1', 'seq': '1', ...}
+E       assert '无量纲' == 'mg/L'
+E         
+E         - mg/L
+E         + 无量纲
+
+tests/test_answer_review_r2.py:185: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_answer_review_r2.py::test_full_measurement_relation_is_required[unknown-unit]
+FAILED tests/test_answer_review_r2.py::test_full_measurement_relation_is_required[wrong-sign]
+FAILED tests/test_answer_review_r2.py::test_full_measurement_relation_is_required[wrong-average-time]
+FAILED tests/test_answer_review_r2.py::test_requested_pollutant_cannot_be_replaced_by_other_verified_rows
+FAILED tests/test_answer_review_r2.py::test_prose_claim_support_through_formal_scope_read[prose-forged]
+FAILED tests/test_answer_review_r2.py::test_row_unit_has_precedence_over_unrelated_dimensionless_caption
+6 failed, 358 passed in 11.72s

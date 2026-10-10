@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-06",
+  "task": "5.2",
+  "accepted": false,
+  "required_fixes": [
+    "L1",
+    "L2",
+    "L3",
+    "L4",
+    "L5"
+  ],
+  "next_task_only": "5.2 fixes",
+  "pending_tasks": [
+    "5.2",
+    "5.3",
+    "5.4",
+    "5.5",
+    "5.6"
+  ],
+  "gate2_remains_accepted": true,
+  "5_1_remains_accepted": true,
+  "gate3_accepted": false,
+  "tests": {
+    "new_passed": 1,
+    "new_failed": 9,
+    "full_passed": 229,
+    "full_failed": 9,
+    "existing_228_passed": true,
+    "original_assertions_modified": false
+  },
+  "actual_models_called_by_reviewer": 0,
+  "production_adapter_replay": "not run because native initialize submits write APIs; direct read-only inventory performed instead",
+  "production_identity_before_after_equal": true,
+  "production_frozen_problems": [],
+  "current_identity": {
+    "when": "after",
+    "public_counts": {
+      "lightrag_doc_full": 221,
+      "lightrag_doc_chunks": 5709,
+      "lightrag_doc_status": 279,
+      "lightrag_llm_cache": 16514,
+      "lightrag_entity_chunks": 65527,
+      "lightrag_full_entities": 221,
+      "lightrag_full_relations": 221,
+      "lightrag_relation_chunks": 119575
+    },
+    "catalog_active": {
+      "run_id": "c15c741742394320",
+      "snapshot_id": "4919b3938ad93747"
+    },
+    "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "search_active": "872d689343a9cbb6",
+    "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+    "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+  },
+  "submission_sha_all_match": true,
+  "installed_wheel": {
+    "version": "1.5.7",
+    "python_checked": 172,
+    "mismatches": []
+  },
+  "5_1_implementation_sha_unchanged": true,
+  "coverage": {
+    "total_files": 610,
+    "reviewed_files": 10,
+    "skipped_files": 600,
+    "coverage_rate": 0.01639344262295082
+  },
+  "checks": {
+    "ruff": true,
+    "format": true,
+    "openspec_strict": true,
+    "diff": true,
+    "credential_scan_files": 17,
+    "credential_leak_files": []
+  },
+  "implementation_modified_by_reviewer": false,
+  "artifact_sha256": {
+    "reports/pg-retrieval/phase-3-local-review/submission-jsonl-audit.json": "6f1e1aade624ec669dfdc3976d647573c10fe3c7e4a75ce91e75864f63d7d35f",
+    "reports/pg-retrieval/phase-3-local-review/ocr-rules.json": "2dc02a35530a6d791b3b37ee7f0a8296ecc1ec2dc30cfcdbfd530697bc4b115e",
+    "reports/pg-retrieval/phase-3-local-review/ruff-format.txt": "65bfe43104bb2e6b62e2cf2e427ada9b13e1c43c71d8a87decbb75061f04e5f6",
+    "reports/pg-retrieval/phase-3-local-review/ocr-preview.json": "fd85aab819bd1580a3ca0c2e9baf5f8a63c4137a61b11e73288afc554c9bdbcb",
+    "reports/pg-retrieval/phase-3-local-review/ruff-check.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "reports/pg-retrieval/phase-3-local-review/all-tests.txt": "abff777c15ccd79cf2c71e64cd6a2d417c9e38919834930daa00ace382cd5765",
+    "reports/pg-retrieval/phase-3-local-review/live-inventory.py": "424f0aa91045eaae59fc16cd911bdfc6ef771f7288fdc842c29842f2e27be75a",
+    "reports/pg-retrieval/phase-3-local-review/static-evidence.json": "5670cca2110f3dd355510fd8f6be2be7f86f7c541d2bdaaba30553ce7d5fb0e9",
+    "reports/pg-retrieval/phase-3-local-review/acceptance-tests.txt": "8a686e9f24e3a0a729a98319e13a402c9630a1777122b1476a70ce28263544bc",
+    "reports/pg-retrieval/phase-3-local-review/findings.json": "6e0ae0d9b7b35f1ecd13764e86c538919ee4b79b0998d26ddc0c4b3608b85e9f",
+    "reports/pg-retrieval/phase-3-local-review/openspec-check.txt": "4693ceda9e27e58fa59b2c9dbba2ff1cf729bd8067915263151894179518ba7c",
+    "reports/pg-retrieval/phase-3-local-review/coverage.json": "691f2a08744e6b7ac6dc0a855fc232e4fe2f251f06392271087fc44dd06a3d4e",
+    "reports/pg-retrieval/phase-3-local-review/review.md": "1402a7ed314b379e9c93711142f3ce76697150485f2c946ff1057930034bcd37",
+    "reports/pg-retrieval/phase-3-local-review/diff-check.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/pg-retrieval/phase-3-local-review/live-inventory.json": "e4b5832878915f51b1dcf469ba91e70831fc27dcba148f3fa84b5115ea7d0596",
+    "tests/test_local_adapter_review.py": "88c9d115dceef69fb02d5e51b272995597249545e853811e2ffdaf70661416c9",
+    "openspec/changes/add-pg-scoped-retrieval/handoff-phase-3-5.2-fixes.md": "660e3c585e5f1857806ea4d812262c16ae57481081337462d17eb9af1906dd4c"
+  }
+}

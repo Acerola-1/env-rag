@@ -1,0 +1,196 @@
+........................................................................ [ 30%]
+........................................................................ [ 60%]
+...............FFFFFFFFF................................................ [ 90%]
+......................                                                   [100%]
+=================================== FAILURES ===================================
+______ test_fetch_existing_qdrant_collection_must_not_submit_index_write _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x119c25ac0>
+
+    def test_fetch_existing_qdrant_collection_must_not_submit_index_write(monkeypatch):
+        import lightrag.kg.qdrant_impl as qmodule
+    
+        mutations = []
+        setup_fetch(monkeypatch)
+    
+        class Client:
+            def __init__(self, **kwargs):
+                pass
+    
+            def collection_exists(self, name):
+                return True
+    
+            def create_payload_index(self, **kwargs):
+                mutations.append("create_payload_index")
+    
+            def count(self, **kwargs):
+                return SimpleNamespace(count=5709)
+    
+            def close(self):
+                pass
+    
+        monkeypatch.setattr(qmodule, "QdrantClient", Client)
+        monkeypatch.setattr(qmodule, "_find_legacy_collection", lambda *args: None)
+        monkeypatch.setattr(la, "QdrantVectorDBStorage", qmodule.QdrantVectorDBStorage)
+        asyncio.run(la.LocalCandidateAdapter(fixture.VALUES).fetch("fixture"))
+>       assert mutations == [], "Existing indexes must be inspected, not ensured by a write API"
+E       AssertionError: Existing indexes must be inspected, not ensured by a write API
+E       assert ['create_payl...ayload_index'] == []
+E         
+E         Left contains 2 more items, first extra item: 'create_payload_index'
+E         Use -v to get more diff
+
+tests/test_local_adapter_review.py:74: AssertionError
+----------------------------- Captured stderr call -----------------------------
+INFO: Qdrant collection: lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d
+INFO: Qdrant collection: lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d
+INFO: [] Qdrant collection 'entities' initialized successfully
+INFO: [] Qdrant collection 'chunks' initialized successfully
+------------------------------ Captured log call -------------------------------
+INFO     lightrag:qdrant_impl.py:507 Qdrant collection: lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d
+INFO     lightrag:qdrant_impl.py:507 Qdrant collection: lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d
+INFO     lightrag:qdrant_impl.py:697 [] Qdrant collection 'entities' initialized successfully
+INFO     lightrag:qdrant_impl.py:697 [] Qdrant collection 'chunks' initialized successfully
+_____________ test_native_edge_pairs_do_not_overwrite_one_another ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11ad0f890>
+
+    def test_native_edge_pairs_do_not_overwrite_one_another(monkeypatch):
+        edges = [
+            {"src_tgt": ("A", "B"), "source_id": "edge-first"},
+            {"src_tgt": ("C", "D"), "source_id": "edge-second"},
+        ]
+        selected, _tracking, _notes = assemble(monkeypatch, edges, vector=["main"])
+>       assert {"edge-first", "edge-second"}.issubset(selected)
+E       AssertionError: assert False
+E        +  where False = <built-in method issubset of set object at 0x10af5da80>(['main', 'edge-second'])
+E        +    where <built-in method issubset of set object at 0x10af5da80> = {'edge-first', 'edge-second'}.issubset
+
+tests/test_local_adapter_review.py:108: AssertionError
+______________ test_edge_provenance_names_actual_native_endpoints ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11ad589b0>
+
+    def test_edge_provenance_names_actual_native_endpoints(monkeypatch):
+        _, tracking, _ = assemble(
+            monkeypatch, [{"src_tgt": ("A", "B"), "source_id": "edge-first"}], vector=["main"]
+        )
+>       assert "edge:|" not in tracking["edge-first"]
+E       AssertionError: assert 'edge:|' not in ['edge:|']
+
+tests/test_local_adapter_review.py:115: AssertionError
+__________ test_vector_helper_swallowed_embedding_failure_is_visible ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11ad58aa0>
+
+    def test_vector_helper_swallowed_embedding_failure_is_visible(monkeypatch):
+        async def failed_embedding(*args, **kwargs):
+            raise TimeoutError("query embedding service timed out")
+    
+        _selected, _tracking, notes = assemble(monkeypatch, [], embedding=failed_embedding)
+>       assert notes, "Release VECTOR helper returns a truncation fallback after this failure"
+E       AssertionError: Release VECTOR helper returns a truncation fallback after this failure
+E       assert []
+
+tests/test_local_adapter_review.py:124: AssertionError
+----------------------------- Captured stderr call -----------------------------
+ERROR: [VECTOR_SIMILARITY] Error in vector similarity sorting: query embedding service timed out
+ERROR: [VECTOR_SIMILARITY] Traceback: Traceback (most recent call last):
+  File "/Users/acerola/Dev/Python/RAG/env-rag-final/.venv/lib/python3.12/site-packages/lightrag/utils.py", line 6019, in pick_by_vector_similarity
+    query_embedding = await embedding_func([query], context="query")
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/acerola/Dev/Python/RAG/env-rag-final/tests/test_local_adapter_review.py", line 121, in failed_embedding
+    raise TimeoutError("query embedding service timed out")
+TimeoutError: query embedding service timed out
+
+------------------------------ Captured log call -------------------------------
+ERROR    lightrag:utils.py:6098 [VECTOR_SIMILARITY] Error in vector similarity sorting: query embedding service timed out
+ERROR    lightrag:utils.py:6101 [VECTOR_SIMILARITY] Traceback: Traceback (most recent call last):
+  File "/Users/acerola/Dev/Python/RAG/env-rag-final/.venv/lib/python3.12/site-packages/lightrag/utils.py", line 6019, in pick_by_vector_similarity
+    query_embedding = await embedding_func([query], context="query")
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/acerola/Dev/Python/RAG/env-rag-final/tests/test_local_adapter_review.py", line 121, in failed_embedding
+    raise TimeoutError("query embedding service timed out")
+TimeoutError: query embedding service timed out
+___________________ test_fetch_closes_owned_semantic_clients ___________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11ad5a2a0>
+
+    def test_fetch_closes_owned_semantic_clients(monkeypatch):
+        instances = setup_fetch(monkeypatch)
+        asyncio.run(la.LocalCandidateAdapter(fixture.VALUES).fetch("fixture"))
+>       assert instances and all(s.closed for s in instances)
+E       assert ([<test_local_adapter_review.setup_fetch.<locals>.Storage object at 0x11ad5a8d0>, <test_local_adapter_review.setup_fetch.<locals>.Storage object at 0x11ad0ec60>, <test_local_adapter_review.setup_fetch.<locals>.Storage object at 0x11ad5a900>] and False)
+E        +  where False = all(<generator object test_fetch_closes_owned_semantic_clients.<locals>.<genexpr> at 0x11c79ebc0>)
+
+tests/test_local_adapter_review.py:130: AssertionError
+______ test_changed_embedding_model_cannot_use_old_model_collection_label ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11ad5ac60>
+
+    def test_changed_embedding_model_cannot_use_old_model_collection_label(monkeypatch):
+        setup_fetch(monkeypatch)
+        values = dict(fixture.VALUES, EMBEDDING_MODEL="Another/Embedding-2560")
+>       with pytest.raises(la.AdapterError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE AdapterError
+
+tests/test_local_adapter_review.py:136: Failed
+______ test_unmapped_pg_workspace_cannot_reuse_default_semantic_namespace ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11ad5b860>
+
+    def test_unmapped_pg_workspace_cannot_reuse_default_semantic_namespace(monkeypatch):
+        setup_fetch(monkeypatch, rows=[dict(fixture.ROW_A, workspace="other")])
+>       with pytest.raises(la.AdapterError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE AdapterError
+
+tests/test_local_adapter_review.py:142: Failed
+_________________ test_empty_pg_read_has_no_claimed_sql_query __________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11c761b80>
+
+    def test_empty_pg_read_has_no_claimed_sql_query(monkeypatch):
+        setup_fetch(monkeypatch, rows=[], selected=[])
+        result = asyncio.run(la.LocalCandidateAdapter(fixture.VALUES).fetch("fixture"))
+>       assert result.service_calls["pg_readonly_queries"] == 0
+E       assert 1 == 0
+
+tests/test_local_adapter_review.py:149: AssertionError
+___________ test_run_frozen_rejects_wrong_gold_sha_before_any_fetch ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11c763650>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-313/test_run_frozen_rejects_wrong_0')
+
+    def test_run_frozen_rejects_wrong_gold_sha_before_any_fetch(monkeypatch, tmp_path):
+        calls = []
+    
+        class Adapter:
+            def __init__(self, values, workspace):
+                pass
+    
+            async def fetch(self, query, query_id=None):
+                calls.append(query_id)
+                return la.LocalCandidateResult(
+                    query, "local", "default", query_id, "start", "end", {}, [], [], [], {}, [], []
+                )
+    
+        monkeypatch.setattr(la, "LocalCandidateAdapter", Adapter)
+        monkeypatch.setitem(la.FROZEN, "gold_sha", "0" * 64)
+>       with pytest.raises(la.AdapterError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE AdapterError
+
+tests/test_local_adapter_review.py:167: Failed
+=========================== short test summary info ============================
+FAILED tests/test_local_adapter_review.py::test_fetch_existing_qdrant_collection_must_not_submit_index_write
+FAILED tests/test_local_adapter_review.py::test_native_edge_pairs_do_not_overwrite_one_another
+FAILED tests/test_local_adapter_review.py::test_edge_provenance_names_actual_native_endpoints
+FAILED tests/test_local_adapter_review.py::test_vector_helper_swallowed_embedding_failure_is_visible
+FAILED tests/test_local_adapter_review.py::test_fetch_closes_owned_semantic_clients
+FAILED tests/test_local_adapter_review.py::test_changed_embedding_model_cannot_use_old_model_collection_label
+FAILED tests/test_local_adapter_review.py::test_unmapped_pg_workspace_cannot_reuse_default_semantic_namespace
+FAILED tests/test_local_adapter_review.py::test_empty_pg_read_has_no_claimed_sql_query
+FAILED tests/test_local_adapter_review.py::test_run_frozen_rejects_wrong_gold_sha_before_any_fetch
+9 failed, 229 passed in 2.68s

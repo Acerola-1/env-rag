@@ -1,0 +1,1062 @@
+{
+ "task": "5.4 derived metadata mapping (C2 remediation) — NO new HTTP call",
+ "derivation_basis": {
+  "source_run": "reports/pg-retrieval/phase-3-rerank-r2/rerank-runtime-latest.json (accepted HTTP 200, 997ms)",
+  "raw_response_reused": true,
+  "input_texts_unchanged": "content_sha256 per input identical to the accepted run (no re-embedding/re-read)",
+  "association_fix": "unit_kind joined from source_units; only real tables are table_unit; blocks keep source_unit semantics",
+  "snapshot": "4919b3938ad93747"
+ },
+ "history_correction": {
+  "previous_claim": "41 enriched paths described as table fragments",
+  "actual_types": {
+   "table": 12,
+   "block": 29
+  },
+  "corrected_derived": {
+   "table_unit": 12,
+   "source_unit": 29
+  }
+ },
+ "ordered": [
+  {
+   "input_index": 0,
+   "workspace": "default",
+   "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+   "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+   "content_sha256": "7ff986aed318b42ea5139ee7985c80a70bc265568b0b89dbe009eab206b5e6f1",
+   "rerank_score": 0.9992733597755432,
+   "paths": [
+    {
+     "path": "pg",
+     "score": {
+      "kind": "pg_ts_rank",
+      "value": null
+     },
+     "note": "carried from fusion replay"
+    },
+    {
+     "path": "pg",
+     "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+     "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+     "citation": {
+      "kind": "table_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=table); NOT a new retrieval hit",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+     "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+     "citation": {
+      "kind": "table_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=table); NOT a new retrieval hit",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0003",
+     "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0003",
+     "citation": {
+      "kind": "table_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0003",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=table); NOT a new retrieval hit",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "a00e1705c43ffacbca6c408197c6bac9",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "a00e1705c43ffacbca6c408197c6bac9",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    }
+   ],
+   "source_order": "rerank"
+  },
+  {
+   "input_index": 4,
+   "workspace": "default",
+   "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000",
+   "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+   "content_sha256": "edd0690d291ae883182e80778116d2d446cf9fa62f017495f5faf3993a0b1317",
+   "rerank_score": 0.9785706400871277,
+   "paths": [
+    {
+     "path": "pg",
+     "score": {
+      "kind": "pg_ts_rank",
+      "value": null
+     },
+     "note": "carried from fusion replay"
+    },
+    {
+     "path": "pg",
+     "unit_id": "2c1eda10b7af56873cdbd4ee86f033d6",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "2c1eda10b7af56873cdbd4ee86f033d6",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "00f06c44e9556a89c7387b6bc4b614ed",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "00f06c44e9556a89c7387b6bc4b614ed",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "784931ac8b352504247a5bbd2b92cfb0",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "784931ac8b352504247a5bbd2b92cfb0",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "caf34c66cc93da2dc29d9739482d03f9",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "caf34c66cc93da2dc29d9739482d03f9",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "35a013776bdbd5c8efcda6bf0ddd6b69",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "35a013776bdbd5c8efcda6bf0ddd6b69",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "7de3a51726cea1b002a38741242687b8",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "7de3a51726cea1b002a38741242687b8",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "214ef7613f1a3c64da042ce72f2bddc0",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "214ef7613f1a3c64da042ce72f2bddc0",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "cb0ada331cd13c433a265db1cdcf17ba",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "cb0ada331cd13c433a265db1cdcf17ba",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "2861821374df5ffccf40ab934d97c1e7",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "2861821374df5ffccf40ab934d97c1e7",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "66c19b0895c01ee1c36a172fcc99b0dd",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "66c19b0895c01ee1c36a172fcc99b0dd",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "6ff2251b284e052a6797b61b046938e2",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "6ff2251b284e052a6797b61b046938e2",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "408814b550a3d1afbd2fa53c571967a5",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "408814b550a3d1afbd2fa53c571967a5",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "e0ee2cef12742c7946cfe0a26ff51f6f",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "e0ee2cef12742c7946cfe0a26ff51f6f",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    }
+   ],
+   "source_order": "rerank"
+  },
+  {
+   "input_index": 3,
+   "workspace": "default",
+   "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-010",
+   "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+   "content_sha256": "c8c30f1ca5257761d88f7c4b4933679d6e4b3202869c10f376d68bfbb52e55ff",
+   "rerank_score": 0.9720391035079956,
+   "paths": [
+    {
+     "path": "pg",
+     "score": {
+      "kind": "pg_ts_rank",
+      "value": null
+     },
+     "note": "carried from fusion replay"
+    },
+    {
+     "path": "pg",
+     "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0009",
+     "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0009",
+     "citation": {
+      "kind": "table_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0009",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-010"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=table); NOT a new retrieval hit",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "8447a0b01b58985f9a4c5eff0ab2fbf5",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "8447a0b01b58985f9a4c5eff0ab2fbf5",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-010"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    }
+   ],
+   "source_order": "rerank"
+  },
+  {
+   "input_index": 6,
+   "workspace": "default",
+   "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006",
+   "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+   "content_sha256": "30caaf295cd4413427069707e1b278e17f5209047ace92764555a0008c8a9228",
+   "rerank_score": 0.9634235501289368,
+   "paths": [
+    {
+     "path": "pg",
+     "score": {
+      "kind": "pg_ts_rank",
+      "value": null
+     },
+     "note": "carried from fusion replay"
+    },
+    {
+     "path": "pg",
+     "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0005",
+     "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0005",
+     "citation": {
+      "kind": "table_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0005",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=table); NOT a new retrieval hit",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0006",
+     "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0006",
+     "citation": {
+      "kind": "table_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0006",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=table); NOT a new retrieval hit",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0007",
+     "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0007",
+     "citation": {
+      "kind": "table_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0007",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=table); NOT a new retrieval hit",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "71860670a6f52c0934c197309cf6e5de",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "71860670a6f52c0934c197309cf6e5de",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    }
+   ],
+   "source_order": "rerank"
+  },
+  {
+   "input_index": 1,
+   "workspace": "default",
+   "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002",
+   "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+   "content_sha256": "0788999c39722c5b9696840b2b3072bf120fde1415fb4e61c7d3f2999614e511",
+   "rerank_score": 0.9515948295593262,
+   "paths": [
+    {
+     "path": "pg",
+     "score": {
+      "kind": "pg_ts_rank",
+      "value": null
+     },
+     "note": "carried from fusion replay"
+    },
+    {
+     "path": "pg",
+     "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0004",
+     "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0004",
+     "citation": {
+      "kind": "table_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0004",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=table); NOT a new retrieval hit",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "71860670a6f52c0934c197309cf6e5de",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "71860670a6f52c0934c197309cf6e5de",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    }
+   ],
+   "source_order": "rerank"
+  },
+  {
+   "input_index": 7,
+   "workspace": "default",
+   "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019",
+   "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+   "content_sha256": "53221549df48809f4afa1d25f6a43302b504d310d754a4408d26f30dea70b48b",
+   "rerank_score": 0.8364622592926025,
+   "paths": [
+    {
+     "path": "pg",
+     "score": {
+      "kind": "pg_ts_rank",
+      "value": null
+     },
+     "note": "carried from fusion replay"
+    },
+    {
+     "path": "pg",
+     "unit_id": "68f5e4887076de1ad7e96ac2e7256c82",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "68f5e4887076de1ad7e96ac2e7256c82",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "21e7b7dbce31595f1a36741b87278918",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "21e7b7dbce31595f1a36741b87278918",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "f77d701aeeda4c3ebe439505ecb3281e",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "f77d701aeeda4c3ebe439505ecb3281e",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "bc6072cfa4fd6d8b9057a46718f5c0c6",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "bc6072cfa4fd6d8b9057a46718f5c0c6",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "67e9963ca131cbe34ffd729936e9c7fc",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "67e9963ca131cbe34ffd729936e9c7fc",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "69891b270d05bf1548a431d6698967b6",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "69891b270d05bf1548a431d6698967b6",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "69ede9a6f865076d3f23949a5d5471de",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "69ede9a6f865076d3f23949a5d5471de",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "67567cebe3fb886790ca01db5b3401ff",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "67567cebe3fb886790ca01db5b3401ff",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    }
+   ],
+   "source_order": "rerank"
+  },
+  {
+   "input_index": 2,
+   "workspace": "default",
+   "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-007",
+   "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+   "content_sha256": "d50b815345c9d7c1018a19b71413c82096102dff7421df5a435fbbe27b53f282",
+   "rerank_score": 0.8354887962341309,
+   "paths": [
+    {
+     "path": "pg",
+     "score": {
+      "kind": "pg_ts_rank",
+      "value": null
+     },
+     "note": "carried from fusion replay"
+    },
+    {
+     "path": "pg",
+     "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0008",
+     "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0008",
+     "citation": {
+      "kind": "table_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0008",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-007"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=table); NOT a new retrieval hit",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "7861e85661a27b359aae0b2d02a9f750",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "7861e85661a27b359aae0b2d02a9f750",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-007"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    }
+   ],
+   "source_order": "rerank"
+  },
+  {
+   "input_index": 5,
+   "workspace": "default",
+   "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-003",
+   "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+   "content_sha256": "021a04aeb66eca0df78f2e4aa19f1d895b6461f3eaf9fdfbb033e29b562304bf",
+   "rerank_score": 0.4941155016422272,
+   "paths": [
+    {
+     "path": "pg",
+     "score": {
+      "kind": "pg_ts_rank",
+      "value": null
+     },
+     "note": "carried from fusion replay"
+    },
+    {
+     "path": "pg",
+     "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0004",
+     "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0004",
+     "citation": {
+      "kind": "table_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0004",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-003"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=table); NOT a new retrieval hit",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "71860670a6f52c0934c197309cf6e5de",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "71860670a6f52c0934c197309cf6e5de",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-003"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    }
+   ],
+   "source_order": "rerank"
+  },
+  {
+   "input_index": 9,
+   "workspace": "default",
+   "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-011",
+   "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+   "content_sha256": "48131450b943be64ec657665bd2b760a436598895a8c4ff9601ca6ccf9ccfcde",
+   "rerank_score": 0.17987217009067535,
+   "paths": [
+    {
+     "path": "pg",
+     "score": {
+      "kind": "pg_ts_rank",
+      "value": null
+     },
+     "note": "carried from fusion replay"
+    },
+    {
+     "path": "pg",
+     "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0009",
+     "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0009",
+     "citation": {
+      "kind": "table_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0009",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-011"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=table); NOT a new retrieval hit",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "8447a0b01b58985f9a4c5eff0ab2fbf5",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "8447a0b01b58985f9a4c5eff0ab2fbf5",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-011"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    }
+   ],
+   "source_order": "rerank"
+  },
+  {
+   "input_index": 8,
+   "workspace": "default",
+   "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-008",
+   "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+   "content_sha256": "cc3980a8142cb567e7587e5649ea5e302c57d91c541004c705e8bfaa5246f033",
+   "rerank_score": 0.17695285379886627,
+   "paths": [
+    {
+     "path": "pg",
+     "score": {
+      "kind": "pg_ts_rank",
+      "value": null
+     },
+     "note": "carried from fusion replay"
+    },
+    {
+     "path": "pg",
+     "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0008",
+     "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0008",
+     "citation": {
+      "kind": "table_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0008",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-008"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=table); NOT a new retrieval hit",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    },
+    {
+     "path": "pg",
+     "unit_id": "7861e85661a27b359aae0b2d02a9f750",
+     "unit_kind": "block",
+     "citation": {
+      "kind": "source_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "7861e85661a27b359aae0b2d02a9f750",
+      "unit_kind": "block",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-008"
+      ]
+     },
+     "enrichment_basis": "association completion from unit_chunk_links JOIN source_units (unit_kind=block); body-block association, never a table fragment",
+     "score": {
+      "kind": "none",
+      "value": null
+     }
+    }
+   ],
+   "source_order": "rerank"
+  }
+ ]
+}

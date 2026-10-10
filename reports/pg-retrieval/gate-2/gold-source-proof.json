@@ -1,0 +1,1576 @@
+{
+  "readonly": true,
+  "model_calls": 0,
+  "state_before": {
+    "state": "current",
+    "active_run_id": "c15c741742394320",
+    "active_snapshot_id": "4919b3938ad93747",
+    "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+    "expected_recipe_id": "phase-1-v4-single-active-snapshot-prune",
+    "live_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "stored_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "action": ""
+  },
+  "file_identity_checks": [
+    {
+      "query_id": "file-enum-001",
+      "predicate_matches_submitted_set": true,
+      "matched_catalog_rows": [
+        {
+          "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+          "doc_name": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+          "self_code": "GB3095",
+          "self_code_version": "2012",
+          "title": "环境空气质量标准"
+        },
+        {
+          "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+          "doc_name": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+          "self_code": "GB3095",
+          "self_code_version": "2026",
+          "title": "环境空气质量标准"
+        }
+      ],
+      "question_semantics_accepted": true
+    },
+    {
+      "query_id": "file-enum-002",
+      "predicate_matches_submitted_set": true,
+      "matched_catalog_rows": [
+        {
+          "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+          "doc_name": "air-15_生态环境部_中国移动源环境管理年报_2021.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "title": "中国移动源环境管理年报"
+        },
+        {
+          "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+          "doc_name": "air-16_生态环境部_中国移动源环境管理年报_2022.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "title": "中国移动源环境管理年报"
+        },
+        {
+          "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+          "doc_name": "air-17_生态环境部_中国移动源环境管理年报_2023.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "title": "中国移动源环境管理年报"
+        },
+        {
+          "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+          "doc_name": "air-18_生态环境部_中国移动源环境管理年报_2024.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "title": "中国移动源环境管理年报"
+        },
+        {
+          "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+          "doc_name": "air-19_生态环境部_中国移动源环境管理年报_2025.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "title": "中国移动源环境管理年报"
+        }
+      ],
+      "question_semantics_accepted": true
+    },
+    {
+      "query_id": "file-enum-003",
+      "predicate_matches_submitted_set": true,
+      "matched_catalog_rows": [
+        {
+          "doc_id": "doc-0e575533a4ec747d16a0b24c381c5ede",
+          "doc_name": "water-25_水利部_2021年中国水资源公报_2021.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "title": "CHINA WATER RESOURCES BULLETIN"
+        },
+        {
+          "doc_id": "doc-a13be3e29e82c913f3470fbe60b4bf6a",
+          "doc_name": "water-26_水利部_2022年中国水资源公报_2022.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "title": "CHINA WATER RESOURCES BULLETIN"
+        },
+        {
+          "doc_id": "doc-d29dd8b36d29309ba693bfdc78ba3103",
+          "doc_name": "water-27_水利部_2023年中国水资源公报_2023.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "title": "CHINA WATER RESOURCES BULLETIN"
+        },
+        {
+          "doc_id": "doc-bb0530b18d32763b3211b67365b36359",
+          "doc_name": "water-28_水利部_2024年中国水资源公报_2024.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "title": "CHINA WATER RESOURCESBULLETIN"
+        },
+        {
+          "doc_id": "doc-969f75052f9f2473ad13e7b7aeaa31d8",
+          "doc_name": "water-29_水利部_2025年中国水资源公报_2025.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "title": "CHINA WATER RESOURCES BULLETIN"
+        }
+      ],
+      "question_semantics_accepted": true
+    },
+    {
+      "query_id": "file-enum-004",
+      "predicate_matches_submitted_set": true,
+      "matched_catalog_rows": [
+        {
+          "doc_id": "doc-2e012f4fd0622b647d151de5d0ecc51b",
+          "doc_name": "air-07_生态环境部_水泥工业大气污染物排放标准GB4915-2013修改单_2026.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "title": "《水泥工业大气污染物排放标准》（GB 4915—2013）修改单"
+        },
+        {
+          "doc_id": "doc-afd999b66f220c7ba8de2e624ba9c212",
+          "doc_name": "air-08_生态环境部_水泥工业大气污染物排放标准GB4915-2013含2025修改单.pdf",
+          "self_code": "GB4915",
+          "self_code_version": "2013",
+          "title": "GB 4915—2013（含2025年修改单）"
+        },
+        {
+          "doc_id": "doc-395b34401e7ee48e833a01d1d5bb4256",
+          "doc_name": "air-11_生态环境部_轻型汽车污染物排放限值及测量方法GB18352.6-2016修改单_2026.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "title": "《轻型汽车污染物排放限值及测量方法（中国第六阶段）》（GB18352.6—2016）修改单"
+        },
+        {
+          "doc_id": "doc-374860e84aca365bb7fc7abb64f719fe",
+          "doc_name": "air-12_生态环境部_钢铁烧结球团工业大气污染物排放标准GB28662-2012修改单_2020.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "title": "《钢铁烧结、球团工业大气污染物排放标准》（GB 28662—2012）修改单"
+        },
+        {
+          "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+          "doc_name": "water-03_生态环境部_医疗机构水污染物排放标准_含2026修改单.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "title": "GB 18466—2005（含2026年修改单）"
+        },
+        {
+          "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+          "doc_name": "water-10_生态环境部_医疗机构水污染物排放标准修改单_2026.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "title": "《医疗机构水污染物排放标准》（GB 18466—2005）修改单"
+        },
+        {
+          "doc_id": "doc-d0039dda04ea5c8c113da89d31e893e3",
+          "doc_name": "water-13_生态环境部_磷肥工业水污染物排放标准修改单_2020.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "title": "《磷肥工业水污染物排放标准》（GB 15580-2011）修改单"
+        }
+      ],
+      "question_semantics_accepted": true
+    },
+    {
+      "query_id": "file-enum-005",
+      "predicate_matches_submitted_set": true,
+      "matched_catalog_rows": [
+        {
+          "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "doc_name": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf",
+          "self_code": "GB18466",
+          "self_code_version": "2005",
+          "title": "医疗机构水污染物排放标准"
+        }
+      ],
+      "question_semantics_accepted": false
+    },
+    {
+      "query_id": "file-enum-006",
+      "predicate_matches_submitted_set": true,
+      "matched_catalog_rows": [
+        {
+          "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+          "doc_name": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf",
+          "self_code": "GB3838",
+          "self_code_version": "2002",
+          "title": "地表水环境质量标准"
+        }
+      ],
+      "question_semantics_accepted": true
+    }
+  ],
+  "raw_units_to_source_chunks": [
+    {
+      "query_id": "fact-001",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+      "links": [
+        {
+          "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+          "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+          "match_basis": "inline_table_id",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "fact-002",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+      "links": [
+        {
+          "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+          "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+          "match_basis": "inline_table_id",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "fact-003",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "unit_id": "385d9e8e0539a87e61f0407bda1739ad",
+      "links": [
+        {
+          "unit_id": "385d9e8e0539a87e61f0407bda1739ad",
+          "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+          "match_basis": "sidecar_ref",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "fact-004",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+      "links": [
+        {
+          "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+          "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+          "match_basis": "inline_table_id",
+          "coverage_status": "partial"
+        },
+        {
+          "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+          "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+          "match_basis": "inline_table_id",
+          "coverage_status": "partial"
+        },
+        {
+          "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+          "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-003",
+          "match_basis": "inline_table_id",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "fact-005",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "unit_id": "tb-d6d711b0614234635955480a53f52a10-0001",
+      "links": [
+        {
+          "unit_id": "tb-d6d711b0614234635955480a53f52a10-0001",
+          "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-000",
+          "match_basis": "inline_table_id",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "fact-006",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "unit_id": "9e2f2fd3df255a39b42ecc93f143bc74",
+      "links": [
+        {
+          "unit_id": "9e2f2fd3df255a39b42ecc93f143bc74",
+          "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+          "match_basis": "sidecar_ref",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "fact-007",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0007",
+      "links": [
+        {
+          "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0007",
+          "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006",
+          "match_basis": "inline_table_id",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "fact-007",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0003",
+      "links": [
+        {
+          "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0003",
+          "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+          "match_basis": "inline_table_id",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "file-enum-005",
+      "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+      "unit_id": "afb68726571f0d32333643ca0484da32",
+      "links": [
+        {
+          "unit_id": "afb68726571f0d32333643ca0484da32",
+          "chunk_id": "doc-b423a0e3331541588988fd34496c349d-chunk-000",
+          "match_basis": "sidecar_ref",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "prose-enum-001",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "unit_id": "385d9e8e0539a87e61f0407bda1739ad",
+      "links": [
+        {
+          "unit_id": "385d9e8e0539a87e61f0407bda1739ad",
+          "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+          "match_basis": "sidecar_ref",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "prose-enum-001",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "unit_id": "ad9d292d3ee2fd88a8fd25b9efc8265a",
+      "links": [
+        {
+          "unit_id": "ad9d292d3ee2fd88a8fd25b9efc8265a",
+          "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+          "match_basis": "sidecar_ref",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "prose-enum-001",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "unit_id": "90d4b1c55cb8c6ff81dcbdfd55827165",
+      "links": [
+        {
+          "unit_id": "90d4b1c55cb8c6ff81dcbdfd55827165",
+          "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+          "match_basis": "sidecar_ref",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "prose-enum-002",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "unit_id": "ef6868c7bc693df8da996208421b815d",
+      "links": [
+        {
+          "unit_id": "ef6868c7bc693df8da996208421b815d",
+          "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+          "match_basis": "sidecar_ref",
+          "coverage_status": "partial"
+        },
+        {
+          "unit_id": "ef6868c7bc693df8da996208421b815d",
+          "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002",
+          "match_basis": "sidecar_ref",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "prose-enum-003",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "a00e1705c43ffacbca6c408197c6bac9",
+      "links": [
+        {
+          "unit_id": "a00e1705c43ffacbca6c408197c6bac9",
+          "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+          "match_basis": "sidecar_ref",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "prose-enum-004",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "unit_id": "7b4770667908af51eb321bd82c89aaf7",
+      "links": [
+        {
+          "unit_id": "7b4770667908af51eb321bd82c89aaf7",
+          "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-000",
+          "match_basis": "sidecar_ref",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "prose-enum-005",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "unit_id": "d9ead1de90c8e67959ccb2b4a67cac4a",
+      "links": [
+        {
+          "unit_id": "d9ead1de90c8e67959ccb2b4a67cac4a",
+          "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-000",
+          "match_basis": "sidecar_ref",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "prose-enum-006",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "unit_id": "7f9dddaf02f372cc7d329f4678c46fbc",
+      "links": [
+        {
+          "unit_id": "7f9dddaf02f372cc7d329f4678c46fbc",
+          "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+          "match_basis": "sidecar_ref",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "table-enum-001",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+      "links": [
+        {
+          "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+          "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+          "match_basis": "inline_table_id",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "table-enum-001",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+      "links": [
+        {
+          "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+          "match_basis": "inline_table_id",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "table-enum-002",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+      "links": [
+        {
+          "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+          "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+          "match_basis": "inline_table_id",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "table-enum-003",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "unit_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+      "links": [
+        {
+          "unit_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+          "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-001",
+          "match_basis": "inline_table_id",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "table-enum-003",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "unit_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+      "links": [
+        {
+          "unit_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+          "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-001",
+          "match_basis": "inline_table_id",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "table-enum-003",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "unit_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+      "links": [
+        {
+          "unit_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+          "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-001",
+          "match_basis": "inline_table_id",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "table-enum-004",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+      "links": [
+        {
+          "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+          "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+          "match_basis": "inline_table_id",
+          "coverage_status": "partial"
+        },
+        {
+          "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+          "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+          "match_basis": "inline_table_id",
+          "coverage_status": "partial"
+        },
+        {
+          "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+          "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-003",
+          "match_basis": "inline_table_id",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "table-enum-005",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "unit_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0002",
+      "links": [
+        {
+          "unit_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0002",
+          "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002",
+          "match_basis": "inline_table_id",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "table-enum-006",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+      "links": [
+        {
+          "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+          "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003",
+          "match_basis": "inline_table_id",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "syn-001",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+      "links": [
+        {
+          "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+          "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+          "match_basis": "inline_table_id",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "syn-001",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "unit_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0001",
+      "links": [
+        {
+          "unit_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0001",
+          "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-002",
+          "match_basis": "inline_table_id",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "syn-001",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "unit_id": "eebc13e2a0348fa67955192750d4e9e6",
+      "links": [
+        {
+          "unit_id": "eebc13e2a0348fa67955192750d4e9e6",
+          "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-000",
+          "match_basis": "sidecar_ref",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "syn-001",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "unit_id": "78548b12c1e8ff7d651ce4dba805909a",
+      "links": [],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "syn-002",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "unit_id": "ef6868c7bc693df8da996208421b815d",
+      "links": [
+        {
+          "unit_id": "ef6868c7bc693df8da996208421b815d",
+          "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+          "match_basis": "sidecar_ref",
+          "coverage_status": "partial"
+        },
+        {
+          "unit_id": "ef6868c7bc693df8da996208421b815d",
+          "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002",
+          "match_basis": "sidecar_ref",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "syn-002",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "unit_id": "e0dae0566f942e76eb779d90de929d39",
+      "links": [
+        {
+          "unit_id": "e0dae0566f942e76eb779d90de929d39",
+          "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-003",
+          "match_basis": "sidecar_ref",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "syn-003",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "e0ee2cef12742c7946cfe0a26ff51f6f",
+      "links": [
+        {
+          "unit_id": "e0ee2cef12742c7946cfe0a26ff51f6f",
+          "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000",
+          "match_basis": "sidecar_ref",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "syn-004",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "unit_id": "1be5a15442ef9d0368b3e1367a03a2fb",
+      "links": [
+        {
+          "unit_id": "1be5a15442ef9d0368b3e1367a03a2fb",
+          "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-000",
+          "match_basis": "sidecar_ref",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "syn-004",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "unit_id": "6291e97f42b5eed29d234cf1e96ed724",
+      "links": [
+        {
+          "unit_id": "6291e97f42b5eed29d234cf1e96ed724",
+          "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+          "match_basis": "sidecar_ref",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "syn-005",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "unit_id": "ef6868c7bc693df8da996208421b815d",
+      "links": [
+        {
+          "unit_id": "ef6868c7bc693df8da996208421b815d",
+          "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+          "match_basis": "sidecar_ref",
+          "coverage_status": "partial"
+        },
+        {
+          "unit_id": "ef6868c7bc693df8da996208421b815d",
+          "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002",
+          "match_basis": "sidecar_ref",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "syn-005",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "unit_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0001",
+      "links": [
+        {
+          "unit_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0001",
+          "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+          "match_basis": "inline_table_id",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "syn-005",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "unit_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0002",
+      "links": [
+        {
+          "unit_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0002",
+          "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002",
+          "match_basis": "inline_table_id",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    },
+    {
+      "query_id": "syn-006",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "e0ee2cef12742c7946cfe0a26ff51f6f",
+      "links": [
+        {
+          "unit_id": "e0ee2cef12742c7946cfe0a26ff51f6f",
+          "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000",
+          "match_basis": "sidecar_ref",
+          "coverage_status": "partial"
+        }
+      ],
+      "note": "Link coverage status retained; this is not a frozen recall group"
+    }
+  ],
+  "submitted_run_diagnostics": [
+    {
+      "query_id": "fact-001",
+      "candidate_chunks": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+          "chunk_ids": [
+            "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "fact-002",
+      "candidate_chunks": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-015"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "fact-003",
+      "candidate_chunks": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "385d9e8e0539a87e61f0407bda1739ad",
+          "chunk_ids": [
+            "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "fact-004",
+      "candidate_chunks": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+          "chunk_ids": [
+            "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+            "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+            "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "fact-005",
+      "candidate_chunks": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "tb-d6d711b0614234635955480a53f52a10-0001",
+          "chunk_ids": [
+            "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "fact-006",
+      "candidate_chunks": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "9e2f2fd3df255a39b42ecc93f143bc74",
+          "chunk_ids": [
+            "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "fact-007",
+      "candidate_chunks": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-007",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-010",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-015",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-020",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-023"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0007",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        },
+        {
+          "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0003",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "file-enum-001",
+      "candidate_chunks": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-000",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-001",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-002",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-006"
+      ],
+      "provisional_groups": [],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "file-enum-002",
+      "candidate_chunks": [
+        "doc-507bc40d1d6395c6932d2201e8483504-chunk-002",
+        "doc-507bc40d1d6395c6932d2201e8483504-chunk-016",
+        "doc-507bc40d1d6395c6932d2201e8483504-chunk-017",
+        "doc-507bc40d1d6395c6932d2201e8483504-chunk-025",
+        "doc-507bc40d1d6395c6932d2201e8483504-chunk-031",
+        "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-001",
+        "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-002",
+        "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-003",
+        "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-018",
+        "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-024",
+        "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-020",
+        "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-026",
+        "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4-chunk-006",
+        "doc-b64a60d5251a9101f3d8f050f6933216-chunk-004",
+        "doc-b64a60d5251a9101f3d8f050f6933216-chunk-005",
+        "doc-b64a60d5251a9101f3d8f050f6933216-chunk-016",
+        "doc-b64a60d5251a9101f3d8f050f6933216-chunk-017",
+        "doc-b64a60d5251a9101f3d8f050f6933216-chunk-021",
+        "doc-b64a60d5251a9101f3d8f050f6933216-chunk-027",
+        "doc-b64a60d5251a9101f3d8f050f6933216-chunk-028"
+      ],
+      "provisional_groups": [],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "file-enum-003",
+      "candidate_chunks": [
+        "doc-0e575533a4ec747d16a0b24c381c5ede-chunk-000",
+        "doc-0e575533a4ec747d16a0b24c381c5ede-chunk-001",
+        "doc-0e575533a4ec747d16a0b24c381c5ede-chunk-010",
+        "doc-969f75052f9f2473ad13e7b7aeaa31d8-chunk-000",
+        "doc-969f75052f9f2473ad13e7b7aeaa31d8-chunk-027",
+        "doc-a13be3e29e82c913f3470fbe60b4bf6a-chunk-000",
+        "doc-a13be3e29e82c913f3470fbe60b4bf6a-chunk-001",
+        "doc-a13be3e29e82c913f3470fbe60b4bf6a-chunk-022",
+        "doc-bb0530b18d32763b3211b67365b36359-chunk-000",
+        "doc-bb0530b18d32763b3211b67365b36359-chunk-016",
+        "doc-bb0530b18d32763b3211b67365b36359-chunk-017",
+        "doc-bb0530b18d32763b3211b67365b36359-chunk-026",
+        "doc-d29dd8b36d29309ba693bfdc78ba3103-chunk-000",
+        "doc-d29dd8b36d29309ba693bfdc78ba3103-chunk-002",
+        "doc-d29dd8b36d29309ba693bfdc78ba3103-chunk-003"
+      ],
+      "provisional_groups": [],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "file-enum-004",
+      "candidate_chunks": [
+        "doc-245e0be8fb0feff02c96a5864fb723c7-chunk-001",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+        "doc-2e012f4fd0622b647d151de5d0ecc51b-chunk-000",
+        "doc-30cc8c5a085a96f9e00e57e0ad3a6da4-chunk-000",
+        "doc-30cc8c5a085a96f9e00e57e0ad3a6da4-chunk-001",
+        "doc-374860e84aca365bb7fc7abb64f719fe-chunk-000",
+        "doc-395b34401e7ee48e833a01d1d5bb4256-chunk-000",
+        "doc-395b34401e7ee48e833a01d1d5bb4256-chunk-001",
+        "doc-395b34401e7ee48e833a01d1d5bb4256-chunk-002",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-000",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-001",
+        "doc-a9936b42bbfac2084ffd605a646553ef-chunk-000",
+        "doc-b423a0e3331541588988fd34496c349d-chunk-000",
+        "doc-b423a0e3331541588988fd34496c349d-chunk-001",
+        "doc-b423a0e3331541588988fd34496c349d-chunk-002",
+        "doc-b423a0e3331541588988fd34496c349d-chunk-003",
+        "doc-b423a0e3331541588988fd34496c349d-chunk-004",
+        "doc-b423a0e3331541588988fd34496c349d-chunk-005",
+        "doc-b423a0e3331541588988fd34496c349d-chunk-006",
+        "doc-d0039dda04ea5c8c113da89d31e893e3-chunk-000"
+      ],
+      "provisional_groups": [],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "file-enum-005",
+      "candidate_chunks": [],
+      "provisional_groups": [
+        {
+          "unit_id": "afb68726571f0d32333643ca0484da32",
+          "chunk_ids": [
+            "doc-b423a0e3331541588988fd34496c349d-chunk-000"
+          ],
+          "any_mapped_chunk_in_discovery": false
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "file-enum-006",
+      "candidate_chunks": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-000",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-004",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-005",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-006",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-007",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-008",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-009",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-010",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-011",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-012",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-013",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-014",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-015",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-016",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-017"
+      ],
+      "provisional_groups": [],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "prose-enum-001",
+      "candidate_chunks": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "385d9e8e0539a87e61f0407bda1739ad",
+          "chunk_ids": [
+            "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        },
+        {
+          "unit_id": "ad9d292d3ee2fd88a8fd25b9efc8265a",
+          "chunk_ids": [
+            "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        },
+        {
+          "unit_id": "90d4b1c55cb8c6ff81dcbdfd55827165",
+          "chunk_ids": [
+            "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "prose-enum-002",
+      "candidate_chunks": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-022",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-027"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "ef6868c7bc693df8da996208421b815d",
+          "chunk_ids": [
+            "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+            "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+          ],
+          "any_mapped_chunk_in_discovery": false
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "prose-enum-003",
+      "candidate_chunks": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-003",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-004",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-007",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-008",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-011",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-012",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-014",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-020",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-023"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "a00e1705c43ffacbca6c408197c6bac9",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "prose-enum-004",
+      "candidate_chunks": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "7b4770667908af51eb321bd82c89aaf7",
+          "chunk_ids": [
+            "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "prose-enum-005",
+      "candidate_chunks": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "d9ead1de90c8e67959ccb2b4a67cac4a",
+          "chunk_ids": [
+            "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "prose-enum-006",
+      "candidate_chunks": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "7f9dddaf02f372cc7d329f4678c46fbc",
+          "chunk_ids": [
+            "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "table-enum-001",
+      "candidate_chunks": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-021"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ],
+          "any_mapped_chunk_in_discovery": false
+        },
+        {
+          "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ],
+          "any_mapped_chunk_in_discovery": false
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "table-enum-002",
+      "candidate_chunks": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+          "chunk_ids": [
+            "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "table-enum-003",
+      "candidate_chunks": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+          "chunk_ids": [
+            "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+          ],
+          "any_mapped_chunk_in_discovery": false
+        },
+        {
+          "unit_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+          "chunk_ids": [
+            "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+          ],
+          "any_mapped_chunk_in_discovery": false
+        },
+        {
+          "unit_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+          "chunk_ids": [
+            "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+          ],
+          "any_mapped_chunk_in_discovery": false
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "table-enum-004",
+      "candidate_chunks": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-000",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-004",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-005",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-006",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-007",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-008",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-009",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-010",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-011",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-012",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-013",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-014",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-015",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-016",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-017"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+          "chunk_ids": [
+            "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+            "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+            "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "table-enum-005",
+      "candidate_chunks": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-003"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0002",
+          "chunk_ids": [
+            "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "table-enum-006",
+      "candidate_chunks": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+          "chunk_ids": [
+            "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "syn-001",
+      "candidate_chunks": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-001",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-002",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-006"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+          "chunk_ids": [
+            "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        },
+        {
+          "unit_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0001",
+          "chunk_ids": [
+            "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-002"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        },
+        {
+          "unit_id": "eebc13e2a0348fa67955192750d4e9e6",
+          "chunk_ids": [
+            "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-000"
+          ],
+          "any_mapped_chunk_in_discovery": false
+        },
+        {
+          "unit_id": "78548b12c1e8ff7d651ce4dba805909a",
+          "chunk_ids": [],
+          "any_mapped_chunk_in_discovery": false
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "syn-002",
+      "candidate_chunks": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-007"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "ef6868c7bc693df8da996208421b815d",
+          "chunk_ids": [
+            "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+            "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+          ],
+          "any_mapped_chunk_in_discovery": false
+        },
+        {
+          "unit_id": "e0dae0566f942e76eb779d90de929d39",
+          "chunk_ids": [
+            "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-003"
+          ],
+          "any_mapped_chunk_in_discovery": false
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "syn-003",
+      "candidate_chunks": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "e0ee2cef12742c7946cfe0a26ff51f6f",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "syn-004",
+      "candidate_chunks": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-000",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-004",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-005",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-006",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-007",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-008",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-009",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-010",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-011",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-012",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-013",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-014",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-015",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-016",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-017"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "1be5a15442ef9d0368b3e1367a03a2fb",
+          "chunk_ids": [
+            "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        },
+        {
+          "unit_id": "6291e97f42b5eed29d234cf1e96ed724",
+          "chunk_ids": [
+            "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "syn-005",
+      "candidate_chunks": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-003",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-004",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-005",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-006",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-007",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-008",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-009",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-010",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-011",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-012",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-013",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-014",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-015",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-016",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-017",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-018",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-019"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "ef6868c7bc693df8da996208421b815d",
+          "chunk_ids": [
+            "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+            "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        },
+        {
+          "unit_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0001",
+          "chunk_ids": [
+            "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        },
+        {
+          "unit_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0002",
+          "chunk_ids": [
+            "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        }
+      ],
+      "not_a_gate_metric": true
+    },
+    {
+      "query_id": "syn-006",
+      "candidate_chunks": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-003",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-004",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-005",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-007",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-008",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-009",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-010",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-011",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-012",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-013",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-015",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-017",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-020",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-021",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-022"
+      ],
+      "provisional_groups": [
+        {
+          "unit_id": "e0ee2cef12742c7946cfe0a26ff51f6f",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+          ],
+          "any_mapped_chunk_in_discovery": true
+        }
+      ],
+      "not_a_gate_metric": true
+    }
+  ],
+  "medical_related_documents": [
+    {
+      "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+      "doc_name": "water-03_生态环境部_医疗机构水污染物排放标准_含2026修改单.pdf",
+      "self_code": null,
+      "self_code_version": null,
+      "title": "GB 18466—2005（含2026年修改单）"
+    },
+    {
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "doc_name": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf",
+      "self_code": "GB18466",
+      "self_code_version": "2005",
+      "title": "医疗机构水污染物排放标准"
+    },
+    {
+      "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+      "doc_name": "water-10_生态环境部_医疗机构水污染物排放标准修改单_2026.pdf",
+      "self_code": null,
+      "self_code_version": null,
+      "title": "《医疗机构水污染物排放标准》（GB 18466—2005）修改单"
+    }
+  ],
+  "state_after": {
+    "state": "current",
+    "active_run_id": "c15c741742394320",
+    "active_snapshot_id": "4919b3938ad93747",
+    "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+    "expected_recipe_id": "phase-1-v4-single-active-snapshot-prune",
+    "live_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "stored_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "action": ""
+  },
+  "metrics_frozen": false
+}

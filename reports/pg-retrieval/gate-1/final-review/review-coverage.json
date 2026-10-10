@@ -1,0 +1,449 @@
+{
+  "summary": {
+    "preview_reviewable": 86,
+    "reviewed": 8,
+    "skipped": 78,
+    "accounted_for": 86,
+    "accounting_rate": 1.0,
+    "review_rate": 0.09302325581395349,
+    "preview_excluded": 54,
+    "additional_manual_review": [
+      "tests/test_gate1_acceptance.py",
+      "reports/pg-retrieval/phase-1/report.md",
+      "reports/pg-retrieval/phase-1/enumeration-runs.jsonl",
+      "openspec/changes/add-pg-scoped-retrieval/tasks.md"
+    ]
+  },
+  "files": [
+    {
+      "path": "src/env_rag_final/cli.py",
+      "status": "reviewed",
+      "reason": "Gate1 implementation and caller paths reviewed"
+    },
+    {
+      "path": "openspec/changes/add-pg-scoped-retrieval/.openspec.yaml",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "openspec/changes/archive/.gitkeep",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "openspec/config.yaml",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "openspec/specs/.gitkeep",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/run-manifest.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/sample-set.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/schema.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/13251e7f29464216b42a642597db5db9/search-probes.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/run-manifest.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/sample-set.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/schema.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/.phase-0.runs/legacy-2a198ad8c9f94b5c9474def68e45f06d/search-probes.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/run-manifest.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/sample-set.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/schema.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/.recheck-a.runs/2a25bf63c1f045639a42a95bdd9a76e5/search-probes.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/fingerprint-check.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/independent-verification.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/re-review-evidence.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/recheck-a",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-0/verify_gate0.py",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/counterexamples-offline.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/final-review/ocr-preview.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/ocr-preview.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/ocr-rules.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/ocr-preview.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/ocr-rules.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/replay-live.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/replay-offline.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/replay.py",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/review-comments.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/review-coverage.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/review-manifest.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/submitted-records-recovered.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/re-review/submitted-runs-original.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/reproduce.py",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/ocr-preview.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/ocr-rules.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/replay.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/replay.py",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/review-comments.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/review-coverage.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-3/review-manifest.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-comments.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-coverage.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/review-manifest.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/submitted-prose-vs-original.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/gate-1/submitted-table-citations.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/run-manifest.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/sample-set.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/schema.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-0-first-run-historical/search-probes.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/builder-change-counterexample.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/live-verification.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/offline-counterexamples.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/re-review-evidence.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/table-link-counterexample.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/v4-live-verification.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1-review/v4-submitted-build-manifest.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1/build-manifest.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "reports/pg-retrieval/phase-1/structure-samples.json",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "src/env_rag_final/audit/__init__.py",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "src/env_rag_final/audit/collect.py",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "src/env_rag_final/audit/compat.py",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "src/env_rag_final/audit/identity.py",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "src/env_rag_final/audit/lexical.py",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "src/env_rag_final/audit/pg.py",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "src/env_rag_final/audit/probes.py",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "src/env_rag_final/audit/samples.py",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "src/env_rag_final/audit/snapshot.py",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "src/env_rag_final/catalog/__init__.py",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "src/env_rag_final/catalog/builder.py",
+      "status": "reviewed",
+      "reason": "Current live source guard helper and caller context reviewed; remainder previously accepted"
+    },
+    {
+      "path": "src/env_rag_final/catalog/lexical_norm.py",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "src/env_rag_final/catalog/metadata.py",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "src/env_rag_final/catalog/schema.py",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "src/env_rag_final/catalog/scopes.py",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "src/env_rag_final/catalog/source.py",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "src/env_rag_final/catalog/units.py",
+      "status": "skipped",
+      "reason": "Prior accepted audit/catalog or historical reports/metadata outside bounded Gate1 review"
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/__init__.py",
+      "status": "reviewed",
+      "reason": "Gate1 implementation and caller paths reviewed"
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/contract.py",
+      "status": "reviewed",
+      "reason": "Gate1 implementation and caller paths reviewed"
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/doc_enum.py",
+      "status": "reviewed",
+      "reason": "Gate1 implementation and caller paths reviewed"
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/prose_enum.py",
+      "status": "reviewed",
+      "reason": "Gate1 implementation and caller paths reviewed"
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/table_enum.py",
+      "status": "reviewed",
+      "reason": "Gate1 implementation and caller paths reviewed"
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/tables.py",
+      "status": "reviewed",
+      "reason": "Gate1 implementation and caller paths reviewed"
+    }
+  ]
+}

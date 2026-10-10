@@ -1,0 +1,375 @@
+{
+ "task": "5.2 real local candidate adapter (production backends, read-only)",
+ "release": "lightrag-hku 1.5.7",
+ "frozen": {
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_run_id": "c15c741742394320",
+  "catalog_snapshot_id": "4919b3938ad93747",
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "public_counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  }
+ },
+ "started_at": "2026-10-06T22:18:04+0800",
+ "results": [
+  {
+   "query_id": "fact-001",
+   "query": "GB 3095-2012 中二氧化硫的年平均浓度二级限值是多少？",
+   "mode": "local",
+   "workspace": "default",
+   "started_at": "2026-10-06T22:18:01+0800",
+   "finished_at": "2026-10-06T22:18:04+0800",
+   "keywords": {
+    "high_level": [
+     "环境空气质量标准",
+     "浓度限值"
+    ],
+    "low_level": [
+     "GB 3095-2012",
+     "二氧化硫",
+     "年平均浓度",
+     "二级限值"
+    ]
+   },
+   "entities_top": [
+    {
+     "entity_name": "表1(环境空气污染物基本项目浓度限值)",
+     "rank": 12
+    },
+    {
+     "entity_name": "二级浓度限值",
+     "rank": 12
+    },
+    {
+     "entity_name": "二氧化硫(SO₂)",
+     "rank": 12
+    },
+    {
+     "entity_name": "Annual Standard Of 10 Ppb",
+     "rank": 2
+    },
+    {
+     "entity_name": "表2(环境空气污染物其他项目浓度限值)",
+     "rank": 12
+    },
+    {
+     "entity_name": "二级SO2标准",
+     "rank": 3
+    },
+    {
+     "entity_name": "Secondary SO2 NAAQS",
+     "rank": 14
+    },
+    {
+     "entity_name": "国家二级标准",
+     "rank": 6
+    }
+   ],
+   "relations_count": 74,
+   "candidates": [
+    {
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+     "workspace": "default",
+     "full_doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_id_verified": true,
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "content_head": "## 4 环境空气功能区分类和质量要求\n\n## 4.1 环境空气功能区分类\n环境空气功能区分为二类：一类区为自然保护区、风景名胜区和其他需要特殊保护的区域；二类",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:表1(环境空气污染物基本项目浓度限值)"
+     ],
+     "similarity_order": 0
+    },
+    {
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-002",
+     "workspace": "default",
+     "full_doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc_id_verified": false,
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "content_head": "## 4.1 环境空气功能区分类\n环境空气功能区分为两类：一类区为国家公园、自然保护区、自然公园和其他需要特殊保护的区域；二类区为居住区、商业交通居民混合区、文",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二级浓度限值"
+     ],
+     "similarity_order": 1
+    },
+    {
+     "chunk_id": "doc-69538e249043b7fb564980ccab13438e-chunk-005",
+     "workspace": "default",
+     "full_doc_id": "doc-69538e249043b7fb564980ccab13438e",
+     "doc_id_verified": false,
+     "file_path": "air-24_中国环境监测总站_2025中国生态环境状况公报_2026.pdf",
+     "content_head": "## 2.2 PM $_{10}$\n全国 339 个城市环境空气 $PM_{10}$ 年均浓度在 12～124 微克 / 立方米之间，平均为 48 微克 / 立",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:国家二级标准"
+     ],
+     "similarity_order": 2
+    },
+    {
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+     "workspace": "default",
+     "full_doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_id_verified": true,
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "content_head": "## 7 实施与监督\n7.1 本标准由各级环境保护行政主管部门负责监督实施。\n7.2 各类环境空气功能区的范围由县级以上（含县级）人民政府环境保护行政主管部门划",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二级浓度限值"
+     ],
+     "similarity_order": 3
+    },
+    {
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+     "workspace": "default",
+     "full_doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc_id_verified": false,
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "content_head": "## 5.3 污染物分析\n应按表 3 的要求，采用相应的方法分析各项污染物的浓度，并执行 HJ 193、HJ 194、HJ 653、HJ 654、HJ 655、",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二氧化硫(SO₂)"
+     ],
+     "similarity_order": 4
+    },
+    {
+     "chunk_id": "doc-13aaccec179aaa355c8c3d98abd0716e-chunk-020",
+     "workspace": "default",
+     "full_doc_id": "doc-13aaccec179aaa355c8c3d98abd0716e",
+     "doc_id_verified": false,
+     "file_path": "air-47_European-Commission_Directive-2024-2881-Ambient-Air-Quality_2024.pdf",
+     "content_head": "## Article 33\nAddressees\nThis Directive is addressed to the Member States.\nDone ",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二氧化硫(SO₂)"
+     ],
+     "similarity_order": 5
+    },
+    {
+     "chunk_id": "doc-f786d9079ac78c8e746df84e2e8e8535-chunk-118",
+     "workspace": "default",
+     "full_doc_id": "doc-f786d9079ac78c8e746df84e2e8e8535",
+     "doc_id_verified": false,
+     "file_path": "air-56_Federal-Register_Secondary-NAAQS-Final-Review-NOx-SO2-PM_2024.pdf",
+     "content_head": "## 3.2 Comparisons With the Annual Secondary SO<sub>2</sub> NAAQS\n(a) The annual",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:年度二级SO2 NAAQS",
+      "edge:|"
+     ],
+     "similarity_order": 6
+    },
+    {
+     "chunk_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f-chunk-004",
+     "workspace": "default",
+     "full_doc_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f",
+     "doc_id_verified": false,
+     "file_path": "air-26_中国环境监测总站_2026年7月全国城市空气质量报告_2026.pdf",
+     "content_head": "全国城市空气质量报告\n2. 《环境空气质量标准》（GB 3095—2026）中六项污染物浓度限值如下表所示：\n<table id=\"tb-c963ecba7ee",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二级浓度限值"
+     ],
+     "similarity_order": 7
+    },
+    {
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-006",
+     "workspace": "default",
+     "full_doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc_id_verified": false,
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "content_head": "## 6 数据统计的有效性规定\n6.1 应采取措施保证监测数据的准确性、连续性和完整性，确保全面、客观地反映监测结果。\n6.2 采用自动监测设备监测时，监测仪器",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二氧化硫(SO₂)"
+     ],
+     "similarity_order": 8
+    },
+    {
+     "chunk_id": "doc-f786d9079ac78c8e746df84e2e8e8535-chunk-096",
+     "workspace": "default",
+     "full_doc_id": "doc-f786d9079ac78c8e746df84e2e8e8535",
+     "doc_id_verified": false,
+     "file_path": "air-56_Federal-Register_Secondary-NAAQS-Final-Review-NOx-SO2-PM_2024.pdf",
+     "content_head": "## C. Decision on the Secondary Standards\nFor the reasons discussed above and co",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:Secondary SO2 NAAQS"
+     ],
+     "similarity_order": 9
+    },
+    {
+     "chunk_id": "doc-eb0a53bb0a4ab5d9eae87c68f6a60fbb-chunk-011",
+     "workspace": "default",
+     "full_doc_id": "doc-eb0a53bb0a4ab5d9eae87c68f6a60fbb",
+     "doc_id_verified": false,
+     "file_path": "air-35_安徽省生态环境厅_安徽省生态环境质量月报2026年6月_2026.pdf",
+     "content_head": "## 附录\n\n## 1.环境空气评价项目及标准\n（1）环境空气质量按照《环境空气质量标准》（GB 3095—2026）和《环境空气质量评价技术规范》（HJ 66",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二氧化硫(SO₂)"
+     ],
+     "similarity_order": 10
+    },
+    {
+     "chunk_id": "doc-f786d9079ac78c8e746df84e2e8e8535-chunk-001",
+     "workspace": "default",
+     "full_doc_id": "doc-f786d9079ac78c8e746df84e2e8e8535",
+     "doc_id_verified": false,
+     "file_path": "air-56_Federal-Register_Secondary-NAAQS-Final-Review-NOx-SO2-PM_2024.pdf",
+     "content_head": "## Review of the Secondary National Ambient Air Quality Standards for Oxides of ",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:10 ppb"
+     ],
+     "similarity_order": 11
+    },
+    {
+     "chunk_id": "doc-69538e249043b7fb564980ccab13438e-chunk-004",
+     "workspace": "default",
+     "full_doc_id": "doc-69538e249043b7fb564980ccab13438e",
+     "doc_id_verified": false,
+     "file_path": "air-24_中国环境监测总站_2025中国生态环境状况公报_2026.pdf",
+     "content_head": "## 2. 主要污染物\n\n## 2.1 PM $_{2.5}$\n全国339个城市环境空气 $PM_{2.5}$ 年均浓度在5.2～51.5微克/立方米之间，平均",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:国家二级标准"
+     ],
+     "similarity_order": 12
+    },
+    {
+     "chunk_id": "doc-f786d9079ac78c8e746df84e2e8e8535-chunk-085",
+     "workspace": "default",
+     "full_doc_id": "doc-f786d9079ac78c8e746df84e2e8e8535",
+     "doc_id_verified": false,
+     "file_path": "air-56_Federal-Register_Secondary-NAAQS-Final-Review-NOx-SO2-PM_2024.pdf",
+     "content_head": "## 3. Administrator’s Conclusions\nHaving carefully considered the public comment",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:Annual Standard Of 10 Ppb"
+     ],
+     "similarity_order": 13
+    },
+    {
+     "chunk_id": "doc-f786d9079ac78c8e746df84e2e8e8535-chunk-070",
+     "workspace": "default",
+     "full_doc_id": "doc-f786d9079ac78c8e746df84e2e8e8535",
+     "doc_id_verified": false,
+     "file_path": "air-56_Federal-Register_Secondary-NAAQS-Final-Review-NOx-SO2-PM_2024.pdf",
+     "content_head": "(b) Comments in Support of a Level Below the Proposed Range\nThree comments indic",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:10 ppb"
+     ],
+     "similarity_order": 14
+    },
+    {
+     "chunk_id": "doc-8eeaab2c272e8a01235e17cfa59d610f-chunk-174",
+     "workspace": "default",
+     "full_doc_id": "doc-8eeaab2c272e8a01235e17cfa59d610f",
+     "doc_id_verified": false,
+     "file_path": "air-42_US-EPA_FR 2023-00269 Reconsideration of the PM NAAQS (PM标准重新审议-拟议规则)_2023.pdf",
+     "content_head": "<table id=\"tb-8eeaab2c272e8a01235e17cfa59d610f-0004\" format=\"html\"><tr><td> $SO_",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二氧化硫(SO₂)"
+     ],
+     "similarity_order": 15
+    },
+    {
+     "chunk_id": "doc-f786d9079ac78c8e746df84e2e8e8535-chunk-086",
+     "workspace": "default",
+     "full_doc_id": "doc-f786d9079ac78c8e746df84e2e8e8535",
+     "doc_id_verified": false,
+     "file_path": "air-56_Federal-Register_Secondary-NAAQS-Final-Review-NOx-SO2-PM_2024.pdf",
+     "content_head": "Federal Register / Vol. 89, No. 248 / Friday, December 27, 2024 / Rules and Regu",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二级SO2标准"
+     ],
+     "similarity_order": 16
+    },
+    {
+     "chunk_id": "doc-69538e249043b7fb564980ccab13438e-chunk-003",
+     "workspace": "default",
+     "full_doc_id": "doc-69538e249043b7fb564980ccab13438e",
+     "doc_id_verified": false,
+     "file_path": "air-24_中国环境监测总站_2025中国生态环境状况公报_2026.pdf",
+     "content_head": "# 大气环境\n\n## 一、大气环境\n\n## (一) 全国环境空气质量\\*\n\n## 1. 总体状况\n\n## 1.1 城市达标情况\n2025 年，全国 339 个地",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二级浓度限值"
+     ],
+     "similarity_order": 17
+    },
+    {
+     "chunk_id": "doc-f786d9079ac78c8e746df84e2e8e8535-chunk-103",
+     "workspace": "default",
+     "full_doc_id": "doc-f786d9079ac78c8e746df84e2e8e8535",
+     "doc_id_verified": false,
+     "file_path": "air-56_Federal-Register_Secondary-NAAQS-Final-Review-NOx-SO2-PM_2024.pdf",
+     "content_head": "## D. Transportation Conformity Program\nAs discussed in the proposal section V.E",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:Secondary SO2 NAAQS"
+     ],
+     "similarity_order": 18
+    },
+    {
+     "chunk_id": "doc-245e0be8fb0feff02c96a5864fb723c7-chunk-001",
+     "workspace": "default",
+     "full_doc_id": "doc-245e0be8fb0feff02c96a5864fb723c7",
+     "doc_id_verified": false,
+     "file_path": "air-27_生态环境部_HJ1328-2023_环境空气颗粒物(PM2.5)中水溶性离子连续自动监测技术规范_2023.pdf",
+     "content_head": "## 2 规范性引用文件\n本标准引用了下列文件或其中的条款。凡是注明日期的引用文件，仅注日期的版本适用于本标准。凡是未注日期的引用文件，其最新版本（包括所有的修",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二氧化硫(SO₂)"
+     ],
+     "similarity_order": 19
+    }
+   ],
+   "service_calls": {
+    "embedding_requests": 2,
+    "embedding_texts": 2,
+    "llm_requests": 1,
+    "qdrant_queries": 2,
+    "neo4j_reads": 1,
+    "pg_readonly_queries": 1
+   },
+   "degraded": [],
+   "errors": [],
+   "targets": [
+    "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,116 @@
+{
+ "cases": [
+  {
+   "case": "plain-caption-attributed-kept",
+   "evidence_label": "构造读取注入 + 离线answer入口回放（run_answer owning 入口）",
+   "coverage_status": "complete",
+   "status": "ok",
+   "model_calls_used": 0,
+   "reverification_problems": [],
+   "clause_4_1_text": "4.1 本条限值见下表：\n表 1\n<table id=\"tb-o\"><tr><td>总汞</td><td>0.05</td></tr></table>\n本条补充要求：每日监测一次。",
+   "clause_4_1_citation_reverified": true,
+   "clause_4_2_text": "4.2 下一条独立要求。",
+   "checks": {
+    "complete": "PASS",
+    "table_values_and_continuation_kept": "PASS",
+    "citation_reverified": "PASS",
+    "zero_problems": "PASS"
+   }
+  },
+  {
+   "case": "markdown-caption-attributed-kept",
+   "evidence_label": "构造读取注入 + 离线answer入口回放（run_answer owning 入口）",
+   "coverage_status": "complete",
+   "status": "ok",
+   "model_calls_used": 0,
+   "reverification_problems": [],
+   "clause_4_1_text": "4.1 本条限值见下表：\n## 表 1 限值\n<table id=\"tb-o\"><tr><td>总汞</td><td>0.05</td></tr></table>\n本条补充要求：每日监测一次。",
+   "clause_4_1_citation_reverified": true,
+   "clause_4_2_text": "4.2 下一条独立要求。",
+   "checks": {
+    "complete": "PASS",
+    "table_values_and_continuation_kept": "PASS",
+    "zero_problems": "PASS"
+   }
+  },
+  {
+   "case": "independent-captioned-table-stays-out",
+   "evidence_label": "构造读取注入 + 离线answer入口回放（run_answer owning 入口）",
+   "coverage_status": "complete",
+   "status": "ok",
+   "model_calls_used": 0,
+   "reverification_problems": [],
+   "clause_4_1_text": "4.1 本条要求已独立成句。",
+   "clause_4_1_citation_reverified": true,
+   "clause_4_2_text": "4.2 下一条独立要求。",
+   "checks": {
+    "complete": "PASS",
+    "clause_4_1_short_sentence": "PASS",
+    "citation_reverified": "PASS"
+   }
+  },
+  {
+   "case": "attribution-does-not-cross-next-clause",
+   "evidence_label": "构造读取注入 + 离线answer入口回放（run_answer owning 入口）",
+   "coverage_status": "complete",
+   "status": "ok",
+   "model_calls_used": 0,
+   "reverification_problems": [],
+   "clause_4_1_text": "4.1 本条限值见下表：\n表 1\n<table id=\"tb-a\"><tr><td>总汞</td><td>0.05</td></tr></table>\n本条补充要求：每日监测一次。",
+   "clause_4_1_citation_reverified": true,
+   "clause_4_2_text": "4.2 另一条已独立成句。",
+   "checks": {
+    "complete": "PASS",
+    "4_1_keeps_own_attributed_table": "PASS",
+    "4_2_stops_at_its_own_caption": "PASS",
+    "later_table_in_no_clause": "PASS"
+   }
+  }
+ ],
+ "function_level_boundary_decisions": {
+  "plain-caption-kept": {
+   "cuts": [],
+   "note_positions": [],
+   "extracted": {
+    "4": "## 4 章规定",
+    "4.1": "4.1 本条限值见下表：\n表 1\n<table id=\"tb-o\"><tr><td>总汞</td><td>0.05</td></tr></table>\n本条补充要求：每日监测一次。",
+    "4.2": "4.2 下一条独立要求。"
+   }
+  },
+  "markdown-caption-kept": {
+   "cuts": [],
+   "note_positions": [],
+   "extracted": {
+    "4": "## 4 章规定",
+    "4.1": "4.1 本条限值见下表：\n## 表 1 限值\n<table id=\"tb-o\"><tr><td>总汞</td><td>0.05</td></tr></table>\n本条补充要求：每日监测一次。",
+    "4.2": "4.2 下一条独立要求。"
+   }
+  },
+  "independent": {
+   "cuts": [
+    24,
+    28
+   ],
+   "note_positions": [],
+   "extracted": {
+    "4": "## 4 章规定",
+    "4.1": "4.1 本条要求已独立成句。",
+    "4.2": "4.2 下一条独立要求。"
+   }
+  },
+  "non-crossing": {
+   "cuts": [
+    114,
+    118
+   ],
+   "note_positions": [],
+   "extracted": {
+    "4": "## 4 章规定",
+    "4.1": "4.1 本条限值见下表：\n表 1\n<table id=\"tb-a\"><tr><td>总汞</td><td>0.05</td></tr></table>\n本条补充要求：每日监测一次。",
+    "4.2": "4.2 另一条已独立成句。",
+    "4.3": "4.3 再下一条要求。"
+   }
+  }
+ },
+ "note": "attribution is looked up through the table object's own title lines (bounded walk: stops at the first prose line), so a caption cannot reset a proven attribution and attribution never crosses into the next independent clause"
+}

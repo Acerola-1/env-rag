@@ -1,0 +1,356 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-09T20:55:50+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "fact-007"
+ ],
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-formal-fixed-round-1/inputs/fusion/fact-007-rerank.json",
+   "sha256": "8073443f5ae116eaa9fdd921a93578e222fdc417193e9cc454e0ef3da8fb6afc",
+   "task": "5.4 joint rerank over fused candidates (bounded, recorded)",
+   "started_at": "2026-10-09T20:55:47+0800",
+   "finished_at": "2026-10-09T20:55:50+0800",
+   "query_ids": [
+    "fact-007"
+   ]
+  },
+  "fused_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-formal-fixed-round-1/inputs/fusion/fact-007-fusion.json",
+   "sha256": "2dcbe5b54b1a7acc0632e964d5da502db6cd183221711afc820c4fd343e2a4fd",
+   "task": "Phase 4 round 1 evaluation input (path=fusion)",
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": [
+    "fact-007"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "model_calls_used": 0,
+ "results": [
+  {
+   "query_id": "fact-007",
+   "query": "GB 8978-1996 中 pH 值的排放限值范围是多少？",
+   "category": "fact",
+   "workspace": "default",
+   "coverage_status": "complete",
+   "fail_stage": "",
+   "flags": [],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "ok",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 11,
+    "typed_targets": [
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "doc_name": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+      "self_code": "GB8978",
+      "self_code_version": "1996",
+      "discovery": "code_exact",
+      "membership_basis": null,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4"
+      },
+      "citation_verified": true
+     }
+    ],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 12,
+    "selected_docs": [
+     "doc-b45c510232ed4d2452b0f5b2a13434e4"
+    ],
+    "priority": [
+     {
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "rerank_rank_or_none": 0
+     }
+    ],
+    "target_confirmation": {
+     "request_branches": [
+      {
+       "code": "GB8978",
+       "version": "1996"
+      }
+     ],
+     "branch_source": "local parse of the question",
+     "identity_source": "catalog documents rows (self_code/self_code_version) read through the guarded workspace+catalog-snapshot connection",
+     "allowed": [
+      "doc-b45c510232ed4d2452b0f5b2a13434e4"
+     ],
+     "allowed_basis": {
+      "doc-b45c510232ed4d2452b0f5b2a13434e4": "canonical GB8978-1996 matches requested branch GB8978-1996 (catalog documents row via the guarded workspace+snapshot)"
+     },
+     "rejected": [],
+     "unresolved": [],
+     "unconfirmed_branches": [],
+     "rule": "discovery never defines the answer scope; a typed label or a replay-declared name is an audit clue, never canonical identity"
+    },
+    "basis": "confirmed canonical target identity defines the answer scope (improvement-2); discovery/top-k/rerank order never bound or promote membership — unconfirmed documents are excluded with recorded reasons and cannot enter the answer"
+   },
+   "expansions": [
+    {
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "kind": "prose",
+     "scope_id": "doc-b45c510232ed4d2452b0f5b2a13434e4:scope:4.3",
+     "requested_clauses": null,
+     "missing_requested_clauses": [],
+     "members_total": 6,
+     "members_processed": 6,
+     "coverage_status": "complete",
+     "read_status": "complete",
+     "fail_stage": "",
+     "units_read": 6,
+     "unit_ids": [
+      "a00e1705c43ffacbca6c408197c6bac9",
+      "71860670a6f52c0934c197309cf6e5de",
+      "7861e85661a27b359aae0b2d02a9f750",
+      "8447a0b01b58985f9a4c5eff0ab2fbf5",
+      "4353d89837fd2e9d9efe4f12d0f61cf1",
+      "f275d6165d613da141896a0ee4be0cbc"
+     ],
+     "chunk_ids": [
+      "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+      "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002",
+      "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-003",
+      "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-004",
+      "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-005",
+      "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006",
+      "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-007",
+      "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-008",
+      "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-009",
+      "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-010",
+      "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-011",
+      "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-012",
+      "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-013",
+      "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-014"
+     ],
+     "items_count": 4,
+     "warnings": [],
+     "boundary_ambiguities": [],
+     "selected": true
+    }
+   ],
+   "answer": {
+    "mode": "deterministic",
+    "generated_by": "enumerate/expand entries",
+    "items": [
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "scope_id": "doc-b45c510232ed4d2452b0f5b2a13434e4:scope:4.3",
+      "clause": "4.3.1",
+      "text": "4.3.1 同一排放口排放两种或两种以上不同类别的污水，且每种污水的排放标准又不同时，其混合污水的排放标准按附录 A 计算。",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 12,
+       "char_end": 75,
+       "quote": "4.3.1 同一排放口排放两种或两种以上不同类别的污水，且每种污水的排放标准又不同时，其混合污水的排放标准按附录 A 计算。",
+       "unit_rel_start": 12,
+       "unit_rel_end": 75,
+       "unit_id": "a00e1705c43ffacbca6c408197c6bac9",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+        "parsed_dir": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+       ],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "scope_id": "doc-b45c510232ed4d2452b0f5b2a13434e4:scope:4.3",
+      "clause": "4.3.2",
+      "text": "4.3.2 工业污水污染物的最高允许排放负荷量按附录 B 计算。",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 75,
+       "char_end": 108,
+       "quote": "4.3.2 工业污水污染物的最高允许排放负荷量按附录 B 计算。",
+       "unit_rel_start": 75,
+       "unit_rel_end": 108,
+       "unit_id": "a00e1705c43ffacbca6c408197c6bac9",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+        "parsed_dir": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+       ],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "scope_id": "doc-b45c510232ed4d2452b0f5b2a13434e4:scope:4.3",
+      "clause": "4.3.3",
+      "text": "4.3.3 污染物最高允许年排放总量按附录 C 计算。",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 108,
+       "char_end": 136,
+       "quote": "4.3.3 污染物最高允许年排放总量按附录 C 计算。",
+       "unit_rel_start": 108,
+       "unit_rel_end": 136,
+       "unit_id": "a00e1705c43ffacbca6c408197c6bac9",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+        "parsed_dir": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+       ],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "scope_id": "doc-b45c510232ed4d2452b0f5b2a13434e4:scope:4.3",
+      "clause": "4.3.4",
+      "text": "4.3.4 对于排放含有放射性物质的污水，除执行本标准外，还须符合 GB 8703—88《辐射防护规定》。",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 136,
+       "char_end": 190,
+       "quote": "4.3.4 对于排放含有放射性物质的污水，除执行本标准外，还须符合 GB 8703—88《辐射防护规定》。",
+       "unit_rel_start": 136,
+       "unit_rel_end": 190,
+       "unit_id": "a00e1705c43ffacbca6c408197c6bac9",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+        "parsed_dir": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+       ],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     }
+    ],
+    "selection": {
+     "terms": [
+      "ph",
+      "排放限值",
+      "范围",
+      "排放",
+      "放限",
+      "限值",
+      "值范"
+     ],
+     "candidates": 4,
+     "kept": 4,
+     "rule": "rows/items whose raw text contains the most subject terms of the QUESTION (never gold text); ties keep every match"
+    },
+    "unit_blockers": []
+   },
+   "reverification": {
+    "items_checked": 4,
+    "problems": [],
+    "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+   },
+   "model": null,
+   "status": "ok"
+  }
+ ]
+}

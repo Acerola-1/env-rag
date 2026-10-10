@@ -1,0 +1,165 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-09T21:03:57+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "neg-002"
+ ],
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-formal-fixed-round-1/inputs/fusion/neg-002-rerank.json",
+   "sha256": "cfc2dc1be1832468520313b70aa73e6ff9d37f3ae0bad373152dc83b0c936687",
+   "task": "5.4 joint rerank over fused candidates (bounded, recorded)",
+   "started_at": "2026-10-09T21:03:50+0800",
+   "finished_at": "2026-10-09T21:03:57+0800",
+   "query_ids": [
+    "neg-002"
+   ]
+  },
+  "fused_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-formal-fixed-round-1/inputs/fusion/neg-002-fusion.json",
+   "sha256": "6a1db61ed12ea789bfdfdaeb7f761f4bdb363abaf70652dd1b35ce1d6175dc67",
+   "task": "Phase 4 round 1 evaluation input (path=fusion)",
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": [
+    "neg-002"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "model_calls_used": 0,
+ "results": [
+  {
+   "query_id": "neg-002",
+   "query": "（隔离测试）default 查询不得返回其他 workspace 同 ID 证据",
+   "category": "fact",
+   "workspace": "default",
+   "coverage_status": "ambiguous",
+   "fail_stage": "",
+   "flags": [
+    "the question names no code branch and no trustworthy upstream resolution supplies a scope basis: discovered documents alone never define the answer scope — explicit ambiguous, never a silent full expansion (zero expansion reads; a this-path refusal is not a verified corpus absence)"
+   ],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "ok",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 30,
+    "typed_targets": [],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 30,
+    "selected_docs": [],
+    "priority": [
+     {
+      "doc_id": "doc-5b1886b7d0c64429a3537f24b65418c1",
+      "rerank_rank_or_none": 0
+     },
+     {
+      "doc_id": "doc-f786d9079ac78c8e746df84e2e8e8535",
+      "rerank_rank_or_none": 1
+     },
+     {
+      "doc_id": "doc-e48b9ef7fd5c2049d28342dec28aecfb",
+      "rerank_rank_or_none": 2
+     },
+     {
+      "doc_id": "doc-2857c5b1ed428225fd633e4a15b06df5",
+      "rerank_rank_or_none": 3
+     },
+     {
+      "doc_id": "doc-e2e392ff98b1abe57cf10f89804d09ee",
+      "rerank_rank_or_none": 6
+     },
+     {
+      "doc_id": "doc-a370c5ba20862bf89b12633e9930aea1",
+      "rerank_rank_or_none": 12
+     },
+     {
+      "doc_id": "doc-c732f5b06bc4789815765976dc573900",
+      "rerank_rank_or_none": 15
+     },
+     {
+      "doc_id": "doc-58c9791d6319085a2b4e4ee6a537ac42",
+      "rerank_rank_or_none": 25
+     },
+     {
+      "doc_id": "doc-6895fbe93e6b201f24f74a96eb55ec8e",
+      "rerank_rank_or_none": 29
+     }
+    ],
+    "target_confirmation": {
+     "rule": "discovery documents alone are not a scope basis; a typed/targets_resolved label without a code_exact resolution or a catalog-verifiable scope is discovery, not confirmation (improvement-2 r2)",
+     "verdict": "ambiguous — no requested code branch, no trustworthy upstream 5.3 resolution, no logical scope/metadata predicate to confirm",
+     "discovery_proposals_kept_for_audit": [],
+     "refusal_basis": "no requested code branch and no resolution of any kind: the replay carries discovery only"
+    }
+   },
+   "expansions": [],
+   "answer": null,
+   "reverification": null,
+   "model": null,
+   "status": "ok"
+  }
+ ]
+}

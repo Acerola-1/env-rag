@@ -1,0 +1,227 @@
+{
+ "typed_attribution_full_read_no_chunks": {
+  "evidence_label": "构造（5.3 真实发布形状：字段逐一同 neg-010 存量 pg fused 输入）+ 离线owning入口回放",
+  "question": "GB 9001-2020 的 4 章规定了哪些要求？含修改单和相关文件。",
+  "step1_upstream_published_evidence": {
+   "typed_targets": [
+    {
+     "target_type": "doc",
+     "workspace": "default",
+     "doc_id": "doc-synth-modify",
+     "doc_name": "synth-GB9001-含2020修改单.pdf",
+     "self_code": null,
+     "self_code_version": null,
+     "discovery": "doc_attribution",
+     "membership_basis": "doc name/title carries the requested code (self_code=None)",
+     "citation": {
+      "kind": "catalog_row",
+      "workspace": "default",
+      "snapshot_id": "snap-1",
+      "doc_id": "doc-synth-modify"
+     },
+     "citation_verified": true
+    }
+   ],
+   "allowed_set_basis": {
+    "resolved_code_targets": [
+     [
+      "doc-synth-goal"
+     ]
+    ],
+    "verified_attributions": [
+     {
+      "doc_id": "doc-synth-modify",
+      "self_code": null,
+      "self_code_version": null,
+      "membership_basis": "doc name/title carries the requested code (self_code=None)",
+      "note": "verified doc_attribution target joins the allowed set; no self_code is fabricated"
+     }
+    ]
+   },
+   "targets_resolved": [
+    {
+     "code": "GB9001",
+     "version": "2020",
+     "docs": [
+      "doc-synth-goal"
+     ],
+     "versions": [
+      "2020"
+     ]
+    }
+   ],
+   "usable_docs": [
+    "doc-synth-goal"
+   ],
+   "note": "doc-synth-modify carries NO usable chunk — evidence lives only in the published typed target + allowed-set basis"
+  },
+  "step2_catalog_rereads_via_owning_connection": [
+   {
+    "sql": "SELECT doc_name, self_code, self_code_version FROM env_rag.documents ...",
+    "workspace": "default",
+    "catalog_snapshot_id": "snap-1",
+    "doc_id": "doc-synth-goal"
+   },
+   {
+    "sql": "SELECT doc_name, self_code, self_code_version FROM env_rag.documents ...",
+    "workspace": "default",
+    "catalog_snapshot_id": "snap-1",
+    "doc_id": "doc-synth-modify"
+   }
+  ],
+  "step3_confirmation": {
+   "request_branches": [
+    {
+     "code": "GB9001",
+     "version": "2020"
+    }
+   ],
+   "branch_source": "local parse of the question",
+   "allowed": [
+    "doc-synth-goal",
+    "doc-synth-modify"
+   ],
+   "allowed_basis": {
+    "doc-synth-goal": "canonical GB9001-2020 matches requested branch GB9001-2020 (catalog documents row via the guarded workspace+snapshot)",
+    "doc-synth-modify": "membership via the upstream-published 5.3 doc_attribution evidence (catalog_row citation @ workspace+active snapshot, cross-checked in allowed_set_basis.verified_attributions; basis: \"doc name/title carries the requested code (self_code=None)\"); self_code unknown in the catalog — cover attribution, never a candidate label, never a fabricated code"
+   },
+   "rejected": [],
+   "unresolved": [],
+   "identity_source": "catalog documents rows (self_code/self_code_version) read through the guarded workspace+catalog-snapshot connection"
+  },
+  "step4_final_items": {
+   "items": [
+    {
+     "doc_id": "doc-synth-goal",
+     "clause": "4.1",
+     "citation_verified": true,
+     "citation_reverified": true
+    },
+    {
+     "doc_id": "doc-synth-goal",
+     "clause": "4.2",
+     "citation_verified": true,
+     "citation_reverified": true
+    },
+    {
+     "doc_id": "doc-synth-modify",
+     "clause": "4.1",
+     "citation_verified": true,
+     "citation_reverified": true
+    },
+    {
+     "doc_id": "doc-synth-modify",
+     "clause": "4.2",
+     "citation_verified": true,
+     "citation_reverified": true
+    }
+   ],
+   "coverage_status": "complete",
+   "model_calls_used": 0,
+   "registration_flags": [
+    "resolved target document doc-synth-modify is absent from the replayed candidates — registered for the FULL scope read (the confirmed resolution, not discovery top-k, defines the membership)"
+   ]
+  }
+ },
+ "bare_candidate_label_refusal": {
+  "evidence_label": "构造 + 离线owning入口回放（伪标记安全拒绝）",
+  "candidate_self_labels": {
+   "paths0_discovery": "doc_attribution",
+   "paths0_membership_basis": "cover attribution recorded by 5.3 route"
+  },
+  "upstream_published_evidence": {
+   "typed_targets": [],
+   "allowed_set_basis": null
+  },
+  "confirmation": {
+   "allowed": [
+    "doc-synth-goal"
+   ],
+   "allowed_basis": {
+    "doc-synth-goal": "canonical GB9001-2020 matches requested branch GB9001-2020 (catalog documents row via the guarded workspace+snapshot)"
+   },
+   "unresolved": [
+    {
+     "doc_id": "doc-synth-foreign",
+     "reason": "self_code unknown in the catalog — never guessed from a name; only the upstream-published, allowed-set-cross-checked attribution evidence may carry such a document"
+    }
+   ]
+  },
+  "published_docs": [
+   "doc-synth-goal"
+  ],
+  "coverage_status": "complete"
+ },
+ "codeless_trusted_vs_selfreported_pair": {
+  "evidence_label": "构造 + 离线owning入口回放（可信/不可信无编号范围成对）",
+  "question": "第 4 章规定了哪些要求？逐项列出。",
+  "trusted_positive": {
+   "upstream_targets_resolved": [
+    {
+     "code": "GB9001",
+     "version": "2020",
+     "docs": [
+      "doc-synth-goal"
+     ],
+     "versions": [
+      "2020"
+     ]
+    }
+   ],
+   "path_provenance": {
+    "path": "fusion",
+    "discovery_only": false
+   },
+   "branch_source": "upstream 5.3 code_exact resolution trace (every document is re-confirmed against the CURRENT catalog below)",
+   "allowed": [
+    "doc-synth-goal"
+   ],
+   "rejected": [
+    {
+     "doc_id": "doc-synth-foreign",
+     "reason": "canonical identity GB9002-2019 matches no requested branch ['GB9001-2020']"
+    }
+   ],
+   "coverage_status": "complete",
+   "published_docs": [
+    "doc-synth-goal"
+   ]
+  },
+  "discovery_only_negative": {
+   "upstream_targets_resolved": [
+    {
+     "code": "GB9001",
+     "version": "2020",
+     "docs": [
+      "doc-synth-goal"
+     ],
+     "versions": [
+      "2020"
+     ]
+    }
+   ],
+   "path_provenance": {
+    "path": "local",
+    "discovery_only": true,
+    "note": "this layer performs discovery only; target identity is confirmed by the answer-layer canonical-code gate against catalog documents rows — not a 5.3 code resolution and never a corpus-wide verdict"
+   },
+   "targets_confirmed": false,
+   "verdict": "ambiguous — no requested code branch, no trustworthy upstream 5.3 resolution, no logical scope/metadata predicate to confirm",
+   "discovery_proposals_kept_for_audit": [
+    {
+     "kind": "targets_resolved",
+     "code": "GB9001",
+     "version": "2020",
+     "discovery": null,
+     "docs": [
+      "doc-synth-goal"
+     ]
+    }
+   ],
+   "refusal_basis": "the replayed path self-declares discovery-only (path_provenance.discovery_only / targets_confirmed False): its typed_targets and targets_resolved fields re-report DISCOVERY, never a confirmation",
+   "coverage_status": "ambiguous",
+   "items": [],
+   "selected_docs": []
+  }
+ }
+}

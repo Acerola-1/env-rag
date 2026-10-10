@@ -1,0 +1,35 @@
+{
+  "assessment": {
+    "manifest_sha256": "18a01150fc1d07143bf9d6e6ea3adb5602ce02adede010954cd054922904778a",
+    "entries": 9,
+    "mismatches": []
+  },
+  "round_1": {
+    "manifest_sha256": "094c97727c740c681d239969f7514eaa53225210733fe766f74ab06438e54861",
+    "entries": 809,
+    "mismatches": []
+  },
+  "submitted_rows": 123,
+  "positive_synthesis_pending": 18,
+  "review_tests": {
+    "total": 17,
+    "failed": 12,
+    "passed": 5,
+    "submitted_tests_passed": 6
+  },
+  "review_scope": {
+    "network_requests": 0,
+    "database_requests": 0,
+    "production_writes": 0,
+    "source_edits": 0
+  },
+  "decision": "assessment_not_accepted; round_2_paused",
+  "source_sha256": {
+    "src/env_rag_final/answer.py": "c017606cd35ddcb9b5afe5e19385d386d1e7a21eddff4ed12107c2af2572ccc8",
+    "src/env_rag_final/evaluation.py": "5a41ee1b58cf3ec054b501cc2fc27abb7f4149b501744c6b8eb29668ef0bc657",
+    "src/env_rag_final/fusion.py": "be1cd4c586596468efda7b9483903a407f0e214fc35e7a83355ad304ef94127e",
+    "src/env_rag_final/rerank.py": "e2a8e089dd69cc02791a3c175bfadd27dd4fded80b249a32786b6a4d099cce08",
+    "src/env_rag_final/local_adapter.py": "0bbad9764856250085b5cefb90c9d56933bfd2f6e9ed5ed796fdd93bdf2da7e3",
+    "src/env_rag_final/compat_runtime.py": "5fa566b2b6a54571803a302e4e5c25df33382b874c5aacf2e4ea696f33ed3933"
+  }
+}

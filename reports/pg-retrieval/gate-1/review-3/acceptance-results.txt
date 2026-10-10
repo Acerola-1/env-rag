@@ -1,0 +1,76 @@
+FFFFFFFFF                                                                [100%]
+=================================== FAILURES ===================================
+_________ test_model_quote_without_coordinates_gets_exact_source_span __________
+tests/test_gate1_acceptance.py:44: in test_model_quote_without_coordinates_gets_exact_source_span
+    bound = bind_citations([item], "default", "d", "s", [unit(text)])[0]["citation"]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/env_rag_final/enumerate_/prose_enum.py:402: in bind_citations
+    lo = max(g_start, u.char_start)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: '>' not supported between instances of 'int' and 'NoneType'
+________________ test_sliced_unit_citation_uses_original_offset ________________
+tests/test_gate1_acceptance.py:57: in test_sliced_unit_citation_uses_original_offset
+    assert raw[cit["unit_rel_start"] : cit["unit_rel_end"]].strip() == wanted
+E   AssertionError: assert '父块引言\n7.1' == '7.5 请求条款。'
+E     
+E     - 7.5 请求条款。
+E     + 父块引言
+E     + 7.1
+_______ test_separator_whitespace_never_creates_negative_unit_coordinate _______
+tests/test_gate1_acceptance.py:66: in test_separator_whitespace_never_creates_negative_unit_coordinate
+    assert 0 <= cit["unit_rel_start"] < cit["unit_rel_end"] <= len(second)
+E   assert 0 <= -1
+_______ test_pending_extraction_warning_cannot_authorize_complete_answer _______
+tests/test_gate1_acceptance.py:83: in test_pending_extraction_warning_cannot_authorize_complete_answer
+    with pytest.raises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE ValueError
+____________ test_partial_word_overlap_does_not_verify_extra_claim _____________
+tests/test_gate1_acceptance.py:127: in test_partial_word_overlap_does_not_verify_extra_claim
+    assert error and "unsupported" in error
+E   assert (None)
+___________ test_document_token_covers_every_returned_metadata_field ___________
+tests/test_gate1_acceptance.py:143: in test_document_token_covers_every_returned_metadata_field
+    assert _set_token([row]) != _set_token([changed])
+E   AssertionError: assert '62fbb3fc3aebf39b2aa71295f5e7f3ef86a071de19400f3ff667bc48050d72bf' != '62fbb3fc3aebf39b2aa71295f5e7f3ef86a071de19400f3ff667bc48050d72bf'
+E    +  where '62fbb3fc3aebf39b2aa71295f5e7f3ef86a071de19400f3ff667bc48050d72bf' = _set_token([{'doc_id': 'd', 'doc_name': 'a', 'title': 'A', 'self_code': None, ...}])
+E    +  and   '62fbb3fc3aebf39b2aa71295f5e7f3ef86a071de19400f3ff667bc48050d72bf' = _set_token([{'doc_id': 'd', 'doc_name': 'a', 'title': 'A', 'self_code': None, ...}])
+__________________ test_table_rechecks_source_before_complete __________________
+tests/test_gate1_acceptance.py:207: in test_table_rechecks_source_before_complete
+    assert len(calls) >= 2
+E   assert 1 >= 2
+E    +  where 1 = len([1])
+__ test_missing_first_fragment_returns_partial_with_correct_remaining_source ___
+tests/test_gate1_acceptance.py:221: in test_missing_first_fragment_returns_partial_with_correct_remaining_source
+    result = asyncio.run(
+../../../../Library/Application Support/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/asyncio/runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+../../../../Library/Application Support/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../../Library/Application Support/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+src/env_rag_final/enumerate_/table_enum.py:202: in enumerate_table
+    meta = frag_meta[fi]
+           ^^^^^^^^^^^^^
+E   IndexError: list index out of range
+____________ test_prose_cli_rechecks_source_after_model_extraction _____________
+tests/test_gate1_acceptance.py:309: in test_prose_cli_rechecks_source_after_model_extraction
+    assert result["coverage_status"] == "stale"
+E   AssertionError: assert 'complete' == 'stale'
+E     
+E     - stale
+E     + complete
+=========================== short test summary info ============================
+FAILED tests/test_gate1_acceptance.py::test_model_quote_without_coordinates_gets_exact_source_span
+FAILED tests/test_gate1_acceptance.py::test_sliced_unit_citation_uses_original_offset
+FAILED tests/test_gate1_acceptance.py::test_separator_whitespace_never_creates_negative_unit_coordinate
+FAILED tests/test_gate1_acceptance.py::test_pending_extraction_warning_cannot_authorize_complete_answer
+FAILED tests/test_gate1_acceptance.py::test_partial_word_overlap_does_not_verify_extra_claim
+FAILED tests/test_gate1_acceptance.py::test_document_token_covers_every_returned_metadata_field
+FAILED tests/test_gate1_acceptance.py::test_table_rechecks_source_before_complete
+FAILED tests/test_gate1_acceptance.py::test_missing_first_fragment_returns_partial_with_correct_remaining_source
+FAILED tests/test_gate1_acceptance.py::test_prose_cli_rechecks_source_after_model_extraction
+9 failed in 0.09s

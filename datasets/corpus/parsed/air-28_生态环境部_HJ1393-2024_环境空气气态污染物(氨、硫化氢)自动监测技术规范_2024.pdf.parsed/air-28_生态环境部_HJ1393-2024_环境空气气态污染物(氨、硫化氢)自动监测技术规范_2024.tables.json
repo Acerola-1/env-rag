@@ -1,0 +1,371 @@
+{
+  "version": "1.0",
+  "tables": {
+    "tb-a5820fc66ddfe522b424b3e275988eaa-0001": {
+      "id": "tb-a5820fc66ddfe522b424b3e275988eaa-0001",
+      "blockid": "a5e05d2099e76eda88a8a4371280ace0",
+      "heading": "4.1　监测系统原理",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测技术规范"
+      ],
+      "dimension": [
+        3,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>监测项目</td><td>点式监测系统</td><td>开放光程监测系统</td></tr><tr><td>氨</td><td>化学发光法/光腔衰荡光谱法/离轴积分腔输出光谱法/差分吸收光谱法/光声光谱法等</td><td>差分吸收光谱法/可调谐激光吸收光谱法/量子级联激光吸收光谱法等</td></tr><tr><td>硫化氢</td><td>紫外荧光法/光腔衰荡光谱法/离轴积分腔输出光谱法等</td><td>可调谐激光吸收光谱法等</td></tr></table>",
+      "caption": "表 1　监测系统原理",
+      "footnotes": [],
+      "self_ref": "content_list.json#/57"
+    },
+    "tb-a5820fc66ddfe522b424b3e275988eaa-0002": {
+      "id": "tb-a5820fc66ddfe522b424b3e275988eaa-0002",
+      "blockid": "20f440685a6757ddd589c11eea232312",
+      "heading": "6.2　调试检测性能指标",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测技术规范"
+      ],
+      "dimension": [
+        18,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\" colspan=\"2\">检测项目</td><td colspan=\"2\">技术要求</td></tr><tr><td>氨监测系统</td><td>硫化氢监测系统</td></tr><tr><td colspan=\"2\">零点噪声</td><td> $\\leqslant 0.5$  nmol/mol</td><td> $\\leqslant 0.5$  nmol/mol</td></tr><tr><td colspan=\"2\">仪器检出限</td><td> $\\leqslant 1$  nmol/mol</td><td> $\\leqslant 1$  nmol/mol</td></tr><tr><td rowspan=\"3\">线性度</td><td>斜率(k)</td><td> $1 \\pm 0.05$ </td><td> $1 \\pm 0.05$ </td></tr><tr><td>截距(b)</td><td> $\\pm 2$  nmol/mol</td><td> $\\pm 2$  nmol/mol</td></tr><tr><td>相关系数(r)</td><td> $\\geqslant 0.999$ </td><td> $\\geqslant 0.999$ </td></tr><tr><td rowspan=\"2\">精密度</td><td>20%量程</td><td> $\\leqslant 5\\%$ </td><td> $\\leqslant 5\\%$ </td></tr><tr><td>80%量程</td><td> $\\leqslant 2\\%$ </td><td> $\\leqslant 2\\%$ </td></tr><tr><td rowspan=\"3\">24 h漂移</td><td>零点</td><td> $\\pm 2$  nmol/mol</td><td> $\\pm 2$  nmol/mol</td></tr><tr><td>20%量程</td><td> $\\pm 3$  nmol/mol</td><td> $\\pm 3$  nmol/mol</td></tr><tr><td>80%量程</td><td> $\\pm 5$  nmol/mol</td><td> $\\pm 5$  nmol/mol</td></tr><tr><td colspan=\"2\">响应时间</td><td> $\\leqslant 600$  s(点式监测系统) $\\leqslant 120$  s(开放光程监测系统)</td><td> $\\leqslant 300$  s(点式监测系统) $\\leqslant 120$  s(开放光程监测系统)</td></tr><tr><td colspan=\"2\">氨转换效率</td><td> $\\geqslant 85\\%$ </td><td>/</td></tr><tr><td colspan=\"2\">二氧化氮转换效率</td><td> $\\geqslant 98\\%$ </td><td>/</td></tr><tr><td colspan=\"2\">硫化氢转换效率</td><td>/</td><td> $\\geqslant 90\\%$ </td></tr><tr><td colspan=\"2\">样气口和校准口浓度偏差</td><td> $\\pm 2\\%$ </td><td> $\\pm 2\\%$ </td></tr><tr><td colspan=\"4\">注1:“氨转换效率”和“二氧化氮转换效率”仅针对采用化学发光法原理的氨监测系统。注2:“硫化氢转换效率”仅针对采用紫外荧光法原理的硫化氢监测系统。注3:“样气口和校准口浓度偏差”仅针对区分样气口和校准口的点式监测系统。</td></tr></table>",
+      "caption": "表 2 调试检测性能指标要求",
+      "footnotes": [],
+      "self_ref": "content_list.json#/144"
+    },
+    "tb-a5820fc66ddfe522b424b3e275988eaa-0003": {
+      "id": "tb-a5820fc66ddfe522b424b3e275988eaa-0003",
+      "blockid": "d6c9c8ed838d58bf87ba189f2e0e7acf",
+      "heading": "8.2.1.1 验收检测性能指标",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测技术规范"
+      ],
+      "dimension": [
+        13,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\" colspan=\"2\">检测项目</td><td colspan=\"2\">技术要求</td></tr><tr><td>氨监测系统</td><td>硫化氢监测系统</td></tr><tr><td colspan=\"2\">零点噪声</td><td> $\\leqslant 0.5$  nmol/mol</td><td> $\\leqslant 0.5$  nmol/mol</td></tr><tr><td colspan=\"2\">仪器检出限</td><td> $\\leqslant 1$  nmol/mol</td><td> $\\leqslant 1$  nmol/mol</td></tr><tr><td rowspan=\"2\">示值误差</td><td>20%量程</td><td> $\\pm 5\\%$ </td><td> $\\pm 5\\%$ </td></tr><tr><td>80%量程</td><td> $\\pm 5\\%$ </td><td> $\\pm 5\\%$ </td></tr><tr><td rowspan=\"2\">精密度</td><td>20%量程</td><td> $\\leqslant 5\\%$ </td><td> $\\leqslant 5\\%$ </td></tr><tr><td>80%量程</td><td> $\\leqslant 2\\%$ </td><td> $\\leqslant 2\\%$ </td></tr><tr><td rowspan=\"3\">24 h漂移</td><td>零点</td><td> $\\pm 2$  nmol/mol</td><td> $\\pm 2$  nmol/mol</td></tr><tr><td>20%量程</td><td> $\\pm 3$  nmol/mol</td><td> $\\pm 3$  nmol/mol</td></tr><tr><td>80%量程</td><td> $\\pm 5$  nmol/mol</td><td> $\\pm 5$  nmol/mol</td></tr><tr><td colspan=\"2\">干扰成分影响</td><td> $\\pm 3\\%$  F.S.</td><td>/</td></tr><tr><td colspan=\"4\">注1:“干扰成分影响”仅针对采用化学发光法原理的氨监测系统。注2:“F.S.”表示满量程。</td></tr></table>",
+      "caption": "表 3　验收检测性能指标要求",
+      "footnotes": [],
+      "self_ref": "content_list.json#/332"
+    },
+    "tb-a5820fc66ddfe522b424b3e275988eaa-0004": {
+      "id": "tb-a5820fc66ddfe522b424b3e275988eaa-0004",
+      "blockid": "b45e5cc5251594838cb3a445c6fd8cf8",
+      "heading": "安装调试报告",
+      "parent_headings": [],
+      "dimension": [
+        14,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td>站点名称</td><td colspan=\"3\"></td></tr><tr><td>点位类型</td><td></td><td>建设性质(新、改建)</td><td></td></tr><tr><td>管理单位</td><td colspan=\"3\"></td></tr><tr><td>监测项目</td><td></td><td>监测原理</td><td></td></tr><tr><td>站房面积</td><td></td><td>站房结构</td><td></td></tr><tr><td>采样口距地面高度</td><td></td><td>采样口距站房地面高度</td><td></td></tr><tr><td>测量光束距地面高度</td><td></td><td>测量光束距站房地面高度</td><td></td></tr><tr><td>站点周围情况简述</td><td colspan=\"3\"></td></tr><tr><td>站点地理位置</td><td colspan=\"3\"></td></tr><tr><td>经度</td><td></td><td>纬度</td><td></td></tr><tr><td>站房建设单位</td><td colspan=\"3\"></td></tr><tr><td>仪器供应商</td><td colspan=\"3\"></td></tr><tr><td>建设项目开工日期</td><td colspan=\"3\"></td></tr><tr><td>建设项目试运行起始日期</td><td colspan=\"3\"></td></tr></table>",
+      "caption": "表 A.1　站点基本信息表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/489"
+    },
+    "tb-a5820fc66ddfe522b424b3e275988eaa-0005": {
+      "id": "tb-a5820fc66ddfe522b424b3e275988eaa-0005",
+      "blockid": "b45e5cc5251594838cb3a445c6fd8cf8",
+      "heading": "安装调试报告",
+      "parent_headings": [],
+      "dimension": [
+        22,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td>站点名称</td><td colspan=\"3\"></td></tr><tr><td>站点地理位置</td><td colspan=\"3\"></td></tr><tr><td rowspan=\"2\">项目</td><td rowspan=\"2\">具体要求</td><td colspan=\"2\">是否符合要求</td></tr><tr><td>是(√)</td><td>否(×)</td></tr><tr><td rowspan=\"10\">点位周边情况</td><td>采样口周围、监测光束附近及光束中没有阻碍环境空气流通的高大建筑物、树木或其他障碍物</td><td></td><td></td></tr><tr><td>采样口或监测光束到附近最高障碍物之间的水平距离,是该障碍物到采样口或监测光束垂直距离的两倍以上</td><td></td><td></td></tr><tr><td>监测点或监测光束周围建设情况稳定</td><td></td><td></td></tr><tr><td>监测点地处相对安全和防火措施有保障的区域</td><td></td><td></td></tr><tr><td>监测点附近无强电磁干扰</td><td></td><td></td></tr><tr><td>监测点周围具备稳定可靠的电力供应</td><td></td><td></td></tr><tr><td>监测点的通信线路方便安装和检修</td><td></td><td></td></tr><tr><td>监测点周边有便于出入的车辆通道</td><td></td><td></td></tr><tr><td>监测点周围无污水池、垃圾场等明显污染源</td><td></td><td></td></tr><tr><td>监测点远离振动源</td><td></td><td></td></tr><tr><td rowspan=\"6\">样品采集单元/监测光路情况</td><td>采样口/监测光束离地面高度在3m~20m范围内</td><td></td><td></td></tr><tr><td>采样口周围水平面应保证有270°以上的捕集空间</td><td></td><td></td></tr><tr><td>采样口离建筑物墙壁、屋顶等支撑物表面的距离大于1m</td><td></td><td></td></tr><tr><td>采样口高于实体围栏至少0.5m</td><td></td><td></td></tr><tr><td>开放光程监测系统在进行环境空气质量监测时,监测光束穿过日平均机动车流量少于10000辆的道路上空、对监测结果影响不大的小污染源和少量未达到间隔距离要求的树木或建筑物上空的距离合计不超过光束总光程的10%</td><td></td><td></td></tr><tr><td>监测光束下方或附近不存在茂密林带、河流、池塘等易干扰光束稳定性的因素</td><td></td><td></td></tr><tr><td>其他情况</td><td colspan=\"3\"></td></tr><tr><td>小结</td><td colspan=\"3\"></td></tr></table>",
+      "caption": "表 A.2　站点周边情况表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/492"
+    },
+    "tb-a5820fc66ddfe522b424b3e275988eaa-0006": {
+      "id": "tb-a5820fc66ddfe522b424b3e275988eaa-0006",
+      "blockid": "b45e5cc5251594838cb3a445c6fd8cf8",
+      "heading": "安装调试报告",
+      "parent_headings": [],
+      "dimension": [
+        30,
+        5
+      ],
+      "format": "html",
+      "content": "<table><tr><td>站点名称</td><td colspan=\"4\"></td></tr><tr><td>站点地址</td><td colspan=\"4\"></td></tr><tr><td>监测系统名称及编号</td><td></td><td>安装单位及人员姓名</td><td colspan=\"2\"></td></tr><tr><td rowspan=\"2\">项目</td><td rowspan=\"2\" colspan=\"2\">具体要求</td><td colspan=\"2\">是否符合要求</td></tr><tr><td>是(√)</td><td>否(×)</td></tr><tr><td rowspan=\"9\">一般要求</td><td colspan=\"2\">站房面积不小于 $15\\mathrm{\\;m}^{2}$ ,房顶为平面结构,坡度不大于 $10^{\\circ}$ ,防护栏高度不低于 $1.2\\mathrm{\\;m}$ </td><td></td><td></td></tr><tr><td colspan=\"2\">站房室内地面到天花板高度不小于 $2.5\\mathrm{\\;m}$ </td><td></td><td></td></tr><tr><td colspan=\"2\">站房室内地面距房顶平台高度不大于 $5\\mathrm{\\;m}$ </td><td></td><td></td></tr><tr><td colspan=\"2\">站房配备通往房顶的Z字型梯或旋梯</td><td></td><td></td></tr><tr><td colspan=\"2\">站房有防水、防潮、隔热、保温措施,站房内地面离地表(或建筑物房顶)有 $25\\mathrm{\\;cm}$ 以上距离</td><td></td><td></td></tr><tr><td colspan=\"2\">站房有防雷和防电磁干扰设施</td><td></td><td></td></tr><tr><td colspan=\"2\">使用开放光程监测系统的站房,如果光源发射/接收装置安装在站房内部,墙面预留圆形通孔,通孔直径大于光源发射装置的外径</td><td></td><td></td></tr><tr><td colspan=\"2\">使用开放光程监测系统的站房,光源发射/接收装置固定安装在基座上</td><td></td><td></td></tr><tr><td colspan=\"2\">站房内环境条件符合:温度: $20°C~30°C$ ;相对湿度: $\\leqslant85\\%$ ;大气压: $80kPa~106kPa$ </td><td></td><td></td></tr><tr><td rowspan=\"3\">配电要求</td><td colspan=\"2\">站房供电系统配有电源过压、过载保护装置</td><td></td><td></td></tr><tr><td colspan=\"2\">站房采用三相五线供电,分相使用</td><td></td><td></td></tr><tr><td colspan=\"2\">站房制作保护地线</td><td></td><td></td></tr><tr><td rowspan=\"4\">辅助设施</td><td colspan=\"2\">空调机出风口未正对仪器和采样总管</td><td></td><td></td></tr><tr><td colspan=\"2\">空调具有来电自启动功能</td><td></td><td></td></tr><tr><td colspan=\"2\">站房配备自动灭火装置</td><td></td><td></td></tr><tr><td colspan=\"2\">站房安装带防尘百叶窗的排气风扇</td><td></td><td></td></tr><tr><td rowspan=\"8\">仪器设备安装</td><td colspan=\"2\">仪器安装完成后,后方空间 $\\geqslant0.8\\mathrm{\\;m}$ </td><td></td><td></td></tr><tr><td colspan=\"2\">采样总管竖直安装,与屋顶法兰连接部位密封防水</td><td></td><td></td></tr><tr><td colspan=\"2\">采样总管加热器加热温度控制在 $40°C~50°C$ ,支管具备保温措施</td><td></td><td></td></tr><tr><td colspan=\"2\">点式监测系统分析仪器样气口入口前安装孔径 $\\leqslant5μm$ 的聚四氟乙烯滤膜</td><td></td><td></td></tr><tr><td colspan=\"2\">点式监测系统分析仪器排气口通过管路与站房总排气管连接</td><td></td><td></td></tr><tr><td colspan=\"2\">开放光程监测系统光源发射/接收装置安装在站房内部时,与墙面预留的圆形通孔密封</td><td></td><td></td></tr><tr><td colspan=\"2\">开放光程监测系统光程测定误差在 $1\\mathrm{\\;m}$ 内,最小显示单位不大于 $0.1\\mathrm{\\;m}$ </td><td></td><td></td></tr><tr><td colspan=\"2\">开放光程监测系统光源发射装置和接收装置(或反射镜)之间的监测光束俯仰角不超过 $15°$ ,接收装置(或反射镜)避光安装</td><td></td><td></td></tr><tr><td>其他情况</td><td colspan=\"4\"></td></tr></table>",
+      "caption": "表 A.3　站房建设和监测系统安装情况表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/495"
+    },
+    "tb-a5820fc66ddfe522b424b3e275988eaa-0007": {
+      "id": "tb-a5820fc66ddfe522b424b3e275988eaa-0007",
+      "blockid": "b45e5cc5251594838cb3a445c6fd8cf8",
+      "heading": "安装调试报告",
+      "parent_headings": [],
+      "dimension": [
+        22,
+        7
+      ],
+      "format": "html",
+      "content": "<table><tr><td colspan=\"2\">站点名称</td><td colspan=\"2\"></td><td>监测系统名称及编号</td><td colspan=\"2\"></td></tr><tr><td colspan=\"2\">调试检测日期</td><td colspan=\"2\"></td><td>检测人员</td><td colspan=\"2\"></td></tr><tr><td colspan=\"2\">测试环境</td><td colspan=\"5\">温度: 湿度: 大气压:</td></tr><tr><td colspan=\"2\">监测项目</td><td colspan=\"2\"></td><td>监测原理</td><td colspan=\"2\"></td></tr><tr><td colspan=\"2\">测试用标准物质/标准样品</td><td colspan=\"5\">标准物质/标准样品名称:标准物质/标准样品浓度:生产厂家:编号:有效期:</td></tr><tr><td colspan=\"2\">调试检测项目</td><td>技术要求</td><td>检测结果</td><td colspan=\"2\">是否符合要求(是√、否×)</td><td>备注</td></tr><tr><td colspan=\"2\">零点噪声</td><td></td><td></td><td colspan=\"2\"></td><td></td></tr><tr><td colspan=\"2\">仪器检出限</td><td></td><td></td><td colspan=\"2\"></td><td></td></tr><tr><td rowspan=\"3\">线性度</td><td>斜率(k)</td><td></td><td></td><td colspan=\"2\"></td><td></td></tr><tr><td>截距(b)</td><td></td><td></td><td colspan=\"2\"></td><td></td></tr><tr><td>相关系数(r)</td><td></td><td></td><td colspan=\"2\"></td><td></td></tr><tr><td rowspan=\"2\">精密度</td><td>20%量程</td><td></td><td></td><td colspan=\"2\"></td><td></td></tr><tr><td>80%量程</td><td></td><td></td><td colspan=\"2\"></td><td></td></tr><tr><td rowspan=\"3\">24h漂移</td><td>零点</td><td></td><td></td><td colspan=\"2\"></td><td></td></tr><tr><td>20%量程</td><td></td><td></td><td colspan=\"2\"></td><td></td></tr><tr><td>80%量程</td><td></td><td></td><td colspan=\"2\"></td><td></td></tr><tr><td colspan=\"2\">响应时间</td><td></td><td></td><td colspan=\"2\"></td><td></td></tr><tr><td colspan=\"2\">氨转换效率</td><td></td><td></td><td colspan=\"2\"></td><td></td></tr><tr><td colspan=\"2\">二氧化氮转换效率</td><td></td><td></td><td colspan=\"2\"></td><td></td></tr><tr><td colspan=\"2\">硫化氢转换效率</td><td></td><td></td><td colspan=\"2\"></td><td></td></tr><tr><td colspan=\"2\">样气口和校准口浓度偏差</td><td></td><td></td><td colspan=\"2\"></td><td></td></tr><tr><td colspan=\"2\">调试检测结论</td><td colspan=\"5\"></td></tr></table>",
+      "caption": "表 A.4　监测系统调试检测记录表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/498"
+    },
+    "tb-a5820fc66ddfe522b424b3e275988eaa-0008": {
+      "id": "tb-a5820fc66ddfe522b424b3e275988eaa-0008",
+      "blockid": "b7fa60f964ecb760865d9f8ad302eedd",
+      "heading": "试运行报告",
+      "parent_headings": [],
+      "dimension": [
+        11,
+        5
+      ],
+      "format": "html",
+      "content": "<table><tr><td>站点名称</td><td colspan=\"4\"></td></tr><tr><td>站点地址</td><td colspan=\"4\"></td></tr><tr><td>运维技术人员</td><td></td><td>试运行起止时间</td><td colspan=\"2\"></td></tr><tr><td>故障次数</td><td>时间</td><td>现象描述</td><td>数据故障小时数</td><td>签名</td></tr><tr><td>1</td><td></td><td></td><td></td><td></td></tr><tr><td>2</td><td></td><td></td><td></td><td></td></tr><tr><td>3</td><td></td><td></td><td></td><td></td></tr><tr><td>4</td><td></td><td></td><td></td><td></td></tr><tr><td>5</td><td></td><td></td><td></td><td></td></tr><tr><td>......</td><td></td><td></td><td></td><td></td></tr><tr><td>数据获取率(%)</td><td colspan=\"3\"></td><td></td></tr></table>",
+      "caption": "表 B.1　监测系统试运行情况记录表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/512"
+    },
+    "tb-a5820fc66ddfe522b424b3e275988eaa-0009": {
+      "id": "tb-a5820fc66ddfe522b424b3e275988eaa-0009",
+      "blockid": "7c803bbb57e5e66866c472fc944c7fc1",
+      "heading": "验收报告",
+      "parent_headings": [],
+      "dimension": [
+        17,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td colspan=\"3\">一、基本信息</td></tr><tr><td colspan=\"3\">安装单位:</td></tr><tr><td>安装单位联系人:</td><td colspan=\"2\">联系电话:</td></tr><tr><td>单位地址:</td><td colspan=\"2\">邮政编码:</td></tr><tr><td colspan=\"3\">安装点位:</td></tr><tr><td colspan=\"3\">监测系统名称及编号:</td></tr><tr><td>监测项目:</td><td colspan=\"2\">监测原理:</td></tr><tr><td colspan=\"3\">监测系统生产单位:</td></tr><tr><td colspan=\"3\">监测系统试运行单位:</td></tr><tr><td colspan=\"3\">试运行起止时间:</td></tr><tr><td colspan=\"3\">二、验收支撑材料(是否具有) 是(√)否(×)</td></tr><tr><td colspan=\"2\">监测系统符合《环境空气气态污染物(氨、硫化氢)自动监测系统技术要求及检测方法》(HJ 1394)要求的相关证明材料</td><td></td></tr><tr><td colspan=\"2\">监测系统的安装调试报告、试运行报告</td><td></td></tr><tr><td colspan=\"2\">联网证明</td><td></td></tr><tr><td colspan=\"2\">质量保证和质量控制计划文档</td><td></td></tr><tr><td colspan=\"2\">监测系统技术档案(监测系统说明书、出厂资料、操作和使用制度、设备开箱清单、备品备件清单)</td><td></td></tr><tr><td colspan=\"3\">备注:</td></tr></table>",
+      "caption": "表 C.1　基本情况",
+      "footnotes": [],
+      "self_ref": "content_list.json#/527"
+    },
+    "tb-a5820fc66ddfe522b424b3e275988eaa-0010": {
+      "id": "tb-a5820fc66ddfe522b424b3e275988eaa-0010",
+      "blockid": "7c803bbb57e5e66866c472fc944c7fc1",
+      "heading": "验收报告",
+      "parent_headings": [],
+      "dimension": [
+        20,
+        6
+      ],
+      "format": "html",
+      "content": "<table><tr><td colspan=\"2\">监测系统名称:</td><td colspan=\"4\">监测系统编号:</td></tr><tr><td colspan=\"2\">验收日期:</td><td colspan=\"4\">监测人员:</td></tr><tr><td colspan=\"2\">测试环境</td><td colspan=\"4\">温度: 湿度: 大气压:</td></tr><tr><td colspan=\"2\">监测项目:</td><td colspan=\"4\">监测原理:</td></tr><tr><td colspan=\"2\">测试用标准物质/标准样品</td><td colspan=\"4\">标准物质/标准样品名称:标准物质/标准样品浓度:生产厂家:编号:有效期:</td></tr><tr><td colspan=\"2\">验收检测项目</td><td>技术要求</td><td>检测结果</td><td>是否符合要求(是√、否×)</td><td>备注</td></tr><tr><td colspan=\"2\">零点噪声</td><td></td><td></td><td></td><td></td></tr><tr><td colspan=\"2\">仪器检出限</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan=\"2\">示值误差</td><td>20%量程</td><td></td><td></td><td></td><td></td></tr><tr><td>80%量程</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan=\"2\">精密度</td><td>20%量程</td><td></td><td></td><td></td><td></td></tr><tr><td>80%量程</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan=\"3\">24h漂移</td><td>零点</td><td></td><td></td><td></td><td></td></tr><tr><td>20%量程</td><td></td><td></td><td></td><td></td></tr><tr><td>80%量程</td><td></td><td></td><td></td><td></td></tr><tr><td colspan=\"2\">干扰成分影响</td><td></td><td></td><td></td><td></td></tr><tr><td colspan=\"2\">联网验收</td><td colspan=\"2\">联网证明主要内容:</td><td></td><td></td></tr><tr><td rowspan=\"2\" colspan=\"2\">相关制度、记录和档案验收</td><td colspan=\"2\">质量保证和质量控制计划文档</td><td></td><td></td></tr><tr><td colspan=\"2\">监测系统技术档案(监测系统说明书、出厂资料、操作和使用制度、设备开箱清单、备品备件清单)</td><td></td><td></td></tr><tr><td colspan=\"2\">验收结论</td><td colspan=\"4\">验收组成员(签字):年 月 日</td></tr></table>",
+      "caption": "表 C.2　验收记录表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/530"
+    },
+    "tb-a5820fc66ddfe522b424b3e275988eaa-0011": {
+      "id": "tb-a5820fc66ddfe522b424b3e275988eaa-0011",
+      "blockid": "7c803bbb57e5e66866c472fc944c7fc1",
+      "heading": "验收报告",
+      "parent_headings": [],
+      "dimension": [
+        23,
+        6
+      ],
+      "format": "html",
+      "content": "<table><tr><td colspan=\"6\">站点名称: 运维单位:</td></tr><tr><td>巡检内容</td><td>巡检明细</td><td>__年__月__日</td><td>__年__月__日</td><td>__年__月__日</td><td>__年__月__日</td></tr><tr><td rowspan=\"6\">站房外部及周边巡检</td><td>点位周围道路、供电线路、通讯线路、给排水设施状况</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td></tr><tr><td>站房外围的防护栏、隔离带状况</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td></tr><tr><td>站房周围的杂草和积水及时清除,影响采样或监测光束的遮挡物如树枝等及时处理</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td></tr><tr><td>避雷设施正常</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td></tr><tr><td>站房屋顶完好且无漏雨</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td></tr><tr><td>气象杆完好</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td></tr><tr><td rowspan=\"13\">站房内部巡检</td><td>站房温度、湿度、大气压符合要求</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td></tr><tr><td>站房内部的供电及网络通讯畅通</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td></tr><tr><td>站房排风扇正常运行</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td></tr><tr><td>空调等辅助设施的运行状况正常</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td></tr><tr><td>钢瓶气减压阀压力指示正常</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td></tr><tr><td>标气在有效期内</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td></tr><tr><td>各种运维工具、系统耗材、备件完好齐全</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td></tr><tr><td>自动灭火装置完好齐全</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td></tr><tr><td>站房内有无异常气味</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td></tr><tr><td>各电源插头、线板工作正常</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td></tr><tr><td>采样总管进气、排气正常</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td></tr><tr><td>采样总管防雨措施正常</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td></tr><tr><td>监测系统关键部件正常</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td><td>正常☐异常☐</td></tr><tr><td colspan=\"6\">异常情况及处理说明:</td></tr><tr><td colspan=\"6\">巡检人: 复核人:</td></tr></table>",
+      "caption": "表 D.1　站点巡检记录表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/536"
+    },
+    "tb-a5820fc66ddfe522b424b3e275988eaa-0012": {
+      "id": "tb-a5820fc66ddfe522b424b3e275988eaa-0012",
+      "blockid": "7c803bbb57e5e66866c472fc944c7fc1",
+      "heading": "验收报告",
+      "parent_headings": [],
+      "dimension": [
+        18,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td colspan=\"4\">站点名称:运维单位:</td></tr><tr><td>监测系统名称及编号</td><td></td><td>检查日期</td><td></td></tr><tr><td>监测项目</td><td></td><td>监测原理</td><td></td></tr><tr><td>标气厂家及编号</td><td></td><td>标气浓度</td><td></td></tr><tr><td>标气有效期</td><td></td><td>监测系统量程</td><td></td></tr><tr><td>起始时间</td><td></td><td>结束时间</td><td></td></tr><tr><td>站房温度、湿度、大气压</td><td colspan=\"3\"></td></tr><tr><td>主要技术参数列表</td><td>检查值</td><td>正常范围</td><td>处理记录</td></tr><tr><td>点式监测系统采样流量</td><td></td><td></td><td></td></tr><tr><td>点式监测系统氨/硫化氢转换炉温度</td><td></td><td></td><td></td></tr><tr><td>点式监测系统二氧化氮转换炉温度</td><td></td><td></td><td></td></tr><tr><td>点式监测系统氨/硫化氢转换炉转换系数</td><td></td><td></td><td></td></tr><tr><td>点式监测系统腔室温度</td><td></td><td></td><td></td></tr><tr><td>点式监测系统腔室压力</td><td></td><td></td><td></td></tr><tr><td>光源强度</td><td></td><td></td><td></td></tr><tr><td>......</td><td></td><td></td><td></td></tr><tr><td>备注</td><td colspan=\"3\"></td></tr><tr><td colspan=\"4\">填表人:复核人:</td></tr></table>",
+      "caption": "表 D.2　监测系统运行状况检查记录表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/539"
+    },
+    "tb-a5820fc66ddfe522b424b3e275988eaa-0013": {
+      "id": "tb-a5820fc66ddfe522b424b3e275988eaa-0013",
+      "blockid": "7c803bbb57e5e66866c472fc944c7fc1",
+      "heading": "验收报告",
+      "parent_headings": [],
+      "dimension": [
+        15,
+        5
+      ],
+      "format": "html",
+      "content": "<table><tr><td colspan=\"5\">站点名称:运维单位:</td></tr><tr><td>序号</td><td>巡查内容</td><td>维护频率要求</td><td>维护时间</td><td>巡检人(签字)</td></tr><tr><td>1</td><td>检查监测系统全流程分析过程,检查分析过程中各主要技术参数是否在仪器设定的合理范围内</td><td>每周1次</td><td></td><td></td></tr><tr><td>2</td><td>检查点式监测系统内部滤光片、限流孔、反应室、气路管路、采样泵、仪器散热风扇等是否异常、脏污</td><td>每周1次</td><td></td><td></td></tr><tr><td>3</td><td>检查开放光程监测系统光源、灯罩、发射装置和接收装置前窗玻璃窗镜、反射镜、光源风扇等是否异常、脏污</td><td>每周1次</td><td></td><td></td></tr><tr><td>4</td><td>检查点式监测系统采样总管进气、排气是否正常,检查采样支管是否存在冷凝水,检查采样总管加热温度是否设置在40°C~50°C,检查采样抽气风机是否正常工作</td><td>每周1次</td><td></td><td></td></tr><tr><td>5</td><td>检查点式监测系统样气口入口前滤膜是否需要更换</td><td>每周1次</td><td></td><td></td></tr><tr><td>6</td><td>检查监测系统零气发生器、动态校准仪、空气压缩机是否工作正常</td><td>每周1次</td><td></td><td></td></tr><tr><td>7</td><td>检查空气压缩机储气瓶中是否有积水</td><td>每周1次</td><td></td><td></td></tr><tr><td>8</td><td>检查零气发生器净化材料是否需要更换</td><td>每周1次</td><td></td><td></td></tr><tr><td>9</td><td>检查零气发生器干燥剂是否需要更换(蓝色部分剩1/3~1/4时应及时更换)</td><td>每周1次</td><td></td><td></td></tr><tr><td>10</td><td>检查监测系统是否出现数据中断、通讯故障等异常情况,监测系统时间、数采仪时间和北京时间是否同步(偏差小于1min)</td><td>每周1次</td><td></td><td></td></tr><tr><td>11</td><td>检查点式监测系统采样支管及分析仪器内部气路气密性</td><td>每月1次</td><td></td><td></td></tr><tr><td>......</td><td></td><td></td><td></td><td></td></tr><tr><td colspan=\"5\">异常情况:填表人:复核人:</td></tr></table>",
+      "caption": "表 D.3　监测系统维护记录表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/542"
+    },
+    "tb-a5820fc66ddfe522b424b3e275988eaa-0014": {
+      "id": "tb-a5820fc66ddfe522b424b3e275988eaa-0014",
+      "blockid": "7c803bbb57e5e66866c472fc944c7fc1",
+      "heading": "验收报告",
+      "parent_headings": [],
+      "dimension": [
+        21,
+        8
+      ],
+      "format": "html",
+      "content": "<table><tr><td colspan=\"2\">监测系统名称及编号</td><td colspan=\"2\"></td><td colspan=\"2\">校准日期</td><td colspan=\"2\"></td></tr><tr><td colspan=\"2\">监测项目</td><td colspan=\"2\"></td><td colspan=\"2\">监测原理</td><td colspan=\"2\"></td></tr><tr><td colspan=\"2\">标气生产厂家及编号</td><td colspan=\"2\"></td><td colspan=\"2\">钢瓶气标气浓度</td><td colspan=\"2\"></td></tr><tr><td colspan=\"2\">标气有效期</td><td colspan=\"2\"></td><td colspan=\"2\">监测系统量程</td><td colspan=\"2\"></td></tr><tr><td colspan=\"2\">起始时间</td><td colspan=\"2\"></td><td colspan=\"2\">结束时间</td><td colspan=\"2\"></td></tr><tr><td colspan=\"2\">站房温度、湿度、大气压</td><td colspan=\"6\"></td></tr><tr><td rowspan=\"8\">多点校准</td><td>校准点</td><td>开始时间</td><td colspan=\"2\">结束时间</td><td colspan=\"2\">标气浓度</td><td>读数</td></tr><tr><td>零气</td><td></td><td colspan=\"2\"></td><td colspan=\"2\"></td><td></td></tr><tr><td>20%量程</td><td></td><td colspan=\"2\"></td><td colspan=\"2\"></td><td></td></tr><tr><td>40%量程</td><td></td><td colspan=\"2\"></td><td colspan=\"2\"></td><td></td></tr><tr><td>60%量程</td><td></td><td colspan=\"2\"></td><td colspan=\"2\"></td><td></td></tr><tr><td>80%量程</td><td></td><td colspan=\"2\"></td><td colspan=\"2\"></td><td></td></tr><tr><td>满量程</td><td></td><td colspan=\"2\"></td><td colspan=\"2\"></td><td></td></tr><tr><td>回归曲线</td><td colspan=\"3\"> $(Y=kX+b)$  k=____</td><td colspan=\"3\">b=____ r=____</td></tr><tr><td rowspan=\"5\">两点校准</td><td>校准点</td><td>开始时间</td><td colspan=\"2\">结束时间</td><td colspan=\"2\">标气浓度</td><td>读数</td></tr><tr><td>零点</td><td></td><td colspan=\"2\"></td><td colspan=\"2\"></td><td></td></tr><tr><td>80%量程</td><td></td><td colspan=\"2\"></td><td colspan=\"2\"></td><td></td></tr><tr><td>浓度修正斜率</td><td colspan=\"6\"></td></tr><tr><td>浓度修正截距</td><td colspan=\"6\"></td></tr><tr><td colspan=\"8\">备注</td></tr><tr><td colspan=\"8\">填表人: 复核人:</td></tr></table>",
+      "caption": "表 D.4　监测系统校准记录表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/545"
+    },
+    "tb-a5820fc66ddfe522b424b3e275988eaa-0015": {
+      "id": "tb-a5820fc66ddfe522b424b3e275988eaa-0015",
+      "blockid": "7c803bbb57e5e66866c472fc944c7fc1",
+      "heading": "验收报告",
+      "parent_headings": [],
+      "dimension": [
+        20,
+        8
+      ],
+      "format": "html",
+      "content": "<table><tr><td colspan=\"8\">站点名称:运维单位:</td></tr><tr><td colspan=\"2\">监测系统名称</td><td colspan=\"3\"></td><td>监测系统编号</td><td colspan=\"2\"></td></tr><tr><td colspan=\"2\">监测项目</td><td colspan=\"3\"></td><td>监测原理</td><td colspan=\"2\"></td></tr><tr><td colspan=\"2\">站房温度、湿度、大气压</td><td colspan=\"6\"></td></tr><tr><td colspan=\"2\">标准流量计型号及编号</td><td colspan=\"3\"></td><td>标准流量计有效期</td><td colspan=\"2\"></td></tr><tr><td colspan=\"2\">起始时间</td><td colspan=\"3\"></td><td>结束时间</td><td colspan=\"2\"></td></tr><tr><td colspan=\"2\">质控检查频率</td><td colspan=\"3\"></td><td>质控指标</td><td colspan=\"2\"></td></tr><tr><td>气体流路</td><td>设定值(mL/min)</td><td>显示值(mL/min)</td><td>标准流量计显示值(mL/min)</td><td>相对误差(%)</td><td>是否合格</td><td>是否调整</td><td>调整后相对误差(%)</td></tr><tr><td rowspan=\"3\">仪器采样流量</td><td></td><td></td><td></td><td rowspan=\"3\"></td><td rowspan=\"3\">是否</td><td rowspan=\"3\">是否</td><td rowspan=\"3\"></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td rowspan=\"3\">动态校准仪质量流量计1</td><td></td><td></td><td></td><td rowspan=\"3\"></td><td rowspan=\"3\">是否</td><td rowspan=\"3\">是否</td><td rowspan=\"3\"></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td rowspan=\"3\">动态校准仪质量流量计2</td><td></td><td></td><td></td><td rowspan=\"3\"></td><td rowspan=\"3\">是否</td><td rowspan=\"3\">是否</td><td rowspan=\"3\"></td></tr><tr><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td></tr><tr><td>......</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan=\"8\">填表人:</td></tr><tr><td colspan=\"8\">复核人:</td></tr></table>",
+      "caption": "表 D.5　监测系统性能检查（流量检查）记录表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/548"
+    },
+    "tb-a5820fc66ddfe522b424b3e275988eaa-0016": {
+      "id": "tb-a5820fc66ddfe522b424b3e275988eaa-0016",
+      "blockid": "7c803bbb57e5e66866c472fc944c7fc1",
+      "heading": "验收报告",
+      "parent_headings": [],
+      "dimension": [
+        16,
+        7
+      ],
+      "format": "html",
+      "content": "<table><tr><td>监测系统名称及编号</td><td colspan=\"2\"></td><td colspan=\"2\">测试日期</td><td colspan=\"2\"></td></tr><tr><td>监测项目</td><td colspan=\"2\"></td><td colspan=\"2\">监测原理</td><td colspan=\"2\"></td></tr><tr><td>标气厂家及编号</td><td colspan=\"2\"></td><td colspan=\"2\">钢瓶气标气浓度</td><td colspan=\"2\"></td></tr><tr><td>标气有效期</td><td colspan=\"2\"></td><td colspan=\"2\">监测系统量程</td><td colspan=\"2\"></td></tr><tr><td>起始时间</td><td colspan=\"2\"></td><td colspan=\"2\">结束时间</td><td colspan=\"2\"></td></tr><tr><td>站房温度、湿度、大气压</td><td colspan=\"6\"></td></tr><tr><td>20%量程标气浓度</td><td colspan=\"6\"></td></tr><tr><td>20%量程仪器读数</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>20%量程示值误差</td><td colspan=\"2\"></td><td>技术要求</td><td></td><td colspan=\"2\">测试结果:合格☐不合格□</td></tr><tr><td>20%量程精密度</td><td colspan=\"2\"></td><td>技术要求</td><td></td><td colspan=\"2\">测试结果:合格☐不合格□</td></tr><tr><td>80%量程标气浓度</td><td colspan=\"6\"></td></tr><tr><td>80%量程仪器读数</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>80%量程示值误差</td><td colspan=\"2\"></td><td>技术要求</td><td></td><td colspan=\"2\">测试结果:合格☐不合格□</td></tr><tr><td>80%量程精密度</td><td colspan=\"2\"></td><td>技术要求</td><td></td><td colspan=\"2\">测试结果:合格☐不合格□</td></tr><tr><td colspan=\"7\">备注:</td></tr><tr><td colspan=\"7\">填表人: 复核人:</td></tr></table>",
+      "caption": "表 D.6　监测系统性能检查（精密度、示值误差）记录表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/551"
+    },
+    "tb-a5820fc66ddfe522b424b3e275988eaa-0017": {
+      "id": "tb-a5820fc66ddfe522b424b3e275988eaa-0017",
+      "blockid": "7c803bbb57e5e66866c472fc944c7fc1",
+      "heading": "验收报告",
+      "parent_headings": [],
+      "dimension": [
+        17,
+        7
+      ],
+      "format": "html",
+      "content": "<table><tr><td>监测系统名称及编号</td><td colspan=\"2\"></td><td colspan=\"2\">测试日期</td><td colspan=\"2\"></td></tr><tr><td>监测项目</td><td colspan=\"2\"></td><td colspan=\"2\">监测原理</td><td colspan=\"2\"></td></tr><tr><td>标气厂家及编号</td><td colspan=\"2\">NO: $NH_3$ : $SO_2$ : $H_2S$ :</td><td colspan=\"2\">钢瓶气标气浓度</td><td colspan=\"2\">NO: $NH_3$ : $SO_2$ : $H_2S$ :</td></tr><tr><td>标气有效期</td><td colspan=\"2\">NO: $NH_3$ : $SO_2$ : $H_2S$ :</td><td colspan=\"2\">监测系统量程</td><td colspan=\"2\"></td></tr><tr><td>起始时间</td><td colspan=\"2\"></td><td colspan=\"2\">结束时间</td><td colspan=\"2\"></td></tr><tr><td>站房温度、湿度、大气压</td><td colspan=\"6\"></td></tr><tr><td rowspan=\"4\">氨转换效率</td><td>测试次数</td><td>氨读数</td><td>一氧化氮读数</td><td>氨/一氧化氮读数</td><td>转换效率</td><td>技术要求</td></tr><tr><td>第一次</td><td></td><td></td><td></td><td rowspan=\"3\"></td><td rowspan=\"3\"></td></tr><tr><td>第二次</td><td></td><td></td><td></td></tr><tr><td>第三次</td><td></td><td></td><td></td></tr><tr><td rowspan=\"4\">硫化氢转换效率</td><td>测试次数</td><td>硫化氢读数</td><td>二氧化硫读数</td><td>硫化氢/二氧化硫读数</td><td>转换效率</td><td>技术要求</td></tr><tr><td>第一次</td><td></td><td></td><td></td><td rowspan=\"3\"></td><td rowspan=\"3\"></td></tr><tr><td>第二次</td><td></td><td></td><td></td></tr><tr><td>第三次</td><td></td><td></td><td></td></tr><tr><td>测试结果</td><td colspan=\"3\">合格□</td><td colspan=\"3\">不合格□</td></tr><tr><td colspan=\"7\">备注:</td></tr><tr><td colspan=\"7\">填表人: 复核人:</td></tr></table>",
+      "caption": "表 D.7　监测系统性能检查（氨/硫化氢转换效率）记录表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/554"
+    },
+    "tb-a5820fc66ddfe522b424b3e275988eaa-0018": {
+      "id": "tb-a5820fc66ddfe522b424b3e275988eaa-0018",
+      "blockid": "7c803bbb57e5e66866c472fc944c7fc1",
+      "heading": "验收报告",
+      "parent_headings": [],
+      "dimension": [
+        19,
+        7
+      ],
+      "format": "html",
+      "content": "<table><tr><td>监测系统名称及编号</td><td colspan=\"3\"></td><td colspan=\"2\">测试日期</td><td></td></tr><tr><td>监测项目</td><td colspan=\"3\"></td><td colspan=\"2\">监测原理</td><td></td></tr><tr><td>标气厂家及编号</td><td colspan=\"3\">NO2:NO:</td><td colspan=\"2\">钢瓶气标气浓度</td><td>NO2:NO:</td></tr><tr><td>标气有效期</td><td colspan=\"3\">NO2:NO:</td><td colspan=\"2\">监测系统量程</td><td></td></tr><tr><td>起始时间</td><td colspan=\"3\"></td><td colspan=\"2\">结束时间</td><td></td></tr><tr><td>站房温度、湿度、大气压</td><td colspan=\"6\"></td></tr><tr><td rowspan=\"3\">使用二氧化氮标准气体测试(NO2标气浓度:)</td><td colspan=\"2\">读数</td><td>第一次</td><td>第二次</td><td>第三次</td><td>转换效率</td></tr><tr><td colspan=\"2\">NO2</td><td></td><td></td><td></td><td rowspan=\"2\"></td></tr><tr><td colspan=\"2\">平均值</td><td colspan=\"3\"></td></tr><tr><td rowspan=\"7\">使用一氧化氮标准气体和臭氧发生器测试</td><td rowspan=\"3\">未启动臭氧发生器</td><td>读数</td><td>第一次</td><td>第二次</td><td>第三次</td><td>平均值</td></tr><tr><td>NO</td><td></td><td></td><td></td><td></td></tr><tr><td>NOx</td><td></td><td></td><td></td><td></td></tr><tr><td rowspan=\"3\">启动臭氧发生器</td><td>读数</td><td>第一次</td><td>第二次</td><td>第三次</td><td>平均值</td></tr><tr><td>NO</td><td></td><td></td><td></td><td></td></tr><tr><td>NOx</td><td></td><td></td><td></td><td></td></tr><tr><td colspan=\"2\"></td><td colspan=\"3\">转换效率</td><td></td></tr><tr><td>技术要求</td><td colspan=\"3\"></td><td colspan=\"2\">测试结果</td><td>合格☐ 不合格☐</td></tr><tr><td colspan=\"7\">备注:</td></tr><tr><td colspan=\"7\">填表人: 复核人:</td></tr></table>",
+      "caption": "表 D.8　监测系统性能检查（二氧化氮转换效率）记录表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/557"
+    },
+    "tb-a5820fc66ddfe522b424b3e275988eaa-0019": {
+      "id": "tb-a5820fc66ddfe522b424b3e275988eaa-0019",
+      "blockid": "7c803bbb57e5e66866c472fc944c7fc1",
+      "heading": "验收报告",
+      "parent_headings": [],
+      "dimension": [
+        14,
+        6
+      ],
+      "format": "html",
+      "content": "<table><tr><td>监测系统名称及编号</td><td colspan=\"2\"></td><td colspan=\"2\">测试日期</td><td></td></tr><tr><td>监测项目</td><td colspan=\"2\"></td><td colspan=\"2\">监测原理</td><td></td></tr><tr><td>标气厂家及编号</td><td colspan=\"2\"> $NO_2$ :</td><td colspan=\"2\">钢瓶气标气浓度</td><td> $NO_2$ :</td></tr><tr><td>标气有效期</td><td colspan=\"2\"> $NO_2$ :</td><td colspan=\"2\">监测系统量程</td><td></td></tr><tr><td>起始时间</td><td colspan=\"2\"></td><td colspan=\"2\">结束时间</td><td></td></tr><tr><td>站房温度、湿度、大气压</td><td colspan=\"5\"></td></tr><tr><td rowspan=\"3\">通入零气</td><td>读数</td><td>第一次</td><td>第二次</td><td>第三次</td><td>干扰成分影响</td></tr><tr><td> $NH_3$ </td><td></td><td></td><td></td><td rowspan=\"4\"></td></tr><tr><td>平均值</td><td colspan=\"3\"></td></tr><tr><td rowspan=\"2\">通入200 nmol/mol  $NO_2$ </td><td> $NH_3$ </td><td></td><td></td><td></td></tr><tr><td>平均值</td><td colspan=\"3\"></td></tr><tr><td>技术要求</td><td></td><td colspan=\"2\">测试结果</td><td colspan=\"2\">合格☐ 不合格□</td></tr><tr><td colspan=\"6\">备注:</td></tr><tr><td colspan=\"5\">填表人: 复核人:</td><td></td></tr></table>",
+      "caption": "表 D.9　监测系统性能检查（干扰成分影响）记录表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/560"
+    },
+    "tb-a5820fc66ddfe522b424b3e275988eaa-0020": {
+      "id": "tb-a5820fc66ddfe522b424b3e275988eaa-0020",
+      "blockid": "7c803bbb57e5e66866c472fc944c7fc1",
+      "heading": "验收报告",
+      "parent_headings": [],
+      "dimension": [
+        13,
+        5
+      ],
+      "format": "html",
+      "content": "<table><tr><td colspan=\"2\">监测系统名称及编号</td><td></td><td>测试日期</td><td></td></tr><tr><td colspan=\"2\">监测项目</td><td></td><td>监测原理</td><td></td></tr><tr><td colspan=\"2\">标气厂家及编号</td><td></td><td>钢瓶气标气浓度</td><td></td></tr><tr><td colspan=\"2\">标气有效期</td><td></td><td>监测系统原理</td><td></td></tr><tr><td colspan=\"2\">起始时间</td><td></td><td>结束时间</td><td></td></tr><tr><td colspan=\"5\">站房温度、湿度、大气压</td></tr><tr><td>通入标气浓度</td><td>读数</td><td>第一次</td><td>第二次</td><td>第三次</td></tr><tr><td></td><td> $SO_{2}$ </td><td></td><td></td><td></td></tr><tr><td colspan=\"2\">平均值</td><td colspan=\"3\"></td></tr><tr><td colspan=\"2\">涤除效率</td><td colspan=\"3\"></td></tr><tr><td colspan=\"2\">技术要求</td><td></td><td>测试结果</td><td>合格☐ 不合格□</td></tr><tr><td colspan=\"5\">备注</td></tr><tr><td colspan=\"5\">填表人: 复核人:</td></tr></table>",
+      "caption": "表 D.10　监测系统性能检查（二氧化硫涤除器涤除效率）记录表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/561"
+    },
+    "tb-a5820fc66ddfe522b424b3e275988eaa-0021": {
+      "id": "tb-a5820fc66ddfe522b424b3e275988eaa-0021",
+      "blockid": "7c803bbb57e5e66866c472fc944c7fc1",
+      "heading": "验收报告",
+      "parent_headings": [],
+      "dimension": [
+        18,
+        5
+      ],
+      "format": "html",
+      "content": "<table><tr><td colspan=\"2\">监测系统名称及编号</td><td></td><td>测试日期</td><td></td></tr><tr><td colspan=\"2\">监测项目</td><td></td><td>监测原理</td><td></td></tr><tr><td colspan=\"2\">标气厂家及编号</td><td></td><td>钢瓶气标气浓度</td><td></td></tr><tr><td colspan=\"2\">标气有效期</td><td></td><td>监测系统量程</td><td></td></tr><tr><td colspan=\"2\">起始时间</td><td></td><td>结束时间</td><td></td></tr><tr><td colspan=\"2\">站房温度、湿度、大气压</td><td colspan=\"3\"></td></tr><tr><td>通入标气浓度点</td><td>标气浓度</td><td>开始时间</td><td>结束时间</td><td>读数</td></tr><tr><td>零气</td><td></td><td></td><td></td><td></td></tr><tr><td>20%量程</td><td></td><td></td><td></td><td></td></tr><tr><td>40%量程</td><td></td><td></td><td></td><td></td></tr><tr><td>60%量程</td><td></td><td></td><td></td><td></td></tr><tr><td>80%量程</td><td></td><td></td><td></td><td></td></tr><tr><td>满量程</td><td></td><td></td><td></td><td></td></tr><tr><td>回归曲线</td><td colspan=\"3\">(Y=kX-b) k=____ b=____ r=____</td><td></td></tr><tr><td>技术要求</td><td colspan=\"3\"></td><td></td></tr><tr><td>测试结果</td><td colspan=\"2\">合格□</td><td colspan=\"2\">不合格□</td></tr><tr><td>备注</td><td colspan=\"3\"></td><td></td></tr><tr><td colspan=\"5\">填表人: 复核人:</td></tr></table>",
+      "caption": "表 D.11　监测系统性能检查（线性度）记录表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/564"
+    },
+    "tb-a5820fc66ddfe522b424b3e275988eaa-0022": {
+      "id": "tb-a5820fc66ddfe522b424b3e275988eaa-0022",
+      "blockid": "7c803bbb57e5e66866c472fc944c7fc1",
+      "heading": "验收报告",
+      "parent_headings": [],
+      "dimension": [
+        9,
+        6
+      ],
+      "format": "html",
+      "content": "<table><tr><td colspan=\"6\">站点名称: 运维单位:</td></tr><tr><td>序号</td><td>仪器/设备名称</td><td>检定(或校准)时间</td><td>检定(或校准)单位</td><td>有效期</td><td>备注</td></tr><tr><td>1</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>2</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>3</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>4</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>5</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan=\"6\">备注:</td></tr><tr><td colspan=\"6\">填表人: 复核人:</td></tr></table>",
+      "caption": "表 D.12 计量器具检定/校准记录表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/565"
+    },
+    "tb-a5820fc66ddfe522b424b3e275988eaa-0023": {
+      "id": "tb-a5820fc66ddfe522b424b3e275988eaa-0023",
+      "blockid": "7c803bbb57e5e66866c472fc944c7fc1",
+      "heading": "验收报告",
+      "parent_headings": [],
+      "dimension": [
+        22,
+        8
+      ],
+      "format": "html",
+      "content": "<table><tr><td colspan=\"8\">站点名称:运维单位:</td></tr><tr><td>序号</td><td>标准物质/标准样品名称</td><td>编号</td><td>购买时间</td><td>证书</td><td>不确定度</td><td>有效期</td><td>备注</td></tr><tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>6</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan=\"8\">备注:</td></tr><tr><td colspan=\"8\">填表人:复核人:</td></tr><tr><td colspan=\"8\">表D.14 监测系统故障检修记录表</td></tr><tr><td colspan=\"8\">站点名称:运维单位:</td></tr><tr><td colspan=\"2\">检修监测系统名称及编号</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan=\"2\">检修时间</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan=\"2\">故障现象</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan=\"2\">故障原因和检修过程</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan=\"2\">更换零件名称</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan=\"2\">更换后校准曲线</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan=\"2\">更换后性能测试情况</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan=\"8\">备注:</td></tr><tr><td colspan=\"8\">填表人:复核人:</td></tr></table>",
+      "caption": "表 D.13　标准物质/标准样品记录表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/568"
+    },
+    "tb-a5820fc66ddfe522b424b3e275988eaa-0024": {
+      "id": "tb-a5820fc66ddfe522b424b3e275988eaa-0024",
+      "blockid": "7c803bbb57e5e66866c472fc944c7fc1",
+      "heading": "验收报告",
+      "parent_headings": [],
+      "dimension": [
+        7,
+        6
+      ],
+      "format": "html",
+      "content": "<table><tr><td colspan=\"6\">站点名称: 运维单位:</td></tr><tr><td>序号</td><td>更换项目</td><td>更换原因</td><td>更换时间</td><td>记录人</td><td>备注</td></tr><tr><td>1</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>2</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>3</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td colspan=\"6\">备注:</td></tr><tr><td colspan=\"6\">填表人: 复核人:</td></tr></table>",
+      "caption": "表 D.15　监测系统/部件更换记录表",
+      "footnotes": [],
+      "self_ref": "content_list.json#/571"
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "verdict": "accepted bounded PG live batch",
+  "artifact_hashes_checked": 42,
+  "identity_matched": true,
+  "pg_issued": 556,
+  "max_leg_pg": 128,
+  "non_pg_issued": 0,
+  "reviewer_backend_requests": 0,
+  "rows": [
+    {
+      "query_id": "file-enum-002",
+      "count": 5,
+      "items": [],
+      "expected_doc_ids": [
+        "doc-507bc40d1d6395c6932d2201e8483504",
+        "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+        "doc-b64a60d5251a9101f3d8f050f6933216"
+      ],
+      "missing": [],
+      "extra": [],
+      "pg_issued": 91
+    },
+    {
+      "query_id": "file-enum-005",
+      "count": 3,
+      "items": [],
+      "expected_doc_ids": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "doc-9bb11e5d3809e590259aef28fb61062b",
+        "doc-b423a0e3331541588988fd34496c349d"
+      ],
+      "missing": [],
+      "extra": [],
+      "pg_issued": 111
+    },
+    {
+      "query_id": "prose-enum-002",
+      "count": 2,
+      "items": [
+        {
+          "clause": "4.1.1",
+          "text_len": 31,
+          "raw_declared_span_full_text_equal_after_outer_trim": true,
+          "whole_gold_required_body_present": true,
+          "published_text_exact_gold_body": false,
+          "source_unit_sha256": "ad46c529a5fa59a157758b7dc9c4f3950e8baac0d54dd8b0fe09781ffcc7c13b",
+          "unit_id": "ef6868c7bc693df8da996208421b815d"
+        },
+        {
+          "clause": "4.1.2",
+          "text_len": 128,
+          "raw_declared_span_full_text_equal_after_outer_trim": true,
+          "whole_gold_required_body_present": true,
+          "published_text_exact_gold_body": false,
+          "source_unit_sha256": "ad46c529a5fa59a157758b7dc9c4f3950e8baac0d54dd8b0fe09781ffcc7c13b",
+          "unit_id": "ef6868c7bc693df8da996208421b815d"
+        }
+      ],
+      "pg_issued": 128
+    },
+    {
+      "query_id": "prose-enum-003",
+      "count": 4,
+      "items": [
+        {
+          "clause": "4.3.1",
+          "text_len": 62,
+          "raw_declared_span_full_text_equal_after_outer_trim": true,
+          "whole_gold_required_body_present": true,
+          "published_text_exact_gold_body": false,
+          "source_unit_sha256": "7ff986aed318b42ea5139ee7985c80a70bc265568b0b89dbe009eab206b5e6f1",
+          "unit_id": "a00e1705c43ffacbca6c408197c6bac9"
+        },
+        {
+          "clause": "4.3.2",
+          "text_len": 32,
+          "raw_declared_span_full_text_equal_after_outer_trim": true,
+          "whole_gold_required_body_present": true,
+          "published_text_exact_gold_body": false,
+          "source_unit_sha256": "7ff986aed318b42ea5139ee7985c80a70bc265568b0b89dbe009eab206b5e6f1",
+          "unit_id": "a00e1705c43ffacbca6c408197c6bac9"
+        },
+        {
+          "clause": "4.3.3",
+          "text_len": 27,
+          "raw_declared_span_full_text_equal_after_outer_trim": true,
+          "whole_gold_required_body_present": true,
+          "published_text_exact_gold_body": false,
+          "source_unit_sha256": "7ff986aed318b42ea5139ee7985c80a70bc265568b0b89dbe009eab206b5e6f1",
+          "unit_id": "a00e1705c43ffacbca6c408197c6bac9"
+        },
+        {
+          "clause": "4.3.4",
+          "text_len": 53,
+          "raw_declared_span_full_text_equal_after_outer_trim": true,
+          "whole_gold_required_body_present": true,
+          "published_text_exact_gold_body": false,
+          "source_unit_sha256": "7ff986aed318b42ea5139ee7985c80a70bc265568b0b89dbe009eab206b5e6f1",
+          "unit_id": "a00e1705c43ffacbca6c408197c6bac9"
+        }
+      ],
+      "pg_issued": 118
+    },
+    {
+      "query_id": "prose-enum-006",
+      "count": 1,
+      "items": [
+        {
+          "clause": "4.2",
+          "text_len": 48,
+          "raw_declared_span_full_text_equal_after_outer_trim": true,
+          "whole_gold_required_body_present": true,
+          "published_text_exact_gold_body": true,
+          "source_unit_sha256": "0b624eb874ed9ed19f99d703375209cc6f90b3a8885c2f1c1a8b3c34be78b88d",
+          "unit_id": "7f9dddaf02f372cc7d329f4678c46fbc"
+        }
+      ],
+      "pg_issued": 108
+    }
+  ],
+  "gold_wording_note": "Required bodies all present; full published text need not equal gold body: clause prefixes/periods and one source GB footer are retained. Do not label them all exact-gold-body strings."
+}

@@ -1,0 +1,942 @@
+{
+ "task": "5.3 two-path candidate fusion (read-only, guarded)",
+ "started_at": "2026-10-08T13:18:17+0800",
+ "pg_only_switch": false,
+ "frozen_contract": {
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8"
+ },
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "results": [
+  {
+   "query_id": "fact-001",
+   "query": "GB 3095-2012 中二氧化硫的年平均浓度二级限值是多少？",
+   "workspace": "default",
+   "pg": {
+    "status": "ok",
+    "search_id": "872d689343a9cbb6",
+    "catalog_snapshot_id": "4919b3938ad93747",
+    "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "discovery_total": 2,
+    "discovery_captured": true,
+    "chunks": 1,
+    "stale_state": "current",
+    "notes": [],
+    "trace_stages": [
+     "code_exact",
+     "keyword_and"
+    ],
+    "sql_statements": {
+     "fetchrow": 8,
+     "fetch": 11
+    },
+    "trace": [
+     {
+      "stage": "code_exact",
+      "code": "GB3095",
+      "version_requested": "2012",
+      "strict": false,
+      "hits": 2,
+      "version_matched": 1,
+      "selected_versions": [
+       "2012"
+      ],
+      "selected_docs": [
+       "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      ]
+     },
+     {
+      "stage": "keyword_and",
+      "tsquery": "'二氧化硫' & '年平均' & '浓度' & '二级' & '限值'",
+      "top_k": 20,
+      "restricted_to_code_docs": [
+       "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      ],
+      "doc_hits": 0,
+      "chunk_hits": 1,
+      "elapsed_ms": 3
+     }
+    ]
+   },
+   "local": {
+    "ran": true,
+    "skipped_reason": null,
+    "error": null,
+    "receipts": {
+     "query_id": "fact-001",
+     "call_records": [
+      {
+       "service": "llm",
+       "operation": "keyword_extraction",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 1469,
+       "result": {
+        "chars": 121
+       },
+       "target": null
+      },
+      {
+       "service": "embedding",
+       "operation": "openai_embed",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 185,
+       "result": {
+        "shape": [
+         1,
+         2560
+        ]
+       },
+       "target": null
+      },
+      {
+       "service": "qdrant",
+       "operation": "query_points",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 22,
+       "result": {
+        "points": 10
+       },
+       "target": "entities"
+      },
+      {
+       "service": "neo4j",
+       "operation": "session.run",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 19,
+       "result": null,
+       "target": null
+      },
+      {
+       "service": "neo4j",
+       "operation": "session.run",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 19,
+       "result": null,
+       "target": null
+      },
+      {
+       "service": "neo4j",
+       "operation": "session.run",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 6,
+       "result": null,
+       "target": null
+      },
+      {
+       "service": "neo4j",
+       "operation": "session.run",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 4,
+       "result": null,
+       "target": null
+      },
+      {
+       "service": "neo4j",
+       "operation": "session.run",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 5,
+       "result": null,
+       "target": null
+      },
+      {
+       "service": "embedding",
+       "operation": "openai_embed",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 128,
+       "result": {
+        "shape": [
+         1,
+         2560
+        ]
+       },
+       "target": null
+      },
+      {
+       "service": "qdrant",
+       "operation": "retrieve",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 36,
+       "result": {
+        "items": 22,
+        "requested": 22
+       },
+       "target": "chunks"
+      },
+      {
+       "service": "pg",
+       "operation": "readonly_select_chunks",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 9,
+       "result": {
+        "items": 22
+       },
+       "target": null
+      },
+      {
+       "service": "pg",
+       "operation": "readonly_select_chunks",
+       "status": "success",
+       "error": null,
+       "elapsed_ms": 6,
+       "result": {
+        "items": 10
+       },
+       "target": null
+      }
+     ],
+     "by_service": {
+      "llm": {
+       "attempt": 1,
+       "success": 1,
+       "failure": 0
+      },
+      "embedding": {
+       "attempt": 2,
+       "success": 2,
+       "failure": 0
+      },
+      "qdrant": {
+       "attempt": 2,
+       "success": 2,
+       "failure": 0
+      },
+      "neo4j": {
+       "attempt": 5,
+       "success": 5,
+       "failure": 0
+      },
+      "pg": {
+       "attempt": 2,
+       "success": 2,
+       "failure": 0
+      }
+     },
+     "groups": {
+      "neo4j": {
+       "attempt": 1,
+       "success": 1,
+       "failure": 0
+      },
+      "pg": {
+       "attempt": 2,
+       "success": 2,
+       "failure": 0
+      }
+     },
+     "degraded": []
+    },
+    "sorting_sources": {
+     "chunk_pick_vectors": {
+      "expected_chunks": 9,
+      "observer_bound": true,
+      "observed_calls": [
+       {
+        "stage": "entities",
+        "collection": "chunks",
+        "vectors_requested": 22,
+        "vectors_effective": 22,
+        "missing_total": 0,
+        "missing_sample": [],
+        "mismatched_total": 0,
+        "mismatched_sample": [],
+        "unusable_total": 0,
+        "unusable_sample": [],
+        "points_returned_raw": 22,
+        "retrieve_failed": false,
+        "complete": true
+       }
+      ],
+      "vectors_requested": 22,
+      "vectors_effective": 22,
+      "missing_total": 0,
+      "mismatched_total": 0,
+      "unusable_total": 0,
+      "points_returned_raw": 22,
+      "vector_backed": true
+     },
+     "chunk_pick": "vector-similarity"
+    },
+    "degraded": [],
+    "keywords": {
+     "high_level": [
+      "环境空气质量标准",
+      "大气污染物浓度限值"
+     ],
+     "low_level": [
+      "GB 3095-2012",
+      "二氧化硫",
+      "年平均浓度",
+      "二级限值"
+     ]
+    },
+    "stage_completeness": [
+     {
+      "stage": "entities",
+      "complete": true,
+      "vectors_requested": 22,
+      "vectors_effective": 22
+     }
+    ]
+   },
+   "targets_requested": [
+    {
+     "code": "GB3095",
+     "version": "2012"
+    }
+   ],
+   "targets_resolved": [
+    {
+     "code": "GB3095",
+     "version": "2012",
+     "docs": [
+      "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+     ],
+     "versions": [
+      "2012"
+     ]
+    }
+   ],
+   "typed_targets": [
+    {
+     "target_type": "doc",
+     "workspace": "default",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_name": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "self_code": "GB3095",
+     "self_code_version": "2012",
+     "discovery": "code_exact",
+     "membership_basis": null,
+     "citation": {
+      "kind": "catalog_row",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+     },
+     "citation_verified": true
+    }
+   ],
+   "candidates": [
+    {
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": "4 环境空气功能区分类和质量要求 环境空气质量标准",
+       "chunk_order": 2,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.023312272503972054
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:表1(环境空气污染物基本项目浓度限值)",
+        "entity:二级浓度限值",
+        "entity:表2(环境空气污染物其他项目浓度限值)",
+        "edge:二级浓度限值|表1",
+        "edge:二级浓度限值|表2",
+        "edge:二氧化氮(NO2)|表1(环境空气污染物基本项目浓度限值)",
+        "edge:臭氧(O3)|表1(环境空气污染物基本项目浓度限值)",
+        "edge:二氧化硫(SO2)|表1(环境空气污染物基本项目浓度限值)",
+        "edge:一氧化碳(CO)|表1(环境空气污染物基本项目浓度限值)",
+        "edge:氮氧化物(NOx)|表2(环境空气污染物其他项目浓度限值)",
+        "edge:GB 3095-2012|表1(环境空气污染物基本项目浓度限值)",
+        "edge:GB 3095-2012|表2(环境空气污染物其他项目浓度限值)",
+        "edge:一类区|表1(环境空气污染物基本项目浓度限值)",
+        "edge:一类区|表2(环境空气污染物其他项目浓度限值)",
+        "edge:总悬浮颗粒物(TSP)|表2(环境空气污染物其他项目浓度限值)",
+        "edge:省级人民政府|表2(环境空气污染物其他项目浓度限值)",
+        "edge:二类区|二级浓度限值",
+        "edge:二类区|表1(环境空气污染物基本项目浓度限值)",
+        "edge:二类区|表2(环境空气污染物其他项目浓度限值)",
+        "edge:国务院环境保护行政主管部门|表2(环境空气污染物其他项目浓度限值)",
+        "edge:苯并[a]芘(BaP)|表2(环境空气污染物其他项目浓度限值)",
+        "edge:二级浓度限值|表1(环境空气污染物基本项目浓度限值)",
+        "edge:二级浓度限值|表2(环境空气污染物其他项目浓度限值)",
+        "edge:一级浓度限值|表1(环境空气污染物基本项目浓度限值)",
+        "edge:一级浓度限值|表2(环境空气污染物其他项目浓度限值)",
+        "edge:监测点位布设|表1(环境空气污染物基本项目浓度限值)",
+        "edge:监测点位布设|表2(环境空气污染物其他项目浓度限值)",
+        "edge:表2(环境空气污染物其他项目浓度限值)|铅(Pb)",
+        "edge:表1(环境空气污染物基本项目浓度限值)|颗粒物(粒径小于等于2.5μm)",
+        "edge:表1(环境空气污染物基本项目浓度限值)|颗粒物(粒径小于等于10μm)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 0,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 0,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "eafea04098b4bf61ff94053d457a8760eee04b9ea04b039ab6f53e180aa83a5a",
+     "content_len": 2840,
+     "content": "## 4 环境空气功能区分类和质量要求\n\n## 4.1 环境空气功能区分类\n环境空气功能区分为二类：一类区为自然保护区、风景名胜区和其他需要特殊保护的区域；二类区为居住区、商业交通居民混合区、文化区、工业区和农村地区。\nGB 3095—2012\n\n## 4.2 环境空气功能区质量要求\n一类区适用一级浓度限值，二类区适用二级浓度限值。一、二类环境空气功能区质量要求见表 1和表 2。\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">浓度限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td></tr><tr><td rowspan=\"3\">1</td><td rowspan=\"3\">二氧化硫( $SO_2$ )</td><td>年平均</td><td>20</td><td>60</td><td rowspan=\"6\"> $μg/m^3$ </td></tr><tr><td>24小时平均</td><td>50</td><td>150</td></tr><tr><td>1小时平均</td><td>150</td><td>500</td></tr><tr><td rowspan=\"3\">2</td><td rowspan=\"3\">二氧化氮( $NO_2$ )</td><td>年平均</td><td>40</td><td>40</td></tr><tr><td>24小时平均</td><td>80</td><td>80</td></tr><tr><td>1小时平均</td><td>200</td><td>200</td></tr><tr><td rowspan=\"2\">3</td><td rowspan=\"2\">一氧化碳(CO)</td><td>24小时平均</td><td>4</td><td>4</td><td rowspan=\"2\"> $mg/m^3$ </td></tr><tr><td>1小时平均</td><td>10</td><td>10</td></tr><tr><td rowspan=\"2\">4</td><td rowspan=\"2\">臭氧( $O_3$ )</td><td>日最大8小时平均</td><td>100</td><td>160</td><td rowspan=\"6\"> $μg/m^3$ </td></tr><tr><td>1小时平均</td><td>160</td><td>200</td></tr><tr><td rowspan=\"2\">5</td><td rowspan=\"2\">颗粒物(粒径小于等于10μm)</td><td>年平均</td><td>40</td><td>70</td></tr><tr><td>24小时平均</td><td>50</td><td>150</td></tr><tr><td rowspan=\"2\">6</td><td rowspan=\"2\">颗粒物(粒径小于等于2.5μm)</td><td>年平均</td><td>15</td><td>35</td></tr><tr><td>24小时平均</td><td>35</td><td>75</td></tr></table>\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0002\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">浓度限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td></tr><tr><td rowspan=\"2\">1</td><td rowspan=\"2\">总悬浮颗粒物(TSP)</td><td>年平均</td><td>80</td><td>200</td><td rowspan=\"9\"> $\\mu g/m^3$ </td></tr><tr><td>24小时平均</td><td>120</td><td>300</td></tr><tr><td rowspan=\"3\">2</td><td rowspan=\"3\">氮氧化物( $NO_x$ )(以 $NO_2$ 计)</td><td>年平均</td><td>50</td><td>50</td></tr><tr><td>24小时平均</td><td>100</td><td>100</td></tr><tr><td>1小时平均</td><td>250</td><td>250</td></tr><tr><td rowspan=\"2\">3</td><td rowspan=\"2\">铅(Pb)</td><td>年平均</td><td>0.5</td><td>0.5</td></tr><tr><td>季平均</td><td>1.0</td><td>1.0</td></tr><tr><td rowspan=\"2\">4</td><td rowspan=\"2\">苯并[a]芘(BaP)</td><td>年平均</td><td>0.001</td><td>0.001</td></tr><tr><td>24小时平均</td><td>0.0025</td><td>0.0025</td></tr></table>\n4.3 本标准自2016年1月1日起在全国实施。基本项目（表1）在全国范围内实施；其他项目（表 2）由国务院环境保护行政主管部门或者省级人民政府根据实际情况，确定具体实施方式。\n4.4 在全国实施本标准之前，国务院环境保护行政主管部门可根据《关于推进大气污染联防联控工作改善区域空气质量的指导意见》等文件要求指定部分地区提前实施本标准，具体实施方案（包括地域范围、时间等）另行公告，各省级人民政府也可根据实际情况和当地环境保护的需要提前实施本标准。\n\n## 5 监测\n环境空气质量监测工作应按照《环境空气质量监测规范（试行）》等规范性文件的要求进行。\nGB 3095—2012\n\n## 5.1 监测点位布设\n表 1和表2 中环境空气污染物监测点位的设置，应按照《环境空气质量监测规范（试行）》中的要求执行。\n\n## 5.2 样品采集\n环境空气质量监测中的采样环境、采样高度及采样频率等要求，按 HJ/T 193 或 HJ/T 194 的要求执行。",
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:二级浓度限值",
+        "edge:二级浓度限值|附录A"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 3,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 3,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "c57667a03194fd8a9cbf7044b0dc36db737b793fa65e46c423f85c5b6080e893",
+     "content_len": 1370,
+     "content": "## 7 实施与监督\n7.1 本标准由各级环境保护行政主管部门负责监督实施。\n7.2 各类环境空气功能区的范围由县级以上（含县级）人民政府环境保护行政主管部门划分，报本级人民政府批准实施。\n7.3 按照《中华人民共和国大气污染防治法》的规定，未达到本标准的大气污染防治重点城市，应当按照国务院或者国务院环境保护行政主管部门规定的期限，达到本标准。该城市人民政府应当制定限期达标规划，并可以根据国务院的授权或者规定，采取更严格的措施，按期实现达标规划。\nGB 3095—2012\n\n## 附 录 A\n（资料性附录）\n\n## 环境空气中镉、汞、砷、六价铬和氟化物参考浓度限值\n各省级人民政府可根据当地环境保护的需要，针对环境污染的特点，对本标准中未规定的污染物项目制定并实施地方环境空气质量标准。以下为环境空气中部分污染物参考浓度限值。\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0005\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">浓度(通量)限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td></tr><tr><td>1</td><td>镉(Cd)</td><td>年平均</td><td>0.005</td><td>0.005</td><td rowspan=\"6\"> $\\mu g/m^3$ </td></tr><tr><td>2</td><td>汞(Hg)</td><td>年平均</td><td>0.05</td><td>0.05</td></tr><tr><td>3</td><td>砷(As)</td><td>年平均</td><td>0.006</td><td>0.006</td></tr><tr><td>4</td><td>六价铬(Cr(VI))</td><td>年平均</td><td>0.000 025</td><td>0.000 025</td></tr><tr><td rowspan=\"4\">5</td><td rowspan=\"4\">氟化物(F)</td><td>1小时平均</td><td> $20^{1}$ </td><td> $20^{1}$ </td></tr><tr><td>24小时平均</td><td> $7^{1}$ </td><td> $7^{1}$ </td></tr><tr><td>月平均</td><td> $1.8^{2}$ </td><td> $3.0^{3}$ </td><td rowspan=\"2\"> $\\mu g/(dm^2 d)$ </td></tr><tr><td>植物生长季平均</td><td> $1.2^{2}$ </td><td> $2.0^{3}$ </td></tr><tr><td colspan=\"6\">注:1适用于城市地区;2适用于牧业区和以牧业为主的半农半牧区,蚕桑区;3适用于农业和林业区。</td></tr></table>\nGB 3095—2012",
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf"
+    }
+   ],
+   "usable": [
+    {
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": "4 环境空气功能区分类和质量要求 环境空气质量标准",
+       "chunk_order": 2,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.023312272503972054
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:表1(环境空气污染物基本项目浓度限值)",
+        "entity:二级浓度限值",
+        "entity:表2(环境空气污染物其他项目浓度限值)",
+        "edge:二级浓度限值|表1",
+        "edge:二级浓度限值|表2",
+        "edge:二氧化氮(NO2)|表1(环境空气污染物基本项目浓度限值)",
+        "edge:臭氧(O3)|表1(环境空气污染物基本项目浓度限值)",
+        "edge:二氧化硫(SO2)|表1(环境空气污染物基本项目浓度限值)",
+        "edge:一氧化碳(CO)|表1(环境空气污染物基本项目浓度限值)",
+        "edge:氮氧化物(NOx)|表2(环境空气污染物其他项目浓度限值)",
+        "edge:GB 3095-2012|表1(环境空气污染物基本项目浓度限值)",
+        "edge:GB 3095-2012|表2(环境空气污染物其他项目浓度限值)",
+        "edge:一类区|表1(环境空气污染物基本项目浓度限值)",
+        "edge:一类区|表2(环境空气污染物其他项目浓度限值)",
+        "edge:总悬浮颗粒物(TSP)|表2(环境空气污染物其他项目浓度限值)",
+        "edge:省级人民政府|表2(环境空气污染物其他项目浓度限值)",
+        "edge:二类区|二级浓度限值",
+        "edge:二类区|表1(环境空气污染物基本项目浓度限值)",
+        "edge:二类区|表2(环境空气污染物其他项目浓度限值)",
+        "edge:国务院环境保护行政主管部门|表2(环境空气污染物其他项目浓度限值)",
+        "edge:苯并[a]芘(BaP)|表2(环境空气污染物其他项目浓度限值)",
+        "edge:二级浓度限值|表1(环境空气污染物基本项目浓度限值)",
+        "edge:二级浓度限值|表2(环境空气污染物其他项目浓度限值)",
+        "edge:一级浓度限值|表1(环境空气污染物基本项目浓度限值)",
+        "edge:一级浓度限值|表2(环境空气污染物其他项目浓度限值)",
+        "edge:监测点位布设|表1(环境空气污染物基本项目浓度限值)",
+        "edge:监测点位布设|表2(环境空气污染物其他项目浓度限值)",
+        "edge:表2(环境空气污染物其他项目浓度限值)|铅(Pb)",
+        "edge:表1(环境空气污染物基本项目浓度限值)|颗粒物(粒径小于等于2.5μm)",
+        "edge:表1(环境空气污染物基本项目浓度限值)|颗粒物(粒径小于等于10μm)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 0,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 0,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "eafea04098b4bf61ff94053d457a8760eee04b9ea04b039ab6f53e180aa83a5a",
+     "content_len": 2840,
+     "content": "## 4 环境空气功能区分类和质量要求\n\n## 4.1 环境空气功能区分类\n环境空气功能区分为二类：一类区为自然保护区、风景名胜区和其他需要特殊保护的区域；二类区为居住区、商业交通居民混合区、文化区、工业区和农村地区。\nGB 3095—2012\n\n## 4.2 环境空气功能区质量要求\n一类区适用一级浓度限值，二类区适用二级浓度限值。一、二类环境空气功能区质量要求见表 1和表 2。\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">浓度限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td></tr><tr><td rowspan=\"3\">1</td><td rowspan=\"3\">二氧化硫( $SO_2$ )</td><td>年平均</td><td>20</td><td>60</td><td rowspan=\"6\"> $μg/m^3$ </td></tr><tr><td>24小时平均</td><td>50</td><td>150</td></tr><tr><td>1小时平均</td><td>150</td><td>500</td></tr><tr><td rowspan=\"3\">2</td><td rowspan=\"3\">二氧化氮( $NO_2$ )</td><td>年平均</td><td>40</td><td>40</td></tr><tr><td>24小时平均</td><td>80</td><td>80</td></tr><tr><td>1小时平均</td><td>200</td><td>200</td></tr><tr><td rowspan=\"2\">3</td><td rowspan=\"2\">一氧化碳(CO)</td><td>24小时平均</td><td>4</td><td>4</td><td rowspan=\"2\"> $mg/m^3$ </td></tr><tr><td>1小时平均</td><td>10</td><td>10</td></tr><tr><td rowspan=\"2\">4</td><td rowspan=\"2\">臭氧( $O_3$ )</td><td>日最大8小时平均</td><td>100</td><td>160</td><td rowspan=\"6\"> $μg/m^3$ </td></tr><tr><td>1小时平均</td><td>160</td><td>200</td></tr><tr><td rowspan=\"2\">5</td><td rowspan=\"2\">颗粒物(粒径小于等于10μm)</td><td>年平均</td><td>40</td><td>70</td></tr><tr><td>24小时平均</td><td>50</td><td>150</td></tr><tr><td rowspan=\"2\">6</td><td rowspan=\"2\">颗粒物(粒径小于等于2.5μm)</td><td>年平均</td><td>15</td><td>35</td></tr><tr><td>24小时平均</td><td>35</td><td>75</td></tr></table>\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0002\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">浓度限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td></tr><tr><td rowspan=\"2\">1</td><td rowspan=\"2\">总悬浮颗粒物(TSP)</td><td>年平均</td><td>80</td><td>200</td><td rowspan=\"9\"> $\\mu g/m^3$ </td></tr><tr><td>24小时平均</td><td>120</td><td>300</td></tr><tr><td rowspan=\"3\">2</td><td rowspan=\"3\">氮氧化物( $NO_x$ )(以 $NO_2$ 计)</td><td>年平均</td><td>50</td><td>50</td></tr><tr><td>24小时平均</td><td>100</td><td>100</td></tr><tr><td>1小时平均</td><td>250</td><td>250</td></tr><tr><td rowspan=\"2\">3</td><td rowspan=\"2\">铅(Pb)</td><td>年平均</td><td>0.5</td><td>0.5</td></tr><tr><td>季平均</td><td>1.0</td><td>1.0</td></tr><tr><td rowspan=\"2\">4</td><td rowspan=\"2\">苯并[a]芘(BaP)</td><td>年平均</td><td>0.001</td><td>0.001</td></tr><tr><td>24小时平均</td><td>0.0025</td><td>0.0025</td></tr></table>\n4.3 本标准自2016年1月1日起在全国实施。基本项目（表1）在全国范围内实施；其他项目（表 2）由国务院环境保护行政主管部门或者省级人民政府根据实际情况，确定具体实施方式。\n4.4 在全国实施本标准之前，国务院环境保护行政主管部门可根据《关于推进大气污染联防联控工作改善区域空气质量的指导意见》等文件要求指定部分地区提前实施本标准，具体实施方案（包括地域范围、时间等）另行公告，各省级人民政府也可根据实际情况和当地环境保护的需要提前实施本标准。\n\n## 5 监测\n环境空气质量监测工作应按照《环境空气质量监测规范（试行）》等规范性文件的要求进行。\nGB 3095—2012\n\n## 5.1 监测点位布设\n表 1和表2 中环境空气污染物监测点位的设置，应按照《环境空气质量监测规范（试行）》中的要求执行。\n\n## 5.2 样品采集\n环境空气质量监测中的采样环境、采样高度及采样频率等要求，按 HJ/T 193 或 HJ/T 194 的要求执行。",
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:二级浓度限值",
+        "edge:二级浓度限值|附录A"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 3,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 3,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "c57667a03194fd8a9cbf7044b0dc36db737b793fa65e46c423f85c5b6080e893",
+     "content_len": 1370,
+     "content": "## 7 实施与监督\n7.1 本标准由各级环境保护行政主管部门负责监督实施。\n7.2 各类环境空气功能区的范围由县级以上（含县级）人民政府环境保护行政主管部门划分，报本级人民政府批准实施。\n7.3 按照《中华人民共和国大气污染防治法》的规定，未达到本标准的大气污染防治重点城市，应当按照国务院或者国务院环境保护行政主管部门规定的期限，达到本标准。该城市人民政府应当制定限期达标规划，并可以根据国务院的授权或者规定，采取更严格的措施，按期实现达标规划。\nGB 3095—2012\n\n## 附 录 A\n（资料性附录）\n\n## 环境空气中镉、汞、砷、六价铬和氟化物参考浓度限值\n各省级人民政府可根据当地环境保护的需要，针对环境污染的特点，对本标准中未规定的污染物项目制定并实施地方环境空气质量标准。以下为环境空气中部分污染物参考浓度限值。\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0005\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">浓度(通量)限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td></tr><tr><td>1</td><td>镉(Cd)</td><td>年平均</td><td>0.005</td><td>0.005</td><td rowspan=\"6\"> $\\mu g/m^3$ </td></tr><tr><td>2</td><td>汞(Hg)</td><td>年平均</td><td>0.05</td><td>0.05</td></tr><tr><td>3</td><td>砷(As)</td><td>年平均</td><td>0.006</td><td>0.006</td></tr><tr><td>4</td><td>六价铬(Cr(VI))</td><td>年平均</td><td>0.000 025</td><td>0.000 025</td></tr><tr><td rowspan=\"4\">5</td><td rowspan=\"4\">氟化物(F)</td><td>1小时平均</td><td> $20^{1}$ </td><td> $20^{1}$ </td></tr><tr><td>24小时平均</td><td> $7^{1}$ </td><td> $7^{1}$ </td></tr><tr><td>月平均</td><td> $1.8^{2}$ </td><td> $3.0^{3}$ </td><td rowspan=\"2\"> $\\mu g/(dm^2 d)$ </td></tr><tr><td>植物生长季平均</td><td> $1.2^{2}$ </td><td> $2.0^{3}$ </td></tr><tr><td colspan=\"6\">注:1适用于城市地区;2适用于牧业区和以牧业为主的半农半牧区,蚕桑区;3适用于农业和林业区。</td></tr></table>\nGB 3095—2012",
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf"
+    }
+   ],
+   "rejected": [
+    {
+     "workspace": "default",
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-002",
+     "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-002",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:二级浓度限值",
+        "edge:二级浓度限值|表1",
+        "edge:二级浓度限值|表2",
+        "edge:二类区|二级浓度限值",
+        "edge:二级浓度限值|表1(环境空气污染物基本项目)",
+        "edge:二级浓度限值|表2(环境空气污染物其他项目)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 1,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 1,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       },
+       "constraint_rejected": "doc doc-4c883d21fa02a53189e0911c3d59d1d1 is not a RESOLVED requested target; a nearby version/other document is never substituted"
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "b2508fbadc91e3924b5cd76a0996cab928baa46e1a5b7c10c909f88e6225277f",
+     "content_len": 3519,
+     "content": "## 4.1 环境空气功能区分类\n环境空气功能区分为两类：一类区为国家公园、自然保护区、自然公园和其他需要特殊保护的区域；二类区为居住区、商业交通居民混合区、文化区、工业区和农村地区。\n\n## 4.2 环境空气功能区质量要求\n一类区适用一级浓度限值，二类区适用二级浓度限值。一、二类环境空气功能区质量要求见表 1 和表 2。\n<table id=\"tb-4c883d21fa02a53189e0911c3d59d1d1-0001\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">过渡阶段浓度限值</td><td colspan=\"2\">浓度限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td><td>一级</td><td>二级</td></tr><tr><td rowspan=\"3\">1</td><td rowspan=\"3\">二氧化硫( $SO_2$ )</td><td>年平均</td><td>20</td><td>60</td><td>20</td><td>20</td><td rowspan=\"6\"> $μg/m^3$ </td></tr><tr><td>日平均</td><td>50</td><td>150</td><td>50</td><td>50</td></tr><tr><td>1小时平均</td><td>150</td><td>500</td><td>150</td><td>150</td></tr><tr><td rowspan=\"3\">2</td><td rowspan=\"3\">二氧化氮( $NO_2$ )</td><td>年平均</td><td>40</td><td>40</td><td>30</td><td>30</td></tr><tr><td>日平均</td><td>80</td><td>80</td><td>50</td><td>50</td></tr><tr><td>1小时平均</td><td>200</td><td>200</td><td>200</td><td>200</td></tr><tr><td rowspan=\"2\">3</td><td rowspan=\"2\">一氧化碳(CO)</td><td>日平均</td><td>4</td><td>4</td><td>4</td><td>4</td><td rowspan=\"2\"> $mg/m^3$ </td></tr><tr><td>1小时平均</td><td>10</td><td>10</td><td>10</td><td>10</td></tr><tr><td rowspan=\"2\">4</td><td rowspan=\"2\">臭氧( $O_3$ )</td><td>日最大8小时平均</td><td>100</td><td>160</td><td>100</td><td>160</td><td rowspan=\"6\"> $μg/m^3$ </td></tr><tr><td>1小时平均</td><td>160</td><td>200</td><td>160</td><td>200</td></tr><tr><td rowspan=\"2\">5</td><td rowspan=\"2\">颗粒物(粒径小于等于10μm, $PM_{10}$ )</td><td>年平均</td><td>40</td><td>60</td><td>20</td><td>50</td></tr><tr><td>日平均</td><td>50</td><td>120</td><td>50</td><td>100</td></tr><tr><td rowspan=\"2\">6</td><td rowspan=\"2\">颗粒物(粒径小于等于2.5μm, $PM_{2.5}$ )</td><td>年平均</td><td>15</td><td>30</td><td>10</td><td>25</td></tr><tr><td>日平均</td><td>35</td><td>60</td><td>25</td><td>50</td></tr></table>\nGB 3095—2026\n<table id=\"tb-4c883d21fa02a53189e0911c3d59d1d1-0002\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">浓度限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td></tr><tr><td rowspan=\"2\">1</td><td rowspan=\"2\">总悬浮颗粒物(TSP)</td><td>年平均</td><td>80</td><td>200</td><td rowspan=\"9\"> $\\mu g/m^{3}$ </td></tr><tr><td>日平均</td><td>120</td><td>300</td></tr><tr><td rowspan=\"3\">2</td><td rowspan=\"3\">氮氧化物( $NO_x$ )(以 $NO_2$ 计)</td><td>年平均</td><td> $40^a$ </td><td> $40^a$ </td></tr><tr><td>日平均</td><td> $70^b$ </td><td> $70^b$ </td></tr><tr><td>1小时平均</td><td>250</td><td>250</td></tr><tr><td rowspan=\"2\">3</td><td rowspan=\"2\">铅(Pb)</td><td>年平均</td><td>0.5</td><td>0.5</td></tr><tr><td>季平均</td><td>1.0</td><td>1.0</td></tr><tr><td rowspan=\"2\">4</td><td rowspan=\"2\">苯并[a]芘(BaP)</td><td>年平均</td><td>0.001</td><td>0.001</td></tr><tr><td>日平均</td><td>0.0025</td><td>0.0025</td></tr><tr><td colspan=\"6\"> $^a$ 自本标准实施之日起至2030年12月31日止,过渡阶段浓度限值为 $50μg/m^{3}$ 。 $^b$ 自本标准实施之日起至2030年12月31日止,过渡阶段浓度限值为 $100μg/m^{3}$ 。</td></tr></table>\n4.3 本标准中的二氧化硫（ $\\mathrm{SO}_2$ ）、二氧化氮（ $\\mathrm{NO}_2$ ）、一氧化碳（CO）、臭氧（ $\\mathrm{O}_3$ ）、氮氧化物（ $\\mathrm{NO}_x$ ）等气态污染物浓度为参比状态下的浓度。颗粒物（粒径小于等于 $2.5 \\mu \\mathrm{m}$ ， $\\mathrm{PM}_{2.5}$ ）、颗粒物（粒径小于等于 $10 \\mu \\mathrm{m}$ ， $\\mathrm{PM}_{10}$ ）及其组分苯并[a]芘（BaP）、总悬浮颗粒物（TSP）及其组分铅（Pb）等浓度为监测时大气温度和压力下的浓度。\n4.4 自本标准实施之日起至2030年12月31日止，环境空气污染物基本项目（表1）实施过渡阶段浓度限值；自2031年1月1日起，在全国范围内实施基本项目（表1）浓度限值。\n4.5 自本标准实施之日起，其他项目（表 2）由国务院生态环境主管部门或者省级人民政府根据实际情况，确定具体实施方式。\n\n## 5 监测\n\n## 5.1 监测点位布设\n表 1 和表 2 中环境空气污染物监测点位的设置，应执行HJ 664 的相关规定。\n\n## 5.2 样品采集\n环境空气质量监测中的采样环境、采样高度及采样频率等要求，应执行HJ 193、HJ 194、HJ 655、HJ 817、HJ 818的相关规定。",
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "rejected_reason": "doc doc-4c883d21fa02a53189e0911c3d59d1d1 is not a RESOLVED requested target; a nearby version/other document is never substituted"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-69538e249043b7fb564980ccab13438e-chunk-005",
+     "doc_id": "doc-69538e249043b7fb564980ccab13438e",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-69538e249043b7fb564980ccab13438e-chunk-005",
+       "doc_id": "doc-69538e249043b7fb564980ccab13438e",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:国家二级标准",
+        "edge:PM10|国家二级标准",
+        "edge:O3|国家二级标准",
+        "edge:NO2|国家二级标准",
+        "edge:SO2|国家二级标准"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 2,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 2,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       },
+       "constraint_rejected": "doc doc-69538e249043b7fb564980ccab13438e is not a RESOLVED requested target; a nearby version/other document is never substituted"
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "db2b70f61e27635ac6efb32ece7cfb55c1e78a3c11e65007a261709c8fa20e9b",
+     "content_len": 3423,
+     "content": "## 2.2 PM $_{10}$\n全国 339 个城市环境空气 $PM_{10}$ 年均浓度在 12～124 微克 / 立方米之间，平均为 48 微克 / 立方米，比 2024 年下降 2.0%。\n$PM_{10}$ 年均浓度分布在 30～60 微克 / 立方米之间的城市较多，占比为 68.5%。\n<drawing id=\"im-69538e249043b7fb564980ccab13438e-0009\" format=\"jpg\" caption=\"图1-9 2025年全国城市环境空气 $\\mathrm{PM}_{10}$ 年均浓度区间分布及年际变化\" path=\"air-24_中国环境监测总站_2025中国生态环境状况公报_2026.blocks.assets/4dd9437156f6fb2cff06ba8b89d1adc11071abd5b959133867a0c90d0efebe54.jpg\" src=\"\" />\n$\\mathrm{PM}_{10}$ 年均浓度超过70微克/立方米（国家二级标准）的城市主要分布在新疆、河南等地。\n<drawing id=\"im-69538e249043b7fb564980ccab13438e-0010\" format=\"jpg\" caption=\"图1-10 2025年全国城市环境空气 $\\mathrm{PM}_{10}$ 年均浓度分布示意图\" path=\"air-24_中国环境监测总站_2025中国生态环境状况公报_2026.blocks.assets/e4306186da40433e9060f80e67d5614150d51fefdb00293f63b4a6963059d43d.jpg\" src=\"\" />\n31个省份中，7个省份的城市环境空气 $PM_{10}$ 年均浓度达到国家一级标准，24个省份达到国家二级标准。\n<drawing id=\"im-69538e249043b7fb564980ccab13438e-0011\" format=\"jpg\" caption=\"京津北西古宁林江海苏江徽建西东南北南东西南庆川州南藏西肃海夏疆\" path=\"air-24_中国环境监测总站_2025中国生态环境状况公报_2026.blocks.assets/95e23ef4bae6a8c632effc33979439a634638604b5544c4318426e70f25a970e.jpg\" src=\"\" />\n<equation id=\"eq-69538e249043b7fb564980ccab13438e-0001\" format=\"latex\">$$\n\\mathrm{O} _ {3}\n$$</equation>\n全国 339 个城市环境空气 O $_{3}$ 日最大 8 小时平均值第 90 百分位数浓度（以下简称 O $_{3}$ 浓度）在 92～178 微克 / 立方米之间，平均为 138 微克 / 立方米，比 2024 年下降 4.2%。\n$O_{3}$ 浓度分布在 120～150 微克 / 立方米之间的城市较多，占比为 49.9%。\n<drawing id=\"im-69538e249043b7fb564980ccab13438e-0012\" format=\"jpg\" caption=\"图1-12 2025年全国城市环境空气 $\\mathrm{O}_3$ 浓度区间分布及年际变化\" path=\"air-24_中国环境监测总站_2025中国生态环境状况公报_2026.blocks.assets/e61360a57fc778d10ca48a2b3ac9de175966b0192c4024c69f64821d5d3c42b6.jpg\" src=\"\" />\n$O_{3}$ 浓度超过 160 微克 / 立方米（国家二级标准）的城市主要分布在京津冀及周边、长三角地区等地。\n<drawing id=\"im-69538e249043b7fb564980ccab13438e-0013\" format=\"jpg\" caption=\"图1-13 2025年全国城市环境空气 $\\mathrm{O}_3$ 浓度分布示意图\" path=\"air-24_中国环境监测总站_2025中国生态环境状况公报_2026.blocks.assets/ad1f1ff0978667f42416092039bea560f8511e96ef070f6952e3fa922ff1e05a.jpg\" src=\"\" />\n31 个省份中，26 个省份的城市环境空气 $O_{3}$ 浓度达到国家二级标准，5 个省份超过国家二级标准。\n<drawing id=\"im-69538e249043b7fb564980ccab13438e-0014\" format=\"jpg\" caption=\"图1-14 2025年31个省份的城市环境空气 $\\mathrm{O}_3$ 浓度\" path=\"air-24_中国环境监测总站_2025中国生态环境状况公报_2026.blocks.assets/1639c373ab1104f19cdee4de247d0f7f990953f5db569bc21d85e82c748a6f4d.jpg\" src=\"\" />\n<equation id=\"eq-69538e249043b7fb564980ccab13438e-0002\" format=\"latex\">$$\n2. 4 \\mathrm{SO} _ {2}\n$$</equation>\n全国 339 个城市环境空气 $SO_{2}$ 年均浓度在 3～28 微克 / 立方米之间，平均为 8 微克 / 立方米，与 2024 年持平。\n$SO_{2}$ 年均浓度分布在 $3 \\sim 9$ 微克 / 立方米之间的城市较多，占比为82.6%。\n<drawing id=\"im-69538e249043b7fb564980ccab13438e-0015\" format=\"jpg\" caption=\"图1-15 2025年全国城市环境空气 $\\mathrm{SO}_2$ 年均浓度区间分布及年际变化\" path=\"air-24_中国环境监测总站_2025中国生态环境状况公报_2026.blocks.assets/3a5e7ceeef4c50f3e75b9a9d53862ab363c3dfe11c2365783cf0b7981ce0e218.jpg\" src=\"\" />\n全国 339 个城市环境空气 $SO_{2}$ 年均浓度均低于 60 微克 / 立方米（国家二级标准）。31 个省份的城市环境空气 $SO_{2}$ 年均浓度均低于 20 微克 / 立方米（国家一级标准）。\n<equation id=\"eq-69538e249043b7fb564980ccab13438e-0003\" format=\"latex\">$$\n2. 5 \\mathrm{NO} _ {2}\n$$</equation>\n全国 339 个城市环境空气 $NO_{2}$ 年均浓度在 4～35 微克 / 立方米之间，平均为 19 微克 / 立方米，比 2024 年下降 5.0%。\n$NO_{2}$ 年均浓度分布在 15～25 微克 / 立方米之间的城市较多，占比为 56.4%。\n<drawing id=\"im-69538e249043b7fb564980ccab13438e-0016\" format=\"jpg\" caption=\"图1-16 2025年全国城市环境空气 $\\mathrm{NO}_2$ 年均浓度区间分布及年际变化\" path=\"air-24_中国环境监测总站_2025中国生态环境状况公报_2026.blocks.assets/c1ca61a2d3df4c5cfdfdfc5d2d845507f2e21f65bb162bef4104595a62c828d0.jpg\" src=\"\" />\n全国 339 个城市环境空气 $NO_{2}$ 年均浓度均低于 40 微克 / 立方米（国家一级 / 二级标准）。31 个省份的城市环境空气 $NO_{2}$ 年均浓度均低于 40 微克 / 立方米（国家一级 / 二级标准）。",
+     "file_path": "air-24_中国环境监测总站_2025中国生态环境状况公报_2026.pdf",
+     "rejected_reason": "doc doc-69538e249043b7fb564980ccab13438e is not a RESOLVED requested target; a nearby version/other document is never substituted"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+     "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:二氧化硫(SO₂)",
+        "edge:二氧化硫(SO₂)|环境空气质量标准(GB 3095-2026)",
+        "edge:二氧化硫(SO₂)|差分吸收光谱分析法",
+        "edge:二氧化硫(SO₂)|紫外荧光法(HJ 1044)",
+        "edge:二氧化硫(SO₂)|甲醛吸收-副玫瑰苯胺分光光度法(HJ 482)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 4,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 4,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       },
+       "constraint_rejected": "doc doc-4c883d21fa02a53189e0911c3d59d1d1 is not a RESOLVED requested target; a nearby version/other document is never substituted"
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "161e5634b5c94a07633407801a5ba9d7a17d0bea8e0e4dd0456fcd41b407596b",
+     "content_len": 1168,
+     "content": "## 5.3 污染物分析\n应按表 3 的要求，采用相应的方法分析各项污染物的浓度，并执行 HJ 193、HJ 194、HJ 653、HJ 654、HJ 655、HJ 817、HJ 818 的相关规定。本标准实施后，国务院生态环境主管部门确认的等效方法，同样适用于本标准相应污染物项目的测定。\nGB 3095—2026\n<table id=\"tb-4c883d21fa02a53189e0911c3d59d1d1-0003\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td colspan=\"2\">手工分析方法</td><td colspan=\"2\">自动分析方法</td></tr><tr><td>名称</td><td>标准编号</td><td>名称</td><td>标准编号</td></tr><tr><td rowspan=\"2\">1</td><td rowspan=\"2\">二氧化硫( $SO_{2}$ )</td><td rowspan=\"2\">环境空气 二氧化硫的测定 甲醛吸收-副玫瑰苯胺分光光度法</td><td rowspan=\"2\">HJ 482</td><td>环境空气 二氧化硫的自动测定 紫外荧光法*</td><td>HJ 1044</td></tr><tr><td>差分吸收光谱分析法</td><td>—</td></tr><tr><td rowspan=\"2\">2</td><td rowspan=\"2\">二氧化氮( $NO_{2}$ )</td><td rowspan=\"2\">环境空气 氮氧化物(一氧化氮和二氧化氮)的测定 盐酸萘乙二胺分光光度法</td><td rowspan=\"2\">HJ 479</td><td>环境空气 氮氧化物的自动测定 化学发光法*</td><td>HJ 1043</td></tr><tr><td>差分吸收光谱分析法</td><td>—</td></tr><tr><td>3</td><td>一氧化碳(CO)</td><td>空气质量 一氧化碳的测定 非分散红外法</td><td>GB/T 9801</td><td>环境空气 一氧化碳的自动测定 非分散红外法*</td><td>HJ 965</td></tr><tr><td rowspan=\"3\">4</td><td rowspan=\"3\">臭氧( $O_{3}$ )</td><td rowspan=\"3\">环境空气 臭氧的测定 靛蓝二磺酸钠分光光度法</td><td rowspan=\"3\">HJ 504</td><td>环境空气 臭氧的测定 紫外光度法*</td><td>HJ 590</td></tr></table>",
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "rejected_reason": "doc doc-4c883d21fa02a53189e0911c3d59d1d1 is not a RESOLVED requested target; a nearby version/other document is never substituted"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-13aaccec179aaa355c8c3d98abd0716e-chunk-020",
+     "doc_id": "doc-13aaccec179aaa355c8c3d98abd0716e",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-13aaccec179aaa355c8c3d98abd0716e-chunk-020",
+       "doc_id": "doc-13aaccec179aaa355c8c3d98abd0716e",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:二氧化硫(SO₂)",
+        "edge:二氧化硫(SO₂)|附件一(空气质量标准)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 5,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 5,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       },
+       "constraint_rejected": "doc doc-13aaccec179aaa355c8c3d98abd0716e is not a RESOLVED requested target; a nearby version/other document is never substituted"
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "12bb82777d4273c4e910fa5be94b3217e37a2ace0cc3fbff96a4c1d3662d223f",
+     "content_len": 4603,
+     "content": "## Article 33\nAddressees\nThis Directive is addressed to the Member States.\nDone at Strasbourg, 23 October 2024.\nFor the European Parliament\nThe President\nR. METSOLA\nFor the Council\nThe President\nZSIGMOND B. P.\nOJ L, 20.11.2024\nEN\nELI: http://data.europa.eu/eli/dir/2024/2881/oj\n\n## ANNEX I\n\n## Air quality standards\n<table id=\"tb-13aaccec179aaa355c8c3d98abd0716e-0001\" format=\"html\"><tr><td>Averaging period</td><td colspan=\"2\">Limit value</td></tr><tr><td colspan=\"3\"> $PM_{2,5}$ </td></tr><tr><td>1 day</td><td>25 μg/m3</td><td>not to be exceeded more than 18 times per calendar year</td></tr><tr><td>Calendar year</td><td>10 μg/m3</td><td></td></tr><tr><td colspan=\"3\"> $PM_{10}$ </td></tr><tr><td>1 day</td><td>45 μg/m3</td><td>not to be exceeded more than 18 times per calendar year</td></tr><tr><td>Calendar year</td><td>20 μg/m3</td><td></td></tr><tr><td colspan=\"3\">Nitrogen dioxide ( $NO_2$ )</td></tr><tr><td>1 hour</td><td>200 μg/m3</td><td>not to be exceeded more than 3 times per calendar year</td></tr><tr><td>1 day</td><td>50 μg/m3</td><td>not to be exceeded more than 18 times per calendar year</td></tr><tr><td>Calendar year</td><td>20 μg/m3</td><td></td></tr><tr><td colspan=\"3\">Sulphur dioxide ( $SO_2$ )</td></tr><tr><td>1 hour</td><td>350 μg/m3</td><td>not to be exceeded more than 3 times per calendar year</td></tr><tr><td>1 day</td><td>50 μg/m3</td><td>not to be exceeded more than 18 times per calendar year</td></tr><tr><td>Calendar year</td><td>20 μg/m3</td><td></td></tr><tr><td colspan=\"3\">Benzene</td></tr><tr><td>Calendar year</td><td>3,4 μg/m3</td><td></td></tr><tr><td colspan=\"3\">Carbon monoxide (CO)</td></tr><tr><td>Maximum daily 8-hour mean (1)</td><td>10 mg/m3</td><td></td></tr><tr><td>1 day</td><td>4 mg/m3</td><td>not to be exceeded more than 18 times per calendar year</td></tr><tr><td colspan=\"3\">Lead (Pb)</td></tr><tr><td>Calendar year</td><td>0,5 μg/m3</td><td></td></tr></table>\nOJ L, 20.11.2024\nELI: http://data.europa.eu/eli/dir/2024/2881/o\n<table id=\"tb-13aaccec179aaa355c8c3d98abd0716e-0002\" format=\"html\"><tr><td>Averaging period</td><td>Limit value</td></tr><tr><td colspan=\"2\">Arsenic (As)</td></tr><tr><td>Calendar year</td><td>6,0 ng/m3</td></tr><tr><td colspan=\"2\">Cadmium (Cd)</td></tr><tr><td>Calendar year</td><td>5,0 ng/m3</td></tr><tr><td colspan=\"2\">Nickel (Ni)</td></tr><tr><td>Calendar year</td><td>20 ng/m3</td></tr><tr><td colspan=\"2\">Benzo(a)pyrene</td></tr><tr><td>Calendar year</td><td>1,0 ng/m3</td></tr></table>\n<table id=\"tb-13aaccec179aaa355c8c3d98abd0716e-0003\" format=\"html\"><tr><td>Averaging period</td><td>Limit value</td></tr><tr><td colspan=\"2\"> $PM_{2,5}$ </td></tr><tr><td>Calendar year</td><td>25 μg/m3</td></tr><tr><td colspan=\"2\"> $PM_{10}$ </td></tr><tr><td>1 day</td><td>50 μg/m3 not to be exceeded more than 35 times per calendar year</td></tr><tr><td>Calendar year</td><td>40 μg/m3</td></tr><tr><td colspan=\"2\">Nitrogen dioxide (NO2)</td></tr><tr><td>1 hour</td><td>200 μg/m3 not to be exceeded more than 18 times per calendar year</td></tr><tr><td>Calendar year</td><td>40 μg/m3</td></tr><tr><td colspan=\"2\">Sulphur dioxide (SO2)</td></tr><tr><td>1 hour</td><td>350 μg/m3 not to be exceeded more than 24 times per calendar year</td></tr><tr><td>1 day</td><td>125 μg/m3 not to be exceeded more than 3 times per calendar year</td></tr><tr><td colspan=\"2\">Benzene</td></tr><tr><td>Calendar year</td><td>5 μg/m3</td></tr><tr><td colspan=\"2\">Carbon monoxide (CO)</td></tr><tr><td>Maximum daily 8-hour mean (1)</td><td>10 mg/m3</td></tr><tr><td colspan=\"2\">Lead (Pb)</td></tr><tr><td>Calendar year</td><td>0,5 μg/m3</td></tr><tr><td colspan=\"2\">(1) The maximum daily 8-hour mean concentration shall be selected by examining 8-hour running averages, calculated from hourly data and updated each hour. Each 8-hour average so calculated shall be assigned to the day on which it ends, i.e. the first calculation period for any 1 day shall be the period from 17:00 on the previous day to 01:00 on that day; the last calculation period for any 1 day shall be the period from 16:00 to 24:00 on that day.</td></tr></table>\nOJ L, 20.11.2024\nELI: http://data.europa.eu/eli/dir/2024/2881/oj\n<table id=\"tb-13aaccec179aaa355c8c3d98abd0716e-0004\" format=\"html\"><tr><td colspan=\"2\">Arsenic (As)</td></tr><tr><td>Calendar year</td><td>6,0 ng/m3</td></tr><tr><td colspan=\"2\">Cadmium (Cd)</td></tr><tr><td>Calendar year</td><td>5,0 ng/m3</td></tr><tr><td colspan=\"2\">Nickel (Ni)</td></tr><tr><td>Calendar year</td><td>20 ng/m3</td></tr><tr><td colspan=\"2\">Benzo(a)pyrene</td></tr><tr><td>Calendar year</td><td>1,0 ng/m3</td></tr></table>",
+     "file_path": "air-47_European-Commission_Directive-2024-2881-Ambient-Air-Quality_2024.pdf",
+     "rejected_reason": "doc doc-13aaccec179aaa355c8c3d98abd0716e is not a RESOLVED requested target; a nearby version/other document is never substituted"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-f786d9079ac78c8e746df84e2e8e8535-chunk-118",
+     "doc_id": "doc-f786d9079ac78c8e746df84e2e8e8535",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-f786d9079ac78c8e746df84e2e8e8535-chunk-118",
+       "doc_id": "doc-f786d9079ac78c8e746df84e2e8e8535",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:年度二级SO2 NAAQS",
+        "edge:年度二级SO2 NAAQS|年度二级标准设计值"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 6,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 6,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       },
+       "constraint_rejected": "doc doc-f786d9079ac78c8e746df84e2e8e8535 is not a RESOLVED requested target; a nearby version/other document is never substituted"
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "23e8b61e45de008c96eb29cf8000abf92d48a4b73923576972d35d31855948f9",
+     "content_len": 8127,
+     "content": "## 3.2 Comparisons With the Annual Secondary SO<sub>2</sub> NAAQS\n(a) The annual secondary SO NAAQS is met at an ambient air quality monitoring site when the valid annual secondary standard design value is less than or equal to 10 parts per billion (ppb).\n(b) An SO annual secondary standard design value is valid if it encompasses three consecutive calendar years of complete data. A year meets data completeness requirements when all four quarters are complete. A quarter is complete when at least 75 percent of the sampling days for each quarter have complete data. A sampling day has complete data if 75 percent of the hourly concentration values, including State-flagged data affected by exceptional events which have been approved for exclusion by the Administrator, are reported.\nFederal Register / Vol. 89, No. 248 / Friday, December 27, 2024 / Rules and Regulations\n(c) In the case of one, two, or three years that do not meet the completeness requirements of section 3.2(b) of this appendix and thus would normally not be useable for the calculation of a valid 3-year annual secondary standard design value, the 3-year annual secondary standard design value shall nevertheless be considered valid if one of the following conditions is true.\n(i) At least 75 percent of the days in each quarter of each of three consecutive years have at least one reported hourly value, and the design value calculated according to the procedures specified in section 5.2 of this appendix is above the level of the secondary annual standard.\n(ii)(A) An annual secondary standard design value that is equal to or below the level of the NAAQS can be validated if the substitution test in section 3.2(c)(ii)(B) of this appendix results in a ‘‘test design value’’ that is below the level of the NAAQS. The test substitutes actual ‘‘high’’ reported daily mean values from the same site at about the same time of the year (specifically, in the same calendar quarter) for unknown or incomplete (less than 75 percent of hours reported) daily mean values. Note that the test is merely diagnostic in nature, intended to confirm that there is a very high likelihood that the original design value (the one with less than 75 percent data capture of hours by day and of days by quarter) reflects the true under-NAAQS-level status for that 3-year period; the result of this data substitution test (the ‘‘test design value,’’ as defined in section 3.2(c)(ii)(B)) of this appendix is not considered the actual design value. For this test, substitution is permitted only if there are at least 200 days across the three matching quarters of the three years under consideration (which is about 75 percent of all possible daily values in those three quarters) for which 75 percent of the hours in the day, including State-flagged data affected by exceptional events which have been approved for exclusion by the Administrator, have reported concentrations. However, daily mean values from days with less than 75 percent of the hours reported shall also be considered in identifying the high daily mean value to be used for substitution.\n(B) The substitution test is as follows: Data substitution will be performed in all quarter periods that have less than 75 percent data capture but at least 50 percent data capture, including State-flagged data affected by exceptional events which have been approved for exclusion by the Administrator; if any quarter has less than 50 percent data capture then this substitution test cannot be used. Identify for each quarter (e.g., January– March) the highest reported daily mean value for that quarter, excluding State-flagged data affected by exceptional events which have been approved for exclusion by the Administrator, looking across those three months of all three years under consideration. All daily mean values from all days in the quarter period shall be considered when identifying this highest value, including days with less than 75\npercent data capture. If after substituting the highest daily mean value for a quarter for as much of the missing daily data in the matching deficient quarter(s) as is needed to make them 100 percent complete, the procedure in section 5 of this appendix yields a recalculated 3-year annual standard ‘‘test design value’’ less than or equal to the level of the standard, then the annual secondary standard design value is deemed to have passed the diagnostic test and is valid, and the level of the standard is deemed to have been met in that 3-year period. As noted in section 3.2(c)(i) of this appendix, in such a case, the 3-year design value based on the data actually reported, not the ‘‘test design value,’’ shall be used as the valid design value.\n(iii)(A) An annual secondary standard design value that is above the level of the NAAQS can be validated if the substitution test in section 3.2(c)(iii)(B) of this appendix results in a ‘‘test design value’’ that is above the level of the NAAQS. The test substitutes actual ‘‘low’’ reported daily mean values from the same site at about the same time of the year (specifically, in the same three months of the calendar) for unknown or incomplete (less than 75 percent of hours reported) daily mean values. Note that the test is merely diagnostic in nature, intended to confirm that there is a very high likelihood that the original design value (the one with less than 75 percent data capture of hours by day and of days by quarter) reflects the true above-NAAQS-level status for that 3-year period; the result of this data substitution test (the ‘‘test design value,’’ as defined in section 3.2(c)(iii)(B) of this appendix) is not considered the actual design value. For this test, substitution is permitted only if there are a minimum number of valid daily mean values from which to identify the low quarter-specific daily mean values, specifically if there are at least 200 days across the three matching quarters of the three years under consideration (which is about 75 percent of all possible daily values in those three quarters) for which 75 percent of the hours in the day have reported concentrations. Only days with at least 75 percent of the hours reported shall be considered in identifying the low daily mean value to be used for substitution.\n(B) The substitution test is as follows: Data substitution will be performed in all quarter periods that have less than 75 percent data capture. Identify for each quarter (e.g., January–March) the lowest reported daily mean value for that quarter, looking across those three months of all three years under consideration. All daily mean values from all days with at least 75 percent capture in the quarter period shall be considered when identifying this lowest value. If after substituting the lowest reported daily mean value for a quarter for as much of the missing daily data in the matching deficient quarter(s) as is needed to make them 75 percent complete, the procedure in section 5.2 of this appendix yields a recalculated 3- year annual standard ‘‘test design value’ above the level of the standard, then the annual secondary standard design value is deemed to have passed the diagnostic test and is valid, and the level of the standard is\ndeemed to have been exceeded in that 3-year period. As noted in section 3.2(c)(i) of this appendix, in such a case, the 3-year design value based on the data actually reported, not the ‘‘test design value,’’ shall be used as the valid design value.\n(d) An annual secondary standard design value based on data that do not meet the completeness criteria stated in section 3.2(b) of this appendix and also do not satisfy section 3.2(c) of this appendix, may also be considered valid with the approval of, or at the initiative of, the Administrator, who may consider factors such as monitoring site closures/moves, monitoring diligence, the consistency and levels of the valid concentration measurements that are available, and nearby concentrations in determining whether to use such data.\n(e) The procedures for calculating the annual secondary standard design values are given in section 5.2 of this appendix.",
+     "file_path": "air-56_Federal-Register_Secondary-NAAQS-Final-Review-NOx-SO2-PM_2024.pdf",
+     "rejected_reason": "doc doc-f786d9079ac78c8e746df84e2e8e8535 is not a RESOLVED requested target; a nearby version/other document is never substituted"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f-chunk-004",
+     "doc_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f-chunk-004",
+       "doc_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:二级浓度限值",
+        "edge:二级浓度限值|过渡阶段浓度限值",
+        "edge:二级浓度限值|基本项目浓度限值"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 7,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 7,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       },
+       "constraint_rejected": "doc doc-c963ecba7eeb28190aa94ffbc29e6b2f is not a RESOLVED requested target; a nearby version/other document is never substituted"
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "2d7ffdf8a6fc9b980932f3e98a3604f3261670c1a7d8e455bbf07c4cbcde4dbf",
+     "content_len": 1728,
+     "content": "全国城市空气质量报告\n2. 《环境空气质量标准》（GB 3095—2026）中六项污染物浓度限值如下表所示：\n<table id=\"tb-c963ecba7eeb28190aa94ffbc29e6b2f-0002\" format=\"html\"><tr><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">过渡阶段浓度限值</td><td colspan=\"2\">浓度限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td><td>一级</td><td>二级</td></tr><tr><td rowspan=\"3\"> $SO_2$ </td><td>年平均</td><td>20</td><td>60</td><td>20</td><td>20</td><td rowspan=\"6\"> $μg/m^3$ </td></tr><tr><td>日平均</td><td>50</td><td>150</td><td>50</td><td>50</td></tr><tr><td>1小时平均</td><td>150</td><td>500</td><td>150</td><td>150</td></tr><tr><td rowspan=\"3\"> $NO_2$ </td><td>年平均</td><td>40</td><td>40</td><td>30</td><td>30</td></tr><tr><td>日平均</td><td>80</td><td>80</td><td>50</td><td>50</td></tr><tr><td>1小时平均</td><td>200</td><td>200</td><td>200</td><td>200</td></tr><tr><td rowspan=\"2\">CO</td><td>日平均</td><td>4</td><td>4</td><td>4</td><td>4</td><td rowspan=\"2\"> $mg/m^3$ </td></tr><tr><td>1小时平均</td><td>10</td><td>10</td><td>10</td><td>10</td></tr><tr><td rowspan=\"2\"> $O_3$ </td><td>日最大8小时平均</td><td>100</td><td>160</td><td>100</td><td>160</td><td rowspan=\"6\"> $μg/m^3$ </td></tr><tr><td>1小时平均</td><td>160</td><td>200</td><td>160</td><td>200</td></tr><tr><td rowspan=\"2\"> $PM_{10}$ </td><td>年平均</td><td>40</td><td>60</td><td>20</td><td>50</td></tr><tr><td>日平均</td><td>50</td><td>120</td><td>50</td><td>100</td></tr><tr><td rowspan=\"2\"> $PM_{2.5}$ </td><td>年平均</td><td>15</td><td>30</td><td>10</td><td>25</td></tr><tr><td>日平均</td><td>35</td><td>60</td><td>25</td><td>50</td></tr></table>\n其中，自《环境空气质量标准》（GB 3095—2026）实施之日起至2030年12月31日止，环境空气污染物基本项目实施过渡阶段浓度限值；自2031年1月1日起，在全国范围内实施基本项目浓度限值。\n3. 本报告采用 “十五五” 国控城市点位监测数据开展评价，其中 $PM_{10}$ 浓度、 $PM_{2.5}$ 浓度扣除沙尘天气影响；优良天数比例、重度及以上污染天数比例保留沙尘。\n全国城市空气质量报告",
+     "file_path": "air-26_中国环境监测总站_2026年7月全国城市空气质量报告_2026.pdf",
+     "rejected_reason": "doc doc-c963ecba7eeb28190aa94ffbc29e6b2f is not a RESOLVED requested target; a nearby version/other document is never substituted"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-006",
+     "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-006",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:二氧化硫(SO₂)",
+        "edge:二氧化硫(SO₂)|表4数据有效性规定"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 8,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 8,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       },
+       "constraint_rejected": "doc doc-4c883d21fa02a53189e0911c3d59d1d1 is not a RESOLVED requested target; a nearby version/other document is never substituted"
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "85cc1fc8365339b7e0dd27bbbd2f58b6c3bf379ccc6dbf3771d52034cae2c06b",
+     "content_len": 2467,
+     "content": "## 6 数据统计的有效性规定\n6.1 应采取措施保证监测数据的准确性、连续性和完整性，确保全面、客观地反映监测结果。\n6.2 采用自动监测设备监测时，监测仪器应全年 365 天（闰年 366 天）连续运行。在监测仪器校准、停电和设备故障，以及其他不可抗拒的因素导致不能获得连续监测数据时，应采取有效措施及时恢复设备正常运行。\n6.3 异常值的判断和处理应符合 HJ 630、HJ 817 和 HJ 818 的规定。对于监测过程中缺失和删除的数据均应说明原因，并保留详细的原始数据记录，以备数据审核。\n6.4 任何情况下，有效的污染物浓度数据均应符合表 4 中的最低要求，否则应视为无效数据。所有有效数据均应参加统计和评价。\n<table id=\"tb-4c883d21fa02a53189e0911c3d59d1d1-0004\" format=\"html\"><tr><td>污染物项目</td><td>平均时间</td><td>数据有效性规定</td></tr><tr><td>二氧化硫( $SO_2$ )、二氧化氮( $NO_2$ )、颗粒物(粒径小于等于10μm, $PM_{10}$ )、颗粒物(粒径小于等于2.5μm, $PM_{2.5}$ )、氮氧化物( $NO_x$ )</td><td>年平均</td><td>每年至少有324个日平均浓度值;每月至少有27个日平均浓度值(二月至少有25个日平均浓度值)</td></tr><tr><td>二氧化硫( $SO_2$ )、二氧化氮( $NO_2$ )、一氧化碳(CO)、颗粒物(粒径小于等于10μm, $PM_{10}$ )、颗粒物(粒径小于等于2.5μm, $PM_{2.5}$ )、氮氧化物( $NO_x$ )</td><td>日平均</td><td>每日至少有20个小时平均浓度值或采样时间</td></tr><tr><td>臭氧( $O_3$ )</td><td>8小时平均</td><td>每8小时至少有6个小时平均浓度值</td></tr><tr><td>二氧化硫( $SO_2$ )、二氧化氮( $NO_2$ )、一氧化碳(CO)、臭氧( $O_3$ )、氮氧化物( $NO_x$ )</td><td>1小时平均</td><td>每小时至少有45分钟的采样时间</td></tr><tr><td>总悬浮颗粒物(TSP)、苯并[a]芘(BaP)、铅(Pb)</td><td>年平均</td><td>每年至少有分布均匀的60个日平均浓度值;每月至少有分布均匀的5个日平均浓度值</td></tr><tr><td>铅(Pb)</td><td>季平均</td><td>每季至少有分布均匀的15个日平均浓度值;每月至少有分布均匀的5个日平均浓度值</td></tr><tr><td>总悬浮颗粒物(TSP)、苯并[a]芘(BaP)、铅(Pb)</td><td>日平均</td><td>每日应有24小时的采样时间</td></tr></table>\n\n## 7 实施与监督\n7.1 本标准由各级生态环境主管部门负责监督实施。\n7.2 各类环境空气功能区的范围由设区的市级及以上生态环境主管部门依法划分。\nGB 3095—2026\n\n## 附录 A\n(资料性附录)\n环境空气中镉、汞、砷、六价铬和氟化物参考浓度限值\n各省级人民政府可根据当地生态环境保护的需要，针对环境污染的特点，对本标准中未规定的污染物项目制定并实施地方环境空气质量标准。以下为环境空气中部分污染物参考浓度限值。\n<table id=\"tb-4c883d21fa02a53189e0911c3d59d1d1-0005\" format=\"html\"><tr><td>序号</td><td>污染物项目</td><td>平均时间</td><td>浓度(通量)限值</td><td>单位</td></tr><tr><td>1</td><td> $镉(Cd)^{a}$ </td><td>年平均</td><td>0.005</td><td rowspan=\"6\"> $\\mu g/m^{3}$ </td></tr><tr><td>2</td><td> $汞(Hg)^{b}$ </td><td>年平均</td><td>0.05</td></tr><tr><td>3</td><td> $砷(As)^{a}$ </td><td>年平均</td><td>0.006</td></tr><tr><td>4</td><td>六价铬  $[Cr(VI)]^{a}$ </td><td>年平均</td><td>0.000 025</td></tr><tr><td rowspan=\"4\">5</td><td rowspan=\"4\"> $氟化物(F)^{c}$ </td><td>1小时平均</td><td> $20^{d}$ </td></tr><tr><td>日平均</td><td> $7^{d}$ </td></tr><tr><td>月平均</td><td> $1.8^{e}, 3.0^{f}$ </td><td rowspan=\"2\"> $\\mu g/(dm^{2}·d)$ </td></tr><tr><td>植物生长季平均</td><td> $1.2^{e}, 2.0^{f}$ </td></tr><tr><td colspan=\"5\"> $^{a}$ 存在于颗粒物(粒径小于等于 $10\\mu m, PM_{10}$ )中的镉(Cd)及其化合物、砷(As)及其化合物、六价铬  $[Cr(VI)]$ 及其化合物。 $^{b}$ 以气态和颗粒态形式存在的汞及其化合物。 $^{c}$ 以气态和颗粒态形式存在的无机氟化物。 $^{d}$ 适用于城市地区。 $^{e}$ 适用于牧业区和以牧业为主的半农半牧区、蚕桑区。 $^{f}$ 适用于农业和林业区。</td></tr></table>\nGB 3095—2026",
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "rejected_reason": "doc doc-4c883d21fa02a53189e0911c3d59d1d1 is not a RESOLVED requested target; a nearby version/other document is never substituted"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-f786d9079ac78c8e746df84e2e8e8535-chunk-096",
+     "doc_id": "doc-f786d9079ac78c8e746df84e2e8e8535",
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-f786d9079ac78c8e746df84e2e8e8535-chunk-096",
+       "doc_id": "doc-f786d9079ac78c8e746df84e2e8e8535",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:Secondary SO2 NAAQS",
+        "edge:Administrator|Secondary SO2 NAAQS",
+        "edge:40 CFR Part 50|Secondary SO2 NAAQS",
+        "edge:Integrated Science Assessment|Secondary SO2 NAAQS",
+        "edge:Clean Air Scientific Advisory Committee|Secondary SO2 NAAQS",
+        "edge:Policy Assessment|Secondary SO2 NAAQS",
+        "edge:Appendix T|Secondary SO2 NAAQS",
+        "edge:1-Hour Primary SO2 NAAQS|Secondary SO2 NAAQS",
+        "edge:Secondary SO2 NAAQS|Technical Memorandum"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 9,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 9,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       },
+       "constraint_rejected": "doc doc-f786d9079ac78c8e746df84e2e8e8535 is not a RESOLVED requested target; a nearby version/other document is never substituted"
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "e15fe941171ace2012f563b47f1fe699c943ea50082846eaf7f1518e4fbacc3a",
+     "content_len": 9472,
+     "content": "## C. Decision on the Secondary Standards\nFor the reasons discussed above and considering the evidence assessed in the ISA, the qualitative assessments and policy evaluations presented in the PA and associated technical memorandum, the advice and recommendations of the CASAC, and the public comments, the Administrator is revising the secondary standard for $S 0 \\mathrm { x }$ to provide the requisite protection of the public welfare from known and anticipated adverse effects. More specifically, the Administrator is revising the secondary SO standard to be an annual average, averaged over three years, with a level of 10 ppb $S { \\mathrm { O } } _ { 2 } .$ With this decision, the Agency is also making corresponding revisions to data handling conventions are specified in revisions to appendix T, discussed in section III. below.\nWith regard to the secondary standards for N oxides and PM, based on the evidence assessed in the ISA, the qualitative assessments and policy evaluations presented in the PA and associated technical memorandum, the advice and recommendations of the CASAC, and the public comments, and for the reasons discussed above, the Administrator concludes that no changes are warranted, and is retaining the existing standards, without revision.\n\n## III. Interpretation of the Secondary SO<sub>2</sub> NAAQS\nThe EPA received no comments regarding the proposed data handling procedures for SO<sub>2</sub> monitoring data for purposes of determining when the new annual secondary SO<sub>2</sub> NAAQS is met. Therefore, the EPA is finalizing the proposed revisions to appendix T to 40 CFR part 50, Interpretation of the Primary National Ambient Air Quality Standards for Oxides of Sulfur, to establish data handling procedures for the new annual secondary SO<sub>2</sub> standard. The regulatory text at 40 CFR 50.21, which sets the averaging period, level, indicator, and form of the annual standard, refers to this appendix T. The revised appendix T details the computations necessary for determining when the annual secondary SO NAAQS is met. The revised appendix T also addresses data reporting, data completeness considerations, and rounding conventions.\n\n## A. Background\nThe general purpose of a data interpretation appendix is to provide the practical details on how to make a comparison between multi-day and possibly multi-monitor ambient air concentration data and the level of the NAAQS, so that determinations of attainment and nonattainment are as objective as possible. Data interpretation guidelines also provide criteria for determining whether there are sufficient data to make a NAAQS level comparison at all. The regulatory language for the secondary SO<sub>2</sub> NAAQS adopted in 1971 does not contain detailed data interpretation instructions. This situation contrasts with the primary $\\mathrm { N O } _ { 2 } ,$ ozone, $\\mathrm { P M } _ { 2 . 5 } , \\mathrm { P M } _ { 1 0 } ,$ lead, and primary SO<sub>2</sub> NAAQS regulations, for which there are detailed data interpretation appendices in 40 CFR part 50 addressing issues that can arise in comparing monitoring data to the NAAQS. The existing appendix T includes these detailed data interpretation requirements for the 1- hour primary SO<sub>2</sub> NAAQS, thus the\nFederal Register / Vol. 89, No. 248 / Friday, December 27, 2024 / Rules and Regulations\n<sup>149</sup> As noted in the PA and summarized in section II.B.1.b. above, the CASAC majority, in its justification for revision of the existing standard, did not identify studies in support of its statements related to lichen species and fog or cloud water.\nrevision provides similar information for the new annual secondary SO<sub>2</sub> NAAQS. The EPA has used its experience developing and applying this data interpretation appendix to develop the revisions to the text in appendix T to address the new annual secondary SO<sub>2</sub> standard.\n\n## B. Interpretation of the Secondary SO<sub>2</sub> Standard\nThe purpose of the data interpretation provisions for the secondary SO<sub>2</sub> NAAQS is to give effect to the form, level, averaging time, and indicator specified in the regulatory text at 40 CFR 50.21, anticipating and resolving in advance various future situations that could occur. The revised appendix T provides definitions and requirements that apply to the annual secondary standard for SO<sub>2</sub>. The requirements clarify how ambient air data are to be reported, what ambient air data are to be used for comparisons with the SO NAAQS, and how to calculate design values for comparisons with the SO NAAQS. The data already required to be reported by ambient air SO monitors for use in calculating design values for the current 1-hour primary SO<sub>2</sub> NAAQS are also sufficient for use in calculating design values for the new annual secondary SO NAAQS.\nThe revised appendix T specifies that the annual secondary SO NAAQS is met at an ambient air quality monitoring site when the valid annual secondary standard design value is less than or equal to 10 ppb. The annual secondary standard design value for an ambient air quality monitoring site is described as the mean of the annual means for three consecutive years, with the annual mean derived as the annual average of daily means, with rounding and data completeness specified as described below. The use of a daily mean value in deriving the design value is consistent with the existing data handling requirements for the current 1-hour primary SO<sub>2</sub> NAAQS.\nData completeness requirements for the annual secondary standard in the revised appendix T follow past EPA practice for other NAAQS pollutants by requiring that in general at least 75% of the monitoring data that should have resulted from following the planned monitoring schedule in a period must be available for the key air quality statistic from that period to be considered valid. These data completeness requirements are consistent with the current data completeness requirements for the 1- hour primary SO<sub>2</sub> NAAQS in appendix T, and the revised appendix T does not change those requirements. For the annual secondary SO<sub>2</sub> NAAQS, the key air quality statistics are the annual average of daily mean (24-hour average, midnight-to-midnight) concentrations in three successive years. It is important that daily means are representative of the 24-hour period and that all seasons of the year are well represented. Hence, the 75% requirement is applied at the daily and quarterly levels. These completeness requirements, including the calculation of the daily mean, are consistent with existing completeness requirements for the current 1-hour primary SO<sub>2</sub> NAAQS.\nRecognizing that there may be years with incomplete data, the text provides that a design value derived from incomplete data will nevertheless be considered valid if at least 75 percent of the days in each quarter of each of three consecutive years have at least one reported hourly value, and the 3-year annual average design value calculated according to the procedures specified in the revised appendix T is above the level of the secondary annual standard. Additionally, following provisions in the revised appendix T, a substitution test may be used to demonstrate validity of incomplete design values above the level of the standard by substituting a ‘‘low’’ daily mean value from the same calendar quarter in the 3-year design value period. Similarly, another substitution test may be used to demonstrate validity of incomplete design values below the level of the standard by substituting a ‘‘high’’ daily mean value from the same calendar quarter in the 3-year design value period. These substitution tests are consistent with existing substitution tests for the current 1-hour primary SO NAAQS.\nIt should be noted that one possible outcome of applying the substitution test is that a year with incomplete data may nevertheless be determined to not have a valid design value and thus to be unusable in making annual secondary NAAQS compliance determinations for that 3-year period. However, the intention of the substitution test is to reduce the frequency of such occurrences.\nThe EPA Administrator has general discretion to use incomplete monitoring data to calculate design values that would be treated as valid for comparison to the NAAQS despite the incompleteness, either at the request of a State or at the Administrator’s own initiative. Similar provisions exist already for the PM , NO , lead, and 1- hour primary SO<sub>2</sub> NAAQS. The EPA may consider monitoring site closures/ moves, monitoring diligence, and nearby concentrations in determining whether to use such data.\nThe rounding conventions for the new annual secondary SO NAAQS are consistent with rounding conventions used for the current 1-hour primary SO<sub>2</sub> NAAQS. Specifically, hourly SO measurement data shall be reported to EPA’s regulatory database in units of ppb, to at most one place after the decimal, with additional digits to the right being truncated with no further rounding. Daily mean values and the annual mean of those daily values are not rounded. Further, the annual secondary standard design value is calculated pursuant to the revised appendix T and then rounded to the nearest whole number or 1 ppb (decimals 0.5 and greater are rounded up to the nearest whole number, and any decimal lower than 0.5 is rounded down to the nearest whole number).",
+     "file_path": "air-56_Federal-Register_Secondary-NAAQS-Final-Review-NOx-SO2-PM_2024.pdf",
+     "rejected_reason": "doc doc-f786d9079ac78c8e746df84e2e8e8535 is not a RESOLVED requested target; a nearby version/other document is never substituted"
+    }
+   ],
+   "budget": {
+    "limit": 40,
+    "kept": 2,
+    "truncated": [],
+    "rule": "no truncation"
+   },
+   "status": "ok",
+   "degraded": [],
+   "notes": [],
+   "allowed_set_basis": {
+    "resolved_code_targets": [
+     [
+      "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+     ]
+    ],
+    "verified_attributions": []
+   },
+   "verify": {
+    "requested": 10,
+    "verified": 10,
+    "missing": 0,
+    "attribution_conflict": 0
+   }
+  }
+ ],
+ "finished_at": "2026-10-08T13:18:21+0800"
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "R1",
+    "path": "src/env_rag_final/evaluation.py",
+    "start_line": 346,
+    "end_line": 360,
+    "severity": "high",
+    "category": "bug",
+    "content": "预算只修改外层_RecordingSession.run；生产 async with driver.session() 返回_EnteredSession，里面run仍直连原生会话。冻结r2实际上下文反例两次query在上限1下均执行。必须覆盖进入后的session并保持真实记录/只close默认语义。"
+  },
+  {
+    "id": "R1",
+    "path": "src/env_rag_final/evaluation.py",
+    "start_line": 1058,
+    "end_line": 1073,
+    "severity": "high",
+    "category": "bug",
+    "content": "仅conn显式传入时才包装PG连接；CLI正常不传conn，run_answer自行asyncpg.connect，SQL全部绕过配额。真实answer+假自有连接在pg=0仍执行SQL。其他自建SourceAdapter/融合/精排/identity读也需纳入定义明确的预算边界，不能只靠测试提供conn。"
+  },
+  {
+    "id": "R2",
+    "path": "src/env_rag_final/evaluation.py",
+    "start_line": 221,
+    "end_line": 254,
+    "severity": "high",
+    "category": "bug",
+    "content": "reserve立即写issued=amount，snapshot仅加总reserved事件；真实答案因incomplete_conditions跳过HTTP时，model_calls_used=0却issued_total.answer_llm=1。预留与实发不能混同，应以真实I/O/receipt作实发凭证，保留已实际执行失败调用的计数。"
+  },
+  {
+    "id": "R2",
+    "path": "src/env_rag_final/evaluation.py",
+    "start_line": 994,
+    "end_line": 1015,
+    "severity": "high",
+    "category": "bug",
+    "content": "发布VECTOR helper会吞BudgetExhausted并回落WEIGHT；当前只等异常逃出runner才记录budget_failure，导致账本已有拒绝仍进入answer并标complete。冻结r2真实Qdrant包装器+同类异常吞掉反例已输出complete；在每阶段核对本题拒绝事件并明确partial/预算失败，不能由库吞异常消除评测失败。"
+  },
+  {
+    "id": "R3",
+    "path": "src/env_rag_final/cli.py",
+    "start_line": 315,
+    "end_line": 330,
+    "severity": "high",
+    "category": "bug",
+    "content": "缺失Phase4锚仍expected=None并进入实际入口；锚存在时仍只传四个来源字段，模型/代码/提示/预算及env配置没有完整冻结校验。要求CLI在读取后端前必须具备完整有效锚；env-only直调fixture通过不能替代CLI合同。"
+  },
+  {
+    "id": "R3",
+    "path": "src/env_rag_final/evaluation.py",
+    "start_line": 158,
+    "end_line": 169,
+    "severity": "high",
+    "category": "bug",
+    "content": "BudgetSpec只检查外层key，None/负数cap原样写入。None会取消该维度约束，负值错误在执行时才暴露；schema拒绝需在identity前完成，校验非bool非负int、已知服务与完整必要限额。r2两项均仍接触identity。"
+  },
+  {
+    "id": "R3",
+    "path": "src/env_rag_final/evaluation.py",
+    "start_line": 1126,
+    "end_line": 1127,
+    "severity": "high",
+    "category": "bug",
+    "content": "post capture直接抛AdapterError时走except AdapterError:raise，没有写失败终态，已完成结果丢失。区分已由本地漂移分支写盘的拒绝与采集本身抛错，统一落盘当前预算/结果/原错/后错后再抛。OSError通过结论保持。"
+  },
+  {
+    "id": "R4",
+    "path": "src/env_rag_final/evaluation.py",
+    "start_line": 592,
+    "end_line": 603,
+    "severity": "medium",
+    "category": "bug",
+    "content": "Candidate转换丢掉reached_via、similarity_order、source_type，发布paths又统一score=None/discovery=local_vector；连实际weight-fallback也不保留。local全文与verified接入已通过，但原始来源/实际选择顺序仍需原样落盘，与PG两路分数口径保持各自含义，不虚构向量排序。"
+  }
+]

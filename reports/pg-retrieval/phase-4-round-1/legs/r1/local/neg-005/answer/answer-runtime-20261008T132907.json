@@ -1,0 +1,4596 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-08T13:29:04+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "neg-005"
+ ],
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "reports/pg-retrieval/phase-4-round-1/inputs/local/neg-005-rerank.json",
+   "sha256": "bf34c548b8d8e28bb5bd476e2bc2439a95b6cee312087da9ab1eb80623ca3f60",
+   "task": null,
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": []
+  },
+  "fused_report": {
+   "path": "reports/pg-retrieval/phase-4-round-1/inputs/local/neg-005-fusion.json",
+   "sha256": "0be4a8f529bdd47508e678531e2635efc57a408066d524bd7fcf0f216fadbd31",
+   "task": "Phase 4 round 1 evaluation input (path=local)",
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": [
+    "neg-005"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "model_calls_used": 0,
+ "results": [
+  {
+   "query_id": "neg-005",
+   "query": "GB 3838-2002 的表 1 与 GB 3095-2012 的表 1 是同一张表吗？",
+   "category": "table_enum",
+   "workspace": "default",
+   "coverage_status": "ambiguous",
+   "fail_stage": "",
+   "flags": [
+    "no rerank replay for this query id — scope priority falls back to fusion path order, explicitly recorded (no fabricated scores)"
+   ],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "absent",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 0,
+    "typed_targets": [
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "discovery": "local"
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "discovery": "local"
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "discovery": "local"
+     }
+    ],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 10,
+    "selected_docs": [
+     "doc-91f9049decde09153368d4b69f280e78",
+     "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+     "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+    ],
+    "priority": [
+     {
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "rerank_rank_or_none": null
+     }
+    ],
+    "basis": "targets_resolved + typed targets (5.3) define the scope; rerank order only prioritizes — membership is never top-k bounded"
+   },
+   "expansions": [
+    {
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "kind": "table",
+     "table_number": "1",
+     "scope_ids": [
+      "tb-91f9049decde09153368d4b69f280e78-0001"
+     ],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "fail_stage": "",
+     "items_count": 24,
+     "warnings": [
+      "table_structure: header=[[\"序号\", \"标准值\\\\分类项目\", \"I类\", \"II类\", \"III类\", \"IV类\", \"V类\"]]; units=[]; footnotes=[]"
+     ],
+     "selected": true
+    },
+    {
+     "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+     "kind": "table",
+     "table_number": "1",
+     "scope_ids": [
+      "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001"
+     ],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "ambiguous",
+     "fail_stage": "ambiguous",
+     "items_count": 39,
+     "warnings": [
+      "structure_status=ambiguous（列/数据行无法可靠识别）",
+      "table_structure: header=[[\"序号\", \"指标\", \"I类\", \"II类\", \"III类\", \"IV类\", \"V类\"], [\"感官性状及一般化学指标\", \"感官性状及一般化学指标\", \"感官性状及一般化学指标\", \"感官性状及一般化学指标\", \"感官性状及一般化学指标\", \"感官性状及一般化学指标\", \"感官性状及一般化学指标\"]]; units=[]; footnotes=[\"微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标\", \"毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标\", \"毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标\", \"放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d\", \"a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。\"]"
+     ],
+     "selected": true
+    },
+    {
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "kind": "table",
+     "table_number": "1",
+     "scope_ids": [
+      "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001"
+     ],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "fail_stage": "",
+     "items_count": 14,
+     "warnings": [
+      "table_structure: header=[[\"序号\", \"污染物项目\", \"平均时间\", \"浓度限值\", \"浓度限值\", \"单位\"], [\"序号\", \"污染物项目\", \"平均时间\", \"一级\", \"二级\", \"单位\"]]; units=[]; footnotes=[]"
+     ],
+     "selected": true
+    }
+   ],
+   "answer": {
+    "mode": "deterministic",
+    "generated_by": "enumerate/expand entries",
+    "items": [
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "1",
+      "cells": [
+       "1",
+       "水温(°C)",
+       "人为造成的环境水温变化应限制在:周平均最大温升≤1周平均最大温降≤2",
+       "人为造成的环境水温变化应限制在:周平均最大温升≤1周平均最大温降≤2",
+       "人为造成的环境水温变化应限制在:周平均最大温升≤1周平均最大温降≤2",
+       "人为造成的环境水温变化应限制在:周平均最大温升≤1周平均最大温降≤2",
+       "人为造成的环境水温变化应限制在:周平均最大温升≤1周平均最大温降≤2"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 1,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "2",
+      "cells": [
+       "2",
+       "pH值(无量纲)",
+       "6~9",
+       "6~9",
+       "6~9",
+       "6~9",
+       "6~9"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 2,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "3",
+      "cells": [
+       "3",
+       "溶解氧≥",
+       "饱和率90%(或7.5)",
+       "6",
+       "5",
+       "3",
+       "2"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 3,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "4",
+      "cells": [
+       "4",
+       "高锰酸盐指数≤",
+       "2",
+       "4",
+       "6",
+       "10",
+       "15"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 4,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "5",
+      "cells": [
+       "5",
+       "化学需氧量(COD)≤",
+       "15",
+       "15",
+       "20",
+       "30",
+       "40"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 5,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "6",
+      "cells": [
+       "6",
+       "五日生化需氧量(BOD5)≤",
+       "3",
+       "3",
+       "4",
+       "6",
+       "10"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 6,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "7",
+      "cells": [
+       "7",
+       "氨氮(NH3-N)≤",
+       "0.15",
+       "0.5",
+       "1.0",
+       "1.5",
+       "2.0"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 7,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "8",
+      "cells": [
+       "8",
+       "总磷(以P计)≤",
+       "0.02(湖、库0.01)",
+       "0.1(湖、库0.025)",
+       "0.2(湖、库0.05)",
+       "0.3(湖、库0.1)",
+       "0.4(湖、库0.2)"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 8,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "9",
+      "cells": [
+       "9",
+       "总氮(湖、库,以N计)≤",
+       "0.2",
+       "0.5",
+       "1.0",
+       "1.5",
+       "2.0"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 9,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "10",
+      "cells": [
+       "10",
+       "铜≤",
+       "0.01",
+       "1.0",
+       "1.0",
+       "1.0",
+       "1.0"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 10,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "11",
+      "cells": [
+       "11",
+       "锌≤",
+       "0.05",
+       "1.0",
+       "1.0",
+       "2.0",
+       "2.0"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 11,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "12",
+      "cells": [
+       "12",
+       "氟化物(以F-计)≤",
+       "1.0",
+       "1.0",
+       "1.0",
+       "1.5",
+       "1.5"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 12,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "13",
+      "cells": [
+       "13",
+       "硒≤",
+       "0.01",
+       "0.01",
+       "0.01",
+       "0.02",
+       "0.02"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 13,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "14",
+      "cells": [
+       "14",
+       "砷≤",
+       "0.05",
+       "0.05",
+       "0.05",
+       "0.1",
+       "0.1"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 14,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "15",
+      "cells": [
+       "15",
+       "汞≤",
+       "0.00005",
+       "0.00005",
+       "0.0001",
+       "0.001",
+       "0.001"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 15,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "16",
+      "cells": [
+       "16",
+       "镉≤",
+       "0.001",
+       "0.005",
+       "0.005",
+       "0.005",
+       "0.01"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 16,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "17",
+      "cells": [
+       "17",
+       "铬(六价)≤",
+       "0.01",
+       "0.05",
+       "0.05",
+       "0.05",
+       "0.1"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 17,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "18",
+      "cells": [
+       "18",
+       "铅≤",
+       "0.01",
+       "0.01",
+       "0.05",
+       "0.05",
+       "0.1"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 18,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "19",
+      "cells": [
+       "19",
+       "氰化物≤",
+       "0.005",
+       "0.05",
+       "0.2",
+       "0.2",
+       "0.2"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 19,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "20",
+      "cells": [
+       "20",
+       "挥发酚≤",
+       "0.002",
+       "0.002",
+       "0.005",
+       "0.01",
+       "0.1"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 20,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "21",
+      "cells": [
+       "21",
+       "石油类≤",
+       "0.05",
+       "0.05",
+       "0.05",
+       "0.5",
+       "1.0"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 21,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "22",
+      "cells": [
+       "22",
+       "阴离子表面活性剂≤",
+       "0.2",
+       "0.2",
+       "0.2",
+       "0.3",
+       "0.3"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 22,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "23",
+      "cells": [
+       "23",
+       "硫化物≤",
+       "0.05",
+       "0.1",
+       "0.2",
+       "0.5",
+       "1.0"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 23,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_number": "1",
+      "seq": "24",
+      "cells": [
+       "24",
+       "粪大肠菌群(个/L)≤",
+       "200",
+       "2000",
+       "10000",
+       "20000",
+       "40000"
+      ],
+      "header": [
+       [
+        "序号",
+        "标准值\\分类项目",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 24,
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "blockid": "9390ecf11c23533f8d2d271b726e98dc",
+       "locator": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "chunk_ids": [
+        "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+        "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地表水环境质量标准基本项目标准限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "1",
+      "cells": [
+       "1",
+       "色(铂钴色度单位)",
+       "$\\leqslant5$",
+       "$\\leqslant5$",
+       "$\\leqslant15$",
+       "$\\leqslant25$",
+       ">25"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 2,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "2",
+      "cells": [
+       "2",
+       "嗅和味",
+       "无",
+       "无",
+       "无",
+       "无",
+       "有"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 3,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "3",
+      "cells": [
+       "3",
+       "浑浊度/NTUa",
+       "$\\leqslant3$",
+       "$\\leqslant3$",
+       "$\\leqslant3$",
+       "$\\leqslant10$",
+       ">10"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 4,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "4",
+      "cells": [
+       "4",
+       "肉眼可见物",
+       "无",
+       "无",
+       "无",
+       "无",
+       "有"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 5,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "5",
+      "cells": [
+       "5",
+       "pH",
+       "6.5 $\\leqslant$ pH $\\leqslant$ 8.5",
+       "6.5 $\\leqslant$ pH $\\leqslant$ 8.5",
+       "6.5 $\\leqslant$ pH $\\leqslant$ 8.5",
+       "5.5 $\\leqslant$ pH<6.58.5 $<$ pH $\\leqslant$ 9.0",
+       "pH<5.5或pH>9.0"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 6,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "6",
+      "cells": [
+       "6",
+       "总硬度(以CaCO3计)/(mg/L)",
+       "$\\leqslant150$",
+       "$\\leqslant300$",
+       "$\\leqslant450$",
+       "$\\leqslant650$",
+       ">650"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 7,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "7",
+      "cells": [
+       "7",
+       "溶解性总固体/(mg/L)",
+       "$\\leqslant300$",
+       "$\\leqslant500$",
+       "$\\leqslant1\\ 000$",
+       "$\\leqslant2\\ 000$",
+       ">2 000"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 8,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "8",
+      "cells": [
+       "8",
+       "硫酸盐/(mg/L)",
+       "$\\leqslant50$",
+       "$\\leqslant150$",
+       "$\\leqslant250$",
+       "$\\leqslant350$",
+       ">350"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 9,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "9",
+      "cells": [
+       "9",
+       "氯化物/(mg/L)",
+       "$\\leqslant50$",
+       "$\\leqslant150$",
+       "$\\leqslant250$",
+       "$\\leqslant350$",
+       ">350"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 10,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "10",
+      "cells": [
+       "10",
+       "铁/(mg/L)",
+       "$\\leqslant0.1$",
+       "$\\leqslant0.2$",
+       "$\\leqslant0.3$",
+       "$\\leqslant2.0$",
+       ">2.0"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 11,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "11",
+      "cells": [
+       "11",
+       "锰/(mg/L)",
+       "$\\leqslant0.05$",
+       "$\\leqslant0.05$",
+       "$\\leqslant0.10$",
+       "$\\leqslant1.50$",
+       ">1.50"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 12,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "12",
+      "cells": [
+       "12",
+       "铜/(mg/L)",
+       "$\\leqslant0.01$",
+       "$\\leqslant0.05$",
+       "$\\leqslant1.00$",
+       "$\\leqslant1.50$",
+       ">1.50"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 13,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "13",
+      "cells": [
+       "13",
+       "锌/(mg/L)",
+       "$\\leqslant0.05$",
+       "$\\leqslant0.5$",
+       "$\\leqslant1.00$",
+       "$\\leqslant5.00$",
+       ">5.00"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 14,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "14",
+      "cells": [
+       "14",
+       "铝/(mg/L)",
+       "$\\leqslant0.01$",
+       "$\\leqslant0.05$",
+       "$\\leqslant0.20$",
+       "$\\leqslant0.50$",
+       ">0.50"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 15,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "15",
+      "cells": [
+       "15",
+       "挥发性酚类(以苯酚计)/(mg/L)",
+       "$\\leqslant0.001$",
+       "$\\leqslant0.001$",
+       "$\\leqslant0.002$",
+       "$\\leqslant0.01$",
+       ">0.01"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 16,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "16",
+      "cells": [
+       "16",
+       "阴离子表面活性剂/(mg/L)",
+       "不得检出",
+       "$\\leqslant0.1$",
+       "$\\leqslant0.3$",
+       "$\\leqslant0.3$",
+       ">0.3"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 17,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "17",
+      "cells": [
+       "17",
+       "耗氧量(CODMn法,以O2计)/(mg/L)",
+       "$\\leqslant1.0$",
+       "$\\leqslant2.0$",
+       "$\\leqslant3.0$",
+       "$\\leqslant10.0$",
+       ">10.0"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 18,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "18",
+      "cells": [
+       "18",
+       "氨氮(以N计)/(mg/L)",
+       "$\\leqslant0.02$",
+       "$\\leqslant0.10$",
+       "$\\leqslant0.50$",
+       "$\\leqslant1.50$",
+       ">1.50"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 19,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "19",
+      "cells": [
+       "19",
+       "硫化物/(mg/L)",
+       "$\\leqslant0.005$",
+       "$\\leqslant0.01$",
+       "$\\leqslant0.02$",
+       "$\\leqslant0.10$",
+       ">0.10"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 20,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "20",
+      "cells": [
+       "20",
+       "钠/(mg/L)",
+       "$\\leqslant100$",
+       "$\\leqslant150$",
+       "$\\leqslant200$",
+       "$\\leqslant400$",
+       ">400"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 21,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "21",
+      "cells": [
+       "21",
+       "总大肠菌群/(MPNb/100 mL或CFUc/100 mL)",
+       "$\\leqslant3.0$",
+       "$\\leqslant3.0$",
+       "$\\leqslant3.0$",
+       "$\\leqslant100$",
+       ">100"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 23,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "22",
+      "cells": [
+       "22",
+       "菌落总数/(CFU/mL)",
+       "$\\leqslant100$",
+       "$\\leqslant100$",
+       "$\\leqslant100$",
+       "$\\leqslant1\\ 000$",
+       ">1 000"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 24,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "23",
+      "cells": [
+       "23",
+       "亚硝酸盐(以N计)/(mg/L)",
+       "$\\leqslant0.01$",
+       "$\\leqslant0.10$",
+       "$\\leqslant1.00$",
+       "$\\leqslant4.80$",
+       ">4.80"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 26,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "24",
+      "cells": [
+       "24",
+       "硝酸盐(以N计)/(mg/L)",
+       "$\\leqslant 2.0$",
+       "$\\leqslant 5.0$",
+       "$\\leqslant 20.0$",
+       "$\\leqslant 30.0$",
+       "$>30.0$"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 28,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "25",
+      "cells": [
+       "25",
+       "氰化物/(mg/L)",
+       "$\\leqslant 0.001$",
+       "$\\leqslant 0.01$",
+       "$\\leqslant 0.05$",
+       "$\\leqslant 0.1$",
+       "$>0.1$"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 29,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "26",
+      "cells": [
+       "26",
+       "氟化物/(mg/L)",
+       "$\\leqslant 1.0$",
+       "$\\leqslant 1.0$",
+       "$\\leqslant 1.0$",
+       "$\\leqslant 2.0$",
+       "$>2.0$"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 30,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "27",
+      "cells": [
+       "27",
+       "碘化物/(mg/L)",
+       "$\\leqslant 0.04$",
+       "$\\leqslant 0.04$",
+       "$\\leqslant 0.08$",
+       "$\\leqslant 0.50$",
+       "$>0.50$"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 31,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "28",
+      "cells": [
+       "28",
+       "汞/(mg/L)",
+       "$\\leqslant 0.0001$",
+       "$\\leqslant 0.0001$",
+       "$\\leqslant 0.001$",
+       "$\\leqslant 0.002$",
+       "$>0.002$"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 32,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "29",
+      "cells": [
+       "29",
+       "砷/(mg/L)",
+       "$\\leqslant 0.001$",
+       "$\\leqslant 0.001$",
+       "$\\leqslant 0.01$",
+       "$\\leqslant 0.05$",
+       "$>0.05$"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 33,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "30",
+      "cells": [
+       "30",
+       "硒/(mg/L)",
+       "$\\leqslant 0.01$",
+       "$\\leqslant 0.01$",
+       "$\\leqslant 0.01$",
+       "$\\leqslant 0.1$",
+       "$>0.1$"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 34,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "31",
+      "cells": [
+       "31",
+       "镉/(mg/L)",
+       "$\\leqslant 0.0001$",
+       "$\\leqslant 0.001$",
+       "$\\leqslant 0.005$",
+       "$\\leqslant 0.01$",
+       "$>0.01$"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 35,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "32",
+      "cells": [
+       "32",
+       "铬(六价)/(mg/L)",
+       "$\\leqslant 0.005$",
+       "$\\leqslant 0.01$",
+       "$\\leqslant 0.05$",
+       "$\\leqslant 0.10$",
+       "$>0.10$"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 36,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "33",
+      "cells": [
+       "33",
+       "铅/(mg/L)",
+       "$\\leqslant 0.005$",
+       "$\\leqslant 0.005$",
+       "$\\leqslant 0.01$",
+       "$\\leqslant 0.10$",
+       "$>0.10$"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 37,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "34",
+      "cells": [
+       "34",
+       "三氯甲烷/(μg/L)",
+       "$\\leqslant 0.5$",
+       "$\\leqslant 6$",
+       "$\\leqslant 60$",
+       "$\\leqslant 300$",
+       "$>300$"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 38,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "35",
+      "cells": [
+       "35",
+       "四氯化碳/(μg/L)",
+       "$\\leqslant 0.5$",
+       "$\\leqslant 0.5$",
+       "$\\leqslant 2.0$",
+       "$\\leqslant 50.0$",
+       "$>50.0$"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 39,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "36",
+      "cells": [
+       "36",
+       "苯/(μg/L)",
+       "$\\leqslant 0.5$",
+       "$\\leqslant 1.0$",
+       "$\\leqslant 10.0$",
+       "$\\leqslant 120$",
+       "$>120$"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 40,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "37",
+      "cells": [
+       "37",
+       "甲苯/(μg/L)",
+       "$\\leqslant 0.5$",
+       "$\\leqslant 140$",
+       "$\\leqslant 700$",
+       "$\\leqslant 1400$",
+       "$>1400$"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 41,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "38",
+      "cells": [
+       "38",
+       "总α放射性/(Bq/L)",
+       "$\\leqslant 0.1$",
+       "$\\leqslant 0.1$",
+       "$\\leqslant 0.5$",
+       "$>0.5$",
+       "$>0.5$"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 43,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+      "table_number": "1",
+      "seq": "39",
+      "cells": [
+       "39",
+       "总β放射性/(Bq/L)",
+       "$\\leqslant 0.1$",
+       "$\\leqslant 1.0$",
+       "$\\leqslant 1.0$",
+       "$>1.0$",
+       "$>1.0$"
+      ],
+      "header": [
+       [
+        "序号",
+        "指标",
+        "I类",
+        "II类",
+        "III类",
+        "IV类",
+        "V类"
+       ],
+       [
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标",
+        "感官性状及一般化学指标"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标 微生物指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标 毒理学指标",
+       "放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d 放射性指标d",
+       "a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。 a NTU为散射浊度单位。b MPN表示最可能数。c CFU表示菌落形成单位。d放射性指标超过指导值,应进行核素分析和评价。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-6557be3b1e950f40b8d14282ecdaf2c6",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 44,
+       "table_id": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "blockid": "3e88fc9113dc3c2dde98002588222627",
+       "locator": "tb-6557be3b1e950f40b8d14282ecdaf2c6-0001",
+       "chunk_ids": [
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-002",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-003",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-004",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-005",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-006",
+        "doc-6557be3b1e950f40b8d14282ecdaf2c6-chunk-007"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 地下水质量常规指标及限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "1",
+      "cells": [
+       "1",
+       "二氧化硫( $SO_2$ )",
+       "年平均",
+       "20",
+       "60",
+       "$μg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 2,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "1",
+      "cells": [
+       "1",
+       "二氧化硫( $SO_2$ )",
+       "24小时平均",
+       "50",
+       "150",
+       "$μg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 3,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "1",
+      "cells": [
+       "1",
+       "二氧化硫( $SO_2$ )",
+       "1小时平均",
+       "150",
+       "500",
+       "$μg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 4,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "2",
+      "cells": [
+       "2",
+       "二氧化氮( $NO_2$ )",
+       "年平均",
+       "40",
+       "40",
+       "$μg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 5,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "2",
+      "cells": [
+       "2",
+       "二氧化氮( $NO_2$ )",
+       "24小时平均",
+       "80",
+       "80",
+       "$μg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 6,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "2",
+      "cells": [
+       "2",
+       "二氧化氮( $NO_2$ )",
+       "1小时平均",
+       "200",
+       "200",
+       "$μg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 7,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "3",
+      "cells": [
+       "3",
+       "一氧化碳(CO)",
+       "24小时平均",
+       "4",
+       "4",
+       "$mg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 8,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "3",
+      "cells": [
+       "3",
+       "一氧化碳(CO)",
+       "1小时平均",
+       "10",
+       "10",
+       "$mg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 9,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "4",
+      "cells": [
+       "4",
+       "臭氧( $O_3$ )",
+       "日最大8小时平均",
+       "100",
+       "160",
+       "$μg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 10,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "4",
+      "cells": [
+       "4",
+       "臭氧( $O_3$ )",
+       "1小时平均",
+       "160",
+       "200",
+       "$μg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 11,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "5",
+      "cells": [
+       "5",
+       "颗粒物(粒径小于等于10μm)",
+       "年平均",
+       "40",
+       "70",
+       "$μg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 12,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "5",
+      "cells": [
+       "5",
+       "颗粒物(粒径小于等于10μm)",
+       "24小时平均",
+       "50",
+       "150",
+       "$μg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 13,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "6",
+      "cells": [
+       "6",
+       "颗粒物(粒径小于等于2.5μm)",
+       "年平均",
+       "15",
+       "35",
+       "$μg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 14,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "1",
+      "seq": "6",
+      "cells": [
+       "6",
+       "颗粒物(粒径小于等于2.5μm)",
+       "24小时平均",
+       "35",
+       "75",
+       "$μg/m^3$"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "浓度限值",
+        "浓度限值",
+        "单位"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "平均时间",
+        "一级",
+        "二级",
+        "单位"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 15,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表1 环境空气污染物基本项目浓度限值"
+     }
+    ]
+   },
+   "reverification": {
+    "items_checked": 77,
+    "problems": [],
+    "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+   },
+   "model": null,
+   "status": "ambiguous"
+  }
+ ]
+}

@@ -1,0 +1,280 @@
+{
+ "task": "5.3 two-path candidate fusion (read-only, guarded)",
+ "started_at": "2026-10-09T20:59:00+0800",
+ "pg_only_switch": true,
+ "frozen_contract": {
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8"
+ },
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "results": [
+  {
+   "query_id": "prose-enum-005",
+   "query": "GB 14554-93 对恶臭污染物厂界标准值的分级别规定了哪几级？",
+   "workspace": "default",
+   "pg": {
+    "status": "ok",
+    "search_id": "872d689343a9cbb6",
+    "catalog_snapshot_id": "4919b3938ad93747",
+    "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "discovery_total": 2,
+    "discovery_captured": true,
+    "chunks": 1,
+    "stale_state": "current",
+    "notes": [],
+    "trace_stages": [
+     "code_exact",
+     "keyword_and",
+     "keyword_and_diagnostics",
+     "keyword_core_and"
+    ],
+    "sql_statements": {
+     "fetchrow": 8,
+     "fetch": 12,
+     "fetchval": 6
+    },
+    "trace": [
+     {
+      "stage": "code_exact",
+      "code": "GB14554",
+      "version_requested": "93",
+      "strict": false,
+      "hits": 1,
+      "version_matched": 1,
+      "selected_versions": [
+       "93"
+      ],
+      "selected_docs": [
+       "doc-d6d711b0614234635955480a53f52a10"
+      ]
+     },
+     {
+      "stage": "keyword_and",
+      "tsquery": "'恶臭污染物' & '厂界标准值' & '分' & '级别' & '哪' & '几级'",
+      "top_k": 20,
+      "restricted_to_code_docs": [
+       "doc-d6d711b0614234635955480a53f52a10"
+      ],
+      "doc_hits": 0,
+      "chunk_hits": 0,
+      "elapsed_ms": 3
+     },
+     {
+      "stage": "keyword_and_diagnostics",
+      "per_term": [
+       {
+        "term": "恶臭污染物",
+        "chunk_hits": 4
+       },
+       {
+        "term": "厂界标准值",
+        "chunk_hits": 2
+       },
+       {
+        "term": "分",
+        "chunk_hits": 1
+       },
+       {
+        "term": "级别",
+        "chunk_hits": 0
+       },
+       {
+        "term": "哪",
+        "chunk_hits": 0
+       },
+       {
+        "term": "几级",
+        "chunk_hits": 0
+       }
+      ],
+      "absent_terms": [
+       "级别",
+       "哪",
+       "几级"
+      ]
+     },
+     {
+      "stage": "keyword_core_and",
+      "tsquery": "'恶臭污染物' & '厂界标准值' & '分'",
+      "dropped_absent_terms": [
+       "几级",
+       "哪",
+       "级别"
+      ],
+      "chunk_hits": 1,
+      "note": "terms absent from the corpus cannot participate in AND"
+     }
+    ]
+   },
+   "local": {
+    "ran": false,
+    "skipped_reason": "pg-only switch",
+    "error": null,
+    "receipts": null
+   },
+   "targets_requested": [
+    {
+     "code": "GB14554",
+     "version": "93"
+    }
+   ],
+   "targets_resolved": [
+    {
+     "code": "GB14554",
+     "version": "93",
+     "docs": [
+      "doc-d6d711b0614234635955480a53f52a10"
+     ],
+     "versions": [
+      "93"
+     ]
+    }
+   ],
+   "typed_targets": [
+    {
+     "target_type": "doc",
+     "workspace": "default",
+     "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+     "doc_name": "air-06_生态环境部_恶臭污染物排放标准_GB14554-93.pdf",
+     "self_code": "GB14554",
+     "self_code_version": "93",
+     "discovery": "code_exact",
+     "membership_basis": null,
+     "citation": {
+      "kind": "catalog_row",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10"
+     },
+     "citation_verified": true
+    }
+   ],
+   "candidates": [
+    {
+     "workspace": "default",
+     "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-000",
+     "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-000",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "heading": "中华人民共和国国家标准",
+       "chunk_order": 0,
+       "discovery": "keyword_core_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.05432546138763428
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "5105712d32152815c603778445fa2cfbd786e61d99289556eac1410bb6403f39",
+     "content_len": 2690,
+     "content": "# 中华人民共和国国家标准\nGB 14554—93\n\n# 恶臭污染物排放标准\n\n# Emission standards for odor pollutants\n<drawing id=\"im-d6d711b0614234635955480a53f52a10-0001\" format=\"jpg\" path=\"air-06_生态环境部_恶臭污染物排放标准_GB14554-93.blocks.assets/a5a16050df80fbc52d866db4c6902160256c51a1b412682e9698f1edb2cad6ad.jpg\" src=\"\" />\n1993-08-06 发布\n1994-01-15 实施\nUDC 614.718\nZ 67\nGB\n国家环境保护局 发布\n国家技术监督局\n\n# 恶臭污染物排放标准\n代替 GBJ 4—73 $^{1)}$\n\n# Emission standards for odor pollutants\n为贯彻《中华人民共和国大气污染防治法》，控制恶臭污染物对大气的污染，保护和改善环境，制定本标准。\n\n## 1 主题内容与适用范围\n\n## 1.1 主题内容\n本标准分年限规定了八种恶臭污染物的一次最大排放限值、复合恶臭物质的臭气浓度限值及无组织排放源的厂界浓度限值。\n\n## 1.2 适用范围\n本标准适用于全国所有向大气排放恶臭气体单位及垃圾堆放场的排放管理以及建设项目的环境影响评价、设计、竣工验收及其建成后的排放管理。\n\n## 2 引用标准\nGB 3095 大气环境质量标准\nGB 12348 工业企业厂界噪声标准\nGB/T 14675 空气质量 恶臭的测定 三点比较式臭袋法\nGB/T 14676 空气质量 三甲胺的测定 气相色谱法\nGB/T 14677 空气质量 甲苯、二甲苯、苯乙烯的测定 气相色谱法\nGB/T 14678 空气质量 硫化氢、甲硫醇、甲硫醚、二甲二硫的测定 气相色谱法\nGB/T 14679 空气质量 氨的测定 次氯酸钠-水杨酸分光光度法\nGB/T 14680 空气质量 二硫化碳的测定 二乙胺分光光度法\n\n## 3 名词术语\n3.1 恶臭污染物 odor pollutants\n指一切刺激嗅觉器官引起人们不愉快及损害生活环境的气体物质。\n3.2 臭气浓度 odor concentration\n指恶臭气体(包括异味)用无臭空气进行稀释,稀释到刚好无臭时,所需的稀释倍数。\n\n## 3.3 无组织排放源\n指没有排气筒或排气筒高度低于 15 m 的排放源。\n\n## 4 技术内容\n\n## 4.1 标准分级\n本标准恶臭污染物厂界标准值分三级。\n中华人民共和国国家标准\nGB 14554—93\n1994-01-15 实施\n注：1）本标准代替 GBJ 4—73 中硫化氢、二硫化碳指标部分。\n国家环境保护局1993-07-19批准\n4.1.1 排入 GB 3095 中一类区的执行一级标准，一类区中不得建新的排污单位。\n4.1.2 排入 GB 3095 中二类区的执行二级标准。\n4.1.3 排入 GB 3095 中三类区的执行三级标准。\n\n## 4.2 标准值\n4.2.1 恶臭污染物厂界标准值是对无组织排放源的限值，见表1。\n1994 年 6 月 1 日起立项的新、扩、改建设项目及其建成后投产的企业执行二级、三级标准中相应的标准值。\n<table id=\"tb-d6d711b0614234635955480a53f52a10-0001\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">控制项目</td><td rowspan=\"2\">单位</td><td rowspan=\"2\">一级</td><td colspan=\"2\">二级</td><td colspan=\"2\">三级</td></tr><tr><td>新扩改建</td><td>现有</td><td>新扩改建</td><td>现有</td></tr><tr><td>1</td><td>氨</td><td> $mg/m^3$ </td><td>1.0</td><td>1.5</td><td>2.0</td><td>4.0</td><td>5.0</td></tr><tr><td>2</td><td>三甲胺</td><td> $mg/m^3$ </td><td>0.05</td><td>0.08</td><td>0.15</td><td>0.45</td><td>0.80</td></tr><tr><td>3</td><td>硫化氢</td><td> $mg/m^3$ </td><td>0.03</td><td>0.06</td><td>0.10</td><td>0.32</td><td>0.60</td></tr><tr><td>4</td><td>甲硫醇</td><td> $mg/m^3$ </td><td>0.004</td><td>0.007</td><td>0.010</td><td>0.020</td><td>0.035</td></tr><tr><td>5</td><td>甲硫醚</td><td> $mg/m^3$ </td><td>0.03</td><td>0.07</td><td>0.15</td><td>0.55</td><td>1.10</td></tr><tr><td>6</td><td>二甲二硫</td><td> $mg/m^3$ </td><td>0.03</td><td>0.06</td><td>0.13</td><td>0.42</td><td>0.71</td></tr><tr><td>7</td><td>二硫化碳</td><td> $mg/m^3$ </td><td>2.0</td><td>3.0</td><td>5.0</td><td>8.0</td><td>10</td></tr><tr><td>8</td><td>苯乙烯</td><td> $mg/m^3$ </td><td>3.0</td><td>5.0</td><td>7.0</td><td>14</td><td>19</td></tr><tr><td>9</td><td>臭气浓度</td><td>无量纲</td><td>10</td><td>20</td><td>30</td><td>60</td><td>70</td></tr></table>",
+     "file_path": "air-06_生态环境部_恶臭污染物排放标准_GB14554-93.pdf"
+    }
+   ],
+   "usable": [
+    {
+     "workspace": "default",
+     "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-000",
+     "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-d6d711b0614234635955480a53f52a10-chunk-000",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "heading": "中华人民共和国国家标准",
+       "chunk_order": 0,
+       "discovery": "keyword_core_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.05432546138763428
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "5105712d32152815c603778445fa2cfbd786e61d99289556eac1410bb6403f39",
+     "content_len": 2690,
+     "content": "# 中华人民共和国国家标准\nGB 14554—93\n\n# 恶臭污染物排放标准\n\n# Emission standards for odor pollutants\n<drawing id=\"im-d6d711b0614234635955480a53f52a10-0001\" format=\"jpg\" path=\"air-06_生态环境部_恶臭污染物排放标准_GB14554-93.blocks.assets/a5a16050df80fbc52d866db4c6902160256c51a1b412682e9698f1edb2cad6ad.jpg\" src=\"\" />\n1993-08-06 发布\n1994-01-15 实施\nUDC 614.718\nZ 67\nGB\n国家环境保护局 发布\n国家技术监督局\n\n# 恶臭污染物排放标准\n代替 GBJ 4—73 $^{1)}$\n\n# Emission standards for odor pollutants\n为贯彻《中华人民共和国大气污染防治法》，控制恶臭污染物对大气的污染，保护和改善环境，制定本标准。\n\n## 1 主题内容与适用范围\n\n## 1.1 主题内容\n本标准分年限规定了八种恶臭污染物的一次最大排放限值、复合恶臭物质的臭气浓度限值及无组织排放源的厂界浓度限值。\n\n## 1.2 适用范围\n本标准适用于全国所有向大气排放恶臭气体单位及垃圾堆放场的排放管理以及建设项目的环境影响评价、设计、竣工验收及其建成后的排放管理。\n\n## 2 引用标准\nGB 3095 大气环境质量标准\nGB 12348 工业企业厂界噪声标准\nGB/T 14675 空气质量 恶臭的测定 三点比较式臭袋法\nGB/T 14676 空气质量 三甲胺的测定 气相色谱法\nGB/T 14677 空气质量 甲苯、二甲苯、苯乙烯的测定 气相色谱法\nGB/T 14678 空气质量 硫化氢、甲硫醇、甲硫醚、二甲二硫的测定 气相色谱法\nGB/T 14679 空气质量 氨的测定 次氯酸钠-水杨酸分光光度法\nGB/T 14680 空气质量 二硫化碳的测定 二乙胺分光光度法\n\n## 3 名词术语\n3.1 恶臭污染物 odor pollutants\n指一切刺激嗅觉器官引起人们不愉快及损害生活环境的气体物质。\n3.2 臭气浓度 odor concentration\n指恶臭气体(包括异味)用无臭空气进行稀释,稀释到刚好无臭时,所需的稀释倍数。\n\n## 3.3 无组织排放源\n指没有排气筒或排气筒高度低于 15 m 的排放源。\n\n## 4 技术内容\n\n## 4.1 标准分级\n本标准恶臭污染物厂界标准值分三级。\n中华人民共和国国家标准\nGB 14554—93\n1994-01-15 实施\n注：1）本标准代替 GBJ 4—73 中硫化氢、二硫化碳指标部分。\n国家环境保护局1993-07-19批准\n4.1.1 排入 GB 3095 中一类区的执行一级标准，一类区中不得建新的排污单位。\n4.1.2 排入 GB 3095 中二类区的执行二级标准。\n4.1.3 排入 GB 3095 中三类区的执行三级标准。\n\n## 4.2 标准值\n4.2.1 恶臭污染物厂界标准值是对无组织排放源的限值，见表1。\n1994 年 6 月 1 日起立项的新、扩、改建设项目及其建成后投产的企业执行二级、三级标准中相应的标准值。\n<table id=\"tb-d6d711b0614234635955480a53f52a10-0001\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">控制项目</td><td rowspan=\"2\">单位</td><td rowspan=\"2\">一级</td><td colspan=\"2\">二级</td><td colspan=\"2\">三级</td></tr><tr><td>新扩改建</td><td>现有</td><td>新扩改建</td><td>现有</td></tr><tr><td>1</td><td>氨</td><td> $mg/m^3$ </td><td>1.0</td><td>1.5</td><td>2.0</td><td>4.0</td><td>5.0</td></tr><tr><td>2</td><td>三甲胺</td><td> $mg/m^3$ </td><td>0.05</td><td>0.08</td><td>0.15</td><td>0.45</td><td>0.80</td></tr><tr><td>3</td><td>硫化氢</td><td> $mg/m^3$ </td><td>0.03</td><td>0.06</td><td>0.10</td><td>0.32</td><td>0.60</td></tr><tr><td>4</td><td>甲硫醇</td><td> $mg/m^3$ </td><td>0.004</td><td>0.007</td><td>0.010</td><td>0.020</td><td>0.035</td></tr><tr><td>5</td><td>甲硫醚</td><td> $mg/m^3$ </td><td>0.03</td><td>0.07</td><td>0.15</td><td>0.55</td><td>1.10</td></tr><tr><td>6</td><td>二甲二硫</td><td> $mg/m^3$ </td><td>0.03</td><td>0.06</td><td>0.13</td><td>0.42</td><td>0.71</td></tr><tr><td>7</td><td>二硫化碳</td><td> $mg/m^3$ </td><td>2.0</td><td>3.0</td><td>5.0</td><td>8.0</td><td>10</td></tr><tr><td>8</td><td>苯乙烯</td><td> $mg/m^3$ </td><td>3.0</td><td>5.0</td><td>7.0</td><td>14</td><td>19</td></tr><tr><td>9</td><td>臭气浓度</td><td>无量纲</td><td>10</td><td>20</td><td>30</td><td>60</td><td>70</td></tr></table>",
+     "file_path": "air-06_生态环境部_恶臭污染物排放标准_GB14554-93.pdf"
+    }
+   ],
+   "rejected": [],
+   "budget": {
+    "limit": 40,
+    "kept": 1,
+    "truncated": [],
+    "rule": "no truncation"
+   },
+   "status": "ok",
+   "degraded": [],
+   "notes": [],
+   "allowed_set_basis": {
+    "resolved_code_targets": [
+     [
+      "doc-d6d711b0614234635955480a53f52a10"
+     ]
+    ],
+    "verified_attributions": []
+   },
+   "verify": {
+    "requested": 1,
+    "verified": 1,
+    "missing": 0,
+    "attribution_conflict": 0
+   }
+  }
+ ],
+ "finished_at": "2026-10-09T20:59:02+0800"
+}

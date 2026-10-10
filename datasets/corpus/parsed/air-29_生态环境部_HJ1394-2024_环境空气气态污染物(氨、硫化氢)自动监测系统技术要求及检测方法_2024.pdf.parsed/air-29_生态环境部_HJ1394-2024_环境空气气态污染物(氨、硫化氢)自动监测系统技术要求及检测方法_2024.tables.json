@@ -1,0 +1,126 @@
+{
+  "version": "1.0",
+  "tables": {
+    "tb-7f8bc90aaa2884ad116d25c8d682474c-0001": {
+      "id": "tb-7f8bc90aaa2884ad116d25c8d682474c-0001",
+      "blockid": "88b0c5f819d1f7d66bd1750f860ec46e",
+      "heading": "4.1　监测系统原理",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测系统技术要求及检测方法"
+      ],
+      "dimension": [
+        3,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>监测项目</td><td>点式监测系统</td><td>开放光程监测系统</td></tr><tr><td>氨</td><td>化学发光法/光腔衰荡光谱法/离轴积分腔输出光谱法/差分吸收光谱法/光声光谱法等</td><td>差分吸收光谱法/可调谐激光吸收光谱法/量子级联激光吸收光谱法等</td></tr><tr><td>硫化氢</td><td>紫外荧光法/光腔衰荡光谱法/离轴积分腔输出光谱法等</td><td>可调谐激光吸收光谱法等</td></tr></table>",
+      "caption": "表 1　监测系统原理",
+      "footnotes": [],
+      "self_ref": "content_list.json#/62"
+    },
+    "tb-7f8bc90aaa2884ad116d25c8d682474c-0002": {
+      "id": "tb-7f8bc90aaa2884ad116d25c8d682474c-0002",
+      "blockid": "89f9b760a3a8f50dbc23d338eeda0ed2",
+      "heading": "6　性能指标",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测系统技术要求及检测方法"
+      ],
+      "dimension": [
+        25,
+        5
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\" colspan=\"2\">检测项目</td><td colspan=\"2\">技术要求</td><td rowspan=\"2\">检测方法</td></tr><tr><td>氨监测系统</td><td>硫化氢监测系统</td></tr><tr><td colspan=\"2\">零点噪声</td><td>≤0.5 nmol/mol</td><td>≤0.5 nmol/mol</td><td>7.2.1</td></tr><tr><td colspan=\"2\">仪器检出限</td><td>≤1 nmol/mol</td><td>≤1 nmol/mol</td><td>7.2.2</td></tr><tr><td rowspan=\"2\">示值误差</td><td>20%量程</td><td>±5%</td><td>±5%</td><td rowspan=\"2\">7.2.3</td></tr><tr><td>80%量程</td><td>±5%</td><td>±5%</td></tr><tr><td rowspan=\"2\">精密度</td><td>20%量程</td><td>≤5%</td><td>≤5%</td><td rowspan=\"2\">7.2.4</td></tr><tr><td>80%量程</td><td>≤2%</td><td>≤2%</td></tr><tr><td rowspan=\"3\">24h漂移</td><td>零点</td><td>±2 nmol/mol</td><td>±2 nmol/mol</td><td rowspan=\"3\">7.2.5</td></tr><tr><td>20%量程</td><td>±3 nmol/mol</td><td>±3 nmol/mol</td></tr><tr><td>80%量程</td><td>±5 nmol/mol</td><td>±5 nmol/mol</td></tr><tr><td rowspan=\"3\">7d漂移</td><td>零点</td><td>±3 nmol/mol</td><td>±3 nmol/mol</td><td rowspan=\"3\">7.2.6</td></tr><tr><td>20%量程</td><td>±5 nmol/mol</td><td>±5 nmol/mol</td></tr><tr><td>80%量程</td><td>±8 nmol/mol</td><td>±8 nmol/mol</td></tr><tr><td colspan=\"2\">响应时间</td><td>≤600s</td><td>≤300s</td><td>7.2.7</td></tr><tr><td colspan=\"2\">氨转换效率</td><td>≥85%</td><td>/</td><td>7.2.8</td></tr><tr><td colspan=\"2\">二氧化氮转换效率</td><td>≥98%</td><td>/</td><td>7.2.9</td></tr><tr><td colspan=\"2\">硫化氢转换效率</td><td>/</td><td>≥90%</td><td>7.2.10</td></tr><tr><td colspan=\"2\">环境温度影响</td><td>±0.5 nmol/mol/°C</td><td>±0.5 nmol/mol/°C</td><td>7.2.11</td></tr><tr><td colspan=\"2\">电压影响</td><td>±2% F.S.</td><td>±2% F.S.</td><td>7.2.12</td></tr><tr><td colspan=\"2\">干扰成分影响</td><td>±3% F.S.</td><td>±3% F.S.</td><td>7.2.13</td></tr><tr><td colspan=\"2\">样气口和校准口浓度偏差</td><td>±2%</td><td>±2%</td><td>7.2.14</td></tr><tr><td colspan=\"2\">动态校准仪流量误差</td><td>±1%</td><td>±1%</td><td>7.2.15</td></tr><tr><td colspan=\"2\">有效数据率</td><td>≥90%</td><td>≥90%</td><td>7.2.16</td></tr><tr><td colspan=\"5\">注1:“F.S.”表示满量程。注2:“样气口和校准口浓度偏差”仅针对区分样气口和校准口的点式监测系统。</td></tr></table>",
+      "caption": "表 2　点式监测系统性能指标要求",
+      "footnotes": [],
+      "self_ref": "content_list.json#/171"
+    },
+    "tb-7f8bc90aaa2884ad116d25c8d682474c-0003": {
+      "id": "tb-7f8bc90aaa2884ad116d25c8d682474c-0003",
+      "blockid": "89f9b760a3a8f50dbc23d338eeda0ed2",
+      "heading": "6　性能指标",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测系统技术要求及检测方法"
+      ],
+      "dimension": [
+        22,
+        5
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\" colspan=\"2\">检测项目</td><td colspan=\"2\">技术要求</td><td rowspan=\"2\">检测方法</td></tr><tr><td>氨监测系统</td><td>硫化氢监测系统</td></tr><tr><td colspan=\"2\">零点噪声</td><td>≤0.5 nmol/mol</td><td>≤0.5 nmol/mol</td><td>7.3.1</td></tr><tr><td colspan=\"2\">仪器检出限</td><td>≤1 nmol/mol</td><td>≤1 nmol/mol</td><td>7.3.2</td></tr><tr><td rowspan=\"2\">示值误差</td><td>20%量程</td><td>±5%</td><td>±5%</td><td rowspan=\"2\">7.3.3</td></tr><tr><td>80%量程</td><td>±5%</td><td>±5%</td></tr><tr><td rowspan=\"2\">精密度</td><td>20%量程</td><td>≤5%</td><td>≤5%</td><td rowspan=\"2\">7.3.4</td></tr><tr><td>80%量程</td><td>≤2%</td><td>≤2%</td></tr><tr><td rowspan=\"3\">24h漂移</td><td>零点</td><td>±2 nmol/mol</td><td>±2 nmol/mol</td><td rowspan=\"3\">7.3.5</td></tr><tr><td>20%量程</td><td>±3 nmol/mol</td><td>±3 nmol/mol</td></tr><tr><td>80%量程</td><td>±5 nmol/mol</td><td>±5 nmol/mol</td></tr><tr><td rowspan=\"3\">7d漂移</td><td>零点</td><td>±3 nmol/mol</td><td>±3 nmol/mol</td><td rowspan=\"3\">7.3.6</td></tr><tr><td>20%量程</td><td>±5 nmol/mol</td><td>±5 nmol/mol</td></tr><tr><td>80%量程</td><td>±8 nmol/mol</td><td>±8 nmol/mol</td></tr><tr><td colspan=\"2\">响应时间</td><td>≤120s</td><td>≤120s</td><td>7.3.7</td></tr><tr><td colspan=\"2\">环境温度影响</td><td>±0.5 nmol/mol/°C</td><td>±0.5 nmol/mol/°C</td><td>7.3.8</td></tr><tr><td colspan=\"2\">电压影响</td><td>±2% F.S.</td><td>±2% F.S.</td><td>7.3.9</td></tr><tr><td colspan=\"2\">干扰成分影响</td><td>±3% F.S.</td><td>±3% F.S.</td><td>7.3.10</td></tr><tr><td colspan=\"2\">光源强度影响</td><td>±2% F.S.</td><td>±2% F.S.</td><td>7.3.11</td></tr><tr><td colspan=\"2\">动态校准仪流量误差</td><td>±1%</td><td>±1%</td><td>7.3.12</td></tr><tr><td colspan=\"2\">有效数据率</td><td>≥90%</td><td>≥90%</td><td>7.3.13</td></tr><tr><td colspan=\"5\">注:“动态校准仪流量误差”仅针对使用4.3.4b)校准方式的监测系统。</td></tr></table>",
+      "caption": "表 3　开放光程监测系统性能指标要求",
+      "footnotes": [],
+      "self_ref": "content_list.json#/174"
+    },
+    "tb-7f8bc90aaa2884ad116d25c8d682474c-0004": {
+      "id": "tb-7f8bc90aaa2884ad116d25c8d682474c-0004",
+      "blockid": "0ac4ffe81779fb21b1d9e716e8105f38",
+      "heading": "7.2.13　干扰成分影响",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测系统技术要求及检测方法"
+      ],
+      "dimension": [
+        5,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td>氨浓度</td><td>干扰气体及浓度</td><td>技术要求</td><td>备注</td></tr><tr><td rowspan=\"2\">0 nmol/mol</td><td>200 nmol/mol一氧化氮</td><td>±3% F.S.</td><td rowspan=\"2\">针对点式监测系统和开放光程监测系统</td></tr><tr><td>200 nmol/mol二氧化氮</td><td>±3% F.S.</td></tr><tr><td rowspan=\"2\">20 nmol/mol</td><td>200 nmol/mol一氧化氮</td><td>±3% F.S.</td><td rowspan=\"2\">仅针对点式监测系统</td></tr><tr><td>200 nmol/mol二氧化氮</td><td>±3% F.S.</td></tr></table>",
+      "caption": "表 4　氨监测系统使用的干扰气体及浓度",
+      "footnotes": [],
+      "self_ref": "content_list.json#/381"
+    },
+    "tb-7f8bc90aaa2884ad116d25c8d682474c-0005": {
+      "id": "tb-7f8bc90aaa2884ad116d25c8d682474c-0005",
+      "blockid": "0ac4ffe81779fb21b1d9e716e8105f38",
+      "heading": "7.2.13　干扰成分影响",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测系统技术要求及检测方法"
+      ],
+      "dimension": [
+        3,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td>硫化氢浓度</td><td>干扰气体及浓度</td><td>技术要求</td><td>备注</td></tr><tr><td>0 nmol/mol</td><td>200 nmol/mol二氧化硫</td><td>±3% F.S.</td><td>针对点式监测系统和开放光程监测系统</td></tr><tr><td>20 nmol/mol</td><td>200 nmol/mol二氧化硫</td><td>±3% F.S.</td><td>仅针对点式监测系统</td></tr></table>",
+      "caption": "表 5　硫化氢监测系统使用的干扰气体及浓度",
+      "footnotes": [],
+      "self_ref": "content_list.json#/382"
+    },
+    "tb-7f8bc90aaa2884ad116d25c8d682474c-0006": {
+      "id": "tb-7f8bc90aaa2884ad116d25c8d682474c-0006",
+      "blockid": "5181602175522d3e95ef786505ee9fe2",
+      "heading": "A.1　数据格式要求",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测系统技术要求及检测方法"
+      ],
+      "dimension": [
+        14,
+        6
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">序号</td><td colspan=\"2\">数据名称</td><td rowspan=\"2\">单位</td><td rowspan=\"2\">小数位</td><td rowspan=\"2\">备注</td></tr><tr><td>氨监测系统</td><td>硫化氢监测系统</td></tr><tr><td>1</td><td>氨体积浓度(摩尔分数)</td><td>/</td><td>nmol/mol</td><td>1</td><td rowspan=\"3\">化学发光法氨监测系统还需具备一氧化氮、二氧化氮和氮氧化物数据,数据名称、单位和小数位参照氨</td></tr><tr><td>2</td><td>氨参比状态质量浓度</td><td>/</td><td> $\\mu g/m^{3}$ </td><td>1</td></tr><tr><td>3</td><td>氨标准状态质量浓度</td><td>/</td><td> $\\mu g/Nm^{3}$ </td><td>1</td></tr><tr><td>4</td><td>/</td><td>硫化氢体积浓度(摩尔分数)</td><td>nmol/mol</td><td>1</td><td rowspan=\"3\">紫外荧光法硫化氢监测系统还需具备二氧化硫数据,数据名称、单位和小数位参照硫化氢</td></tr><tr><td>5</td><td>/</td><td>硫化氢参比状态质量浓度</td><td> $\\mu g/m^{3}$ </td><td>1</td></tr><tr><td>6</td><td>/</td><td>硫化氢标准状态质量浓度</td><td> $\\mu g/Nm^{3}$ </td><td>1</td></tr><tr><td>7</td><td colspan=\"2\">采样流量</td><td>mL/min</td><td>0</td><td>仅针对点式监测系统</td></tr><tr><td>8</td><td colspan=\"2\">转换炉温度</td><td>°C</td><td>1</td><td>仅针对化学发光法氨监测系统和紫外荧光法硫化氢监测系统,包含氨转换炉、二氧化氮转换炉和硫化氢转换炉</td></tr><tr><td>9</td><td colspan=\"2\">内部/腔室压力</td><td>kPa</td><td>1</td><td>/</td></tr><tr><td>10</td><td colspan=\"2\">内部/腔室温度</td><td>°C</td><td>1</td><td>/</td></tr><tr><td>11</td><td colspan=\"2\">光源强度</td><td>/</td><td>0</td><td>仅针对具备光源的监测系统</td></tr><tr><td>12</td><td colspan=\"2\">光程</td><td>m</td><td>1</td><td>仅针对开放光程监测系统</td></tr></table>",
+      "caption": "表 A.1　测量数据格式一览表",
+      "footnotes": [
+        "A.1.2 监测系统应具备显示、记录和输出表 A.2 中所列参数的功能。"
+      ],
+      "self_ref": "content_list.json#/470"
+    },
+    "tb-7f8bc90aaa2884ad116d25c8d682474c-0007": {
+      "id": "tb-7f8bc90aaa2884ad116d25c8d682474c-0007",
+      "blockid": "5181602175522d3e95ef786505ee9fe2",
+      "heading": "A.1　数据格式要求",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测系统技术要求及检测方法"
+      ],
+      "dimension": [
+        5,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>参数类别</td><td>参数名称</td><td>备注</td></tr><tr><td rowspan=\"2\">系统修正参数</td><td>浓度修正斜率</td><td>/</td></tr><tr><td>浓度修正截距</td><td>/</td></tr><tr><td rowspan=\"2\">测量参数</td><td>流量校准系数</td><td>仅针对点式监测系统</td></tr><tr><td>转换炉转换系数</td><td>仅针对化学发光法氨监测系统和紫外荧光法硫化氢监测系统,包含氨转换炉、二氧化氮转换炉和硫化氢转换炉</td></tr></table>",
+      "caption": "表 A.2　参数清单",
+      "footnotes": [],
+      "self_ref": "content_list.json#/471"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+ "generation": "phase-4-improvement-3",
+ "before": {
+  "src/env_rag_final/answer.py": "14c9673b2b07a41d83b32c747d048a572f8d8795ecc6892d9df59c30e6100968",
+  "src/env_rag_final/evaluation.py": "a42d5c68952e40627a395f023650eae89f59a0527ac0208f45c90ea0f8dd7529",
+  "src/env_rag_final/search/expand.py": "编辑前未捕获（本组流程失误，如实记录；answer/evaluation 的 before 有既有验收记录支撑）",
+  "src/env_rag_final/search/query.py": "编辑前未捕获（本组流程失误，如实记录；answer/evaluation 的 before 有既有验收记录支撑）",
+  "src/env_rag_final/enumerate_/doc_enum.py": "编辑前未捕获（本组流程失误，如实记录；answer/evaluation 的 before 有既有验收记录支撑）",
+  "tests/test_phase4_improvement3_union_enumeration.py": "新文件",
+  "tests/test_gate2_acceptance.py": "编辑前未捕获（本组流程失误，如实记录；answer/evaluation 的 before 有既有验收记录支撑）",
+  "tests/test_gate2_rereview.py": "编辑前未捕获（本组流程失误，如实记录；answer/evaluation 的 before 有既有验收记录支撑）"
+ },
+ "before_provenance": {
+  "answer/evaluation": "improvement-2 r2 sha-after.json after 块 + improvement-3 诊断轮 sha-baseline.json（两处一致，编辑前会话实测）"
+ },
+ "after": {
+  "src/env_rag_final/answer.py": "65eefd79a01414d678a8d9e5e2155158870e6de9856db2125a871d29b7e72df3",
+  "src/env_rag_final/evaluation.py": "a42d5c68952e40627a395f023650eae89f59a0527ac0208f45c90ea0f8dd7529",
+  "src/env_rag_final/search/expand.py": "b004c9fa75baadc6b6716dca643e54ae1a3d1a2f61850aa4fa9af571172bd2ef",
+  "src/env_rag_final/search/query.py": "25bed96d082198001bfb5502d15a6ff9890863c494ec2bfdac6adcb1812e7712",
+  "src/env_rag_final/enumerate_/doc_enum.py": "e553d05235b683b83206704df69cb18c0bccd97145b54a6fe35f8a024d893ed2",
+  "tests/test_phase4_improvement3_union_enumeration.py": "8c294b78e8217972626a12e2df4aa21fe5df5504d3e2a2c80f208b399ec62ddc",
+  "tests/test_gate2_acceptance.py": "1f2813941453ab6323907beca691258f67f645f8012879362434fa99c7f54ee9",
+  "tests/test_gate2_rereview.py": "9c34c53c10889ab0778671cb7faf2d124d2b497170e102c4af5259c2ee0329f3"
+ },
+ "unchanged_expected": {
+  "src/env_rag_final/evaluation.py": true
+ }
+}

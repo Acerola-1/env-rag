@@ -1,0 +1,30 @@
+{
+  "decision": "assessment-r2_not_accepted; round_2_paused",
+  "services_requested": 0,
+  "round_1": {
+    "entries": 809,
+    "mismatches": []
+  },
+  "assessment_r1": {
+    "entries": 9,
+    "mismatches": []
+  },
+  "assessment_r2": {
+    "entries": 4,
+    "mismatches": []
+  },
+  "reproduction": {
+    "byte_equal": true,
+    "sha256": "c97b6742d3dff0e4b2dc5732cf68bd51f3e2641fa04171061979c82b64bd7be4"
+  },
+  "parsed_artifacts": {
+    "match_gate0_frozen_bytes": true,
+    "sha256": "fccb274827fc21f0f02f721271d175efd800175a4a8db5140bf7f72f404ab1db"
+  },
+  "tests": {
+    "retained": 33,
+    "new_total": 18,
+    "new_failures": 14,
+    "new_positives": 4
+  }
+}

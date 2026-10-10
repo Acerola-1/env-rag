@@ -1,0 +1,113 @@
+{
+  "phase": "phase-1-structure",
+  "correction_round": 3,
+  "review_reference": "reports/pg-retrieval/phase-1-review/review.md (S1-S7)",
+  "generated_at": "2026-10-05T11:00:00+00:00",
+  "active_run_id": "c15c741742394320",
+  "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+  "snapshot_id": "4919b3938ad93747",
+  "source_fingerprint_frozen": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_counts": {
+    "documents": 221,
+    "source_units": 12269,
+    "unit_chunk_links": 16783,
+    "scopes": 1970,
+    "scope_units": 14557
+  },
+  "link_basis_distribution": {
+    "sidecar_ref": 13227,
+    "inline_table_id": 3556
+  },
+  "requires_span_scopes": 4,
+  "scope_status_distribution": {
+    "chapter/ambiguous": 219,
+    "chapter/confirmed": 113,
+    "clause/confirmed": 1634,
+    "chapter/requires_span": 4
+  },
+  "runs_history": [
+    {
+      "run_id": "0aba3ea21d8944e4",
+      "status": "failed",
+      "snapshot_id": "79f4b49b8c83ea7f"
+    },
+    {
+      "run_id": "c7c1129e29ba4ef4",
+      "status": "failed",
+      "snapshot_id": "79f4b49b8c83ea7f"
+    },
+    {
+      "run_id": "6f8edc7200cf4a34",
+      "status": "failed",
+      "snapshot_id": "79f4b49b8c83ea7f"
+    },
+    {
+      "run_id": "2c78d543f68f4209",
+      "status": "retired",
+      "snapshot_id": "79f4b49b8c83ea7f"
+    },
+    {
+      "run_id": "f088ef170e904c0d",
+      "status": "retired",
+      "snapshot_id": "a28f182e718f5da4"
+    },
+    {
+      "run_id": "c15c741742394320",
+      "status": "active",
+      "snapshot_id": "4919b3938ad93747"
+    }
+  ],
+  "public_tables_unchanged": {
+    "counts_after_build": {
+      "lightrag_doc_full": 221,
+      "lightrag_doc_chunks": 5709,
+      "lightrag_doc_status": 279,
+      "lightrag_llm_cache": 16514,
+      "lightrag_entity_chunks": 65527,
+      "lightrag_full_entities": 221,
+      "lightrag_full_relations": 221,
+      "lightrag_relation_chunks": 119575
+    },
+    "expected": {
+      "lightrag_doc_full": 221,
+      "lightrag_doc_chunks": 5709,
+      "lightrag_doc_status": 279,
+      "lightrag_llm_cache": 16514,
+      "lightrag_entity_chunks": 65527,
+      "lightrag_full_entities": 221,
+      "lightrag_full_relations": 221,
+      "lightrag_relation_chunks": 119575
+    }
+  },
+  "tests": {
+    "total": 63,
+    "phase1_behavior_tests": 47,
+    "audit_fixture_tests": 16
+  },
+  "live_verifications": [
+    "S1: teardown ownership proof + fresh migrate + rerun noop on real DB",
+    "S5: recipe change (v2→v3) produces new snapshot a28f182e…; skip-path trap reproduced and documented",
+    "S2: GB3095 ch4 members include 4.1/4.2 blocks exclude ch5; WHO Annex4 requires_span; GB4915 amendment aggregated parents",
+    "S3: GB18466/air-06/water-14 titles correct; 0 generic titles; 0 replacement titles; self_code 52/64 standards",
+    "S7: air-03 chunk-002 keeps 2 real inline_table_id links",
+    "public tables unchanged after every operation; exactly one active build"
+  ],
+  "publish_semantics": "whole-build workspace session lock; activation and superseded-row pruning in a single locked transaction; retired ledger retained, retired directory rows pruned",
+  "review_verified_at": "2026-10-05T06:07:52.341233+00:00",
+  "review_corrections": [
+    "content-derived pagination epoch instead of transaction ID",
+    "whole-build workspace lock",
+    "activation and pruning in one rollback-safe transaction"
+  ],
+  "catalog_source_sha256": {
+    "scopes.py": "4680be5502eafbf76055cde994c84045ed110ca569cd35db6216ae6d581ab924",
+    "units.py": "d9dd9809de7ea7e29e3c2a1f661ed5a46c99126b6f47ef8731f3763e900d0072",
+    "metadata.py": "342b1adb5d47d62ad60ac88cdd22f09d7543cd2cedeb06960ffb61e8bf2ad296",
+    "lexical_norm.py": "5851bd47fd990fa1d5ba068ffa9357aa46236d5e1231f711172057f097e7d6e9",
+    "__init__.py": "c7253545f462405718ade88663eb6540f41d571bb05c231f820ad3d8c8fd2c43",
+    "builder.py": "4a23c1d937eb25b60ff23a877665b2ba4d9242e61fd1ab0409c6c0bf37cdcf83",
+    "source.py": "16a71c572528bb3826e4a1d6698cc493edca392739178423360ac020bb0a330a",
+    "schema.py": "9a0bc61f2bc85462c0173629a8d33683ee742cc9d8a8ce5865c5fe7f32c2976b"
+  },
+  "review_scope": "Existing v4 derived directory validated read-only; review corrected reader and publication lifecycle without rebuilding or mutating the database."
+}

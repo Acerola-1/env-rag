@@ -1,0 +1,173 @@
+--- reports/pg-retrieval/phase-4-scoring-readiness-r2/assess_two_rounds.py	2026-10-09 17:32:10
++++ reports/pg-retrieval/phase-4-scoring-readiness-r3/assess_two_rounds.py	2026-10-09 18:06:59
+@@ -107,8 +107,8 @@
+ 
+ import argparse
+ import hashlib
+-import os
+ import json
++import os
+ import re
+ import statistics
+ import sys
+@@ -195,6 +195,12 @@
+ }
+ _HEX64 = re.compile(r"^[0-9a-f]{64}$")
+ CONSUMED: set = set()  # absolute paths actually READ in generation mode
++# R4 r3: during the real generation MAIN scoring, answer/fusion/local result
++# rows MUST carry a legal query_id/workspace (missing is a refusal, not a
++# skip). Bare interface calls (e.g. typed fixture probes) keep the lenient
++# "present-then-match" semantics — real artifacts and approved anchors are
++# validated first for required fields, then by value.
++_STRICT_BIND = False
+ 
+ 
+ def _consume(p) -> None:
+@@ -471,7 +477,17 @@
+         if pre.get("counts") != post.get("counts"):
+             problems.append("counts drift between pre and post identity")
+         eight = fi.get("eight_table_counts")
+-        if eight:
++        if not (
++            isinstance(eight, list)
++            and len(eight) == 8
++            and all(isinstance(x, int) and not isinstance(x, bool) and x >= 0 for x in eight)
++        ):
++            # R4 r3: frozen counts are REQUIRED structure — absent/short/
++            # malformed is an input refusal, never a skipped comparison.
++            problems.append(
++                "approved anchor eight_table_counts missing/malformed — required frozen counts"
++            )
++        if isinstance(eight, list) and len(eight) == 8:
+             want = dict(zip(_COUNT_KEYS, eight))
+             for side, ident in (("pre", pre), ("post", post)):
+                 gotc = ident.get("counts") or {}
+@@ -535,12 +551,24 @@
+     workspace) — never consume another question's first results row."""
+     if not _generation_mode():
+         return
++    # R4 r3: under main scoring, a SUCCESSFUL result row must carry a legal
++    # query_id/workspace — missing fields may never skip the comparison.
++    # Explicit failure / no-results / absent legs returned before this call
++    # keep their failure/absent semantics.
+     got_q = res.get("query_id")
++    if got_q is None and _STRICT_BIND:
++        raise InputIntegrityError(
++            f"{kind} artifact for {qid!r} lacks the required query_id binding"
++        )
+     if got_q is not None and got_q != qid:
+         raise InputIntegrityError(
+             f"{kind} artifact query_id {got_q!r} bound to wrong question {qid!r}"
+         )
+     got_ws = res.get("workspace")
++    if got_ws is None and _STRICT_BIND:
++        raise InputIntegrityError(
++            f"{kind} artifact for {qid!r} lacks the required workspace binding"
++        )
+     if got_ws is not None and FROZEN_IDENTITY and got_ws != FROZEN_IDENTITY.get("workspace"):
+         raise InputIntegrityError(
+             f"{kind} artifact workspace {got_ws!r} foreign to bound generation"
+@@ -1664,6 +1692,20 @@
+     (its table contains FAILs only)."""
+     j = v_out["judgement"]
+     v_out.pop("_model", None)
++    if _generation_mode() and j == "synthesis_pending_human_review":
++        # R1 r3: established hard failures (partial coverage, fabricated/
++        # unverified citations, zero delivery, set violations) are decided
++        # BEFORE any manual branch — including no-record — so "unaudited"
++        # never softens a known incomplete synthesis into PENDING. Real
++        # fragments and any submitted record stay visible on the row.
++        hard = _hard_positive_failure(v_out)
++        if hard is not None:
++            if manual is not None:
++                v_out["manual_review"] = manual
++            v_out["final_status"] = "FAIL"
++            v_out["final_basis"] = "mechanical_hard_failure"
++            v_out["final_reason"] = hard + "（已证实的硬失败不依赖人工状态，也不因未审而软化）"
++            return v_out
+     if manual is not None:
+         v_out["manual_review"] = manual
+         if manual["verdict"] == "FAIL":
+@@ -1982,14 +2024,10 @@
+     typed = []
+     for t in tt:
+         if isinstance(t, dict) and t.get("doc_id"):
+-            typed.append(
+-                {
+-                    "target_type": t.get("target_type"),
+-                    "doc_id": t["doc_id"],
+-                    "workspace": t.get("workspace"),
+-                    "discovery": t.get("discovery"),
+-                }
+-            )
++            # R2 r3: keep the FULL published identity (unit_id/table_id/
++            # scope_id/citation/basis/status) — copying only doc fields and
++            # then expecting downstream to read unit_id/scope_id dropped them.
++            typed.append(dict(t))
+     return {"chunk_docs": chunk_docs, "chunk_ids": chunk_ids, "typed": typed}
+ 
+ 
+@@ -2228,10 +2266,18 @@
+                     for (w, d, cid) in chunk_set
+                 )
+                 if not hit and typed:
++                    # R2 r3: typed hits are bound by the FULL composite
++                    # identity — the target's own workspace/doc must match the
++                    # expected unit's; a same-named scope on another workspace
++                    # or document never hits.
++                    def _own(x):
++                        return x.get("doc_id") == comp[1] and (x.get("workspace") or ws) == comp[0]
++
+                     hit = any(
+-                        (x.get("unit_id") == comp[3] and x.get("doc_id") == comp[1])
++                        (x.get("unit_id") == comp[3] and _own(x))
+                         or (
+                             x.get("scope_id")
++                            and _own(x)
+                             and any(
+                                 s.get("scope_id") == x["scope_id"] for s in ent.get("scopes") or []
+                             )
+@@ -2560,6 +2606,8 @@
+             raise SystemExit(f"generation adjudication output already exists: {out_file}")
+         configure_generation(Path(args.run_dir), args.round, Path(args.anchor), args.manifest)
+         rej_dir = out_file.parent
++        rej_dir.mkdir(parents=True, exist_ok=True)
++        diag_written = False
+         try:
+             if args.records:
+                 load_review_records(Path(args.records))
+@@ -2568,6 +2616,7 @@
+             verification = verify_inputs()
+             if not verification["ok"]:
+                 _write_rejection_unique(rej_dir, verification["problems"])
++                diag_written = True
+                 raise InputIntegrityError(
+                     "assessment inputs failed integrity verification: "
+                     + "; ".join(verification["problems"])
+@@ -2576,7 +2625,12 @@
+             terminal = load_terminal()
+             doc_reg = doc_registry()
+             issued_legs = answer_issued_by_leg(terminal)
+-            verdicts = _score_legs(terminal, gold_by, doc_reg, issued_legs)
++            global _STRICT_BIND
++            _STRICT_BIND = True
++            try:
++                verdicts = _score_legs(terminal, gold_by, doc_reg, issued_legs)
++            finally:
++                _STRICT_BIND = False
+             # S1: every file actually consumed must be bound by the manifest
+             man = json.loads((ROUND1 / RUN_MANIFEST_NAME).read_text(encoding="utf-8"))["files"]
+             bound = {str((REPO / k).resolve()) for k in man}  # absolute k stays k
+@@ -2615,7 +2669,11 @@
+         except (SystemExit, KeyboardInterrupt):
+             raise
+         except Exception as exc:  # noqa: BLE001 — the ONE generation boundary
+-            if not any(rej_dir.glob("input-rejection*.json")):
++            # R3 r3: the PRESENCE of an earlier invocation's diagnostic must
++            # never silence this one's; _write_rejection_unique appends a new
++            # uniquely-named file and the per-call flag prevents a double
++            # write for the same failure. Every rejection keeps its own cause.
++            if not diag_written:
+                 _write_rejection_unique(rej_dir, ["generation flow failed before publish"], exc)
+             raise InputIntegrityError(
+                 f"generation assessment rejected: {type(exc).__name__}: {_sanitize(str(exc))[:200]}"

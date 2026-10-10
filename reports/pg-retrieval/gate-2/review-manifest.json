@@ -1,0 +1,104 @@
+{
+  "review_date": "2026-10-05",
+  "gate": "Gate2",
+  "result": "not passed",
+  "reviewer": "main agent",
+  "tasks": "4.1–4.5 reopened;4.6 pending;1.1–3.6 accepted status retained",
+  "tests": {
+    "before_independent_tests": {
+      "passed": 123,
+      "failed": 0
+    },
+    "final": {
+      "passed": 123,
+      "failed": 13
+    },
+    "new_independent_tests": 13,
+    "evidence": "test-results.txt"
+  },
+  "checks": {
+    "ruff_check": "passed:src/tests/current review scripts",
+    "ruff_format": "44 files passed",
+    "openspec_strict": "passed",
+    "git_diff_check": "passed",
+    "credential_leaks": 0
+  },
+  "real_readonly_pg_replay": "replay.json",
+  "gold_review": {
+    "positives": 31,
+    "counter_examples": 10,
+    "evidence": "gold-review.json",
+    "identity_links": "gold-source-proof.json",
+    "raw_materials": "raw-gold-materials.json",
+    "formal_gold_frozen": false,
+    "gate_metrics_approved": false
+  },
+  "source_state": {
+    "state": "current",
+    "active_run_id": "c15c741742394320",
+    "active_snapshot_id": "4919b3938ad93747",
+    "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+    "expected_recipe_id": "phase-1-v4-single-active-snapshot-prune",
+    "live_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "stored_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "action": ""
+  },
+  "search_state": {
+    "state": "current",
+    "search_id": "b1cd771ee0e2b55f",
+    "catalog_snapshot_id": "4919b3938ad93747",
+    "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+    "vocab_sha": "66edabd3b268b0fcbc6cf50c4a1ac0c066b4e7a0dc2041a3d9873e59d7f42003",
+    "reasons": []
+  },
+  "public_counts": {
+    "doc_full": 221,
+    "doc_chunks": 5709,
+    "doc_status": 279,
+    "llm_cache": 16514,
+    "entity_chunks": 65527,
+    "full_entities": 221,
+    "full_relations": 221,
+    "relation_chunks": 119575
+  },
+  "public_unchanged": true,
+  "source_and_active_unchanged": true,
+  "gold_proof_end_matches_start": true,
+  "model_calls": 0,
+  "db_mutations": 0,
+  "source_sha256": {
+    "pyproject.toml": "429598a4953a57f5d8fab570539b3e7982a3231f0969612bf4ef4b90937472c5",
+    "src/env_rag_final/catalog/schema.py": "29f209b1fa682151d486cd2cbca72284d61652ba63c8b5a0d084c9f2d6f78ae6",
+    "src/env_rag_final/cli.py": "cb46bb31322b82e0b686ee6be7b402b3979710672829bbb5e67b5a75c20fa5e4",
+    "src/env_rag_final/search/__init__.py": "5e1c975ee7c2d4fe82a1f9704122a8b92c72cd960053b50c9433a8041802e0b2",
+    "src/env_rag_final/search/clean.py": "316ff69e1ff00f6318d94ce993a6b0b0b23beffe74c7a7249786d407bf89056b",
+    "src/env_rag_final/search/eval.py": "5dc0e569dc7ed0ba901c22fcd50526367504934ed93f8148ef035d5bdaf1709e",
+    "src/env_rag_final/search/expand.py": "c862c5133464b04b229c5da8e5b3d7180e8dfef6fdda771fbcf9abf98f0933da",
+    "src/env_rag_final/search/gold.py": "c5f0db175dae4609b73348fe4a5cc407b9f986ff01f08b40649749610b37d9af",
+    "src/env_rag_final/search/index.py": "e5dec7e3979f5489a6c4f623ecae103fe900ecb51a00f6da307d41edbc0c5e0d",
+    "src/env_rag_final/search/probe.py": "fa135bace6f75d93d8c492aa5ac5f6dee86f12e99d5c61a6676921c961347686",
+    "src/env_rag_final/search/query.py": "d19b8f2eae63413b90ce9822a6b3f49ec476b9426695abab3091f953ba94b71d",
+    "src/env_rag_final/search/tokenizer.py": "9211700b07bec289ed6c819bfab21678cdcca1e68a33d5fb1265b00bb05b65e5",
+    "src/env_rag_final/search/vocab/base.txt": "e57d3893e8e68a89df3908959aecbc3791abadfc637155631c3876cf821d5ec6",
+    "src/env_rag_final/search/vocab/stopwords.txt": "7258ab4649c3e42768791b2d483023913826c4f99b6593d5dd683a98916afe1a",
+    "src/env_rag_final/search/vocab/synonyms.txt": "ad5488268beac3a039b83e43ab62dec374ab43f9718d6178b71da6e162c5a162",
+    "tests/test_gate2_acceptance.py": "9fa939a8e66c12da60d618250b614863701b84321a7a7e0cd6f10d2b45362fa5",
+    "tests/test_search_phase2.py": "d4bab25fdd750a9e4077e0701486da77e243d68f94fbcd76a099420b2556953b",
+    "uv.lock": "fbddea97a9b2607fa45326a2ca7af0750100e4cf1a43ddc9a7afcd2c5aed50aa"
+  },
+  "coverage": {
+    "total_files": 115,
+    "reviewed_files": 16,
+    "skipped_files": 99,
+    "coverage_rate": 0.1391304347826087,
+    "accounted_for_rate": 1.0,
+    "excluded_count": 68,
+    "bounded_scope": "Phase2 search/tokenizer/index/expand/eval/gold and new CLI/schema/dependency changes",
+    "additional_manual_review": [
+      "tests/test_gate2_acceptance.py",
+      "all31 gold candidates and10 counter-example expectations",
+      "OpenSpec design and affected specs"
+    ]
+  },
+  "next": "handoff-phase-2-fixes.md;stop at Gate2;no Phase3"
+}

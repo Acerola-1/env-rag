@@ -1,0 +1,147 @@
+{
+  "scope": "19 explicitly selected protected phase-4 historical/submitted manifests; not a claim to scan every earlier-phase manifest",
+  "manifests": [
+    {
+      "manifest": "reports/pg-retrieval/phase-4-round-1/pilot-manifest.json",
+      "entries": 809,
+      "sha256": "094c97727c740c681d239969f7514eaa53225210733fe766f74ab06438e54861"
+    },
+    {
+      "manifest": "reports/pg-retrieval/phase-4-round-1-assessment/pilot-manifest.json",
+      "entries": 9,
+      "sha256": "18a01150fc1d07143bf9d6e6ea3adb5602ce02adede010954cd054922904778a"
+    },
+    {
+      "manifest": "reports/pg-retrieval/phase-4-round-1-assessment-r2/assessment-manifest.json",
+      "entries": 4,
+      "sha256": "929b361550f77bfc6d35215e99a94f0488288d6d1a439be90486492c5eeced4f"
+    },
+    {
+      "manifest": "reports/pg-retrieval/phase-4-round-1-assessment-r3/assessment-manifest.json",
+      "entries": 4,
+      "sha256": "e7a3e53f9bb5f04a98adb16652bfa069769d4bfdda35ef14e260d77af3692219"
+    },
+    {
+      "manifest": "reports/pg-retrieval/phase-4-improvement-1/improvement-1-manifest.json",
+      "entries": 6,
+      "sha256": "9f7b2d598994b2408e20c8f82721d81a5da004a6a8264098f6dd1c85995e952b"
+    },
+    {
+      "manifest": "reports/pg-retrieval/phase-4-improvement-1-review/review-manifest.json",
+      "entries": 12,
+      "sha256": "a42e2b62e85f90c0f7e5d6c6d7171cc8d51e38f3ddce2111d6589b700b906b88"
+    },
+    {
+      "manifest": "reports/pg-retrieval/phase-4-improvement-1-r2/improvement-1-r2-manifest.json",
+      "entries": 14,
+      "sha256": "8ca3d6283bf255915cf2ffdff9918ad1483c05b05847ef42e7d916b0dba68ece"
+    },
+    {
+      "manifest": "reports/pg-retrieval/phase-4-improvement-1-review-r2/review-manifest.json",
+      "entries": 15,
+      "sha256": "df3c2d90ef382974f0ba44209a82d818d3c276a2426eba182c35b3efc56faf77"
+    },
+    {
+      "manifest": "reports/pg-retrieval/phase-4-improvement-1-r3/improvement-1-r3-manifest.json",
+      "entries": 9,
+      "sha256": "036483500fdeca53f19d81881362e4d59af0f063dcf9f4eff034b1386be6714b"
+    },
+    {
+      "manifest": "reports/pg-retrieval/phase-4-improvement-1-review-r3/review-manifest.json",
+      "entries": 10,
+      "sha256": "7ecead73c27cb43a2d0afbaa220ff4717cdeb6f9b16283bddfe4df61d78bd0a3"
+    },
+    {
+      "manifest": "reports/pg-retrieval/phase-4-improvement-2-diagnosis/improvement-2-manifest.json",
+      "entries": 9,
+      "sha256": "be30c79ae77cae4017061c50d8d0fde3151c5ae582dfd5a48617af617bfb6bfa"
+    },
+    {
+      "manifest": "reports/pg-retrieval/phase-4-improvement-2-diagnosis-review/review-manifest.json",
+      "entries": 10,
+      "sha256": "f92d892d96cc3a6f9a99a2df70b4cf16168d0db29bbf92f2ecf32d237cdc3947"
+    },
+    {
+      "manifest": "reports/pg-retrieval/phase-4-improvement-2/improvement-2-manifest.json",
+      "entries": 10,
+      "sha256": "39aeb7c902fede66b001824b706b39f81e2335c98d6117da4be6905792b28e98"
+    },
+    {
+      "manifest": "reports/pg-retrieval/phase-4-improvement-2-review/review-manifest.json",
+      "entries": 17,
+      "sha256": "ec49e58e5df5258cbd3d60256c314968d306a975d5647d83d208adf2e45eb869"
+    },
+    {
+      "manifest": "reports/pg-retrieval/phase-4-improvement-2-r2/improvement-2-r2-manifest.json",
+      "entries": 19,
+      "sha256": "9273c818c74755eef5148541b2636345b75b704c5865f4eb0d8d80a873ddedbf"
+    },
+    {
+      "manifest": "reports/pg-retrieval/phase-4-improvement-2-review-r2/review-manifest.json",
+      "entries": 16,
+      "sha256": "1794703b98c4c6393b14377c47c8d499338c9457654bd69464b7d0562658a8bb"
+    },
+    {
+      "manifest": "reports/pg-retrieval/phase-4-improvement-3-diagnosis/improvement-3-diagnosis-manifest.json",
+      "entries": 13,
+      "sha256": "ffb709734e4b701500ee1f2fb577a91acfe59a4e62bc227dcc9bccc34f5f355d"
+    },
+    {
+      "manifest": "reports/pg-retrieval/phase-4-improvement-3-diagnosis-review/review-manifest.json",
+      "entries": 12,
+      "sha256": "e68ca7ccd4fea17edb2178994d3017e75a2ac5ecd582b0e313ebad94efd29771"
+    },
+    {
+      "manifest": "reports/pg-retrieval/phase-4-improvement-3/improvement-3-manifest.json",
+      "entries": 17,
+      "sha256": "1c30e71ebba28397c68160e2df021ae09fadc68b0814c40bc24698847ba83d52"
+    }
+  ],
+  "entries_checked": 1015,
+  "drift": [],
+  "submission_source_anchors": [
+    {
+      "path": "src/env_rag_final/answer.py",
+      "sha256": "65eefd79a01414d678a8d9e5e2155158870e6de9856db2125a871d29b7e72df3",
+      "matches_submission": true
+    },
+    {
+      "path": "src/env_rag_final/evaluation.py",
+      "sha256": "a42d5c68952e40627a395f023650eae89f59a0527ac0208f45c90ea0f8dd7529",
+      "matches_submission": true
+    },
+    {
+      "path": "src/env_rag_final/search/expand.py",
+      "sha256": "b004c9fa75baadc6b6716dca643e54ae1a3d1a2f61850aa4fa9af571172bd2ef",
+      "matches_submission": true
+    },
+    {
+      "path": "src/env_rag_final/search/query.py",
+      "sha256": "25bed96d082198001bfb5502d15a6ff9890863c494ec2bfdac6adcb1812e7712",
+      "matches_submission": true
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/doc_enum.py",
+      "sha256": "e553d05235b683b83206704df69cb18c0bccd97145b54a6fe35f8a024d893ed2",
+      "matches_submission": true
+    },
+    {
+      "path": "tests/test_phase4_improvement3_union_enumeration.py",
+      "sha256": "8c294b78e8217972626a12e2df4aa21fe5df5504d3e2a2c80f208b399ec62ddc",
+      "matches_submission": true
+    },
+    {
+      "path": "tests/test_gate2_acceptance.py",
+      "sha256": "1f2813941453ab6323907beca691258f67f645f8012879362434fa99c7f54ee9",
+      "matches_submission": true
+    },
+    {
+      "path": "tests/test_gate2_rereview.py",
+      "sha256": "9c34c53c10889ab0778671cb7faf2d124d2b497170e102c4af5259c2ee0329f3",
+      "matches_submission": true
+    }
+  ],
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "expand_before_lineage_recovered_from": "phase-4-improvement-2-diagnosis/sha-anchors.json; not a pre-edit capture for this submission",
+  "expand_prior_sha": "d328e76b049703aa7e872b567a67d01a38f3a7dcd3dbfec5c2e8f8aabfe97ace"
+}

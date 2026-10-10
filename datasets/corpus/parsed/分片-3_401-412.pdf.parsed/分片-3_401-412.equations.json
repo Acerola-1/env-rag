@@ -1,0 +1,131 @@
+{
+  "version": "1.0",
+  "equations": {
+    "eq-e2e392ff98b1abe57cf10f89804d09ee-0001": {
+      "id": "eq-e2e392ff98b1abe57cf10f89804d09ee-0001",
+      "blockid": "f7dfa0ffb342358df9fb6c69cee138c3",
+      "heading": "RB.1.1 修正适用条件",
+      "parent_headings": [
+        "（规范性附件）基于 REESS 电量变化的修正程序"
+      ],
+      "format": "latex",
+      "content": "c = \\frac {\\left| \\Delta E _ {\\text { REESS,CS }} \\right|}{E _ {\\text { fuel,CS }}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/13"
+    },
+    "eq-e2e392ff98b1abe57cf10f89804d09ee-0002": {
+      "id": "eq-e2e392ff98b1abe57cf10f89804d09ee-0002",
+      "blockid": "87d28bf4b6e1ef389063c72ee0bd5f38",
+      "heading": "RB.1.2.1 NOVC-HEV 和 OVC-HEV 电量保持模式下的燃料能量当量",
+      "parent_headings": [
+        "（规范性附件）基于 REESS 电量变化的修正程序"
+      ],
+      "format": "latex",
+      "content": "E _ {\\mathrm{fuel,CS}} = 1 0 \\times \\mathrm{HV} \\times \\mathrm{FC} _ {\\mathrm{CS,nb}} \\times d _ {\\mathrm{CS}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/18"
+    },
+    "eq-e2e392ff98b1abe57cf10f89804d09ee-0003": {
+      "id": "eq-e2e392ff98b1abe57cf10f89804d09ee-0003",
+      "blockid": "a392c1a2c3934026e1713625d14d5c38",
+      "heading": "RB.2 修正系数的计算",
+      "parent_headings": [
+        "（规范性附件）基于 REESS 电量变化的修正程序"
+      ],
+      "format": "latex",
+      "content": "- 0. 0 1 \\leqslant \\frac {\\Delta E _ {\\mathrm{REESS}}}{E _ {\\mathrm{fuel}}} \\leqslant + 0. 0 1",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/43"
+    },
+    "eq-e2e392ff98b1abe57cf10f89804d09ee-0004": {
+      "id": "eq-e2e392ff98b1abe57cf10f89804d09ee-0004",
+      "blockid": "28999f26598519d4a06dcc6756722e00",
+      "heading": "RB.2.3 修正系数 $K _ { \\infty _ { 2 } }$",
+      "parent_headings": [
+        "（规范性附件）基于 REESS 电量变化的修正程序"
+      ],
+      "format": "latex",
+      "content": "K _ {\\mathrm{CO} _ {2}} = \\frac {\\sum_ {n = 1} ^ {n _ {\\mathrm{CS}}} \\left[ \\left(\\mathrm{EC} _ {\\mathrm{CS} , n} - \\mathrm{EC} _ {\\mathrm{CS} , \\text {avg}}\\right) \\times \\left(M _ {\\mathrm{CO} _ {2} , \\mathrm{CS} , \\mathrm{nb} , n} - M _ {\\mathrm{CO} _ {2} , \\mathrm{CS} , \\mathrm{nb} , \\text {avg}}\\right) \\right]}{\\sum_ {n = 1} ^ {n _ {\\mathrm{CS}}} \\left(\\mathrm{EC} _ {\\mathrm{CS} , n} - \\mathrm{EC} _ {\\mathrm{CS} , \\text {avg}}\\right) ^ {2}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/51"
+    },
+    "eq-e2e392ff98b1abe57cf10f89804d09ee-0005": {
+      "id": "eq-e2e392ff98b1abe57cf10f89804d09ee-0005",
+      "blockid": "28999f26598519d4a06dcc6756722e00",
+      "heading": "RB.2.3 修正系数 $K _ { \\infty _ { 2 } }$",
+      "parent_headings": [
+        "（规范性附件）基于 REESS 电量变化的修正程序"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{EC} _ {\\mathrm{CS}, n} = \\frac {\\Delta E _ {\\mathrm{REESS,CS} , n}}{d _ {\\mathrm{CS} , n}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/54"
+    },
+    "eq-e2e392ff98b1abe57cf10f89804d09ee-0006": {
+      "id": "eq-e2e392ff98b1abe57cf10f89804d09ee-0006",
+      "blockid": "28999f26598519d4a06dcc6756722e00",
+      "heading": "RB.2.3 修正系数 $K _ { \\infty _ { 2 } }$",
+      "parent_headings": [
+        "（规范性附件）基于 REESS 电量变化的修正程序"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{EC} _ {\\mathrm{CS}, \\text { avg }} = \\frac {1}{n _ {\\mathrm{CS}}} \\times \\sum_ {n = 1} ^ {n _ {\\mathrm{CS}}} \\mathrm{EC} _ {\\mathrm{CS}, n}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/60"
+    },
+    "eq-e2e392ff98b1abe57cf10f89804d09ee-0007": {
+      "id": "eq-e2e392ff98b1abe57cf10f89804d09ee-0007",
+      "blockid": "28999f26598519d4a06dcc6756722e00",
+      "heading": "RB.2.3 修正系数 $K _ { \\infty _ { 2 } }$",
+      "parent_headings": [
+        "（规范性附件）基于 REESS 电量变化的修正程序"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2}, \\mathrm{CS,nb,avg}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/64"
+    },
+    "eq-e2e392ff98b1abe57cf10f89804d09ee-0008": {
+      "id": "eq-e2e392ff98b1abe57cf10f89804d09ee-0008",
+      "blockid": "28999f26598519d4a06dcc6756722e00",
+      "heading": "RB.2.3 修正系数 $K _ { \\infty _ { 2 } }$",
+      "parent_headings": [
+        "（规范性附件）基于 REESS 电量变化的修正程序"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2}, \\mathrm{CS,nb,avg}} = \\frac {1}{n _ {\\mathrm{CS}}} \\times \\sum_ {n = 1} ^ {n _ {\\mathrm{CS}}} M _ {\\mathrm{CO} _ {2}, \\mathrm{CS,nb}, n} 。",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/66"
+    },
+    "eq-e2e392ff98b1abe57cf10f89804d09ee-0009": {
+      "id": "eq-e2e392ff98b1abe57cf10f89804d09ee-0009",
+      "blockid": "3cbaa91561b710f94aee4c0796a27056",
+      "heading": "附 件 RE",
+      "parent_headings": [],
+      "format": "latex",
+      "content": "\\mathrm{UF} _ {j} \\left(d _ {j}\\right) = 1 - \\exp \\left\\{- \\left(\\sum_ {i = 1} ^ {k} C _ {i} \\times \\left(\\frac {d _ {j}}{d _ {n}}\\right) ^ {i}\\right) \\right\\} - \\sum_ {l = 1} ^ {j - 1} \\mathrm{UF} _ {l}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/186"
+    },
+    "eq-e2e392ff98b1abe57cf10f89804d09ee-0010": {
+      "id": "eq-e2e392ff98b1abe57cf10f89804d09ee-0010",
+      "blockid": "3cbaa91561b710f94aee4c0796a27056",
+      "heading": "附 件 RE",
+      "parent_headings": [],
+      "format": "latex",
+      "content": "\\begin{array}{c} j \\\\ i \\end{array}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/192"
+    }
+  }
+}

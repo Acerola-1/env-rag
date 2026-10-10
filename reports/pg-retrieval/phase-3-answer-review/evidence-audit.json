@@ -1,0 +1,406 @@
+{
+  "method": "Offline raw grid and raw block slices; no database or model request by reviewer.",
+  "sha_checks": [
+    {
+      "path": "src/env_rag_final/answer.py",
+      "expected": "c27f1b2bc6d1062308c7f6eb0a5d3facc323cfee522a39ed38ae54f2353dddcc",
+      "actual": "c27f1b2bc6d1062308c7f6eb0a5d3facc323cfee522a39ed38ae54f2353dddcc",
+      "match": true
+    },
+    {
+      "path": "src/env_rag_final/cli.py",
+      "expected": "ba940f63205b617be00fe0e2cf58683ea53d74247c4039e0cb28c27ced521195",
+      "actual": "ba940f63205b617be00fe0e2cf58683ea53d74247c4039e0cb28c27ced521195",
+      "match": true
+    },
+    {
+      "path": "src/env_rag_final/rerank.py",
+      "expected": "e2a8e089dd69cc02791a3c175bfadd27dd4fded80b249a32786b6a4d099cce08",
+      "actual": "e2a8e089dd69cc02791a3c175bfadd27dd4fded80b249a32786b6a4d099cce08",
+      "match": true
+    },
+    {
+      "path": "src/env_rag_final/fusion.py",
+      "expected": "be1cd4c586596468efda7b9483903a407f0e214fc35e7a83355ad304ef94127e",
+      "actual": "be1cd4c586596468efda7b9483903a407f0e214fc35e7a83355ad304ef94127e",
+      "match": true
+    },
+    {
+      "path": "src/env_rag_final/local_adapter.py",
+      "expected": "0bbad9764856250085b5cefb90c9d56933bfd2f6e9ed5ed796fdd93bdf2da7e3",
+      "actual": "0bbad9764856250085b5cefb90c9d56933bfd2f6e9ed5ed796fdd93bdf2da7e3",
+      "match": true
+    },
+    {
+      "path": "tests/test_answer.py",
+      "expected": "a004298c3366eb2a7396df177a7685792c839e76d9bddf374cabcb51499f2b55",
+      "actual": "a004298c3366eb2a7396df177a7685792c839e76d9bddf374cabcb51499f2b55",
+      "match": true
+    },
+    {
+      "path": "tests/test_rerank.py",
+      "expected": "7edeaa62a72f330b1baa2e6f6294ed5c8259eb38ab18d6b28e5d4a2f2a463586",
+      "actual": "7edeaa62a72f330b1baa2e6f6294ed5c8259eb38ab18d6b28e5d4a2f2a463586",
+      "match": true
+    },
+    {
+      "path": "tests/test_rerank_review_r1.py",
+      "expected": "303906859bf4c8199c11cac2c2c698250cca85d70b5380483bd34fc96908c34e",
+      "actual": "303906859bf4c8199c11cac2c2c698250cca85d70b5380483bd34fc96908c34e",
+      "match": true
+    },
+    {
+      "path": "tests/test_rerank_review_r2.py",
+      "expected": "6673e0ef9579a373da9c8c0481f8e92722e6a1c8b14f487d56772a62f0d45fac",
+      "actual": "6673e0ef9579a373da9c8c0481f8e92722e6a1c8b14f487d56772a62f0d45fac",
+      "match": true
+    },
+    {
+      "path": "tests/test_rerank_review_r3.py",
+      "expected": "9a337de82a2d4d5822fbc8821ba4d45252cb7d45b57790d65b1301573c1790d8",
+      "actual": "9a337de82a2d4d5822fbc8821ba4d45252cb7d45b57790d65b1301573c1790d8",
+      "match": true
+    },
+    {
+      "path": "reports/pg-retrieval/gate-2/review-r5/gold-approved.json",
+      "expected": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+      "actual": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+      "match": true
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer/answer-runtime-latest.json",
+      "expected": "1d97ce27741c7815727bc687edcb28f9d9656359f95bec549444748107bb542e",
+      "actual": "1d97ce27741c7815727bc687edcb28f9d9656359f95bec549444748107bb542e",
+      "match": true
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-enums/answer-runtime-latest.json",
+      "expected": "697df4c044014455fcd1d4cb308c7e0af9c389949ddfd3afbd2c6a5b8261d3f1",
+      "actual": "697df4c044014455fcd1d4cb308c7e0af9c389949ddfd3afbd2c6a5b8261d3f1",
+      "match": true
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-syn-check/answer-runtime-latest.json",
+      "expected": "f3cebee7393c9fc1aa09b91bd730ac76aeaf99e65f30e9296d3f94fdf447f5e1",
+      "actual": "f3cebee7393c9fc1aa09b91bd730ac76aeaf99e65f30e9296d3f94fdf447f5e1",
+      "match": true
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-syn-check/formal-expand-control.json",
+      "expected": "5a41ac15471a8f68fabf724e67403096d965e4e2c17760ad3d48f86f853e5cf0",
+      "actual": "5a41ac15471a8f68fabf724e67403096d965e4e2c17760ad3d48f86f853e5cf0",
+      "match": true
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-syn/answer-runtime-latest.json",
+      "expected": "aa2a9ff01271066951f6f9b3f91fbcbf8ccfbf6bbdfd68bfc65adf3f5f8257b9",
+      "actual": "aa2a9ff01271066951f6f9b3f91fbcbf8ccfbf6bbdfd68bfc65adf3f5f8257b9",
+      "match": true
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-syn2/answer-runtime-latest.json",
+      "expected": "41b715e536a2e275b58c217bb666abc71c13578252b63746f71e73a6dfb0df8a",
+      "actual": "41b715e536a2e275b58c217bb666abc71c13578252b63746f71e73a6dfb0df8a",
+      "match": true
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-fusion/fusion-runtime-latest.json",
+      "expected": "d7e87076dbc5f799890c5c369aefea18d1d6e28b3d2cc4344effb76d7a6e0e2a",
+      "actual": "d7e87076dbc5f799890c5c369aefea18d1d6e28b3d2cc4344effb76d7a6e0e2a",
+      "match": true
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-fusion-syn/fusion-runtime-latest.json",
+      "expected": "824c708526cb1d25a850ad2e1bd6ab4bc6fc90f150451f5cc9204ed532a1da55",
+      "actual": "824c708526cb1d25a850ad2e1bd6ab4bc6fc90f150451f5cc9204ed532a1da55",
+      "match": true
+    }
+  ],
+  "runs": [
+    {
+      "path": "reports/pg-retrieval/phase-3-answer/answer-runtime-latest.json",
+      "model_calls_used": 0,
+      "identity_matches_in_submitted_log": [
+        true,
+        true
+      ],
+      "identity_drift": [],
+      "results": [
+        {
+          "query_id": "fact-002",
+          "coverage_status": "complete",
+          "raw_citation_checks": [
+            {
+              "kind": "table_row",
+              "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+              "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+              "valid": true
+            }
+          ],
+          "model_status": null,
+          "model_failure": null,
+          "model_receipt": null,
+          "submitted_reverification": {
+            "items_checked": 13,
+            "problems": [],
+            "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-enums/answer-runtime-latest.json",
+      "model_calls_used": 0,
+      "identity_matches_in_submitted_log": [
+        true,
+        true
+      ],
+      "identity_drift": [],
+      "results": [
+        {
+          "query_id": "table-enum-001",
+          "coverage_status": "complete",
+          "raw_citation_checks": [
+            {
+              "kind": "table_row",
+              "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+              "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+              "valid": true
+            },
+            {
+              "kind": "table_row",
+              "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+              "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+              "valid": true
+            },
+            {
+              "kind": "table_row",
+              "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+              "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+              "valid": true
+            },
+            {
+              "kind": "table_row",
+              "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+              "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+              "valid": true
+            },
+            {
+              "kind": "table_row",
+              "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+              "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+              "valid": true
+            },
+            {
+              "kind": "table_row",
+              "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+              "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+              "valid": true
+            },
+            {
+              "kind": "table_row",
+              "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+              "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+              "valid": true
+            },
+            {
+              "kind": "table_row",
+              "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+              "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+              "valid": true
+            },
+            {
+              "kind": "table_row",
+              "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+              "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+              "valid": true
+            },
+            {
+              "kind": "table_row",
+              "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+              "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+              "valid": true
+            },
+            {
+              "kind": "table_row",
+              "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+              "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+              "valid": true
+            },
+            {
+              "kind": "table_row",
+              "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+              "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+              "valid": true
+            },
+            {
+              "kind": "table_row",
+              "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+              "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+              "valid": true
+            }
+          ],
+          "model_status": null,
+          "model_failure": null,
+          "model_receipt": null,
+          "submitted_reverification": {
+            "items_checked": 13,
+            "problems": [],
+            "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+          },
+          "note": null
+        },
+        {
+          "query_id": "prose-enum-001",
+          "coverage_status": "complete",
+          "raw_citation_checks": [
+            {
+              "kind": "prose_item",
+              "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+              "locator": {
+                "file": "blocks.jsonl",
+                "kind": "block",
+                "blockid": "385d9e8e0539a87e61f0407bda1739ad",
+                "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+              },
+              "valid": true
+            },
+            {
+              "kind": "prose_item",
+              "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+              "locator": {
+                "file": "blocks.jsonl",
+                "kind": "block",
+                "blockid": "385d9e8e0539a87e61f0407bda1739ad",
+                "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+              },
+              "valid": true
+            },
+            {
+              "kind": "prose_item",
+              "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+              "locator": {
+                "file": "blocks.jsonl",
+                "kind": "block",
+                "blockid": "ad9d292d3ee2fd88a8fd25b9efc8265a",
+                "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+              },
+              "valid": true
+            },
+            {
+              "kind": "prose_item",
+              "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+              "locator": {
+                "file": "blocks.jsonl",
+                "kind": "block",
+                "blockid": "90d4b1c55cb8c6ff81dcbdfd55827165",
+                "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+              },
+              "valid": true
+            }
+          ],
+          "model_status": null,
+          "model_failure": null,
+          "model_receipt": null,
+          "submitted_reverification": {
+            "items_checked": 4,
+            "problems": [],
+            "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-syn-check/answer-runtime-latest.json",
+      "model_calls_used": 0,
+      "identity_matches_in_submitted_log": [
+        true,
+        true
+      ],
+      "identity_drift": [],
+      "results": [
+        {
+          "query_id": "syn-001",
+          "coverage_status": "partial",
+          "raw_citation_checks": [],
+          "model_status": "incomplete_conditions",
+          "model_failure": "requested edition(s) ['gb3095-2012'] are not resolved in the read scope — a version comparison missing one edition is incomplete, never answered from the neighbouring version or from gold",
+          "model_receipt": null,
+          "submitted_reverification": {
+            "items_checked": 1,
+            "problems": [],
+            "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+          },
+          "note": null
+        }
+      ]
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-syn/answer-runtime-latest.json",
+      "model_calls_used": 1,
+      "identity_matches_in_submitted_log": [
+        true,
+        true
+      ],
+      "identity_drift": [],
+      "results": [
+        {
+          "query_id": "syn-004",
+          "coverage_status": "partial",
+          "raw_citation_checks": [],
+          "model_status": "model_failure",
+          "model_failure": "answer call failed: http_503 — degraded answer refused without a fabricated synthesis",
+          "model_receipt": {
+            "service": "answer-model",
+            "endpoint": "http://127.0.0.1:8787/v1/chat/completions",
+            "model": "<redacted>",
+            "status": "failure",
+            "error": "http_503",
+            "latency_ms": 64
+          },
+          "submitted_reverification": {
+            "items_checked": 8,
+            "problems": [],
+            "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+          },
+          "note": "Failed synthesis has no answer items; its eight source position claims are not independently accepted from summary counts alone."
+        }
+      ]
+    },
+    {
+      "path": "reports/pg-retrieval/phase-3-answer-syn2/answer-runtime-latest.json",
+      "model_calls_used": 1,
+      "identity_matches_in_submitted_log": [
+        true,
+        true
+      ],
+      "identity_drift": [],
+      "results": [
+        {
+          "query_id": "syn-004",
+          "coverage_status": "partial",
+          "raw_citation_checks": [],
+          "model_status": "model_failure",
+          "model_failure": "answer call failed: http_503 — degraded answer refused without a fabricated synthesis",
+          "model_receipt": {
+            "service": "answer-model",
+            "endpoint": "http://127.0.0.1:8787/v1/chat/completions",
+            "model": "<redacted>",
+            "status": "failure",
+            "error": "http_503",
+            "latency_ms": 64
+          },
+          "submitted_reverification": {
+            "items_checked": 8,
+            "problems": [],
+            "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+          },
+          "note": "Failed synthesis has no answer items; its eight source position claims are not independently accepted from summary counts alone."
+        }
+      ]
+    }
+  ],
+  "cache_limit": "Equal row counts cannot demonstrate zero cache reads or updates; code path inspection is separate evidence."
+}

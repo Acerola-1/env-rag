@@ -1,0 +1,133 @@
+{
+  "review_date": "2026-10-06",
+  "result": "Gate2 not passed",
+  "accepted_tasks": [
+    "4.1",
+    "4.2",
+    "4.3"
+  ],
+  "pending_tasks": [
+    "4.4",
+    "4.5",
+    "4.6"
+  ],
+  "phase3_authorized": false,
+  "tests": {
+    "existing_passed": 161,
+    "new_counterexamples_failed": 7,
+    "old33_assertion_files_unchanged": {
+      "tests/test_gate2_acceptance.py": true,
+      "tests/test_gate2_rereview.py": true,
+      "tests/test_gate2_review_r3.py": true
+    }
+  },
+  "checks": {
+    "ruff_check": "passed",
+    "ruff_format": "passed",
+    "openspec_strict": "passed",
+    "diff_check": "passed",
+    "credential_scan_files": 24,
+    "credential_leak_files": []
+  },
+  "live": {
+    "readonly": true,
+    "production_queries": 26,
+    "benchmark_questions": 31,
+    "tokenizer_cases": 25,
+    "tokenizer_passed": 25,
+    "direct_scope_reads": 2,
+    "explicit_scope_queries": 2,
+    "formal_cli_runs": 2,
+    "db_writes": 0,
+    "index_rebuilds": 0,
+    "model_calls": 0,
+    "raw_table_row_citations_checked": 167,
+    "raw_prose_citations_checked": 11,
+    "unbound_prose_citations": 1
+  },
+  "source_final": {
+    "public_counts": {
+      "doc_full": 221,
+      "doc_chunks": 5709,
+      "doc_status": 279,
+      "llm_cache": 16514,
+      "entity_chunks": 65527,
+      "full_entities": 221,
+      "full_relations": 221,
+      "relation_chunks": 119575
+    },
+    "catalog": {
+      "state": "current",
+      "active_run_id": "c15c741742394320",
+      "active_snapshot_id": "4919b3938ad93747",
+      "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "expected_recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "live_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "stored_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "action": ""
+    },
+    "search": {
+      "state": "current",
+      "search_id": "e3cb2a39dee53d9d",
+      "catalog_snapshot_id": "4919b3938ad93747",
+      "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+      "vocab_sha": "66edabd3b268b0fcbc6cf50c4a1ac0c066b4e7a0dc2041a3d9873e59d7f42003",
+      "index_recipe": "phase-2-v2-local-caption-identity-guard",
+      "expected_search_id": "e3cb2a39dee53d9d",
+      "reasons": []
+    },
+    "public_unchanged": true,
+    "catalog_and_source_unchanged": true,
+    "search_unchanged": true
+  },
+  "gold": {
+    "positives_reexamined": 31,
+    "counter_expectations_reexamined": 10,
+    "formal_frozen": false,
+    "metrics_approved": false
+  },
+  "current_program_checks_unapproved": {
+    "prose_enum": {
+      "questions": 6,
+      "current_program_exact": 4
+    },
+    "table_enum": {
+      "questions": 6,
+      "current_program_exact": 5
+    },
+    "file_enum": {
+      "questions": 6,
+      "current_program_exact": 6
+    }
+  },
+  "coverage": {
+    "total_files": 164,
+    "reviewed_files": 6,
+    "skipped_files": 158,
+    "excluded_count": 95,
+    "previewed_total_including_excluded": 259,
+    "accounted_for_rate": 1.0,
+    "extra_manual_review": [
+      "tests/test_gate2_review_r4.py",
+      "README and OpenSpec tasks/design/handoffs",
+      "current fix report and 31-question/10-expectation gold review",
+      "new readonly production/benchmark/scope/CLI/source outputs",
+      "167 raw grid rows and11 raw prose citation checks"
+    ],
+    "coverage_rate": 0.036585365853658534
+  },
+  "source_sha256": {
+    "reports/pg-retrieval/phase-2/bench-r3.json": "0b254e3bb8d52c65ea4915ae454d25de9cf6f5808d96ec2c52a917b6cc305398",
+    "reports/pg-retrieval/phase-2/gold-candidates.json": "4124131f117f71d8ab643adfee27340153d601ebe5b97b77e851a835705c1373",
+    "src/env_rag_final/search/eval.py": "64ec115818aa9cdb8d4c3c51817d9510971e4e0069221aa8342d1526bf68eaa0",
+    "src/env_rag_final/search/expand.py": "490811bd3e70125704f5c44dc8eccf1def8238ded0a16ee6548584386b7abad4",
+    "src/env_rag_final/search/gold.py": "6364059769741330875cff9468939b5f603d81a5e98df8a540d224b74fce048f",
+    "src/env_rag_final/search/query.py": "97f14c989864e675dd20c64ea031a1c49a278d41f83a6f5ab1dedd5e00a34a19",
+    "tests/test_gate2_acceptance.py": "9fa939a8e66c12da60d618250b614863701b84321a7a7e0cd6f10d2b45362fa5",
+    "tests/test_gate2_rereview.py": "92190b2f57f7b08e9633dff79f63ed4650876b6a5480b996bbc3d74c213a80d7",
+    "tests/test_gate2_review_r3.py": "e0502b5910d2550a36d0171f9b749188cc27d5ed94df37059c5c97380a03c726",
+    "tests/test_gate2_review_r4.py": "0452492a6c7704be0faf96af6e4f07fdb091e0214f5c3be21da29ce02caa18a4"
+  },
+  "next": "openspec/changes/add-pg-scoped-retrieval/handoff-phase-2-fixes-r4.md"
+}

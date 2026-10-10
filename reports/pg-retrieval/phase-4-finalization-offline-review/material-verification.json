@@ -1,0 +1,27 @@
+{
+  "original_rows_unchanged": 123,
+  "matrix_equal_frozen": true,
+  "exclusive_evidence": {
+    "not_verified": 111,
+    "offline_only": 3,
+    "live": 9
+  },
+  "synthesis_actual": {
+    "not-issued": 10,
+    "issued": 11
+  },
+  "synthesis_detail_mismatch": [
+    {
+      "qid": "syn-003",
+      "path": "fusion",
+      "submitted_http": "not-issued",
+      "actual_http": "issued",
+      "call_status": "success",
+      "model_status": "incomplete_answer_coverage",
+      "model_calls_used": 1,
+      "matches": false,
+      "source_runtime": "reports/pg-retrieval/phase-4-round-1/legs/r1/fusion/syn-003/answer/answer-runtime-latest.json"
+    }
+  ],
+  "reviewer_actual_requests": 0
+}

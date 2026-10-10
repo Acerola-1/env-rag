@@ -1,0 +1,19 @@
+{
+ "generation": "phase-4-formal-two-rounds-blocked-r1",
+ "written_at": "2026-10-09T12:34:38Z",
+ "scope": "authorized two-round batch STOPPED at step one: mapping capture UndefinedColumnError; zero paid calls; bundle verified pre/post",
+ "real_model_requests": 0,
+ "database_writes": 0,
+ "paid_legs_started": 0,
+ "files": {
+  "reports/pg-retrieval/phase-4-formal-two-rounds-blocked-r1/blocked-report.md": "b73dce0772d3b88cb8810165ef1c7e85cd7df9f76e844de3caadd7b4e78af92f",
+  "reports/pg-retrieval/phase-4-formal-two-rounds-blocked-r1/sensitive-scan.json": "86fd6bd0df6af8cb5123868931bfb1a18c30187266f3f15dfe8f395a8cb33e6d",
+  "reports/pg-retrieval/phase-4-formal-mapping-r1/capture-failure.json": "157c22f1fe44fff8e36e2088df8c25be4f2d0f278c102d35191ad0cef19e7796",
+  "reports/pg-retrieval/phase-4-formal-two-rounds-blocked-r1/sha-list.json": "6c34609318056bcfd676a089ac3b70000ffd2b8239897ecdd4b7417b52ca263d"
+ },
+ "protected_after_stop": {
+  "preparation-manifest.json 19/19": "re-verified equal after dry-run (see blocked-report)",
+  "config-anchor/env/gold/prod sources": "unchanged (validated via validate_bundle inside the failed run itself)",
+  "round dirs": "never created"
+ }
+}

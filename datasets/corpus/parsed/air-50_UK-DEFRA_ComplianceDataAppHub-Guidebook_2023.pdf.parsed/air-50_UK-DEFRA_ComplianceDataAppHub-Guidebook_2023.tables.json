@@ -1,0 +1,41 @@
+{
+  "version": "1.0",
+  "tables": {
+    "tb-94b32a2f7fb2f25df7b362ad0df94708-0001": {
+      "id": "tb-94b32a2f7fb2f25df7b362ad0df94708-0001",
+      "blockid": "839aaa55465fa64a542090b5956fef23",
+      "heading": "Pollutants, metrics, and legislative thresholds",
+      "parent_headings": [
+        "Air Quality Compliance Assessment Map and Data Hub"
+      ],
+      "dimension": [
+        22,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Pollutant</td><td>Averaging Period</td><td>Objective</td><td>Objective Type</td></tr><tr><td> $NO_2$ </td><td>Annual mean</td><td>40 μg m-3</td><td>Limit Value</td></tr><tr><td> $NO_2$ </td><td>Hourly mean</td><td>200 μg m-3, 18 permitted exceedances each year</td><td>Limit Value</td></tr><tr><td> $NO_x$ </td><td>Annual mean</td><td>30 μg m-3</td><td>Critical Level</td></tr><tr><td> $SO_2$ </td><td>Hourly mean</td><td>350 μg m-3, with 24 permitted exceedances each year</td><td>Limit Value</td></tr><tr><td> $SO_2$ </td><td>24-hour mean</td><td>125 μg m-3, with 3 permitted exceedances each year</td><td>Limit Value</td></tr><tr><td> $SO_2$ </td><td>Annual mean</td><td>20 μg m-3</td><td>Critical Level</td></tr><tr><td> $SO_2$ </td><td>Winter mean</td><td>20 μg m-3</td><td>Critical Level</td></tr><tr><td> $PM_{10}$ </td><td>Annual mean</td><td>40 μg m-3</td><td>Limit Value</td></tr><tr><td> $PM_{10}$ </td><td>24-hour mean</td><td>50 μg m-3, with 35 permitted exceedances each year</td><td>Limit Value</td></tr><tr><td> $PM_{2.5}$ </td><td>Annual mean</td><td>20 μg m-3</td><td>Limit Value</td></tr><tr><td>Benzene</td><td>Annual mean</td><td>5 μg m-3</td><td>Limit Value</td></tr><tr><td>CO</td><td>maximum daily 8-hour mean</td><td>10 mg m-3</td><td>Limit Value</td></tr><tr><td>O3</td><td>maximum daily 8-hour mean</td><td>120 μg m-3, not to be exceeded on more than 25 days per calendar year averaged over three years</td><td>Target Value</td></tr><tr><td>O3</td><td>maximum daily 8-hour mean</td><td>120 μg m-3</td><td>Long Term Objective</td></tr><tr><td>O3</td><td>AOT40 (calculated from 1-hour values, May to July averaged over five years)</td><td>18000 μg m-3.h</td><td>Target Value</td></tr><tr><td>O3</td><td>AOT40 (calculated from 1-hour values, May to July)</td><td>6000 μg m-3.h</td><td>Long Term Objective</td></tr><tr><td>As</td><td>Annual mean</td><td>6 ng m-3</td><td>Target Value</td></tr><tr><td>Cd</td><td>Annual mean</td><td>5 ng m-3</td><td>Target Value</td></tr><tr><td>Ni</td><td>Annual mean</td><td>20 ng m-3</td><td>Target Value</td></tr><tr><td>Pb</td><td>Annual mean</td><td>0.5 μg m-3</td><td>Limit Value</td></tr><tr><td>benzo(a)pyrene (B(a)P)</td><td>Annual mean</td><td>1 ng m-3</td><td>Target Value</td></tr></table>",
+      "caption": "Table 1 Summary of legislative thresholds and pollutant metrics",
+      "footnotes": [],
+      "self_ref": "content_list.json#/21"
+    },
+    "tb-94b32a2f7fb2f25df7b362ad0df94708-0002": {
+      "id": "tb-94b32a2f7fb2f25df7b362ad0df94708-0002",
+      "blockid": "8e60a6e123a2f2cbc5165d4fe07b1779",
+      "heading": "Abbreviations",
+      "parent_headings": [
+        "Air Quality Compliance Map"
+      ],
+      "dimension": [
+        6,
+        2
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Abbreviation</td><td>Full name</td></tr><tr><td>AOT40</td><td>Average over Threshold 40 ppb*</td></tr><tr><td>CL</td><td>Critical Level</td></tr><tr><td>LTO</td><td>Long Term Objective</td></tr><tr><td>LV</td><td>Limit value</td></tr><tr><td>TV</td><td>Target Value</td></tr></table>",
+      "caption": "Table 2 – List of abbreviations used in the Compliance Map",
+      "footnotes": [
+        "\\* The sum of the differences between hourly ozone concentration and 40 ppb (parts per billion) for each hour when the concentration exceeds 40 ppb during a relevant growing season, e.g., for forest and crops."
+      ],
+      "self_ref": "content_list.json#/98"
+    }
+  }
+}

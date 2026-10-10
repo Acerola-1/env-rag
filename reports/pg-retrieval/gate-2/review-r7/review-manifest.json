@@ -1,0 +1,144 @@
+{
+  "review_date": "2026-10-06",
+  "result": "Gate2 not passed; body offsets accepted; F1 verifier has three counterexamples",
+  "accepted_tasks": [
+    "4.1",
+    "4.2",
+    "4.3",
+    "4.5"
+  ],
+  "pending_tasks": [
+    "4.4",
+    "4.6"
+  ],
+  "phase3_authorized": false,
+  "tests": {
+    "existing_passed": 171,
+    "new_failed": 3,
+    "old43_files_unchanged": {
+      "tests/test_gate2_acceptance.py": true,
+      "tests/test_gate2_rereview.py": true,
+      "tests/test_gate2_review_r3.py": true,
+      "tests/test_gate2_review_r4.py": true,
+      "tests/test_gate2_review_r5.py": true,
+      "tests/test_gate2_review_r6.py": true
+    }
+  },
+  "gold": {
+    "source_gold_frozen": true,
+    "sha256": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+    "unchanged": true,
+    "positive_questions": 31,
+    "negative_expectations": 10
+  },
+  "live": {
+    "production_queries": 0,
+    "benchmark_questions": 31,
+    "real_negative_runs": 8,
+    "negative_passed": 8,
+    "formal_cli_runs": 0,
+    "tokenizer_cases": 25,
+    "tokenizer_passed": 25,
+    "db_writes": 0,
+    "index_rebuilds": 0,
+    "model_calls": 0,
+    "readonly": true,
+    "citations": {
+      "char_span": {
+        "checked": 60,
+        "failed": 0
+      },
+      "table_row": {
+        "checked": 241,
+        "failed": 0
+      }
+    }
+  },
+  "frozen_benchmark_metrics_reproduced": true,
+  "metrics": {
+    "groups": 59,
+    "hits": 56,
+    "file_docs": 23,
+    "file_hits": 23,
+    "evidence_recall_at_20": 0.9491525423728814,
+    "file_doc_recall_at_20": 1.0
+  },
+  "enum_set_checks": {
+    "prose_enum": {
+      "questions": 6,
+      "exact_match": 5,
+      "failed": 1,
+      "citation_unverified_total": 0
+    },
+    "table_enum": {
+      "questions": 6,
+      "exact_match": 5,
+      "failed": 1,
+      "citation_unverified_total": 0
+    },
+    "file_enum": {
+      "questions": 6,
+      "exact_match": 6,
+      "failed": 0,
+      "citation_unverified_total": 0
+    }
+  },
+  "source_final": {
+    "public_counts": {
+      "doc_full": 221,
+      "doc_chunks": 5709,
+      "doc_status": 279,
+      "llm_cache": 16514,
+      "entity_chunks": 65527,
+      "full_entities": 221,
+      "full_relations": 221,
+      "relation_chunks": 119575
+    },
+    "catalog": {
+      "state": "current",
+      "active_run_id": "c15c741742394320",
+      "active_snapshot_id": "4919b3938ad93747",
+      "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "expected_recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "live_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "stored_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "action": ""
+    },
+    "search": {
+      "state": "current",
+      "search_id": "872d689343a9cbb6",
+      "catalog_snapshot_id": "4919b3938ad93747",
+      "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+      "vocab_sha": "c3d0b6a6cf7d6af0758329bccea3bbbf432d73b20df4db42b768ae07446978cf",
+      "index_recipe": "phase-2-v2-local-caption-identity-guard",
+      "expected_search_id": "872d689343a9cbb6",
+      "reasons": []
+    },
+    "all_match_initial": true,
+    "match_previous_review_search": true
+  },
+  "checks": {
+    "ruff_check": "passed",
+    "ruff_format": "passed",
+    "openspec_strict": "passed",
+    "diff_check": "passed",
+    "credential_scan_files": 27,
+    "credential_leak_files": []
+  },
+  "source_sha256": {
+    "tests/test_gate2_review_r6.py": "6d6fdb1b4d8c46eafa62b27421620a7aeb3d11d4ef05fd6f8aff94be8567f796",
+    "reports/pg-retrieval/phase-2/bench-r6.json": "0fece10044bd2aaf2fa2de94e5f3d4a869d4c1ef138c1a53906737ea4f728296",
+    "src/env_rag_final/cli.py": "0e6f0234772458d7b8ed4501717e60f08512dd726d723b873d978881c6eaeaa0",
+    "reports/pg-retrieval/phase-2/report-gate2-fixes-r6.md": "87d448f5f5fb9b302e941cf04e76f612a7b0005630b77ff0a12a925287ce6604",
+    "tests/test_gate2_review_r7.py": "3d9341f3d193f3a6c1588afb04561eda0a73206e54b8afb47067af66eb54a9b2",
+    "src/env_rag_final/search/expand.py": "0bf4851cde7e45f8888573ec198e5751a8bd348ef0edb789bb185947f56cccd1",
+    "src/env_rag_final/enumerate_/prose_enum.py": "e79d76b52ec4e07844cad8920f869054e88812b9730c5a7e1f65da7034660247"
+  },
+  "coverage": {
+    "total_files": 229,
+    "reviewed_files": 4,
+    "skipped_files": 225,
+    "coverage_rate": 0.017467248908296942
+  }
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "C1",
+    "path": "src/env_rag_final/answer.py",
+    "start_line": 963,
+    "end_line": 982,
+    "severity": "high",
+    "category": "bug",
+    "content": "Prose word and numeric subset checks accept swapped subject/value relations as complete despite authentic source quotes."
+  },
+  {
+    "id": "C2",
+    "path": "src/env_rag_final/answer.py",
+    "start_line": 1649,
+    "end_line": 1676,
+    "severity": "high",
+    "category": "bug",
+    "content": "Coverage ignores requested level, lets PM10 prefix-fill PM1, and rejects correct four-item answers by requiring one claim to cover every subject; required slots must be matched independently."
+  },
+  {
+    "id": "C3",
+    "path": "src/env_rag_final/answer.py",
+    "start_line": 887,
+    "end_line": 930,
+    "severity": "high",
+    "category": "bug",
+    "content": "A subject listed in a table title is treated as the subject of another unit assertion, making mercury dimensionless from a pH-only note."
+  }
+]

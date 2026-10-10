@@ -1,0 +1,11 @@
+[
+  {
+    "id": "V1",
+    "path": "src/env_rag_final/local_adapter.py",
+    "start_line": 954,
+    "end_line": 967,
+    "severity": "high",
+    "category": "bug",
+    "content": "vectors_returned取原生retrieve的items数，vector=None或原始chunk身份不匹配仍被当完整覆盖。实际发布选取器WEIGHT回退而标vector-similarity。按实际有效向量映射与请求chunk身份判定；正常正例保持。"
+  }
+]

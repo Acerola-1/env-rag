@@ -1,0 +1,62 @@
+{
+  "diagnosis_manifest_entries": 9,
+  "production_sha_checks": {
+    "src/env_rag_final/evaluation.py": true,
+    "src/env_rag_final/answer.py": true,
+    "src/env_rag_final/search/expand.py": true,
+    "src/env_rag_final/enumerate_/prose_enum.py": true,
+    "src/env_rag_final/enumerate_/table_enum.py": true,
+    "src/env_rag_final/local_adapter.py": true,
+    "src/env_rag_final/fusion.py": true
+  },
+  "round1_own_inputs_checked": 12,
+  "protected_manifests": {
+    "phase-4-round-1/pilot-manifest.json": {
+      "entries": 809,
+      "mismatches": []
+    },
+    "phase-4-round-1-assessment/pilot-manifest.json": {
+      "entries": 9,
+      "mismatches": []
+    },
+    "phase-4-round-1-assessment-r2/assessment-manifest.json": {
+      "entries": 4,
+      "mismatches": []
+    },
+    "phase-4-round-1-assessment-r3/assessment-manifest.json": {
+      "entries": 4,
+      "mismatches": []
+    },
+    "phase-4-improvement-1/improvement-1-manifest.json": {
+      "entries": 6,
+      "mismatches": []
+    },
+    "phase-4-improvement-1-review/review-manifest.json": {
+      "entries": 12,
+      "mismatches": []
+    },
+    "phase-4-improvement-1-r2/improvement-1-r2-manifest.json": {
+      "entries": 14,
+      "mismatches": []
+    },
+    "phase-4-improvement-1-review-r2/review-manifest.json": {
+      "entries": 15,
+      "mismatches": []
+    },
+    "phase-4-improvement-1-r3/improvement-1-r3-manifest.json": {
+      "entries": 9,
+      "mismatches": []
+    },
+    "phase-4-improvement-1-review-r3/review-manifest.json": {
+      "entries": 10,
+      "mismatches": []
+    }
+  },
+  "four_reconciliations_exactly_reproduced": true,
+  "comparison": "JSON value equality (tuple/list serialization normalized)",
+  "reviewer_requests": {
+    "network": 0,
+    "database": 0,
+    "models": 0
+  }
+}

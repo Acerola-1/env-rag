@@ -1,0 +1,110 @@
+{
+  "run_id": "3b7f17b1e30140a7",
+  "generated_at": "2026-10-05T00:28:21.558689+00:00",
+  "status": "ok",
+  "tool": "env_rag_final.audit (Phase 0 read-only audit)",
+  "code_version": {
+    "commit": "0732119a5ae3acd7c51ae6e6ca935b5bbfc7a3b3",
+    "dirty": true,
+    "audit_source_sha256": {
+      "__init__.py": "344f4d5cd31a028ac7991270feaaffb3491d7e3a5478ece6419cc5fc80764ec1",
+      "collect.py": "f54f067be97a1631b7e1128f846149b9b1c8d39738fe693e6c1fca88bf56739c",
+      "compat.py": "d154f795ab10da7d591d83a19dfbf3ae6f5ae021cb6ce50bc488a9dcf37195cf",
+      "identity.py": "ce3f560a0082f80444bb21da97c2bae0a95846b2a4d3e45761cb68d5697253b6",
+      "lexical.py": "66fe801afd5a913a93286d1898938c8a6cd1481ac4b759a2356189c8ebb04136",
+      "pg.py": "04d4ad1e9b0446f26bcc8110807052b31db0609e1d816cc0c4b9bb8848cfce33",
+      "probes.py": "9253696aac95a5eeaa4cf0519bd1693e7da50be44e02339f143cdeb0e43d2a20",
+      "samples.py": "a50f201855af5eb3421b0d7d7a570e23a02103b7c49a2c6cb059bba0a68ea8dc",
+      "snapshot.py": "fe4d9c707e08616e12fc83d2675ca6b89dee123ec0830a79a748e17b1c234eba"
+    }
+  },
+  "dependency_versions": {
+    "lightrag-hku": "1.5.7",
+    "asyncpg": "0.31.0",
+    "pgvector": "0.5.0",
+    "qdrant-client": "1.19.1",
+    "neo4j": "6.3.1",
+    "lxml": "6.1.3",
+    "python-dotenv": "1.2.4",
+    "python": "3.12.10",
+    "jieba": "not-installed（探针候选，Phase 2 锁定）"
+  },
+  "execution": {
+    "entry": "uv run env-rag-final audit [--report-dir reports/pg-retrieval/phase-0]",
+    "transaction": "READ ONLY REPEATABLE READ, statement_timeout=30s, statement_cache_size=0",
+    "writes": "none — no DDL/DML, no LightRAG storage initialization against the live DB"
+  },
+  "inputs": {
+    "workspace": "default",
+    "parsed_artifacts_dir": "/Users/acerola/Dev/Python/RAG/LightRAG/inputs/__parsed__",
+    "source_snapshot_fingerprint": {
+      "algorithm": "sha256 composite of per-source sha256 values",
+      "value": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "components": {
+        "pg_doc_full_content": "30cf5ddf9b33d3322bb46f39785114daf32a059d120f0cda69c67aea940eab29",
+        "pg_doc_chunks_content_order_refs": "7bbdb3849edeb4555aa76e2eab1a4d5a1b838a789c88b8d598ff752b8a9a3506",
+        "pg_doc_status": "2d0fe540b3fe0bc219c69adc41141b70be105141b841069bb81ff494455940bc",
+        "parsed_blocks_tables_bytes": "fccb274827fc21f0f02f721271d175efd800175a4a8db5140bf7f72f404ab1db",
+        "chunking_params": {
+          "distinct_values": 1,
+          "counts": {
+            "\"{\\\"chunk_token_size\\\": 1500, \\\"paragraph_semantic\\\": {\\\"chunk_token_size\\\": 2000, \\\"chunk_overlap_token_size\\\": 100}}\"": 221
+          }
+        }
+      }
+    }
+  },
+  "steps": [
+    {
+      "step": "artifact_snapshot_start",
+      "status": "ok"
+    },
+    {
+      "step": "collect_rows",
+      "status": "ok"
+    },
+    {
+      "step": "schema.json",
+      "status": "ok"
+    },
+    {
+      "step": "inventory.jsonl",
+      "status": "ok"
+    },
+    {
+      "step": "mapping-samples.jsonl",
+      "status": "ok"
+    },
+    {
+      "step": "search-probes.json",
+      "status": "ok"
+    },
+    {
+      "step": "sample-set.json",
+      "status": "ok"
+    },
+    {
+      "step": "compatibility.md",
+      "status": "ok"
+    },
+    {
+      "step": "artifact_snapshot_end",
+      "status": "ok"
+    },
+    {
+      "step": "audit.md",
+      "status": "ok"
+    }
+  ],
+  "deliverables_expected": [
+    "schema.json",
+    "inventory.jsonl",
+    "mapping-samples.jsonl",
+    "search-probes.json",
+    "sample-set.json",
+    "compatibility.md",
+    "audit.md",
+    "run-manifest.json"
+  ],
+  "rerun_policy": "语料／产物／分块任一变化都会改变 source_snapshot_fingerprint 的对应组件；这是观察事实，不得为消除差异写库。失败运行以 status=failed_at:* 标记，不与成功产物混用。"
+}

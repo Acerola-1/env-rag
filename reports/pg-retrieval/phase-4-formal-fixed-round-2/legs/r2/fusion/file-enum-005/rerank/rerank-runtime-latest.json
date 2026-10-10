@@ -1,0 +1,3166 @@
+{
+ "task": "5.4 joint rerank over fused candidates (bounded, recorded)",
+ "started_at": "2026-10-09T21:11:37+0800",
+ "service_contract": {
+  "endpoint": "{host}/v1/rerank (POST)",
+  "request": [
+   "model",
+   "query",
+   "documents",
+   "top_n",
+   "return_documents=false"
+  ],
+  "response": [
+   "id",
+   "results[{index, relevance_score}]",
+   "meta.tokens"
+  ],
+  "errors": {
+   "401/403": "auth",
+   "429": "rate limit",
+   "5xx": "service"
+  }
+ },
+ "input_budget": 40,
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "results": [
+  {
+   "query_id": "file-enum-005",
+   "query": "库内有哪些 GB 18466-2005 的文档（含修改单）？",
+   "workspace": "default",
+   "skipped": null,
+   "inputs": [
+    {
+     "input_index": 0,
+     "workspace": "default",
+     "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-017",
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "content_sha256": "b4126d8d882b53b00470772b32bd8540416c2c721a7d7f44d4051d31c75717d7",
+     "content_len": 1312,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-017",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466 - 2005"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 0,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 0,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "15577269b2527cbe927736798a5c958e",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "15577269b2527cbe927736798a5c958e",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-017"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0008",
+       "table_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0008",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "table_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0008",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-017"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "b4126d8d882b53b00470772b32bd8540416c2c721a7d7f44d4051d31c75717d7"
+    },
+    {
+     "input_index": 1,
+     "workspace": "default",
+     "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-018",
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "content_sha256": "176085d17e5fd01b7dd8b8f1c7014db9cf440b0455925db7b8acbec284ba0ad7",
+     "content_len": 1253,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-018",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466 - 2005",
+        "edge:GB 18466 - 2005|每1g泥样中MPN"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 1,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 1,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "15577269b2527cbe927736798a5c958e",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "15577269b2527cbe927736798a5c958e",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-018"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0009",
+       "table_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0009",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "table_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0009",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-018"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "176085d17e5fd01b7dd8b8f1c7014db9cf440b0455925db7b8acbec284ba0ad7"
+    },
+    {
+     "input_index": 2,
+     "workspace": "default",
+     "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-006",
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "content_sha256": "7365814a78ba4190aaafea49f3e9afe2b948e2a74bc248b6136740431ad0def1",
+     "content_len": 990,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-006",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466 - 2005"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 2,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 2,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "90a474145e739101388733fc7841ca82",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "90a474145e739101388733fc7841ca82",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-006"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0005",
+       "table_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0005",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "table_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0005",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-006"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "7365814a78ba4190aaafea49f3e9afe2b948e2a74bc248b6136740431ad0def1"
+    },
+    {
+     "input_index": 3,
+     "workspace": "default",
+     "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000",
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "content_sha256": "6d257224b304446f48b66380f090f1d23865bb564f962ab30a6270e60cfd0fbe",
+     "content_len": 2199,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466-2005",
+        "entity:医疗机构污水排放要求",
+        "entity:国家环境保护总局网站",
+        "entity:GB 18466-2001",
+        "edge:GB 18466-2005|医疗机构水污染物排放标准",
+        "edge:GB 18466-2005|GB 8978-1996",
+        "edge:GB 18466-2005|国家质量监督检验检疫总局",
+        "edge:GB 18466-2005|中国环境科学出版社",
+        "edge:GB 18466-2005|国家环境保护总局",
+        "edge:GB 18466-2005|国家环境保护总局科技标准司",
+        "edge:GB 18466-2001|GB 18466-2005",
+        "edge:GB 18466-2005|国家环境保护总局网站",
+        "edge:GB 18466-2005|中国环境标准网",
+        "edge:GB 18466-2001|医疗机构污水排放要求"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 3,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 3,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "019b57c81c547304fc4be5f346f02fe1",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "019b57c81c547304fc4be5f346f02fe1",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "32de7fb7a056b36d563ee7e2d4074922",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "32de7fb7a056b36d563ee7e2d4074922",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "513a2e35e21d1534a892df860ae9f6ee",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "513a2e35e21d1534a892df860ae9f6ee",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "72880cce904fb8c4c64d8813e647687a",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "72880cce904fb8c4c64d8813e647687a",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "782f48336231c256fea67074c7283a58",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "782f48336231c256fea67074c7283a58",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7f4b2bd0b5a8d5502b162a4091d955b8",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "7f4b2bd0b5a8d5502b162a4091d955b8",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "b1d0c7d6dab6f4b9a52d302d0259ccb2",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "b1d0c7d6dab6f4b9a52d302d0259ccb2",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "b4e752ae5e5cb6a09f271ff19e5f62a3",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "b4e752ae5e5cb6a09f271ff19e5f62a3",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "d31c76ed903687ef8f00cfac45879847",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "d31c76ed903687ef8f00cfac45879847",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "e31edc7c638b018f2ca8a3066db58adf",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "e31edc7c638b018f2ca8a3066db58adf",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "6d257224b304446f48b66380f090f1d23865bb564f962ab30a6270e60cfd0fbe"
+    },
+    {
+     "input_index": 4,
+     "workspace": "default",
+     "chunk_id": "doc-b423a0e3331541588988fd34496c349d-chunk-000",
+     "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+     "content_sha256": "7ee6f4aa4fb1aea0b05cd7db74a9e2912f63f5e112f405ba9d904cd34faf413e",
+     "content_len": 2502,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b423a0e3331541588988fd34496c349d-chunk-000",
+       "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:《医疗机构水污染物排放标准》(GB 18466-2005)修改单|环境影响评价",
+        "edge:《医疗机构水污染物排放标准》(GB 18466-2005)修改单|医疗机构",
+        "edge:《医疗机构水污染物排放标准》(GB 18466-2005)修改单|平急两用公共基础设施",
+        "edge:《医疗机构水污染物排放标准》(GB 18466-2005)修改单|综合毒性",
+        "edge:《医疗机构水污染物排放标准》(GB 18466-2005)修改单|排污许可证",
+        "edge:HJ 700|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 776|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 694|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 505|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:GB/T 7475|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ/T 399|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 494|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 637|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:《医疗机构水污染物排放标准》(GB 18466-2005)修改单|最低无效应稀释倍数",
+        "edge:HJ 898|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 899|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 91.1|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 1105|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 1069|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:GB/T 11901|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 493|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 495|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 535|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 585|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 586|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 597|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 828|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 905|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 1405|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 195|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 347.2|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 484|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 503|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 536|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 665|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 666|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:《医疗机构水污染物排放标准》(GB 18466-2005)修改单|稀释倍数",
+        "edge:HJ 1147|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 908|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:GB/T 7494|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ/T 30|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 533|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 534|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 537|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 659|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 757|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 823|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 825|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 826|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:GB 18871|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 1188|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 1001|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 604|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ/T 91地表水和污水监测技术规范|《医疗机构水污染物排放标准》(GB 18466-2005)修改单"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 4,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 4,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "16c265d89a1afdc60572b8f14a705dc0",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+        "unit_id": "16c265d89a1afdc60572b8f14a705dc0",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b423a0e3331541588988fd34496c349d-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7ebc370fd7bc29dce729559ee72e8e02",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+        "unit_id": "7ebc370fd7bc29dce729559ee72e8e02",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b423a0e3331541588988fd34496c349d-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "9668256801364aa530b6a3825401daa0",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+        "unit_id": "9668256801364aa530b6a3825401daa0",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b423a0e3331541588988fd34496c349d-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "a46e961dbb1b61b1766fbca15307daae",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+        "unit_id": "a46e961dbb1b61b1766fbca15307daae",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b423a0e3331541588988fd34496c349d-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "afb68726571f0d32333643ca0484da32",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+        "unit_id": "afb68726571f0d32333643ca0484da32",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b423a0e3331541588988fd34496c349d-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "e51a17ff70cc47fd4b8f4d37b7b6d7ac",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+        "unit_id": "e51a17ff70cc47fd4b8f4d37b7b6d7ac",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b423a0e3331541588988fd34496c349d-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "fea6424ee08546b7e066be6027936041",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+        "unit_id": "fea6424ee08546b7e066be6027936041",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b423a0e3331541588988fd34496c349d-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "7ee6f4aa4fb1aea0b05cd7db74a9e2912f63f5e112f405ba9d904cd34faf413e"
+    },
+    {
+     "input_index": 5,
+     "workspace": "default",
+     "chunk_id": "doc-9bb11e5d3809e590259aef28fb61062b-chunk-000",
+     "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+     "content_sha256": "fee0683f06455111680c80d8467c4233a1b351a214fa7a88c9fd884f0edacd23",
+     "content_len": 1523,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-9bb11e5d3809e590259aef28fb61062b-chunk-000",
+       "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466-2005",
+        "entity:GB 18466-2001",
+        "edge:GB 18466-2005|医疗机构水污染物排放标准",
+        "edge:GB 18466-2005|GB 8978-1996",
+        "edge:GB 18466-2005|中华人民共和国海洋环境保护法",
+        "edge:GB 18466-2005|中华人民共和国水污染防治法",
+        "edge:GB 18466-2005|中华人民共和国大气污染防治法",
+        "edge:GB 18466-2005|中华人民共和国环境保护法",
+        "edge:GB 18466-2005|医疗机构污泥中蛔虫卵的检验方法",
+        "edge:GB 18466-2005|污水处理站",
+        "edge:GB 18466-2005|医疗机构",
+        "edge:GB 18466-2005|国家质量监督检验检疫总局",
+        "edge:GB 18466-2005|处理工艺与消毒要求",
+        "edge:GB 18466-2005|医疗机构污水和污泥中结核杆菌的检验方法",
+        "edge:GB 18466-2005|平急两用公共基础设施",
+        "edge:GB 18466-2005|取样与监测",
+        "edge:GB 18466-2005|生态环境部环境标准研究所",
+        "edge:GB 18466-2005|水污染物排放控制要求",
+        "edge:GB 18466-2005|国家环境保护总局",
+        "edge:GB 18466-2005|医疗机构污水污染物单位排放负荷计算方法",
+        "edge:GB 18466-2005|国家环境保护总局科技标准司",
+        "edge:GB 18466-2005|附录F(COD、BOD、SS单位排放负荷计算方法)",
+        "edge:GB 18466-2005|标准的实施与监督",
+        "edge:GB 18466-2005|北京市环境保护科学研究院",
+        "edge:GB 18466-2005|中国疾病预防控制中心",
+        "edge:GB 18466-2001|GB 18466-2005",
+        "edge:GB 18466-2005|中华人民共和国传染病防治法",
+        "edge:GB 18466-2005|附录B(沙门氏菌检验方法)",
+        "edge:GB 18466-2005|附录A(粪大肠菌群检验方法)",
+        "edge:GB 18466-2005|附录E(结核杆菌检验方法)",
+        "edge:GB 18466-2005|附录C(志贺氏菌检验方法)",
+        "edge:GB 18466-2005|附录D(蛔虫卵检验方法)",
+        "edge:GB 18466-2005|医疗机构污水和污泥中志贺氏菌的检验方法",
+        "edge:GB 18466-2005|医疗机构污水和污泥中沙门氏菌的检验方法",
+        "edge:GB 18466-2005|传染病",
+        "edge:GB 18466-2005|医疗机构污泥中粪大肠菌群的检验方法",
+        "edge:GB 18466-2005|污泥控制要求",
+        "edge:GB 18466-2005|大气污染物控制要求"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 5,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 5,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "3abcbd0785a0322103ea0cc01295a771",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "unit_id": "3abcbd0785a0322103ea0cc01295a771",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "49eb6d324c1c2478202272feae00f2b8",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "unit_id": "49eb6d324c1c2478202272feae00f2b8",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "507cd6b284ce5e5447254bf3ff8f128b",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "unit_id": "507cd6b284ce5e5447254bf3ff8f128b",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "56e86e8872db8927982932a5d44c19c4",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "unit_id": "56e86e8872db8927982932a5d44c19c4",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "57da3bc43a3cd5fa4d03d2fd802e7446",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "unit_id": "57da3bc43a3cd5fa4d03d2fd802e7446",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "83635cad999c495eedd1575833cbb6dc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "unit_id": "83635cad999c495eedd1575833cbb6dc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "d2c7604d88eb0764a06e22cfabb005c6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "unit_id": "d2c7604d88eb0764a06e22cfabb005c6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "fee0683f06455111680c80d8467c4233a1b351a214fa7a88c9fd884f0edacd23"
+    },
+    {
+     "input_index": 6,
+     "workspace": "default",
+     "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002",
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "content_sha256": "4d8a9d940178e437a113b08ca7219a612fa971ffabc2faa0793177e74b44fd7b",
+     "content_len": 2373,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466 - 2005",
+        "entity:总 α",
+        "edge:GB 18466 - 2005|氨氮",
+        "edge:GB 18466 - 2005|pH",
+        "edge:GB 18466 - 2005|总汞",
+        "edge:GB 18466 - 2005|石油类",
+        "edge:GB 18466 - 2005|六价铬",
+        "edge:GB 18466 - 2005|综合医疗机构",
+        "edge:GB 18466 - 2005|粪大肠菌群数",
+        "edge:GB 18466 - 2005|总铬",
+        "edge:GB 18466 - 2005|总镉",
+        "edge:GB 18466 - 2005|阴离子表面活性剂",
+        "edge:GB 18466 - 2005|总铅",
+        "edge:GB 18466 - 2005|总余氯",
+        "edge:GB 18466 - 2005|化学需氧量(COD)",
+        "edge:GB 18466 - 2005|总银",
+        "edge:GB 18466 - 2005|挥发酚",
+        "edge:GB 18466 - 2005|动植物油",
+        "edge:GB 18466 - 2005|悬浮物(SS)",
+        "edge:GB 18466 - 2005|色度",
+        "edge:GB 18466 - 2005|总砷",
+        "edge:GB 18466 - 2005|总氰化物",
+        "edge:GB 18466 - 2005|含氯消毒剂",
+        "edge:GB 18466 - 2005|肠道致病菌",
+        "edge:GB 18466 - 2005|肠道病毒",
+        "edge:GB 18466 - 2005|生化需氧量(BOD)",
+        "edge:GB 18466 - 2005|脱氯处理",
+        "edge:GB 18466 - 2005|GB 3838",
+        "edge:GB 18466 - 2005|GB 3097",
+        "edge:GB 18466 - 2005|带传染病房的综合医疗机构",
+        "edge:GB 18466 - 2005|总 β",
+        "edge:GB 18466 - 2005|总 α"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 6,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 6,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "ef6868c7bc693df8da996208421b815d",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "ef6868c7bc693df8da996208421b815d",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0002",
+       "table_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0002",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "table_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0002",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "4d8a9d940178e437a113b08ca7219a612fa971ffabc2faa0793177e74b44fd7b"
+    },
+    {
+     "input_index": 7,
+     "workspace": "default",
+     "chunk_id": "doc-9bb11e5d3809e590259aef28fb61062b-chunk-010",
+     "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+     "content_sha256": "6a73e98237c18dab3f09b8dc7baf9e31c8edd5db647da3758da8fd33462d29c6",
+     "content_len": 1111,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-9bb11e5d3809e590259aef28fb61062b-chunk-010",
+       "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466-2005",
+        "edge:GB 18466-2005|HJ 700",
+        "edge:GB 18466-2005|HJ 776",
+        "edge:GB 18466-2005|HJ 1453",
+        "edge:GB 18466-2005|GB/T 7475",
+        "edge:GB 18466-2005|HJ 898",
+        "edge:GB 18466-2005|HJ 1069",
+        "edge:GB 18466-2005|HJ 586",
+        "edge:GB 18466-2005|HJ 585",
+        "edge:GB 18466-2005|HJ 899",
+        "edge:GB 18466-2005|HJ 1443",
+        "edge:GB 18466-2005|HJ 1451"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 7,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 7,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "efcca63ca2ac8b26ab8a7aa3a0880c6e",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "unit_id": "efcca63ca2ac8b26ab8a7aa3a0880c6e",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-010"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-9bb11e5d3809e590259aef28fb61062b-0005",
+       "table_id": "tb-9bb11e5d3809e590259aef28fb61062b-0005",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "table_id": "tb-9bb11e5d3809e590259aef28fb61062b-0005",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-010"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "6a73e98237c18dab3f09b8dc7baf9e31c8edd5db647da3758da8fd33462d29c6"
+    },
+    {
+     "input_index": 8,
+     "workspace": "default",
+     "chunk_id": "doc-9bb11e5d3809e590259aef28fb61062b-chunk-001",
+     "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+     "content_sha256": "3b5b96e311c2da7e307750597981ec295929a2e9e072881d3e86d867f2072cfd",
+     "content_len": 2039,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-9bb11e5d3809e590259aef28fb61062b-chunk-001",
+       "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466-2005",
+        "edge:GB 18466-2005|医疗机构水污染物排放标准",
+        "edge:GB 16297大气污染物综合排放标准|GB 18466-2005",
+        "edge:GB 18466-2005|HJ 1147水质pH值的测定电极法",
+        "edge:GB 18466-2005|HJ 637水质石油类和动植物油类的测定红外分光光度法",
+        "edge:GB 18466-2005|HJ/T 399水质化学需氧量的测定快速消解分光光度法",
+        "edge:GB 18466-2005|HJ/T 55大气污染物无组织排放监测技术导则",
+        "edge:GB 18466-2005|GB 8978污水综合排放标准",
+        "edge:GB 18466-2005|GB 3838地表水环境质量标准",
+        "edge:GB 18466-2005|GB 3097海水水质标准",
+        "edge:GB 18466-2005|HJ 1182水质色度的测定稀释倍数法",
+        "edge:GB 18466-2005|HJ 908水质六价铬的测定流动注射-二苯碳酰二肼光度法",
+        "edge:GB 18466-2005|HJ 494水质采样技术指导",
+        "edge:GB 18466-2005|HJ1453水质铜、铅、镉、镍、铬的测定石墨炉原子吸收分光光度法",
+        "edge:GB 18466-2005|HJ1451水质银的测定石墨炉原子吸收分光光度法",
+        "edge:GB 18466-2005|HJ1450水质六价铬的测定二苯碳酰二肼-便携式光度法",
+        "edge:GB 18466-2005|HJ1449水质氨氮的测定水杨酸-便携式光度法",
+        "edge:GB 18466-2005|HJ1448水质氨氮的测定纳氏试剂-便携式光度法",
+        "edge:GB 18466-2005|HJ1444环境空气10种含硫化合物的测定罐采样-预浓缩/气相色谱法",
+        "edge:GB 18466-2005|HJ1443水质银的测定火焰原子吸收分光光度法",
+        "edge:GB 18466-2005|HJ1405排污单位污染物排放口监测点位设置技术规范",
+        "edge:GB 18466-2005|HJ 1262环境空气和废气臭气的测定三点比较式臭袋法",
+        "edge:GB 18466-2005|HJ 1188核医学辐射防护与安全要求",
+        "edge:GB 18466-2005|HJ 1105排污许可证申请与核发技术规范医疗机构",
+        "edge:GB 18466-2005|HJ1069水质急性毒性的测定斑马鱼卵法",
+        "edge:GB 18466-2005|HJ1001水质总大肠菌群、粪大肠菌群和大肠埃希氏菌的测定酶底物法",
+        "edge:GB 18466-2005|HJ 905恶臭污染环境监测技术规范",
+        "edge:GB 18466-2005|HJ 899水质总 β 放射性的测定厚源法",
+        "edge:GB 18466-2005|HJ 898水质总 α 放射性的测定厚源法",
+        "edge:GB 18466-2005|HJ826水质阴离子表面活性剂的测定流动注射-亚甲基蓝分光光度法",
+        "edge:GB 18466-2005|HJ825水质挥发酚的测定流动注射-4-氨基安替比林分光光度法",
+        "edge:GB 18466-2005|HJ823水质氰化物的测定流动注射-分光光度法",
+        "edge:GB 18466-2005|HJ776水质32种元素的测定电感耦合等离子体发射光谱法",
+        "edge:GB 18466-2005|HJ757水质铬的测定火焰原子吸收分光光度法",
+        "edge:GB 18466-2005|HJ700水质65种元素的测定电感耦合等离子体质谱法",
+        "edge:GB 18466-2005|HJ694水质汞、砷、硒、铋和锑的测定原子荧光法",
+        "edge:GB 18466-2005|HJ666水质氨氮的测定流动注射-水杨酸分光光度法",
+        "edge:GB 18466-2005|HJ665水质氨氮的测定连续流动-水杨酸分光光度法",
+        "edge:GB 18466-2005|HJ659水质氰化物等的测定真空检测管-电子比色法",
+        "edge:GB 18466-2005|HJ604环境空气总烃、甲烷和非甲烷总烃的测定直接进样-气相色谱法",
+        "edge:GB 18466-2005|HJ597水质总汞的测定冷原子吸收分光光度法",
+        "edge:GB 18466-2005|HJ586水质游离氯和总氯的测定N,N-二乙基-1,4-苯二胺分光光度法",
+        "edge:GB 18466-2005|HJ585水质游离氯和总氯的测定N,N-二乙基-1,4-苯二胺滴定法",
+        "edge:GB 18466-2005|HJ537水质氨氮的测定蒸馏-中和滴定法",
+        "edge:GB 18466-2005|HJ536水质氨氮的测定水杨酸分光光度法",
+        "edge:GB 18466-2005|HJ535水质氨氮的测定纳氏试剂分光光度法",
+        "edge:GB 18466-2005|HJ534环境空气氨的测定次氯酸钠-水杨酸分光光度法",
+        "edge:GB 18466-2005|HJ533环境空气和废气氨的测定纳氏试剂分光光度法",
+        "edge:GB 18466-2005|HJ505水质五日生化需氧量(BOD5)的测定稀释与接种法",
+        "edge:GB 18466-2005|HJ503水质挥发酚的测定4-氨基安替比林分光光度法",
+        "edge:GB 18466-2005|HJ495水质采样方案设计技术规定",
+        "edge:GB 18466-2005|HJ493水质样品的保存和管理技术规定",
+        "edge:GB 18466-2005|HJ484水质氰化物的测定容量法和分光光度法",
+        "edge:GB 18466-2005|HJ347.2水质粪大肠菌群的测定多管发酵法",
+        "edge:GB 18466-2005|HJ195水质氨氮的测定气相分子吸收光谱法",
+        "edge:GB 18466-2005|HJ91.1污水监测技术规范",
+        "edge:GB 18466-2005|HJ/T 30固定污染源排气中氯气的测定甲基橙分光光度法",
+        "edge:GB 18466-2005|GB 18871电离辐射防护与辐射源安全基本标准",
+        "edge:GB 18466-2005|HJ828水质化学需氧量的测定重铬酸盐法",
+        "edge:GB 18466-2005|GB/T11901水质悬浮物的测定重量法",
+        "edge:GB 18466-2005|GB/T 7494水质阴离子表面活性剂的测定亚甲蓝分光光度法",
+        "edge:GB 18466-2005|GB/T 7475水质铜、锌、铅、镉的测定原子吸收分光光度法"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 8,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 8,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "185b00e681d6cb45204d4dbd145bfede",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "unit_id": "185b00e681d6cb45204d4dbd145bfede",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "55972773a9137febfb2efd2285e7488f",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "unit_id": "55972773a9137febfb2efd2285e7488f",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "587e5ce9c5d7442b97d1468c05a1a56c",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "unit_id": "587e5ce9c5d7442b97d1468c05a1a56c",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "992f11ab1d4f3975b9fc8e51c15ffdee",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "unit_id": "992f11ab1d4f3975b9fc8e51c15ffdee",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "3b5b96e311c2da7e307750597981ec295929a2e9e072881d3e86d867f2072cfd"
+    },
+    {
+     "input_index": 9,
+     "workspace": "default",
+     "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "content_sha256": "8d6828de6ebc336b89a3ece1cf868b3c180756b1c4aa8d6cd0aae66c905faf9c",
+     "content_len": 2471,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466 - 2005",
+        "edge:GB 18466 - 2005|表1",
+        "edge:GB 18466 - 2005|表2"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 9,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 9,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "385d9e8e0539a87e61f0407bda1739ad",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "385d9e8e0539a87e61f0407bda1739ad",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "90d4b1c55cb8c6ff81dcbdfd55827165",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "90d4b1c55cb8c6ff81dcbdfd55827165",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "ad9d292d3ee2fd88a8fd25b9efc8265a",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "ad9d292d3ee2fd88a8fd25b9efc8265a",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "b8825f81a2426e361c91a6226df251ac",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "b8825f81a2426e361c91a6226df251ac",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "cf177d960affc97b9b77e517596688a4",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "cf177d960affc97b9b77e517596688a4",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "ef6868c7bc693df8da996208421b815d",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "ef6868c7bc693df8da996208421b815d",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0001",
+       "table_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0001",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "table_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0001",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "8d6828de6ebc336b89a3ece1cf868b3c180756b1c4aa8d6cd0aae66c905faf9c"
+    }
+   ],
+   "call": {
+    "service": "rerank",
+    "operation": "rerank",
+    "endpoint": "/v1/rerank",
+    "url_path_used": "configured-endpoint",
+    "model": "Qwen/Qwen3-Reranker-4B",
+    "documents_sent": 10,
+    "chars_sent": 17773,
+    "elapsed_ms": 933,
+    "status_code": 200,
+    "status": "success",
+    "response_evidence": {
+     "id": "01a120ca68c471819a6d9e0b86fffa63",
+     "results_len": 10
+    },
+    "raw_response": {
+     "id": "01a120ca68c471819a6d9e0b86fffa63",
+     "results": [
+      {
+       "index": 5,
+       "document": null,
+       "relevance_score": 0.9923681616783142
+      },
+      {
+       "index": 3,
+       "document": null,
+       "relevance_score": 0.9727602601051331
+      },
+      {
+       "index": 4,
+       "document": null,
+       "relevance_score": 0.9457820057868958
+      },
+      {
+       "index": 8,
+       "document": null,
+       "relevance_score": 0.8742928504943848
+      },
+      {
+       "index": 7,
+       "document": null,
+       "relevance_score": 0.754565954208374
+      },
+      {
+       "index": 6,
+       "document": null,
+       "relevance_score": 0.7206311821937561
+      },
+      {
+       "index": 2,
+       "document": null,
+       "relevance_score": 0.6592682003974915
+      },
+      {
+       "index": 0,
+       "document": null,
+       "relevance_score": 0.5876327753067017
+      },
+      {
+       "index": 9,
+       "document": null,
+       "relevance_score": 0.5854378342628479
+      },
+      {
+       "index": 1,
+       "document": null,
+       "relevance_score": 0.5513929128646851
+      }
+     ],
+     "meta": {
+      "tokens": "<redacted>",
+      "billed_units": {
+       "input_tokens": "<redacted>",
+       "output_tokens": "<redacted>",
+       "image_tokens": "<redacted>",
+       "search_units": 0,
+       "classifications": 0
+      }
+     }
+    }
+   },
+   "ordered": [
+    {
+     "input_index": 5,
+     "workspace": "default",
+     "chunk_id": "doc-9bb11e5d3809e590259aef28fb61062b-chunk-000",
+     "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+     "content_sha256": "fee0683f06455111680c80d8467c4233a1b351a214fa7a88c9fd884f0edacd23",
+     "rerank_score": 0.9923681616783142,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-9bb11e5d3809e590259aef28fb61062b-chunk-000",
+       "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466-2005",
+        "entity:GB 18466-2001",
+        "edge:GB 18466-2005|医疗机构水污染物排放标准",
+        "edge:GB 18466-2005|GB 8978-1996",
+        "edge:GB 18466-2005|中华人民共和国海洋环境保护法",
+        "edge:GB 18466-2005|中华人民共和国水污染防治法",
+        "edge:GB 18466-2005|中华人民共和国大气污染防治法",
+        "edge:GB 18466-2005|中华人民共和国环境保护法",
+        "edge:GB 18466-2005|医疗机构污泥中蛔虫卵的检验方法",
+        "edge:GB 18466-2005|污水处理站",
+        "edge:GB 18466-2005|医疗机构",
+        "edge:GB 18466-2005|国家质量监督检验检疫总局",
+        "edge:GB 18466-2005|处理工艺与消毒要求",
+        "edge:GB 18466-2005|医疗机构污水和污泥中结核杆菌的检验方法",
+        "edge:GB 18466-2005|平急两用公共基础设施",
+        "edge:GB 18466-2005|取样与监测",
+        "edge:GB 18466-2005|生态环境部环境标准研究所",
+        "edge:GB 18466-2005|水污染物排放控制要求",
+        "edge:GB 18466-2005|国家环境保护总局",
+        "edge:GB 18466-2005|医疗机构污水污染物单位排放负荷计算方法",
+        "edge:GB 18466-2005|国家环境保护总局科技标准司",
+        "edge:GB 18466-2005|附录F(COD、BOD、SS单位排放负荷计算方法)",
+        "edge:GB 18466-2005|标准的实施与监督",
+        "edge:GB 18466-2005|北京市环境保护科学研究院",
+        "edge:GB 18466-2005|中国疾病预防控制中心",
+        "edge:GB 18466-2001|GB 18466-2005",
+        "edge:GB 18466-2005|中华人民共和国传染病防治法",
+        "edge:GB 18466-2005|附录B(沙门氏菌检验方法)",
+        "edge:GB 18466-2005|附录A(粪大肠菌群检验方法)",
+        "edge:GB 18466-2005|附录E(结核杆菌检验方法)",
+        "edge:GB 18466-2005|附录C(志贺氏菌检验方法)",
+        "edge:GB 18466-2005|附录D(蛔虫卵检验方法)",
+        "edge:GB 18466-2005|医疗机构污水和污泥中志贺氏菌的检验方法",
+        "edge:GB 18466-2005|医疗机构污水和污泥中沙门氏菌的检验方法",
+        "edge:GB 18466-2005|传染病",
+        "edge:GB 18466-2005|医疗机构污泥中粪大肠菌群的检验方法",
+        "edge:GB 18466-2005|污泥控制要求",
+        "edge:GB 18466-2005|大气污染物控制要求"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 5,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 5,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "3abcbd0785a0322103ea0cc01295a771",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "unit_id": "3abcbd0785a0322103ea0cc01295a771",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "49eb6d324c1c2478202272feae00f2b8",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "unit_id": "49eb6d324c1c2478202272feae00f2b8",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "507cd6b284ce5e5447254bf3ff8f128b",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "unit_id": "507cd6b284ce5e5447254bf3ff8f128b",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "56e86e8872db8927982932a5d44c19c4",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "unit_id": "56e86e8872db8927982932a5d44c19c4",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "57da3bc43a3cd5fa4d03d2fd802e7446",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "unit_id": "57da3bc43a3cd5fa4d03d2fd802e7446",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "83635cad999c495eedd1575833cbb6dc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "unit_id": "83635cad999c495eedd1575833cbb6dc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "d2c7604d88eb0764a06e22cfabb005c6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "unit_id": "d2c7604d88eb0764a06e22cfabb005c6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 3,
+     "workspace": "default",
+     "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000",
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "content_sha256": "6d257224b304446f48b66380f090f1d23865bb564f962ab30a6270e60cfd0fbe",
+     "rerank_score": 0.9727602601051331,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466-2005",
+        "entity:医疗机构污水排放要求",
+        "entity:国家环境保护总局网站",
+        "entity:GB 18466-2001",
+        "edge:GB 18466-2005|医疗机构水污染物排放标准",
+        "edge:GB 18466-2005|GB 8978-1996",
+        "edge:GB 18466-2005|国家质量监督检验检疫总局",
+        "edge:GB 18466-2005|中国环境科学出版社",
+        "edge:GB 18466-2005|国家环境保护总局",
+        "edge:GB 18466-2005|国家环境保护总局科技标准司",
+        "edge:GB 18466-2001|GB 18466-2005",
+        "edge:GB 18466-2005|国家环境保护总局网站",
+        "edge:GB 18466-2005|中国环境标准网",
+        "edge:GB 18466-2001|医疗机构污水排放要求"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 3,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 3,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "019b57c81c547304fc4be5f346f02fe1",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "019b57c81c547304fc4be5f346f02fe1",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "32de7fb7a056b36d563ee7e2d4074922",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "32de7fb7a056b36d563ee7e2d4074922",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "513a2e35e21d1534a892df860ae9f6ee",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "513a2e35e21d1534a892df860ae9f6ee",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "72880cce904fb8c4c64d8813e647687a",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "72880cce904fb8c4c64d8813e647687a",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "782f48336231c256fea67074c7283a58",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "782f48336231c256fea67074c7283a58",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7f4b2bd0b5a8d5502b162a4091d955b8",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "7f4b2bd0b5a8d5502b162a4091d955b8",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "b1d0c7d6dab6f4b9a52d302d0259ccb2",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "b1d0c7d6dab6f4b9a52d302d0259ccb2",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "b4e752ae5e5cb6a09f271ff19e5f62a3",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "b4e752ae5e5cb6a09f271ff19e5f62a3",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "d31c76ed903687ef8f00cfac45879847",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "d31c76ed903687ef8f00cfac45879847",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "e31edc7c638b018f2ca8a3066db58adf",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "e31edc7c638b018f2ca8a3066db58adf",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 4,
+     "workspace": "default",
+     "chunk_id": "doc-b423a0e3331541588988fd34496c349d-chunk-000",
+     "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+     "content_sha256": "7ee6f4aa4fb1aea0b05cd7db74a9e2912f63f5e112f405ba9d904cd34faf413e",
+     "rerank_score": 0.9457820057868958,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b423a0e3331541588988fd34496c349d-chunk-000",
+       "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:《医疗机构水污染物排放标准》(GB 18466-2005)修改单|环境影响评价",
+        "edge:《医疗机构水污染物排放标准》(GB 18466-2005)修改单|医疗机构",
+        "edge:《医疗机构水污染物排放标准》(GB 18466-2005)修改单|平急两用公共基础设施",
+        "edge:《医疗机构水污染物排放标准》(GB 18466-2005)修改单|综合毒性",
+        "edge:《医疗机构水污染物排放标准》(GB 18466-2005)修改单|排污许可证",
+        "edge:HJ 700|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 776|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 694|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 505|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:GB/T 7475|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ/T 399|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 494|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 637|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:《医疗机构水污染物排放标准》(GB 18466-2005)修改单|最低无效应稀释倍数",
+        "edge:HJ 898|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 899|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 91.1|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 1105|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 1069|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:GB/T 11901|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 493|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 495|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 535|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 585|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 586|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 597|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 828|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 905|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 1405|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 195|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 347.2|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 484|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 503|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 536|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 665|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 666|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:《医疗机构水污染物排放标准》(GB 18466-2005)修改单|稀释倍数",
+        "edge:HJ 1147|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 908|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:GB/T 7494|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ/T 30|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 533|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 534|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 537|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 659|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 757|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 823|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 825|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 826|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:GB 18871|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 1188|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 1001|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ 604|《医疗机构水污染物排放标准》(GB 18466-2005)修改单",
+        "edge:HJ/T 91地表水和污水监测技术规范|《医疗机构水污染物排放标准》(GB 18466-2005)修改单"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 4,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 4,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "16c265d89a1afdc60572b8f14a705dc0",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+        "unit_id": "16c265d89a1afdc60572b8f14a705dc0",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b423a0e3331541588988fd34496c349d-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7ebc370fd7bc29dce729559ee72e8e02",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+        "unit_id": "7ebc370fd7bc29dce729559ee72e8e02",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b423a0e3331541588988fd34496c349d-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "9668256801364aa530b6a3825401daa0",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+        "unit_id": "9668256801364aa530b6a3825401daa0",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b423a0e3331541588988fd34496c349d-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "a46e961dbb1b61b1766fbca15307daae",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+        "unit_id": "a46e961dbb1b61b1766fbca15307daae",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b423a0e3331541588988fd34496c349d-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "afb68726571f0d32333643ca0484da32",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+        "unit_id": "afb68726571f0d32333643ca0484da32",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b423a0e3331541588988fd34496c349d-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "e51a17ff70cc47fd4b8f4d37b7b6d7ac",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+        "unit_id": "e51a17ff70cc47fd4b8f4d37b7b6d7ac",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b423a0e3331541588988fd34496c349d-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "fea6424ee08546b7e066be6027936041",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+        "unit_id": "fea6424ee08546b7e066be6027936041",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b423a0e3331541588988fd34496c349d-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 8,
+     "workspace": "default",
+     "chunk_id": "doc-9bb11e5d3809e590259aef28fb61062b-chunk-001",
+     "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+     "content_sha256": "3b5b96e311c2da7e307750597981ec295929a2e9e072881d3e86d867f2072cfd",
+     "rerank_score": 0.8742928504943848,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-9bb11e5d3809e590259aef28fb61062b-chunk-001",
+       "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466-2005",
+        "edge:GB 18466-2005|医疗机构水污染物排放标准",
+        "edge:GB 16297大气污染物综合排放标准|GB 18466-2005",
+        "edge:GB 18466-2005|HJ 1147水质pH值的测定电极法",
+        "edge:GB 18466-2005|HJ 637水质石油类和动植物油类的测定红外分光光度法",
+        "edge:GB 18466-2005|HJ/T 399水质化学需氧量的测定快速消解分光光度法",
+        "edge:GB 18466-2005|HJ/T 55大气污染物无组织排放监测技术导则",
+        "edge:GB 18466-2005|GB 8978污水综合排放标准",
+        "edge:GB 18466-2005|GB 3838地表水环境质量标准",
+        "edge:GB 18466-2005|GB 3097海水水质标准",
+        "edge:GB 18466-2005|HJ 1182水质色度的测定稀释倍数法",
+        "edge:GB 18466-2005|HJ 908水质六价铬的测定流动注射-二苯碳酰二肼光度法",
+        "edge:GB 18466-2005|HJ 494水质采样技术指导",
+        "edge:GB 18466-2005|HJ1453水质铜、铅、镉、镍、铬的测定石墨炉原子吸收分光光度法",
+        "edge:GB 18466-2005|HJ1451水质银的测定石墨炉原子吸收分光光度法",
+        "edge:GB 18466-2005|HJ1450水质六价铬的测定二苯碳酰二肼-便携式光度法",
+        "edge:GB 18466-2005|HJ1449水质氨氮的测定水杨酸-便携式光度法",
+        "edge:GB 18466-2005|HJ1448水质氨氮的测定纳氏试剂-便携式光度法",
+        "edge:GB 18466-2005|HJ1444环境空气10种含硫化合物的测定罐采样-预浓缩/气相色谱法",
+        "edge:GB 18466-2005|HJ1443水质银的测定火焰原子吸收分光光度法",
+        "edge:GB 18466-2005|HJ1405排污单位污染物排放口监测点位设置技术规范",
+        "edge:GB 18466-2005|HJ 1262环境空气和废气臭气的测定三点比较式臭袋法",
+        "edge:GB 18466-2005|HJ 1188核医学辐射防护与安全要求",
+        "edge:GB 18466-2005|HJ 1105排污许可证申请与核发技术规范医疗机构",
+        "edge:GB 18466-2005|HJ1069水质急性毒性的测定斑马鱼卵法",
+        "edge:GB 18466-2005|HJ1001水质总大肠菌群、粪大肠菌群和大肠埃希氏菌的测定酶底物法",
+        "edge:GB 18466-2005|HJ 905恶臭污染环境监测技术规范",
+        "edge:GB 18466-2005|HJ 899水质总 β 放射性的测定厚源法",
+        "edge:GB 18466-2005|HJ 898水质总 α 放射性的测定厚源法",
+        "edge:GB 18466-2005|HJ826水质阴离子表面活性剂的测定流动注射-亚甲基蓝分光光度法",
+        "edge:GB 18466-2005|HJ825水质挥发酚的测定流动注射-4-氨基安替比林分光光度法",
+        "edge:GB 18466-2005|HJ823水质氰化物的测定流动注射-分光光度法",
+        "edge:GB 18466-2005|HJ776水质32种元素的测定电感耦合等离子体发射光谱法",
+        "edge:GB 18466-2005|HJ757水质铬的测定火焰原子吸收分光光度法",
+        "edge:GB 18466-2005|HJ700水质65种元素的测定电感耦合等离子体质谱法",
+        "edge:GB 18466-2005|HJ694水质汞、砷、硒、铋和锑的测定原子荧光法",
+        "edge:GB 18466-2005|HJ666水质氨氮的测定流动注射-水杨酸分光光度法",
+        "edge:GB 18466-2005|HJ665水质氨氮的测定连续流动-水杨酸分光光度法",
+        "edge:GB 18466-2005|HJ659水质氰化物等的测定真空检测管-电子比色法",
+        "edge:GB 18466-2005|HJ604环境空气总烃、甲烷和非甲烷总烃的测定直接进样-气相色谱法",
+        "edge:GB 18466-2005|HJ597水质总汞的测定冷原子吸收分光光度法",
+        "edge:GB 18466-2005|HJ586水质游离氯和总氯的测定N,N-二乙基-1,4-苯二胺分光光度法",
+        "edge:GB 18466-2005|HJ585水质游离氯和总氯的测定N,N-二乙基-1,4-苯二胺滴定法",
+        "edge:GB 18466-2005|HJ537水质氨氮的测定蒸馏-中和滴定法",
+        "edge:GB 18466-2005|HJ536水质氨氮的测定水杨酸分光光度法",
+        "edge:GB 18466-2005|HJ535水质氨氮的测定纳氏试剂分光光度法",
+        "edge:GB 18466-2005|HJ534环境空气氨的测定次氯酸钠-水杨酸分光光度法",
+        "edge:GB 18466-2005|HJ533环境空气和废气氨的测定纳氏试剂分光光度法",
+        "edge:GB 18466-2005|HJ505水质五日生化需氧量(BOD5)的测定稀释与接种法",
+        "edge:GB 18466-2005|HJ503水质挥发酚的测定4-氨基安替比林分光光度法",
+        "edge:GB 18466-2005|HJ495水质采样方案设计技术规定",
+        "edge:GB 18466-2005|HJ493水质样品的保存和管理技术规定",
+        "edge:GB 18466-2005|HJ484水质氰化物的测定容量法和分光光度法",
+        "edge:GB 18466-2005|HJ347.2水质粪大肠菌群的测定多管发酵法",
+        "edge:GB 18466-2005|HJ195水质氨氮的测定气相分子吸收光谱法",
+        "edge:GB 18466-2005|HJ91.1污水监测技术规范",
+        "edge:GB 18466-2005|HJ/T 30固定污染源排气中氯气的测定甲基橙分光光度法",
+        "edge:GB 18466-2005|GB 18871电离辐射防护与辐射源安全基本标准",
+        "edge:GB 18466-2005|HJ828水质化学需氧量的测定重铬酸盐法",
+        "edge:GB 18466-2005|GB/T11901水质悬浮物的测定重量法",
+        "edge:GB 18466-2005|GB/T 7494水质阴离子表面活性剂的测定亚甲蓝分光光度法",
+        "edge:GB 18466-2005|GB/T 7475水质铜、锌、铅、镉的测定原子吸收分光光度法"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 8,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 8,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "185b00e681d6cb45204d4dbd145bfede",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "unit_id": "185b00e681d6cb45204d4dbd145bfede",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "55972773a9137febfb2efd2285e7488f",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "unit_id": "55972773a9137febfb2efd2285e7488f",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "587e5ce9c5d7442b97d1468c05a1a56c",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "unit_id": "587e5ce9c5d7442b97d1468c05a1a56c",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "992f11ab1d4f3975b9fc8e51c15ffdee",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "unit_id": "992f11ab1d4f3975b9fc8e51c15ffdee",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 7,
+     "workspace": "default",
+     "chunk_id": "doc-9bb11e5d3809e590259aef28fb61062b-chunk-010",
+     "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+     "content_sha256": "6a73e98237c18dab3f09b8dc7baf9e31c8edd5db647da3758da8fd33462d29c6",
+     "rerank_score": 0.754565954208374,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-9bb11e5d3809e590259aef28fb61062b-chunk-010",
+       "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466-2005",
+        "edge:GB 18466-2005|HJ 700",
+        "edge:GB 18466-2005|HJ 776",
+        "edge:GB 18466-2005|HJ 1453",
+        "edge:GB 18466-2005|GB/T 7475",
+        "edge:GB 18466-2005|HJ 898",
+        "edge:GB 18466-2005|HJ 1069",
+        "edge:GB 18466-2005|HJ 586",
+        "edge:GB 18466-2005|HJ 585",
+        "edge:GB 18466-2005|HJ 899",
+        "edge:GB 18466-2005|HJ 1443",
+        "edge:GB 18466-2005|HJ 1451"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 7,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 7,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "efcca63ca2ac8b26ab8a7aa3a0880c6e",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "unit_id": "efcca63ca2ac8b26ab8a7aa3a0880c6e",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-010"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-9bb11e5d3809e590259aef28fb61062b-0005",
+       "table_id": "tb-9bb11e5d3809e590259aef28fb61062b-0005",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "table_id": "tb-9bb11e5d3809e590259aef28fb61062b-0005",
+        "chunk_ids": [
+         "doc-9bb11e5d3809e590259aef28fb61062b-chunk-010"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 6,
+     "workspace": "default",
+     "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002",
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "content_sha256": "4d8a9d940178e437a113b08ca7219a612fa971ffabc2faa0793177e74b44fd7b",
+     "rerank_score": 0.7206311821937561,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466 - 2005",
+        "entity:总 α",
+        "edge:GB 18466 - 2005|氨氮",
+        "edge:GB 18466 - 2005|pH",
+        "edge:GB 18466 - 2005|总汞",
+        "edge:GB 18466 - 2005|石油类",
+        "edge:GB 18466 - 2005|六价铬",
+        "edge:GB 18466 - 2005|综合医疗机构",
+        "edge:GB 18466 - 2005|粪大肠菌群数",
+        "edge:GB 18466 - 2005|总铬",
+        "edge:GB 18466 - 2005|总镉",
+        "edge:GB 18466 - 2005|阴离子表面活性剂",
+        "edge:GB 18466 - 2005|总铅",
+        "edge:GB 18466 - 2005|总余氯",
+        "edge:GB 18466 - 2005|化学需氧量(COD)",
+        "edge:GB 18466 - 2005|总银",
+        "edge:GB 18466 - 2005|挥发酚",
+        "edge:GB 18466 - 2005|动植物油",
+        "edge:GB 18466 - 2005|悬浮物(SS)",
+        "edge:GB 18466 - 2005|色度",
+        "edge:GB 18466 - 2005|总砷",
+        "edge:GB 18466 - 2005|总氰化物",
+        "edge:GB 18466 - 2005|含氯消毒剂",
+        "edge:GB 18466 - 2005|肠道致病菌",
+        "edge:GB 18466 - 2005|肠道病毒",
+        "edge:GB 18466 - 2005|生化需氧量(BOD)",
+        "edge:GB 18466 - 2005|脱氯处理",
+        "edge:GB 18466 - 2005|GB 3838",
+        "edge:GB 18466 - 2005|GB 3097",
+        "edge:GB 18466 - 2005|带传染病房的综合医疗机构",
+        "edge:GB 18466 - 2005|总 β",
+        "edge:GB 18466 - 2005|总 α"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 6,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 6,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "ef6868c7bc693df8da996208421b815d",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "ef6868c7bc693df8da996208421b815d",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0002",
+       "table_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0002",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "table_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0002",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 2,
+     "workspace": "default",
+     "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-006",
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "content_sha256": "7365814a78ba4190aaafea49f3e9afe2b948e2a74bc248b6136740431ad0def1",
+     "rerank_score": 0.6592682003974915,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-006",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466 - 2005"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 2,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 2,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "90a474145e739101388733fc7841ca82",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "90a474145e739101388733fc7841ca82",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-006"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0005",
+       "table_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0005",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "table_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0005",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-006"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 0,
+     "workspace": "default",
+     "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-017",
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "content_sha256": "b4126d8d882b53b00470772b32bd8540416c2c721a7d7f44d4051d31c75717d7",
+     "rerank_score": 0.5876327753067017,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-017",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466 - 2005"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 0,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 0,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "15577269b2527cbe927736798a5c958e",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "15577269b2527cbe927736798a5c958e",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-017"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0008",
+       "table_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0008",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "table_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0008",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-017"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 9,
+     "workspace": "default",
+     "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "content_sha256": "8d6828de6ebc336b89a3ece1cf868b3c180756b1c4aa8d6cd0aae66c905faf9c",
+     "rerank_score": 0.5854378342628479,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466 - 2005",
+        "edge:GB 18466 - 2005|表1",
+        "edge:GB 18466 - 2005|表2"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 9,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 9,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "385d9e8e0539a87e61f0407bda1739ad",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "385d9e8e0539a87e61f0407bda1739ad",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "90d4b1c55cb8c6ff81dcbdfd55827165",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "90d4b1c55cb8c6ff81dcbdfd55827165",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "ad9d292d3ee2fd88a8fd25b9efc8265a",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "ad9d292d3ee2fd88a8fd25b9efc8265a",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "b8825f81a2426e361c91a6226df251ac",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "b8825f81a2426e361c91a6226df251ac",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "cf177d960affc97b9b77e517596688a4",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "cf177d960affc97b9b77e517596688a4",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "ef6868c7bc693df8da996208421b815d",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "ef6868c7bc693df8da996208421b815d",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0001",
+       "table_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0001",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "table_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0001",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 1,
+     "workspace": "default",
+     "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-018",
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "content_sha256": "176085d17e5fd01b7dd8b8f1c7014db9cf440b0455925db7b8acbec284ba0ad7",
+     "rerank_score": 0.5513929128646851,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-018",
+       "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 18466 - 2005",
+        "edge:GB 18466 - 2005|每1g泥样中MPN"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 1,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 1,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "15577269b2527cbe927736798a5c958e",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "unit_id": "15577269b2527cbe927736798a5c958e",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-018"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0009",
+       "table_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0009",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "table_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0009",
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-018"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    }
+   ],
+   "degraded": [],
+   "status": "ok",
+   "typed_targets": [
+    {
+     "target_type": "doc",
+     "workspace": "default",
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "doc_name": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf",
+     "self_code": "GB18466",
+     "self_code_version": "2005",
+     "discovery": "code_exact",
+     "membership_basis": null,
+     "citation": {
+      "kind": "catalog_row",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+     },
+     "citation_verified": true
+    },
+    {
+     "target_type": "doc",
+     "workspace": "default",
+     "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+     "doc_name": "water-03_生态环境部_医疗机构水污染物排放标准_含2026修改单.pdf",
+     "self_code": null,
+     "self_code_version": null,
+     "discovery": "doc_attribution",
+     "membership_basis": "doc name/title carries the requested code (self_code=None)",
+     "citation": {
+      "kind": "catalog_row",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b"
+     },
+     "citation_verified": true
+    },
+    {
+     "target_type": "doc",
+     "workspace": "default",
+     "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+     "doc_name": "water-10_生态环境部_医疗机构水污染物排放标准修改单_2026.pdf",
+     "self_code": null,
+     "self_code_version": null,
+     "discovery": "doc_attribution",
+     "membership_basis": "doc name/title carries the requested code (self_code=None)",
+     "citation": {
+      "kind": "catalog_row",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b423a0e3331541588988fd34496c349d"
+     },
+     "citation_verified": true
+    }
+   ],
+   "path_enrichment": [
+    "association completion: 6 table fragment path(s) and 39 non-table (block/source_unit) path(s) from unit_chunk_links JOIN source_units by actual unit_kind (replay paths predate the 5.3-F2 fix); no id/locator/kind guessed"
+   ],
+   "source_verification": {
+    "candidates_checked": 10,
+    "verified": 10,
+    "problems": []
+   },
+   "skipped_inputs": []
+  }
+ ],
+ "finished_at": "2026-10-09T21:11:39+0800"
+}

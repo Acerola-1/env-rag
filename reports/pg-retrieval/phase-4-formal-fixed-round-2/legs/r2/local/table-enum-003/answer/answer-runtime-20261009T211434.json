@@ -1,0 +1,3254 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-09T21:14:32+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "table-enum-003"
+ ],
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-formal-fixed-round-2/inputs/local/table-enum-003-rerank.json",
+   "sha256": "e182f5b5d7f944b932531cbb17e456190f165c83d9879811ae41b6d99b1b0cff",
+   "task": null,
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": []
+  },
+  "fused_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-formal-fixed-round-2/inputs/local/table-enum-003-fusion.json",
+   "sha256": "8f19efd12a14fb124b7749d1f2d29a318ad64dbda36dcd18661695d50331386b",
+   "task": "Phase 4 round 2 evaluation input (path=local)",
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": [
+    "table-enum-003"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "model_calls_used": 0,
+ "results": [
+  {
+   "query_id": "table-enum-003",
+   "query": "GB 14554-93 表 2 及其续表列出的排放标准值项目有哪些？",
+   "category": "table_enum",
+   "workspace": "default",
+   "coverage_status": "ambiguous",
+   "fail_stage": "",
+   "flags": [
+    "no rerank replay for this query id — scope priority falls back to fusion path order, explicitly recorded (no fabricated scores)",
+    "discovery document doc-b45c510232ed4d2452b0f5b2a13434e4 excluded from the answer scope: canonical identity GB8978-1996 matches no requested branch ['GB14554-93']",
+    "discovery document doc-91f9049decde09153368d4b69f280e78 excluded from the answer scope: canonical identity GB3838-2002 matches no requested branch ['GB14554-93']",
+    "2 expansion record(s) from non-target candidate documents are recorded but cannot degrade the selected scope"
+   ],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "absent",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 0,
+    "typed_targets": [],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 10,
+    "selected_docs": [
+     "doc-d6d711b0614234635955480a53f52a10"
+    ],
+    "priority": [
+     {
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "rerank_rank_or_none": null
+     }
+    ],
+    "target_confirmation": {
+     "request_branches": [
+      {
+       "code": "GB14554",
+       "version": "93"
+      }
+     ],
+     "branch_source": "local parse of the question",
+     "identity_source": "catalog documents rows (self_code/self_code_version) read through the guarded workspace+catalog-snapshot connection",
+     "allowed": [
+      "doc-d6d711b0614234635955480a53f52a10"
+     ],
+     "allowed_basis": {
+      "doc-d6d711b0614234635955480a53f52a10": "canonical GB14554-93 matches requested branch GB14554-93 (catalog documents row via the guarded workspace+snapshot)"
+     },
+     "rejected": [
+      {
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "reason": "canonical identity GB8978-1996 matches no requested branch ['GB14554-93']"
+      },
+      {
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "reason": "canonical identity GB3838-2002 matches no requested branch ['GB14554-93']"
+      }
+     ],
+     "unresolved": [],
+     "unconfirmed_branches": [],
+     "rule": "discovery never defines the answer scope; a typed label or a replay-declared name is an audit clue, never canonical identity"
+    },
+    "basis": "confirmed canonical target identity defines the answer scope (improvement-2); discovery/top-k/rerank order never bound or promote membership — unconfirmed documents are excluded with recorded reasons and cannot enter the answer"
+   },
+   "expansions": [
+    {
+     "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+     "kind": "table",
+     "table_number": "2",
+     "scope_ids": [
+      "tb-d6d711b0614234635955480a53f52a10-0002"
+     ],
+     "members_total": 3,
+     "members_processed": 3,
+     "coverage_status": "ambiguous",
+     "fail_stage": "ambiguous",
+     "items_count": 72,
+     "warnings": [
+      "structure_status=ambiguous（列/数据行无法可靠识别）",
+      "table_structure: header=[[\"序号\", \"控制项目\", \"排气筒高度,m\", \"排放量,kg·h\"]]; units=[]; footnotes=[\"序号 控制项目 排气筒高度,m 排放量,kg/h\", \"序号 控制项目 排气筒高度,m 排放量,kg/h\"]"
+     ],
+     "selected": true
+    },
+    {
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "kind": "table",
+     "table_number": "2",
+     "scope_ids": [],
+     "members_total": 0,
+     "members_processed": 0,
+     "coverage_status": "ambiguous",
+     "fail_stage": "ambiguous",
+     "items_count": 0,
+     "warnings": [
+      "no logical table 表2 in water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf"
+     ],
+     "selected": false,
+     "note": "non-target candidate document — recorded for transparency, excluded from the answer scope and coverage decision"
+    },
+    {
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "kind": "table",
+     "table_number": "2",
+     "scope_ids": [
+      "tb-91f9049decde09153368d4b69f280e78-0002"
+     ],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "fail_stage": "",
+     "items_count": 5,
+     "warnings": [
+      "table_structure: header=[[\"序号\", \"项目\", \"标准值\"]]; units=[]; footnotes=[]"
+     ],
+     "selected": false,
+     "note": "non-target candidate document — recorded for transparency, excluded from the answer scope and coverage decision"
+    }
+   ],
+   "answer": {
+    "mode": "deterministic",
+    "generated_by": "enumerate/expand entries",
+    "items": [
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "1",
+      "cells": [
+       "1",
+       "硫化氢",
+       "15",
+       "0.33"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 1,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 2 恶臭污染物排放标准值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "1",
+      "cells": [
+       "1",
+       "硫化氢",
+       "20",
+       "0.58"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 2,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 2 恶臭污染物排放标准值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "1",
+      "cells": [
+       "1",
+       "硫化氢",
+       "25",
+       "0.90"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 3,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 2 恶臭污染物排放标准值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "1",
+      "cells": [
+       "1",
+       "硫化氢",
+       "30",
+       "1.3"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 4,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 2 恶臭污染物排放标准值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "1",
+      "cells": [
+       "1",
+       "硫化氢",
+       "35",
+       "1.8"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 5,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 2 恶臭污染物排放标准值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "1",
+      "cells": [
+       "1",
+       "硫化氢",
+       "40",
+       "2.3"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 6,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 2 恶臭污染物排放标准值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "1",
+      "cells": [
+       "1",
+       "硫化氢",
+       "60",
+       "5.2"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 7,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 2 恶臭污染物排放标准值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "1",
+      "cells": [
+       "1",
+       "硫化氢",
+       "80",
+       "9.3"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 8,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 2 恶臭污染物排放标准值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "1",
+      "cells": [
+       "1",
+       "硫化氢",
+       "100",
+       "14"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 9,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 2 恶臭污染物排放标准值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "1",
+      "cells": [
+       "1",
+       "硫化氢",
+       "120",
+       "21"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 10,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 2 恶臭污染物排放标准值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "2",
+      "cells": [
+       "2",
+       "甲硫醇",
+       "15",
+       "0.04"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 11,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 2 恶臭污染物排放标准值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "2",
+      "cells": [
+       "2",
+       "甲硫醇",
+       "20",
+       "0.08"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 12,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 2 恶臭污染物排放标准值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "2",
+      "cells": [
+       "2",
+       "甲硫醇",
+       "25",
+       "0.12"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 13,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 2 恶臭污染物排放标准值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "2",
+      "cells": [
+       "2",
+       "甲硫醇",
+       "30",
+       "0.17"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 14,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0002",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 2 恶臭污染物排放标准值"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "2",
+      "cells": [
+       "2",
+       "甲硫醇",
+       "35",
+       "0.24"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 1,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "2",
+      "cells": [
+       "2",
+       "甲硫醇",
+       "40",
+       "0.31"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 2,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "2",
+      "cells": [
+       "2",
+       "甲硫醇",
+       "60",
+       "0.69"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 3,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "3",
+      "cells": [
+       "3",
+       "甲硫醚",
+       "15",
+       "0.33"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 4,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "3",
+      "cells": [
+       "3",
+       "甲硫醚",
+       "20",
+       "0.58"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 5,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "3",
+      "cells": [
+       "3",
+       "甲硫醚",
+       "25",
+       "0.90"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 6,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "3",
+      "cells": [
+       "3",
+       "甲硫醚",
+       "30",
+       "1.3"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 7,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "3",
+      "cells": [
+       "3",
+       "甲硫醚",
+       "35",
+       "1.8"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 8,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "3",
+      "cells": [
+       "3",
+       "甲硫醚",
+       "40",
+       "2.3"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 9,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "3",
+      "cells": [
+       "3",
+       "甲硫醚",
+       "60",
+       "5.2"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 10,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "4",
+      "cells": [
+       "4",
+       "二甲二硫醚",
+       "15",
+       "0.43"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 11,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "4",
+      "cells": [
+       "4",
+       "二甲二硫醚",
+       "20",
+       "0.77"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 12,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "4",
+      "cells": [
+       "4",
+       "二甲二硫醚",
+       "25",
+       "1.2"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 13,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "4",
+      "cells": [
+       "4",
+       "二甲二硫醚",
+       "30",
+       "1.7"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 14,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "4",
+      "cells": [
+       "4",
+       "二甲二硫醚",
+       "35",
+       "2.4"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 15,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "4",
+      "cells": [
+       "4",
+       "二甲二硫醚",
+       "40",
+       "3.1"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 16,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "4",
+      "cells": [
+       "4",
+       "二甲二硫醚",
+       "60",
+       "7.0"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 17,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "5",
+      "cells": [
+       "5",
+       "二硫化碳",
+       "15",
+       "1.5"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 18,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "5",
+      "cells": [
+       "5",
+       "二硫化碳",
+       "20",
+       "2.7"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 19,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "5",
+      "cells": [
+       "5",
+       "二硫化碳",
+       "25",
+       "4.2"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 20,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "5",
+      "cells": [
+       "5",
+       "二硫化碳",
+       "30",
+       "6.1"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 21,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "5",
+      "cells": [
+       "5",
+       "二硫化碳",
+       "35",
+       "8.3"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 22,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "5",
+      "cells": [
+       "5",
+       "二硫化碳",
+       "40",
+       "11"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 23,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "5",
+      "cells": [
+       "5",
+       "二硫化碳",
+       "60",
+       "24"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 24,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "5",
+      "cells": [
+       "5",
+       "二硫化碳",
+       "80",
+       "43"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 25,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "5",
+      "cells": [
+       "5",
+       "二硫化碳",
+       "100",
+       "68"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 26,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "5",
+      "cells": [
+       "5",
+       "二硫化碳",
+       "120",
+       "97"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 27,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "6",
+      "cells": [
+       "6",
+       "氨",
+       "15",
+       "4.9"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 28,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "6",
+      "cells": [
+       "6",
+       "氨",
+       "20",
+       "8.7"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 29,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "6",
+      "cells": [
+       "6",
+       "氨",
+       "25",
+       "14"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 30,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "6",
+      "cells": [
+       "6",
+       "氨",
+       "30",
+       "20"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 31,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "6",
+      "cells": [
+       "6",
+       "氨",
+       "35",
+       "27"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 32,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "6",
+      "cells": [
+       "6",
+       "氨",
+       "40",
+       "35"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 33,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "6",
+      "cells": [
+       "6",
+       "氨",
+       "60",
+       "75"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 34,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0003",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "7",
+      "cells": [
+       "7",
+       "三甲胺",
+       "15",
+       "0.54"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 2,
+       "row_in_fragment": 1,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "7",
+      "cells": [
+       "7",
+       "三甲胺",
+       "20",
+       "0.97"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 2,
+       "row_in_fragment": 2,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "7",
+      "cells": [
+       "7",
+       "三甲胺",
+       "25",
+       "1.5"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 2,
+       "row_in_fragment": 3,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "7",
+      "cells": [
+       "7",
+       "三甲胺",
+       "30",
+       "2.2"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 2,
+       "row_in_fragment": 4,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "7",
+      "cells": [
+       "7",
+       "三甲胺",
+       "35",
+       "3.0"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 2,
+       "row_in_fragment": 5,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "7",
+      "cells": [
+       "7",
+       "三甲胺",
+       "40",
+       "3.9*"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 2,
+       "row_in_fragment": 6,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "7",
+      "cells": [
+       "7",
+       "三甲胺",
+       "60",
+       "8.7"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 2,
+       "row_in_fragment": 7,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "7",
+      "cells": [
+       "7",
+       "三甲胺",
+       "80",
+       "15"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 2,
+       "row_in_fragment": 8,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "7",
+      "cells": [
+       "7",
+       "三甲胺",
+       "100",
+       "24"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 2,
+       "row_in_fragment": 9,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "7",
+      "cells": [
+       "7",
+       "三甲胺",
+       "120",
+       "35"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 2,
+       "row_in_fragment": 10,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "8",
+      "cells": [
+       "8",
+       "苯乙烯",
+       "15",
+       "6.5"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 2,
+       "row_in_fragment": 11,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "8",
+      "cells": [
+       "8",
+       "苯乙烯",
+       "20",
+       "12"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 2,
+       "row_in_fragment": 12,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "8",
+      "cells": [
+       "8",
+       "苯乙烯",
+       "25",
+       "18"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 2,
+       "row_in_fragment": 13,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "8",
+      "cells": [
+       "8",
+       "苯乙烯",
+       "30",
+       "26"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 2,
+       "row_in_fragment": 14,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "8",
+      "cells": [
+       "8",
+       "苯乙烯",
+       "35",
+       "35"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 2,
+       "row_in_fragment": 15,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "8",
+      "cells": [
+       "8",
+       "苯乙烯",
+       "40",
+       "45"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 2,
+       "row_in_fragment": 16,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "8",
+      "cells": [
+       "8",
+       "苯乙烯",
+       "60",
+       "104"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 2,
+       "row_in_fragment": 17,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "9",
+      "cells": [
+       "9",
+       "臭气浓度",
+       "排气筒高度,m",
+       "标准值(无量纲)"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 2,
+       "row_in_fragment": 18,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "9",
+      "cells": [
+       "9",
+       "臭气浓度",
+       "15",
+       "2000"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 2,
+       "row_in_fragment": 19,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "9",
+      "cells": [
+       "9",
+       "臭气浓度",
+       "25",
+       "<redacted>"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 2,
+       "row_in_fragment": 20,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "9",
+      "cells": [
+       "9",
+       "臭气浓度",
+       "35",
+       "15000"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 2,
+       "row_in_fragment": 21,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "9",
+      "cells": [
+       "9",
+       "臭气浓度",
+       "40",
+       "20000"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 2,
+       "row_in_fragment": 22,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "9",
+      "cells": [
+       "9",
+       "臭气浓度",
+       "50",
+       "40000"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 2,
+       "row_in_fragment": 23,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "table_number": "2",
+      "seq": "9",
+      "cells": [
+       "9",
+       "臭气浓度",
+       "≥60",
+       "<redacted>0"
+      ],
+      "header": [
+       [
+        "序号",
+        "控制项目",
+        "排气筒高度,m",
+        "排放量,kg·h"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "序号 控制项目 排气筒高度,m 排放量,kg/h",
+       "序号 控制项目 排气筒高度,m 排放量,kg/h"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 2,
+       "row_in_fragment": 24,
+       "table_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "blockid": "aee7cb361b386096cc7fbe78c15bc61e",
+       "locator": "tb-d6d711b0614234635955480a53f52a10-0004",
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "续表 2"
+     }
+    ]
+   },
+   "reverification": {
+    "items_checked": 72,
+    "problems": [],
+    "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+   },
+   "model": null,
+   "status": "ambiguous"
+  }
+ ]
+}

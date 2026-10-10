@@ -1,0 +1,1788 @@
+{
+  "generation": "phase-4-improvements123-local-validation-r1",
+  "mode": "one bounded four-leg fresh local run",
+  "real_requests": "keyword 4 issued / embedding 11 / qdrant 11 / neo4j 20 / pg 439; rerank+answer 0",
+  "database_writes": 0,
+  "identity_before_equals_after": true,
+  "identity_after": {
+    "matches_frozen": true,
+    "problems": [],
+    "counts": {
+      "lightrag_doc_full": 221,
+      "lightrag_doc_chunks": 5709,
+      "lightrag_doc_status": 279,
+      "lightrag_llm_cache": 16514,
+      "lightrag_entity_chunks": 65527,
+      "lightrag_full_entities": 221,
+      "lightrag_full_relations": 221,
+      "lightrag_relation_chunks": 119575
+    },
+    "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "catalog_active": {
+      "run_id": "c15c741742394320",
+      "snapshot_id": "4919b3938ad93747"
+    },
+    "search_active": "872d689343a9cbb6",
+    "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+    "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+  },
+  "budget_totals": {
+    "reserved": {
+      "llm": 4,
+      "embedding": 11,
+      "qdrant": 11,
+      "neo4j": 20,
+      "pg": 439
+    },
+    "issued": {
+      "llm": 4,
+      "embedding": 11,
+      "qdrant": 11,
+      "neo4j": 20,
+      "pg": 439
+    },
+    "refusal_count": 0,
+    "caps": {
+      "round": {
+        "llm": 4,
+        "embedding": 16,
+        "qdrant": 32,
+        "neo4j": 40,
+        "pg": 4096,
+        "rerank": 0,
+        "answer_llm": 0
+      },
+      "total": {
+        "llm": 4,
+        "embedding": 16,
+        "qdrant": 32,
+        "neo4j": 40,
+        "pg": 4096,
+        "rerank": 0,
+        "answer_llm": 0
+      },
+      "per_question": {
+        "llm": 1,
+        "embedding": 4,
+        "qdrant": 8,
+        "neo4j": 10,
+        "pg": 1024
+      },
+      "max_texts_per_embed_call": 32,
+      "max_chars_per_embed_call": 64000
+    }
+  },
+  "denominator_note": "3 positives + 1 counter, reported separately; not a 31-question metric",
+  "gold_policy": "expected values used post-hoc only; nothing injected into discovery or answers",
+  "legs": [
+    {
+      "query_id": "file-enum-005",
+      "is_counter": false,
+      "status": "ok",
+      "coverage": "complete",
+      "model_calls_used": 0,
+      "answer_latency_ms": 3315,
+      "timings": {
+        "discovery_ms": 6043,
+        "total_ms": 9358
+      },
+      "fresh_discovery": {
+        "discovery_docs": [
+          "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "doc-b423a0e3331541588988fd34496c349d",
+          "doc-9bb11e5d3809e590259aef28fb61062b"
+        ],
+        "usable": 10,
+        "pg_search_id": "",
+        "targets_confirmed_layer": false,
+        "budget": {
+          "limit": 40,
+          "kept": 10,
+          "truncated": []
+        },
+        "path_provenance": {
+          "path": "local",
+          "discovery_only": true,
+          "note": "this layer performs discovery only; target identity is confirmed by the answer-layer canonical-code gate against catalog documents rows — not a 5.3 code resolution and never a corpus-wide verdict"
+        }
+      },
+      "receipts": {
+        "call_records": [
+          {
+            "service": "llm",
+            "operation": "keyword_extraction",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 2027,
+            "result": {
+              "chars": 83
+            },
+            "target": null
+          },
+          {
+            "service": "embedding",
+            "operation": "openai_embed",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 150,
+            "result": {
+              "shape": [
+                1,
+                2560
+              ]
+            },
+            "target": null
+          },
+          {
+            "service": "qdrant",
+            "operation": "query_points",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 133,
+            "result": {
+              "points": 10
+            },
+            "target": "entities"
+          },
+          {
+            "service": "neo4j",
+            "operation": "session.run",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 1189,
+            "result": null,
+            "target": null
+          },
+          {
+            "service": "neo4j",
+            "operation": "session.run",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 1189,
+            "result": null,
+            "target": null
+          },
+          {
+            "service": "neo4j",
+            "operation": "session.run",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 195,
+            "result": null,
+            "target": null
+          },
+          {
+            "service": "neo4j",
+            "operation": "session.run",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 79,
+            "result": null,
+            "target": null
+          },
+          {
+            "service": "neo4j",
+            "operation": "session.run",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 149,
+            "result": null,
+            "target": null
+          },
+          {
+            "service": "embedding",
+            "operation": "openai_embed",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 417,
+            "result": {
+              "shape": [
+                1,
+                2560
+              ]
+            },
+            "target": null
+          },
+          {
+            "service": "qdrant",
+            "operation": "retrieve",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 43,
+            "result": {
+              "items": 37,
+              "requested": 37
+            },
+            "target": "chunks"
+          },
+          {
+            "service": "pg",
+            "operation": "readonly_select_chunks",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 8,
+            "result": {
+              "items": 25
+            },
+            "target": null
+          },
+          {
+            "service": "embedding",
+            "operation": "openai_embed",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 134,
+            "result": {
+              "shape": [
+                1,
+                2560
+              ]
+            },
+            "target": null
+          },
+          {
+            "service": "qdrant",
+            "operation": "retrieve",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 15,
+            "result": {
+              "items": 10,
+              "requested": 10
+            },
+            "target": "chunks"
+          },
+          {
+            "service": "pg",
+            "operation": "readonly_select_chunks",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 9,
+            "result": {
+              "items": 10
+            },
+            "target": null
+          },
+          {
+            "service": "pg",
+            "operation": "readonly_select_chunks",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 4,
+            "result": {
+              "items": 10
+            },
+            "target": null
+          }
+        ],
+        "service_calls": {
+          "embedding_requests": 3,
+          "llm_requests": 1,
+          "qdrant_queries": 3,
+          "neo4j_reads": 1,
+          "pg_readonly_queries": 3,
+          "by_service": {
+            "llm": {
+              "attempt": 1,
+              "success": 1,
+              "failure": 0
+            },
+            "embedding": {
+              "attempt": 3,
+              "success": 3,
+              "failure": 0
+            },
+            "qdrant": {
+              "attempt": 3,
+              "success": 3,
+              "failure": 0
+            },
+            "neo4j": {
+              "attempt": 5,
+              "success": 5,
+              "failure": 0
+            },
+            "pg": {
+              "attempt": 3,
+              "success": 3,
+              "failure": 0
+            }
+          },
+          "groups": {
+            "neo4j": {
+              "attempt": 1,
+              "success": 1,
+              "failure": 0
+            },
+            "pg": {
+              "attempt": 2,
+              "success": 2,
+              "failure": 0
+            }
+          }
+        },
+        "degraded": [],
+        "sorting_sources": {
+          "chunk_pick_vectors": {
+            "expected_chunks": 9,
+            "observer_bound": true,
+            "observed_calls": [
+              {
+                "stage": "entities",
+                "collection": "chunks",
+                "vectors_requested": 37,
+                "vectors_effective": 37,
+                "missing_total": 0,
+                "missing_sample": [],
+                "mismatched_total": 0,
+                "mismatched_sample": [],
+                "unusable_total": 0,
+                "unusable_sample": [],
+                "points_returned_raw": 37,
+                "retrieve_failed": false,
+                "complete": true
+              },
+              {
+                "stage": "relations",
+                "collection": "chunks",
+                "vectors_requested": 10,
+                "vectors_effective": 10,
+                "missing_total": 0,
+                "missing_sample": [],
+                "mismatched_total": 0,
+                "mismatched_sample": [],
+                "unusable_total": 0,
+                "unusable_sample": [],
+                "points_returned_raw": 10,
+                "retrieve_failed": false,
+                "complete": true
+              }
+            ],
+            "vectors_requested": 47,
+            "vectors_effective": 47,
+            "missing_total": 0,
+            "mismatched_total": 0,
+            "unusable_total": 0,
+            "points_returned_raw": 47,
+            "vector_backed": true
+          },
+          "chunk_pick": "vector-similarity"
+        },
+        "refused_candidates": []
+      },
+      "scope_selection": {
+        "candidates": 10,
+        "selected_docs": [
+          "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "doc-b423a0e3331541588988fd34496c349d",
+          "doc-9bb11e5d3809e590259aef28fb61062b"
+        ],
+        "priority": [
+          {
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "rerank_rank_or_none": null
+          },
+          {
+            "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+            "rerank_rank_or_none": null
+          },
+          {
+            "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+            "rerank_rank_or_none": null
+          }
+        ],
+        "target_confirmation": {
+          "skipped": "file enumeration lists documents by metadata predicate — the identity gate must not bound the listing"
+        },
+        "basis": "confirmed canonical target identity defines the answer scope (improvement-2); discovery/top-k/rerank order never bound or promote membership — unconfirmed documents are excluded with recorded reasons and cannot enter the answer"
+      },
+      "flags": [
+        "no rerank replay for this query id — scope priority falls back to fusion path order, explicitly recorded (no fabricated scores)"
+      ],
+      "expansions": [
+        {
+          "members_total": 3,
+          "members_processed": 3,
+          "coverage_status": "complete",
+          "publication_guard": "stable",
+          "base_total": 1,
+          "attribution_added": 2,
+          "related_matches": 3,
+          "related_evidence": 2,
+          "warnings": [
+            "1 matched docs have unknown metadata fields; they are included but flagged"
+          ],
+          "overlap_canonical": [
+            "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+          ]
+        }
+      ],
+      "reverification": {
+        "items_checked": 0,
+        "problems": [],
+        "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+      },
+      "ledgers": {
+        "r1/local/file-enum-005:keyword_extraction": {
+          "llm/reserved": 1,
+          "llm/issued": 1
+        },
+        "r1/local/file-enum-005:openai_embed": {
+          "embedding/reserved": 3,
+          "embedding/issued": 3
+        },
+        "r1/local/file-enum-005:query_points": {
+          "qdrant/reserved": 1,
+          "qdrant/issued": 1
+        },
+        "r1/local/file-enum-005:session.run": {
+          "neo4j/reserved": 5,
+          "neo4j/issued": 5
+        },
+        "r1/local/file-enum-005:retrieve": {
+          "qdrant/reserved": 2,
+          "qdrant/issued": 2
+        },
+        "r1/local/file-enum-005:readonly_select_chunks": {
+          "pg/reserved": 3,
+          "pg/issued": 3
+        },
+        "r1/local/file-enum-005:pg": {
+          "pg/reserved": 77,
+          "pg/issued": 77
+        }
+      },
+      "gold_check": {
+        "expected": [
+          "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "doc-9bb11e5d3809e590259aef28fb61062b",
+          "doc-b423a0e3331541588988fd34496c349d"
+        ],
+        "published": [
+          "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "doc-9bb11e5d3809e590259aef28fb61062b",
+          "doc-b423a0e3331541588988fd34496c349d"
+        ],
+        "missing": [],
+        "extra": []
+      },
+      "items": [
+        {
+          "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "doc_name": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf",
+          "self_code": "GB18466",
+          "self_code_version": "2005",
+          "citation_verified": true,
+          "citation_reverified": true,
+          "attribution": false
+        },
+        {
+          "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+          "doc_name": "water-03_生态环境部_医疗机构水污染物排放标准_含2026修改单.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "citation_verified": true,
+          "citation_reverified": true,
+          "attribution": true
+        },
+        {
+          "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+          "doc_name": "water-10_生态环境部_医疗机构水污染物排放标准修改单_2026.pdf",
+          "self_code": null,
+          "self_code_version": null,
+          "citation_verified": true,
+          "citation_reverified": true,
+          "attribution": true
+        }
+      ]
+    },
+    {
+      "query_id": "prose-enum-001",
+      "is_counter": false,
+      "status": "ok",
+      "coverage": "complete",
+      "model_calls_used": 0,
+      "answer_latency_ms": 6411,
+      "timings": {
+        "discovery_ms": 2854,
+        "total_ms": 9265
+      },
+      "fresh_discovery": {
+        "discovery_docs": [
+          "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "doc-9bb11e5d3809e590259aef28fb61062b",
+          "doc-b45c510232ed4d2452b0f5b2a13434e4"
+        ],
+        "usable": 10,
+        "pg_search_id": "",
+        "targets_confirmed_layer": false,
+        "budget": {
+          "limit": 40,
+          "kept": 10,
+          "truncated": []
+        },
+        "path_provenance": {
+          "path": "local",
+          "discovery_only": true,
+          "note": "this layer performs discovery only; target identity is confirmed by the answer-layer canonical-code gate against catalog documents rows — not a 5.3 code resolution and never a corpus-wide verdict"
+        }
+      },
+      "receipts": {
+        "call_records": [
+          {
+            "service": "llm",
+            "operation": "keyword_extraction",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 1528,
+            "result": {
+              "chars": 101
+            },
+            "target": null
+          },
+          {
+            "service": "embedding",
+            "operation": "openai_embed",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 176,
+            "result": {
+              "shape": [
+                1,
+                2560
+              ]
+            },
+            "target": null
+          },
+          {
+            "service": "qdrant",
+            "operation": "query_points",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 61,
+            "result": {
+              "points": 10
+            },
+            "target": "entities"
+          },
+          {
+            "service": "neo4j",
+            "operation": "session.run",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 24,
+            "result": null,
+            "target": null
+          },
+          {
+            "service": "neo4j",
+            "operation": "session.run",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 24,
+            "result": null,
+            "target": null
+          },
+          {
+            "service": "neo4j",
+            "operation": "session.run",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 7,
+            "result": null,
+            "target": null
+          },
+          {
+            "service": "neo4j",
+            "operation": "session.run",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 5,
+            "result": null,
+            "target": null
+          },
+          {
+            "service": "neo4j",
+            "operation": "session.run",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 8,
+            "result": null,
+            "target": null
+          },
+          {
+            "service": "embedding",
+            "operation": "openai_embed",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 178,
+            "result": {
+              "shape": [
+                1,
+                2560
+              ]
+            },
+            "target": null
+          },
+          {
+            "service": "qdrant",
+            "operation": "retrieve",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 59,
+            "result": {
+              "items": 56,
+              "requested": 56
+            },
+            "target": "chunks"
+          },
+          {
+            "service": "pg",
+            "operation": "readonly_select_chunks",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 5,
+            "result": {
+              "items": 25
+            },
+            "target": null
+          },
+          {
+            "service": "embedding",
+            "operation": "openai_embed",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 210,
+            "result": {
+              "shape": [
+                1,
+                2560
+              ]
+            },
+            "target": null
+          },
+          {
+            "service": "qdrant",
+            "operation": "retrieve",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 24,
+            "result": {
+              "items": 25,
+              "requested": 25
+            },
+            "target": "chunks"
+          },
+          {
+            "service": "pg",
+            "operation": "readonly_select_chunks",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 5,
+            "result": {
+              "items": 25
+            },
+            "target": null
+          },
+          {
+            "service": "pg",
+            "operation": "readonly_select_chunks",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 4,
+            "result": {
+              "items": 10
+            },
+            "target": null
+          }
+        ],
+        "service_calls": {
+          "embedding_requests": 3,
+          "llm_requests": 1,
+          "qdrant_queries": 3,
+          "neo4j_reads": 1,
+          "pg_readonly_queries": 3,
+          "by_service": {
+            "llm": {
+              "attempt": 1,
+              "success": 1,
+              "failure": 0
+            },
+            "embedding": {
+              "attempt": 3,
+              "success": 3,
+              "failure": 0
+            },
+            "qdrant": {
+              "attempt": 3,
+              "success": 3,
+              "failure": 0
+            },
+            "neo4j": {
+              "attempt": 5,
+              "success": 5,
+              "failure": 0
+            },
+            "pg": {
+              "attempt": 3,
+              "success": 3,
+              "failure": 0
+            }
+          },
+          "groups": {
+            "neo4j": {
+              "attempt": 1,
+              "success": 1,
+              "failure": 0
+            },
+            "pg": {
+              "attempt": 2,
+              "success": 2,
+              "failure": 0
+            }
+          }
+        },
+        "degraded": [],
+        "sorting_sources": {
+          "chunk_pick_vectors": {
+            "expected_chunks": 8,
+            "observer_bound": true,
+            "observed_calls": [
+              {
+                "stage": "entities",
+                "collection": "chunks",
+                "vectors_requested": 56,
+                "vectors_effective": 56,
+                "missing_total": 0,
+                "missing_sample": [],
+                "mismatched_total": 0,
+                "mismatched_sample": [],
+                "unusable_total": 0,
+                "unusable_sample": [],
+                "points_returned_raw": 56,
+                "retrieve_failed": false,
+                "complete": true
+              },
+              {
+                "stage": "relations",
+                "collection": "chunks",
+                "vectors_requested": 25,
+                "vectors_effective": 25,
+                "missing_total": 0,
+                "missing_sample": [],
+                "mismatched_total": 0,
+                "mismatched_sample": [],
+                "unusable_total": 0,
+                "unusable_sample": [],
+                "points_returned_raw": 25,
+                "retrieve_failed": false,
+                "complete": true
+              }
+            ],
+            "vectors_requested": 81,
+            "vectors_effective": 81,
+            "missing_total": 0,
+            "mismatched_total": 0,
+            "unusable_total": 0,
+            "points_returned_raw": 81,
+            "vector_backed": true
+          },
+          "chunk_pick": "vector-similarity"
+        },
+        "refused_candidates": []
+      },
+      "scope_selection": {
+        "candidates": 10,
+        "selected_docs": [
+          "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+        ],
+        "priority": [
+          {
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "rerank_rank_or_none": null
+          },
+          {
+            "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+            "rerank_rank_or_none": null
+          },
+          {
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "rerank_rank_or_none": null
+          }
+        ],
+        "target_confirmation": {
+          "request_branches": [
+            {
+              "code": "GB18466",
+              "version": "2005"
+            }
+          ],
+          "branch_source": "local parse of the question",
+          "identity_source": "catalog documents rows (self_code/self_code_version) read through the guarded workspace+catalog-snapshot connection",
+          "allowed": [
+            "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+          ],
+          "allowed_basis": {
+            "doc-68a03b50e1ba1ffc6a0116529f694fe1": "canonical GB18466-2005 matches requested branch GB18466-2005 (catalog documents row via the guarded workspace+snapshot)"
+          },
+          "rejected": [
+            {
+              "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+              "reason": "canonical identity GB8978-1996 matches no requested branch ['GB18466-2005']"
+            }
+          ],
+          "unresolved": [
+            {
+              "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+              "reason": "self_code unknown in the catalog — never guessed from a name; only the upstream-published, allowed-set-cross-checked attribution evidence may carry such a document"
+            }
+          ],
+          "unconfirmed_branches": [],
+          "rule": "discovery never defines the answer scope; a typed label or a replay-declared name is an audit clue, never canonical identity"
+        },
+        "basis": "confirmed canonical target identity defines the answer scope (improvement-2); discovery/top-k/rerank order never bound or promote membership — unconfirmed documents are excluded with recorded reasons and cannot enter the answer"
+      },
+      "flags": [
+        "no rerank replay for this query id — scope priority falls back to fusion path order, explicitly recorded (no fabricated scores)",
+        "discovery document doc-b45c510232ed4d2452b0f5b2a13434e4 excluded from the answer scope: canonical identity GB8978-1996 matches no requested branch ['GB18466-2005']",
+        "discovery document doc-9bb11e5d3809e590259aef28fb61062b identity unresolved: self_code unknown in the catalog — never guessed from a name; only the upstream-published, allowed-set-cross-checked attribution evidence may carry such a document",
+        "2 expansion record(s) from non-target candidate documents are recorded but cannot degrade the selected scope"
+      ],
+      "expansions": [
+        {
+          "kind": "prose",
+          "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "members_total": 3,
+          "members_processed": 3,
+          "coverage_status": "complete",
+          "warnings": []
+        },
+        {
+          "kind": "prose",
+          "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+          "members_total": 9,
+          "members_processed": 9,
+          "coverage_status": "complete",
+          "warnings": []
+        },
+        {
+          "kind": "prose",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "members_total": 5,
+          "members_processed": 5,
+          "coverage_status": "complete",
+          "warnings": []
+        }
+      ],
+      "reverification": {
+        "items_checked": 4,
+        "problems": [],
+        "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+      },
+      "ledgers": {
+        "r1/local/prose-enum-001:keyword_extraction": {
+          "llm/reserved": 1,
+          "llm/issued": 1
+        },
+        "r1/local/prose-enum-001:openai_embed": {
+          "embedding/reserved": 3,
+          "embedding/issued": 3
+        },
+        "r1/local/prose-enum-001:query_points": {
+          "qdrant/reserved": 1,
+          "qdrant/issued": 1
+        },
+        "r1/local/prose-enum-001:session.run": {
+          "neo4j/reserved": 5,
+          "neo4j/issued": 5
+        },
+        "r1/local/prose-enum-001:retrieve": {
+          "qdrant/reserved": 2,
+          "qdrant/issued": 2
+        },
+        "r1/local/prose-enum-001:readonly_select_chunks": {
+          "pg/reserved": 3,
+          "pg/issued": 3
+        },
+        "r1/local/prose-enum-001:pg": {
+          "pg/reserved": 140,
+          "pg/issued": 140
+        }
+      },
+      "gold_check": {
+        "expected_count": 4,
+        "published_count": 4
+      },
+      "items": [
+        {
+          "clause": "3.1",
+          "text_len": 68,
+          "citation_verified": true,
+          "citation_reverified": true,
+          "gold_body_contained": true
+        },
+        {
+          "clause": "3.2",
+          "text_len": 127,
+          "citation_verified": true,
+          "citation_reverified": true,
+          "gold_body_contained": true
+        },
+        {
+          "clause": "3.3",
+          "text_len": 46,
+          "citation_verified": true,
+          "citation_reverified": true,
+          "gold_body_contained": true
+        },
+        {
+          "clause": "3.4",
+          "text_len": 40,
+          "citation_verified": true,
+          "citation_reverified": true,
+          "gold_body_contained": true
+        }
+      ]
+    },
+    {
+      "query_id": "prose-enum-006",
+      "is_counter": false,
+      "status": "ok",
+      "coverage": "complete",
+      "model_calls_used": 0,
+      "answer_latency_ms": 6961,
+      "timings": {
+        "discovery_ms": 2805,
+        "total_ms": 9766
+      },
+      "fresh_discovery": {
+        "discovery_docs": [
+          "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+          "doc-4c883d21fa02a53189e0911c3d59d1d1",
+          "doc-d3d7d38fe9dc1348e57c1fa29b47f404",
+          "doc-69538e249043b7fb564980ccab13438e"
+        ],
+        "usable": 10,
+        "pg_search_id": "",
+        "targets_confirmed_layer": false,
+        "budget": {
+          "limit": 40,
+          "kept": 10,
+          "truncated": []
+        },
+        "path_provenance": {
+          "path": "local",
+          "discovery_only": true,
+          "note": "this layer performs discovery only; target identity is confirmed by the answer-layer canonical-code gate against catalog documents rows — not a 5.3 code resolution and never a corpus-wide verdict"
+        }
+      },
+      "receipts": {
+        "call_records": [
+          {
+            "service": "llm",
+            "operation": "keyword_extraction",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 2033,
+            "result": {
+              "chars": 101
+            },
+            "target": null
+          },
+          {
+            "service": "embedding",
+            "operation": "openai_embed",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 152,
+            "result": {
+              "shape": [
+                1,
+                2560
+              ]
+            },
+            "target": null
+          },
+          {
+            "service": "qdrant",
+            "operation": "query_points",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 66,
+            "result": {
+              "points": 10
+            },
+            "target": "entities"
+          },
+          {
+            "service": "neo4j",
+            "operation": "session.run",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 16,
+            "result": null,
+            "target": null
+          },
+          {
+            "service": "neo4j",
+            "operation": "session.run",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 18,
+            "result": null,
+            "target": null
+          },
+          {
+            "service": "neo4j",
+            "operation": "session.run",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 2,
+            "result": null,
+            "target": null
+          },
+          {
+            "service": "neo4j",
+            "operation": "session.run",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 3,
+            "result": null,
+            "target": null
+          },
+          {
+            "service": "neo4j",
+            "operation": "session.run",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 2,
+            "result": null,
+            "target": null
+          },
+          {
+            "service": "embedding",
+            "operation": "openai_embed",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 138,
+            "result": {
+              "shape": [
+                1,
+                2560
+              ]
+            },
+            "target": null
+          },
+          {
+            "service": "qdrant",
+            "operation": "retrieve",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 22,
+            "result": {
+              "items": 12,
+              "requested": 12
+            },
+            "target": "chunks"
+          },
+          {
+            "service": "pg",
+            "operation": "readonly_select_chunks",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 8,
+            "result": {
+              "items": 12
+            },
+            "target": null
+          },
+          {
+            "service": "pg",
+            "operation": "readonly_select_chunks",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 6,
+            "result": {
+              "items": 10
+            },
+            "target": null
+          }
+        ],
+        "service_calls": {
+          "embedding_requests": 2,
+          "llm_requests": 1,
+          "qdrant_queries": 2,
+          "neo4j_reads": 1,
+          "pg_readonly_queries": 2,
+          "by_service": {
+            "llm": {
+              "attempt": 1,
+              "success": 1,
+              "failure": 0
+            },
+            "embedding": {
+              "attempt": 2,
+              "success": 2,
+              "failure": 0
+            },
+            "qdrant": {
+              "attempt": 2,
+              "success": 2,
+              "failure": 0
+            },
+            "neo4j": {
+              "attempt": 5,
+              "success": 5,
+              "failure": 0
+            },
+            "pg": {
+              "attempt": 2,
+              "success": 2,
+              "failure": 0
+            }
+          },
+          "groups": {
+            "neo4j": {
+              "attempt": 1,
+              "success": 1,
+              "failure": 0
+            },
+            "pg": {
+              "attempt": 2,
+              "success": 2,
+              "failure": 0
+            }
+          }
+        },
+        "degraded": [],
+        "sorting_sources": {
+          "chunk_pick_vectors": {
+            "expected_chunks": 8,
+            "observer_bound": true,
+            "observed_calls": [
+              {
+                "stage": "entities",
+                "collection": "chunks",
+                "vectors_requested": 12,
+                "vectors_effective": 12,
+                "missing_total": 0,
+                "missing_sample": [],
+                "mismatched_total": 0,
+                "mismatched_sample": [],
+                "unusable_total": 0,
+                "unusable_sample": [],
+                "points_returned_raw": 12,
+                "retrieve_failed": false,
+                "complete": true
+              }
+            ],
+            "vectors_requested": 12,
+            "vectors_effective": 12,
+            "missing_total": 0,
+            "mismatched_total": 0,
+            "unusable_total": 0,
+            "points_returned_raw": 12,
+            "vector_backed": true
+          },
+          "chunk_pick": "vector-similarity"
+        },
+        "refused_candidates": []
+      },
+      "scope_selection": {
+        "candidates": 10,
+        "selected_docs": [
+          "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+        ],
+        "priority": [
+          {
+            "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+            "rerank_rank_or_none": null
+          },
+          {
+            "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+            "rerank_rank_or_none": null
+          },
+          {
+            "doc_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404",
+            "rerank_rank_or_none": null
+          },
+          {
+            "doc_id": "doc-69538e249043b7fb564980ccab13438e",
+            "rerank_rank_or_none": null
+          }
+        ],
+        "target_confirmation": {
+          "request_branches": [
+            {
+              "code": "GB3095",
+              "version": "2012"
+            }
+          ],
+          "branch_source": "local parse of the question",
+          "identity_source": "catalog documents rows (self_code/self_code_version) read through the guarded workspace+catalog-snapshot connection",
+          "allowed": [
+            "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+          ],
+          "allowed_basis": {
+            "doc-257d8cf3fdf90e76c31908c4f92fc1a1": "canonical GB3095-2012 matches requested branch GB3095-2012 (catalog documents row via the guarded workspace+snapshot)"
+          },
+          "rejected": [
+            {
+              "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+              "reason": "canonical identity GB3095-2026 matches no requested branch ['GB3095-2012']"
+            },
+            {
+              "doc_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404",
+              "reason": "canonical identity HJ2.2-2018 matches no requested branch ['GB3095-2012']"
+            }
+          ],
+          "unresolved": [
+            {
+              "doc_id": "doc-69538e249043b7fb564980ccab13438e",
+              "reason": "self_code unknown in the catalog — never guessed from a name; only the upstream-published, allowed-set-cross-checked attribution evidence may carry such a document"
+            }
+          ],
+          "unconfirmed_branches": [],
+          "rule": "discovery never defines the answer scope; a typed label or a replay-declared name is an audit clue, never canonical identity"
+        },
+        "basis": "confirmed canonical target identity defines the answer scope (improvement-2); discovery/top-k/rerank order never bound or promote membership — unconfirmed documents are excluded with recorded reasons and cannot enter the answer"
+      },
+      "flags": [
+        "no rerank replay for this query id — scope priority falls back to fusion path order, explicitly recorded (no fabricated scores)",
+        "discovery document doc-4c883d21fa02a53189e0911c3d59d1d1 excluded from the answer scope: canonical identity GB3095-2026 matches no requested branch ['GB3095-2012']",
+        "discovery document doc-d3d7d38fe9dc1348e57c1fa29b47f404 excluded from the answer scope: canonical identity HJ2.2-2018 matches no requested branch ['GB3095-2012']",
+        "discovery document doc-69538e249043b7fb564980ccab13438e identity unresolved: self_code unknown in the catalog — never guessed from a name; only the upstream-published, allowed-set-cross-checked attribution evidence may carry such a document",
+        "3 expansion record(s) from non-target candidate documents are recorded but cannot degrade the selected scope"
+      ],
+      "expansions": [
+        {
+          "kind": "prose",
+          "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+          "members_total": 1,
+          "members_processed": 1,
+          "coverage_status": "complete",
+          "warnings": []
+        },
+        {
+          "kind": "prose",
+          "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+          "members_total": 1,
+          "members_processed": 1,
+          "coverage_status": "complete",
+          "warnings": []
+        },
+        {
+          "kind": "prose",
+          "doc_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404",
+          "members_total": 1,
+          "members_processed": 1,
+          "coverage_status": "complete",
+          "warnings": []
+        },
+        {
+          "kind": "prose",
+          "doc_id": "doc-69538e249043b7fb564980ccab13438e",
+          "members_total": 6,
+          "members_processed": 6,
+          "coverage_status": "complete",
+          "warnings": []
+        }
+      ],
+      "reverification": {
+        "items_checked": 1,
+        "problems": [],
+        "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+      },
+      "ledgers": {
+        "r1/local/prose-enum-006:keyword_extraction": {
+          "llm/reserved": 1,
+          "llm/issued": 1
+        },
+        "r1/local/prose-enum-006:openai_embed": {
+          "embedding/reserved": 2,
+          "embedding/issued": 2
+        },
+        "r1/local/prose-enum-006:query_points": {
+          "qdrant/reserved": 1,
+          "qdrant/issued": 1
+        },
+        "r1/local/prose-enum-006:session.run": {
+          "neo4j/reserved": 5,
+          "neo4j/issued": 5
+        },
+        "r1/local/prose-enum-006:retrieve": {
+          "qdrant/reserved": 1,
+          "qdrant/issued": 1
+        },
+        "r1/local/prose-enum-006:readonly_select_chunks": {
+          "pg/reserved": 2,
+          "pg/issued": 2
+        },
+        "r1/local/prose-enum-006:pg": {
+          "pg/reserved": 145,
+          "pg/issued": 145
+        }
+      },
+      "gold_check": {
+        "expected_count": 1,
+        "published_count": 1
+      },
+      "items": [
+        {
+          "clause": "4.2",
+          "text_len": 48,
+          "citation_verified": true,
+          "citation_reverified": true,
+          "gold_body_contained": true
+        }
+      ]
+    },
+    {
+      "query_id": "neg-004",
+      "is_counter": true,
+      "status": "ok",
+      "coverage": "complete",
+      "model_calls_used": 0,
+      "answer_latency_ms": 3769,
+      "timings": {
+        "discovery_ms": 3679,
+        "total_ms": 7448
+      },
+      "fresh_discovery": {
+        "discovery_docs": [
+          "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "doc-b45c510232ed4d2452b0f5b2a13434e4"
+        ],
+        "usable": 10,
+        "pg_search_id": "",
+        "targets_confirmed_layer": false,
+        "budget": {
+          "limit": 40,
+          "kept": 10,
+          "truncated": []
+        },
+        "path_provenance": {
+          "path": "local",
+          "discovery_only": true,
+          "note": "this layer performs discovery only; target identity is confirmed by the answer-layer canonical-code gate against catalog documents rows — not a 5.3 code resolution and never a corpus-wide verdict"
+        }
+      },
+      "receipts": {
+        "call_records": [
+          {
+            "service": "llm",
+            "operation": "keyword_extraction",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 1622,
+            "result": {
+              "chars": 82
+            },
+            "target": null
+          },
+          {
+            "service": "embedding",
+            "operation": "openai_embed",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 141,
+            "result": {
+              "shape": [
+                1,
+                2560
+              ]
+            },
+            "target": null
+          },
+          {
+            "service": "qdrant",
+            "operation": "query_points",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 38,
+            "result": {
+              "points": 10
+            },
+            "target": "entities"
+          },
+          {
+            "service": "neo4j",
+            "operation": "session.run",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 20,
+            "result": null,
+            "target": null
+          },
+          {
+            "service": "neo4j",
+            "operation": "session.run",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 20,
+            "result": null,
+            "target": null
+          },
+          {
+            "service": "neo4j",
+            "operation": "session.run",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 2,
+            "result": null,
+            "target": null
+          },
+          {
+            "service": "neo4j",
+            "operation": "session.run",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 3,
+            "result": null,
+            "target": null
+          },
+          {
+            "service": "neo4j",
+            "operation": "session.run",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 4,
+            "result": null,
+            "target": null
+          },
+          {
+            "service": "embedding",
+            "operation": "openai_embed",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 160,
+            "result": {
+              "shape": [
+                1,
+                2560
+              ]
+            },
+            "target": null
+          },
+          {
+            "service": "qdrant",
+            "operation": "retrieve",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 47,
+            "result": {
+              "items": 46,
+              "requested": 46
+            },
+            "target": "chunks"
+          },
+          {
+            "service": "pg",
+            "operation": "readonly_select_chunks",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 6,
+            "result": {
+              "items": 25
+            },
+            "target": null
+          },
+          {
+            "service": "embedding",
+            "operation": "openai_embed",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 899,
+            "result": {
+              "shape": [
+                1,
+                2560
+              ]
+            },
+            "target": null
+          },
+          {
+            "service": "qdrant",
+            "operation": "retrieve",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 25,
+            "result": {
+              "items": 17,
+              "requested": 17
+            },
+            "target": "chunks"
+          },
+          {
+            "service": "pg",
+            "operation": "readonly_select_chunks",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 6,
+            "result": {
+              "items": 17
+            },
+            "target": null
+          },
+          {
+            "service": "pg",
+            "operation": "readonly_select_chunks",
+            "status": "success",
+            "error": null,
+            "elapsed_ms": 4,
+            "result": {
+              "items": 10
+            },
+            "target": null
+          }
+        ],
+        "service_calls": {
+          "embedding_requests": 3,
+          "llm_requests": 1,
+          "qdrant_queries": 3,
+          "neo4j_reads": 1,
+          "pg_readonly_queries": 3,
+          "by_service": {
+            "llm": {
+              "attempt": 1,
+              "success": 1,
+              "failure": 0
+            },
+            "embedding": {
+              "attempt": 3,
+              "success": 3,
+              "failure": 0
+            },
+            "qdrant": {
+              "attempt": 3,
+              "success": 3,
+              "failure": 0
+            },
+            "neo4j": {
+              "attempt": 5,
+              "success": 5,
+              "failure": 0
+            },
+            "pg": {
+              "attempt": 3,
+              "success": 3,
+              "failure": 0
+            }
+          },
+          "groups": {
+            "neo4j": {
+              "attempt": 1,
+              "success": 1,
+              "failure": 0
+            },
+            "pg": {
+              "attempt": 2,
+              "success": 2,
+              "failure": 0
+            }
+          }
+        },
+        "degraded": [],
+        "sorting_sources": {
+          "chunk_pick_vectors": {
+            "expected_chunks": 10,
+            "observer_bound": true,
+            "observed_calls": [
+              {
+                "stage": "entities",
+                "collection": "chunks",
+                "vectors_requested": 46,
+                "vectors_effective": 46,
+                "missing_total": 0,
+                "missing_sample": [],
+                "mismatched_total": 0,
+                "mismatched_sample": [],
+                "unusable_total": 0,
+                "unusable_sample": [],
+                "points_returned_raw": 46,
+                "retrieve_failed": false,
+                "complete": true
+              },
+              {
+                "stage": "relations",
+                "collection": "chunks",
+                "vectors_requested": 17,
+                "vectors_effective": 17,
+                "missing_total": 0,
+                "missing_sample": [],
+                "mismatched_total": 0,
+                "mismatched_sample": [],
+                "unusable_total": 0,
+                "unusable_sample": [],
+                "points_returned_raw": 17,
+                "retrieve_failed": false,
+                "complete": true
+              }
+            ],
+            "vectors_requested": 63,
+            "vectors_effective": 63,
+            "missing_total": 0,
+            "mismatched_total": 0,
+            "unusable_total": 0,
+            "points_returned_raw": 63,
+            "vector_backed": true
+          },
+          "chunk_pick": "vector-similarity"
+        },
+        "refused_candidates": []
+      },
+      "scope_selection": {
+        "candidates": 10,
+        "selected_docs": [
+          "doc-b45c510232ed4d2452b0f5b2a13434e4"
+        ],
+        "priority": [
+          {
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "rerank_rank_or_none": null
+          },
+          {
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "rerank_rank_or_none": null
+          }
+        ],
+        "target_confirmation": {
+          "request_branches": [
+            {
+              "code": "GB8978",
+              "version": "1996"
+            }
+          ],
+          "branch_source": "local parse of the question",
+          "identity_source": "catalog documents rows (self_code/self_code_version) read through the guarded workspace+catalog-snapshot connection",
+          "allowed": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4"
+          ],
+          "allowed_basis": {
+            "doc-b45c510232ed4d2452b0f5b2a13434e4": "canonical GB8978-1996 matches requested branch GB8978-1996 (catalog documents row via the guarded workspace+snapshot)"
+          },
+          "rejected": [
+            {
+              "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+              "reason": "canonical identity GB18466-2005 matches no requested branch ['GB8978-1996']"
+            }
+          ],
+          "unresolved": [],
+          "unconfirmed_branches": [],
+          "rule": "discovery never defines the answer scope; a typed label or a replay-declared name is an audit clue, never canonical identity"
+        },
+        "basis": "confirmed canonical target identity defines the answer scope (improvement-2); discovery/top-k/rerank order never bound or promote membership — unconfirmed documents are excluded with recorded reasons and cannot enter the answer"
+      },
+      "flags": [
+        "no rerank replay for this query id — scope priority falls back to fusion path order, explicitly recorded (no fabricated scores)",
+        "discovery document doc-68a03b50e1ba1ffc6a0116529f694fe1 excluded from the answer scope: canonical identity GB18466-2005 matches no requested branch ['GB8978-1996']",
+        "1 expansion record(s) from non-target candidate documents are recorded but cannot degrade the selected scope"
+      ],
+      "expansions": [
+        {
+          "kind": "table",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "table_number": "1",
+          "members_total": 2,
+          "members_processed": 2,
+          "coverage_status": "complete",
+          "warnings": [
+            "table_structure: header=[[\"序号\", \"污染物\", \"最高允许排放浓度\"]]; units=[]; footnotes=[]"
+          ]
+        },
+        {
+          "kind": "table",
+          "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "table_number": "1",
+          "members_total": 1,
+          "members_processed": 1,
+          "coverage_status": "complete",
+          "warnings": [
+            "table_structure: header=[[\"序号\", \"控制项目\", \"标准值\"]]; units=[]; footnotes=[\"注:1)采用含氯消毒剂消毒的工艺控制要求为:消毒接触池的接触时间≥1.5h,接触池出口总余氯6.5~10mg/L。2)采用其他消毒剂对总余氯不做要求。 注:1)采用含氯消毒剂消毒的工艺控制要求为:消毒接触池的接触时间≥1.5h,接触池出口总余氯6.5~10mg/L。2)采用其他消毒剂对总余氯不做要求。 注:1)采用含氯消毒剂消毒的工艺控制要求为:消毒接触池的接触时间≥1.5h,接触池出口总余氯6.5~10mg/L。2)采用其他消毒剂对总余氯不做要求。\"]"
+          ]
+        }
+      ],
+      "reverification": {
+        "items_checked": 13,
+        "problems": [],
+        "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+      },
+      "ledgers": {
+        "r1/local/neg-004:keyword_extraction": {
+          "llm/reserved": 1,
+          "llm/issued": 1
+        },
+        "r1/local/neg-004:openai_embed": {
+          "embedding/reserved": 3,
+          "embedding/issued": 3
+        },
+        "r1/local/neg-004:query_points": {
+          "qdrant/reserved": 1,
+          "qdrant/issued": 1
+        },
+        "r1/local/neg-004:session.run": {
+          "neo4j/reserved": 5,
+          "neo4j/issued": 5
+        },
+        "r1/local/neg-004:retrieve": {
+          "qdrant/reserved": 2,
+          "qdrant/issued": 2
+        },
+        "r1/local/neg-004:readonly_select_chunks": {
+          "pg/reserved": 3,
+          "pg/issued": 3
+        },
+        "r1/local/neg-004:pg": {
+          "pg/reserved": 66,
+          "pg/issued": 66
+        }
+      },
+      "counter_contract": {
+        "counter_id": "neg-004",
+        "type": "fragmented_table_merge",
+        "question": "GB 8978-1996 表 1 共有几项？",
+        "expected_behavior": "必须合并两物理片（13 项）；只给 5/10 项并 complete 属失败",
+        "expected_status": "complete",
+        "review_status": "expectation_reviewed"
+      },
+      "gold_check": {
+        "rows_delivered": 13,
+        "raw_rows_processed": 3,
+        "all_rows_doc_b45c": true,
+        "seqs": [
+          "1",
+          "10",
+          "11",
+          "12",
+          "13",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "all_reread": true
+      }
+    }
+  ],
+  "cold_generation_contract": "no old runtime answers read; every answer uses the context/messages of THIS round's own generation",
+  "budget_coverage_declaration": {
+    "enforced_pre_request": {
+      "service_boundary": "every ServiceBoundary.call (embedding/llm/pg groups, including local_adapter readonly_select_chunks); embedding batch texts/chars caps judged on the ACTUAL positional-or-keyword shape",
+      "qdrant_native_wrapper": "query_points/retrieve via BudgetedQdrantClient — reserve before the native call, issued only when it is entered",
+      "neo4j_native_wrapper": "BOTH driver.session().run(...) and the async-with entered session run through _BudgetedNeo4jSession (one gate + one issued mark per real run; __aenter__/__aexit__ and close ownership delegate unchanged)",
+      "pg_data_sql": "fetch/fetchrow/fetchval on the explicit AND on every self-made connection (asyncpg.connect is scoped-patched per leg: answer's own connection, SourceAdapter read-back, fusion/rerank guard reads, local_adapter provenance reads)",
+      "rerank_and_answer_model": "reserved before the accepted entries run; issuance reconciled ONLY from the entries' real HTTP receipts — answer_llm from model_calls_used (runtime included on the exception path), rerank from the call receipt of THIS question's result entry or failure_service_records whose query_id IS this question (a foreign question's in-flight call never counts; the mere existence of some failure never proves this question stopped before HTTP; only a named pre-flight/identity guard stage is an explicit before-http zero; otherwise unknown) — executed 401/timeout counts, skip/refusal 0, unknown is explicit and unbilled; the three-state status is published onto the leg record and terminal even when the leg raises"
+    },
+    "not_billed": [
+      "connection establishment and close (readonly/timeout/server_settings pass through to the owning code path)",
+      "transaction control: BEGIN/COMMIT via conn.transaction and SET LOCAL via conn.execute — audited to carry no data SQL in the read-only evaluation paths",
+      "run-level pre/post identity capture (guard reads outside per-question envelopes)",
+      "native client methods not recorded by the accepted wrappers (identical coverage to the accepted recording contract — declared, not hidden)"
+    ],
+    "artifact_counts_note": "per-leg pg numbers are envelope usage on the WRAPPED seams (local_adapter._fetch is deliberately double-accounted: group reservation AND statement gate — conservative over-accounting, never under); they are NOT a claim of exhaustive coverage of every historical PG read"
+  }
+}

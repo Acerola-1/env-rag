@@ -1,0 +1,67 @@
+{
+ "generation": "phase-4-improvement-3-diagnosis",
+ "files_scanned": 14,
+ "scanned": [
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3-diagnosis/diagnose_file_enum_offline.py",
+   "sha256": "854cbbb6bdfc64ad3c88e5c9f96f53b3c37c4c381a9b7895c6026740b5273493"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3-diagnosis/diagnosis-replay.json",
+   "sha256": "bd90e53e90e8c9467d13d97dd5d1816cdcd85260ddf60331fd96904dd9536fd4"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3-diagnosis/diagnosis.md",
+   "sha256": "f9c298b66468eda39c1e61e230b9d8832f2c3f17d226ccd5b6751ccf6c06429c"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3-diagnosis/protected-recheck.json",
+   "sha256": "397106fc0c8932e24a421296108fcc4707182c8ff62185a00726e5df17f2fe95"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3-diagnosis/pytest-frozen-spotcheck.txt",
+   "sha256": "dde9bb2593bb0aa1f715a934801509e4e7d8fd5e6c7aec264f1a529e59817831"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3-diagnosis/replays/file-enum-001-local/answer-runtime-latest.json",
+   "sha256": "4d71e2b95fe3eb612672371451eb02ce6e6d4c32fc53ecab3a0a2f0ec96adb50"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3-diagnosis/replays/file-enum-002-local-pagesize2/answer-runtime-latest.json",
+   "sha256": "841caad10363ed8f36face81ee8b4bafdb57ece0cfb17cea7726672bb97b4bc3"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3-diagnosis/replays/file-enum-002-local/answer-runtime-latest.json",
+   "sha256": "abbee97a7498434427bfed162d35cc836b84c259294f2a7ef4d330523ea2599c"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3-diagnosis/replays/file-enum-005-local-searchid-variant/answer-runtime-latest.json",
+   "sha256": "30ad46768416c7ac239437458f998a4fe0477fe9d260436a802b1966e955dcee"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3-diagnosis/replays/file-enum-005-local/answer-runtime-latest.json",
+   "sha256": "464f3f36b1b6b3defd8a5bc7441232f40679e56c71947e0534fc61a4058ec9fd"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3-diagnosis/replays/file-enum-005-pg/answer-runtime-latest.json",
+   "sha256": "d86c0ff85ebaa3a3258ca53e439f22a4d06c7782611eda520e38460acb5a69e2"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-3-diagnosis/sha-baseline.json",
+   "sha256": "0c77305b3f716014dc3c0cad59d3f26449721a3292e3c41eee952c1ddf9eff80"
+  },
+  {
+   "path": "src/env_rag_final/answer.py",
+   "sha256": "14c9673b2b07a41d83b32c747d048a572f8d8795ecc6892d9df59c30e6100968"
+  },
+  {
+   "path": "src/env_rag_final/evaluation.py",
+   "sha256": "a42d5c68952e40627a395f023650eae89f59a0527ac0208f45c90ea0f8dd7529"
+  }
+ ],
+ "raw_hits": [],
+ "hits_review": [],
+ "residual_credentials": [],
+ "env_file_read": false,
+ "note": "值形态模式；命中逐条定性为代码配置键名/公开 doc_id/冻结校验值，真实凭证 0"
+}

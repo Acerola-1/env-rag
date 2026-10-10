@@ -1,0 +1,426 @@
+{
+  "date": "2026-10-07",
+  "task": "5.2",
+  "review_round": 5,
+  "accepted": true,
+  "next_task_only": "5.3",
+  "pending_tasks": [
+    "5.3",
+    "5.4",
+    "5.5",
+    "5.6"
+  ],
+  "5_1_remains_accepted": true,
+  "gate2_remains_accepted": true,
+  "gate3_accepted": false,
+  "tests": {
+    "full_passed": 255,
+    "failed": 0,
+    "V1_three_passed": true,
+    "four_acceptance_files_sha_unchanged": {
+      "tests/test_local_adapter_review.py": true,
+      "tests/test_local_adapter_review_r2.py": true,
+      "tests/test_local_adapter_review_r3.py": true,
+      "tests/test_local_adapter_review_r4.py": true
+    },
+    "original_assertions_modified": false
+  },
+  "submitted_sha_matches": {
+    "src/env_rag_final/local_adapter.py": true,
+    "src/env_rag_final/cli.py": true,
+    "tests/test_local_adapter_review_r4.py": true,
+    "reports/pg-retrieval/phase-3-local-r5/local-runtime-latest.json": true,
+    "reports/pg-retrieval/gate-2/review-r5/gold-approved.json": true
+  },
+  "wheel": {
+    "version": "1.5.7",
+    "python_checked": 172,
+    "mismatches": []
+  },
+  "5_1_implementation_sha_unchanged": true,
+  "formal_cli": {
+    "query_id": "fact-002",
+    "exit_code": 0,
+    "finished_at": "2026-10-07T02:18:39+0800",
+    "candidate_source_verified": 10,
+    "target_doc_hits_observation": 9,
+    "vector_coverage": {
+      "expected_chunks": 7,
+      "observer_bound": true,
+      "observed_calls": [
+        {
+          "stage": "entities",
+          "collection": "chunks",
+          "vectors_requested": 28,
+          "vectors_effective": 28,
+          "missing_total": 0,
+          "missing_sample": [],
+          "mismatched_total": 0,
+          "mismatched_sample": [],
+          "unusable_total": 0,
+          "unusable_sample": [],
+          "points_returned_raw": 28,
+          "retrieve_failed": false,
+          "complete": true
+        },
+        {
+          "stage": "relations",
+          "collection": "chunks",
+          "vectors_requested": 2,
+          "vectors_effective": 2,
+          "missing_total": 0,
+          "missing_sample": [],
+          "mismatched_total": 0,
+          "mismatched_sample": [],
+          "unusable_total": 0,
+          "unusable_sample": [],
+          "points_returned_raw": 2,
+          "retrieve_failed": false,
+          "complete": true
+        }
+      ],
+      "vectors_requested": 30,
+      "vectors_effective": 30,
+      "missing_total": 0,
+      "mismatched_total": 0,
+      "unusable_total": 0,
+      "points_returned_raw": 30,
+      "vector_backed": true
+    },
+    "service_calls": {
+      "embedding_requests": 3,
+      "llm_requests": 1,
+      "qdrant_queries": 3,
+      "neo4j_reads": 1,
+      "pg_readonly_queries": 3,
+      "by_service": {
+        "llm": {
+          "attempt": 1,
+          "success": 1,
+          "failure": 0
+        },
+        "embedding": {
+          "attempt": 3,
+          "success": 3,
+          "failure": 0
+        },
+        "qdrant": {
+          "attempt": 3,
+          "success": 3,
+          "failure": 0
+        },
+        "neo4j": {
+          "attempt": 5,
+          "success": 5,
+          "failure": 0
+        },
+        "pg": {
+          "attempt": 3,
+          "success": 3,
+          "failure": 0
+        }
+      },
+      "groups": {
+        "neo4j": {
+          "attempt": 1,
+          "success": 1,
+          "failure": 0
+        },
+        "pg": {
+          "attempt": 2,
+          "success": 2,
+          "failure": 0
+        }
+      }
+    },
+    "degraded": [],
+    "errors": [],
+    "identity_before": {
+      "matches_frozen": true,
+      "problems": [],
+      "counts": {
+        "lightrag_doc_full": 221,
+        "lightrag_doc_chunks": 5709,
+        "lightrag_doc_status": 279,
+        "lightrag_llm_cache": 16514,
+        "lightrag_entity_chunks": 65527,
+        "lightrag_full_entities": 221,
+        "lightrag_full_relations": 221,
+        "lightrag_relation_chunks": 119575
+      },
+      "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "catalog_active": {
+        "run_id": "c15c741742394320",
+        "snapshot_id": "4919b3938ad93747"
+      },
+      "search_active": "872d689343a9cbb6",
+      "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+      "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+    },
+    "identity_after": {
+      "matches_frozen": true,
+      "problems": [],
+      "counts": {
+        "lightrag_doc_full": 221,
+        "lightrag_doc_chunks": 5709,
+        "lightrag_doc_status": 279,
+        "lightrag_llm_cache": 16514,
+        "lightrag_entity_chunks": 65527,
+        "lightrag_full_entities": 221,
+        "lightrag_full_relations": 221,
+        "lightrag_relation_chunks": 119575
+      },
+      "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "catalog_active": {
+        "run_id": "c15c741742394320",
+        "snapshot_id": "4919b3938ad93747"
+      },
+      "search_active": "872d689343a9cbb6",
+      "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+      "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+    },
+    "identity_drift": []
+  },
+  "independent_pg_reread": {
+    "verified": 10,
+    "all_verified": true
+  },
+  "actual_service_calls_by_reviewer": {
+    "llm": {
+      "attempt": 1,
+      "success": 1,
+      "failure": 0
+    },
+    "embedding": {
+      "attempt": 3,
+      "success": 3,
+      "failure": 0
+    },
+    "qdrant": {
+      "attempt": 3,
+      "success": 3,
+      "failure": 0
+    },
+    "neo4j": {
+      "attempt": 5,
+      "success": 5,
+      "failure": 0
+    },
+    "pg": {
+      "attempt": 3,
+      "success": 3,
+      "failure": 0
+    }
+  },
+  "answer_llm_calls": 0,
+  "hashing_kv": null,
+  "production_writes_by_reviewer": 0,
+  "source_and_backend_readonly_inventory": {
+    "identity_before_after_equal": true,
+    "frozen_problems": [],
+    "current_identity": {
+      "when": "after",
+      "public_counts": {
+        "lightrag_doc_full": 221,
+        "lightrag_doc_chunks": 5709,
+        "lightrag_doc_status": 279,
+        "lightrag_llm_cache": 16514,
+        "lightrag_entity_chunks": 65527,
+        "lightrag_full_entities": 221,
+        "lightrag_full_relations": 221,
+        "lightrag_relation_chunks": 119575
+      },
+      "catalog_active": {
+        "run_id": "c15c741742394320",
+        "snapshot_id": "4919b3938ad93747"
+      },
+      "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "search_active": "872d689343a9cbb6",
+      "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+      "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+    },
+    "qdrant": {
+      "lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d": {
+        "points_count": 5709,
+        "vectors": {
+          "size": 2560,
+          "distance": "Cosine",
+          "hnsw_config": null,
+          "quantization_config": null,
+          "on_disk": null,
+          "memory": null,
+          "datatype": null,
+          "multivector_config": null
+        },
+        "payload_schema": {
+          "workspace_id": {
+            "data_type": "keyword",
+            "params": {
+              "type": "keyword",
+              "is_tenant": true,
+              "on_disk": null,
+              "memory": null,
+              "enable_hnsw": null,
+              "prefix": null
+            },
+            "points": 5709
+          }
+        }
+      },
+      "lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d": {
+        "points_count": 65526,
+        "vectors": {
+          "size": 2560,
+          "distance": "Cosine",
+          "hnsw_config": null,
+          "quantization_config": null,
+          "on_disk": null,
+          "memory": null,
+          "datatype": null,
+          "multivector_config": null
+        },
+        "payload_schema": {
+          "workspace_id": {
+            "data_type": "keyword",
+            "params": {
+              "type": "keyword",
+              "is_tenant": true,
+              "on_disk": null,
+              "memory": null,
+              "enable_hnsw": null,
+              "prefix": null
+            },
+            "points": 65526
+          }
+        }
+      },
+      "lightrag_vdb_relationships_qwen_qwen3_embedding_4b_2560d": {
+        "points_count": 119574,
+        "vectors": {
+          "size": 2560,
+          "distance": "Cosine",
+          "hnsw_config": null,
+          "quantization_config": null,
+          "on_disk": null,
+          "memory": null,
+          "datatype": null,
+          "multivector_config": null
+        },
+        "payload_schema": {
+          "workspace_id": {
+            "data_type": "keyword",
+            "params": {
+              "type": "keyword",
+              "is_tenant": true,
+              "on_disk": null,
+              "memory": null,
+              "enable_hnsw": null,
+              "prefix": null
+            },
+            "points": 119574
+          }
+        }
+      }
+    },
+    "neo4j": {
+      "nodes": 66069,
+      "relationships": 121819,
+      "indexes": [
+        {
+          "name": "entity_id_fulltext_idx_base",
+          "state": "ONLINE",
+          "type": "FULLTEXT",
+          "labelsOrTypes": [
+            "base"
+          ],
+          "properties": [
+            "entity_id"
+          ]
+        },
+        {
+          "name": "entity_id_fulltext_idx_default",
+          "state": "ONLINE",
+          "type": "FULLTEXT",
+          "labelsOrTypes": [
+            "default"
+          ],
+          "properties": [
+            "entity_id"
+          ]
+        },
+        {
+          "name": "index_343aff4e",
+          "state": "ONLINE",
+          "type": "LOOKUP",
+          "labelsOrTypes": null,
+          "properties": null
+        },
+        {
+          "name": "index_599f5995",
+          "state": "ONLINE",
+          "type": "RANGE",
+          "labelsOrTypes": [
+            "default"
+          ],
+          "properties": [
+            "entity_id"
+          ]
+        },
+        {
+          "name": "index_f5e5c6f5",
+          "state": "ONLINE",
+          "type": "RANGE",
+          "labelsOrTypes": [
+            "base"
+          ],
+          "properties": [
+            "entity_id"
+          ]
+        },
+        {
+          "name": "index_f7700477",
+          "state": "ONLINE",
+          "type": "LOOKUP",
+          "labelsOrTypes": null,
+          "properties": null
+        }
+      ]
+    }
+  },
+  "quality_metrics_approved": false,
+  "scope": {
+    "total_files": 704,
+    "reviewed_files": 9,
+    "skipped_files": 695,
+    "coverage_rate": 0.01278409090909091
+  },
+  "checks": {
+    "ruff": true,
+    "format": true,
+    "openspec_strict": true,
+    "diff": true,
+    "credential_scan_files": 19,
+    "credential_leaks": []
+  },
+  "implementation_modified_by_reviewer": false,
+  "artifact_sha256": {
+    "reports/pg-retrieval/phase-3-local-review-r5/coverage.json": "103c0cf78c150625b3f84a199c2562e7c9d4cadc4e78efb6ebf40420ce3093e3",
+    "reports/pg-retrieval/phase-3-local-review-r5/diff-check.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/pg-retrieval/phase-3-local-review-r5/findings.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "reports/pg-retrieval/phase-3-local-review-r5/formal-cli/local-candidates-latest.jsonl": "a09722c7759149f58d077cffe66671fe3808e82c576b1c617215542330140b04",
+    "reports/pg-retrieval/phase-3-local-review-r5/formal-cli/local-runtime-20261007T021839.json": "66a939939d6b76468c7b163f641c8b6a7d0e968a724e8e7f5cf2aece05dac2e8",
+    "reports/pg-retrieval/phase-3-local-review-r5/formal-cli/local-runtime-latest.json": "66a939939d6b76468c7b163f641c8b6a7d0e968a724e8e7f5cf2aece05dac2e8",
+    "reports/pg-retrieval/phase-3-local-review-r5/formal-cli-output.txt": "1f31ef6fd10cd9e45245f92039c8be9801cd2fdb6c2a76eef03f0835771e40d4",
+    "reports/pg-retrieval/phase-3-local-review-r5/live-inventory.json": "e4b5832878915f51b1dcf469ba91e70831fc27dcba148f3fa84b5115ea7d0596",
+    "reports/pg-retrieval/phase-3-local-review-r5/live-inventory.py": "424f0aa91045eaae59fc16cd911bdfc6ef771f7288fdc842c29842f2e27be75a",
+    "reports/pg-retrieval/phase-3-local-review-r5/ocr-preview.json": "de5c5670a2c442924182c2d9ce6551d36bc681f33287a09c5cd5f415cc730987",
+    "reports/pg-retrieval/phase-3-local-review-r5/ocr-rules.json": "d5d2295fee5d2d4b8640cde739d37c883c2dd6d320b8dbf69d51ae56bb4e1a10",
+    "reports/pg-retrieval/phase-3-local-review-r5/openspec-check.txt": "4693ceda9e27e58fa59b2c9dbba2ff1cf729bd8067915263151894179518ba7c",
+    "reports/pg-retrieval/phase-3-local-review-r5/review.md": "0b47e3536cf0f1db33dc0a3801e7df64ba6dba6dbe1f5582840237bbeea45892",
+    "reports/pg-retrieval/phase-3-local-review-r5/ruff-check.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "reports/pg-retrieval/phase-3-local-review-r5/ruff-format.txt": "4497e5275a08a84c75f3df7854a1eab367a01605e2beab30b621a77d8b6e9578",
+    "reports/pg-retrieval/phase-3-local-review-r5/source-reread.json": "c34f8102ce565f91fc719c95d6bb4b8022d168abee9e9e9c0b667839b885fdb8",
+    "reports/pg-retrieval/phase-3-local-review-r5/static-evidence.json": "25f1a2a611d047be925448cacef64c2d292e54834e8d60be8f541848734af1e4",
+    "reports/pg-retrieval/phase-3-local-review-r5/submitted-tests.txt": "ac2aa7b32ef5f4b10ce3defe824ae40ad2317c054abe40e60da04f152fb9041c"
+  }
+}

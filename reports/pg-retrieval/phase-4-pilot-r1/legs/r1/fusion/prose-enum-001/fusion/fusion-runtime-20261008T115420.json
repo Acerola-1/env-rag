@@ -1,0 +1,46 @@
+{
+ "task": "5.3 two-path candidate fusion (read-only, guarded)",
+ "started_at": "2026-10-08T11:54:19+0800",
+ "pg_only_switch": false,
+ "frozen_contract": {
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8"
+ },
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after_error": "BudgetExhausted: budget refused pg x1 at r1/fusion/prose-enum-001:pg: per-question envelope 24 reached (24) (zero calls issued)",
+ "results": [],
+ "failure_service_records": {
+  "query_id": "prose-enum-001",
+  "call_records": [],
+  "group_records": [],
+  "by_service": {},
+  "groups": {},
+  "note": "the failing query's local stage had not completed; zero local calls belong to this query (previous queries' ledgers stay on their own results)",
+  "partial_stage": "pg-discovery"
+ },
+ "failure": {
+  "stage": "fuse",
+  "detail": "BudgetExhausted: budget refused pg x1 at r1/fusion/prose-enum-001:pg: per-question envelope 24 reached (24) (zero calls issued)"
+ }
+}

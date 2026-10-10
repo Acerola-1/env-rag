@@ -1,0 +1,636 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-08T22:27:32+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "table-enum-001"
+ ],
+ "gold_sha_verified": "gold-sha",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "reports/pg-retrieval/phase-4-round-1/inputs/local/table-enum-001-rerank.json",
+   "sha256": "4464a151238c7f3cc4cb518b25cc3bfd098ce8535c77e798178d226484d5beb1",
+   "task": null,
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": []
+  },
+  "fused_report": {
+   "path": "reports/pg-retrieval/phase-4-round-1/inputs/local/table-enum-001-fusion.json",
+   "sha256": "f7725cd619d99e20e6274172aca15033dd93181b907fe9d524dca3c75353088c",
+   "task": "Phase 4 round 1 evaluation input (path=local)",
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": [
+    "table-enum-001"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "model_calls_used": 0,
+ "results": [
+  {
+   "query_id": "table-enum-001",
+   "query": "GB 8978-1996 表 1（第一类污染物）共列出哪些污染物及其限值？逐行列出。",
+   "category": "table_enum",
+   "workspace": "default",
+   "coverage_status": "complete",
+   "fail_stage": "",
+   "flags": [
+    "no rerank replay for this query id — scope priority falls back to fusion path order, explicitly recorded (no fabricated scores)"
+   ],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "absent",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 0,
+    "typed_targets": [
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "discovery": "local"
+     }
+    ],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 10,
+    "selected_docs": [
+     "doc-b45c510232ed4d2452b0f5b2a13434e4"
+    ],
+    "priority": [
+     {
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "rerank_rank_or_none": null
+     }
+    ],
+    "target_confirmation": {
+     "request_branches": [
+      {
+       "code": "GB8978",
+       "version": "1996"
+      }
+     ],
+     "identity_source": "catalog documents rows (self_code/self_code_version) read through the guarded workspace+catalog-snapshot connection",
+     "allowed": [
+      "doc-b45c510232ed4d2452b0f5b2a13434e4"
+     ],
+     "allowed_basis": {
+      "doc-b45c510232ed4d2452b0f5b2a13434e4": "canonical GB8978-1996 matches requested branch GB8978-1996 (catalog documents row via the guarded workspace+snapshot)"
+     },
+     "rejected": [],
+     "unresolved": [],
+     "unconfirmed_branches": [],
+     "rule": "discovery never defines the answer scope; a typed label or a replay-declared name is an audit clue, never canonical identity"
+    },
+    "basis": "confirmed canonical target identity defines the answer scope (improvement-2); discovery/top-k/rerank order never bound or promote membership — unconfirmed documents are excluded with recorded reasons and cannot enter the answer"
+   },
+   "expansions": [
+    {
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "kind": "table",
+     "table_number": "1",
+     "scope_ids": [
+      "tb-b45c510232ed4d2452b0f5b2a13434e4-0001"
+     ],
+     "members_total": 2,
+     "members_processed": 2,
+     "coverage_status": "complete",
+     "fail_stage": "",
+     "items_count": 13,
+     "warnings": [
+      "table_structure: header=[[\"序号\", \"污染物\", \"最高允许排放浓度\"]]; units=[]; footnotes=[]"
+     ],
+     "selected": true
+    }
+   ],
+   "answer": {
+    "mode": "deterministic",
+    "generated_by": "enumerate/expand entries",
+    "items": [
+     {
+      "kind": "table_row",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_number": "1",
+      "seq": "1",
+      "cells": [
+       "1",
+       "总汞",
+       "0.05"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物",
+        "最高允许排放浓度"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 1,
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+       "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+       "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+       "chunk_ids": []
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 第一类污染物最高允许排放浓度"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_number": "1",
+      "seq": "2",
+      "cells": [
+       "2",
+       "烷基汞",
+       "不得检出"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物",
+        "最高允许排放浓度"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 2,
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+       "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+       "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+       "chunk_ids": []
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 第一类污染物最高允许排放浓度"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_number": "1",
+      "seq": "3",
+      "cells": [
+       "3",
+       "总镉",
+       "0.1"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物",
+        "最高允许排放浓度"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 3,
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+       "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+       "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+       "chunk_ids": []
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 第一类污染物最高允许排放浓度"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_number": "1",
+      "seq": "4",
+      "cells": [
+       "4",
+       "总铬",
+       "1.5"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物",
+        "最高允许排放浓度"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 4,
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+       "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+       "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+       "chunk_ids": []
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 第一类污染物最高允许排放浓度"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_number": "1",
+      "seq": "5",
+      "cells": [
+       "5",
+       "六价铬",
+       "0.5"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物",
+        "最高允许排放浓度"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 1,
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+       "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "chunk_ids": []
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1(完)"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_number": "1",
+      "seq": "6",
+      "cells": [
+       "6",
+       "总砷",
+       "0.5"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物",
+        "最高允许排放浓度"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 2,
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+       "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "chunk_ids": []
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1(完)"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_number": "1",
+      "seq": "7",
+      "cells": [
+       "7",
+       "总铅",
+       "1.0"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物",
+        "最高允许排放浓度"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 3,
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+       "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "chunk_ids": []
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1(完)"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_number": "1",
+      "seq": "8",
+      "cells": [
+       "8",
+       "总镍",
+       "1.0"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物",
+        "最高允许排放浓度"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 4,
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+       "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "chunk_ids": []
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1(完)"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_number": "1",
+      "seq": "9",
+      "cells": [
+       "9",
+       "苯并(a)芘",
+       "0.000 03"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物",
+        "最高允许排放浓度"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 5,
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+       "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "chunk_ids": []
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1(完)"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_number": "1",
+      "seq": "10",
+      "cells": [
+       "10",
+       "总铍",
+       "0.005"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物",
+        "最高允许排放浓度"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 6,
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+       "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "chunk_ids": []
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1(完)"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_number": "1",
+      "seq": "11",
+      "cells": [
+       "11",
+       "总银",
+       "0.5"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物",
+        "最高允许排放浓度"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 7,
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+       "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "chunk_ids": []
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1(完)"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_number": "1",
+      "seq": "12",
+      "cells": [
+       "12",
+       "总 $\\alpha$ 放射性",
+       "1 Bq/L"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物",
+        "最高允许排放浓度"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 8,
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+       "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "chunk_ids": []
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1(完)"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_number": "1",
+      "seq": "13",
+      "cells": [
+       "13",
+       "总 $\\beta$ 放射性",
+       "10 Bq/L"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物",
+        "最高允许排放浓度"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 1,
+       "row_in_fragment": 9,
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+       "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "chunk_ids": []
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1(完)"
+     }
+    ]
+   },
+   "reverification": {
+    "items_checked": 13,
+    "problems": [],
+    "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+   },
+   "model": null,
+   "status": "ok"
+  }
+ ]
+}

@@ -1,0 +1,206 @@
+{
+  "submitted_source_reread": [
+    {
+      "query_id": "fact-002",
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+      "verified": true
+    },
+    {
+      "query_id": "fact-002",
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002",
+      "verified": true
+    },
+    {
+      "query_id": "fact-002",
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-007",
+      "verified": true
+    },
+    {
+      "query_id": "fact-002",
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-010",
+      "verified": true
+    },
+    {
+      "query_id": "fact-002",
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000",
+      "verified": true
+    },
+    {
+      "query_id": "fact-002",
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-003",
+      "verified": true
+    },
+    {
+      "query_id": "fact-002",
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006",
+      "verified": true
+    },
+    {
+      "query_id": "fact-002",
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019",
+      "verified": true
+    },
+    {
+      "query_id": "fact-002",
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-008",
+      "verified": true
+    },
+    {
+      "query_id": "fact-002",
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-011",
+      "verified": true
+    },
+    {
+      "query_id": "syn-001",
+      "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-002",
+      "verified": true
+    },
+    {
+      "query_id": "syn-001",
+      "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+      "verified": true
+    },
+    {
+      "query_id": "syn-001",
+      "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-006",
+      "verified": true
+    },
+    {
+      "query_id": "syn-001",
+      "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+      "verified": true
+    },
+    {
+      "query_id": "syn-001",
+      "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+      "verified": true
+    },
+    {
+      "query_id": "syn-001",
+      "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+      "verified": true
+    },
+    {
+      "query_id": "syn-001",
+      "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-000",
+      "verified": true
+    },
+    {
+      "query_id": "syn-001",
+      "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-001",
+      "verified": true
+    },
+    {
+      "query_id": "syn-001",
+      "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005",
+      "verified": true
+    }
+  ],
+  "verified_count": 19,
+  "related_request": {
+    "status": "ok",
+    "requested": [
+      {
+        "code": "GB18466",
+        "version": "2005"
+      }
+    ],
+    "resolved": [
+      {
+        "code": "GB18466",
+        "version": "2005",
+        "docs": [
+          "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+        ],
+        "versions": [
+          "2005"
+        ]
+      }
+    ],
+    "pg_proven_related_targets": [
+      {
+        "target_type": "doc",
+        "workspace": "default",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "doc_name": "water-03_生态环境部_医疗机构水污染物排放标准_含2026修改单.pdf",
+        "self_code": null,
+        "self_code_version": null,
+        "discovery": "doc_attribution"
+      },
+      {
+        "target_type": "doc",
+        "workspace": "default",
+        "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+        "doc_name": "water-10_生态环境部_医疗机构水污染物排放标准修改单_2026.pdf",
+        "self_code": null,
+        "self_code_version": null,
+        "discovery": "doc_attribution"
+      }
+    ],
+    "fusion_constraint_decisions": [
+      {
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "discovery": "doc_attribution",
+        "constraint_rejected": "doc doc-9bb11e5d3809e590259aef28fb61062b is not a RESOLVED requested target; a nearby version/other document is never substituted"
+      },
+      {
+        "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+        "discovery": "doc_attribution",
+        "constraint_rejected": "doc doc-b423a0e3331541588988fd34496c349d is not a RESOLVED requested target; a nearby version/other document is never substituted"
+      }
+    ]
+  },
+  "identity_before": {
+    "identity": {
+      "when": "fusion",
+      "public_counts": {
+        "lightrag_doc_full": 221,
+        "lightrag_doc_chunks": 5709,
+        "lightrag_doc_status": 279,
+        "lightrag_llm_cache": 16514,
+        "lightrag_entity_chunks": 65527,
+        "lightrag_full_entities": 221,
+        "lightrag_full_relations": 221,
+        "lightrag_relation_chunks": 119575
+      },
+      "catalog_active": {
+        "run_id": "c15c741742394320",
+        "snapshot_id": "4919b3938ad93747"
+      },
+      "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "search_active": "872d689343a9cbb6",
+      "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+      "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+    },
+    "problems": [],
+    "matches_frozen": true
+  },
+  "identity_after": {
+    "identity": {
+      "when": "fusion",
+      "public_counts": {
+        "lightrag_doc_full": 221,
+        "lightrag_doc_chunks": 5709,
+        "lightrag_doc_status": 279,
+        "lightrag_llm_cache": 16514,
+        "lightrag_entity_chunks": 65527,
+        "lightrag_full_entities": 221,
+        "lightrag_full_relations": 221,
+        "lightrag_relation_chunks": 119575
+      },
+      "catalog_active": {
+        "run_id": "c15c741742394320",
+        "snapshot_id": "4919b3938ad93747"
+      },
+      "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "search_active": "872d689343a9cbb6",
+      "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+      "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+    },
+    "problems": [],
+    "matches_frozen": true
+  },
+  "identity_drift": [],
+  "model_calls": 0,
+  "writes": 0
+}

@@ -1,0 +1,62 @@
+{
+  "procedure": "preserve overwritten bytes, verify untouched tmp backup equals historical manifest, copy exact original bytes back, verify old SHA; no regenerated timestamps or revised manifests",
+  "records": [
+    {
+      "original": "reports/pg-retrieval/phase-4-improvement-3/replays/file-enum-005-local/answer-runtime-latest.json",
+      "original_manifest_sha256": "5f73c5bf66c21050896eada804edc22028046de7018f6943e1ca0fe693a5b142",
+      "preserved_overwrite": "reports/pg-retrieval/phase-4-improvement-3-review-r2/overwritten-receipts/file-enum-005-local/answer-runtime-latest.json",
+      "overwritten_sha256": "57264fef810a268b3a52eb72142906e55dded4b91939c713171b0dd3ca838755",
+      "recovery_backup": "/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/tmpaos7z8he/run/answer-runtime-latest.json",
+      "backup_sha256": "5f73c5bf66c21050896eada804edc22028046de7018f6943e1ca0fe693a5b142",
+      "restored_sha256": "5f73c5bf66c21050896eada804edc22028046de7018f6943e1ca0fe693a5b142"
+    },
+    {
+      "original": "reports/pg-retrieval/phase-4-improvement-3/replays/file-enum-002-local-pagesize2/answer-runtime-latest.json",
+      "original_manifest_sha256": "b9342092e3db6e969a2318ad1076ba0af657e263b26849240c6452576946ece9",
+      "preserved_overwrite": "reports/pg-retrieval/phase-4-improvement-3-review-r2/overwritten-receipts/file-enum-002-local-pagesize2/answer-runtime-latest.json",
+      "overwritten_sha256": "d873f0c37ab65791b5698962a6fd98b6046b980ed83ef14fd3b94a8e5f606c83",
+      "recovery_backup": "/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/tmpgse07_dq/run/answer-runtime-latest.json",
+      "backup_sha256": "b9342092e3db6e969a2318ad1076ba0af657e263b26849240c6452576946ece9",
+      "restored_sha256": "b9342092e3db6e969a2318ad1076ba0af657e263b26849240c6452576946ece9"
+    },
+    {
+      "original": "reports/pg-retrieval/phase-4-improvement-3/replays/file-enum-005-local-searchid-variant/answer-runtime-latest.json",
+      "original_manifest_sha256": "fed5071e0674658a28b54f4cd0a051297ccc7ef037d0d8e63c956722461d51f2",
+      "preserved_overwrite": "reports/pg-retrieval/phase-4-improvement-3-review-r2/overwritten-receipts/file-enum-005-local-searchid-variant/answer-runtime-latest.json",
+      "overwritten_sha256": "4cda60a069aec4dc7e61cd1474940f165422299ad97347b12fd44dc43126f0b7",
+      "recovery_backup": "/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/tmpx35b7ob7/run/answer-runtime-latest.json",
+      "backup_sha256": "fed5071e0674658a28b54f4cd0a051297ccc7ef037d0d8e63c956722461d51f2",
+      "restored_sha256": "fed5071e0674658a28b54f4cd0a051297ccc7ef037d0d8e63c956722461d51f2"
+    },
+    {
+      "original": "reports/pg-retrieval/phase-4-improvement-3/replays/file-enum-001-local/answer-runtime-latest.json",
+      "original_manifest_sha256": "6fbfe741496df7cc47ac347ac6ea8ff3df7fda11331a2f86ef3337b7db963f8f",
+      "preserved_overwrite": "reports/pg-retrieval/phase-4-improvement-3-review-r2/overwritten-receipts/file-enum-001-local/answer-runtime-latest.json",
+      "overwritten_sha256": "ecd43b4c9199b6da01ec16489d3e9061bb1cd86bd0c1babfb897c219ed5329f7",
+      "recovery_backup": "/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/tmpjeq40qz6/run/answer-runtime-latest.json",
+      "backup_sha256": "6fbfe741496df7cc47ac347ac6ea8ff3df7fda11331a2f86ef3337b7db963f8f",
+      "restored_sha256": "6fbfe741496df7cc47ac347ac6ea8ff3df7fda11331a2f86ef3337b7db963f8f"
+    },
+    {
+      "original": "reports/pg-retrieval/phase-4-improvement-3/replays/file-enum-005-pg/answer-runtime-latest.json",
+      "original_manifest_sha256": "e6497ffd2f55f603e5495b73190fff23e51f3ee64d096b322b55612d76b4cc81",
+      "preserved_overwrite": "reports/pg-retrieval/phase-4-improvement-3-review-r2/overwritten-receipts/file-enum-005-pg/answer-runtime-latest.json",
+      "overwritten_sha256": "2ae655816188a9e5da79713ada19c85a280878230bcf9513ab3e7e4681f94775",
+      "recovery_backup": "/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/tmpbc6_wwe0/run/answer-runtime-latest.json",
+      "backup_sha256": "e6497ffd2f55f603e5495b73190fff23e51f3ee64d096b322b55612d76b4cc81",
+      "restored_sha256": "e6497ffd2f55f603e5495b73190fff23e51f3ee64d096b322b55612d76b4cc81"
+    },
+    {
+      "original": "reports/pg-retrieval/phase-4-improvement-3/replays/file-enum-002-local/answer-runtime-latest.json",
+      "original_manifest_sha256": "f166c6b0f50b0a9a572140ff3236e2d69c12cbbb5c5f4612d0f9ed33c98b5a1f",
+      "preserved_overwrite": "reports/pg-retrieval/phase-4-improvement-3-review-r2/overwritten-receipts/file-enum-002-local/answer-runtime-latest.json",
+      "overwritten_sha256": "6159ca36c5c09de6e86d27606c3715a27671b19fa629d2311d1d5ad4ec3a8632",
+      "recovery_backup": "/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/tmprwzm62jx/run/answer-runtime-latest.json",
+      "backup_sha256": "f166c6b0f50b0a9a572140ff3236e2d69c12cbbb5c5f4612d0f9ed33c98b5a1f",
+      "restored_sha256": "f166c6b0f50b0a9a572140ff3236e2d69c12cbbb5c5f4612d0f9ed33c98b5a1f"
+    }
+  ],
+  "restored_files": 6,
+  "historical_manifest_changed": false,
+  "current_r2_artifacts_changed": false
+}

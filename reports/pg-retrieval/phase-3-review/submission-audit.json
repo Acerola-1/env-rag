@@ -1,0 +1,371 @@
+{
+  "submitted_ledger_entries": 51,
+  "unchanged_entries": 46,
+  "intentional_main_agent_changes": [
+    "src/env_rag_final/answer.py",
+    "reports/pg-retrieval/phase-3/report.md",
+    "reports/pg-retrieval/phase-3/gate3-checklist.json",
+    "reports/pg-retrieval/phase-3/syn-prep-syn004.json",
+    "README.md"
+  ],
+  "answer_logic_byte_identical_after_removing_prompt_addition": true,
+  "entries": [
+    {
+      "group": "stage_code_final_accepted",
+      "path": "src/env_rag_final/compat_runtime.py",
+      "submitted": "5fa566b2b6a54571803a302e4e5c25df33382b874c5aacf2e4ea696f33ed3933",
+      "actual": "5fa566b2b6a54571803a302e4e5c25df33382b874c5aacf2e4ea696f33ed3933",
+      "unchanged": true
+    },
+    {
+      "group": "stage_code_final_accepted",
+      "path": "src/env_rag_final/local_adapter.py",
+      "submitted": "0bbad9764856250085b5cefb90c9d56933bfd2f6e9ed5ed796fdd93bdf2da7e3",
+      "actual": "0bbad9764856250085b5cefb90c9d56933bfd2f6e9ed5ed796fdd93bdf2da7e3",
+      "unchanged": true
+    },
+    {
+      "group": "stage_code_final_accepted",
+      "path": "src/env_rag_final/fusion.py",
+      "submitted": "be1cd4c586596468efda7b9483903a407f0e214fc35e7a83355ad304ef94127e",
+      "actual": "be1cd4c586596468efda7b9483903a407f0e214fc35e7a83355ad304ef94127e",
+      "unchanged": true
+    },
+    {
+      "group": "stage_code_final_accepted",
+      "path": "src/env_rag_final/rerank.py",
+      "submitted": "e2a8e089dd69cc02791a3c175bfadd27dd4fded80b249a32786b6a4d099cce08",
+      "actual": "e2a8e089dd69cc02791a3c175bfadd27dd4fded80b249a32786b6a4d099cce08",
+      "unchanged": true
+    },
+    {
+      "group": "stage_code_final_accepted",
+      "path": "src/env_rag_final/answer.py",
+      "submitted": "29e0aa29b2b49be4370adbedd3e6bfc746d9ca9530d992f98d731a8056e213c7",
+      "actual": "2a53f2d7b959b34434a0a78d4345c205693b01b56378e94f70c62608d6bea8e6",
+      "unchanged": false
+    },
+    {
+      "group": "stage_code_final_accepted",
+      "path": "src/env_rag_final/cli.py",
+      "submitted": "ba940f63205b617be00fe0e2cf58683ea53d74247c4039e0cb28c27ced521195",
+      "actual": "ba940f63205b617be00fe0e2cf58683ea53d74247c4039e0cb28c27ced521195",
+      "unchanged": true
+    },
+    {
+      "group": "frozen_acceptance_files",
+      "path": "tests/test_phase3_compat_review_r3.py",
+      "submitted": "de0217d8c54260316ad1280111ede555e678f370578b5fa899793ff785ffec5b",
+      "actual": "de0217d8c54260316ad1280111ede555e678f370578b5fa899793ff785ffec5b",
+      "unchanged": true
+    },
+    {
+      "group": "frozen_acceptance_files",
+      "path": "tests/test_phase3_compat_review_r4.py",
+      "submitted": "761d94d96d72b662699a2bc190fc07066729203c34b2f4f34899b02bee32b89c",
+      "actual": "761d94d96d72b662699a2bc190fc07066729203c34b2f4f34899b02bee32b89c",
+      "unchanged": true
+    },
+    {
+      "group": "frozen_acceptance_files",
+      "path": "tests/test_phase3_compat_review_r5.py",
+      "submitted": "6bf5f2502fc22b3ec12e2d20f644b06f63b033dd77af42c75b57d63973b73359",
+      "actual": "6bf5f2502fc22b3ec12e2d20f644b06f63b033dd77af42c75b57d63973b73359",
+      "unchanged": true
+    },
+    {
+      "group": "frozen_acceptance_files",
+      "path": "tests/test_local_adapter_review.py",
+      "submitted": "88c9d115dceef69fb02d5e51b272995597249545e853811e2ffdaf70661416c9",
+      "actual": "88c9d115dceef69fb02d5e51b272995597249545e853811e2ffdaf70661416c9",
+      "unchanged": true
+    },
+    {
+      "group": "frozen_acceptance_files",
+      "path": "tests/test_local_adapter_review_r2.py",
+      "submitted": "93ca5ea4066723c6dbad925e4eaaafc2fa1f06ec0fcac1668df7091c470581e2",
+      "actual": "93ca5ea4066723c6dbad925e4eaaafc2fa1f06ec0fcac1668df7091c470581e2",
+      "unchanged": true
+    },
+    {
+      "group": "frozen_acceptance_files",
+      "path": "tests/test_local_adapter_review_r3.py",
+      "submitted": "a8d5bb08c2d50650211d55808b33a108efabe076d1f3366a03f21ca4b22bb0ae",
+      "actual": "a8d5bb08c2d50650211d55808b33a108efabe076d1f3366a03f21ca4b22bb0ae",
+      "unchanged": true
+    },
+    {
+      "group": "frozen_acceptance_files",
+      "path": "tests/test_local_adapter_review_r4.py",
+      "submitted": "2997941f0a516040d808964358f4524546552d82e003accabd46cadda7bd98f6",
+      "actual": "2997941f0a516040d808964358f4524546552d82e003accabd46cadda7bd98f6",
+      "unchanged": true
+    },
+    {
+      "group": "frozen_acceptance_files",
+      "path": "tests/test_fusion_review_r1.py",
+      "submitted": "9aff4a4b596a4fd53134e2131ded82ae6d184f9ebf0c4d645093c7d8b80e3c4c",
+      "actual": "9aff4a4b596a4fd53134e2131ded82ae6d184f9ebf0c4d645093c7d8b80e3c4c",
+      "unchanged": true
+    },
+    {
+      "group": "frozen_acceptance_files",
+      "path": "tests/test_fusion_review_r2.py",
+      "submitted": "b8d643cb27209023fcb6b15a6004a46b413902bb2ac56f22761cdc266caf4636",
+      "actual": "b8d643cb27209023fcb6b15a6004a46b413902bb2ac56f22761cdc266caf4636",
+      "unchanged": true
+    },
+    {
+      "group": "frozen_acceptance_files",
+      "path": "tests/test_fusion_review_r3.py",
+      "submitted": "a90f73fbcc3be10d2ead43be02f5080499ae4b66b8ef21a65de02fd72ac26836",
+      "actual": "a90f73fbcc3be10d2ead43be02f5080499ae4b66b8ef21a65de02fd72ac26836",
+      "unchanged": true
+    },
+    {
+      "group": "frozen_acceptance_files",
+      "path": "tests/test_rerank_review_r1.py",
+      "submitted": "303906859bf4c8199c11cac2c2c698250cca85d70b5380483bd34fc96908c34e",
+      "actual": "303906859bf4c8199c11cac2c2c698250cca85d70b5380483bd34fc96908c34e",
+      "unchanged": true
+    },
+    {
+      "group": "frozen_acceptance_files",
+      "path": "tests/test_rerank_review_r2.py",
+      "submitted": "6673e0ef9579a373da9c8c0481f8e92722e6a1c8b14f487d56772a62f0d45fac",
+      "actual": "6673e0ef9579a373da9c8c0481f8e92722e6a1c8b14f487d56772a62f0d45fac",
+      "unchanged": true
+    },
+    {
+      "group": "frozen_acceptance_files",
+      "path": "tests/test_rerank_review_r3.py",
+      "submitted": "9a337de82a2d4d5822fbc8821ba4d45252cb7d45b57790d65b1301573c1790d8",
+      "actual": "9a337de82a2d4d5822fbc8821ba4d45252cb7d45b57790d65b1301573c1790d8",
+      "unchanged": true
+    },
+    {
+      "group": "frozen_acceptance_files",
+      "path": "tests/test_answer_review_r1.py",
+      "submitted": "3650133dbbf84a6571786bf4bba051ab60003171a7fef9d9752ea6fb0fffea9f",
+      "actual": "3650133dbbf84a6571786bf4bba051ab60003171a7fef9d9752ea6fb0fffea9f",
+      "unchanged": true
+    },
+    {
+      "group": "frozen_acceptance_files",
+      "path": "tests/test_answer_review_r2.py",
+      "submitted": "c4de6606c101833a2195b0abe41ddf32dd2ea445f0eb1aba1cfee28314c08550",
+      "actual": "c4de6606c101833a2195b0abe41ddf32dd2ea445f0eb1aba1cfee28314c08550",
+      "unchanged": true
+    },
+    {
+      "group": "frozen_acceptance_files",
+      "path": "tests/test_answer_review_r3.py",
+      "submitted": "fae62747f4407790af792e5d1e9eb94c75a9b48e8ed9cb16a097bbeda8371da2",
+      "actual": "fae62747f4407790af792e5d1e9eb94c75a9b48e8ed9cb16a097bbeda8371da2",
+      "unchanged": true
+    },
+    {
+      "group": "frozen_acceptance_files",
+      "path": "tests/test_answer_review_r4.py",
+      "submitted": "16829712b469f178917671953d21d2db17fbeb78592e997538f2db1325b6df1a",
+      "actual": "16829712b469f178917671953d21d2db17fbeb78592e997538f2db1325b6df1a",
+      "unchanged": true
+    },
+    {
+      "group": "accepted_runtime_generations",
+      "path": "reports/pg-retrieval/phase-3-r5/compat-runtime-probes-latest.json",
+      "submitted": "130a3e4ee2986debd4198f26aca05de1dcee7fd7d9c4827effa92880d2568a09",
+      "actual": "130a3e4ee2986debd4198f26aca05de1dcee7fd7d9c4827effa92880d2568a09",
+      "unchanged": true
+    },
+    {
+      "group": "accepted_runtime_generations",
+      "path": "reports/pg-retrieval/phase-3-local-r5/local-runtime-latest.json",
+      "submitted": "4f7878743a691e8cc25601c77be78238f4116ef7f288e576b664d7a3adceb3d2",
+      "actual": "4f7878743a691e8cc25601c77be78238f4116ef7f288e576b664d7a3adceb3d2",
+      "unchanged": true
+    },
+    {
+      "group": "accepted_runtime_generations",
+      "path": "reports/pg-retrieval/phase-3-fusion/fusion-runtime-latest.json",
+      "submitted": "0bb845a6c270cb603746343ca3a8d4710fbb0754279aba45edb61b88e514281e",
+      "actual": "0bb845a6c270cb603746343ca3a8d4710fbb0754279aba45edb61b88e514281e",
+      "unchanged": true
+    },
+    {
+      "group": "accepted_runtime_generations",
+      "path": "reports/pg-retrieval/phase-3-fusion-r2/fusion-runtime-latest.json",
+      "submitted": "37b30d4dc4950422a28dd0776a68c42a93b2d0be032b899560bb8e5960394ebc",
+      "actual": "37b30d4dc4950422a28dd0776a68c42a93b2d0be032b899560bb8e5960394ebc",
+      "unchanged": true
+    },
+    {
+      "group": "accepted_runtime_generations",
+      "path": "reports/pg-retrieval/phase-3-fusion-r2-f1/fusion-runtime-latest.json",
+      "submitted": "033fe2f8325cd961833ec4b6c013a918ee17609f41363bc327dc71bbeac00139",
+      "actual": "033fe2f8325cd961833ec4b6c013a918ee17609f41363bc327dc71bbeac00139",
+      "unchanged": true
+    },
+    {
+      "group": "accepted_runtime_generations",
+      "path": "reports/pg-retrieval/phase-3-rerank/rerank-runtime-latest.json",
+      "submitted": "cfd6889914d129a3aca06c6703bcf4caac672a9dee5799b5fb1e08b1b7e0fd3c",
+      "actual": "cfd6889914d129a3aca06c6703bcf4caac672a9dee5799b5fb1e08b1b7e0fd3c",
+      "unchanged": true
+    },
+    {
+      "group": "accepted_runtime_generations",
+      "path": "reports/pg-retrieval/phase-3-rerank-r2/rerank-runtime-latest.json",
+      "submitted": "4ad5a56f14acf6debd17dbc16f3836c767322b0b1779ab166f873dfce044227c",
+      "actual": "4ad5a56f14acf6debd17dbc16f3836c767322b0b1779ab166f873dfce044227c",
+      "unchanged": true
+    },
+    {
+      "group": "accepted_runtime_generations",
+      "path": "reports/pg-retrieval/phase-3-answer/answer-runtime-latest.json",
+      "submitted": "1d97ce27741c7815727bc687edcb28f9d9656359f95bec549444748107bb542e",
+      "actual": "1d97ce27741c7815727bc687edcb28f9d9656359f95bec549444748107bb542e",
+      "unchanged": true
+    },
+    {
+      "group": "accepted_runtime_generations",
+      "path": "reports/pg-retrieval/phase-3-answer-r2/answer-runtime-latest.json",
+      "submitted": "1b737e3349879272d49ba36a4b082189614e338f1279dc9b6c5e12b3a3b86a56",
+      "actual": "1b737e3349879272d49ba36a4b082189614e338f1279dc9b6c5e12b3a3b86a56",
+      "unchanged": true
+    },
+    {
+      "group": "accepted_runtime_generations",
+      "path": "reports/pg-retrieval/phase-3-answer-fusion/fusion-runtime-latest.json",
+      "submitted": "d7e87076dbc5f799890c5c369aefea18d1d6e28b3d2cc4344effb76d7a6e0e2a",
+      "actual": "d7e87076dbc5f799890c5c369aefea18d1d6e28b3d2cc4344effb76d7a6e0e2a",
+      "unchanged": true
+    },
+    {
+      "group": "accepted_runtime_generations",
+      "path": "reports/pg-retrieval/phase-3-answer-fusion-syn/fusion-runtime-latest.json",
+      "submitted": "824c708526cb1d25a850ad2e1bd6ab4bc6fc90f150451f5cc9204ed532a1da55",
+      "actual": "824c708526cb1d25a850ad2e1bd6ab4bc6fc90f150451f5cc9204ed532a1da55",
+      "unchanged": true
+    },
+    {
+      "group": "accepted_runtime_generations",
+      "path": "reports/pg-retrieval/phase-3-answer-enums/answer-runtime-latest.json",
+      "submitted": "697df4c044014455fcd1d4cb308c7e0af9c389949ddfd3afbd2c6a5b8261d3f1",
+      "actual": "697df4c044014455fcd1d4cb308c7e0af9c389949ddfd3afbd2c6a5b8261d3f1",
+      "unchanged": true
+    },
+    {
+      "group": "accepted_runtime_generations",
+      "path": "reports/pg-retrieval/phase-3-answer-syn-check/answer-runtime-latest.json",
+      "submitted": "f3cebee7393c9fc1aa09b91bd730ac76aeaf99e65f30e9296d3f94fdf447f5e1",
+      "actual": "f3cebee7393c9fc1aa09b91bd730ac76aeaf99e65f30e9296d3f94fdf447f5e1",
+      "unchanged": true
+    },
+    {
+      "group": "accepted_runtime_generations",
+      "path": "reports/pg-retrieval/phase-3-answer-syn-check/formal-expand-control.json",
+      "submitted": "5a41ac15471a8f68fabf724e67403096d965e4e2c17760ad3d48f86f853e5cf0",
+      "actual": "5a41ac15471a8f68fabf724e67403096d965e4e2c17760ad3d48f86f853e5cf0",
+      "unchanged": true
+    },
+    {
+      "group": "accepted_runtime_generations",
+      "path": "reports/pg-retrieval/phase-3-answer-syn4-check/answer-runtime-latest.json",
+      "submitted": "7e1e986853ee573e70454805c4046f3ce016fdb800ebfdffaa3b8f199ef834a9",
+      "actual": "7e1e986853ee573e70454805c4046f3ce016fdb800ebfdffaa3b8f199ef834a9",
+      "unchanged": true
+    },
+    {
+      "group": "accepted_runtime_generations",
+      "path": "reports/pg-retrieval/phase-3-answer-syn/answer-runtime-latest.json",
+      "submitted": "aa2a9ff01271066951f6f9b3f91fbcbf8ccfbf6bbdfd68bfc65adf3f5f8257b9",
+      "actual": "aa2a9ff01271066951f6f9b3f91fbcbf8ccfbf6bbdfd68bfc65adf3f5f8257b9",
+      "unchanged": true
+    },
+    {
+      "group": "accepted_runtime_generations",
+      "path": "reports/pg-retrieval/phase-3-answer-syn2/answer-runtime-latest.json",
+      "submitted": "41b715e536a2e275b58c217bb666abc71c13578252b63746f71e73a6dfb0df8a",
+      "actual": "41b715e536a2e275b58c217bb666abc71c13578252b63746f71e73a6dfb0df8a",
+      "unchanged": true
+    },
+    {
+      "group": "identity_and_review_anchors",
+      "path": "reports/pg-retrieval/gate-2/review-r5/gold-approved.json",
+      "submitted": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+      "actual": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+      "unchanged": true
+    },
+    {
+      "group": "identity_and_review_anchors",
+      "path": "reports/pg-retrieval/phase-3-answer/answer-manifest.json",
+      "submitted": "5637b38e736596ff8fc7bdca381e9229c54a61c5b3110096574e317e5523d47a",
+      "actual": "5637b38e736596ff8fc7bdca381e9229c54a61c5b3110096574e317e5523d47a",
+      "unchanged": true
+    },
+    {
+      "group": "identity_and_review_anchors",
+      "path": "reports/pg-retrieval/phase-3-answer-review-r5/review.md",
+      "submitted": "3d8db2f833feef6f1df98f0fc7aa7ab0d24db5350b9c4f201a76a06672c9bbe4",
+      "actual": "3d8db2f833feef6f1df98f0fc7aa7ab0d24db5350b9c4f201a76a06672c9bbe4",
+      "unchanged": true
+    },
+    {
+      "group": "identity_and_review_anchors",
+      "path": "reports/pg-retrieval/phase-3-rerank-review-r4/review.md",
+      "submitted": "bc62d1e40ad45c75491cd133177bcf7cb4b80ea4238f3a4a3c931b2ebb6520eb",
+      "actual": "bc62d1e40ad45c75491cd133177bcf7cb4b80ea4238f3a4a3c931b2ebb6520eb",
+      "unchanged": true
+    },
+    {
+      "group": "identity_and_review_anchors",
+      "path": "reports/pg-retrieval/phase-3-fusion-review-r4/review.md",
+      "submitted": "4ff0b61819bc44d275f231596e80bd6b083d76fd63f3f12e7865061a998b4d31",
+      "actual": "4ff0b61819bc44d275f231596e80bd6b083d76fd63f3f12e7865061a998b4d31",
+      "unchanged": true
+    },
+    {
+      "group": "identity_and_review_anchors",
+      "path": "reports/pg-retrieval/phase-3-local-review-r5/review.md",
+      "submitted": "0b47e3536cf0f1db33dc0a3801e7df64ba6dba6dbe1f5582840237bbeea45892",
+      "actual": "0b47e3536cf0f1db33dc0a3801e7df64ba6dba6dbe1f5582840237bbeea45892",
+      "unchanged": true
+    },
+    {
+      "group": "identity_and_review_anchors",
+      "path": "reports/pg-retrieval/phase-3-review-r5/review.md",
+      "submitted": "e927378220204b620a058e204fad88aeb02c55236c34eea7f9497b25cd001d95",
+      "actual": "e927378220204b620a058e204fad88aeb02c55236c34eea7f9497b25cd001d95",
+      "unchanged": true
+    },
+    {
+      "group": "this_round_deliverables",
+      "path": "reports/pg-retrieval/phase-3/report.md",
+      "submitted": "1dd181c63220f7408b7c3297ad730b857535715ea6654426a66032926a4513a4",
+      "actual": "2ac3081249c94b8efc03805e3ab3fefbecf4b31260df48ae2159794375afdf46",
+      "unchanged": false
+    },
+    {
+      "group": "this_round_deliverables",
+      "path": "reports/pg-retrieval/phase-3/gate3-checklist.json",
+      "submitted": "9b4f3eb850bf62cc9d3a41048c72cabf18b9e6e30055a7a442ee612d863979ba",
+      "actual": "b0ff50ee5f1c3803d6dc8311cdadeed5fb27f87d416ec897ceb7b7e155c907b3",
+      "unchanged": false
+    },
+    {
+      "group": "this_round_deliverables",
+      "path": "reports/pg-retrieval/phase-3/syn-prep-syn004.json",
+      "submitted": "b2254f3fd40fd2ed28ec6179066fe7c3f6c32c1c4b8eacc4d450294f52db2ea6",
+      "actual": "59d9dc8c5025547ff942cee05efef49ba968efc3e01843708d489f845f689868",
+      "unchanged": false
+    },
+    {
+      "group": "this_round_deliverables",
+      "path": "README.md",
+      "submitted": "8691ebc93267497f1f85558aa2505061a1bf4b210d091e0e8372528419da56ce",
+      "actual": "10ac3ae4be903ba75eefe5d104882603b15b1b4bdc53fa0a20544437cd32bbd2",
+      "unchanged": false
+    }
+  ]
+}

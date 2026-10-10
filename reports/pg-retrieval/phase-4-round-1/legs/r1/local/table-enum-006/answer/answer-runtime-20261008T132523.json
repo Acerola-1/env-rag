@@ -1,0 +1,6257 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-08T13:25:19+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "table-enum-006"
+ ],
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "reports/pg-retrieval/phase-4-round-1/inputs/local/table-enum-006-rerank.json",
+   "sha256": "1c916868c072bec993c9f93c33b3c4cada8eae436718889ba4f94b2838bbc70b",
+   "task": null,
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": []
+  },
+  "fused_report": {
+   "path": "reports/pg-retrieval/phase-4-round-1/inputs/local/table-enum-006-fusion.json",
+   "sha256": "bc0ec71d75de16bf6eff744345aeea62d6b7c1b967491d6a9abd0f6f8ecc4469",
+   "task": "Phase 4 round 1 evaluation input (path=local)",
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": [
+    "table-enum-006"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "model_calls_used": 0,
+ "results": [
+  {
+   "query_id": "table-enum-006",
+   "query": "GB 3095-2012 表 3 列出了哪些污染物的分析方法？",
+   "category": "table_enum",
+   "workspace": "default",
+   "coverage_status": "ambiguous",
+   "fail_stage": "",
+   "flags": [
+    "no rerank replay for this query id — scope priority falls back to fusion path order, explicitly recorded (no fabricated scores)"
+   ],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "absent",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 0,
+    "typed_targets": [
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "discovery": "local"
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "discovery": "local"
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "discovery": "local"
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404",
+      "discovery": "local"
+     }
+    ],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 10,
+    "selected_docs": [
+     "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc-503d7a0789fa0087345a5f4358e1dca0",
+     "doc-d3d7d38fe9dc1348e57c1fa29b47f404"
+    ],
+    "priority": [
+     {
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404",
+      "rerank_rank_or_none": null
+     }
+    ],
+    "basis": "targets_resolved + typed targets (5.3) define the scope; rerank order only prioritizes — membership is never top-k bounded"
+   },
+   "expansions": [
+    {
+     "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "kind": "table",
+     "table_number": "3",
+     "scope_ids": [
+      "tb-4c883d21fa02a53189e0911c3d59d1d1-0003"
+     ],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "fail_stage": "",
+     "items_count": 21,
+     "warnings": [
+      "table_structure: header=[[\"序号\", \"污染物项目\", \"手工分析方法\", \"手工分析方法\", \"自动分析方法\", \"自动分析方法\"], [\"序号\", \"污染物项目\", \"名称\", \"标准编号\", \"名称\", \"标准编号\"]]; units=[]; footnotes=[\"注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。\"]"
+     ],
+     "selected": true
+    },
+    {
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "kind": "table",
+     "table_number": "3",
+     "scope_ids": [
+      "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003"
+     ],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "fail_stage": "",
+     "items_count": 14,
+     "warnings": [
+      "table_structure: header=[[\"序号\", \"污染物项目\", \"手工分析方法\", \"手工分析方法\", \"自动分析方法\"], [\"序号\", \"污染物项目\", \"分析方法\", \"标准编号\", \"自动分析方法\"]]; units=[]; footnotes=[]"
+     ],
+     "selected": true
+    },
+    {
+     "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+     "kind": "table",
+     "table_number": "3",
+     "scope_ids": [
+      "tb-503d7a0789fa0087345a5f4358e1dca0-0003"
+     ],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "fail_stage": "",
+     "items_count": 89,
+     "warnings": [
+      "table_structure: header=[[\"序号\", \"分析项目\", \"标准名称\", \"标准编号\", \"标准编号\"]]; units=[]; footnotes=[]"
+     ],
+     "selected": true
+    },
+    {
+     "doc_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404",
+     "kind": "table",
+     "table_number": "3",
+     "scope_ids": [
+      "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0003"
+     ],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "ambiguous",
+     "fail_stage": "ambiguous",
+     "items_count": 0,
+     "warnings": [
+      "no data rows could be extracted",
+      "table_structure: header=[]; units=[]; footnotes=[]"
+     ],
+     "selected": true
+    }
+   ],
+   "answer": {
+    "mode": "deterministic",
+    "generated_by": "enumerate/expand entries",
+    "items": [
+     {
+      "kind": "table_row",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "table_number": "3",
+      "seq": "1",
+      "cells": [
+       "1",
+       "二氧化硫( $SO_{2}$ )",
+       "环境空气 二氧化硫的测定 甲醛吸收-副玫瑰苯胺分光光度法",
+       "HJ 482",
+       "环境空气 二氧化硫的自动测定 紫外荧光法*",
+       "HJ 1044"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "名称",
+        "标准编号",
+        "名称",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 2,
+       "table_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "blockid": "6c4283cab67f52419193785fb0dcf1ef",
+       "locator": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "chunk_ids": [
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "table_number": "3",
+      "seq": "1",
+      "cells": [
+       "1",
+       "二氧化硫( $SO_{2}$ )",
+       "环境空气 二氧化硫的测定 甲醛吸收-副玫瑰苯胺分光光度法",
+       "HJ 482",
+       "差分吸收光谱分析法",
+       "—"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "名称",
+        "标准编号",
+        "名称",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 3,
+       "table_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "blockid": "6c4283cab67f52419193785fb0dcf1ef",
+       "locator": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "chunk_ids": [
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "table_number": "3",
+      "seq": "2",
+      "cells": [
+       "2",
+       "二氧化氮( $NO_{2}$ )",
+       "环境空气 氮氧化物(一氧化氮和二氧化氮)的测定 盐酸萘乙二胺分光光度法",
+       "HJ 479",
+       "环境空气 氮氧化物的自动测定 化学发光法*",
+       "HJ 1043"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "名称",
+        "标准编号",
+        "名称",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 4,
+       "table_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "blockid": "6c4283cab67f52419193785fb0dcf1ef",
+       "locator": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "chunk_ids": [
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "table_number": "3",
+      "seq": "2",
+      "cells": [
+       "2",
+       "二氧化氮( $NO_{2}$ )",
+       "环境空气 氮氧化物(一氧化氮和二氧化氮)的测定 盐酸萘乙二胺分光光度法",
+       "HJ 479",
+       "差分吸收光谱分析法",
+       "—"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "名称",
+        "标准编号",
+        "名称",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 5,
+       "table_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "blockid": "6c4283cab67f52419193785fb0dcf1ef",
+       "locator": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "chunk_ids": [
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "table_number": "3",
+      "seq": "3",
+      "cells": [
+       "3",
+       "一氧化碳(CO)",
+       "空气质量 一氧化碳的测定 非分散红外法",
+       "GB/T 9801",
+       "环境空气 一氧化碳的自动测定 非分散红外法*",
+       "HJ 965"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "名称",
+        "标准编号",
+        "名称",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 6,
+       "table_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "blockid": "6c4283cab67f52419193785fb0dcf1ef",
+       "locator": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "chunk_ids": [
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "table_number": "3",
+      "seq": "4",
+      "cells": [
+       "4",
+       "臭氧( $O_{3}$ )",
+       "环境空气 臭氧的测定 靛蓝二磺酸钠分光光度法",
+       "HJ 504",
+       "环境空气 臭氧的测定 紫外光度法*",
+       "HJ 590"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "名称",
+        "标准编号",
+        "名称",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 7,
+       "table_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "blockid": "6c4283cab67f52419193785fb0dcf1ef",
+       "locator": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "chunk_ids": [
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "table_number": "3",
+      "seq": "4",
+      "cells": [
+       "4",
+       "臭氧( $O_{3}$ )",
+       "环境空气 臭氧的测定 靛蓝二磺酸钠分光光度法",
+       "HJ 504",
+       "环境空气 臭氧的自动测定化学发光法",
+       "HJ 1225"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "名称",
+        "标准编号",
+        "名称",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 8,
+       "table_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "blockid": "6c4283cab67f52419193785fb0dcf1ef",
+       "locator": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "chunk_ids": [
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "table_number": "3",
+      "seq": "4",
+      "cells": [
+       "4",
+       "臭氧( $O_{3}$ )",
+       "环境空气 臭氧的测定 靛蓝二磺酸钠分光光度法",
+       "HJ 504",
+       "差分吸收光谱分析法",
+       "—"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "名称",
+        "标准编号",
+        "名称",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 9,
+       "table_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "blockid": "6c4283cab67f52419193785fb0dcf1ef",
+       "locator": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "chunk_ids": [
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "table_number": "3",
+      "seq": "5",
+      "cells": [
+       "5",
+       "颗粒物(粒径小于等于 $10\\mu m,PM_{10}$ )",
+       "环境空气 $PM_{10}$ 和 $PM_{2.5}$ 的测定 重量法*",
+       "HJ 618",
+       "微量振荡天平法、β射线法、光散射法",
+       "—"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "名称",
+        "标准编号",
+        "名称",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 10,
+       "table_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "blockid": "6c4283cab67f52419193785fb0dcf1ef",
+       "locator": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "chunk_ids": [
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "table_number": "3",
+      "seq": "6",
+      "cells": [
+       "6",
+       "颗粒物(粒径小于等于 $2.5\\mu m,PM_{2.5}$ )",
+       "环境空气 $PM_{10}$ 和 $PM_{2.5}$ 的测定 重量法*",
+       "HJ 618",
+       "微量振荡天平法、β射线法、光散射法",
+       "—"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "名称",
+        "标准编号",
+        "名称",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 11,
+       "table_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "blockid": "6c4283cab67f52419193785fb0dcf1ef",
+       "locator": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "chunk_ids": [
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "table_number": "3",
+      "seq": "7",
+      "cells": [
+       "7",
+       "总悬浮颗粒物(TSP)",
+       "环境空气 总悬浮颗粒物的测定重量法*",
+       "HJ 1263",
+       "—",
+       "—"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "名称",
+        "标准编号",
+        "名称",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 12,
+       "table_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "blockid": "6c4283cab67f52419193785fb0dcf1ef",
+       "locator": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "chunk_ids": [
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "table_number": "3",
+      "seq": "8",
+      "cells": [
+       "8",
+       "氮氧化物( $NO_{x}$ )",
+       "环境空气 氮氧化物(一氧化氮和二氧化氮)的测定 盐酸萘乙二胺分光光度法",
+       "HJ 479",
+       "环境空气 氮氧化物的自动测定 化学发光法*",
+       "HJ 1043"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "名称",
+        "标准编号",
+        "名称",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 13,
+       "table_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "blockid": "6c4283cab67f52419193785fb0dcf1ef",
+       "locator": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "chunk_ids": [
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "table_number": "3",
+      "seq": "8",
+      "cells": [
+       "8",
+       "氮氧化物( $NO_{x}$ )",
+       "环境空气 氮氧化物(一氧化氮和二氧化氮)的测定 盐酸萘乙二胺分光光度法",
+       "HJ 479",
+       "差分吸收光谱分析法",
+       "—"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "名称",
+        "标准编号",
+        "名称",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 14,
+       "table_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "blockid": "6c4283cab67f52419193785fb0dcf1ef",
+       "locator": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "chunk_ids": [
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "table_number": "3",
+      "seq": "9",
+      "cells": [
+       "9",
+       "铅(Pb)",
+       "空气和废气 颗粒物中铅等金属元素的测定 电感耦合等离子体质谱法*",
+       "HJ 657",
+       "—",
+       "—"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "名称",
+        "标准编号",
+        "名称",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 15,
+       "table_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "blockid": "6c4283cab67f52419193785fb0dcf1ef",
+       "locator": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "chunk_ids": [
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "table_number": "3",
+      "seq": "9",
+      "cells": [
+       "9",
+       "铅(Pb)",
+       "环境空气 铅的测定 石墨炉原子吸收分光光度法",
+       "HJ 539",
+       "—",
+       "—"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "名称",
+        "标准编号",
+        "名称",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 16,
+       "table_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "blockid": "6c4283cab67f52419193785fb0dcf1ef",
+       "locator": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "chunk_ids": [
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "table_number": "3",
+      "seq": "9",
+      "cells": [
+       "9",
+       "铅(Pb)",
+       "空气和废气 颗粒物中金属元素的测定 电感耦合等离子体发射光谱法",
+       "HJ 777",
+       "—",
+       "—"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "名称",
+        "标准编号",
+        "名称",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 17,
+       "table_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "blockid": "6c4283cab67f52419193785fb0dcf1ef",
+       "locator": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "chunk_ids": [
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "table_number": "3",
+      "seq": "9",
+      "cells": [
+       "9",
+       "铅(Pb)",
+       "环境空气 颗粒物中无机元素的测定 能量色散X射线荧光光谱法",
+       "HJ 829",
+       "—",
+       "—"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "名称",
+        "标准编号",
+        "名称",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 18,
+       "table_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "blockid": "6c4283cab67f52419193785fb0dcf1ef",
+       "locator": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "chunk_ids": [
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "table_number": "3",
+      "seq": "9",
+      "cells": [
+       "9",
+       "铅(Pb)",
+       "环境空气 颗粒物中无机元素的测定 波长色散X射线荧光光谱法",
+       "HJ 830",
+       "—",
+       "—"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "名称",
+        "标准编号",
+        "名称",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 19,
+       "table_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "blockid": "6c4283cab67f52419193785fb0dcf1ef",
+       "locator": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "chunk_ids": [
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "table_number": "3",
+      "seq": "10",
+      "cells": [
+       "10",
+       "苯并[a]芘(BaP)",
+       "环境空气 苯并[a]芘的测定 高效液相色谱法*",
+       "HJ 956",
+       "—",
+       "—"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "名称",
+        "标准编号",
+        "名称",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 20,
+       "table_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "blockid": "6c4283cab67f52419193785fb0dcf1ef",
+       "locator": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "chunk_ids": [
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "table_number": "3",
+      "seq": "10",
+      "cells": [
+       "10",
+       "苯并[a]芘(BaP)",
+       "环境空气和废气 气相和颗粒物中多环芳烃的测定 气相色谱-质谱法",
+       "HJ 646",
+       "—",
+       "—"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "名称",
+        "标准编号",
+        "名称",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 21,
+       "table_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "blockid": "6c4283cab67f52419193785fb0dcf1ef",
+       "locator": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "chunk_ids": [
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "table_number": "3",
+      "seq": "10",
+      "cells": [
+       "10",
+       "苯并[a]芘(BaP)",
+       "环境空气和废气 气相和颗粒物中多环芳烃的测定 高效液相色谱法",
+       "HJ 647",
+       "—",
+       "—"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "名称",
+        "标准编号",
+        "名称",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [
+       "注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。 注:“*”表示该污染物项目的参比方法。"
+      ],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 22,
+       "table_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "blockid": "6c4283cab67f52419193785fb0dcf1ef",
+       "locator": "tb-4c883d21fa02a53189e0911c3d59d1d1-0003",
+       "chunk_ids": [
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "3",
+      "seq": "1",
+      "cells": [
+       "1",
+       "二氧化硫( $SO_2$ )",
+       "环境空气 二氧化硫的测定 甲醛吸收-副玫瑰苯胺分光光度法",
+       "HJ 482",
+       "紫外荧光法、差分吸收光谱分析法"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "分析方法",
+        "标准编号",
+        "自动分析方法"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 2,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "blockid": "437f7c19a5677fae67744a415f4e22b4",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "3",
+      "seq": "1",
+      "cells": [
+       "1",
+       "二氧化硫( $SO_2$ )",
+       "环境空气 二氧化硫的测定 四氯汞盐吸收-副玫瑰苯胺分光光度法",
+       "HJ 483",
+       "紫外荧光法、差分吸收光谱分析法"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "分析方法",
+        "标准编号",
+        "自动分析方法"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 3,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "blockid": "437f7c19a5677fae67744a415f4e22b4",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "3",
+      "seq": "2",
+      "cells": [
+       "2",
+       "二氧化氮( $NO_2$ )",
+       "环境空气 氮氧化物(一氧化氮和二氧化氮)的测定 盐酸萘乙二胺分光光度法",
+       "HJ 479",
+       "化学发光法、差分吸收光谱分析法"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "分析方法",
+        "标准编号",
+        "自动分析方法"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 4,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "blockid": "437f7c19a5677fae67744a415f4e22b4",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "3",
+      "seq": "3",
+      "cells": [
+       "3",
+       "一氧化碳(CO)",
+       "空气质量 一氧化碳的测定 非分散红外法",
+       "GB 9801",
+       "气体滤波相关红外吸收法、非分散红外吸收法"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "分析方法",
+        "标准编号",
+        "自动分析方法"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 5,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "blockid": "437f7c19a5677fae67744a415f4e22b4",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "3",
+      "seq": "4",
+      "cells": [
+       "4",
+       "臭氧( $O_3$ )",
+       "环境空气 臭氧的测定 靛蓝二磺酸钠分光光度法",
+       "HJ 504",
+       "紫外荧光法、差分吸收光谱分析法"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "分析方法",
+        "标准编号",
+        "自动分析方法"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 6,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "blockid": "437f7c19a5677fae67744a415f4e22b4",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "3",
+      "seq": "4",
+      "cells": [
+       "4",
+       "臭氧( $O_3$ )",
+       "环境空气 臭氧的测定 紫外光度法",
+       "HJ 590",
+       "紫外荧光法、差分吸收光谱分析法"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "分析方法",
+        "标准编号",
+        "自动分析方法"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 7,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "blockid": "437f7c19a5677fae67744a415f4e22b4",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "3",
+      "seq": "5",
+      "cells": [
+       "5",
+       "颗粒物(粒径小于等于10μm)",
+       "环境空气 $PM_{10}$ 和 $PM_{2.5}$ 的测定 重量法",
+       "HJ 618",
+       "微量振荡天平法、β射线法"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "分析方法",
+        "标准编号",
+        "自动分析方法"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 8,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "blockid": "437f7c19a5677fae67744a415f4e22b4",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "3",
+      "seq": "6",
+      "cells": [
+       "6",
+       "颗粒物(粒径小于等于2.5μm)",
+       "环境空气 $PM_{10}$ 和 $PM_{2.5}$ 的测定 重量法",
+       "HJ 618",
+       "微量振荡天平法、β射线法"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "分析方法",
+        "标准编号",
+        "自动分析方法"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 9,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "blockid": "437f7c19a5677fae67744a415f4e22b4",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "3",
+      "seq": "7",
+      "cells": [
+       "7",
+       "总悬浮颗粒物(TSP)",
+       "环境空气 总悬浮颗粒物的测定 重量法",
+       "GB/T 15432",
+       "—"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "分析方法",
+        "标准编号",
+        "自动分析方法"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 10,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "blockid": "437f7c19a5677fae67744a415f4e22b4",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "3",
+      "seq": "8",
+      "cells": [
+       "8",
+       "氮氧化物( $NO_x$ )",
+       "环境空气 氮氧化物(一氧化氮和二氧化氮)的测定 盐酸萘乙二胺分光光度法",
+       "HJ 479",
+       "化学发光法、差分吸收光谱分析法"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "分析方法",
+        "标准编号",
+        "自动分析方法"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 11,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "blockid": "437f7c19a5677fae67744a415f4e22b4",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "3",
+      "seq": "9",
+      "cells": [
+       "9",
+       "铅(Pb)",
+       "环境空气 铅的测定 石墨炉原子吸收分光光度法(暂行)",
+       "HJ 539",
+       "—"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "分析方法",
+        "标准编号",
+        "自动分析方法"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 12,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "blockid": "437f7c19a5677fae67744a415f4e22b4",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "3",
+      "seq": "9",
+      "cells": [
+       "9",
+       "铅(Pb)",
+       "环境空气 铅的测定 火焰原子吸收分光光度法",
+       "GB/T 15264",
+       "—"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "分析方法",
+        "标准编号",
+        "自动分析方法"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 13,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "blockid": "437f7c19a5677fae67744a415f4e22b4",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "3",
+      "seq": "10",
+      "cells": [
+       "10",
+       "苯并[a]芘(BaP)",
+       "空气质量 飘尘中苯并[a]芘的测定 乙酰化滤纸层析荧光分光光度法",
+       "GB 8971",
+       "—"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "分析方法",
+        "标准编号",
+        "自动分析方法"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 14,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "blockid": "437f7c19a5677fae67744a415f4e22b4",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "table_number": "3",
+      "seq": "10",
+      "cells": [
+       "10",
+       "苯并[a]芘(BaP)",
+       "环境空气 苯并[a]芘的测定 高效液相色谱法",
+       "GB/T 15439",
+       "—"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物项目",
+        "手工分析方法",
+        "手工分析方法",
+        "自动分析方法"
+       ],
+       [
+        "序号",
+        "污染物项目",
+        "分析方法",
+        "标准编号",
+        "自动分析方法"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 15,
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "blockid": "437f7c19a5677fae67744a415f4e22b4",
+       "locator": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "chunk_ids": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 各项污染物分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "1",
+      "cells": [
+       "1",
+       "pH值",
+       "水质 pH值的测定 电极法",
+       "HJ 1147",
+       "HJ 1147"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 1,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "2",
+      "cells": [
+       "2",
+       "水温",
+       "水质 水温的测定 温度计或颠倒温度计测定法",
+       "GB 13195",
+       "GB 13195"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 2,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "3",
+      "cells": [
+       "3",
+       "悬浮物",
+       "水质 悬浮物的测定 重量法",
+       "GB 11901",
+       "GB 11901"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 3,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "4",
+      "cells": [
+       "4",
+       "五日生化需氧量(BOD5)",
+       "水质 五日生化需氧量(BOD5)的测定 稀释与接种法",
+       "HJ 505",
+       "HJ 505"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 4,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "5",
+      "cells": [
+       "5",
+       "化学需氧量(CODCr)",
+       "水质 化学需氧量的测定 快速消解分光光度法",
+       "HJ/T 399",
+       "HJ/T 399"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 5,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "5",
+      "cells": [
+       "5",
+       "化学需氧量(CODCr)",
+       "水质 化学需氧量的测定 重铬酸盐法",
+       "HJ 828",
+       "HJ 828"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 6,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "6",
+      "cells": [
+       "6",
+       "阴离子表面活性剂",
+       "水质 阴离子表面活性剂的测定 亚甲蓝分光光度法",
+       "GB 7494",
+       "GB 7494"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 7,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "6",
+      "cells": [
+       "6",
+       "阴离子表面活性剂",
+       "水质 阴离子表面活性剂的测定 流动注射-亚甲基蓝分光光度法",
+       "HJ 826",
+       "HJ 826"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 8,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "7",
+      "cells": [
+       "7",
+       "氯化物",
+       "水质 氯化物的测定 硝酸银滴定法",
+       "GB 11896",
+       "GB 11896"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 9,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "7",
+      "cells": [
+       "7",
+       "氯化物",
+       "水质 无机阴离子(F-、Cl-、NO2-、Br-、NO3-、PO43-、SO32-、SO42-)的测定 离子色谱法",
+       "HJ 84",
+       "HJ 84"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 10,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "7",
+      "cells": [
+       "7",
+       "氯化物",
+       "水质 氯化物的测定 硝酸汞滴定法(试行)",
+       "HJ/T 343",
+       "HJ/T 343"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 11,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "8",
+      "cells": [
+       "8",
+       "硫化物",
+       "水质 硫化物的测定 亚甲基蓝分光光度法",
+       "GB/T 16489",
+       "GB/T 16489"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 12,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "8",
+      "cells": [
+       "8",
+       "硫化物",
+       "水质 硫化物的测定 气相分子吸收光谱法",
+       "HJ/T 200",
+       "HJ/T 200"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 13,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "8",
+      "cells": [
+       "8",
+       "硫化物",
+       "水质 硫化物的测定 流动注射-亚甲基蓝分光光度法",
+       "HJ 824",
+       "HJ 824"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 14,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "9",
+      "cells": [
+       "9",
+       "全盐量",
+       "水质 全盐量的测定 重量法",
+       "HJ/T 51",
+       "HJ/T 51"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 15,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "10",
+      "cells": [
+       "10",
+       "总铅",
+       "水质 铜、锌、铅、镉的测定 原子吸收分光光度法",
+       "GB 7475",
+       "GB 7475"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 16,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "10",
+      "cells": [
+       "10",
+       "总铅",
+       "水质 65种元素的测定 电感耦合等离子体质谱法",
+       "HJ 700",
+       "HJ 700"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 17,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "10",
+      "cells": [
+       "10",
+       "总铅",
+       "水质 32种元素的测定 电感耦合等离子体发射光谱法",
+       "HJ 776",
+       "HJ 776"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 18,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "11",
+      "cells": [
+       "11",
+       "总镉",
+       "水质 65种元素的测定 电感耦合等离子体质谱法",
+       "HJ 700",
+       "HJ 700"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 19,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "11",
+      "cells": [
+       "11",
+       "总镉",
+       "水质 32种元素的测定 电感耦合等离子体发射光谱法",
+       "HJ 776",
+       "HJ 776"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 20,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "12",
+      "cells": [
+       "12",
+       "铬(六价)",
+       "水质 六价铬的测定 二苯碳酰二肼分光光度法",
+       "GB 7467",
+       "GB 7467"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 21,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "12",
+      "cells": [
+       "12",
+       "铬(六价)",
+       "水质 六价铬的测定 流动注射-二苯碳酰二肼光度法",
+       "HJ 908",
+       "HJ 908"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 22,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "13",
+      "cells": [
+       "13",
+       "总汞",
+       "总汞",
+       "水质 总汞的测定 冷原子吸收分光光度法",
+       "HJ 597"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 23,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "13",
+      "cells": [
+       "13",
+       "总汞",
+       "总汞",
+       "水质 汞、砷、硒、铋和锑的测定 原子荧光法",
+       "HJ 694"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 24,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "14",
+      "cells": [
+       "14",
+       "总砷",
+       "总砷",
+       "水质 汞、砷、硒、铋和锑的测定 原子荧光法",
+       "HJ 694"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 25,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "14",
+      "cells": [
+       "14",
+       "总砷",
+       "总砷",
+       "水质 65 种元素的测定 电感耦合等离子体质谱法",
+       "HJ 700"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 26,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "15",
+      "cells": [
+       "15",
+       "总镍",
+       "总镍",
+       "水质 镍的测定 火焰原子吸收分光光度法",
+       "GB 11912"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 27,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "15",
+      "cells": [
+       "15",
+       "总镍",
+       "总镍",
+       "水质 65 种元素的测定 电感耦合等离子体质谱法",
+       "HJ 700"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 28,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "15",
+      "cells": [
+       "15",
+       "总镍",
+       "总镍",
+       "水质 32 种元素的测定 电感耦合等离子体发射光谱法",
+       "HJ 776"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 29,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "16",
+      "cells": [
+       "16",
+       "粪大肠菌群数",
+       "粪大肠菌群数",
+       "水质 粪大肠菌群的测定 多管发酵法",
+       "HJ 347.2"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 30,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "17",
+      "cells": [
+       "17",
+       "蛔虫卵数",
+       "蛔虫卵数",
+       "水质 蛔虫卵的测定 沉淀集卵法",
+       "HJ 775"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 31,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "18",
+      "cells": [
+       "18",
+       "氰化物",
+       "氰化物",
+       "水质 氰化物的测定 容量法和分光光度法",
+       "HJ 484"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 32,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "18",
+      "cells": [
+       "18",
+       "氰化物",
+       "氰化物",
+       "水质 氰化物的测定 流动注射-分光光度法",
+       "HJ 823"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 33,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "19",
+      "cells": [
+       "19",
+       "氟化物",
+       "氟化物",
+       "水质 氟化物的测定 离子选择电极法",
+       "GB 7484"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 34,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "19",
+      "cells": [
+       "19",
+       "氟化物",
+       "氟化物",
+       "水质 无机阴离子( $F^{-}$ 、 $Cl^{-}$ 、 $NO_{2}^{-}$ 、 $Br^{-}$ 、 $NO_{3}^{-}$ 、 $PO_{4}^{3-}$ 、 $SO_{3}^{2-}$ 、 $SO_{4}^{2-}$ )的测定 离子色谱法",
+       "HJ 84"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 35,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "19",
+      "cells": [
+       "19",
+       "氟化物",
+       "氟化物",
+       "水质 氟化物的测定 茜素磺酸锆目视比色法",
+       "HJ 487"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 36,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "19",
+      "cells": [
+       "19",
+       "氟化物",
+       "氟化物",
+       "水质 氟化物的测定 氟试剂分光光度法",
+       "HJ 488"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 37,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "20",
+      "cells": [
+       "20",
+       "石油类",
+       "石油类",
+       "水质 石油类和动植物油类的测定 红外分光光度法",
+       "HJ 637"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 38,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "20",
+      "cells": [
+       "20",
+       "石油类",
+       "石油类",
+       "水质 石油类的测定 紫外分光光度法(试行)",
+       "HJ 970"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 39,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "21",
+      "cells": [
+       "21",
+       "挥发酚",
+       "挥发酚",
+       "水质 挥发酚的测定 4-氨基安替比林分光光度法",
+       "HJ 503"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 40,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "21",
+      "cells": [
+       "21",
+       "挥发酚",
+       "挥发酚",
+       "水质 挥发酚的测定 流动注射-4-氨基安替比林分光光度法",
+       "HJ 825"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 41,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "22",
+      "cells": [
+       "22",
+       "硼",
+       "硼",
+       "水质 硼的测定 姜黄素分光光度法",
+       "HJ/T 49"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 42,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "22",
+      "cells": [
+       "22",
+       "硼",
+       "硼",
+       "水质 65 种元素的测定 电感耦合等离子体质谱法",
+       "HJ 700"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 43,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "23",
+      "cells": [
+       "23",
+       "总铜",
+       "总铜",
+       "水质 铜、锌、铅、镉的测定 原子吸收分光光度法",
+       "GB 7475"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 44,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "23",
+      "cells": [
+       "23",
+       "总铜",
+       "总铜",
+       "水质 铜的测定 二乙基二硫代氨基甲酸钠分光光度法",
+       "HJ 485"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 45,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "23",
+      "cells": [
+       "23",
+       "总铜",
+       "总铜",
+       "水质 铜的测定 2,9-二甲基-1,10菲啰啉分光光度法",
+       "HJ 486"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 46,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "23",
+      "cells": [
+       "23",
+       "总铜",
+       "总铜",
+       "水质 65 种元素的测定 电感耦合等离子体质谱法",
+       "HJ 700"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 47,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "23",
+      "cells": [
+       "23",
+       "总铜",
+       "总铜",
+       "水质 32 种元素的测定 电感耦合等离子体发射光谱法",
+       "HJ 776"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 48,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "24",
+      "cells": [
+       "24",
+       "总锌",
+       "总锌",
+       "水质 铜、锌、铅、镉的测定 原子吸收分光光度法",
+       "GB 7475"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 49,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "24",
+      "cells": [
+       "24",
+       "总锌",
+       "总锌",
+       "水质 65 种元素的测定 电感耦合等离子体质谱法",
+       "HJ 700"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 50,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "24",
+      "cells": [
+       "24",
+       "总锌",
+       "总锌",
+       "水质 32 种元素的测定 电感耦合等离子体发射光谱法",
+       "HJ 776"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 51,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "25",
+      "cells": [
+       "25",
+       "硒",
+       "水质 硒的测定 石墨炉原子吸收分光光度法",
+       "GB/T 15505",
+       "GB/T 15505"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 52,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "25",
+      "cells": [
+       "25",
+       "硒",
+       "水质 汞、砷、硒、铋和锑的测定 原子荧光法",
+       "HJ 694",
+       "HJ 694"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 53,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "25",
+      "cells": [
+       "25",
+       "硒",
+       "水质 65种元素的测定 电感耦合等离子体质谱法",
+       "HJ 700",
+       "HJ 700"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 54,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "25",
+      "cells": [
+       "25",
+       "硒",
+       "水质 总硒的测定 3,3'-二氨基联苯胺分光光度法",
+       "HJ 811",
+       "HJ 811"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 55,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "26",
+      "cells": [
+       "26",
+       "苯",
+       "水质 挥发性有机物的测定 吹扫捕集/气相色谱-质谱法",
+       "HJ 639",
+       "HJ 639"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 56,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "26",
+      "cells": [
+       "26",
+       "苯",
+       "水质 挥发性有机物的测定 吹扫捕集/气相色谱法",
+       "HJ 686",
+       "HJ 686"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 57,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "26",
+      "cells": [
+       "26",
+       "苯",
+       "水质 挥发性有机物的测定 顶空/气相色谱-质谱法",
+       "HJ 810",
+       "HJ 810"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 58,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "26",
+      "cells": [
+       "26",
+       "苯",
+       "水质 苯系物的测定 顶空/气相色谱法",
+       "HJ 1067",
+       "HJ 1067"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 59,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "27",
+      "cells": [
+       "27",
+       "甲苯",
+       "水质 挥发性有机物的测定 吹扫捕集/气相色谱-质谱法",
+       "HJ 639",
+       "HJ 639"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 60,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "27",
+      "cells": [
+       "27",
+       "甲苯",
+       "水质 挥发性有机物的测定 吹扫捕集/气相色谱法",
+       "HJ 686",
+       "HJ 686"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 61,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "27",
+      "cells": [
+       "27",
+       "甲苯",
+       "水质 挥发性有机物的测定 顶空/气相色谱-质谱法",
+       "HJ 81O",
+       "HJ 81O"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 62,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "27",
+      "cells": [
+       "27",
+       "甲苯",
+       "水质 苯系物的测定 顶空/气相色谱法",
+       "HJ 1067",
+       "HJ 1067"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 63,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "28",
+      "cells": [
+       "28",
+       "二甲苯",
+       "水质 挥发性有机物的测定 吹扫捕集/气相色谱-质谱法",
+       "HJ 639",
+       "HJ 639"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 64,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "28",
+      "cells": [
+       "28",
+       "二甲苯",
+       "水质 挥发性有机物的测定 吹扫捕集/气相色谱法",
+       "HJ 686",
+       "HJ 686"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 65,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "28",
+      "cells": [
+       "28",
+       "二甲苯",
+       "水质 挥发性有机物的测定 顶空/气相色谱-质谱法",
+       "HJ 8I0",
+       "HJ 8I0"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 66,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "28",
+      "cells": [
+       "28",
+       "二甲苯",
+       "水质 苯系物的测定 顶空/气相色谱法",
+       "HJ 1067",
+       "HJ 1067"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 67,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "29",
+      "cells": [
+       "29",
+       "异丙苯",
+       "水质 挥发性有机物的测定 吹扫捕集/气相色谱-质谱法",
+       "HJ 639",
+       "HJ 639"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 68,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "29",
+      "cells": [
+       "29",
+       "异丙苯",
+       "水质 挥发性有机物的测定 吹扫捕集/气相色谱法",
+       "HJ 686",
+       "HJ 686"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 69,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "29",
+      "cells": [
+       "29",
+       "异丙苯",
+       "水质 挥发性有机物的测定 顶空/气相色谱-质谱法",
+       "HJ 81",
+       "HJ 81"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 70,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "29",
+      "cells": [
+       "29",
+       "异丙苯",
+       "水质 苯系物的测定 顶空/气相色谱法",
+       "HJ 1067",
+       "HJ 1067"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 71,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "30",
+      "cells": [
+       "30",
+       "苯胺",
+       "水质 苯胺类化合物的测定 N-(1-萘基)乙二胺偶氮分光光度法",
+       "GB 11889",
+       "GB 11889"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 72,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "30",
+      "cells": [
+       "30",
+       "苯胺",
+       "水质 苯胺类化合物的测定 气相色谱-质谱法",
+       "HJ 822",
+       "HJ 822"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 73,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "30",
+      "cells": [
+       "30",
+       "苯胺",
+       "水质 17种苯胺类化合物的测定 液相色谱-三重四极杆质谱法",
+       "HJ 1048",
+       "HJ 1048"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 74,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "31",
+      "cells": [
+       "31",
+       "三氯乙醛",
+       "水质 三氯乙醛的测定 吡唑啉酮分光光度法",
+       "HJ/T 50",
+       "HJ/T 50"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 75,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "32",
+      "cells": [
+       "32",
+       "丙烯醛",
+       "水质 丙烯腈和丙烯醛的测定 吹扫捕集/气相色谱法",
+       "HJ 806",
+       "HJ 806"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 76,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "33",
+      "cells": [
+       "33",
+       "氯苯",
+       "水质 氯苯的测定 气相色谱法",
+       "HJ/T 74",
+       "HJ/T 74"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 77,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "33",
+      "cells": [
+       "33",
+       "氯苯",
+       "水质 氯苯类化合物的测定 气相色谱法",
+       "HJ 621",
+       "HJ 621"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 78,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "33",
+      "cells": [
+       "33",
+       "氯苯",
+       "水质 挥发性有机物的测定 吹扫捕集/气相色谱-质谱法",
+       "HJ 639",
+       "HJ 639"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 79,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "33",
+      "cells": [
+       "33",
+       "氯苯",
+       "水质 挥发性有机物的测定 顶空/气相色谱-质谱法",
+       "HJ 810",
+       "HJ 810"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 80,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "34",
+      "cells": [
+       "34",
+       "1,2-二氯苯",
+       "水质 氯苯类化合物的测定 气相色谱法",
+       "HJ 621",
+       "HJ 621"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 81,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "34",
+      "cells": [
+       "34",
+       "1,2-二氯苯",
+       "水质 挥发性有机物的测定 吹扫捕集/气相色谱-质谱法",
+       "HJ 639",
+       "HJ 639"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 82,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "34",
+      "cells": [
+       "34",
+       "1,2-二氯苯",
+       "水质 挥发性有机物的测定 顶空/气相色谱-质谱法",
+       "HJ 810",
+       "HJ 810"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 83,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "35",
+      "cells": [
+       "35",
+       "1,4-二氯苯",
+       "水质 氯苯类化合物的测定 气相色谱法",
+       "HJ 621",
+       "HJ 621"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 84,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "35",
+      "cells": [
+       "35",
+       "1,4-二氯苯",
+       "水质 挥发性有机物的测定 气相色谱-质谱法",
+       "HJ 639",
+       "HJ 639"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 85,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "35",
+      "cells": [
+       "35",
+       "1,4-二氯苯",
+       "水质 挥发性有机物的测定 顶空/气相色谱-质谱法",
+       "HJ 810",
+       "HJ 810"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 86,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "36",
+      "cells": [
+       "36",
+       "硝基苯",
+       "水质 硝基苯类化合物的测定 气相色谱法",
+       "HJ 592",
+       "HJ 592"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 87,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "36",
+      "cells": [
+       "36",
+       "硝基苯",
+       "水质 硝基苯类化合物的测定 液液萃取/固相萃取-气相色谱法",
+       "HJ 648",
+       "HJ 648"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 88,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     },
+     {
+      "kind": "table_row",
+      "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+      "table_number": "3",
+      "seq": "36",
+      "cells": [
+       "36",
+       "硝基苯",
+       "水质 硝基苯类化合物的测定 气相色谱-质谱法",
+       "HJ 716",
+       "HJ 716"
+      ],
+      "header": [
+       [
+        "序号",
+        "分析项目",
+        "标准名称",
+        "标准编号",
+        "标准编号"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 89,
+       "table_id": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "blockid": "16de30b3200abf36ef0466eaf324191f",
+       "locator": "tb-503d7a0789fa0087345a5f4358e1dca0-0003",
+       "chunk_ids": [
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-004",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-006",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-007",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-008",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-009",
+        "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-010"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表3 农田灌溉水质控制项目分析方法"
+     }
+    ]
+   },
+   "reverification": {
+    "items_checked": 124,
+    "problems": [],
+    "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+   },
+   "model": null,
+   "status": "ambiguous"
+  }
+ ]
+}

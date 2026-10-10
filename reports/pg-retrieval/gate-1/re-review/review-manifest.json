@@ -1,0 +1,98 @@
+{
+  "reviewed_at": "2026-10-05T12:08:52.488433+00:00",
+  "decision": "rejected",
+  "accepted_tasks": [
+    "3.1"
+  ],
+  "pending_tasks": [
+    "3.2",
+    "3.3",
+    "3.4",
+    "3.5",
+    "3.6"
+  ],
+  "code_sha256": {
+    "src/env_rag_final/enumerate_/__init__.py": "a1f93429fbe9550836d7f1b08f87c9e62b7946e834e8c9698936a138346f696f",
+    "src/env_rag_final/enumerate_/contract.py": "d674bd649fd58eb528d7cfde5dd02cdc089a6bcb7506149eb711f4903f42785d",
+    "src/env_rag_final/enumerate_/doc_enum.py": "6a2749da3464683294d6887f8d12adb6e8b940f70b8274aaf584d701a0fbeaec",
+    "src/env_rag_final/enumerate_/prose_enum.py": "020f0125bf165ecbd985573280ddfe222a3605ccb8d40cdcc0679c3054cbdea8",
+    "src/env_rag_final/enumerate_/table_enum.py": "95633cfe4e967cd2c3c9ba8f53ec72c375534cdf28ba6fbd7775d49362f972dd",
+    "src/env_rag_final/enumerate_/tables.py": "32e2b2fd5d74e427a2cbf2559fec1a2b3d1e7a6b6ae2cc9e3a2ddeac5d96889f",
+    "src/env_rag_final/cli.py": "8254ce58e28d3c92ca9bafb485901d4816839eee315ab639d757a420fff293ff"
+  },
+  "live": {
+    "source_before": {
+      "state": "current",
+      "active_run_id": "c15c741742394320",
+      "active_snapshot_id": "4919b3938ad93747",
+      "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "expected_recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "live_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "stored_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "action": ""
+    },
+    "source_after": {
+      "state": "current",
+      "active_run_id": "c15c741742394320",
+      "active_snapshot_id": "4919b3938ad93747",
+      "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "expected_recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "live_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "stored_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "action": ""
+    },
+    "public_before": {
+      "doc_full": 221,
+      "doc_chunks": 5709,
+      "doc_status": 279,
+      "llm_cache": 16514,
+      "entity_chunks": 65527,
+      "full_entities": 221,
+      "full_relations": 221,
+      "relation_chunks": 119575
+    },
+    "public_after": {
+      "doc_full": 221,
+      "doc_chunks": 5709,
+      "doc_status": 279,
+      "llm_cache": 16514,
+      "entity_chunks": 65527,
+      "full_entities": 221,
+      "full_relations": 221,
+      "relation_chunks": 119575
+    },
+    "matches_frozen_counts": true,
+    "readonly_main_connection": "on",
+    "database_writes": 0,
+    "model_calls": 0,
+    "container": "existing lightrag-postgres running; no service mutations by reviewer",
+    "table1_items": 13,
+    "incorrect_raw_row_citations": 13,
+    "cli_positive_exit_code": 1,
+    "cli_missing_clause_false_complete": true
+  },
+  "counterexample_count": 7,
+  "verification": {
+    "pytest": {
+      "passed": 87
+    },
+    "ruff_check": "passed",
+    "ruff_format": "failed: cli.py and prose_enum.py",
+    "openspec_strict": "passed",
+    "git_diff_check": "passed"
+  },
+  "scope": {
+    "total_files": 69,
+    "reviewed_files": 7,
+    "skipped_files": 62,
+    "coverage_rate": 0.10144927536231885,
+    "additional_reviewed": [
+      "tests/test_enumeration.py",
+      "phase-1/report.md",
+      "phase-1/enumeration-runs.jsonl",
+      "handoff-phase-1-enumeration-fixes.md"
+    ],
+    "bounded_scope": "Six enum modules + CLI: all reviewed"
+  },
+  "review_source_sha256": "9be9de6c9aaff8b84ab56c5b6f3daa235ed32b65cce76a28ac9f1bb712ce2b03"
+}

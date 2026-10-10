@@ -1,0 +1,1419 @@
+{
+ "task": "5.2 real local candidate adapter (production backends, read-only)",
+ "release": "lightrag-hku 1.5.7",
+ "frozen": {
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_run_id": "c15c741742394320",
+  "catalog_snapshot_id": "4919b3938ad93747",
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "public_counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  }
+ },
+ "started_at": "2026-10-06T22:25:10+0800",
+ "results": [
+  {
+   "query_id": "fact-001",
+   "query": "GB 3095-2012 中二氧化硫的年平均浓度二级限值是多少？",
+   "mode": "local",
+   "workspace": "default",
+   "started_at": "2026-10-06T22:25:00+0800",
+   "finished_at": "2026-10-06T22:25:03+0800",
+   "keywords": {
+    "high_level": [
+     "环境空气质量标准",
+     "污染物浓度限值"
+    ],
+    "low_level": [
+     "GB 3095-2012",
+     "二氧化硫",
+     "年平均浓度",
+     "二级限值"
+    ]
+   },
+   "entities_top": [
+    {
+     "entity_name": "表1(环境空气污染物基本项目浓度限值)",
+     "rank": 12
+    },
+    {
+     "entity_name": "二级浓度限值",
+     "rank": 12
+    },
+    {
+     "entity_name": "二氧化硫(SO₂)",
+     "rank": 12
+    },
+    {
+     "entity_name": "Annual Standard Of 10 Ppb",
+     "rank": 2
+    },
+    {
+     "entity_name": "表2(环境空气污染物其他项目浓度限值)",
+     "rank": 12
+    },
+    {
+     "entity_name": "二级SO2标准",
+     "rank": 3
+    },
+    {
+     "entity_name": "Secondary SO2 NAAQS",
+     "rank": 14
+    },
+    {
+     "entity_name": "国家二级标准",
+     "rank": 6
+    }
+   ],
+   "relations_count": 74,
+   "candidates": [
+    {
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+     "workspace": "default",
+     "full_doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_id_verified": true,
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "content_head": "## 4 环境空气功能区分类和质量要求\n\n## 4.1 环境空气功能区分类\n环境空气功能区分为二类：一类区为自然保护区、风景名胜区和其他需要特殊保护的区域；二类",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:表1(环境空气污染物基本项目浓度限值)"
+     ],
+     "similarity_order": 0
+    },
+    {
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-002",
+     "workspace": "default",
+     "full_doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc_id_verified": false,
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "content_head": "## 4.1 环境空气功能区分类\n环境空气功能区分为两类：一类区为国家公园、自然保护区、自然公园和其他需要特殊保护的区域；二类区为居住区、商业交通居民混合区、文",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二级浓度限值"
+     ],
+     "similarity_order": 1
+    },
+    {
+     "chunk_id": "doc-69538e249043b7fb564980ccab13438e-chunk-005",
+     "workspace": "default",
+     "full_doc_id": "doc-69538e249043b7fb564980ccab13438e",
+     "doc_id_verified": false,
+     "file_path": "air-24_中国环境监测总站_2025中国生态环境状况公报_2026.pdf",
+     "content_head": "## 2.2 PM $_{10}$\n全国 339 个城市环境空气 $PM_{10}$ 年均浓度在 12～124 微克 / 立方米之间，平均为 48 微克 / 立",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:国家二级标准"
+     ],
+     "similarity_order": 2
+    },
+    {
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+     "workspace": "default",
+     "full_doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_id_verified": true,
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "content_head": "## 7 实施与监督\n7.1 本标准由各级环境保护行政主管部门负责监督实施。\n7.2 各类环境空气功能区的范围由县级以上（含县级）人民政府环境保护行政主管部门划",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二级浓度限值"
+     ],
+     "similarity_order": 3
+    },
+    {
+     "chunk_id": "doc-13aaccec179aaa355c8c3d98abd0716e-chunk-020",
+     "workspace": "default",
+     "full_doc_id": "doc-13aaccec179aaa355c8c3d98abd0716e",
+     "doc_id_verified": false,
+     "file_path": "air-47_European-Commission_Directive-2024-2881-Ambient-Air-Quality_2024.pdf",
+     "content_head": "## Article 33\nAddressees\nThis Directive is addressed to the Member States.\nDone ",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二氧化硫(SO₂)"
+     ],
+     "similarity_order": 4
+    },
+    {
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+     "workspace": "default",
+     "full_doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc_id_verified": false,
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "content_head": "## 5.3 污染物分析\n应按表 3 的要求，采用相应的方法分析各项污染物的浓度，并执行 HJ 193、HJ 194、HJ 653、HJ 654、HJ 655、",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二氧化硫(SO₂)"
+     ],
+     "similarity_order": 5
+    },
+    {
+     "chunk_id": "doc-f786d9079ac78c8e746df84e2e8e8535-chunk-118",
+     "workspace": "default",
+     "full_doc_id": "doc-f786d9079ac78c8e746df84e2e8e8535",
+     "doc_id_verified": false,
+     "file_path": "air-56_Federal-Register_Secondary-NAAQS-Final-Review-NOx-SO2-PM_2024.pdf",
+     "content_head": "## 3.2 Comparisons With the Annual Secondary SO<sub>2</sub> NAAQS\n(a) The annual",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:年度二级SO2 NAAQS",
+      "edge:|"
+     ],
+     "similarity_order": 6
+    },
+    {
+     "chunk_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f-chunk-004",
+     "workspace": "default",
+     "full_doc_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f",
+     "doc_id_verified": false,
+     "file_path": "air-26_中国环境监测总站_2026年7月全国城市空气质量报告_2026.pdf",
+     "content_head": "全国城市空气质量报告\n2. 《环境空气质量标准》（GB 3095—2026）中六项污染物浓度限值如下表所示：\n<table id=\"tb-c963ecba7ee",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二级浓度限值"
+     ],
+     "similarity_order": 7
+    },
+    {
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-006",
+     "workspace": "default",
+     "full_doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc_id_verified": false,
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "content_head": "## 6 数据统计的有效性规定\n6.1 应采取措施保证监测数据的准确性、连续性和完整性，确保全面、客观地反映监测结果。\n6.2 采用自动监测设备监测时，监测仪器",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二氧化硫(SO₂)"
+     ],
+     "similarity_order": 8
+    },
+    {
+     "chunk_id": "doc-f786d9079ac78c8e746df84e2e8e8535-chunk-096",
+     "workspace": "default",
+     "full_doc_id": "doc-f786d9079ac78c8e746df84e2e8e8535",
+     "doc_id_verified": false,
+     "file_path": "air-56_Federal-Register_Secondary-NAAQS-Final-Review-NOx-SO2-PM_2024.pdf",
+     "content_head": "## C. Decision on the Secondary Standards\nFor the reasons discussed above and co",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:Secondary SO2 NAAQS"
+     ],
+     "similarity_order": 9
+    },
+    {
+     "chunk_id": "doc-eb0a53bb0a4ab5d9eae87c68f6a60fbb-chunk-011",
+     "workspace": "default",
+     "full_doc_id": "doc-eb0a53bb0a4ab5d9eae87c68f6a60fbb",
+     "doc_id_verified": false,
+     "file_path": "air-35_安徽省生态环境厅_安徽省生态环境质量月报2026年6月_2026.pdf",
+     "content_head": "## 附录\n\n## 1.环境空气评价项目及标准\n（1）环境空气质量按照《环境空气质量标准》（GB 3095—2026）和《环境空气质量评价技术规范》（HJ 66",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二氧化硫(SO₂)"
+     ],
+     "similarity_order": 10
+    },
+    {
+     "chunk_id": "doc-f786d9079ac78c8e746df84e2e8e8535-chunk-001",
+     "workspace": "default",
+     "full_doc_id": "doc-f786d9079ac78c8e746df84e2e8e8535",
+     "doc_id_verified": false,
+     "file_path": "air-56_Federal-Register_Secondary-NAAQS-Final-Review-NOx-SO2-PM_2024.pdf",
+     "content_head": "## Review of the Secondary National Ambient Air Quality Standards for Oxides of ",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:10 ppb"
+     ],
+     "similarity_order": 11
+    },
+    {
+     "chunk_id": "doc-69538e249043b7fb564980ccab13438e-chunk-004",
+     "workspace": "default",
+     "full_doc_id": "doc-69538e249043b7fb564980ccab13438e",
+     "doc_id_verified": false,
+     "file_path": "air-24_中国环境监测总站_2025中国生态环境状况公报_2026.pdf",
+     "content_head": "## 2. 主要污染物\n\n## 2.1 PM $_{2.5}$\n全国339个城市环境空气 $PM_{2.5}$ 年均浓度在5.2～51.5微克/立方米之间，平均",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:国家二级标准"
+     ],
+     "similarity_order": 12
+    },
+    {
+     "chunk_id": "doc-f786d9079ac78c8e746df84e2e8e8535-chunk-085",
+     "workspace": "default",
+     "full_doc_id": "doc-f786d9079ac78c8e746df84e2e8e8535",
+     "doc_id_verified": false,
+     "file_path": "air-56_Federal-Register_Secondary-NAAQS-Final-Review-NOx-SO2-PM_2024.pdf",
+     "content_head": "## 3. Administrator’s Conclusions\nHaving carefully considered the public comment",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:Annual Standard Of 10 Ppb"
+     ],
+     "similarity_order": 13
+    },
+    {
+     "chunk_id": "doc-f786d9079ac78c8e746df84e2e8e8535-chunk-070",
+     "workspace": "default",
+     "full_doc_id": "doc-f786d9079ac78c8e746df84e2e8e8535",
+     "doc_id_verified": false,
+     "file_path": "air-56_Federal-Register_Secondary-NAAQS-Final-Review-NOx-SO2-PM_2024.pdf",
+     "content_head": "(b) Comments in Support of a Level Below the Proposed Range\nThree comments indic",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:10 ppb"
+     ],
+     "similarity_order": 14
+    },
+    {
+     "chunk_id": "doc-8eeaab2c272e8a01235e17cfa59d610f-chunk-174",
+     "workspace": "default",
+     "full_doc_id": "doc-8eeaab2c272e8a01235e17cfa59d610f",
+     "doc_id_verified": false,
+     "file_path": "air-42_US-EPA_FR 2023-00269 Reconsideration of the PM NAAQS (PM标准重新审议-拟议规则)_2023.pdf",
+     "content_head": "<table id=\"tb-8eeaab2c272e8a01235e17cfa59d610f-0004\" format=\"html\"><tr><td> $SO_",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二氧化硫(SO₂)"
+     ],
+     "similarity_order": 15
+    },
+    {
+     "chunk_id": "doc-f786d9079ac78c8e746df84e2e8e8535-chunk-086",
+     "workspace": "default",
+     "full_doc_id": "doc-f786d9079ac78c8e746df84e2e8e8535",
+     "doc_id_verified": false,
+     "file_path": "air-56_Federal-Register_Secondary-NAAQS-Final-Review-NOx-SO2-PM_2024.pdf",
+     "content_head": "Federal Register / Vol. 89, No. 248 / Friday, December 27, 2024 / Rules and Regu",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二级SO2标准"
+     ],
+     "similarity_order": 16
+    },
+    {
+     "chunk_id": "doc-69538e249043b7fb564980ccab13438e-chunk-003",
+     "workspace": "default",
+     "full_doc_id": "doc-69538e249043b7fb564980ccab13438e",
+     "doc_id_verified": false,
+     "file_path": "air-24_中国环境监测总站_2025中国生态环境状况公报_2026.pdf",
+     "content_head": "# 大气环境\n\n## 一、大气环境\n\n## (一) 全国环境空气质量\\*\n\n## 1. 总体状况\n\n## 1.1 城市达标情况\n2025 年，全国 339 个地",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二级浓度限值"
+     ],
+     "similarity_order": 17
+    },
+    {
+     "chunk_id": "doc-f786d9079ac78c8e746df84e2e8e8535-chunk-103",
+     "workspace": "default",
+     "full_doc_id": "doc-f786d9079ac78c8e746df84e2e8e8535",
+     "doc_id_verified": false,
+     "file_path": "air-56_Federal-Register_Secondary-NAAQS-Final-Review-NOx-SO2-PM_2024.pdf",
+     "content_head": "## D. Transportation Conformity Program\nAs discussed in the proposal section V.E",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:Secondary SO2 NAAQS"
+     ],
+     "similarity_order": 18
+    },
+    {
+     "chunk_id": "doc-245e0be8fb0feff02c96a5864fb723c7-chunk-001",
+     "workspace": "default",
+     "full_doc_id": "doc-245e0be8fb0feff02c96a5864fb723c7",
+     "doc_id_verified": false,
+     "file_path": "air-27_生态环境部_HJ1328-2023_环境空气颗粒物(PM2.5)中水溶性离子连续自动监测技术规范_2023.pdf",
+     "content_head": "## 2 规范性引用文件\n本标准引用了下列文件或其中的条款。凡是注明日期的引用文件，仅注日期的版本适用于本标准。凡是未注日期的引用文件，其最新版本（包括所有的修",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二氧化硫(SO₂)"
+     ],
+     "similarity_order": 19
+    }
+   ],
+   "service_calls": {
+    "embedding_requests": 2,
+    "embedding_texts": 2,
+    "llm_requests": 1,
+    "qdrant_queries": 2,
+    "neo4j_reads": 1,
+    "pg_readonly_queries": 1
+   },
+   "degraded": [],
+   "errors": [],
+   "targets": [
+    "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+   ],
+   "counter": null
+  },
+  {
+   "query_id": "fact-002",
+   "query": "GB 8978-1996 表 1 中总汞的最高允许排放浓度是多少？",
+   "mode": "local",
+   "workspace": "default",
+   "started_at": "2026-10-06T22:25:03+0800",
+   "finished_at": "2026-10-06T22:25:05+0800",
+   "keywords": {
+    "high_level": [
+     "污染物排放标准",
+     "最高允许排放浓度"
+    ],
+    "low_level": [
+     "GB 8978-1996",
+     "表1",
+     "总汞"
+    ]
+   },
+   "entities_top": [
+    {
+     "entity_name": "GB 8978-1996",
+     "rank": 96
+    },
+    {
+     "entity_name": "GB 7468",
+     "rank": 2
+    },
+    {
+     "entity_name": "GB 7468-87",
+     "rank": 1
+    },
+    {
+     "entity_name": "GB 7469",
+     "rank": 2
+    },
+    {
+     "entity_name": "GB/T 17132-1997",
+     "rank": 1
+    },
+    {
+     "entity_name": "GB 8978-88",
+     "rank": 1
+    },
+    {
+     "entity_name": "GB 7468水质总汞测定冷原子吸收分光光度法",
+     "rank": 1
+    },
+    {
+     "entity_name": "水质总汞的测定冷原子吸收分光光度法",
+     "rank": 2
+    }
+   ],
+   "relations_count": 107,
+   "candidates": [
+    {
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+     "workspace": "default",
+     "full_doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_id_verified": true,
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "content_head": "## 4.3 其他规定\n4.3.1 同一排放口排放两种或两种以上不同类别的污水，且每种污水的排放标准又不同时，其混合污水的排放标准按附录 A 计算。\n4.3.2",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996"
+     ],
+     "similarity_order": 0
+    },
+    {
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002",
+     "workspace": "default",
+     "full_doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_id_verified": true,
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "content_head": "## GB 8978—1996\n<table id=\"tb-b45c510232ed4d2452b0f5b2a13434e4-0004\" format=\"htm",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996"
+     ],
+     "similarity_order": 1
+    },
+    {
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-007",
+     "workspace": "default",
+     "full_doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_id_verified": true,
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "content_head": "## GB 8978—1996\n表 4(续)\nmg/L\n<table id=\"tb-b45c510232ed4d2452b0f5b2a13434e4-0008\"",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996"
+     ],
+     "similarity_order": 2
+    },
+    {
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-010",
+     "workspace": "default",
+     "full_doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_id_verified": true,
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "content_head": "## GB 8978—1996\nmg/L\n<table id=\"tb-b45c510232ed4d2452b0f5b2a13434e4-0009\" format",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996"
+     ],
+     "similarity_order": 3
+    },
+    {
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000",
+     "workspace": "default",
+     "full_doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_id_verified": true,
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "content_head": "# 中华人民共和国国家标准\nGB 8978—1996\n\n# 污水综合排放标准\n代替 GB 8978—88\nIntegrated wastewater disch",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996"
+     ],
+     "similarity_order": 4
+    },
+    {
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-003",
+     "workspace": "default",
+     "full_doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_id_verified": true,
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "content_head": "<table id=\"tb-b45c510232ed4d2452b0f5b2a13434e4-0004\" format=\"html\"><tr><td>18</t",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996"
+     ],
+     "similarity_order": 5
+    },
+    {
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019",
+     "workspace": "default",
+     "full_doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_id_verified": true,
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "content_head": "## 6 标准实施监督\n6.1 本标准由县级以上人民政府环境保护行政主管部门负责监督实施。\n6.2 省、自治区、直辖市人民政府对执行国家水污染物排放标准不能保证",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996"
+     ],
+     "similarity_order": 6
+    },
+    {
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-008",
+     "workspace": "default",
+     "full_doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_id_verified": true,
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "content_head": "<table id=\"tb-b45c510232ed4d2452b0f5b2a13434e4-0008\" format=\"html\"><tr><td rowsp",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996"
+     ],
+     "similarity_order": 7
+    },
+    {
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-011",
+     "workspace": "default",
+     "full_doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_id_verified": true,
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "content_head": "<table id=\"tb-b45c510232ed4d2452b0f5b2a13434e4-0009\" format=\"html\"><tr><td>51</t",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996"
+     ],
+     "similarity_order": 8
+    },
+    {
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-016",
+     "workspace": "default",
+     "full_doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "doc_id_verified": false,
+     "file_path": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf",
+     "content_head": "<table id=\"tb-91f9049decde09153368d4b69f280e78-0006\" format=\"html\"><tr><td>59</t",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB/T 17132-1997"
+     ],
+     "similarity_order": 9
+    },
+    {
+     "chunk_id": "doc-503d7a0789fa0087345a5f4358e1dca0-chunk-005",
+     "workspace": "default",
+     "full_doc_id": "doc-503d7a0789fa0087345a5f4358e1dca0",
+     "doc_id_verified": false,
+     "file_path": "water-02_生态环境部_农田灌溉水质标准_GB5084-2021.pdf",
+     "content_head": "<table id=\"tb-503d7a0789fa0087345a5f4358e1dca0-0003\" format=\"html\"><tr><td rowsp",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:水质总汞的测定冷原子吸收分光光度法"
+     ],
+     "similarity_order": 10
+    },
+    {
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-013",
+     "workspace": "default",
+     "full_doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_id_verified": true,
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "content_head": "<table id=\"tb-b45c510232ed4d2452b0f5b2a13434e4-0010\" format=\"html\"><tr><td>6</td",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996"
+     ],
+     "similarity_order": 11
+    },
+    {
+     "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-005",
+     "workspace": "default",
+     "full_doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "doc_id_verified": false,
+     "file_path": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf",
+     "content_head": "<table id=\"tb-68a03b50e1ba1ffc6a0116529f694fe1-0005\" format=\"html\"><tr><td>10</t",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 7468"
+     ],
+     "similarity_order": 12
+    },
+    {
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-009",
+     "workspace": "default",
+     "full_doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_id_verified": true,
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "content_head": "<table id=\"tb-b45c510232ed4d2452b0f5b2a13434e4-0008\" format=\"html\"><tr><td>30</t",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996"
+     ],
+     "similarity_order": 13
+    },
+    {
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-009",
+     "workspace": "default",
+     "full_doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "doc_id_verified": false,
+     "file_path": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf",
+     "content_head": "<table id=\"tb-91f9049decde09153368d4b69f280e78-0004\" format=\"html\"><tr><td rowsp",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 7468-87",
+      "edge:|"
+     ],
+     "similarity_order": 14
+    },
+    {
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-016",
+     "workspace": "default",
+     "full_doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_id_verified": true,
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "content_head": "## GB 8978—1996\n<table id=\"tb-b45c510232ed4d2452b0f5b2a13434e4-0014\" format=\"htm",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996"
+     ],
+     "similarity_order": 15
+    },
+    {
+     "chunk_id": "doc-9bb11e5d3809e590259aef28fb61062b-chunk-009",
+     "workspace": "default",
+     "full_doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+     "doc_id_verified": false,
+     "file_path": "water-03_生态环境部_医疗机构水污染物排放标准_含2026修改单.pdf",
+     "content_head": "<table id=\"tb-9bb11e5d3809e590259aef28fb61062b-0005\" format=\"html\"><tr><td>水质 氰化",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:水质总汞的测定冷原子吸收分光光度法"
+     ],
+     "similarity_order": 16
+    },
+    {
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-004",
+     "workspace": "default",
+     "full_doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_id_verified": true,
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "content_head": "<table id=\"tb-b45c510232ed4d2452b0f5b2a13434e4-0005\" format=\"html\"><tr><td>序号</t",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996"
+     ],
+     "similarity_order": 17
+    },
+    {
+     "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000",
+     "workspace": "default",
+     "full_doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "doc_id_verified": false,
+     "file_path": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf",
+     "content_head": "# 中华人民共和国国家标准\nGB 18466 — 2005\n代替 GB 18466—2001\n部分代替 GB 8978—1996\n\n# 医疗机构水污染物排放标准",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996"
+     ],
+     "similarity_order": 18
+    },
+    {
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-014",
+     "workspace": "default",
+     "full_doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_id_verified": true,
+     "file_path": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "content_head": "## 表5(续)\n<table id=\"tb-b45c510232ed4d2452b0f5b2a13434e4-0011\" format=\"html\"><tr>",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 8978-1996"
+     ],
+     "similarity_order": 19
+    }
+   ],
+   "service_calls": {
+    "embedding_requests": 2,
+    "embedding_texts": 2,
+    "llm_requests": 1,
+    "qdrant_queries": 2,
+    "neo4j_reads": 1,
+    "pg_readonly_queries": 1
+   },
+   "degraded": [],
+   "errors": [],
+   "targets": [
+    "doc-b45c510232ed4d2452b0f5b2a13434e4"
+   ],
+   "counter": null
+  },
+  {
+   "query_id": "syn-001",
+   "query": "对比 GB 3095-2012 与 GB 3095-2026 中 PM2.5 年平均浓度限值的差异。",
+   "mode": "local",
+   "workspace": "default",
+   "started_at": "2026-10-06T22:25:05+0800",
+   "finished_at": "2026-10-06T22:25:08+0800",
+   "keywords": {
+    "high_level": [
+     "标准对比",
+     "空气质量标准",
+     "浓度限值差异"
+    ],
+    "low_level": [
+     "GB 3095-2012",
+     "GB 3095-2026",
+     "PM2.5",
+     "年平均浓度限值"
+    ]
+   },
+   "entities_top": [
+    {
+     "entity_name": "细颗粒物(PM₂.₅)",
+     "rank": 3
+    },
+    {
+     "entity_name": "环境空气质量标准(GB 3095-2026)",
+     "rank": 28
+    },
+    {
+     "entity_name": "浓度限值",
+     "rank": 6
+    },
+    {
+     "entity_name": "颗粒物(粒径小于等于2.5μm)",
+     "rank": 4
+    },
+    {
+     "entity_name": "PM2.5年均限值",
+     "rank": 3
+    },
+    {
+     "entity_name": "GB 3095-2012",
+     "rank": 27
+    },
+    {
+     "entity_name": "表1(环境空气污染物基本项目浓度限值)",
+     "rank": 12
+    },
+    {
+     "entity_name": "现行年PM2.5标准(12.0 μg/m³)",
+     "rank": 4
+    }
+   ],
+   "relations_count": 175,
+   "candidates": [
+    {
+     "chunk_id": "doc-8bd91f028c6c0749375c042c3c1537ea-chunk-004",
+     "workspace": "default",
+     "full_doc_id": "doc-8bd91f028c6c0749375c042c3c1537ea",
+     "doc_id_verified": false,
+     "file_path": "air-25_中国环境监测总站_2026年6月全国城市空气质量报告_2026.pdf",
+     "content_head": "全国城市空气质量报告\n2. 《环境空气质量标准》（GB 3095—2026）中六项污染物浓度限值如下表所示：\n<table id=\"tb-8bd91f028c6",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:环境空气质量标准(GB 3095-2026)"
+     ],
+     "similarity_order": 0
+    },
+    {
+     "chunk_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f-chunk-004",
+     "workspace": "default",
+     "full_doc_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f",
+     "doc_id_verified": false,
+     "file_path": "air-26_中国环境监测总站_2026年7月全国城市空气质量报告_2026.pdf",
+     "content_head": "全国城市空气质量报告\n2. 《环境空气质量标准》（GB 3095—2026）中六项污染物浓度限值如下表所示：\n<table id=\"tb-c963ecba7ee",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:环境空气质量标准(GB 3095-2026)"
+     ],
+     "similarity_order": 1
+    },
+    {
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+     "workspace": "default",
+     "full_doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_id_verified": true,
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "content_head": "# 中 华 人 民 共 和 国 国 家 标 准\nGB 3095—2012\n代替 GB 3095—1996 GB 9137—88\n\n# 环境空气质量标准\n\n# A",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:颗粒物(粒径小于等于2.5μm)"
+     ],
+     "similarity_order": 2
+    },
+    {
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-000",
+     "workspace": "default",
+     "full_doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc_id_verified": true,
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "content_head": "# 中华人民共和国国家标准\nGB 3095—2026\n代替 GB 3095—2012\n环境空气质量标准\nAmbient air quality standard",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:浓度限值"
+     ],
+     "similarity_order": 3
+    },
+    {
+     "chunk_id": "doc-eb0a53bb0a4ab5d9eae87c68f6a60fbb-chunk-011",
+     "workspace": "default",
+     "full_doc_id": "doc-eb0a53bb0a4ab5d9eae87c68f6a60fbb",
+     "doc_id_verified": false,
+     "file_path": "air-35_安徽省生态环境厅_安徽省生态环境质量月报2026年6月_2026.pdf",
+     "content_head": "## 附录\n\n## 1.环境空气评价项目及标准\n（1）环境空气质量按照《环境空气质量标准》（GB 3095—2026）和《环境空气质量评价技术规范》（HJ 66",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:细颗粒物(PM₂.₅)"
+     ],
+     "similarity_order": 4
+    },
+    {
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+     "workspace": "default",
+     "full_doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_id_verified": true,
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "content_head": "## 7 实施与监督\n7.1 本标准由各级环境保护行政主管部门负责监督实施。\n7.2 各类环境空气功能区的范围由县级以上（含县级）人民政府环境保护行政主管部门划",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 3095-2012"
+     ],
+     "similarity_order": 5
+    },
+    {
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-001",
+     "workspace": "default",
+     "full_doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc_id_verified": true,
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "content_head": "## 2 规范性引用文件\n本标准引用了下列文件或其中的条款。凡是注明日期的引用标准，仅注日期的版本适用于本标准。凡是未注明日期的引用标准，其最新版本（包括所有的",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 3095-2026"
+     ],
+     "similarity_order": 6
+    },
+    {
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005",
+     "workspace": "default",
+     "full_doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc_id_verified": true,
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "content_head": "<table id=\"tb-4c883d21fa02a53189e0911c3d59d1d1-0003\" format=\"html\"><tr><td>环境空气 ",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 3095-2026"
+     ],
+     "similarity_order": 7
+    },
+    {
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+     "workspace": "default",
+     "full_doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_id_verified": true,
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "content_head": "## 4 环境空气功能区分类和质量要求\n\n## 4.1 环境空气功能区分类\n环境空气功能区分为二类：一类区为自然保护区、风景名胜区和其他需要特殊保护的区域；二类",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:颗粒物(粒径小于等于2.5μm)"
+     ],
+     "similarity_order": 8
+    },
+    {
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-002",
+     "workspace": "default",
+     "full_doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc_id_verified": true,
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "content_head": "## 4.1 环境空气功能区分类\n环境空气功能区分为两类：一类区为国家公园、自然保护区、自然公园和其他需要特殊保护的区域；二类区为居住区、商业交通居民混合区、文",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:浓度限值"
+     ],
+     "similarity_order": 9
+    },
+    {
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+     "workspace": "default",
+     "full_doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_id_verified": true,
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "content_head": "# 环境空气质量标准\n\n## 1 适用范围\n本标准规定了环境空气功能区分类、标准分级、污染物项目、平均时间及浓度限值、监测方法、数据统计的有效性规定及实施与监督",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:浓度限值"
+     ],
+     "similarity_order": 10
+    },
+    {
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-006",
+     "workspace": "default",
+     "full_doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc_id_verified": true,
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "content_head": "## 6 数据统计的有效性规定\n6.1 应采取措施保证监测数据的准确性、连续性和完整性，确保全面、客观地反映监测结果。\n6.2 采用自动监测设备监测时，监测仪器",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 3095-2026"
+     ],
+     "similarity_order": 11
+    },
+    {
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+     "workspace": "default",
+     "full_doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc_id_verified": true,
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "content_head": "## 5.3 污染物分析\n应按表 3 的要求，采用相应的方法分析各项污染物的浓度，并执行 HJ 193、HJ 194、HJ 653、HJ 654、HJ 655、",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:环境空气质量标准(GB 3095-2026)"
+     ],
+     "similarity_order": 12
+    },
+    {
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003",
+     "workspace": "default",
+     "full_doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_id_verified": true,
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "content_head": "## 5.3 污染物分析\n应按表3的要求，采用相应的方法分析各项污染物的浓度。\n<table id=\"tb-257d8cf3fdf90e76c31908c4f9",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 3095-2012"
+     ],
+     "similarity_order": 13
+    },
+    {
+     "chunk_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f-chunk-001",
+     "workspace": "default",
+     "full_doc_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f",
+     "doc_id_verified": false,
+     "file_path": "air-26_中国环境监测总站_2026年7月全国城市空气质量报告_2026.pdf",
+     "content_head": "## 目录\n一、339个城市空气质量状况....1\n二、168个城市空气质量....1\n（一）总体状况....1\n（二）主要污染物状况....1\n三、重点区域空",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:环境空气质量标准(GB 3095-2026)"
+     ],
+     "similarity_order": 14
+    },
+    {
+     "chunk_id": "doc-94c5cacd2f64ca6430dc5175d520f539-chunk-039",
+     "workspace": "default",
+     "full_doc_id": "doc-94c5cacd2f64ca6430dc5175d520f539",
+     "doc_id_verified": false,
+     "file_path": "air-49_UK-DEFRA_Air-Pollution-in-the-UK-2024-Full-Report_2024.pdf",
+     "content_head": "<table id=\"tb-94c5cacd2f64ca6430dc5175d520f539-0013\" format=\"html\"><tr><td>Year<",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:PM2.5年均限值",
+      "edge:|"
+     ],
+     "similarity_order": 15
+    },
+    {
+     "chunk_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404-chunk-024",
+     "workspace": "default",
+     "full_doc_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404",
+     "doc_id_verified": false,
+     "file_path": "air-04_生态环境部_环境影响评价技术导则_大气环境_HJ2.2-2018_2018.pdf",
+     "content_head": "## C.6.2 无组织排放量核算\n<table id=\"tb-d3d7d38fe9dc1348e57c1fa29b47f404-0038\" format=\"h",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:浓度限值"
+     ],
+     "similarity_order": 16
+    },
+    {
+     "chunk_id": "doc-94c5cacd2f64ca6430dc5175d520f539-chunk-005",
+     "workspace": "default",
+     "full_doc_id": "doc-94c5cacd2f64ca6430dc5175d520f539",
+     "doc_id_verified": false,
+     "file_path": "air-49_UK-DEFRA_Air-Pollution-in-the-UK-2024-Full-Report_2024.pdf",
+     "content_head": "## 2.1.1 Background to The Air Quality Standards Regulations (2010)\nIn the UK, t",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:PM2.5年均限值"
+     ],
+     "similarity_order": 17
+    },
+    {
+     "chunk_id": "doc-8eeaab2c272e8a01235e17cfa59d610f-chunk-072",
+     "workspace": "default",
+     "full_doc_id": "doc-8eeaab2c272e8a01235e17cfa59d610f",
+     "doc_id_verified": false,
+     "file_path": "air-42_US-EPA_FR 2023-00269 Reconsideration of the PM NAAQS (PM标准重新审议-拟议规则)_2023.pdf",
+     "content_head": "Federal Register / Vol. 88, No. 18 / Friday, January 27, 2023 / Proposed Rules\nt",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:现行年PM2.5标准(12.0 μg/m³)"
+     ],
+     "similarity_order": 18
+    },
+    {
+     "chunk_id": "doc-e06953a2a9ea0dc69213f2401aedb8ef-chunk-046",
+     "workspace": "default",
+     "full_doc_id": "doc-e06953a2a9ea0dc69213f2401aedb8ef",
+     "doc_id_verified": false,
+     "file_path": "分片-3_401-600.pdf",
+     "content_head": "<table id=\"tb-e06953a2a9ea0dc69213f2401aedb8ef-0010\" format=\"html\"><tr><td>Mass-",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:浓度限值"
+     ],
+     "similarity_order": 19
+    }
+   ],
+   "service_calls": {
+    "embedding_requests": 2,
+    "embedding_texts": 2,
+    "llm_requests": 1,
+    "qdrant_queries": 2,
+    "neo4j_reads": 1,
+    "pg_readonly_queries": 1
+   },
+   "degraded": [],
+   "errors": [],
+   "targets": [
+    "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+    "doc-4c883d21fa02a53189e0911c3d59d1d1"
+   ],
+   "counter": null
+  },
+  {
+   "query_id": "neg-001",
+   "query": "GB 3095-1996 的二级标准年均限值是多少？",
+   "mode": "local",
+   "workspace": "default",
+   "started_at": "2026-10-06T22:25:08+0800",
+   "finished_at": "2026-10-06T22:25:10+0800",
+   "keywords": {
+    "high_level": [
+     "环境空气质量标准",
+     "标准限值查询"
+    ],
+    "low_level": [
+     "GB 3095-1996",
+     "二级标准",
+     "年均限值"
+    ]
+   },
+   "entities_top": [
+    {
+     "entity_name": "细颗粒物(PM₂.₅)",
+     "rank": 3
+    },
+    {
+     "entity_name": "国家二级标准",
+     "rank": 6
+    },
+    {
+     "entity_name": "表1(环境空气污染物基本项目浓度限值)",
+     "rank": 12
+    },
+    {
+     "entity_name": "GB 3095",
+     "rank": 7
+    },
+    {
+     "entity_name": "二级浓度限值",
+     "rank": 12
+    },
+    {
+     "entity_name": "表2(环境空气污染物其他项目浓度限值)",
+     "rank": 12
+    },
+    {
+     "entity_name": "可吸入颗粒物(PM₁₀)",
+     "rank": 3
+    },
+    {
+     "entity_name": "浓度限值",
+     "rank": 6
+    }
+   ],
+   "relations_count": 94,
+   "candidates": [
+    {
+     "chunk_id": "doc-8bd91f028c6c0749375c042c3c1537ea-chunk-004",
+     "workspace": "default",
+     "full_doc_id": "doc-8bd91f028c6c0749375c042c3c1537ea",
+     "doc_id_verified": false,
+     "file_path": "air-25_中国环境监测总站_2026年6月全国城市空气质量报告_2026.pdf",
+     "content_head": "全国城市空气质量报告\n2. 《环境空气质量标准》（GB 3095—2026）中六项污染物浓度限值如下表所示：\n<table id=\"tb-8bd91f028c6",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:环境空气质量标准(GB 3095-2026)"
+     ],
+     "similarity_order": 0
+    },
+    {
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-000",
+     "workspace": "default",
+     "full_doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc_id_verified": false,
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "content_head": "# 中华人民共和国国家标准\nGB 3095—2026\n代替 GB 3095—2012\n环境空气质量标准\nAmbient air quality standard",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:浓度限值"
+     ],
+     "similarity_order": 1
+    },
+    {
+     "chunk_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f-chunk-004",
+     "workspace": "default",
+     "full_doc_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f",
+     "doc_id_verified": false,
+     "file_path": "air-26_中国环境监测总站_2026年7月全国城市空气质量报告_2026.pdf",
+     "content_head": "全国城市空气质量报告\n2. 《环境空气质量标准》（GB 3095—2026）中六项污染物浓度限值如下表所示：\n<table id=\"tb-c963ecba7ee",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二级浓度限值"
+     ],
+     "similarity_order": 2
+    },
+    {
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+     "workspace": "default",
+     "full_doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_id_verified": false,
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "content_head": "## 7 实施与监督\n7.1 本标准由各级环境保护行政主管部门负责监督实施。\n7.2 各类环境空气功能区的范围由县级以上（含县级）人民政府环境保护行政主管部门划",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二级浓度限值"
+     ],
+     "similarity_order": 3
+    },
+    {
+     "chunk_id": "doc-eb0a53bb0a4ab5d9eae87c68f6a60fbb-chunk-011",
+     "workspace": "default",
+     "full_doc_id": "doc-eb0a53bb0a4ab5d9eae87c68f6a60fbb",
+     "doc_id_verified": false,
+     "file_path": "air-35_安徽省生态环境厅_安徽省生态环境质量月报2026年6月_2026.pdf",
+     "content_head": "## 附录\n\n## 1.环境空气评价项目及标准\n（1）环境空气质量按照《环境空气质量标准》（GB 3095—2026）和《环境空气质量评价技术规范》（HJ 66",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:细颗粒物(PM₂.₅)"
+     ],
+     "similarity_order": 4
+    },
+    {
+     "chunk_id": "doc-46b25338ec9db0a65d0401b938baf44f-chunk-011",
+     "workspace": "default",
+     "full_doc_id": "doc-46b25338ec9db0a65d0401b938baf44f",
+     "doc_id_verified": false,
+     "file_path": "air-36_安徽省生态环境厅_安徽省生态环境质量月报2026年7月_2026.pdf",
+     "content_head": "## 附录\n\n## 1.环境空气评价项目及标准\n（1）环境空气质量按照《环境空气质量标准》（GB 3095—2026）和《环境空气质量评价技术规范》（HJ 66",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:《环境空气质量标准》(GB 3095-2026)"
+     ],
+     "similarity_order": 5
+    },
+    {
+     "chunk_id": "doc-69538e249043b7fb564980ccab13438e-chunk-005",
+     "workspace": "default",
+     "full_doc_id": "doc-69538e249043b7fb564980ccab13438e",
+     "doc_id_verified": false,
+     "file_path": "air-24_中国环境监测总站_2025中国生态环境状况公报_2026.pdf",
+     "content_head": "## 2.2 PM $_{10}$\n全国 339 个城市环境空气 $PM_{10}$ 年均浓度在 12～124 微克 / 立方米之间，平均为 48 微克 / 立",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:国家二级标准"
+     ],
+     "similarity_order": 6
+    },
+    {
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+     "workspace": "default",
+     "full_doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_id_verified": false,
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "content_head": "## 4 环境空气功能区分类和质量要求\n\n## 4.1 环境空气功能区分类\n环境空气功能区分为二类：一类区为自然保护区、风景名胜区和其他需要特殊保护的区域；二类",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:表1(环境空气污染物基本项目浓度限值)"
+     ],
+     "similarity_order": 7
+    },
+    {
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-002",
+     "workspace": "default",
+     "full_doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc_id_verified": false,
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "content_head": "## 4.1 环境空气功能区分类\n环境空气功能区分为两类：一类区为国家公园、自然保护区、自然公园和其他需要特殊保护的区域；二类区为居住区、商业交通居民混合区、文",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二级浓度限值"
+     ],
+     "similarity_order": 8
+    },
+    {
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+     "workspace": "default",
+     "full_doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_id_verified": false,
+     "file_path": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "content_head": "# 环境空气质量标准\n\n## 1 适用范围\n本标准规定了环境空气功能区分类、标准分级、污染物项目、平均时间及浓度限值、监测方法、数据统计的有效性规定及实施与监督",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:浓度限值"
+     ],
+     "similarity_order": 9
+    },
+    {
+     "chunk_id": "doc-69538e249043b7fb564980ccab13438e-chunk-004",
+     "workspace": "default",
+     "full_doc_id": "doc-69538e249043b7fb564980ccab13438e",
+     "doc_id_verified": false,
+     "file_path": "air-24_中国环境监测总站_2025中国生态环境状况公报_2026.pdf",
+     "content_head": "## 2. 主要污染物\n\n## 2.1 PM $_{2.5}$\n全国339个城市环境空气 $PM_{2.5}$ 年均浓度在5.2～51.5微克/立方米之间，平均",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:国家二级标准"
+     ],
+     "similarity_order": 10
+    },
+    {
+     "chunk_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404-chunk-002",
+     "workspace": "default",
+     "full_doc_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404",
+     "doc_id_verified": false,
+     "file_path": "air-04_生态环境部_环境影响评价技术导则_大气环境_HJ2.2-2018_2018.pdf",
+     "content_head": "## 5.1 环境影响识别与评价因子筛选\n5.1.1 按HJ 2.1或HJ 130的要求识别大气环境影响因素，并筛选出大气环境影响评价因子。大气环境影响评价因子",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 3095",
+      "edge:|"
+     ],
+     "similarity_order": 11
+    },
+    {
+     "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+     "workspace": "default",
+     "full_doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc_id_verified": false,
+     "file_path": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+     "content_head": "## 5.3 污染物分析\n应按表 3 的要求，采用相应的方法分析各项污染物的浓度，并执行 HJ 193、HJ 194、HJ 653、HJ 654、HJ 655、",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:环境空气质量标准(GB 3095-2026)"
+     ],
+     "similarity_order": 12
+    },
+    {
+     "chunk_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404-chunk-024",
+     "workspace": "default",
+     "full_doc_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404",
+     "doc_id_verified": false,
+     "file_path": "air-04_生态环境部_环境影响评价技术导则_大气环境_HJ2.2-2018_2018.pdf",
+     "content_head": "## C.6.2 无组织排放量核算\n<table id=\"tb-d3d7d38fe9dc1348e57c1fa29b47f404-0038\" format=\"h",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:浓度限值"
+     ],
+     "similarity_order": 13
+    },
+    {
+     "chunk_id": "doc-8bd91f028c6c0749375c042c3c1537ea-chunk-001",
+     "workspace": "default",
+     "full_doc_id": "doc-8bd91f028c6c0749375c042c3c1537ea",
+     "doc_id_verified": false,
+     "file_path": "air-25_中国环境监测总站_2026年6月全国城市空气质量报告_2026.pdf",
+     "content_head": "## 目录\n一、339个城市空气质量状况....1\n二、168个城市空气质量....1\n（一）总体状况....1\n（二）主要污染物状况....1\n三、重点区域空",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:《环境空气质量标准》(GB 3095-2026)"
+     ],
+     "similarity_order": 14
+    },
+    {
+     "chunk_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f-chunk-001",
+     "workspace": "default",
+     "full_doc_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f",
+     "doc_id_verified": false,
+     "file_path": "air-26_中国环境监测总站_2026年7月全国城市空气质量报告_2026.pdf",
+     "content_head": "## 目录\n一、339个城市空气质量状况....1\n二、168个城市空气质量....1\n（一）总体状况....1\n（二）主要污染物状况....1\n三、重点区域空",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:环境空气质量标准(GB 3095-2026)"
+     ],
+     "similarity_order": 15
+    },
+    {
+     "chunk_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404-chunk-004",
+     "workspace": "default",
+     "full_doc_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404",
+     "doc_id_verified": false,
+     "file_path": "air-04_生态环境部_环境影响评价技术导则_大气环境_HJ2.2-2018_2018.pdf",
+     "content_head": "## 6.3.1 监测时段\n6.3.1.1 根据监测因子的污染特征，选择污染较重的季节进行现状监测。补充监测应至少取得 7d有效数据。\n6.3.1.2 对于部分",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:GB 3095"
+     ],
+     "similarity_order": 16
+    },
+    {
+     "chunk_id": "doc-69538e249043b7fb564980ccab13438e-chunk-003",
+     "workspace": "default",
+     "full_doc_id": "doc-69538e249043b7fb564980ccab13438e",
+     "doc_id_verified": false,
+     "file_path": "air-24_中国环境监测总站_2025中国生态环境状况公报_2026.pdf",
+     "content_head": "# 大气环境\n\n## 一、大气环境\n\n## (一) 全国环境空气质量\\*\n\n## 1. 总体状况\n\n## 1.1 城市达标情况\n2025 年，全国 339 个地",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:二级浓度限值"
+     ],
+     "similarity_order": 17
+    },
+    {
+     "chunk_id": "doc-e06953a2a9ea0dc69213f2401aedb8ef-chunk-046",
+     "workspace": "default",
+     "full_doc_id": "doc-e06953a2a9ea0dc69213f2401aedb8ef",
+     "doc_id_verified": false,
+     "file_path": "分片-3_401-600.pdf",
+     "content_head": "<table id=\"tb-e06953a2a9ea0dc69213f2401aedb8ef-0010\" format=\"html\"><tr><td>Mass-",
+     "verified": true,
+     "verify_error": null,
+     "reached_via": [
+      "entity:浓度限值"
+     ],
+     "similarity_order": 18
+    }
+   ],
+   "service_calls": {
+    "embedding_requests": 2,
+    "embedding_texts": 2,
+    "llm_requests": 1,
+    "qdrant_queries": 2,
+    "neo4j_reads": 1,
+    "pg_readonly_queries": 1
+   },
+   "degraded": [],
+   "errors": [],
+   "targets": [],
+   "counter": {
+    "type": "absent_version",
+    "expected_status": "missing"
+   }
+  }
+ ]
+}

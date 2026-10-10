@@ -1,0 +1,2335 @@
+{
+ "task": "5.4 joint rerank over fused candidates (bounded, recorded)",
+ "started_at": "2026-10-09T21:00:37+0800",
+ "service_contract": {
+  "endpoint": "{host}/v1/rerank (POST)",
+  "request": [
+   "model",
+   "query",
+   "documents",
+   "top_n",
+   "return_documents=false"
+  ],
+  "response": [
+   "id",
+   "results[{index, relevance_score}]",
+   "meta.tokens"
+  ],
+  "errors": {
+   "401/403": "auth",
+   "429": "rate limit",
+   "5xx": "service"
+  }
+ },
+ "input_budget": 40,
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "results": [
+  {
+   "query_id": "table-enum-004",
+   "query": "GB 3838-2002 表 1 的基本项目共多少项？逐项列出。",
+   "workspace": "default",
+   "skipped": null,
+   "inputs": [
+    {
+     "input_index": 0,
+     "workspace": "default",
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-000",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "content_sha256": "4f79779fb25f8e5ec0ad34cca261984c2c2175f245331f32d739bc8768d82fc8",
+     "content_len": 2639,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-000",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": "中华人民共和国国家标准",
+       "chunk_order": 0,
+       "discovery": "keyword_core_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.0009616180323064327
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-000",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 3838-2002",
+        "entity:地表水环境质量标准基本项目",
+        "entity:地表水环境质量标准(GB 3838-2002)",
+        "entity:集中式生活饮用水地表水源地特定项目",
+        "entity:地表水环境质量标准",
+        "entity:Environmental Quality Standards For Surface Water",
+        "entity:集中式生活饮用水地表水源地补充项目",
+        "edge:GB 3838-2002|总磷",
+        "edge:GB 3838-2002|铅",
+        "edge:GB 3838-2002|总氮",
+        "edge:地表水环境质量标准基本项目|总磷",
+        "edge:地表水环境质量标准基本项目|铅",
+        "edge:地表水环境质量标准(GB 3838-2002)|总氮",
+        "edge:GB 3838-2002|农田灌溉水质标准",
+        "edge:GB 3838-2002|中华人民共和国水污染防治法",
+        "edge:GB 3838-2002|地表水环境质量标准",
+        "edge:地表水环境质量标准基本项目|表1",
+        "edge:GB 3838-2002|氨氮",
+        "edge:GB 3838-2002|溶解氧",
+        "edge:GB 3838-2002|pH",
+        "edge:GB 3838-2002|氯化物",
+        "edge:GB 3838-2002|硫酸盐",
+        "edge:GB 3838-2002|湖泊",
+        "edge:表2|集中式生活饮用水地表水源地补充项目",
+        "edge:GB 3838-2002|水质监测",
+        "edge:GB 3838-2002|高锰酸盐指数",
+        "edge:GB 3838-2002|粪大肠菌群",
+        "edge:GB 3838-2002|硝酸盐",
+        "edge:GB 3838-2002|中华人民共和国环境保护法",
+        "edge:GB 3838-2002|海水水质标准",
+        "edge:GB 3838-2002|地表水环境质量标准基本项目",
+        "edge:GB 3838-2002|锰",
+        "edge:GB 3838-2002|国家质量监督检验检疫总局",
+        "edge:GB 3838-2002|铁",
+        "edge:GB 3838-2002|非离子氨",
+        "edge:GB 3838-2002|渔业水质标准",
+        "edge:GB 3838-2002|水库",
+        "edge:GB 3838-2002|中国环境科学研究院",
+        "edge:GB 3838-2002|集中式生活饮用水地表水源地补充项目",
+        "edge:GB 3838-2002|水质评价",
+        "edge:农田灌溉水质标准|地表水环境质量标准(GB 3838-2002)",
+        "edge:表3|集中式生活饮用水地表水源地特定项目",
+        "edge:GB 3838-2002|生活饮用水卫生规范",
+        "edge:GB 3838-2002|集中式生活饮用水地表水源地特定项目",
+        "edge:中华人民共和国水污染防治法|地表水环境质量标准(GB 3838-2002)",
+        "edge:GB 3838-2002|国家环境保护总局",
+        "edge:GB 3838-2002|水域功能和标准分类",
+        "edge:GB 3838-2002|亚硝酸盐",
+        "edge:GB 3838-2002|凯氏氮",
+        "edge:GB 3838-2002|标准的实施与监督",
+        "edge:GB 3838-2002|国家环境保护总局科技标准司",
+        "edge:GB 3838-2002|江河",
+        "edge:GB 3838-2002|GB 3838-88",
+        "edge:GB 3838-2002|GHZB 1-1999",
+        "edge:GB 3838-2002|渠道",
+        "edge:GB 3838-2002|运河",
+        "edge:Environmental Quality Standards For Surface Water|GB 3838-2002",
+        "edge:地表水环境质量标准基本项目|氨氮",
+        "edge:地表水环境质量标准基本项目|溶解氧",
+        "edge:地表水环境质量标准基本项目|表4",
+        "edge:pH|地表水环境质量标准基本项目",
+        "edge:地表水环境质量标准(GB 3838-2002)|水质监测",
+        "edge:硫酸盐|集中式生活饮用水地表水源地补充项目",
+        "edge:氯化物|集中式生活饮用水地表水源地补充项目",
+        "edge:地表水环境质量标准基本项目|高锰酸盐指数",
+        "edge:地表水环境质量标准基本项目|粪大肠菌群",
+        "edge:表5|集中式生活饮用水地表水源地补充项目",
+        "edge:中华人民共和国环境保护法|地表水环境质量标准(GB 3838-2002)",
+        "edge:表6|集中式生活饮用水地表水源地特定项目",
+        "edge:地表水环境质量标准(GB 3838-2002)|海水水质标准",
+        "edge:硝酸盐|集中式生活饮用水地表水源地补充项目",
+        "edge:地表水环境质量标准(GB 3838-2002)|地表水环境质量标准基本项目",
+        "edge:国家质量监督检验检疫总局|地表水环境质量标准(GB 3838-2002)",
+        "edge:地表水环境质量标准(GB 3838-2002)|渔业水质标准",
+        "edge:中国环境科学研究院|地表水环境质量标准(GB 3838-2002)",
+        "edge:地表水环境质量标准(GB 3838-2002)|集中式生活饮用水地表水源地补充项目",
+        "edge:地表水环境质量标准(GB 3838-2002)|水质评价",
+        "edge:县级以上人民政府环境保护行政主管部门|地表水环境质量标准(GB 3838-2002)",
+        "edge:地表水环境质量标准(GB 3838-2002)|生活饮用水卫生规范",
+        "edge:地表水环境质量标准(GB 3838-2002)|集中式生活饮用水地表水源地特定项目",
+        "edge:国家环境保护总局|地表水环境质量标准(GB 3838-2002)",
+        "edge:地表水环境质量标准基本项目|非离子氨",
+        "edge:国家环境保护总局科技标准司|地表水环境质量标准(GB 3838-2002)",
+        "edge:地表水环境质量标准基本项目|集中式生活饮用水地表水源地补充项目",
+        "edge:地表水环境质量标准(GB 3838-2002)|河口水域",
+        "edge:地表水环境质量标准(GB 3838-2002)|地面水环境质量标准(GB 3838-88)",
+        "edge:地表水环境质量标准(GB 3838-2002)|地面水环境质量标准(GB 3838-83)",
+        "edge:国家地表水环境监测技术规范|地表水环境质量标准(GB 3838-2002)",
+        "edge:ISO方法体系|地表水环境质量标准(GB 3838-2002)",
+        "edge:地表水环境质量标准(GB 3838-2002)|地表水环境质量标准(GHZB 1-1999)",
+        "edge:锰|集中式生活饮用水地表水源地补充项目",
+        "edge:地表水水域功能分类|地表水环境质量标准(GB 3838-2002)",
+        "edge:铁|集中式生活饮用水地表水源地补充项目",
+        "edge:地表水环境质量标准基本项目|集中式生活饮用水地表水源地特定项目",
+        "edge:亚硝酸盐|地表水环境质量标准基本项目",
+        "edge:凯氏氮|地表水环境质量标准基本项目",
+        "edge:县级以上人民政府环境保护行政主管部门|集中式生活饮用水地表水源地特定项目",
+        "edge:地表水环境质量标准基本项目|基本要求",
+        "edge:地表水环境质量标准基本项目|表4地表水环境质量标准基本项目分析方法",
+        "edge:地表水环境质量标准基本项目|表1地表水环境质量标准基本项目标准限值",
+        "edge:集中式生活饮用水地表水源地二级保护区|集中式生活饮用水地表水源地补充项目",
+        "edge:表5集中式生活饮用水地表水源地补充项目分析方法|集中式生活饮用水地表水源地补充项目",
+        "edge:表2集中式生活饮用水地表水源地补充项目标准限值|集中式生活饮用水地表水源地补充项目",
+        "edge:集中式生活饮用水地表水源地一级保护区|集中式生活饮用水地表水源地补充项目",
+        "edge:表3集中式生活饮用水地表水源地特定项目标准限值|集中式生活饮用水地表水源地特定项目",
+        "edge:表6集中式生活饮用水地表水源地特定项目分析方法|集中式生活饮用水地表水源地特定项目",
+        "edge:集中式生活饮用水地表水源地二级保护区|集中式生活饮用水地表水源地特定项目",
+        "edge:集中式生活饮用水地表水源地一级保护区|集中式生活饮用水地表水源地特定项目"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 0,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 0,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "0ce1468301793439fef474911be9c427",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "0ce1468301793439fef474911be9c427",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "1be5a15442ef9d0368b3e1367a03a2fb",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "1be5a15442ef9d0368b3e1367a03a2fb",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "3c4fe04ff85cd494aef228fb38b89472",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "3c4fe04ff85cd494aef228fb38b89472",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "632bbe2a7313f0a5c20dbaff0d0e7ed0",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "632bbe2a7313f0a5c20dbaff0d0e7ed0",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "65014255b083e3fa2a7bd6edce17fa3e",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "65014255b083e3fa2a7bd6edce17fa3e",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7b4770667908af51eb321bd82c89aaf7",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "7b4770667908af51eb321bd82c89aaf7",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "8a797aa1ca8b615facad55fde27c0587",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "8a797aa1ca8b615facad55fde27c0587",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "a00b03f556ea5a44bcfa56d169e8035b",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "a00b03f556ea5a44bcfa56d169e8035b",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "a06ee03df403e9698901cd40c54bfce7",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "a06ee03df403e9698901cd40c54bfce7",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "c52afdc4bdd532dae65055f306b2842c",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "c52afdc4bdd532dae65055f306b2842c",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "de22a458f387b53eec9d2b2d633e4174",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "de22a458f387b53eec9d2b2d633e4174",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "e6725f89d4d126cf6c3811abac1430b2",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "e6725f89d4d126cf6c3811abac1430b2",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "4f79779fb25f8e5ec0ad34cca261984c2c2175f245331f32d739bc8768d82fc8"
+    },
+    {
+     "input_index": 1,
+     "workspace": "default",
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "content_sha256": "35b936935fe65937ae9d86a70f413d0ab9f8c59bddcccc6532547d2eccfaed24",
+     "content_len": 956,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": "7 标准的实施与监督",
+       "chunk_order": null,
+       "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+         "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+         "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+        ]
+       },
+       "discovery": "table_range_binding",
+       "citation_verified": true,
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:地表水环境质量标准",
+        "edge:地表水环境质量标准|氨氮",
+        "edge:地表水环境质量标准|溶解氧",
+        "edge:化学需氧量|地表水环境质量标准",
+        "edge:地表水环境质量标准|高锰酸盐指数",
+        "edge:pH值|地表水环境质量标准",
+        "edge:五日生化需氧量|地表水环境质量标准",
+        "edge:地表水环境质量标准|水温",
+        "edge:化学需氧量(COD)|地表水环境质量标准",
+        "edge:地表水环境质量标准|省、自治区、直辖市人民政府",
+        "edge:地表水水质分类|地表水环境质量标准",
+        "edge:县级以上人民政府环境保护行政主管部门|地表水环境质量标准",
+        "edge:地表水环境质量标准|生活饮用水卫生规范",
+        "edge:五日生化需氧量(BOD5)|地表水环境质量标准",
+        "edge:地方补充标准|地表水环境质量标准",
+        "edge:地表水环境质量标准|氨氮(NH3-N)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 8,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 8,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "35b936935fe65937ae9d86a70f413d0ab9f8c59bddcccc6532547d2eccfaed24"
+    },
+    {
+     "input_index": 2,
+     "workspace": "default",
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "content_sha256": "699692ffe7277c18b5cfb7a59e74f6f7d80859ba0c57b873dd6bec9f2407b335",
+     "content_len": 895,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": "7 标准的实施与监督",
+       "chunk_order": null,
+       "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+         "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+         "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+        ]
+       },
+       "discovery": "table_range_binding",
+       "citation_verified": true,
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "699692ffe7277c18b5cfb7a59e74f6f7d80859ba0c57b873dd6bec9f2407b335"
+    },
+    {
+     "input_index": 3,
+     "workspace": "default",
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-003",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "content_sha256": "56748cf6991b454dff3aed196b3cc05ce52c12d4bb4d147f501741a4c4589e87",
+     "content_len": 1340,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-003",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": "7 标准的实施与监督",
+       "chunk_order": null,
+       "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+         "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+         "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+        ]
+       },
+       "discovery": "table_range_binding",
+       "citation_verified": true,
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-003",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 3838-2002",
+        "edge:GB 3838-2002|铅",
+        "edge:GB 3838-2002|镉",
+        "edge:GB 3838-2002|氯化物",
+        "edge:GB 3838-2002|硫酸盐",
+        "edge:GB 3838-2002|粪大肠菌群",
+        "edge:GB 3838-2002|硝酸盐",
+        "edge:GB 3838-2002|石油类",
+        "edge:GB 3838-2002|氰化物",
+        "edge:GB 3838-2002|硫化物",
+        "edge:GB 3838-2002|锰",
+        "edge:GB 3838-2002|阴离子表面活性剂",
+        "edge:GB 3838-2002|铁",
+        "edge:GB 3838-2002|挥发酚",
+        "edge:GB 3838-2002|铬(六价)",
+        "edge:GB 3838-2002|硝酸盐(以N计)",
+        "edge:GB 3838-2002|氯化物(以Cl-计)",
+        "edge:GB 3838-2002|硫酸盐(以SO4^2-计)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 1,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 1,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-91f9049decde09153368d4b69f280e78-0002",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0002",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "table_id": "tb-91f9049decde09153368d4b69f280e78-0002",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "56748cf6991b454dff3aed196b3cc05ce52c12d4bb4d147f501741a4c4589e87"
+    },
+    {
+     "input_index": 4,
+     "workspace": "default",
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-008",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "content_sha256": "6060d6418efccbe13e9b992ba9a851e156e1b4cb47e0fa45f6ff213608534cda",
+     "content_len": 1020,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-008",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 3838-2002",
+        "edge:GB 3838-2002|总磷",
+        "edge:GB 3838-2002|总氮",
+        "edge:GB 3838-2002|氨氮",
+        "edge:GB 3838-2002|溶解氧",
+        "edge:GB 3838-2002|化学需氧量",
+        "edge:GB 3838-2002|高锰酸盐指数",
+        "edge:GB 3838-2002|pH值",
+        "edge:GB 3838-2002|五日生化需氧量",
+        "edge:GB 3838-2002|水温"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 2,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 2,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-008"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-91f9049decde09153368d4b69f280e78-0004",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0004",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "table_id": "tb-91f9049decde09153368d4b69f280e78-0004",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-008"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "6060d6418efccbe13e9b992ba9a851e156e1b4cb47e0fa45f6ff213608534cda"
+    },
+    {
+     "input_index": 5,
+     "workspace": "default",
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-010",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "content_sha256": "3bceca26d99afd7f892c148a7a118204e1ea31b898f50ee4ef6527fb167d3403",
+     "content_len": 2480,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-010",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 3838-2002",
+        "edge:GB 3838-2002|铅",
+        "edge:GB 3838-2002|镉",
+        "edge:GB 3838-2002|氯化物",
+        "edge:GB 3838-2002|硫酸盐",
+        "edge:GB 3838-2002|粪大肠菌群",
+        "edge:GB 3838-2002|硝酸盐",
+        "edge:GB 3838-2002|石油类",
+        "edge:GB 3838-2002|氰化物",
+        "edge:GB 3838-2002|硫化物",
+        "edge:GB 3838-2002|锰",
+        "edge:GB 3838-2002|阴离子表面活性剂",
+        "edge:GB 3838-2002|铁",
+        "edge:GB 3838-2002|挥发酚",
+        "edge:GB 3838-2002|铬(六价)",
+        "edge:GB 3838-2002|GB 7475-87",
+        "edge:GB 3838-2002|GB/T 16488-1996",
+        "edge:GB 3838-2002|GB 7490-87",
+        "edge:GB 3838-2002|GB 7487-87",
+        "edge:GB 3838-2002|GB 7467-87",
+        "edge:GB 3838-2002|GB/T 17133-1997",
+        "edge:GB 3838-2002|GB/T 16489-1996",
+        "edge:GB 3838-2002|GB 7494-87",
+        "edge:GB 3838-2002|冷原子荧光法"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 3,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 3,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-010"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-91f9049decde09153368d4b69f280e78-0004",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0004",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "table_id": "tb-91f9049decde09153368d4b69f280e78-0004",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-010"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-91f9049decde09153368d4b69f280e78-0005",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0005",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "table_id": "tb-91f9049decde09153368d4b69f280e78-0005",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-010"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "3bceca26d99afd7f892c148a7a118204e1ea31b898f50ee4ef6527fb167d3403"
+    },
+    {
+     "input_index": 6,
+     "workspace": "default",
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-017",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "content_sha256": "4984b8f26b4909568a3d60d1f72d81f13e0ad16dec5ddff0044b785ee9aa8269",
+     "content_len": 1399,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-017",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 3838-2002",
+        "edge:GB 3838-2002|镍",
+        "edge:GB 3838-2002|硼",
+        "edge:GB 3838-2002|铍",
+        "edge:GB 3838-2002|锑",
+        "edge:GB 3838-2002|生活饮用水卫生规范",
+        "edge:GB 3838-2002|钡",
+        "edge:GB 3838-2002|水和废水监测分析方法(第三版)",
+        "edge:GB 3838-2002|钴",
+        "edge:GB 3838-2002|铊",
+        "edge:GB 3838-2002|钛",
+        "edge:GB 3838-2002|钒",
+        "edge:GB 3838-2002|水和废水标准检验法(第15版)",
+        "edge:GB 3838-2002|国家方法标准"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 4,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 4,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-017"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-91f9049decde09153368d4b69f280e78-0006",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0006",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "table_id": "tb-91f9049decde09153368d4b69f280e78-0006",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-017"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "4984b8f26b4909568a3d60d1f72d81f13e0ad16dec5ddff0044b785ee9aa8269"
+    },
+    {
+     "input_index": 7,
+     "workspace": "default",
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-007",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "content_sha256": "8aafb1ca50ba8b1a73f836f8a8e019f1374cebc0c7352f6531e2853c4384a26c",
+     "content_len": 1200,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-007",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 3838-2002",
+        "edge:GB 3838-2002|镍",
+        "edge:GB 3838-2002|甲基汞",
+        "edge:GB 3838-2002|硼",
+        "edge:GB 3838-2002|多氯联苯",
+        "edge:GB 3838-2002|苯并(a)芘",
+        "edge:GB 3838-2002|二甲苯",
+        "edge:GB 3838-2002|铍",
+        "edge:GB 3838-2002|锑",
+        "edge:GB 3838-2002|敌敌畏",
+        "edge:GB 3838-2002|钡",
+        "edge:GB 3838-2002|百菌清",
+        "edge:GB 3838-2002|钴",
+        "edge:GB 3838-2002|钼",
+        "edge:GB 3838-2002|铊",
+        "edge:GB 3838-2002|四氯苯",
+        "edge:GB 3838-2002|阿特拉津",
+        "edge:GB 3838-2002|三氯苯",
+        "edge:GB 3838-2002|敌百虫",
+        "edge:GB 3838-2002|硝基氯苯",
+        "edge:GB 3838-2002|钛",
+        "edge:GB 3838-2002|钒",
+        "edge:GB 3838-2002|二硝基苯",
+        "edge:GB 3838-2002|溴氰菊酯",
+        "edge:GB 3838-2002|多氯联苯6",
+        "edge:GB 3838-2002|内吸磷",
+        "edge:GB 3838-2002|甲萘威"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 5,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 5,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-007"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-91f9049decde09153368d4b69f280e78-0003",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0003",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "table_id": "tb-91f9049decde09153368d4b69f280e78-0003",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-007"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "8aafb1ca50ba8b1a73f836f8a8e019f1374cebc0c7352f6531e2853c4384a26c"
+    }
+   ],
+   "call": {
+    "service": "rerank",
+    "operation": "rerank",
+    "endpoint": "/v1/rerank",
+    "url_path_used": "configured-endpoint",
+    "model": "Qwen/Qwen3-Reranker-4B",
+    "documents_sent": 8,
+    "chars_sent": 11929,
+    "elapsed_ms": 2384,
+    "status_code": 200,
+    "status": "success",
+    "response_evidence": {
+     "id": "01a120c054a4775c82e2c2ce97786fa4",
+     "results_len": 8
+    },
+    "raw_response": {
+     "id": "01a120c054a4775c82e2c2ce97786fa4",
+     "results": [
+      {
+       "index": 0,
+       "document": null,
+       "relevance_score": 0.9979870319366455
+      },
+      {
+       "index": 5,
+       "document": null,
+       "relevance_score": 0.9782052636146545
+      },
+      {
+       "index": 3,
+       "document": null,
+       "relevance_score": 0.9635822772979736
+      },
+      {
+       "index": 4,
+       "document": null,
+       "relevance_score": 0.959341287612915
+      },
+      {
+       "index": 1,
+       "document": null,
+       "relevance_score": 0.4978720247745514
+      },
+      {
+       "index": 2,
+       "document": null,
+       "relevance_score": 0.1943988800048828
+      },
+      {
+       "index": 6,
+       "document": null,
+       "relevance_score": 0.14826396107673645
+      },
+      {
+       "index": 7,
+       "document": null,
+       "relevance_score": 0.08372904360294342
+      }
+     ],
+     "meta": {
+      "tokens": "<redacted>",
+      "billed_units": {
+       "input_tokens": "<redacted>",
+       "output_tokens": "<redacted>",
+       "image_tokens": "<redacted>",
+       "search_units": 0,
+       "classifications": 0
+      }
+     }
+    }
+   },
+   "ordered": [
+    {
+     "input_index": 0,
+     "workspace": "default",
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-000",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "content_sha256": "4f79779fb25f8e5ec0ad34cca261984c2c2175f245331f32d739bc8768d82fc8",
+     "rerank_score": 0.9979870319366455,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-000",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": "中华人民共和国国家标准",
+       "chunk_order": 0,
+       "discovery": "keyword_core_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.0009616180323064327
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-000",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 3838-2002",
+        "entity:地表水环境质量标准基本项目",
+        "entity:地表水环境质量标准(GB 3838-2002)",
+        "entity:集中式生活饮用水地表水源地特定项目",
+        "entity:地表水环境质量标准",
+        "entity:Environmental Quality Standards For Surface Water",
+        "entity:集中式生活饮用水地表水源地补充项目",
+        "edge:GB 3838-2002|总磷",
+        "edge:GB 3838-2002|铅",
+        "edge:GB 3838-2002|总氮",
+        "edge:地表水环境质量标准基本项目|总磷",
+        "edge:地表水环境质量标准基本项目|铅",
+        "edge:地表水环境质量标准(GB 3838-2002)|总氮",
+        "edge:GB 3838-2002|农田灌溉水质标准",
+        "edge:GB 3838-2002|中华人民共和国水污染防治法",
+        "edge:GB 3838-2002|地表水环境质量标准",
+        "edge:地表水环境质量标准基本项目|表1",
+        "edge:GB 3838-2002|氨氮",
+        "edge:GB 3838-2002|溶解氧",
+        "edge:GB 3838-2002|pH",
+        "edge:GB 3838-2002|氯化物",
+        "edge:GB 3838-2002|硫酸盐",
+        "edge:GB 3838-2002|湖泊",
+        "edge:表2|集中式生活饮用水地表水源地补充项目",
+        "edge:GB 3838-2002|水质监测",
+        "edge:GB 3838-2002|高锰酸盐指数",
+        "edge:GB 3838-2002|粪大肠菌群",
+        "edge:GB 3838-2002|硝酸盐",
+        "edge:GB 3838-2002|中华人民共和国环境保护法",
+        "edge:GB 3838-2002|海水水质标准",
+        "edge:GB 3838-2002|地表水环境质量标准基本项目",
+        "edge:GB 3838-2002|锰",
+        "edge:GB 3838-2002|国家质量监督检验检疫总局",
+        "edge:GB 3838-2002|铁",
+        "edge:GB 3838-2002|非离子氨",
+        "edge:GB 3838-2002|渔业水质标准",
+        "edge:GB 3838-2002|水库",
+        "edge:GB 3838-2002|中国环境科学研究院",
+        "edge:GB 3838-2002|集中式生活饮用水地表水源地补充项目",
+        "edge:GB 3838-2002|水质评价",
+        "edge:农田灌溉水质标准|地表水环境质量标准(GB 3838-2002)",
+        "edge:表3|集中式生活饮用水地表水源地特定项目",
+        "edge:GB 3838-2002|生活饮用水卫生规范",
+        "edge:GB 3838-2002|集中式生活饮用水地表水源地特定项目",
+        "edge:中华人民共和国水污染防治法|地表水环境质量标准(GB 3838-2002)",
+        "edge:GB 3838-2002|国家环境保护总局",
+        "edge:GB 3838-2002|水域功能和标准分类",
+        "edge:GB 3838-2002|亚硝酸盐",
+        "edge:GB 3838-2002|凯氏氮",
+        "edge:GB 3838-2002|标准的实施与监督",
+        "edge:GB 3838-2002|国家环境保护总局科技标准司",
+        "edge:GB 3838-2002|江河",
+        "edge:GB 3838-2002|GB 3838-88",
+        "edge:GB 3838-2002|GHZB 1-1999",
+        "edge:GB 3838-2002|渠道",
+        "edge:GB 3838-2002|运河",
+        "edge:Environmental Quality Standards For Surface Water|GB 3838-2002",
+        "edge:地表水环境质量标准基本项目|氨氮",
+        "edge:地表水环境质量标准基本项目|溶解氧",
+        "edge:地表水环境质量标准基本项目|表4",
+        "edge:pH|地表水环境质量标准基本项目",
+        "edge:地表水环境质量标准(GB 3838-2002)|水质监测",
+        "edge:硫酸盐|集中式生活饮用水地表水源地补充项目",
+        "edge:氯化物|集中式生活饮用水地表水源地补充项目",
+        "edge:地表水环境质量标准基本项目|高锰酸盐指数",
+        "edge:地表水环境质量标准基本项目|粪大肠菌群",
+        "edge:表5|集中式生活饮用水地表水源地补充项目",
+        "edge:中华人民共和国环境保护法|地表水环境质量标准(GB 3838-2002)",
+        "edge:表6|集中式生活饮用水地表水源地特定项目",
+        "edge:地表水环境质量标准(GB 3838-2002)|海水水质标准",
+        "edge:硝酸盐|集中式生活饮用水地表水源地补充项目",
+        "edge:地表水环境质量标准(GB 3838-2002)|地表水环境质量标准基本项目",
+        "edge:国家质量监督检验检疫总局|地表水环境质量标准(GB 3838-2002)",
+        "edge:地表水环境质量标准(GB 3838-2002)|渔业水质标准",
+        "edge:中国环境科学研究院|地表水环境质量标准(GB 3838-2002)",
+        "edge:地表水环境质量标准(GB 3838-2002)|集中式生活饮用水地表水源地补充项目",
+        "edge:地表水环境质量标准(GB 3838-2002)|水质评价",
+        "edge:县级以上人民政府环境保护行政主管部门|地表水环境质量标准(GB 3838-2002)",
+        "edge:地表水环境质量标准(GB 3838-2002)|生活饮用水卫生规范",
+        "edge:地表水环境质量标准(GB 3838-2002)|集中式生活饮用水地表水源地特定项目",
+        "edge:国家环境保护总局|地表水环境质量标准(GB 3838-2002)",
+        "edge:地表水环境质量标准基本项目|非离子氨",
+        "edge:国家环境保护总局科技标准司|地表水环境质量标准(GB 3838-2002)",
+        "edge:地表水环境质量标准基本项目|集中式生活饮用水地表水源地补充项目",
+        "edge:地表水环境质量标准(GB 3838-2002)|河口水域",
+        "edge:地表水环境质量标准(GB 3838-2002)|地面水环境质量标准(GB 3838-88)",
+        "edge:地表水环境质量标准(GB 3838-2002)|地面水环境质量标准(GB 3838-83)",
+        "edge:国家地表水环境监测技术规范|地表水环境质量标准(GB 3838-2002)",
+        "edge:ISO方法体系|地表水环境质量标准(GB 3838-2002)",
+        "edge:地表水环境质量标准(GB 3838-2002)|地表水环境质量标准(GHZB 1-1999)",
+        "edge:锰|集中式生活饮用水地表水源地补充项目",
+        "edge:地表水水域功能分类|地表水环境质量标准(GB 3838-2002)",
+        "edge:铁|集中式生活饮用水地表水源地补充项目",
+        "edge:地表水环境质量标准基本项目|集中式生活饮用水地表水源地特定项目",
+        "edge:亚硝酸盐|地表水环境质量标准基本项目",
+        "edge:凯氏氮|地表水环境质量标准基本项目",
+        "edge:县级以上人民政府环境保护行政主管部门|集中式生活饮用水地表水源地特定项目",
+        "edge:地表水环境质量标准基本项目|基本要求",
+        "edge:地表水环境质量标准基本项目|表4地表水环境质量标准基本项目分析方法",
+        "edge:地表水环境质量标准基本项目|表1地表水环境质量标准基本项目标准限值",
+        "edge:集中式生活饮用水地表水源地二级保护区|集中式生活饮用水地表水源地补充项目",
+        "edge:表5集中式生活饮用水地表水源地补充项目分析方法|集中式生活饮用水地表水源地补充项目",
+        "edge:表2集中式生活饮用水地表水源地补充项目标准限值|集中式生活饮用水地表水源地补充项目",
+        "edge:集中式生活饮用水地表水源地一级保护区|集中式生活饮用水地表水源地补充项目",
+        "edge:表3集中式生活饮用水地表水源地特定项目标准限值|集中式生活饮用水地表水源地特定项目",
+        "edge:表6集中式生活饮用水地表水源地特定项目分析方法|集中式生活饮用水地表水源地特定项目",
+        "edge:集中式生活饮用水地表水源地二级保护区|集中式生活饮用水地表水源地特定项目",
+        "edge:集中式生活饮用水地表水源地一级保护区|集中式生活饮用水地表水源地特定项目"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 0,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 0,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "0ce1468301793439fef474911be9c427",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "0ce1468301793439fef474911be9c427",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "1be5a15442ef9d0368b3e1367a03a2fb",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "1be5a15442ef9d0368b3e1367a03a2fb",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "3c4fe04ff85cd494aef228fb38b89472",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "3c4fe04ff85cd494aef228fb38b89472",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "632bbe2a7313f0a5c20dbaff0d0e7ed0",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "632bbe2a7313f0a5c20dbaff0d0e7ed0",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "65014255b083e3fa2a7bd6edce17fa3e",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "65014255b083e3fa2a7bd6edce17fa3e",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7b4770667908af51eb321bd82c89aaf7",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "7b4770667908af51eb321bd82c89aaf7",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "8a797aa1ca8b615facad55fde27c0587",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "8a797aa1ca8b615facad55fde27c0587",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "a00b03f556ea5a44bcfa56d169e8035b",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "a00b03f556ea5a44bcfa56d169e8035b",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "a06ee03df403e9698901cd40c54bfce7",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "a06ee03df403e9698901cd40c54bfce7",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "c52afdc4bdd532dae65055f306b2842c",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "c52afdc4bdd532dae65055f306b2842c",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "de22a458f387b53eec9d2b2d633e4174",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "de22a458f387b53eec9d2b2d633e4174",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "e6725f89d4d126cf6c3811abac1430b2",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "e6725f89d4d126cf6c3811abac1430b2",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 5,
+     "workspace": "default",
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-010",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "content_sha256": "3bceca26d99afd7f892c148a7a118204e1ea31b898f50ee4ef6527fb167d3403",
+     "rerank_score": 0.9782052636146545,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-010",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 3838-2002",
+        "edge:GB 3838-2002|铅",
+        "edge:GB 3838-2002|镉",
+        "edge:GB 3838-2002|氯化物",
+        "edge:GB 3838-2002|硫酸盐",
+        "edge:GB 3838-2002|粪大肠菌群",
+        "edge:GB 3838-2002|硝酸盐",
+        "edge:GB 3838-2002|石油类",
+        "edge:GB 3838-2002|氰化物",
+        "edge:GB 3838-2002|硫化物",
+        "edge:GB 3838-2002|锰",
+        "edge:GB 3838-2002|阴离子表面活性剂",
+        "edge:GB 3838-2002|铁",
+        "edge:GB 3838-2002|挥发酚",
+        "edge:GB 3838-2002|铬(六价)",
+        "edge:GB 3838-2002|GB 7475-87",
+        "edge:GB 3838-2002|GB/T 16488-1996",
+        "edge:GB 3838-2002|GB 7490-87",
+        "edge:GB 3838-2002|GB 7487-87",
+        "edge:GB 3838-2002|GB 7467-87",
+        "edge:GB 3838-2002|GB/T 17133-1997",
+        "edge:GB 3838-2002|GB/T 16489-1996",
+        "edge:GB 3838-2002|GB 7494-87",
+        "edge:GB 3838-2002|冷原子荧光法"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 3,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 3,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-010"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-91f9049decde09153368d4b69f280e78-0004",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0004",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "table_id": "tb-91f9049decde09153368d4b69f280e78-0004",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-010"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-91f9049decde09153368d4b69f280e78-0005",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0005",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "table_id": "tb-91f9049decde09153368d4b69f280e78-0005",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-010"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 3,
+     "workspace": "default",
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-003",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "content_sha256": "56748cf6991b454dff3aed196b3cc05ce52c12d4bb4d147f501741a4c4589e87",
+     "rerank_score": 0.9635822772979736,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-003",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": "7 标准的实施与监督",
+       "chunk_order": null,
+       "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+         "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+         "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+        ]
+       },
+       "discovery": "table_range_binding",
+       "citation_verified": true,
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-003",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 3838-2002",
+        "edge:GB 3838-2002|铅",
+        "edge:GB 3838-2002|镉",
+        "edge:GB 3838-2002|氯化物",
+        "edge:GB 3838-2002|硫酸盐",
+        "edge:GB 3838-2002|粪大肠菌群",
+        "edge:GB 3838-2002|硝酸盐",
+        "edge:GB 3838-2002|石油类",
+        "edge:GB 3838-2002|氰化物",
+        "edge:GB 3838-2002|硫化物",
+        "edge:GB 3838-2002|锰",
+        "edge:GB 3838-2002|阴离子表面活性剂",
+        "edge:GB 3838-2002|铁",
+        "edge:GB 3838-2002|挥发酚",
+        "edge:GB 3838-2002|铬(六价)",
+        "edge:GB 3838-2002|硝酸盐(以N计)",
+        "edge:GB 3838-2002|氯化物(以Cl-计)",
+        "edge:GB 3838-2002|硫酸盐(以SO4^2-计)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 1,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 1,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-91f9049decde09153368d4b69f280e78-0002",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0002",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "table_id": "tb-91f9049decde09153368d4b69f280e78-0002",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 4,
+     "workspace": "default",
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-008",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "content_sha256": "6060d6418efccbe13e9b992ba9a851e156e1b4cb47e0fa45f6ff213608534cda",
+     "rerank_score": 0.959341287612915,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-008",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 3838-2002",
+        "edge:GB 3838-2002|总磷",
+        "edge:GB 3838-2002|总氮",
+        "edge:GB 3838-2002|氨氮",
+        "edge:GB 3838-2002|溶解氧",
+        "edge:GB 3838-2002|化学需氧量",
+        "edge:GB 3838-2002|高锰酸盐指数",
+        "edge:GB 3838-2002|pH值",
+        "edge:GB 3838-2002|五日生化需氧量",
+        "edge:GB 3838-2002|水温"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 2,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 2,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-008"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-91f9049decde09153368d4b69f280e78-0004",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0004",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "table_id": "tb-91f9049decde09153368d4b69f280e78-0004",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-008"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 1,
+     "workspace": "default",
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "content_sha256": "35b936935fe65937ae9d86a70f413d0ab9f8c59bddcccc6532547d2eccfaed24",
+     "rerank_score": 0.4978720247745514,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": "7 标准的实施与监督",
+       "chunk_order": null,
+       "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+         "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+         "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+        ]
+       },
+       "discovery": "table_range_binding",
+       "citation_verified": true,
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:地表水环境质量标准",
+        "edge:地表水环境质量标准|氨氮",
+        "edge:地表水环境质量标准|溶解氧",
+        "edge:化学需氧量|地表水环境质量标准",
+        "edge:地表水环境质量标准|高锰酸盐指数",
+        "edge:pH值|地表水环境质量标准",
+        "edge:五日生化需氧量|地表水环境质量标准",
+        "edge:地表水环境质量标准|水温",
+        "edge:化学需氧量(COD)|地表水环境质量标准",
+        "edge:地表水环境质量标准|省、自治区、直辖市人民政府",
+        "edge:地表水水质分类|地表水环境质量标准",
+        "edge:县级以上人民政府环境保护行政主管部门|地表水环境质量标准",
+        "edge:地表水环境质量标准|生活饮用水卫生规范",
+        "edge:五日生化需氧量(BOD5)|地表水环境质量标准",
+        "edge:地方补充标准|地表水环境质量标准",
+        "edge:地表水环境质量标准|氨氮(NH3-N)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 8,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 8,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 2,
+     "workspace": "default",
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "content_sha256": "699692ffe7277c18b5cfb7a59e74f6f7d80859ba0c57b873dd6bec9f2407b335",
+     "rerank_score": 0.1943988800048828,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": "7 标准的实施与监督",
+       "chunk_order": null,
+       "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+         "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+         "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+        ]
+       },
+       "discovery": "table_range_binding",
+       "citation_verified": true,
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 6,
+     "workspace": "default",
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-017",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "content_sha256": "4984b8f26b4909568a3d60d1f72d81f13e0ad16dec5ddff0044b785ee9aa8269",
+     "rerank_score": 0.14826396107673645,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-017",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 3838-2002",
+        "edge:GB 3838-2002|镍",
+        "edge:GB 3838-2002|硼",
+        "edge:GB 3838-2002|铍",
+        "edge:GB 3838-2002|锑",
+        "edge:GB 3838-2002|生活饮用水卫生规范",
+        "edge:GB 3838-2002|钡",
+        "edge:GB 3838-2002|水和废水监测分析方法(第三版)",
+        "edge:GB 3838-2002|钴",
+        "edge:GB 3838-2002|铊",
+        "edge:GB 3838-2002|钛",
+        "edge:GB 3838-2002|钒",
+        "edge:GB 3838-2002|水和废水标准检验法(第15版)",
+        "edge:GB 3838-2002|国家方法标准"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 4,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 4,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-017"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-91f9049decde09153368d4b69f280e78-0006",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0006",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "table_id": "tb-91f9049decde09153368d4b69f280e78-0006",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-017"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 7,
+     "workspace": "default",
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-007",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "content_sha256": "8aafb1ca50ba8b1a73f836f8a8e019f1374cebc0c7352f6531e2853c4384a26c",
+     "rerank_score": 0.08372904360294342,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-007",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 3838-2002",
+        "edge:GB 3838-2002|镍",
+        "edge:GB 3838-2002|甲基汞",
+        "edge:GB 3838-2002|硼",
+        "edge:GB 3838-2002|多氯联苯",
+        "edge:GB 3838-2002|苯并(a)芘",
+        "edge:GB 3838-2002|二甲苯",
+        "edge:GB 3838-2002|铍",
+        "edge:GB 3838-2002|锑",
+        "edge:GB 3838-2002|敌敌畏",
+        "edge:GB 3838-2002|钡",
+        "edge:GB 3838-2002|百菌清",
+        "edge:GB 3838-2002|钴",
+        "edge:GB 3838-2002|钼",
+        "edge:GB 3838-2002|铊",
+        "edge:GB 3838-2002|四氯苯",
+        "edge:GB 3838-2002|阿特拉津",
+        "edge:GB 3838-2002|三氯苯",
+        "edge:GB 3838-2002|敌百虫",
+        "edge:GB 3838-2002|硝基氯苯",
+        "edge:GB 3838-2002|钛",
+        "edge:GB 3838-2002|钒",
+        "edge:GB 3838-2002|二硝基苯",
+        "edge:GB 3838-2002|溴氰菊酯",
+        "edge:GB 3838-2002|多氯联苯6",
+        "edge:GB 3838-2002|内吸磷",
+        "edge:GB 3838-2002|甲萘威"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 5,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 5,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "unit_id": "9390ecf11c23533f8d2d271b726e98dc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-007"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-91f9049decde09153368d4b69f280e78-0003",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0003",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "table_id": "tb-91f9049decde09153368d4b69f280e78-0003",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-007"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    }
+   ],
+   "degraded": [],
+   "status": "ok",
+   "typed_targets": [
+    {
+     "target_type": "doc",
+     "workspace": "default",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "doc_name": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf",
+     "self_code": "GB3838",
+     "self_code_version": "2002",
+     "discovery": "code_exact",
+     "membership_basis": null,
+     "citation": {
+      "kind": "catalog_row",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78"
+     },
+     "citation_verified": true
+    },
+    {
+     "target_type": "table_unit",
+     "workspace": "default",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+     "heading": "7 标准的实施与监督",
+     "chunk_ids": [
+      "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+      "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+      "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+     ],
+     "discovery": "table_range_binding",
+     "scope_status": null,
+     "membership_basis": null,
+     "citation": {
+      "kind": "table_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+      "chunk_ids": [
+       "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+       "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+       "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+      ]
+     }
+    }
+   ],
+   "path_enrichment": [
+    "association completion: 6 table fragment path(s) and 19 non-table (block/source_unit) path(s) from unit_chunk_links JOIN source_units by actual unit_kind (replay paths predate the 5.3-F2 fix); no id/locator/kind guessed"
+   ],
+   "source_verification": {
+    "candidates_checked": 8,
+    "verified": 8,
+    "problems": []
+   },
+   "skipped_inputs": []
+  }
+ ],
+ "finished_at": "2026-10-09T21:00:40+0800"
+}

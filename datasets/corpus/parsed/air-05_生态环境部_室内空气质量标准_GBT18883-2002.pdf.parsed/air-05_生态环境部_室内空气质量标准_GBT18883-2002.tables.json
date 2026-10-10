@@ -1,0 +1,73 @@
+{
+  "version": "1.0",
+  "tables": {
+    "tb-6187dc63c308700305a9fb46cc49b706-0001": {
+      "id": "tb-6187dc63c308700305a9fb46cc49b706-0001",
+      "blockid": "7a6513396bcaa35e50ba18b5fb0345df",
+      "heading": "4 室内空气质量",
+      "parent_headings": [
+        "室内空气质量标准"
+      ],
+      "dimension": [
+        24,
+        6
+      ],
+      "format": "html",
+      "content": "<table><tr><td>序号</td><td>参数类别</td><td>参数</td><td>单位</td><td>标准值</td><td>备注</td></tr><tr><td rowspan=\"2\">1</td><td rowspan=\"7\">物理性</td><td rowspan=\"2\">温度</td><td rowspan=\"2\">°C</td><td>22~28</td><td>夏季空调</td></tr><tr><td>16~24</td><td>冬季采暖</td></tr><tr><td rowspan=\"2\">2</td><td rowspan=\"2\">相对湿度</td><td rowspan=\"2\">%</td><td>40~80</td><td>夏季空调</td></tr><tr><td>30~60</td><td>冬季采暖</td></tr><tr><td rowspan=\"2\">3</td><td rowspan=\"2\">空气流速</td><td rowspan=\"2\">m/s</td><td>0.3</td><td>夏季空调</td></tr><tr><td>0.2</td><td>冬季采暖</td></tr><tr><td>4</td><td>新风量</td><td> $m^3/(h·人)$ </td><td> $30^a$ </td><td></td></tr><tr><td>5</td><td rowspan=\"13\">化学性</td><td>二氧化硫  $SO_2$ </td><td> $mg/m^3$ </td><td>0.50</td><td>1小时均值</td></tr><tr><td>6</td><td>二氧化氮  $NO_2$ </td><td> $mg/m^3$ </td><td>0.24</td><td>1小时均值</td></tr><tr><td>7</td><td>一氧化碳 CO</td><td> $mg/m^3$ </td><td>10</td><td>1小时均值</td></tr><tr><td>8</td><td>二氧化碳  $CO_2$ </td><td>%</td><td>0.10</td><td>日平均值</td></tr><tr><td>9</td><td>氨  $NH_3$ </td><td> $mg/m^3$ </td><td>0.20</td><td>1小时均值</td></tr><tr><td>10</td><td>臭氧  $O_3$ </td><td> $mg/m^3$ </td><td>0.16</td><td>1小时均值</td></tr><tr><td>11</td><td>甲醛 HCHO</td><td> $mg/m^3$ </td><td>0.10</td><td>1小时均值</td></tr><tr><td>12</td><td>苯  $C_6H_6$ </td><td> $mg/m^3$ </td><td>0.11</td><td>1小时均值</td></tr><tr><td>13</td><td>甲苯  $C_7H_8$ </td><td> $mg/m^3$ </td><td>0.20</td><td>1小时均值</td></tr><tr><td>14</td><td>二甲苯  $C_8H_{10}$ </td><td> $mg/m^3$ </td><td>0.20</td><td>1小时均值</td></tr><tr><td>15</td><td>苯并[a]芘 B(a)P</td><td> $ng/m^3$ </td><td>1.0</td><td>日平均值</td></tr><tr><td>16</td><td>可吸入颗粒物  $PM_{10}$ </td><td> $mg/m^3$ </td><td>0.15</td><td>日平均值</td></tr><tr><td>17</td><td>总挥发性有机物 TVOC</td><td> $mg/m^3$ </td><td>0.60</td><td>8小时均值</td></tr><tr><td>18</td><td>生物性</td><td>菌落总数</td><td> $cfu/m^3$ </td><td>2500</td><td>依据仪器定b</td></tr><tr><td>19</td><td>放射性</td><td>氡222Rn</td><td> $Bq/m^3$ </td><td>400</td><td>年平均值(行动水平c)</td></tr><tr><td colspan=\"6\">a新风量要求≥标准值,除温度、相对湿度外的其它参数要求≤标准值;b见附录D;c达到此水平建议采取干预行动以降低室内氡浓度。</td></tr></table>",
+      "caption": "表 1 室内空气质量标准",
+      "footnotes": [],
+      "self_ref": "content_list.json#/70"
+    },
+    "tb-6187dc63c308700305a9fb46cc49b706-0002": {
+      "id": "tb-6187dc63c308700305a9fb46cc49b706-0002",
+      "blockid": "db10e984c32fb4ce71c63e099be2dbe9",
+      "heading": "A.6 检验方法",
+      "parent_headings": [
+        "室内空气监测技术导则"
+      ],
+      "dimension": [
+        19,
+        4
+      ],
+      "format": "html",
+      "content": "<table><tr><td>序号</td><td>参数</td><td>检验方法</td><td>来源</td></tr><tr><td>1</td><td>二氧化硫 $SO_{2}$ </td><td>(1)甲醛溶液吸收——盐酸副玫瑰苯胺分光光度法</td><td>(1)GB/T 16128GB/T 15262</td></tr><tr><td>2</td><td>二氧化氮 $NO_{2}$ </td><td>(1)改进的Saltzaman法</td><td>(1)GB 12372GB/T 15435</td></tr><tr><td>3</td><td>一氧化碳CO</td><td>(1)非分散红外法(2)不分光红外线气体分析法 气相色谱法 求置换法</td><td>(1)GB 9801(2)GB/T 18204.23</td></tr><tr><td>4</td><td>二氧化碳 $CO_{2}$ </td><td>(1)不分光红外线气体分析法(2)气相色谱法(3)容量滴定法</td><td>GB/T 18204.24</td></tr><tr><td>5</td><td>氨 $NH_{3}$ </td><td>(1)靛酚蓝分光光度法 纳氏试剂分光光度法(2)离子选择电极法(3)次氯酸钠—水杨酸分光光度法</td><td>(1)GB/T 18204.25 GB/T 14668(2)GB/T 14669(3)GB/T 14679</td></tr><tr><td>6</td><td>臭氧 $O_{3}$ </td><td>(1)紫外光度法(2)靛蓝二磺酸钠分光光度法</td><td>(1)GB/T 15438(2)GB/T 18204.27 GB/T 15437</td></tr><tr><td>7</td><td>甲醛HCHO</td><td>(1)AHMT分光光度法(2)酚试剂分光光度法 气相色谱法(3)乙酰丙酮分光光度法</td><td>(1)GB/T 16129(2)GB/T 18204.26(3)GB/T 15516</td></tr><tr><td>8</td><td>苯 $C_{6}H_{6}$ </td><td>气相色谱法</td><td>(1)附录B(2)GB 11737</td></tr><tr><td>9</td><td>甲苯 $C_{7}H_{8}$ 二甲苯 $C_{8}H_{10}$ </td><td>气相色谱法</td><td>(1)GB 11737(2)GB 14677</td></tr><tr><td>10</td><td>苯并[a]芘B(a)P</td><td>高效液相色谱法</td><td>GB/T 15439</td></tr><tr><td>11</td><td>可吸入颗粒物 $PM_{10}$ </td><td>撞击式——称重法</td><td>GB/T 17095</td></tr><tr><td>12</td><td>总挥发性有机化合物TVOC</td><td>气相色谱法</td><td>附录C</td></tr><tr><td>13</td><td>菌落总数</td><td>撞击法</td><td>附录D</td></tr><tr><td>14</td><td>温度</td><td>(1)玻璃液体温度计法(2)数显式温度计法</td><td>GB/T 18204.13</td></tr><tr><td>15</td><td>相对湿度</td><td>(1)通风干湿表法(2)氯化锂湿度计法(3)电容式数字湿度计法</td><td>GB/T 18204.14</td></tr><tr><td>16</td><td>空气流速</td><td>(1) 热球式电风速计法(2) 数字式风速表法</td><td>GB/T 18204.15</td></tr><tr><td>17</td><td>新风量</td><td>示踪气体法</td><td>GB/T 18204.18</td></tr><tr><td>18</td><td> $氨^{222}Rn$ </td><td>(1) 空气中氡浓度的闪烁瓶测量方法(2) 径迹蚀刻法(3) 双滤膜法(4) 活性炭盒法</td><td>(1) GB/T 16147(2) GB/T 14582</td></tr></table>",
+      "caption": "表 A.1 室内空气中各种参数的检验方法",
+      "footnotes": [],
+      "self_ref": "content_list.json#/114"
+    },
+    "tb-6187dc63c308700305a9fb46cc49b706-0003": {
+      "id": "tb-6187dc63c308700305a9fb46cc49b706-0003",
+      "blockid": "0fd5a56785d28177c6c74e00cde80874",
+      "heading": "C.6.1 样品的解吸和浓缩",
+      "parent_headings": [
+        "（规范性附录） 室内空气中总挥发性有机物（TVOC）的检验方法 (热解吸/毛细管气相色谱法)"
+      ],
+      "dimension": [
+        8,
+        2
+      ],
+      "format": "html",
+      "content": "<table><tr><td>解吸温度</td><td>250~325°C</td></tr><tr><td>解吸时间</td><td>5~15 min</td></tr><tr><td>解吸气流量</td><td>30~50 ml/min</td></tr><tr><td>冷阱的制冷温度</td><td>+20~-180°C</td></tr><tr><td>冷阱的加热温度</td><td>250~350°C</td></tr><tr><td>冷阱中的吸附剂</td><td>如果使用、一般与吸附管相同,40~100 mg</td></tr><tr><td>载气</td><td>氦气或高纯氮气</td></tr><tr><td>分流比</td><td>样品管和二级冷阱之间以及二级冷阱和分析柱之间的分流比应根据空气中的浓度来选择</td></tr></table>",
+      "caption": "表 C.1 解吸条件",
+      "footnotes": [],
+      "self_ref": "content_list.json#/217"
+    },
+    "tb-6187dc63c308700305a9fb46cc49b706-0004": {
+      "id": "tb-6187dc63c308700305a9fb46cc49b706-0004",
+      "blockid": "14bb88ef30b658b33ce4d7bc1312255e",
+      "heading": "D.4 营养琼脂培养基",
+      "parent_headings": [
+        "室内空气中菌落总数检验方法"
+      ],
+      "dimension": [
+        5,
+        2
+      ],
+      "format": "html",
+      "content": "<table><tr><td>蛋白胨</td><td>20 g</td></tr><tr><td>牛肉浸膏</td><td>3 g</td></tr><tr><td>氯化钠</td><td>5 g</td></tr><tr><td>琼脂</td><td>15~20 g</td></tr><tr><td>蒸馏水</td><td>1 000 ml</td></tr></table>",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/279"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+lightrag-hku: 1.5.7
+openai: 2.54.0
+asyncpg: 0.31.0
+pgvector: 0.5.0
+qdrant-client: 1.19.1
+neo4j: 6.3.1
+httpx: 0.28.1
+python-dotenv: 1.2.4
+lxml: 6.1.3
+Configuration: OK (51 keys; credential values hidden)
+Eval dry-run OK: executions=9 backend_fetches=0
+  bounds: {"note": "compiled from the frozen matrix rows x configured envelopes; enforced pre-request by the budget ledger (refusal issues zero calls). REAL-boundary compilation: the per-question pg envelope now spans every guarded data SQL inside the leg — discovery helpers, the answer entry AND its self-made connection, SourceAdapter full-text read-back, fusion/rerank guard reads (two envelopes per row: discovery + answer); establishment/close and transaction-control statements are declared unbilled in the run report's budget_coverage_declaration; reservations are the pre-request gate, issued_total is the real-call bill", "path_executions": 9, "local_or_fusion_legs": 6, "services": {"llm": {"envelope_bound": 6, "total_cap": 6, "effective_bound": 6}, "embedding": {"envelope_bound": 24, "total_cap": 24, "effective_bound": 24}, "qdrant": {"envelope_bound": 48, "total_cap": 48, "effective_bound": 48}, "neo4j": {"envelope_bound": 60, "total_cap": 60, "effective_bound": 60}, "pg": {"envelope_bound": 18432, "total_cap": 9216, "effective_bound": 9216}, "rerank": {"envelope_bound": 3, "total_cap": 3, "effective_bound": 3}, "answer_llm": {"envelope_bound": 3, "total_cap": 3, "effective_bound": 3}}, "embedding_max_texts_per_call": 32, "embedding_max_chars_per_call": 64000, "answer_llm_calls_positives": 3, "answer_llm_calls_counter_cap": 0, "answer_llm_note": "reserved ONLY for synthesis-category rows and only with explicit authorization; refusal means the answer entry runs read-only (allow_model=False), never a hidden call"}
+  -> reports/pg-retrieval/phase-4-pilot-r1-review/r2-dry-run/execution-matrix.json

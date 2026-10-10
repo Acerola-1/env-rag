@@ -1,0 +1,226 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-09T20:53:59+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "fact-001"
+ ],
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-formal-fixed-round-1/inputs/local/fact-001-rerank.json",
+   "sha256": "af7d05730c40ed3b844031a64146d531d112e91c2c86ce010b65f21b74de3c5c",
+   "task": null,
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": []
+  },
+  "fused_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-formal-fixed-round-1/inputs/local/fact-001-fusion.json",
+   "sha256": "4f3978d4c0ac79127c303e7dbc257fe16bba90f54673a3bb451cf35fffeb2e56",
+   "task": "Phase 4 round 1 evaluation input (path=local)",
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": [
+    "fact-001"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "model_calls_used": 0,
+ "results": [
+  {
+   "query_id": "fact-001",
+   "query": "GB 3095-2012 中二氧化硫的年平均浓度二级限值是多少？",
+   "category": "fact",
+   "workspace": "default",
+   "coverage_status": "partial",
+   "fail_stage": "",
+   "flags": [
+    "no rerank replay for this query id — scope priority falls back to fusion path order, explicitly recorded (no fabricated scores)",
+    "discovery document doc-4c883d21fa02a53189e0911c3d59d1d1 excluded from the answer scope: canonical identity GB3095-2026 matches no requested branch ['GB3095-2012']",
+    "discovery document doc-69538e249043b7fb564980ccab13438e identity unresolved: self_code unknown in the catalog — never guessed from a name; only the upstream-published, allowed-set-cross-checked attribution evidence may carry such a document",
+    "discovery document doc-13aaccec179aaa355c8c3d98abd0716e identity unresolved: self_code unknown in the catalog — never guessed from a name; only the upstream-published, allowed-set-cross-checked attribution evidence may carry such a document",
+    "discovery document doc-f786d9079ac78c8e746df84e2e8e8535 identity unresolved: self_code unknown in the catalog — never guessed from a name; only the upstream-published, allowed-set-cross-checked attribution evidence may carry such a document",
+    "discovery document doc-c963ecba7eeb28190aa94ffbc29e6b2f identity unresolved: self_code unknown in the catalog — never guessed from a name; only the upstream-published, allowed-set-cross-checked attribution evidence may carry such a document",
+    "expansion requested but nothing confirmed — never a guessed range"
+   ],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "absent",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 0,
+    "typed_targets": [],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 10,
+    "selected_docs": [
+     "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+    ],
+    "priority": [
+     {
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-69538e249043b7fb564980ccab13438e",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-13aaccec179aaa355c8c3d98abd0716e",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-f786d9079ac78c8e746df84e2e8e8535",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f",
+      "rerank_rank_or_none": null
+     }
+    ],
+    "target_confirmation": {
+     "request_branches": [
+      {
+       "code": "GB3095",
+       "version": "2012"
+      }
+     ],
+     "branch_source": "local parse of the question",
+     "identity_source": "catalog documents rows (self_code/self_code_version) read through the guarded workspace+catalog-snapshot connection",
+     "allowed": [
+      "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+     ],
+     "allowed_basis": {
+      "doc-257d8cf3fdf90e76c31908c4f92fc1a1": "canonical GB3095-2012 matches requested branch GB3095-2012 (catalog documents row via the guarded workspace+snapshot)"
+     },
+     "rejected": [
+      {
+       "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+       "reason": "canonical identity GB3095-2026 matches no requested branch ['GB3095-2012']"
+      }
+     ],
+     "unresolved": [
+      {
+       "doc_id": "doc-69538e249043b7fb564980ccab13438e",
+       "reason": "self_code unknown in the catalog — never guessed from a name; only the upstream-published, allowed-set-cross-checked attribution evidence may carry such a document"
+      },
+      {
+       "doc_id": "doc-13aaccec179aaa355c8c3d98abd0716e",
+       "reason": "self_code unknown in the catalog — never guessed from a name; only the upstream-published, allowed-set-cross-checked attribution evidence may carry such a document"
+      },
+      {
+       "doc_id": "doc-f786d9079ac78c8e746df84e2e8e8535",
+       "reason": "self_code unknown in the catalog — never guessed from a name; only the upstream-published, allowed-set-cross-checked attribution evidence may carry such a document"
+      },
+      {
+       "doc_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f",
+       "reason": "self_code unknown in the catalog — never guessed from a name; only the upstream-published, allowed-set-cross-checked attribution evidence may carry such a document"
+      }
+     ],
+     "unconfirmed_branches": [],
+     "rule": "discovery never defines the answer scope; a typed label or a replay-declared name is an audit clue, never canonical identity"
+    },
+    "basis": "confirmed canonical target identity defines the answer scope (improvement-2); discovery/top-k/rerank order never bound or promote membership — unconfirmed documents are excluded with recorded reasons and cannot enter the answer"
+   },
+   "expansions": [],
+   "answer": {
+    "mode": "deterministic",
+    "generated_by": "enumerate/expand entries",
+    "items": [],
+    "selection": {
+     "terms": [
+      "二氧化硫",
+      "年平均",
+      "浓度",
+      "二级",
+      "限值",
+      "中二",
+      "二氧",
+      "氧化",
+      "化硫",
+      "年平",
+      "平均",
+      "均浓",
+      "度二",
+      "级限"
+     ],
+     "candidates": 0,
+     "kept": 0,
+     "rule": "rows/items whose raw text contains the most subject terms of the QUESTION (never gold text); ties keep every match"
+    },
+    "unit_blockers": []
+   },
+   "reverification": {
+    "items_checked": 0,
+    "problems": [],
+    "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+   },
+   "model": null,
+   "status": "partial"
+  }
+ ]
+}

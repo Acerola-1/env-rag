@@ -1,0 +1,84 @@
+.FF                                                                      [100%]
+=================================== FAILURES ===================================
+__ test_same_snapshot_content_change_before_publication_refuses[base-fields] ___
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x115ae7a10>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-823/test_same_snapshot_content_cha0')
+change = 'base-fields'
+
+    @pytest.mark.parametrize("change", ["base-fields", "new-related-same-count"])
+    def test_same_snapshot_content_change_before_publication_refuses(monkeypatch, tmp_path, change):
+        cat = catalog()
+        original = tc.de.verify_publication_snapshot
+        changed = []
+    
+        async def inject_then_real_guard(conn, workspace, snapshot_id, source_fp, *args, **kwargs):
+            if not changed:
+                if change == "base-fields":
+                    cat["doc-std"]["self_code_version"] = "2006"
+                    cat["doc-std"]["title"] = "当前登记已变为另一版本"
+                else:
+                    cat["doc-noise"]["title"] = "GB 18466—2005 新增修改单"
+                changed.append(True)
+            # Same snapshot/count/public-source identity. No validator is mocked
+            # to success: the real guard receives the changed fake metadata.
+            return await original(conn, workspace, snapshot_id, source_fp, *args, **kwargs)
+    
+        monkeypatch.setattr(tc.de, "verify_publication_snapshot", inject_then_real_guard)
+        report, out, _stage, _conn = tc._run_leg(
+            monkeypatch,
+            tmp_path,
+            tc.Q_WITH,
+            cat,
+            usable=[tc._usable("doc-std", cat["doc-std"]["doc_name"])],
+        )
+        assert changed and len(cat) == 3
+        assert report["model_calls_used"] == 0
+>       assert out["coverage_status"] != "complete", out
+E       AssertionError: {'query_id': 'uq', 'query': '库内有哪些GB 18466-2005的文档（含修改单）？', 'category': 'file_enum', 'workspace': 'default', ...}
+E       assert 'complete' != 'complete'
+
+reports/pg-retrieval/phase-4-improvement-3-review/test_improvement3_review_r1.py:70: AssertionError
+_ test_same_snapshot_content_change_before_publication_refuses[new-related-same-count] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x115d6e330>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-823/test_same_snapshot_content_cha1')
+change = 'new-related-same-count'
+
+    @pytest.mark.parametrize("change", ["base-fields", "new-related-same-count"])
+    def test_same_snapshot_content_change_before_publication_refuses(monkeypatch, tmp_path, change):
+        cat = catalog()
+        original = tc.de.verify_publication_snapshot
+        changed = []
+    
+        async def inject_then_real_guard(conn, workspace, snapshot_id, source_fp, *args, **kwargs):
+            if not changed:
+                if change == "base-fields":
+                    cat["doc-std"]["self_code_version"] = "2006"
+                    cat["doc-std"]["title"] = "当前登记已变为另一版本"
+                else:
+                    cat["doc-noise"]["title"] = "GB 18466—2005 新增修改单"
+                changed.append(True)
+            # Same snapshot/count/public-source identity. No validator is mocked
+            # to success: the real guard receives the changed fake metadata.
+            return await original(conn, workspace, snapshot_id, source_fp, *args, **kwargs)
+    
+        monkeypatch.setattr(tc.de, "verify_publication_snapshot", inject_then_real_guard)
+        report, out, _stage, _conn = tc._run_leg(
+            monkeypatch,
+            tmp_path,
+            tc.Q_WITH,
+            cat,
+            usable=[tc._usable("doc-std", cat["doc-std"]["doc_name"])],
+        )
+        assert changed and len(cat) == 3
+        assert report["model_calls_used"] == 0
+>       assert out["coverage_status"] != "complete", out
+E       AssertionError: {'query_id': 'uq', 'query': '库内有哪些GB 18466-2005的文档（含修改单）？', 'category': 'file_enum', 'workspace': 'default', ...}
+E       assert 'complete' != 'complete'
+
+reports/pg-retrieval/phase-4-improvement-3-review/test_improvement3_review_r1.py:70: AssertionError
+=========================== short test summary info ============================
+FAILED reports/pg-retrieval/phase-4-improvement-3-review/test_improvement3_review_r1.py::test_same_snapshot_content_change_before_publication_refuses[base-fields]
+FAILED reports/pg-retrieval/phase-4-improvement-3-review/test_improvement3_review_r1.py::test_same_snapshot_content_change_before_publication_refuses[new-related-same-count]
+2 failed, 1 passed in 2.30s

@@ -1,0 +1,226 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-08T13:28:00+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "neg-001"
+ ],
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "reports/pg-retrieval/phase-4-round-1/inputs/local/neg-001-rerank.json",
+   "sha256": "31f3c65dfe4780f3e35bd9eeb2fd6c7704a61ccb2060ce2b901e1c8bb77401c1",
+   "task": null,
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": []
+  },
+  "fused_report": {
+   "path": "reports/pg-retrieval/phase-4-round-1/inputs/local/neg-001-fusion.json",
+   "sha256": "1d6a9b13178698bb1ea08c69a01f2f56b1278f56c7a62e1c7f2e83724ad57ce7",
+   "task": "Phase 4 round 1 evaluation input (path=local)",
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": [
+    "neg-001"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "model_calls_used": 0,
+ "results": [
+  {
+   "query_id": "neg-001",
+   "query": "GB 3095-1996 的二级标准年均限值是多少？",
+   "category": "fact",
+   "workspace": "default",
+   "coverage_status": "partial",
+   "fail_stage": "",
+   "flags": [
+    "no rerank replay for this query id — scope priority falls back to fusion path order, explicitly recorded (no fabricated scores)",
+    "expansion requested but nothing confirmed — never a guessed range"
+   ],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "absent",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 0,
+    "typed_targets": [
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-8bd91f028c6c0749375c042c3c1537ea",
+      "discovery": "local"
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "discovery": "local"
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f",
+      "discovery": "local"
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "discovery": "local"
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-eb0a53bb0a4ab5d9eae87c68f6a60fbb",
+      "discovery": "local"
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-46b25338ec9db0a65d0401b938baf44f",
+      "discovery": "local"
+     },
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-69538e249043b7fb564980ccab13438e",
+      "discovery": "local"
+     }
+    ],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 10,
+    "selected_docs": [
+     "doc-8bd91f028c6c0749375c042c3c1537ea",
+     "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "doc-c963ecba7eeb28190aa94ffbc29e6b2f",
+     "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc-eb0a53bb0a4ab5d9eae87c68f6a60fbb",
+     "doc-46b25338ec9db0a65d0401b938baf44f",
+     "doc-69538e249043b7fb564980ccab13438e"
+    ],
+    "priority": [
+     {
+      "doc_id": "doc-8bd91f028c6c0749375c042c3c1537ea",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-c963ecba7eeb28190aa94ffbc29e6b2f",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-eb0a53bb0a4ab5d9eae87c68f6a60fbb",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-46b25338ec9db0a65d0401b938baf44f",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-69538e249043b7fb564980ccab13438e",
+      "rerank_rank_or_none": null
+     }
+    ],
+    "basis": "targets_resolved + typed targets (5.3) define the scope; rerank order only prioritizes — membership is never top-k bounded"
+   },
+   "expansions": [],
+   "answer": {
+    "mode": "deterministic",
+    "generated_by": "enumerate/expand entries",
+    "items": [],
+    "selection": {
+     "terms": [
+      "二级标准",
+      "年均",
+      "限值",
+      "二级",
+      "级标",
+      "标准",
+      "准年",
+      "均限"
+     ],
+     "candidates": 0,
+     "kept": 0,
+     "rule": "rows/items whose raw text contains the most subject terms of the QUESTION (never gold text); ties keep every match"
+    },
+    "unit_blockers": []
+   },
+   "reverification": {
+    "items_checked": 0,
+    "problems": [],
+    "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+   },
+   "model": null,
+   "status": "partial"
+  }
+ ]
+}

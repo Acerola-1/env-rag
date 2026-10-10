@@ -1,0 +1,101 @@
+{
+  "checks": [
+    {
+      "part": "owner",
+      "edge": "start",
+      "type": "bool",
+      "safely_rejected": true
+    },
+    {
+      "part": "owner",
+      "edge": "start",
+      "type": "str",
+      "safely_rejected": true
+    },
+    {
+      "part": "owner",
+      "edge": "start",
+      "type": "NoneType",
+      "safely_rejected": true
+    },
+    {
+      "part": "owner",
+      "edge": "start",
+      "type": "float",
+      "safely_rejected": true
+    },
+    {
+      "part": "owner",
+      "edge": "end",
+      "type": "bool",
+      "safely_rejected": true
+    },
+    {
+      "part": "owner",
+      "edge": "end",
+      "type": "str",
+      "safely_rejected": true
+    },
+    {
+      "part": "owner",
+      "edge": "end",
+      "type": "NoneType",
+      "safely_rejected": true
+    },
+    {
+      "part": "owner",
+      "edge": "end",
+      "type": "float",
+      "safely_rejected": true
+    },
+    {
+      "part": "segment",
+      "edge": "start",
+      "type": "bool",
+      "safely_rejected": true
+    },
+    {
+      "part": "segment",
+      "edge": "start",
+      "type": "str",
+      "safely_rejected": true
+    },
+    {
+      "part": "segment",
+      "edge": "start",
+      "type": "NoneType",
+      "safely_rejected": true
+    },
+    {
+      "part": "segment",
+      "edge": "start",
+      "type": "float",
+      "safely_rejected": true
+    },
+    {
+      "part": "segment",
+      "edge": "end",
+      "type": "bool",
+      "safely_rejected": true
+    },
+    {
+      "part": "segment",
+      "edge": "end",
+      "type": "str",
+      "safely_rejected": true
+    },
+    {
+      "part": "segment",
+      "edge": "end",
+      "type": "NoneType",
+      "safely_rejected": true
+    },
+    {
+      "part": "segment",
+      "edge": "end",
+      "type": "float",
+      "safely_rejected": true
+    }
+  ],
+  "passed": 16
+}

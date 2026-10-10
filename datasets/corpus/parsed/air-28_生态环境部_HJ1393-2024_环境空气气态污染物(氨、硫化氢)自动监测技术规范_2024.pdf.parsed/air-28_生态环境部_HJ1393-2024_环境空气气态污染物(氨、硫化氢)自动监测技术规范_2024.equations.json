@@ -1,0 +1,265 @@
+{
+  "version": "1.0",
+  "equations": {
+    "eq-a5820fc66ddfe522b424b3e275988eaa-0001": {
+      "id": "eq-a5820fc66ddfe522b424b3e275988eaa-0001",
+      "blockid": "f7ad46c55392ae0458e2d226dbfae7a2",
+      "heading": "6.3.1 零点噪声",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测技术规范"
+      ],
+      "format": "latex",
+      "content": "\\overline {{x}} = \\frac {\\sum_ {i = 1} ^ {n} x _ {i}}{n}\\tag{……(1}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/150"
+    },
+    "eq-a5820fc66ddfe522b424b3e275988eaa-0002": {
+      "id": "eq-a5820fc66ddfe522b424b3e275988eaa-0002",
+      "blockid": "f7ad46c55392ae0458e2d226dbfae7a2",
+      "heading": "6.3.1 零点噪声",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测技术规范"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{SD} _ {0} = \\sqrt {\\frac {\\sum_ {i = 1} ^ {n} (x _ {i} - \\bar {x}) ^ {2}}{n - 1}}\\tag{……(2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/156"
+    },
+    "eq-a5820fc66ddfe522b424b3e275988eaa-0003": {
+      "id": "eq-a5820fc66ddfe522b424b3e275988eaa-0003",
+      "blockid": "13150b239ca3e4dcdb546bb84f18e844",
+      "heading": "6.3.2 仪器检出限",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测技术规范"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{IDL} = 2 \\mathrm{SD} _ {0}\\tag{……(3}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/165"
+    },
+    "eq-a5820fc66ddfe522b424b3e275988eaa-0004": {
+      "id": "eq-a5820fc66ddfe522b424b3e275988eaa-0004",
+      "blockid": "5238b2f4611896c23490ff49b4f62bff",
+      "heading": "6.3.3 线性度",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测技术规范"
+      ],
+      "format": "latex",
+      "content": "k = \\frac {\\sum_ {i = 1} ^ {n} \\left(x _ {\\mathrm{s} , i} - \\bar {x} _ {\\mathrm{s}}\\right) \\times \\left(x _ {i} - \\bar {x}\\right)}{\\sum_ {i = 1} ^ {n} \\left(x _ {\\mathrm{s} , i} - \\bar {x} _ {\\mathrm{s}}\\right) ^ {2}}\\tag{……(4}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/171"
+    },
+    "eq-a5820fc66ddfe522b424b3e275988eaa-0005": {
+      "id": "eq-a5820fc66ddfe522b424b3e275988eaa-0005",
+      "blockid": "5238b2f4611896c23490ff49b4f62bff",
+      "heading": "6.3.3 线性度",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测技术规范"
+      ],
+      "format": "latex",
+      "content": "b = \\bar {x} - k \\times \\bar {x} _ {\\mathrm{s}}\\tag{……(5}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/183"
+    },
+    "eq-a5820fc66ddfe522b424b3e275988eaa-0006": {
+      "id": "eq-a5820fc66ddfe522b424b3e275988eaa-0006",
+      "blockid": "5238b2f4611896c23490ff49b4f62bff",
+      "heading": "6.3.3 线性度",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测技术规范"
+      ],
+      "format": "latex",
+      "content": "\\sum_ {i = 1} ^ {n} \\left(x _ {\\mathrm{s}, i} - \\bar {x} _ {\\mathrm{s}}\\right) \\times \\left(x _ {i} - \\bar {x}\\right)\\tag{……(6}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/189"
+    },
+    "eq-a5820fc66ddfe522b424b3e275988eaa-0007": {
+      "id": "eq-a5820fc66ddfe522b424b3e275988eaa-0007",
+      "blockid": "5238b2f4611896c23490ff49b4f62bff",
+      "heading": "6.3.3 线性度",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测技术规范"
+      ],
+      "format": "latex",
+      "content": "\\sqrt {\\sum_ {i = 1} ^ {n} \\left(x _ {s , i} - \\bar {x} _ {s}\\right) ^ {2} \\times \\sum_ {i = 1} ^ {n} \\left(x _ {i} - \\bar {x}\\right) ^ {2}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/190"
+    },
+    "eq-a5820fc66ddfe522b424b3e275988eaa-0008": {
+      "id": "eq-a5820fc66ddfe522b424b3e275988eaa-0008",
+      "blockid": "ea74d005a97d65d652ee0d7e1b5902ab",
+      "heading": "6.3.4 精密度",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测技术规范"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{RSD} = \\frac {\\sqrt {n - 1}}{\\overline {{x}}} \\times 100 \\%\\tag{……(7}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/203"
+    },
+    "eq-a5820fc66ddfe522b424b3e275988eaa-0009": {
+      "id": "eq-a5820fc66ddfe522b424b3e275988eaa-0009",
+      "blockid": "d56f5a1be2225405cfb9f5b3446ca194",
+      "heading": "6.3.5 24 h 漂移",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测技术规范"
+      ],
+      "format": "latex",
+      "content": "x _ {z d, i} = x _ {z, i + 1} - x _ {z, i}\\tag{……(8}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/217"
+    },
+    "eq-a5820fc66ddfe522b424b3e275988eaa-0010": {
+      "id": "eq-a5820fc66ddfe522b424b3e275988eaa-0010",
+      "blockid": "d56f5a1be2225405cfb9f5b3446ca194",
+      "heading": "6.3.5 24 h 漂移",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测技术规范"
+      ],
+      "format": "latex",
+      "content": "x _ {\\mathrm{rd}, i} = x _ {\\mathrm{r}, i + 1} - x _ {\\mathrm{r}, i}\\tag{……(9}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/222"
+    },
+    "eq-a5820fc66ddfe522b424b3e275988eaa-0011": {
+      "id": "eq-a5820fc66ddfe522b424b3e275988eaa-0011",
+      "blockid": "d56f5a1be2225405cfb9f5b3446ca194",
+      "heading": "6.3.5 24 h 漂移",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测技术规范"
+      ],
+      "format": "latex",
+      "content": "x _ {\\mathrm{sd}, i} = x _ {\\mathrm{s}, i + 1}\\tag{……(10}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/228"
+    },
+    "eq-a5820fc66ddfe522b424b3e275988eaa-0012": {
+      "id": "eq-a5820fc66ddfe522b424b3e275988eaa-0012",
+      "blockid": "6cb1cbdd8c9dadf3bcd0df71973e5b59",
+      "heading": "6.3.7 氨转换效率",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测技术规范"
+      ],
+      "format": "latex",
+      "content": "\\eta_ {\\mathrm{NH} _ {3}, i} = \\frac {x _ {\\mathrm{NH} _ {3} , i}}{x _ {\\mathrm{NO} , i}} \\times 100 \\%\\tag{……(11}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/245"
+    },
+    "eq-a5820fc66ddfe522b424b3e275988eaa-0013": {
+      "id": "eq-a5820fc66ddfe522b424b3e275988eaa-0013",
+      "blockid": "dc2e00dde45e9ceead360f41de3cf6d9",
+      "heading": "6.3.8 二氧化氮转换效率",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测技术规范"
+      ],
+      "format": "latex",
+      "content": "\\eta_ {\\mathrm{NO} _ {2}} = \\frac {x _ {\\mathrm{NO} _ {2}}}{x _ {\\mathrm{NO} _ {2}}} \\times 100 \\%\\tag{……(13}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/264"
+    },
+    "eq-a5820fc66ddfe522b424b3e275988eaa-0014": {
+      "id": "eq-a5820fc66ddfe522b424b3e275988eaa-0014",
+      "blockid": "dc2e00dde45e9ceead360f41de3cf6d9",
+      "heading": "6.3.8 二氧化氮转换效率",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测技术规范"
+      ],
+      "format": "latex",
+      "content": "\\eta_ {\\mathrm{NO} _ {2}} = \\frac {(\\overline {{x}} _ {\\mathrm{NO} _ {x} , \\text {rem}} - \\overline {{x}} _ {\\mathrm{NO} , \\text {rem}}) - (\\overline {{x}} _ {\\mathrm{NO} _ {x} , \\text {ori}} - \\overline {{x}} _ {\\mathrm{NO} , \\text {ori}})}{\\overline {{x}} _ {\\mathrm{NO} , \\text {ori}} - \\overline {{x}} _ {\\mathrm{NO} , \\text {rem}}} \\times 100 \\%\\tag{……(14}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/276"
+    },
+    "eq-a5820fc66ddfe522b424b3e275988eaa-0015": {
+      "id": "eq-a5820fc66ddfe522b424b3e275988eaa-0015",
+      "blockid": "bf91e5aee415b5dbd73674bb1386fffc",
+      "heading": "6.3.9 硫化氢转换效率",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测技术规范"
+      ],
+      "format": "latex",
+      "content": "\\eta_ {\\mathrm{H} _ {2} \\mathrm{S}, i} = \\frac {x _ {\\mathrm{H} _ {2} \\mathrm{S} , i}}{x _ {\\mathrm{SO} _ {2} , i}} \\times 100 \\%\\tag{……(15}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/288"
+    },
+    "eq-a5820fc66ddfe522b424b3e275988eaa-0016": {
+      "id": "eq-a5820fc66ddfe522b424b3e275988eaa-0016",
+      "blockid": "932ec46b0f009c473e634aaa9e84ce9e",
+      "heading": "6.3.10 样气口和校准口浓度偏差",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测技术规范"
+      ],
+      "format": "latex",
+      "content": "\\Delta x = \\frac {\\overline {{x}} _ {\\mathrm{c}} - \\overline {{x}} _ {\\mathrm{s}}}{\\overline {{x}} _ {\\mathrm{s}}} \\times 100 \\%\\tag{……(17}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/306"
+    },
+    "eq-a5820fc66ddfe522b424b3e275988eaa-0017": {
+      "id": "eq-a5820fc66ddfe522b424b3e275988eaa-0017",
+      "blockid": "a2e24121cdd417c8246a677cd7354702",
+      "heading": "7　试运行",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测技术规范"
+      ],
+      "format": "latex",
+      "content": "D = \\frac {T - t}{T} \\times 100 \\%\\tag{……(18}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/315"
+    },
+    "eq-a5820fc66ddfe522b424b3e275988eaa-0018": {
+      "id": "eq-a5820fc66ddfe522b424b3e275988eaa-0018",
+      "blockid": "77bbeddea27d0f93d5b061c4875cab57",
+      "heading": "8.2.1.2.3　示值误差",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测技术规范"
+      ],
+      "format": "latex",
+      "content": "\\overline {{x}} = \\frac {\\sum_ {i = 1} ^ {n} x _ {i}}{n}\\tag{……(19}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/342"
+    },
+    "eq-a5820fc66ddfe522b424b3e275988eaa-0019": {
+      "id": "eq-a5820fc66ddfe522b424b3e275988eaa-0019",
+      "blockid": "77bbeddea27d0f93d5b061c4875cab57",
+      "heading": "8.2.1.2.3　示值误差",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测技术规范"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{RE} = \\frac{\\overline{x} - x_{\\mathrm{s}}}{x_{\\mathrm{s}}} \\times 100\\%\\tag{……(20}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/350"
+    },
+    "eq-a5820fc66ddfe522b424b3e275988eaa-0020": {
+      "id": "eq-a5820fc66ddfe522b424b3e275988eaa-0020",
+      "blockid": "1f6775aaaa18c683b9b0ccfd44e4c2e5",
+      "heading": "8.2.1.2.6　干扰成分影响",
+      "parent_headings": [
+        "环境空气气态污染物（氨、硫化氢）自动监测技术规范"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{IE} = \\frac {\\overline {{x}} _ {\\mathrm{b}} - \\overline {{x}} _ {\\mathrm{a}}}{R} \\times 100 \\%\\tag{……(21}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/362"
+    }
+  }
+}

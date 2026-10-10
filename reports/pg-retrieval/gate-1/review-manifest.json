@@ -1,0 +1,66 @@
+{
+  "reviewed_at": "2026-10-05T10:52:02.264121+00:00",
+  "gate": "Gate 1",
+  "decision": "rejected",
+  "tasks_unchecked": [
+    "3.1",
+    "3.2",
+    "3.3",
+    "3.4",
+    "3.5",
+    "3.6"
+  ],
+  "code_sha256": {
+    "src/env_rag_final/enumerate_/__init__.py": "af3320e0bb82b78a6d71ead627a2611f41f8a37ea1c94f68d47c0fa1d746dddc",
+    "src/env_rag_final/enumerate_/contract.py": "178a82e17068fe6c6bda65e08cfce40d482395e554ffe453bcfdccae3085c8ce",
+    "src/env_rag_final/enumerate_/doc_enum.py": "66dc1b4cb5a73bb843dd30d06d92ea2a11d6409dc68fb0e40826e049f5af1726",
+    "src/env_rag_final/enumerate_/prose_enum.py": "d75104ed9f65ac0c02175db28e8bab842efcca96df615a514fb31a461ba3f70d",
+    "src/env_rag_final/enumerate_/table_enum.py": "a8d158bcda2a9a06d020345f60b7fb70baf2af461b5204b6c95be8f85c97c16d",
+    "src/env_rag_final/enumerate_/tables.py": "6460082d3ecd9bbefe535ad171523058a650c0a48514f02730b8d74e3b715ba0"
+  },
+  "existing_tests": {
+    "passed": 90,
+    "command": ".venv/bin/python -m pytest -q tests/"
+  },
+  "counterexamples": {
+    "cases": 9,
+    "command": ".venv/bin/python reports/pg-retrieval/gate-1/reproduce.py",
+    "evidence": "counterexamples-offline.json"
+  },
+  "live_replay": {
+    "status": "not_completed",
+    "failure": "OSError: connection refused on localhost:5432",
+    "port_listener": "none",
+    "container_system": "apiserver is not running and not registered with launchd",
+    "database_writes": 0,
+    "service_changes": 0,
+    "model_calls": 0,
+    "public_counts": "not_verified_in_this_review",
+    "active_build": "not_verified_in_this_review"
+  },
+  "parsed_artifacts": {
+    "live_sha256": "fccb274827fc21f0f02f721271d175efd800175a4a8db5140bf7f72f404ab1db",
+    "frozen_sha256": "fccb274827fc21f0f02f721271d175efd800175a4a8db5140bf7f72f404ab1db",
+    "matches_frozen": true
+  },
+  "historical_input": {
+    "catalog_snapshot": "4919b3938ad93747",
+    "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "submitted_runs": 7,
+    "scope": "Submitted evidence only; no current PG verification"
+  },
+  "checks": {
+    "ruff": "passed",
+    "format": "passed",
+    "openspec_strict": "passed",
+    "git_diff_check": "passed"
+  },
+  "review_coverage": {
+    "total_files": 60,
+    "reviewed_files": 7,
+    "skipped_files": 53,
+    "coverage_rate": 0.11666666666666667,
+    "scope": "Six enumeration modules + CLI; also read test_enumeration.py and requirements/reports even though OCR defaults exclude them"
+  },
+  "review_source_sha256": "6f28dac2ac27a5813f1fc16d0d63c96bd775f46cf89201062788a806bdc9f290"
+}

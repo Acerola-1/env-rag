@@ -1,0 +1,102 @@
+..........................................................F..F.......... [ 18%]
+........................................................................ [ 37%]
+........................................................................ [ 56%]
+........................................................................ [ 75%]
+........................................................................ [ 94%]
+.....................                                                    [100%]
+=================================== FAILURES ===================================
+_ test_prose_slot_requires_answered_subject_not_only_read_paragraph[missing-cadmium] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x116254980>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-568/test_prose_slot_requires_answe0')
+full = False
+
+    @pytest.mark.parametrize("full", [False, True], ids=["missing-cadmium", "both-subjects"])
+    def test_prose_slot_requires_answered_subject_not_only_read_paragraph(monkeypatch, tmp_path, full):
+        conn, fp, rp = fx._syn_env(monkeypatch, tmp_path, fx._Q_HG_CD)
+        fx._load_limits_chapter(conn, tmp_path)
+        claim = fx._LIMITS_QUOTE if full else "总汞限值为0.05 mg/L。"
+        payload = {
+            "items": [
+                {"edition": f"gb3095-{year}", "claim": claim, "quote": claim}
+                for year in ["2012", "2026"]
+            ]
+        }
+        # In the missing case, strip sentence punctuation that is not present
+        # directly after the mercury clause in the actual source paragraph.
+        if not full:
+            for item in payload["items"]:
+                item["quote"] = "总汞限值为0.05 mg/L"
+        result = fx._run_syn(tmp_path, conn, fp, rp, payload)
+        assert result["reverification"]["problems"] == []
+        assert len(result["answer"]["items"]) == 2
+        assert all(i["citation_verified"] for i in result["answer"]["items"])
+        if full:
+            assert result["coverage_status"] == "complete", result
+        else:
+>           assert result["coverage_status"] != "complete", result["answer"]
+E           AssertionError: {'mode': 'model', 'generated_by': 'one answer model call (fixture-answer-model-0005)', 'items': [{'kind': 'synthesis_c..., 'snapshot_id': 'snap-1'}, 'claim': '总汞限值为0.05 mg/L。', 'quote': '总汞限值为0.05 mg/L', ...}], 'unverified_claims': [], ...}
+E           assert 'complete' != 'complete'
+
+tests/test_answer_review_r4.py:32: AssertionError
+_ test_multiple_local_unit_assertions_inside_brackets_do_not_cross_subjects[combined-bracket] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x116256570>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-568/test_multiple_local_unit_asser1')
+combined = True
+
+    @pytest.mark.parametrize("combined", [False, True], ids=["separate-brackets", "combined-bracket"])
+    def test_multiple_local_unit_assertions_inside_brackets_do_not_cross_subjects(
+        monkeypatch, tmp_path, combined
+    ):
+        conn, _ = fx._install(monkeypatch, tmp_path, [fx._gold_q("q-fact", fx.Q_FACT, "fact")])
+        note = "（总汞单位为mg/L；pH为无量纲）" if combined else "（总汞单位为mg/L）（pH为无量纲）"
+        caption = "表 1 总汞及pH限值" + note
+        conn.cat["table_units"][fx.DOC_8978][0]["caption"] = caption
+        path = tmp_path / "gb8978.pdf.parsed" / "x.tables.json"
+        tables = json.loads(path.read_text())
+        tables["tables"][fx.FRAG1] = {
+            "caption": caption,
+            "content": "<table><tr><th>序号</th><th>污染物</th><th>最高允许排放浓度</th></tr>"
+            "<tr><td>1</td><td>总汞</td><td>0.05</td></tr></table>",
+        }
+        tables["tables"][fx.FRAG2]["content"] = (
+            "<table><tr><th>序号</th><th>污染物</th><th>最高允许排放浓度</th></tr>"
+            "<tr><td>2</td><td>pH</td><td>7</td></tr></table>"
+        )
+        path.write_text(json.dumps(tables, ensure_ascii=False))
+        fp, rp = fx._write_replay(
+            tmp_path,
+            [
+                fx._fused(
+                    "q-fact", fx.Q_FACT, [fx._usable(fx.C1, fx.DOC_8978, fx.CHUNKS[fx.C1]["content"])]
+                )
+            ],
+            [],
+        )
+        report = fx._run(
+            fx.an.run_answer(
+                tmp_path / "out",
+                ["q-fact"],
+                fused_report_path=fp,
+                rerank_report_path=rp,
+                values=fx.VALUES,
+                conn=conn,
+                allow_model=False,
+            )
+        )
+        result = report["results"][0]
+        item = result["answer"]["items"][0]
+        assert item["citation_reverified"] is True
+>       assert item["unit"] == "mg/L", item
+E       AssertionError: {'kind': 'table_row', 'doc_id': 'doc-8978', 'table_number': '1', 'seq': '1', ...}
+E       assert '无量纲' == 'mg/L'
+E         
+E         - mg/L
+E         + 无量纲
+
+tests/test_answer_review_r4.py:79: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_answer_review_r4.py::test_prose_slot_requires_answered_subject_not_only_read_paragraph[missing-cadmium]
+FAILED tests/test_answer_review_r4.py::test_multiple_local_unit_assertions_inside_brackets_do_not_cross_subjects[combined-bracket]
+2 failed, 379 passed in 10.61s

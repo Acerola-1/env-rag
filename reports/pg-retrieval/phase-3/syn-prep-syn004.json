@@ -1,0 +1,105 @@
+{
+  "purpose": "Preparation material for ONE necessary real synthesis request (5.6; NOT executed in this round — the actual request is arranged by the main agent)",
+  "prepared_at": "2026-10-07",
+  "selection": {
+    "query_id": "syn-004",
+    "gold_question": "GB 3838-2002 与 GB 3095-2012 分别对哪些环境要素规定质量标准？",
+    "why": "the only synthesis question whose both compared editions' scopes were fully located and independently re-read by the accepted read-only run (phase-3-answer-syn4-check: 2 sections, 5+3 items, 8/8 re-read problems[]); syn-001 stays incomplete (2012 condition scope unlocatable — gold must not be changed or force-executed)",
+    "not_reused_inputs_warning": "no new keyword/embedding/local/rerank rounds — discovery/fusion are REPLAYED from the accepted generation below"
+  },
+  "replayed_inputs": {
+    "fused_report": {
+      "path": "reports/pg-retrieval/phase-3-answer-fusion-syn/fusion-runtime-latest.json",
+      "sha256": "824c708526cb1d25a850ad2e1bd6ab4bc6fc90f150451f5cc9204ed532a1da55",
+      "nature": "explicit PG-only fusion of 5.3 semantics (read-only PG, 0 model), recorded as THIS round's input earlier, accepted"
+    },
+    "rerank_report_default": {
+      "path": "reports/pg-retrieval/phase-3-rerank-r2/rerank-runtime-latest.json",
+      "sha256": "4ad5a56f14acf6debd17dbc16f3836c767322b0b1779ab166f873dfce044227c",
+      "note": "contains fact-002 only; syn-004 therefore runs with an EXPLICIT rerank-absent flag (fusion order prioritizes; never a claimed rerank success)"
+    },
+    "answer_entry_sha256": "src/env_rag_final/answer.py = 2a53f2d7b959b34434a0a78d4345c205693b01b56378e94f70c62608d6bea8e6 (only prompt aligned with accepted C1 proof contract; no runtime issued)",
+    "gold_sha256": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e"
+  },
+  "identity_and_sources": {
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "catalog_run_id": "c15c741742394320",
+    "sections": [
+      {
+        "label": "GB3838-2002",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "scope": "…:scope:3",
+        "items": 5,
+        "context_chars": 392
+      },
+      {
+        "label": "GB3095-2012",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "scope": "…:scope:7",
+        "items": 3,
+        "context_chars": 1449
+      }
+    ],
+    "reverification": "8/8 independent unit-relative raw-block re-reads, problems[] — identical between the read-only check run and both 503 attempts (context_sha256 stable)"
+  },
+  "required_slots_derived_by_accepted_code": {
+    "subjects": [],
+    "averaging_times": [],
+    "levels": [],
+    "editions_required": [
+      "gb3838-2002",
+      "gb3095-2012"
+    ],
+    "meaning": "the slot matrix for this frozen question is edition-only: at least ONE verified bound prose claim per edition; any additional on-topic item is extra, any missing edition is explicit incomplete (never substituted)",
+    "raw_derived_terms": [
+      [],
+      [],
+      []
+    ]
+  },
+  "intended_request": {
+    "entrypoint": "uv run env-rag-final answer --query-id syn-004 --fused-report reports/pg-retrieval/phase-3-answer-fusion-syn/fusion-runtime-latest.json --report-dir <new generation dir> --allow-model",
+    "endpoint": "{LLM_BINDING_HOST}/chat/completions POST (OpenAI-compatible; resolved in prior attempts to http://127.0.0.1:8787/v1/chat/completions)",
+    "model_config": "QUERY_LLM_MODEL if set else LLM_MODEL (values come from .env at run time; never persisted — receipts show <redacted>)",
+    "api_key": "LLM_BINDING_API_KEY; missing → refuse before any request, never 'Bearer None'",
+    "temperature": 0,
+    "budget": "exactly 1 call per run (MAX_ANSWER_MODEL_CALLS), user-content 1934 chars in prior attempts ≤ MAX_MODEL_CONTEXT_CHARS 40000 (refuse-not-truncate)",
+    "expected_context_sha256": "b0487919fa1d1deff53db927300d1f2123f259f054e83608690aae83a04670a4",
+    "system_prompt_current": "你是严谨的环境标准比对助手。只依据给定上下文回答，输出 JSON：{\"summary\": \"...\", \"items\": [{\"edition\": \"上下文中的版本标签之一\", \"claim\": \"结论\", \"quote\": \"支持结论的逐字原文引句\"}]}。每个 claim 的所有数值/日期必须出现在其 quote 中；quote 必须逐字来自该版本上下文；edition 只能原样使用上下文中给出的标签；不得改写归属，不得补充上下文之外的内容。正文类 claim 必须直接引用该版本上下文中连续的逐字原文片段，不得改写、拼接或概括（仅可附加同版本年份前缀和句末标点）；表格行 claim 须按绑定行列明主体、平均时间、级别及对应数值和单位。",
+    "messages_note": "user content = 问题 + 版本标签 + 由正式展开重建的上下文（上下文绝不允许人工答案替换；必须由 answer 入口从回放输入推出）",
+    "messages": [
+      {
+        "role": "system",
+        "content": "你是严谨的环境标准比对助手。只依据给定上下文回答，输出 JSON：{\"summary\": \"...\", \"items\": [{\"edition\": \"上下文中的版本标签之一\", \"claim\": \"结论\", \"quote\": \"支持结论的逐字原文引句\"}]}。每个 claim 的所有数值/日期必须出现在其 quote 中；quote 必须逐字来自该版本上下文；edition 只能原样使用上下文中给出的标签；不得改写归属，不得补充上下文之外的内容。正文类 claim 必须直接引用该版本上下文中连续的逐字原文片段，不得改写、拼接或概括（仅可附加同版本年份前缀和句末标点）；表格行 claim 须按绑定行列明主体、平均时间、级别及对应数值和单位。"
+      },
+      {
+        "role": "user",
+        "content": "问题：GB 3838-2002 与 GB 3095-2012 分别对哪些环境要素规定质量标准？\n\n版本标签：['GB3095-2012', 'GB3838-2002']\n\n上下文：\n=== 版本标签: GB3838-2002 (doc_id=doc-91f9049decde09153368d4b69f280e78) ===\n[I类] 主要适用于源头水、国家自然保护区\n[Ⅰ类] 主要适用于集中式生活饮用水地表水源地一级保护区、珍稀水生生物栖息地、鱼虾类产卵场、仔稚幼鱼的索饵场等\n[Ⅰ类] 主要适用于集中式生活饮用水地表水源地二级保护区、鱼虾类越冬场、洄游通道、水产养殖区等渔业水域及游泳区\n[N类] 主要适用于一般工业用水区及人体非直接接触的娱乐用水区\n[V类] 主要适用于农业用水区及一般景观要求水域。\n对应地表水上述五类水域功能，将地表水环境质量标准基本项目标准值分为五类，不同功能类别分别执行相应类别的标准值。水域功能类别高的标准值严于水域功能类别低的标准值。同一水域兼有多类使用功能的，执行最高功能类别对应的标准值。实现水域功能与达功能类别标准为同一含义\n\n=== 版本标签: GB3095-2012 (doc_id=doc-257d8cf3fdf90e76c31908c4f92fc1a1) ===\n[7.1] 7.1 本标准由各级环境保护行政主管部门负责监督实施。\n[7.2] 7.2 各类环境空气功能区的范围由县级以上（含县级）人民政府环境保护行政主管部门划分，报本级人民政府批准实施。\n[7.3] 7.3 按照《中华人民共和国大气污染防治法》的规定，未达到本标准的大气污染防治重点城市，应当按照国务院或者国务院环境保护行政主管部门规定的期限，达到本标准。该城市人民政府应当制定限期达标规划，并可以根据国务院的授权或者规定，采取更严格的措施，按期实现达标规划。\nGB 3095—2012\n\n## 附 录 A\n（资料性附录）\n\n## 环境空气中镉、汞、砷、六价铬和氟化物参考浓度限值\n各省级人民政府可根据当地环境保护的需要，针对环境污染的特点，对本标准中未规定的污染物项目制定并实施地方环境空气质量标准。以下为环境空气中部分污染物参考浓度限值。\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0005\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">浓度(通量)限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td></tr><tr><td>1</td><td>镉(Cd)</td><td>年平均</td><td>0.005</td><td>0.005</td><td rowspan=\"6\"> $\\mu g/m^3$ </td></tr><tr><td>2</td><td>汞(Hg)</td><td>年平均</td><td>0.05</td><td>0.05</td></tr><tr><td>3</td><td>砷(As)</td><td>年平均</td><td>0.006</td><td>0.006</td></tr><tr><td>4</td><td>六价铬(Cr(VI))</td><td>年平均</td><td>0.000 025</td><td>0.000 025</td></tr><tr><td rowspan=\"4\">5</td><td rowspan=\"4\">氟化物(F)</td><td>1小时平均</td><td> $20^{1}$ </td><td> $20^{1}$ </td></tr><tr><td>24小时平均</td><td> $7^{1}$ </td><td> $7^{1}$ </td></tr><tr><td>月平均</td><td> $1.8^{2}$ </td><td> $3.0^{3}$ </td><td rowspan=\"2\"> $\\mu g/(dm^2 d)$ </td></tr><tr><td>植物生长季平均</td><td> $1.2^{2}$ </td><td> $2.0^{3}$ </td></tr><tr><td colspan=\"6\">注:1适用于城市地区;2适用于牧业区和以牧业为主的半农半牧区,蚕桑区;3适用于农业和林业区。</td></tr></table>\nGB 3095—2012"
+      }
+    ],
+    "context_text": "=== 版本标签: GB3838-2002 (doc_id=doc-91f9049decde09153368d4b69f280e78) ===\n[I类] 主要适用于源头水、国家自然保护区\n[Ⅰ类] 主要适用于集中式生活饮用水地表水源地一级保护区、珍稀水生生物栖息地、鱼虾类产卵场、仔稚幼鱼的索饵场等\n[Ⅰ类] 主要适用于集中式生活饮用水地表水源地二级保护区、鱼虾类越冬场、洄游通道、水产养殖区等渔业水域及游泳区\n[N类] 主要适用于一般工业用水区及人体非直接接触的娱乐用水区\n[V类] 主要适用于农业用水区及一般景观要求水域。\n对应地表水上述五类水域功能，将地表水环境质量标准基本项目标准值分为五类，不同功能类别分别执行相应类别的标准值。水域功能类别高的标准值严于水域功能类别低的标准值。同一水域兼有多类使用功能的，执行最高功能类别对应的标准值。实现水域功能与达功能类别标准为同一含义\n\n=== 版本标签: GB3095-2012 (doc_id=doc-257d8cf3fdf90e76c31908c4f92fc1a1) ===\n[7.1] 7.1 本标准由各级环境保护行政主管部门负责监督实施。\n[7.2] 7.2 各类环境空气功能区的范围由县级以上（含县级）人民政府环境保护行政主管部门划分，报本级人民政府批准实施。\n[7.3] 7.3 按照《中华人民共和国大气污染防治法》的规定，未达到本标准的大气污染防治重点城市，应当按照国务院或者国务院环境保护行政主管部门规定的期限，达到本标准。该城市人民政府应当制定限期达标规划，并可以根据国务院的授权或者规定，采取更严格的措施，按期实现达标规划。\nGB 3095—2012\n\n## 附 录 A\n（资料性附录）\n\n## 环境空气中镉、汞、砷、六价铬和氟化物参考浓度限值\n各省级人民政府可根据当地环境保护的需要，针对环境污染的特点，对本标准中未规定的污染物项目制定并实施地方环境空气质量标准。以下为环境空气中部分污染物参考浓度限值。\n<table id=\"tb-257d8cf3fdf90e76c31908c4f92fc1a1-0005\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">污染物项目</td><td rowspan=\"2\">平均时间</td><td colspan=\"2\">浓度(通量)限值</td><td rowspan=\"2\">单位</td></tr><tr><td>一级</td><td>二级</td></tr><tr><td>1</td><td>镉(Cd)</td><td>年平均</td><td>0.005</td><td>0.005</td><td rowspan=\"6\"> $\\mu g/m^3$ </td></tr><tr><td>2</td><td>汞(Hg)</td><td>年平均</td><td>0.05</td><td>0.05</td></tr><tr><td>3</td><td>砷(As)</td><td>年平均</td><td>0.006</td><td>0.006</td></tr><tr><td>4</td><td>六价铬(Cr(VI))</td><td>年平均</td><td>0.000 025</td><td>0.000 025</td></tr><tr><td rowspan=\"4\">5</td><td rowspan=\"4\">氟化物(F)</td><td>1小时平均</td><td> $20^{1}$ </td><td> $20^{1}$ </td></tr><tr><td>24小时平均</td><td> $7^{1}$ </td><td> $7^{1}$ </td></tr><tr><td>月平均</td><td> $1.8^{2}$ </td><td> $3.0^{3}$ </td><td rowspan=\"2\"> $\\mu g/(dm^2 d)$ </td></tr><tr><td>植物生长季平均</td><td> $1.2^{2}$ </td><td> $2.0^{3}$ </td></tr><tr><td colspan=\"6\">注:1适用于城市地区;2适用于牧业区和以牧业为主的半农半牧区,蚕桑区;3适用于农业和林业区。</td></tr></table>\nGB 3095—2012",
+    "user_content_chars": 1934,
+    "context_chars": 1843,
+    "messages_sha256": "2d0859e488e05723ca849e50938cbefa54c0d78f5ab7f1fde69a900be018429d",
+    "executed": false,
+    "system_prompt_sha256": "626fda413ae3be3c7531ee04e2f235ee80da72ac6fade45848705a194dc31dda"
+  },
+  "contract_consistency_note_and_minimal_proposal": {
+    "decision": "Minimal prompt sentence applied by main agent; body-context bytes unchanged, no second validation/model call. Existing 64 owning tests are rerun. Real compliance remains unverified.",
+    "previous_code_sha256": "29e0aa29b2b49be4370adbedd3e6bfc746d9ca9530d992f98d731a8056e213c7"
+  },
+  "success_and_failure_semantics": {
+    "success_means": "HTTP 200 receipt published AND every item bound per contract AND edition slots covered → coverage may reach complete; a 200 with refused claims stays model_failure/partial — both outcomes are published, neither is laundered",
+    "failure_policy": "if the service returns 503/401/timeout again: keep the failure receipt, do NOT retry-chase, report the item as still unverified; historical two 503s remain failures",
+    "this_round_real_calls": 0,
+    "manual_answer_check": "The application slots are edition-only for this qualitative query. A main-agent check must also confirm each actual answer claim addresses the requested environmental element with its literal source evidence; HTTP200/complete alone does not prove question relevance."
+  },
+  "offline_review_reconstruction": {
+    "method": "Original sidecar bytes + published unit IDs/order; same extraction/binding functions, no database/model call. Raw positions verified offline; current production identity/chunk mappings still require guarded execution.",
+    "context_sha_matches_historical": true,
+    "raw_citations_verified": 8,
+    "citations_file": "reports/pg-retrieval/phase-3/syn004-source-citations.json",
+    "appendix_context_note": "The existing GB3095 7.3 item includes Appendix A in its parsed block; preserved verbatim. Full member processing is not independent proof of a clean chapter boundary. Do not treat appendix statements as chapter-7 requirements."
+  }
+}

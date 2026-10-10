@@ -1,0 +1,80 @@
+{
+  "model_calls_authorized": 1,
+  "model_calls_observed": 1,
+  "model": "deepseek-v4.1-flash",
+  "latency_ms": 2792,
+  "scope": "GB18466 3.2 explicitly named places; 等 remains open",
+  "exact_set": true,
+  "citations": [
+    {
+      "place": "门诊",
+      "raw_quote_exact": true,
+      "unit_id": "385d9e8e0539a87e61f0407bda1739ad"
+    },
+    {
+      "place": "病房",
+      "raw_quote_exact": true,
+      "unit_id": "385d9e8e0539a87e61f0407bda1739ad"
+    },
+    {
+      "place": "手术室",
+      "raw_quote_exact": true,
+      "unit_id": "385d9e8e0539a87e61f0407bda1739ad"
+    },
+    {
+      "place": "各类检验室",
+      "raw_quote_exact": true,
+      "unit_id": "385d9e8e0539a87e61f0407bda1739ad"
+    },
+    {
+      "place": "病理解剖室",
+      "raw_quote_exact": true,
+      "unit_id": "385d9e8e0539a87e61f0407bda1739ad"
+    },
+    {
+      "place": "放射室",
+      "raw_quote_exact": true,
+      "unit_id": "385d9e8e0539a87e61f0407bda1739ad"
+    },
+    {
+      "place": "洗衣房",
+      "raw_quote_exact": true,
+      "unit_id": "385d9e8e0539a87e61f0407bda1739ad"
+    },
+    {
+      "place": "太平间",
+      "raw_quote_exact": true,
+      "unit_id": "385d9e8e0539a87e61f0407bda1739ad"
+    }
+  ],
+  "public_after_model": {
+    "doc_full": 221,
+    "doc_chunks": 5709,
+    "doc_status": 279,
+    "llm_cache": 16514,
+    "entity_chunks": 65527,
+    "full_entities": 221,
+    "full_relations": 221,
+    "relation_chunks": 119575
+  },
+  "public_unchanged": true,
+  "source_and_active_unchanged": true,
+  "state_after_model": {
+    "state": "current",
+    "active_run_id": "c15c741742394320",
+    "active_snapshot_id": "4919b3938ad93747",
+    "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+    "expected_recipe_id": "phase-1-v4-single-active-snapshot-prune",
+    "live_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "stored_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "action": ""
+  },
+  "directory_counts": {
+    "documents": 221,
+    "source_units": 12269,
+    "unit_chunk_links": 16783,
+    "scopes": 1970,
+    "scope_units": 14557
+  },
+  "readonly": true
+}

@@ -1,0 +1,54 @@
+{
+  "review_date": "2026-10-08",
+  "checkpoint": "6.1 rev1",
+  "accepted": false,
+  "gate3_maintained": true,
+  "task6_2_started": false,
+  "submitted_tests_passed": 420,
+  "r1_frozen_20_passed_and_unchanged": true,
+  "r2_matrix": {
+    "total": 12,
+    "failed": 9,
+    "passed": 3
+  },
+  "new_real_services_or_db_calls": 0,
+  "production_writes": 0,
+  "checks": {
+    "ruff": "passed",
+    "format": "passed",
+    "openspec_strict": "passed",
+    "diff": "passed",
+    "actual_secret_matches": 0
+  },
+  "coverage": {
+    "total_files": 614,
+    "reviewed_files": 6,
+    "skipped_files": 608,
+    "coverage_rate": 0.009771986970684038,
+    "all_entries_accounted_for": true,
+    "incremental_scope": "8/8"
+  },
+  "sha256": {
+    "reports/pg-retrieval/phase-4-6.1-review-r2/ocr-rules.json": "398b94e07ea4058754ad15c8ed5995dcf685d8927249a886f5c54251e66646d7",
+    "reports/pg-retrieval/phase-4-6.1-review-r2/ruff-format.txt": "0321fffcb91606a42c0a19d8c1121d5c544379d663821fce616c71a7bb62f6b5",
+    "reports/pg-retrieval/phase-4-6.1-review-r2/ocr-preview.json": "e14a154550c93de82879cbb2a1a77d75d8891f2983c9057e5163bdb17e7b0d72",
+    "reports/pg-retrieval/phase-4-6.1-review-r2/ruff-check.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "reports/pg-retrieval/phase-4-6.1-review-r2/comments.json": "6d1a99ac2bf84aef2fb54ec6634d2732022dc3c6a5e4d23da17023207265221d",
+    "reports/pg-retrieval/phase-4-6.1-review-r2/submission-audit.json": "b5482a166783bc3e9f8d34edd84b4e734fe1008ab6a6f48566ab510f31179fdf",
+    "reports/pg-retrieval/phase-4-6.1-review-r2/openspec-check.txt": "4693ceda9e27e58fa59b2c9dbba2ff1cf729bd8067915263151894179518ba7c",
+    "reports/pg-retrieval/phase-4-6.1-review-r2/coverage.json": "b5e3b24c7d4b6c0faac0ee21a4204fb15f4d8c7a7871f0d49ea7018adccd9655",
+    "reports/pg-retrieval/phase-4-6.1-review-r2/credential-scan.json": "b95038f7ec91d750939a399a697c589baba04ed0e9a915918480c0a611884f1e",
+    "reports/pg-retrieval/phase-4-6.1-review-r2/independent-tests.txt": "c635cba7b93f9735383e050dcdb4c0fd6b5450a9d773a6ae4c9598029bb171a6",
+    "reports/pg-retrieval/phase-4-6.1-review-r2/review.md": "1d1c66114632a18aea64cb1fcc7ff407d4fa21562856b0df03a359d4f49443a3",
+    "reports/pg-retrieval/phase-4-6.1-review-r2/submitted-suite.txt": "690b7dc15d500791e24b826f9ad6255f16b6b1144c17232234049fb6874ceaf1",
+    "reports/pg-retrieval/phase-4-6.1-review-r2/diff-check.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_evaluation_review_r2.py": "63bec6ee3ef68dd4a5fa4223ceb91c6afe0d91207b5a60440db984a97bbd1ace",
+    "openspec/changes/add-pg-scoped-retrieval/handoff-phase-4-6.1-fixes-r2.md": "df3e896268e619d5cb395274bcd45cee3929083df4323131e37da6d0fb21d776",
+    "src/env_rag_final/evaluation.py": "0b1cc3f408efa4dba1b26f753082da57a98c1de856e96f01ad91453cd300511e",
+    "src/env_rag_final/answer.py": "c017606cd35ddcb9b5afe5e19385d386d1e7a21eddff4ed12107c2af2572ccc8",
+    "src/env_rag_final/search/expand.py": "d3deba9f08fdf763552fd33ae3d6ffecb90a74b995869ce620f4a275f48a0392",
+    "src/env_rag_final/cli.py": "a4d9caf1f828a9e437da69dd81c2b0f9e5fa3127dd0e1249e01adde9c6a101d1",
+    "tests/test_search_phase2.py": "3393116dba5ede07c813646663dcf0d19607e3c2a51eb69122a42320af21fdc5"
+  },
+  "main_agent_trivial_fix": "only reformat the declared fake prose_budget parameter signature in test_search_phase2.py; assertions and semantics unchanged"
+}

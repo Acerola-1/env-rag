@@ -1,0 +1,74 @@
+[
+  {
+    "id": "G2-1",
+    "path": "src/env_rag_final/search/query.py",
+    "start_line": 149,
+    "severity": "high",
+    "category": "bug",
+    "content": "Missing targets lost: Any present code resets the missing status of another requested version; missing bare/fullwidth code also relaxes outside intended targets. Real PG reproductions saved.",
+    "status": "open"
+  },
+  {
+    "id": "G2-2",
+    "path": "src/env_rag_final/search/expand.py",
+    "start_line": 99,
+    "severity": "high",
+    "category": "bug",
+    "content": "Document predicate broadened: Expansion drops version/all-code/name constraints and workspace, producing both years or the entire corpus while claiming complete.",
+    "status": "open"
+  },
+  {
+    "id": "G2-3",
+    "path": "src/env_rag_final/search/index.py",
+    "start_line": 300,
+    "severity": "high",
+    "category": "bug",
+    "content": "Publish lacks closing source guard: Derivation source change still publishes; read-side final check and cleaning-version invalidation also missing. Production-entry fixture tests fail.",
+    "status": "open"
+  },
+  {
+    "id": "G2-4",
+    "path": "src/env_rag_final/search/index.py",
+    "start_line": 233,
+    "severity": "high",
+    "category": "bug",
+    "content": "Global captions become false chunk signals: All table captions are assigned to every chunk in the document; GB8978 all24 chunks acquire Table6 while raw text only one explicitly mentions it.",
+    "status": "open"
+  },
+  {
+    "id": "G2-5",
+    "path": "src/env_rag_final/search/expand.py",
+    "start_line": 185,
+    "severity": "high",
+    "category": "bug",
+    "content": "Prose expansion does not return enumerated evidence: Prose path discards UnitText bodies and no item extraction or verified citations are returned; requested scope must be externally supplied. Benchmark cannot validate enum set correctness.",
+    "status": "open"
+  },
+  {
+    "id": "G2-6",
+    "path": "src/env_rag_final/search/query.py",
+    "start_line": 375,
+    "severity": "high",
+    "category": "bug",
+    "content": "Synonym alternatives become adjacency: Alternatives flattened into QueryToken tuple use phrase adjacency rather than OR; OOV terms lose their controlled synonym opportunity.",
+    "status": "open"
+  },
+  {
+    "id": "G2-7",
+    "path": "src/env_rag_final/search/probe.py",
+    "start_line": 150,
+    "severity": "high",
+    "category": "bug",
+    "content": "Probe validates query against itself: tokens_text default query mode is compared with query_terms; an intentionally incompatible index stream is undetected.",
+    "status": "open"
+  },
+  {
+    "id": "G2-8",
+    "path": "src/env_rag_final/search/eval.py",
+    "start_line": 77,
+    "severity": "high",
+    "category": "bug",
+    "content": "Metrics lack correct budget and approval semantics: Hits are computed before top-k slicing, rejected gold is counted, and catalog code hits are treated as recall without target evidence; gold contains incorrect column/condition values.",
+    "status": "open"
+  }
+]

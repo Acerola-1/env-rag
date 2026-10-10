@@ -1,0 +1,205 @@
+.FFFFF                                                                   [100%]
+=================================== FAILURES ===================================
+_ test_candidate_attribution_marker_without_bound_evidence_refuses[discovery-label] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x113213440>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-767/test_candidate_attribution_mar0')
+claim = 'discovery-label'
+
+    @pytest.mark.parametrize("claim", ["discovery-label", "membership-string"])
+    def test_candidate_attribution_marker_without_bound_evidence_refuses(monkeypatch, tmp_path, claim):
+        original = tc._usable
+    
+        def mark(*args, **kwargs):
+            row = original(*args, **kwargs)
+            if row["doc_id"] == tc._X:
+                row["paths"][0]["discovery"] = "doc_attribution" if claim == "discovery-label" else "entity"
+                if claim == "membership-string":
+                    row["paths"][0]["membership_basis"] = "this is supposedly a related document"
+            return row
+    
+        monkeypatch.setattr(tc, "_usable", mark)
+        report, _ = tc._synth_leg(
+            tmp_path,
+            monkeypatch,
+            "GB 9001-2020 的 4 章规定了哪些要求？含修改单和相关文件。",
+            {
+                tc._G: tc._goal_doc(),
+                tc._X: tc._foreign_doc(self_code=None, self_code_version=None),
+            },
+        )
+        out = report["results"][0]
+>       assert tc._X not in tc._audit_of(out)["allowed"]
+E       AssertionError: assert 'doc-synth-foreign' not in ['doc-synth-goal', 'doc-synth-foreign']
+E        +  where 'doc-synth-foreign' = tc._X
+
+reports/pg-retrieval/phase-4-improvement-2-review/test_improvement2_review_r1.py:47: AssertionError
+_ test_candidate_attribution_marker_without_bound_evidence_refuses[membership-string] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1132de600>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-767/test_candidate_attribution_mar1')
+claim = 'membership-string'
+
+    @pytest.mark.parametrize("claim", ["discovery-label", "membership-string"])
+    def test_candidate_attribution_marker_without_bound_evidence_refuses(monkeypatch, tmp_path, claim):
+        original = tc._usable
+    
+        def mark(*args, **kwargs):
+            row = original(*args, **kwargs)
+            if row["doc_id"] == tc._X:
+                row["paths"][0]["discovery"] = "doc_attribution" if claim == "discovery-label" else "entity"
+                if claim == "membership-string":
+                    row["paths"][0]["membership_basis"] = "this is supposedly a related document"
+            return row
+    
+        monkeypatch.setattr(tc, "_usable", mark)
+        report, _ = tc._synth_leg(
+            tmp_path,
+            monkeypatch,
+            "GB 9001-2020 的 4 章规定了哪些要求？含修改单和相关文件。",
+            {
+                tc._G: tc._goal_doc(),
+                tc._X: tc._foreign_doc(self_code=None, self_code_version=None),
+            },
+        )
+        out = report["results"][0]
+>       assert tc._X not in tc._audit_of(out)["allowed"]
+E       AssertionError: assert 'doc-synth-foreign' not in ['doc-synth-goal', 'doc-synth-foreign']
+E        +  where 'doc-synth-foreign' = tc._X
+
+reports/pg-retrieval/phase-4-improvement-2-review/test_improvement2_review_r1.py:47: AssertionError
+______ test_verified_typed_attribution_absent_from_chunks_keeps_full_read ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1132ddfd0>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-767/test_verified_typed_attributio0')
+
+    def test_verified_typed_attribution_absent_from_chunks_keeps_full_read(monkeypatch, tmp_path):
+        """Same 5.3 target/allowed_set_basis shape, with a valid catalog citation.
+    
+        The unknown-self-code target is already confirmed by upstream evidence;
+        missing a usable chunk must not remove it from the full scope read.
+        """
+        typed = {
+            "target_type": "doc",
+            "workspace": "default",
+            "doc_id": tc._M,
+            "doc_name": "synth-GB9001-含2020修改单.pdf",
+            "self_code": None,
+            "self_code_version": None,
+            "discovery": "doc_attribution",
+            "membership_basis": "doc name/title carries the requested code (self_code=None)",
+            "citation": {
+                "kind": "catalog_row",
+                "workspace": "default",
+                "snapshot_id": tc.IDENT["catalog_active"]["snapshot_id"],
+                "doc_id": tc._M,
+            },
+            "citation_verified": True,
+        }
+        original = tc.ev._synthesized_fused_result
+    
+        def upstream(q, usable, path_label):
+            row = original(q, [u for u in usable if u["doc_id"] != tc._M], path_label)
+            row["path_provenance"] = {"path": "fusion", "discovery_only": False}
+            row["targets_resolved"] = [{"code": "GB9001", "version": "2020", "docs": [tc._G]}]
+            row["allowed_set_basis"] = {
+                "resolved_code_targets": [[tc._G]],
+                "verified_attributions": [
+                    {k: typed[k] for k in ("doc_id", "self_code", "self_code_version", "membership_basis")}
+                ],
+            }
+            return row
+    
+        monkeypatch.setattr(tc.ev, "_synthesized_fused_result", upstream)
+        report, _ = tc._synth_leg(
+            tmp_path,
+            monkeypatch,
+            "GB 9001-2020 的 4 章规定了哪些要求？含修改单和相关文件。",
+            {
+                tc._G: tc._goal_doc(),
+                tc._M: tc._goal_doc(
+                    self_code=None,
+                    self_code_version=None,
+                    file_path=typed["doc_name"],
+                ),
+            },
+            typed_promotion=[typed],
+        )
+        out = report["results"][0]
+>       assert set(tc._audit_of(out)["allowed"]) == {tc._G, tc._M}
+E       AssertionError: assert {'doc-synth-goal'} == {'doc-synth-g...synth-modify'}
+E         
+E         Extra items in the right set:
+E         'doc-synth-modify'
+E         Use -v to get more diff
+
+reports/pg-retrieval/phase-4-improvement-2-review/test_improvement2_review_r1.py:104: AssertionError
+_ test_codeless_discovery_cannot_promote_itself_to_confirmed_scope[typed-discovery] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1132df560>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-767/test_codeless_discovery_cannot0')
+target_shape = 'typed-discovery'
+
+    @pytest.mark.parametrize("target_shape", ["typed-discovery", "resolved-discovery"])
+    def test_codeless_discovery_cannot_promote_itself_to_confirmed_scope(monkeypatch, tmp_path, target_shape):
+        original = tc.ev._synthesized_fused_result
+    
+        def discovery(q, usable, path_label):
+            row = original(q, usable, path_label)
+            doc = {"target_type": "doc", "workspace": "default", "doc_id": tc._X, "discovery": "local"}
+            if target_shape == "typed-discovery":
+                row["typed_targets"] = [doc]
+            else:
+                row["targets_resolved"] = [{"docs": [tc._X], "discovery": "local"}]
+            return row
+    
+        monkeypatch.setattr(tc.ev, "_synthesized_fused_result", discovery)
+        report, _ = tc._synth_leg(
+            tmp_path,
+            monkeypatch,
+            "第 4 章规定了哪些要求？逐项列出。",
+            {tc._X: tc._foreign_doc()},
+        )
+        out = report["results"][0]
+>       assert out["coverage_status"] in {"partial", "ambiguous"}
+E       AssertionError: assert 'complete' in {'ambiguous', 'partial'}
+
+reports/pg-retrieval/phase-4-improvement-2-review/test_improvement2_review_r1.py:130: AssertionError
+_ test_codeless_discovery_cannot_promote_itself_to_confirmed_scope[resolved-discovery] _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1132dfef0>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-767/test_codeless_discovery_cannot1')
+target_shape = 'resolved-discovery'
+
+    @pytest.mark.parametrize("target_shape", ["typed-discovery", "resolved-discovery"])
+    def test_codeless_discovery_cannot_promote_itself_to_confirmed_scope(monkeypatch, tmp_path, target_shape):
+        original = tc.ev._synthesized_fused_result
+    
+        def discovery(q, usable, path_label):
+            row = original(q, usable, path_label)
+            doc = {"target_type": "doc", "workspace": "default", "doc_id": tc._X, "discovery": "local"}
+            if target_shape == "typed-discovery":
+                row["typed_targets"] = [doc]
+            else:
+                row["targets_resolved"] = [{"docs": [tc._X], "discovery": "local"}]
+            return row
+    
+        monkeypatch.setattr(tc.ev, "_synthesized_fused_result", discovery)
+        report, _ = tc._synth_leg(
+            tmp_path,
+            monkeypatch,
+            "第 4 章规定了哪些要求？逐项列出。",
+            {tc._X: tc._foreign_doc()},
+        )
+        out = report["results"][0]
+>       assert out["coverage_status"] in {"partial", "ambiguous"}
+E       AssertionError: assert 'complete' in {'ambiguous', 'partial'}
+
+reports/pg-retrieval/phase-4-improvement-2-review/test_improvement2_review_r1.py:130: AssertionError
+=========================== short test summary info ============================
+FAILED reports/pg-retrieval/phase-4-improvement-2-review/test_improvement2_review_r1.py::test_candidate_attribution_marker_without_bound_evidence_refuses[discovery-label]
+FAILED reports/pg-retrieval/phase-4-improvement-2-review/test_improvement2_review_r1.py::test_candidate_attribution_marker_without_bound_evidence_refuses[membership-string]
+FAILED reports/pg-retrieval/phase-4-improvement-2-review/test_improvement2_review_r1.py::test_verified_typed_attribution_absent_from_chunks_keeps_full_read
+FAILED reports/pg-retrieval/phase-4-improvement-2-review/test_improvement2_review_r1.py::test_codeless_discovery_cannot_promote_itself_to_confirmed_scope[typed-discovery]
+FAILED reports/pg-retrieval/phase-4-improvement-2-review/test_improvement2_review_r1.py::test_codeless_discovery_cannot_promote_itself_to_confirmed_scope[resolved-discovery]
+5 failed, 1 passed in 1.19s

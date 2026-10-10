@@ -1,0 +1,199 @@
+{
+  "round1": {
+    "entries": 809,
+    "mismatches": []
+  },
+  "assessment_r1": {
+    "entries": 9,
+    "mismatches": []
+  },
+  "assessment_r2": {
+    "entries": 4,
+    "mismatches": []
+  },
+  "assessment_r3": {
+    "entries": 4,
+    "mismatches": []
+  },
+  "reproduction": {
+    "byte_equal": true,
+    "sha256": "9e2ec407e24b03cd68645bfad79a395e8d2ff3319f962a5d3a5fcae181ef5de3"
+  },
+  "summary": {
+    "positive": {
+      "fact": {
+        "pg": {
+          "PENDING": 6,
+          "FAIL": 1
+        },
+        "local": {
+          "FAIL": 7
+        },
+        "fusion": {
+          "PENDING": 6,
+          "FAIL": 1
+        }
+      },
+      "file_enum": {
+        "pg": {
+          "PASS": 5,
+          "PENDING": 1
+        },
+        "local": {
+          "PASS": 4,
+          "PENDING": 1,
+          "FAIL": 1
+        },
+        "fusion": {
+          "PASS": 5,
+          "PENDING": 1
+        }
+      },
+      "prose_enum": {
+        "pg": {
+          "PASS": 4,
+          "FAIL": 2
+        },
+        "local": {
+          "FAIL": 6
+        },
+        "fusion": {
+          "PASS": 4,
+          "FAIL": 2
+        }
+      },
+      "table_enum": {
+        "pg": {
+          "PASS": 5,
+          "FAIL": 1
+        },
+        "local": {
+          "PASS": 1,
+          "FAIL": 5
+        },
+        "fusion": {
+          "PASS": 5,
+          "FAIL": 1
+        }
+      },
+      "synthesis": {
+        "pg": {
+          "FAIL": 6
+        },
+        "local": {
+          "FAIL": 6
+        },
+        "fusion": {
+          "FAIL": 6
+        }
+      }
+    },
+    "counter": {
+      "fact": {
+        "pg": {
+          "PASS": 2,
+          "PENDING": 1
+        },
+        "local": {
+          "FAIL": 2,
+          "PENDING": 1
+        },
+        "fusion": {
+          "PASS": 2,
+          "PENDING": 1
+        }
+      },
+      "file_enum": {
+        "pg": {
+          "PASS": 1,
+          "FAIL": 1
+        },
+        "local": {
+          "PASS": 1,
+          "FAIL": 1
+        },
+        "fusion": {
+          "PASS": 1,
+          "FAIL": 1
+        }
+      },
+      "table_enum": {
+        "pg": {
+          "PASS": 1,
+          "FAIL": 2
+        },
+        "local": {
+          "FAIL": 2,
+          "PENDING": 1
+        },
+        "fusion": {
+          "PASS": 1,
+          "FAIL": 2
+        }
+      },
+      "prose_enum": {
+        "pg": {
+          "PENDING": 1
+        },
+        "local": {
+          "PENDING": 1
+        },
+        "fusion": {
+          "PENDING": 1
+        }
+      },
+      "synthesis": {
+        "pg": {
+          "FAIL": 1
+        },
+        "local": {
+          "FAIL": 1
+        },
+        "fusion": {
+          "FAIL": 1
+        }
+      }
+    },
+    "totals": {
+      "positive": {
+        "PENDING": 15,
+        "FAIL": 45,
+        "PASS": 33
+      },
+      "counter": {
+        "PASS": 9,
+        "FAIL": 14,
+        "PENDING": 7
+      }
+    }
+  },
+  "parsed_bytes": {
+    "expected_gate0": "fccb274827fc21f0f02f721271d175efd800175a4a8db5140bf7f72f404ab1db",
+    "computed": "fccb274827fc21f0f02f721271d175efd800175a4a8db5140bf7f72f404ab1db",
+    "match": true
+  },
+  "nonblocking_erratum": {
+    "qid": "neg-010",
+    "path": "pg",
+    "manual_reason": "model_failure/条件不足、HTTP 未发出、0 交付——expected 为应答，整题未回答 FAIL；保守不发不等同契约满足（无 over-claim 另行记录）",
+    "recorded_http_issued": 1,
+    "correction": "one real answer HTTP 200; model_failure and zero delivery; no score change"
+  },
+  "tests": {
+    "frozen": 35,
+    "own_r3": 13,
+    "historical": 16,
+    "passed": 64
+  },
+  "reviewer_requests": {
+    "network": 0,
+    "database": 0,
+    "models": 0
+  },
+  "decision": "assessment_r3_accepted; independent_improvement_first; round2_paused",
+  "source_sha256": {
+    "src/env_rag_final/enumerate_/prose_enum.py": "84c282710160e49f25f84c101bd911f73bfa0ca0abf455534da3293ebec033bb",
+    "src/env_rag_final/search/expand.py": "d3deba9f08fdf763552fd33ae3d6ffecb90a74b995869ce620f4a275f48a0392",
+    "src/env_rag_final/answer.py": "c017606cd35ddcb9b5afe5e19385d386d1e7a21eddff4ed12107c2af2572ccc8"
+  }
+}

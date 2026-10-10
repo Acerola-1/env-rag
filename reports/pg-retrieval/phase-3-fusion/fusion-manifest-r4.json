@@ -1,0 +1,26 @@
+{
+ "task": "5.3 two-path candidate fusion (rev 4, F3-a unified pre-flight exception terminal, read-only, guarded)",
+ "generated_at": "2026-10-07T10:40:00+0800",
+ "baseline": "rev 3 accepted F3-b (phase-3-fusion-review-r3/review.md); this round fixes ONLY the remaining F3-a exception-type coverage",
+ "files_sha256": {
+  "src/env_rag_final/fusion.py": "be1cd4c586596468efda7b9483903a407f0e214fc35e7a83355ad304ef94127e",
+  "src/env_rag_final/cli.py": "08753ee88a1cb2b439aafd542f69651fab439396e5f316a27c867a16f393aa52",
+  "tests/test_fusion.py": "a89194b9222e1d5fb7cfa54ae2129ce02e7e6392f2e2ef0ccbb8622b730d569b",
+  "tests/test_fusion_review_r1.py": "9aff4a4b596a4fd53134e2131ded82ae6d184f9ebf0c4d645093c7d8b80e3c4c",
+  "tests/test_fusion_review_r2.py": "b8d643cb27209023fcb6b15a6004a46b413902bb2ac56f22761cdc266caf4636",
+  "tests/test_fusion_review_r3.py": "a90f73fbcc3be10d2ead43be02f5080499ae4b66b8ef21a65de02fd72ac26836",
+  "reports/pg-retrieval/gate-2/review-r5/gold-approved.json": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e"
+ },
+ "fixes": {
+  "F3-a-fallback": "unified `except Exception` fallback inside the existing zero-backend-contact pre-flight boundary: any ordinary exception type (KeyError missing gold field / TypeError null structure / ValueError non-integer dim / anything else) writes the zero-call failure terminal (failure_service_records.call_records=[], 'pre-flight: <Type>: <msg>' auditable, no finished_at) and re-raises with the ORIGINAL exception and cause preserved. Specialized stages kept (unknown-query-id / gold-parse / gold-read / AdapterError pre-flight). BaseException (KeyboardInterrupt/SystemExit) deliberately not caught; exceptions never swallowed; frozen gold/.env never modified."
+ },
+ "verification": {
+  "frozen_acceptance": "tests/test_fusion_review_r3.py 3/3 (missing_questions KeyError / null_questions TypeError / invalid_dim ValueError: zero backend contact, call_records=[], original type auditable, no finished_at)",
+  "regression": "tests/test_fusion_review_r1.py 8/8, tests/test_fusion_review_r2.py 2/2, tests/test_fusion.py 11/11 unchanged",
+  "full_suite": 279,
+  "model_or_backend_calls": 0,
+  "real_reruns": "none required per handoff; rev-2 accepted live evidence retained"
+ },
+ "checks": {"ruff": "pass", "ruff_format": "pass", "openspec_strict": "valid", "diff_check": "pass", "credential_scan": "0 hits"},
+ "next": "stop at the 5.3 checkpoint for main-agent review; 5.4-5.6/Gate3 not entered"
+}

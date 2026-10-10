@@ -1,0 +1,61 @@
+{
+  "checkpoint": "Phase 3 / task 5.5 final engineering acceptance",
+  "review_date": "2026-10-07",
+  "accepted": true,
+  "scope": "Implementation, source-backed deterministic expansion/answers, model contract fixtures and guarded failure semantics",
+  "full_suite_passed": 383,
+  "answer_acceptance_passed": 64,
+  "blocking_findings": [],
+  "submission_sha_match": "25/25",
+  "previous_frozen_sha_match": "13/13",
+  "reviewer_real_calls": {
+    "model": 0,
+    "backend": 0,
+    "embedding": 0,
+    "rerank": 0,
+    "writes": 0
+  },
+  "real_synthesis_success": "UNVERIFIED: historical two503 responses remain failures",
+  "retained_public_failures": [
+    "fact-002 unit missing/partial",
+    "syn-001 incomplete conditions",
+    "historical scope/table ambiguity"
+  ],
+  "next": "5.6 evidence/docs/request preparation only; no real calls delegated",
+  "not_complete": [
+    "5.6/Gate 3",
+    "Phase 4"
+  ],
+  "checks": {
+    "ruff": true,
+    "format": true,
+    "openspec_strict": true,
+    "diff_check": true,
+    "credentials": true
+  },
+  "sha256": {
+    "reports/pg-retrieval/phase-3-answer-review-r5/ocr-rules.json": "2bb54a792a7a7c1b1b69b6d2ed7a853b89fa99d02b7168716504dac66d85aa93",
+    "reports/pg-retrieval/phase-3-answer-review-r5/ruff-format.txt": "1a3c6aa46d7f5260e23740995cfa3cf8617f1bd5d18465e940eb76f39be45866",
+    "reports/pg-retrieval/phase-3-answer-review-r5/ocr-preview.json": "f81b6962b7c761eb3a05242ca01655658a3f1d410274481511792de631fe06ed",
+    "reports/pg-retrieval/phase-3-answer-review-r5/ruff-check.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "reports/pg-retrieval/phase-3-answer-review-r5/all-tests.txt": "838cfcbcc468bf74c8b27f3ee07aed01ddf6b9aa11936b7e994739bc212bc6ed",
+    "reports/pg-retrieval/phase-3-answer-review-r5/acceptance-tests.txt": "9124793b6f2a666237afa8a002f6d0d6ceb822220242fba0be121a374d189ab8",
+    "reports/pg-retrieval/phase-3-answer-review-r5/findings.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "reports/pg-retrieval/phase-3-answer-review-r5/openspec-check.txt": "4693ceda9e27e58fa59b2c9dbba2ff1cf729bd8067915263151894179518ba7c",
+    "reports/pg-retrieval/phase-3-answer-review-r5/coverage.json": "c257c9aff40d678b1646a951755e838be97d83ab5fe051098af728c259be0016",
+    "reports/pg-retrieval/phase-3-answer-review-r5/review.md": "3d8db2f833feef6f1df98f0fc7aa7ab0d24db5350b9c4f201a76a06672c9bbe4",
+    "reports/pg-retrieval/phase-3-answer-review-r5/diff-check.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/pg-retrieval/phase-3-answer-review-r5/evidence-audit.json": "a675452e1c897ae34d58fbfdb6bcba21ab040aebbf06386c47b86ac3e3873383",
+    "openspec/changes/add-pg-scoped-retrieval/handoff-phase-3-5.6.md": "b113405c13f6b4bc85758c15cdcf520d114f1ca610d307c96eee751ff748d063",
+    "reports/pg-retrieval/phase-3-answer-review-r5/credential-scan.json": "db7c69f642327fe826effce871bb548cbfa88af2bcaa1f871a3f5ac73551b880",
+    "src/env_rag_final/answer.py": "29e0aa29b2b49be4370adbedd3e6bfc746d9ca9530d992f98d731a8056e213c7",
+    "src/env_rag_final/cli.py": "ba940f63205b617be00fe0e2cf58683ea53d74247c4039e0cb28c27ced521195",
+    "tests/test_answer.py": "f30ce84a7c5df70b7379ddb0ab99623dd99b9b361cddd609dd79ab4f8d9ecb37",
+    "tests/test_answer_review_r1.py": "3650133dbbf84a6571786bf4bba051ab60003171a7fef9d9752ea6fb0fffea9f",
+    "tests/test_answer_review_r2.py": "c4de6606c101833a2195b0abe41ddf32dd2ea445f0eb1aba1cfee28314c08550",
+    "tests/test_answer_review_r3.py": "fae62747f4407790af792e5d1e9eb94c75a9b48e8ed9cb16a097bbeda8371da2",
+    "tests/test_answer_review_r4.py": "16829712b469f178917671953d21d2db17fbeb78592e997538f2db1325b6df1a",
+    "openspec/changes/add-pg-scoped-retrieval/tasks.md": "a96ef5a5f6a46e772f8c19bb9b3372d89238e3dba3e6caf4d468882f61a7d243",
+    "README.md": "dc2513bfbc851d36141f9b3c15cedfe6effed4ed4f0c23aadaaefaefe8675871"
+  }
+}

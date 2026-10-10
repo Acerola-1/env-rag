@@ -1,0 +1,200 @@
+{
+  "offline": {
+    "empty_pending_extraction_accepted_complete": {
+      "query_id": "q",
+      "kind": "prose",
+      "workspace": "w",
+      "catalog_snapshot_id": "s",
+      "source_snapshot_id": "f",
+      "scope_ids": [],
+      "members_total": 1,
+      "members_processed": 1,
+      "items": [],
+      "coverage_status": "complete",
+      "warnings": [
+        "items pending extraction"
+      ],
+      "fail_stage": "",
+      "predicate": null,
+      "read_token": null,
+      "model_calls": []
+    },
+    "duplicate_span_disagrees_with_text": {
+      "item": {
+        "clause": "4.1.1",
+        "text": "4.1.1 更长的完整条款后半条件。",
+        "citation": {
+          "kind": "char_span",
+          "char_start": 0,
+          "char_end": 28,
+          "quote": "4.1.1 更长的完整条款后半条件。"
+        },
+        "citation_verified": true,
+        "source": "regex_clause_split"
+      },
+      "span_text": "4.1.1 短片\n4.1.1 更长的完整条款后半条件。\n"
+    },
+    "unsupported_claim_real_quote_accepted": {
+      "items": [
+        {
+          "text": "原文明确列出停车场",
+          "citation": {
+            "quote": "门诊、病房"
+          },
+          "citation_verified": true
+        }
+      ],
+      "error": null
+    },
+    "requires_span_selects_first_instead_of_requested": {
+      "requested_scope": "scope-requesting-7.5",
+      "raw_text": "Annex intro\n7.1 第一个条款。\n7.5 请求条款。\n7.6 下一条。",
+      "returned_text": "7.1 第一个条款。\n",
+      "result": {
+        "query_id": "prose-78b04756a4ea",
+        "kind": "prose",
+        "workspace": "default",
+        "catalog_snapshot_id": "s",
+        "source_snapshot_id": "",
+        "scope_ids": [
+          "scope-requesting-7.5"
+        ],
+        "members_total": 1,
+        "members_processed": 1,
+        "items": [],
+        "coverage_status": "complete",
+        "warnings": [
+          "items pending extraction (reading layer complete)"
+        ],
+        "fail_stage": "",
+        "predicate": null,
+        "read_token": null,
+        "model_calls": []
+      }
+    },
+    "table_final_guard_absent": {
+      "result": {
+        "query_id": "table-04e40fb9a651",
+        "kind": "table",
+        "workspace": "default",
+        "catalog_snapshot_id": "s",
+        "source_snapshot_id": "f",
+        "scope_ids": [
+          "tb"
+        ],
+        "members_total": 1,
+        "members_processed": 1,
+        "items": [
+          {
+            "seq": "1",
+            "cells": [
+              "1",
+              "总汞"
+            ],
+            "citation": {
+              "kind": "table_row",
+              "workspace": "default",
+              "doc_id": "d",
+              "snapshot_id": "s",
+              "fragment_index": 0,
+              "row_in_fragment": 0,
+              "table_id": "tb",
+              "blockid": "u",
+              "locator": "tb",
+              "chunk_ids": [
+                "c"
+              ]
+            },
+            "citation_verified": true
+          },
+          {
+            "seq": "2",
+            "cells": [
+              "2",
+              "总镉"
+            ],
+            "citation": {
+              "kind": "table_row",
+              "workspace": "default",
+              "doc_id": "d",
+              "snapshot_id": "s",
+              "fragment_index": 0,
+              "row_in_fragment": 1,
+              "table_id": "tb",
+              "blockid": "u",
+              "locator": "tb",
+              "chunk_ids": [
+                "c"
+              ]
+            },
+            "citation_verified": true
+          }
+        ],
+        "coverage_status": "complete",
+        "warnings": [],
+        "fail_stage": "",
+        "predicate": null,
+        "read_token": null,
+        "model_calls": []
+      },
+      "guard_calls": 1,
+      "next_guard_state": "stale"
+    },
+    "missing_first_fragment_partial": {
+      "error_type": "IndexError"
+    },
+    "document_live_source_guard_and_workspace_absent": {
+      "result": {
+        "query_id": "doc-enum-d5e17850c3ae",
+        "kind": "document",
+        "workspace": "another-workspace",
+        "catalog_snapshot_id": "s",
+        "source_snapshot_id": "f",
+        "scope_ids": [],
+        "members_total": 1,
+        "members_processed": 1,
+        "items": [
+          {
+            "doc_id": "d",
+            "doc_name": "a",
+            "title": "A",
+            "self_code": null,
+            "self_code_version": null,
+            "unknown_fields": [],
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "another-workspace",
+              "snapshot_id": "s",
+              "doc_id": "d",
+              "doc_name": "a"
+            },
+            "citation_verified": true
+          }
+        ],
+        "coverage_status": "complete",
+        "warnings": [],
+        "fail_stage": "",
+        "predicate": "TRUE",
+        "read_token": "62fbb3fc3aebf39b2aa71295f5e7f3ef86a071de19400f3ff667bc48050d72bf",
+        "model_calls": []
+      },
+      "requested_workspace": "another-workspace",
+      "data_query_workspaces": [
+        "default",
+        "default",
+        "default",
+        "default"
+      ],
+      "source_guard_calls": 0
+    }
+  },
+  "code_sha256": {
+    "src/env_rag_final/enumerate_/__init__.py": "a1f93429fbe9550836d7f1b08f87c9e62b7946e834e8c9698936a138346f696f",
+    "src/env_rag_final/enumerate_/contract.py": "d674bd649fd58eb528d7cfde5dd02cdc089a6bcb7506149eb711f4903f42785d",
+    "src/env_rag_final/enumerate_/doc_enum.py": "6a2749da3464683294d6887f8d12adb6e8b940f70b8274aaf584d701a0fbeaec",
+    "src/env_rag_final/enumerate_/prose_enum.py": "020f0125bf165ecbd985573280ddfe222a3605ccb8d40cdcc0679c3054cbdea8",
+    "src/env_rag_final/enumerate_/table_enum.py": "95633cfe4e967cd2c3c9ba8f53ec72c375534cdf28ba6fbd7775d49362f972dd",
+    "src/env_rag_final/enumerate_/tables.py": "32e2b2fd5d74e427a2cbf2559fec1a2b3d1e7a6b6ae2cc9e3a2ddeac5d96889f",
+    "src/env_rag_final/cli.py": "8254ce58e28d3c92ca9bafb485901d4816839eee315ab639d757a420fff293ff"
+  }
+}

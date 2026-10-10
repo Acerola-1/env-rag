@@ -1,0 +1,29 @@
+[
+  {
+    "id": "M1",
+    "path": "src/env_rag_final/local_adapter.py",
+    "start_line": 1143,
+    "end_line": 1179,
+    "severity": "high",
+    "category": "bug",
+    "content": "post只比较冻结而不比before/after，env SHA变化可成功返回；fetch失败在post前写盘，最终identity_after未持久化。统一漂移守卫和失败终态。"
+  },
+  {
+    "id": "M2",
+    "path": "src/env_rag_final/local_adapter.py",
+    "start_line": 678,
+    "end_line": 708,
+    "severity": "high",
+    "category": "bug",
+    "content": "只看embedding失败就标vector-similarity，真实缺向量/被吞Qdrant超时仍误标成功；Qdrant底层读没有边界记录，复用adapter累积账本。记录真实调用并按选择阶段正确降级。"
+  },
+  {
+    "id": "M3",
+    "path": "src/env_rag_final/local_adapter.py",
+    "start_line": 390,
+    "end_line": 407,
+    "severity": "medium",
+    "category": "bug",
+    "content": "client创建后storage构造失败时尚未登记到fetch resources，client泄漏。binding内立即建立所有权边界，生产close-only不接flush finalizer。"
+  }
+]

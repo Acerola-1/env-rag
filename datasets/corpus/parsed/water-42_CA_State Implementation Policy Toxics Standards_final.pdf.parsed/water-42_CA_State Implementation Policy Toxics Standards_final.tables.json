@@ -1,0 +1,235 @@
+{
+  "version": "1.0",
+  "tables": {
+    "tb-8769a5f2c742fb5d92067118ee9681c6-0001": {
+      "id": "tb-8769a5f2c742fb5d92067118ee9681c6-0001",
+      "blockid": "667bbd77a08ab496dc2cb5facee4ad45",
+      "heading": "1.4 Calculation of Effluent Limitations",
+      "parent_headings": [
+        "POLICY FOR IMPLEMENTATION OF TOXICS STANDARDS FOR INLAND SURFACE WATERS, ENCLOSED BAYS, AND ESTUARIES OF CALIFORNIA"
+      ],
+      "dimension": [
+        42,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">Coefficient Of Variation (CV)</td><td>Acute Multiplier</td><td>Chronic Multiplier</td></tr><tr><td> $99^{th}$ PercentileOccurrence Probability</td><td> $99^{th}$ PercentileOccurrence Probability</td></tr><tr><td>0.1</td><td>0.797</td><td>0.891</td></tr><tr><td>0.2</td><td>0.643</td><td>0.797</td></tr><tr><td>0.3</td><td>0.527</td><td>0.715</td></tr><tr><td>0.4</td><td>0.440</td><td>0.643</td></tr><tr><td>0.5</td><td>0.373</td><td>0.581</td></tr><tr><td>0.6</td><td>0.321</td><td>0.527</td></tr><tr><td>0.7</td><td>0.281</td><td>0.481</td></tr><tr><td>0.8</td><td>0.249</td><td>0.440</td></tr><tr><td>0.9</td><td>0.224</td><td>0.404</td></tr><tr><td>1.0</td><td>0.204</td><td>0.373</td></tr><tr><td>1.1</td><td>0.187</td><td>0.345</td></tr><tr><td>1.2</td><td>0.174</td><td>0.321</td></tr><tr><td>1.3</td><td>0.162</td><td>0.300</td></tr><tr><td>1.4</td><td>0.153</td><td>0.281</td></tr><tr><td>1.5</td><td>0.144</td><td>0.264</td></tr><tr><td>1.6</td><td>0.137</td><td>0.249</td></tr><tr><td>1.7</td><td>0.131</td><td>0.236</td></tr><tr><td>1.8</td><td>0.126</td><td>0.224</td></tr><tr><td>1.9</td><td>0.121</td><td>0.214</td></tr><tr><td>2.0</td><td>0.117</td><td>0.204</td></tr><tr><td>2.1</td><td>0.113</td><td>0.195</td></tr><tr><td>2.2</td><td>0.110</td><td>0.187</td></tr><tr><td>2.3</td><td>0.107</td><td>0.180</td></tr><tr><td>2.4</td><td>0.104</td><td>0.174</td></tr><tr><td>2.5</td><td>0.102</td><td>0.168</td></tr><tr><td>2.6</td><td>0.100</td><td>0.162</td></tr><tr><td>2.7</td><td>0.098</td><td>0.157</td></tr><tr><td>2.8</td><td>0.096</td><td>0.153</td></tr><tr><td>2.9</td><td>0.094</td><td>0.148</td></tr><tr><td>3.0</td><td>0.093</td><td>0.144</td></tr><tr><td>3.1</td><td>0.091</td><td>0.141</td></tr><tr><td>3.2</td><td>0.090</td><td>0.137</td></tr><tr><td>3.3</td><td>0.089</td><td>0.134</td></tr><tr><td>3.4</td><td>0.088</td><td>0.131</td></tr><tr><td>3.5</td><td>0.087</td><td>0.128</td></tr><tr><td>3.6</td><td>0.086</td><td>0.126</td></tr><tr><td>3.7</td><td>0.085</td><td>0.123</td></tr><tr><td>3.8</td><td>0.084</td><td>0.121</td></tr><tr><td>3.9</td><td>0.083</td><td>0.119</td></tr><tr><td>4.0</td><td>0.082</td><td>0.117</td></tr></table>",
+      "caption": "Table 1. Effluent Concentration Allowance (ECA) Multipliers for Calculating Long-Term Averages (LTAs)",
+      "footnotes": [],
+      "self_ref": "content_list.json#/119"
+    },
+    "tb-8769a5f2c742fb5d92067118ee9681c6-0002": {
+      "id": "tb-8769a5f2c742fb5d92067118ee9681c6-0002",
+      "blockid": "a4e027ac3e5ce974f293341375648322",
+      "heading": "LTA Equations",
+      "parent_headings": [
+        "POLICY FOR IMPLEMENTATION OF TOXICS STANDARDS FOR INLAND SURFACE WATERS, ENCLOSED BAYS, AND ESTUARIES OF CALIFORNIA"
+      ],
+      "dimension": [
+        23,
+        8
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">Coefficient of Variation</td><td>MDEL Multiplier</td><td colspan=\"3\">AMEL Multiplier</td><td colspan=\"3\">MDEL/AMEL Multiplier</td></tr><tr><td> $99^{th}$  Percentile Occurrence Probability</td><td colspan=\"3\"> $95^{th}$  Percentile Occurrence Probability</td><td colspan=\"3\">MDEL =  $99^{th}$  Percentile AMEL =  $95^{th}$  Percentile Occurrence Probability</td></tr><tr><td>(CV)</td><td></td><td>n = 4</td><td>n = 8</td><td>n = 30</td><td>n = 4</td><td>n = 8</td><td>n = 30</td></tr><tr><td>0.1</td><td>1.25</td><td>1.08</td><td>1.06</td><td>1.03</td><td>1.16</td><td>1.18</td><td>1.22</td></tr><tr><td>0.2</td><td>1.55</td><td>1.17</td><td>1.12</td><td>1.06</td><td>1.33</td><td>1.39</td><td>1.46</td></tr><tr><td>0.3</td><td>1.90</td><td>1.26</td><td>1.18</td><td>1.09</td><td>1.50</td><td>1.60</td><td>1.74</td></tr><tr><td>0.4</td><td>2.27</td><td>1.36</td><td>1.25</td><td>1.12</td><td>1.67</td><td>1.82</td><td>2.02</td></tr><tr><td>0.5</td><td>2.68</td><td>1.45</td><td>1.31</td><td>1.16</td><td>1.84</td><td>2.04</td><td>2.32</td></tr><tr><td>0.6</td><td>3.11</td><td>1.55</td><td>1.38</td><td>1.19</td><td>2.01</td><td>2.25</td><td>2.62</td></tr><tr><td>0.7</td><td>3.56</td><td>1.65</td><td>1.45</td><td>1.22</td><td>2.16</td><td>2.45</td><td>2.91</td></tr><tr><td>0.8</td><td>4.01</td><td>1.75</td><td>1.52</td><td>1.26</td><td>2.29</td><td>2.64</td><td>3.19</td></tr><tr><td>0.9</td><td>4.46</td><td>1.85</td><td>1.59</td><td>1.29</td><td>2.41</td><td>2.81</td><td>3.45</td></tr><tr><td>1.0</td><td>4.90</td><td>1.95</td><td>1.66</td><td>1.33</td><td>2.52</td><td>2.96</td><td>3.70</td></tr><tr><td>1.1</td><td>5.34</td><td>2.04</td><td>1.73</td><td>1.36</td><td>2.62</td><td>3.09</td><td>3.93</td></tr><tr><td>1.2</td><td>5.76</td><td>2.13</td><td>1.80</td><td>1.39</td><td>2.70</td><td>3.20</td><td>4.13</td></tr><tr><td>1.3</td><td>6.17</td><td>2.23</td><td>1.87</td><td>1.43</td><td>2.77</td><td>3.30</td><td>4.31</td></tr><tr><td>1.4</td><td>6.56</td><td>2.31</td><td>1.94</td><td>1.47</td><td>2.83</td><td>3.39</td><td>4.47</td></tr><tr><td>1.5</td><td>6.93</td><td>2.40</td><td>2.00</td><td>1.50</td><td>2.89</td><td>3.46</td><td>4.62</td></tr><tr><td>1.6</td><td>7.29</td><td>2.48</td><td>2.07</td><td>1.54</td><td>2.93</td><td>3.52</td><td>4.74</td></tr><tr><td>1.7</td><td>7.63</td><td>2.56</td><td>2.14</td><td>1.57</td><td>2.98</td><td>3.57</td><td>4.85</td></tr><tr><td>1.8</td><td>7.95</td><td>2.64</td><td>2.20</td><td>1.61</td><td>3.01</td><td>3.61</td><td>4.94</td></tr><tr><td>1.9</td><td>8.26</td><td>2.71</td><td>2.27</td><td>1.64</td><td>3.05</td><td>3.65</td><td>5.02</td></tr><tr><td>2.0</td><td>8.55</td><td>2.78</td><td>2.33</td><td>1.68</td><td>3.07</td><td>3.67</td><td>5.09</td></tr></table>",
+      "caption": "Table 2. Long-Term Average (LTA) Multipliers for Calculating Effluent Limitations",
+      "footnotes": [
+        "Note:",
+        "n = monthly sampling frequency of the effluent concentration data"
+      ],
+      "self_ref": "content_list.json#/135"
+    },
+    "tb-8769a5f2c742fb5d92067118ee9681c6-0003": {
+      "id": "tb-8769a5f2c742fb5d92067118ee9681c6-0003",
+      "blockid": "a4e027ac3e5ce974f293341375648322",
+      "heading": "LTA Equations",
+      "parent_headings": [
+        "POLICY FOR IMPLEMENTATION OF TOXICS STANDARDS FOR INLAND SURFACE WATERS, ENCLOSED BAYS, AND ESTUARIES OF CALIFORNIA"
+      ],
+      "dimension": [
+        23,
+        8
+      ],
+      "format": "html",
+      "content": "<table><tr><td rowspan=\"2\">Coefficient of Variation</td><td>MDEL Multiplier</td><td colspan=\"3\">AMEL Multiplier</td><td colspan=\"3\">MDEL/AMEL Multiplier</td></tr><tr><td> $99^{th}$  Percentile Occurrence Probability</td><td colspan=\"3\"> $95^{th}$  Percentile Occurrence Probability</td><td colspan=\"3\">MDEL =  $99^{th}$  Percentile AMEL =  $95^{th}$  Percentile Occurrence Probability</td></tr><tr><td>(CV)</td><td></td><td>n = 4</td><td>n = 8</td><td>n = 30</td><td>n = 4</td><td>n = 8</td><td>n = 30</td></tr><tr><td>2.1</td><td>8.83</td><td>2.85</td><td>2.39</td><td>1.72</td><td>3.10</td><td>3.70</td><td>5.14</td></tr><tr><td>2.2</td><td>9.09</td><td>2.91</td><td>2.45</td><td>1.75</td><td>3.12</td><td>3.72</td><td>5.19</td></tr><tr><td>2.3</td><td>9.34</td><td>2.97</td><td>2.50</td><td>1.79</td><td>3.15</td><td>3.73</td><td>5.22</td></tr><tr><td>2.4</td><td>9.58</td><td>3.03</td><td>2.56</td><td>1.82</td><td>3.17</td><td>3.74</td><td>5.25</td></tr><tr><td>2.5</td><td>9.81</td><td>3.08</td><td>2.61</td><td>1.86</td><td>3.18</td><td>3.75</td><td>5.27</td></tr><tr><td>2.6</td><td>10.0</td><td>3.13</td><td>2.67</td><td>1.90</td><td>3.20</td><td>3.76</td><td>5.29</td></tr><tr><td>2.7</td><td>10.2</td><td>3.18</td><td>2.72</td><td>1.93</td><td>3.22</td><td>3.76</td><td>5.30</td></tr><tr><td>2.8</td><td>10.4</td><td>3.23</td><td>2.77</td><td>1.97</td><td>3.23</td><td>3.77</td><td>5.30</td></tr><tr><td>2.9</td><td>10.6</td><td>3.27</td><td>2.82</td><td>2.00</td><td>3.25</td><td>3.77</td><td>5.30</td></tr><tr><td>3.0</td><td>10.8</td><td>3.31</td><td>2.86</td><td>2.04</td><td>3.26</td><td>3.77</td><td>5.30</td></tr><tr><td>3.1</td><td>11.0</td><td>3.35</td><td>2.91</td><td>2.07</td><td>3.27</td><td>3.77</td><td>5.29</td></tr><tr><td>3.2</td><td>11.1</td><td>3.38</td><td>2.95</td><td>2.11</td><td>3.29</td><td>3.77</td><td>5.28</td></tr><tr><td>3.3</td><td>11.3</td><td>3.42</td><td>2.99</td><td>2.14</td><td>3.30</td><td>3.77</td><td>5.27</td></tr><tr><td>3.4</td><td>11.4</td><td>3.45</td><td>3.03</td><td>2.17</td><td>3.31</td><td>3.77</td><td>5.25</td></tr><tr><td>3.5</td><td>11.6</td><td>3.48</td><td>3.07</td><td>2.21</td><td>3.32</td><td>3.77</td><td>5.24</td></tr><tr><td>3.6</td><td>11.7</td><td>3.51</td><td>3.10</td><td>2.24</td><td>3.33</td><td>3.76</td><td>5.22</td></tr><tr><td>3.7</td><td>11.8</td><td>3.53</td><td>3.14</td><td>2.27</td><td>3.34</td><td>3.76</td><td>5.20</td></tr><tr><td>3.8</td><td>11.9</td><td>3.56</td><td>3.17</td><td>2.30</td><td>3.35</td><td>3.76</td><td>5.18</td></tr><tr><td>3.9</td><td>12.1</td><td>3.58</td><td>3.21</td><td>2.34</td><td>3.36</td><td>3.76</td><td>5.16</td></tr><tr><td>4.0</td><td>12.16</td><td>3.60</td><td>3.24</td><td>2.37</td><td>3.37</td><td>3.76</td><td>5.14</td></tr></table>",
+      "caption": "Table 2. Continued",
+      "footnotes": [
+        "Note:",
+        "n = monthly sampling frequency of the effluent concentration data."
+      ],
+      "self_ref": "content_list.json#/137"
+    },
+    "tb-8769a5f2c742fb5d92067118ee9681c6-0004": {
+      "id": "tb-8769a5f2c742fb5d92067118ee9681c6-0004",
+      "blockid": "3aae0315c4850af9f2dc8182d51e1836",
+      "heading": "1.4.2.1 Dilution Credits",
+      "parent_headings": [
+        "POLICY FOR IMPLEMENTATION OF TOXICS STANDARDS FOR INLAND SURFACE WATERS, ENCLOSED BAYS, AND ESTUARIES OF CALIFORNIA"
+      ],
+      "dimension": [
+        5,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>In calculating a dilution ratio for:</td><td>Use the critical receiving water flow1 of:</td><td>Use the discharged effluent flow of:</td></tr><tr><td>Acute aquatic life criteria/objectives</td><td>*1Q10</td><td>*maximum daily flow during period of discharge</td></tr><tr><td>Chronic aquatic life criteria/objectives</td><td>*7Q10</td><td>*four-day average of daily maximum flows during period of discharge</td></tr><tr><td>Chronic toxicity objective for aquatic life2</td><td></td><td></td></tr><tr><td>Human health criteria/objectives</td><td>*harmonic mean</td><td>*long-term arithmetic mean flow during period of discharge</td></tr></table>",
+      "caption": "Table 3. Effluent and Receiving Water Flows for Calculating Dilution Ratios",
+      "footnotes": [
+        "The approach to making a mixing zone determination also depends on whether a discharge is \\*completely-mixed or \\*incompletely-mixed with the receiving water as discussed below."
+      ],
+      "self_ref": "content_list.json#/174"
+    },
+    "tb-8769a5f2c742fb5d92067118ee9681c6-0005": {
+      "id": "tb-8769a5f2c742fb5d92067118ee9681c6-0005",
+      "blockid": "813ecd65cd7caa21473d87515bb7e165",
+      "heading": "2.4.2 Selection and Use of Appropriate ML Value",
+      "parent_headings": [
+        "POLICY FOR IMPLEMENTATION OF TOXICS STANDARDS FOR INLAND SURFACE WATERS, ENCLOSED BAYS, AND ESTUARIES OF CALIFORNIA"
+      ],
+      "dimension": [
+        1,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Substance or Grouping Volatile organic Semi-Volatile organic Metals Pesticides</td><td>Method-Specified Treatment No differential treatment Samples concentrated by extraction Samples diluted or concentrated Samples concentrated by extraction</td><td>Most Common Method-Specific Factor(s) 1 1000  $\\frac{1}{2}$ , 2, and 4 100</td></tr></table>",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/274"
+    },
+    "tb-8769a5f2c742fb5d92067118ee9681c6-0006": {
+      "id": "tb-8769a5f2c742fb5d92067118ee9681c6-0006",
+      "blockid": "393dd4ef7892ca31b1956aa8c3b420a1",
+      "heading": "3. 2,3,7,8-TCDD EQUIVALENTS",
+      "parent_headings": [
+        "POLICY FOR IMPLEMENTATION OF TOXICS STANDARDS FOR INLAND SURFACE WATERS, ENCLOSED BAYS, AND ESTUARIES OF CALIFORNIA"
+      ],
+      "dimension": [
+        18,
+        2
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Congener</td><td>TEF</td></tr><tr><td>2,3,7,8-TetraCDD</td><td>1</td></tr><tr><td>1,2,3,7,8-PentaCDD</td><td>1.0</td></tr><tr><td>1,2,3,4,7,8-HexaCDD</td><td>0.1</td></tr><tr><td>1,2,3,6,7,8-HexaCDD</td><td>0.1</td></tr><tr><td>1,2,3,7,8,9-HexaCDD</td><td>0.1</td></tr><tr><td>1,2,3,4,6,7,8-HeptaCDD</td><td>0.01</td></tr><tr><td>OctaCDD</td><td>0.0001</td></tr><tr><td>2,3,7,8-TetraCDF</td><td>0.1</td></tr><tr><td>1,2,3,7,8-PentaCDF</td><td>0.05</td></tr><tr><td>2,3,4,7,8-PentaCDF</td><td>0.5</td></tr><tr><td>1,2,3,4,7,8-HexaCDF</td><td>0.1</td></tr><tr><td>1,2,3,6,7,8-HexaCDF</td><td>0.1</td></tr><tr><td>1,2,3,7,8,9-HexaCDF</td><td>0.1</td></tr><tr><td>2,3,4,6,7,8-HexaCDF</td><td>0.1</td></tr><tr><td>1,2,3,4,6,7,8-HeptaCDF</td><td>0.01</td></tr><tr><td>1,2,3,4,7,8,9-HeptaCDF</td><td>0.01</td></tr><tr><td>OctaCDF</td><td>0.0001</td></tr></table>",
+      "caption": "Table 4. Toxic Equivalency Factors (TEFs) for 2,3,7,8-TCDD Equivalents",
+      "footnotes": [],
+      "self_ref": "content_list.json#/323"
+    },
+    "tb-8769a5f2c742fb5d92067118ee9681c6-0007": {
+      "id": "tb-8769a5f2c742fb5d92067118ee9681c6-0007",
+      "blockid": "674a009f3a4ac15e5375a52c97a19b94",
+      "heading": "Water Quality-Based Toxicity Control",
+      "parent_headings": [
+        "POLICY FOR IMPLEMENTATION OF TOXICS STANDARDS FOR INLAND SURFACE WATERS, ENCLOSED BAYS, AND ESTUARIES OF CALIFORNIA"
+      ],
+      "dimension": [
+        4,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Species</td><td>Effect</td><td>Test duration (days)</td></tr><tr><td>fathead minnow(Pimephales promelas)</td><td>larval survival; growth</td><td>7</td></tr><tr><td>water flea (Ceriodaphnia dubia)</td><td>survival; number of young</td><td>6 to 8</td></tr><tr><td>alga (Selenastrum capricornutum)</td><td>growth rate</td><td>4</td></tr></table>",
+      "caption": "Table 5. Short-term Methods for Estimating Chronic Toxicity-Fresh Water",
+      "footnotes": [
+        "Toxicity Test Reference: U.S. EPA. 1994. Short-term methods for estimating the chronic toxicity of effluents and receiving waters to freshwater organisms. Third edition. U.S. EPA Environmental Monitoring Systems Laboratory, Cincinnati, Ohio. EPA/600/4-91-002."
+      ],
+      "self_ref": "content_list.json#/340"
+    },
+    "tb-8769a5f2c742fb5d92067118ee9681c6-0008": {
+      "id": "tb-8769a5f2c742fb5d92067118ee9681c6-0008",
+      "blockid": "d3a9388ad693478958f96c2a73054d80",
+      "heading": "Definition of Terms",
+      "parent_headings": [
+        "POLICY FOR IMPLEMENTATION OF TOXICS STANDARDS FOR INLAND SURFACE WATERS, ENCLOSED BAYS, AND ESTUARIES OF CALIFORNIA"
+      ],
+      "dimension": [
+        15,
+        5
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Metal</td><td>Conversion Factor (CF) for Freshwater Acute Criteria</td><td>CF for Freshwater Chronic Criteria</td><td>CF for Saltwater Acute Criteria</td><td>CF(a) for Saltwater Chronic Criteria</td></tr><tr><td>Antimony</td><td>(d)</td><td>(d)</td><td>(d)</td><td>(d)</td></tr><tr><td>Arsenic</td><td>1.000</td><td>1.000</td><td>1.000</td><td>1.000</td></tr><tr><td>Beryllium</td><td>(d)</td><td>(d)</td><td>(d)</td><td>(d)</td></tr><tr><td>Cadmium (b)</td><td>0.944</td><td>0.909</td><td>0.994</td><td>0.994</td></tr><tr><td>Chromium (III)</td><td>0.316</td><td>0.860</td><td>(d)</td><td>(d)</td></tr><tr><td>Chromium (VI)</td><td>0.982</td><td>0.962</td><td>0.993</td><td>0.993</td></tr><tr><td>Copper</td><td>0.960</td><td>0.960</td><td>0.83</td><td>0.83</td></tr><tr><td>Lead (b)</td><td>0.791</td><td>0.791</td><td>0.951</td><td>0.951</td></tr><tr><td>Mercury</td><td>0.85</td><td>0.85</td><td>0.85</td><td>0.85</td></tr><tr><td>Nickel</td><td>0.998</td><td>0.997</td><td>0.990</td><td>0.990</td></tr><tr><td>Selenium</td><td>(c)</td><td>(c)</td><td>0.998</td><td>0.998</td></tr><tr><td>Silver</td><td>0.85</td><td>(d)</td><td>0.85</td><td>(d)</td></tr><tr><td>Thallium</td><td>(d)</td><td>(d)</td><td>(d)</td><td>(d)</td></tr><tr><td>Zinc</td><td>0.978</td><td>0.986</td><td>0.946</td><td>0.946</td></tr></table>",
+      "caption": "U.S. Environmental Protection Agency Conversion Factors",
+      "footnotes": [
+        "Footnotes:",
+        "(a) Conversion Factors for chronic marine criteria are not currently available. Conversion Factors for acute marine criteria have been used for both acute and chronic marine criteria.",
+        "(b) Conversion Factors for these pollutants are hardness dependent. CFs are based on a hardness of 100 mg/l as calcium carbonate (CaCO<sub>3</sub>). Other hardness can be used; CFs should be recalculated using the following equations:",
+        "Cadmium: Acute: CF = 1.136672 - [(ln {hardness})(0.041838)]",
+        "Cadmium: Chronic: CF = 1.101672 - [(ln {hardness})(0.041838)]",
+        "Lead: Acute and Chronic: CF = 1.46203 - [ln {hardness})(0.145712)]",
+        "(c) Bioaccumulative compound and inappropriate to adjust to percent dissolved.",
+        "(d) U.S. EPA has not published an aquatic life criterion value.",
+        "NOTE: The term “Conversion Factor” represents the recommended conversion factor for converting a metal criterion expressed as the total recoverable fraction in the water column to a criterion expressed as the dissolved fraction in the water column. See “Office of Water Policy and Technical Guidance on Interpretation and Implementation of Aquatic Life Metals Criteria,” October 1, 1993, by Martha G. Prothro, Acting Assistant Administrator for Water, available from the Water Resource Center, USEPA, 401 M St. SW., mail code RC 4100, Washington, DC 20460; and 40 CFR §131.36(b)(1)."
+      ],
+      "self_ref": "content_list.json#/462"
+    },
+    "tb-8769a5f2c742fb5d92067118ee9681c6-0009": {
+      "id": "tb-8769a5f2c742fb5d92067118ee9681c6-0009",
+      "blockid": "7f965c7fa6e2ca87e0748e74650a78b7",
+      "heading": "SWRCB Minimum Levels in ppb (µg/L)",
+      "parent_headings": [
+        "POLICY FOR IMPLEMENTATION OF TOXICS STANDARDS FOR INLAND SURFACE WATERS, ENCLOSED BAYS, AND ESTUARIES OF CALIFORNIA"
+      ],
+      "dimension": [
+        31,
+        3
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Table 2a - VOLATILE SUBSTANCES*</td><td>GC</td><td>GCMS</td></tr><tr><td>1,1 Dichloroethane</td><td>0.5</td><td>1</td></tr><tr><td>1,1 Dichloroethene</td><td>0.5</td><td>2</td></tr><tr><td>1,1,1 Trichloroethane</td><td>0.5</td><td>2</td></tr><tr><td>1,1,2 Trichloroethane</td><td>0.5</td><td>2</td></tr><tr><td>1,1,2,2 Tetrachloroethane</td><td>0.5</td><td>1</td></tr><tr><td>1,2 Dichlorobenzene (volatile)</td><td>0.5</td><td>2</td></tr><tr><td>1,2 Dichloroethane</td><td>0.5</td><td>2</td></tr><tr><td>1,2 Dichloropropane</td><td>0.5</td><td>1</td></tr><tr><td>1,3 Dichlorobenzene (volatile)</td><td>0.5</td><td>2</td></tr><tr><td>1,3 Dichloropropene (volatile)</td><td>0.5</td><td>2</td></tr><tr><td>1,4 Dichlorobenzene (volatile)</td><td>0.5</td><td>2</td></tr><tr><td>Acrolein</td><td>2.0</td><td>5</td></tr><tr><td>Acrylonitrile</td><td>2.0</td><td>2</td></tr><tr><td>Benzene</td><td>0.5</td><td>2</td></tr><tr><td>Bromoform</td><td>0.5</td><td>2</td></tr><tr><td>Bromomethane</td><td>1.0</td><td>2</td></tr><tr><td>Carbon Tetrachloride</td><td>0.5</td><td>2</td></tr><tr><td>Chlorobenzene</td><td>0.5</td><td>2</td></tr><tr><td>Chlorodibromo-methane</td><td>0.5</td><td>2</td></tr><tr><td>Chloroethane</td><td>0.5</td><td>2</td></tr><tr><td>Chloroform</td><td>0.5</td><td>2</td></tr><tr><td>Chloromethane</td><td>0.5</td><td>2</td></tr><tr><td>Dichlorobromo-methane</td><td>0.5</td><td>2</td></tr><tr><td>Dichloromethane</td><td>0.5</td><td>2</td></tr><tr><td>Ethylbenzene</td><td>0.5</td><td>2</td></tr><tr><td>Tetrachloroethene</td><td>0.5</td><td>2</td></tr><tr><td>Toluene</td><td>0.5</td><td>2</td></tr><tr><td>trans-1,2 Dichloroethylene</td><td>0.5</td><td>1</td></tr><tr><td>Trichloroethene</td><td>0.5</td><td>2</td></tr><tr><td>Vinyl Chloride</td><td>0.5</td><td>2</td></tr></table>",
+      "caption": "",
+      "footnotes": [
+        "\\*The normal method-specific factor for these substances is 1, therefore, the lowest standard concentration in the calibration curve is equal to the above ML value for each substance."
+      ],
+      "self_ref": "content_list.json#/469"
+    },
+    "tb-8769a5f2c742fb5d92067118ee9681c6-0010": {
+      "id": "tb-8769a5f2c742fb5d92067118ee9681c6-0010",
+      "blockid": "7f965c7fa6e2ca87e0748e74650a78b7",
+      "heading": "SWRCB Minimum Levels in ppb (µg/L)",
+      "parent_headings": [
+        "POLICY FOR IMPLEMENTATION OF TOXICS STANDARDS FOR INLAND SURFACE WATERS, ENCLOSED BAYS, AND ESTUARIES OF CALIFORNIA"
+      ],
+      "dimension": [
+        59,
+        5
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Table 2b - SEMI-VOLATILESUBSTANCES*</td><td>GC</td><td>GCMS</td><td>LC</td><td>COLOR</td></tr><tr><td>1,2 Benzenthracene</td><td>10</td><td>5</td><td></td><td></td></tr><tr><td>1,2 Dichlorobenzene (semivolatile)</td><td>2</td><td>2</td><td></td><td></td></tr><tr><td>1,2 Diphenylhydrazine</td><td></td><td>1</td><td></td><td></td></tr><tr><td>1,2,4 Trichlorobenzene</td><td>1</td><td>5</td><td></td><td></td></tr><tr><td>1,3 Dichlorobenzene (semivolatile)</td><td>2</td><td>1</td><td></td><td></td></tr><tr><td>1,4 Dichlorobenzene (semivolatile)</td><td>2</td><td>1</td><td></td><td></td></tr><tr><td>2 Chlorophenol</td><td>2</td><td>5</td><td></td><td></td></tr><tr><td>2,4 Dichlorophenol</td><td>1</td><td>5</td><td></td><td></td></tr><tr><td>2,4 Dimethylphenol</td><td>1</td><td>2</td><td></td><td></td></tr><tr><td>2,4 Dinitrophenol</td><td>5</td><td>5</td><td></td><td></td></tr><tr><td>2,4 Dinitrotoluene</td><td>10</td><td>5</td><td></td><td></td></tr><tr><td>2,4,6 Trichlorophenol</td><td>10</td><td>10</td><td></td><td></td></tr><tr><td>2,6 Dinitrotoluene</td><td></td><td>5</td><td></td><td></td></tr><tr><td>2- Nitrophenol</td><td></td><td>10</td><td></td><td></td></tr><tr><td>2-Chloroethyl vinyl ether</td><td>1</td><td>1</td><td></td><td></td></tr><tr><td>2-Chloronaphthalene</td><td></td><td>10</td><td></td><td></td></tr><tr><td>3,3' Dichlorobenzidine</td><td></td><td>5</td><td></td><td></td></tr><tr><td>3,4 Benzofluoranthene</td><td></td><td>10</td><td>10</td><td></td></tr><tr><td>4 Chloro-3-methylphenol</td><td>5</td><td>1</td><td></td><td></td></tr><tr><td>4,6 Dinitro-2-methylphenol</td><td>10</td><td>5</td><td></td><td></td></tr><tr><td>4- Nitrophenol</td><td>5</td><td>10</td><td></td><td></td></tr><tr><td>4-Bromophenyl phenyl ether</td><td>10</td><td>5</td><td></td><td></td></tr><tr><td>4-Chlorophenyl phenyl ether</td><td></td><td>5</td><td></td><td></td></tr><tr><td>Acenaphthene</td><td>1</td><td>1</td><td>0.5</td><td></td></tr><tr><td>Acenaphthylene</td><td></td><td>10</td><td>0.2</td><td></td></tr><tr><td>Anthracene</td><td></td><td>10</td><td>2</td><td></td></tr><tr><td>Benzidine</td><td></td><td>5</td><td></td><td></td></tr><tr><td>Benzo(a) pyrene(3,4 Benzopyrene)</td><td></td><td>10</td><td>2</td><td></td></tr><tr><td>Benzo(g,h,i)perylene</td><td></td><td>5</td><td>0.1</td><td></td></tr><tr><td>Benzo(k)fluoranthene</td><td></td><td>10</td><td>2</td><td></td></tr><tr><td>bis 2-(1-Chloroethoxyl) methane</td><td></td><td>5</td><td></td><td></td></tr><tr><td>bis(2-chloroethyl) ether</td><td>10</td><td>1</td><td></td><td></td></tr><tr><td>bis(2-Chloroisopropyl) ether</td><td>10</td><td>2</td><td></td><td></td></tr><tr><td>bis(2-Ethylhexyl) phthalate</td><td>10</td><td>5</td><td></td><td></td></tr><tr><td>Butyl benzyl phthalate</td><td>10</td><td>10</td><td></td><td></td></tr><tr><td>Chrysene</td><td></td><td>10</td><td>5</td><td></td></tr><tr><td>di-n-Butyl phthalate</td><td></td><td>10</td><td></td><td></td></tr><tr><td>di-n-Octyl phthalate</td><td></td><td>10</td><td></td><td></td></tr><tr><td>Dibenzo(a,h)-anthracene</td><td></td><td>10</td><td>0.1</td><td></td></tr><tr><td>Diethyl phthalate</td><td>10</td><td>2</td><td></td><td></td></tr><tr><td>Dimethyl phthalate</td><td>10</td><td>2</td><td></td><td></td></tr><tr><td>Fluoranthene</td><td>10</td><td>1</td><td>0.05</td><td></td></tr><tr><td>Fluorene</td><td></td><td>10</td><td>0.1</td><td></td></tr><tr><td>Hexachloro-cyclopentadiene</td><td>5</td><td>5</td><td></td><td></td></tr><tr><td>Hexachlorobenzene</td><td>5</td><td>1</td><td></td><td></td></tr><tr><td>Hexachlorobutadiene</td><td>5</td><td>1</td><td></td><td></td></tr><tr><td>Hexachloroethane</td><td>5</td><td>1</td><td></td><td></td></tr><tr><td>Indeno(1,2,3,cd)-pyrene</td><td></td><td>10</td><td>0.05</td><td></td></tr><tr><td>Isophorone</td><td>10</td><td>1</td><td></td><td></td></tr><tr><td>N-Nitroso diphenyl amine</td><td>10</td><td>1</td><td></td><td></td></tr><tr><td>N-Nitroso-dimethyl amine</td><td>10</td><td>5</td><td></td><td></td></tr><tr><td>N-Nitroso -di n-propyl amine</td><td>10</td><td>5</td><td></td><td></td></tr><tr><td>Naphthalene</td><td>10</td><td>1</td><td>0.2</td><td></td></tr><tr><td>Nitrobenzene</td><td>10</td><td>1</td><td></td><td></td></tr><tr><td>Pentachlorophenol</td><td>1</td><td>5</td><td></td><td></td></tr><tr><td>Phenanthrene</td><td></td><td>5</td><td>0.05</td><td></td></tr><tr><td>Phenol **</td><td>1</td><td>1</td><td></td><td>50</td></tr><tr><td>Pyrene</td><td></td><td>10</td><td>0.05</td><td></td></tr></table>",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/471"
+    },
+    "tb-8769a5f2c742fb5d92067118ee9681c6-0011": {
+      "id": "tb-8769a5f2c742fb5d92067118ee9681c6-0011",
+      "blockid": "7f965c7fa6e2ca87e0748e74650a78b7",
+      "heading": "SWRCB Minimum Levels in ppb (µg/L)",
+      "parent_headings": [
+        "POLICY FOR IMPLEMENTATION OF TOXICS STANDARDS FOR INLAND SURFACE WATERS, ENCLOSED BAYS, AND ESTUARIES OF CALIFORNIA"
+      ],
+      "dimension": [
+        16,
+        10
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Table 2c – INORGANICS*</td><td>FAA</td><td>GFAA</td><td>ICP</td><td>ICPMS</td><td>SPGFAA</td><td>HYDRIDE</td><td>CVAA</td><td>COLOR</td><td>DCP</td></tr><tr><td>Antimony</td><td>10</td><td>5</td><td>50</td><td>0.5</td><td>5</td><td>0.5</td><td></td><td></td><td>1000</td></tr><tr><td>Arsenic</td><td></td><td>2</td><td>10</td><td>2</td><td>2</td><td>1</td><td></td><td>20</td><td>1000</td></tr><tr><td>Beryllium</td><td>20</td><td>0.5</td><td>2</td><td>0.5</td><td>1</td><td></td><td></td><td></td><td>1000</td></tr><tr><td>Cadmium</td><td>10</td><td>0.5</td><td>10</td><td>0.25</td><td>0.5</td><td></td><td></td><td></td><td>1000</td></tr><tr><td>Chromium (total)</td><td>50</td><td>2</td><td>10</td><td>0.5</td><td>1</td><td></td><td></td><td></td><td>1000</td></tr><tr><td>Chromium VI</td><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td><td>10</td><td></td></tr><tr><td>Copper</td><td>25</td><td>5</td><td>10</td><td>0.5</td><td>2</td><td></td><td></td><td></td><td>1000</td></tr><tr><td>Cyanide</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>5</td><td></td></tr><tr><td>Lead</td><td>20</td><td>5</td><td>5</td><td>0.5</td><td>2</td><td></td><td></td><td></td><td>10,000</td></tr><tr><td>Mercury</td><td></td><td></td><td></td><td>0.5</td><td></td><td></td><td>0.2</td><td></td><td></td></tr><tr><td>Nickel</td><td>50</td><td>5</td><td>20</td><td>1</td><td>5</td><td></td><td></td><td></td><td>1000</td></tr><tr><td>Selenium</td><td></td><td>5</td><td>10</td><td>2</td><td>5</td><td>1</td><td></td><td></td><td>1000</td></tr><tr><td>Silver</td><td>10</td><td>1</td><td>10</td><td>0.25</td><td>2</td><td></td><td></td><td></td><td>1000</td></tr><tr><td>Thallium</td><td>10</td><td>2</td><td>10</td><td>1</td><td>5</td><td></td><td></td><td></td><td>1000</td></tr><tr><td>Zinc</td><td>20</td><td></td><td>20</td><td>1</td><td>10</td><td></td><td></td><td></td><td>1000</td></tr></table>",
+      "caption": "",
+      "footnotes": [
+        "\\* The normal method-specific factor for these substances is 1, therefore, the lowest standard concentration in the calibration curve is equal to the above ML value for each substance."
+      ],
+      "self_ref": "content_list.json#/477"
+    },
+    "tb-8769a5f2c742fb5d92067118ee9681c6-0012": {
+      "id": "tb-8769a5f2c742fb5d92067118ee9681c6-0012",
+      "blockid": "7f965c7fa6e2ca87e0748e74650a78b7",
+      "heading": "SWRCB Minimum Levels in ppb (µg/L)",
+      "parent_headings": [
+        "POLICY FOR IMPLEMENTATION OF TOXICS STANDARDS FOR INLAND SURFACE WATERS, ENCLOSED BAYS, AND ESTUARIES OF CALIFORNIA"
+      ],
+      "dimension": [
+        26,
+        2
+      ],
+      "format": "html",
+      "content": "<table><tr><td>Table 2d - PESTICIDES – PCBs*</td><td>GC</td></tr><tr><td>4,4’-DDD</td><td>0.05</td></tr><tr><td>4,4’-DDE</td><td>0.05</td></tr><tr><td>4,4’-DDT</td><td>0.01</td></tr><tr><td>a-Endosulfan</td><td>0.02</td></tr><tr><td>a-Hexachloro-cyclohexane</td><td>0.01</td></tr><tr><td>Aldrin</td><td>0.005</td></tr><tr><td>b-Endosulfan</td><td>0.01</td></tr><tr><td>b-Hexachloro-cyclohexane</td><td>0.005</td></tr><tr><td>Chlordane</td><td>0.1</td></tr><tr><td>d-Hexachloro-cyclohexane</td><td>0.005</td></tr><tr><td>Dieldrin</td><td>0.01</td></tr><tr><td>Endosulfan Sulfate</td><td>0.05</td></tr><tr><td>Endrin</td><td>0.01</td></tr><tr><td>Endrin Aldehyde</td><td>0.01</td></tr><tr><td>Heptachlor</td><td>0.01</td></tr><tr><td>Heptachlor Epoxide</td><td>0.01</td></tr><tr><td>Lindane(g-Hexachloro-cyclohexane)</td><td>0.02</td></tr><tr><td>PCB 1016</td><td>0.5</td></tr><tr><td>PCB 1221</td><td>0.5</td></tr><tr><td>PCB 1232</td><td>0.5</td></tr><tr><td>PCB 1242</td><td>0.5</td></tr><tr><td>PCB 1248</td><td>0.5</td></tr><tr><td>PCB 1254</td><td>0.5</td></tr><tr><td>PCB 1260</td><td>0.5</td></tr><tr><td>Toxaphene</td><td>0.5</td></tr></table>",
+      "caption": "",
+      "footnotes": [
+        "木 The normal method-specific factor for these substances is 100, therefore, the lowest standard concentration in the calibration curve is equal to the above ML value for each substance multiplied by 100."
+      ],
+      "self_ref": "content_list.json#/479"
+    }
+  }
+}

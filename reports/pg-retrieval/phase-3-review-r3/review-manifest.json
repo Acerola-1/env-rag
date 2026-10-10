@@ -1,0 +1,76 @@
+{
+  "review_date": "2026-10-06",
+  "task": "5.1",
+  "round": 3,
+  "accepted": false,
+  "fix_groups": [
+    "E1",
+    "E2",
+    "E3"
+  ],
+  "gate2_remains_accepted": true,
+  "gate3_accepted": false,
+  "scope_reviewed": [
+    "src/env_rag_final/compat_runtime.py",
+    "tests/test_phase3_compat_review_r2.py",
+    "tests/test_phase3_compat_review_r3.py",
+    "reports/pg-retrieval/phase-3-r3/compatibility-runtime.md",
+    "reports/pg-retrieval/phase-3-r3/compat-runtime-probes-latest.json",
+    "reports/pg-retrieval/phase-3-r3/compat-manifest.json"
+  ],
+  "submitted_sha_matches": {
+    "src/env_rag_final/compat_runtime.py": true,
+    "reports/pg-retrieval/phase-3-r3/compatibility-runtime.md": true,
+    "reports/pg-retrieval/phase-3-r3/compat-runtime-probes-latest.json": true,
+    "reports/pg-retrieval/gate-2/review-r5/gold-approved.json": true,
+    "tests/test_phase3_compat_review_r3.py": true
+  },
+  "tests": {
+    "baseline_passed": 208,
+    "new_passed": 2,
+    "new_failed": 6,
+    "full_passed": 210,
+    "full_failed": 6
+  },
+  "real_model_service_calls": 0,
+  "real_embedding_service_calls": 0,
+  "production_unchanged": true,
+  "env_file_unchanged": true,
+  "owned_scratch_cleanup": {
+    "dropped": true,
+    "ownership_verified": true
+  },
+  "submitted_real_destructive_cleanup_executed": false,
+  "coverage": {
+    "total_files": 533,
+    "reviewed_entries": 6,
+    "skipped_entries": 527,
+    "coverage_rate": 0.01125703564727955,
+    "note": "Scoped checkpoint only; other workspace files individually explained in coverage.json"
+  },
+  "checks": {
+    "ruff": true,
+    "format": true,
+    "openspec_strict": true,
+    "diff": true,
+    "credential_scan_files": 15,
+    "credential_leak_files": []
+  },
+  "artifact_sha256": {
+    "reports/pg-retrieval/phase-3-review-r3/ocr-rules.json": "cc8dae1e7fa17eb1a774a02006d090d37eb4ccfd0219874b9bc3d00d6cffc098",
+    "reports/pg-retrieval/phase-3-review-r3/ruff-format.txt": "8d6404e6e9a4ded6d6582abd979392f3a840b5e7abe8b95c4c5109590d84da89",
+    "reports/pg-retrieval/phase-3-review-r3/independent-runtime.json": "ce46fbb24aa17377adae8b0a79c1ea50c1b339228a628704115351edd09adf3f",
+    "reports/pg-retrieval/phase-3-review-r3/ocr-preview.json": "968ea4f55145bbc72fea63e2abb3cc6fbe73b19d6008a3804ed174fe020f6831",
+    "reports/pg-retrieval/phase-3-review-r3/ruff-check.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "reports/pg-retrieval/phase-3-review-r3/all-tests.txt": "3cf668007b9ff446a13669c1649308d18523c50821193f11148c11f704eae55d",
+    "reports/pg-retrieval/phase-3-review-r3/independent-runtime-output.txt": "a9e25db8c42d977a01137190ae9785580249a7e874906bdc18cdb7e5ba42cc44",
+    "reports/pg-retrieval/phase-3-review-r3/acceptance-tests.txt": "de9c51773070cf0568fc274b963543d3a555453d973ac0976e154b234bab0869",
+    "reports/pg-retrieval/phase-3-review-r3/openspec-check.txt": "4693ceda9e27e58fa59b2c9dbba2ff1cf729bd8067915263151894179518ba7c",
+    "reports/pg-retrieval/phase-3-review-r3/independent-runtime.py": "645fb04d97fdef4f73b9bfd096acf9607c5deef16314008dd652c60dec664a17",
+    "reports/pg-retrieval/phase-3-review-r3/coverage.json": "c1a1bb31de0df208c6876155f4e8917b0e91bbe25a8f7b0bffa5783456c02720",
+    "reports/pg-retrieval/phase-3-review-r3/review.md": "308c13c0b8cffe8a88e3a8f49656715c30687d4f02e2cc66dc0f2a8c2a4d803c",
+    "reports/pg-retrieval/phase-3-review-r3/diff-check.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_phase3_compat_review_r4.py": "761d94d96d72b662699a2bc190fc07066729203c34b2f4f34899b02bee32b89c",
+    "openspec/changes/add-pg-scoped-retrieval/handoff-phase-3-fixes-r3.md": "5bdfc4ce72a33e798f6b91e0a27aeb11d8ae4b51605cd575e8b45ccc20d81bc8"
+  }
+}

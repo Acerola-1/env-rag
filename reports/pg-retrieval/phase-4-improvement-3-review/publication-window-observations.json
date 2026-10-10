@@ -1,0 +1,308 @@
+[
+  {
+    "case": "stable",
+    "evidence_class": "offline owning entry / constructed catalog",
+    "before": {
+      "doc-std": {
+        "doc_name": "synth-GB18466-2005.pdf",
+        "self_code": "GB18466",
+        "self_code_version": "2005",
+        "title": "医疗机构水污染物排放标准",
+        "doc_type": "standard",
+        "row_missing": false
+      },
+      "doc-m1": {
+        "doc_name": "synth-含2026修改单整合版.pdf",
+        "self_code": null,
+        "self_code_version": null,
+        "title": "GB 18466—2005（含2026年修改单）",
+        "doc_type": "standard",
+        "row_missing": false
+      },
+      "doc-noise": {
+        "doc_name": "synth-unrelated.pdf",
+        "self_code": null,
+        "self_code_version": null,
+        "title": "无关目录文件",
+        "doc_type": "standard",
+        "row_missing": false
+      }
+    },
+    "after": {
+      "doc-std": {
+        "doc_name": "synth-GB18466-2005.pdf",
+        "self_code": "GB18466",
+        "self_code_version": "2005",
+        "title": "医疗机构水污染物排放标准",
+        "doc_type": "standard",
+        "row_missing": false
+      },
+      "doc-m1": {
+        "doc_name": "synth-含2026修改单整合版.pdf",
+        "self_code": null,
+        "self_code_version": null,
+        "title": "GB 18466—2005（含2026年修改单）",
+        "doc_type": "standard",
+        "row_missing": false
+      },
+      "doc-noise": {
+        "doc_name": "synth-unrelated.pdf",
+        "self_code": null,
+        "self_code_version": null,
+        "title": "无关目录文件",
+        "doc_type": "standard",
+        "row_missing": false
+      }
+    },
+    "metadata_count_before": 3,
+    "metadata_count_after": 3,
+    "injection_executed": false,
+    "coverage": "complete",
+    "publication_guard": "stable",
+    "members_total": 2,
+    "items": [
+      {
+        "kind": "document",
+        "doc_id": "doc-std",
+        "doc_name": "synth-GB18466-2005.pdf",
+        "title": "医疗机构水污染物排放标准",
+        "self_code": "GB18466",
+        "self_code_version": "2005",
+        "attribution": false,
+        "citation": {
+          "kind": "catalog_row",
+          "workspace": "default",
+          "snapshot_id": "snap-1",
+          "doc_id": "doc-std",
+          "doc_name": "synth-GB18466-2005.pdf"
+        },
+        "citation_verified": true,
+        "citation_reverified": true
+      },
+      {
+        "kind": "document",
+        "doc_id": "doc-m1",
+        "doc_name": "synth-含2026修改单整合版.pdf",
+        "title": "GB 18466—2005（含2026年修改单）",
+        "self_code": null,
+        "self_code_version": null,
+        "attribution": true,
+        "citation": {
+          "kind": "catalog_row",
+          "workspace": "default",
+          "snapshot_id": "snap-1",
+          "doc_id": "doc-m1",
+          "doc_name": "synth-含2026修改单整合版.pdf"
+        },
+        "citation_verified": true,
+        "citation_reverified": true
+      }
+    ],
+    "model_calls_used": 0,
+    "expected": "complete"
+  },
+  {
+    "case": "base-fields",
+    "evidence_class": "offline owning entry / constructed catalog",
+    "before": {
+      "doc-std": {
+        "doc_name": "synth-GB18466-2005.pdf",
+        "self_code": "GB18466",
+        "self_code_version": "2005",
+        "title": "医疗机构水污染物排放标准",
+        "doc_type": "standard",
+        "row_missing": false
+      },
+      "doc-m1": {
+        "doc_name": "synth-含2026修改单整合版.pdf",
+        "self_code": null,
+        "self_code_version": null,
+        "title": "GB 18466—2005（含2026年修改单）",
+        "doc_type": "standard",
+        "row_missing": false
+      },
+      "doc-noise": {
+        "doc_name": "synth-unrelated.pdf",
+        "self_code": null,
+        "self_code_version": null,
+        "title": "无关目录文件",
+        "doc_type": "standard",
+        "row_missing": false
+      }
+    },
+    "after": {
+      "doc-std": {
+        "doc_name": "synth-GB18466-2005.pdf",
+        "self_code": "GB18466",
+        "self_code_version": "2006",
+        "title": "当前登记已变为另一版本",
+        "doc_type": "standard",
+        "row_missing": false
+      },
+      "doc-m1": {
+        "doc_name": "synth-含2026修改单整合版.pdf",
+        "self_code": null,
+        "self_code_version": null,
+        "title": "GB 18466—2005（含2026年修改单）",
+        "doc_type": "standard",
+        "row_missing": false
+      },
+      "doc-noise": {
+        "doc_name": "synth-unrelated.pdf",
+        "self_code": null,
+        "self_code_version": null,
+        "title": "无关目录文件",
+        "doc_type": "standard",
+        "row_missing": false
+      }
+    },
+    "metadata_count_before": 3,
+    "metadata_count_after": 3,
+    "injection_executed": true,
+    "coverage": "complete",
+    "publication_guard": "stable",
+    "members_total": 2,
+    "items": [
+      {
+        "kind": "document",
+        "doc_id": "doc-std",
+        "doc_name": "synth-GB18466-2005.pdf",
+        "title": "医疗机构水污染物排放标准",
+        "self_code": "GB18466",
+        "self_code_version": "2005",
+        "attribution": false,
+        "citation": {
+          "kind": "catalog_row",
+          "workspace": "default",
+          "snapshot_id": "snap-1",
+          "doc_id": "doc-std",
+          "doc_name": "synth-GB18466-2005.pdf"
+        },
+        "citation_verified": true,
+        "citation_reverified": true
+      },
+      {
+        "kind": "document",
+        "doc_id": "doc-m1",
+        "doc_name": "synth-含2026修改单整合版.pdf",
+        "title": "GB 18466—2005（含2026年修改单）",
+        "self_code": null,
+        "self_code_version": null,
+        "attribution": true,
+        "citation": {
+          "kind": "catalog_row",
+          "workspace": "default",
+          "snapshot_id": "snap-1",
+          "doc_id": "doc-m1",
+          "doc_name": "synth-含2026修改单整合版.pdf"
+        },
+        "citation_verified": true,
+        "citation_reverified": true
+      }
+    ],
+    "model_calls_used": 0,
+    "expected": "non-complete"
+  },
+  {
+    "case": "new-related-same-count",
+    "evidence_class": "offline owning entry / constructed catalog",
+    "before": {
+      "doc-std": {
+        "doc_name": "synth-GB18466-2005.pdf",
+        "self_code": "GB18466",
+        "self_code_version": "2005",
+        "title": "医疗机构水污染物排放标准",
+        "doc_type": "standard",
+        "row_missing": false
+      },
+      "doc-m1": {
+        "doc_name": "synth-含2026修改单整合版.pdf",
+        "self_code": null,
+        "self_code_version": null,
+        "title": "GB 18466—2005（含2026年修改单）",
+        "doc_type": "standard",
+        "row_missing": false
+      },
+      "doc-noise": {
+        "doc_name": "synth-unrelated.pdf",
+        "self_code": null,
+        "self_code_version": null,
+        "title": "无关目录文件",
+        "doc_type": "standard",
+        "row_missing": false
+      }
+    },
+    "after": {
+      "doc-std": {
+        "doc_name": "synth-GB18466-2005.pdf",
+        "self_code": "GB18466",
+        "self_code_version": "2005",
+        "title": "医疗机构水污染物排放标准",
+        "doc_type": "standard",
+        "row_missing": false
+      },
+      "doc-m1": {
+        "doc_name": "synth-含2026修改单整合版.pdf",
+        "self_code": null,
+        "self_code_version": null,
+        "title": "GB 18466—2005（含2026年修改单）",
+        "doc_type": "standard",
+        "row_missing": false
+      },
+      "doc-noise": {
+        "doc_name": "synth-unrelated.pdf",
+        "self_code": null,
+        "self_code_version": null,
+        "title": "GB 18466—2005 新增修改单",
+        "doc_type": "standard",
+        "row_missing": false
+      }
+    },
+    "metadata_count_before": 3,
+    "metadata_count_after": 3,
+    "injection_executed": true,
+    "coverage": "complete",
+    "publication_guard": "stable",
+    "members_total": 2,
+    "items": [
+      {
+        "kind": "document",
+        "doc_id": "doc-std",
+        "doc_name": "synth-GB18466-2005.pdf",
+        "title": "医疗机构水污染物排放标准",
+        "self_code": "GB18466",
+        "self_code_version": "2005",
+        "attribution": false,
+        "citation": {
+          "kind": "catalog_row",
+          "workspace": "default",
+          "snapshot_id": "snap-1",
+          "doc_id": "doc-std",
+          "doc_name": "synth-GB18466-2005.pdf"
+        },
+        "citation_verified": true,
+        "citation_reverified": true
+      },
+      {
+        "kind": "document",
+        "doc_id": "doc-m1",
+        "doc_name": "synth-含2026修改单整合版.pdf",
+        "title": "GB 18466—2005（含2026年修改单）",
+        "self_code": null,
+        "self_code_version": null,
+        "attribution": true,
+        "citation": {
+          "kind": "catalog_row",
+          "workspace": "default",
+          "snapshot_id": "snap-1",
+          "doc_id": "doc-m1",
+          "doc_name": "synth-含2026修改单整合版.pdf"
+        },
+        "citation_verified": true,
+        "citation_reverified": true
+      }
+    ],
+    "model_calls_used": 0,
+    "expected": "non-complete"
+  }
+]

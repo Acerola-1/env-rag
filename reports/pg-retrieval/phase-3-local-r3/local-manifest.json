@@ -1,0 +1,79 @@
+{
+ "task": "5.2 real local candidate adapter (rev 3, M1-M3 remediation, read-only)",
+ "generated_at": "2026-10-07T00:54:52+0800",
+ "command_run": "uv run env-rag-final lightrag-local --query-id fact-001,fact-002,syn-001,neg-001 --report-dir reports/pg-retrieval/phase-3-local-r3",
+ "files_sha256": {
+  "src/env_rag_final/local_adapter.py": "28f6a7e00249e843a4dc404e642ac4110531ebf5e5d9d923ccf444601e1b2fea",
+  "src/env_rag_final/cli.py": "cb4ddcb025d3e17e484099ddcbaab4fdcaed2e3aa7bc3054885752d7da11c023",
+  "reports/pg-retrieval/phase-3-local-r3/local-runtime-latest.json": "7234144d9232619243445085f904fd7d9dca9cc55b00e81a8e3ee047bbf244e6",
+  "reports/pg-retrieval/gate-2/review-r5/gold-approved.json": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "tests/test_local_adapter_review_r2.py": "93ca5ea4066723c6dbad925e4eaaafc2fa1f06ec0fcac1668df7091c470581e2"
+ },
+ "release": {
+  "lightrag_hku": "1.5.7",
+  "wheel_record_mismatches": 0
+ },
+ "fixes": {
+  "M1": "field-by-field before/after identity drift incl. env byte SHA; single terminal writer after post-guard; failure report carries identity_after/error, drift, original error, completed results; unknown query_id/gold checks before any backend read",
+  "M2": "fresh ledger per fetch; real Qdrant/Neo4j calls recorded at the boundary (incl. swallowed failures); correct degraded labels (truncation/weight vs vector-similarity); duplicated VECTOR discovery removed (embedding 13→9)",
+  "M3": "binding owns client from creation (any failure closes); production cleanup close-only (no release finalize/flush); non-empty pending queue refuses flush but still closes"
+ },
+ "service_call_totals": {
+  "by_service": {
+   "llm": {
+    "attempt": 4,
+    "success": 4,
+    "failure": 0
+   },
+   "embedding": {
+    "attempt": 9,
+    "success": 9,
+    "failure": 0
+   },
+   "qdrant": {
+    "attempt": 9,
+    "success": 9,
+    "failure": 0
+   },
+   "neo4j": {
+    "attempt": 20,
+    "success": 20,
+    "failure": 0
+   },
+   "pg": {
+    "attempt": 9,
+    "success": 9,
+    "failure": 0
+   }
+  },
+  "groups": {
+   "neo4j": {
+    "attempt": 4,
+    "success": 4,
+    "failure": 0
+   },
+   "pg": {
+    "attempt": 8,
+    "success": 8,
+    "failure": 0
+   }
+  }
+ },
+ "identity_guards": {
+  "identity_before_matches_frozen": true,
+  "identity_after_matches_frozen": true,
+  "identity_drift": [],
+  "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e"
+ },
+ "verification": {
+  "candidates_total": 40,
+  "candidates_verified": 40,
+  "answer_llm_calls": 0,
+  "llm_cache_rows_after": 16514
+ },
+ "tests": {
+  "total": 246,
+  "r2_review": "8/8 pass (7 former failures fixed)",
+  "r1_review": "10/10 pass"
+ }
+}

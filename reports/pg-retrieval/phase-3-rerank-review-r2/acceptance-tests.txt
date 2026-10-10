@@ -1,0 +1,216 @@
+..............FFFFFF                                                     [100%]
+=================================== FAILURES ===================================
+__________ test_source_verified_metadata_is_canonical[content_sha256] __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11779b8f0>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-456/test_source_verified_metadata_0')
+field = 'content_sha256'
+
+    @pytest.mark.parametrize("field", ["content_sha256", "doc_id"])
+    def test_source_verified_metadata_is_canonical(monkeypatch, tmp_path, field):
+        _, fused, body, path = first._setup(monkeypatch, tmp_path)
+        fused["usable"][0][field] = "incorrect-hash" if field == "content_sha256" else None
+        path.write_text(json.dumps(body))
+    
+        async def transport(query, documents):
+            return base._resp(base._ok_payload(1))
+    
+        try:
+            report = first._invoke(tmp_path, path, transport)
+        except Exception:
+            return  # explicit refusal is allowed instead of canonical source repair
+        result = report["results"][0]
+        if result["status"] != "ok":
+            return
+        ordered = result["ordered"][0]
+        assert ordered["doc_id"] == base.DOC_A
+>       assert ordered["content_sha256"] == hashlib.sha256(b"full body").hexdigest()
+E       AssertionError: assert 'incorrect-hash' == '34eff3154477...b3ee9a13a8a8a'
+E         
+E         - 34eff3154477afb1a3ee6925c09340b2df092050cbe9ed82ffcb3ee9a13a8a8a
+E         + incorrect-hash
+
+tests/test_rerank_review_r2.py:31: AssertionError
+______________ test_source_verified_metadata_is_canonical[doc_id] ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11779a000>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-456/test_source_verified_metadata_1')
+field = 'doc_id'
+
+    @pytest.mark.parametrize("field", ["content_sha256", "doc_id"])
+    def test_source_verified_metadata_is_canonical(monkeypatch, tmp_path, field):
+        _, fused, body, path = first._setup(monkeypatch, tmp_path)
+        fused["usable"][0][field] = "incorrect-hash" if field == "content_sha256" else None
+        path.write_text(json.dumps(body))
+    
+        async def transport(query, documents):
+            return base._resp(base._ok_payload(1))
+    
+        try:
+            report = first._invoke(tmp_path, path, transport)
+        except Exception:
+            return  # explicit refusal is allowed instead of canonical source repair
+        result = report["results"][0]
+        if result["status"] != "ok":
+            return
+        ordered = result["ordered"][0]
+>       assert ordered["doc_id"] == base.DOC_A
+E       AssertionError: assert None == 'doc-aaa'
+E        +  where 'doc-aaa' = base.DOC_A
+
+tests/test_rerank_review_r2.py:30: AssertionError
+____________ test_replay_question_mismatch_rejected_before_service _____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11779bda0>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-456/test_replay_question_mismatch_0')
+
+    def test_replay_question_mismatch_rejected_before_service(monkeypatch, tmp_path):
+        _, fused, body, path = first._setup(monkeypatch, tmp_path)
+        fused["query"] = "different question with different source constraints"
+        path.write_text(json.dumps(body))
+        calls = []
+    
+        async def transport(query, documents):
+            calls.append(query)
+            return base._resp(base._ok_payload(1))
+    
+        try:
+            first._invoke(tmp_path, path, transport)
+        except Exception:
+            pass
+>       assert calls == []
+E       AssertionError: assert ['问题'] == []
+E         
+E         Left contains one more item: '问题'
+E         Use -v to get more diff
+
+tests/test_rerank_review_r2.py:48: AssertionError
+_______________ test_block_link_not_fabricated_as_table_fragment _______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1177c6240>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-456/test_block_link_not_fabricated0')
+
+    def test_block_link_not_fabricated_as_table_fragment(monkeypatch, tmp_path):
+        _, _, _, path = first._setup(monkeypatch, tmp_path)
+    
+        class Conn:
+            async def fetch(self, sql, *args):
+                if "lightrag_doc_chunks" in sql:
+                    return [
+                        {
+                            "id": base.C1,
+                            "workspace": "default",
+                            "full_doc_id": base.DOC_A,
+                            "content": "full body",
+                            "file_path": "a.pdf",
+                        }
+                    ]
+                if "unit_chunk_links" in sql:
+                    rows = [
+                        {
+                            "unit_id": "block-original",
+                            "doc_id": base.DOC_A,
+                            "chunk_id": base.C1,
+                            "unit_kind": "block",
+                        },
+                        {
+                            "unit_id": "table-original",
+                            "doc_id": base.DOC_A,
+                            "chunk_id": base.C1,
+                            "unit_kind": "table",
+                        },
+                    ]
+                    if "unit_kind" in sql and "'table'" in sql:
+                        return [r for r in rows if r["unit_kind"] == "table"]
+                    return rows
+                return []
+    
+            async def close(self):
+                pass
+    
+        async def connect(**kwargs):
+            return Conn()
+    
+        async def call(values, query, documents, transport=None):
+            return {"status": "success", "status_code": 200, "payload": base._ok_payload(1)}
+    
+        monkeypatch.setattr(rr.asyncpg, "connect", connect)
+        monkeypatch.setattr(rr, "_call_rerank", call)
+        result = first._invoke(tmp_path, path, None)["results"][0]
+        table_ids = {
+            p.get("table_id")
+            for p in result["ordered"][0]["paths"]
+            if (p.get("citation") or {}).get("kind") == "table_unit"
+        }
+>       assert "block-original" not in table_ids
+E       AssertionError: assert 'block-original' not in {'block-original', 'table-original'}
+
+tests/test_rerank_review_r2.py:103: AssertionError
+_____________ test_secret_is_redacted_before_error_body_truncation _____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1177c6cc0>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-456/test_secret_is_redacted_before0')
+
+    def test_secret_is_redacted_before_error_body_truncation(monkeypatch, tmp_path):
+        values, _, _, path = first._setup(monkeypatch, tmp_path)
+        key = "fixture-sensitive-prefix-" + "abcdef123456" * 5
+        values["RERANK_BINDING_API_KEY"] = key
+    
+        async def transport(query, documents):
+            return base._resp({}, status_code=401, text="x" * 290 + key)
+    
+        first._invoke(tmp_path, path, transport)
+        terminal = (tmp_path / "rerank-runtime-latest.json").read_text()
+>       assert key[:10] not in terminal, "truncation must not expose an unredacted secret prefix"
+E       AssertionError: truncation must not expose an unredacted secret prefix
+E       assert 'fixture-se' not in '{\n "task":...5+0800"\n}\n'
+E         
+E         'fixture-se' is contained here:
+E           xxxxxxxxxxfixture-se"
+E              },
+E              "ordered": [
+E               {
+E                "input_index": 0,...
+E         
+E         ...Full output truncated (37 lines hidden), use '-vv' to show
+
+tests/test_rerank_review_r2.py:117: AssertionError
+_____________ test_preflight_terminal_sanitizes_configured_secrets _____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1177c77a0>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-456/test_preflight_terminal_saniti0')
+
+    def test_preflight_terminal_sanitizes_configured_secrets(monkeypatch, tmp_path):
+        values, _, _, path = first._setup(monkeypatch, tmp_path)
+        key = "fixture-sensitive-config-key"
+        values["RERANK_BINDING_API_KEY"] = key
+    
+        def guard(values, workspace):
+            raise rr.AdapterError("upstream config error includes " + key)
+    
+        monkeypatch.setattr(rr, "verify_config_guard", guard)
+    
+        async def transport(query, documents):
+            raise AssertionError("preflight must reject before service")
+    
+        with pytest.raises(rr.AdapterError):
+            first._invoke(tmp_path, path, transport)
+        terminal = (tmp_path / "rerank-runtime-latest.json").read_text()
+>       assert key not in terminal, "all terminal stages, not just HTTP receipts, require sanitizing"
+E       AssertionError: all terminal stages, not just HTTP receipts, require sanitizing
+E       assert 'fixture-sen...e-config-key' not in '{\n "task":...ey"\n }\n}\n'
+E         
+E         'fixture-sensitive-config-key' is contained here:
+E            includes fixture-sensitive-config-key"
+E            }
+E           }
+
+tests/test_rerank_review_r2.py:136: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_rerank_review_r2.py::test_source_verified_metadata_is_canonical[content_sha256]
+FAILED tests/test_rerank_review_r2.py::test_source_verified_metadata_is_canonical[doc_id]
+FAILED tests/test_rerank_review_r2.py::test_replay_question_mismatch_rejected_before_service
+FAILED tests/test_rerank_review_r2.py::test_block_link_not_fabricated_as_table_fragment
+FAILED tests/test_rerank_review_r2.py::test_secret_is_redacted_before_error_body_truncation
+FAILED tests/test_rerank_review_r2.py::test_preflight_terminal_sanitizes_configured_secrets
+6 failed, 14 passed in 1.42s

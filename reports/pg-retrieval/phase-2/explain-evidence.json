@@ -1,0 +1,32 @@
+{
+ "search_id": "b1cd771ee0e2b55f",
+ "plans": [
+  {
+   "tsquery": "'医疗机构' & '水污染物'",
+   "elapsed_ms": 8.1,
+   "lines": [
+    "->  Bitmap Index Scan on idx_schunk_gin  (cost=0.00..30.04 rows=1 width=0) (actual time=0.074..0.074 rows=58 loops=1)",
+    "Index Cond: (tsv @@ '''医疗机构'' & ''水污染物'''::tsquery)",
+    "Execution Time: 4.496 ms"
+   ]
+  },
+  {
+   "tsquery": "'环境空气' & '浓度限值'",
+   "elapsed_ms": 3.9,
+   "lines": [
+    "->  Bitmap Index Scan on idx_schunk_gin  (cost=0.00..30.04 rows=1 width=0) (actual time=0.051..0.051 rows=55 loops=1)",
+    "Index Cond: (tsv @@ '''环境空气'' & ''浓度限值'''::tsquery)",
+    "Execution Time: 2.885 ms"
+   ]
+  },
+  {
+   "tsquery": "'gb3095' <-> '-2012'",
+   "elapsed_ms": 2.1,
+   "lines": [
+    "->  Bitmap Index Scan on idx_schunk_gin  (cost=0.00..30.04 rows=1 width=0) (actual time=0.069..0.070 rows=12 loops=1)",
+    "Index Cond: (tsv @@ '''gb3095'' <-> ''-2012'''::tsquery)",
+    "Execution Time: 1.157 ms"
+   ]
+  }
+ ]
+}

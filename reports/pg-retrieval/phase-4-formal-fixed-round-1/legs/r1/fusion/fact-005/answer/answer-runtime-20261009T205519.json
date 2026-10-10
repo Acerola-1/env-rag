@@ -1,0 +1,256 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-09T20:55:17+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "fact-005"
+ ],
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-formal-fixed-round-1/inputs/fusion/fact-005-rerank.json",
+   "sha256": "5b1d30eb9556a002b727a0bc2fabc7cf19c51c3944d0f51d5f6ab8f958c76c22",
+   "task": "5.4 joint rerank over fused candidates (bounded, recorded)",
+   "started_at": "2026-10-09T20:55:15+0800",
+   "finished_at": "2026-10-09T20:55:17+0800",
+   "query_ids": [
+    "fact-005"
+   ]
+  },
+  "fused_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-formal-fixed-round-1/inputs/fusion/fact-005-fusion.json",
+   "sha256": "e98a670aad8eeb09122420b0c675f0259a55e036e5832f1c1b33a8c276b00497",
+   "task": "Phase 4 round 1 evaluation input (path=fusion)",
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": [
+    "fact-005"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "model_calls_used": 0,
+ "results": [
+  {
+   "query_id": "fact-005",
+   "query": "GB 14554-93 中臭气浓度（无量纲）的厂界二级标准值是多少？",
+   "category": "fact",
+   "workspace": "default",
+   "coverage_status": "complete",
+   "fail_stage": "",
+   "flags": [],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "ok",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 4,
+    "typed_targets": [
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "doc_name": "air-06_生态环境部_恶臭污染物排放标准_GB14554-93.pdf",
+      "self_code": "GB14554",
+      "self_code_version": "93",
+      "discovery": "code_exact",
+      "membership_basis": null,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10"
+      },
+      "citation_verified": true
+     }
+    ],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 5,
+    "selected_docs": [
+     "doc-d6d711b0614234635955480a53f52a10"
+    ],
+    "priority": [
+     {
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "rerank_rank_or_none": 0
+     }
+    ],
+    "target_confirmation": {
+     "request_branches": [
+      {
+       "code": "GB14554",
+       "version": "93"
+      }
+     ],
+     "branch_source": "local parse of the question",
+     "identity_source": "catalog documents rows (self_code/self_code_version) read through the guarded workspace+catalog-snapshot connection",
+     "allowed": [
+      "doc-d6d711b0614234635955480a53f52a10"
+     ],
+     "allowed_basis": {
+      "doc-d6d711b0614234635955480a53f52a10": "canonical GB14554-93 matches requested branch GB14554-93 (catalog documents row via the guarded workspace+snapshot)"
+     },
+     "rejected": [],
+     "unresolved": [],
+     "unconfirmed_branches": [],
+     "rule": "discovery never defines the answer scope; a typed label or a replay-declared name is an audit clue, never canonical identity"
+    },
+    "basis": "confirmed canonical target identity defines the answer scope (improvement-2); discovery/top-k/rerank order never bound or promote membership — unconfirmed documents are excluded with recorded reasons and cannot enter the answer"
+   },
+   "expansions": [
+    {
+     "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+     "kind": "prose",
+     "scope_id": "doc-d6d711b0614234635955480a53f52a10:scope:4",
+     "requested_clauses": null,
+     "missing_requested_clauses": [],
+     "members_total": 4,
+     "members_processed": 4,
+     "coverage_status": "complete",
+     "read_status": "complete",
+     "fail_stage": "",
+     "units_read": 4,
+     "unit_ids": [
+      "ac46d20afd5ec4c7c7d85c171651b6d6",
+      "d9ead1de90c8e67959ccb2b4a67cac4a",
+      "29de4a334ddbe1b059b26afdc6e308ce",
+      "aee7cb361b386096cc7fbe78c15bc61e"
+     ],
+     "chunk_ids": [
+      "doc-d6d711b0614234635955480a53f52a10-chunk-000",
+      "doc-d6d711b0614234635955480a53f52a10-chunk-001"
+     ],
+     "items_count": 7,
+     "warnings": [],
+     "boundary_ambiguities": [],
+     "selected": true
+    }
+   ],
+   "answer": {
+    "mode": "deterministic",
+    "generated_by": "enumerate/expand entries",
+    "items": [
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+      "scope_id": "doc-d6d711b0614234635955480a53f52a10:scope:4",
+      "clause": "4.1.2",
+      "text": "4.1.2 排入 GB 3095 中二类区的执行二级标准。",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 177,
+       "char_end": 207,
+       "quote": "4.1.2 排入 GB 3095 中二类区的执行二级标准。",
+       "unit_rel_start": 166,
+       "unit_rel_end": 196,
+       "unit_id": "d9ead1de90c8e67959ccb2b4a67cac4a",
+       "locator": {
+        "file": "blocks.jsonl",
+        "kind": "block",
+        "blockid": "d9ead1de90c8e67959ccb2b4a67cac4a",
+        "parsed_dir": "air-06_生态环境部_恶臭污染物排放标准_GB14554-93.pdf.parsed"
+       },
+       "chunk_ids": [
+        "doc-d6d711b0614234635955480a53f52a10-chunk-000"
+       ],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+       "snapshot_id": "4919b3938ad93747"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     }
+    ],
+    "selection": {
+     "terms": [
+      "臭气浓度",
+      "无量",
+      "二级标准",
+      "中臭",
+      "臭气",
+      "气浓",
+      "浓度",
+      "量纲",
+      "厂界",
+      "界二",
+      "二级",
+      "级标",
+      "标准",
+      "准值"
+     ],
+     "candidates": 7,
+     "kept": 1,
+     "rule": "rows/items whose raw text contains the most subject terms of the QUESTION (never gold text); ties keep every match"
+    },
+    "unit_blockers": []
+   },
+   "reverification": {
+    "items_checked": 7,
+    "problems": [],
+    "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+   },
+   "model": null,
+   "status": "ok"
+  }
+ ]
+}

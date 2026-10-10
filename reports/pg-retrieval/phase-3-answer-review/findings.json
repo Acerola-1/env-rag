@@ -1,0 +1,47 @@
+[
+  {
+    "id": "A1-model",
+    "path": "src/env_rag_final/answer.py",
+    "start_line": 733,
+    "end_line": 745,
+    "severity": "high",
+    "category": "bug",
+    "content": "Authentic quote plus wrong subject/column/unit or numeric substring is accepted as verified complete. Four owning-entry counterexamples reproduce unsupported claims."
+  },
+  {
+    "id": "A1-fact",
+    "path": "src/env_rag_final/answer.py",
+    "start_line": 1025,
+    "end_line": 1040,
+    "severity": "high",
+    "category": "bug",
+    "content": "Concentration fact with no verified unit is complete; reproduced with a unitless three-column source, and submitted real fact-002 has units=[] and value 0.05. Preserve numeric evidence but require source-supported unit/conditions or unknown/partial."
+  },
+  {
+    "id": "A2",
+    "path": "src/env_rag_final/answer.py",
+    "start_line": 1027,
+    "end_line": 1038,
+    "severity": "high",
+    "category": "bug",
+    "content": "Reading both requested editions does not ensure answer coverage: a model returning only the 2012 claim is still complete for a two-edition comparison."
+  },
+  {
+    "id": "A3-post",
+    "path": "src/env_rag_final/answer.py",
+    "start_line": 1476,
+    "end_line": 1490,
+    "severity": "high",
+    "category": "bug",
+    "content": "Post guard capture failure/drift is written to the report but run_answer returns normally; CLI prints Answer OK. Failure must reject after terminal evidence is saved."
+  },
+  {
+    "id": "A3-acquire",
+    "path": "src/env_rag_final/answer.py",
+    "start_line": 1394,
+    "end_line": 1417,
+    "severity": "medium",
+    "category": "bug",
+    "content": "Connection acquisition precedes the resource/terminal try boundary. PG connection TimeoutError skips post identity collection and leaves no runtime terminal report."
+  }
+]

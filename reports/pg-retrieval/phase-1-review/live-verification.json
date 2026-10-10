@@ -1,0 +1,130 @@
+{
+  "reviewed_at": "2026-10-05T04:36:29.863587+00:00",
+  "runs": [
+    {
+      "run_id": "619ba8b7321746d5",
+      "status": "failed",
+      "schema_version": "phase-1-v1",
+      "source_fingerprint": "{\"value\": \"95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8\", \"algorithm\": \"sha256 composite of per-source sha256 values\", \"components\": {\"pg_doc_status\": \"2d0fe540b3fe0bc219c69adc41141b70be105141b841069bb81ff494455940bc\", \"chunking_params\": {\"counts\": {\"\\\"{\\\\\\\"chunk_token_size\\\\\\\": 1500, \\\\\\\"paragraph_semantic\\\\\\\": {\\\\\\\"chunk_token_size\\\\\\\": 2000, \\\\\\\"chunk_overlap_token_size\\\\\\\": 100}}\\\"\": 221}, \"distinct_values\": 1}, \"pg_doc_full_content\": \"30cf5ddf9b33d3322bb46f39785114daf32a059d120f0cda69c67aea940eab29\", \"parsed_blocks_tables_bytes\": \"fccb274827fc21f0f02f721271d175efd800175a4a8db5140bf7f72f404ab1db\", \"pg_doc_chunks_content_order_refs\": \"7bbdb3849edeb4555aa76e2eab1a4d5a1b838a789c88b8d598ff752b8a9a3506\"}}",
+      "started_at": "2026-10-05 00:55:37.942719+00:00",
+      "finished_at": "2026-10-05 00:55:37.945233+00:00"
+    },
+    {
+      "run_id": "43658b0122c44623",
+      "status": "failed",
+      "schema_version": "phase-1-v1",
+      "source_fingerprint": "{\"value\": \"95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8\", \"algorithm\": \"sha256 composite of per-source sha256 values\", \"components\": {\"pg_doc_status\": \"2d0fe540b3fe0bc219c69adc41141b70be105141b841069bb81ff494455940bc\", \"chunking_params\": {\"counts\": {\"\\\"{\\\\\\\"chunk_token_size\\\\\\\": 1500, \\\\\\\"paragraph_semantic\\\\\\\": {\\\\\\\"chunk_token_size\\\\\\\": 2000, \\\\\\\"chunk_overlap_token_size\\\\\\\": 100}}\\\"\": 221}, \"distinct_values\": 1}, \"pg_doc_full_content\": \"30cf5ddf9b33d3322bb46f39785114daf32a059d120f0cda69c67aea940eab29\", \"parsed_blocks_tables_bytes\": \"fccb274827fc21f0f02f721271d175efd800175a4a8db5140bf7f72f404ab1db\", \"pg_doc_chunks_content_order_refs\": \"7bbdb3849edeb4555aa76e2eab1a4d5a1b838a789c88b8d598ff752b8a9a3506\"}}",
+      "started_at": "2026-10-05 00:56:13.876691+00:00",
+      "finished_at": "2026-10-05 00:56:13.878905+00:00"
+    },
+    {
+      "run_id": "e7723bb5096b4449",
+      "status": "active",
+      "schema_version": "phase-1-v1",
+      "source_fingerprint": "{\"value\": \"95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8\", \"algorithm\": \"sha256 composite of per-source sha256 values\", \"components\": {\"pg_doc_status\": \"2d0fe540b3fe0bc219c69adc41141b70be105141b841069bb81ff494455940bc\", \"chunking_params\": {\"counts\": {\"\\\"{\\\\\\\"chunk_token_size\\\\\\\": 1500, \\\\\\\"paragraph_semantic\\\\\\\": {\\\\\\\"chunk_token_size\\\\\\\": 2000, \\\\\\\"chunk_overlap_token_size\\\\\\\": 100}}\\\"\": 221}, \"distinct_values\": 1}, \"pg_doc_full_content\": \"30cf5ddf9b33d3322bb46f39785114daf32a059d120f0cda69c67aea940eab29\", \"parsed_blocks_tables_bytes\": \"fccb274827fc21f0f02f721271d175efd800175a4a8db5140bf7f72f404ab1db\", \"pg_doc_chunks_content_order_refs\": \"7bbdb3849edeb4555aa76e2eab1a4d5a1b838a789c88b8d598ff752b8a9a3506\"}}",
+      "started_at": "2026-10-05 00:57:02.793558+00:00",
+      "finished_at": "2026-10-05 00:57:06.283579+00:00"
+    }
+  ],
+  "catalog_counts": {
+    "documents": 221,
+    "source_units": 12269,
+    "unit_chunk_links": 16783,
+    "scopes": 1817,
+    "scope_units": 10108
+  },
+  "public_counts": {
+    "lightrag_doc_full": 221,
+    "lightrag_doc_chunks": 5709,
+    "lightrag_doc_status": 279,
+    "lightrag_llm_cache": 16514,
+    "lightrag_entity_chunks": 65527,
+    "lightrag_full_entities": 221,
+    "lightrag_full_relations": 221,
+    "lightrag_relation_chunks": 119575
+  },
+  "gb18466_scope_members": [
+    {
+      "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:4.1",
+      "number": "4.1",
+      "title": "4.1 污水排放要求",
+      "confirm_status": "confirmed",
+      "note": null,
+      "unit_id": "ef6868c7bc693df8da996208421b815d",
+      "heading": "4.1 污水排放要求",
+      "content_length": 4313
+    }
+  ],
+  "gb18466_metadata": [
+    {
+      "doc_name": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf",
+      "title": "部分代替 GB 8978—1996",
+      "self_code": "GB18466",
+      "self_code_version": "2005",
+      "field_provenance": "{\"dates\": \"发布/实施 matched separately; no merging, no year inference\", \"title\": \"skipped generic cover line '中华人民共和国国家标准'; skipped code line 'GB 18466 — 2005'; skipped code line '代替 GB 18466—2001'; first non-generic heading: '部分代替 GB 8978—1996'\", \"doc_type\": \"file name contains 标准 or GB/HJ code\", \"self_code\": \"cover line: 'GB 18466 — 2005'\", \"publish_date\": \"'…发布' pattern in body\", \"content_source\": \"doc_full.content minus explicit {{LRdoc}} storage marker\", \"implement_date\": \"'…实施' pattern in body\", \"referenced_codes\": \"regex scan of full body via lexical_norm.extract_codes\"}"
+    }
+  ],
+  "scope_status": [
+    {
+      "confirm_status": "confirmed",
+      "n": 1598
+    },
+    {
+      "confirm_status": "ambiguous",
+      "n": 219
+    }
+  ],
+  "big_block_scopes": [
+    {
+      "scope_id": "doc-fc62a74b19f18e323438c733643c5f7a:scope:6",
+      "title": "6 Annexes",
+      "confirm_status": "confirmed",
+      "note": null,
+      "unit_id": "2b800b46a29674fba8f04fd7c05991e8",
+      "content_length": 373295,
+      "chunk_refs": 273
+    },
+    {
+      "scope_id": "doc-fc62a74b19f18e323438c733643c5f7a:scope:6",
+      "title": "6 Annexes",
+      "confirm_status": "confirmed",
+      "note": null,
+      "unit_id": "937f224e77d8c5c9d8b528171282fd52",
+      "content_length": 245869,
+      "chunk_refs": 176
+    },
+    {
+      "scope_id": "doc-f805428271483d1b443afea955bd13da:scope:front-matter",
+      "title": "front-matter",
+      "confirm_status": "ambiguous",
+      "note": "封面/公告/前言等未编号区块，边界以 block 顺序为准",
+      "unit_id": "74bdd889005371aee410c0fc4eac31b3",
+      "content_length": 159837,
+      "chunk_refs": 91
+    },
+    {
+      "scope_id": "doc-fc62a74b19f18e323438c733643c5f7a:scope:6",
+      "title": "6 Annexes",
+      "confirm_status": "confirmed",
+      "note": null,
+      "unit_id": "601e8d1433bdeedc0a942d5a33c1f393",
+      "content_length": 105438,
+      "chunk_refs": 77
+    },
+    {
+      "scope_id": "doc-f1f8823266659d6ea1c6e2ba760d77da:scope:2005",
+      "title": "2005 Review",
+      "confirm_status": "confirmed",
+      "note": null,
+      "unit_id": "c0eae0ce0f897b9b4950b9f1756d64dc",
+      "content_length": 80746,
+      "chunk_refs": 59
+    }
+  ],
+  "link_coverage_status": [
+    {
+      "coverage_status": "partial",
+      "n": 16783
+    }
+  ]
+}

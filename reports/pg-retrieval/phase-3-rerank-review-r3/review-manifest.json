@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-07",
+  "task": "5.4",
+  "accepted": false,
+  "remaining": [
+    "D1",
+    "D2"
+  ],
+  "C3_accepted": true,
+  "tests": {
+    "passed": 315,
+    "failed": 2
+  },
+  "prior_independent_tests_passed": 20,
+  "prior_r2_sha_unchanged": true,
+  "submitted_sha_matches": {
+    "src/env_rag_final/rerank.py": true,
+    "src/env_rag_final/cli.py": true,
+    "tests/test_rerank.py": true,
+    "tests/test_rerank_review_r1.py": true,
+    "tests/test_rerank_review_r2.py": true,
+    "reports/pg-retrieval/phase-3-rerank-r3/rerank-derived-metadata.json": true,
+    "reports/pg-retrieval/phase-3-rerank-r3/rerank-inputs.jsonl": true,
+    "reports/pg-retrieval/phase-3-rerank-r3/rerank-report.md": true,
+    "reports/pg-retrieval/gate-2/review-r5/gold-approved.json": true
+  },
+  "derived_order_mapping_correct": true,
+  "derived_association_types_correct": true,
+  "reviewer_model_calls": 0,
+  "reviewer_backend_calls": 0,
+  "reviewer_production_writes": 0,
+  "runtime_state_refreshed_this_turn": false,
+  "implementation_modified_by_reviewer": false,
+  "old_assertions_modified_by_reviewer": false,
+  "checks": {
+    "ruff_check": true,
+    "ruff_format": false,
+    "openspec_strict": true,
+    "diff": true
+  },
+  "next_only": "5.4 D1/D2 fixture owning-path proof, zero real-service calls",
+  "scope": {
+    "total_files": 509,
+    "reviewed_files": 1,
+    "skipped_files": 508,
+    "coverage_rate": 0.0019646365422396855
+  },
+  "actual_config_credential_scan_leaks": [],
+  "artifact_sha256": {
+    "reports/pg-retrieval/phase-3-rerank-review-r3/ocr-rules.json": "2d49374a2d6887f4884b346f9bb8a6b58b21d61f3a15c87c2c7e6b32bfc83fb3",
+    "reports/pg-retrieval/phase-3-rerank-review-r3/ruff-format.txt": "7c52df678e3476e25e9f8df0bad6b398fa28ccb8b966e2a32f2e8e61e85fa409",
+    "reports/pg-retrieval/phase-3-rerank-review-r3/ocr-preview.json": "56fbee307da8eb86bb5599c8eb8c98e943c5527b225ea6378d7c6389da0874e1",
+    "reports/pg-retrieval/phase-3-rerank-review-r3/ruff-check.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "reports/pg-retrieval/phase-3-rerank-review-r3/submitted-tests.txt": "6b4cafa09a83e88e7a7bf5326c7fc12713f89cedf5f625bb1a5f4e676b343598",
+    "reports/pg-retrieval/phase-3-rerank-review-r3/final-tests.txt": "f99f23920a2dc57b85579b8617db7162bc0fbcb828dc5e45575f11b262ef5423",
+    "reports/pg-retrieval/phase-3-rerank-review-r3/acceptance-tests.txt": "cee6c46aded22085aafadfcf914b30ecd0926ad07dfcd8735fc0d6bb82d14a66",
+    "reports/pg-retrieval/phase-3-rerank-review-r3/findings.json": "65f4cdc90052c88ad134743f5c9dde3c8b10a69617239b3752831e7c816877d5",
+    "reports/pg-retrieval/phase-3-rerank-review-r3/openspec-check.txt": "4693ceda9e27e58fa59b2c9dbba2ff1cf729bd8067915263151894179518ba7c",
+    "reports/pg-retrieval/phase-3-rerank-review-r3/coverage.json": "8f25acbfb66b66c9fcf87b208a1852364f986fa730da7553c0b10018237abb16",
+    "reports/pg-retrieval/phase-3-rerank-review-r3/review.md": "9aded683509e9347d69c56eb14ef29e4a02a6c547f23f16e21d17ff6d06ec415",
+    "reports/pg-retrieval/phase-3-rerank-review-r3/diff-check.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/pg-retrieval/phase-3-rerank-review-r3/evidence-audit.json": "0adb9b56fef946b3ae77d339efe0b218dd6c49c64aeb4c3acc2d363f48d58de6",
+    "tests/test_rerank_review_r3.py": "9a337de82a2d4d5822fbc8821ba4d45252cb7d45b57790d65b1301573c1790d8",
+    "openspec/changes/add-pg-scoped-retrieval/handoff-phase-3-5.4-fixes-r3.md": "963f32d7857f5538b860ec7195771d14052369fc483229695a3cad5538adccd6"
+  }
+}

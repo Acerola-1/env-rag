@@ -1,0 +1,46 @@
+{
+ "generation": "phase-4-improvement-3-r2",
+ "manifest_entries_rechecked_excl_self": 1180,
+ "manifest_drift_excl_self": [
+  {
+   "manifest": "reports/pg-retrieval/phase-4-improvement-3/improvement-3-manifest.json",
+   "path": "reports/pg-retrieval/phase-4-improvement-3/replays/file-enum-001-local/answer-runtime-latest.json",
+   "want": "6fbfe741496df7cc47ac347ac6ea8ff3df7fda11331a2f86ef3337b7db963f8f",
+   "got": "ecd43b4c9199b6da01ec16489d3e9061bb1cd86bd0c1babfb897c219ed5329f7"
+  },
+  {
+   "manifest": "reports/pg-retrieval/phase-4-improvement-3/improvement-3-manifest.json",
+   "path": "reports/pg-retrieval/phase-4-improvement-3/replays/file-enum-002-local/answer-runtime-latest.json",
+   "want": "f166c6b0f50b0a9a572140ff3236e2d69c12cbbb5c5f4612d0f9ed33c98b5a1f",
+   "got": "6159ca36c5c09de6e86d27606c3715a27671b19fa629d2311d1d5ad4ec3a8632"
+  },
+  {
+   "manifest": "reports/pg-retrieval/phase-4-improvement-3/improvement-3-manifest.json",
+   "path": "reports/pg-retrieval/phase-4-improvement-3/replays/file-enum-002-local-pagesize2/answer-runtime-latest.json",
+   "want": "b9342092e3db6e969a2318ad1076ba0af657e263b26849240c6452576946ece9",
+   "got": "d873f0c37ab65791b5698962a6fd98b6046b980ed83ef14fd3b94a8e5f606c83"
+  },
+  {
+   "manifest": "reports/pg-retrieval/phase-4-improvement-3/improvement-3-manifest.json",
+   "path": "reports/pg-retrieval/phase-4-improvement-3/replays/file-enum-005-local/answer-runtime-latest.json",
+   "want": "5f73c5bf66c21050896eada804edc22028046de7018f6943e1ca0fe693a5b142",
+   "got": "57264fef810a268b3a52eb72142906e55dded4b91939c713171b0dd3ca838755"
+  },
+  {
+   "manifest": "reports/pg-retrieval/phase-4-improvement-3/improvement-3-manifest.json",
+   "path": "reports/pg-retrieval/phase-4-improvement-3/replays/file-enum-005-local-searchid-variant/answer-runtime-latest.json",
+   "want": "fed5071e0674658a28b54f4cd0a051297ccc7ef037d0d8e63c956722461d51f2",
+   "got": "4cda60a069aec4dc7e61cd1474940f165422299ad97347b12fd44dc43126f0b7"
+  },
+  {
+   "manifest": "reports/pg-retrieval/phase-4-improvement-3/improvement-3-manifest.json",
+   "path": "reports/pg-retrieval/phase-4-improvement-3/replays/file-enum-005-pg/answer-runtime-latest.json",
+   "want": "e6497ffd2f55f603e5495b73190fff23e51f3ee64d096b322b55612d76b4cc81",
+   "got": "2ae655816188a9e5da79713ada19c85a280878230bcf9513ab3e7e4681f94775"
+  }
+ ],
+ "incident_disclosure": "本轮复跑原 phase-4-improvement-3 回放驱动时误将输出写回原代目录，6 份终态报告的运行时间戳与新增复读计量字段发生漂移（drift 列表如实保留，旧 manifest 不回写、不豁免）。发布结果逐腿一致：原代 union-reconcile.json（无时间戳的对账文件）经重跑后字节不变、其 SHA 在 improvement-3-manifest 中零漂移——证明 items/coverage/统计/gold 对账字段完全相同（3/3/3/2/5/5、guard stable、search 0）。r2 代 replay 独立写入本目录，原代其余工件（驱动/报告/日志/SHA/清单）未动。教训入记忆：代次复跑必须 OUT 指向新目录。",
+ "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "gold_matches_frozen": true,
+ "env_file_read": false
+}

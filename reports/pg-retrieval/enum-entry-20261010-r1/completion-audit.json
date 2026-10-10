@@ -1,0 +1,62 @@
+{
+  "goal": "free-form enumeration entry",
+  "requirements": [
+    {
+      "item": 1,
+      "status": "proven",
+      "evidence": [
+        "src/env_rag_final/cli.py:_run_ask",
+        "src/env_rag_final/ask.py:ask_question",
+        "tests/test_ask.py",
+        "ENUMERATION.md",
+        "acceptance-sealed/acceptance.json"
+      ]
+    },
+    {
+      "item": 2,
+      "status": "proven",
+      "evidence": [
+        "continued_table top_k=1 -> 13 raw rows",
+        "ambiguous_table -> ambiguous 0",
+        "judgement -> ambiguous 0, preflight_no_backend",
+        "metadata/code/snapshot/citation tests"
+      ]
+    },
+    {
+      "item": 3,
+      "status": "proven",
+      "evidence": [
+        "expected-before-run.json raw source validated before requests",
+        "6 complete positive sets + 2 ambiguity controls",
+        "missing/extra/citation problems recorded per case"
+      ]
+    },
+    {
+      "item": 4,
+      "status": "proven_with_explicit_boundary",
+      "evidence": [
+        "src/env_rag_final/lightrag_enum_bridge.py",
+        "5 transparent disabled/enabled adapter tests",
+        "ENUMERATION.md Python API example"
+      ],
+      "not_claimed": [
+        "original REST/WebUI integration",
+        "original unchanged local live baseline",
+        "overall system quality improvement"
+      ]
+    }
+  ],
+  "acceptance_all_passed": true,
+  "final_runtime_source_bytes_match": true,
+  "engineering_tests": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/pytest -q tests",
+    "passed": 550,
+    "new_tests": 24
+  },
+  "history_entries_unchanged": 1670,
+  "history_changed": [],
+  "public_counts_unchanged": true,
+  "paid_model_embedding_rerank_calls": 0,
+  "sensitive_matches": 0,
+  "gate4_previous_failure_unchanged": true
+}

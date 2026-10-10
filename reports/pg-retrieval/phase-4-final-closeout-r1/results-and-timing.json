@@ -1,0 +1,396 @@
+[
+  {
+    "round": 1,
+    "totals": {
+      "positive": {
+        "PENDING": 12,
+        "FAIL": 37,
+        "PASS": 44
+      },
+      "counter": {
+        "PASS": 10,
+        "FAIL": 14,
+        "PENDING": 6
+      }
+    },
+    "category_path_counts": {
+      "positive": {
+        "fact": {
+          "pg": {
+            "PENDING": 6,
+            "FAIL": 1
+          },
+          "local": {
+            "FAIL": 7
+          },
+          "fusion": {
+            "PENDING": 6,
+            "FAIL": 1
+          }
+        },
+        "file_enum": {
+          "pg": {
+            "PASS": 5,
+            "FAIL": 1
+          },
+          "local": {
+            "PASS": 5,
+            "FAIL": 1
+          },
+          "fusion": {
+            "PASS": 5,
+            "FAIL": 1
+          }
+        },
+        "prose_enum": {
+          "pg": {
+            "PASS": 5,
+            "FAIL": 1
+          },
+          "local": {
+            "PASS": 4,
+            "FAIL": 2
+          },
+          "fusion": {
+            "PASS": 5,
+            "FAIL": 1
+          }
+        },
+        "table_enum": {
+          "pg": {
+            "PASS": 5,
+            "FAIL": 1
+          },
+          "local": {
+            "PASS": 5,
+            "FAIL": 1
+          },
+          "fusion": {
+            "PASS": 5,
+            "FAIL": 1
+          }
+        },
+        "synthesis": {
+          "pg": {
+            "FAIL": 6
+          },
+          "local": {
+            "FAIL": 6
+          },
+          "fusion": {
+            "FAIL": 6
+          }
+        }
+      },
+      "counter": {
+        "fact": {
+          "pg": {
+            "PASS": 2,
+            "PENDING": 1
+          },
+          "local": {
+            "FAIL": 2,
+            "PENDING": 1
+          },
+          "fusion": {
+            "PASS": 2,
+            "PENDING": 1
+          }
+        },
+        "file_enum": {
+          "pg": {
+            "PASS": 1,
+            "FAIL": 1
+          },
+          "local": {
+            "PASS": 1,
+            "FAIL": 1
+          },
+          "fusion": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "table_enum": {
+          "pg": {
+            "PASS": 1,
+            "FAIL": 2
+          },
+          "local": {
+            "PASS": 1,
+            "FAIL": 2
+          },
+          "fusion": {
+            "PASS": 1,
+            "FAIL": 2
+          }
+        },
+        "prose_enum": {
+          "pg": {
+            "PENDING": 1
+          },
+          "local": {
+            "PENDING": 1
+          },
+          "fusion": {
+            "PENDING": 1
+          }
+        },
+        "synthesis": {
+          "pg": {
+            "FAIL": 1
+          },
+          "local": {
+            "FAIL": 1
+          },
+          "fusion": {
+            "FAIL": 1
+          }
+        }
+      },
+      "totals": {
+        "positive": {
+          "PENDING": 12,
+          "FAIL": 37,
+          "PASS": 44
+        },
+        "counter": {
+          "PASS": 10,
+          "FAIL": 14,
+          "PENDING": 6
+        }
+      }
+    },
+    "recorded_timing": {
+      "discovery_inclusive_rerank_ms": {
+        "n": 120,
+        "p50": 2670.0,
+        "p95": 8026,
+        "max": 11544
+      },
+      "discovery_exclusive_rerank_approx_ms": {
+        "n": 38,
+        "p50": 4233.5,
+        "p95": 5055,
+        "max": 7114
+      },
+      "rerank_ms": {
+        "n": 38,
+        "p50": 2057.0,
+        "p95": 5013,
+        "max": 7025
+      },
+      "answer_ms_composite_unsplit": {
+        "n": 120,
+        "p50": 1610.0,
+        "p95": 5857,
+        "max": 9129
+      },
+      "total_ms_recorded": {
+        "n": 120,
+        "p50": 4780.0,
+        "p95": 11511,
+        "max": 13325
+      },
+      "answer_stage_stages_unavailable": "answer_ms 内含范围展开/生成/复核，独立阶段计时 unavailable；模型 call.latency 仅 HTTP 时间不冒充全生成"
+    },
+    "source": "reports/pg-retrieval/phase-4-formal-fixed-assessment-1/adjudication-initial.json"
+  },
+  {
+    "round": 2,
+    "totals": {
+      "positive": {
+        "PENDING": 12,
+        "FAIL": 37,
+        "PASS": 44
+      },
+      "counter": {
+        "PASS": 10,
+        "FAIL": 14,
+        "PENDING": 6
+      }
+    },
+    "category_path_counts": {
+      "positive": {
+        "fact": {
+          "pg": {
+            "PENDING": 6,
+            "FAIL": 1
+          },
+          "local": {
+            "FAIL": 7
+          },
+          "fusion": {
+            "PENDING": 6,
+            "FAIL": 1
+          }
+        },
+        "file_enum": {
+          "pg": {
+            "PASS": 5,
+            "FAIL": 1
+          },
+          "local": {
+            "PASS": 5,
+            "FAIL": 1
+          },
+          "fusion": {
+            "PASS": 5,
+            "FAIL": 1
+          }
+        },
+        "prose_enum": {
+          "pg": {
+            "PASS": 5,
+            "FAIL": 1
+          },
+          "local": {
+            "PASS": 4,
+            "FAIL": 2
+          },
+          "fusion": {
+            "PASS": 5,
+            "FAIL": 1
+          }
+        },
+        "table_enum": {
+          "pg": {
+            "PASS": 5,
+            "FAIL": 1
+          },
+          "local": {
+            "PASS": 5,
+            "FAIL": 1
+          },
+          "fusion": {
+            "PASS": 5,
+            "FAIL": 1
+          }
+        },
+        "synthesis": {
+          "pg": {
+            "FAIL": 6
+          },
+          "local": {
+            "FAIL": 6
+          },
+          "fusion": {
+            "FAIL": 6
+          }
+        }
+      },
+      "counter": {
+        "fact": {
+          "pg": {
+            "PASS": 2,
+            "PENDING": 1
+          },
+          "local": {
+            "FAIL": 2,
+            "PENDING": 1
+          },
+          "fusion": {
+            "PASS": 2,
+            "PENDING": 1
+          }
+        },
+        "file_enum": {
+          "pg": {
+            "PASS": 1,
+            "FAIL": 1
+          },
+          "local": {
+            "PASS": 1,
+            "FAIL": 1
+          },
+          "fusion": {
+            "PASS": 1,
+            "FAIL": 1
+          }
+        },
+        "table_enum": {
+          "pg": {
+            "PASS": 1,
+            "FAIL": 2
+          },
+          "local": {
+            "PASS": 1,
+            "FAIL": 2
+          },
+          "fusion": {
+            "PASS": 1,
+            "FAIL": 2
+          }
+        },
+        "prose_enum": {
+          "pg": {
+            "PENDING": 1
+          },
+          "local": {
+            "PENDING": 1
+          },
+          "fusion": {
+            "PENDING": 1
+          }
+        },
+        "synthesis": {
+          "pg": {
+            "FAIL": 1
+          },
+          "local": {
+            "FAIL": 1
+          },
+          "fusion": {
+            "FAIL": 1
+          }
+        }
+      },
+      "totals": {
+        "positive": {
+          "PENDING": 12,
+          "FAIL": 37,
+          "PASS": 44
+        },
+        "counter": {
+          "PASS": 10,
+          "FAIL": 14,
+          "PENDING": 6
+        }
+      }
+    },
+    "recorded_timing": {
+      "discovery_inclusive_rerank_ms": {
+        "n": 120,
+        "p50": 2552.0,
+        "p95": 7440,
+        "max": 13323
+      },
+      "discovery_exclusive_rerank_approx_ms": {
+        "n": 38,
+        "p50": 4219.0,
+        "p95": 5745,
+        "max": 6143
+      },
+      "rerank_ms": {
+        "n": 38,
+        "p50": 1853.5,
+        "p95": 3916,
+        "max": 7180
+      },
+      "answer_ms_composite_unsplit": {
+        "n": 120,
+        "p50": 1606.0,
+        "p95": 5563,
+        "max": 7217
+      },
+      "total_ms_recorded": {
+        "n": 120,
+        "p50": 4488.5,
+        "p95": 10573,
+        "max": 14141
+      },
+      "answer_stage_stages_unavailable": "answer_ms 内含范围展开/生成/复核，独立阶段计时 unavailable；模型 call.latency 仅 HTTP 时间不冒充全生成"
+    },
+    "source": "reports/pg-retrieval/phase-4-formal-fixed-assessment-2/adjudication-initial.json"
+  }
+]

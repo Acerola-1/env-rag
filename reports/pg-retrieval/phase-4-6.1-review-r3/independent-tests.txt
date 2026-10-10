@@ -1,0 +1,142 @@
+FF.FFF.                                                                  [100%]
+=================================== FAILURES ===================================
+____ test_rerank_http_not_issued_on_before_http_refusal[pre_http_exception] ____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1176cf9e0>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x1176cf170>, calls={'identity': 2, 'conn': <test_answer.FakeEnvConn...: 'fact-001', 'question': 'GB 8978-1996 表 1 中总汞的最高允许排放浓度是多少？', 'workspace': 'default', 'category': 'fact'}, answers=[])
+outcome = 'pre_http_exception'
+
+    @pytest.mark.parametrize("outcome", ["pre_http_exception", "source_refusal"])
+    def test_rerank_http_not_issued_on_before_http_refusal(monkeypatch, setup, outcome):
+        async def fusion(*args, **kwargs):
+            return fusion_input(setup)
+    
+        async def rerank(*args, **kwargs):
+            if outcome == "pre_http_exception":
+                raise ev.AdapterError("source read-back failed before HTTP")
+            return {
+                "results": [
+                    {
+                        "query_id": "fact-001",
+                        "status": "degraded",
+                        "ordered": [],
+                        "degraded": ["source-verification-failed"],
+                        "call": None,
+                    }
+                ]
+            }
+    
+        monkeypatch.setattr(ev, "_run_fusion", fusion)
+        monkeypatch.setattr(ev, "_run_rerank", rerank)
+        report = asyncio.run(
+            ev.run_evaluation(
+                setup.out,
+                paths=["fusion"],
+                gold_path=setup.gold,
+                values=fx.VALUES,
+                conn=setup.conn,
+            )
+        )
+        assert report["budget_snapshot_end"]["reserved_total"]["rerank"] == 1
+>       assert report["budget_snapshot_end"]["issued_total"].get("rerank", 0) == 0, report
+E       AssertionError: {'task': 'Phase 4 evaluation round 1 (6.1 owning entry)', 'round': 1, 'paths': ['fusion'], 'gold_sha256': '621a142301fca99beb7b4fc022e85f2a81993eb7cde86515cf43a28c824f2b7c', ...}
+E       assert 1 == 0
+E        +  where 1 = <built-in method get of dict object at 0x117703480>('rerank', 0)
+E        +    where <built-in method get of dict object at 0x117703480> = {'rerank': 1}.get
+
+tests/test_evaluation_review_r3.py:66: AssertionError
+______ test_rerank_http_not_issued_on_before_http_refusal[source_refusal] ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x117705b80>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x117706a80>, calls={'identity': 2, 'conn': <test_answer.FakeEnvConn...egory_overrides': {'fact-001': 'fact'}, 'conn': <env_rag_final.evaluation._BudgetedConnection object at 0x117704500>}])
+outcome = 'source_refusal'
+
+    @pytest.mark.parametrize("outcome", ["pre_http_exception", "source_refusal"])
+    def test_rerank_http_not_issued_on_before_http_refusal(monkeypatch, setup, outcome):
+        async def fusion(*args, **kwargs):
+            return fusion_input(setup)
+    
+        async def rerank(*args, **kwargs):
+            if outcome == "pre_http_exception":
+                raise ev.AdapterError("source read-back failed before HTTP")
+            return {
+                "results": [
+                    {
+                        "query_id": "fact-001",
+                        "status": "degraded",
+                        "ordered": [],
+                        "degraded": ["source-verification-failed"],
+                        "call": None,
+                    }
+                ]
+            }
+    
+        monkeypatch.setattr(ev, "_run_fusion", fusion)
+        monkeypatch.setattr(ev, "_run_rerank", rerank)
+        report = asyncio.run(
+            ev.run_evaluation(
+                setup.out,
+                paths=["fusion"],
+                gold_path=setup.gold,
+                values=fx.VALUES,
+                conn=setup.conn,
+            )
+        )
+        assert report["budget_snapshot_end"]["reserved_total"]["rerank"] == 1
+>       assert report["budget_snapshot_end"]["issued_total"].get("rerank", 0) == 0, report
+E       AssertionError: {'task': 'Phase 4 evaluation round 1 (6.1 owning entry)', 'round': 1, 'paths': ['fusion'], 'gold_sha256': '621a142301fca99beb7b4fc022e85f2a81993eb7cde86515cf43a28c824f2b7c', ...}
+E       assert 1 == 0
+E        +  where 1 = <built-in method get of dict object at 0x11776eec0>('rerank', 0)
+E        +    where <built-in method get of dict object at 0x11776eec0> = {'rerank': 1}.get
+
+tests/test_evaluation_review_r3.py:66: AssertionError
+____________ test_keyword_model_drift_is_rejected_by_frozen_anchor _____________
+
+anchor_case = (PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-648/test_keyword_model_d...0b249a32786b6a4d099cce08', 'fusion.py': 'be1cd4c586596468efda7b9483903a407f0e214fc35e7a83355ad304ef94127e', ...}, ...})
+
+    def test_keyword_model_drift_is_rejected_by_frozen_anchor(anchor_case):
+        path, values, anchor = anchor_case
+        values = dict(values)
+        values["KEYWORD_LLM_MODEL"] = anchor["model_config"]["keyword_llm"]["value"] + "-changed"
+>       with pytest.raises(ev.AdapterError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE AdapterError
+
+tests/test_evaluation_review_r3.py:139: Failed
+________ test_missing_complete_anchor_section_is_rejected[code_anchors] ________
+
+anchor_case = (PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-648/test_missing_complet...b6', 'gold_sha256': '1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e', ...}, 'code_anchors': {}, ...})
+section = 'code_anchors'
+
+    @pytest.mark.parametrize("section", ["code_anchors", "frozen_budgets"])
+    def test_missing_complete_anchor_section_is_rejected(anchor_case, section):
+        path, values, anchor = anchor_case
+        anchor[section] = {}
+        path.write_text(json.dumps(anchor))
+>       with pytest.raises(ev.AdapterError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE AdapterError
+
+tests/test_evaluation_review_r3.py:148: Failed
+_______ test_missing_complete_anchor_section_is_rejected[frozen_budgets] _______
+
+anchor_case = (PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-648/test_missing_complet...0b249a32786b6a4d099cce08', 'fusion.py': 'be1cd4c586596468efda7b9483903a407f0e214fc35e7a83355ad304ef94127e', ...}, ...})
+section = 'frozen_budgets'
+
+    @pytest.mark.parametrize("section", ["code_anchors", "frozen_budgets"])
+    def test_missing_complete_anchor_section_is_rejected(anchor_case, section):
+        path, values, anchor = anchor_case
+        anchor[section] = {}
+        path.write_text(json.dumps(anchor))
+>       with pytest.raises(ev.AdapterError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE AdapterError
+
+tests/test_evaluation_review_r3.py:148: Failed
+=========================== short test summary info ============================
+FAILED tests/test_evaluation_review_r3.py::test_rerank_http_not_issued_on_before_http_refusal[pre_http_exception]
+FAILED tests/test_evaluation_review_r3.py::test_rerank_http_not_issued_on_before_http_refusal[source_refusal]
+FAILED tests/test_evaluation_review_r3.py::test_keyword_model_drift_is_rejected_by_frozen_anchor
+FAILED tests/test_evaluation_review_r3.py::test_missing_complete_anchor_section_is_rejected[code_anchors]
+FAILED tests/test_evaluation_review_r3.py::test_missing_complete_anchor_section_is_rejected[frozen_budgets]
+5 failed, 2 passed in 2.06s

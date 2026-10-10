@@ -1,0 +1,12 @@
+{
+ "generation": "phase-4-improvement-2-r2",
+ "before": {
+  "src/env_rag_final/answer.py": "62e8f996557871baf827fccf954281be7e7045fe16a669e0edd05706a9460b27",
+  "src/env_rag_final/evaluation.py": "a42d5c68952e40627a395f023650eae89f59a0527ac0208f45c90ea0f8dd7529"
+ },
+ "provenance": "改动前用 shasum 实测于本会话（复现冻结矩阵 5 失败/1 正例之前、编辑 answer.py 之前捕获）；两值与已验收实施代次 phase-4-improvement-2/sha-after.json after-block 逐字符相同",
+ "match_accepted_generation_after": {
+  "src/env_rag_final/answer.py": true,
+  "src/env_rag_final/evaluation.py": true
+ }
+}

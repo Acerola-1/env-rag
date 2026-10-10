@@ -1,0 +1,58 @@
+{
+  "submitted_sha": {
+    "src/env_rag_final/enumerate_/prose_enum.py": true,
+    "src/env_rag_final/search/expand.py": true,
+    "src/env_rag_final/answer.py": true,
+    "tests/test_phase4_improvement1_prose_integrity.py": true,
+    "tests/test_phase4_improvement1r2_owning_replay.py": true
+  },
+  "manifests": {
+    "phase-4-round-1/pilot-manifest.json": {
+      "entries": 809,
+      "mismatches": []
+    },
+    "phase-4-round-1-assessment/pilot-manifest.json": {
+      "entries": 9,
+      "mismatches": []
+    },
+    "phase-4-round-1-assessment-r2/assessment-manifest.json": {
+      "entries": 4,
+      "mismatches": []
+    },
+    "phase-4-round-1-assessment-r3/assessment-manifest.json": {
+      "entries": 4,
+      "mismatches": []
+    },
+    "phase-4-improvement-1/improvement-1-manifest.json": {
+      "entries": 6,
+      "mismatches": []
+    },
+    "phase-4-improvement-1-review/review-manifest.json": {
+      "entries": 12,
+      "mismatches": []
+    },
+    "phase-4-improvement-1-r2/improvement-1-r2-manifest.json": {
+      "entries": 14,
+      "mismatches": []
+    },
+    "phase-4-improvement-1-review-r2/review-manifest.json": {
+      "entries": 15,
+      "mismatches": []
+    },
+    "phase-4-improvement-1-r3/improvement-1-r3-manifest.json": {
+      "entries": 9,
+      "mismatches": []
+    }
+  },
+  "tests": {
+    "targeted": 37,
+    "engineering": 479,
+    "scoring_frozen": 35
+  },
+  "decision": "improvement_group_1_accepted",
+  "reviewer_requests": {
+    "network": 0,
+    "database": 0,
+    "models": 0
+  }
+}

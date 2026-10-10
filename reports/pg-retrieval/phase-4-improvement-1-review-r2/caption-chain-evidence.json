@@ -1,0 +1,30 @@
+[
+  {
+    "case": "plain-caption",
+    "input": "## 4 章规定\n4.1 本条限值见下表：\n表 1\n<table id=\"tb-o\"><tr><td>总汞</td><td>0.05</td></tr></table>\n本条补充要求：每日监测一次。\n4.2 下一条独立要求。",
+    "evidence_type": "constructed offline owning answer replay; fake read-only catalog",
+    "coverage": "complete",
+    "delivered_text": "4.1 本条限值见下表：\n表 1",
+    "lost_required": [
+      "总汞",
+      "0.05",
+      "每日监测一次"
+    ],
+    "model_calls_used": 0,
+    "runtime_file": "reports/pg-retrieval/phase-4-improvement-1-review-r2/plain-caption-answer-runtime.json"
+  },
+  {
+    "case": "markdown-caption",
+    "input": "## 4 章规定\n4.1 本条限值见下表：\n## 表 1 限值\n<table id=\"tb-o\"><tr><td>总汞</td><td>0.05</td></tr></table>\n本条补充要求：每日监测一次。\n4.2 下一条独立要求。",
+    "evidence_type": "constructed offline owning answer replay; fake read-only catalog",
+    "coverage": "complete",
+    "delivered_text": "4.1 本条限值见下表：\n## 表 1 限值",
+    "lost_required": [
+      "总汞",
+      "0.05",
+      "每日监测一次"
+    ],
+    "model_calls_used": 0,
+    "runtime_file": "reports/pg-retrieval/phase-4-improvement-1-review-r2/markdown-caption-answer-runtime.json"
+  }
+]

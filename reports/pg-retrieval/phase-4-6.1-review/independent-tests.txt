@@ -1,0 +1,530 @@
+FFFFFFFFFFFFF..FFFFF                                                     [100%]
+=================================== FAILURES ===================================
+____________ test_real_candidate_object_is_read_back_not_dict_crash ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1075965d0>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x1137bba10>, calls={'identity': 2, 'conn': <test_answer.FakeEnvConn...: 'fact-001', 'question': 'GB 8978-1996 表 1 中总汞的最高允许排放浓度是多少？', 'workspace': 'default', 'category': 'fact'}, answers=[])
+
+    def test_real_candidate_object_is_read_back_not_dict_crash(monkeypatch, setup):
+        candidate = la.Candidate(
+            fx.C1,
+            "default",
+            fx.DOC_8978,
+            "gb8978.pdf",
+            fx.CHUNKS[fx.C1]["content"][:80],
+            len(fx.CHUNKS[fx.C1]["content"]),
+            True,
+        )
+    
+        class Adapter:
+            async def fetch(self, *a, **kw):
+                return SimpleNamespace(
+                    candidates=[candidate], call_records=[], degraded=[], sorting_sources={}
+                )
+    
+        report = run(setup, local_adapter_factory=lambda *a: Adapter())
+        record = report["results"][0]
+>       assert "failure" not in record, record
+E       AssertionError: {'round': 1, 'path': 'local', 'query_id': 'fact-001', 'category': 'fact', ...}
+E       assert 'failure' not in {'round': 1, 'path': 'local', 'query_id': 'fact-001', 'category': 'fact', ...}
+
+tests/test_evaluation_review_r1.py:81: AssertionError
+______________ test_fusion_really_reranks_and_passes_fresh_report ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1137bbef0>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x1137baf00>, calls={'identity': 2, 'conn': <test_answer.FakeEnvConn...e-0009-synthetic'}, 'conn': <test_answer.FakeEnvConn object at 0x1137baf00>, 'transport': None, 'allow_model': False}])
+
+    def test_fusion_really_reranks_and_passes_fresh_report(monkeypatch, setup):
+        seen = []
+    
+        async def fusion_stub(*a, **kw):
+            fused = fx._fused(
+                setup.q["query_id"],
+                setup.q["question"],
+                [fx._usable(fx.C1, fx.DOC_8978, fx.CHUNKS[fx.C1]["content"])],
+            )
+            return {"results": [fused]}
+    
+        async def rerank_stub(*a, **kw):
+            seen.append(kw)
+            return {
+                "results": [
+                    {
+                        "query_id": "fact-001",
+                        "status": "ok",
+                        "ordered": [],
+                        "degraded": [],
+                        "call": {"status": "success"},
+                    }
+                ]
+            }
+    
+        monkeypatch.setattr(ev, "_run_fusion", fusion_stub)
+        monkeypatch.setattr(rr, "run_rerank", rerank_stub)
+        monkeypatch.setattr(ev, "_run_rerank", rerank_stub, raising=False)
+        report = asyncio.run(
+            ev.run_evaluation(
+                setup.out, paths=["fusion"], gold_path=setup.gold, values=fx.VALUES, conn=setup.conn
+            )
+        )
+>       assert len(seen) == 1, report
+E       AssertionError: {'task': 'Phase 4 evaluation round 1 (6.1 owning entry)', 'round': 1, 'paths': ['fusion'], 'gold_sha256': '621a142301fca99beb7b4fc022e85f2a81993eb7cde86515cf43a28c824f2b7c', ...}
+E       assert 0 == 1
+E        +  where 0 = len([])
+
+tests/test_evaluation_review_r1.py:120: AssertionError
+_________ test_native_recording_wrappers_cannot_bypass_budget[qdrant] __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1138828d0>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x113883ce0>, calls={'identity': 2, 'conn': <test_answer.FakeEnvConn...e-0009-synthetic'}, 'conn': <test_answer.FakeEnvConn object at 0x113883ce0>, 'transport': None, 'allow_model': False}])
+service = 'qdrant'
+
+    @pytest.mark.parametrize("service", ["qdrant", "neo4j"])
+    def test_native_recording_wrappers_cannot_bypass_budget(monkeypatch, setup, service):
+        issued = []
+    
+        class Client:
+            def query_points(self, *a, **kw):
+                issued.append(1)
+                return []
+    
+        class Session:
+            async def run(self, *a, **kw):
+                issued.append(1)
+                return []
+    
+        class Driver:
+            def session(self, *a, **kw):
+                return Session()
+    
+        async def runner(q, *a, **kw):
+            boundary = la.ServiceBoundary()
+            if service == "qdrant":
+                client = la._RecordingQdrantClient(Client(), boundary, "chunks")
+                client.query_points()
+                client.query_points()
+            else:
+                driver = la._RecordingNeo4jDriver(Driver(), boundary)
+                await driver.session().run("MATCH (n) RETURN n")
+                await driver.session().run("MATCH (n) RETURN n")
+            return stage(q)
+    
+        monkeypatch.setattr(ev, "PATH_RUNNERS", {"local": runner})
+        report = run(setup, budgets={"per_question": {service: 1}})
+>       assert len(issued) == 1, (issued, report)
+E       AssertionError: ([1, 1], {'task': 'Phase 4 evaluation round 1 (6.1 owning entry)', 'round': 1, 'paths': ['local'], 'gold_sha256': '621a142301fca99beb7b4fc022e85f2a81993eb7cde86515cf43a28c824f2b7c', ...})
+E       assert 2 == 1
+E        +  where 2 = len([1, 1])
+
+tests/test_evaluation_review_r1.py:158: AssertionError
+__________ test_native_recording_wrappers_cannot_bypass_budget[neo4j] __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x113882c60>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x113880ec0>, calls={'identity': 2, 'conn': <test_answer.FakeEnvConn...e-0009-synthetic'}, 'conn': <test_answer.FakeEnvConn object at 0x113880ec0>, 'transport': None, 'allow_model': False}])
+service = 'neo4j'
+
+    @pytest.mark.parametrize("service", ["qdrant", "neo4j"])
+    def test_native_recording_wrappers_cannot_bypass_budget(monkeypatch, setup, service):
+        issued = []
+    
+        class Client:
+            def query_points(self, *a, **kw):
+                issued.append(1)
+                return []
+    
+        class Session:
+            async def run(self, *a, **kw):
+                issued.append(1)
+                return []
+    
+        class Driver:
+            def session(self, *a, **kw):
+                return Session()
+    
+        async def runner(q, *a, **kw):
+            boundary = la.ServiceBoundary()
+            if service == "qdrant":
+                client = la._RecordingQdrantClient(Client(), boundary, "chunks")
+                client.query_points()
+                client.query_points()
+            else:
+                driver = la._RecordingNeo4jDriver(Driver(), boundary)
+                await driver.session().run("MATCH (n) RETURN n")
+                await driver.session().run("MATCH (n) RETURN n")
+            return stage(q)
+    
+        monkeypatch.setattr(ev, "PATH_RUNNERS", {"local": runner})
+        report = run(setup, budgets={"per_question": {service: 1}})
+>       assert len(issued) == 1, (issued, report)
+E       AssertionError: ([1, 1], {'task': 'Phase 4 evaluation round 1 (6.1 owning entry)', 'round': 1, 'paths': ['local'], 'gold_sha256': '621a142301fca99beb7b4fc022e85f2a81993eb7cde86515cf43a28c824f2b7c', ...})
+E       assert 2 == 1
+E        +  where 2 = len([1, 1])
+
+tests/test_evaluation_review_r1.py:158: AssertionError
+__________ test_embedding_keyword_batch_cannot_bypass_single_call_cap __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x113883ec0>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x113882060>, calls={'identity': 2, 'conn': <test_answer.FakeEnvConn...e-0009-synthetic'}, 'conn': <test_answer.FakeEnvConn object at 0x113882060>, 'transport': None, 'allow_model': False}])
+
+    def test_embedding_keyword_batch_cannot_bypass_single_call_cap(monkeypatch, setup):
+        issued = []
+    
+        async def embed(*, texts):
+            issued.append(texts)
+            return []
+    
+        async def runner(q, *a, **kw):
+            await la.ServiceBoundary().call("embedding", "openai_embed", embed, texts=["x"] * 33)
+            return stage(q)
+    
+        monkeypatch.setattr(ev, "PATH_RUNNERS", {"local": runner})
+        report = run(setup)
+>       assert issued == [], report
+E       AssertionError: {'task': 'Phase 4 evaluation round 1 (6.1 owning entry)', 'round': 1, 'paths': ['local'], 'gold_sha256': '621a142301fca99beb7b4fc022e85f2a81993eb7cde86515cf43a28c824f2b7c', ...}
+E       assert [['x', 'x', '...x', 'x', ...]] == []
+E         
+E         Left contains one more item: ['x', 'x', 'x', 'x', 'x', 'x', ...]
+E         Use -v to get more diff
+
+tests/test_evaluation_review_r1.py:175: AssertionError
+________________ test_local_actual_receipts_survive_evaluation _________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1138823f0>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x113881a00>, calls={'identity': 2, 'conn': <test_answer.FakeEnvConn...e-0009-synthetic'}, 'conn': <test_answer.FakeEnvConn object at 0x113881a00>, 'transport': None, 'allow_model': False}])
+
+    def test_local_actual_receipts_survive_evaluation(monkeypatch, setup):
+        class Adapter:
+            async def fetch(self, *a, **kw):
+                return SimpleNamespace(
+                    candidates=[],
+                    call_records=[
+                        {
+                            "service": "llm",
+                            "operation": "receipt-marker",
+                            "status": "failure",
+                            "error": "TimeoutError",
+                            "latency_ms": 7,
+                        }
+                    ],
+                    service_calls={"llm": {"attempt": 1, "failure": 1}},
+                    degraded=["keyword failure"],
+                    sorting_sources={},
+                )
+    
+        report = run(setup, local_adapter_factory=lambda *a: Adapter())
+        files = [report] + [json.loads(p.read_text()) for p in setup.out.rglob("*.json")]
+>       assert any("receipt-marker" in json.dumps(d) for d in files), report
+E       AssertionError: {'task': 'Phase 4 evaluation round 1 (6.1 owning entry)', 'round': 1, 'paths': ['local'], 'gold_sha256': '621a142301fca99beb7b4fc022e85f2a81993eb7cde86515cf43a28c824f2b7c', ...}
+E       assert False
+E        +  where False = any(<generator object test_local_actual_receipts_survive_evaluation.<locals>.<genexpr> at 0x11385c740>)
+
+tests/test_evaluation_review_r1.py:200: AssertionError
+___________ test_pre_guard_false_refuses_even_matching_primary_keys ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x113882750>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x113875310>, calls={'identity': 0, 'conn': <test_answer.FakeEnvConn...e-0009-synthetic'}, 'conn': <test_answer.FakeEnvConn object at 0x113875310>, 'transport': None, 'allow_model': False}])
+
+    def test_pre_guard_false_refuses_even_matching_primary_keys(monkeypatch, setup):
+        fake_path(monkeypatch)
+    
+        async def identity(v):
+            return capture(frozen=False)
+    
+        monkeypatch.setattr(an, "_capture_identity", identity)
+>       with pytest.raises(ev.AdapterError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE AdapterError
+
+tests/test_evaluation_review_r1.py:225: Failed
+________________ test_pre_env_only_configuration_drift_refuses _________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1138767b0>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x113874410>, calls={'identity': 2, 'conn': <test_answer.FakeEnvConn...e-0009-synthetic'}, 'conn': <test_answer.FakeEnvConn object at 0x113874410>, 'transport': None, 'allow_model': False}])
+
+    def test_pre_env_only_configuration_drift_refuses(monkeypatch, setup):
+        fake_path(monkeypatch)
+        expected = {
+            "source_fingerprint": fx.FP,
+            "catalog_run_snapshot": f"{fx.RUN}/{fx.SNAP}",
+            "search_active": fx.SEARCH,
+            "gold_sha256": fx.GOLD_SHA,
+            "env_sha": "expected-config",
+        }
+>       with pytest.raises(ev.AdapterError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE AdapterError
+
+tests/test_evaluation_review_r1.py:240: Failed
+_____________ test_post_env_only_drift_rejects_and_keeps_terminal ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x113876c90>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x113874b90>, calls={'identity': 0, 'conn': <test_answer.FakeEnvConn...e-0009-synthetic'}, 'conn': <test_answer.FakeEnvConn object at 0x113874b90>, 'transport': None, 'allow_model': False}])
+
+    def test_post_env_only_drift_rejects_and_keeps_terminal(monkeypatch, setup):
+        fake_path(monkeypatch)
+        n = 0
+    
+        async def identity(v):
+            nonlocal n
+            n += 1
+            return capture(env="env-1" if n == 1 else "env-2")
+    
+        monkeypatch.setattr(an, "_capture_identity", identity)
+>       with pytest.raises(ev.AdapterError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE AdapterError
+
+tests/test_evaluation_review_r1.py:255: Failed
+________________ test_post_capture_error_still_writes_terminal _________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x113877d10>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x113874f80>, calls={'identity': 0, 'conn': <test_answer.FakeEnvConn...e-0009-synthetic'}, 'conn': <test_answer.FakeEnvConn object at 0x113874f80>, 'transport': None, 'allow_model': False}])
+
+    def test_post_capture_error_still_writes_terminal(monkeypatch, setup):
+        fake_path(monkeypatch)
+        n = 0
+    
+        async def identity(v):
+            nonlocal n
+            n += 1
+            if n == 2:
+                raise OSError("post capture failed")
+            return capture()
+    
+        monkeypatch.setattr(an, "_capture_identity", identity)
+        with pytest.raises((ev.AdapterError, OSError)):
+            run(setup)
+        path = setup.out / "eval-runtime-latest.json"
+>       assert path.exists(), "post capture error lost all completed evaluation records"
+E       AssertionError: post capture error lost all completed evaluation records
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-616/test_post_capture_error_still_0/out/eval-runtime-latest.json').exists
+
+tests/test_evaluation_review_r1.py:277: AssertionError
+_____________ test_each_discovery_gets_its_own_runtime_generation ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x113874c50>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x113877980>, calls={'identity': 2, 'conn': <test_answer.FakeEnvConn...e-0009-synthetic'}, 'conn': <test_answer.FakeEnvConn object at 0x113877980>, 'transport': None, 'allow_model': False}])
+
+    def test_each_discovery_gets_its_own_runtime_generation(monkeypatch, setup):
+        q2 = fx._gold_q("fact-002", fx.Q_FACT, "fact")
+        setup.gold.write_text(json.dumps({"questions": [setup.q, q2], "counter_examples": []}))
+        dirs = []
+    
+        async def fusion_stub(report_dir, queries, **kw):
+            dirs.append(report_dir)
+            return {"results": [fx._fused(queries[0], fx.Q_FACT, [], status="missing")]}
+    
+        monkeypatch.setattr(ev, "_run_fusion", fusion_stub)
+        asyncio.run(
+            ev.run_evaluation(
+                setup.out, paths=["pg"], gold_path=setup.gold, values=fx.VALUES, conn=setup.conn
+            )
+        )
+>       assert len(set(dirs)) == 2, "two question runtimes overwrite the same path generation"
+E       AssertionError: two question runtimes overwrite the same path generation
+E       assert 1 == 2
+E        +  where 1 = len({PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-616/test_each_discovery_gets_its_o0/out/pg/fusion')})
+E        +    where {PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-616/test_each_discovery_gets_its_o0/out/pg/fusion')} = set([PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-616/test_each_discovery_...lders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-616/test_each_discovery_gets_its_o0/out/pg/fusion')])
+
+tests/test_evaluation_review_r1.py:301: AssertionError
+_____________________ test_dry_run_uses_selected_query_set _____________________
+
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x113883cb0>, calls={'identity': 0, 'conn': <test_answer.FakeEnvConn...: 'fact-001', 'question': 'GB 8978-1996 表 1 中总汞的最高允许排放浓度是多少？', 'workspace': 'default', 'category': 'fact'}, answers=[])
+
+    def test_dry_run_uses_selected_query_set(setup):
+        p = ev.GOLD_PATH
+        report = asyncio.run(
+            ev.run_evaluation(
+                setup.out, dry_run=True, rounds=[1], paths=["pg"], query_ids=["fact-001"], gold_path=p
+            )
+        )
+>       assert report["total_executions"] == 1
+E       assert 41 == 1
+
+tests/test_evaluation_review_r1.py:311: AssertionError
+__________________ test_unknown_query_rejected_before_backend __________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1138827e0>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x113881d30>, calls={'identity': 2, 'conn': <test_answer.FakeEnvConn...: 'fact-001', 'question': 'GB 8978-1996 表 1 中总汞的最高允许排放浓度是多少？', 'workspace': 'default', 'category': 'fact'}, answers=[])
+
+    def test_unknown_query_rejected_before_backend(monkeypatch, setup):
+        fake_path(monkeypatch)
+>       with pytest.raises(ev.AdapterError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE AdapterError
+
+tests/test_evaluation_review_r1.py:316: Failed
+_____________ test_pg_queries_in_accepted_answer_are_also_budgeted _____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x113883dd0>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x113883a70>, calls={'identity': 2, 'conn': <test_answer.FakeEnvConn...: 'fact-001', 'question': 'GB 8978-1996 表 1 中总汞的最高允许排放浓度是多少？', 'workspace': 'default', 'category': 'fact'}, answers=[])
+
+    def test_pg_queries_in_accepted_answer_are_also_budgeted(monkeypatch, setup):
+        fake_path(monkeypatch)
+    
+        async def reading_answer(*a, **kw):
+            await kw["conn"].fetch("SELECT fixture_read")
+            return {"results": [{"coverage_status": "missing"}], "model_calls_used": 0}
+    
+        monkeypatch.setattr(ev, "_run_answer", reading_answer)
+        report = run(setup, budgets={"total_caps": {"pg": 0}})
+>       assert setup.conn.queries == [], report
+E       AssertionError: {'task': 'Phase 4 evaluation round 1 (6.1 owning entry)', 'round': 1, 'paths': ['local'], 'gold_sha256': '621a142301fca99beb7b4fc022e85f2a81993eb7cde86515cf43a28c824f2b7c', ...}
+E       assert [('fetch', 'S...ixture_read')] == []
+E         
+E         Left contains one more item: ('fetch', 'SELECT fixture_read')
+E         Use -v to get more diff
+
+tests/test_evaluation_review_r1.py:355: AssertionError
+________ test_post_other_identity_changes_are_rejected[catalog_active] _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x113883710>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x1138801a0>, calls={'identity': 0, 'conn': <test_answer.FakeEnvConn...e-0009-synthetic'}, 'conn': <test_answer.FakeEnvConn object at 0x1138801a0>, 'transport': None, 'allow_model': False}])
+field = 'catalog_active'
+
+    @pytest.mark.parametrize("field", ["catalog_active", "gold_sha"])
+    def test_post_other_identity_changes_are_rejected(monkeypatch, setup, field):
+        fake_path(monkeypatch)
+        n = 0
+    
+        async def identity(v):
+            nonlocal n
+            n += 1
+            result = capture()
+            if n == 2:
+                result["identity"][field] = (
+                    {"run_id": "new-run", "snapshot_id": fx.SNAP}
+                    if field == "catalog_active"
+                    else "new-gold-sha"
+                )
+            return result
+    
+        monkeypatch.setattr(an, "_capture_identity", identity)
+>       with pytest.raises(ev.AdapterError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE AdapterError
+
+tests/test_evaluation_review_r1.py:377: Failed
+___________ test_post_other_identity_changes_are_rejected[gold_sha] ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x113883800>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x1138835c0>, calls={'identity': 0, 'conn': <test_answer.FakeEnvConn...e-0009-synthetic'}, 'conn': <test_answer.FakeEnvConn object at 0x1138835c0>, 'transport': None, 'allow_model': False}])
+field = 'gold_sha'
+
+    @pytest.mark.parametrize("field", ["catalog_active", "gold_sha"])
+    def test_post_other_identity_changes_are_rejected(monkeypatch, setup, field):
+        fake_path(monkeypatch)
+        n = 0
+    
+        async def identity(v):
+            nonlocal n
+            n += 1
+            result = capture()
+            if n == 2:
+                result["identity"][field] = (
+                    {"run_id": "new-run", "snapshot_id": fx.SNAP}
+                    if field == "catalog_active"
+                    else "new-gold-sha"
+                )
+            return result
+    
+        monkeypatch.setattr(an, "_capture_identity", identity)
+>       with pytest.raises(ev.AdapterError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE AdapterError
+
+tests/test_evaluation_review_r1.py:377: Failed
+__________________ test_exception_redacted_before_truncation ___________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1137ba270>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x1137ba210>, calls={'identity': 2, 'conn': <test_answer.FakeEnvConn...: 'fact-001', 'question': 'GB 8978-1996 表 1 中总汞的最高允许排放浓度是多少？', 'workspace': 'default', 'category': 'fact'}, answers=[])
+
+    def test_exception_redacted_before_truncation(monkeypatch, setup):
+        key = "independent-review-synthetic-credential-0123456789"
+        values = dict(fx.VALUES, LLM_BINDING_API_KEY=key)
+    
+        async def runner(q, *a, **kw):
+            raise ValueError("x" * 190 + key)
+    
+        monkeypatch.setattr(ev, "PATH_RUNNERS", {"local": runner})
+        report = asyncio.run(
+            ev.run_evaluation(
+                setup.out,
+                paths=["local"],
+                gold_path=setup.gold,
+                values=values,
+                conn=setup.conn,
+            )
+        )
+        terminal = (setup.out / "eval-runtime-latest.json").read_text()
+>       assert key[:10] not in terminal, "configured secret prefix survived truncation"
+E       AssertionError: configured secret prefix survived truncation
+E       assert 'independen' not in '{\n  "task"...4+0800"\n}\n'
+E         
+E         'independen' is contained here:
+E           xxxxxxxxxxindependen"
+E                 }
+E               }
+E             ],
+E             "cold_generation_contract": "no old runtime answers read; every answer uses the context/messages of THIS round's own generation",...
+E         
+E         ...Full output truncated (54 lines hidden), use '-vv' to show
+
+tests/test_evaluation_review_r1.py:401: AssertionError
+___________ test_counter_category_reaches_same_real_answer_contract ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1138767e0>
+setup = namespace(conn=<test_answer.FakeEnvConn object at 0x113877ef0>, calls={'identity': 4, 'conn': <test_answer.FakeEnvConn...: 'fact-001', 'question': 'GB 8978-1996 表 1 中总汞的最高允许排放浓度是多少？', 'workspace': 'default', 'category': 'fact'}, answers=[])
+
+    def test_counter_category_reaches_same_real_answer_contract(monkeypatch, setup):
+        question = "GB 8978-1996 表 1 共有几项？"
+        counter = {
+            "counter_id": "neg-004",
+            "question": question,
+            "type": "fragmented_table_merge",
+            "expected_status": "complete",
+        }
+        setup.gold.write_text(json.dumps({"questions": [], "counter_examples": [counter]}))
+        an.GOLD_PATH.write_text(json.dumps({"questions": [], "counter_examples": [counter]}))
+        monkeypatch.setattr(ev, "_run_answer", an.run_answer)
+    
+        async def runner(q, *a, **kw):
+            data = stage(q)
+            usable = [fx._usable(cid, fx.DOC_8978, fx.CHUNKS[cid]["content"]) for cid in [fx.C1, fx.C2]]
+            data["fused_result"] = fx._fused(q["query_id"], question, usable)
+            data["discovery_status"] = "ok"
+            data["usable"] = 2
+            return data
+    
+        monkeypatch.setattr(ev, "PATH_RUNNERS", {"local": runner})
+        report = run(setup)
+        record = report["results"][0]
+        assert "failure" not in record, record
+        assert record["category"] == "table_enum"
+>       assert record["answer"]["items"] == 13, record
+E       AssertionError: {'round': 1, 'path': 'local', 'query_id': 'neg-004', 'category': 'table_enum', ...}
+E       assert 0 == 13
+
+tests/test_evaluation_review_r1.py:430: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_evaluation_review_r1.py::test_real_candidate_object_is_read_back_not_dict_crash
+FAILED tests/test_evaluation_review_r1.py::test_fusion_really_reranks_and_passes_fresh_report
+FAILED tests/test_evaluation_review_r1.py::test_native_recording_wrappers_cannot_bypass_budget[qdrant]
+FAILED tests/test_evaluation_review_r1.py::test_native_recording_wrappers_cannot_bypass_budget[neo4j]
+FAILED tests/test_evaluation_review_r1.py::test_embedding_keyword_batch_cannot_bypass_single_call_cap
+FAILED tests/test_evaluation_review_r1.py::test_local_actual_receipts_survive_evaluation
+FAILED tests/test_evaluation_review_r1.py::test_pre_guard_false_refuses_even_matching_primary_keys
+FAILED tests/test_evaluation_review_r1.py::test_pre_env_only_configuration_drift_refuses
+FAILED tests/test_evaluation_review_r1.py::test_post_env_only_drift_rejects_and_keeps_terminal
+FAILED tests/test_evaluation_review_r1.py::test_post_capture_error_still_writes_terminal
+FAILED tests/test_evaluation_review_r1.py::test_each_discovery_gets_its_own_runtime_generation
+FAILED tests/test_evaluation_review_r1.py::test_dry_run_uses_selected_query_set
+FAILED tests/test_evaluation_review_r1.py::test_unknown_query_rejected_before_backend
+FAILED tests/test_evaluation_review_r1.py::test_pg_queries_in_accepted_answer_are_also_budgeted
+FAILED tests/test_evaluation_review_r1.py::test_post_other_identity_changes_are_rejected[catalog_active]
+FAILED tests/test_evaluation_review_r1.py::test_post_other_identity_changes_are_rejected[gold_sha]
+FAILED tests/test_evaluation_review_r1.py::test_exception_redacted_before_truncation
+FAILED tests/test_evaluation_review_r1.py::test_counter_category_reaches_same_real_answer_contract
+18 failed, 2 passed in 1.18s

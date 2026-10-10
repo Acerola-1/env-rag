@@ -1,0 +1,568 @@
+{
+ "task": "5.3 two-path candidate fusion (read-only, guarded)",
+ "started_at": "2026-10-08T13:24:37+0800",
+ "pg_only_switch": true,
+ "frozen_contract": {
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8"
+ },
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "results": [
+  {
+   "query_id": "table-enum-004",
+   "query": "GB 3838-2002 表 1 的基本项目共多少项？逐项列出。",
+   "workspace": "default",
+   "pg": {
+    "status": "ok",
+    "search_id": "872d689343a9cbb6",
+    "catalog_snapshot_id": "4919b3938ad93747",
+    "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "discovery_total": 3,
+    "discovery_captured": true,
+    "chunks": 4,
+    "stale_state": "current",
+    "notes": [],
+    "trace_stages": [
+     "code_exact",
+     "keyword_and",
+     "keyword_and_diagnostics",
+     "keyword_core_and",
+     "range_binding"
+    ],
+    "sql_statements": {
+     "fetchrow": 8,
+     "fetch": 14,
+     "fetchval": 5
+    },
+    "trace": [
+     {
+      "stage": "code_exact",
+      "code": "GB3838",
+      "version_requested": "2002",
+      "strict": false,
+      "hits": 1,
+      "version_matched": 1,
+      "selected_versions": [
+       "2002"
+      ],
+      "selected_docs": [
+       "doc-91f9049decde09153368d4b69f280e78"
+      ]
+     },
+     {
+      "stage": "keyword_and",
+      "tsquery": "'表1' & '基本项目' & '共' & '项' & '逐项'",
+      "top_k": 20,
+      "restricted_to_code_docs": [
+       "doc-91f9049decde09153368d4b69f280e78"
+      ],
+      "doc_hits": 0,
+      "chunk_hits": 0,
+      "elapsed_ms": 3
+     },
+     {
+      "stage": "keyword_and_diagnostics",
+      "per_term": [
+       {
+        "term": "表1",
+        "chunk_hits": 4
+       },
+       {
+        "term": "基本项目",
+        "chunk_hits": 7
+       },
+       {
+        "term": "共",
+        "chunk_hits": 0
+       },
+       {
+        "term": "项",
+        "chunk_hits": 1
+       },
+       {
+        "term": "逐项",
+        "chunk_hits": 0
+       }
+      ],
+      "absent_terms": [
+       "共",
+       "逐项"
+      ]
+     },
+     {
+      "stage": "keyword_core_and",
+      "tsquery": "'表1' & '基本项目' & '项'",
+      "dropped_absent_terms": [
+       "共",
+       "逐项"
+      ],
+      "chunk_hits": 1,
+      "note": "terms absent from the corpus cannot participate in AND"
+     },
+     {
+      "stage": "range_binding",
+      "targets": [
+       {
+        "kind": "table",
+        "value": "1",
+        "clauses": null
+       }
+      ],
+      "code_docs": [
+       "doc-91f9049decde09153368d4b69f280e78"
+      ],
+      "hits": 1,
+      "selected": 1,
+      "budget": 20,
+      "units": [
+       "tb-91f9049decde09153368d4b69f280e78-0001"
+      ],
+      "note": "requested table/chapter bound to actual catalog units; full member read stays in expansion, top-k bounds this discovery list too"
+     }
+    ]
+   },
+   "local": {
+    "ran": false,
+    "skipped_reason": "pg-only switch",
+    "error": null,
+    "receipts": null
+   },
+   "targets_requested": [
+    {
+     "code": "GB3838",
+     "version": "2002"
+    }
+   ],
+   "targets_resolved": [
+    {
+     "code": "GB3838",
+     "version": "2002",
+     "docs": [
+      "doc-91f9049decde09153368d4b69f280e78"
+     ],
+     "versions": [
+      "2002"
+     ]
+    }
+   ],
+   "typed_targets": [
+    {
+     "target_type": "doc",
+     "workspace": "default",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "doc_name": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf",
+     "self_code": "GB3838",
+     "self_code_version": "2002",
+     "discovery": "code_exact",
+     "membership_basis": null,
+     "citation": {
+      "kind": "catalog_row",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78"
+     },
+     "citation_verified": true
+    },
+    {
+     "target_type": "table_unit",
+     "workspace": "default",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+     "heading": "7 标准的实施与监督",
+     "chunk_ids": [
+      "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+      "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+      "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+     ],
+     "discovery": "table_range_binding",
+     "scope_status": null,
+     "membership_basis": null,
+     "citation": {
+      "kind": "table_unit",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+      "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+      "chunk_ids": [
+       "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+       "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+       "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+      ]
+     }
+    }
+   ],
+   "candidates": [
+    {
+     "workspace": "default",
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-000",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-000",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": "中华人民共和国国家标准",
+       "chunk_order": 0,
+       "discovery": "keyword_core_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.0009616180323064327
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "4f79779fb25f8e5ec0ad34cca261984c2c2175f245331f32d739bc8768d82fc8",
+     "content_len": 2639,
+     "content": "# 中华人民共和国国家标准\nGB 3838—2002\n代替 GB 3838—88, GHZB 1—1999\n\n# 地表水环境质量标准\n\n# Environmental quality standards for surface water\n2002-04-28 发布\n2002-06-01 实施\n国家环境保护总局\n国家质量监督检验检疫总局\n发布\nICS 13.060\nZ 50\nGB\n\n## 目次\n前言 ii  \n1 范围 1  \n2 引用标准 1  \n3 水域功能和标准分类 1  \n4 标准值 1  \n5 水质评价 1  \n6 水质监测 1  \n7 标准的实施与监督 2  \n表1 地表水环境质量标准基本项目标准限值 2  \n表2 集中式生活饮用水地表水源地补充项目标准限值 3  \n表3 集中式生活饮用水地表水源地特定项目标准限值 3  \n表4 地表水环境质量标准基本项目分析方法 4  \n表5 集中式生活饮用水地表水源地补充项目分析方法 5  \n表6 集中式生活饮用水地表水源地特定项目分析方法 6\nGB 3838—2002\n\n## 前言\n为贯彻《中华人民共和国环境保护法》和《中华人民共和国水污染防治法》，防治水污染，保护地表水水质，保障人体健康，维护良好的生态系统，制定本标准。\n本标准将标准项目分为：地表水环境质量标准基本项目、集中式生活饮用水地表水源地补充项目和集中式生活饮用水地表水源地特定项目。地表水环境质量标准基本项目适用于全国江河、湖泊、运河、渠道、水库等具有使用功能的地表水水域；集中式生活饮用水地表水源地补充项目和特定项目适用于集中式生活饮用水地表水源地一级保护区和二级保护区。集中式生活饮用水地表水源地特定项目由县级以上人民政府环境保护行政主管部门根据本地区地表水水质特点和环境管理的需要进行选择，集中式生活饮用水地表水源地补充项目和选择确定的特定项目作为基本项目的补充指标。\n本标准项目共计 109 项，其中地表水环境质量标准基本项目 24 项，集中式生活饮用水地表水源地补充项目 5 项，集中式生活饮用水地表水源地特定项目 80 项。\n与 GHZB 1—1999 相比，本标准在地表水环境质量标准基本项目中增加了总氮一项指标，删除了基本要求和亚硝酸盐、非离子氨及凯氏氮三项指标，将硫酸盐、氯化物、硝酸盐、铁、锰调整为集中式生活饮用水地表水源地补充项目，修订了 pH、溶解氧、氨氮、总磷、高锰酸盐指数、铅、粪大肠菌群七个项目的标准值，增加了集中式生活饮用水地表水源地特定项目 40 项。本标准删除了湖泊水库特定项目标准值。\n县级以上人民政府环境保护行政主管部门及相关部门根据职责分工，按本标准对地表水各类水域进行监督管理。\n与近海水域相连的地表水河口水域根据水环境功能按本标准相应类别标准值进行管理，近海水功能区水域根据使用功能按《海水水质标准》相应类别标准值进行管理。批准划定的单一渔业水域按《渔业水质标准》进行管理；处理后的城市污水及与城市污水水质相近的工业废水用于农田灌溉用水的水质按《农田灌溉水质标准》进行管理。\n《地面水环境质量标准》(GB 3838—83) 为首次发布，1988年为第一次修订，1999年为第二次修订，本次为第三次修订。本标准自2002年6月1日起实施，《地面水环境质量标准》(GB 3838—88) 和《地表水环境质量标准》(GHZB 1—1999) 同时废止。\n本标准由国家环境保护总局科技标准司提出并归口。\n本标准由中国环境科学研究院负责修订。\n本标准由国家环境保护总局 2002 年 4 月 26 日批准。\n本标准由国家环境保护总局负责解释。\nGB 3838—2002\n\n# 地表水环境质量标准\n\n## 1 范围\n1.1 本标准按照地表水环境功能分类和保护目标，规定了水环境质量应控制的项目及限值，以及水质评价、水质项目的分析方法和标准的实施与监督。\n1.2 本标准适用于中华人民共和国领域内江河、湖泊、运河、渠道、水库等具有使用功能的地表水水域。具有特定功能的水域，执行相应的专业用水水质标准。\n\n## 2 引用标准\n《生活饮用水卫生规范》（卫生部，2001年）和本标准表4～表6所列分析方法标准及规范中所含条文在本标准中被引用即构成为本标准条文，与本标准同效。当上述标准和规范被修订时，应使用其最新版本。\n\n## 3 水域功能和标准分类\n依据地表水水域环境功能和保护目标，按功能高低依次划分为五类：\nI 类 主要适用于源头水、国家自然保护区；\nⅠ类 主要适用于集中式生活饮用水地表水源地一级保护区、珍稀水生生物栖息地、鱼虾类产卵场、仔稚幼鱼的索饵场等；\nⅠ类 主要适用于集中式生活饮用水地表水源地二级保护区、鱼虾类越冬场、洄游通道、水产养殖区等渔业水域及游泳区；\nN类 主要适用于一般工业用水区及人体非直接接触的娱乐用水区；\nV 类 主要适用于农业用水区及一般景观要求水域。\n对应地表水上述五类水域功能，将地表水环境质量标准基本项目标准值分为五类，不同功能类别分别执行相应类别的标准值。水域功能类别高的标准值严于水域功能类别低的标准值。同一水域兼有多类使用功能的，执行最高功能类别对应的标准值。实现水域功能与达功能类别标准为同一含义。\n\n## 4 标准值\n4.1 地表水环境质量标准基本项目标准限值见表 1。\n4.2 集中式生活饮用水地表水源地补充项目标准限值见表 2。\n4.3 集中式生活饮用水地表水源地特定项目标准限值见表 3。\n\n## 5 水质评价\n5.1 地表水环境质量评价应根据应实现的水域功能类别，选取相应类别标准，进行单因子评价，评价结果应说明水质达标情况，超标的应说明超标项目和超标倍数。\n5.2 丰、平、枯水期特征明显的水域，应分水期进行水质评价。\n5.3 集中式生活饮用水地表水源地水质评价的项目应包括表1中的基本项目、表2中的补充项目以及由县级以上人民政府环境保护行政主管部门从表3中选择确定的特定项目。\n\n## 6 水质监测\n6.1 本标准规定的项目标准值，要求水样采集后自然沉降 30 min，取上层非沉降部分按规定方法进行\nGB 3838—2002\n分析。\n6.2 地表水水质监测的采样布点、监测频率应符合国家地表水环境监测技术规范的要求。\n6.3 本标准水质项目的分析方法应优先选用表 4～表 6 规定的方法，也可采用 ISO 方法体系等其它等效分析方法，但须进行适用性检验。",
+     "file_path": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": "7 标准的实施与监督",
+       "chunk_order": null,
+       "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+         "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+         "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+        ]
+       },
+       "discovery": "table_range_binding",
+       "citation_verified": true,
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "35b936935fe65937ae9d86a70f413d0ab9f8c59bddcccc6532547d2eccfaed24",
+     "content_len": 956,
+     "content": "## 7 标准的实施与监督\n7.1 本标准由县级以上人民政府环境保护行政主管部门及相关部门按职责分工监督实施。\n7.2 集中式生活饮用水地表水源地水质超标项目经自来水厂净化处理后，必须达到《生活饮用水卫生规范》的要求。\n7.3 省、自治区、直辖市人民政府可以对本标准中未作规定的项目，制定地方补充标准，并报国务院环境保护行政主管部门备案。\n<table id=\"tb-91f9049decde09153368d4b69f280e78-0001\" format=\"html\"><tr><td>序号</td><td>标准值\\分类项目</td><td>I类</td><td>II类</td><td>III类</td><td>IV类</td><td>V类</td></tr><tr><td>1</td><td>水温(°C)</td><td colspan=\"5\">人为造成的环境水温变化应限制在:周平均最大温升≤1周平均最大温降≤2</td></tr><tr><td>2</td><td>pH值(无量纲)</td><td colspan=\"5\">6~9</td></tr><tr><td>3</td><td>溶解氧≥</td><td>饱和率90%(或7.5)</td><td>6</td><td>5</td><td>3</td><td>2</td></tr><tr><td>4</td><td>高锰酸盐指数≤</td><td>2</td><td>4</td><td>6</td><td>10</td><td>15</td></tr><tr><td>5</td><td>化学需氧量(COD)≤</td><td>15</td><td>15</td><td>20</td><td>30</td><td>40</td></tr><tr><td>6</td><td>五日生化需氧量(BOD5)≤</td><td>3</td><td>3</td><td>4</td><td>6</td><td>10</td></tr><tr><td>7</td><td>氨氮(NH3-N)≤</td><td>0.15</td><td>0.5</td><td>1.0</td><td>1.5</td><td>2.0</td></tr></table>",
+     "file_path": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": "7 标准的实施与监督",
+       "chunk_order": null,
+       "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+         "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+         "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+        ]
+       },
+       "discovery": "table_range_binding",
+       "citation_verified": true,
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "699692ffe7277c18b5cfb7a59e74f6f7d80859ba0c57b873dd6bec9f2407b335",
+     "content_len": 895,
+     "content": "<table id=\"tb-91f9049decde09153368d4b69f280e78-0001\" format=\"html\"><tr><td>8</td><td>总磷(以P计)≤</td><td>0.02(湖、库0.01)</td><td>0.1(湖、库0.025)</td><td>0.2(湖、库0.05)</td><td>0.3(湖、库0.1)</td><td>0.4(湖、库0.2)</td></tr><tr><td>9</td><td>总氮(湖、库,以N计)≤</td><td>0.2</td><td>0.5</td><td>1.0</td><td>1.5</td><td>2.0</td></tr><tr><td>10</td><td>铜≤</td><td>0.01</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td></tr><tr><td>11</td><td>锌≤</td><td>0.05</td><td>1.0</td><td>1.0</td><td>2.0</td><td>2.0</td></tr><tr><td>12</td><td>氟化物(以F-计)≤</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.5</td><td>1.5</td></tr><tr><td>13</td><td>硒≤</td><td>0.01</td><td>0.01</td><td>0.01</td><td>0.02</td><td>0.02</td></tr><tr><td>14</td><td>砷≤</td><td>0.05</td><td>0.05</td><td>0.05</td><td>0.1</td><td>0.1</td></tr><tr><td>15</td><td>汞≤</td><td>0.00005</td><td>0.00005</td><td>0.0001</td><td>0.001</td><td>0.001</td></tr></table>",
+     "file_path": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-003",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-003",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": "7 标准的实施与监督",
+       "chunk_order": null,
+       "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+         "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+         "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+        ]
+       },
+       "discovery": "table_range_binding",
+       "citation_verified": true,
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "56748cf6991b454dff3aed196b3cc05ce52c12d4bb4d147f501741a4c4589e87",
+     "content_len": 1340,
+     "content": "<table id=\"tb-91f9049decde09153368d4b69f280e78-0001\" format=\"html\"><tr><td>16</td><td>镉≤</td><td>0.001</td><td>0.005</td><td>0.005</td><td>0.005</td><td>0.01</td></tr><tr><td>17</td><td>铬(六价)≤</td><td>0.01</td><td>0.05</td><td>0.05</td><td>0.05</td><td>0.1</td></tr><tr><td>18</td><td>铅≤</td><td>0.01</td><td>0.01</td><td>0.05</td><td>0.05</td><td>0.1</td></tr><tr><td>19</td><td>氰化物≤</td><td>0.005</td><td>0.05</td><td>0.2</td><td>0.2</td><td>0.2</td></tr><tr><td>20</td><td>挥发酚≤</td><td>0.002</td><td>0.002</td><td>0.005</td><td>0.01</td><td>0.1</td></tr><tr><td>21</td><td>石油类≤</td><td>0.05</td><td>0.05</td><td>0.05</td><td>0.5</td><td>1.0</td></tr><tr><td>22</td><td>阴离子表面活性剂≤</td><td>0.2</td><td>0.2</td><td>0.2</td><td>0.3</td><td>0.3</td></tr><tr><td>23</td><td>硫化物≤</td><td>0.05</td><td>0.1</td><td>0.2</td><td>0.5</td><td>1.0</td></tr><tr><td>24</td><td>粪大肠菌群(个/L)≤</td><td>200</td><td>2000</td><td>10000</td><td>20000</td><td>40000</td></tr></table>\nGB 3838—2002\n<table id=\"tb-91f9049decde09153368d4b69f280e78-0002\" format=\"html\"><tr><td>序号</td><td>项目</td><td>标准值</td></tr><tr><td>1</td><td>硫酸盐(以 $SO_{4}^{2-}$ 计)</td><td>250</td></tr><tr><td>2</td><td>氯化物(以 $Cl^{-}$ 计)</td><td>250</td></tr><tr><td>3</td><td>硝酸盐(以N计)</td><td>10</td></tr><tr><td>4</td><td>铁</td><td>0.3</td></tr><tr><td>5</td><td>锰</td><td>0.1</td></tr></table>",
+     "file_path": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf"
+    }
+   ],
+   "usable": [
+    {
+     "workspace": "default",
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-000",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-000",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": "中华人民共和国国家标准",
+       "chunk_order": 0,
+       "discovery": "keyword_core_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.0009616180323064327
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "4f79779fb25f8e5ec0ad34cca261984c2c2175f245331f32d739bc8768d82fc8",
+     "content_len": 2639,
+     "content": "# 中华人民共和国国家标准\nGB 3838—2002\n代替 GB 3838—88, GHZB 1—1999\n\n# 地表水环境质量标准\n\n# Environmental quality standards for surface water\n2002-04-28 发布\n2002-06-01 实施\n国家环境保护总局\n国家质量监督检验检疫总局\n发布\nICS 13.060\nZ 50\nGB\n\n## 目次\n前言 ii  \n1 范围 1  \n2 引用标准 1  \n3 水域功能和标准分类 1  \n4 标准值 1  \n5 水质评价 1  \n6 水质监测 1  \n7 标准的实施与监督 2  \n表1 地表水环境质量标准基本项目标准限值 2  \n表2 集中式生活饮用水地表水源地补充项目标准限值 3  \n表3 集中式生活饮用水地表水源地特定项目标准限值 3  \n表4 地表水环境质量标准基本项目分析方法 4  \n表5 集中式生活饮用水地表水源地补充项目分析方法 5  \n表6 集中式生活饮用水地表水源地特定项目分析方法 6\nGB 3838—2002\n\n## 前言\n为贯彻《中华人民共和国环境保护法》和《中华人民共和国水污染防治法》，防治水污染，保护地表水水质，保障人体健康，维护良好的生态系统，制定本标准。\n本标准将标准项目分为：地表水环境质量标准基本项目、集中式生活饮用水地表水源地补充项目和集中式生活饮用水地表水源地特定项目。地表水环境质量标准基本项目适用于全国江河、湖泊、运河、渠道、水库等具有使用功能的地表水水域；集中式生活饮用水地表水源地补充项目和特定项目适用于集中式生活饮用水地表水源地一级保护区和二级保护区。集中式生活饮用水地表水源地特定项目由县级以上人民政府环境保护行政主管部门根据本地区地表水水质特点和环境管理的需要进行选择，集中式生活饮用水地表水源地补充项目和选择确定的特定项目作为基本项目的补充指标。\n本标准项目共计 109 项，其中地表水环境质量标准基本项目 24 项，集中式生活饮用水地表水源地补充项目 5 项，集中式生活饮用水地表水源地特定项目 80 项。\n与 GHZB 1—1999 相比，本标准在地表水环境质量标准基本项目中增加了总氮一项指标，删除了基本要求和亚硝酸盐、非离子氨及凯氏氮三项指标，将硫酸盐、氯化物、硝酸盐、铁、锰调整为集中式生活饮用水地表水源地补充项目，修订了 pH、溶解氧、氨氮、总磷、高锰酸盐指数、铅、粪大肠菌群七个项目的标准值，增加了集中式生活饮用水地表水源地特定项目 40 项。本标准删除了湖泊水库特定项目标准值。\n县级以上人民政府环境保护行政主管部门及相关部门根据职责分工，按本标准对地表水各类水域进行监督管理。\n与近海水域相连的地表水河口水域根据水环境功能按本标准相应类别标准值进行管理，近海水功能区水域根据使用功能按《海水水质标准》相应类别标准值进行管理。批准划定的单一渔业水域按《渔业水质标准》进行管理；处理后的城市污水及与城市污水水质相近的工业废水用于农田灌溉用水的水质按《农田灌溉水质标准》进行管理。\n《地面水环境质量标准》(GB 3838—83) 为首次发布，1988年为第一次修订，1999年为第二次修订，本次为第三次修订。本标准自2002年6月1日起实施，《地面水环境质量标准》(GB 3838—88) 和《地表水环境质量标准》(GHZB 1—1999) 同时废止。\n本标准由国家环境保护总局科技标准司提出并归口。\n本标准由中国环境科学研究院负责修订。\n本标准由国家环境保护总局 2002 年 4 月 26 日批准。\n本标准由国家环境保护总局负责解释。\nGB 3838—2002\n\n# 地表水环境质量标准\n\n## 1 范围\n1.1 本标准按照地表水环境功能分类和保护目标，规定了水环境质量应控制的项目及限值，以及水质评价、水质项目的分析方法和标准的实施与监督。\n1.2 本标准适用于中华人民共和国领域内江河、湖泊、运河、渠道、水库等具有使用功能的地表水水域。具有特定功能的水域，执行相应的专业用水水质标准。\n\n## 2 引用标准\n《生活饮用水卫生规范》（卫生部，2001年）和本标准表4～表6所列分析方法标准及规范中所含条文在本标准中被引用即构成为本标准条文，与本标准同效。当上述标准和规范被修订时，应使用其最新版本。\n\n## 3 水域功能和标准分类\n依据地表水水域环境功能和保护目标，按功能高低依次划分为五类：\nI 类 主要适用于源头水、国家自然保护区；\nⅠ类 主要适用于集中式生活饮用水地表水源地一级保护区、珍稀水生生物栖息地、鱼虾类产卵场、仔稚幼鱼的索饵场等；\nⅠ类 主要适用于集中式生活饮用水地表水源地二级保护区、鱼虾类越冬场、洄游通道、水产养殖区等渔业水域及游泳区；\nN类 主要适用于一般工业用水区及人体非直接接触的娱乐用水区；\nV 类 主要适用于农业用水区及一般景观要求水域。\n对应地表水上述五类水域功能，将地表水环境质量标准基本项目标准值分为五类，不同功能类别分别执行相应类别的标准值。水域功能类别高的标准值严于水域功能类别低的标准值。同一水域兼有多类使用功能的，执行最高功能类别对应的标准值。实现水域功能与达功能类别标准为同一含义。\n\n## 4 标准值\n4.1 地表水环境质量标准基本项目标准限值见表 1。\n4.2 集中式生活饮用水地表水源地补充项目标准限值见表 2。\n4.3 集中式生活饮用水地表水源地特定项目标准限值见表 3。\n\n## 5 水质评价\n5.1 地表水环境质量评价应根据应实现的水域功能类别，选取相应类别标准，进行单因子评价，评价结果应说明水质达标情况，超标的应说明超标项目和超标倍数。\n5.2 丰、平、枯水期特征明显的水域，应分水期进行水质评价。\n5.3 集中式生活饮用水地表水源地水质评价的项目应包括表1中的基本项目、表2中的补充项目以及由县级以上人民政府环境保护行政主管部门从表3中选择确定的特定项目。\n\n## 6 水质监测\n6.1 本标准规定的项目标准值，要求水样采集后自然沉降 30 min，取上层非沉降部分按规定方法进行\nGB 3838—2002\n分析。\n6.2 地表水水质监测的采样布点、监测频率应符合国家地表水环境监测技术规范的要求。\n6.3 本标准水质项目的分析方法应优先选用表 4～表 6 规定的方法，也可采用 ISO 方法体系等其它等效分析方法，但须进行适用性检验。",
+     "file_path": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": "7 标准的实施与监督",
+       "chunk_order": null,
+       "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+         "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+         "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+        ]
+       },
+       "discovery": "table_range_binding",
+       "citation_verified": true,
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "35b936935fe65937ae9d86a70f413d0ab9f8c59bddcccc6532547d2eccfaed24",
+     "content_len": 956,
+     "content": "## 7 标准的实施与监督\n7.1 本标准由县级以上人民政府环境保护行政主管部门及相关部门按职责分工监督实施。\n7.2 集中式生活饮用水地表水源地水质超标项目经自来水厂净化处理后，必须达到《生活饮用水卫生规范》的要求。\n7.3 省、自治区、直辖市人民政府可以对本标准中未作规定的项目，制定地方补充标准，并报国务院环境保护行政主管部门备案。\n<table id=\"tb-91f9049decde09153368d4b69f280e78-0001\" format=\"html\"><tr><td>序号</td><td>标准值\\分类项目</td><td>I类</td><td>II类</td><td>III类</td><td>IV类</td><td>V类</td></tr><tr><td>1</td><td>水温(°C)</td><td colspan=\"5\">人为造成的环境水温变化应限制在:周平均最大温升≤1周平均最大温降≤2</td></tr><tr><td>2</td><td>pH值(无量纲)</td><td colspan=\"5\">6~9</td></tr><tr><td>3</td><td>溶解氧≥</td><td>饱和率90%(或7.5)</td><td>6</td><td>5</td><td>3</td><td>2</td></tr><tr><td>4</td><td>高锰酸盐指数≤</td><td>2</td><td>4</td><td>6</td><td>10</td><td>15</td></tr><tr><td>5</td><td>化学需氧量(COD)≤</td><td>15</td><td>15</td><td>20</td><td>30</td><td>40</td></tr><tr><td>6</td><td>五日生化需氧量(BOD5)≤</td><td>3</td><td>3</td><td>4</td><td>6</td><td>10</td></tr><tr><td>7</td><td>氨氮(NH3-N)≤</td><td>0.15</td><td>0.5</td><td>1.0</td><td>1.5</td><td>2.0</td></tr></table>",
+     "file_path": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": "7 标准的实施与监督",
+       "chunk_order": null,
+       "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+         "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+         "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+        ]
+       },
+       "discovery": "table_range_binding",
+       "citation_verified": true,
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "699692ffe7277c18b5cfb7a59e74f6f7d80859ba0c57b873dd6bec9f2407b335",
+     "content_len": 895,
+     "content": "<table id=\"tb-91f9049decde09153368d4b69f280e78-0001\" format=\"html\"><tr><td>8</td><td>总磷(以P计)≤</td><td>0.02(湖、库0.01)</td><td>0.1(湖、库0.025)</td><td>0.2(湖、库0.05)</td><td>0.3(湖、库0.1)</td><td>0.4(湖、库0.2)</td></tr><tr><td>9</td><td>总氮(湖、库,以N计)≤</td><td>0.2</td><td>0.5</td><td>1.0</td><td>1.5</td><td>2.0</td></tr><tr><td>10</td><td>铜≤</td><td>0.01</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.0</td></tr><tr><td>11</td><td>锌≤</td><td>0.05</td><td>1.0</td><td>1.0</td><td>2.0</td><td>2.0</td></tr><tr><td>12</td><td>氟化物(以F-计)≤</td><td>1.0</td><td>1.0</td><td>1.0</td><td>1.5</td><td>1.5</td></tr><tr><td>13</td><td>硒≤</td><td>0.01</td><td>0.01</td><td>0.01</td><td>0.02</td><td>0.02</td></tr><tr><td>14</td><td>砷≤</td><td>0.05</td><td>0.05</td><td>0.05</td><td>0.1</td><td>0.1</td></tr><tr><td>15</td><td>汞≤</td><td>0.00005</td><td>0.00005</td><td>0.0001</td><td>0.001</td><td>0.001</td></tr></table>",
+     "file_path": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf"
+    },
+    {
+     "workspace": "default",
+     "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-003",
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-003",
+       "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+       "heading": "7 标准的实施与监督",
+       "chunk_order": null,
+       "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "table_id": "tb-91f9049decde09153368d4b69f280e78-0001",
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+         "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+         "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+        ]
+       },
+       "discovery": "table_range_binding",
+       "citation_verified": true,
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "verified": true,
+     "verify_error": null,
+     "content_sha256": "56748cf6991b454dff3aed196b3cc05ce52c12d4bb4d147f501741a4c4589e87",
+     "content_len": 1340,
+     "content": "<table id=\"tb-91f9049decde09153368d4b69f280e78-0001\" format=\"html\"><tr><td>16</td><td>镉≤</td><td>0.001</td><td>0.005</td><td>0.005</td><td>0.005</td><td>0.01</td></tr><tr><td>17</td><td>铬(六价)≤</td><td>0.01</td><td>0.05</td><td>0.05</td><td>0.05</td><td>0.1</td></tr><tr><td>18</td><td>铅≤</td><td>0.01</td><td>0.01</td><td>0.05</td><td>0.05</td><td>0.1</td></tr><tr><td>19</td><td>氰化物≤</td><td>0.005</td><td>0.05</td><td>0.2</td><td>0.2</td><td>0.2</td></tr><tr><td>20</td><td>挥发酚≤</td><td>0.002</td><td>0.002</td><td>0.005</td><td>0.01</td><td>0.1</td></tr><tr><td>21</td><td>石油类≤</td><td>0.05</td><td>0.05</td><td>0.05</td><td>0.5</td><td>1.0</td></tr><tr><td>22</td><td>阴离子表面活性剂≤</td><td>0.2</td><td>0.2</td><td>0.2</td><td>0.3</td><td>0.3</td></tr><tr><td>23</td><td>硫化物≤</td><td>0.05</td><td>0.1</td><td>0.2</td><td>0.5</td><td>1.0</td></tr><tr><td>24</td><td>粪大肠菌群(个/L)≤</td><td>200</td><td>2000</td><td>10000</td><td>20000</td><td>40000</td></tr></table>\nGB 3838—2002\n<table id=\"tb-91f9049decde09153368d4b69f280e78-0002\" format=\"html\"><tr><td>序号</td><td>项目</td><td>标准值</td></tr><tr><td>1</td><td>硫酸盐(以 $SO_{4}^{2-}$ 计)</td><td>250</td></tr><tr><td>2</td><td>氯化物(以 $Cl^{-}$ 计)</td><td>250</td></tr><tr><td>3</td><td>硝酸盐(以N计)</td><td>10</td></tr><tr><td>4</td><td>铁</td><td>0.3</td></tr><tr><td>5</td><td>锰</td><td>0.1</td></tr></table>",
+     "file_path": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf"
+    }
+   ],
+   "rejected": [],
+   "budget": {
+    "limit": 40,
+    "kept": 4,
+    "truncated": [],
+    "rule": "no truncation"
+   },
+   "status": "ok",
+   "degraded": [],
+   "notes": [],
+   "allowed_set_basis": {
+    "resolved_code_targets": [
+     [
+      "doc-91f9049decde09153368d4b69f280e78"
+     ]
+    ],
+    "verified_attributions": []
+   },
+   "verify": {
+    "requested": 4,
+    "verified": 4,
+    "missing": 0,
+    "attribution_conflict": 0
+   }
+  }
+ ],
+ "finished_at": "2026-10-08T13:24:39+0800"
+}

@@ -1,0 +1,59 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+___________ test_full_quote_split_across_two_valid_units_is_verified ___________
+
+    def test_full_quote_split_across_two_valid_units_is_verified():
+        first = "第一单元的有效条款正文，"
+        second = "第二单元继续同一条款并给出限值99。"
+        text = first + "\n\n" + second
+        units = [
+            UnitText("u1", first, ["c1"], {}, 0, len(first), False, "parsed_block"),
+            UnitText("u2", second, ["c2"], {}, len(first) + 2, len(text), False, "parsed_block"),
+        ]
+        item = {
+            "citation_verified": True,
+            "citation": {"char_start": 0, "char_end": len(text), "quote": text},
+        }
+        bound = bind_citations([item], "default", "d", "s", units)
+        assert len(bound[0]["citation"]["unit_segments"]) == 2
+>       assert verify_citations(bound, text, units)[0]["citation_verified"] is True
+E       assert False is True
+
+tests/test_gate2_review_r8.py:20: AssertionError
+______ test_numeric_bound_unit_missing_from_supplied_sources_is_rejected _______
+
+    def test_numeric_bound_unit_missing_from_supplied_sources_is_rejected():
+        text = "实际原文中的完整引句，限值99。"
+        unit = UnitText("u", text, ["c"], {}, 0, len(text), False, "parsed_block")
+        item = {
+            "citation_verified": True,
+            "citation": {"char_start": 0, "char_end": len(text), "quote": text},
+        }
+        bound = bind_citations([item], "default", "d", "s", [unit])
+>       assert verify_citations(bound, text, [])[0]["citation_verified"] is False
+E       assert True is False
+
+tests/test_gate2_review_r8.py:31: AssertionError
+____ test_empty_declared_segment_is_rejected_even_when_owner_contains_quote ____
+
+    def test_empty_declared_segment_is_rejected_even_when_owner_contains_quote():
+        text = "完整的原文引句。"
+        unit = UnitText("u", text, ["c"], {}, 0, len(text), False, "parsed_block")
+        item = {
+            "citation_verified": True,
+            "citation": {"char_start": 0, "char_end": len(text), "quote": text},
+        }
+        bound = bind_citations([item], "default", "d", "s", [unit])
+        bound[0]["citation"]["unit_segments"] = [
+            {"unit_id": "u", "rel_start": 0, "rel_end": len(text)},
+            {"unit_id": "u", "rel_start": len(text), "rel_end": len(text)},
+        ]
+>       assert verify_citations(bound, text, [unit])[0]["citation_verified"] is False
+E       assert True is False
+
+tests/test_gate2_review_r8.py:46: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_gate2_review_r8.py::test_full_quote_split_across_two_valid_units_is_verified
+FAILED tests/test_gate2_review_r8.py::test_numeric_bound_unit_missing_from_supplied_sources_is_rejected
+FAILED tests/test_gate2_review_r8.py::test_empty_declared_segment_is_rejected_even_when_owner_contains_quote
+3 failed in 0.08s

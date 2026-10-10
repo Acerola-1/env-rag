@@ -1,0 +1,200 @@
+{
+  "version": "1.0",
+  "equations": {
+    "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0001": {
+      "id": "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0001",
+      "blockid": "a3e86a67432f1a10d219b845ba429c5b",
+      "heading": "5.3.2 评价工作分级方法",
+      "parent_headings": [
+        "环境影响评价技术导则 大气环境"
+      ],
+      "format": "latex",
+      "content": "P _ {i} = \\frac {C _ {i}}{C _ {0 i}} \\times 100 \\%\\tag{1}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/121"
+    },
+    "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0002": {
+      "id": "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0002",
+      "blockid": "58bc35902ebe5ce13dc5414200041b68",
+      "heading": "6.4.3 环境空气保护目标及网格点环境质量现状浓度",
+      "parent_headings": [
+        "环境影响评价技术导则 大气环境"
+      ],
+      "format": "latex",
+      "content": "C _ {\\mathrm{现状} (x, y, t)} = \\frac {1}{n} \\sum_ {j = 1} ^ {n} C _ {\\mathrm{现状} (j, t)}\\tag{2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/192"
+    },
+    "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0003": {
+      "id": "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0003",
+      "blockid": "58bc35902ebe5ce13dc5414200041b68",
+      "heading": "6.4.3 环境空气保护目标及网格点环境质量现状浓度",
+      "parent_headings": [
+        "环境影响评价技术导则 大气环境"
+      ],
+      "format": "latex",
+      "content": "C _ {\\mathrm{现状} (x, y)} = \\operatorname{MAX} \\left[ \\frac {1}{n} \\Sigma_ {j = 1} ^ {n} C _ {\\mathrm{监测} (j, t)} \\right]\\tag{3}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/199"
+    },
+    "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0004": {
+      "id": "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0004",
+      "blockid": "2bdf8daae80e4509ea8d65a350c9461c",
+      "heading": "8.5.3 推荐模型使用要求",
+      "parent_headings": [
+        "环境影响评价技术导则 大气环境"
+      ],
+      "format": "latex",
+      "content": "C _ {\\text {二次PM} _ {2. 5}} = \\varphi_ {\\mathrm{SO} _ {2}} \\times C _ {\\mathrm{SO} _ {2}} + \\varphi_ {\\mathrm{NO} _ {2}} \\times C _ {\\mathrm{NO} _ {2}}\\tag{4}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/259"
+    },
+    "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0005": {
+      "id": "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0005",
+      "blockid": "2bdf8daae80e4509ea8d65a350c9461c",
+      "heading": "8.5.3 推荐模型使用要求",
+      "parent_headings": [
+        "环境影响评价技术导则 大气环境"
+      ],
+      "format": "latex",
+      "content": "C _ {\\mathrm{SO} _ {2}} 、 C _ {\\mathrm{NO} _ {2}} — — \\mathrm{SO} _ {2} 、 \\mathrm{NO} _ {2} \\text {的预测质量浓度，} \\mu \\mathrm{g} / \\mathrm{m} ^ {3} 。",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/262"
+    },
+    "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0006": {
+      "id": "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0006",
+      "blockid": "780c7ee62d9e46bd33cf2e738e1d6055",
+      "heading": "8.8.1.1 达标区环境影响叠加",
+      "parent_headings": [
+        "环境影响评价技术导则 大气环境"
+      ],
+      "format": "latex",
+      "content": "C _ {\\text {叠加} (x, y, t)} = C _ {\\text {本项目} (x, y, t)} - C _ {\\text {区域削减} (x, y, t)} + C _ {\\text {拟在建} (x, y, t)} + C _ {\\text {现状} (x, y, t)}\\tag{5}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/295"
+    },
+    "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0007": {
+      "id": "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0007",
+      "blockid": "780c7ee62d9e46bd33cf2e738e1d6055",
+      "heading": "8.8.1.1 达标区环境影响叠加",
+      "parent_headings": [
+        "环境影响评价技术导则 大气环境"
+      ],
+      "format": "latex",
+      "content": "C _ {\\text {本项目} (x, y, t)} = C _ {\\text {新增} (x, y, t)} - C _ {\\text {以新带老} (x, y, t)}\\tag{6}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/301"
+    },
+    "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0008": {
+      "id": "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0008",
+      "blockid": "b708bd479845e6f002b6313f44cc8775",
+      "heading": "8.8.1.2 不达标区环境影响叠加",
+      "parent_headings": [
+        "环境影响评价技术导则 大气环境"
+      ],
+      "format": "latex",
+      "content": "C _ {\\text {叠加} (x, y, t)} = C _ {\\text {本项目} (x, y, t)} - C _ {\\text {区域削减} (x, y, t)} + C _ {\\text {拟在建} (x, y, t)} + C _ {\\text {规划} (x, y, t)}\\tag{7}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/306"
+    },
+    "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0009": {
+      "id": "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0009",
+      "blockid": "f0d8e44bd91d0714fa0bbb3d3d2db91c",
+      "heading": "8.8.2 保证率日平均质量浓度",
+      "parent_headings": [
+        "环境影响评价技术导则 大气环境"
+      ],
+      "format": "latex",
+      "content": "m = 1 + (n - 1) \\times p\\tag{8}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/310"
+    },
+    "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0010": {
+      "id": "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0010",
+      "blockid": "f2b44e6bb29b1590c6993e70bc638076",
+      "heading": "8.8.4 区域环境质量变化评价",
+      "parent_headings": [
+        "环境影响评价技术导则 大气环境"
+      ],
+      "format": "latex",
+      "content": "k = \\left[ \\overline {{C}} _ {\\text {本项目} (a)} - \\overline {{C}} _ {\\text {区域削减} (a)} \\right] / \\overline {{C}} _ {\\text {区域削减} (a)} \\times 100\\tag{9}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/321"
+    },
+    "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0011": {
+      "id": "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0011",
+      "blockid": "f2b44e6bb29b1590c6993e70bc638076",
+      "heading": "8.8.4 区域环境质量变化评价",
+      "parent_headings": [
+        "环境影响评价技术导则 大气环境"
+      ],
+      "format": "latex",
+      "content": "E _ {\\mathrm{年排放}} = \\sum_ {i = 1} ^ {n} \\Big (M _ {i \\mathrm{有组织}} \\times H _ {i \\mathrm{有组织}} \\Big) / 1 0 0 0 + \\sum_ {j = 1} ^ {m} \\Big (M _ {j \\mathrm{无组织}} \\times H _ {j \\mathrm{无组织}} \\Big) / 1 0 0 0\\tag{10}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/337"
+    },
+    "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0012": {
+      "id": "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0012",
+      "blockid": "e8ae05248288e560f08a5d2340360397",
+      "heading": "B.6.3 计算点和网格点设置",
+      "parent_headings": [
+        "（规范性附录）推荐模型参数及说明"
+      ],
+      "format": "latex",
+      "content": "P _ {o} = \\frac {Q}{C _ {0}} \\times 1 0 ^ {1 2}\\tag{B.1}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/470"
+    },
+    "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0013": {
+      "id": "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0013",
+      "blockid": "6cd76e5fbc5312d8b74baea82b4032c2",
+      "heading": "B.6.4 建筑物下洗",
+      "parent_headings": [
+        "（规范性附录）推荐模型参数及说明"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{GEP} \\text {烟囱高度} = H + 1. 5 L\\tag{B.2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/482"
+    },
+    "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0014": {
+      "id": "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0014",
+      "blockid": "e1e6da49fbee03c1092a7f408d2dfef6",
+      "heading": "C.4.5 火炬源调查内容",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "format": "latex",
+      "content": "D = 9. 8 8 \\times 1 0 ^ {- 4} \\times \\sqrt {\\mathrm{HR} \\times (1 - \\mathrm{HL})}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/596"
+    },
+    "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0015": {
+      "id": "eq-d3d7d38fe9dc1348e57c1fa29b47f404-0015",
+      "blockid": "e1e6da49fbee03c1092a7f408d2dfef6",
+      "heading": "C.4.5 火炬源调查内容",
+      "parent_headings": [
+        "附录C（规范性附录）大气环境影响评价基本内容与图表"
+      ],
+      "format": "latex",
+      "content": "h _ {\\mathrm{eff}} = H \\mathrm{s} + 4. 5 6 \\times 1 0 ^ {- 3} \\times \\mathrm{HR} ^ {0. 4 7 8}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/600"
+    }
+  }
+}

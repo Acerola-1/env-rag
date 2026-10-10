@@ -1,0 +1,412 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-09T21:02:54+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "syn-005"
+ ],
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-formal-fixed-round-1/inputs/local/syn-005-rerank.json",
+   "sha256": "ac5b823a1b9b1827c687b491d0d6451e1d13d9463280274e2eea3e39ccc93d61",
+   "task": null,
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": []
+  },
+  "fused_report": {
+   "path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-formal-fixed-round-1/inputs/local/syn-005-fusion.json",
+   "sha256": "2b5242e43ded37ce7b82cfc9501688d1dafc200726531eb58c16efa5d3e5e7ec",
+   "task": "Phase 4 round 1 evaluation input (path=local)",
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": [
+    "syn-005"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "model_calls_used": 1,
+ "results": [
+  {
+   "query_id": "syn-005",
+   "query": "综合 GB 18466-2005 表 1、表 2，说明传染病医疗机构、综合医疗机构分别执行哪张表。",
+   "category": "synthesis",
+   "workspace": "default",
+   "coverage_status": "partial",
+   "fail_stage": "model_failure",
+   "flags": [
+    "no rerank replay for this query id — scope priority falls back to fusion path order, explicitly recorded (no fabricated scores)",
+    "discovery document doc-b45c510232ed4d2452b0f5b2a13434e4 excluded from the answer scope: canonical identity GB8978-1996 matches no requested branch ['GB18466-2005']",
+    "discovery document doc-9bb11e5d3809e590259aef28fb61062b identity unresolved: self_code unknown in the catalog — never guessed from a name; only the upstream-published, allowed-set-cross-checked attribution evidence may carry such a document",
+    "discovery document doc-b423a0e3331541588988fd34496c349d identity unresolved: self_code unknown in the catalog — never guessed from a name; only the upstream-published, allowed-set-cross-checked attribution evidence may carry such a document",
+    "6 expansion record(s) from non-target candidate documents are recorded but cannot degrade the selected scope"
+   ],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "absent",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 0,
+    "typed_targets": [],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 10,
+    "selected_docs": [
+     "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+    ],
+    "priority": [
+     {
+      "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "rerank_rank_or_none": null
+     },
+     {
+      "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+      "rerank_rank_or_none": null
+     }
+    ],
+    "target_confirmation": {
+     "request_branches": [
+      {
+       "code": "GB18466",
+       "version": "2005"
+      }
+     ],
+     "branch_source": "local parse of the question",
+     "identity_source": "catalog documents rows (self_code/self_code_version) read through the guarded workspace+catalog-snapshot connection",
+     "allowed": [
+      "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+     ],
+     "allowed_basis": {
+      "doc-68a03b50e1ba1ffc6a0116529f694fe1": "canonical GB18466-2005 matches requested branch GB18466-2005 (catalog documents row via the guarded workspace+snapshot)"
+     },
+     "rejected": [
+      {
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "reason": "canonical identity GB8978-1996 matches no requested branch ['GB18466-2005']"
+      }
+     ],
+     "unresolved": [
+      {
+       "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+       "reason": "self_code unknown in the catalog — never guessed from a name; only the upstream-published, allowed-set-cross-checked attribution evidence may carry such a document"
+      },
+      {
+       "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+       "reason": "self_code unknown in the catalog — never guessed from a name; only the upstream-published, allowed-set-cross-checked attribution evidence may carry such a document"
+      }
+     ],
+     "unconfirmed_branches": [],
+     "rule": "discovery never defines the answer scope; a typed label or a replay-declared name is an audit clue, never canonical identity"
+    },
+    "basis": "confirmed canonical target identity defines the answer scope (improvement-2); discovery/top-k/rerank order never bound or promote membership — unconfirmed documents are excluded with recorded reasons and cannot enter the answer"
+   },
+   "expansions": [
+    {
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "kind": "table",
+     "table_number": "1",
+     "scope_ids": [
+      "tb-68a03b50e1ba1ffc6a0116529f694fe1-0001"
+     ],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "fail_stage": "",
+     "items_count": 31,
+     "warnings": [
+      "table_structure: header=[[\"序号\", \"控制项目\", \"标准值\"]]; units=[]; footnotes=[\"注:1)采用含氯消毒剂消毒的工艺控制要求为:消毒接触池的接触时间≥1.5h,接触池出口总余氯6.5~10mg/L。2)采用其他消毒剂对总余氯不做要求。 注:1)采用含氯消毒剂消毒的工艺控制要求为:消毒接触池的接触时间≥1.5h,接触池出口总余氯6.5~10mg/L。2)采用其他消毒剂对总余氯不做要求。 注:1)采用含氯消毒剂消毒的工艺控制要求为:消毒接触池的接触时间≥1.5h,接触池出口总余氯6.5~10mg/L。2)采用其他消毒剂对总余氯不做要求。\"]"
+     ],
+     "selected": true
+    },
+    {
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "kind": "table",
+     "table_number": "2",
+     "scope_ids": [
+      "tb-68a03b50e1ba1ffc6a0116529f694fe1-0002"
+     ],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "fail_stage": "",
+     "items_count": 30,
+     "warnings": [
+      "table_structure: header=[[\"序号\", \"控制项目\", \"排放标准\", \"预处理标准\"]]; units=[]; footnotes=[\"注:1)采用含氯消毒剂消毒的工艺控制要求为:排放标准:消毒接触池接触时间≥1 h,接触池出口总余氯3~10 mg/L。预处理标准:消毒接触池接触时间≥1 h,接触池出口总余氯2~8 mg/L。2)采用其他消毒剂对总余氯不做要求。 注:1)采用含氯消毒剂消毒的工艺控制要求为:排放标准:消毒接触池接触时间≥1 h,接触池出口总余氯3~10 mg/L。预处理标准:消毒接触池接触时间≥1 h,接触池出口总余氯2~8 mg/L。2)采用其他消毒剂对总余氯不做要求。 注:1)采用含氯消毒剂消毒的工艺控制要求为:排放标准:消毒接触池接触时间≥1 h,接触池出口总余氯3~10 mg/L。预处理标准:消毒接触池接触时间≥1 h,接触池出口总余氯2~8 mg/L。2)采用其他消毒剂对总余氯不做要求。 注:1)采用含氯消毒剂消毒的工艺控制要求为:排放标准:消毒接触池接触时间≥1 h,接触池出口总余氯3~10 mg/L。预处理标准:消毒接触池接触时间≥1 h,接触池出口总余氯2~8 mg/L。2)采用其他消毒剂对总余氯不做要求。\"]"
+     ],
+     "selected": true
+    },
+    {
+     "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+     "kind": "table",
+     "table_number": "1",
+     "scope_ids": [
+      "tb-9bb11e5d3809e590259aef28fb61062b-0001"
+     ],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "fail_stage": "",
+     "items_count": 33,
+     "warnings": [
+      "table_structure: header=[[\"序号\", \"控制项目\", \"标准值\", \"标准值\"]]; units=[]; footnotes=[\"注: $^{1)}$ 仅适用于采用含氯消毒剂的消毒工艺,不适用于其他消毒工艺。 $^{2)}$ 综合毒性表征指标,以最低无效应稀释倍数来表示,在26°C±1°C的条件下培养48h,不少于90%的斑马鱼卵存活时水样的最低稀释倍数。 注: $^{1)}$ 仅适用于采用含氯消毒剂的消毒工艺,不适用于其他消毒工艺。 $^{2)}$ 综合毒性表征指标,以最低无效应稀释倍数来表示,在26°C±1°C的条件下培养48h,不少于90%的斑马鱼卵存活时水样的最低稀释倍数。 注: $^{1)}$ 仅适用于采用含氯消毒剂的消毒工艺,不适用于其他消毒工艺。 $^{2)}$ 综合毒性表征指标,以最低无效应稀释倍数来表示,在26°C±1°C的条件下培养48h,不少于90%的斑马鱼卵存活时水样的最低稀释倍数。 注: $^{1)}$ 仅适用于采用含氯消毒剂的消毒工艺,不适用于其他消毒工艺。 $^{2)}$ 综合毒性表征指标,以最低无效应稀释倍数来表示,在26°C±1°C的条件下培养48h,不少于90%的斑马鱼卵存活时水样的最低稀释倍数。\"]"
+     ],
+     "selected": false,
+     "note": "non-target candidate document — recorded for transparency, excluded from the answer scope and coverage decision"
+    },
+    {
+     "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+     "kind": "table",
+     "table_number": "2",
+     "scope_ids": [
+      "tb-9bb11e5d3809e590259aef28fb61062b-0002"
+     ],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "fail_stage": "",
+     "items_count": 32,
+     "warnings": [
+      "table_structure: header=[[\"序号\", \"控制项目\", \"排放标准\", \"预处理标准\", \"预处理标准\", \"预处理标准\"]]; units=[]; footnotes=[\"注: $^{1)}$ 仅适用于采用含氯消毒剂的消毒工艺,不适用于其他消毒工艺。 $^{2)}$ 综合毒性表征指标,以最低无效应稀释倍数来表示,在26°C±1°C的条件下培养48h,不少于90%的斑马鱼卵存活时水样的最低稀释倍数。 注: $^{1)}$ 仅适用于采用含氯消毒剂的消毒工艺,不适用于其他消毒工艺。 $^{2)}$ 综合毒性表征指标,以最低无效应稀释倍数来表示,在26°C±1°C的条件下培养48h,不少于90%的斑马鱼卵存活时水样的最低稀释倍数。 注: $^{1)}$ 仅适用于采用含氯消毒剂的消毒工艺,不适用于其他消毒工艺。 $^{2)}$ 综合毒性表征指标,以最低无效应稀释倍数来表示,在26°C±1°C的条件下培养48h,不少于90%的斑马鱼卵存活时水样的最低稀释倍数。 注: $^{1)}$ 仅适用于采用含氯消毒剂的消毒工艺,不适用于其他消毒工艺。 $^{2)}$ 综合毒性表征指标,以最低无效应稀释倍数来表示,在26°C±1°C的条件下培养48h,不少于90%的斑马鱼卵存活时水样的最低稀释倍数。 注: $^{1)}$ 仅适用于采用含氯消毒剂的消毒工艺,不适用于其他消毒工艺。 $^{2)}$ 综合毒性表征指标,以最低无效应稀释倍数来表示,在26°C±1°C的条件下培养48h,不少于90%的斑马鱼卵存活时水样的最低稀释倍数。 注: $^{1)}$ 仅适用于采用含氯消毒剂的消毒工艺,不适用于其他消毒工艺。 $^{2)}$ 综合毒性表征指标,以最低无效应稀释倍数来表示,在26°C±1°C的条件下培养48h,不少于90%的斑马鱼卵存活时水样的最低稀释倍数。\"]"
+     ],
+     "selected": false,
+     "note": "non-target candidate document — recorded for transparency, excluded from the answer scope and coverage decision"
+    },
+    {
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "kind": "table",
+     "table_number": "1",
+     "scope_ids": [
+      "tb-b45c510232ed4d2452b0f5b2a13434e4-0001"
+     ],
+     "members_total": 2,
+     "members_processed": 2,
+     "coverage_status": "complete",
+     "fail_stage": "",
+     "items_count": 13,
+     "warnings": [
+      "table_structure: header=[[\"序号\", \"污染物\", \"最高允许排放浓度\"]]; units=[]; footnotes=[]"
+     ],
+     "selected": false,
+     "note": "non-target candidate document — recorded for transparency, excluded from the answer scope and coverage decision"
+    },
+    {
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "kind": "table",
+     "table_number": "2",
+     "scope_ids": [],
+     "members_total": 0,
+     "members_processed": 0,
+     "coverage_status": "ambiguous",
+     "fail_stage": "ambiguous",
+     "items_count": 0,
+     "warnings": [
+      "no logical table 表2 in water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf"
+     ],
+     "selected": false,
+     "note": "non-target candidate document — recorded for transparency, excluded from the answer scope and coverage decision"
+    },
+    {
+     "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+     "kind": "table",
+     "table_number": "1",
+     "scope_ids": [
+      "tb-b423a0e3331541588988fd34496c349d-0001"
+     ],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "partial",
+     "fail_stage": "",
+     "items_count": 5,
+     "warnings": [
+      "序号不连续：缺片或解析缺行，不能宣称 complete",
+      "table_structure: header=[[\"序号\", \"控制项目\", \"标准值\", \"标准值\"]]; units=[]; footnotes=[\"注: $^{1)}$ 仅适用于采用含氯消毒剂的消毒工艺,不适用于其他消毒工艺。 $^{2)}$ 综合毒性表征指标,以最低无效应稀释倍数来表示,在26°C±1°C的条件下培养48h,不少于90%的斑马鱼卵存活时水样的最低稀释倍数。 注: $^{1)}$ 仅适用于采用含氯消毒剂的消毒工艺,不适用于其他消毒工艺。 $^{2)}$ 综合毒性表征指标,以最低无效应稀释倍数来表示,在26°C±1°C的条件下培养48h,不少于90%的斑马鱼卵存活时水样的最低稀释倍数。 注: $^{1)}$ 仅适用于采用含氯消毒剂的消毒工艺,不适用于其他消毒工艺。 $^{2)}$ 综合毒性表征指标,以最低无效应稀释倍数来表示,在26°C±1°C的条件下培养48h,不少于90%的斑马鱼卵存活时水样的最低稀释倍数。 注: $^{1)}$ 仅适用于采用含氯消毒剂的消毒工艺,不适用于其他消毒工艺。 $^{2)}$ 综合毒性表征指标,以最低无效应稀释倍数来表示,在26°C±1°C的条件下培养48h,不少于90%的斑马鱼卵存活时水样的最低稀释倍数。\"]"
+     ],
+     "selected": false,
+     "note": "non-target candidate document — recorded for transparency, excluded from the answer scope and coverage decision"
+    },
+    {
+     "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+     "kind": "table",
+     "table_number": "2",
+     "scope_ids": [
+      "tb-b423a0e3331541588988fd34496c349d-0002"
+     ],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "partial",
+     "fail_stage": "",
+     "items_count": 5,
+     "warnings": [
+      "序号不连续：缺片或解析缺行，不能宣称 complete",
+      "table_structure: header=[[\"序号\", \"控制项目\", \"排放标准\", \"排放标准\", \"预处理标准\", \"预处理标准\"]]; units=[]; footnotes=[\"注: $^{1)}$ 仅适用于采用含氯消毒剂的消毒工艺,不适用于其他消毒工艺。 $^{2)}$ 综合毒性表征指标,以最低无效应稀释倍数来表示,在26°C±1°C的条件下培养48h,不少于90%的斑马鱼卵存活时水样的最低稀释倍数。 注: $^{1)}$ 仅适用于采用含氯消毒剂的消毒工艺,不适用于其他消毒工艺。 $^{2)}$ 综合毒性表征指标,以最低无效应稀释倍数来表示,在26°C±1°C的条件下培养48h,不少于90%的斑马鱼卵存活时水样的最低稀释倍数。 注: $^{1)}$ 仅适用于采用含氯消毒剂的消毒工艺,不适用于其他消毒工艺。 $^{2)}$ 综合毒性表征指标,以最低无效应稀释倍数来表示,在26°C±1°C的条件下培养48h,不少于90%的斑马鱼卵存活时水样的最低稀释倍数。 注: $^{1)}$ 仅适用于采用含氯消毒剂的消毒工艺,不适用于其他消毒工艺。 $^{2)}$ 综合毒性表征指标,以最低无效应稀释倍数来表示,在26°C±1°C的条件下培养48h,不少于90%的斑马鱼卵存活时水样的最低稀释倍数。 注: $^{1)}$ 仅适用于采用含氯消毒剂的消毒工艺,不适用于其他消毒工艺。 $^{2)}$ 综合毒性表征指标,以最低无效应稀释倍数来表示,在26°C±1°C的条件下培养48h,不少于90%的斑马鱼卵存活时水样的最低稀释倍数。 注: $^{1)}$ 仅适用于采用含氯消毒剂的消毒工艺,不适用于其他消毒工艺。 $^{2)}$ 综合毒性表征指标,以最低无效应稀释倍数来表示,在26°C±1°C的条件下培养48h,不少于90%的斑马鱼卵存活时水样的最低稀释倍数。\"]"
+     ],
+     "selected": false,
+     "note": "non-target candidate document — recorded for transparency, excluded from the answer scope and coverage decision"
+    }
+   ],
+   "answer": {
+    "mode": "model",
+    "generated_by": "one answer model call (<redacted>)",
+    "items": [],
+    "unverified_claims": [
+     "claim subject is not the row's subject cell(s) ['粪大肠菌群数/(MPN/L)']; a valid quote attached to a different subject never supports the claim",
+     "value 1 claims unit '粪大肠菌群数限值为' but the bound row's units are ['mg/l'] — no proven equivalence, refused",
+     "value 100 claims unit 'MPN/L' but the bound row's units are ['mg/l'] — no proven equivalence, refused",
+     "claim numbers ['2'] are not complete signed value tokens of the quoted row (edition GB18466-2005)",
+     "claim subject is not the row's subject cell(s) ['粪大肠菌群数/(MPN/L)']; a valid quote attached to a different subject never supports the claim",
+     "value 2 claims unit '粪大肠菌群数限值为' but the bound row's units are ['mg/l'] — no proven equivalence, refused",
+     "value 500 claims unit 'MPN/L' but the bound row's units are ['mg/l'] — no proven equivalence, refused",
+     "value 000 claims unit 'MPN/L' but the bound row's units are ['mg/l'] — no proven equivalence, refused",
+     "claim numbers ['1'] are not complete signed value tokens of the quoted row (edition GB18466-2005)",
+     "claim subject is not the row's subject cell(s) ['浓度/(mg/L)']; a valid quote attached to a different subject never supports the claim",
+     "value 1 claims unit '化学需氧量(COD)浓度限值为' but the bound row's units are ['mg/l'] — no proven equivalence, refused",
+     "claim numbers ['2'] are not complete signed value tokens of the quoted row (edition GB18466-2005)",
+     "claim subject is not the row's subject cell(s) ['浓度/(mg/L)']; a valid quote attached to a different subject never supports the claim",
+     "value 2 claims unit '化学需氧量(COD)浓度限值为' but the bound row's units are ['mg/l'] — no proven equivalence, refused",
+     "claim numbers ['1'] are not complete signed value tokens of the quoted row (edition GB18466-2005)",
+     "value 1 claims unit '肠道致病菌要求不得检出' but the bound row's units are ['mg/l'] — no proven equivalence, refused",
+     "value 2 claims unit '肠道致病菌要求不得检出' but the bound row's units are ['mg/l'] — no proven equivalence, refused",
+     "claim numbers ['1'] are not complete signed value tokens of the quoted row (edition GB18466-2005)",
+     "value 1 claims unit '肠道病毒要求不得检出' but the bound row's units are ['mg/l'] — no proven equivalence, refused",
+     "claim numbers ['2'] are not complete signed value tokens of the quoted row (edition GB18466-2005)",
+     "value 2 claims unit '肠道病毒要求不得检出' but the bound row's units are ['mg/l'] — no proven equivalence, refused"
+    ],
+    "model_failure": "21 claim(s) failed source verification"
+   },
+   "reverification": {
+    "items_checked": 61,
+    "problems": [],
+    "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+   },
+   "model": {
+    "used": true,
+    "sections": [
+     {
+      "label": "GB18466-2005",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "code_norm": "GB18466",
+      "version": "2005",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "item_count": 61,
+      "context_chars": 1804
+     }
+    ],
+    "context_sha256": "3b9c76f7ac464a981201d8c59d6208006082611552808b99018426dd44683029",
+    "call": {
+     "service": "answer-model",
+     "endpoint": "http://127.0.0.1:8787/v1/chat/completions",
+     "model": "<redacted>",
+     "status": "success",
+     "error": null,
+     "latency_ms": 3072
+    },
+    "request_messages": [
+     {
+      "role": "system",
+      "content": "你是严谨的环境标准比对助手。只依据给定上下文回答，输出 JSON：{\"summary\": \"...\", \"items\": [{\"edition\": \"上下文中的版本标签之一\", \"claim\": \"结论\", \"quote\": \"支持结论的逐字原文引句\"}]}。每个 claim 的所有数值/日期必须出现在其 quote 中；quote 必须逐字来自该版本上下文；edition 只能原样使用上下文中给出的标签；不得改写归属，不得补充上下文之外的内容。正文类 claim 必须直接引用该版本上下文中连续的逐字原文片段，不得改写、拼接或概括（仅可附加同版本年份前缀和句末标点）；表格行 claim 须按绑定行列明主体、平均时间、级别及对应数值和单位。"
+     },
+     {
+      "role": "user",
+      "content": "问题：综合 GB 18466-2005 表 1、表 2，说明传染病医疗机构、综合医疗机构分别执行哪张表。\n\n版本标签：['GB18466-2005']\n\n上下文：\n=== 版本标签: GB18466-2005 (doc_id=doc-68a03b50e1ba1ffc6a0116529f694fe1) ===\n[1] 1 | 粪大肠菌群数/(MPN/L) | 100\n[2] 2 | 肠道致病菌 | 不得检出\n[3] 3 | 肠道病毒 | 不得检出\n[4] 4 | 结核杆菌 | 不得检出\n[5] 5 | pH | 6~9\n[6] 6 | 化学需氧量(COD) | \n[6] 6 | 浓度/(mg/L) | 60\n[6] 6 | 最高允许排放负荷/[g/(床位·d)] | 60\n[7] 7 | 生化需氧量(BOD) | \n[7] 7 | 浓度/(mg/L) | 20\n[7] 7 | 最高允许排放负荷/[g/(床位·d)] | 20\n[8] 8 | 悬浮物(SS) | \n[8] 8 | 浓度/(mg/L) | 20\n[8] 8 | 最高允许排放负荷[g/(床位·d)] | 20\n[9] 9 | 氨氮/(mg/L) | 15\n[10] 10 | 动植物油/(mg/L) | 5\n[11] 11 | 石油类/(mg/L) | 5\n[12] 12 | 阴离子表面活性剂/(mg/L) | 5\n[13] 13 | 色度/(稀释倍数) | 30\n[14] 14 | 挥发酚/(mg/L) | 0.5\n[15] 15 | 总氰化物/(mg/L) | 0.5\n[16] 16 | 总汞/(mg/L) | 0.05\n[17] 17 | 总镉/(mg/L) | 0.1\n[18] 18 | 总铬/(mg/L) | 1.5\n[19] 19 | 六价铬/(mg/L) | 0.5\n[20] 20 | 总砷/(mg/L) | 0.5\n[21] 21 | 总铅/(mg/L) | 1.0\n[22] 22 | 总银/(mg/L) | 0.5\n[23] 23 | 总α/(Bq/L) | 1\n[24] 24 | 总β/(Bq/L) | 10\n[25] 25 | 总余氯 $^{1),2)}$ /(mg/L)(直接排入水体的要求) | 0.5\n[1] 1 | 粪大肠菌群数/(MPN/L) | 500 | 5 000\n[2] 2 | 肠道致病菌 | 不得检出 | —\n[3] 3 | 肠道病毒 | 不得检出 | —\n[4] 4 | pH | 6~9 | 6~9\n[5] 5 | 化学需氧量(COD) |  | \n[5] 5 | 浓度/(mg/L) | 60 | 250\n[5] 5 | 最高允许排放负荷/[g/(床位·d)] | 60 | 250\n[6] 6 | 生化需氧量(BOD) |  | \n[6] 6 | 浓度/(mg/L) | 20 | 100\n[6] 6 | 最高允许排放负荷/[g/(床位·d)] | 20 | 100\n[7] 7 | 悬浮物(SS) |  | \n[7] 7 | 浓度/(mg/L) | 20 | 60\n[7] 7 | 最高允许排放负荷/[g/(床位·d)] | 20 | 60\n[8] 8 | 氨氮/(mg/L) | 15 | —\n[9] 9 | 动植物油/(mg/L) | 5 | 20\n[10] 10 | 石油类/(mg/L) | 5 | 20\n[11] 11 | 阴离子表面活性剂/(mg/L) | 5 | 10\n[12] 12 | 色度/(稀释倍数) | 30 | —\n[13] 13 | 挥发酚/(mg/L) | 0.5 | 1.0\n[14] 14 | 总氰化物/(mg/L) | 0.5 | 0.5\n[15] 15 | 总汞/(mg/L) | 0.05 | 0.05\n[16] 16 | 总镉/(mg/L) | 0.1 | 0.1\n[17] 17 | 总铬/(mg/L) | 1.5 | 1.5\n[18] 18 | 六价铬/(mg/L) | 0.5 | 0.5\n[19] 19 | 总砷/(mg/L) | 0.5 | 0.5\n[20] 20 | 总铅/(mg/L) | 1.0 | 1.0\n[21] 21 | 总银/(mg/L) | 0.5 | 0.5\n[22] 22 | 总α/(Bq/L) | 1 | 1\n[23] 23 | 总β/(Bq/L) | 10 | 10\n[24] 24 | 总余氯 $^{1),2)}$ /(mg/L) | 0.5 | —"
+     }
+    ],
+    "raw_response": "{\"summary\": \"给定上下文仅包含 GB 18466-2005 中两张表格的数值条目，未提供任何说明传染病医疗机构与综合医疗机构分别执行哪张表的正文文字，因此无法依据上下文判定二者各自适用的表。\", \"items\": [{\"edition\": \"GB18466-2005\", \"claim\": \"表1 粪大肠菌群数限值为 100 MPN/L。\", \"quote\": \"1 | 粪大肠菌群数/(MPN/L) | 100\"}, {\"edition\": \"GB18466-2005\", \"claim\": \"表2 粪大肠菌群数限值为 500 MPN/L 与 5 000 MPN/L 两档。\", \"quote\": \"1 | 粪大肠菌群数/(MPN/L) | 500 | 5 000\"}, {\"edition\": \"GB18466-2005\", \"claim\": \"表1 化学需氧量(COD)浓度限值为 60 mg/L。\", \"quote\": \"6 | 浓度/(mg/L) | 60\"}, {\"edition\": \"GB18466-2005\", \"claim\": \"表2 化学需氧量(COD)浓度限值为 60 mg/L 与 250 mg/L 两档。\", \"quote\": \"5 | 浓度/(mg/L) | 60 | 250\"}, {\"edition\": \"GB18466-2005\", \"claim\": \"表1 肠道致病菌要求不得检出。\", \"quote\": \"2 | 肠道致病菌 | 不得检出\"}, {\"edition\": \"GB18466-2005\", \"claim\": \"表2 肠道致病菌要求不得检出。\", \"quote\": \"2 | 肠道致病菌 | 不得检出 | —\"}, {\"edition\": \"GB18466-2005\", \"claim\": \"表1 肠道病毒要求不得检出。\", \"quote\": \"3 | 肠道病毒 | 不得检出\"}, {\"edition\": \"GB18466-2005\", \"claim\": \"表2 肠道病毒要求不得检出。\", \"quote\": \"3 | 肠道病毒 | 不得检出 | —\"}], \"note\": \"上下文中仅出现表1、表2的数值条目，未出现任何指明传染病医疗机构或综合医疗机构分别执行哪张表的文字，依据上下文无法给出该归属结论。\"}",
+    "status": "model_failure",
+    "verification_problems": [
+     "claim subject is not the row's subject cell(s) ['粪大肠菌群数/(MPN/L)']; a valid quote attached to a different subject never supports the claim",
+     "value 1 claims unit '粪大肠菌群数限值为' but the bound row's units are ['mg/l'] — no proven equivalence, refused",
+     "value 100 claims unit 'MPN/L' but the bound row's units are ['mg/l'] — no proven equivalence, refused",
+     "claim numbers ['2'] are not complete signed value tokens of the quoted row (edition GB18466-2005)",
+     "claim subject is not the row's subject cell(s) ['粪大肠菌群数/(MPN/L)']; a valid quote attached to a different subject never supports the claim",
+     "value 2 claims unit '粪大肠菌群数限值为' but the bound row's units are ['mg/l'] — no proven equivalence, refused",
+     "value 500 claims unit 'MPN/L' but the bound row's units are ['mg/l'] — no proven equivalence, refused",
+     "value 000 claims unit 'MPN/L' but the bound row's units are ['mg/l'] — no proven equivalence, refused",
+     "claim numbers ['1'] are not complete signed value tokens of the quoted row (edition GB18466-2005)",
+     "claim subject is not the row's subject cell(s) ['浓度/(mg/L)']; a valid quote attached to a different subject never supports the claim",
+     "value 1 claims unit '化学需氧量(COD)浓度限值为' but the bound row's units are ['mg/l'] — no proven equivalence, refused",
+     "claim numbers ['2'] are not complete signed value tokens of the quoted row (edition GB18466-2005)",
+     "claim subject is not the row's subject cell(s) ['浓度/(mg/L)']; a valid quote attached to a different subject never supports the claim",
+     "value 2 claims unit '化学需氧量(COD)浓度限值为' but the bound row's units are ['mg/l'] — no proven equivalence, refused",
+     "claim numbers ['1'] are not complete signed value tokens of the quoted row (edition GB18466-2005)",
+     "value 1 claims unit '肠道致病菌要求不得检出' but the bound row's units are ['mg/l'] — no proven equivalence, refused",
+     "value 2 claims unit '肠道致病菌要求不得检出' but the bound row's units are ['mg/l'] — no proven equivalence, refused",
+     "claim numbers ['1'] are not complete signed value tokens of the quoted row (edition GB18466-2005)",
+     "value 1 claims unit '肠道病毒要求不得检出' but the bound row's units are ['mg/l'] — no proven equivalence, refused",
+     "claim numbers ['2'] are not complete signed value tokens of the quoted row (edition GB18466-2005)",
+     "value 2 claims unit '肠道病毒要求不得检出' but the bound row's units are ['mg/l'] — no proven equivalence, refused"
+    ],
+    "failure": "21 claim(s) failed source verification"
+   },
+   "status": "partial"
+  }
+ ]
+}

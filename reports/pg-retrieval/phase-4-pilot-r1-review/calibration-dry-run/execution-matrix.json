@@ -1,0 +1,44 @@
+{
+  "gold_sha256": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "rounds": [
+    1
+  ],
+  "paths": [
+    "pg"
+  ],
+  "rows": [
+    {
+      "round": 1,
+      "path": "pg",
+      "query_id": "fact-002",
+      "category": "fact",
+      "is_counter": false,
+      "expected_status": null,
+      "answer_model_budget": 0
+    },
+    {
+      "round": 1,
+      "path": "pg",
+      "query_id": "prose-enum-001",
+      "category": "prose_enum",
+      "is_counter": false,
+      "expected_status": null,
+      "answer_model_budget": 0
+    },
+    {
+      "round": 1,
+      "path": "pg",
+      "query_id": "syn-004",
+      "category": "synthesis",
+      "is_counter": false,
+      "expected_status": null,
+      "answer_model_budget": 1
+    }
+  ],
+  "total_executions": 3,
+  "denominators": {
+    "positive_executions": 3,
+    "counter_executions": 0,
+    "note": "positive quality and counter behaviour are reported SEPARATELY; never merged into one recall/exact score"
+  }
+}

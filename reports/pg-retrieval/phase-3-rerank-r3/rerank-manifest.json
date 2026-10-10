@@ -1,0 +1,47 @@
+{
+ "task": "5.4 joint rerank (rev 3, C1-C3 remediation: canonical metadata, unit-kind associations, sanitized-everywhere; derived metadata, NO new HTTP)",
+ "generated_at": "2026-10-07T13:20:00+0800",
+ "history": "phase-3-rerank/ (rev1: 200+404 receipts) and phase-3-rerank-r2/ (rev2: accepted 997ms run) retained unchanged; review phase-3-rerank-review-r2/review.md (6 failed)",
+ "files_sha256": {
+  "src/env_rag_final/rerank.py": "848e239c17887451805e0c1e4c63f7ea64da65dfac8c1ceadb19c4aff7165cfc",
+  "src/env_rag_final/cli.py": "9b4fee387dd16136f3590a713b0cbe7d979c5e87fcf44ccdce6b0cd1c073dc6a",
+  "tests/test_rerank.py": "221be80364fd2ab98265cf0d3a5f1cfcffe80cd42adc29576693b3748c57a66b",
+  "tests/test_rerank_review_r1.py": "303906859bf4c8199c11cac2c2c698250cca85d70b5380483bd34fc96908c34e",
+  "tests/test_rerank_review_r2.py": "6673e0ef9579a373da9c8c0481f8e92722e6a1c8b14f487d56772a62f0d45fac",
+  "reports/pg-retrieval/phase-3-rerank-r3/rerank-derived-metadata.json": "31cef613aea37b36ebfcc42e8a9c1422a1a93c0a59a274c000aea7e20f60a337",
+  "reports/pg-retrieval/phase-3-rerank-r3/rerank-inputs.jsonl": "946b4e9af0b1677ef7a604088e6c1d804f198f451db7e0eef31ceec05be10853",
+  "reports/pg-retrieval/phase-3-rerank-r3/rerank-report.md": "6896ef041efc96ed8c0e031d133cc26bf8231f5aab264aa0a4f8d6a625ee4dbc",
+  "reports/pg-retrieval/gate-2/review-r5/gold-approved.json": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e"
+ },
+ "fixes": {
+  "C1": "canonical source metadata: content_sha256/length RECOMPUTED from the verified production row and doc_id backfilled from full_doc_id (replay originals kept under replayed_* with canonicalization_basis); replay entry query/workspace binding checked against the frozen gold question — other questions' candidates refused; matrix fixtures now carry real recomputable SHAs and canonical replay bindings",
+  "C2": "path enrichment joins env_rag.unit_chunk_links with env_rag.source_units by (workspace, snapshot, doc, unit) to read the REAL unit_kind; only real tables create table_unit/table_id citations, blocks keep source_unit/unit_kind semantics; the active snapshot id is required (cross-generation scan branch removed); every association is marked as completion, never a retrieval hit; HISTORY CORRECTED: the previous '41 table fragments' claim was wrong — actual 12 table + 29 block (independently re-verified read-only this round)",
+  "C3": "sanitize FIRST then truncate (error bodies/non-JSON/exception messages — no unredacted secret prefix survives a truncation boundary); the terminal writer sanitizes the WHOLE report at the single write point (pre-flight/identity/failure details included); sanitizer applies secrets LONGEST-FIRST so short placeholder credentials cannot corrupt longer ones; fixture credentials replaced with long collision-free synthetic values (handoff-sanctioned)"
+ },
+ "derived_mapping": {
+  "file": "reports/pg-retrieval/phase-3-rerank-r3/rerank-derived-metadata.json",
+  "basis": "accepted rev2 raw response (HTTP 200, 997ms, 10 results) re-ordered independently; input bodies/SHAs unchanged; association metadata re-derived with real unit_kind",
+  "result": {
+   "ordered": 10,
+   "table_unit": 12,
+   "source_unit": 29,
+   "order_matches_accepted_run": true
+  },
+  "no_new_http": true
+ },
+ "verification": {
+  "frozen_r2": "6/6 (tests/test_rerank_review_r2.py)",
+  "r1": "14/14",
+  "matrix": "16/16 (fixtures C1-canonicalized per handoff allowance; no assertion removed/weakened)",
+  "full_suite": 315,
+  "model_or_backend_calls": "0 new rerank/embedding/LLM calls; one read-only unit-kind catalog query for the derivation"
+ },
+ "checks": {
+  "ruff": "pass",
+  "ruff_format": "pass",
+  "openspec_strict": "valid",
+  "diff_check": "pass",
+  "credential_scan": "0 hits"
+ },
+ "next": "stop at the 5.4 checkpoint for main-agent review; 5.5/5.6/Gate3 not entered"
+}

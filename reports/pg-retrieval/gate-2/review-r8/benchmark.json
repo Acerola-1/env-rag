@@ -1,0 +1,1232 @@
+{
+  "run_id": "bench-afd2515239f3",
+  "started_at": "2026-10-06T13:41:10+0800",
+  "workspace": "default",
+  "top_k": 20,
+  "expand": true,
+  "catalog_snapshot_id": "4919b3938ad93747",
+  "questions_total": 31,
+  "questions_reviewed": 31,
+  "questions_excluded_not_eligible": 0,
+  "file_list_doc_denominator": 23,
+  "list_doc_recall_at_k_reviewed": 1.0,
+  "evidence_groups_total": 59,
+  "evidence_groups_satisfied": 56,
+  "enum_set_checks": {
+    "prose_enum": {
+      "questions": 6,
+      "exact_match": 5,
+      "failed": 1,
+      "citation_unverified_total": 0
+    },
+    "table_enum": {
+      "questions": 6,
+      "exact_match": 5,
+      "failed": 1,
+      "citation_unverified_total": 0
+    },
+    "file_enum": {
+      "questions": 6,
+      "exact_match": 6,
+      "failed": 0,
+      "citation_unverified_total": 0
+    }
+  },
+  "evidence_recall_at_k_reviewed": 0.9491525423728814,
+  "frozen_identity_ok": true,
+  "identity_note": null,
+  "metrics_note": "only explicitly reviewed/approved gold carrying typed target evidence contributes; results must be ok/missing (stale/ambiguous excluded); candidates are truncated to top_k BEFORE hits are counted; unit/table/scope gold resolves through audited unit_chunk_links; the typed key carries workspace; file-list recall covers file_enum only; expansion reads are diagnostic and never substituted for candidate evidence",
+  "rows": [
+    {
+      "query_id": "fact-001",
+      "category": "fact",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      ],
+      "discovery_candidates_total": 2,
+      "candidates_total": 2,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 1,
+      "evidence_groups_satisfied": 1,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": null,
+      "expansion_reads": [
+        {
+          "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+          "kind": "prose",
+          "scope_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1:scope:4.2",
+          "table_number": null,
+          "members_total": 1,
+          "members_processed": 1,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 1,
+          "units_read": 1
+        }
+      ],
+      "status": "ok",
+      "elapsed_ms": 4592
+    },
+    {
+      "query_id": "fact-002",
+      "category": "fact",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4"
+      ],
+      "discovery_candidates_total": 4,
+      "candidates_total": 4,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 1,
+      "evidence_groups_satisfied": 1,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": null,
+      "expansion_reads": [
+        {
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "kind": "table",
+          "scope_id": null,
+          "table_number": "1",
+          "members_total": 2,
+          "members_processed": 2,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 13,
+          "units_read": null
+        }
+      ],
+      "status": "ok",
+      "elapsed_ms": 1850
+    },
+    {
+      "query_id": "fact-003",
+      "category": "fact",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+      ],
+      "discovery_candidates_total": 3,
+      "candidates_total": 3,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 1,
+      "evidence_groups_satisfied": 1,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": null,
+      "expansion_reads": [
+        {
+          "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "kind": "prose",
+          "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:4.1",
+          "table_number": null,
+          "members_total": 1,
+          "members_processed": 1,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 6,
+          "units_read": 1
+        }
+      ],
+      "status": "ok",
+      "elapsed_ms": 2815
+    },
+    {
+      "query_id": "fact-004",
+      "category": "fact",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-91f9049decde09153368d4b69f280e78"
+      ],
+      "discovery_candidates_total": 2,
+      "candidates_total": 2,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 1,
+      "evidence_groups_satisfied": 1,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": null,
+      "expansion_reads": [
+        {
+          "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+          "kind": "prose",
+          "scope_id": "doc-91f9049decde09153368d4b69f280e78:scope:7",
+          "table_number": null,
+          "members_total": 1,
+          "members_processed": 1,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 3,
+          "units_read": 1
+        }
+      ],
+      "status": "ok",
+      "elapsed_ms": 3359
+    },
+    {
+      "query_id": "fact-005",
+      "category": "fact",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-d6d711b0614234635955480a53f52a10"
+      ],
+      "discovery_candidates_total": 4,
+      "candidates_total": 4,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 1,
+      "evidence_groups_satisfied": 1,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": null,
+      "expansion_reads": [
+        {
+          "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+          "kind": "prose",
+          "scope_id": "doc-d6d711b0614234635955480a53f52a10:scope:4",
+          "table_number": null,
+          "members_total": 4,
+          "members_processed": 4,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 7,
+          "units_read": 4
+        }
+      ],
+      "status": "ok",
+      "elapsed_ms": 2831
+    },
+    {
+      "query_id": "fact-006",
+      "category": "fact",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      ],
+      "discovery_candidates_total": 5,
+      "candidates_total": 5,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 1,
+      "evidence_groups_satisfied": 1,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": null,
+      "expansion_reads": [
+        {
+          "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+          "kind": "prose",
+          "scope_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1:scope:7",
+          "table_number": null,
+          "members_total": 3,
+          "members_processed": 3,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 3,
+          "units_read": 3
+        }
+      ],
+      "status": "ok",
+      "elapsed_ms": 2933
+    },
+    {
+      "query_id": "fact-007",
+      "category": "fact",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4"
+      ],
+      "discovery_candidates_total": 10,
+      "candidates_total": 10,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 1,
+      "evidence_groups_satisfied": 1,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": null,
+      "expansion_reads": [
+        {
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "kind": "prose",
+          "scope_id": "doc-b45c510232ed4d2452b0f5b2a13434e4:scope:4.3",
+          "table_number": null,
+          "members_total": 6,
+          "members_processed": 6,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 4,
+          "units_read": 6
+        }
+      ],
+      "status": "ok",
+      "elapsed_ms": 2687
+    },
+    {
+      "query_id": "file-enum-001",
+      "category": "file_enum",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1"
+      ],
+      "discovery_candidates_total": 14,
+      "candidates_total": 2,
+      "candidates_budget": 20,
+      "doc_recall": 1.0,
+      "doc_denominator": 2,
+      "evidence_groups": 2,
+      "evidence_groups_satisfied": 2,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": {
+        "expected_count": 2,
+        "produced_count": 2,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "expansion_reads": [],
+      "status": "ok",
+      "elapsed_ms": 1783
+    },
+    {
+      "query_id": "file-enum-002",
+      "category": "file_enum",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+        "doc-b64a60d5251a9101f3d8f050f6933216",
+        "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "doc-507bc40d1d6395c6932d2201e8483504"
+      ],
+      "discovery_candidates_total": 25,
+      "candidates_total": 5,
+      "candidates_budget": 20,
+      "doc_recall": 1.0,
+      "doc_denominator": 5,
+      "evidence_groups": 5,
+      "evidence_groups_satisfied": 5,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": {
+        "expected_count": 5,
+        "produced_count": 5,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "expansion_reads": [],
+      "status": "ok",
+      "elapsed_ms": 1707
+    },
+    {
+      "query_id": "file-enum-003",
+      "category": "file_enum",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-0e575533a4ec747d16a0b24c381c5ede",
+        "doc-a13be3e29e82c913f3470fbe60b4bf6a",
+        "doc-d29dd8b36d29309ba693bfdc78ba3103",
+        "doc-bb0530b18d32763b3211b67365b36359",
+        "doc-969f75052f9f2473ad13e7b7aeaa31d8"
+      ],
+      "discovery_candidates_total": 20,
+      "candidates_total": 5,
+      "candidates_budget": 20,
+      "doc_recall": 1.0,
+      "doc_denominator": 5,
+      "evidence_groups": 5,
+      "evidence_groups_satisfied": 5,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": {
+        "expected_count": 5,
+        "produced_count": 5,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "expansion_reads": [],
+      "status": "ok",
+      "elapsed_ms": 2185
+    },
+    {
+      "query_id": "file-enum-004",
+      "category": "file_enum",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-2e012f4fd0622b647d151de5d0ecc51b",
+        "doc-afd999b66f220c7ba8de2e624ba9c212",
+        "doc-395b34401e7ee48e833a01d1d5bb4256",
+        "doc-374860e84aca365bb7fc7abb64f719fe",
+        "doc-9bb11e5d3809e590259aef28fb61062b",
+        "doc-b423a0e3331541588988fd34496c349d",
+        "doc-d0039dda04ea5c8c113da89d31e893e3",
+        "doc-30cc8c5a085a96f9e00e57e0ad3a6da4",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "doc-a9936b42bbfac2084ffd605a646553ef"
+      ],
+      "discovery_candidates_total": 27,
+      "candidates_total": 7,
+      "candidates_budget": 20,
+      "doc_recall": 1.0,
+      "doc_denominator": 7,
+      "evidence_groups": 7,
+      "evidence_groups_satisfied": 7,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": {
+        "expected_count": 7,
+        "produced_count": 7,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "expansion_reads": [],
+      "status": "ok",
+      "elapsed_ms": 1711
+    },
+    {
+      "query_id": "file-enum-005",
+      "category": "file_enum",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "doc-9bb11e5d3809e590259aef28fb61062b",
+        "doc-b423a0e3331541588988fd34496c349d"
+      ],
+      "discovery_candidates_total": 3,
+      "candidates_total": 3,
+      "candidates_budget": 20,
+      "doc_recall": 1.0,
+      "doc_denominator": 3,
+      "evidence_groups": 3,
+      "evidence_groups_satisfied": 3,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": {
+        "expected_count": 3,
+        "produced_count": 3,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "expansion_reads": [],
+      "status": "ok",
+      "elapsed_ms": 2105
+    },
+    {
+      "query_id": "file-enum-006",
+      "category": "file_enum",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-91f9049decde09153368d4b69f280e78"
+      ],
+      "discovery_candidates_total": 19,
+      "candidates_total": 1,
+      "candidates_budget": 20,
+      "doc_recall": 1.0,
+      "doc_denominator": 1,
+      "evidence_groups": 1,
+      "evidence_groups_satisfied": 1,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": {
+        "expected_count": 1,
+        "produced_count": 1,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "expansion_reads": [],
+      "status": "ok",
+      "elapsed_ms": 2300
+    },
+    {
+      "query_id": "prose-enum-001",
+      "category": "prose_enum",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+      ],
+      "discovery_candidates_total": 4,
+      "candidates_total": 4,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 3,
+      "evidence_groups_satisfied": 3,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": {
+        "expected_count": 4,
+        "produced_count": 4,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "expansion_reads": [
+        {
+          "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "kind": "prose",
+          "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3",
+          "table_number": null,
+          "members_total": 3,
+          "members_processed": 3,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 4,
+          "units_read": 3
+        }
+      ],
+      "status": "ok",
+      "elapsed_ms": 2645
+    },
+    {
+      "query_id": "prose-enum-002",
+      "category": "prose_enum",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+      ],
+      "discovery_candidates_total": 6,
+      "candidates_total": 6,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 1,
+      "evidence_groups_satisfied": 1,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": {
+        "expected_count": 2,
+        "produced_count": 2,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "expansion_reads": [
+        {
+          "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "kind": "prose",
+          "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:4.1",
+          "table_number": null,
+          "members_total": 1,
+          "members_processed": 1,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 1,
+          "units_read": 1
+        },
+        {
+          "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "kind": "prose",
+          "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:4.1",
+          "table_number": null,
+          "members_total": 1,
+          "members_processed": 1,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 1,
+          "units_read": 1
+        }
+      ],
+      "status": "ok",
+      "elapsed_ms": 4624
+    },
+    {
+      "query_id": "prose-enum-003",
+      "category": "prose_enum",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4"
+      ],
+      "discovery_candidates_total": 16,
+      "candidates_total": 16,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 1,
+      "evidence_groups_satisfied": 1,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": {
+        "expected_count": 4,
+        "produced_count": 4,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "expansion_reads": [
+        {
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "kind": "prose",
+          "scope_id": "doc-b45c510232ed4d2452b0f5b2a13434e4:scope:4.3",
+          "table_number": null,
+          "members_total": 6,
+          "members_processed": 6,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 4,
+          "units_read": 6
+        }
+      ],
+      "status": "ok",
+      "elapsed_ms": 2170
+    },
+    {
+      "query_id": "prose-enum-004",
+      "category": "prose_enum",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-91f9049decde09153368d4b69f280e78"
+      ],
+      "discovery_candidates_total": 2,
+      "candidates_total": 2,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 1,
+      "evidence_groups_satisfied": 1,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": {
+        "expected_count": 5,
+        "produced_count": 5,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "expansion_reads": [
+        {
+          "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+          "kind": "prose",
+          "scope_id": "doc-91f9049decde09153368d4b69f280e78:scope:3",
+          "table_number": null,
+          "members_total": 1,
+          "members_processed": 1,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 5,
+          "units_read": 1
+        }
+      ],
+      "status": "ok",
+      "elapsed_ms": 2971
+    },
+    {
+      "query_id": "prose-enum-005",
+      "category": "prose_enum",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-d6d711b0614234635955480a53f52a10"
+      ],
+      "discovery_candidates_total": 2,
+      "candidates_total": 2,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 1,
+      "evidence_groups_satisfied": 1,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": {
+        "expected_count": 3,
+        "produced_count": 0,
+        "exact_match": false,
+        "missing": [
+          "一级",
+          "二级",
+          "三级"
+        ],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "expansion_reads": [],
+      "status": "ambiguous",
+      "elapsed_ms": 1702
+    },
+    {
+      "query_id": "prose-enum-006",
+      "category": "prose_enum",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      ],
+      "discovery_candidates_total": 7,
+      "candidates_total": 7,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 1,
+      "evidence_groups_satisfied": 1,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": {
+        "expected_count": 1,
+        "produced_count": 1,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "expansion_reads": [
+        {
+          "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+          "kind": "prose",
+          "scope_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1:scope:4.2",
+          "table_number": null,
+          "members_total": 1,
+          "members_processed": 1,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 1,
+          "units_read": 1
+        }
+      ],
+      "status": "ok",
+      "elapsed_ms": 3161
+    },
+    {
+      "query_id": "table-enum-001",
+      "category": "table_enum",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4"
+      ],
+      "discovery_candidates_total": 4,
+      "candidates_total": 4,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 2,
+      "evidence_groups_satisfied": 2,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": {
+        "expected_count": 13,
+        "produced_count": 13,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "expansion_reads": [
+        {
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "kind": "table",
+          "scope_id": null,
+          "table_number": "1",
+          "members_total": 2,
+          "members_processed": 2,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 13,
+          "units_read": null
+        }
+      ],
+      "status": "ok",
+      "elapsed_ms": 2379
+    },
+    {
+      "query_id": "table-enum-002",
+      "category": "table_enum",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      ],
+      "discovery_candidates_total": 3,
+      "candidates_total": 3,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 1,
+      "evidence_groups_satisfied": 1,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": {
+        "expected_count": 6,
+        "produced_count": 14,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "expansion_reads": [
+        {
+          "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+          "kind": "table",
+          "scope_id": null,
+          "table_number": "1",
+          "members_total": 1,
+          "members_processed": 1,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 14,
+          "units_read": null
+        }
+      ],
+      "status": "ok",
+      "elapsed_ms": 2042
+    },
+    {
+      "query_id": "table-enum-003",
+      "category": "table_enum",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-d6d711b0614234635955480a53f52a10"
+      ],
+      "discovery_candidates_total": 7,
+      "candidates_total": 7,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 3,
+      "evidence_groups_satisfied": 3,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": {
+        "expected_count": 9,
+        "produced_count": 72,
+        "exact_match": false,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": true
+      },
+      "expansion_reads": [
+        {
+          "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+          "kind": "table",
+          "scope_id": null,
+          "table_number": "2",
+          "members_total": 3,
+          "members_processed": 3,
+          "coverage_status": "ambiguous",
+          "fail_stage": "ambiguous",
+          "items_count": 72,
+          "units_read": null
+        }
+      ],
+      "status": "ambiguous",
+      "elapsed_ms": 1592
+    },
+    {
+      "query_id": "table-enum-004",
+      "category": "table_enum",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-91f9049decde09153368d4b69f280e78"
+      ],
+      "discovery_candidates_total": 3,
+      "candidates_total": 3,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 1,
+      "evidence_groups_satisfied": 1,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": {
+        "expected_count": 24,
+        "produced_count": 24,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "expansion_reads": [
+        {
+          "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+          "kind": "table",
+          "scope_id": null,
+          "table_number": "1",
+          "members_total": 1,
+          "members_processed": 1,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 24,
+          "units_read": null
+        }
+      ],
+      "status": "ok",
+      "elapsed_ms": 2172
+    },
+    {
+      "query_id": "table-enum-005",
+      "category": "table_enum",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+      ],
+      "discovery_candidates_total": 5,
+      "candidates_total": 5,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 1,
+      "evidence_groups_satisfied": 1,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": {
+        "expected_count": 30,
+        "produced_count": 30,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "expansion_reads": [
+        {
+          "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "kind": "table",
+          "scope_id": null,
+          "table_number": "2",
+          "members_total": 1,
+          "members_processed": 1,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 30,
+          "units_read": null
+        }
+      ],
+      "status": "ok",
+      "elapsed_ms": 2505
+    },
+    {
+      "query_id": "table-enum-006",
+      "category": "table_enum",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      ],
+      "discovery_candidates_total": 3,
+      "candidates_total": 3,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 1,
+      "evidence_groups_satisfied": 1,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": {
+        "expected_count": 10,
+        "produced_count": 14,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "expansion_reads": [
+        {
+          "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+          "kind": "table",
+          "scope_id": null,
+          "table_number": "3",
+          "members_total": 1,
+          "members_processed": 1,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 14,
+          "units_read": null
+        }
+      ],
+      "status": "ok",
+      "elapsed_ms": 2137
+    },
+    {
+      "query_id": "syn-001",
+      "category": "synthesis",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "doc-4c883d21fa02a53189e0911c3d59d1d1"
+      ],
+      "discovery_candidates_total": 7,
+      "candidates_total": 7,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 3,
+      "evidence_groups_satisfied": 2,
+      "evidence_groups_unresolved": 1,
+      "evidence_recall": 0.6666666666666666,
+      "enum_set_check": null,
+      "expansion_reads": [
+        {
+          "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+          "kind": "prose",
+          "scope_id": "doc-4c883d21fa02a53189e0911c3d59d1d1:scope:4.2",
+          "table_number": null,
+          "members_total": 1,
+          "members_processed": 1,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 1,
+          "units_read": 1
+        }
+      ],
+      "status": "ok",
+      "elapsed_ms": 2517
+    },
+    {
+      "query_id": "syn-002",
+      "category": "synthesis",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+      ],
+      "discovery_candidates_total": 2,
+      "candidates_total": 2,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 2,
+      "evidence_groups_satisfied": 0,
+      "evidence_groups_unresolved": 2,
+      "evidence_recall": 0.0,
+      "enum_set_check": null,
+      "expansion_reads": [
+        {
+          "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "kind": "prose",
+          "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:4.1",
+          "table_number": null,
+          "members_total": 1,
+          "members_processed": 1,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 6,
+          "units_read": 1
+        }
+      ],
+      "status": "ok",
+      "elapsed_ms": 3305
+    },
+    {
+      "query_id": "syn-003",
+      "category": "synthesis",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4"
+      ],
+      "discovery_candidates_total": 2,
+      "candidates_total": 2,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 1,
+      "evidence_groups_satisfied": 1,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": null,
+      "expansion_reads": [
+        {
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "kind": "prose",
+          "scope_id": "doc-b45c510232ed4d2452b0f5b2a13434e4:scope:4.1",
+          "table_number": null,
+          "members_total": 1,
+          "members_processed": 1,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 5,
+          "units_read": 1
+        }
+      ],
+      "status": "ok",
+      "elapsed_ms": 3001
+    },
+    {
+      "query_id": "syn-004",
+      "category": "synthesis",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-91f9049decde09153368d4b69f280e78",
+        "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+      ],
+      "discovery_candidates_total": 22,
+      "candidates_total": 22,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 2,
+      "evidence_groups_satisfied": 2,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": null,
+      "expansion_reads": [
+        {
+          "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+          "kind": "prose",
+          "scope_id": "doc-91f9049decde09153368d4b69f280e78:scope:3",
+          "table_number": null,
+          "members_total": 1,
+          "members_processed": 1,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 5,
+          "units_read": 1
+        },
+        {
+          "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+          "kind": "prose",
+          "scope_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1:scope:7",
+          "table_number": null,
+          "members_total": 3,
+          "members_processed": 3,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 3,
+          "units_read": 3
+        }
+      ],
+      "status": "ok",
+      "elapsed_ms": 4999
+    },
+    {
+      "query_id": "syn-005",
+      "category": "synthesis",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+      ],
+      "discovery_candidates_total": 11,
+      "candidates_total": 11,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 3,
+      "evidence_groups_satisfied": 3,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": null,
+      "expansion_reads": [
+        {
+          "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "kind": "table",
+          "scope_id": null,
+          "table_number": "1",
+          "members_total": 1,
+          "members_processed": 1,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 31,
+          "units_read": null
+        },
+        {
+          "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "kind": "table",
+          "scope_id": null,
+          "table_number": "2",
+          "members_total": 1,
+          "members_processed": 1,
+          "coverage_status": "complete",
+          "fail_stage": "",
+          "items_count": 30,
+          "units_read": null
+        }
+      ],
+      "status": "ok",
+      "elapsed_ms": 2591
+    },
+    {
+      "query_id": "syn-006",
+      "category": "synthesis",
+      "gold_review_status": "approved",
+      "metric_eligible": true,
+      "candidate_docs_topk": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4"
+      ],
+      "discovery_candidates_total": 19,
+      "candidates_total": 19,
+      "candidates_budget": 20,
+      "doc_recall": null,
+      "doc_denominator": 0,
+      "evidence_groups": 1,
+      "evidence_groups_satisfied": 1,
+      "evidence_groups_unresolved": 0,
+      "evidence_recall": 1.0,
+      "enum_set_check": null,
+      "expansion_reads": [],
+      "status": "ambiguous",
+      "elapsed_ms": 1935
+    }
+  ],
+  "recall_at_k_reviewed": 1.0,
+  "doc_recall_at_k_reviewed": 1.0,
+  "runs_path": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/gate-2/review-r8/benchmark-runs.jsonl"
+}

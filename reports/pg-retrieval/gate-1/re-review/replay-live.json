@@ -1,0 +1,1295 @@
+{
+  "offline": {
+    "empty_pending_extraction_accepted_complete": {
+      "query_id": "q",
+      "kind": "prose",
+      "workspace": "w",
+      "catalog_snapshot_id": "s",
+      "source_snapshot_id": "f",
+      "scope_ids": [],
+      "members_total": 1,
+      "members_processed": 1,
+      "items": [],
+      "coverage_status": "complete",
+      "warnings": [
+        "items pending extraction"
+      ],
+      "fail_stage": "",
+      "predicate": null,
+      "read_token": null,
+      "model_calls": []
+    },
+    "duplicate_span_disagrees_with_text": {
+      "item": {
+        "clause": "4.1.1",
+        "text": "4.1.1 更长的完整条款后半条件。",
+        "citation": {
+          "kind": "char_span",
+          "char_start": 0,
+          "char_end": 28,
+          "quote": "4.1.1 更长的完整条款后半条件。"
+        },
+        "citation_verified": true,
+        "source": "regex_clause_split"
+      },
+      "span_text": "4.1.1 短片\n4.1.1 更长的完整条款后半条件。\n"
+    },
+    "unsupported_claim_real_quote_accepted": {
+      "items": [
+        {
+          "text": "原文明确列出停车场",
+          "citation": {
+            "quote": "门诊、病房"
+          },
+          "citation_verified": true
+        }
+      ],
+      "error": null
+    }
+  },
+  "live": {
+    "public_before": {
+      "doc_full": 221,
+      "doc_chunks": 5709,
+      "doc_status": 279,
+      "llm_cache": 16514,
+      "entity_chunks": 65527,
+      "full_entities": 221,
+      "full_relations": 221,
+      "relation_chunks": 119575
+    },
+    "start": {
+      "state": "current",
+      "active_run_id": "c15c741742394320",
+      "active_snapshot_id": "4919b3938ad93747",
+      "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "expected_recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "live_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "stored_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "action": ""
+    },
+    "table1": {
+      "query_id": "table-d3be70a41ea2",
+      "kind": "table",
+      "workspace": "default",
+      "catalog_snapshot_id": "4919b3938ad93747",
+      "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "scope_ids": [
+        "tb-b45c510232ed4d2452b0f5b2a13434e4-0001"
+      ],
+      "members_total": 2,
+      "members_processed": 2,
+      "items": [
+        {
+          "seq": "1",
+          "cells": [
+            "1",
+            "总汞",
+            "0.05"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 0,
+            "row_in_fragment": 0,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        },
+        {
+          "seq": "2",
+          "cells": [
+            "2",
+            "烷基汞",
+            "不得检出"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 0,
+            "row_in_fragment": 1,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        },
+        {
+          "seq": "3",
+          "cells": [
+            "3",
+            "总镉",
+            "0.1"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 0,
+            "row_in_fragment": 2,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        },
+        {
+          "seq": "4",
+          "cells": [
+            "4",
+            "总铬",
+            "1.5"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 0,
+            "row_in_fragment": 3,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        },
+        {
+          "seq": "5",
+          "cells": [
+            "5",
+            "六价铬",
+            "0.5"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 0,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        },
+        {
+          "seq": "6",
+          "cells": [
+            "6",
+            "总砷",
+            "0.5"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 1,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        },
+        {
+          "seq": "7",
+          "cells": [
+            "7",
+            "总铅",
+            "1.0"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 2,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        },
+        {
+          "seq": "8",
+          "cells": [
+            "8",
+            "总镍",
+            "1.0"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 3,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        },
+        {
+          "seq": "9",
+          "cells": [
+            "9",
+            "苯并(a)芘",
+            "0.000 03"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 4,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        },
+        {
+          "seq": "10",
+          "cells": [
+            "10",
+            "总铍",
+            "0.005"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 5,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        },
+        {
+          "seq": "11",
+          "cells": [
+            "11",
+            "总银",
+            "0.5"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 6,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        },
+        {
+          "seq": "12",
+          "cells": [
+            "12",
+            "总 $\\alpha$ 放射性",
+            "1 Bq/L"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 7,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        },
+        {
+          "seq": "13",
+          "cells": [
+            "13",
+            "总 $\\beta$ 放射性",
+            "10 Bq/L"
+          ],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 8,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true
+        }
+      ],
+      "coverage_status": "complete",
+      "warnings": [],
+      "fail_stage": "",
+      "predicate": null,
+      "read_token": null,
+      "model_calls": []
+    },
+    "row_citation_reread": [
+      {
+        "seq": "1",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 0,
+          "row_in_fragment": 0,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "1",
+          "总汞",
+          "0.05"
+        ],
+        "cited_source_row": [
+          "序号",
+          "污染物",
+          "最高允许排放浓度"
+        ],
+        "matches": false
+      },
+      {
+        "seq": "2",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 0,
+          "row_in_fragment": 1,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "2",
+          "烷基汞",
+          "不得检出"
+        ],
+        "cited_source_row": [
+          "1",
+          "总汞",
+          "0.05"
+        ],
+        "matches": false
+      },
+      {
+        "seq": "3",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 0,
+          "row_in_fragment": 2,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "3",
+          "总镉",
+          "0.1"
+        ],
+        "cited_source_row": [
+          "2",
+          "烷基汞",
+          "不得检出"
+        ],
+        "matches": false
+      },
+      {
+        "seq": "4",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 0,
+          "row_in_fragment": 3,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "4",
+          "总铬",
+          "1.5"
+        ],
+        "cited_source_row": [
+          "3",
+          "总镉",
+          "0.1"
+        ],
+        "matches": false
+      },
+      {
+        "seq": "5",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 1,
+          "row_in_fragment": 0,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "5",
+          "六价铬",
+          "0.5"
+        ],
+        "cited_source_row": [
+          "序号",
+          "污染物",
+          "最高允许排放浓度"
+        ],
+        "matches": false
+      },
+      {
+        "seq": "6",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 1,
+          "row_in_fragment": 1,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "6",
+          "总砷",
+          "0.5"
+        ],
+        "cited_source_row": [
+          "5",
+          "六价铬",
+          "0.5"
+        ],
+        "matches": false
+      },
+      {
+        "seq": "7",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 1,
+          "row_in_fragment": 2,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "7",
+          "总铅",
+          "1.0"
+        ],
+        "cited_source_row": [
+          "6",
+          "总砷",
+          "0.5"
+        ],
+        "matches": false
+      },
+      {
+        "seq": "8",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 1,
+          "row_in_fragment": 3,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "8",
+          "总镍",
+          "1.0"
+        ],
+        "cited_source_row": [
+          "7",
+          "总铅",
+          "1.0"
+        ],
+        "matches": false
+      },
+      {
+        "seq": "9",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 1,
+          "row_in_fragment": 4,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "9",
+          "苯并(a)芘",
+          "0.000 03"
+        ],
+        "cited_source_row": [
+          "8",
+          "总镍",
+          "1.0"
+        ],
+        "matches": false
+      },
+      {
+        "seq": "10",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 1,
+          "row_in_fragment": 5,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "10",
+          "总铍",
+          "0.005"
+        ],
+        "cited_source_row": [
+          "9",
+          "苯并(a)芘",
+          "0.000 03"
+        ],
+        "matches": false
+      },
+      {
+        "seq": "11",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 1,
+          "row_in_fragment": 6,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "11",
+          "总银",
+          "0.5"
+        ],
+        "cited_source_row": [
+          "10",
+          "总铍",
+          "0.005"
+        ],
+        "matches": false
+      },
+      {
+        "seq": "12",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 1,
+          "row_in_fragment": 7,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "12",
+          "总 $\\alpha$ 放射性",
+          "1 Bq/L"
+        ],
+        "cited_source_row": [
+          "11",
+          "总银",
+          "0.5"
+        ],
+        "matches": false
+      },
+      {
+        "seq": "13",
+        "citation": {
+          "kind": "table_row",
+          "workspace": "default",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "snapshot_id": "4919b3938ad93747",
+          "fragment_index": 1,
+          "row_in_fragment": 8,
+          "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+          "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+          "chunk_ids": [
+            "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+          ]
+        },
+        "output_cells": [
+          "13",
+          "总 $\\beta$ 放射性",
+          "10 Bq/L"
+        ],
+        "cited_source_row": [
+          "12",
+          "总 $\\alpha$ 放射性",
+          "1 Bq/L"
+        ],
+        "matches": false
+      }
+    ],
+    "table2": {
+      "query_id": "table-bb6e5d52beff",
+      "kind": "table",
+      "workspace": "default",
+      "catalog_snapshot_id": "4919b3938ad93747",
+      "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "scope_ids": [],
+      "members_total": 0,
+      "members_processed": 0,
+      "items": [],
+      "coverage_status": "ambiguous",
+      "warnings": [
+        "no logical table 表2 in water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf"
+      ],
+      "fail_stage": "ambiguous",
+      "predicate": null,
+      "read_token": null,
+      "model_calls": []
+    },
+    "scope3": {
+      "workspace": "default",
+      "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+      "snapshot_id": "4919b3938ad93747",
+      "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3",
+      "scope_kind": "clause",
+      "parent_scope_id": null,
+      "title": "3 术语和定义",
+      "number": "3",
+      "confirm_status": "confirmed",
+      "note": null
+    },
+    "prose3_manually_bound": {
+      "query_id": "prose-335ad802bf2c",
+      "kind": "prose",
+      "workspace": "default",
+      "catalog_snapshot_id": "4919b3938ad93747",
+      "source_snapshot_id": "",
+      "scope_ids": [
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3"
+      ],
+      "members_total": 3,
+      "members_processed": 3,
+      "items": [
+        {
+          "clause": "3.1",
+          "text": "3.1 医疗机构 medical organization\n指从事疾病诊断、治疗活动的医院、卫生院、疗养院、门诊部、诊所、卫生急救站等。",
+          "citation": {
+            "kind": "char_span",
+            "char_start": 22,
+            "char_end": 91,
+            "quote": "3.1 医疗机构 medical organization\n指从事疾病诊断、治疗活动的医院、卫生院、疗养院、门诊部、诊所、卫生急救站等。",
+            "unit_rel_start": 22,
+            "unit_rel_end": 91,
+            "unit_id": "385d9e8e0539a87e61f0407bda1739ad",
+            "locator": {
+              "file": "blocks.jsonl",
+              "kind": "block",
+              "blockid": "385d9e8e0539a87e61f0407bda1739ad",
+              "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+            },
+            "chunk_ids": [
+              "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+            ],
+            "unit_source": "parsed_block",
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "snapshot_id": "4919b3938ad93747"
+          },
+          "citation_verified": true,
+          "source": "regex_clause_split"
+        },
+        {
+          "clause": "3.2",
+          "text": "3.2 医疗机构污水 medical organization wastewater\n指医疗机构门诊、病房、手术室、各类检验室、病理解剖室、放射室、洗衣房、太平间等处排出的诊疗、生活及粪便污水。当医疗机构其他污水与上述污水混合排出时一律视为医疗机构污水。",
+          "citation": {
+            "kind": "char_span",
+            "char_start": 91,
+            "char_end": 219,
+            "quote": "3.2 医疗机构污水 medical organization wastewater\n指医疗机构门诊、病房、手术室、各类检验室、病理解剖室、放射室、洗衣房、太平间等处排出的诊疗、生活及粪便污水。当医疗机构其他污水与上述污水混合排出时一律视为",
+            "unit_rel_start": 91,
+            "unit_rel_end": 218,
+            "unit_id": "385d9e8e0539a87e61f0407bda1739ad",
+            "locator": {
+              "file": "blocks.jsonl",
+              "kind": "block",
+              "blockid": "385d9e8e0539a87e61f0407bda1739ad",
+              "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+            },
+            "chunk_ids": [
+              "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+            ],
+            "unit_source": "parsed_block",
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "snapshot_id": "4919b3938ad93747"
+          },
+          "citation_verified": true,
+          "source": "regex_clause_split"
+        },
+        {
+          "clause": "3.3",
+          "text": "## 3.3 污泥 sludge\n指医疗机构污水处理过程中产生的栅渣、沉淀污泥和化粪池污泥。",
+          "citation": {
+            "kind": "char_span",
+            "char_start": 219,
+            "char_end": 267,
+            "quote": "## 3.3 污泥 sludge\n指医疗机构污水处理过程中产生的栅渣、沉淀污泥和化粪池污泥。",
+            "unit_ids": [
+              "385d9e8e0539a87e61f0407bda1739ad",
+              "ad9d292d3ee2fd88a8fd25b9efc8265a",
+              "90d4b1c55cb8c6ff81dcbdfd55827165"
+            ],
+            "unit_chunk_ids": {
+              "385d9e8e0539a87e61f0407bda1739ad": [
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+              ],
+              "ad9d292d3ee2fd88a8fd25b9efc8265a": [
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+              ],
+              "90d4b1c55cb8c6ff81dcbdfd55827165": [
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+              ]
+            },
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "snapshot_id": "4919b3938ad93747"
+          },
+          "citation_verified": true,
+          "source": "regex_clause_split"
+        },
+        {
+          "clause": "3.4",
+          "text": "## 3.4 废气 waste gas\n指医疗机构污水处理过程中产生的有害气体。",
+          "citation": {
+            "kind": "char_span",
+            "char_start": 267,
+            "char_end": 308,
+            "quote": "## 3.4 废气 waste gas\n指医疗机构污水处理过程中产生的有害气体。",
+            "unit_ids": [
+              "385d9e8e0539a87e61f0407bda1739ad",
+              "ad9d292d3ee2fd88a8fd25b9efc8265a",
+              "90d4b1c55cb8c6ff81dcbdfd55827165"
+            ],
+            "unit_chunk_ids": {
+              "385d9e8e0539a87e61f0407bda1739ad": [
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+              ],
+              "ad9d292d3ee2fd88a8fd25b9efc8265a": [
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+              ],
+              "90d4b1c55cb8c6ff81dcbdfd55827165": [
+                "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+              ]
+            },
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "snapshot_id": "4919b3938ad93747"
+          },
+          "citation_verified": true,
+          "source": "regex_clause_split"
+        }
+      ],
+      "coverage_status": "complete",
+      "warnings": [
+        "items pending extraction (reading layer complete)"
+      ],
+      "fail_stage": "",
+      "predicate": null,
+      "read_token": null,
+      "model_calls": []
+    },
+    "prose_cli": {
+      "command": [
+        ".venv/bin/env-rag-final",
+        "enum-prose",
+        "--doc-id",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "--scope-id",
+        "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3",
+        "--clause-wanted",
+        "3.1,3.2,3.3,3.4"
+      ],
+      "exit_code": 1,
+      "stderr": "enum-prose: FAIL (ValueError: complete citation must bind snapshot_id for independent re-read)\n",
+      "stdout_tail": "lightrag-hku: 1.5.7\nopenai: 2.54.0\nasyncpg: 0.31.0\npgvector: 0.5.0\nqdrant-client: 1.19.1\nneo4j: 6.3.1\nhttpx: 0.28.1\npython-dotenv: 1.2.4\nlxml: 6.1.3\nConfiguration: OK (51 keys; credential values hidden)\n"
+    },
+    "missing_clause_cli": {
+      "exit_code": 0,
+      "stderr": "",
+      "stdout_tail": "lightrag-hku: 1.5.7\nopenai: 2.54.0\nasyncpg: 0.31.0\npgvector: 0.5.0\nqdrant-client: 1.19.1\nneo4j: 6.3.1\nhttpx: 0.28.1\npython-dotenv: 1.2.4\nlxml: 6.1.3\nConfiguration: OK (51 keys; credential values hidden)\n{\n \"query_id\": \"prose-b11ad68def9d\",\n \"kind\": \"prose\",\n \"workspace\": \"default\",\n \"catalog_snapshot_id\": \"4919b3938ad93747\",\n \"source_snapshot_id\": \"\",\n \"scope_ids\": [\n  \"doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3\"\n ],\n \"members_total\": 3,\n \"members_processed\": 3,\n \"items\": [],\n \"coverage_status\": \"complete\",\n \"warnings\": [\n  \"items pending extraction (reading layer complete)\"\n ],\n \"fail_stage\": \"\",\n \"predicate\": null,\n \"read_token\": null,\n \"model_calls\": []\n}\n"
+    },
+    "big_scope": {
+      "workspace": "default",
+      "doc_id": "doc-fc62a74b19f18e323438c733643c5f7a",
+      "snapshot_id": "4919b3938ad93747",
+      "scope_id": "doc-fc62a74b19f18e323438c733643c5f7a:scope:Annex 3 Drinking water estimates",
+      "scope_kind": "chapter",
+      "parent_scope_id": null,
+      "title": "Annex 3 Drinking water estimates",
+      "number": null,
+      "confirm_status": "requires_span",
+      "note": "内容位于大 block（937f224e77d8…，共 245869 字符，被最多 176 个 chunk 引用）；子片段（表格/段落）需按 locator 逐片段定位；不得把整个 block 引用跨度当作完整范围"
+    },
+    "big_scope_result": {
+      "query_id": "prose-5799645202fc",
+      "kind": "prose",
+      "workspace": "default",
+      "catalog_snapshot_id": "4919b3938ad93747",
+      "source_snapshot_id": "",
+      "scope_ids": [
+        "doc-fc62a74b19f18e323438c733643c5f7a:scope:Annex 3 Drinking water estimates"
+      ],
+      "members_total": 1,
+      "members_processed": 0,
+      "items": [],
+      "coverage_status": "partial",
+      "warnings": [
+        "unit 937f224e77d8c5c9d8b528171282fd52 requires span extraction but no sub-clause range could be located; treated as unresolved (not processed)"
+      ],
+      "fail_stage": "unresolved_span",
+      "predicate": null,
+      "read_token": null,
+      "model_calls": []
+    },
+    "big_scope_units": [],
+    "big_member_original": {
+      "unit_id": "937f224e77d8c5c9d8b528171282fd52",
+      "content_length": 245869
+    },
+    "documents": {
+      "yearbooks": {
+        "query_id": "doc-enum-cc088e2b8a3f",
+        "kind": "document",
+        "workspace": "default",
+        "catalog_snapshot_id": "4919b3938ad93747",
+        "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+        "scope_ids": [],
+        "members_total": 5,
+        "members_processed": 5,
+        "items": [
+          {
+            "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+            "doc_name": "air-15_生态环境部_中国移动源环境管理年报_2021.pdf",
+            "title": "中国移动源环境管理年报",
+            "title_confidence": "extracted",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "yearbook",
+            "unknown_fields": "[\"self_code\", \"publish_date\", \"implement_date\", \"stats_period\"]",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+              "doc_name": "air-15_生态环境部_中国移动源环境管理年报_2021.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+            "doc_name": "air-16_生态环境部_中国移动源环境管理年报_2022.pdf",
+            "title": "中国移动源环境管理年报",
+            "title_confidence": "extracted",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "yearbook",
+            "unknown_fields": "[\"self_code\", \"publish_date\", \"implement_date\", \"stats_period\"]",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+              "doc_name": "air-16_生态环境部_中国移动源环境管理年报_2022.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+            "doc_name": "air-17_生态环境部_中国移动源环境管理年报_2023.pdf",
+            "title": "中国移动源环境管理年报",
+            "title_confidence": "extracted",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "yearbook",
+            "unknown_fields": "[\"self_code\", \"publish_date\", \"implement_date\", \"stats_period\"]",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+              "doc_name": "air-17_生态环境部_中国移动源环境管理年报_2023.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+            "doc_name": "air-18_生态环境部_中国移动源环境管理年报_2024.pdf",
+            "title": "中国移动源环境管理年报",
+            "title_confidence": "extracted",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "yearbook",
+            "unknown_fields": "[\"self_code\", \"publish_date\", \"implement_date\", \"stats_period\"]",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+              "doc_name": "air-18_生态环境部_中国移动源环境管理年报_2024.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+            "doc_name": "air-19_生态环境部_中国移动源环境管理年报_2025.pdf",
+            "title": "中国移动源环境管理年报",
+            "title_confidence": "extracted",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "yearbook",
+            "unknown_fields": "[\"self_code\", \"publish_date\", \"implement_date\", \"stats_period\"]",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+              "doc_name": "air-19_生态环境部_中国移动源环境管理年报_2025.pdf"
+            },
+            "citation_verified": true
+          }
+        ],
+        "coverage_status": "complete",
+        "warnings": [
+          "5 matched docs have unknown metadata fields; they are included but flagged"
+        ],
+        "fail_stage": "",
+        "predicate": "doc_name LIKE '%中国移动源环境管理年报%'",
+        "read_token": "77d56f1496dea911f2114e6ce8f40429222c3cbacf29d1abf36ec64f836c2998",
+        "model_calls": []
+      },
+      "water_bulletins": {
+        "query_id": "doc-enum-6b8aa5d65ab4",
+        "kind": "document",
+        "workspace": "default",
+        "catalog_snapshot_id": "4919b3938ad93747",
+        "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+        "scope_ids": [],
+        "members_total": 5,
+        "members_processed": 5,
+        "items": [
+          {
+            "doc_id": "doc-0e575533a4ec747d16a0b24c381c5ede",
+            "doc_name": "water-25_水利部_2021年中国水资源公报_2021.pdf",
+            "title": "CHINA WATER RESOURCES BULLETIN",
+            "title_confidence": "extracted",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "bulletin",
+            "unknown_fields": "[\"self_code\", \"publish_date\", \"implement_date\", \"stats_period\"]",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-0e575533a4ec747d16a0b24c381c5ede",
+              "doc_name": "water-25_水利部_2021年中国水资源公报_2021.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-a13be3e29e82c913f3470fbe60b4bf6a",
+            "doc_name": "water-26_水利部_2022年中国水资源公报_2022.pdf",
+            "title": "CHINA WATER RESOURCES BULLETIN",
+            "title_confidence": "extracted",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "bulletin",
+            "unknown_fields": "[\"self_code\", \"publish_date\", \"implement_date\", \"stats_period\"]",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-a13be3e29e82c913f3470fbe60b4bf6a",
+              "doc_name": "water-26_水利部_2022年中国水资源公报_2022.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-d29dd8b36d29309ba693bfdc78ba3103",
+            "doc_name": "water-27_水利部_2023年中国水资源公报_2023.pdf",
+            "title": "CHINA WATER RESOURCES BULLETIN",
+            "title_confidence": "extracted",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "bulletin",
+            "unknown_fields": "[\"self_code\", \"publish_date\", \"implement_date\", \"stats_period\"]",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-d29dd8b36d29309ba693bfdc78ba3103",
+              "doc_name": "water-27_水利部_2023年中国水资源公报_2023.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-bb0530b18d32763b3211b67365b36359",
+            "doc_name": "water-28_水利部_2024年中国水资源公报_2024.pdf",
+            "title": "CHINA WATER RESOURCESBULLETIN",
+            "title_confidence": "extracted",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "bulletin",
+            "unknown_fields": "[\"self_code\", \"publish_date\", \"implement_date\", \"stats_period\"]",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-bb0530b18d32763b3211b67365b36359",
+              "doc_name": "water-28_水利部_2024年中国水资源公报_2024.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-969f75052f9f2473ad13e7b7aeaa31d8",
+            "doc_name": "water-29_水利部_2025年中国水资源公报_2025.pdf",
+            "title": "CHINA WATER RESOURCES BULLETIN",
+            "title_confidence": "extracted",
+            "self_code": null,
+            "self_code_version": null,
+            "doc_type": "bulletin",
+            "unknown_fields": "[\"self_code\", \"publish_date\", \"implement_date\", \"stats_period\"]",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-969f75052f9f2473ad13e7b7aeaa31d8",
+              "doc_name": "water-29_水利部_2025年中国水资源公报_2025.pdf"
+            },
+            "citation_verified": true
+          }
+        ],
+        "coverage_status": "complete",
+        "warnings": [
+          "5 matched docs have unknown metadata fields; they are included but flagged"
+        ],
+        "fail_stage": "",
+        "predicate": "doc_name LIKE '%中国水资源公报%'",
+        "read_token": "4f8248f00f8b92b289a4e3e8197974837e32fedc6a82b6daae31787fc3243dfa",
+        "model_calls": []
+      },
+      "GB3095": {
+        "query_id": "doc-enum-2a77a7a54315",
+        "kind": "document",
+        "workspace": "default",
+        "catalog_snapshot_id": "4919b3938ad93747",
+        "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+        "scope_ids": [],
+        "members_total": 2,
+        "members_processed": 2,
+        "items": [
+          {
+            "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+            "doc_name": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+            "title": "环境空气质量标准",
+            "title_confidence": "extracted",
+            "self_code": "GB3095",
+            "self_code_version": "2012",
+            "doc_type": "standard",
+            "unknown_fields": "[\"stats_period\"]",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+              "doc_name": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf"
+            },
+            "citation_verified": true
+          },
+          {
+            "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+            "doc_name": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+            "title": "环境空气质量标准",
+            "title_confidence": "extracted",
+            "self_code": "GB3095",
+            "self_code_version": "2026",
+            "doc_type": "standard",
+            "unknown_fields": "[\"stats_period\"]",
+            "citation": {
+              "kind": "catalog_row",
+              "workspace": "default",
+              "snapshot_id": "4919b3938ad93747",
+              "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+              "doc_name": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf"
+            },
+            "citation_verified": true
+          }
+        ],
+        "coverage_status": "complete",
+        "warnings": [
+          "2 matched docs have unknown metadata fields; they are included but flagged"
+        ],
+        "fail_stage": "",
+        "predicate": "self_code='GB3095'",
+        "read_token": "caa4a9ce71c4dcfebbaf21e7722e82e5836d1272051381570bf05b530fe03695",
+        "model_calls": []
+      }
+    },
+    "end": {
+      "state": "current",
+      "active_run_id": "c15c741742394320",
+      "active_snapshot_id": "4919b3938ad93747",
+      "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "expected_recipe_id": "phase-1-v4-single-active-snapshot-prune",
+      "live_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "stored_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "action": ""
+    },
+    "public_after": {
+      "doc_full": 221,
+      "doc_chunks": 5709,
+      "doc_status": 279,
+      "llm_cache": 16514,
+      "entity_chunks": 65527,
+      "full_entities": 221,
+      "full_relations": 221,
+      "relation_chunks": 119575
+    },
+    "public_unchanged": true,
+    "readonly": "on"
+  },
+  "code_sha256": {
+    "src/env_rag_final/enumerate_/__init__.py": "a1f93429fbe9550836d7f1b08f87c9e62b7946e834e8c9698936a138346f696f",
+    "src/env_rag_final/enumerate_/contract.py": "d674bd649fd58eb528d7cfde5dd02cdc089a6bcb7506149eb711f4903f42785d",
+    "src/env_rag_final/enumerate_/doc_enum.py": "6a2749da3464683294d6887f8d12adb6e8b940f70b8274aaf584d701a0fbeaec",
+    "src/env_rag_final/enumerate_/prose_enum.py": "020f0125bf165ecbd985573280ddfe222a3605ccb8d40cdcc0679c3054cbdea8",
+    "src/env_rag_final/enumerate_/table_enum.py": "95633cfe4e967cd2c3c9ba8f53ec72c375534cdf28ba6fbd7775d49362f972dd",
+    "src/env_rag_final/enumerate_/tables.py": "32e2b2fd5d74e427a2cbf2559fec1a2b3d1e7a6b6ae2cc9e3a2ddeac5d96889f",
+    "src/env_rag_final/cli.py": "8254ce58e28d3c92ca9bafb485901d4816839eee315ab639d757a420fff293ff"
+  }
+}

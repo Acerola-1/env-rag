@@ -1,0 +1,232 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-08T21:12:55+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "own-q"
+ ],
+ "gold_sha_verified": "gold-sha",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/tmpcjwofbz2/rerank-runtime-latest.json",
+   "sha256": "fdec651f50641752655d095dbbbf08b75492646380b86bc7955c7495d6763aa2",
+   "task": "5.4 joint rerank over fused candidates (bounded, recorded)",
+   "started_at": "2026-10-07T11:56:13+0800",
+   "finished_at": null,
+   "query_ids": [
+    "own-q"
+   ]
+  },
+  "fused_report": {
+   "path": "/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/tmpcjwofbz2/fusion-runtime-latest.json",
+   "sha256": "26ff63ef62967d9a0b5b15b6b9a7b267aa61ce1589841f05e73d485aa562dcdc",
+   "task": "5.3 two-path candidate fusion (read-only, guarded)",
+   "started_at": "2026-10-07T08:03:15+0800",
+   "finished_at": null,
+   "query_ids": [
+    "own-q"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_llm_cache": 16514,
+   "lightrag_doc_chunks": 5709
+  },
+  "source_fingerprint": "fp-1",
+  "catalog_active": {
+   "run_id": "r1",
+   "snapshot_id": "snap-1"
+  },
+  "search_active": "srch-1",
+  "gold_sha": "gold-sha",
+  "env_sha": "env-1"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_llm_cache": 16514,
+   "lightrag_doc_chunks": 5709
+  },
+  "source_fingerprint": "fp-1",
+  "catalog_active": {
+   "run_id": "r1",
+   "snapshot_id": "snap-1"
+  },
+  "search_active": "srch-1",
+  "gold_sha": "gold-sha",
+  "env_sha": "env-1"
+ },
+ "model_calls_used": 0,
+ "results": [
+  {
+   "query_id": "own-q",
+   "query": "GB 8978-1996 中 4 章规定了哪些要求？逐项列出编号。",
+   "category": "prose_enum",
+   "workspace": "default",
+   "coverage_status": "complete",
+   "fail_stage": "",
+   "flags": [],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "ok",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 0,
+    "typed_targets": [
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-owning-r2",
+      "discovery": "code_exact"
+     }
+    ],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 2,
+    "selected_docs": [
+     "doc-owning-r2"
+    ],
+    "priority": [
+     {
+      "doc_id": "doc-owning-r2",
+      "rerank_rank_or_none": null
+     }
+    ],
+    "basis": "targets_resolved + typed targets (5.3) define the scope; rerank order only prioritizes — membership is never top-k bounded"
+   },
+   "expansions": [
+    {
+     "doc_id": "doc-owning-r2",
+     "kind": "prose",
+     "scope_id": "own:scope:4",
+     "requested_clauses": null,
+     "missing_requested_clauses": [],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "read_status": "complete",
+     "fail_stage": "",
+     "units_read": 1,
+     "unit_ids": [
+      "own-u1"
+     ],
+     "chunk_ids": [],
+     "items_count": 3,
+     "warnings": [],
+     "boundary_ambiguities": [],
+     "selected": true
+    }
+   ],
+   "answer": {
+    "mode": "deterministic",
+    "generated_by": "enumerate/expand entries",
+    "items": [
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-owning-r2",
+      "scope_id": "own:scope:4",
+      "clause": "4.1",
+      "text": "4.1 本条限值见下表：\n表 1\n<table id=\"tb-a\"><tr><td>总汞</td><td>0.05</td></tr></table>\n本条补充要求：每日监测一次。",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 9,
+       "char_end": 100,
+       "quote": "4.1 本条限值见下表：\n表 1\n<table id=\"tb-a\"><tr><td>总汞</td><td>0.05</td></tr></table>\n本条补充要求：每日监测一次。",
+       "unit_rel_start": 9,
+       "unit_rel_end": 100,
+       "unit_id": "own-u1",
+       "locator": {
+        "blockid": "own-u1"
+       },
+       "chunk_ids": [],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-owning-r2",
+       "snapshot_id": "snap-1"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-owning-r2",
+      "scope_id": "own:scope:4",
+      "clause": "4.2",
+      "text": "4.2 另一条已独立成句。",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 100,
+       "char_end": 114,
+       "quote": "4.2 另一条已独立成句。",
+       "unit_rel_start": 100,
+       "unit_rel_end": 114,
+       "unit_id": "own-u1",
+       "locator": {
+        "blockid": "own-u1"
+       },
+       "chunk_ids": [],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-owning-r2",
+       "snapshot_id": "snap-1"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     },
+     {
+      "kind": "prose_item",
+      "doc_id": "doc-owning-r2",
+      "scope_id": "own:scope:4",
+      "clause": "4.3",
+      "text": "4.3 再下一条要求。",
+      "citation": {
+       "kind": "char_span",
+       "char_start": 163,
+       "char_end": 174,
+       "quote": "4.3 再下一条要求。",
+       "unit_rel_start": 163,
+       "unit_rel_end": 174,
+       "unit_id": "own-u1",
+       "locator": {
+        "blockid": "own-u1"
+       },
+       "chunk_ids": [],
+       "unit_source": "parsed_block",
+       "workspace": "default",
+       "doc_id": "doc-owning-r2",
+       "snapshot_id": "snap-1"
+      },
+      "citation_verified": true,
+      "citation_reverified": true
+     }
+    ]
+   },
+   "reverification": {
+    "items_checked": 3,
+    "problems": [],
+    "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+   },
+   "model": null,
+   "status": "ok"
+  }
+ ]
+}

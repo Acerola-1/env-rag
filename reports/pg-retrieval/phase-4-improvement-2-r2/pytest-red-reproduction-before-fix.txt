@@ -1,0 +1,21 @@
+# 红相复现（改动前实测，本会话开始时的运行输出）
+
+冻结矩阵 reports/pg-retrieval/phase-4-improvement-2-review/test_improvement2_review_r1.py
+在主 agent 提交代码（answer.py 62e8f996…、evaluation.py a42d5c68…，即 baseline-shas.json 的
+before 状态）上的实际运行结果，与交接所述 5 失败/1 正例完全一致。本文件为改动前复现的
+记录转录；修复后该矩阵的通过证据见 pytest-frozen-matrix-r2.txt。
+
+$ uv run pytest reports/pg-retrieval/phase-4-improvement-2-review/test_improvement2_review_r1.py -q
+FAILED ...::test_candidate_attribution_marker_without_bound_evidence_refuses[discovery-label]
+    AssertionError: assert 'doc-synth-foreign' not in ['doc-synth-goal', 'doc-synth-foreign']
+FAILED ...::test_candidate_attribution_marker_without_bound_evidence_refuses[membership-string]
+    AssertionError: assert 'doc-synth-foreign' not in ['doc-synth-goal', 'doc-synth-foreign']
+FAILED ...::test_verified_typed_attribution_absent_from_chunks_keeps_full_read
+    AssertionError: assert {'doc-synth-goal'} == {'doc-synth-g...synth-modify'}
+FAILED ...::test_codeless_discovery_cannot_promote_itself_to_confirmed_scope[typed-discovery]
+    AssertionError: assert 'complete' in {'ambiguous', 'partial'}
+FAILED ...::test_codeless_discovery_cannot_promote_itself_to_confirmed_scope[resolved-discovery]
+    AssertionError: assert 'complete' in {'ambiguous', 'partial'}
+5 failed, 1 passed in 1.34s
+
+（1 正例 = test_canonical_target_with_noise_remains_complete，修复前后均通过。）

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "C1",
+    "path": "src/env_rag_final/rerank.py",
+    "start_line": 138,
+    "severity": "high",
+    "category": "bug",
+    "content": "Current PG body matches are accepted with wrong content_sha256 or missing doc_id unchanged; per-result replay question is not bound to the gold question. Three owning-entry failures reproduce inconsistent source/request metadata."
+  },
+  {
+    "id": "C2",
+    "path": "src/env_rag_final/rerank.py",
+    "start_line": 221,
+    "end_line": 270,
+    "severity": "high",
+    "category": "bug",
+    "content": "All unit_chunk_links are labeled table_unit without checking source_units.unit_kind. Read-only live classification proves 29 of 41 new paths are blocks falsely labeled tables; only 12 are tables."
+  },
+  {
+    "id": "C3",
+    "path": "src/env_rag_final/rerank.py",
+    "start_line": 430,
+    "severity": "high",
+    "category": "security",
+    "content": "Error text is truncated before secret replacement, leaking a fixture-secret prefix; the terminal writer also skips sanitization of preflight details. Both owning-entry failures use synthetic secrets; no actual credential leak was observed."
+  }
+]

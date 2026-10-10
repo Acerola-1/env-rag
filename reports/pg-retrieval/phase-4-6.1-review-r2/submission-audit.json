@@ -1,0 +1,19 @@
+{
+  "prior_frozen_r1_sha_unchanged": true,
+  "old_phase3_ledger_changed_files": [
+    "src/env_rag_final/answer.py",
+    "src/env_rag_final/cli.py"
+  ],
+  "change_reason": "new eval-run CLI and explicitly declared default-compatible answer parameter seams; historical runtimes/frozen/gold unchanged",
+  "phase4_code_anchor_matches": {
+    "answer.py": false,
+    "rerank.py": true,
+    "fusion.py": true,
+    "local_adapter.py": true,
+    "compat_runtime.py": true
+  },
+  "phase4_note": "update to an approved new config generation only after 6.1 acceptance; retain old anchor history",
+  "env_sha_unchanged_since_user_hy3_switch": true,
+  "gold_sha_unchanged": true,
+  "new_real_requests": 0
+}

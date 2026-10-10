@@ -1,0 +1,1279 @@
+{
+  "version": "1.0",
+  "equations": {
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0001": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0001",
+      "blockid": "7e6793d553a97dbf6c726a7005bf647e",
+      "heading": "DE.6.1 计算加权排放",
+      "parent_headings": [
+        "DE.4.4 市区、市郊和高速路段窗口"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{gas,d}, k} = \\frac {\\sum \\left(w _ {j} M _ {\\mathrm{gas,d} , j}\\right)}{\\sum w _ {j}} k = \\mathrm{u,r,m}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/18"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0002": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0002",
+      "blockid": "7e6793d553a97dbf6c726a7005bf647e",
+      "heading": "DE.6.1 计算加权排放",
+      "parent_headings": [
+        "DE.4.4 市区、市郊和高速路段窗口"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2}, \\mathrm{d}, \\mathrm{cc}} (\\bar {v} _ {j}) \\left(1 - \\frac {\\operatorname{tol} _ {1}}{1 0 0}\\right) \\leqslant M _ {\\mathrm{CO} _ {2}, \\mathrm{d}, j} (\\bar {v} _ {j}) \\leqslant M _ {\\mathrm{CO} _ {2}, \\mathrm{d}, \\mathrm{cc}} (\\bar {v} _ {j}) \\left(1 + \\frac {\\operatorname{tol} _ {1}}{1 0 0}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/21"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0003": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0003",
+      "blockid": "7e6793d553a97dbf6c726a7005bf647e",
+      "heading": "DE.6.1 计算加权排放",
+      "parent_headings": [
+        "DE.4.4 市区、市郊和高速路段窗口"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2}, \\mathrm{d}, \\mathrm{cc}} (\\bar {v} _ {j}) \\times \\left(1 + \\frac {\\operatorname{tol} _ {1}}{1 0 0}\\right) \\leqslant M _ {\\mathrm{CO} _ {2}, \\mathrm{d}, j} (\\bar {v} _ {j}) \\leqslant M _ {\\mathrm{CO} _ {2}, \\mathrm{d}, \\mathrm{cc}} (\\bar {v} _ {j}) \\times \\left(1 + \\frac {\\operatorname{tol} _ {2}}{1 0 0}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/24"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0004": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0004",
+      "blockid": "7e6793d553a97dbf6c726a7005bf647e",
+      "heading": "DE.6.1 计算加权排放",
+      "parent_headings": [
+        "DE.4.4 市区、市郊和高速路段窗口"
+      ],
+      "format": "latex",
+      "content": "w _ {j} = k _ {1 1} h _ {j} + k _ {1 2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/26"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0005": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0005",
+      "blockid": "7e6793d553a97dbf6c726a7005bf647e",
+      "heading": "DE.6.1 计算加权排放",
+      "parent_headings": [
+        "DE.4.4 市区、市郊和高速路段窗口"
+      ],
+      "format": "latex",
+      "content": "k _ {1 1} = 1 / \\left(\\operatorname{tol} _ {1} - \\operatorname{tol} _ {2}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/27"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0006": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0006",
+      "blockid": "7e6793d553a97dbf6c726a7005bf647e",
+      "heading": "DE.6.1 计算加权排放",
+      "parent_headings": [
+        "DE.4.4 市区、市郊和高速路段窗口"
+      ],
+      "format": "latex",
+      "content": "k _ {1 2} = \\mathrm{tol} _ {2} / (\\mathrm{tol} _ {2} - \\mathrm{tol} _ {1})",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/28"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0007": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0007",
+      "blockid": "7e6793d553a97dbf6c726a7005bf647e",
+      "heading": "DE.6.1 计算加权排放",
+      "parent_headings": [
+        "DE.4.4 市区、市郊和高速路段窗口"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2}, \\mathrm{d}, \\mathrm{ce}} (\\bar {v} _ {j}) \\times \\left(1 - \\frac {\\operatorname{tol} _ {2}}{1 0 0}\\right) \\leqslant M _ {\\mathrm{CO} _ {2}, \\mathrm{d}, j} (\\bar {v} _ {j}) \\leqslant M _ {\\mathrm{CO} _ {2}, \\mathrm{d}, \\mathrm{ce}} (\\bar {v} _ {j}) \\times \\left(1 - \\frac {\\operatorname{tol} _ {1}}{1 0 0}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/30"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0008": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0008",
+      "blockid": "7e6793d553a97dbf6c726a7005bf647e",
+      "heading": "DE.6.1 计算加权排放",
+      "parent_headings": [
+        "DE.4.4 市区、市郊和高速路段窗口"
+      ],
+      "format": "latex",
+      "content": "w _ {j} = k _ {2 1} h _ {j} + k _ {2 2}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/32"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0009": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0009",
+      "blockid": "7e6793d553a97dbf6c726a7005bf647e",
+      "heading": "DE.6.1 计算加权排放",
+      "parent_headings": [
+        "DE.4.4 市区、市郊和高速路段窗口"
+      ],
+      "format": "latex",
+      "content": "k _ {2 1} = 1 / \\left(\\operatorname{tol} _ {2} - \\operatorname{tol} _ {1}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/33"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0010": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0010",
+      "blockid": "7e6793d553a97dbf6c726a7005bf647e",
+      "heading": "DE.6.1 计算加权排放",
+      "parent_headings": [
+        "DE.4.4 市区、市郊和高速路段窗口"
+      ],
+      "format": "latex",
+      "content": "k _ {2 2} = k _ {1 2} = \\mathrm{tol} _ {2} / (\\mathrm{tol} _ {2} - \\mathrm{tol} _ {1})",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/34"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0011": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0011",
+      "blockid": "7e6793d553a97dbf6c726a7005bf647e",
+      "heading": "DE.6.1 计算加权排放",
+      "parent_headings": [
+        "DE.4.4 市区、市郊和高速路段窗口"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2}, \\mathrm{d}, j} (\\bar {v} _ {j}) \\leqslant M _ {\\mathrm{CO} _ {2}, \\mathrm{d}, \\mathrm{cc}} (\\bar {v} _ {j}) (1 - \\operatorname{tol} _ {2} / 1 0 0)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/36"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0012": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0012",
+      "blockid": "7e6793d553a97dbf6c726a7005bf647e",
+      "heading": "DE.6.1 计算加权排放",
+      "parent_headings": [
+        "DE.4.4 市区、市郊和高速路段窗口"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2}, \\mathrm{d}, j} (\\bar {v} _ {j}) \\geqslant M _ {\\mathrm{CO} _ {2}, \\mathrm{d}, \\mathrm{cc}} (\\bar {v} _ {j}) (1 + \\operatorname{tol} _ {2} / 1 0 0)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/38"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0013": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0013",
+      "blockid": "7e6793d553a97dbf6c726a7005bf647e",
+      "heading": "DE.6.1 计算加权排放",
+      "parent_headings": [
+        "DE.4.4 市区、市郊和高速路段窗口"
+      ],
+      "format": "latex",
+      "content": "h _ {j} = 1 0 0 \\cdot \\frac {M _ {\\mathrm{CO} _ {2} , \\mathrm{d} , j} - M _ {\\mathrm{CO} _ {2} , \\mathrm{d} , \\mathrm{cc}} (\\overline {{v}} _ {j})}{M _ {\\mathrm{CO} _ {2} , \\mathrm{d} , \\mathrm{cc}} (\\overline {{v}} _ {j})}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/41"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0014": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0014",
+      "blockid": "062d728f61ef816395827789491b28bd",
+      "heading": "DE.6.2 严格程度指数计算",
+      "parent_headings": [
+        "DE.4.4 市区、市郊和高速路段窗口"
+      ],
+      "format": "latex",
+      "content": "\\overline {{h}} _ {k} = \\frac {1}{N _ {k}} \\sum h _ {j} k = \\mathrm{u,r,m}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/47"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0015": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0015",
+      "blockid": "062d728f61ef816395827789491b28bd",
+      "heading": "DE.6.2 严格程度指数计算",
+      "parent_headings": [
+        "DE.4.4 市区、市郊和高速路段窗口"
+      ],
+      "format": "latex",
+      "content": "\\overline {{h}} _ {t} = \\frac {f _ {\\mathrm{u}} \\overline {{h}} _ {\\mathrm{u}} + f _ {\\mathrm{r}} \\overline {{h}} _ {\\mathrm{r}} + f _ {\\mathrm{m}} \\overline {{h}} _ {\\mathrm{m}}}{f _ {\\mathrm{u}} + f _ {\\mathrm{r}} + f _ {\\mathrm{m}}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/49"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0016": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0016",
+      "blockid": "df5903caf4019ab41f587ac17e0587fa",
+      "heading": "DE.6.3 总行程的排放计算",
+      "parent_headings": [
+        "DE.4.4 市区、市郊和高速路段窗口"
+      ],
+      "format": "latex",
+      "content": "M _ {\\text { gas,d,t }} = 1 0 0 0 \\cdot \\frac {f _ {\\mathrm{u}} M _ {\\text { gas,d,u }} + f _ {\\mathrm{r}} M _ {\\text { gas,d,r }} + f _ {\\mathrm{m}} M _ {\\text { gas,d,m }}}{\\left(f _ {\\mathrm{u}} + f _ {\\mathrm{r}} + f _ {\\mathrm{m}}\\right)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/53"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0017": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0017",
+      "blockid": "df5903caf4019ab41f587ac17e0587fa",
+      "heading": "DE.6.3 总行程的排放计算",
+      "parent_headings": [
+        "DE.4.4 市区、市郊和高速路段窗口"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{PN,d,t}} = \\frac {f _ {\\mathrm{u}} M _ {\\mathrm{PN,d,u}} + f _ {\\mathrm{r}} M _ {\\mathrm{PN,d,r}} + f _ {\\mathrm{m}} M _ {\\mathrm{PN,d,m}}}{\\left(f _ {\\mathrm{u}} + f _ {\\mathrm{r}} + f _ {\\mathrm{m}}\\right)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/55"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0018": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0018",
+      "blockid": "b5b88411e983c1bca6b0fd9b6c74a7ef",
+      "heading": "DG.3.1.2 计算距离、加速度及 va",
+      "parent_headings": [
+        "行程动力学特性的校验"
+      ],
+      "format": "latex",
+      "content": "d _ {i} = v _ {i} / 3. 6, i = 1 \\sim N _ {\\mathrm{t}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/134"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0019": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0019",
+      "blockid": "b5b88411e983c1bca6b0fd9b6c74a7ef",
+      "heading": "DG.3.1.2 计算距离、加速度及 va",
+      "parent_headings": [
+        "行程动力学特性的校验"
+      ],
+      "format": "latex",
+      "content": "a _ {i} = \\left(v _ {i + 1} - v _ {i - 1}\\right) / (2 \\times 3. 6), i = 1 \\sim N _ {\\mathrm{t}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/139"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0020": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0020",
+      "blockid": "b5b88411e983c1bca6b0fd9b6c74a7ef",
+      "heading": "DG.3.1.2 计算距离、加速度及 va",
+      "parent_headings": [
+        "行程动力学特性的校验"
+      ],
+      "format": "latex",
+      "content": "\\left(v \\cdot a\\right) _ {i} = v _ {i} \\cdot a _ {i} / 3. 6, i = 1 \\sim N _ {\\mathrm{t}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/142"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0021": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0021",
+      "blockid": "b5e4ba2dc191c14bb98ea5f2a20c0c55",
+      "heading": "DG.3.1.3 对数据结果进行分组",
+      "parent_headings": [
+        "行程动力学特性的校验"
+      ],
+      "format": "latex",
+      "content": "\\overline {{{v}}} _ {k} = \\left(\\sum_ {i} v _ {i, k}\\right) / N _ {k}, i = 1 \\sim N _ {k}, k = u, r, m",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/149"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0022": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0022",
+      "blockid": "ce9c47836e0fb40eaeb688d2430f2433",
+      "heading": "DG.3.1.4 计算每个速度组中的 $\\nu { \\cdot } a _ { \\mathrm { p o s } { \\mathrm { - } } } [ 9 5 ]$",
+      "parent_headings": [
+        "行程动力学特性的校验"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{RPA} _ {k} = \\sum_ {j} \\left(\\Delta t \\cdot \\left(v \\cdot a _ {\\text {pos}}\\right) _ {j, k}\\right) / \\sum_ {i} d _ {i, k}, \\quad j = 1 \\sim M _ {k}, i = 1 \\sim N _ {k}, k = u, r, m",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/157"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0023": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0023",
+      "blockid": "e08caed4498a1ffaf9a4ad51dfde5e39",
+      "heading": "DH.4.2 数据质量的筛选和原则核实",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "h (t) = h _ {\\mathrm{map}} (t)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/192"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0024": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0024",
+      "blockid": "08973d1cba5d9f51b79d539524f15719",
+      "heading": "DH.4.3 瞬时车辆正海拔高度数据的校正",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "\\left| h (t) - h (t - 1) \\right| > \\left(v (t) / 3. 6 \\times \\sin 4 5 ^ {\\circ}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/199"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0025": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0025",
+      "blockid": "08973d1cba5d9f51b79d539524f15719",
+      "heading": "DH.4.3 瞬时车辆正海拔高度数据的校正",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "h _ {\\mathrm{corr}} (t) = h _ {\\mathrm{corr}} (t - 1)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/201"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0026": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0026",
+      "blockid": "13bb6873b5eb7eb5f58e482a07ac60e4",
+      "heading": "DH.4.4.1 建立统一空间分辨率",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "d _ {i} = \\frac {v _ {i}}{3 . 6}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/213"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0027": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0027",
+      "blockid": "13bb6873b5eb7eb5f58e482a07ac60e4",
+      "heading": "DH.4.4.1 建立统一空间分辨率",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "h _ {\\mathrm{int}} (d) = h _ {\\mathrm{corr}} (0) + \\frac {h _ {\\mathrm{corr}} (1) - h _ {\\mathrm{corr}} (0)}{d _ {1} - d _ {0}} \\times (d - d _ {0})",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/218"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0028": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0028",
+      "blockid": "5bc695c7c90d46bea1e933b0c11af2b1",
+      "heading": "DH.4.4.2 附加数据的光滑处理",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "\\operatorname{road} _ {\\text { grade }, 1} (d) = \\frac {h _ {\\text { int }} (d + 2 0 0) - h _ {\\text { int }} \\left(d _ {\\mathrm{a}}\\right)}{(d + 2 0 0)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/228"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0029": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0029",
+      "blockid": "5bc695c7c90d46bea1e933b0c11af2b1",
+      "heading": "DH.4.4.2 附加数据的光滑处理",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "\\operatorname{road} _ {\\text { grade }, 1} (d) = \\frac {h _ {\\text { int }} (d + 2 0 0) - h _ {\\text { int }} (d - 2 0 0)}{(d + 2 0 0) - (d - 2 0 0)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/230"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0030": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0030",
+      "blockid": "5bc695c7c90d46bea1e933b0c11af2b1",
+      "heading": "DH.4.4.2 附加数据的光滑处理",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "\\operatorname{road} _ {\\text { grade }, 1} (d) = \\frac {h _ {\\text { int }} \\left(d _ {\\mathrm{e}}\\right) - h _ {\\text { int }} (d - 2 0 0)}{d _ {\\mathrm{e}} - (d - 2 0 0)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/232"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0031": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0031",
+      "blockid": "5bc695c7c90d46bea1e933b0c11af2b1",
+      "heading": "DH.4.4.2 附加数据的光滑处理",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "h _ {\\text {int,sm,l}} (d) = h _ {\\text {int,sm,l}} (d - 1) + \\operatorname{road} _ {\\text {grade,l}} (d), d = d _ {\\mathrm{a}} + 1 \\text {至} d _ {\\mathrm{e}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/233"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0032": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0032",
+      "blockid": "5bc695c7c90d46bea1e933b0c11af2b1",
+      "heading": "DH.4.4.2 附加数据的光滑处理",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "h _ {\\text { int,sm,l }} \\left(d _ {\\text { a }}\\right) = h _ {\\text { int }} \\left(d _ {\\text { a }}\\right) + \\text { road } _ {\\text { grade,l }} \\left(d _ {\\text { a }}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/234"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0033": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0033",
+      "blockid": "5bc695c7c90d46bea1e933b0c11af2b1",
+      "heading": "DH.4.4.2 附加数据的光滑处理",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "\\operatorname{road} _ {\\text { grade }, 2} (d) = \\frac {h _ {\\text { int,sm } , 1} (d + 2 0 0) - h _ {\\text { int,sm } , 1} \\left(d _ {\\mathrm{a}}\\right)}{(d + 2 0 0)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/245"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0034": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0034",
+      "blockid": "5bc695c7c90d46bea1e933b0c11af2b1",
+      "heading": "DH.4.4.2 附加数据的光滑处理",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "\\operatorname{road} _ {\\text { grade }, 2} (d) = \\frac {h _ {\\text { int,sm } , 1} (d + 2 0 0) - h _ {\\text { int,sm } , 1} (d - 2 0 0)}{(d + 2 0 0) - (d - 2 0 0)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/247"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0035": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0035",
+      "blockid": "5bc695c7c90d46bea1e933b0c11af2b1",
+      "heading": "DH.4.4.2 附加数据的光滑处理",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "\\operatorname{road} _ {\\text { grade }, 2} (d) = \\frac {h _ {\\text { int,sm } , 1} \\left(d _ {\\mathrm{e}}\\right) - h _ {\\text { int,sm } , 1} (d - 2 0 0)}{d _ {\\mathrm{e}} - (d - 2 0 0)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/249"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0036": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0036",
+      "blockid": "5bc695c7c90d46bea1e933b0c11af2b1",
+      "heading": "DH.4.4.2 附加数据的光滑处理",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "h _ {\\text { int,sm,1 }} (d)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/252"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0037": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0037",
+      "blockid": "5bc695c7c90d46bea1e933b0c11af2b1",
+      "heading": "DH.4.4.2 附加数据的光滑处理",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "d",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/253"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0038": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0038",
+      "blockid": "5bc695c7c90d46bea1e933b0c11af2b1",
+      "heading": "DH.4.4.2 附加数据的光滑处理",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "d _ {\\mathrm{a}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/255"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0039": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0039",
+      "blockid": "5bc695c7c90d46bea1e933b0c11af2b1",
+      "heading": "DH.4.4.2 附加数据的光滑处理",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "d _ {\\mathrm{e}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/256"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0040": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0040",
+      "blockid": "a5e7f06378ccfe13d3398aac1ca10dd3",
+      "heading": "DH.5.1 数据质量的筛选核实",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "h _ {\\mathrm{GPS}} (t) - h _ {\\mathrm{map}} (t) <   - 4 0 \\mathrm{m}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/269"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0041": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0041",
+      "blockid": "397125bd7920cfbe14bb17e652482f3d",
+      "heading": "DH.5.2 瞬时车辆高度数据的校正",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "\\left| h (t) - h (t - 1) \\right| > \\left(v (t) / 3. 6 \\times \\sin 4 5 ^ {\\circ}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/273"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0042": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0042",
+      "blockid": "6775c760132c2cc8ab4391ba02649760",
+      "heading": "DH.5.3.1 建立统一空间分辨率",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "h _ {\\mathrm{int}} (0) = 1 2 0. 3 + \\frac {1 2 0 . 3 - 1 2 0 . 3}{0 . 1 - 0 . 0} \\times (0 - 0) = 1 2 0. 3 0 0 0",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/279"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0043": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0043",
+      "blockid": "6775c760132c2cc8ab4391ba02649760",
+      "heading": "DH.5.3.1 建立统一空间分辨率",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "h _ {\\mathrm{int}} (5 2 0) = 1 3 2. 5 + \\frac {1 3 2 . 6 - 1 3 2 . 5}{5 2 3 . 6 - 5 1 9 . 9} \\times (5 2 0 - 5 1 9. 9) = 1 3 2. 5 0 2 7",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/280"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0044": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0044",
+      "blockid": "4f5c86cc6e6b5aeb17685e4d7d910756",
+      "heading": "DH.5.3.2 额外的数据光滑处理",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "\\operatorname{road} _ {\\text { grade }, 1} (0) = \\frac {h _ {\\text { int }} (2 0 0) - h _ {\\text { int }} (0)}{(0 + 2 0 0)} = \\frac {1 2 0 . 9 6 8 2 - 1 2 0 . 3 0 0 0}{2 0 0} = 0. 0 0 3 3",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/285"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0045": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0045",
+      "blockid": "4f5c86cc6e6b5aeb17685e4d7d910756",
+      "heading": "DH.5.3.2 额外的数据光滑处理",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "\\operatorname{road} _ {\\text {grade,1}} (7 2 0) = \\frac {h _ {\\text {int}} (7 9 9) - h _ {\\text {int}} (5 2 0)}{7 9 9 - (5 2 0)} = \\frac {1 2 1 . 2 0 0 0 - 1 3 2 . 5 0 2 7}{2 7 9} = - 0. 0 4 0 5",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/288"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0046": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0046",
+      "blockid": "4f5c86cc6e6b5aeb17685e4d7d910756",
+      "heading": "DH.5.3.2 额外的数据光滑处理",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "h _ {\\text { int,sm,l }} (0) = h _ {\\text { int }} (0) + \\text { road } _ {\\text { grade,l }} (0) = 1 2 0. 3 + 0. 0 0 3 3 \\approx 1 2 0. 3 0 3 3 \\mathrm{m}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/292"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0047": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0047",
+      "blockid": "4f5c86cc6e6b5aeb17685e4d7d910756",
+      "heading": "DH.5.3.2 额外的数据光滑处理",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "h _ {\\text { int,sm,l }} (7 9 9) = h _ {\\text { int,sm,l }} (7 9 8) + \\text { road } _ {\\text { grade,l }} (7 9 9) = 1 2 1. 2 5 5 0 - 0. 0 2 2 0 = 1 2 1. 2 3 3 0 \\mathrm{m}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/293"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0048": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0048",
+      "blockid": "4f5c86cc6e6b5aeb17685e4d7d910756",
+      "heading": "DH.5.3.2 额外的数据光滑处理",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "\\operatorname{road} _ {\\text {grade,2}} (0) = \\frac {h _ {\\text {int,sm,1}} (2 0 0) - h _ {\\text {int,sm,1}} (0)}{(2 0 0)} = \\frac {1 1 9 . 9 6 1 8 - 1 2 0 . 3 0 3 3}{(2 0 0)} = - 0. 0 0 1 7",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/296"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0049": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0049",
+      "blockid": "4f5c86cc6e6b5aeb17685e4d7d910756",
+      "heading": "DH.5.3.2 额外的数据光滑处理",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "\\operatorname{road} _ {\\text {grade,2}} (3 2 0) = \\frac {h _ {\\text {int,sm,l}} (5 2 0) - h _ {\\text {int,sm,l}} (1 2 0)}{(5 2 0) - (1 2 0)} = \\frac {1 2 3 . 6 8 0 9 - 1 2 0 . 1 8 4 3}{4 0 0} = 0. 0 0 8 7",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/298"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0050": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0050",
+      "blockid": "4f5c86cc6e6b5aeb17685e4d7d910756",
+      "heading": "DH.5.3.2 额外的数据光滑处理",
+      "parent_headings": [
+        "（规范性附件）行程累计正海拔高度增加量的计算程序"
+      ],
+      "format": "latex",
+      "content": "\\text { road } _ {\\text { grade }, 2} (7 2 0) = \\frac {h _ {\\text { int,sm } , 1} (7 9 9) - h _ {\\text { int,sm } , 1} (5 2 0)}{7 9 9 - (5 2 0)} = \\frac {1 2 1 . 2 3 3 0 - 1 2 3 . 6 8 0 9}{2 7 9} = - 0. 0 0 8 8",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/300"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0051": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0051",
+      "blockid": "ebe3d14e443060e5696973563a2a676e",
+      "heading": "DI.5 最终 RDE 排放结果计算",
+      "parent_headings": [
+        "（规范性附件）OVC-HEV车辆行程状态校验和最终 RDE排放的计算"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{t}} = \\frac {m _ {\\mathrm{t}}}{m _ {\\mathrm{t} , \\mathrm{CO} _ {2}}} \\cdot M _ {\\mathrm{WLTC}, \\mathrm{CO} _ {2}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/338"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0052": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0052",
+      "blockid": "ebe3d14e443060e5696973563a2a676e",
+      "heading": "DI.5 最终 RDE 排放结果计算",
+      "parent_headings": [
+        "（规范性附件）OVC-HEV车辆行程状态校验和最终 RDE排放的计算"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{u}} = \\frac {m _ {\\mathrm{u}}}{m _ {\\mathrm{u} , \\mathrm{CO} _ {2}}} \\cdot M _ {\\mathrm{WLTC}, \\mathrm{CO} _ {2}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/340"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0053": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0053",
+      "blockid": "0b852e15df5ae1304a943e8eb1c6c593",
+      "heading": "F.7 计算",
+      "parent_headings": [
+        "（规范性附录）蒸发污染物排放试验（Ⅳ型试验）"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{HC,HS}} = k \\times V \\times 1 0 ^ {- 4} \\times \\left(\\frac {C _ {\\mathrm{HC,f}} \\times P _ {\\mathrm{f}}}{T _ {\\mathrm{f}}} - \\frac {C _ {\\mathrm{HC,i}} \\times P _ {\\mathrm{i}}}{T _ {\\mathrm{i}}}\\right) + M _ {\\mathrm{HC,出}} - M _ {\\mathrm{HC,入}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/605"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0054": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0054",
+      "blockid": "0b852e15df5ae1304a943e8eb1c6c593",
+      "heading": "F.7 计算",
+      "parent_headings": [
+        "（规范性附录）蒸发污染物排放试验（Ⅳ型试验）"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{HC}, 2 4} = k \\times V \\times 1 0 ^ {- 4} \\times \\left(\\frac {C _ {\\mathrm{HC} , 2 4} \\times P _ {2 4}}{T _ {2 4}} - \\frac {C _ {\\mathrm{HC} , \\mathrm{i}} \\times P _ {\\mathrm{i}}}{T _ {\\mathrm{i}}}\\right) + M _ {\\mathrm{HC}, \\text {出}} - M _ {\\mathrm{HC}, \\text {入}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/607"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0055": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0055",
+      "blockid": "0b852e15df5ae1304a943e8eb1c6c593",
+      "heading": "F.7 计算",
+      "parent_headings": [
+        "（规范性附录）蒸发污染物排放试验（Ⅳ型试验）"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{HC}, 4 8} = k \\times V \\times 1 0 ^ {- 4} \\times \\left(\\frac {C _ {\\mathrm{HC} , 4 8} \\times P _ {4 8}}{T _ {4 8}} - \\frac {C _ {\\mathrm{HC} , 2 4} \\times P _ {2 4}}{T _ {2 4}}\\right) + M _ {\\mathrm{HC}, \\text {出}} - M _ {\\mathrm{HC}, \\text {入}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/608"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0056": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0056",
+      "blockid": "222f105d6d7e906bf42177f1d2114877",
+      "heading": "F.7.2 试验结果",
+      "parent_headings": [
+        "（规范性附录）蒸发污染物排放试验（Ⅳ型试验）"
+      ],
+      "format": "latex",
+      "content": "M _ {\\text {总}} = M _ {\\mathrm{DI}} + M _ {\\mathrm{HS}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/628"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0057": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0057",
+      "blockid": "749eebeba5ae1c3b857e5c82a22a49e0",
+      "heading": "FA.2.4 计算",
+      "parent_headings": [
+        "（规范性附件）蒸发排放试验设备的标定"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{HC}} = k \\times V \\times 1 0 ^ {- 4} \\times \\left(\\frac {C _ {\\mathrm{HC,f}} \\times P _ {\\mathrm{f}}}{T _ {\\mathrm{f}}} - \\frac {C _ {\\mathrm{HC,i}} \\times P _ {\\mathrm{i}}}{T _ {\\mathrm{i}}}\\right) + M _ {\\mathrm{HC,出}} - M _ {\\mathrm{HC,入}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/707"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0058": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0058",
+      "blockid": "caaea5d323ea6d7d474e809ac377e0be",
+      "heading": "G.2.5 测量污染物排放量",
+      "parent_headings": [
+        "（规范性附录）污染控制装置耐久性试验（Ⅴ型试验）"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{DF} = \\frac {M _ {i 2}}{M _ {i 1}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/803"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0059": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0059",
+      "blockid": "caaea5d323ea6d7d474e809ac377e0be",
+      "heading": "G.2.5 测量污染物排放量",
+      "parent_headings": [
+        "（规范性附录）污染控制装置耐久性试验（Ⅴ型试验）"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{DF} = M _ {i 2} - M _ {i 1}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/809"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0060": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0060",
+      "blockid": "6c4897a25bc64d74fe6ab07c57c6008c",
+      "heading": "G.3.2 装用点燃式发动机的汽车",
+      "parent_headings": [
+        "（规范性附录）污染控制装置耐久性试验（Ⅴ型试验）"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{某个温度框体内的} t _ {\\mathrm{e}} = t _ {\\mathrm{h}} \\times \\mathbf {e} ^ {(R / T r - R / T v)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/824"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0061": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0061",
+      "blockid": "6c4897a25bc64d74fe6ab07c57c6008c",
+      "heading": "G.3.2 装用点燃式发动机的汽车",
+      "parent_headings": [
+        "（规范性附录）污染控制装置耐久性试验（Ⅴ型试验）"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{总} t _ {\\mathrm{e}} = \\mathrm{所有温度组} t _ {\\mathrm{e}} \\mathrm{的总和}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/827"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0062": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0062",
+      "blockid": "6c4897a25bc64d74fe6ab07c57c6008c",
+      "heading": "G.3.2 装用点燃式发动机的汽车",
+      "parent_headings": [
+        "（规范性附录）污染控制装置耐久性试验（Ⅴ型试验）"
+      ],
+      "format": "latex",
+      "content": "\\text { 台架老化时间 } = A \\times (\\text { 总 } t _ {\\mathrm{e}})",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/828"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0063": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0063",
+      "blockid": "948a98963bd5d8ab9e5bd05ce60afa7f",
+      "heading": "I.6.1 计算公式",
+      "parent_headings": [
+        "（规范性附录）加油过程污染物排放试验（Ⅶ型试验）"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{HC}} = k \\times V \\times 1 0 ^ {- 4} \\times \\left(\\frac {C _ {\\mathrm{HC,f}} \\times P _ {\\mathrm{f}}}{T _ {\\mathrm{f}}} - \\frac {C _ {\\mathrm{HC,i}} \\times P _ {\\mathrm{i}}}{T _ {\\mathrm{i}}}\\right) + M _ {\\mathrm{HC,出}} - M _ {\\mathrm{HC,入}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1324"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0064": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0064",
+      "blockid": "74d9bc50b98173aedf9a0594d735b093",
+      "heading": "I.6.2 总试验结果",
+      "parent_headings": [
+        "（规范性附录）加油过程污染物排放试验（Ⅶ型试验）"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{RE} = \\frac {M _ {\\mathrm{HC}}}{V _ {\\mathrm{D}}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/1338"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0065": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0065",
+      "blockid": "4c06df45ea54bb694607f8094f6e5b7d",
+      "heading": "M.5.2.3 评价装替代用污染控制装置汽车的污染物排放",
+      "parent_headings": [
+        "作为独立技术总成的替代用污染控制装置的型式检验"
+      ],
+      "format": "latex",
+      "content": "M \\leqslant 0. 8 5 \\mathrm{S} + 0. 4 G",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3179"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0066": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0066",
+      "blockid": "4c06df45ea54bb694607f8094f6e5b7d",
+      "heading": "M.5.2.3 评价装替代用污染控制装置汽车的污染物排放",
+      "parent_headings": [
+        "作为独立技术总成的替代用污染控制装置的型式检验"
+      ],
+      "format": "latex",
+      "content": "M \\leqslant G",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3180"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0067": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0067",
+      "blockid": "edcaf1f232b7896268f15fca26feff88",
+      "heading": "Q.3.1 单一再生系统的污染物排放和 $\\mathsf { C O } _ { 2 }$ 排放的计算",
+      "parent_headings": [
+        "（规范性附录）装有周期性再生系统汽车的排放试验规程"
+      ],
+      "format": "latex",
+      "content": "M _ {s i} = \\frac {\\sum_ {j = 1} ^ {n} M _ {s i j} ^ {\\prime}}{n} \\quad \\text {当} n \\geqslant 1",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3615"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0068": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0068",
+      "blockid": "edcaf1f232b7896268f15fca26feff88",
+      "heading": "Q.3.1 单一再生系统的污染物排放和 $\\mathsf { C O } _ { 2 }$ 排放的计算",
+      "parent_headings": [
+        "（规范性附录）装有周期性再生系统汽车的排放试验规程"
+      ],
+      "format": "latex",
+      "content": "M _ {r i} = \\frac {\\sum_ {j = 1} ^ {d} M _ {r i j} ^ {\\prime}}{d} \\quad \\text {当} d \\geqslant 1",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3616"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0069": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0069",
+      "blockid": "edcaf1f232b7896268f15fca26feff88",
+      "heading": "Q.3.1 单一再生系统的污染物排放和 $\\mathsf { C O } _ { 2 }$ 排放的计算",
+      "parent_headings": [
+        "（规范性附录）装有周期性再生系统汽车的排放试验规程"
+      ],
+      "format": "latex",
+      "content": "M _ {p i} = \\frac {M _ {s i} \\times D + M _ {r i} \\times d}{D + d}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3617"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0070": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0070",
+      "blockid": "edcaf1f232b7896268f15fca26feff88",
+      "heading": "Q.3.1 单一再生系统的污染物排放和 $\\mathsf { C O } _ { 2 }$ 排放的计算",
+      "parent_headings": [
+        "（规范性附录）装有周期性再生系统汽车的排放试验规程"
+      ],
+      "format": "latex",
+      "content": "K _ {i} = M _ {p i} / M _ {s i}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3629"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0071": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0071",
+      "blockid": "edcaf1f232b7896268f15fca26feff88",
+      "heading": "Q.3.1 单一再生系统的污染物排放和 $\\mathsf { C O } _ { 2 }$ 排放的计算",
+      "parent_headings": [
+        "（规范性附录）装有周期性再生系统汽车的排放试验规程"
+      ],
+      "format": "latex",
+      "content": "K _ {i} = M _ {p i} - M _ {s i}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3630"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0072": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0072",
+      "blockid": "e9c71114c639de3a876670c2568609a2",
+      "heading": "Q.3.2 复合再生系统的污染物和 $\\mathsf { C O } _ { 2 }$ 排放的计算",
+      "parent_headings": [
+        "（规范性附录）装有周期性再生系统汽车的排放试验规程"
+      ],
+      "format": "latex",
+      "content": "M _ {s i k} = \\frac {\\sum_ {j = 1} ^ {n _ {k}} M _ {s i k , j} ^ {\\prime}}{n _ {k}} \\quad \\text {当} n _ {j} \\geqslant 1",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3638"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0073": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0073",
+      "blockid": "e9c71114c639de3a876670c2568609a2",
+      "heading": "Q.3.2 复合再生系统的污染物和 $\\mathsf { C O } _ { 2 }$ 排放的计算",
+      "parent_headings": [
+        "（规范性附录）装有周期性再生系统汽车的排放试验规程"
+      ],
+      "format": "latex",
+      "content": "M _ {r i k} = \\frac {\\sum_ {j = 1} ^ {d _ {k}} M _ {r i k , j} ^ {\\prime}}{d _ {k}} \\quad \\text {当} d \\geqslant 1",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3639"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0074": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0074",
+      "blockid": "e9c71114c639de3a876670c2568609a2",
+      "heading": "Q.3.2 复合再生系统的污染物和 $\\mathsf { C O } _ { 2 }$ 排放的计算",
+      "parent_headings": [
+        "（规范性附录）装有周期性再生系统汽车的排放试验规程"
+      ],
+      "format": "latex",
+      "content": "M _ {s i} = \\frac {\\sum_ {k = 1} ^ {x} M _ {s i k} \\times D _ {k}}{\\sum_ {k = 1} ^ {x} D _ {k}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3640"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0075": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0075",
+      "blockid": "e9c71114c639de3a876670c2568609a2",
+      "heading": "Q.3.2 复合再生系统的污染物和 $\\mathsf { C O } _ { 2 }$ 排放的计算",
+      "parent_headings": [
+        "（规范性附录）装有周期性再生系统汽车的排放试验规程"
+      ],
+      "format": "latex",
+      "content": "M _ {r i} = \\frac {\\sum_ {k = 1} ^ {x} M _ {r i k} \\times d _ {k}}{\\sum_ {k = 1} ^ {x} d _ {k}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3641"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0076": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0076",
+      "blockid": "e9c71114c639de3a876670c2568609a2",
+      "heading": "Q.3.2 复合再生系统的污染物和 $\\mathsf { C O } _ { 2 }$ 排放的计算",
+      "parent_headings": [
+        "（规范性附录）装有周期性再生系统汽车的排放试验规程"
+      ],
+      "format": "latex",
+      "content": "M _ {p i} = \\frac {M _ {s i} \\times \\sum_ {k = 1} ^ {x} D _ {k} + M _ {r i} \\times \\sum_ {k = 1} ^ {x} d _ {k}}{\\sum_ {k = 1} ^ {x} \\left(D _ {k} + d _ {k}\\right)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3642"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0077": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0077",
+      "blockid": "e9c71114c639de3a876670c2568609a2",
+      "heading": "Q.3.2 复合再生系统的污染物和 $\\mathsf { C O } _ { 2 }$ 排放的计算",
+      "parent_headings": [
+        "（规范性附录）装有周期性再生系统汽车的排放试验规程"
+      ],
+      "format": "latex",
+      "content": "M _ {p i} = \\frac {\\sum_ {k = 1} ^ {x} \\left(M _ {s i k} \\times D _ {k} + M _ {r i k} \\times d _ {k}\\right)}{\\sum_ {k = 1} ^ {x} \\left(D _ {k} + d _ {k}\\right)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3645"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0078": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0078",
+      "blockid": "931450e8afe21a1d1f455ca41ed3dddb",
+      "heading": "R.5.2.4.4 电量消耗模式Ⅰ型试验结束",
+      "parent_headings": [
+        "混合动力电动汽车（HEV）试验"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{REEC} _ {i} = \\frac {\\left| \\Delta E _ {\\text { REESS } , i} \\right|}{E _ {\\text { cycle }} \\times \\frac {1}{3 6 0 0}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3744"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0079": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0079",
+      "blockid": "931450e8afe21a1d1f455ca41ed3dddb",
+      "heading": "R.5.2.4.4 电量消耗模式Ⅰ型试验结束",
+      "parent_headings": [
+        "混合动力电动汽车（HEV）试验"
+      ],
+      "format": "latex",
+      "content": "\\Delta E _ {\\text { REESS }, j} = \\sum_ {i = 1} ^ {n} \\Delta E _ {\\text { REESS }, j, i}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3749"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0080": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0080",
+      "blockid": "931450e8afe21a1d1f455ca41ed3dddb",
+      "heading": "R.5.2.4.4 电量消耗模式Ⅰ型试验结束",
+      "parent_headings": [
+        "混合动力电动汽车（HEV）试验"
+      ],
+      "format": "latex",
+      "content": "\\Delta E _ {\\text { REESS }, j, i} = \\frac {1}{3 6 0 0} \\times \\int_ {t _ {0}} ^ {t _ {\\text { end }}} U (t) _ {\\text { REESS }, j, i} \\times I (t) _ {j, i} d t",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3752"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0081": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0081",
+      "blockid": "fb5eb56418abadeaad62305eed0ef384",
+      "heading": "R.6.1.1.1 NOVC-HEV 和 OVC-HEV 电量保持模式Ⅰ型试验计算过程",
+      "parent_headings": [
+        "混合动力电动汽车（HEV）试验"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2}, \\mathrm{CS}} = M _ {\\mathrm{CO} _ {2}, \\mathrm{CS,nb}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3825"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0082": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0082",
+      "blockid": "fb5eb56418abadeaad62305eed0ef384",
+      "heading": "R.6.1.1.1 NOVC-HEV 和 OVC-HEV 电量保持模式Ⅰ型试验计算过程",
+      "parent_headings": [
+        "混合动力电动汽车（HEV）试验"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2}, \\mathrm{CS}} = M _ {\\mathrm{CO} _ {2}, \\mathrm{CS,nb}} - K _ {\\mathrm{CO} _ {2}} \\times \\mathrm{EC} _ {\\mathrm{DC}, \\mathrm{CS}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3828"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0083": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0083",
+      "blockid": "fb5eb56418abadeaad62305eed0ef384",
+      "heading": "R.6.1.1.1 NOVC-HEV 和 OVC-HEV 电量保持模式Ⅰ型试验计算过程",
+      "parent_headings": [
+        "混合动力电动汽车（HEV）试验"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2}, \\mathrm{CS}, \\mathrm{p}} = M _ {\\mathrm{CO} _ {2}, \\mathrm{CS}, \\mathrm{nb}, \\mathrm{p}} - K _ {\\mathrm{CO} _ {2}} \\times \\mathrm{EC} _ {\\mathrm{DC}, \\mathrm{CS}, \\mathrm{p}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3831"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0084": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0084",
+      "blockid": "fb5eb56418abadeaad62305eed0ef384",
+      "heading": "R.6.1.1.1 NOVC-HEV 和 OVC-HEV 电量保持模式Ⅰ型试验计算过程",
+      "parent_headings": [
+        "混合动力电动汽车（HEV）试验"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2}, \\mathrm{CS}, \\mathrm{p}} = M _ {\\mathrm{CO} _ {2}, \\mathrm{CS}, \\mathrm{nb}, \\mathrm{p}} - K _ {\\mathrm{CO} _ {2}, \\mathrm{p}} \\times \\mathrm{EC} _ {\\mathrm{DC}, \\mathrm{CS}, \\mathrm{p}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3839"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0085": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0085",
+      "blockid": "d9617026c6a2d50f15b88ee91ece4fd9",
+      "heading": "R.6.1.2 OVC-HEV 车辆电量消耗模式 ${ \\mathsf { C } } 0 _ { 2 }$ 排放量计算（使用纯电利用系数加权）",
+      "parent_headings": [
+        "混合动力电动汽车（HEV）试验"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2}, \\mathrm{CD}} = \\frac {\\sum_ {j = 1} ^ {k} \\left(\\mathrm{UF} _ {j} \\times M _ {\\mathrm{CO} _ {2} , \\mathrm{CD} , \\mathrm{j}}\\right)}{\\sum_ {j = 1} ^ {k} \\mathrm{UF} _ {j}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3843"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0086": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0086",
+      "blockid": "d9617026c6a2d50f15b88ee91ece4fd9",
+      "heading": "R.6.1.2 OVC-HEV 车辆电量消耗模式 ${ \\mathsf { C } } 0 _ { 2 }$ 排放量计算（使用纯电利用系数加权）",
+      "parent_headings": [
+        "混合动力电动汽车（HEV）试验"
+      ],
+      "format": "latex",
+      "content": "M _ {i, \\text { weighted }} = \\sum_ {j = 1} ^ {k} (\\mathrm{UF} _ {j} \\times M _ {i, \\mathrm{CD}, j}) + (1 - \\sum_ {j = 1} ^ {k} \\mathrm{UF} _ {j}) \\times M _ {i, \\mathrm{CS}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3853"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0087": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0087",
+      "blockid": "d9617026c6a2d50f15b88ee91ece4fd9",
+      "heading": "R.6.1.2 OVC-HEV 车辆电量消耗模式 ${ \\mathsf { C } } 0 _ { 2 }$ 排放量计算（使用纯电利用系数加权）",
+      "parent_headings": [
+        "混合动力电动汽车（HEV）试验"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{PN} _ {\\text { weighted }} = \\sum_ {j = 1} ^ {k} \\left(\\mathrm{UF} _ {j} \\times \\mathrm{PN} _ {\\mathrm{CD}, j}\\right) + \\left(1 - \\sum_ {j = 1} ^ {k} \\mathrm{UF} _ {j}\\right) \\times \\mathrm{PN} _ {\\mathrm{CS}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3866"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0088": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0088",
+      "blockid": "d9617026c6a2d50f15b88ee91ece4fd9",
+      "heading": "R.6.1.2 OVC-HEV 车辆电量消耗模式 ${ \\mathsf { C } } 0 _ { 2 }$ 排放量计算（使用纯电利用系数加权）",
+      "parent_headings": [
+        "混合动力电动汽车（HEV）试验"
+      ],
+      "format": "latex",
+      "content": "\\mathrm{PM} _ {\\text { weighted }} = \\sum_ {c = 1} ^ {n _ {c}} \\left(\\mathrm{UF} _ {c} \\times \\mathrm{PM} _ {\\mathrm{CD}, c}\\right) + \\left(1 - \\sum_ {c = 1} ^ {n _ {c}} \\mathrm{UF} _ {c}\\right) \\times \\mathrm{PM} _ {\\mathrm{CS}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3874"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0089": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0089",
+      "blockid": "90ad725179e586f0e1789bf6d573b60b",
+      "heading": "R.6.2.3 某一时间段的插值系数 $K _ { \\mathrm { i n d , p } }$ 应使用下式计算：",
+      "parent_headings": [
+        "混合动力电动汽车（HEV）试验"
+      ],
+      "format": "latex",
+      "content": "K _ {\\mathrm{ind,p}} = \\frac {E _ {3 , \\mathrm{p}} - E _ {1 , \\mathrm{p}}}{E _ {2 , \\mathrm{p}} - E _ {1 , \\mathrm{p}}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3897"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0090": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0090",
+      "blockid": "89923785b86f7bc921794f2dbf663dd0",
+      "heading": "R.6.2.4.1 OVC-HEV 和 NOVC-HEV 某一车辆电量保持模式下 CO 排放",
+      "parent_headings": [
+        "混合动力电动汽车（HEV）试验"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2} - \\text { ind,CS,p }} = M _ {\\mathrm{CO} _ {2} - \\mathrm{L,CS,p}} + K _ {\\text { ind,p }} \\times \\left(M _ {\\mathrm{CO} _ {2} - \\mathrm{H,CS,p}} - M _ {\\mathrm{CO} _ {2} - \\mathrm{L,C,S,p}}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3906"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0091": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0091",
+      "blockid": "89923785b86f7bc921794f2dbf663dd0",
+      "heading": "R.6.2.4.1 OVC-HEV 和 NOVC-HEV 某一车辆电量保持模式下 CO 排放",
+      "parent_headings": [
+        "混合动力电动汽车（HEV）试验"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2} \\text {-L,CS,p}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3909"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0092": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0092",
+      "blockid": "89923785b86f7bc921794f2dbf663dd0",
+      "heading": "R.6.2.4.1 OVC-HEV 和 NOVC-HEV 某一车辆电量保持模式下 CO 排放",
+      "parent_headings": [
+        "混合动力电动汽车（HEV）试验"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2} \\text {-H,CS,p}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3911"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0093": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0093",
+      "blockid": "89923785b86f7bc921794f2dbf663dd0",
+      "heading": "R.6.2.4.1 OVC-HEV 和 NOVC-HEV 某一车辆电量保持模式下 CO 排放",
+      "parent_headings": [
+        "混合动力电动汽车（HEV）试验"
+      ],
+      "format": "latex",
+      "content": "K _ {\\mathrm{ind,p}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3913"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0094": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0094",
+      "blockid": "41f8faa4487ecd2ecc06a76d446a3039",
+      "heading": "R.6.2.4.2 OVC-HEV具体某一车辆在电量消耗模式下使用纯电利用系数加权后的 CO 排放",
+      "parent_headings": [
+        "混合动力电动汽车（HEV）试验"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2} - \\text { ind,CD }} = M _ {\\mathrm{CO} _ {2} - \\mathrm{L,CD}} + K _ {\\text { ind }} \\times \\left(M _ {\\mathrm{CO} _ {2} - \\mathrm{H,CD}} - M _ {\\mathrm{CO} _ {2} - \\mathrm{L,CD}}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3918"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0095": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0095",
+      "blockid": "41f8faa4487ecd2ecc06a76d446a3039",
+      "heading": "R.6.2.4.2 OVC-HEV具体某一车辆在电量消耗模式下使用纯电利用系数加权后的 CO 排放",
+      "parent_headings": [
+        "混合动力电动汽车（HEV）试验"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2} \\text {-L,CD}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3920"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0096": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0096",
+      "blockid": "41f8faa4487ecd2ecc06a76d446a3039",
+      "heading": "R.6.2.4.2 OVC-HEV具体某一车辆在电量消耗模式下使用纯电利用系数加权后的 CO 排放",
+      "parent_headings": [
+        "混合动力电动汽车（HEV）试验"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2} \\text {-H,CD}}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3922"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0097": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0097",
+      "blockid": "41f8faa4487ecd2ecc06a76d446a3039",
+      "heading": "R.6.2.4.2 OVC-HEV具体某一车辆在电量消耗模式下使用纯电利用系数加权后的 CO 排放",
+      "parent_headings": [
+        "混合动力电动汽车（HEV）试验"
+      ],
+      "format": "latex",
+      "content": "K _ {\\text { ind,p }}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3924"
+    },
+    "eq-5b1886b7d0c64429a3537f24b65418c1-0098": {
+      "id": "eq-5b1886b7d0c64429a3537f24b65418c1-0098",
+      "blockid": "f97f25f80110e463b9d76965d8134349",
+      "heading": "R.6.2.4.3 OVC-HEV具体某一车辆使用纯电利用系数加权后的 ${ \\mathsf { C } } 0 _ { 2 }$ 排放",
+      "parent_headings": [
+        "混合动力电动汽车（HEV）试验"
+      ],
+      "format": "latex",
+      "content": "M _ {\\mathrm{CO} _ {2} - \\text { ind,weighted }} = M _ {\\mathrm{CO} _ {2} - \\mathrm{L}, \\text { weighted }} + K _ {\\text { ind }} \\times \\left(M _ {\\mathrm{CO} _ {2} - \\mathrm{H}, \\text { weighted }} - M _ {\\mathrm{CO} _ {2} - \\mathrm{L}, \\text { weighted }}\\right)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/3927"
+    }
+  }
+}

@@ -1,0 +1,387 @@
+{
+  "generated_at": "2026-10-05T00:28:20.319440+00:00",
+  "database": {
+    "server": {
+      "default_text_search_config": "pg_catalog.english",
+      "max_connections": "100",
+      "server_version": "17.10",
+      "shared_buffers": "16384",
+      "TimeZone": "UTC"
+    },
+    "current_user": "rag",
+    "schemas": [
+      "public"
+    ],
+    "app_schema_plan": {
+      "candidate_name": "env_rag",
+      "exists": false,
+      "current_user_can_create_schema": true
+    },
+    "extensions_installed": [
+      {
+        "extname": "plpgsql",
+        "extversion": "1.0"
+      }
+    ],
+    "extensions_available_relevant": [
+      {
+        "name": "pg_trgm",
+        "default_version": "1.6"
+      }
+    ],
+    "custom_text_search_configs": []
+  },
+  "chinese_fts_observation": {
+    "ts_debug_simple": [
+      [
+        "word",
+        "医疗机构水污染物排放标准"
+      ],
+      [
+        "blank",
+        " "
+      ],
+      [
+        "asciiword",
+        "GB"
+      ],
+      [
+        "blank",
+        " "
+      ],
+      [
+        "uint",
+        "18466"
+      ],
+      [
+        "int",
+        "-2005"
+      ],
+      [
+        "blank",
+        " "
+      ],
+      [
+        "numword",
+        "表1"
+      ],
+      [
+        "blank",
+        " "
+      ],
+      [
+        "word",
+        "总氮"
+      ]
+    ],
+    "substring_lexeme_match": false,
+    "exact_lexeme_match": true,
+    "conclusion": "观察事实（本次运行实测）：默认配置把整句中文并成单个 lexeme，子串查询不命中；中文分词必须在应用侧完成（design.md 决策 4）。"
+  },
+  "tables": {
+    "lightrag_doc_full": {
+      "columns": [
+        {
+          "column_name": "id",
+          "data_type": "character varying",
+          "is_nullable": "NO"
+        },
+        {
+          "column_name": "workspace",
+          "data_type": "character varying",
+          "is_nullable": "NO"
+        },
+        {
+          "column_name": "doc_name",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "content",
+          "data_type": "text",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "meta",
+          "data_type": "jsonb",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "sidecar_location",
+          "data_type": "text",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "parse_format",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "content_hash",
+          "data_type": "text",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "process_options",
+          "data_type": "text",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "chunk_options",
+          "data_type": "jsonb",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "parse_engine",
+          "data_type": "text",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "create_time",
+          "data_type": "timestamp without time zone",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "update_time",
+          "data_type": "timestamp without time zone",
+          "is_nullable": "YES"
+        }
+      ],
+      "indexes": [
+        {
+          "indexname": "idx_lightrag_doc_full_id",
+          "indexdef": "CREATE INDEX idx_lightrag_doc_full_id ON public.lightrag_doc_full USING btree (id)"
+        },
+        {
+          "indexname": "idx_lightrag_doc_full_workspace_id",
+          "indexdef": "CREATE INDEX idx_lightrag_doc_full_workspace_id ON public.lightrag_doc_full USING btree (workspace, id)"
+        },
+        {
+          "indexname": "lightrag_doc_full_pk",
+          "indexdef": "CREATE UNIQUE INDEX lightrag_doc_full_pk ON public.lightrag_doc_full USING btree (workspace, id)"
+        }
+      ]
+    },
+    "lightrag_doc_status": {
+      "columns": [
+        {
+          "column_name": "workspace",
+          "data_type": "character varying",
+          "is_nullable": "NO"
+        },
+        {
+          "column_name": "id",
+          "data_type": "character varying",
+          "is_nullable": "NO"
+        },
+        {
+          "column_name": "content_summary",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "content_length",
+          "data_type": "integer",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "chunks_count",
+          "data_type": "integer",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "status",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "file_path",
+          "data_type": "text",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "chunks_list",
+          "data_type": "jsonb",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "track_id",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "metadata",
+          "data_type": "jsonb",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "error_msg",
+          "data_type": "text",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "content_hash",
+          "data_type": "text",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "created_at",
+          "data_type": "timestamp without time zone",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "updated_at",
+          "data_type": "timestamp without time zone",
+          "is_nullable": "YES"
+        }
+      ],
+      "indexes": [
+        {
+          "indexname": "idx_lightrag_doc_status_id",
+          "indexdef": "CREATE INDEX idx_lightrag_doc_status_id ON public.lightrag_doc_status USING btree (id)"
+        },
+        {
+          "indexname": "idx_lightrag_doc_status_track_id",
+          "indexdef": "CREATE INDEX idx_lightrag_doc_status_track_id ON public.lightrag_doc_status USING btree (track_id)"
+        },
+        {
+          "indexname": "idx_lightrag_doc_status_workspace_content_hash",
+          "indexdef": "CREATE INDEX idx_lightrag_doc_status_workspace_content_hash ON public.lightrag_doc_status USING btree (workspace, content_hash) WHERE ((content_hash IS NOT NULL) AND (content_hash <> ''::text))"
+        },
+        {
+          "indexname": "idx_lightrag_doc_status_workspace_created_at",
+          "indexdef": "CREATE INDEX idx_lightrag_doc_status_workspace_created_at ON public.lightrag_doc_status USING btree (workspace, created_at DESC)"
+        },
+        {
+          "indexname": "idx_lightrag_doc_status_workspace_file_path",
+          "indexdef": "CREATE INDEX idx_lightrag_doc_status_workspace_file_path ON public.lightrag_doc_status USING btree (workspace, file_path)"
+        },
+        {
+          "indexname": "idx_lightrag_doc_status_workspace_id",
+          "indexdef": "CREATE INDEX idx_lightrag_doc_status_workspace_id ON public.lightrag_doc_status USING btree (workspace, id)"
+        },
+        {
+          "indexname": "idx_lightrag_doc_status_workspace_status_created_at",
+          "indexdef": "CREATE INDEX idx_lightrag_doc_status_workspace_status_created_at ON public.lightrag_doc_status USING btree (workspace, status, created_at DESC)"
+        },
+        {
+          "indexname": "idx_lightrag_doc_status_workspace_status_updated_at",
+          "indexdef": "CREATE INDEX idx_lightrag_doc_status_workspace_status_updated_at ON public.lightrag_doc_status USING btree (workspace, status, updated_at DESC)"
+        },
+        {
+          "indexname": "idx_lightrag_doc_status_workspace_updated_at",
+          "indexdef": "CREATE INDEX idx_lightrag_doc_status_workspace_updated_at ON public.lightrag_doc_status USING btree (workspace, updated_at DESC)"
+        },
+        {
+          "indexname": "idx_lightrag_doc_status_ws_status_created_nf_id",
+          "indexdef": "CREATE INDEX idx_lightrag_doc_status_ws_status_created_nf_id ON public.lightrag_doc_status USING btree (workspace, status, created_at NULLS FIRST, id)"
+        },
+        {
+          "indexname": "lightrag_doc_status_pk",
+          "indexdef": "CREATE UNIQUE INDEX lightrag_doc_status_pk ON public.lightrag_doc_status USING btree (workspace, id)"
+        }
+      ]
+    },
+    "lightrag_doc_chunks": {
+      "columns": [
+        {
+          "column_name": "id",
+          "data_type": "character varying",
+          "is_nullable": "NO"
+        },
+        {
+          "column_name": "workspace",
+          "data_type": "character varying",
+          "is_nullable": "NO"
+        },
+        {
+          "column_name": "full_doc_id",
+          "data_type": "character varying",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "chunk_order_index",
+          "data_type": "integer",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "tokens",
+          "data_type": "integer",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "content",
+          "data_type": "text",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "file_path",
+          "data_type": "text",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "llm_cache_list",
+          "data_type": "jsonb",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "heading",
+          "data_type": "jsonb",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "sidecar",
+          "data_type": "jsonb",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "create_time",
+          "data_type": "timestamp without time zone",
+          "is_nullable": "YES"
+        },
+        {
+          "column_name": "update_time",
+          "data_type": "timestamp without time zone",
+          "is_nullable": "YES"
+        }
+      ],
+      "indexes": [
+        {
+          "indexname": "idx_lightrag_doc_chunks_id",
+          "indexdef": "CREATE INDEX idx_lightrag_doc_chunks_id ON public.lightrag_doc_chunks USING btree (id)"
+        },
+        {
+          "indexname": "idx_lightrag_doc_chunks_workspace_id",
+          "indexdef": "CREATE INDEX idx_lightrag_doc_chunks_workspace_id ON public.lightrag_doc_chunks USING btree (workspace, id)"
+        },
+        {
+          "indexname": "lightrag_doc_chunks_pk",
+          "indexdef": "CREATE UNIQUE INDEX lightrag_doc_chunks_pk ON public.lightrag_doc_chunks USING btree (workspace, id)"
+        }
+      ]
+    }
+  },
+  "row_counts": {
+    "lightrag_doc_chunks": 5709,
+    "lightrag_doc_full": 221,
+    "lightrag_doc_status": 279,
+    "lightrag_entity_chunks": 65527,
+    "lightrag_full_entities": 221,
+    "lightrag_full_relations": 221,
+    "lightrag_graph_edges": 0,
+    "lightrag_graph_nodes": 0,
+    "lightrag_llm_cache": 16514,
+    "lightrag_relation_chunks": 119575
+  },
+  "dependency_versions": {
+    "lightrag-hku": "1.5.7",
+    "asyncpg": "0.31.0",
+    "pgvector": "0.5.0",
+    "qdrant-client": "1.19.1",
+    "neo4j": "6.3.1",
+    "lxml": "6.1.3",
+    "python-dotenv": "1.2.4",
+    "python": "3.12.10",
+    "jieba": "not-installed（探针候选，Phase 2 锁定）"
+  }
+}

@@ -1,0 +1,974 @@
+lightrag-hku: 1.5.7
+openai: 2.54.0
+asyncpg: 0.31.0
+pgvector: 0.5.0
+qdrant-client: 1.19.1
+neo4j: 6.3.1
+httpx: 0.28.1
+python-dotenv: 1.2.4
+lxml: 6.1.3
+Configuration: OK (51 keys; credential values hidden)
+{
+ "query_id": "search-004c9aae4948",
+ "workspace": "default",
+ "status": "ok",
+ "search_id": "872d689343a9cbb6",
+ "catalog_snapshot_id": "4919b3938ad93747",
+ "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+ "parsed_code": {
+  "raw": "GB3838-2002",
+  "code": "GB3838",
+  "version": "2002"
+ },
+ "parsed_codes": [
+  {
+   "raw": "GB3838-2002",
+   "code": "GB3838",
+   "version": "2002"
+  }
+ ],
+ "query_text": "GB3838-2002 第3章水域功能和标准分类有哪些类别？",
+ "candidates": [
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "doc_name": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf",
+   "self_code": "GB3838",
+   "self_code_version": "2002",
+   "title": "地表水环境质量标准",
+   "doc_type": "standard",
+   "discovery": "code_exact",
+   "score": 1.0,
+   "citation": {
+    "kind": "catalog_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-000",
+   "heading": "中华人民共和国国家标准",
+   "chunk_order": 0,
+   "score": 18.80000114440918,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+   "heading": "7 标准的实施与监督 [part 1] 地表水环境质量标准",
+   "chunk_order": 1,
+   "score": 3.6000001430511475,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-001"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-003",
+   "heading": "7 标准的实施与监督 [part 3] 地表水环境质量标准",
+   "chunk_order": 3,
+   "score": 3.4000000953674316,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-007",
+   "heading": "7 标准的实施与监督 [part 7] 地表水环境质量标准",
+   "chunk_order": 7,
+   "score": 2.200000047683716,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-007"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-010",
+   "heading": "7 标准的实施与监督 [part 10] 地表水环境质量标准",
+   "chunk_order": 10,
+   "score": 2.200000047683716,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-010"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-006",
+   "heading": "7 标准的实施与监督 [part 6] 地表水环境质量标准",
+   "chunk_order": 6,
+   "score": 2.0,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-006"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+   "heading": "7 标准的实施与监督 [part 2] 地表水环境质量标准",
+   "chunk_order": 2,
+   "score": 1.8000000715255737,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-002"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-004",
+   "heading": "7 标准的实施与监督 [part 4] 地表水环境质量标准",
+   "chunk_order": 4,
+   "score": 1.8000000715255737,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-004"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-017",
+   "heading": "7 标准的实施与监督 [part 17] 地表水环境质量标准",
+   "chunk_order": 17,
+   "score": 1.8000000715255737,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-017"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-008",
+   "heading": "7 标准的实施与监督 [part 8] 地表水环境质量标准",
+   "chunk_order": 8,
+   "score": 1.399999976158142,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-008"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-009",
+   "heading": "7 标准的实施与监督 [part 9] 地表水环境质量标准",
+   "chunk_order": 9,
+   "score": 1.399999976158142,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-009"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-005",
+   "heading": "7 标准的实施与监督 [part 5] 地表水环境质量标准",
+   "chunk_order": 5,
+   "score": 1.2000000476837158,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-005"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-015",
+   "heading": "7 标准的实施与监督 [part 15] 地表水环境质量标准",
+   "chunk_order": 15,
+   "score": 1.2000000476837158,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-015"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-016",
+   "heading": "7 标准的实施与监督 [part 16] 地表水环境质量标准",
+   "chunk_order": 16,
+   "score": 1.2000000476837158,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-016"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-011",
+   "heading": "7 标准的实施与监督 [part 11] 地表水环境质量标准",
+   "chunk_order": 11,
+   "score": 1.0,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-011"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-012",
+   "heading": "7 标准的实施与监督 [part 12] 地表水环境质量标准",
+   "chunk_order": 12,
+   "score": 1.0,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-012"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-014",
+   "heading": "7 标准的实施与监督 [part 14] 地表水环境质量标准",
+   "chunk_order": 14,
+   "score": 1.0,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-014"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-013",
+   "heading": "7 标准的实施与监督 [part 13] 地表水环境质量标准",
+   "chunk_order": 13,
+   "score": 0.800000011920929,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-013"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "scope_id": "doc-91f9049decde09153368d4b69f280e78:scope:3",
+   "heading": "3 水域功能和标准分类",
+   "chunk_ids": [],
+   "score": null,
+   "discovery": "scope_range_binding",
+   "scope_status": "confirmed",
+   "member_units": [
+    "7b4770667908af51eb321bd82c89aaf7"
+   ],
+   "citation": {
+    "kind": "scope",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "scope_id": "doc-91f9049decde09153368d4b69f280e78:scope:3"
+   },
+   "citation_verified": true
+  }
+ ],
+ "discovery_candidates": [
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "doc_name": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf",
+   "self_code": "GB3838",
+   "self_code_version": "2002",
+   "title": "地表水环境质量标准",
+   "doc_type": "standard",
+   "discovery": "code_exact",
+   "score": 1.0,
+   "citation": {
+    "kind": "catalog_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-000",
+   "heading": "中华人民共和国国家标准",
+   "chunk_order": 0,
+   "score": 18.80000114440918,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-001",
+   "heading": "7 标准的实施与监督 [part 1] 地表水环境质量标准",
+   "chunk_order": 1,
+   "score": 3.6000001430511475,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-001"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-003",
+   "heading": "7 标准的实施与监督 [part 3] 地表水环境质量标准",
+   "chunk_order": 3,
+   "score": 3.4000000953674316,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-003"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-007",
+   "heading": "7 标准的实施与监督 [part 7] 地表水环境质量标准",
+   "chunk_order": 7,
+   "score": 2.200000047683716,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-007"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-010",
+   "heading": "7 标准的实施与监督 [part 10] 地表水环境质量标准",
+   "chunk_order": 10,
+   "score": 2.200000047683716,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-010"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-006",
+   "heading": "7 标准的实施与监督 [part 6] 地表水环境质量标准",
+   "chunk_order": 6,
+   "score": 2.0,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-006"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-002",
+   "heading": "7 标准的实施与监督 [part 2] 地表水环境质量标准",
+   "chunk_order": 2,
+   "score": 1.8000000715255737,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-002"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-004",
+   "heading": "7 标准的实施与监督 [part 4] 地表水环境质量标准",
+   "chunk_order": 4,
+   "score": 1.8000000715255737,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-004"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-017",
+   "heading": "7 标准的实施与监督 [part 17] 地表水环境质量标准",
+   "chunk_order": 17,
+   "score": 1.8000000715255737,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-017"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-008",
+   "heading": "7 标准的实施与监督 [part 8] 地表水环境质量标准",
+   "chunk_order": 8,
+   "score": 1.399999976158142,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-008"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-009",
+   "heading": "7 标准的实施与监督 [part 9] 地表水环境质量标准",
+   "chunk_order": 9,
+   "score": 1.399999976158142,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-009"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-005",
+   "heading": "7 标准的实施与监督 [part 5] 地表水环境质量标准",
+   "chunk_order": 5,
+   "score": 1.2000000476837158,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-005"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-015",
+   "heading": "7 标准的实施与监督 [part 15] 地表水环境质量标准",
+   "chunk_order": 15,
+   "score": 1.2000000476837158,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-015"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-016",
+   "heading": "7 标准的实施与监督 [part 16] 地表水环境质量标准",
+   "chunk_order": 16,
+   "score": 1.2000000476837158,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-016"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-011",
+   "heading": "7 标准的实施与监督 [part 11] 地表水环境质量标准",
+   "chunk_order": 11,
+   "score": 1.0,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-011"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-012",
+   "heading": "7 标准的实施与监督 [part 12] 地表水环境质量标准",
+   "chunk_order": 12,
+   "score": 1.0,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-012"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-014",
+   "heading": "7 标准的实施与监督 [part 14] 地表水环境质量标准",
+   "chunk_order": 14,
+   "score": 1.0,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-014"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-013",
+   "heading": "7 标准的实施与监督 [part 13] 地表水环境质量标准",
+   "chunk_order": 13,
+   "score": 0.800000011920929,
+   "discovery": "keyword_or_relaxed",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-013"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+   "scope_id": "doc-91f9049decde09153368d4b69f280e78:scope:3",
+   "heading": "3 水域功能和标准分类",
+   "chunk_ids": [],
+   "score": null,
+   "discovery": "scope_range_binding",
+   "scope_status": "confirmed",
+   "member_units": [
+    "7b4770667908af51eb321bd82c89aaf7"
+   ],
+   "citation": {
+    "kind": "scope",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "scope_id": "doc-91f9049decde09153368d4b69f280e78:scope:3"
+   },
+   "citation_verified": true
+  }
+ ],
+ "notes": [],
+ "trace": [
+  {
+   "stage": "code_exact",
+   "code": "GB3838",
+   "version_requested": "2002",
+   "strict": false,
+   "hits": 1,
+   "version_matched": 1,
+   "selected_versions": [
+    "2002"
+   ],
+   "selected_docs": [
+    "doc-91f9049decde09153368d4b69f280e78"
+   ]
+  },
+  {
+   "stage": "keyword_and",
+   "tsquery": "'第' & '3' & '章' & '水域功能' & '标准' & '分类' & '类别'",
+   "top_k": 20,
+   "restricted_to_code_docs": [
+    "doc-91f9049decde09153368d4b69f280e78"
+   ],
+   "doc_hits": 0,
+   "chunk_hits": 0,
+   "elapsed_ms": 5
+  },
+  {
+   "stage": "keyword_and_diagnostics",
+   "per_term": [
+    {
+     "term": "第",
+     "chunk_hits": 1
+    },
+    {
+     "term": "3",
+     "chunk_hits": 16
+    },
+    {
+     "term": "章",
+     "chunk_hits": 0
+    },
+    {
+     "term": "水域功能",
+     "chunk_hits": 1
+    },
+    {
+     "term": "标准",
+     "chunk_hits": 18
+    },
+    {
+     "term": "分类",
+     "chunk_hits": 2
+    },
+    {
+     "term": "类别",
+     "chunk_hits": 1
+    }
+   ],
+   "absent_terms": [
+    "章"
+   ]
+  },
+  {
+   "stage": "keyword_core_and",
+   "tsquery": "'第' & '3' & '水域功能' & '标准' & '分类' & '类别'",
+   "dropped_absent_terms": [
+    "章"
+   ],
+   "chunk_hits": 0,
+   "note": "terms absent from the corpus cannot participate in AND"
+  },
+  {
+   "stage": "keyword_synonym_and",
+   "tsquery": "('第') & ('3') & ('水域功能') & ('标准') & ('分类') & ('类别')",
+   "synonyms_applied": [],
+   "skipped_terms": [
+    "章"
+   ],
+   "chunk_hits": 0,
+   "note": "each concept is an OR group (original + controlled synonyms); concepts are AND-combined; strong constraints kept"
+  },
+  {
+   "stage": "keyword_or_relaxed",
+   "tsquery": "'第' | '3' | '水域功能' | '标准' | '分类' | '类别'",
+   "synonyms_applied": [],
+   "chunk_hits": 18,
+   "note": "last-resort OR over terms present in the corpus"
+  },
+  {
+   "stage": "range_binding",
+   "targets": [
+    {
+     "kind": "chapter",
+     "value": "3",
+     "clauses": null
+    }
+   ],
+   "code_docs": [
+    "doc-91f9049decde09153368d4b69f280e78"
+   ],
+   "hits": 1,
+   "selected": 1,
+   "budget": 20,
+   "units": [
+    "doc-91f9049decde09153368d4b69f280e78:scope:3"
+   ],
+   "note": "requested table/chapter bound to actual catalog units; full member read stays in expansion, top-k bounds this discovery list too"
+  },
+  {
+   "stage": "scope_expansion",
+   "requested_scope_id": null,
+   "requested_table_number": null,
+   "auto_targets": [
+    {
+     "kind": "chapter",
+     "value": "3",
+     "clauses": null
+    }
+   ],
+   "expansions": [
+    {
+     "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+     "kind": "prose",
+     "scope_id": "doc-91f9049decde09153368d4b69f280e78:scope:3",
+     "requested_clauses": null,
+     "missing_requested_clauses": [],
+     "members_total": 1,
+     "members_processed": 1,
+     "coverage_status": "complete",
+     "read_status": "complete",
+     "fail_stage": "",
+     "units_read": 1,
+     "unit_ids": [
+      "7b4770667908af51eb321bd82c89aaf7"
+     ],
+     "chunk_ids": [
+      "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+     ],
+     "items_count": 5,
+     "items": [
+      {
+       "clause": "I类",
+       "text": "主要适用于源头水、国家自然保护区",
+       "citation": {
+        "kind": "char_span",
+        "char_start": 45,
+        "char_end": 66,
+        "quote": "\nI 类 主要适用于源头水、国家自然保护区",
+        "unit_rel_start": 45,
+        "unit_rel_end": 66,
+        "unit_id": "7b4770667908af51eb321bd82c89aaf7",
+        "locator": {
+         "file": "blocks.jsonl",
+         "kind": "block",
+         "blockid": "7b4770667908af51eb321bd82c89aaf7",
+         "parsed_dir": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf.parsed"
+        },
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ],
+        "unit_source": "parsed_block",
+        "workspace": "default",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "snapshot_id": "4919b3938ad93747"
+       },
+       "citation_verified": true,
+       "source": "category_sentence_split"
+      },
+      {
+       "clause": "Ⅰ类",
+       "text": "主要适用于集中式生活饮用水地表水源地一级保护区、珍稀水生生物栖息地、鱼虾类产卵场、仔稚幼鱼的索饵场等",
+       "citation": {
+        "kind": "char_span",
+        "char_start": 67,
+        "char_end": 121,
+        "quote": "\nⅠ类 主要适用于集中式生活饮用水地表水源地一级保护区、珍稀水生生物栖息地、鱼虾类产卵场、仔稚幼鱼的索饵场等",
+        "unit_rel_start": 67,
+        "unit_rel_end": 121,
+        "unit_id": "7b4770667908af51eb321bd82c89aaf7",
+        "locator": {
+         "file": "blocks.jsonl",
+         "kind": "block",
+         "blockid": "7b4770667908af51eb321bd82c89aaf7",
+         "parsed_dir": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf.parsed"
+        },
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ],
+        "unit_source": "parsed_block",
+        "workspace": "default",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "snapshot_id": "4919b3938ad93747"
+       },
+       "citation_verified": true,
+       "source": "category_sentence_split"
+      },
+      {
+       "clause": "Ⅰ类",
+       "text": "主要适用于集中式生活饮用水地表水源地二级保护区、鱼虾类越冬场、洄游通道、水产养殖区等渔业水域及游泳区",
+       "citation": {
+        "kind": "char_span",
+        "char_start": 122,
+        "char_end": 176,
+        "quote": "\nⅠ类 主要适用于集中式生活饮用水地表水源地二级保护区、鱼虾类越冬场、洄游通道、水产养殖区等渔业水域及游泳区",
+        "unit_rel_start": 122,
+        "unit_rel_end": 176,
+        "unit_id": "7b4770667908af51eb321bd82c89aaf7",
+        "locator": {
+         "file": "blocks.jsonl",
+         "kind": "block",
+         "blockid": "7b4770667908af51eb321bd82c89aaf7",
+         "parsed_dir": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf.parsed"
+        },
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ],
+        "unit_source": "parsed_block",
+        "workspace": "default",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "snapshot_id": "4919b3938ad93747"
+       },
+       "citation_verified": true,
+       "source": "category_sentence_split"
+      },
+      {
+       "clause": "N类",
+       "text": "主要适用于一般工业用水区及人体非直接接触的娱乐用水区",
+       "citation": {
+        "kind": "char_span",
+        "char_start": 177,
+        "char_end": 207,
+        "quote": "\nN类 主要适用于一般工业用水区及人体非直接接触的娱乐用水区",
+        "unit_rel_start": 177,
+        "unit_rel_end": 207,
+        "unit_id": "7b4770667908af51eb321bd82c89aaf7",
+        "locator": {
+         "file": "blocks.jsonl",
+         "kind": "block",
+         "blockid": "7b4770667908af51eb321bd82c89aaf7",
+         "parsed_dir": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf.parsed"
+        },
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ],
+        "unit_source": "parsed_block",
+        "workspace": "default",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "snapshot_id": "4919b3938ad93747"
+       },
+       "citation_verified": true,
+       "source": "category_sentence_split"
+      },
+      {
+       "clause": "V类",
+       "text": "主要适用于农业用水区及一般景观要求水域。\n对应地表水上述五类水域功能，将地表水环境质量标准基本项目标准值分为五类，不同功能类别分别执行相应类别的标准值。水域功能类别高的标准值严于水域功能类别低的标准值。同一水域兼有多类使用功能的，执行最高功能类别对应的标准值。实现水域功能与达功能类别标准为同一含义",
+       "citation": {
+        "kind": "char_span",
+        "char_start": 208,
+        "char_end": 363,
+        "quote": "\nV 类 主要适用于农业用水区及一般景观要求水域。\n对应地表水上述五类水域功能，将地表水环境质量标准基本项目标准值分为五类，不同功能类别分别执行相应类别的标准值。水域功能类别高的标准值严于水域功能类别低的标准值。同一水域兼有多类使用功能的，",
+        "unit_rel_start": 208,
+        "unit_rel_end": 363,
+        "unit_id": "7b4770667908af51eb321bd82c89aaf7",
+        "locator": {
+         "file": "blocks.jsonl",
+         "kind": "block",
+         "blockid": "7b4770667908af51eb321bd82c89aaf7",
+         "parsed_dir": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf.parsed"
+        },
+        "chunk_ids": [
+         "doc-91f9049decde09153368d4b69f280e78-chunk-000"
+        ],
+        "unit_source": "parsed_block",
+        "workspace": "default",
+        "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+        "snapshot_id": "4919b3938ad93747"
+       },
+       "citation_verified": true,
+       "source": "category_sentence_split"
+      }
+     ],
+     "warnings": []
+    }
+   ],
+   "note": "expansion reads the FULL ordered membership; discovery top-k is not a limit"
+  }
+ ],
+ "elapsed_ms": 2609
+}

@@ -1,0 +1,83 @@
+[
+  {
+    "id": "E1",
+    "path": "src/env_rag_final/evaluation.py",
+    "start_line": 445,
+    "end_line": 451,
+    "severity": "high",
+    "category": "bug",
+    "content": "LocalCandidateAdapter返回Candidate dataclass，_local_candidates_to_usable按字典.get访问并要求不存在的content字段；真实有候选路径会AttributeError。必须按实际类型保留组合键/verified/来源路径，并只读回读完整正文；不能使用content_head或无条件verified=True。"
+  },
+  {
+    "id": "E1",
+    "path": "src/env_rag_final/evaluation.py",
+    "start_line": 510,
+    "end_line": 529,
+    "severity": "high",
+    "category": "bug",
+    "content": "fusion runner只执行run_fusion并返回rerank_report=None，通用分支随后为所有路径写absent；联合精排从未发生，rerank配额也未预留。融合必须调用本轮真实rerank入口并向answer传其完整results形状、原始凭证与顺序；PG/local才可按声明策略absent。"
+  },
+  {
+    "id": "E2",
+    "path": "src/env_rag_final/evaluation.py",
+    "start_line": 249,
+    "end_line": 275,
+    "severity": "high",
+    "category": "bug",
+    "content": "覆写ServiceBoundary.call仅拦住经过此异步函数的调用。实际_RecordingQdrantClient与_RecordingNeo4jDriver直接执行原生请求并append records，因此两者的上限均可被越过；PG范围/守卫/精排来源回读也不经该边界，embedding文本从kwargs传入时单批检查为空。预算须在每项真正I/O前生效，包含下游调用，不能将观察记账误当拦截。"
+  },
+  {
+    "id": "E3",
+    "path": "src/env_rag_final/evaluation.py",
+    "start_line": 599,
+    "end_line": 620,
+    "severity": "high",
+    "category": "bug",
+    "content": "前置matches_frozen=False未被检查；仅比较四字段，env/模型/代码/提示/八表等配置锚未验证，CLI还允许缺失锚。已确认env-only漂移仍运行。必须先校验完整配置锚，再采集并验证来源身份；锚缺失或来源guard拒绝须零题调用失败终态。"
+  },
+  {
+    "id": "E3",
+    "path": "src/env_rag_final/evaluation.py",
+    "start_line": 752,
+    "end_line": 783,
+    "severity": "high",
+    "category": "bug",
+    "content": "后置采集不在终态finally内，抛错丢失全部已完成结果；比较将归一化before和原始after混用，漏catalog run、gold、env及counts，且发现漂移也写finished_at并正常返回。必须统一形状全字段比对、保留原错/后错和完成结果，运行级失败落盘后抛出使CLI非零。"
+  },
+  {
+    "id": "E4",
+    "path": "src/env_rag_final/evaluation.py",
+    "start_line": 64,
+    "end_line": 71,
+    "severity": "high",
+    "category": "bug",
+    "content": "neg-008需要成员/字符级极小枚举预算，当前仅缩Qdrant请求配额，PG路径无效果，并将实际生产runner标isolated_fixture而未隔离；neg-002也未建立跨workspace构造前置。COUNTER_CATEGORIES只决定eval字段，run_answer重读gold将反例类别设为counter；真实neg-004拥有13行来源而答案输出0项。需实际携带题型并实现隔离/枚举预算前置，不能借fixture把counter改成questions来掩盖。"
+  },
+  {
+    "id": "E5",
+    "path": "src/env_rag_final/evaluation.py",
+    "start_line": 396,
+    "end_line": 443,
+    "severity": "high",
+    "category": "bug",
+    "content": "每题发现复用同一路目录/path/fusion，latest及同秒timestamp终态会覆盖；local_result服务凭证/degraded等被丢弃。需每题/路径/轮唯一工件与完整当前题账本，保存实际候选/排序/范围/context/生成/阶段与端到端耗时。"
+  },
+  {
+    "id": "E5",
+    "path": "src/env_rag_final/evaluation.py",
+    "start_line": 740,
+    "end_line": 741,
+    "severity": "high",
+    "category": "security",
+    "content": "异常先截取200字再调用sanitizer，会将恰跨截断边界的配置key前缀留在报告中；合成凭据反例已复现。必须先净化完整错误/预算理由/工件再截断，前置CLI错误同样不能原样暴露。"
+  },
+  {
+    "id": "E6",
+    "path": "src/env_rag_final/evaluation.py",
+    "start_line": 562,
+    "end_line": 576,
+    "severity": "medium",
+    "category": "bug",
+    "content": "query_ids筛选后dry-run却仍从完整gold_set编译，选fact-001/单路/单轮仍输出41执行；未知ID被静默过滤为空并接触身份后端。选择集合、路径、轮、预算类型需零接触前验证，dry-run与实际运行必须共享选后矩阵，bounds按真正受控I/O及配置计算。"
+  }
+]

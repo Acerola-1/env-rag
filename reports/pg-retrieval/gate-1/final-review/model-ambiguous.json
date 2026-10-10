@@ -1,0 +1,74 @@
+{
+ "query_id": "prose-d3e03ece77b1",
+ "kind": "prose",
+ "workspace": "default",
+ "catalog_snapshot_id": "4919b3938ad93747",
+ "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+ "scope_ids": [
+  "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3"
+ ],
+ "members_total": 3,
+ "members_processed": 3,
+ "items": [
+  {
+   "clause": "3.2",
+   "text": "污水",
+   "citation": {
+    "quote": "污水",
+    "unit_candidates": [
+     "385d9e8e0539a87e61f0407bda1739ad",
+     "ad9d292d3ee2fd88a8fd25b9efc8265a",
+     "90d4b1c55cb8c6ff81dcbdfd55827165"
+    ],
+    "locator_ambiguous": true,
+    "unit_ids": [
+     "385d9e8e0539a87e61f0407bda1739ad",
+     "ad9d292d3ee2fd88a8fd25b9efc8265a",
+     "90d4b1c55cb8c6ff81dcbdfd55827165"
+    ],
+    "unit_chunk_ids": {
+     "385d9e8e0539a87e61f0407bda1739ad": [
+      "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+     ],
+     "ad9d292d3ee2fd88a8fd25b9efc8265a": [
+      "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+     ],
+     "90d4b1c55cb8c6ff81dcbdfd55827165": [
+      "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+     ]
+    },
+    "workspace": "default",
+    "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+    "snapshot_id": "4919b3938ad93747"
+   },
+   "citation_verified": false
+  }
+ ],
+ "coverage_status": "partial",
+ "warnings": [
+  "1 items carry unverified citations"
+ ],
+ "fail_stage": "",
+ "predicate": null,
+ "read_token": null,
+ "model_calls": [
+  {
+   "model": "deepseek-v4.1-flash",
+   "latency_ms": 0,
+   "ok": true,
+   "error": "",
+   "request_messages": [
+    {
+     "role": "system",
+     "content": "你是严谨的文本抽取助手。只输出 JSON 数组，每个元素形如 {\"clause\": \"编号\", \"text\": \"条目全文\", \"citation\": {\"quote\": \"支持该条目的逐字原文引句\"}}。quote 必须逐字来自原文且直接支持对应条目。"
+    },
+    {
+     "role": "user",
+     "content": "列出该章出现的词语污水，并提供精确原文位置\n\n原文：\n## 3 术语和定义\n本标准采用下列定义。\n3.1 医疗机构 medical organization\n指从事疾病诊断、治疗活动的医院、卫生院、疗养院、门诊部、诊所、卫生急救站等。\n3.2 医疗机构污水 medical organization wastewater\n指医疗机构门诊、病房、手术室、各类检验室、病理解剖室、放射室、洗衣房、太平间等处排出的诊疗、生活及粪便污水。当医疗机构其他污水与上述污水混合排出时一律视为医疗机构污水。\n\n## 3.3 污泥 sludge\n指医疗机构污水处理过程中产生的栅渣、沉淀污泥和化粪池污泥。\n\n## 3.4 废气 waste gas\n指医疗机构污水处理过程中产生的有害气体。"
+    }
+   ],
+   "raw_response": "[{\"clause\": \"3.2\", \"text\": \"污水\", \"citation\": {\"quote\": \"污水\"}}]"
+  }
+ ],
+ "read_status": "complete"
+}

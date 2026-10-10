@@ -1,0 +1,1999 @@
+{
+ "task": "5.4 joint rerank over fused candidates (bounded, recorded)",
+ "started_at": "2026-10-08T13:23:38+0800",
+ "service_contract": {
+  "endpoint": "{host}/v1/rerank (POST)",
+  "request": [
+   "model",
+   "query",
+   "documents",
+   "top_n",
+   "return_documents=false"
+  ],
+  "response": [
+   "id",
+   "results[{index, relevance_score}]",
+   "meta.tokens"
+  ],
+  "errors": {
+   "401/403": "auth",
+   "429": "rate limit",
+   "5xx": "service"
+  }
+ },
+ "input_budget": 40,
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "results": [
+  {
+   "query_id": "prose-enum-006",
+   "query": "GB 3095-2012 的 4.2 节对环境空气功能区质量要求作了哪些规定？",
+   "workspace": "default",
+   "skipped": null,
+   "inputs": [
+    {
+     "input_index": 0,
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "content_sha256": "eafea04098b4bf61ff94053d457a8760eee04b9ea04b039ab6f53e180aa83a5a",
+     "content_len": 2840,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": "4 环境空气功能区分类和质量要求 环境空气质量标准",
+       "chunk_order": 2,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 6.800000190734863
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 3095-2012",
+        "entity:GB 3095-2012全国实施",
+        "entity:表1(环境空气污染物基本项目浓度限值)",
+        "entity:表2(环境空气污染物其他项目浓度限值)",
+        "edge:GB 3095-2012|表1",
+        "edge:GB 3095-2012|表2",
+        "edge:二氧化氮(NO2)|表1(环境空气污染物基本项目浓度限值)",
+        "edge:臭氧(O3)|表1(环境空气污染物基本项目浓度限值)",
+        "edge:二氧化硫(SO2)|表1(环境空气污染物基本项目浓度限值)",
+        "edge:一氧化碳(CO)|表1(环境空气污染物基本项目浓度限值)",
+        "edge:氮氧化物(NOx)|表2(环境空气污染物其他项目浓度限值)",
+        "edge:GB 3095-2012|一类区",
+        "edge:GB 3095-2012|省级人民政府",
+        "edge:GB 3095-2012|二类区",
+        "edge:GB 3095-2012|国务院环境保护行政主管部门",
+        "edge:GB 3095-2012|表2(环境空气污染物其他项目浓度限值)",
+        "edge:GB 3095-2012|表1(环境空气污染物基本项目浓度限值)",
+        "edge:GB 3095-2012|环境空气功能区",
+        "edge:一类区|表1(环境空气污染物基本项目浓度限值)",
+        "edge:一类区|表2(环境空气污染物其他项目浓度限值)",
+        "edge:GB 3095-2012|环境空气质量监测",
+        "edge:GB 3095-2012|环境空气功能区分类",
+        "edge:总悬浮颗粒物(TSP)|表2(环境空气污染物其他项目浓度限值)",
+        "edge:省级人民政府|表2(环境空气污染物其他项目浓度限值)",
+        "edge:二类区|表1(环境空气污染物基本项目浓度限值)",
+        "edge:二类区|表2(环境空气污染物其他项目浓度限值)",
+        "edge:GB 3095-2012|部分地区提前实施",
+        "edge:GB 3095-2012|GB 3095-2012全国实施",
+        "edge:GB 3095-2012|全国实施",
+        "edge:国务院环境保护行政主管部门|表2(环境空气污染物其他项目浓度限值)",
+        "edge:苯并[a]芘(BaP)|表2(环境空气污染物其他项目浓度限值)",
+        "edge:二级浓度限值|表1(环境空气污染物基本项目浓度限值)",
+        "edge:二级浓度限值|表2(环境空气污染物其他项目浓度限值)",
+        "edge:一级浓度限值|表1(环境空气污染物基本项目浓度限值)",
+        "edge:一级浓度限值|表2(环境空气污染物其他项目浓度限值)",
+        "edge:监测点位布设|表1(环境空气污染物基本项目浓度限值)",
+        "edge:监测点位布设|表2(环境空气污染物其他项目浓度限值)",
+        "edge:表2(环境空气污染物其他项目浓度限值)|铅(Pb)",
+        "edge:表1(环境空气污染物基本项目浓度限值)|颗粒物(粒径小于等于2.5μm)",
+        "edge:表1(环境空气污染物基本项目浓度限值)|颗粒物(粒径小于等于10μm)",
+        "edge:2016年1月1日|GB 3095-2012全国实施"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 0,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 0,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "10865333c97ac5b443984f6fd0d2b7c6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "10865333c97ac5b443984f6fd0d2b7c6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "5ec7f017b394e19d919dce200fc3684c",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "5ec7f017b394e19d919dce200fc3684c",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "6b561f175905ef52a9c4b02aab741551",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "6b561f175905ef52a9c4b02aab741551",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "7f9dddaf02f372cc7d329f4678c46fbc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "ced9002b92f52f07096945aae564c1d5",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "ced9002b92f52f07096945aae564c1d5",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "e151ce5965ec3b5346b3cd8dcac27645",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "e151ce5965ec3b5346b3cd8dcac27645",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0002",
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0002",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0002",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "eafea04098b4bf61ff94053d457a8760eee04b9ea04b039ab6f53e180aa83a5a"
+    },
+    {
+     "input_index": 1,
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "content_sha256": "21c3345f91c141953e2ee535f539d25d08d4d308cac6f3d4a5c45fd03f6d3c2f",
+     "content_len": 1561,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": "中 华 人 民 共 和 国 国 家 标 准",
+       "chunk_order": 0,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 6.400000095367432
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|臭氧",
+        "edge:环境空气质量标准(GB 3095-2012)|铅",
+        "edge:二氧化氮|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|附录A",
+        "edge:环境空气质量标准(GB 3095-2012)|苯并[a]芘",
+        "edge:中华人民共和国大气污染防治法|环境空气质量标准(GB 3095-2012)",
+        "edge:中华人民共和国环境保护法|环境空气质量标准(GB 3095-2012)",
+        "edge:中国环境监测总站|环境空气质量标准(GB 3095-2012)",
+        "edge:环境保护部|环境空气质量标准(GB 3095-2012)",
+        "edge:国家质量监督检验检疫总局|环境空气质量标准(GB 3095-2012)",
+        "edge:中国环境科学研究院|环境空气质量标准(GB 3095-2012)",
+        "edge:国务院环境保护行政主管部门|环境空气质量标准(GB 3095-2012)",
+        "edge:中国环境科学出版社|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|监测方法",
+        "edge:环境保护部科技标准司|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气功能区分类|环境空气质量标准(GB 3095-2012)",
+        "edge:数据统计的有效性规定|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|颗粒物(粒径小于等于10μm)",
+        "edge:环境空气质量标准(GB 3095-2012)|颗粒物(粒径小于等于2.5μm)",
+        "edge:各省级人民政府|环境空气质量标准(GB 3095-2012)",
+        "edge:实施与监督|环境空气质量标准(GB 3095-2012)",
+        "edge:标准分级|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|质量浓度",
+        "edge:环境保护部网站|环境空气质量标准(GB 3095-2012)",
+        "edge:环境保护部网站(bz.mep.gov.cn)|环境空气质量标准(GB 3095-2012)",
+        "edge:中华人民共和国环境保护部公告(2012年第7号)|环境空气质量标准(GB 3095-2012)",
+        "edge:环境保护部公告(2012年第7号)|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-1996)|环境空气质量标准(GB 3095-2012)",
+        "edge:《环境空气质量标准》(GB 3095-1996)修改单|环境空气质量标准(GB 3095-2012)",
+        "edge:《环境空气质量标准》(GB3095-1996)修改单|环境空气质量标准(GB 3095-2012)",
+        "edge:保护农作物的大气污染物最高允许浓度(GB 9137-88)|环境空气质量标准(GB 3095-2012)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 1,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 1,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "30e2b8916295989e6e6d7226c2eaf9a2",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "30e2b8916295989e6e6d7226c2eaf9a2",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "548a74e5d81f4cf0c9755ce071c7f4de",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "548a74e5d81f4cf0c9755ce071c7f4de",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "6b8cd9466cece927fe4625d03bc60881",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "6b8cd9466cece927fe4625d03bc60881",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "9e2f2fd3df255a39b42ecc93f143bc74",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "9e2f2fd3df255a39b42ecc93f143bc74",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "e400c84588c97779bd9bcf467cb11df0",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "e400c84588c97779bd9bcf467cb11df0",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "e7f88e871787f23785b63de1b55f9cfe",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "e7f88e871787f23785b63de1b55f9cfe",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "21c3345f91c141953e2ee535f539d25d08d4d308cac6f3d4a5c45fd03f6d3c2f"
+    },
+    {
+     "input_index": 2,
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "content_sha256": "0f66aa569b65f4132e9a0cdb6970234878ebe10418fb262eb6e90d0254708607",
+     "content_len": 1568,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": "环境空气质量标准",
+       "chunk_order": 1,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 6.0
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|铅",
+        "edge:氟化物|环境空气质量标准(GB 3095-2012)",
+        "edge:PM2.5(细颗粒物)|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气|环境空气质量标准(GB 3095-2012)",
+        "edge:标准状态|环境空气质量标准(GB 3095-2012)",
+        "edge:总悬浮颗粒物(TSP)|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|苯并[a]芘(BaP)",
+        "edge:年平均|环境空气质量标准(GB 3095-2012)",
+        "edge:1小时平均|环境空气质量标准(GB 3095-2012)",
+        "edge:PM10(可吸入颗粒物)|环境空气质量标准(GB 3095-2012)",
+        "edge:HJ 618|环境空气质量标准(GB 3095-2012)",
+        "edge:GB/T 15432|环境空气质量标准(GB 3095-2012)",
+        "edge:HJ 630|环境空气质量标准(GB 3095-2012)",
+        "edge:HJ 479|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|环境空气质量监测规范(试行)",
+        "edge:GB/T 15439|环境空气质量标准(GB 3095-2012)",
+        "edge:8小时平均|环境空气质量标准(GB 3095-2012)",
+        "edge:HJ 539|环境空气质量标准(GB 3095-2012)",
+        "edge:GB 8971|环境空气质量标准(GB 3095-2012)",
+        "edge:HJ 482|环境空气质量标准(GB 3095-2012)",
+        "edge:HJ 590|环境空气质量标准(GB 3095-2012)",
+        "edge:HJ 504|环境空气质量标准(GB 3095-2012)",
+        "edge:HJ 483|环境空气质量标准(GB 3095-2012)",
+        "edge:GB 9801|环境空气质量标准(GB 3095-2012)",
+        "edge:关于推进大气污染联防联控工作改善区域空气质量的指导意见|环境空气质量标准(GB 3095-2012)",
+        "edge:季平均|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|环境空气质量评价与管理",
+        "edge:GB/T 15264|环境空气质量标准(GB 3095-2012)",
+        "edge:月平均|环境空气质量标准(GB 3095-2012)",
+        "edge:HJ/T 193|环境空气质量标准(GB 3095-2012)",
+        "edge:HJ/T 194|环境空气质量标准(GB 3095-2012)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 3,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 3,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "6291e97f42b5eed29d234cf1e96ed724",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "6291e97f42b5eed29d234cf1e96ed724",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "9b3182288072af39817000e961fc2214",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "9b3182288072af39817000e961fc2214",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "b58db1db80ac069ce45621aeaabfb360",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "b58db1db80ac069ce45621aeaabfb360",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "c4ef8e1d776e5083495e55e18cac3dff",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "c4ef8e1d776e5083495e55e18cac3dff",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "ca4a16ef70eb2de7b8a396307c06fb84",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "ca4a16ef70eb2de7b8a396307c06fb84",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "f8222a27318827ff130cd0aea254310f",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "f8222a27318827ff130cd0aea254310f",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "0f66aa569b65f4132e9a0cdb6970234878ebe10418fb262eb6e90d0254708607"
+    },
+    {
+     "input_index": 3,
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "content_sha256": "9966bb53e03896cc4d04eee0b7d8b15a86db00b99197a275c51bfd6aca4a3b60",
+     "content_len": 2993,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": "5.3 污染物分析 环境空气质量标准",
+       "chunk_order": 3,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 3.6000001430511475
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "437f7c19a5677fae67744a415f4e22b4",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "437f7c19a5677fae67744a415f4e22b4",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "4de3635258ef2ba4a3df87bec5252bd9",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "4de3635258ef2ba4a3df87bec5252bd9",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0004",
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0004",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0004",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "9966bb53e03896cc4d04eee0b7d8b15a86db00b99197a275c51bfd6aca4a3b60"
+    },
+    {
+     "input_index": 4,
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "content_sha256": "c57667a03194fd8a9cbf7044b0dc36db737b793fa65e46c423f85c5b6080e893",
+     "content_len": 1370,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": "7 实施与监督 环境空气质量标准",
+       "chunk_order": 4,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 2.4000000953674316
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 3095-2012",
+        "entity:环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|附录A",
+        "edge:GB 3095-2012|附录A",
+        "edge:环境保护行政主管部门|环境空气质量标准(GB 3095-2012)",
+        "edge:地方环境空气质量标准|环境空气质量标准(GB 3095-2012)",
+        "edge:大气污染防治重点城市|环境空气质量标准(GB 3095-2012)",
+        "edge:GB 3095-2012|中华人民共和国大气污染防治法",
+        "edge:GB 3095-2012|环境保护行政主管部门",
+        "edge:GB 3095-2012|地方环境空气质量标准",
+        "edge:GB 3095-2012|大气污染防治重点城市",
+        "edge:GB 3095-2012|限期达标规划"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 4,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 4,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "8d717f7bab4184537990a86fdd9aba21",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "8d717f7bab4184537990a86fdd9aba21",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "c45552d0a5d96a5541e6ea2588a6ccc2",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "c45552d0a5d96a5541e6ea2588a6ccc2",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "d9c1681fcfbfd2f48e654d5692f28b30",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "d9c1681fcfbfd2f48e654d5692f28b30",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0005",
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0005",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0005",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "c57667a03194fd8a9cbf7044b0dc36db737b793fa65e46c423f85c5b6080e893"
+    }
+   ],
+   "call": {
+    "service": "rerank",
+    "operation": "rerank",
+    "endpoint": "/v1/rerank",
+    "url_path_used": "configured-endpoint",
+    "model": "Qwen/Qwen3-Reranker-4B",
+    "documents_sent": 5,
+    "chars_sent": 10332,
+    "elapsed_ms": 762,
+    "status_code": 200,
+    "status": "success",
+    "response_evidence": {
+     "id": "01a119f7990b795c86387d9703da27eb",
+     "results_len": 5
+    },
+    "raw_response": {
+     "id": "01a119f7990b795c86387d9703da27eb",
+     "results": [
+      {
+       "index": 0,
+       "document": null,
+       "relevance_score": 0.9985427856445312
+      },
+      {
+       "index": 1,
+       "document": null,
+       "relevance_score": 0.9894800186157227
+      },
+      {
+       "index": 2,
+       "document": null,
+       "relevance_score": 0.9008015394210815
+      },
+      {
+       "index": 4,
+       "document": null,
+       "relevance_score": 0.6519086360931396
+      },
+      {
+       "index": 3,
+       "document": null,
+       "relevance_score": 0.0019376017153263092
+      }
+     ],
+     "meta": {
+      "tokens": "<redacted>",
+      "billed_units": {
+       "input_tokens": "<redacted>",
+       "output_tokens": "<redacted>",
+       "image_tokens": "<redacted>",
+       "search_units": 0,
+       "classifications": 0
+      }
+     }
+    }
+   },
+   "ordered": [
+    {
+     "input_index": 0,
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "content_sha256": "eafea04098b4bf61ff94053d457a8760eee04b9ea04b039ab6f53e180aa83a5a",
+     "rerank_score": 0.9985427856445312,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": "4 环境空气功能区分类和质量要求 环境空气质量标准",
+       "chunk_order": 2,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 6.800000190734863
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 3095-2012",
+        "entity:GB 3095-2012全国实施",
+        "entity:表1(环境空气污染物基本项目浓度限值)",
+        "entity:表2(环境空气污染物其他项目浓度限值)",
+        "edge:GB 3095-2012|表1",
+        "edge:GB 3095-2012|表2",
+        "edge:二氧化氮(NO2)|表1(环境空气污染物基本项目浓度限值)",
+        "edge:臭氧(O3)|表1(环境空气污染物基本项目浓度限值)",
+        "edge:二氧化硫(SO2)|表1(环境空气污染物基本项目浓度限值)",
+        "edge:一氧化碳(CO)|表1(环境空气污染物基本项目浓度限值)",
+        "edge:氮氧化物(NOx)|表2(环境空气污染物其他项目浓度限值)",
+        "edge:GB 3095-2012|一类区",
+        "edge:GB 3095-2012|省级人民政府",
+        "edge:GB 3095-2012|二类区",
+        "edge:GB 3095-2012|国务院环境保护行政主管部门",
+        "edge:GB 3095-2012|表2(环境空气污染物其他项目浓度限值)",
+        "edge:GB 3095-2012|表1(环境空气污染物基本项目浓度限值)",
+        "edge:GB 3095-2012|环境空气功能区",
+        "edge:一类区|表1(环境空气污染物基本项目浓度限值)",
+        "edge:一类区|表2(环境空气污染物其他项目浓度限值)",
+        "edge:GB 3095-2012|环境空气质量监测",
+        "edge:GB 3095-2012|环境空气功能区分类",
+        "edge:总悬浮颗粒物(TSP)|表2(环境空气污染物其他项目浓度限值)",
+        "edge:省级人民政府|表2(环境空气污染物其他项目浓度限值)",
+        "edge:二类区|表1(环境空气污染物基本项目浓度限值)",
+        "edge:二类区|表2(环境空气污染物其他项目浓度限值)",
+        "edge:GB 3095-2012|部分地区提前实施",
+        "edge:GB 3095-2012|GB 3095-2012全国实施",
+        "edge:GB 3095-2012|全国实施",
+        "edge:国务院环境保护行政主管部门|表2(环境空气污染物其他项目浓度限值)",
+        "edge:苯并[a]芘(BaP)|表2(环境空气污染物其他项目浓度限值)",
+        "edge:二级浓度限值|表1(环境空气污染物基本项目浓度限值)",
+        "edge:二级浓度限值|表2(环境空气污染物其他项目浓度限值)",
+        "edge:一级浓度限值|表1(环境空气污染物基本项目浓度限值)",
+        "edge:一级浓度限值|表2(环境空气污染物其他项目浓度限值)",
+        "edge:监测点位布设|表1(环境空气污染物基本项目浓度限值)",
+        "edge:监测点位布设|表2(环境空气污染物其他项目浓度限值)",
+        "edge:表2(环境空气污染物其他项目浓度限值)|铅(Pb)",
+        "edge:表1(环境空气污染物基本项目浓度限值)|颗粒物(粒径小于等于2.5μm)",
+        "edge:表1(环境空气污染物基本项目浓度限值)|颗粒物(粒径小于等于10μm)",
+        "edge:2016年1月1日|GB 3095-2012全国实施"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 0,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 0,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "10865333c97ac5b443984f6fd0d2b7c6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "10865333c97ac5b443984f6fd0d2b7c6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "5ec7f017b394e19d919dce200fc3684c",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "5ec7f017b394e19d919dce200fc3684c",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "6b561f175905ef52a9c4b02aab741551",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "6b561f175905ef52a9c4b02aab741551",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7f9dddaf02f372cc7d329f4678c46fbc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "7f9dddaf02f372cc7d329f4678c46fbc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "ced9002b92f52f07096945aae564c1d5",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "ced9002b92f52f07096945aae564c1d5",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "e151ce5965ec3b5346b3cd8dcac27645",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "e151ce5965ec3b5346b3cd8dcac27645",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0002",
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0002",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0002",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 1,
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "content_sha256": "21c3345f91c141953e2ee535f539d25d08d4d308cac6f3d4a5c45fd03f6d3c2f",
+     "rerank_score": 0.9894800186157227,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": "中 华 人 民 共 和 国 国 家 标 准",
+       "chunk_order": 0,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 6.400000095367432
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|臭氧",
+        "edge:环境空气质量标准(GB 3095-2012)|铅",
+        "edge:二氧化氮|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|附录A",
+        "edge:环境空气质量标准(GB 3095-2012)|苯并[a]芘",
+        "edge:中华人民共和国大气污染防治法|环境空气质量标准(GB 3095-2012)",
+        "edge:中华人民共和国环境保护法|环境空气质量标准(GB 3095-2012)",
+        "edge:中国环境监测总站|环境空气质量标准(GB 3095-2012)",
+        "edge:环境保护部|环境空气质量标准(GB 3095-2012)",
+        "edge:国家质量监督检验检疫总局|环境空气质量标准(GB 3095-2012)",
+        "edge:中国环境科学研究院|环境空气质量标准(GB 3095-2012)",
+        "edge:国务院环境保护行政主管部门|环境空气质量标准(GB 3095-2012)",
+        "edge:中国环境科学出版社|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|监测方法",
+        "edge:环境保护部科技标准司|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气功能区分类|环境空气质量标准(GB 3095-2012)",
+        "edge:数据统计的有效性规定|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|颗粒物(粒径小于等于10μm)",
+        "edge:环境空气质量标准(GB 3095-2012)|颗粒物(粒径小于等于2.5μm)",
+        "edge:各省级人民政府|环境空气质量标准(GB 3095-2012)",
+        "edge:实施与监督|环境空气质量标准(GB 3095-2012)",
+        "edge:标准分级|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|质量浓度",
+        "edge:环境保护部网站|环境空气质量标准(GB 3095-2012)",
+        "edge:环境保护部网站(bz.mep.gov.cn)|环境空气质量标准(GB 3095-2012)",
+        "edge:中华人民共和国环境保护部公告(2012年第7号)|环境空气质量标准(GB 3095-2012)",
+        "edge:环境保护部公告(2012年第7号)|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-1996)|环境空气质量标准(GB 3095-2012)",
+        "edge:《环境空气质量标准》(GB 3095-1996)修改单|环境空气质量标准(GB 3095-2012)",
+        "edge:《环境空气质量标准》(GB3095-1996)修改单|环境空气质量标准(GB 3095-2012)",
+        "edge:保护农作物的大气污染物最高允许浓度(GB 9137-88)|环境空气质量标准(GB 3095-2012)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 1,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 1,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "30e2b8916295989e6e6d7226c2eaf9a2",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "30e2b8916295989e6e6d7226c2eaf9a2",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "548a74e5d81f4cf0c9755ce071c7f4de",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "548a74e5d81f4cf0c9755ce071c7f4de",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "6b8cd9466cece927fe4625d03bc60881",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "6b8cd9466cece927fe4625d03bc60881",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "9e2f2fd3df255a39b42ecc93f143bc74",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "9e2f2fd3df255a39b42ecc93f143bc74",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "e400c84588c97779bd9bcf467cb11df0",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "e400c84588c97779bd9bcf467cb11df0",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "e7f88e871787f23785b63de1b55f9cfe",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "e7f88e871787f23785b63de1b55f9cfe",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 2,
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "content_sha256": "0f66aa569b65f4132e9a0cdb6970234878ebe10418fb262eb6e90d0254708607",
+     "rerank_score": 0.9008015394210815,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": "环境空气质量标准",
+       "chunk_order": 1,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 6.0
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|铅",
+        "edge:氟化物|环境空气质量标准(GB 3095-2012)",
+        "edge:PM2.5(细颗粒物)|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气|环境空气质量标准(GB 3095-2012)",
+        "edge:标准状态|环境空气质量标准(GB 3095-2012)",
+        "edge:总悬浮颗粒物(TSP)|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|苯并[a]芘(BaP)",
+        "edge:年平均|环境空气质量标准(GB 3095-2012)",
+        "edge:1小时平均|环境空气质量标准(GB 3095-2012)",
+        "edge:PM10(可吸入颗粒物)|环境空气质量标准(GB 3095-2012)",
+        "edge:HJ 618|环境空气质量标准(GB 3095-2012)",
+        "edge:GB/T 15432|环境空气质量标准(GB 3095-2012)",
+        "edge:HJ 630|环境空气质量标准(GB 3095-2012)",
+        "edge:HJ 479|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|环境空气质量监测规范(试行)",
+        "edge:GB/T 15439|环境空气质量标准(GB 3095-2012)",
+        "edge:8小时平均|环境空气质量标准(GB 3095-2012)",
+        "edge:HJ 539|环境空气质量标准(GB 3095-2012)",
+        "edge:GB 8971|环境空气质量标准(GB 3095-2012)",
+        "edge:HJ 482|环境空气质量标准(GB 3095-2012)",
+        "edge:HJ 590|环境空气质量标准(GB 3095-2012)",
+        "edge:HJ 504|环境空气质量标准(GB 3095-2012)",
+        "edge:HJ 483|环境空气质量标准(GB 3095-2012)",
+        "edge:GB 9801|环境空气质量标准(GB 3095-2012)",
+        "edge:关于推进大气污染联防联控工作改善区域空气质量的指导意见|环境空气质量标准(GB 3095-2012)",
+        "edge:季平均|环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|环境空气质量评价与管理",
+        "edge:GB/T 15264|环境空气质量标准(GB 3095-2012)",
+        "edge:月平均|环境空气质量标准(GB 3095-2012)",
+        "edge:HJ/T 193|环境空气质量标准(GB 3095-2012)",
+        "edge:HJ/T 194|环境空气质量标准(GB 3095-2012)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 3,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 3,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "6291e97f42b5eed29d234cf1e96ed724",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "6291e97f42b5eed29d234cf1e96ed724",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "9b3182288072af39817000e961fc2214",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "9b3182288072af39817000e961fc2214",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "b58db1db80ac069ce45621aeaabfb360",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "b58db1db80ac069ce45621aeaabfb360",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "c4ef8e1d776e5083495e55e18cac3dff",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "c4ef8e1d776e5083495e55e18cac3dff",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "ca4a16ef70eb2de7b8a396307c06fb84",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "ca4a16ef70eb2de7b8a396307c06fb84",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "f8222a27318827ff130cd0aea254310f",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "f8222a27318827ff130cd0aea254310f",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 4,
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "content_sha256": "c57667a03194fd8a9cbf7044b0dc36db737b793fa65e46c423f85c5b6080e893",
+     "rerank_score": 0.6519086360931396,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": "7 实施与监督 环境空气质量标准",
+       "chunk_order": 4,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 2.4000000953674316
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 3095-2012",
+        "entity:环境空气质量标准(GB 3095-2012)",
+        "edge:环境空气质量标准(GB 3095-2012)|附录A",
+        "edge:GB 3095-2012|附录A",
+        "edge:环境保护行政主管部门|环境空气质量标准(GB 3095-2012)",
+        "edge:地方环境空气质量标准|环境空气质量标准(GB 3095-2012)",
+        "edge:大气污染防治重点城市|环境空气质量标准(GB 3095-2012)",
+        "edge:GB 3095-2012|中华人民共和国大气污染防治法",
+        "edge:GB 3095-2012|环境保护行政主管部门",
+        "edge:GB 3095-2012|地方环境空气质量标准",
+        "edge:GB 3095-2012|大气污染防治重点城市",
+        "edge:GB 3095-2012|限期达标规划"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 4,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 4,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "8d717f7bab4184537990a86fdd9aba21",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "8d717f7bab4184537990a86fdd9aba21",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "c45552d0a5d96a5541e6ea2588a6ccc2",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "c45552d0a5d96a5541e6ea2588a6ccc2",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "d9c1681fcfbfd2f48e654d5692f28b30",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "d9c1681fcfbfd2f48e654d5692f28b30",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0005",
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0005",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0005",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 3,
+     "workspace": "default",
+     "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "content_sha256": "9966bb53e03896cc4d04eee0b7d8b15a86db00b99197a275c51bfd6aca4a3b60",
+     "rerank_score": 0.0019376017153263092,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003",
+       "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+       "heading": "5.3 污染物分析 环境空气质量标准",
+       "chunk_order": 3,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 3.6000001430511475
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "437f7c19a5677fae67744a415f4e22b4",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "437f7c19a5677fae67744a415f4e22b4",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "4de3635258ef2ba4a3df87bec5252bd9",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "unit_id": "4de3635258ef2ba4a3df87bec5252bd9",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0004",
+       "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0004",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "table_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0004",
+        "chunk_ids": [
+         "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    }
+   ],
+   "degraded": [],
+   "status": "ok",
+   "typed_targets": [
+    {
+     "target_type": "doc",
+     "workspace": "default",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc_name": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+     "self_code": "GB3095",
+     "self_code_version": "2012",
+     "discovery": "code_exact",
+     "membership_basis": null,
+     "citation": {
+      "kind": "catalog_row",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+     },
+     "citation_verified": true
+    },
+    {
+     "target_type": "scope",
+     "workspace": "default",
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "scope_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1:scope:4.2",
+     "heading": "4.2 环境空气功能区质量要求",
+     "member_units": [
+      "7f9dddaf02f372cc7d329f4678c46fbc"
+     ],
+     "discovery": "scope_range_binding",
+     "scope_status": "confirmed",
+     "citation": {
+      "kind": "scope",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+      "scope_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1:scope:4.2"
+     },
+     "citation_verified": true
+    }
+   ],
+   "path_enrichment": [
+    "association completion: 5 table fragment path(s) and 23 non-table (block/source_unit) path(s) from unit_chunk_links JOIN source_units by actual unit_kind (replay paths predate the 5.3-F2 fix); no id/locator/kind guessed"
+   ],
+   "source_verification": {
+    "candidates_checked": 5,
+    "verified": 5,
+    "problems": []
+   },
+   "skipped_inputs": []
+  }
+ ],
+ "finished_at": "2026-10-08T13:23:40+0800"
+}

@@ -1,0 +1,12 @@
+{
+ "generation": "phase-4-improvement-3-diagnosis",
+ "note": "本组纯离线诊断，生产源码一字未改；两文件 SHA 与改进组2 r2 已验收态逐字符相同",
+ "production_sha": {
+  "src/env_rag_final/answer.py": "14c9673b2b07a41d83b32c747d048a572f8d8795ecc6892d9df59c30e6100968",
+  "src/env_rag_final/evaluation.py": "a42d5c68952e40627a395f023650eae89f59a0527ac0208f45c90ea0f8dd7529"
+ },
+ "matches_accepted_improvement2_r2": true,
+ "frozen_spotcheck": "44 passed (改进组2冻结6+自有26+改进组1冻结9+3)",
+ "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "gold_matches_frozen": true
+}

@@ -1,0 +1,221 @@
+........................................................................ [ 28%]
+........................................................................ [ 57%]
+.................................FFFFF.................................. [ 85%]
+....................................                                     [100%]
+=================================== FAILURES ===================================
+_____________ test_native_neo4j_async_failure_is_a_failure_receipt _____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11917b710>
+
+    def test_native_neo4j_async_failure_is_a_failure_receipt(monkeypatch):
+        from neo4j import AsyncGraphDatabase
+    
+        driver = AsyncDriver(failure=True)
+        monkeypatch.setattr(AsyncGraphDatabase, "driver", lambda *a, **k: driver)
+        boundary = la.ServiceBoundary()
+        graph = la.bind_neo4j_readonly("base", None, fixture.fixture.VALUES, boundary)
+    
+        async def run():
+            try:
+                with pytest.raises(TimeoutError):
+                    await graph.get_nodes_batch(["A"])
+            finally:
+                await graph._driver.close()
+    
+        asyncio.run(run())
+>       assert any(r.service == "neo4j" and r.status == "failure" for r in boundary.records)
+E       assert False
+E        +  where False = any(<generator object test_native_neo4j_async_failure_is_a_failure_receipt.<locals>.<genexpr> at 0x1191acad0>)
+
+tests/test_local_adapter_review_r3.py:64: AssertionError
+___________ test_entity_search_hits_do_not_prove_chunk_vectors_exist ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11917bb00>
+
+    def test_entity_search_hits_do_not_prove_chunk_vectors_exist(monkeypatch):
+        import lightrag.kg.qdrant_impl as qmodule
+    
+        fixture.install_fetch(monkeypatch, with_entity=True)
+        original_client = qmodule.QdrantClient
+    
+        class Client(original_client):
+            def query_points(self, **kwargs):
+                self.reads.append("query_points")
+                return SimpleNamespace(
+                    points=[SimpleNamespace(id="entity-id", payload={"entity_name": "A"}, score=0.8)]
+                )
+    
+        monkeypatch.setattr(qmodule, "QdrantClient", Client)
+        result = asyncio.run(la.LocalCandidateAdapter(fixture.fixture.VALUES).fetch("fixture"))
+        assert result.candidates and all(c.verified for c in result.candidates)
+>       assert result.sorting_sources["chunk_pick"] == "weight-fallback"
+E       AssertionError: assert 'vector-similarity' == 'weight-fallback'
+E         
+E         - weight-fallback
+E         + vector-similarity
+
+tests/test_local_adapter_review_r3.py:84: AssertionError
+----------------------------- Captured stderr call -----------------------------
+INFO: Qdrant collection: lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d
+INFO: Qdrant collection: lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d
+WARNING: Vector similarity chunk selection: no vectors retrieved from chunks_vdb
+WARNING: No entity-related chunks selected by vector similarity, falling back to WEIGHT method
+INFO: Selecting 1 from 1 entity-related chunks by weighted polling
+------------------------------ Captured log call -------------------------------
+INFO     lightrag:qdrant_impl.py:507 Qdrant collection: lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d
+INFO     lightrag:qdrant_impl.py:507 Qdrant collection: lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d
+WARNING  lightrag:utils.py:6038 Vector similarity chunk selection: no vectors retrieved from chunks_vdb
+WARNING  lightrag:operate.py:6241 No entity-related chunks selected by vector similarity, falling back to WEIGHT method
+INFO     lightrag:operate.py:6262 Selecting 1 from 1 entity-related chunks by weighted polling
+______________ test_failed_model_receipt_survives_frozen_terminal ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11917baa0>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-353/test_failed_model_receipt_surv0')
+
+    def test_failed_model_receipt_survives_frozen_terminal(monkeypatch, tmp_path):
+        adapter_class = la.LocalCandidateAdapter
+        fixture.install_run(monkeypatch)
+        monkeypatch.setattr(la, "LocalCandidateAdapter", adapter_class)
+        fixture.install_fetch(monkeypatch)
+    
+        async def failed_complete(*args, **kwargs):
+            raise TimeoutError("keyword service failed")
+    
+        monkeypatch.setattr("lightrag.llm.openai.openai_complete_if_cache", failed_complete)
+    
+        async def keywords(query, param, config, cache):
+            await config["role_llm_funcs"]["keyword"]("fixture")
+    
+        monkeypatch.setattr(la, "release_get_keywords_from_query", keywords)
+        with pytest.raises(la.AdapterError):
+            asyncio.run(la.run_frozen(tmp_path, ["fact-001"]))
+        report = json.loads((tmp_path / "local-runtime-latest.json").read_text())
+    
+        def contains_receipt(value):
+            if isinstance(value, dict):
+                return (value.get("service") == "llm" and value.get("status") == "failure") or any(
+                    contains_receipt(v) for v in value.values()
+                )
+            if isinstance(value, list):
+                return any(contains_receipt(v) for v in value)
+            return False
+    
+        assert "identity_after" in report
+>       assert contains_receipt(report), (
+            "The failing adapter recorded the call; terminal must retain it"
+        )
+E       AssertionError: The failing adapter recorded the call; terminal must retain it
+E       assert False
+E        +  where False = <function test_failed_model_receipt_survives_frozen_terminal.<locals>.contains_receipt at 0x1198a94e0>({'task': '5.2 real local candidate adapter (rev 2, read-only, guarded)', 'release': 'lightrag-hku 1.5.7', 'frozen_cont...shot_id': '4919b3938ad93747', 'search_active': '872d689343a9cbb6', ...}, 'started_at': '2026-10-07T01:04:14+0800', ...})
+
+tests/test_local_adapter_review_r3.py:117: AssertionError
+----------------------------- Captured stderr call -----------------------------
+INFO: Qdrant collection: lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d
+INFO: Qdrant collection: lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d
+------------------------------ Captured log call -------------------------------
+INFO     lightrag:qdrant_impl.py:507 Qdrant collection: lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d
+INFO     lightrag:qdrant_impl.py:507 Qdrant collection: lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d
+____________ test_native_close_failure_never_calls_flush_finalizer _____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x109084a70>
+
+    def test_native_close_failure_never_calls_flush_finalizer(monkeypatch):
+        import lightrag.kg.qdrant_impl as qmodule
+    
+        fixture.install_fetch(monkeypatch)
+        original_client = qmodule.QdrantClient
+        finalize_calls = []
+    
+        class Client(original_client):
+            def close(self):
+                raise OSError("close transport failed")
+    
+        async def forbidden_finalize(self):
+            finalize_calls.append(self)
+    
+        monkeypatch.setattr(qmodule, "QdrantClient", Client)
+        monkeypatch.setattr(qmodule.QdrantVectorDBStorage, "finalize", forbidden_finalize)
+        result = asyncio.run(la.LocalCandidateAdapter(fixture.fixture.VALUES).fetch("fixture"))
+        assert result.degraded, "Close failure must remain visible"
+>       assert not finalize_calls, "Native finalize can flush; it is forbidden even when close fails"
+E       AssertionError: Native finalize can flush; it is forbidden even when close fails
+E       assert not [QdrantVectorDBStorage(namespace='entities', workspace='_', global_config={'embedding_batch_num': 32, 'vector_db_stora...model_name='Qwen/Qwen3-Embedding-4B', supports_asymmetric=False), cosine_better_than_threshold=0.2, meta_fields=set())]
+
+tests/test_local_adapter_review_r3.py:140: AssertionError
+----------------------------- Captured stderr call -----------------------------
+INFO: Qdrant collection: lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d
+INFO: Qdrant collection: lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d
+------------------------------ Captured log call -------------------------------
+INFO     lightrag:qdrant_impl.py:507 Qdrant collection: lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d
+INFO     lightrag:qdrant_impl.py:507 Qdrant collection: lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d
+_______ test_partial_native_graph_binding_is_closed_before_fetch_returns _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11917a3c0>
+
+    def test_partial_native_graph_binding_is_closed_before_fetch_returns(monkeypatch):
+        import lightrag.kg.neo4j_impl as nmodule
+        from neo4j import AsyncGraphDatabase
+    
+        bind = la.bind_neo4j_readonly
+        fixture.install_fetch(monkeypatch)
+        monkeypatch.setattr(la, "bind_neo4j_readonly", bind)
+        driver = AsyncDriver()
+        acquisitions = []
+    
+        def acquire_driver(*args, **kwargs):
+            acquisitions.append(driver)
+            return driver
+    
+        monkeypatch.setattr(AsyncGraphDatabase, "driver", acquire_driver)
+    
+        def failed_storage(self, **kwargs):
+            raise RuntimeError("graph storage constructor failed")
+    
+        monkeypatch.setattr(nmodule.Neo4JStorage, "__init__", failed_storage)
+    
+        async def run():
+            with pytest.raises(RuntimeError):
+                await la.LocalCandidateAdapter(fixture.fixture.VALUES).fetch("fixture")
+            assert not acquisitions or driver.closed, (
+                "Acquired graph driver must be awaited closed before terminal return"
+            )
+    
+>       asyncio.run(run())
+
+tests/test_local_adapter_review_r3.py:171: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../../Library/Application Support/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/asyncio/runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+../../../../Library/Application Support/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../../Library/Application Support/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    async def run():
+        with pytest.raises(RuntimeError):
+            await la.LocalCandidateAdapter(fixture.fixture.VALUES).fetch("fixture")
+>       assert not acquisitions or driver.closed, (
+            "Acquired graph driver must be awaited closed before terminal return"
+        )
+E       AssertionError: Acquired graph driver must be awaited closed before terminal return
+E       assert (not [<test_local_adapter_review_r3.AsyncDriver object at 0x11917a030>] or False)
+E        +  where False = <test_local_adapter_review_r3.AsyncDriver object at 0x11917a030>.closed
+
+tests/test_local_adapter_review_r3.py:167: AssertionError
+----------------------------- Captured stderr call -----------------------------
+INFO: Qdrant collection: lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d
+INFO: Qdrant collection: lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d
+------------------------------ Captured log call -------------------------------
+INFO     lightrag:qdrant_impl.py:507 Qdrant collection: lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d
+INFO     lightrag:qdrant_impl.py:507 Qdrant collection: lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d
+=========================== short test summary info ============================
+FAILED tests/test_local_adapter_review_r3.py::test_native_neo4j_async_failure_is_a_failure_receipt
+FAILED tests/test_local_adapter_review_r3.py::test_entity_search_hits_do_not_prove_chunk_vectors_exist
+FAILED tests/test_local_adapter_review_r3.py::test_failed_model_receipt_survives_frozen_terminal
+FAILED tests/test_local_adapter_review_r3.py::test_native_close_failure_never_calls_flush_finalizer
+FAILED tests/test_local_adapter_review_r3.py::test_partial_native_graph_binding_is_closed_before_fetch_returns
+5 failed, 247 passed in 10.14s

@@ -1,0 +1,79 @@
+{
+ "task": "5.2 real local candidate adapter (rev 5, V1 effective-vector-coverage remediation, read-only)",
+ "generated_at": "2026-10-07T02:20:00+0800",
+ "command_run": "uv run env-rag-final lightrag-local --query-id fact-002 --report-dir reports/pg-retrieval/phase-3-local-r5",
+ "files_sha256": {
+  "src/env_rag_final/local_adapter.py": "0bbad9764856250085b5cefb90c9d56933bfd2f6e9ed5ed796fdd93bdf2da7e3",
+  "src/env_rag_final/cli.py": "cb4ddcb025d3e17e484099ddcbaab4fdcaed2e3aa7bc3054885752d7da11c023",
+  "tests/test_local_adapter_review_r4.py": "2997941f0a516040d808964358f4524546552d82e003accabd46cadda7bd98f6",
+  "reports/pg-retrieval/phase-3-local-r5/local-runtime-latest.json": "4f7878743a691e8cc25601c77be78238f4116ef7f288e576b664d7a3adceb3d2",
+  "reports/pg-retrieval/gate-2/review-r5/gold-approved.json": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e"
+ },
+ "release": {
+  "lightrag_hku": "1.5.7",
+  "wheel_record_mismatches": 0
+ },
+ "fixes": {
+  "V1": "chunk vector coverage judged on the EFFECTIVE mapping the release chunks storage hands to the picker (get_vectors_by_ids observer: post-drop-of-vectorless-points, post-payload-identity remap), per stage (entities/relations); raw retrieve point count is a transport statistic only (points_returned_raw). Missing / mismatched / unusable-width vectors -> not coverage; any incomplete call -> weight-fallback + degraded. Positive case preserved."
+ },
+ "service_call_totals": {
+  "by_service": {
+   "llm": {"attempt": 1, "success": 1, "failure": 0},
+   "embedding": {"attempt": 3, "success": 3, "failure": 0},
+   "qdrant": {"attempt": 3, "success": 3, "failure": 0},
+   "neo4j": {"attempt": 5, "success": 5, "failure": 0},
+   "pg": {"attempt": 3, "success": 3, "failure": 0}
+  },
+  "groups": {
+   "neo4j": {"attempt": 1, "success": 1, "failure": 0},
+   "pg": {"attempt": 2, "success": 2, "failure": 0}
+  }
+ },
+ "identity_guards": {
+  "identity_before_matches_frozen": true,
+  "identity_after_matches_frozen": true,
+  "identity_drift": [],
+  "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "counts_after": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  }
+ },
+ "verification": {
+  "queries": ["fact-002"],
+  "candidates_total": 10,
+  "candidates_verified": 10,
+  "vector_coverage": {
+   "fact-002": {
+    "observer_bound": true,
+    "observed_calls": [
+     {"stage": "entities", "vectors_requested": 29, "vectors_effective": 29, "missing_total": 0, "mismatched_total": 0, "unusable_total": 0, "points_returned_raw": 29, "complete": true},
+     {"stage": "relations", "vectors_requested": 3, "vectors_effective": 3, "missing_total": 0, "mismatched_total": 0, "unusable_total": 0, "points_returned_raw": 3, "complete": true}
+    ],
+    "vectors_requested": 32,
+    "vectors_effective": 32,
+    "points_returned_raw": 32,
+    "vector_backed": true,
+    "chunk_pick": "vector-similarity"
+   }
+  },
+  "note": "r4 fact-002 evidence (220/282/20/19 point counts across four queries) remains historical; those numbers were raw point counts and are superseded by effective-mapping evidence in this generation. Other three queries unchanged by V1 remediation per handoff (no repetitive full round required).",
+  "answer_llm_calls": 0,
+  "hashing_kv": null,
+  "llm_cache_rows_after": 16514
+ },
+ "tests": {
+  "total": 255,
+  "r4_review": "3/3 pass (2 former failures fixed, positive case preserved)",
+  "r3_review": "6/6 pass",
+  "r2_review": "8/8 pass",
+  "r1_review": "10/10 pass",
+  "submission_suite": "8/8 pass"
+ }
+}

@@ -1,0 +1,152 @@
+lightrag-hku: 1.5.7
+openai: 2.54.0
+asyncpg: 0.31.0
+pgvector: 0.5.0
+qdrant-client: 1.19.1
+neo4j: 6.3.1
+httpx: 0.28.1
+python-dotenv: 1.2.4
+lxml: 6.1.3
+Configuration: OK (51 keys; credential values hidden)
+{
+ "query_id": "search-e2bfa4e8d6e7",
+ "workspace": "default",
+ "status": "ambiguous",
+ "search_id": "e3cb2a39dee53d9d",
+ "catalog_snapshot_id": "4919b3938ad93747",
+ "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+ "parsed_code": {
+  "raw": "GB18466-2005",
+  "code": "GB18466",
+  "version": "2005"
+ },
+ "parsed_codes": [
+  {
+   "raw": "GB18466-2005",
+   "code": "GB18466",
+   "version": "2005"
+  }
+ ],
+ "query_text": "GB18466-2005 中 3 章定义了哪些术语？",
+ "candidates": [
+  {
+   "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+   "doc_name": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf",
+   "self_code": "GB18466",
+   "self_code_version": "2005",
+   "title": "医疗机构水污染物排放标准",
+   "doc_type": "standard",
+   "discovery": "code_exact",
+   "score": 1.0,
+   "citation": {
+    "kind": "catalog_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+   "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+   "heading": "2 规范性引用文件 公 告",
+   "chunk_order": 1,
+   "score": 0.1008230447769165,
+   "discovery": "keyword_core_and",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+    "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+   "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000",
+   "heading": "中华人民共和国国家标准",
+   "chunk_order": 0,
+   "score": 0.10000000149011612,
+   "discovery": "keyword_core_and",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+    "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000"
+   },
+   "citation_verified": true
+  }
+ ],
+ "notes": [],
+ "trace": [
+  {
+   "stage": "code_exact",
+   "code": "GB18466",
+   "version_requested": "2005",
+   "strict": false,
+   "hits": 1,
+   "version_matched": 1,
+   "selected_versions": [
+    "2005"
+   ],
+   "selected_docs": [
+    "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+   ]
+  },
+  {
+   "stage": "keyword_and",
+   "tsquery": "'3' & '章' & '定义' & '术语'",
+   "top_k": 20,
+   "restricted_to_code_docs": [
+    "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+   ],
+   "doc_hits": 0,
+   "chunk_hits": 0,
+   "elapsed_ms": 1
+  },
+  {
+   "stage": "keyword_and_diagnostics",
+   "per_term": [
+    {
+     "term": "3",
+     "chunk_hits": 26
+    },
+    {
+     "term": "章",
+     "chunk_hits": 0
+    },
+    {
+     "term": "定义",
+     "chunk_hits": 2
+    },
+    {
+     "term": "术语",
+     "chunk_hits": 2
+    }
+   ],
+   "absent_terms": [
+    "章"
+   ]
+  },
+  {
+   "stage": "keyword_core_and",
+   "tsquery": "'3' & '定义' & '术语'",
+   "dropped_absent_terms": [
+    "章"
+   ],
+   "chunk_hits": 2,
+   "note": "terms absent from the corpus cannot participate in AND"
+  },
+  {
+   "stage": "scope_expansion",
+   "requested_scope_id": null,
+   "requested_table_number": null,
+   "auto_targets": [],
+   "expansions": [],
+   "note": "expansion requested but the names no confirmable chapter/clause/table; no guessed range — top-level status is ambiguous"
+  }
+ ],
+ "elapsed_ms": 951
+}

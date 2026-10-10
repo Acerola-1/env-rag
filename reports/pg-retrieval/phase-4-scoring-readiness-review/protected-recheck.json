@@ -1,0 +1,63 @@
+{
+  "manifests": [
+    "reports/pg-retrieval/phase-4-round-1/pilot-manifest.json",
+    "reports/pg-retrieval/phase-4-round-1-assessment/pilot-manifest.json",
+    "reports/pg-retrieval/phase-4-round-1-assessment-r2/assessment-manifest.json",
+    "reports/pg-retrieval/phase-4-round-1-assessment-r3/assessment-manifest.json",
+    "reports/pg-retrieval/phase-4-improvement-1/improvement-1-manifest.json",
+    "reports/pg-retrieval/phase-4-improvement-1-review/review-manifest.json",
+    "reports/pg-retrieval/phase-4-improvement-1-r2/improvement-1-r2-manifest.json",
+    "reports/pg-retrieval/phase-4-improvement-1-review-r2/review-manifest.json",
+    "reports/pg-retrieval/phase-4-improvement-1-r3/improvement-1-r3-manifest.json",
+    "reports/pg-retrieval/phase-4-improvement-1-review-r3/review-manifest.json",
+    "reports/pg-retrieval/phase-4-improvement-2-diagnosis/improvement-2-manifest.json",
+    "reports/pg-retrieval/phase-4-improvement-2-diagnosis-review/review-manifest.json",
+    "reports/pg-retrieval/phase-4-improvement-2/improvement-2-manifest.json",
+    "reports/pg-retrieval/phase-4-improvement-2-review/review-manifest.json",
+    "reports/pg-retrieval/phase-4-improvement-2-r2/improvement-2-r2-manifest.json",
+    "reports/pg-retrieval/phase-4-improvement-2-review-r2/review-manifest.json",
+    "reports/pg-retrieval/phase-4-improvement-3-diagnosis/improvement-3-diagnosis-manifest.json",
+    "reports/pg-retrieval/phase-4-improvement-3-diagnosis-review/review-manifest.json",
+    "reports/pg-retrieval/phase-4-improvement-3/improvement-3-manifest.json",
+    "reports/pg-retrieval/phase-4-improvement-3-review/review-manifest.json",
+    "reports/pg-retrieval/phase-4-improvement-3-r2/improvement-3-r2-manifest.json",
+    "reports/pg-retrieval/phase-4-improvement-3-review-r2/review-manifest.json",
+    "reports/pg-retrieval/phase-4-improvements123-pg-validation-r1/pg-validation-manifest.json",
+    "reports/pg-retrieval/phase-4-improvements123-pg-validation-review/review-manifest.json",
+    "reports/pg-retrieval/phase-4-improvements123-local-validation-r1/local-validation-manifest.json",
+    "reports/pg-retrieval/phase-4-improvements123-local-validation-review/review-manifest.json",
+    "reports/pg-retrieval/phase-4-finalization-offline/finalization-manifest.json",
+    "reports/pg-retrieval/phase-4-finalization-offline-review/review-manifest.json",
+    "reports/pg-retrieval/phase-4-scoring-readiness/scoring-readiness-manifest.json"
+  ],
+  "entries_checked": 1233,
+  "drift": [],
+  "source_anchors": {
+    "src/env_rag_final/search/expand.py": {
+      "sha256": "7ce0a67ca9f325ec0263a54cd4850cc188ce8987f65c94666b3b6a464d28b5c1",
+      "match": true
+    },
+    "src/env_rag_final/enumerate_/doc_enum.py": {
+      "sha256": "495efb96f9ecb2f63fff73748e9686a9714090db886bb7ff28d27dde0d172944",
+      "match": true
+    },
+    "src/env_rag_final/answer.py": {
+      "sha256": "98328f7f18540b82ed5dc2798c4bc94957357b8ed8f76ccb37e3bf63c7c565df",
+      "match": true
+    },
+    "src/env_rag_final/search/query.py": {
+      "sha256": "25bed96d082198001bfb5502d15a6ff9890863c494ec2bfdac6adcb1812e7712",
+      "match": true
+    },
+    "src/env_rag_final/evaluation.py": {
+      "sha256": "a42d5c68952e40627a395f023650eae89f59a0527ac0208f45c90ea0f8dd7529",
+      "match": true
+    },
+    "tests/test_phase4_improvement3_union_enumeration.py": {
+      "sha256": "7857e7912c73e3fdd5a80a901649028932f8dd261727487bcf6b5755a69743f8",
+      "match": true
+    }
+  },
+  "before_after_entries_checked": 11,
+  "scope": "29 selected protection manifests; bounded independent scope"
+}

@@ -1,0 +1,1139 @@
+{
+  "review_date": "2026-10-06",
+  "reviewer": "main agent",
+  "submitted_sha256": "4124131f117f71d8ab643adfee27340153d601ebe5b97b77e851a835705c1373",
+  "positive_questions_reexamined": 31,
+  "counter_expectations_reexamined": 10,
+  "formal_gold_frozen": false,
+  "metrics_approved": false,
+  "questions": [
+    {
+      "query_id": "fact-001",
+      "category": "fact",
+      "review_note": "二级年平均SO2=60 μg/m³，一级20；按原始表头和平均时间核对。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+            "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001"
+          },
+          "kind": "table",
+          "target_exists": true,
+          "quote_is_supported_raw_cells": true,
+          "quoted_prefix_columns": 6
+        }
+      ],
+      "runtime_status": "ambiguous",
+      "current_program_set_check": null,
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "fact-002",
+      "category": "fact",
+      "review_note": "表1总汞0.05 mg/L；两片全表不替代定位到该物理行。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001"
+          },
+          "kind": "table",
+          "target_exists": true,
+          "quote_is_supported_raw_cells": true,
+          "quoted_prefix_columns": 3
+        }
+      ],
+      "runtime_status": "ok",
+      "current_program_set_check": null,
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "fact-003",
+      "category": "fact",
+      "review_note": "3.2定义及混合污水条件均在真实正文块内。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "unit_id": "385d9e8e0539a87e61f0407bda1739ad"
+          },
+          "kind": "block",
+          "target_exists": true,
+          "entire_quote_is_substring": true
+        }
+      ],
+      "runtime_status": "ambiguous",
+      "current_program_set_check": null,
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "fact-004",
+      "category": "fact",
+      "review_note": "III类COD=20 mg/L，列序I/II/III/IV/V已核对。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+            "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001"
+          },
+          "kind": "table",
+          "target_exists": true,
+          "quote_is_supported_raw_cells": true,
+          "quoted_prefix_columns": 7
+        }
+      ],
+      "runtime_status": "ambiguous",
+      "current_program_set_check": null,
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "fact-005",
+      "category": "fact",
+      "review_note": "二级新扩改建20/现有30两个条件均保留。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+            "unit_id": "tb-d6d711b0614234635955480a53f52a10-0001"
+          },
+          "kind": "table",
+          "target_exists": true,
+          "quote_is_supported_raw_cells": true,
+          "quoted_prefix_columns": 8
+        }
+      ],
+      "runtime_status": "ambiguous",
+      "current_program_set_check": null,
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "fact-006",
+      "category": "fact",
+      "review_note": "发布2012-02-29/实施2016-01-01由封面正文核对。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+            "unit_id": "9e2f2fd3df255a39b42ecc93f143bc74"
+          },
+          "kind": "block",
+          "target_exists": true,
+          "entire_quote_is_substring": true
+        }
+      ],
+      "runtime_status": "ambiguous",
+      "current_program_set_check": null,
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "fact-007",
+      "category": "fact",
+      "review_note": "表2 pH真实物理片来源组已补，表4/表2同值6~9有原始网格依据。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0007"
+          },
+          "kind": "table",
+          "target_exists": true,
+          "quote_is_supported_raw_cells": true,
+          "quoted_prefix_columns": 6
+        }
+      ],
+      "runtime_status": "ambiguous",
+      "current_program_set_check": null,
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "file-enum-001",
+      "category": "file_enum",
+      "review_note": "完整枚举入口已进入benchmark，当前集合与期望doc IDs一致；但用于discovery recall的候选仍被完整枚举替换，不能认可recall指标。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+          },
+          "kind": "document",
+          "reference": "catalog matched-set identity"
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1"
+          },
+          "kind": "document",
+          "reference": "catalog matched-set identity"
+        }
+      ],
+      "runtime_status": "ok",
+      "current_program_set_check": {
+        "expected_count": 2,
+        "produced_count": 2,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "file-enum-002",
+      "category": "file_enum",
+      "review_note": "完整枚举入口已进入benchmark，当前集合与期望doc IDs一致；但用于discovery recall的候选仍被完整枚举替换，不能认可recall指标。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4"
+          },
+          "kind": "document",
+          "reference": "catalog matched-set identity"
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216"
+          },
+          "kind": "document",
+          "reference": "catalog matched-set identity"
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2"
+          },
+          "kind": "document",
+          "reference": "catalog matched-set identity"
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63"
+          },
+          "kind": "document",
+          "reference": "catalog matched-set identity"
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-507bc40d1d6395c6932d2201e8483504"
+          },
+          "kind": "document",
+          "reference": "catalog matched-set identity"
+        }
+      ],
+      "runtime_status": "ok",
+      "current_program_set_check": {
+        "expected_count": 5,
+        "produced_count": 5,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "file-enum-003",
+      "category": "file_enum",
+      "review_note": "完整枚举入口已进入benchmark，当前集合与期望doc IDs一致；但用于discovery recall的候选仍被完整枚举替换，不能认可recall指标。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-0e575533a4ec747d16a0b24c381c5ede"
+          },
+          "kind": "document",
+          "reference": "catalog matched-set identity"
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-a13be3e29e82c913f3470fbe60b4bf6a"
+          },
+          "kind": "document",
+          "reference": "catalog matched-set identity"
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-d29dd8b36d29309ba693bfdc78ba3103"
+          },
+          "kind": "document",
+          "reference": "catalog matched-set identity"
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-bb0530b18d32763b3211b67365b36359"
+          },
+          "kind": "document",
+          "reference": "catalog matched-set identity"
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-969f75052f9f2473ad13e7b7aeaa31d8"
+          },
+          "kind": "document",
+          "reference": "catalog matched-set identity"
+        }
+      ],
+      "runtime_status": "ok",
+      "current_program_set_check": {
+        "expected_count": 5,
+        "produced_count": 5,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "file-enum-004",
+      "category": "file_enum",
+      "review_note": "完整枚举入口已进入benchmark，当前集合与期望doc IDs一致；但用于discovery recall的候选仍被完整枚举替换，不能认可recall指标。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-2e012f4fd0622b647d151de5d0ecc51b"
+          },
+          "kind": "document",
+          "reference": "catalog matched-set identity"
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-afd999b66f220c7ba8de2e624ba9c212"
+          },
+          "kind": "document",
+          "reference": "catalog matched-set identity"
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-395b34401e7ee48e833a01d1d5bb4256"
+          },
+          "kind": "document",
+          "reference": "catalog matched-set identity"
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-374860e84aca365bb7fc7abb64f719fe"
+          },
+          "kind": "document",
+          "reference": "catalog matched-set identity"
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b"
+          },
+          "kind": "document",
+          "reference": "catalog matched-set identity"
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-b423a0e3331541588988fd34496c349d"
+          },
+          "kind": "document",
+          "reference": "catalog matched-set identity"
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-d0039dda04ea5c8c113da89d31e893e3"
+          },
+          "kind": "document",
+          "reference": "catalog matched-set identity"
+        }
+      ],
+      "runtime_status": "ok",
+      "current_program_set_check": {
+        "expected_count": 7,
+        "produced_count": 7,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "file-enum-005",
+      "category": "file_enum",
+      "review_note": "完整枚举入口已进入benchmark，当前集合与期望doc IDs一致；但用于discovery recall的候选仍被完整枚举替换，不能认可recall指标。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+          },
+          "kind": "document",
+          "reference": "catalog matched-set identity"
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-b423a0e3331541588988fd34496c349d"
+          },
+          "kind": "document",
+          "reference": "catalog matched-set identity"
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b"
+          },
+          "kind": "document",
+          "reference": "catalog matched-set identity"
+        }
+      ],
+      "runtime_status": "ok",
+      "current_program_set_check": {
+        "expected_count": 3,
+        "produced_count": 3,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "file-enum-006",
+      "category": "file_enum",
+      "review_note": "完整枚举入口已进入benchmark，当前集合与期望doc IDs一致；但用于discovery recall的候选仍被完整枚举替换，不能认可recall指标。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-91f9049decde09153368d4b69f280e78"
+          },
+          "kind": "document",
+          "reference": "catalog matched-set identity"
+        }
+      ],
+      "runtime_status": "ok",
+      "current_program_set_check": {
+        "expected_count": 1,
+        "produced_count": 1,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "prose-enum-001",
+      "category": "prose_enum",
+      "review_note": "3章解析已修复，四术语正确；每条引句身份与原文回读成立。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "unit_id": "385d9e8e0539a87e61f0407bda1739ad",
+            "quote": "## 3 术语和定义\n本标准采用下列定义。\n3.1 医疗机构 medical organization\n指从事疾病诊断、治疗活动的医院、卫生院、疗养院、门诊部、诊所、卫生急救站等。\n3.2 医疗机构污水 medical organization wastewater\n指医疗机构门诊、病房、手术室、各类检验室、病理解剖室、放射室、洗衣房、太平间等处排出的诊疗、"
+          },
+          "kind": "block",
+          "target_exists": true,
+          "entire_quote_is_substring": true
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "unit_id": "ad9d292d3ee2fd88a8fd25b9efc8265a",
+            "quote": "## 3.3 污泥 sludge\n指医疗机构污水处理过程中产生的栅渣、沉淀污泥和化粪池污泥。"
+          },
+          "kind": "block",
+          "target_exists": true,
+          "entire_quote_is_substring": true
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "unit_id": "90d4b1c55cb8c6ff81dcbdfd55827165",
+            "quote": "## 3.4 废气 waste gas\n指医疗机构污水处理过程中产生的有害气体。"
+          },
+          "kind": "block",
+          "target_exists": true,
+          "entire_quote_is_substring": true
+        }
+      ],
+      "runtime_status": "ok",
+      "current_program_set_check": {
+        "expected_count": 4,
+        "produced_count": 4,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "prose-enum-002",
+      "category": "prose_enum",
+      "review_note": "两条内容gold已包含必要适用条件和排放去向；实测内容满足，保留原始跨度来源。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "unit_id": "ef6868c7bc693df8da996208421b815d"
+          },
+          "kind": "block",
+          "target_exists": true,
+          "entire_quote_is_substring": true
+        }
+      ],
+      "runtime_status": "ok",
+      "current_program_set_check": {
+        "expected_count": 2,
+        "produced_count": 2,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "prose-enum-003",
+      "category": "prose_enum",
+      "review_note": "实际四条可读且引用来源存在，但expected仍仅短关键词/4.3.4编号；反向篡改四条要求仍exact=True。冻结前须完整要求或必要主张合同。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "unit_id": "a00e1705c43ffacbca6c408197c6bac9"
+          },
+          "kind": "block",
+          "target_exists": true,
+          "entire_quote_is_substring": true
+        }
+      ],
+      "runtime_status": "ok",
+      "current_program_set_check": {
+        "expected_count": 4,
+        "produced_count": 4,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "prose-enum-004",
+      "category": "prose_enum",
+      "review_note": "候选已命中文档，但无auto_targets/无scope读取。scope3 confirmed、363字、requires_span=False、读取1/1 complete；不是Phase1大块/保守结构阻断。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+            "unit_id": "7b4770667908af51eb321bd82c89aaf7"
+          },
+          "kind": "block",
+          "target_exists": true,
+          "entire_quote_is_substring": true
+        }
+      ],
+      "runtime_status": "ambiguous",
+      "current_program_set_check": {
+        "expected_count": 5,
+        "produced_count": 0,
+        "exact_match": false,
+        "missing": [
+          "I 类 源头水、国家自然保护区",
+          "II 类 集中式生活饮用水地表水源地一级保护区、珍稀水生生物栖息地、鱼虾类产卵场、仔稚幼鱼的索饵场等",
+          "III 类 集中式生活饮用水地表水源地二级保护区、鱼虾类越冬场、洄游通道、水产养殖区等渔业水域及游泳区",
+          "IV 类 一般工业用水区及人体非直接接触的娱乐用水区",
+          "V 类 农业用水区及一般景观要求水域"
+        ],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "prose-enum-005",
+      "category": "prose_enum",
+      "review_note": "无题面范围号，Phase2没有确认scope。scope4.1 confirmed、225字、requires_span=False、读取1/1 complete；需题意定位及一级/二级/三级名称投影。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+            "unit_id": "d9ead1de90c8e67959ccb2b4a67cac4a"
+          },
+          "kind": "block",
+          "target_exists": true,
+          "entire_quote_is_substring": true
+        }
+      ],
+      "runtime_status": "ambiguous",
+      "current_program_set_check": {
+        "expected_count": 3,
+        "produced_count": 0,
+        "exact_match": false,
+        "missing": [
+          "一级",
+          "二级",
+          "三级"
+        ],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "prose-enum-006",
+      "category": "prose_enum",
+      "review_note": "正文语义不再混到4.3/4.4，但新fallback绕过引用绑定/验证并截400字；唯一条目无workspace/doc/snapshot/unit身份却verified=True，程序exact不能当引用合格。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+            "unit_id": "7f9dddaf02f372cc7d329f4678c46fbc"
+          },
+          "kind": "block",
+          "target_exists": true,
+          "entire_quote_is_substring": true
+        }
+      ],
+      "runtime_status": "ok",
+      "current_program_set_check": {
+        "expected_count": 1,
+        "produced_count": 1,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "table-enum-001",
+      "category": "table_enum",
+      "review_note": "13原始行引用正确，完整cells期望正确；评分器对同名额外错行仍放行，需修复full-row模式额外项判断。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "quote": "1 | 总汞 | 0.05"
+          },
+          "kind": "table",
+          "target_exists": true,
+          "quote_is_supported_raw_cells": true,
+          "quoted_prefix_columns": 3
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "quote": "5 | 六价铬 | 0.5"
+          },
+          "kind": "table",
+          "target_exists": true,
+          "quote_is_supported_raw_cells": true,
+          "quoted_prefix_columns": 3
+        }
+      ],
+      "runtime_status": "ok",
+      "current_program_set_check": {
+        "expected_count": 13,
+        "produced_count": 13,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "table-enum-002",
+      "category": "table_enum",
+      "review_note": "六污染物名称期望正确，程序按名称投影可比较14物理行；应分别标原始行数与投影项目数。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+            "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001"
+          },
+          "kind": "table",
+          "target_exists": true,
+          "quote_is_supported_raw_cells": true,
+          "quoted_prefix_columns": 6
+        }
+      ],
+      "runtime_status": "ok",
+      "current_program_set_check": {
+        "expected_count": 6,
+        "produced_count": 14,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "table-enum-003",
+      "category": "table_enum",
+      "review_note": "九污染物期望及72行来源存在；ambiguous保留失败，不强行放宽Phase1结构关系。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+            "unit_id": "tb-d6d711b0614234635955480a53f52a10-0002",
+            "quote": "1 | 硫化氢 | 15 | 0.33"
+          },
+          "kind": "table",
+          "target_exists": true,
+          "quote_is_supported_raw_cells": true,
+          "quoted_prefix_columns": 4
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+            "unit_id": "tb-d6d711b0614234635955480a53f52a10-0003",
+            "quote": "2 | 甲硫醇 | 35 | 0.24"
+          },
+          "kind": "table",
+          "target_exists": true,
+          "quote_is_supported_raw_cells": true,
+          "quoted_prefix_columns": 4
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-d6d711b0614234635955480a53f52a10",
+            "unit_id": "tb-d6d711b0614234635955480a53f52a10-0004",
+            "quote": "7 | 三甲胺 | 15 | 0.54"
+          },
+          "kind": "table",
+          "target_exists": true,
+          "quote_is_supported_raw_cells": true,
+          "quoted_prefix_columns": 4
+        }
+      ],
+      "runtime_status": "ambiguous",
+      "current_program_set_check": {
+        "expected_count": 9,
+        "produced_count": 72,
+        "exact_match": false,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": true
+      },
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "table-enum-004",
+      "category": "table_enum",
+      "review_note": "24个seq/name期望和原始表相符，名称比较已有效。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+            "unit_id": "tb-91f9049decde09153368d4b69f280e78-0001"
+          },
+          "kind": "table",
+          "target_exists": true,
+          "quote_is_supported_raw_cells": true,
+          "quoted_prefix_columns": 3
+        }
+      ],
+      "runtime_status": "ok",
+      "current_program_set_check": {
+        "expected_count": 24,
+        "produced_count": 24,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "table-enum-005",
+      "category": "table_enum",
+      "review_note": "答案材料实际为30数据行/24控制项目，另存表头/脚注上下文；报告称24数据行应更正。预处理浓度/负荷及总余氯条件均留在材料中。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "unit_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0002"
+          },
+          "kind": "table",
+          "target_exists": true,
+          "quote_is_supported_raw_cells": true,
+          "quoted_prefix_columns": 4
+        }
+      ],
+      "runtime_status": "ok",
+      "current_program_set_check": {
+        "expected_count": 30,
+        "produced_count": 30,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "table-enum-006",
+      "category": "table_enum",
+      "review_note": "十污染物名称期望和原始表相符，14原始方法行按名称投影比对。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+            "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003"
+          },
+          "kind": "table",
+          "target_exists": true,
+          "quote_is_supported_raw_cells": true,
+          "quoted_prefix_columns": 5
+        }
+      ],
+      "runtime_status": "ok",
+      "current_program_set_check": {
+        "expected_count": 10,
+        "produced_count": 14,
+        "exact_match": true,
+        "missing": [],
+        "extra": [],
+        "citation_unverified": 0,
+        "expansion_incomplete": false
+      },
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "syn-001",
+      "category": "synthesis",
+      "review_note": "两表数值及新增前言日期组均有原文支持；前言未进候选预算为保留的真实召回失败。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+            "unit_id": "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+            "quote": "6 | 颗粒物(粒径小于等于2.5μm) | 年平均 | 15 | 35 | $μg/m^3$"
+          },
+          "kind": "table",
+          "target_exists": true,
+          "quote_is_supported_raw_cells": true,
+          "quoted_prefix_columns": 6
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+            "unit_id": "tb-4c883d21fa02a53189e0911c3d59d1d1-0001",
+            "quote": "1 | 二氧化硫( $SO_2$ ) | 年平均 | 20 | 60 | 20 | 20 | $μg/m^3$"
+          },
+          "kind": "table",
+          "target_exists": true,
+          "quote_is_supported_raw_cells": true,
+          "quoted_prefix_columns": 8
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+            "unit_id": "eebc13e2a0348fa67955192750d4e9e6",
+            "quote": "本标准自实施之日起至2030年12月31日，环境空气污染物基本项目实施过渡阶段浓度限值；2031年1月1日起，在全国范围内实施基本项目浓度限值。"
+          },
+          "kind": "block",
+          "target_exists": true,
+          "entire_quote_is_substring": true
+        }
+      ],
+      "runtime_status": "ambiguous",
+      "current_program_set_check": null,
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "syn-002",
+      "category": "synthesis",
+      "review_note": "真实正文目标和重复6.1.2要求保留，排序失败不改gold。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "unit_id": "ef6868c7bc693df8da996208421b815d",
+            "quote": "## 4.1 污水排放要求\n4.1.1 传染病和结核病医疗机构污水排放一律执行表1的规定。\n4.1.2 县级及县级以上或 20 张床位及以上的综合医疗机构和其他医疗机构污水排放执行表 2 的规定。直接或间接排入地表水体和海域的污水执行排放标准，排入终端已建有正常运行城镇二级污水处理厂的下水道的污水，执行预处理标准。\nGB 18466 — 2005\n<tabl"
+          },
+          "kind": "block",
+          "target_exists": true,
+          "entire_quote_is_substring": true
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "unit_id": "e0dae0566f942e76eb779d90de929d39",
+            "quote": "## 6.1 污水取样与监测\n6.1.1 应按规定设置科室处理设施排出口和单位污水外排口，并设置排放口标志。\n6.1.2 表 1 第 16～22 项，表 2 第 15～21 项在科室处理设施排出口取样，总 $\\alpha$ 、总 $\\beta$ 在衰变池出口取样监测。其他污染物的采样点一律设在排污单位的外排口。\n6.1.2 医疗机构污水外排口处应设污水计量装"
+          },
+          "kind": "block",
+          "target_exists": true,
+          "entire_quote_is_substring": true
+        }
+      ],
+      "runtime_status": "ambiguous",
+      "current_program_set_check": null,
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "syn-003",
+      "category": "synthesis",
+      "review_note": "第一/第二类取样位置正文依据正确；完整目标块存在，引用不得只取无关块头。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "unit_id": "e0ee2cef12742c7946cfe0a26ff51f6f"
+          },
+          "kind": "block",
+          "target_exists": true,
+          "entire_quote_is_substring": true
+        }
+      ],
+      "runtime_status": "ambiguous",
+      "current_program_set_check": null,
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "syn-004",
+      "category": "synthesis",
+      "review_note": "两个适用范围已改为正文块；不再指目次，逐字quote回读正确。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+            "unit_id": "1be5a15442ef9d0368b3e1367a03a2fb",
+            "quote": "## 1 范围\n1.1 本标准按照地表水环境功能分类和保护目标，规定了水环境质量应控制的项目及限值，以及水质评价、水质项目的分析方法和标准的实施与监督。\n1.2 本标准适用于中华人民共和国领域内江河、湖泊、运河、渠道、水库等具有使用功能的地表水水域。具有特定功能的水域，执行相应的专业用水水质标准。"
+          },
+          "kind": "block",
+          "target_exists": true,
+          "entire_quote_is_substring": true
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+            "unit_id": "6291e97f42b5eed29d234cf1e96ed724",
+            "quote": "## 1 适用范围\n本标准规定了环境空气功能区分类、标准分级、污染物项目、平均时间及浓度限值、监测方法、数据统计的有效性规定及实施与监督等内容。\n本标准适用于环境空气质量评价与管理。"
+          },
+          "kind": "block",
+          "target_exists": true,
+          "entire_quote_is_substring": true
+        }
+      ],
+      "runtime_status": "ambiguous",
+      "current_program_set_check": null,
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "syn-005",
+      "category": "synthesis",
+      "review_note": "适用条件正文及两表各自的行quote已分开，当前逐字依据成立。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "unit_id": "ef6868c7bc693df8da996208421b815d",
+            "quote": "## 4.1 污水排放要求\n4.1.1 传染病和结核病医疗机构污水排放一律执行表1的规定。\n4.1.2 县级及县级以上或 20 张床位及以上的综合医疗机构和其他医疗机构污水排放执行表 2 的规定。直接或间接排入地表水体和海域的污水执行排放标准，排入终端已建有正常运行城镇二级污水处理厂的下水道的污水，执行预处理标准。\nGB 18466 — 2005\n<tabl"
+          },
+          "kind": "block",
+          "target_exists": true,
+          "entire_quote_is_substring": true
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "unit_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0001",
+            "quote": "1 | 粪大肠菌群数/(MPN/L) | 100"
+          },
+          "kind": "table",
+          "target_exists": true,
+          "quote_is_supported_raw_cells": true,
+          "quoted_prefix_columns": 3
+        },
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "unit_id": "tb-68a03b50e1ba1ffc6a0116529f694fe1-0002",
+            "quote": "1 | 粪大肠菌群数/(MPN/L) | 500 | 5 000"
+          },
+          "kind": "table",
+          "target_exists": true,
+          "quote_is_supported_raw_cells": true,
+          "quoted_prefix_columns": 4
+        }
+      ],
+      "runtime_status": "ok",
+      "current_program_set_check": null,
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    },
+    {
+      "query_id": "syn-006",
+      "category": "synthesis",
+      "review_note": "两建设时间对应表组和批准日期规则有原文依据；日期条件不能省略。",
+      "typed_source_reread": [
+        {
+          "identity": {
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "unit_id": "e0ee2cef12742c7946cfe0a26ff51f6f"
+          },
+          "kind": "block",
+          "target_exists": true,
+          "entire_quote_is_substring": true
+        }
+      ],
+      "runtime_status": "ambiguous",
+      "current_program_set_check": null,
+      "gold_review_status_for_metrics": "unreviewed",
+      "benchmark_frozen": false
+    }
+  ],
+  "counter_examples": [
+    {
+      "counter_id": "neg-001",
+      "expectation": "missing；库内 2012/2026，另一个版本不得替代",
+      "review": "expectation retained from previous full review; current status-only logs do not independently prove all source/answer semantics"
+    },
+    {
+      "counter_id": "neg-002",
+      "expectation": "组合键 (workspace,id) 隔离",
+      "review": "expectation retained from previous full review; current status-only logs do not independently prove all source/answer semantics"
+    },
+    {
+      "counter_id": "neg-003",
+      "expectation": "仅 self_code=GB3838 计入；引用该编号的文档不得计入自身编号集合",
+      "review": "expectation retained from previous full review; current status-only logs do not independently prove all source/answer semantics"
+    },
+    {
+      "counter_id": "neg-004",
+      "expectation": "必须合并两物理片（13 项）；只给 5/10 项并 complete 属失败",
+      "review": "expectation retained from previous full review; current status-only logs do not independently prove all source/answer semantics"
+    },
+    {
+      "counter_id": "neg-005",
+      "expectation": "逻辑表身份含文档+章节+表号，跨文档不合并",
+      "review": "expectation retained from previous full review; current status-only logs do not independently prove all source/answer semantics"
+    },
+    {
+      "counter_id": "neg-006",
+      "expectation": "missing；不得编造或近似替代（含无年份裸编号同样拒绝）",
+      "review": "expectation retained from previous full review; current status-only logs do not independently prove all source/answer semantics"
+    },
+    {
+      "counter_id": "neg-007",
+      "expectation": "不能确认时 ambiguous，不强行声称完整",
+      "review": "expectation retained from previous full review; current status-only logs do not independently prove all source/answer semantics"
+    },
+    {
+      "counter_id": "neg-008",
+      "expectation": "partial + 已处理/总量；不得静默截断后 complete",
+      "review": "expectation retained from previous full review; current status-only logs do not independently prove all source/answer semantics"
+    },
+    {
+      "counter_id": "neg-009",
+      "expectation": "该文件自身因内容重复未入库（无独立 doc 身份）；但其内容与已入库原件相同，可通过原件检索到。不得把去重当作内容丢失",
+      "review": "expectation retained from previous full review; current status-only logs do not independently prove all source/answer semantics"
+    },
+    {
+      "counter_id": "neg-010",
+      "expectation": "修改单只修改指定条款；原标准问题必须读原文档，不得用修改单替代",
+      "review": "expectation retained from previous full review; current status-only logs do not independently prove all source/answer semantics"
+    }
+  ],
+  "note": "Submitted labels were not changed. Source references checked; incomplete expected requirements/scoring and a real unbound citation still block freezing."
+}

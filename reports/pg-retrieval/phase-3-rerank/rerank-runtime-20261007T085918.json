@@ -1,0 +1,625 @@
+{
+ "task": "5.4 joint rerank over fused candidates (bounded, recorded)",
+ "started_at": "2026-10-07T08:59:17+0800",
+ "service_contract": {
+  "endpoint": "{host}/v1/rerank (POST)",
+  "request": [
+   "model",
+   "query",
+   "documents",
+   "top_n",
+   "return_documents=false"
+  ],
+  "response": [
+   "id",
+   "results[{index, relevance_score}]",
+   "meta.tokens"
+  ],
+  "errors": {
+   "401/403": "auth",
+   "429": "rate limit",
+   "5xx": "service"
+  }
+ },
+ "input_budget": 40,
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "results": [
+  {
+   "query_id": "fact-002",
+   "query": "GB 8978-1996 表 1 中总汞的最高允许排放浓度是多少？",
+   "workspace": "default",
+   "skipped": null,
+   "inputs": [
+    {
+     "input_index": 0,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "7ff986aed318b42ea5139ee7985c80a70bc265568b0b89dbe009eab206b5e6f1",
+     "content_len": 2957,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "4.3 其他规定 污水综合排放标准",
+       "chunk_order": 1,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.002201834926381707
+       }
+      },
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "4.3 其他规定",
+       "chunk_order": null,
+       "discovery": "table_range_binding",
+       "citation_verified": true,
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "4.3 其他规定",
+       "chunk_order": null,
+       "discovery": "table_range_binding",
+       "citation_verified": true,
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996",
+        "edge:GB 8978-1996|pH",
+        "edge:GB 8978-1996|总汞",
+        "edge:GB 8978-1996|石油类",
+        "edge:GB 8978-1996|六价铬",
+        "edge:GB 8978-1996|苯并(a)芘",
+        "edge:GB 8978-1996|总铬",
+        "edge:GB 8978-1996|总镉",
+        "edge:GB 8978-1996|化学需氧量(COD)",
+        "edge:GB 8978-1996|总铅",
+        "edge:GB 8978-1996|动植物油",
+        "edge:GB 8978-1996|挥发酚",
+        "edge:GB 8978-1996|总银",
+        "edge:GB 8978-1996|悬浮物(SS)",
+        "edge:GB 8978-1996|总砷",
+        "edge:GB 8978-1996|五日生化需氧量(BOD5)",
+        "edge:GB 8978-1996|总镍",
+        "edge:GB 8978-1996|色度(稀释倍数)",
+        "edge:GB 8978-1996|烷基汞",
+        "edge:GB 8978-1996|总铍",
+        "edge:GB 8978-1996|总 α 放射性",
+        "edge:GB 8978-1996|总 β 放射性",
+        "edge:GB 8978-1996|总氰化合物"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 0,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 0,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "text_sha256": "7ff986aed318b42ea5139ee7985c80a70bc265568b0b89dbe009eab206b5e6f1"
+    },
+    {
+     "input_index": 1,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "0788999c39722c5b9696840b2b3072bf120fde1415fb4e61c7d3f2999614e511",
+     "content_len": 1166,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996",
+        "edge:GB 8978-1996|氨氮",
+        "edge:GB 8978-1996|氟化物",
+        "edge:GB 8978-1996|甲醛",
+        "edge:GB 8978-1996|硫化物",
+        "edge:GB 8978-1996|苯胺类",
+        "edge:GB 8978-1996|硝基苯类",
+        "edge:GB 8978-1996|阴离子表面活性剂(LAS)",
+        "edge:GB 8978-1996|磷酸盐(以P计)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 1,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 1,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "text_sha256": "0788999c39722c5b9696840b2b3072bf120fde1415fb4e61c7d3f2999614e511"
+    },
+    {
+     "input_index": 2,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-007",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "d50b815345c9d7c1018a19b71413c82096102dff7421df5a435fbbe27b53f282",
+     "content_len": 1009,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-007",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996",
+        "edge:GB 8978-1996|氟化物",
+        "edge:GB 8978-1996|甲醛",
+        "edge:GB 8978-1996|总铜",
+        "edge:GB 8978-1996|苯胺类",
+        "edge:GB 8978-1996|总锌",
+        "edge:GB 8978-1996|硝基苯类",
+        "edge:GB 8978-1996|阴离子表面活性剂(LAS)",
+        "edge:GB 8978-1996|磷酸盐"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 2,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 2,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "text_sha256": "d50b815345c9d7c1018a19b71413c82096102dff7421df5a435fbbe27b53f282"
+    },
+    {
+     "input_index": 3,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-010",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "c8c30f1ca5257761d88f7c4b4933679d6e4b3202869c10f376d68bfbb52e55ff",
+     "content_len": 1037,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-010",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996",
+        "edge:GB 8978-1996|氯苯",
+        "edge:GB 8978-1996|苯酚",
+        "edge:2,4,6-三氯酚|GB 8978-1996",
+        "edge:2,4-二硝基氯苯|GB 8978-1996",
+        "edge:2,4-二氯酚|GB 8978-1996",
+        "edge:GB 8978-1996|间-甲酚",
+        "edge:GB 8978-1996|对-硝基氯苯",
+        "edge:GB 8978-1996|对-二氯苯",
+        "edge:GB 8978-1996|邻-二氯苯",
+        "edge:GB 8978-1996|邻苯二甲酸二丁脂"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 3,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 3,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "text_sha256": "c8c30f1ca5257761d88f7c4b4933679d6e4b3202869c10f376d68bfbb52e55ff"
+    },
+    {
+     "input_index": 4,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "edd0690d291ae883182e80778116d2d446cf9fa62f017495f5faf3993a0b1317",
+     "content_len": 2015,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996",
+        "entity:GB 8978-88",
+        "edge:GB 8978-1996|污水综合排放标准",
+        "edge:GB 8978-1996|GB 8978-88"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 4,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 4,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "text_sha256": "edd0690d291ae883182e80778116d2d446cf9fa62f017495f5faf3993a0b1317"
+    },
+    {
+     "input_index": 5,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-003",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "021a04aeb66eca0df78f2e4aa19f1d895b6461f3eaf9fdfbb033e29b562304bf",
+     "content_len": 1284,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-003",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996",
+        "edge:GB 8978-1996|总铜",
+        "edge:GB 8978-1996|总锌",
+        "edge:GB 8978-1996|元素磷",
+        "edge:GB 8978-1996|总锰",
+        "edge:GB 8978-1996|有机磷农药(以P计)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 5,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 5,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "text_sha256": "021a04aeb66eca0df78f2e4aa19f1d895b6461f3eaf9fdfbb033e29b562304bf"
+    },
+    {
+     "input_index": 6,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "30caaf295cd4413427069707e1b278e17f5209047ace92764555a0008c8a9228",
+     "content_len": 3483,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996污水综合排放标准",
+        "edge:GB 8978-1996污水综合排放标准|氨氮",
+        "edge:GB 8978-1996污水综合排放标准|pH",
+        "edge:GB 8978-1996污水综合排放标准|石油类",
+        "edge:GB 8978-1996污水综合排放标准|硫化物",
+        "edge:GB 8978-1996污水综合排放标准|化学需氧量(COD)",
+        "edge:GB 8978-1996污水综合排放标准|挥发酚",
+        "edge:GB 8978-1996污水综合排放标准|动植物油",
+        "edge:GB 8978-1996污水综合排放标准|悬浮物(SS)",
+        "edge:GB 8978-1996污水综合排放标准|五日生化需氧量(BOD5)",
+        "edge:GB 8978-1996污水综合排放标准|酒精工业",
+        "edge:GB 8978-1996污水综合排放标准|色度(稀释倍数)",
+        "edge:GB 8978-1996污水综合排放标准|电影洗片",
+        "edge:GB 8978-1996污水综合排放标准|发酵酿造工业",
+        "edge:GB 8978-1996污水综合排放标准|总氰化合物",
+        "edge:GB 8978-1996污水综合排放标准|苎麻脱胶工业",
+        "edge:GB 8978-1996污水综合排放标准|味精工业",
+        "edge:GB 8978-1996污水综合排放标准|羊干皮",
+        "edge:GB 8978-1996污水综合排放标准|牛干皮",
+        "edge:GB 8978-1996污水综合排放标准|石油沥青工业",
+        "edge:GB 8978-1996污水综合排放标准|铁路货车洗刷",
+        "edge:GB 8978-1996污水综合排放标准|化纤浆粕",
+        "edge:GB 8978-1996污水综合排放标准|硫酸工业(水洗法)",
+        "edge:GB 8978-1996污水综合排放标准|铬盐工业",
+        "edge:GB 8978-1996污水综合排放标准|啤酒工业",
+        "edge:GB 8978-1996污水综合排放标准|粘胶纤维工业(单纯纤维)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 6,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 6,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "text_sha256": "30caaf295cd4413427069707e1b278e17f5209047ace92764555a0008c8a9228"
+    },
+    {
+     "input_index": 7,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "53221549df48809f4afa1d25f6a43302b504d310d754a4408d26f30dea70b48b",
+     "content_len": 1360,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 7,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 7,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "text_sha256": "53221549df48809f4afa1d25f6a43302b504d310d754a4408d26f30dea70b48b"
+    },
+    {
+     "input_index": 8,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-008",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "cc3980a8142cb567e7587e5649ea5e302c57d91c541004c705e8bfaa5246f033",
+     "content_len": 1017,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-008",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996",
+        "edge:GB 8978-1996|马拉硫磷",
+        "edge:GB 8978-1996|甲基对硫磷",
+        "edge:GB 8978-1996|乐果",
+        "edge:GB 8978-1996|元素磷",
+        "edge:GB 8978-1996|对硫磷",
+        "edge:GB 8978-1996|总锰",
+        "edge:GB 8978-1996|显影剂及氧化物总量",
+        "edge:GB 8978-1996|有机磷农药(以P计)",
+        "edge:GB 8978-1996|五氯酚及五氯酚钠(以五氯酚计)",
+        "edge:GB 8978-1996|彩色显影剂"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 8,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 8,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "text_sha256": "cc3980a8142cb567e7587e5649ea5e302c57d91c541004c705e8bfaa5246f033"
+    },
+    {
+     "input_index": 9,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-011",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "48131450b943be64ec657665bd2b760a436598895a8c4ff9601ca6ccf9ccfcde",
+     "content_len": 1113,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-011",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996",
+        "edge:GB 8978-1996|污水综合排放标准"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 9,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 9,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      }
+     ],
+     "text_sha256": "48131450b943be64ec657665bd2b760a436598895a8c4ff9601ca6ccf9ccfcde"
+    }
+   ],
+   "call": {
+    "service": "rerank",
+    "operation": "rerank",
+    "endpoint": "/v1/rerank",
+    "model": "Qwen/Qwen3-Reranker-4B",
+    "documents_sent": 10,
+    "chars_sent": 16441,
+    "elapsed_ms": 133,
+    "status_code": 404,
+    "status": "failure",
+    "error": "HTTP 404",
+    "response_evidence": "Not Found"
+   },
+   "ordered": [
+    {
+     "input_index": 0,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+     "rerank_score": null,
+     "source_order": "fusion-original"
+    },
+    {
+     "input_index": 1,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002",
+     "rerank_score": null,
+     "source_order": "fusion-original"
+    },
+    {
+     "input_index": 2,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-007",
+     "rerank_score": null,
+     "source_order": "fusion-original"
+    },
+    {
+     "input_index": 3,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-010",
+     "rerank_score": null,
+     "source_order": "fusion-original"
+    },
+    {
+     "input_index": 4,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000",
+     "rerank_score": null,
+     "source_order": "fusion-original"
+    },
+    {
+     "input_index": 5,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-003",
+     "rerank_score": null,
+     "source_order": "fusion-original"
+    },
+    {
+     "input_index": 6,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006",
+     "rerank_score": null,
+     "source_order": "fusion-original"
+    },
+    {
+     "input_index": 7,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019",
+     "rerank_score": null,
+     "source_order": "fusion-original"
+    },
+    {
+     "input_index": 8,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-008",
+     "rerank_score": null,
+     "source_order": "fusion-original"
+    },
+    {
+     "input_index": 9,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-011",
+     "rerank_score": null,
+     "source_order": "fusion-original"
+    }
+   ],
+   "degraded": [
+    "rerank call failed (HTTP 404); falling back to the original fusion order with NO fabricated scores"
+   ],
+   "status": "degraded",
+   "skipped_inputs": []
+  }
+ ],
+ "finished_at": "2026-10-07T08:59:18+0800"
+}

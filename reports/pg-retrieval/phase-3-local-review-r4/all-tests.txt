@@ -1,0 +1,121 @@
+........................................................................ [ 28%]
+........................................................................ [ 56%]
+.......................................FF............................... [ 84%]
+.......................................                                  [100%]
+=================================== FAILURES ===================================
+__ test_vector_coverage_requires_vectors_not_just_returned_points[False-True] __
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x117f0ed20>
+has_vector = False, correct_identity = True
+
+    @pytest.mark.parametrize(
+        "has_vector,correct_identity", [(False, True), (True, False), (True, True)]
+    )
+    def test_vector_coverage_requires_vectors_not_just_returned_points(
+        monkeypatch, has_vector, correct_identity
+    ):
+        import lightrag.kg.qdrant_impl as qmodule
+    
+        fixture.install_fetch(monkeypatch, with_entity=True)
+        client_class = qmodule.QdrantClient
+    
+        class Client(client_class):
+            def query_points(self, **kwargs):
+                self.reads.append("query_points")
+                return SimpleNamespace(
+                    points=[SimpleNamespace(id="entity", payload={"entity_name": "A"}, score=0.8)]
+                )
+    
+            def retrieve(self, **kwargs):
+                self.reads.append("retrieve")
+                # Exactly the requested IDs are returned, but missing vectors
+                # are discarded by the actual release get_vectors_by_ids().
+                return [
+                    SimpleNamespace(
+                        id=rid,
+                        payload={} if correct_identity else {qmodule.ID_FIELD: "unrelated-chunk"},
+                        vector=[1.0] * 2560 if has_vector else None,
+                    )
+                    for rid in kwargs["ids"]
+                ]
+    
+        monkeypatch.setattr(qmodule, "QdrantClient", Client)
+        result = asyncio.run(la.LocalCandidateAdapter(fixture.fixture.VALUES).fetch("fixture"))
+        assert result.candidates and all(c.verified for c in result.candidates)
+        supported = has_vector and correct_identity
+>       assert result.sorting_sources["chunk_pick_vectors"]["vector_backed"] is supported
+E       assert True is False
+
+tests/test_local_adapter_review_r4.py:54: AssertionError
+----------------------------- Captured stderr call -----------------------------
+INFO: Qdrant collection: lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d
+INFO: Qdrant collection: lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d
+WARNING: Vector similarity chunk selection: no vectors retrieved from chunks_vdb
+WARNING: No entity-related chunks selected by vector similarity, falling back to WEIGHT method
+INFO: Selecting 1 from 1 entity-related chunks by weighted polling
+------------------------------ Captured log call -------------------------------
+INFO     lightrag:qdrant_impl.py:507 Qdrant collection: lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d
+INFO     lightrag:qdrant_impl.py:507 Qdrant collection: lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d
+WARNING  lightrag:utils.py:6038 Vector similarity chunk selection: no vectors retrieved from chunks_vdb
+WARNING  lightrag:operate.py:6241 No entity-related chunks selected by vector similarity, falling back to WEIGHT method
+INFO     lightrag:operate.py:6262 Selecting 1 from 1 entity-related chunks by weighted polling
+__ test_vector_coverage_requires_vectors_not_just_returned_points[True-False] __
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x117f0fd40>
+has_vector = True, correct_identity = False
+
+    @pytest.mark.parametrize(
+        "has_vector,correct_identity", [(False, True), (True, False), (True, True)]
+    )
+    def test_vector_coverage_requires_vectors_not_just_returned_points(
+        monkeypatch, has_vector, correct_identity
+    ):
+        import lightrag.kg.qdrant_impl as qmodule
+    
+        fixture.install_fetch(monkeypatch, with_entity=True)
+        client_class = qmodule.QdrantClient
+    
+        class Client(client_class):
+            def query_points(self, **kwargs):
+                self.reads.append("query_points")
+                return SimpleNamespace(
+                    points=[SimpleNamespace(id="entity", payload={"entity_name": "A"}, score=0.8)]
+                )
+    
+            def retrieve(self, **kwargs):
+                self.reads.append("retrieve")
+                # Exactly the requested IDs are returned, but missing vectors
+                # are discarded by the actual release get_vectors_by_ids().
+                return [
+                    SimpleNamespace(
+                        id=rid,
+                        payload={} if correct_identity else {qmodule.ID_FIELD: "unrelated-chunk"},
+                        vector=[1.0] * 2560 if has_vector else None,
+                    )
+                    for rid in kwargs["ids"]
+                ]
+    
+        monkeypatch.setattr(qmodule, "QdrantClient", Client)
+        result = asyncio.run(la.LocalCandidateAdapter(fixture.fixture.VALUES).fetch("fixture"))
+        assert result.candidates and all(c.verified for c in result.candidates)
+        supported = has_vector and correct_identity
+>       assert result.sorting_sources["chunk_pick_vectors"]["vector_backed"] is supported
+E       assert True is False
+
+tests/test_local_adapter_review_r4.py:54: AssertionError
+----------------------------- Captured stderr call -----------------------------
+INFO: Qdrant collection: lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d
+INFO: Qdrant collection: lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d
+WARNING: Vector similarity chunk selection:  no vector found for chunk doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000
+WARNING: No entity-related chunks selected by vector similarity, falling back to WEIGHT method
+INFO: Selecting 1 from 1 entity-related chunks by weighted polling
+------------------------------ Captured log call -------------------------------
+INFO     lightrag:qdrant_impl.py:507 Qdrant collection: lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d
+INFO     lightrag:qdrant_impl.py:507 Qdrant collection: lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d
+WARNING  lightrag:utils.py:6083 Vector similarity chunk selection:  no vector found for chunk doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000
+WARNING  lightrag:operate.py:6241 No entity-related chunks selected by vector similarity, falling back to WEIGHT method
+INFO     lightrag:operate.py:6262 Selecting 1 from 1 entity-related chunks by weighted polling
+=========================== short test summary info ============================
+FAILED tests/test_local_adapter_review_r4.py::test_vector_coverage_requires_vectors_not_just_returned_points[False-True]
+FAILED tests/test_local_adapter_review_r4.py::test_vector_coverage_requires_vectors_not_just_returned_points[True-False]
+2 failed, 253 passed in 9.74s

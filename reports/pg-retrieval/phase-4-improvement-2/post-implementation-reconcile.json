@@ -1,0 +1,123 @@
+[
+ {
+  "query_id": "prose-enum-001",
+  "evidence_label": "存量产物读取 + 离线answer入口回放（实施后新终态；服务禁止）",
+  "allowed": [
+   "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+  ],
+  "rejected": [
+   {
+    "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+    "reason": "canonical identity GB8978-1996 matches no requested branch ['GB18466-2005']"
+   }
+  ],
+  "unresolved": [
+   {
+    "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+    "reason": "self_code unknown in the catalog — never guessed from a name; only the recorded attribution route may carry such a document"
+   }
+  ],
+  "unconfirmed_branches": [],
+  "foreign_items_published": 0,
+  "items_count": 4,
+  "stored_run_items_count": 17,
+  "coverage_new": "complete",
+  "coverage_stored": "complete",
+  "gold_missing_posthoc": [],
+  "model_calls_used": 0,
+  "identity_before_matches_frozen": true,
+  "offline_observation_delta_vs_stored": {
+   "items_before": 17,
+   "items_after": 4,
+   "note": "foreign-document items removed; goal items identical per-item (clause/row sets below unchanged)"
+  }
+ },
+ {
+  "query_id": "prose-enum-006",
+  "evidence_label": "存量产物读取 + 离线answer入口回放（实施后新终态；服务禁止）",
+  "allowed": [
+   "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+  ],
+  "rejected": [
+   {
+    "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+    "reason": "canonical identity GB3095-2026 matches no requested branch ['GB3095-2012']"
+   },
+   {
+    "doc_id": "doc-d3d7d38fe9dc1348e57c1fa29b47f404",
+    "reason": "canonical identity HJ2.2-2018 matches no requested branch ['GB3095-2012']"
+   }
+  ],
+  "unresolved": [
+   {
+    "doc_id": "doc-8eeaab2c272e8a01235e17cfa59d610f",
+    "reason": "self_code unknown in the catalog — never guessed from a name; only the recorded attribution route may carry such a document"
+   }
+  ],
+  "unconfirmed_branches": [],
+  "foreign_items_published": 0,
+  "items_count": 1,
+  "stored_run_items_count": 13,
+  "coverage_new": "complete",
+  "coverage_stored": "complete",
+  "gold_missing_posthoc": [],
+  "model_calls_used": 0,
+  "identity_before_matches_frozen": true,
+  "offline_observation_delta_vs_stored": {
+   "items_before": 13,
+   "items_after": 1,
+   "note": "foreign-document items removed; goal items identical per-item (clause/row sets below unchanged)"
+  }
+ },
+ {
+  "query_id": "neg-004",
+  "evidence_label": "存量产物读取 + 离线answer入口回放（实施后新终态；服务禁止）",
+  "allowed": [
+   "doc-b45c510232ed4d2452b0f5b2a13434e4"
+  ],
+  "rejected": [
+   {
+    "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+    "reason": "canonical identity GB18466-2005 matches no requested branch ['GB8978-1996']"
+   }
+  ],
+  "unresolved": [],
+  "unconfirmed_branches": [],
+  "foreign_items_published": 0,
+  "items_count": 13,
+  "stored_run_items_count": 44,
+  "coverage_new": "complete",
+  "coverage_stored": "complete",
+  "gold_missing_posthoc": [],
+  "model_calls_used": 0,
+  "identity_before_matches_frozen": true,
+  "offline_observation_delta_vs_stored": {
+   "items_before": 44,
+   "items_after": 13,
+   "note": "foreign-document items removed; goal items identical per-item (clause/row sets below unchanged)"
+  }
+ },
+ {
+  "query_id": "table-enum-001",
+  "evidence_label": "存量产物读取 + 离线answer入口回放（实施后新终态；服务禁止）",
+  "allowed": [
+   "doc-b45c510232ed4d2452b0f5b2a13434e4"
+  ],
+  "rejected": [],
+  "unresolved": [],
+  "unconfirmed_branches": [],
+  "foreign_items_published": 0,
+  "items_count": 13,
+  "stored_run_items_count": 13,
+  "coverage_new": "complete",
+  "coverage_stored": "complete",
+  "gold_missing_posthoc": [],
+  "model_calls_used": 0,
+  "identity_before_matches_frozen": true,
+  "offline_observation_delta_vs_stored": {
+   "items_before": 13,
+   "items_after": 13,
+   "note": "foreign-document items removed; goal items identical per-item (clause/row sets below unchanged)"
+  }
+ }
+]

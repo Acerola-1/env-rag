@@ -1,0 +1,22 @@
+{
+ "generation": "phase-4-improvement-2-r2",
+ "before": {
+  "src/env_rag_final/answer.py": "62e8f996557871baf827fccf954281be7e7045fe16a669e0edd05706a9460b27",
+  "src/env_rag_final/evaluation.py": "a42d5c68952e40627a395f023650eae89f59a0527ac0208f45c90ea0f8dd7529"
+ },
+ "after": {
+  "src/env_rag_final/answer.py": "14c9673b2b07a41d83b32c747d048a572f8d8795ecc6892d9df59c30e6100968",
+  "src/env_rag_final/evaluation.py": "a42d5c68952e40627a395f023650eae89f59a0527ac0208f45c90ea0f8dd7529"
+ },
+ "changed": [
+  "src/env_rag_final/answer.py"
+ ],
+ "unchanged": [
+  "src/env_rag_final/evaluation.py"
+ ],
+ "changed_tests": [
+  "tests/test_phase4_improvement2_target_confirmation.py"
+ ],
+ "test_sha_after": "1ebe2c53e820b07e4a79b0c8e48d2360ec0cd02b3ec7f7f11d3c8f580a4a5956",
+ "scope_note": "r2 仅按交接补 A/B 两组接缝：answer.py 归属证据双向闭合 + 无编号范围确认；评测晋升停止、canonical 编号门、空发现处理、改进组1 全部未动"
+}

@@ -1,0 +1,58 @@
+{
+ "task": "5.1 runtime compatibility (rev 4, E1-E3 remediation final clean run)",
+ "generated_at": "2026-10-06T20:33:12+0800",
+ "command_run": "uv run python -m env_rag_final.compat_runtime --report-dir reports/pg-retrieval/phase-3-r4",
+ "probe_run_id": "compat-6ac185c09ad6",
+ "files_sha256": {
+  "src/env_rag_final/compat_runtime.py": "a74790501e358dadccc7da1b763b943e508a62deecea9c93e023b19345ee4778",
+  "reports/pg-retrieval/phase-3-r4/compatibility-runtime.md": "c8ebdf939e101c976f3b5fb607431aad85ecd3199c084f5ca158a7d13b9f6e2c",
+  "reports/pg-retrieval/phase-3-r4/compat-runtime-probes-latest.json": "cfc9fc3d02e31e58288147772fcf3d34c9a39b92026e0dcb7b13f243c5dfa084",
+  "reports/pg-retrieval/gate-2/review-r5/gold-approved.json": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "tests/test_phase3_compat_review_r4.py": "761d94d96d72b662699a2bc190fc07066729203c34b2f4f34899b02bee32b89c"
+ },
+ "environment": {
+  "release": "lightrag-hku 1.5.7 (uv.lock)",
+  "python": "3.12 (.venv site-packages only)",
+  "scratch_database": "per-run unique name + probe_ownership(run_id, secret, db_oid); DROP-carrying connection re-reads OID+sessions itself (E1); partial-acquire identity retained (E2); recovery record 0600 from creation (E2)",
+  "production_database": "rag (read-only identity guards before/after incl. catalog run + env sha drift; never initialized by LightRAG)",
+  "model_calls": 0,
+  "embedding_service_calls": 0
+ },
+ "required_probe_contract": {
+  "required": [
+   "PGTableGraphStorage",
+   "PGGraphStorage",
+   "PGVectorStorage"
+  ],
+  "lifecycle_stages_required": {
+   "first_acquire": {
+    "initdb": 1,
+    "check_tables": 1
+   },
+   "second_acquire_holding_ref": {
+    "initdb": 1,
+    "check_tables": 1
+   },
+   "reacquire_after_full_release": {
+    "initdb": 2,
+    "check_tables": 2
+   }
+  },
+  "problems": [],
+  "enforced": true
+ },
+ "live_rejection_proofs": {
+  "E1_tampered_marker_oid": "refused (three-connection flow); DB intact; session count unchanged; repaired -> dropped",
+  "E1_foreign_session": "precheck refused before DROP connection opened; after leave -> dropped",
+  "E1_ghost_recovery_replay": "refused InvalidCatalogNameError",
+  "E2_partial_acquire": "CREATE ok + marker connect fail -> ProbeAborted carries partial_scratch (database+secret); DB existed and was accounted",
+  "E2_recovery_write_failure": "run refused (recovery record write failed: OSError); cleanup executed; failure stage=recovery-record; no finished_at",
+  "E2_instance_register_before_initialize": "fake-instance test: all constructed instances finalized after initialize failure",
+  "E3_repeated_initialize_same_pool": "required True in contract; False -> whole-run failure (test verified)",
+  "E3_lifecycle_and_cache_in_contract": "stage counts 1/1,1/1,2/2 and cache_type column enforced"
+ },
+ "tests": {
+  "total": 216,
+  "note": "216 passed; review r4 8 assertions: 6 former failures fixed, 2 positives kept; no deletion/xfail/weakening"
+ }
+}

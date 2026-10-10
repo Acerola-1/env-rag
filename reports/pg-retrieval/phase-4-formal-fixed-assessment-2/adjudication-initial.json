@@ -1,0 +1,5387 @@
+{
+ "schema": "phase-4-generation-assessment/r2",
+ "supersedes": "this adjudication supersedes nothing; bound to reports/pg-retrieval/phase-4-formal-fixed-round-2 r2",
+ "inputs_verification": {
+  "manifest": {
+   "entries": 805,
+   "mismatches": []
+  },
+  "gold": {
+   "sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+   "expected": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+   "match": true
+  },
+  "identity": {
+   "pre": {
+    "source_fingerprint": true,
+    "catalog_run_snapshot": true,
+    "search_active": true,
+    "gold_sha": true
+   },
+   "post": {
+    "source_fingerprint": true,
+    "catalog_run_snapshot": true,
+    "search_active": true,
+    "gold_sha": true
+   },
+   "pre_missing_fields": [],
+   "post_missing_fields": [],
+   "matches_frozen_pre": true,
+   "matches_frozen_post": true,
+   "run_failure": null,
+   "finished_at": "2026-10-09T21:19:59+0800"
+  },
+  "code": {
+   "answer.py": {
+    "match": true
+   },
+   "fusion.py": {
+    "match": true
+   },
+   "rerank.py": {
+    "match": true
+   },
+   "local_adapter.py": {
+    "match": true
+   },
+   "compat_runtime.py": {
+    "match": true
+   },
+   "src/env_rag_final/evaluation.py": {
+    "match": true
+   },
+   "src/env_rag_final/cli.py": {
+    "match": true
+   },
+   "src/env_rag_final/search/expand.py": {
+    "match": true
+   },
+   "src/env_rag_final/search/query.py": {
+    "match": true
+   },
+   "src/env_rag_final/enumerate_/doc_enum.py": {
+    "match": true
+   },
+   "src/env_rag_final/enumerate_/prose_enum.py": {
+    "match": true
+   }
+  },
+  "parsed": {
+   "docs": 83,
+   "unresolved": 0,
+   "artifact_bytes_fingerprint": {
+    "expected_gate0": "fccb274827fc21f0f02f721271d175efd800175a4a8db5140bf7f72f404ab1db",
+    "computed": "fccb274827fc21f0f02f721271d175efd800175a4a8db5140bf7f72f404ab1db",
+    "match": true
+   }
+  },
+  "problems": [],
+  "ok": true
+ },
+ "rows": [
+  {
+   "qid": "fact-001",
+   "path": "pg",
+   "category": "fact",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 1,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "row_candidates": 0,
+   "exact_row_delivered": false,
+   "judgement": "pending_fact_carrier_review",
+   "final_status": "PENDING",
+   "final_basis": "evidence_gap",
+   "final_reason": "judgement=pending_fact_carrier_review; masked=0 gaps=0"
+  },
+  {
+   "qid": "fact-001",
+   "path": "local",
+   "category": "fact",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "row_candidates": 0,
+   "exact_row_delivered": false,
+   "judgement": "no_delivery_coverage_partial",
+   "final_status": "FAIL",
+   "final_basis": "mechanical",
+   "final_reason": "judgement=no_delivery_coverage_partial; coverage=partial（非 complete 整题 exact 不成立）"
+  },
+  {
+   "qid": "fact-001",
+   "path": "fusion",
+   "category": "fact",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 1,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "row_candidates": 0,
+   "exact_row_delivered": false,
+   "judgement": "pending_fact_carrier_review",
+   "final_status": "PENDING",
+   "final_basis": "evidence_gap",
+   "final_reason": "judgement=pending_fact_carrier_review; masked=0 gaps=0"
+  },
+  {
+   "qid": "fact-002",
+   "path": "pg",
+   "category": "fact",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": null,
+   "delivered": 1,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "row_candidates": 1,
+   "exact_row_delivered": true,
+   "judgement": "partial_fragment_correct",
+   "correct_fragments": [
+    [
+     "1",
+     "总汞",
+     "0.05"
+    ]
+   ],
+   "final_status": "FAIL",
+   "final_basis": "mechanical",
+   "final_reason": "judgement=partial_fragment_correct; coverage=partial（非 complete 整题 exact 不成立）"
+  },
+  {
+   "qid": "fact-002",
+   "path": "local",
+   "category": "fact",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": null,
+   "delivered": 1,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "row_candidates": 1,
+   "exact_row_delivered": true,
+   "judgement": "partial_fragment_correct",
+   "correct_fragments": [
+    [
+     "1",
+     "总汞",
+     "0.05"
+    ]
+   ],
+   "final_status": "FAIL",
+   "final_basis": "mechanical",
+   "final_reason": "judgement=partial_fragment_correct; coverage=partial（非 complete 整题 exact 不成立）"
+  },
+  {
+   "qid": "fact-002",
+   "path": "fusion",
+   "category": "fact",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": null,
+   "delivered": 1,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "row_candidates": 1,
+   "exact_row_delivered": true,
+   "judgement": "partial_fragment_correct",
+   "correct_fragments": [
+    [
+     "1",
+     "总汞",
+     "0.05"
+    ]
+   ],
+   "final_status": "FAIL",
+   "final_basis": "mechanical",
+   "final_reason": "judgement=partial_fragment_correct; coverage=partial（非 complete 整题 exact 不成立）"
+  },
+  {
+   "qid": "fact-003",
+   "path": "pg",
+   "category": "fact",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 5,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "row_candidates": 0,
+   "exact_row_delivered": false,
+   "judgement": "pending_fact_carrier_review",
+   "final_status": "PENDING",
+   "final_basis": "evidence_gap",
+   "final_reason": "judgement=pending_fact_carrier_review; masked=0 gaps=0"
+  },
+  {
+   "qid": "fact-003",
+   "path": "local",
+   "category": "fact",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "row_candidates": 0,
+   "exact_row_delivered": false,
+   "judgement": "no_delivery_coverage_partial",
+   "final_status": "FAIL",
+   "final_basis": "mechanical",
+   "final_reason": "judgement=no_delivery_coverage_partial; coverage=partial（非 complete 整题 exact 不成立）"
+  },
+  {
+   "qid": "fact-003",
+   "path": "fusion",
+   "category": "fact",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 5,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "row_candidates": 0,
+   "exact_row_delivered": false,
+   "judgement": "pending_fact_carrier_review",
+   "final_status": "PENDING",
+   "final_basis": "evidence_gap",
+   "final_reason": "judgement=pending_fact_carrier_review; masked=0 gaps=0"
+  },
+  {
+   "qid": "fact-004",
+   "path": "pg",
+   "category": "fact",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 2,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "row_candidates": 0,
+   "exact_row_delivered": false,
+   "judgement": "pending_fact_carrier_review",
+   "final_status": "PENDING",
+   "final_basis": "evidence_gap",
+   "final_reason": "judgement=pending_fact_carrier_review; masked=0 gaps=0"
+  },
+  {
+   "qid": "fact-004",
+   "path": "local",
+   "category": "fact",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "row_candidates": 0,
+   "exact_row_delivered": false,
+   "judgement": "no_delivery_coverage_partial",
+   "final_status": "FAIL",
+   "final_basis": "mechanical",
+   "final_reason": "judgement=no_delivery_coverage_partial; coverage=partial（非 complete 整题 exact 不成立）"
+  },
+  {
+   "qid": "fact-004",
+   "path": "fusion",
+   "category": "fact",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 2,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "row_candidates": 0,
+   "exact_row_delivered": false,
+   "judgement": "pending_fact_carrier_review",
+   "final_status": "PENDING",
+   "final_basis": "evidence_gap",
+   "final_reason": "judgement=pending_fact_carrier_review; masked=0 gaps=0"
+  },
+  {
+   "qid": "fact-005",
+   "path": "pg",
+   "category": "fact",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 1,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "row_candidates": 0,
+   "exact_row_delivered": false,
+   "judgement": "pending_fact_carrier_review",
+   "final_status": "PENDING",
+   "final_basis": "evidence_gap",
+   "final_reason": "judgement=pending_fact_carrier_review; masked=0 gaps=0"
+  },
+  {
+   "qid": "fact-005",
+   "path": "local",
+   "category": "fact",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "row_candidates": 0,
+   "exact_row_delivered": false,
+   "judgement": "no_delivery_coverage_partial",
+   "final_status": "FAIL",
+   "final_basis": "mechanical",
+   "final_reason": "judgement=no_delivery_coverage_partial; coverage=partial（非 complete 整题 exact 不成立）"
+  },
+  {
+   "qid": "fact-005",
+   "path": "fusion",
+   "category": "fact",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 1,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "row_candidates": 0,
+   "exact_row_delivered": false,
+   "judgement": "pending_fact_carrier_review",
+   "final_status": "PENDING",
+   "final_basis": "evidence_gap",
+   "final_reason": "judgement=pending_fact_carrier_review; masked=0 gaps=0"
+  },
+  {
+   "qid": "fact-006",
+   "path": "pg",
+   "category": "fact",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 2,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "row_candidates": 0,
+   "exact_row_delivered": false,
+   "judgement": "pending_fact_carrier_review",
+   "final_status": "PENDING",
+   "final_basis": "evidence_gap",
+   "final_reason": "judgement=pending_fact_carrier_review; masked=0 gaps=0"
+  },
+  {
+   "qid": "fact-006",
+   "path": "local",
+   "category": "fact",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "row_candidates": 0,
+   "exact_row_delivered": false,
+   "judgement": "no_delivery_coverage_partial",
+   "final_status": "FAIL",
+   "final_basis": "mechanical",
+   "final_reason": "judgement=no_delivery_coverage_partial; coverage=partial（非 complete 整题 exact 不成立）"
+  },
+  {
+   "qid": "fact-006",
+   "path": "fusion",
+   "category": "fact",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 2,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "row_candidates": 0,
+   "exact_row_delivered": false,
+   "judgement": "pending_fact_carrier_review",
+   "final_status": "PENDING",
+   "final_basis": "evidence_gap",
+   "final_reason": "judgement=pending_fact_carrier_review; masked=0 gaps=0"
+  },
+  {
+   "qid": "fact-007",
+   "path": "pg",
+   "category": "fact",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 4,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "row_candidates": 0,
+   "exact_row_delivered": false,
+   "judgement": "pending_fact_carrier_review",
+   "final_status": "PENDING",
+   "final_basis": "evidence_gap",
+   "final_reason": "judgement=pending_fact_carrier_review; masked=0 gaps=0"
+  },
+  {
+   "qid": "fact-007",
+   "path": "local",
+   "category": "fact",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "row_candidates": 0,
+   "exact_row_delivered": false,
+   "judgement": "no_delivery_coverage_partial",
+   "final_status": "FAIL",
+   "final_basis": "mechanical",
+   "final_reason": "judgement=no_delivery_coverage_partial; coverage=partial（非 complete 整题 exact 不成立）"
+  },
+  {
+   "qid": "fact-007",
+   "path": "fusion",
+   "category": "fact",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 4,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "row_candidates": 0,
+   "exact_row_delivered": false,
+   "judgement": "pending_fact_carrier_review",
+   "final_status": "PENDING",
+   "final_basis": "evidence_gap",
+   "final_reason": "judgement=pending_fact_carrier_review; masked=0 gaps=0"
+  },
+  {
+   "qid": "file-enum-001",
+   "path": "pg",
+   "category": "file_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 2,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra": [],
+   "delivered_versions": [
+    "2012",
+    "2026"
+   ],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "file-enum-001",
+   "path": "local",
+   "category": "file_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 2,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra": [],
+   "delivered_versions": [
+    "2012",
+    "2026"
+   ],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "file-enum-001",
+   "path": "fusion",
+   "category": "file_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 2,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra": [],
+   "delivered_versions": [
+    "2012",
+    "2026"
+   ],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "file-enum-002",
+   "path": "pg",
+   "category": "file_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 5,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra": [],
+   "delivered_versions": [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "file-enum-002",
+   "path": "local",
+   "category": "file_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 5,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra": [],
+   "delivered_versions": [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "file-enum-002",
+   "path": "fusion",
+   "category": "file_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 5,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra": [],
+   "delivered_versions": [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "file-enum-003",
+   "path": "pg",
+   "category": "file_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 5,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra": [],
+   "delivered_versions": [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "file-enum-003",
+   "path": "local",
+   "category": "file_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 5,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra": [],
+   "delivered_versions": [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "file-enum-003",
+   "path": "fusion",
+   "category": "file_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 5,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra": [],
+   "delivered_versions": [
+    "",
+    "",
+    "",
+    "",
+    ""
+   ],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "file-enum-004",
+   "path": "pg",
+   "category": "file_enum",
+   "is_counter": false,
+   "coverage": "ambiguous",
+   "model_status": null,
+   "delivered": 7,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [
+    [
+     "catalog doc not present in SHA-guarded run inputs (no independent evidence)"
+    ]
+   ],
+   "masked_citations": 0,
+   "citation_gaps": 1,
+   "citation_gap_only": true,
+   "all_citations_verified": false,
+   "missing": [],
+   "extra": [],
+   "delivered_versions": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "2013"
+   ],
+   "judgement": "coverage_not_complete",
+   "final_status": "FAIL",
+   "final_basis": "mechanical",
+   "final_reason": "judgement=coverage_not_complete; coverage=ambiguous（非 complete 整题 exact 不成立）"
+  },
+  {
+   "qid": "file-enum-004",
+   "path": "local",
+   "category": "file_enum",
+   "is_counter": false,
+   "coverage": "ambiguous",
+   "model_status": null,
+   "delivered": 7,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [
+    [
+     "catalog doc not present in SHA-guarded run inputs (no independent evidence)"
+    ]
+   ],
+   "masked_citations": 0,
+   "citation_gaps": 1,
+   "citation_gap_only": true,
+   "all_citations_verified": false,
+   "missing": [],
+   "extra": [],
+   "delivered_versions": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "2013"
+   ],
+   "judgement": "coverage_not_complete",
+   "final_status": "FAIL",
+   "final_basis": "mechanical",
+   "final_reason": "judgement=coverage_not_complete; coverage=ambiguous（非 complete 整题 exact 不成立）"
+  },
+  {
+   "qid": "file-enum-004",
+   "path": "fusion",
+   "category": "file_enum",
+   "is_counter": false,
+   "coverage": "ambiguous",
+   "model_status": null,
+   "delivered": 7,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [
+    [
+     "catalog doc not present in SHA-guarded run inputs (no independent evidence)"
+    ]
+   ],
+   "masked_citations": 0,
+   "citation_gaps": 1,
+   "citation_gap_only": true,
+   "all_citations_verified": false,
+   "missing": [],
+   "extra": [],
+   "delivered_versions": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "2013"
+   ],
+   "judgement": "coverage_not_complete",
+   "final_status": "FAIL",
+   "final_basis": "mechanical",
+   "final_reason": "judgement=coverage_not_complete; coverage=ambiguous（非 complete 整题 exact 不成立）"
+  },
+  {
+   "qid": "file-enum-005",
+   "path": "pg",
+   "category": "file_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 3,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra": [],
+   "delivered_versions": [
+    "",
+    "",
+    "2005"
+   ],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "file-enum-005",
+   "path": "local",
+   "category": "file_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 3,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra": [],
+   "delivered_versions": [
+    "",
+    "",
+    "2005"
+   ],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "file-enum-005",
+   "path": "fusion",
+   "category": "file_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 3,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra": [],
+   "delivered_versions": [
+    "",
+    "",
+    "2005"
+   ],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "file-enum-006",
+   "path": "pg",
+   "category": "file_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 1,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra": [],
+   "delivered_versions": [
+    "2002"
+   ],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "file-enum-006",
+   "path": "local",
+   "category": "file_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 1,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra": [],
+   "delivered_versions": [
+    "2002"
+   ],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "file-enum-006",
+   "path": "fusion",
+   "category": "file_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 1,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra": [],
+   "delivered_versions": [
+    "2002"
+   ],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "prose-enum-001",
+   "path": "pg",
+   "category": "prose_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 4,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra_out_of_scope": 0,
+   "extra_in_scope": 0,
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "prose-enum-001",
+   "path": "local",
+   "category": "prose_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 4,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra_out_of_scope": 0,
+   "extra_in_scope": 0,
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "prose-enum-001",
+   "path": "fusion",
+   "category": "prose_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 4,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra_out_of_scope": 0,
+   "extra_in_scope": 0,
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "prose-enum-002",
+   "path": "pg",
+   "category": "prose_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 2,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra_out_of_scope": 0,
+   "extra_in_scope": 0,
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "prose-enum-002",
+   "path": "local",
+   "category": "prose_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 2,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra_out_of_scope": 0,
+   "extra_in_scope": 0,
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "prose-enum-002",
+   "path": "fusion",
+   "category": "prose_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 2,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra_out_of_scope": 0,
+   "extra_in_scope": 0,
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "prose-enum-003",
+   "path": "pg",
+   "category": "prose_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 4,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra_out_of_scope": 0,
+   "extra_in_scope": 0,
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "prose-enum-003",
+   "path": "local",
+   "category": "prose_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 4,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra_out_of_scope": 0,
+   "extra_in_scope": 0,
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "prose-enum-003",
+   "path": "fusion",
+   "category": "prose_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 4,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra_out_of_scope": 0,
+   "extra_in_scope": 0,
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "prose-enum-004",
+   "path": "pg",
+   "category": "prose_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 5,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra_out_of_scope": 0,
+   "extra_in_scope": 0,
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "prose-enum-004",
+   "path": "local",
+   "category": "prose_enum",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "missing": [
+    "主要适用于源头水、国家自然保护区",
+    "主要适用于集中式生活饮用水地表水源地一级保护区、珍稀水生生物栖息地、鱼虾类产卵场、仔稚幼鱼的索饵场等",
+    "主要适用于集中式生活饮用水地表水源地二级保护区、鱼虾类越冬场、洄游通道、水产养殖区等渔业水域及游泳区",
+    "主要适用于一般工业用水区及人体非直接接触的娱乐用水区",
+    "主要适用于农业用水区及一般景观要求水域"
+   ],
+   "extra_out_of_scope": 0,
+   "extra_in_scope": 0,
+   "judgement": "projection_mismatch",
+   "final_status": "FAIL",
+   "final_basis": "mechanical",
+   "final_reason": "judgement=projection_mismatch; missing=['主要适用于源头水、国家自然保护区', '主要适用于集中式生活饮用水地表水源地一级保护区、珍稀水生生物栖息地、鱼虾类产卵场、仔稚幼鱼的索饵场等', '主要适用于集中式生活饮用水地表水源地二级保护区、鱼虾类越冬场、洄游通道、水产养殖区等渔业水域及游泳区']; coverage=partial（非 complete 整题 exact 不成立）"
+  },
+  {
+   "qid": "prose-enum-004",
+   "path": "fusion",
+   "category": "prose_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 5,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra_out_of_scope": 0,
+   "extra_in_scope": 0,
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "prose-enum-005",
+   "path": "pg",
+   "category": "prose_enum",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "missing": [
+    "一级",
+    "二级",
+    "三级"
+   ],
+   "extra_out_of_scope": 0,
+   "extra_in_scope": 0,
+   "judgement": "projection_mismatch",
+   "final_status": "FAIL",
+   "final_basis": "mechanical",
+   "final_reason": "judgement=projection_mismatch; missing=['一级', '二级', '三级']; coverage=partial（非 complete 整题 exact 不成立）"
+  },
+  {
+   "qid": "prose-enum-005",
+   "path": "local",
+   "category": "prose_enum",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "missing": [
+    "一级",
+    "二级",
+    "三级"
+   ],
+   "extra_out_of_scope": 0,
+   "extra_in_scope": 0,
+   "judgement": "projection_mismatch",
+   "final_status": "FAIL",
+   "final_basis": "mechanical",
+   "final_reason": "judgement=projection_mismatch; missing=['一级', '二级', '三级']; coverage=partial（非 complete 整题 exact 不成立）"
+  },
+  {
+   "qid": "prose-enum-005",
+   "path": "fusion",
+   "category": "prose_enum",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "missing": [
+    "一级",
+    "二级",
+    "三级"
+   ],
+   "extra_out_of_scope": 0,
+   "extra_in_scope": 0,
+   "judgement": "projection_mismatch",
+   "final_status": "FAIL",
+   "final_basis": "mechanical",
+   "final_reason": "judgement=projection_mismatch; missing=['一级', '二级', '三级']; coverage=partial（非 complete 整题 exact 不成立）"
+  },
+  {
+   "qid": "prose-enum-006",
+   "path": "pg",
+   "category": "prose_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 1,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra_out_of_scope": 0,
+   "extra_in_scope": 0,
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "prose-enum-006",
+   "path": "local",
+   "category": "prose_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 1,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra_out_of_scope": 0,
+   "extra_in_scope": 0,
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "prose-enum-006",
+   "path": "fusion",
+   "category": "prose_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 1,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra_out_of_scope": 0,
+   "extra_in_scope": 0,
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "table-enum-001",
+   "path": "pg",
+   "category": "table_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 13,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "projection_mode": "seq_cells",
+   "projection": {
+    "ok": true,
+    "missing": [],
+    "extra_rows": 0,
+    "matched": 13
+   },
+   "foreign_table_docs": [],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "table-enum-001",
+   "path": "local",
+   "category": "table_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 13,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "projection_mode": "seq_cells",
+   "projection": {
+    "ok": true,
+    "missing": [],
+    "extra_rows": 0,
+    "matched": 13
+   },
+   "foreign_table_docs": [],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "table-enum-001",
+   "path": "fusion",
+   "category": "table_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 13,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "projection_mode": "seq_cells",
+   "projection": {
+    "ok": true,
+    "missing": [],
+    "extra_rows": 0,
+    "matched": 13
+   },
+   "foreign_table_docs": [],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "table-enum-002",
+   "path": "pg",
+   "category": "table_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 14,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "projection_mode": "name",
+   "projection": {
+    "ok": true,
+    "missing": [],
+    "extra_rows": 0,
+    "matched": 6
+   },
+   "foreign_table_docs": [],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "table-enum-002",
+   "path": "local",
+   "category": "table_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 14,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "projection_mode": "name",
+   "projection": {
+    "ok": true,
+    "missing": [],
+    "extra_rows": 0,
+    "matched": 6
+   },
+   "foreign_table_docs": [],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "table-enum-002",
+   "path": "fusion",
+   "category": "table_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 14,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "projection_mode": "name",
+   "projection": {
+    "ok": true,
+    "missing": [],
+    "extra_rows": 0,
+    "matched": 6
+   },
+   "foreign_table_docs": [],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "table-enum-003",
+   "path": "pg",
+   "category": "table_enum",
+   "is_counter": false,
+   "coverage": "ambiguous",
+   "model_status": null,
+   "delivered": 72,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [
+    [
+     "row re-read mismatch at tb-d6d711b0614234635955480a53f52a10-0004[20]: grid ['9', '臭气浓度', '25', '6000'] != item ['9', '臭气浓度', '25', '<redacted>']",
+     "row re-read mismatch at tb-d6d711b0614234635955480a53f52a10-0004[24]: grid ['9', '臭气浓度', '≥60', '60000'] != item ['9', '臭气浓度', '≥60', '<redacted>0']"
+    ],
+    [
+     "row re-read mismatch at tb-d6d711b0614234635955480a53f52a10-0004[20]: grid ['9', '臭气浓度', '25', '6000'] != item ['9', '臭气浓度', '25', '<redacted>']",
+     "row re-read mismatch at tb-d6d711b0614234635955480a53f52a10-0004[24]: grid ['9', '臭气浓度', '≥60', '60000'] != item ['9', '臭气浓度', '≥60', '<redacted>0']"
+    ]
+   ],
+   "masked_citations": 2,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": false,
+   "projection_mode": "name",
+   "projection": {
+    "ok": true,
+    "missing": [],
+    "extra_rows": 0,
+    "matched": 9
+   },
+   "foreign_table_docs": [],
+   "judgement": "coverage_not_complete",
+   "final_status": "FAIL",
+   "final_basis": "mechanical",
+   "final_reason": "judgement=coverage_not_complete; coverage=ambiguous（非 complete 整题 exact 不成立）; masked_citation_details=2（局部 unknown，不改整题结论）"
+  },
+  {
+   "qid": "table-enum-003",
+   "path": "local",
+   "category": "table_enum",
+   "is_counter": false,
+   "coverage": "ambiguous",
+   "model_status": null,
+   "delivered": 72,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [
+    [
+     "row re-read mismatch at tb-d6d711b0614234635955480a53f52a10-0004[20]: grid ['9', '臭气浓度', '25', '6000'] != item ['9', '臭气浓度', '25', '<redacted>']",
+     "row re-read mismatch at tb-d6d711b0614234635955480a53f52a10-0004[24]: grid ['9', '臭气浓度', '≥60', '60000'] != item ['9', '臭气浓度', '≥60', '<redacted>0']"
+    ],
+    [
+     "row re-read mismatch at tb-d6d711b0614234635955480a53f52a10-0004[20]: grid ['9', '臭气浓度', '25', '6000'] != item ['9', '臭气浓度', '25', '<redacted>']",
+     "row re-read mismatch at tb-d6d711b0614234635955480a53f52a10-0004[24]: grid ['9', '臭气浓度', '≥60', '60000'] != item ['9', '臭气浓度', '≥60', '<redacted>0']"
+    ]
+   ],
+   "masked_citations": 2,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": false,
+   "projection_mode": "name",
+   "projection": {
+    "ok": true,
+    "missing": [],
+    "extra_rows": 0,
+    "matched": 9
+   },
+   "foreign_table_docs": [],
+   "judgement": "coverage_not_complete",
+   "final_status": "FAIL",
+   "final_basis": "mechanical",
+   "final_reason": "judgement=coverage_not_complete; coverage=ambiguous（非 complete 整题 exact 不成立）; masked_citation_details=2（局部 unknown，不改整题结论）"
+  },
+  {
+   "qid": "table-enum-003",
+   "path": "fusion",
+   "category": "table_enum",
+   "is_counter": false,
+   "coverage": "ambiguous",
+   "model_status": null,
+   "delivered": 72,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [
+    [
+     "row re-read mismatch at tb-d6d711b0614234635955480a53f52a10-0004[20]: grid ['9', '臭气浓度', '25', '6000'] != item ['9', '臭气浓度', '25', '<redacted>']",
+     "row re-read mismatch at tb-d6d711b0614234635955480a53f52a10-0004[24]: grid ['9', '臭气浓度', '≥60', '60000'] != item ['9', '臭气浓度', '≥60', '<redacted>0']"
+    ],
+    [
+     "row re-read mismatch at tb-d6d711b0614234635955480a53f52a10-0004[20]: grid ['9', '臭气浓度', '25', '6000'] != item ['9', '臭气浓度', '25', '<redacted>']",
+     "row re-read mismatch at tb-d6d711b0614234635955480a53f52a10-0004[24]: grid ['9', '臭气浓度', '≥60', '60000'] != item ['9', '臭气浓度', '≥60', '<redacted>0']"
+    ]
+   ],
+   "masked_citations": 2,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": false,
+   "projection_mode": "name",
+   "projection": {
+    "ok": true,
+    "missing": [],
+    "extra_rows": 0,
+    "matched": 9
+   },
+   "foreign_table_docs": [],
+   "judgement": "coverage_not_complete",
+   "final_status": "FAIL",
+   "final_basis": "mechanical",
+   "final_reason": "judgement=coverage_not_complete; coverage=ambiguous（非 complete 整题 exact 不成立）; masked_citation_details=2（局部 unknown，不改整题结论）"
+  },
+  {
+   "qid": "table-enum-004",
+   "path": "pg",
+   "category": "table_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 24,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "projection_mode": "seq_name",
+   "projection": {
+    "ok": true,
+    "missing": [],
+    "extra_rows": 0,
+    "extras": [],
+    "matched": 24
+   },
+   "foreign_table_docs": [],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "table-enum-004",
+   "path": "local",
+   "category": "table_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 24,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "projection_mode": "seq_name",
+   "projection": {
+    "ok": true,
+    "missing": [],
+    "extra_rows": 0,
+    "extras": [],
+    "matched": 24
+   },
+   "foreign_table_docs": [],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "table-enum-004",
+   "path": "fusion",
+   "category": "table_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 24,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "projection_mode": "seq_name",
+   "projection": {
+    "ok": true,
+    "missing": [],
+    "extra_rows": 0,
+    "extras": [],
+    "matched": 24
+   },
+   "foreign_table_docs": [],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "table-enum-005",
+   "path": "pg",
+   "category": "table_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 30,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "projection_mode": "row_cells",
+   "projection": {
+    "ok": true,
+    "missing": [],
+    "extra_rows": 0,
+    "matched": 30
+   },
+   "foreign_table_docs": [],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "table-enum-005",
+   "path": "local",
+   "category": "table_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 30,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "projection_mode": "row_cells",
+   "projection": {
+    "ok": true,
+    "missing": [],
+    "extra_rows": 0,
+    "matched": 30
+   },
+   "foreign_table_docs": [],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "table-enum-005",
+   "path": "fusion",
+   "category": "table_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 30,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "projection_mode": "row_cells",
+   "projection": {
+    "ok": true,
+    "missing": [],
+    "extra_rows": 0,
+    "matched": 30
+   },
+   "foreign_table_docs": [],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "table-enum-006",
+   "path": "pg",
+   "category": "table_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 14,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "projection_mode": "name",
+   "projection": {
+    "ok": true,
+    "missing": [],
+    "extra_rows": 0,
+    "matched": 10
+   },
+   "foreign_table_docs": [],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "table-enum-006",
+   "path": "local",
+   "category": "table_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 14,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "projection_mode": "name",
+   "projection": {
+    "ok": true,
+    "missing": [],
+    "extra_rows": 0,
+    "matched": 10
+   },
+   "foreign_table_docs": [],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "table-enum-006",
+   "path": "fusion",
+   "category": "table_enum",
+   "is_counter": false,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 14,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "projection_mode": "name",
+   "projection": {
+    "ok": true,
+    "missing": [],
+    "extra_rows": 0,
+    "matched": 10
+   },
+   "foreign_table_docs": [],
+   "judgement": "pass_mechanical",
+   "final_status": "PASS",
+   "final_basis": "mechanical_projection+citations+coverage",
+   "final_reason": "投影集合全等、引用经冻结守卫身份独立重读、覆盖 complete（仍受主agent抽审）"
+  },
+  {
+   "qid": "syn-001",
+   "path": "pg",
+   "category": "synthesis",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": "incomplete_conditions",
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "gold_expected": "2012：PM2.5 年均 一级 15／二级 35；2026 过渡期（至2030年末）一级15／二级30，2031 起一级10／二级25 μg/m³。必须携带过渡阶段日期条件。",
+   "condition_tokens": [
+    "至2030年末"
+   ],
+   "missing_conditions": [
+    "至2030年末"
+   ],
+   "all_claims_bound": null,
+   "judgement": "synthesis_pending_human_review",
+   "final_status": "FAIL",
+   "final_basis": "mechanical_hard_failure",
+   "final_reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）"
+  },
+  {
+   "qid": "syn-001",
+   "path": "local",
+   "category": "synthesis",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": "incomplete_conditions",
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "gold_expected": "2012：PM2.5 年均 一级 15／二级 35；2026 过渡期（至2030年末）一级15／二级30，2031 起一级10／二级25 μg/m³。必须携带过渡阶段日期条件。",
+   "condition_tokens": [
+    "至2030年末"
+   ],
+   "missing_conditions": [
+    "至2030年末"
+   ],
+   "all_claims_bound": null,
+   "judgement": "synthesis_pending_human_review",
+   "final_status": "FAIL",
+   "final_basis": "mechanical_hard_failure",
+   "final_reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）"
+  },
+  {
+   "qid": "syn-001",
+   "path": "fusion",
+   "category": "synthesis",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": "incomplete_conditions",
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "gold_expected": "2012：PM2.5 年均 一级 15／二级 35；2026 过渡期（至2030年末）一级15／二级30，2031 起一级10／二级25 μg/m³。必须携带过渡阶段日期条件。",
+   "condition_tokens": [
+    "至2030年末"
+   ],
+   "missing_conditions": [
+    "至2030年末"
+   ],
+   "all_claims_bound": null,
+   "judgement": "synthesis_pending_human_review",
+   "final_status": "FAIL",
+   "final_basis": "mechanical_hard_failure",
+   "final_reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）"
+  },
+  {
+   "qid": "syn-002",
+   "path": "pg",
+   "category": "synthesis",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": "model_failure",
+   "delivered": 4,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "gold_expected": "4.1 执行标准（表1/表2、排放/预处理标准）与 6.1 取样与监测两个范围独立取证后合并；6.1 存在重复 6.1.2 原始编号，不能按编号去重丢独立要求",
+   "condition_tokens": [
+    "排放",
+    "表1",
+    "表2",
+    "预处理标准"
+   ],
+   "missing_conditions": [
+    "表2",
+    "预处理标准"
+   ],
+   "all_claims_bound": true,
+   "judgement": "synthesis_pending_human_review",
+   "final_status": "FAIL",
+   "final_basis": "mechanical_hard_failure",
+   "final_reason": "coverage=partial（非 complete）（已证实的硬失败不依赖人工状态，也不因未审而软化）"
+  },
+  {
+   "qid": "syn-002",
+   "path": "local",
+   "category": "synthesis",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": "incomplete_conditions",
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "gold_expected": "4.1 执行标准（表1/表2、排放/预处理标准）与 6.1 取样与监测两个范围独立取证后合并；6.1 存在重复 6.1.2 原始编号，不能按编号去重丢独立要求",
+   "condition_tokens": [
+    "排放",
+    "表1",
+    "表2",
+    "预处理标准"
+   ],
+   "missing_conditions": [
+    "排放",
+    "表1",
+    "表2",
+    "预处理标准"
+   ],
+   "all_claims_bound": null,
+   "judgement": "synthesis_pending_human_review",
+   "final_status": "FAIL",
+   "final_basis": "mechanical_hard_failure",
+   "final_reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）"
+  },
+  {
+   "qid": "syn-002",
+   "path": "fusion",
+   "category": "synthesis",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": "model_failure",
+   "delivered": 6,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "gold_expected": "4.1 执行标准（表1/表2、排放/预处理标准）与 6.1 取样与监测两个范围独立取证后合并；6.1 存在重复 6.1.2 原始编号，不能按编号去重丢独立要求",
+   "condition_tokens": [
+    "排放",
+    "表1",
+    "表2",
+    "预处理标准"
+   ],
+   "missing_conditions": [],
+   "all_claims_bound": true,
+   "judgement": "synthesis_pending_human_review",
+   "final_status": "FAIL",
+   "final_basis": "mechanical_hard_failure",
+   "final_reason": "coverage=partial（非 complete）（已证实的硬失败不依赖人工状态，也不因未审而软化）"
+  },
+  {
+   "qid": "syn-003",
+   "path": "pg",
+   "category": "synthesis",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": "model_failure",
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "gold_expected": "第一类：在车间或车间处理设施排放口采样；第二类：在排污单位排放口采样",
+   "condition_tokens": [],
+   "missing_conditions": [],
+   "all_claims_bound": null,
+   "judgement": "synthesis_pending_human_review",
+   "final_status": "FAIL",
+   "final_basis": "mechanical_hard_failure",
+   "final_reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）"
+  },
+  {
+   "qid": "syn-003",
+   "path": "local",
+   "category": "synthesis",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": "incomplete_conditions",
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "gold_expected": "第一类：在车间或车间处理设施排放口采样；第二类：在排污单位排放口采样",
+   "condition_tokens": [],
+   "missing_conditions": [],
+   "all_claims_bound": null,
+   "judgement": "synthesis_pending_human_review",
+   "final_status": "FAIL",
+   "final_basis": "mechanical_hard_failure",
+   "final_reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）"
+  },
+  {
+   "qid": "syn-003",
+   "path": "fusion",
+   "category": "synthesis",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": "model_failure",
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "gold_expected": "第一类：在车间或车间处理设施排放口采样；第二类：在排污单位排放口采样",
+   "condition_tokens": [],
+   "missing_conditions": [],
+   "all_claims_bound": null,
+   "judgement": "synthesis_pending_human_review",
+   "final_status": "FAIL",
+   "final_basis": "mechanical_hard_failure",
+   "final_reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）"
+  },
+  {
+   "qid": "syn-004",
+   "path": "pg",
+   "category": "synthesis",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": "model_failure",
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "gold_expected": "GB3838：地表水环境质量；GB3095：环境空气质量。两原文单独引用，不得跨文档混引",
+   "condition_tokens": [],
+   "missing_conditions": [],
+   "all_claims_bound": null,
+   "judgement": "synthesis_pending_human_review",
+   "final_status": "FAIL",
+   "final_basis": "mechanical_hard_failure",
+   "final_reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）"
+  },
+  {
+   "qid": "syn-004",
+   "path": "local",
+   "category": "synthesis",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": "incomplete_conditions",
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "gold_expected": "GB3838：地表水环境质量；GB3095：环境空气质量。两原文单独引用，不得跨文档混引",
+   "condition_tokens": [],
+   "missing_conditions": [],
+   "all_claims_bound": null,
+   "judgement": "synthesis_pending_human_review",
+   "final_status": "FAIL",
+   "final_basis": "mechanical_hard_failure",
+   "final_reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）"
+  },
+  {
+   "qid": "syn-004",
+   "path": "fusion",
+   "category": "synthesis",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": "model_failure",
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "gold_expected": "GB3838：地表水环境质量；GB3095：环境空气质量。两原文单独引用，不得跨文档混引",
+   "condition_tokens": [],
+   "missing_conditions": [],
+   "all_claims_bound": null,
+   "judgement": "synthesis_pending_human_review",
+   "final_status": "FAIL",
+   "final_basis": "mechanical_hard_failure",
+   "final_reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）"
+  },
+  {
+   "qid": "syn-005",
+   "path": "pg",
+   "category": "synthesis",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": "model_failure",
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "gold_expected": "传染病和结核病医疗机构 → 表1（一律执行）；县级及县级以上或20床及以上的综合/其他医疗机构 → 表2（按排放去向分排放标准/预处理标准）",
+   "condition_tokens": [
+    "一律执行",
+    "按排放去向分排放标准",
+    "预处理标准"
+   ],
+   "missing_conditions": [
+    "一律执行",
+    "按排放去向分排放标准",
+    "预处理标准"
+   ],
+   "all_claims_bound": null,
+   "judgement": "synthesis_pending_human_review",
+   "final_status": "FAIL",
+   "final_basis": "mechanical_hard_failure",
+   "final_reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）"
+  },
+  {
+   "qid": "syn-005",
+   "path": "local",
+   "category": "synthesis",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": "model_failure",
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "gold_expected": "传染病和结核病医疗机构 → 表1（一律执行）；县级及县级以上或20床及以上的综合/其他医疗机构 → 表2（按排放去向分排放标准/预处理标准）",
+   "condition_tokens": [
+    "一律执行",
+    "按排放去向分排放标准",
+    "预处理标准"
+   ],
+   "missing_conditions": [
+    "一律执行",
+    "按排放去向分排放标准",
+    "预处理标准"
+   ],
+   "all_claims_bound": null,
+   "judgement": "synthesis_pending_human_review",
+   "final_status": "FAIL",
+   "final_basis": "mechanical_hard_failure",
+   "final_reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）"
+  },
+  {
+   "qid": "syn-005",
+   "path": "fusion",
+   "category": "synthesis",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": "model_failure",
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "gold_expected": "传染病和结核病医疗机构 → 表1（一律执行）；县级及县级以上或20床及以上的综合/其他医疗机构 → 表2（按排放去向分排放标准/预处理标准）",
+   "condition_tokens": [
+    "一律执行",
+    "按排放去向分排放标准",
+    "预处理标准"
+   ],
+   "missing_conditions": [
+    "一律执行",
+    "按排放去向分排放标准",
+    "预处理标准"
+   ],
+   "all_claims_bound": null,
+   "judgement": "synthesis_pending_human_review",
+   "final_status": "FAIL",
+   "final_basis": "mechanical_hard_failure",
+   "final_reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）"
+  },
+  {
+   "qid": "syn-006",
+   "path": "pg",
+   "category": "synthesis",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": "incomplete_conditions",
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "gold_expected": "1997-12-31 前建设（含改、扩建）→ 表1、表2、表3；1998-01-01 起建设 → 表1、表4、表5；建设时间以环境影响评价报告书（表）批准日期为准",
+   "condition_tokens": [
+    "含改",
+    "扩建",
+    "表"
+   ],
+   "missing_conditions": [
+    "含改",
+    "扩建",
+    "表"
+   ],
+   "all_claims_bound": null,
+   "judgement": "synthesis_pending_human_review",
+   "final_status": "FAIL",
+   "final_basis": "mechanical_hard_failure",
+   "final_reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）"
+  },
+  {
+   "qid": "syn-006",
+   "path": "local",
+   "category": "synthesis",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": "incomplete_conditions",
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "gold_expected": "1997-12-31 前建设（含改、扩建）→ 表1、表2、表3；1998-01-01 起建设 → 表1、表4、表5；建设时间以环境影响评价报告书（表）批准日期为准",
+   "condition_tokens": [
+    "含改",
+    "扩建",
+    "表"
+   ],
+   "missing_conditions": [
+    "含改",
+    "扩建",
+    "表"
+   ],
+   "all_claims_bound": null,
+   "judgement": "synthesis_pending_human_review",
+   "final_status": "FAIL",
+   "final_basis": "mechanical_hard_failure",
+   "final_reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）"
+  },
+  {
+   "qid": "syn-006",
+   "path": "fusion",
+   "category": "synthesis",
+   "is_counter": false,
+   "coverage": "partial",
+   "model_status": "incomplete_conditions",
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "gold_expected": "1997-12-31 前建设（含改、扩建）→ 表1、表2、表3；1998-01-01 起建设 → 表1、表4、表5；建设时间以环境影响评价报告书（表）批准日期为准",
+   "condition_tokens": [
+    "含改",
+    "扩建",
+    "表"
+   ],
+   "missing_conditions": [
+    "含改",
+    "扩建",
+    "表"
+   ],
+   "all_claims_bound": null,
+   "judgement": "synthesis_pending_human_review",
+   "final_status": "FAIL",
+   "final_basis": "mechanical_hard_failure",
+   "final_reason": "coverage=partial（非 complete）; 0 交付——raw 正确不等于应用完成（已证实的硬失败不依赖人工状态，也不因未审而软化）"
+  },
+  {
+   "qid": "neg-001",
+   "path": "pg",
+   "category": "fact",
+   "is_counter": true,
+   "coverage": "missing",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "judgement": "counter_pending_gold_projection",
+   "counter_type": "absent_version",
+   "counter_expected_status": "missing",
+   "final_status": "PASS",
+   "final_basis": "frozen_behaviour_contract",
+   "final_reason": "显式 missing 答复（missing 形态、0 交付）——有证据支持",
+   "local_safety_observations": [
+    "未用版本替代"
+   ]
+  },
+  {
+   "qid": "neg-001",
+   "path": "local",
+   "category": "fact",
+   "is_counter": true,
+   "coverage": "partial",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "judgement": "counter_pending_gold_projection",
+   "counter_type": "absent_version",
+   "counter_expected_status": "missing",
+   "final_status": "FAIL",
+   "final_basis": "frozen_behaviour_contract",
+   "final_reason": "coverage=partial，未明确回答 missing——仅 partial/条件不足不等同冻结答复合同",
+   "local_safety_observations": [
+    "未乱答 / 无 false complete"
+   ]
+  },
+  {
+   "qid": "neg-001",
+   "path": "fusion",
+   "category": "fact",
+   "is_counter": true,
+   "coverage": "missing",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "judgement": "counter_pending_gold_projection",
+   "counter_type": "absent_version",
+   "counter_expected_status": "missing",
+   "final_status": "PASS",
+   "final_basis": "frozen_behaviour_contract",
+   "final_reason": "显式 missing 答复（missing 形态、0 交付）——有证据支持",
+   "local_safety_observations": [
+    "未用版本替代"
+   ]
+  },
+  {
+   "qid": "neg-002",
+   "path": "pg",
+   "category": "fact",
+   "is_counter": true,
+   "coverage": "ambiguous",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "judgement": "counter_pending_gold_projection",
+   "counter_type": "cross_workspace_isolation",
+   "counter_expected_status": "isolation",
+   "final_status": "PENDING",
+   "final_basis": "isolation_contract_unproven",
+   "final_reason": "隔离合同需对抗证据；观测不升格为 PASS",
+   "local_safety_observations": [
+    "本腿未见外来 workspace（观测级隔离，非 same-id 对抗实弹）"
+   ]
+  },
+  {
+   "qid": "neg-002",
+   "path": "local",
+   "category": "fact",
+   "is_counter": true,
+   "coverage": "ambiguous",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "judgement": "counter_pending_gold_projection",
+   "counter_type": "cross_workspace_isolation",
+   "counter_expected_status": "isolation",
+   "final_status": "PENDING",
+   "final_basis": "isolation_contract_unproven",
+   "final_reason": "隔离合同需对抗证据；观测不升格为 PASS",
+   "local_safety_observations": [
+    "本腿未见外来 workspace（观测级隔离，非 same-id 对抗实弹）"
+   ]
+  },
+  {
+   "qid": "neg-002",
+   "path": "fusion",
+   "category": "fact",
+   "is_counter": true,
+   "coverage": "ambiguous",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "judgement": "counter_pending_gold_projection",
+   "counter_type": "cross_workspace_isolation",
+   "counter_expected_status": "isolation",
+   "final_status": "PENDING",
+   "final_basis": "isolation_contract_unproven",
+   "final_reason": "隔离合同需对抗证据；观测不升格为 PASS",
+   "local_safety_observations": [
+    "本腿未见外来 workspace（观测级隔离，非 same-id 对抗实弹）"
+   ]
+  },
+  {
+   "qid": "neg-003",
+   "path": "pg",
+   "category": "file_enum",
+   "is_counter": true,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": [
+    "doc-91f9049decde09153368d4b69f280e78"
+   ],
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra": [
+    "doc-91f9049decde09153368d4b69f280e78"
+   ],
+   "delivered_versions": [
+    "2002"
+   ],
+   "judgement": "behaviour_ok_mechanical",
+   "counter_type": "self_code_vs_cited_code",
+   "counter_expected_status": "ok",
+   "self_code_subset_expected": [
+    "doc-91f9049decde09153368d4b69f280e78"
+   ],
+   "extra_citation_only": [],
+   "missing_self_code": [],
+   "final_status": "PASS",
+   "final_basis": "frozen_behaviour_contract",
+   "final_reason": "整题行为有结构证据：集合/覆盖/引用身份全部通过（neg-003 自身编号集合）",
+   "local_safety_observations": []
+  },
+  {
+   "qid": "neg-003",
+   "path": "local",
+   "category": "file_enum",
+   "is_counter": true,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": [
+    "doc-91f9049decde09153368d4b69f280e78"
+   ],
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra": [
+    "doc-91f9049decde09153368d4b69f280e78"
+   ],
+   "delivered_versions": [
+    "2002"
+   ],
+   "judgement": "behaviour_ok_mechanical",
+   "counter_type": "self_code_vs_cited_code",
+   "counter_expected_status": "ok",
+   "self_code_subset_expected": [
+    "doc-91f9049decde09153368d4b69f280e78"
+   ],
+   "extra_citation_only": [],
+   "missing_self_code": [],
+   "final_status": "PASS",
+   "final_basis": "frozen_behaviour_contract",
+   "final_reason": "整题行为有结构证据：集合/覆盖/引用身份全部通过（neg-003 自身编号集合）",
+   "local_safety_observations": []
+  },
+  {
+   "qid": "neg-003",
+   "path": "fusion",
+   "category": "file_enum",
+   "is_counter": true,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": [
+    "doc-91f9049decde09153368d4b69f280e78"
+   ],
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "missing": [],
+   "extra": [
+    "doc-91f9049decde09153368d4b69f280e78"
+   ],
+   "delivered_versions": [
+    "2002"
+   ],
+   "judgement": "behaviour_ok_mechanical",
+   "counter_type": "self_code_vs_cited_code",
+   "counter_expected_status": "ok",
+   "self_code_subset_expected": [
+    "doc-91f9049decde09153368d4b69f280e78"
+   ],
+   "extra_citation_only": [],
+   "missing_self_code": [],
+   "final_status": "PASS",
+   "final_basis": "frozen_behaviour_contract",
+   "final_reason": "整题行为有结构证据：集合/覆盖/引用身份全部通过（neg-003 自身编号集合）",
+   "local_safety_observations": []
+  },
+  {
+   "qid": "neg-004",
+   "path": "pg",
+   "category": "table_enum",
+   "is_counter": true,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 13,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "projection_mode": "empty_projection",
+   "projection": {
+    "ok": true,
+    "missing": [],
+    "extra_rows": 0,
+    "matched": 13
+   },
+   "foreign_table_docs": [],
+   "judgement": "behaviour_ok_mechanical",
+   "counter_type": "fragmented_table_merge",
+   "counter_expected_status": "complete",
+   "target13_complete": true,
+   "extra_rows": 0,
+   "final_status": "PASS",
+   "final_basis": "frozen_behaviour_contract",
+   "final_reason": "整题行为有结构证据：集合/覆盖/引用身份全部通过（合并合同 13 项 exact）",
+   "local_safety_observations": []
+  },
+  {
+   "qid": "neg-004",
+   "path": "local",
+   "category": "table_enum",
+   "is_counter": true,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 13,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "projection_mode": "empty_projection",
+   "projection": {
+    "ok": true,
+    "missing": [],
+    "extra_rows": 0,
+    "matched": 13
+   },
+   "foreign_table_docs": [],
+   "judgement": "behaviour_ok_mechanical",
+   "counter_type": "fragmented_table_merge",
+   "counter_expected_status": "complete",
+   "target13_complete": true,
+   "extra_rows": 0,
+   "final_status": "PASS",
+   "final_basis": "frozen_behaviour_contract",
+   "final_reason": "整题行为有结构证据：集合/覆盖/引用身份全部通过（合并合同 13 项 exact）",
+   "local_safety_observations": []
+  },
+  {
+   "qid": "neg-004",
+   "path": "fusion",
+   "category": "table_enum",
+   "is_counter": true,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 13,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "projection_mode": "empty_projection",
+   "projection": {
+    "ok": true,
+    "missing": [],
+    "extra_rows": 0,
+    "matched": 13
+   },
+   "foreign_table_docs": [],
+   "judgement": "behaviour_ok_mechanical",
+   "counter_type": "fragmented_table_merge",
+   "counter_expected_status": "complete",
+   "target13_complete": true,
+   "extra_rows": 0,
+   "final_status": "PASS",
+   "final_basis": "frozen_behaviour_contract",
+   "final_reason": "整题行为有结构证据：集合/覆盖/引用身份全部通过（合并合同 13 项 exact）",
+   "local_safety_observations": []
+  },
+  {
+   "qid": "neg-005",
+   "path": "pg",
+   "category": "table_enum",
+   "is_counter": true,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 38,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "projection_mode": "empty_projection",
+   "projection": {
+    "ok": false,
+    "note": "no gold projection"
+   },
+   "foreign_table_docs": [],
+   "judgement": "behaviour_violation_merges_or_overclaims",
+   "counter_type": "same_number_different_docs",
+   "counter_expected_status": "ambiguous",
+   "delivered_rows": 38,
+   "docs_cited": [
+    "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+    "doc-91f9049decde09153368d4b69f280e78"
+   ],
+   "final_status": "FAIL",
+   "final_basis": "frozen_behaviour_contract",
+   "final_reason": "跨 2 文档 complete 交付，不符冻结 ambiguous（仅判当前行为，不宣称底层表身份串并）",
+   "local_safety_observations": []
+  },
+  {
+   "qid": "neg-005",
+   "path": "local",
+   "category": "table_enum",
+   "is_counter": true,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 38,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "projection_mode": "empty_projection",
+   "projection": {
+    "ok": false,
+    "note": "no gold projection"
+   },
+   "foreign_table_docs": [],
+   "judgement": "behaviour_violation_merges_or_overclaims",
+   "counter_type": "same_number_different_docs",
+   "counter_expected_status": "ambiguous",
+   "delivered_rows": 38,
+   "docs_cited": [
+    "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+    "doc-91f9049decde09153368d4b69f280e78"
+   ],
+   "final_status": "FAIL",
+   "final_basis": "frozen_behaviour_contract",
+   "final_reason": "跨 2 文档 complete 交付，不符冻结 ambiguous（仅判当前行为，不宣称底层表身份串并）",
+   "local_safety_observations": []
+  },
+  {
+   "qid": "neg-005",
+   "path": "fusion",
+   "category": "table_enum",
+   "is_counter": true,
+   "coverage": "complete",
+   "model_status": null,
+   "delivered": 38,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": true,
+   "projection_mode": "empty_projection",
+   "projection": {
+    "ok": false,
+    "note": "no gold projection"
+   },
+   "foreign_table_docs": [],
+   "judgement": "behaviour_violation_merges_or_overclaims",
+   "counter_type": "same_number_different_docs",
+   "counter_expected_status": "ambiguous",
+   "delivered_rows": 38,
+   "docs_cited": [
+    "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+    "doc-91f9049decde09153368d4b69f280e78"
+   ],
+   "final_status": "FAIL",
+   "final_basis": "frozen_behaviour_contract",
+   "final_reason": "跨 2 文档 complete 交付，不符冻结 ambiguous（仅判当前行为，不宣称底层表身份串并）",
+   "local_safety_observations": []
+  },
+  {
+   "qid": "neg-006",
+   "path": "pg",
+   "category": "fact",
+   "is_counter": true,
+   "coverage": "missing",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "judgement": "counter_pending_gold_projection",
+   "counter_type": "no_answer_in_corpus",
+   "counter_expected_status": "missing",
+   "final_status": "PASS",
+   "final_basis": "frozen_behaviour_contract",
+   "final_reason": "显式 missing 答复（missing 形态、0 交付）——有证据支持",
+   "local_safety_observations": [
+    "未用版本替代"
+   ]
+  },
+  {
+   "qid": "neg-006",
+   "path": "local",
+   "category": "fact",
+   "is_counter": true,
+   "coverage": "partial",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "judgement": "counter_pending_gold_projection",
+   "counter_type": "no_answer_in_corpus",
+   "counter_expected_status": "missing",
+   "final_status": "FAIL",
+   "final_basis": "frozen_behaviour_contract",
+   "final_reason": "coverage=partial，未明确回答 missing——仅 partial/条件不足不等同冻结答复合同",
+   "local_safety_observations": [
+    "未乱答 / 无 false complete"
+   ]
+  },
+  {
+   "qid": "neg-006",
+   "path": "fusion",
+   "category": "fact",
+   "is_counter": true,
+   "coverage": "missing",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "judgement": "counter_pending_gold_projection",
+   "counter_type": "no_answer_in_corpus",
+   "counter_expected_status": "missing",
+   "final_status": "PASS",
+   "final_basis": "frozen_behaviour_contract",
+   "final_reason": "显式 missing 答复（missing 形态、0 交付）——有证据支持",
+   "local_safety_observations": [
+    "未用版本替代"
+   ]
+  },
+  {
+   "qid": "neg-007",
+   "path": "pg",
+   "category": "table_enum",
+   "is_counter": true,
+   "coverage": "partial",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "projection_mode": "empty_projection",
+   "projection": {
+    "ok": false,
+    "note": "no gold projection"
+   },
+   "foreign_table_docs": [],
+   "judgement": "pending_behaviour_review",
+   "counter_type": "ambiguous_caption",
+   "counter_expected_status": "ambiguous",
+   "final_status": "FAIL",
+   "final_basis": "frozen_behaviour_contract",
+   "final_reason": "coverage=partial ≠ 冻结 ambiguous——保守拒绝不等同合同满足",
+   "local_safety_observations": [
+    "保守拒绝，未编造表号"
+   ]
+  },
+  {
+   "qid": "neg-007",
+   "path": "local",
+   "category": "table_enum",
+   "is_counter": true,
+   "coverage": "partial",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "projection_mode": "empty_projection",
+   "projection": {
+    "ok": false,
+    "note": "no gold projection"
+   },
+   "foreign_table_docs": [],
+   "judgement": "pending_behaviour_review",
+   "counter_type": "ambiguous_caption",
+   "counter_expected_status": "ambiguous",
+   "final_status": "FAIL",
+   "final_basis": "frozen_behaviour_contract",
+   "final_reason": "coverage=partial ≠ 冻结 ambiguous——保守拒绝不等同合同满足",
+   "local_safety_observations": [
+    "保守拒绝，未编造表号"
+   ]
+  },
+  {
+   "qid": "neg-007",
+   "path": "fusion",
+   "category": "table_enum",
+   "is_counter": true,
+   "coverage": "partial",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "projection_mode": "empty_projection",
+   "projection": {
+    "ok": false,
+    "note": "no gold projection"
+   },
+   "foreign_table_docs": [],
+   "judgement": "pending_behaviour_review",
+   "counter_type": "ambiguous_caption",
+   "counter_expected_status": "ambiguous",
+   "final_status": "FAIL",
+   "final_basis": "frozen_behaviour_contract",
+   "final_reason": "coverage=partial ≠ 冻结 ambiguous——保守拒绝不等同合同满足",
+   "local_safety_observations": [
+    "保守拒绝，未编造表号"
+   ]
+  },
+  {
+   "qid": "neg-008",
+   "path": "pg",
+   "category": "prose_enum",
+   "is_counter": true,
+   "coverage": null,
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "absent",
+   "budget_failure": "swallowed-refusal",
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "judgement": "budget_refused_at_pg_guard_expected",
+   "counter_type": "budget_exhaustion",
+   "counter_expected_status": "partial",
+   "coverage_gap": "members/chars expansion path NOT exercised in production this round",
+   "final_status": "PENDING",
+   "final_basis": "coverage_gap",
+   "final_reason": "该成员/字符展开预算反例未获生产实测——整题不可标 PASS；闸门成功控制独立记录",
+   "local_safety_observations": [
+    "PG 请求前额度闸门拒绝执行正常（该控制项单独记录为有效）"
+   ]
+  },
+  {
+   "qid": "neg-008",
+   "path": "local",
+   "category": "prose_enum",
+   "is_counter": true,
+   "coverage": null,
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "absent",
+   "budget_failure": "budget",
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "judgement": "budget_refused_at_pg_guard_expected",
+   "counter_type": "budget_exhaustion",
+   "counter_expected_status": "partial",
+   "coverage_gap": "members/chars expansion path NOT exercised in production this round",
+   "final_status": "PENDING",
+   "final_basis": "coverage_gap",
+   "final_reason": "该成员/字符展开预算反例未获生产实测——整题不可标 PASS；闸门成功控制独立记录",
+   "local_safety_observations": [
+    "PG 请求前额度闸门拒绝执行正常（该控制项单独记录为有效）"
+   ]
+  },
+  {
+   "qid": "neg-008",
+   "path": "fusion",
+   "category": "prose_enum",
+   "is_counter": true,
+   "coverage": null,
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "absent",
+   "budget_failure": "swallowed-refusal",
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "judgement": "budget_refused_at_pg_guard_expected",
+   "counter_type": "budget_exhaustion",
+   "counter_expected_status": "partial",
+   "coverage_gap": "members/chars expansion path NOT exercised in production this round",
+   "final_status": "PENDING",
+   "final_basis": "coverage_gap",
+   "final_reason": "该成员/字符展开预算反例未获生产实测——整题不可标 PASS；闸门成功控制独立记录",
+   "local_safety_observations": [
+    "PG 请求前额度闸门拒绝执行正常（该控制项单独记录为有效）"
+   ]
+  },
+  {
+   "qid": "neg-009",
+   "path": "pg",
+   "category": "file_enum",
+   "is_counter": true,
+   "coverage": "partial",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "missing": [],
+   "extra": [],
+   "delivered_versions": [],
+   "judgement": "counter_coverage_not_complete",
+   "counter_type": "duplicate_content_doc",
+   "counter_expected_status": "ok",
+   "final_status": "FAIL",
+   "final_basis": "frozen_behaviour_contract",
+   "final_reason": "expected 应答（ok）而 0 交付——整题未回答",
+   "local_safety_observations": [
+    "本结果不构成内容丢失或版本乱答的证据"
+   ]
+  },
+  {
+   "qid": "neg-009",
+   "path": "local",
+   "category": "file_enum",
+   "is_counter": true,
+   "coverage": "partial",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "missing": [],
+   "extra": [],
+   "delivered_versions": [],
+   "judgement": "counter_coverage_not_complete",
+   "counter_type": "duplicate_content_doc",
+   "counter_expected_status": "ok",
+   "final_status": "FAIL",
+   "final_basis": "frozen_behaviour_contract",
+   "final_reason": "expected 应答（ok）而 0 交付——整题未回答",
+   "local_safety_observations": [
+    "本结果不构成内容丢失或版本乱答的证据"
+   ]
+  },
+  {
+   "qid": "neg-009",
+   "path": "fusion",
+   "category": "file_enum",
+   "is_counter": true,
+   "coverage": "partial",
+   "model_status": null,
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "missing": [],
+   "extra": [],
+   "delivered_versions": [],
+   "judgement": "counter_coverage_not_complete",
+   "counter_type": "duplicate_content_doc",
+   "counter_expected_status": "ok",
+   "final_status": "FAIL",
+   "final_basis": "frozen_behaviour_contract",
+   "final_reason": "expected 应答（ok）而 0 交付——整题未回答",
+   "local_safety_observations": [
+    "本结果不构成内容丢失或版本乱答的证据"
+   ]
+  },
+  {
+   "qid": "neg-010",
+   "path": "pg",
+   "category": "synthesis",
+   "is_counter": true,
+   "coverage": "partial",
+   "model_status": "model_failure",
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "gold_expected": "",
+   "condition_tokens": [],
+   "missing_conditions": [],
+   "all_claims_bound": null,
+   "judgement": "counter_synthesis_pending_human_review",
+   "counter_type": "version_substitution",
+   "counter_expected_status": "ok",
+   "final_status": "FAIL",
+   "final_basis": "frozen_behaviour_contract",
+   "final_reason": "expected 应答而 0 交付——整题未回答（model_failure/条件不足保留）",
+   "local_safety_observations": [
+    "model_failure（保守不发记录，无 over-claim）"
+   ]
+  },
+  {
+   "qid": "neg-010",
+   "path": "local",
+   "category": "synthesis",
+   "is_counter": true,
+   "coverage": "partial",
+   "model_status": "incomplete_conditions",
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "gold_expected": "",
+   "condition_tokens": [],
+   "missing_conditions": [],
+   "all_claims_bound": null,
+   "judgement": "counter_synthesis_pending_human_review",
+   "counter_type": "version_substitution",
+   "counter_expected_status": "ok",
+   "final_status": "FAIL",
+   "final_basis": "frozen_behaviour_contract",
+   "final_reason": "expected 应答而 0 交付——整题未回答（model_failure/条件不足保留）",
+   "local_safety_observations": [
+    "incomplete_conditions（保守不发记录，无 over-claim）"
+   ]
+  },
+  {
+   "qid": "neg-010",
+   "path": "fusion",
+   "category": "synthesis",
+   "is_counter": true,
+   "coverage": "partial",
+   "model_status": "model_failure",
+   "delivered": 0,
+   "runtime": "ok",
+   "budget_failure": null,
+   "unverified_citations": [],
+   "masked_citations": 0,
+   "citation_gaps": 0,
+   "citation_gap_only": false,
+   "all_citations_verified": null,
+   "gold_expected": "",
+   "condition_tokens": [],
+   "missing_conditions": [],
+   "all_claims_bound": null,
+   "judgement": "counter_synthesis_pending_human_review",
+   "counter_type": "version_substitution",
+   "counter_expected_status": "ok",
+   "final_status": "FAIL",
+   "final_basis": "frozen_behaviour_contract",
+   "final_reason": "expected 应答而 0 交付——整题未回答（model_failure/条件不足保留）",
+   "local_safety_observations": [
+    "model_failure（保守不发记录，无 over-claim）"
+   ]
+  }
+ ],
+ "summary": {
+  "positive": {
+   "fact": {
+    "pg": {
+     "PENDING": 6,
+     "FAIL": 1
+    },
+    "local": {
+     "FAIL": 7
+    },
+    "fusion": {
+     "PENDING": 6,
+     "FAIL": 1
+    }
+   },
+   "file_enum": {
+    "pg": {
+     "PASS": 5,
+     "FAIL": 1
+    },
+    "local": {
+     "PASS": 5,
+     "FAIL": 1
+    },
+    "fusion": {
+     "PASS": 5,
+     "FAIL": 1
+    }
+   },
+   "prose_enum": {
+    "pg": {
+     "PASS": 5,
+     "FAIL": 1
+    },
+    "local": {
+     "PASS": 4,
+     "FAIL": 2
+    },
+    "fusion": {
+     "PASS": 5,
+     "FAIL": 1
+    }
+   },
+   "table_enum": {
+    "pg": {
+     "PASS": 5,
+     "FAIL": 1
+    },
+    "local": {
+     "PASS": 5,
+     "FAIL": 1
+    },
+    "fusion": {
+     "PASS": 5,
+     "FAIL": 1
+    }
+   },
+   "synthesis": {
+    "pg": {
+     "FAIL": 6
+    },
+    "local": {
+     "FAIL": 6
+    },
+    "fusion": {
+     "FAIL": 6
+    }
+   }
+  },
+  "counter": {
+   "fact": {
+    "pg": {
+     "PASS": 2,
+     "PENDING": 1
+    },
+    "local": {
+     "FAIL": 2,
+     "PENDING": 1
+    },
+    "fusion": {
+     "PASS": 2,
+     "PENDING": 1
+    }
+   },
+   "file_enum": {
+    "pg": {
+     "PASS": 1,
+     "FAIL": 1
+    },
+    "local": {
+     "PASS": 1,
+     "FAIL": 1
+    },
+    "fusion": {
+     "PASS": 1,
+     "FAIL": 1
+    }
+   },
+   "table_enum": {
+    "pg": {
+     "PASS": 1,
+     "FAIL": 2
+    },
+    "local": {
+     "PASS": 1,
+     "FAIL": 2
+    },
+    "fusion": {
+     "PASS": 1,
+     "FAIL": 2
+    }
+   },
+   "prose_enum": {
+    "pg": {
+     "PENDING": 1
+    },
+    "local": {
+     "PENDING": 1
+    },
+    "fusion": {
+     "PENDING": 1
+    }
+   },
+   "synthesis": {
+    "pg": {
+     "FAIL": 1
+    },
+    "local": {
+     "FAIL": 1
+    },
+    "fusion": {
+     "FAIL": 1
+    }
+   }
+  },
+  "totals": {
+   "positive": {
+    "PENDING": 12,
+    "FAIL": 37,
+    "PASS": 44
+   },
+   "counter": {
+    "PASS": 10,
+    "FAIL": 14,
+    "PENDING": 6
+   }
+  }
+ },
+ "recall": {
+  "per_question": {
+   "fact-001": {
+    "pg": {
+     "chunk_n": 1,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 2,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "fact-002": {
+    "pg": {
+     "chunk_n": 1,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 10,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "fact-003": {
+    "pg": {
+     "chunk_n": 2,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 3,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "fact-004": {
+    "pg": {
+     "chunk_n": 1,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 8,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "fact-005": {
+    "pg": {
+     "chunk_n": 3,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 9,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 4,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "fact-006": {
+    "pg": {
+     "chunk_n": 4,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 4,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "fact-007": {
+    "pg": {
+     "chunk_n": 9,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 11,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "file-enum-001": {
+    "pg": {
+     "chunk_n": 12,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 2,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 12,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 2,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "file-enum-002": {
+    "pg": {
+     "chunk_n": 20,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 5,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 23,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 5,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "file-enum-003": {
+    "pg": {
+     "chunk_n": 15,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 5,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 18,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 5,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "file-enum-004": {
+    "pg": {
+     "chunk_n": 20,
+     "chunk_recall_at_20": 0.714,
+     "typed_n": 7,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 0.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 30,
+     "chunk_recall_at_20": 0.714,
+     "typed_n": 7,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "file-enum-005": {
+    "pg": {
+     "chunk_n": 0,
+     "chunk_recall_at_20": 0.0,
+     "typed_n": 3,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 10,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 3,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "file-enum-006": {
+    "pg": {
+     "chunk_n": 18,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 18,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "prose-enum-001": {
+    "pg": {
+     "chunk_n": 2,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 6,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "prose-enum-002": {
+    "pg": {
+     "chunk_n": 5,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 10,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "prose-enum-003": {
+    "pg": {
+     "chunk_n": 13,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 16,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "prose-enum-004": {
+    "pg": {
+     "chunk_n": 1,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 7,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "prose-enum-005": {
+    "pg": {
+     "chunk_n": 1,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 8,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 4,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "prose-enum-006": {
+    "pg": {
+     "chunk_n": 5,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 5,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "table-enum-001": {
+    "pg": {
+     "chunk_n": 2,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 10,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "table-enum-002": {
+    "pg": {
+     "chunk_n": 1,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 5,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "table-enum-003": {
+    "pg": {
+     "chunk_n": 3,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 3,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "table-enum-004": {
+    "pg": {
+     "chunk_n": 4,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 9,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "table-enum-005": {
+    "pg": {
+     "chunk_n": 3,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 7,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "table-enum-006": {
+    "pg": {
+     "chunk_n": 1,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 5,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "syn-001": {
+    "pg": {
+     "chunk_n": 5,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 2,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 9,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 2,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "syn-002": {
+    "pg": {
+     "chunk_n": 1,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 5,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "syn-003": {
+    "pg": {
+     "chunk_n": 1,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 10,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "syn-004": {
+    "pg": {
+     "chunk_n": 20,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 2,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 0.5,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 21,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 2,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "syn-005": {
+    "pg": {
+     "chunk_n": 8,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 9,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   },
+   "syn-006": {
+    "pg": {
+     "chunk_n": 18,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    },
+    "local": {
+     "usable_ordered_n": 10,
+     "usable_recall_at_20": 1.0,
+     "explicit_zero": false
+    },
+    "fusion": {
+     "chunk_n": 19,
+     "chunk_recall_at_20": 1.0,
+     "typed_n": 1,
+     "typed_coverage": 1.0,
+     "union_coverage": 1.0,
+     "explicit_zero": false
+    }
+   }
+  },
+  "typed_evidence_recall": {
+   "per_question": {
+    "fact-001": {
+     "pg": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    },
+    "fact-002": {
+     "pg": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-b45c510232ed4d2452b0f5b2a13434e4-0001"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-b45c510232ed4d2452b0f5b2a13434e4-0001"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-b45c510232ed4d2452b0f5b2a13434e4-0001"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    },
+    "fact-003": {
+     "pg": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "385d9e8e0539a87e61f0407bda1739ad"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "385d9e8e0539a87e61f0407bda1739ad"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "385d9e8e0539a87e61f0407bda1739ad"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    },
+    "fact-004": {
+     "pg": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-91f9049decde09153368d4b69f280e78-0001"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-91f9049decde09153368d4b69f280e78-0001"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-91f9049decde09153368d4b69f280e78-0001"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    },
+    "fact-005": {
+     "pg": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-d6d711b0614234635955480a53f52a10-0001"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-d6d711b0614234635955480a53f52a10-0001"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-d6d711b0614234635955480a53f52a10-0001"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    },
+    "fact-006": {
+     "pg": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "9e2f2fd3df255a39b42ecc93f143bc74"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "9e2f2fd3df255a39b42ecc93f143bc74"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "9e2f2fd3df255a39b42ecc93f143bc74"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    },
+    "fact-007": {
+     "pg": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-b45c510232ed4d2452b0f5b2a13434e4-0007"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-b45c510232ed4d2452b0f5b2a13434e4-0007"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-b45c510232ed4d2452b0f5b2a13434e4-0007"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    },
+    "prose-enum-001": {
+     "pg": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "385d9e8e0539a87e61f0407bda1739ad",
+       "90d4b1c55cb8c6ff81dcbdfd55827165",
+       "ad9d292d3ee2fd88a8fd25b9efc8265a"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "385d9e8e0539a87e61f0407bda1739ad",
+       "90d4b1c55cb8c6ff81dcbdfd55827165",
+       "ad9d292d3ee2fd88a8fd25b9efc8265a"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "385d9e8e0539a87e61f0407bda1739ad",
+       "90d4b1c55cb8c6ff81dcbdfd55827165",
+       "ad9d292d3ee2fd88a8fd25b9efc8265a"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    },
+    "prose-enum-002": {
+     "pg": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "ef6868c7bc693df8da996208421b815d"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "ef6868c7bc693df8da996208421b815d"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "ef6868c7bc693df8da996208421b815d"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    },
+    "prose-enum-003": {
+     "pg": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "a00e1705c43ffacbca6c408197c6bac9"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "a00e1705c43ffacbca6c408197c6bac9"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "a00e1705c43ffacbca6c408197c6bac9"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    },
+    "prose-enum-004": {
+     "pg": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "7b4770667908af51eb321bd82c89aaf7"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "7b4770667908af51eb321bd82c89aaf7"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "7b4770667908af51eb321bd82c89aaf7"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    },
+    "prose-enum-005": {
+     "pg": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "d9ead1de90c8e67959ccb2b4a67cac4a"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "d9ead1de90c8e67959ccb2b4a67cac4a"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "d9ead1de90c8e67959ccb2b4a67cac4a"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    },
+    "prose-enum-006": {
+     "pg": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "7f9dddaf02f372cc7d329f4678c46fbc"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "7f9dddaf02f372cc7d329f4678c46fbc"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "7f9dddaf02f372cc7d329f4678c46fbc"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    },
+    "table-enum-001": {
+     "pg": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+       "tb-b45c510232ed4d2452b0f5b2a13434e4-0002"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+       "tb-b45c510232ed4d2452b0f5b2a13434e4-0002"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+       "tb-b45c510232ed4d2452b0f5b2a13434e4-0002"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    },
+    "table-enum-002": {
+     "pg": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    },
+    "table-enum-003": {
+     "pg": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-d6d711b0614234635955480a53f52a10-0002",
+       "tb-d6d711b0614234635955480a53f52a10-0003",
+       "tb-d6d711b0614234635955480a53f52a10-0004"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-d6d711b0614234635955480a53f52a10-0002",
+       "tb-d6d711b0614234635955480a53f52a10-0003",
+       "tb-d6d711b0614234635955480a53f52a10-0004"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-d6d711b0614234635955480a53f52a10-0002",
+       "tb-d6d711b0614234635955480a53f52a10-0003",
+       "tb-d6d711b0614234635955480a53f52a10-0004"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    },
+    "table-enum-004": {
+     "pg": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-91f9049decde09153368d4b69f280e78-0001"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-91f9049decde09153368d4b69f280e78-0001"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-91f9049decde09153368d4b69f280e78-0001"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    },
+    "table-enum-005": {
+     "pg": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-68a03b50e1ba1ffc6a0116529f694fe1-0002"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-68a03b50e1ba1ffc6a0116529f694fe1-0002"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-68a03b50e1ba1ffc6a0116529f694fe1-0002"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    },
+    "table-enum-006": {
+     "pg": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0003"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    },
+    "syn-001": {
+     "pg": {
+      "typed_evidence_recall": 0.667,
+      "covered": [
+       "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "tb-4c883d21fa02a53189e0911c3d59d1d1-0001"
+      ],
+      "missed": [
+       "eebc13e2a0348fa67955192750d4e9e6"
+      ],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 0.667,
+      "covered": [
+       "eebc13e2a0348fa67955192750d4e9e6",
+       "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001"
+      ],
+      "missed": [
+       "tb-4c883d21fa02a53189e0911c3d59d1d1-0001"
+      ],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "eebc13e2a0348fa67955192750d4e9e6",
+       "tb-257d8cf3fdf90e76c31908c4f92fc1a1-0001",
+       "tb-4c883d21fa02a53189e0911c3d59d1d1-0001"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    },
+    "syn-002": {
+     "pg": {
+      "typed_evidence_recall": 0.0,
+      "covered": [],
+      "missed": [
+       "e0dae0566f942e76eb779d90de929d39",
+       "ef6868c7bc693df8da996208421b815d"
+      ],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 0.5,
+      "covered": [
+       "ef6868c7bc693df8da996208421b815d"
+      ],
+      "missed": [
+       "e0dae0566f942e76eb779d90de929d39"
+      ],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 0.5,
+      "covered": [
+       "ef6868c7bc693df8da996208421b815d"
+      ],
+      "missed": [
+       "e0dae0566f942e76eb779d90de929d39"
+      ],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    },
+    "syn-003": {
+     "pg": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "e0ee2cef12742c7946cfe0a26ff51f6f"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "e0ee2cef12742c7946cfe0a26ff51f6f"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "e0ee2cef12742c7946cfe0a26ff51f6f"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    },
+    "syn-004": {
+     "pg": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "1be5a15442ef9d0368b3e1367a03a2fb",
+       "6291e97f42b5eed29d234cf1e96ed724"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 0.5,
+      "covered": [
+       "1be5a15442ef9d0368b3e1367a03a2fb"
+      ],
+      "missed": [
+       "6291e97f42b5eed29d234cf1e96ed724"
+      ],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "1be5a15442ef9d0368b3e1367a03a2fb",
+       "6291e97f42b5eed29d234cf1e96ed724"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    },
+    "syn-005": {
+     "pg": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "ef6868c7bc693df8da996208421b815d",
+       "tb-68a03b50e1ba1ffc6a0116529f694fe1-0001",
+       "tb-68a03b50e1ba1ffc6a0116529f694fe1-0002"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "ef6868c7bc693df8da996208421b815d",
+       "tb-68a03b50e1ba1ffc6a0116529f694fe1-0001",
+       "tb-68a03b50e1ba1ffc6a0116529f694fe1-0002"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "ef6868c7bc693df8da996208421b815d",
+       "tb-68a03b50e1ba1ffc6a0116529f694fe1-0001",
+       "tb-68a03b50e1ba1ffc6a0116529f694fe1-0002"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    },
+    "syn-006": {
+     "pg": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "e0ee2cef12742c7946cfe0a26ff51f6f"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "local": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "e0ee2cef12742c7946cfe0a26ff51f6f"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     },
+     "fusion": {
+      "typed_evidence_recall": 1.0,
+      "covered": [
+       "e0ee2cef12742c7946cfe0a26ff51f6f"
+      ],
+      "missed": [],
+      "pending_unmapped": [],
+      "published_basis": "期望 unit 全部按组合身份解析",
+      "explicit_zero_discovery": false,
+      "backfill": "枚举/展开/精排结果一律不参与"
+     }
+    }
+   },
+   "manifest_sha256": "ee23f2c10a8e2c733511fae59bb157380c4ab9c1e888aa510e36daf49f9b8f3b",
+   "rejected_entries": [],
+   "note": "unit 命中=发现 chunk 真在该 unit 的 chunk_ids 内，或 typed 目标自带该 unit/scope 身份；typed-doc 发现只算文档存在，不自动命中其 unit；缺映射 pending；跨 workspace 条目加载即拒"
+  },
+  "published_aggregates": null,
+  "withdrawn_previous_averages": {
+   "pg": 0.959,
+   "local": 0.952,
+   "fusion": 0.991,
+   "reason": "漏读 typed discovery，不能作为可比较的发现召回结论；本轮按分段口径重算，汇总留待口径审查"
+  },
+  "method": {
+   "chunk_ordered_recall_at_20": "chunk 候选按保存顺序前 20 文档命中/期望文档数（仅当有 chunk 候选）",
+   "typed_discovery_coverage": "typed 目标文档集命中/期望（typed 无排序声明，不称 @20）",
+   "union_discovery_coverage": "两段并集命中/期望（无序存在性覆盖）",
+   "backfill": "枚举答案/targets_resolved/usable(仅 local 段口径)/精排/展开一律不回填；显式 0 发现保持 0"
+  },
+  "notes": "pre-expansion only；local usable=adapter 已验发现（展开前），pg/fusion 读 fusion runtime typed_targets+candidates 两段"
+ },
+ "ledger_and_timing": {
+  "reserved_vs_issued_diffs": [
+   {
+    "leg": "r2/fusion/syn-001",
+    "service": "answer_llm",
+    "reserved": 1,
+    "issued": 0
+   },
+   {
+    "leg": "r2/fusion/syn-006",
+    "service": "answer_llm",
+    "reserved": 1,
+    "issued": 0
+   },
+   {
+    "leg": "r2/local/neg-010",
+    "service": "answer_llm",
+    "reserved": 1,
+    "issued": 0
+   },
+   {
+    "leg": "r2/local/syn-001",
+    "service": "answer_llm",
+    "reserved": 1,
+    "issued": 0
+   },
+   {
+    "leg": "r2/local/syn-002",
+    "service": "answer_llm",
+    "reserved": 1,
+    "issued": 0
+   },
+   {
+    "leg": "r2/local/syn-003",
+    "service": "answer_llm",
+    "reserved": 1,
+    "issued": 0
+   },
+   {
+    "leg": "r2/local/syn-004",
+    "service": "answer_llm",
+    "reserved": 1,
+    "issued": 0
+   },
+   {
+    "leg": "r2/local/syn-006",
+    "service": "answer_llm",
+    "reserved": 1,
+    "issued": 0
+   },
+   {
+    "leg": "r2/pg/syn-001",
+    "service": "answer_llm",
+    "reserved": 1,
+    "issued": 0
+   },
+   {
+    "leg": "r2/pg/syn-006",
+    "service": "answer_llm",
+    "reserved": 1,
+    "issued": 0
+   }
+  ],
+  "refusals": {
+   "events": [
+    {
+     "where": "r2/pg/neg-008:pg",
+     "service": "pg"
+    },
+    {
+     "where": "r2/local/neg-008:readonly_select_chunks",
+     "service": "pg"
+    },
+    {
+     "where": "r2/fusion/neg-008:pg",
+     "service": "pg"
+    }
+   ]
+  },
+  "answer_http_by_leg": {
+   "r2/pg/syn-002": 1,
+   "r2/fusion/syn-002": 1,
+   "r2/pg/syn-003": 1,
+   "r2/fusion/syn-003": 1,
+   "r2/pg/syn-004": 1,
+   "r2/fusion/syn-004": 1,
+   "r2/pg/syn-005": 1,
+   "r2/local/syn-005": 1,
+   "r2/fusion/syn-005": 1,
+   "r2/pg/neg-010": 1,
+   "r2/fusion/neg-010": 1
+  },
+  "timings": {
+   "discovery_inclusive_rerank_ms": {
+    "n": 120,
+    "p50": 2552.0,
+    "p95": 7440,
+    "max": 13323
+   },
+   "discovery_exclusive_rerank_approx_ms": {
+    "n": 38,
+    "p50": 4219.0,
+    "p95": 5745,
+    "max": 6143
+   },
+   "rerank_ms": {
+    "n": 38,
+    "p50": 1853.5,
+    "p95": 3916,
+    "max": 7180
+   },
+   "answer_ms_composite_unsplit": {
+    "n": 120,
+    "p50": 1606.0,
+    "p95": 5563,
+    "max": 7217
+   },
+   "total_ms_recorded": {
+    "n": 120,
+    "p50": 4488.5,
+    "p95": 10573,
+    "max": 14141
+   },
+   "answer_stage_stages_unavailable": "answer_ms 内含范围展开/生成/复核，独立阶段计时 unavailable；模型 call.latency 仅 HTTP 时间不冒充全生成"
+  },
+  "recorded_total_sum_s": 692.542,
+  "serial_cache_condition": "run structure as recorded by the owning entry; every value from THIS run's ledger receipts"
+ },
+ "policy_notes": {
+  "final_layering": "final_status 从整题决定性证据出发：投影/集合/合同/覆盖/人工失败优先；掩码等细项 unknown 单列不软化整题结论",
+  "recall": "typed 与 chunk 分段呈现，无统一 @20 声明；typed 证据召回按组合身份；旧均值撤下",
+  "source_qualification": "workspace/snapshot/doc 身份经冻结守卫+SHA 守卫输入独立核对后方为 verified；catalog 名称须经独立输入证据定位",
+  "declaration_support": "R1：所交付全文须由声明的原始 unit 跨度/按声明顺序的跨 unit segments 完整回读（空白归一包含，非 LLM）；item.doc_id 与 citation.doc_id 必须一致；两种金标形状的编号都绑定 item.clause",
+  "counter_layering": "R2：整题裁决=冻结行为合同是否达成（主 agent 2026-10-08 裁决表）；'无 false complete/额度闸门拒绝/本腿未见外 workspace'等安全观测单列于 local_safety_observations，不折算整题 PASS；runtime 失败/工件缺失为第三类",
+  "reject_boundary": "R3：后置身份必验（结构+与冻结及 before 一致）；解析证据内容绑定=Gate-0 parsed_blocks_tables_bytes 复算对账；verify/读/解析统一拒绝边界，诊断净化后非零抛出",
+  "expected_routing": "expected 仅事后对照，从不路由；反例判实际行为"
+ },
+ "generation_binding": {
+  "run_dir": "reports/pg-retrieval/phase-4-formal-fixed-round-2",
+  "round": 2,
+  "anchor": "reports/pg-retrieval/phase-4-formal-two-rounds-prep-r2/config-anchor.json",
+  "anchor_sha256": "315428e20a30ce8bbffe9c064e447816f8e1fd5ce8b91ad49e791981018b5221",
+  "run_manifest": "pilot-manifest.json",
+  "manual_records": null,
+  "manual_records_sha256": null,
+  "records_bound": 0,
+  "mapping_manifest_sha256": "ee23f2c10a8e2c733511fae59bb157380c4ab9c1e888aa510e36daf49f9b8f3b",
+  "consumed_files": 214
+ }
+}

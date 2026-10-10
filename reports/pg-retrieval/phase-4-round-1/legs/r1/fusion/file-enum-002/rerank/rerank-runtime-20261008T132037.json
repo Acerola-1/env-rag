@@ -1,0 +1,5153 @@
+{
+ "task": "5.4 joint rerank over fused candidates (bounded, recorded)",
+ "started_at": "2026-10-08T13:20:34+0800",
+ "service_contract": {
+  "endpoint": "{host}/v1/rerank (POST)",
+  "request": [
+   "model",
+   "query",
+   "documents",
+   "top_n",
+   "return_documents=false"
+  ],
+  "response": [
+   "id",
+   "results[{index, relevance_score}]",
+   "meta.tokens"
+  ],
+  "errors": {
+   "401/403": "auth",
+   "429": "rate limit",
+   "5xx": "service"
+  }
+ },
+ "input_budget": 40,
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "results": [
+  {
+   "query_id": "file-enum-002",
+   "query": "库内有哪些《中国移动源环境管理年报》？",
+   "workspace": "default",
+   "skipped": null,
+   "inputs": [
+    {
+     "input_index": 0,
+     "workspace": "default",
+     "chunk_id": "doc-b64a60d5251a9101f3d8f050f6933216-chunk-028",
+     "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+     "content_sha256": "79ec528e081ad82eebbf4ddb456b9dc43935de29c6f6183b11ad598d152b9cc2",
+     "content_len": 2453,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b64a60d5251a9101f3d8f050f6933216-chunk-028",
+       "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+       "heading": "中国移动源环境管理年报 [part 5] 中国移动源环境管理年报 专栏 10：“十四五”现代综合交通运输体系发展规划",
+       "chunk_order": 28,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.166045069694519
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "a42ee4eb8339a20ceb082f045300bba7",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "unit_id": "a42ee4eb8339a20ceb082f045300bba7",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-028"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b64a60d5251a9101f3d8f050f6933216-0012",
+       "table_id": "tb-b64a60d5251a9101f3d8f050f6933216-0012",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "table_id": "tb-b64a60d5251a9101f3d8f050f6933216-0012",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-028"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b64a60d5251a9101f3d8f050f6933216-0013",
+       "table_id": "tb-b64a60d5251a9101f3d8f050f6933216-0013",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "table_id": "tb-b64a60d5251a9101f3d8f050f6933216-0013",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-028"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "79ec528e081ad82eebbf4ddb456b9dc43935de29c6f6183b11ad598d152b9cc2"
+    },
+    {
+     "input_index": 1,
+     "workspace": "default",
+     "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-000",
+     "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+     "content_sha256": "50f889e3b82635d9e4ba261185ff3221a7a68ed31e3e2f9b82d17f73d9992619",
+     "content_len": 2205,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-000",
+       "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+       "heading": "中国移动源环境管理年报",
+       "chunk_order": 0,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.0123015642166138
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "5e733d2308558422e336680ecf69b265",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "5e733d2308558422e336680ecf69b265",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "c46b0c1e1e6eff4d8d308f9de1b12636",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "c46b0c1e1e6eff4d8d308f9de1b12636",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "dc641ea90fe54d10b70f6639c3d542e6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "dc641ea90fe54d10b70f6639c3d542e6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "50f889e3b82635d9e4ba261185ff3221a7a68ed31e3e2f9b82d17f73d9992619"
+    },
+    {
+     "input_index": 2,
+     "workspace": "default",
+     "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-000",
+     "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+     "content_sha256": "24e4ad2774d5407bd422895976b6e19c8517b8bab44b0750fa94ca5fdbd7030d",
+     "content_len": 1889,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-000",
+       "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+       "heading": "中国移动源环境管理年报",
+       "chunk_order": 0,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.0123015642166138
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "182e3873694894a5f5e9dc99491c16cc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "182e3873694894a5f5e9dc99491c16cc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "1bee5008ad1faa69df1717f75c251039",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "1bee5008ad1faa69df1717f75c251039",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "ffa54ccd5d3b4c100e3503843353e729",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "ffa54ccd5d3b4c100e3503843353e729",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "24e4ad2774d5407bd422895976b6e19c8517b8bab44b0750fa94ca5fdbd7030d"
+    },
+    {
+     "input_index": 3,
+     "workspace": "default",
+     "chunk_id": "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-000",
+     "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+     "content_sha256": "4055e004e10decbf4c78dedf371521f36787b6c67a2f32cfba7e410e96ab195a",
+     "content_len": 73,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-000",
+       "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+       "heading": "中国移动源环境管理年报",
+       "chunk_order": 0,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.0123015642166138
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-000",
+       "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:中国移动源环境管理年报",
+        "edge:中国|中国移动源环境管理年报",
+        "edge:中国移动源环境管理年报|移动源"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 0,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 0,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7b8b6b2d3434c88f4318f364e9c42729",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "unit_id": "7b8b6b2d3434c88f4318f364e9c42729",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "4055e004e10decbf4c78dedf371521f36787b6c67a2f32cfba7e410e96ab195a"
+    },
+    {
+     "input_index": 4,
+     "workspace": "default",
+     "chunk_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4-chunk-000",
+     "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+     "content_sha256": "57ad206bce2ad2e27d73d477d8bb2afbae22a1c2a3e2cbfa94e6f7ff8d421f0b",
+     "content_len": 161,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4-chunk-000",
+       "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+       "heading": "中国移动源环境管理年报",
+       "chunk_order": 0,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.0123015642166138
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4-chunk-000",
+       "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:移动源环境管理",
+        "entity:中国移动源环境管理年报",
+        "edge:2021年|中国移动源环境管理年报",
+        "edge:中华人民共和国生态环境部|中国移动源环境管理年报",
+        "edge:中国移动源环境管理年报|移动源环境管理"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 2,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 2,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7176e7780e52bc4fb89b2938ef08074b",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+        "unit_id": "7176e7780e52bc4fb89b2938ef08074b",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "57ad206bce2ad2e27d73d477d8bb2afbae22a1c2a3e2cbfa94e6f7ff8d421f0b"
+    },
+    {
+     "input_index": 5,
+     "workspace": "default",
+     "chunk_id": "doc-b64a60d5251a9101f3d8f050f6933216-chunk-000",
+     "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+     "content_sha256": "5e6c6ab02c3e3b444d0d17e1200dd9f1b4826a57b41b18fae6634bd65e5da746",
+     "content_len": 161,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b64a60d5251a9101f3d8f050f6933216-chunk-000",
+       "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+       "heading": "中国移动源环境管理年报",
+       "chunk_order": 0,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.0123015642166138
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b64a60d5251a9101f3d8f050f6933216-chunk-000",
+       "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:中国移动源环境管理年报",
+        "entity:2022",
+        "edge:中华人民共和国生态环境部|中国移动源环境管理年报",
+        "edge:2022|中国移动源环境管理年报"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 1,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 1,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "5d98fd84ef5f2ed8dac76497532904b0",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "unit_id": "5d98fd84ef5f2ed8dac76497532904b0",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "5e6c6ab02c3e3b444d0d17e1200dd9f1b4826a57b41b18fae6634bd65e5da746"
+    },
+    {
+     "input_index": 6,
+     "workspace": "default",
+     "chunk_id": "doc-b64a60d5251a9101f3d8f050f6933216-chunk-021",
+     "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+     "content_sha256": "10905d82caa88dea5d3b5ffb60e770ced408c4a0e728b6e9cf43edfd03826d79",
+     "content_len": 796,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b64a60d5251a9101f3d8f050f6933216-chunk-021",
+       "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+       "heading": "3.1 非道路移动机械低排放控制区划定 [part 3] 中国移动源环境管理年报",
+       "chunk_order": 21,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.9081019163131714
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b64a60d5251a9101f3d8f050f6933216-chunk-021",
+       "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:中国移动源环境管理年报",
+        "edge:中国移动源环境管理年报|新疆",
+        "edge:中国移动源环境管理年报|甘肃",
+        "edge:中国移动源环境管理年报|宁夏",
+        "edge:中国移动源环境管理年报|陕西",
+        "edge:中国移动源环境管理年报|青海",
+        "edge:中国移动源环境管理年报|云南",
+        "edge:中国移动源环境管理年报|贵州",
+        "edge:中国移动源环境管理年报|海南",
+        "edge:中国移动源环境管理年报|四川",
+        "edge:中国移动源环境管理年报|重庆",
+        "edge:中国移动源环境管理年报|西藏"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 6,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 6,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "56dc555a38607d1f566a473df83e8c31",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "unit_id": "56dc555a38607d1f566a473df83e8c31",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-021"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b64a60d5251a9101f3d8f050f6933216-0009",
+       "table_id": "tb-b64a60d5251a9101f3d8f050f6933216-0009",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "table_id": "tb-b64a60d5251a9101f3d8f050f6933216-0009",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-021"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "10905d82caa88dea5d3b5ffb60e770ced408c4a0e728b6e9cf43edfd03826d79"
+    },
+    {
+     "input_index": 7,
+     "workspace": "default",
+     "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-031",
+     "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+     "content_sha256": "407be196cd9f2575df9b790b7d3e151994760d87ef63a4023ee9f7156f9c909c",
+     "content_len": 3440,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-031",
+       "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+       "heading": "专栏 12：郑州市设置绿色物流区 [part 4] 第IV部分 车用燃料环境管理",
+       "chunk_order": 31,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.9061257243156433
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "abd42847580eeba03080740e6f9e8515",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "abd42847580eeba03080740e6f9e8515",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-031"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-507bc40d1d6395c6932d2201e8483504-0014",
+       "table_id": "tb-507bc40d1d6395c6932d2201e8483504-0014",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "table_id": "tb-507bc40d1d6395c6932d2201e8483504-0014",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-031"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-507bc40d1d6395c6932d2201e8483504-0015",
+       "table_id": "tb-507bc40d1d6395c6932d2201e8483504-0015",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "table_id": "tb-507bc40d1d6395c6932d2201e8483504-0015",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-031"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-507bc40d1d6395c6932d2201e8483504-0016",
+       "table_id": "tb-507bc40d1d6395c6932d2201e8483504-0016",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "table_id": "tb-507bc40d1d6395c6932d2201e8483504-0016",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-031"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "407be196cd9f2575df9b790b7d3e151994760d87ef63a4023ee9f7156f9c909c"
+    },
+    {
+     "input_index": 8,
+     "workspace": "default",
+     "chunk_id": "doc-b64a60d5251a9101f3d8f050f6933216-chunk-027",
+     "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+     "content_sha256": "b33b7e3a5971311747b857fb218e6836ab76cd30a1d1d4ff1fc0c680222bea52",
+     "content_len": 2178,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b64a60d5251a9101f3d8f050f6933216-chunk-027",
+       "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+       "heading": "专栏 10：“十四五”现代综合交通运输体系发展规划 [part 4] 中国移动源环境管理年报",
+       "chunk_order": 27,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.9056838154792786
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "a42ee4eb8339a20ceb082f045300bba7",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "unit_id": "a42ee4eb8339a20ceb082f045300bba7",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-027"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b64a60d5251a9101f3d8f050f6933216-0010",
+       "table_id": "tb-b64a60d5251a9101f3d8f050f6933216-0010",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "table_id": "tb-b64a60d5251a9101f3d8f050f6933216-0010",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-027"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b64a60d5251a9101f3d8f050f6933216-0011",
+       "table_id": "tb-b64a60d5251a9101f3d8f050f6933216-0011",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "table_id": "tb-b64a60d5251a9101f3d8f050f6933216-0011",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-027"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "b33b7e3a5971311747b857fb218e6836ab76cd30a1d1d4ff1fc0c680222bea52"
+    },
+    {
+     "input_index": 9,
+     "workspace": "default",
+     "chunk_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4-chunk-006",
+     "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+     "content_sha256": "9f85d726ea14d8a869b466540eb4288c0b04d79f9e5198d204b4bf2aa4319cc3",
+     "content_len": 2648,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4-chunk-006",
+       "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+       "heading": "(6) 国VI标准汽车污染物排放情况 中国移动源环境管理年报",
+       "chunk_order": 6,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.7334149479866028
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "1489d174c17d6f46342ff803a7c072e9",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+        "unit_id": "1489d174c17d6f46342ff803a7c072e9",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4-chunk-006"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "5580663b965bad4e6c914ef41a43064c",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+        "unit_id": "5580663b965bad4e6c914ef41a43064c",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4-chunk-006"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "5e53275a9c397d5ed15703f579780e3c",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+        "unit_id": "5e53275a9c397d5ed15703f579780e3c",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4-chunk-006"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "a1d44ad05a6de92971482859d0b80c68",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+        "unit_id": "a1d44ad05a6de92971482859d0b80c68",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4-chunk-006"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "9f85d726ea14d8a869b466540eb4288c0b04d79f9e5198d204b4bf2aa4319cc3"
+    },
+    {
+     "input_index": 10,
+     "workspace": "default",
+     "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-025",
+     "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+     "content_sha256": "c1d15aa074e02e797d9c4cae77ab9d46861974a0313eee3e9ba6bf70052cf679",
+     "content_len": 820,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-025",
+       "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+       "heading": "3.1 非道路移动机械低排放控制区划定 [part 3] 第IV部分 车用燃料环境管理",
+       "chunk_order": 25,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.699999988079071
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-025",
+       "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:中国移动源环境管理年报",
+        "edge:中国移动源环境管理年报|新疆",
+        "edge:中国移动源环境管理年报|甘肃",
+        "edge:中国移动源环境管理年报|宁夏",
+        "edge:中国移动源环境管理年报|陕西",
+        "edge:中国移动源环境管理年报|青海",
+        "edge:中国移动源环境管理年报|云南",
+        "edge:中国移动源环境管理年报|贵州",
+        "edge:中国移动源环境管理年报|四川",
+        "edge:中国移动源环境管理年报|重庆",
+        "edge:中国移动源环境管理年报|西藏",
+        "edge:中国移动源环境管理年报|兵团"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 9,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 9,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "189424813780f90aa601bf8185f7d3ef",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "189424813780f90aa601bf8185f7d3ef",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-025"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-507bc40d1d6395c6932d2201e8483504-0013",
+       "table_id": "tb-507bc40d1d6395c6932d2201e8483504-0013",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "table_id": "tb-507bc40d1d6395c6932d2201e8483504-0013",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-025"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "c1d15aa074e02e797d9c4cae77ab9d46861974a0313eee3e9ba6bf70052cf679"
+    },
+    {
+     "input_index": 11,
+     "workspace": "default",
+     "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-018",
+     "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+     "content_sha256": "9ee0e9cac5384d60b9e7c53a67e1387c409a0e8c223016525c79961063ac6e27",
+     "content_len": 799,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-018",
+       "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+       "heading": "3.1 非道路移动机械低排放控制区划定 [part 3] 第Ⅳ部分 车用燃料环境管理",
+       "chunk_order": 18,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.699999988079071
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-018",
+       "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:中国移动源环境管理年报",
+        "edge:中国移动源环境管理年报|非道路移动机械低排放控制区"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 4,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 4,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "adb1a021a7033e0e1338e50b5ee3a367",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "adb1a021a7033e0e1338e50b5ee3a367",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-018"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0009",
+       "table_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0009",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "table_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0009",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-018"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "9ee0e9cac5384d60b9e7c53a67e1387c409a0e8c223016525c79961063ac6e27"
+    },
+    {
+     "input_index": 12,
+     "workspace": "default",
+     "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-024",
+     "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+     "content_sha256": "65c00f57f277d203aeef82d425531ab8abf731a240239cdaa6b61bd19f47c4a1",
+     "content_len": 2499,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-024",
+       "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+       "heading": "专栏10：唐山市积极建设疏港铁矿石零排放运输通道 [part 4] 第Ⅵ部分 运输结构调整",
+       "chunk_order": 24,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.699999988079071
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-024",
+       "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:中国移动源环境管理年报",
+        "edge:中国移动源环境管理年报|黔南布依族苗族自治州机动车和非道路移动机械排放污染防治管理办法",
+        "edge:中国移动源环境管理年报|吉林省机动车和非道路移动机械排放污染防治条例",
+        "edge:中国移动源环境管理年报|绍兴市柴油动力移动源排气污染防治办法",
+        "edge:中国移动源环境管理年报|杭州市非道路移动机械排气污染防治规定",
+        "edge:中国移动源环境管理年报|广州市生态环境保护条例",
+        "edge:中国移动源环境管理年报|山东省机动车排气污染防治条例",
+        "edge:中国移动源环境管理年报|江西省非道路移动机械排气污染防治条例",
+        "edge:中国移动源环境管理年报|乌海市矿区环境综合治理条例",
+        "edge:2011-2022年度统计数据表|中国移动源环境管理年报",
+        "edge:中国移动源环境管理年报|移动源污染防治地方法规统计表"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 7,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 7,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "6f547b3173208449550dd3f995f581bc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "6f547b3173208449550dd3f995f581bc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-024"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0011",
+       "table_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0011",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "table_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0011",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-024"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0012",
+       "table_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0012",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "table_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0012",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-024"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "65c00f57f277d203aeef82d425531ab8abf731a240239cdaa6b61bd19f47c4a1"
+    },
+    {
+     "input_index": 13,
+     "workspace": "default",
+     "chunk_id": "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-026",
+     "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+     "content_sha256": "f546aebd8710759c873ad6d021922afc212dc65e17cc6203f2f637548021ebd1",
+     "content_len": 2154,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-026",
+       "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+       "heading": "专栏 8：天津市分类施策推进天津港清洁运输 [part 4] 第V部分 非道路移动源环境管理",
+       "chunk_order": 26,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.699999988079071
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7e5b0c56744a074f743283dc064f8aef",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "unit_id": "7e5b0c56744a074f743283dc064f8aef",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-026"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-90f413ede6224a15083a7e2f75ac0c63-0014",
+       "table_id": "tb-90f413ede6224a15083a7e2f75ac0c63-0014",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "table_id": "tb-90f413ede6224a15083a7e2f75ac0c63-0014",
+        "chunk_ids": [
+         "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-026"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-90f413ede6224a15083a7e2f75ac0c63-0015",
+       "table_id": "tb-90f413ede6224a15083a7e2f75ac0c63-0015",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "table_id": "tb-90f413ede6224a15083a7e2f75ac0c63-0015",
+        "chunk_ids": [
+         "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-026"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "f546aebd8710759c873ad6d021922afc212dc65e17cc6203f2f637548021ebd1"
+    },
+    {
+     "input_index": 14,
+     "workspace": "default",
+     "chunk_id": "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-020",
+     "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+     "content_sha256": "1c9879348409e5c32fb63d0f9f733b036eff685524a53f4fc0f90d17cb4263f9",
+     "content_len": 2618,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-020",
+       "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+       "heading": "3.2 非道路移动机械编码登记 第V部分 非道路移动源环境管理",
+       "chunk_order": 20,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.632522463798523
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "1985475eced4e618ce446b1ce1df463e",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "unit_id": "1985475eced4e618ce446b1ce1df463e",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "230d17e09623d15bc3585c636037a49b",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "unit_id": "230d17e09623d15bc3585c636037a49b",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "648fb3aad85a43a35b73fe8c112cf5e2",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "unit_id": "648fb3aad85a43a35b73fe8c112cf5e2",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "976aa51aaa736f5b992f840fefd9cf70",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "unit_id": "976aa51aaa736f5b992f840fefd9cf70",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "cf11bb8718db34fda4b8e5f5f8b59d59",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "unit_id": "cf11bb8718db34fda4b8e5f5f8b59d59",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "d2afe07642260920cf1d8ea1ebb24005",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "unit_id": "d2afe07642260920cf1d8ea1ebb24005",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "f7cae49600ecc04c53e4b5e698a4f585",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "unit_id": "f7cae49600ecc04c53e4b5e698a4f585",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "f931d6ac920504b1e7761107e66235f4",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "unit_id": "f931d6ac920504b1e7761107e66235f4",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "1c9879348409e5c32fb63d0f9f733b036eff685524a53f4fc0f90d17cb4263f9"
+    },
+    {
+     "input_index": 15,
+     "workspace": "default",
+     "chunk_id": "doc-b64a60d5251a9101f3d8f050f6933216-chunk-005",
+     "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+     "content_sha256": "031001c20d6d6bee9d28157365c20ef05e1621dd5b27c13771c3a411c4311b22",
+     "content_len": 2856,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b64a60d5251a9101f3d8f050f6933216-chunk-005",
+       "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+       "heading": "（3）国Ⅳ标准汽车污染物排放情况 中国移动源环境管理年报",
+       "chunk_order": 5,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.6254019141197205
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "328022cdf37e95effed1635c317bada8",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "unit_id": "328022cdf37e95effed1635c317bada8",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-005"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "32cfd4d89c928af0524b3af260198cc7",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "unit_id": "32cfd4d89c928af0524b3af260198cc7",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-005"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "341cf8db1b8747655e7180911ff47101",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "unit_id": "341cf8db1b8747655e7180911ff47101",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-005"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "631b6fd206f284f1e7cfd2bfd7401eb8",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "unit_id": "631b6fd206f284f1e7cfd2bfd7401eb8",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-005"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "6b76adcb95ef227d5efb728b72d93adc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "unit_id": "6b76adcb95ef227d5efb728b72d93adc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-005"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "ac728d2be991d06093dbbe0a40b7ab9c",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "unit_id": "ac728d2be991d06093dbbe0a40b7ab9c",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-005"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "c5d19b0e0750cac227586108764555fe",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "unit_id": "c5d19b0e0750cac227586108764555fe",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-005"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "031001c20d6d6bee9d28157365c20ef05e1621dd5b27c13771c3a411c4311b22"
+    },
+    {
+     "input_index": 16,
+     "workspace": "default",
+     "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-003",
+     "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+     "content_sha256": "ba9159ae54b3e494992c0d513b5c648b50a72c8a9eebc74535a167c3be5be805",
+     "content_len": 2788,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-003",
+       "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+       "heading": "（1）国Ⅲ及以前标准汽车污染物排放情况 中国移动源环境管理年报",
+       "chunk_order": 3,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.6175781488418579
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "0693f6543e37ca5bc34fc99559cfd3c0",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "0693f6543e37ca5bc34fc99559cfd3c0",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "2cc87a97c26720dff1c825de2f37cd00",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "2cc87a97c26720dff1c825de2f37cd00",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "3a36ee0b202096e1d147078aff417c15",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "3a36ee0b202096e1d147078aff417c15",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "6dad1144bb8c4c409baa7961a7eb5977",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "6dad1144bb8c4c409baa7961a7eb5977",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "a096f9c819d26c3263bddaf93a2955f6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "a096f9c819d26c3263bddaf93a2955f6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "be8d6258b4784ed3d915d700f295e486",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "be8d6258b4784ed3d915d700f295e486",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "ba9159ae54b3e494992c0d513b5c648b50a72c8a9eebc74535a167c3be5be805"
+    },
+    {
+     "input_index": 17,
+     "workspace": "default",
+     "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-017",
+     "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+     "content_sha256": "22f67b6c8233989877fdc70c584c830d36c6b862f4451922de49d199426ce87b",
+     "content_len": 1936,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-017",
+       "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+       "heading": "专栏 5：机动车排放检验领域第三方机构专项整治涉刑典型问题通报 中国移动源环境管理年报",
+       "chunk_order": 17,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.6170009970664978
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "147ceae310afae15508d84ac12f242c7",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "147ceae310afae15508d84ac12f242c7",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-017"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "ca97fe50ea564b77b2782c47fea7acaf",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "ca97fe50ea564b77b2782c47fea7acaf",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-017"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "d46cdcdc3fd53e302c2641597dd77f3b",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "d46cdcdc3fd53e302c2641597dd77f3b",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-017"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "d53dabc359941743adda93f623c13dad",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "d53dabc359941743adda93f623c13dad",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-017"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "de2261e28058136477a4d2a254fe4a47",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "de2261e28058136477a4d2a254fe4a47",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-017"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "f162d4321ad87bacdba7a4ce06036c44",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "f162d4321ad87bacdba7a4ce06036c44",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-017"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "22f67b6c8233989877fdc70c584c830d36c6b862f4451922de49d199426ce87b"
+    },
+    {
+     "input_index": 18,
+     "workspace": "default",
+     "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-016",
+     "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+     "content_sha256": "cd0cb7f91c9484c5bd48afa9bcbbd6e47b16ee4e15c185786c80442e25cda64f",
+     "content_len": 2142,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-016",
+       "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+       "heading": "专栏 1：国家实施老旧汽车淘汰更新政策 中国移动源环境管理年报",
+       "chunk_order": 16,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.6109654903411865
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "08938f2585ae81e0b7eda97dde795498",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "08938f2585ae81e0b7eda97dde795498",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-016"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "1100c81d2cd68150c225a1f2d2bd0375",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "1100c81d2cd68150c225a1f2d2bd0375",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-016"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "156c77be0881cdf6f47653233dd3c632",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "156c77be0881cdf6f47653233dd3c632",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-016"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "cdd9ceb06989381260e3da4d519f9f81",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "cdd9ceb06989381260e3da4d519f9f81",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-016"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "cd0cb7f91c9484c5bd48afa9bcbbd6e47b16ee4e15c185786c80442e25cda64f"
+    },
+    {
+     "input_index": 19,
+     "workspace": "default",
+     "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-001",
+     "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+     "content_sha256": "ab04e41b116460eea51cb910e1a3ca2fe7cc8f451602de5b1065d1d012acae75",
+     "content_len": 3458,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-001",
+       "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+       "heading": "1 机动车产销量 中国移动源环境管理年报",
+       "chunk_order": 1,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.5514117479324341
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "3fabec8feb18f4b34e32509dfd68a54b",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "3fabec8feb18f4b34e32509dfd68a54b",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "424e045b7652fabc6254dcc56feffbe2",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "424e045b7652fabc6254dcc56feffbe2",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "979ecd879b9181e493fd834bd8d06fa9",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "979ecd879b9181e493fd834bd8d06fa9",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "bac34caa57e760258a3a3279c145c9e4",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "bac34caa57e760258a3a3279c145c9e4",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "ab04e41b116460eea51cb910e1a3ca2fe7cc8f451602de5b1065d1d012acae75"
+    },
+    {
+     "input_index": 20,
+     "workspace": "default",
+     "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-015",
+     "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+     "content_sha256": "a8c108bd248219178952578568dc493a7f4102c7f59e5e4c5f494df95132240d",
+     "content_len": 1307,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-015",
+       "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:中国移动源环境管理年报",
+        "edge:中国移动源环境管理年报|新疆",
+        "edge:中国移动源环境管理年报|河南",
+        "edge:中国移动源环境管理年报|山东",
+        "edge:中国移动源环境管理年报|湖南",
+        "edge:中国移动源环境管理年报|甘肃",
+        "edge:中国移动源环境管理年报|湖北",
+        "edge:中国移动源环境管理年报|宁夏",
+        "edge:中国移动源环境管理年报|陕西",
+        "edge:中国移动源环境管理年报|广东",
+        "edge:中国移动源环境管理年报|青海",
+        "edge:中国移动源环境管理年报|广西",
+        "edge:中国移动源环境管理年报|云南",
+        "edge:中国移动源环境管理年报|贵州",
+        "edge:中国移动源环境管理年报|海南",
+        "edge:中国移动源环境管理年报|四川",
+        "edge:中国移动源环境管理年报|重庆",
+        "edge:中国移动源环境管理年报|西藏",
+        "edge:中国移动源环境管理年报|兵团"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 3,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 3,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "2ddaeca00c4d33866892b6a3aff79214",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "2ddaeca00c4d33866892b6a3aff79214",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-015"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-507bc40d1d6395c6932d2201e8483504-0008",
+       "table_id": "tb-507bc40d1d6395c6932d2201e8483504-0008",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "table_id": "tb-507bc40d1d6395c6932d2201e8483504-0008",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-015"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "a8c108bd248219178952578568dc493a7f4102c7f59e5e4c5f494df95132240d"
+    },
+    {
+     "input_index": 21,
+     "workspace": "default",
+     "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-013",
+     "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+     "content_sha256": "14ff06816710ff5d490ae55a9b0a459221a10c16fcdb3e028082f16333e0ab65",
+     "content_len": 1221,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-013",
+       "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:中国移动源环境管理年报",
+        "edge:中国移动源环境管理年报|新疆",
+        "edge:中国移动源环境管理年报|甘肃",
+        "edge:中国移动源环境管理年报|宁夏",
+        "edge:中国移动源环境管理年报|陕西",
+        "edge:中国移动源环境管理年报|青海",
+        "edge:中国移动源环境管理年报|云南",
+        "edge:中国移动源环境管理年报|贵州",
+        "edge:中国移动源环境管理年报|西藏",
+        "edge:中国移动源环境管理年报|兵团"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 5,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 5,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "2ddaeca00c4d33866892b6a3aff79214",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "2ddaeca00c4d33866892b6a3aff79214",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-013"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-507bc40d1d6395c6932d2201e8483504-0007",
+       "table_id": "tb-507bc40d1d6395c6932d2201e8483504-0007",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "table_id": "tb-507bc40d1d6395c6932d2201e8483504-0007",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-013"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "14ff06816710ff5d490ae55a9b0a459221a10c16fcdb3e028082f16333e0ab65"
+    },
+    {
+     "input_index": 22,
+     "workspace": "default",
+     "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-025",
+     "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+     "content_sha256": "6d64161702b2bd7a4375689165db53d73b7e3b37457eb1aebffc549a24b6432c",
+     "content_len": 2457,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-025",
+       "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:中国移动源环境管理年报",
+        "edge:中国移动源环境管理年报|移动源",
+        "edge:中华人民共和国生态环境部|中国移动源环境管理年报"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 8,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 8,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "6f547b3173208449550dd3f995f581bc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "6f547b3173208449550dd3f995f581bc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-025"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0013",
+       "table_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0013",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "table_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0013",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-025"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0014",
+       "table_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0014",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "table_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0014",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-025"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "6d64161702b2bd7a4375689165db53d73b7e3b37457eb1aebffc549a24b6432c"
+    }
+   ],
+   "call": {
+    "service": "rerank",
+    "operation": "rerank",
+    "endpoint": "/v1/rerank",
+    "url_path_used": "configured-endpoint",
+    "model": "Qwen/Qwen3-Reranker-4B",
+    "documents_sent": 23,
+    "chars_sent": 43059,
+    "elapsed_ms": 2033,
+    "status_code": 200,
+    "status": "success",
+    "response_evidence": {
+     "id": "01a119f4c8ba70cc86b178d5466f4274",
+     "results_len": 23
+    },
+    "raw_response": {
+     "id": "01a119f4c8ba70cc86b178d5466f4274",
+     "results": [
+      {
+       "index": 3,
+       "document": null,
+       "relevance_score": 0.9936771988868713
+      },
+      {
+       "index": 4,
+       "document": null,
+       "relevance_score": 0.9924207329750061
+      },
+      {
+       "index": 5,
+       "document": null,
+       "relevance_score": 0.9917351007461548
+      },
+      {
+       "index": 2,
+       "document": null,
+       "relevance_score": 0.982846200466156
+      },
+      {
+       "index": 1,
+       "document": null,
+       "relevance_score": 0.9802888631820679
+      },
+      {
+       "index": 22,
+       "document": null,
+       "relevance_score": 0.9208114743232727
+      },
+      {
+       "index": 8,
+       "document": null,
+       "relevance_score": 0.891549289226532
+      },
+      {
+       "index": 12,
+       "document": null,
+       "relevance_score": 0.8592323660850525
+      },
+      {
+       "index": 0,
+       "document": null,
+       "relevance_score": 0.8458640575408936
+      },
+      {
+       "index": 9,
+       "document": null,
+       "relevance_score": 0.8304466605186462
+      },
+      {
+       "index": 18,
+       "document": null,
+       "relevance_score": 0.7906469702720642
+      },
+      {
+       "index": 15,
+       "document": null,
+       "relevance_score": 0.7200093269348145
+      },
+      {
+       "index": 14,
+       "document": null,
+       "relevance_score": 0.719757616519928
+      },
+      {
+       "index": 19,
+       "document": null,
+       "relevance_score": 0.7173383831977844
+      },
+      {
+       "index": 7,
+       "document": null,
+       "relevance_score": 0.7072279453277588
+      },
+      {
+       "index": 13,
+       "document": null,
+       "relevance_score": 0.6975482106208801
+      },
+      {
+       "index": 16,
+       "document": null,
+       "relevance_score": 0.618885338306427
+      },
+      {
+       "index": 11,
+       "document": null,
+       "relevance_score": 0.6108857989311218
+      },
+      {
+       "index": 6,
+       "document": null,
+       "relevance_score": 0.6020451784133911
+      },
+      {
+       "index": 10,
+       "document": null,
+       "relevance_score": 0.38300061225891113
+      },
+      {
+       "index": 21,
+       "document": null,
+       "relevance_score": 0.3077210783958435
+      },
+      {
+       "index": 17,
+       "document": null,
+       "relevance_score": 0.21471892297267914
+      },
+      {
+       "index": 20,
+       "document": null,
+       "relevance_score": 0.1540064662694931
+      }
+     ],
+     "meta": {
+      "tokens": "<redacted>",
+      "billed_units": {
+       "input_tokens": "<redacted>",
+       "output_tokens": "<redacted>",
+       "image_tokens": "<redacted>",
+       "search_units": 0,
+       "classifications": 0
+      }
+     }
+    }
+   },
+   "ordered": [
+    {
+     "input_index": 3,
+     "workspace": "default",
+     "chunk_id": "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-000",
+     "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+     "content_sha256": "4055e004e10decbf4c78dedf371521f36787b6c67a2f32cfba7e410e96ab195a",
+     "rerank_score": 0.9936771988868713,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-000",
+       "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+       "heading": "中国移动源环境管理年报",
+       "chunk_order": 0,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.0123015642166138
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-000",
+       "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:中国移动源环境管理年报",
+        "edge:中国|中国移动源环境管理年报",
+        "edge:中国移动源环境管理年报|移动源"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 0,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 0,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7b8b6b2d3434c88f4318f364e9c42729",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "unit_id": "7b8b6b2d3434c88f4318f364e9c42729",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 4,
+     "workspace": "default",
+     "chunk_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4-chunk-000",
+     "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+     "content_sha256": "57ad206bce2ad2e27d73d477d8bb2afbae22a1c2a3e2cbfa94e6f7ff8d421f0b",
+     "rerank_score": 0.9924207329750061,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4-chunk-000",
+       "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+       "heading": "中国移动源环境管理年报",
+       "chunk_order": 0,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.0123015642166138
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4-chunk-000",
+       "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:移动源环境管理",
+        "entity:中国移动源环境管理年报",
+        "edge:2021年|中国移动源环境管理年报",
+        "edge:中华人民共和国生态环境部|中国移动源环境管理年报",
+        "edge:中国移动源环境管理年报|移动源环境管理"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 2,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 2,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7176e7780e52bc4fb89b2938ef08074b",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+        "unit_id": "7176e7780e52bc4fb89b2938ef08074b",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 5,
+     "workspace": "default",
+     "chunk_id": "doc-b64a60d5251a9101f3d8f050f6933216-chunk-000",
+     "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+     "content_sha256": "5e6c6ab02c3e3b444d0d17e1200dd9f1b4826a57b41b18fae6634bd65e5da746",
+     "rerank_score": 0.9917351007461548,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b64a60d5251a9101f3d8f050f6933216-chunk-000",
+       "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+       "heading": "中国移动源环境管理年报",
+       "chunk_order": 0,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.0123015642166138
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b64a60d5251a9101f3d8f050f6933216-chunk-000",
+       "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:中国移动源环境管理年报",
+        "entity:2022",
+        "edge:中华人民共和国生态环境部|中国移动源环境管理年报",
+        "edge:2022|中国移动源环境管理年报"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 1,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 1,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "5d98fd84ef5f2ed8dac76497532904b0",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "unit_id": "5d98fd84ef5f2ed8dac76497532904b0",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 2,
+     "workspace": "default",
+     "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-000",
+     "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+     "content_sha256": "24e4ad2774d5407bd422895976b6e19c8517b8bab44b0750fa94ca5fdbd7030d",
+     "rerank_score": 0.982846200466156,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-000",
+       "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+       "heading": "中国移动源环境管理年报",
+       "chunk_order": 0,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.0123015642166138
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "182e3873694894a5f5e9dc99491c16cc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "182e3873694894a5f5e9dc99491c16cc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "1bee5008ad1faa69df1717f75c251039",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "1bee5008ad1faa69df1717f75c251039",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "ffa54ccd5d3b4c100e3503843353e729",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "ffa54ccd5d3b4c100e3503843353e729",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 1,
+     "workspace": "default",
+     "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-000",
+     "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+     "content_sha256": "50f889e3b82635d9e4ba261185ff3221a7a68ed31e3e2f9b82d17f73d9992619",
+     "rerank_score": 0.9802888631820679,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-000",
+       "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+       "heading": "中国移动源环境管理年报",
+       "chunk_order": 0,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.0123015642166138
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "5e733d2308558422e336680ecf69b265",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "5e733d2308558422e336680ecf69b265",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "c46b0c1e1e6eff4d8d308f9de1b12636",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "c46b0c1e1e6eff4d8d308f9de1b12636",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "dc641ea90fe54d10b70f6639c3d542e6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "dc641ea90fe54d10b70f6639c3d542e6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 22,
+     "workspace": "default",
+     "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-025",
+     "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+     "content_sha256": "6d64161702b2bd7a4375689165db53d73b7e3b37457eb1aebffc549a24b6432c",
+     "rerank_score": 0.9208114743232727,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-025",
+       "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:中国移动源环境管理年报",
+        "edge:中国移动源环境管理年报|移动源",
+        "edge:中华人民共和国生态环境部|中国移动源环境管理年报"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 8,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 8,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "6f547b3173208449550dd3f995f581bc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "6f547b3173208449550dd3f995f581bc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-025"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0013",
+       "table_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0013",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "table_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0013",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-025"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0014",
+       "table_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0014",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "table_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0014",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-025"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 8,
+     "workspace": "default",
+     "chunk_id": "doc-b64a60d5251a9101f3d8f050f6933216-chunk-027",
+     "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+     "content_sha256": "b33b7e3a5971311747b857fb218e6836ab76cd30a1d1d4ff1fc0c680222bea52",
+     "rerank_score": 0.891549289226532,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b64a60d5251a9101f3d8f050f6933216-chunk-027",
+       "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+       "heading": "专栏 10：“十四五”现代综合交通运输体系发展规划 [part 4] 中国移动源环境管理年报",
+       "chunk_order": 27,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.9056838154792786
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "a42ee4eb8339a20ceb082f045300bba7",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "unit_id": "a42ee4eb8339a20ceb082f045300bba7",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-027"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b64a60d5251a9101f3d8f050f6933216-0010",
+       "table_id": "tb-b64a60d5251a9101f3d8f050f6933216-0010",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "table_id": "tb-b64a60d5251a9101f3d8f050f6933216-0010",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-027"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b64a60d5251a9101f3d8f050f6933216-0011",
+       "table_id": "tb-b64a60d5251a9101f3d8f050f6933216-0011",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "table_id": "tb-b64a60d5251a9101f3d8f050f6933216-0011",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-027"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 12,
+     "workspace": "default",
+     "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-024",
+     "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+     "content_sha256": "65c00f57f277d203aeef82d425531ab8abf731a240239cdaa6b61bd19f47c4a1",
+     "rerank_score": 0.8592323660850525,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-024",
+       "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+       "heading": "专栏10：唐山市积极建设疏港铁矿石零排放运输通道 [part 4] 第Ⅵ部分 运输结构调整",
+       "chunk_order": 24,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.699999988079071
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-024",
+       "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:中国移动源环境管理年报",
+        "edge:中国移动源环境管理年报|黔南布依族苗族自治州机动车和非道路移动机械排放污染防治管理办法",
+        "edge:中国移动源环境管理年报|吉林省机动车和非道路移动机械排放污染防治条例",
+        "edge:中国移动源环境管理年报|绍兴市柴油动力移动源排气污染防治办法",
+        "edge:中国移动源环境管理年报|杭州市非道路移动机械排气污染防治规定",
+        "edge:中国移动源环境管理年报|广州市生态环境保护条例",
+        "edge:中国移动源环境管理年报|山东省机动车排气污染防治条例",
+        "edge:中国移动源环境管理年报|江西省非道路移动机械排气污染防治条例",
+        "edge:中国移动源环境管理年报|乌海市矿区环境综合治理条例",
+        "edge:2011-2022年度统计数据表|中国移动源环境管理年报",
+        "edge:中国移动源环境管理年报|移动源污染防治地方法规统计表"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 7,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 7,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "6f547b3173208449550dd3f995f581bc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "6f547b3173208449550dd3f995f581bc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-024"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0011",
+       "table_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0011",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "table_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0011",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-024"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0012",
+       "table_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0012",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "table_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0012",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-024"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 0,
+     "workspace": "default",
+     "chunk_id": "doc-b64a60d5251a9101f3d8f050f6933216-chunk-028",
+     "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+     "content_sha256": "79ec528e081ad82eebbf4ddb456b9dc43935de29c6f6183b11ad598d152b9cc2",
+     "rerank_score": 0.8458640575408936,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b64a60d5251a9101f3d8f050f6933216-chunk-028",
+       "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+       "heading": "中国移动源环境管理年报 [part 5] 中国移动源环境管理年报 专栏 10：“十四五”现代综合交通运输体系发展规划",
+       "chunk_order": 28,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.166045069694519
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "a42ee4eb8339a20ceb082f045300bba7",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "unit_id": "a42ee4eb8339a20ceb082f045300bba7",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-028"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b64a60d5251a9101f3d8f050f6933216-0012",
+       "table_id": "tb-b64a60d5251a9101f3d8f050f6933216-0012",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "table_id": "tb-b64a60d5251a9101f3d8f050f6933216-0012",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-028"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b64a60d5251a9101f3d8f050f6933216-0013",
+       "table_id": "tb-b64a60d5251a9101f3d8f050f6933216-0013",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "table_id": "tb-b64a60d5251a9101f3d8f050f6933216-0013",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-028"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 9,
+     "workspace": "default",
+     "chunk_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4-chunk-006",
+     "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+     "content_sha256": "9f85d726ea14d8a869b466540eb4288c0b04d79f9e5198d204b4bf2aa4319cc3",
+     "rerank_score": 0.8304466605186462,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4-chunk-006",
+       "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+       "heading": "(6) 国VI标准汽车污染物排放情况 中国移动源环境管理年报",
+       "chunk_order": 6,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.7334149479866028
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "1489d174c17d6f46342ff803a7c072e9",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+        "unit_id": "1489d174c17d6f46342ff803a7c072e9",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4-chunk-006"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "5580663b965bad4e6c914ef41a43064c",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+        "unit_id": "5580663b965bad4e6c914ef41a43064c",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4-chunk-006"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "5e53275a9c397d5ed15703f579780e3c",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+        "unit_id": "5e53275a9c397d5ed15703f579780e3c",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4-chunk-006"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "a1d44ad05a6de92971482859d0b80c68",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+        "unit_id": "a1d44ad05a6de92971482859d0b80c68",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4-chunk-006"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 18,
+     "workspace": "default",
+     "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-016",
+     "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+     "content_sha256": "cd0cb7f91c9484c5bd48afa9bcbbd6e47b16ee4e15c185786c80442e25cda64f",
+     "rerank_score": 0.7906469702720642,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-016",
+       "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+       "heading": "专栏 1：国家实施老旧汽车淘汰更新政策 中国移动源环境管理年报",
+       "chunk_order": 16,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.6109654903411865
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "08938f2585ae81e0b7eda97dde795498",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "08938f2585ae81e0b7eda97dde795498",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-016"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "1100c81d2cd68150c225a1f2d2bd0375",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "1100c81d2cd68150c225a1f2d2bd0375",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-016"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "156c77be0881cdf6f47653233dd3c632",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "156c77be0881cdf6f47653233dd3c632",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-016"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "cdd9ceb06989381260e3da4d519f9f81",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "cdd9ceb06989381260e3da4d519f9f81",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-016"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 15,
+     "workspace": "default",
+     "chunk_id": "doc-b64a60d5251a9101f3d8f050f6933216-chunk-005",
+     "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+     "content_sha256": "031001c20d6d6bee9d28157365c20ef05e1621dd5b27c13771c3a411c4311b22",
+     "rerank_score": 0.7200093269348145,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b64a60d5251a9101f3d8f050f6933216-chunk-005",
+       "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+       "heading": "（3）国Ⅳ标准汽车污染物排放情况 中国移动源环境管理年报",
+       "chunk_order": 5,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.6254019141197205
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "328022cdf37e95effed1635c317bada8",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "unit_id": "328022cdf37e95effed1635c317bada8",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-005"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "32cfd4d89c928af0524b3af260198cc7",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "unit_id": "32cfd4d89c928af0524b3af260198cc7",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-005"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "341cf8db1b8747655e7180911ff47101",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "unit_id": "341cf8db1b8747655e7180911ff47101",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-005"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "631b6fd206f284f1e7cfd2bfd7401eb8",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "unit_id": "631b6fd206f284f1e7cfd2bfd7401eb8",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-005"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "6b76adcb95ef227d5efb728b72d93adc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "unit_id": "6b76adcb95ef227d5efb728b72d93adc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-005"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "ac728d2be991d06093dbbe0a40b7ab9c",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "unit_id": "ac728d2be991d06093dbbe0a40b7ab9c",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-005"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "c5d19b0e0750cac227586108764555fe",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "unit_id": "c5d19b0e0750cac227586108764555fe",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-005"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 14,
+     "workspace": "default",
+     "chunk_id": "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-020",
+     "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+     "content_sha256": "1c9879348409e5c32fb63d0f9f733b036eff685524a53f4fc0f90d17cb4263f9",
+     "rerank_score": 0.719757616519928,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-020",
+       "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+       "heading": "3.2 非道路移动机械编码登记 第V部分 非道路移动源环境管理",
+       "chunk_order": 20,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.632522463798523
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "1985475eced4e618ce446b1ce1df463e",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "unit_id": "1985475eced4e618ce446b1ce1df463e",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "230d17e09623d15bc3585c636037a49b",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "unit_id": "230d17e09623d15bc3585c636037a49b",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "648fb3aad85a43a35b73fe8c112cf5e2",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "unit_id": "648fb3aad85a43a35b73fe8c112cf5e2",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "976aa51aaa736f5b992f840fefd9cf70",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "unit_id": "976aa51aaa736f5b992f840fefd9cf70",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "cf11bb8718db34fda4b8e5f5f8b59d59",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "unit_id": "cf11bb8718db34fda4b8e5f5f8b59d59",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "d2afe07642260920cf1d8ea1ebb24005",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "unit_id": "d2afe07642260920cf1d8ea1ebb24005",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "f7cae49600ecc04c53e4b5e698a4f585",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "unit_id": "f7cae49600ecc04c53e4b5e698a4f585",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "f931d6ac920504b1e7761107e66235f4",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "unit_id": "f931d6ac920504b1e7761107e66235f4",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 19,
+     "workspace": "default",
+     "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-001",
+     "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+     "content_sha256": "ab04e41b116460eea51cb910e1a3ca2fe7cc8f451602de5b1065d1d012acae75",
+     "rerank_score": 0.7173383831977844,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-001",
+       "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+       "heading": "1 机动车产销量 中国移动源环境管理年报",
+       "chunk_order": 1,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.5514117479324341
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "3fabec8feb18f4b34e32509dfd68a54b",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "3fabec8feb18f4b34e32509dfd68a54b",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "424e045b7652fabc6254dcc56feffbe2",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "424e045b7652fabc6254dcc56feffbe2",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "979ecd879b9181e493fd834bd8d06fa9",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "979ecd879b9181e493fd834bd8d06fa9",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "bac34caa57e760258a3a3279c145c9e4",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "bac34caa57e760258a3a3279c145c9e4",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 7,
+     "workspace": "default",
+     "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-031",
+     "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+     "content_sha256": "407be196cd9f2575df9b790b7d3e151994760d87ef63a4023ee9f7156f9c909c",
+     "rerank_score": 0.7072279453277588,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-031",
+       "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+       "heading": "专栏 12：郑州市设置绿色物流区 [part 4] 第IV部分 车用燃料环境管理",
+       "chunk_order": 31,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.9061257243156433
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "abd42847580eeba03080740e6f9e8515",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "abd42847580eeba03080740e6f9e8515",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-031"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-507bc40d1d6395c6932d2201e8483504-0014",
+       "table_id": "tb-507bc40d1d6395c6932d2201e8483504-0014",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "table_id": "tb-507bc40d1d6395c6932d2201e8483504-0014",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-031"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-507bc40d1d6395c6932d2201e8483504-0015",
+       "table_id": "tb-507bc40d1d6395c6932d2201e8483504-0015",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "table_id": "tb-507bc40d1d6395c6932d2201e8483504-0015",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-031"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-507bc40d1d6395c6932d2201e8483504-0016",
+       "table_id": "tb-507bc40d1d6395c6932d2201e8483504-0016",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "table_id": "tb-507bc40d1d6395c6932d2201e8483504-0016",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-031"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 13,
+     "workspace": "default",
+     "chunk_id": "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-026",
+     "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+     "content_sha256": "f546aebd8710759c873ad6d021922afc212dc65e17cc6203f2f637548021ebd1",
+     "rerank_score": 0.6975482106208801,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-026",
+       "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+       "heading": "专栏 8：天津市分类施策推进天津港清洁运输 [part 4] 第V部分 非道路移动源环境管理",
+       "chunk_order": 26,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.699999988079071
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7e5b0c56744a074f743283dc064f8aef",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "unit_id": "7e5b0c56744a074f743283dc064f8aef",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-026"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-90f413ede6224a15083a7e2f75ac0c63-0014",
+       "table_id": "tb-90f413ede6224a15083a7e2f75ac0c63-0014",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "table_id": "tb-90f413ede6224a15083a7e2f75ac0c63-0014",
+        "chunk_ids": [
+         "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-026"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-90f413ede6224a15083a7e2f75ac0c63-0015",
+       "table_id": "tb-90f413ede6224a15083a7e2f75ac0c63-0015",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+        "table_id": "tb-90f413ede6224a15083a7e2f75ac0c63-0015",
+        "chunk_ids": [
+         "doc-90f413ede6224a15083a7e2f75ac0c63-chunk-026"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 16,
+     "workspace": "default",
+     "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-003",
+     "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+     "content_sha256": "ba9159ae54b3e494992c0d513b5c648b50a72c8a9eebc74535a167c3be5be805",
+     "rerank_score": 0.618885338306427,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-003",
+       "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+       "heading": "（1）国Ⅲ及以前标准汽车污染物排放情况 中国移动源环境管理年报",
+       "chunk_order": 3,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.6175781488418579
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "0693f6543e37ca5bc34fc99559cfd3c0",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "0693f6543e37ca5bc34fc99559cfd3c0",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "2cc87a97c26720dff1c825de2f37cd00",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "2cc87a97c26720dff1c825de2f37cd00",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "3a36ee0b202096e1d147078aff417c15",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "3a36ee0b202096e1d147078aff417c15",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "6dad1144bb8c4c409baa7961a7eb5977",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "6dad1144bb8c4c409baa7961a7eb5977",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "a096f9c819d26c3263bddaf93a2955f6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "a096f9c819d26c3263bddaf93a2955f6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "be8d6258b4784ed3d915d700f295e486",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "be8d6258b4784ed3d915d700f295e486",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 11,
+     "workspace": "default",
+     "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-018",
+     "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+     "content_sha256": "9ee0e9cac5384d60b9e7c53a67e1387c409a0e8c223016525c79961063ac6e27",
+     "rerank_score": 0.6108857989311218,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-018",
+       "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+       "heading": "3.1 非道路移动机械低排放控制区划定 [part 3] 第Ⅳ部分 车用燃料环境管理",
+       "chunk_order": 18,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.699999988079071
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-018",
+       "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:中国移动源环境管理年报",
+        "edge:中国移动源环境管理年报|非道路移动机械低排放控制区"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 4,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 4,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "adb1a021a7033e0e1338e50b5ee3a367",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "unit_id": "adb1a021a7033e0e1338e50b5ee3a367",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-018"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0009",
+       "table_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0009",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+        "table_id": "tb-60eb1ff63505bb659d0d97f2524479a2-0009",
+        "chunk_ids": [
+         "doc-60eb1ff63505bb659d0d97f2524479a2-chunk-018"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 6,
+     "workspace": "default",
+     "chunk_id": "doc-b64a60d5251a9101f3d8f050f6933216-chunk-021",
+     "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+     "content_sha256": "10905d82caa88dea5d3b5ffb60e770ced408c4a0e728b6e9cf43edfd03826d79",
+     "rerank_score": 0.6020451784133911,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b64a60d5251a9101f3d8f050f6933216-chunk-021",
+       "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+       "heading": "3.1 非道路移动机械低排放控制区划定 [part 3] 中国移动源环境管理年报",
+       "chunk_order": 21,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.9081019163131714
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b64a60d5251a9101f3d8f050f6933216-chunk-021",
+       "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:中国移动源环境管理年报",
+        "edge:中国移动源环境管理年报|新疆",
+        "edge:中国移动源环境管理年报|甘肃",
+        "edge:中国移动源环境管理年报|宁夏",
+        "edge:中国移动源环境管理年报|陕西",
+        "edge:中国移动源环境管理年报|青海",
+        "edge:中国移动源环境管理年报|云南",
+        "edge:中国移动源环境管理年报|贵州",
+        "edge:中国移动源环境管理年报|海南",
+        "edge:中国移动源环境管理年报|四川",
+        "edge:中国移动源环境管理年报|重庆",
+        "edge:中国移动源环境管理年报|西藏"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 6,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 6,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "56dc555a38607d1f566a473df83e8c31",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "unit_id": "56dc555a38607d1f566a473df83e8c31",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-021"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b64a60d5251a9101f3d8f050f6933216-0009",
+       "table_id": "tb-b64a60d5251a9101f3d8f050f6933216-0009",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+        "table_id": "tb-b64a60d5251a9101f3d8f050f6933216-0009",
+        "chunk_ids": [
+         "doc-b64a60d5251a9101f3d8f050f6933216-chunk-021"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 10,
+     "workspace": "default",
+     "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-025",
+     "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+     "content_sha256": "c1d15aa074e02e797d9c4cae77ab9d46861974a0313eee3e9ba6bf70052cf679",
+     "rerank_score": 0.38300061225891113,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-025",
+       "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+       "heading": "3.1 非道路移动机械低排放控制区划定 [part 3] 第IV部分 车用燃料环境管理",
+       "chunk_order": 25,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.699999988079071
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-025",
+       "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:中国移动源环境管理年报",
+        "edge:中国移动源环境管理年报|新疆",
+        "edge:中国移动源环境管理年报|甘肃",
+        "edge:中国移动源环境管理年报|宁夏",
+        "edge:中国移动源环境管理年报|陕西",
+        "edge:中国移动源环境管理年报|青海",
+        "edge:中国移动源环境管理年报|云南",
+        "edge:中国移动源环境管理年报|贵州",
+        "edge:中国移动源环境管理年报|四川",
+        "edge:中国移动源环境管理年报|重庆",
+        "edge:中国移动源环境管理年报|西藏",
+        "edge:中国移动源环境管理年报|兵团"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 9,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 9,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "189424813780f90aa601bf8185f7d3ef",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "189424813780f90aa601bf8185f7d3ef",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-025"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-507bc40d1d6395c6932d2201e8483504-0013",
+       "table_id": "tb-507bc40d1d6395c6932d2201e8483504-0013",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "table_id": "tb-507bc40d1d6395c6932d2201e8483504-0013",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-025"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 21,
+     "workspace": "default",
+     "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-013",
+     "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+     "content_sha256": "14ff06816710ff5d490ae55a9b0a459221a10c16fcdb3e028082f16333e0ab65",
+     "rerank_score": 0.3077210783958435,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-013",
+       "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:中国移动源环境管理年报",
+        "edge:中国移动源环境管理年报|新疆",
+        "edge:中国移动源环境管理年报|甘肃",
+        "edge:中国移动源环境管理年报|宁夏",
+        "edge:中国移动源环境管理年报|陕西",
+        "edge:中国移动源环境管理年报|青海",
+        "edge:中国移动源环境管理年报|云南",
+        "edge:中国移动源环境管理年报|贵州",
+        "edge:中国移动源环境管理年报|西藏",
+        "edge:中国移动源环境管理年报|兵团"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 5,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 5,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "2ddaeca00c4d33866892b6a3aff79214",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "2ddaeca00c4d33866892b6a3aff79214",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-013"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-507bc40d1d6395c6932d2201e8483504-0007",
+       "table_id": "tb-507bc40d1d6395c6932d2201e8483504-0007",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "table_id": "tb-507bc40d1d6395c6932d2201e8483504-0007",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-013"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 17,
+     "workspace": "default",
+     "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-017",
+     "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+     "content_sha256": "22f67b6c8233989877fdc70c584c830d36c6b862f4451922de49d199426ce87b",
+     "rerank_score": 0.21471892297267914,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-017",
+       "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+       "heading": "专栏 5：机动车排放检验领域第三方机构专项整治涉刑典型问题通报 中国移动源环境管理年报",
+       "chunk_order": 17,
+       "discovery": "keyword_and",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.6170009970664978
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "147ceae310afae15508d84ac12f242c7",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "147ceae310afae15508d84ac12f242c7",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-017"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "ca97fe50ea564b77b2782c47fea7acaf",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "ca97fe50ea564b77b2782c47fea7acaf",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-017"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "d46cdcdc3fd53e302c2641597dd77f3b",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "d46cdcdc3fd53e302c2641597dd77f3b",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-017"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "d53dabc359941743adda93f623c13dad",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "d53dabc359941743adda93f623c13dad",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-017"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "de2261e28058136477a4d2a254fe4a47",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "de2261e28058136477a4d2a254fe4a47",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-017"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "f162d4321ad87bacdba7a4ce06036c44",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "f162d4321ad87bacdba7a4ce06036c44",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-017"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 20,
+     "workspace": "default",
+     "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-015",
+     "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+     "content_sha256": "a8c108bd248219178952578568dc493a7f4102c7f59e5e4c5f494df95132240d",
+     "rerank_score": 0.1540064662694931,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-507bc40d1d6395c6932d2201e8483504-chunk-015",
+       "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:中国移动源环境管理年报",
+        "edge:中国移动源环境管理年报|新疆",
+        "edge:中国移动源环境管理年报|河南",
+        "edge:中国移动源环境管理年报|山东",
+        "edge:中国移动源环境管理年报|湖南",
+        "edge:中国移动源环境管理年报|甘肃",
+        "edge:中国移动源环境管理年报|湖北",
+        "edge:中国移动源环境管理年报|宁夏",
+        "edge:中国移动源环境管理年报|陕西",
+        "edge:中国移动源环境管理年报|广东",
+        "edge:中国移动源环境管理年报|青海",
+        "edge:中国移动源环境管理年报|广西",
+        "edge:中国移动源环境管理年报|云南",
+        "edge:中国移动源环境管理年报|贵州",
+        "edge:中国移动源环境管理年报|海南",
+        "edge:中国移动源环境管理年报|四川",
+        "edge:中国移动源环境管理年报|重庆",
+        "edge:中国移动源环境管理年报|西藏",
+        "edge:中国移动源环境管理年报|兵团"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 3,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 3,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "2ddaeca00c4d33866892b6a3aff79214",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "unit_id": "2ddaeca00c4d33866892b6a3aff79214",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-015"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-507bc40d1d6395c6932d2201e8483504-0008",
+       "table_id": "tb-507bc40d1d6395c6932d2201e8483504-0008",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+        "table_id": "tb-507bc40d1d6395c6932d2201e8483504-0008",
+        "chunk_ids": [
+         "doc-507bc40d1d6395c6932d2201e8483504-chunk-015"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    }
+   ],
+   "degraded": [],
+   "status": "ok",
+   "typed_targets": [
+    {
+     "target_type": "doc",
+     "workspace": "default",
+     "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+     "doc_name": "air-15_生态环境部_中国移动源环境管理年报_2021.pdf",
+     "self_code": null,
+     "self_code_version": null,
+     "discovery": "doc_and",
+     "membership_basis": null,
+     "citation": {
+      "kind": "catalog_row",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4"
+     },
+     "citation_verified": true
+    },
+    {
+     "target_type": "doc",
+     "workspace": "default",
+     "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+     "doc_name": "air-16_生态环境部_中国移动源环境管理年报_2022.pdf",
+     "self_code": null,
+     "self_code_version": null,
+     "discovery": "doc_and",
+     "membership_basis": null,
+     "citation": {
+      "kind": "catalog_row",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216"
+     },
+     "citation_verified": true
+    },
+    {
+     "target_type": "doc",
+     "workspace": "default",
+     "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+     "doc_name": "air-17_生态环境部_中国移动源环境管理年报_2023.pdf",
+     "self_code": null,
+     "self_code_version": null,
+     "discovery": "doc_and",
+     "membership_basis": null,
+     "citation": {
+      "kind": "catalog_row",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2"
+     },
+     "citation_verified": true
+    },
+    {
+     "target_type": "doc",
+     "workspace": "default",
+     "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+     "doc_name": "air-18_生态环境部_中国移动源环境管理年报_2024.pdf",
+     "self_code": null,
+     "self_code_version": null,
+     "discovery": "doc_and",
+     "membership_basis": null,
+     "citation": {
+      "kind": "catalog_row",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63"
+     },
+     "citation_verified": true
+    },
+    {
+     "target_type": "doc",
+     "workspace": "default",
+     "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+     "doc_name": "air-19_生态环境部_中国移动源环境管理年报_2025.pdf",
+     "self_code": null,
+     "self_code_version": null,
+     "discovery": "doc_and",
+     "membership_basis": null,
+     "citation": {
+      "kind": "catalog_row",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-507bc40d1d6395c6932d2201e8483504"
+     },
+     "citation_verified": true
+    }
+   ],
+   "path_enrichment": [
+    "association completion: 18 table fragment path(s) and 59 non-table (block/source_unit) path(s) from unit_chunk_links JOIN source_units by actual unit_kind (replay paths predate the 5.3-F2 fix); no id/locator/kind guessed"
+   ],
+   "source_verification": {
+    "candidates_checked": 23,
+    "verified": 23,
+    "problems": []
+   },
+   "skipped_inputs": []
+  }
+ ],
+ "finished_at": "2026-10-08T13:20:37+0800"
+}

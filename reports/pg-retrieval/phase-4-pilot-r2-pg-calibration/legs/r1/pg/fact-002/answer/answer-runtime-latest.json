@@ -1,0 +1,287 @@
+{
+ "task": "5.5 full scope expansion + per-type answers over replayed 5.3/5.4",
+ "started_at": "2026-10-08T12:44:16+0800",
+ "service_contract": {
+  "endpoint": "{LLM_BINDING_HOST}/chat/completions (POST, OpenAI-compatible)",
+  "request": [
+   "model",
+   "messages",
+   "temperature=0 (frozen)"
+  ],
+  "response": [
+   "choices[0].message.content"
+  ],
+  "cache": "code-path evidence: plain HTTP only — no LightRAG/ClientManager instantiation and no openai_complete_if_cache/hashing_kv call, so the answer path issues no cache SQL. The frozen lightrag_llm_cache count checked before/after (16514 unchanged) is a DRIFT check only: an unchanged row count does not by itself prove zero reads or zero in-place updates, so it is never presented as that proof (answer-review r1).",
+  "replay_summaries": "input-file SHA256 + generation identity are COMPUTED AND RECORDED by this entry, and the entry REFUSES when the generation identity disagrees with the live frozen capture; the cross-check of recorded digests against the previously accepted digests is the reviewer's comparison, never claimed as done here"
+ },
+ "model_budget": 1,
+ "query_ids": [
+  "fact-002"
+ ],
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "replay_sources": {
+  "rerank_report": {
+   "path": "reports/pg-retrieval/phase-4-pilot-r2-pg-calibration/inputs/pg/fact-002-rerank.json",
+   "sha256": "8e7647701b04694545457c92d55224e243c56dfb96748f7a3dab8af1d3081a0b",
+   "task": null,
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": []
+  },
+  "fused_report": {
+   "path": "reports/pg-retrieval/phase-4-pilot-r2-pg-calibration/inputs/pg/fact-002-fusion.json",
+   "sha256": "2df296e56cfc01f6d0c30e0773342b188be78aca1ae493280ee6f4a62356a6c3",
+   "task": "Phase 4 round 1 evaluation input (path=pg)",
+   "started_at": null,
+   "finished_at": null,
+   "query_ids": [
+    "fact-002"
+   ]
+  },
+  "note": "discovery/fusion/rerank are REPLAYED from these accepted generations; this run performs only scope expansion reads (and at most one answer model call) — no new retrieval round"
+ },
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "model_calls_used": 0,
+ "results": [
+  {
+   "query_id": "fact-002",
+   "query": "GB 8978-1996 表 1 中总汞的最高允许排放浓度是多少？",
+   "category": "fact",
+   "workspace": "default",
+   "coverage_status": "partial",
+   "fail_stage": "",
+   "flags": [
+    "no rerank replay for this query id — scope priority falls back to fusion path order, explicitly recorded (no fabricated scores)",
+    "quantitative fact(s) lack a verifiable unit/condition in the READ source — the numbers stay as evidence but coverage is not complete"
+   ],
+   "replay": {
+    "fused_status": "ok",
+    "fused_degraded": [],
+    "rerank_status": "absent",
+    "rerank_degraded": [],
+    "rerank_ordered_chunks": 0,
+    "typed_targets": [
+     {
+      "target_type": "doc",
+      "workspace": "default",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "doc_name": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+      "self_code": "GB8978",
+      "self_code_version": "1996",
+      "discovery": "code_exact",
+      "membership_basis": null,
+      "citation": {
+       "kind": "catalog_row",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4"
+      },
+      "citation_verified": true
+     },
+     {
+      "target_type": "table_unit",
+      "workspace": "default",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+      "heading": "4.3 其他规定",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+      ],
+      "discovery": "table_range_binding",
+      "scope_status": null,
+      "membership_basis": null,
+      "citation": {
+       "kind": "table_unit",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+       "chunk_ids": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+       ]
+      }
+     },
+     {
+      "target_type": "table_unit",
+      "workspace": "default",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+      "heading": "4.3 其他规定",
+      "chunk_ids": [
+       "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+      ],
+      "discovery": "table_range_binding",
+      "scope_status": null,
+      "membership_basis": null,
+      "citation": {
+       "kind": "table_unit",
+       "workspace": "default",
+       "snapshot_id": "4919b3938ad93747",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "chunk_ids": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+       ]
+      }
+     }
+    ],
+    "note": "rerank order is SCOPE PRIORITY only; every replayed candidate document is expanded with its FULL membership below"
+   },
+   "scope_selection": {
+    "candidates": 2,
+    "selected_docs": [
+     "doc-b45c510232ed4d2452b0f5b2a13434e4"
+    ],
+    "priority": [
+     {
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "rerank_rank_or_none": null
+     }
+    ],
+    "basis": "targets_resolved + typed targets (5.3) define the scope; rerank order only prioritizes — membership is never top-k bounded"
+   },
+   "expansions": [
+    {
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "kind": "table",
+     "table_number": "1",
+     "scope_ids": [
+      "tb-b45c510232ed4d2452b0f5b2a13434e4-0001"
+     ],
+     "members_total": 2,
+     "members_processed": 2,
+     "coverage_status": "complete",
+     "fail_stage": "",
+     "items_count": 13,
+     "warnings": [
+      "table_structure: header=[[\"序号\", \"污染物\", \"最高允许排放浓度\"]]; units=[]; footnotes=[]"
+     ],
+     "selected": true
+    }
+   ],
+   "answer": {
+    "mode": "deterministic",
+    "generated_by": "enumerate/expand entries",
+    "items": [
+     {
+      "kind": "table_row",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+      "table_number": "1",
+      "seq": "1",
+      "cells": [
+       "1",
+       "总汞",
+       "0.05"
+      ],
+      "header": [
+       [
+        "序号",
+        "污染物",
+        "最高允许排放浓度"
+       ]
+      ],
+      "units": [],
+      "footnotes": [],
+      "citation": {
+       "kind": "table_row",
+       "workspace": "default",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "snapshot_id": "4919b3938ad93747",
+       "fragment_index": 0,
+       "row_in_fragment": 1,
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+       "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+       "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+       "chunk_ids": [
+        "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+       ]
+      },
+      "citation_verified": true,
+      "citation_reverified": true,
+      "caption": "表 1 第一类污染物最高允许排放浓度",
+      "unit_status": "unverified_absent",
+      "unit": null
+     }
+    ],
+    "selection": {
+     "terms": [
+      "表1",
+      "总汞",
+      "最高允许排放浓度",
+      "中总",
+      "最高",
+      "高允",
+      "允许",
+      "许排",
+      "排放",
+      "放浓",
+      "浓度"
+     ],
+     "candidates": 13,
+     "kept": 1,
+     "rule": "rows/items whose raw text contains the most subject terms of the QUESTION (never gold text); ties keep every match"
+    },
+    "unit_blockers": [
+     {
+      "cells": [
+       "1",
+       "总汞",
+       "0.05"
+      ],
+      "note": "quantitative fact without a verifiable unit/condition in the read source — number kept, coverage stays partial"
+     }
+    ]
+   },
+   "reverification": {
+    "items_checked": 13,
+    "problems": [],
+    "basis": "table rows re-read against the raw HTML grid of their bound fragment; prose items re-read against the raw unit block text at the declared unit-relative span (independent of the in-memory objects)"
+   },
+   "model": null,
+   "status": "partial"
+  }
+ ]
+}

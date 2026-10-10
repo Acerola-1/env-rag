@@ -1,0 +1,152 @@
+FFFFFF..                                                                 [100%]
+=================================== FAILURES ===================================
+__________ test_identity_change_on_actual_drop_connection_is_refused ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10afc7470>
+
+    def test_identity_change_on_actual_drop_connection_is_refused(monkeypatch):
+        verify = fixtures.MarkerConnection(current_oid=42)
+        precheck = fixtures.MarkerConnection(current_oid=42)
+        actual_drop = fixtures.MarkerConnection(current_oid=999)
+        fixtures.install_connection(monkeypatch, [verify, precheck, actual_drop])
+>       with pytest.raises(compat.ProbeAborted):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ProbeAborted
+
+tests/test_phase3_compat_review_r4.py:24: Failed
+______ test_recovery_record_write_error_still_cleans_and_records_failure _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b392d80>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-273/test_recovery_record_write_err0')
+
+    def test_recovery_record_write_error_still_cleans_and_records_failure(monkeypatch, tmp_path):
+        events, reports = fixtures.stub_run(monkeypatch)
+    
+        def failed_record(report_dir, scratch):
+            raise OSError("record filesystem unavailable")
+    
+        monkeypatch.setattr(compat, "write_recovery_record", failed_record)
+        with pytest.raises((compat.ProbeAborted, OSError)):
+            asyncio.run(compat.run(fixtures.VALUES, tmp_path))
+>       assert "cleanup" in events
+E       AssertionError: assert 'cleanup' in ['capture:before', 'acquire']
+
+tests/test_phase3_compat_review_r4.py:38: AssertionError
+____________ test_cleanup_error_alone_is_persisted_in_failed_report ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b390b00>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-273/test_cleanup_error_alone_is_pe0')
+
+    def test_cleanup_error_alone_is_persisted_in_failed_report(monkeypatch, tmp_path):
+        events, reports = fixtures.stub_run(monkeypatch)
+    
+        async def failed_cleanup(values, scratch):
+            events.append("cleanup")
+            raise compat.ProbeAborted("foreign session refuses cleanup")
+    
+        monkeypatch.setattr(compat, "cleanup_scratch", failed_cleanup)
+        with pytest.raises(compat.ProbeAborted):
+            asyncio.run(compat.run(fixtures.VALUES, tmp_path))
+>       assert reports and reports[-1]["cleanup"]["dropped"] is False
+E       assert ([])
+
+tests/test_phase3_compat_review_r4.py:52: AssertionError
+_______ test_workspace_initialize_failure_finalizes_constructed_instance _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b3912e0>
+
+    def test_workspace_initialize_failure_finalizes_constructed_instance(monkeypatch):
+        import lightrag
+    
+        instances = []
+    
+        class FailingRAG:
+            def __init__(self, **kwargs):
+                self.workspace = kwargs["workspace"]
+                self.finalized = False
+                instances.append(self)
+    
+            async def initialize_storages(self):
+                # Represents a partially initialized instance holding acquired resources.
+                raise RuntimeError("initialization failed after acquisition")
+    
+            async def finalize_storages(self):
+                self.finalized = True
+    
+        monkeypatch.setattr(lightrag, "LightRAG", FailingRAG)
+        with pytest.raises((compat.ProbeAborted, RuntimeError)):
+            asyncio.run(compat.probe_workspace_identity(fixtures.VALUES, fixtures.SCRATCH, {}))
+>       assert instances and all(r.finalized for r in instances)
+E       assert ([<test_phase3_compat_review_r4.test_workspace_initialize_failure_finalizes_constructed_instance.<locals>.FailingRAG object at 0x10ede72c0>] and False)
+E        +  where False = all(<generator object test_workspace_initialize_failure_finalizes_constructed_instance.<locals>.<genexpr> at 0x10ec47d00>)
+
+tests/test_phase3_compat_review_r4.py:77: AssertionError
+_ test_created_database_connection_failure_retains_cleanup_or_recovery_identity _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10ede5ac0>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-273/test_created_database_connecti0')
+
+    def test_created_database_connection_failure_retains_cleanup_or_recovery_identity(
+        monkeypatch, tmp_path
+    ):
+        original_acquire = compat._acquire_scratch
+        events, reports = fixtures.stub_run(monkeypatch)
+        monkeypatch.setattr(compat, "_acquire_scratch", original_acquire)
+        created = []
+    
+        class Admin:
+            async def fetchval(self, sql, *args):
+                return 0  # Generated database name is available.
+    
+            async def execute(self, sql, *args):
+                if sql.startswith("CREATE DATABASE"):
+                    created.append(sql.split('"')[1])
+    
+            async def close(self):
+                pass
+    
+        async def connect(**kwargs):
+            if kwargs["database"] == "postgres":
+                return Admin()
+            raise OSError("new database connection unavailable after CREATE")
+    
+        monkeypatch.setattr(compat.asyncpg, "connect", connect)
+        with pytest.raises((compat.ProbeAborted, OSError)):
+            asyncio.run(compat.run(fixtures.VALUES, tmp_path))
+        assert created
+>       assert "cleanup" in events or any(
+            r.get("scratch", {}).get("database") == created[0] for r in reports
+        )
+E       AssertionError: assert ('cleanup' in ['capture:before'] or False)
+E        +  where False = any(<generator object test_created_database_connection_failure_retains_cleanup_or_recovery_identity.<locals>.<genexpr> at 0x10f301620>)
+
+tests/test_phase3_compat_review_r4.py:108: AssertionError
+________ test_wrong_repeated_initialize_result_fails_required_contract _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10ede59a0>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-273/test_wrong_repeated_initialize0')
+
+    def test_wrong_repeated_initialize_result_fails_required_contract(monkeypatch, tmp_path):
+        events, reports = fixtures.stub_run(monkeypatch)
+        original = compat.probe_backend_matrix
+    
+        async def wrong_repeated(values, scratch, report):
+            await original(values, scratch, report)
+            report["probe_backend_matrix"]["PGTableGraphStorage"]["repeated_initialize_same_pool"] = (
+                False
+            )
+    
+        monkeypatch.setattr(compat, "probe_backend_matrix", wrong_repeated)
+>       with pytest.raises(compat.ProbeAborted):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ProbeAborted
+
+tests/test_phase3_compat_review_r4.py:124: Failed
+=========================== short test summary info ============================
+FAILED tests/test_phase3_compat_review_r4.py::test_identity_change_on_actual_drop_connection_is_refused
+FAILED tests/test_phase3_compat_review_r4.py::test_recovery_record_write_error_still_cleans_and_records_failure
+FAILED tests/test_phase3_compat_review_r4.py::test_cleanup_error_alone_is_persisted_in_failed_report
+FAILED tests/test_phase3_compat_review_r4.py::test_workspace_initialize_failure_finalizes_constructed_instance
+FAILED tests/test_phase3_compat_review_r4.py::test_created_database_connection_failure_retains_cleanup_or_recovery_identity
+FAILED tests/test_phase3_compat_review_r4.py::test_wrong_repeated_initialize_result_fails_required_contract
+6 failed, 2 passed in 0.59s

@@ -1,0 +1,115 @@
+{
+  "reviewed_at": "2026-10-05T13:01:40.801660+00:00",
+  "decision": "rejected",
+  "accepted_tasks": [
+    "3.1"
+  ],
+  "pending_tasks": [
+    "3.2",
+    "3.3",
+    "3.4",
+    "3.5",
+    "3.6"
+  ],
+  "verified_repairs": [
+    "table1_raw_grid_citations_13_of_13",
+    "prose_cli_3.1_to_3.4_success",
+    "missing_9.9.9_partial",
+    "source_fingerprint_populated",
+    "workspace_threading",
+    "document_live_source_guard",
+    "jsonl_line_parse"
+  ],
+  "code_sha256": {
+    "src/env_rag_final/enumerate_/__init__.py": "a1f93429fbe9550836d7f1b08f87c9e62b7946e834e8c9698936a138346f696f",
+    "src/env_rag_final/enumerate_/contract.py": "3962b84a4e5267dee8fab7909ea6d4066208e602aaa33beca92f8f9140350993",
+    "src/env_rag_final/enumerate_/doc_enum.py": "daa27ec7f1892f49299393232471ddc67571fa747289e907fc53d08a3a51a86f",
+    "src/env_rag_final/enumerate_/prose_enum.py": "a6a2743f68e0b082a40c2e2e0fb8a78bd5ce2f7ca392f755f7d8d7ffd4511abb",
+    "src/env_rag_final/enumerate_/table_enum.py": "c58a2a7a62754a45d1bdba6acb84902e32bc6983970fc73a43b908c7d8a4a114",
+    "src/env_rag_final/enumerate_/tables.py": "3f24d09271e45a5b16f46e46088e2a4830c41309636fddc2b62ea8f7ab6f90a0",
+    "src/env_rag_final/cli.py": "349703cf1444ac765a8d240bf278de18872fe33656125cde22a34909711fbfe6",
+    "src/env_rag_final/catalog/builder.py": "4da7251a82a4b000655829d3ad99ebe40e5ca6227b5b02f70d44c9f7a6f9eb4e"
+  },
+  "live_source_before": {
+    "state": "current",
+    "active_run_id": "c15c741742394320",
+    "active_snapshot_id": "4919b3938ad93747",
+    "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+    "expected_recipe_id": "phase-1-v4-single-active-snapshot-prune",
+    "live_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "stored_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "action": ""
+  },
+  "live_source_after": {
+    "state": "current",
+    "active_run_id": "c15c741742394320",
+    "active_snapshot_id": "4919b3938ad93747",
+    "recipe_id": "phase-1-v4-single-active-snapshot-prune",
+    "expected_recipe_id": "phase-1-v4-single-active-snapshot-prune",
+    "live_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "stored_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "action": ""
+  },
+  "public_counts_before": {
+    "doc_full": 221,
+    "doc_chunks": 5709,
+    "doc_status": 279,
+    "llm_cache": 16514,
+    "entity_chunks": 65527,
+    "full_entities": 221,
+    "full_relations": 221,
+    "relation_chunks": 119575
+  },
+  "public_counts_after": {
+    "doc_full": 221,
+    "doc_chunks": 5709,
+    "doc_status": 279,
+    "llm_cache": 16514,
+    "entity_chunks": 65527,
+    "full_entities": 221,
+    "full_relations": 221,
+    "relation_chunks": 119575
+  },
+  "public_unchanged": true,
+  "raw_table_citation_matches": 13,
+  "raw_prose_citation_matches": 2,
+  "raw_prose_citation_total": 4,
+  "model_cli_success_http_fixture": {
+    "exit_code": 1,
+    "error": "enum-prose: FAIL (TypeError: '>' not supported between instances of 'int' and 'NoneType')",
+    "real_model_calls": 0
+  },
+  "tests": {
+    "total": 99,
+    "passed": 90,
+    "failed": 9,
+    "independent_acceptance_failed": 9,
+    "evidence": "all-tests.txt"
+  },
+  "checks": {
+    "ruff_check": "passed",
+    "ruff_format": "passed",
+    "openspec_strict": "passed",
+    "diff_check": "passed"
+  },
+  "writes": {
+    "database": 0,
+    "source_artifacts": 0,
+    "catalog": 0,
+    "service_mutations": 0,
+    "product_source_edits": 0,
+    "new_acceptance_tests": 1
+  },
+  "review_scope": {
+    "total_files": 79,
+    "reviewed_files": 7,
+    "skipped_files": 72,
+    "coverage_rate": 0.08860759493670886,
+    "additional_reviewed": [
+      "tests/test_enumeration.py",
+      "tests/test_gate1_acceptance.py",
+      "catalog.builder._live_source_fingerprint",
+      "phase-1 report and JSONL"
+    ]
+  }
+}

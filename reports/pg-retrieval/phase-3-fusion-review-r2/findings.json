@@ -1,0 +1,19 @@
+[
+  {
+    "id": "F3-a",
+    "path": "src/env_rag_final/fusion.py",
+    "start_line": 547,
+    "severity": "high",
+    "category": "bug",
+    "content": "Gold read/JSON parse occurs outside the failure-terminal boundary. Malformed JSON rejects with zero backend calls but no failure report."
+  },
+  {
+    "id": "F3-b",
+    "path": "src/env_rag_final/fusion.py",
+    "start_line": 766,
+    "end_line": 771,
+    "severity": "high",
+    "category": "bug",
+    "content": "New query does not reset live.receipts. Second query failing during PG discovery borrows the first query keyword LLM receipts and identity."
+  }
+]

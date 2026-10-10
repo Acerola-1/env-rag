@@ -1,0 +1,26 @@
+[
+  {
+    "path": "src/env_rag_final/evaluation.py",
+    "start_line": 1042,
+    "end_line": 1050,
+    "category": "bug",
+    "severity": "medium",
+    "content": "Exception receipt reconciliation only marks issued then raises. The owning failed leg loses rerank_issuance, including unknown when no readable receipt exists. Publish the current question tri-state into its terminal while preserving the original error."
+  },
+  {
+    "path": "src/env_rag_final/evaluation.py",
+    "start_line": 997,
+    "end_line": 1002,
+    "category": "bug",
+    "severity": "medium",
+    "content": "failure_service_records.query_id is not compared with qid before accepting its rerank call. A foreign question receipt credits this question with one issued HTTP. Verify attribution and leave unknown when only foreign evidence exists."
+  },
+  {
+    "path": "src/env_rag_final/evaluation.py",
+    "start_line": 1442,
+    "end_line": 1457,
+    "category": "bug",
+    "severity": "medium",
+    "content": "answer_temperature is required and type-checked but never compared with the actual fixed zero. A complete anchor declaring temperature=1 passes. Compare the declared temperature with actual generation temperature; keep zero positive."
+  }
+]

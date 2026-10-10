@@ -1,0 +1,148 @@
+{
+  "artifact_manifest_checks": {
+    "phase-4-pilot-r1": {
+      "count": 31,
+      "mismatches": []
+    },
+    "phase-4-pilot-r2-pg-calibration": {
+      "count": 28,
+      "mismatches": []
+    },
+    "phase-4-pilot-r2": {
+      "count": 67,
+      "mismatches": []
+    }
+  },
+  "source_identity_pre_post_same": true,
+  "accepted_source_hashes_same": true,
+  "pg_calibration_reserved": {
+    "r1/pg/fact-002": 89,
+    "r1/pg/prose-enum-001": 109,
+    "r1/pg/syn-004": 144
+  },
+  "pg_trial_reserved": {
+    "r1/pg/fact-002": 89,
+    "r1/local/fact-002": 77,
+    "r1/fusion/fact-002": 123,
+    "r1/pg/prose-enum-001": 109,
+    "r1/local/prose-enum-001": 142,
+    "r1/fusion/prose-enum-001": 143,
+    "r1/pg/syn-004": 144,
+    "r1/local/syn-004": 45,
+    "r1/fusion/syn-004": 176
+  },
+  "calibration_issued": {
+    "pg": 342
+  },
+  "trial_reserved": {
+    "pg": 1048,
+    "llm": 6,
+    "embedding": 16,
+    "qdrant": 16,
+    "neo4j": 30,
+    "rerank": 3,
+    "answer_llm": 3
+  },
+  "trial_issued": {
+    "pg": 1048,
+    "llm": 6,
+    "embedding": 16,
+    "qdrant": 16,
+    "neo4j": 30,
+    "rerank": 3,
+    "answer_llm": 2
+  },
+  "service_statuses": {
+    "llm/success": 3,
+    "embedding/success": 8,
+    "qdrant/success": 8,
+    "neo4j/success": 15,
+    "pg/success": 8
+  },
+  "rerank_checks": [
+    {
+      "qid": "fact-002",
+      "ordered": 10,
+      "actual_http_status": "success"
+    },
+    {
+      "qid": "prose-enum-001",
+      "ordered": 6,
+      "actual_http_status": "success"
+    },
+    {
+      "qid": "syn-004",
+      "ordered": 21,
+      "actual_http_status": "success"
+    }
+  ],
+  "prose_question_membership_checks": {
+    "pg": {
+      "app_coverage": "complete",
+      "produced": 4,
+      "matched": 4,
+      "missing": 0,
+      "extra": 0,
+      "scope_membership_exact": true,
+      "extra_documents": []
+    },
+    "local": {
+      "app_coverage": "complete",
+      "produced": 17,
+      "matched": 4,
+      "missing": 0,
+      "extra": 13,
+      "scope_membership_exact": false,
+      "extra_documents": [
+        "doc-9bb11e5d3809e590259aef28fb61062b",
+        "doc-b45c510232ed4d2452b0f5b2a13434e4"
+      ]
+    },
+    "fusion": {
+      "app_coverage": "complete",
+      "produced": 4,
+      "matched": 4,
+      "missing": 0,
+      "extra": 0,
+      "scope_membership_exact": true,
+      "extra_documents": []
+    }
+  },
+  "synthesis_checks": {
+    "pg": {
+      "app_coverage": "partial",
+      "model_status": "model_failure",
+      "http_status": "success",
+      "actual_output_items": 2,
+      "validation_problems_count": 2,
+      "delivered_items": 0,
+      "raw_summary": "GB 3838-2002 规定地表水环境质量标准，GB 3095-2012 规定环境空气质量标准。",
+      "context_sha256": "b0487919fa1d1deff53db927300d1f2123f259f054e83608690aae83a04670a4"
+    },
+    "local": {
+      "app_coverage": "partial",
+      "model_status": "incomplete_conditions",
+      "http_status": null,
+      "actual_output_items": null,
+      "validation_problems_count": 0,
+      "delivered_items": 0,
+      "raw_summary": null,
+      "context_sha256": null
+    },
+    "fusion": {
+      "app_coverage": "partial",
+      "model_status": "model_failure",
+      "http_status": "success",
+      "actual_output_items": 10,
+      "validation_problems_count": 12,
+      "delivered_items": 0,
+      "raw_summary": "根据提供的上下文，仅能确认 GB 3838-2002 涉及地表水环境质量标准，GB 3095-2012 涉及环境空气质量标准（含附录A环境空气中镉、汞、砷、六价铬和氟化物参考浓度限值）；上下文未涵盖两个标准中其他环境要素的完整规定。",
+      "context_sha256": "b0487919fa1d1deff53db927300d1f2123f259f054e83608690aae83a04670a4"
+    }
+  },
+  "engineering_pilot_accepted": true,
+  "quality_passed": false,
+  "task6_2_checked": false,
+  "reviewer_new_real_requests": 0,
+  "production_writes": 0
+}

@@ -1,0 +1,83 @@
+{
+  "version": "1.0",
+  "equations": {
+    "eq-2bc6fbfc04843fa1e1d25ab0e6fb7f50-0001": {
+      "id": "eq-2bc6fbfc04843fa1e1d25ab0e6fb7f50-0001",
+      "blockid": "31220ff5567ad7035ee7be6214f101e5",
+      "heading": "Box 2.4. Benefit transfer for the value of a statistical life (continued)",
+      "parent_headings": [
+        "The links between outdoor air pollution and economic growth"
+      ],
+      "format": "latex",
+      "content": "V S L _ {r} ^ {t} = V S L _ {O E C D} ^ {2 0 1 0} \\cdot \\left(\\frac {Y _ {r} ^ {t}}{Y _ {O E C D} ^ {t}}\\right) ^ {\\beta}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/371"
+    },
+    "eq-2bc6fbfc04843fa1e1d25ab0e6fb7f50-0002": {
+      "id": "eq-2bc6fbfc04843fa1e1d25ab0e6fb7f50-0002",
+      "blockid": "b5a0ccebd82032931ec73d043ea5b2d0",
+      "heading": "Description of the TM5-FASST model",
+      "parent_headings": [
+        "Description of the ENV-Linkages model"
+      ],
+      "format": "latex",
+      "content": "C _ {i j} (x, y) = C _ {j} ^ {0} (y) + A _ {i j} (x, y) \\cdot E _ {i} (x)",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/886"
+    },
+    "eq-2bc6fbfc04843fa1e1d25ab0e6fb7f50-0003": {
+      "id": "eq-2bc6fbfc04843fa1e1d25ab0e6fb7f50-0003",
+      "blockid": "b5a0ccebd82032931ec73d043ea5b2d0",
+      "heading": "Description of the TM5-FASST model",
+      "parent_headings": [
+        "Description of the ENV-Linkages model"
+      ],
+      "format": "latex",
+      "content": "A _ {i j} (x, y) = \\frac {\\Delta C _ {j} (y)}{\\Delta E _ {i} (x)}",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/895"
+    },
+    "eq-2bc6fbfc04843fa1e1d25ab0e6fb7f50-0004": {
+      "id": "eq-2bc6fbfc04843fa1e1d25ab0e6fb7f50-0004",
+      "blockid": "b5a0ccebd82032931ec73d043ea5b2d0",
+      "heading": "Description of the TM5-FASST model",
+      "parent_headings": [
+        "Description of the ENV-Linkages model"
+      ],
+      "format": "latex",
+      "content": "C _ {i j} (x, y) = C _ {j} ^ {0} (y) + \\sum_ {x} \\sum_ {i} A _ {i j} (x, y) \\left[ E _ {i} (x) - E _ {i} ^ {0} (x) \\right]",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/897"
+    },
+    "eq-2bc6fbfc04843fa1e1d25ab0e6fb7f50-0005": {
+      "id": "eq-2bc6fbfc04843fa1e1d25ab0e6fb7f50-0005",
+      "blockid": "252bd5c33a6ba7892a2bc99fc7941482",
+      "heading": "Mortality",
+      "parent_headings": [
+        "Methodology to calculate the health impacts"
+      ],
+      "format": "latex",
+      "content": "P A F _ {G B D} = \\left\\{ \\begin{array}{c c} \\alpha \\ln (\\text { concentration   in } \\mu g / m ^ {3}) + \\beta , & \\text { for   concentrations } > 5. 8 \\mu g / m ^ {3} \\\\ 0, & \\text { otherwise } \\end{array} \\right.",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/923"
+    },
+    "eq-2bc6fbfc04843fa1e1d25ab0e6fb7f50-0006": {
+      "id": "eq-2bc6fbfc04843fa1e1d25ab0e6fb7f50-0006",
+      "blockid": "252bd5c33a6ba7892a2bc99fc7941482",
+      "heading": "Mortality",
+      "parent_headings": [
+        "Methodology to calculate the health impacts"
+      ],
+      "format": "latex",
+      "content": "D e a t h s = P A F _ {G B D} \\times C M R \\times P o p u l a t i o n",
+      "caption": "",
+      "footnotes": [],
+      "self_ref": "content_list.json#/926"
+    }
+  }
+}

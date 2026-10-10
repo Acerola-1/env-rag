@@ -1,0 +1,520 @@
+{
+ "legs": [
+  {
+   "query_id": "file-enum-005",
+   "coverage_status": "complete",
+   "model_calls_used": 0,
+   "items_count": 3,
+   "published_doc_ids": [
+    "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+    "doc-9bb11e5d3809e590259aef28fb61062b",
+    "doc-b423a0e3331541588988fd34496c349d"
+   ],
+   "posthoc_gold": {
+    "expected": [
+     "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "doc-9bb11e5d3809e590259aef28fb61062b",
+     "doc-b423a0e3331541588988fd34496c349d"
+    ],
+    "missing": [],
+    "extra": []
+   },
+   "enum_stats": {
+    "base_total": 1,
+    "base_processed": 1,
+    "base_coverage": "complete",
+    "related_total": 3,
+    "related_processed": 3,
+    "related_matches": 3,
+    "related_evidence": 2,
+    "related_coverage": "complete",
+    "attribution_branch": true,
+    "attribution_added": 2,
+    "overlap_evidence": [],
+    "overlap_canonical": [
+     "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+    ],
+    "union_total": 3,
+    "members_total": 3,
+    "members_processed": 3,
+    "coverage_status": "complete",
+    "publication_guard": "stable",
+    "catalog_snapshot_id": "4919b3938ad93747"
+   },
+   "items_detail": [
+    {
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "self_code": "GB18466",
+     "self_code_version": "2005",
+     "attribution": false,
+     "citation_snapshot": "4919b3938ad93747",
+     "citation_workspace": "default",
+     "citation_verified": true,
+     "citation_reverified": true
+    },
+    {
+     "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+     "self_code": null,
+     "self_code_version": null,
+     "attribution": true,
+     "citation_snapshot": "4919b3938ad93747",
+     "citation_workspace": "default",
+     "citation_verified": true,
+     "citation_reverified": true
+    },
+    {
+     "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+     "self_code": null,
+     "self_code_version": null,
+     "attribution": true,
+     "citation_snapshot": "4919b3938ad93747",
+     "citation_workspace": "default",
+     "citation_verified": true,
+     "citation_reverified": true
+    }
+   ],
+   "citations_with_foreign_or_empty_snapshot": 0,
+   "search_layer_reads": 0,
+   "full_metadata_scans": 6,
+   "publication_guard": "stable",
+   "guard_field_evidence": true,
+   "leg": "file-enum-005-local",
+   "evidence_label": "存量产物读取 + 离线owning入口回放（当前源码；服务炸弹）"
+  },
+  {
+   "query_id": "file-enum-005",
+   "coverage_status": "complete",
+   "model_calls_used": 0,
+   "items_count": 3,
+   "published_doc_ids": [
+    "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+    "doc-9bb11e5d3809e590259aef28fb61062b",
+    "doc-b423a0e3331541588988fd34496c349d"
+   ],
+   "posthoc_gold": {
+    "expected": [
+     "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "doc-9bb11e5d3809e590259aef28fb61062b",
+     "doc-b423a0e3331541588988fd34496c349d"
+    ],
+    "missing": [],
+    "extra": []
+   },
+   "enum_stats": {
+    "base_total": 1,
+    "base_processed": 1,
+    "base_coverage": "complete",
+    "related_total": 3,
+    "related_processed": 3,
+    "related_matches": 3,
+    "related_evidence": 2,
+    "related_coverage": "complete",
+    "attribution_branch": true,
+    "attribution_added": 2,
+    "overlap_evidence": [],
+    "overlap_canonical": [
+     "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+    ],
+    "union_total": 3,
+    "members_total": 3,
+    "members_processed": 3,
+    "coverage_status": "complete",
+    "publication_guard": "stable",
+    "catalog_snapshot_id": "4919b3938ad93747"
+   },
+   "items_detail": [
+    {
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "self_code": "GB18466",
+     "self_code_version": "2005",
+     "attribution": false,
+     "citation_snapshot": "4919b3938ad93747",
+     "citation_workspace": "default",
+     "citation_verified": true,
+     "citation_reverified": true
+    },
+    {
+     "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+     "self_code": null,
+     "self_code_version": null,
+     "attribution": true,
+     "citation_snapshot": "4919b3938ad93747",
+     "citation_workspace": "default",
+     "citation_verified": true,
+     "citation_reverified": true
+    },
+    {
+     "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+     "self_code": null,
+     "self_code_version": null,
+     "attribution": true,
+     "citation_snapshot": "4919b3938ad93747",
+     "citation_workspace": "default",
+     "citation_verified": true,
+     "citation_reverified": true
+    }
+   ],
+   "citations_with_foreign_or_empty_snapshot": 0,
+   "search_layer_reads": 0,
+   "full_metadata_scans": 6,
+   "publication_guard": "stable",
+   "guard_field_evidence": true,
+   "leg": "file-enum-005-pg",
+   "evidence_label": "存量产物读取 + 离线owning入口回放（当前源码；服务炸弹）"
+  },
+  {
+   "query_id": "file-enum-005",
+   "coverage_status": "complete",
+   "model_calls_used": 0,
+   "items_count": 3,
+   "published_doc_ids": [
+    "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+    "doc-9bb11e5d3809e590259aef28fb61062b",
+    "doc-b423a0e3331541588988fd34496c349d"
+   ],
+   "posthoc_gold": {
+    "expected": [
+     "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "doc-9bb11e5d3809e590259aef28fb61062b",
+     "doc-b423a0e3331541588988fd34496c349d"
+    ],
+    "missing": [],
+    "extra": []
+   },
+   "enum_stats": {
+    "base_total": 1,
+    "base_processed": 1,
+    "base_coverage": "complete",
+    "related_total": 3,
+    "related_processed": 3,
+    "related_matches": 3,
+    "related_evidence": 2,
+    "related_coverage": "complete",
+    "attribution_branch": true,
+    "attribution_added": 2,
+    "overlap_evidence": [],
+    "overlap_canonical": [
+     "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+    ],
+    "union_total": 3,
+    "members_total": 3,
+    "members_processed": 3,
+    "coverage_status": "complete",
+    "publication_guard": "stable",
+    "catalog_snapshot_id": "4919b3938ad93747"
+   },
+   "items_detail": [
+    {
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "self_code": "GB18466",
+     "self_code_version": "2005",
+     "attribution": false,
+     "citation_snapshot": "4919b3938ad93747",
+     "citation_workspace": "default",
+     "citation_verified": true,
+     "citation_reverified": true
+    },
+    {
+     "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+     "self_code": null,
+     "self_code_version": null,
+     "attribution": true,
+     "citation_snapshot": "4919b3938ad93747",
+     "citation_workspace": "default",
+     "citation_verified": true,
+     "citation_reverified": true
+    },
+    {
+     "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+     "self_code": null,
+     "self_code_version": null,
+     "attribution": true,
+     "citation_snapshot": "4919b3938ad93747",
+     "citation_workspace": "default",
+     "citation_verified": true,
+     "citation_reverified": true
+    }
+   ],
+   "citations_with_foreign_or_empty_snapshot": 0,
+   "search_layer_reads": 0,
+   "full_metadata_scans": 6,
+   "publication_guard": "stable",
+   "guard_field_evidence": true,
+   "leg": "file-enum-005-local-searchid-variant",
+   "evidence_label": "构造参数对照（存储输入逐字段复制仅改 pg.search_id / 强制 page_size） + 存量产物读取 + 离线owning入口回放（当前源码）"
+  },
+  {
+   "query_id": "file-enum-001",
+   "coverage_status": "complete",
+   "model_calls_used": 0,
+   "items_count": 2,
+   "published_doc_ids": [
+    "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+    "doc-4c883d21fa02a53189e0911c3d59d1d1"
+   ],
+   "posthoc_gold": {
+    "expected": [
+     "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "doc-4c883d21fa02a53189e0911c3d59d1d1"
+    ],
+    "missing": [],
+    "extra": []
+   },
+   "enum_stats": {
+    "base_total": 2,
+    "base_processed": 2,
+    "base_coverage": "complete",
+    "related_total": 0,
+    "related_processed": 0,
+    "related_matches": 0,
+    "related_evidence": 0,
+    "related_coverage": "not-requested",
+    "attribution_branch": false,
+    "attribution_added": 0,
+    "overlap_evidence": [],
+    "overlap_canonical": [],
+    "union_total": 2,
+    "members_total": 2,
+    "members_processed": 2,
+    "coverage_status": "complete",
+    "publication_guard": "stable",
+    "catalog_snapshot_id": "4919b3938ad93747"
+   },
+   "items_detail": [
+    {
+     "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+     "self_code": "GB3095",
+     "self_code_version": "2012",
+     "attribution": false,
+     "citation_snapshot": "4919b3938ad93747",
+     "citation_workspace": "default",
+     "citation_verified": true,
+     "citation_reverified": true
+    },
+    {
+     "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+     "self_code": "GB3095",
+     "self_code_version": "2026",
+     "attribution": false,
+     "citation_snapshot": "4919b3938ad93747",
+     "citation_workspace": "default",
+     "citation_verified": true,
+     "citation_reverified": true
+    }
+   ],
+   "citations_with_foreign_or_empty_snapshot": 0,
+   "search_layer_reads": 0,
+   "full_metadata_scans": 0,
+   "publication_guard": "stable",
+   "guard_field_evidence": true,
+   "leg": "file-enum-001-local",
+   "evidence_label": "存量产物读取 + 离线owning入口回放（当前源码；服务炸弹）"
+  },
+  {
+   "query_id": "file-enum-002",
+   "coverage_status": "complete",
+   "model_calls_used": 0,
+   "items_count": 5,
+   "published_doc_ids": [
+    "doc-507bc40d1d6395c6932d2201e8483504",
+    "doc-60eb1ff63505bb659d0d97f2524479a2",
+    "doc-90f413ede6224a15083a7e2f75ac0c63",
+    "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+    "doc-b64a60d5251a9101f3d8f050f6933216"
+   ],
+   "posthoc_gold": {
+    "expected": [
+     "doc-507bc40d1d6395c6932d2201e8483504",
+     "doc-60eb1ff63505bb659d0d97f2524479a2",
+     "doc-90f413ede6224a15083a7e2f75ac0c63",
+     "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+     "doc-b64a60d5251a9101f3d8f050f6933216"
+    ],
+    "missing": [],
+    "extra": []
+   },
+   "enum_stats": {
+    "base_total": 5,
+    "base_processed": 5,
+    "base_coverage": "complete",
+    "related_total": 0,
+    "related_processed": 0,
+    "related_matches": 0,
+    "related_evidence": 0,
+    "related_coverage": "not-requested",
+    "attribution_branch": false,
+    "attribution_added": 0,
+    "overlap_evidence": [],
+    "overlap_canonical": [],
+    "union_total": 5,
+    "members_total": 5,
+    "members_processed": 5,
+    "coverage_status": "complete",
+    "publication_guard": "stable",
+    "catalog_snapshot_id": "4919b3938ad93747"
+   },
+   "items_detail": [
+    {
+     "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+     "self_code": null,
+     "self_code_version": null,
+     "attribution": false,
+     "citation_snapshot": "4919b3938ad93747",
+     "citation_workspace": "default",
+     "citation_verified": true,
+     "citation_reverified": true
+    },
+    {
+     "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+     "self_code": null,
+     "self_code_version": null,
+     "attribution": false,
+     "citation_snapshot": "4919b3938ad93747",
+     "citation_workspace": "default",
+     "citation_verified": true,
+     "citation_reverified": true
+    },
+    {
+     "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+     "self_code": null,
+     "self_code_version": null,
+     "attribution": false,
+     "citation_snapshot": "4919b3938ad93747",
+     "citation_workspace": "default",
+     "citation_verified": true,
+     "citation_reverified": true
+    },
+    {
+     "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+     "self_code": null,
+     "self_code_version": null,
+     "attribution": false,
+     "citation_snapshot": "4919b3938ad93747",
+     "citation_workspace": "default",
+     "citation_verified": true,
+     "citation_reverified": true
+    },
+    {
+     "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+     "self_code": null,
+     "self_code_version": null,
+     "attribution": false,
+     "citation_snapshot": "4919b3938ad93747",
+     "citation_workspace": "default",
+     "citation_verified": true,
+     "citation_reverified": true
+    }
+   ],
+   "citations_with_foreign_or_empty_snapshot": 0,
+   "search_layer_reads": 0,
+   "full_metadata_scans": 0,
+   "publication_guard": "stable",
+   "guard_field_evidence": true,
+   "leg": "file-enum-002-local",
+   "evidence_label": "存量产物读取 + 离线owning入口回放（当前源码；服务炸弹）"
+  },
+  {
+   "query_id": "file-enum-002",
+   "coverage_status": "complete",
+   "model_calls_used": 0,
+   "items_count": 5,
+   "published_doc_ids": [
+    "doc-507bc40d1d6395c6932d2201e8483504",
+    "doc-60eb1ff63505bb659d0d97f2524479a2",
+    "doc-90f413ede6224a15083a7e2f75ac0c63",
+    "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+    "doc-b64a60d5251a9101f3d8f050f6933216"
+   ],
+   "posthoc_gold": {
+    "expected": [
+     "doc-507bc40d1d6395c6932d2201e8483504",
+     "doc-60eb1ff63505bb659d0d97f2524479a2",
+     "doc-90f413ede6224a15083a7e2f75ac0c63",
+     "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+     "doc-b64a60d5251a9101f3d8f050f6933216"
+    ],
+    "missing": [],
+    "extra": []
+   },
+   "enum_stats": {
+    "base_total": 5,
+    "base_processed": 5,
+    "base_coverage": "complete",
+    "related_total": 0,
+    "related_processed": 0,
+    "related_matches": 0,
+    "related_evidence": 0,
+    "related_coverage": "not-requested",
+    "attribution_branch": false,
+    "attribution_added": 0,
+    "overlap_evidence": [],
+    "overlap_canonical": [],
+    "union_total": 5,
+    "members_total": 5,
+    "members_processed": 5,
+    "coverage_status": "complete",
+    "publication_guard": "stable",
+    "catalog_snapshot_id": "4919b3938ad93747"
+   },
+   "items_detail": [
+    {
+     "doc_id": "doc-90fd84f5ff8b2f62472a0ff5a9b7f7e4",
+     "self_code": null,
+     "self_code_version": null,
+     "attribution": false,
+     "citation_snapshot": "4919b3938ad93747",
+     "citation_workspace": "default",
+     "citation_verified": true,
+     "citation_reverified": true
+    },
+    {
+     "doc_id": "doc-b64a60d5251a9101f3d8f050f6933216",
+     "self_code": null,
+     "self_code_version": null,
+     "attribution": false,
+     "citation_snapshot": "4919b3938ad93747",
+     "citation_workspace": "default",
+     "citation_verified": true,
+     "citation_reverified": true
+    },
+    {
+     "doc_id": "doc-60eb1ff63505bb659d0d97f2524479a2",
+     "self_code": null,
+     "self_code_version": null,
+     "attribution": false,
+     "citation_snapshot": "4919b3938ad93747",
+     "citation_workspace": "default",
+     "citation_verified": true,
+     "citation_reverified": true
+    },
+    {
+     "doc_id": "doc-90f413ede6224a15083a7e2f75ac0c63",
+     "self_code": null,
+     "self_code_version": null,
+     "attribution": false,
+     "citation_snapshot": "4919b3938ad93747",
+     "citation_workspace": "default",
+     "citation_verified": true,
+     "citation_reverified": true
+    },
+    {
+     "doc_id": "doc-507bc40d1d6395c6932d2201e8483504",
+     "self_code": null,
+     "self_code_version": null,
+     "attribution": false,
+     "citation_snapshot": "4919b3938ad93747",
+     "citation_workspace": "default",
+     "citation_verified": true,
+     "citation_reverified": true
+    }
+   ],
+   "citations_with_foreign_or_empty_snapshot": 0,
+   "search_layer_reads": 0,
+   "full_metadata_scans": 0,
+   "publication_guard": "stable",
+   "guard_field_evidence": true,
+   "leg": "file-enum-002-local-pagesize2",
+   "evidence_label": "构造参数对照（存储输入逐字段复制仅改 pg.search_id / 强制 page_size） + 存量产物读取 + 离线owning入口回放（当前源码）"
+  }
+ ]
+}

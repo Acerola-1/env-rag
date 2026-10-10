@@ -1,0 +1,197 @@
+{
+ "generation": "phase-4-improvement-2-r2",
+ "files_scanned": 19,
+ "scanned": [
+  {
+   "path": "src/env_rag_final/answer.py",
+   "sha256": "14c9673b2b07a41d83b32c747d048a572f8d8795ecc6892d9df59c30e6100968"
+  },
+  {
+   "path": "tests/test_phase4_improvement2_target_confirmation.py",
+   "sha256": "1ebe2c53e820b07e4a79b0c8e48d2360ec0cd02b3ec7f7f11d3c8f580a4a5956"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-2-r2/r2_evidence.py",
+   "sha256": "13f3bbb2b001a0beb42c4340f141ba4cfae9b0649bed1ecd11fb9bca437d1ed1"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-2-r2/baseline-shas.json",
+   "sha256": "a2de632f58c920d99cc27b452765040dfcf6eedac150dde5552cd581fed75e39"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-2-r2/sha-after.json",
+   "sha256": "1ff88686099d049fa5207ce034ce9c954c67188d710c704aa6836895f372ed99"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-2-r2/protected-recheck.json",
+   "sha256": "a03e66db21900e065f22d04b1a23a76b228f30c5143086b1815bfcb496327510"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-2-r2/four-leg-preservation.json",
+   "sha256": "9d314979e7bf7a86c65aea09e33a59cd141bd3553f19db6ce30b12a2b48bf55f"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-2-r2/attribution-and-scope-trace.json",
+   "sha256": "1708dc1c0324e3bdcb166e430fc5f9b2f5c22c05b198846164fb8a21c386f9a7"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-2-r2/pytest-red-reproduction-before-fix.txt",
+   "sha256": "dafe863a3e3e1bcb7fbf14dde678649aed8f9ca6871978aba846f20b15ebb790"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-2-r2/pytest-engineering.txt",
+   "sha256": "e26bc3a46dfa017030103752784a7c52d91a42be97dec53911f5e45bfa5a5011"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-2-r2/pytest-frozen-matrix-r2.txt",
+   "sha256": "3e8f9a2415a3b0a9b3afc614a8a0149df3dd34e8a6e4e339dc39d578fafaeefd"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-2-r2/pytest-own-r2.txt",
+   "sha256": "e03e48a755021c4a0f28b0c44f63143bc475e0d7c5ae0e56cbc7a7945ba2bb3d"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-2-r2/pytest-improvement1-frozen.txt",
+   "sha256": "1b08f0c0beaba0c279189ef1c7341e54d766feced764562cbc079af35d44cba8"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-2-r2/pytest-assessment-frozen.txt",
+   "sha256": "307e13e8c2abf54a0b968c81ca06dd624bc40604a629ac30796939ce97362418"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-2-r2/pytest-scorer-selftests.txt",
+   "sha256": "a3721e88c833aa0624649e3e76ebfeecdbcbc6235d5add3e07df1efa67fa625e"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-2-r2/replays/prose-enum-001/answer-runtime-latest.json",
+   "sha256": "3552389167bf9175af9f6df7d700b47b9fb333f06b5216b8425b52e334fbd603"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-2-r2/replays/prose-enum-006/answer-runtime-latest.json",
+   "sha256": "4ab20577587a558de5c4a3e2fef6723cee59d42c9cf01091c0bd7834c4cea0fb"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-2-r2/replays/neg-004/answer-runtime-latest.json",
+   "sha256": "331a7e37449a04c47eab3edf96125e557ba7d3018161ec802b6ff090db90196f"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-2-r2/replays/table-enum-001/answer-runtime-latest.json",
+   "sha256": "28b7323db742df2fbff8a012d40e198b16f141581d7bfc85bd5feeb0af78aa18"
+  }
+ ],
+ "hits": [
+  {
+   "path": "tests/test_phase4_improvement2_target_confirmation.py",
+   "line": 302,
+   "match": "= \"doc-68a…"
+  },
+  {
+   "path": "tests/test_phase4_improvement2_target_confirmation.py",
+   "line": 303,
+   "match": "= \"doc-257…"
+  },
+  {
+   "path": "tests/test_phase4_improvement2_target_confirmation.py",
+   "line": 304,
+   "match": "= \"doc-b45…"
+  },
+  {
+   "path": "tests/test_phase4_improvement2_target_confirmation.py",
+   "line": 305,
+   "match": "= \"doc-68a…"
+  },
+  {
+   "path": "reports/pg-retrieval/phase-4-improvement-2-r2/r2_evidence.py",
+   "line": 39,
+   "match": "= \"1bf1300…"
+  }
+ ],
+ "method_note": "两轮扫描：第一轮含裸标识符备选（api_key|secret|password 等键名），8 处命中经逐行复核全部为代码中的配置键名/f-string 模板（answer.py:785-788 拒绝 None Bearer 的守卫、2361 必检键列表、2445 连接参数名），非任何真实值；第二轮用值形态模式（sk-/AKIA/PEM/Bearer 字面量/长引号赋值），0 命中。",
+ "preliminary_identifier_hits_reviewed": [
+  {
+   "path": "src/env_rag_final/answer.py",
+   "line": 785,
+   "match": "api_key…"
+  },
+  {
+   "path": "src/env_rag_final/answer.py",
+   "line": 785,
+   "match": "API_KEY…"
+  },
+  {
+   "path": "src/env_rag_final/answer.py",
+   "line": 786,
+   "match": "api_key…"
+  },
+  {
+   "path": "src/env_rag_final/answer.py",
+   "line": 787,
+   "match": "API_KEY…"
+  },
+  {
+   "path": "src/env_rag_final/answer.py",
+   "line": 788,
+   "match": "api_key…"
+  },
+  {
+   "path": "src/env_rag_final/answer.py",
+   "line": 2361,
+   "match": "API_KEY…"
+  },
+  {
+   "path": "src/env_rag_final/answer.py",
+   "line": 2445,
+   "match": "password…"
+  },
+  {
+   "path": "src/env_rag_final/answer.py",
+   "line": 2445,
+   "match": "PASSWORD…"
+  }
+ ],
+ "env_file_read": false,
+ "hits_review": [
+  {
+   "raw": {
+    "path": "tests/test_phase4_improvement2_target_confirmation.py",
+    "line": 302,
+    "match": "= \"doc-68a…"
+   },
+   "classification": "公开 doc_id 常量（存量报告已发布标识，非凭证）"
+  },
+  {
+   "raw": {
+    "path": "tests/test_phase4_improvement2_target_confirmation.py",
+    "line": 303,
+    "match": "= \"doc-257…"
+   },
+   "classification": "公开 doc_id 常量（存量报告已发布标识，非凭证）"
+  },
+  {
+   "raw": {
+    "path": "tests/test_phase4_improvement2_target_confirmation.py",
+    "line": 304,
+    "match": "= \"doc-b45…"
+   },
+   "classification": "公开 doc_id 常量（存量报告已发布标识，非凭证）"
+  },
+  {
+   "raw": {
+    "path": "tests/test_phase4_improvement2_target_confirmation.py",
+    "line": 305,
+    "match": "= \"doc-68a…"
+   },
+   "classification": "公开 doc_id 常量（存量报告已发布标识，非凭证）"
+  },
+  {
+   "raw": {
+    "path": "reports/pg-retrieval/phase-4-improvement-2-r2/r2_evidence.py",
+    "line": 39,
+    "match": "= \"1bf1300…"
+   },
+   "classification": "gold 冻结 SHA-256 校验值（交接明文规定，非凭证）"
+  }
+ ],
+ "value_shaped_hits_after_review": [],
+ "final_verdict": "0 真实凭证：两轮模式的全部命中逐条定性为代码配置键名、f-string 模板、公开 doc_id 常量与 gold SHA 校验值"
+}

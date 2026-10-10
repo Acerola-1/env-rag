@@ -1,0 +1,698 @@
+{
+  "query_id": "ask-567fa77e54dc",
+  "query": "列出库内 GB3095 标准的全部文档及版本",
+  "effective_query": "列出库内 GB3095 标准的全部文档及版本",
+  "kind": "files",
+  "workspace": "default",
+  "coverage_status": "complete",
+  "answer": {
+    "mode": "deterministic",
+    "generated_by": "enumerate/expand entries",
+    "items": [
+      {
+        "kind": "document",
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "doc_name": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+        "title": "环境空气质量标准",
+        "self_code": "GB3095",
+        "self_code_version": "2012",
+        "attribution": false,
+        "citation": {
+          "kind": "catalog_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+          "doc_name": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf"
+        },
+        "citation_verified": true,
+        "citation_reverified": true
+      },
+      {
+        "kind": "document",
+        "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+        "doc_name": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+        "title": "环境空气质量标准",
+        "self_code": "GB3095",
+        "self_code_version": "2026",
+        "attribution": false,
+        "citation": {
+          "kind": "catalog_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+          "doc_name": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf"
+        },
+        "citation_verified": true,
+        "citation_reverified": true
+      }
+    ],
+    "items_count": 2
+  },
+  "flags": [],
+  "model_calls_used": 0,
+  "embedding_calls": 0,
+  "rerank_calls": 0,
+  "original_local_baseline": "unverified",
+  "evidence_mode": "production_readonly",
+  "identity_before": {
+    "state": "current",
+    "search_id": "872d689343a9cbb6",
+    "catalog_snapshot_id": "4919b3938ad93747",
+    "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+    "vocab_sha": "c3d0b6a6cf7d6af0758329bccea3bbbf432d73b20df4db42b768ae07446978cf",
+    "index_recipe": "phase-2-v2-local-caption-identity-guard",
+    "expected_search_id": "872d689343a9cbb6",
+    "reasons": []
+  },
+  "discovery": {
+    "query_id": "search-a17d4be81598",
+    "workspace": "default",
+    "status": "ok",
+    "search_id": "872d689343a9cbb6",
+    "catalog_snapshot_id": "4919b3938ad93747",
+    "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "parsed_code": {
+      "raw": "GB3095",
+      "code": "GB3095",
+      "version": null
+    },
+    "parsed_codes": [
+      {
+        "raw": "GB3095",
+        "code": "GB3095",
+        "version": null
+      }
+    ],
+    "query_text": "列出库内 GB3095 标准的全部文档及版本",
+    "candidates": [
+      {
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "doc_name": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+        "self_code": "GB3095",
+        "self_code_version": "2012",
+        "title": "环境空气质量标准",
+        "doc_type": "standard",
+        "discovery": "code_exact",
+        "score": 1.0,
+        "citation": {
+          "kind": "catalog_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+        "doc_name": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+        "self_code": "GB3095",
+        "self_code_version": "2026",
+        "title": "环境空气质量标准",
+        "doc_type": "standard",
+        "discovery": "code_exact",
+        "score": 1.0,
+        "citation": {
+          "kind": "catalog_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+        "heading": "中 华 人 民 共 和 国 国 家 标 准",
+        "chunk_order": 0,
+        "score": 6.599999904632568,
+        "discovery": "keyword_core_and",
+        "citation": {
+          "kind": "chunk_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+          "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+        "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-000",
+        "heading": "中华人民共和国国家标准",
+        "chunk_order": 0,
+        "score": 6.599999904632568,
+        "discovery": "keyword_core_and",
+        "citation": {
+          "kind": "chunk_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+          "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-000"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+        "heading": "环境空气质量标准",
+        "chunk_order": 1,
+        "score": 2.4000000953674316,
+        "discovery": "keyword_core_and",
+        "citation": {
+          "kind": "chunk_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+          "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+        "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-001",
+        "heading": "2 规范性引用文件 环境空气质量标准",
+        "chunk_order": 1,
+        "score": 2.200000047683716,
+        "discovery": "keyword_core_and",
+        "citation": {
+          "kind": "chunk_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+          "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-001"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+        "heading": "7 实施与监督 环境空气质量标准",
+        "chunk_order": 4,
+        "score": 1.399999976158142,
+        "discovery": "keyword_core_and",
+        "citation": {
+          "kind": "chunk_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+          "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+        "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-002",
+        "heading": "4.1 环境空气功能区分类 环境空气质量标准",
+        "chunk_order": 2,
+        "score": 1.399999976158142,
+        "discovery": "keyword_core_and",
+        "citation": {
+          "kind": "chunk_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+          "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-002"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+        "heading": "4 环境空气功能区分类和质量要求 环境空气质量标准",
+        "chunk_order": 2,
+        "score": 1.2000000476837158,
+        "discovery": "keyword_core_and",
+        "citation": {
+          "kind": "chunk_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+          "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+        "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+        "heading": "5.3 污染物分析 [part 1] 环境空气质量标准",
+        "chunk_order": 3,
+        "score": 1.2000000476837158,
+        "discovery": "keyword_core_and",
+        "citation": {
+          "kind": "chunk_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+          "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+        "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-006",
+        "heading": "6 数据统计的有效性规定 环境空气质量标准",
+        "chunk_order": 6,
+        "score": 1.0,
+        "discovery": "keyword_core_and",
+        "citation": {
+          "kind": "chunk_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+          "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-006"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003",
+        "heading": "5.3 污染物分析 环境空气质量标准",
+        "chunk_order": 3,
+        "score": 0.6000000238418579,
+        "discovery": "keyword_core_and",
+        "citation": {
+          "kind": "chunk_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+          "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+        "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004",
+        "heading": "5.3 污染物分析 [part 2] 环境空气质量标准",
+        "chunk_order": 4,
+        "score": 0.4000000059604645,
+        "discovery": "keyword_core_and",
+        "citation": {
+          "kind": "chunk_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+          "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+        "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005",
+        "heading": "5.3 污染物分析 [part 3] 环境空气质量标准",
+        "chunk_order": 5,
+        "score": 0.4000000059604645,
+        "discovery": "keyword_core_and",
+        "citation": {
+          "kind": "chunk_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+          "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005"
+        },
+        "citation_verified": true
+      }
+    ],
+    "discovery_candidates": [
+      {
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "doc_name": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+        "self_code": "GB3095",
+        "self_code_version": "2012",
+        "title": "环境空气质量标准",
+        "doc_type": "standard",
+        "discovery": "code_exact",
+        "score": 1.0,
+        "citation": {
+          "kind": "catalog_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+        "doc_name": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+        "self_code": "GB3095",
+        "self_code_version": "2026",
+        "title": "环境空气质量标准",
+        "doc_type": "standard",
+        "discovery": "code_exact",
+        "score": 1.0,
+        "citation": {
+          "kind": "catalog_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+        "heading": "中 华 人 民 共 和 国 国 家 标 准",
+        "chunk_order": 0,
+        "score": 6.599999904632568,
+        "discovery": "keyword_core_and",
+        "citation": {
+          "kind": "chunk_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+          "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+        "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-000",
+        "heading": "中华人民共和国国家标准",
+        "chunk_order": 0,
+        "score": 6.599999904632568,
+        "discovery": "keyword_core_and",
+        "citation": {
+          "kind": "chunk_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+          "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-000"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+        "heading": "环境空气质量标准",
+        "chunk_order": 1,
+        "score": 2.4000000953674316,
+        "discovery": "keyword_core_and",
+        "citation": {
+          "kind": "chunk_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+          "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+        "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-001",
+        "heading": "2 规范性引用文件 环境空气质量标准",
+        "chunk_order": 1,
+        "score": 2.200000047683716,
+        "discovery": "keyword_core_and",
+        "citation": {
+          "kind": "chunk_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+          "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-001"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004",
+        "heading": "7 实施与监督 环境空气质量标准",
+        "chunk_order": 4,
+        "score": 1.399999976158142,
+        "discovery": "keyword_core_and",
+        "citation": {
+          "kind": "chunk_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+          "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-004"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+        "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-002",
+        "heading": "4.1 环境空气功能区分类 环境空气质量标准",
+        "chunk_order": 2,
+        "score": 1.399999976158142,
+        "discovery": "keyword_core_and",
+        "citation": {
+          "kind": "chunk_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+          "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-002"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002",
+        "heading": "4 环境空气功能区分类和质量要求 环境空气质量标准",
+        "chunk_order": 2,
+        "score": 1.2000000476837158,
+        "discovery": "keyword_core_and",
+        "citation": {
+          "kind": "chunk_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+          "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+        "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003",
+        "heading": "5.3 污染物分析 [part 1] 环境空气质量标准",
+        "chunk_order": 3,
+        "score": 1.2000000476837158,
+        "discovery": "keyword_core_and",
+        "citation": {
+          "kind": "chunk_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+          "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-003"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+        "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-006",
+        "heading": "6 数据统计的有效性规定 环境空气质量标准",
+        "chunk_order": 6,
+        "score": 1.0,
+        "discovery": "keyword_core_and",
+        "citation": {
+          "kind": "chunk_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+          "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-006"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+        "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003",
+        "heading": "5.3 污染物分析 环境空气质量标准",
+        "chunk_order": 3,
+        "score": 0.6000000238418579,
+        "discovery": "keyword_core_and",
+        "citation": {
+          "kind": "chunk_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+          "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-003"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+        "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004",
+        "heading": "5.3 污染物分析 [part 2] 环境空气质量标准",
+        "chunk_order": 4,
+        "score": 0.4000000059604645,
+        "discovery": "keyword_core_and",
+        "citation": {
+          "kind": "chunk_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+          "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-004"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+        "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005",
+        "heading": "5.3 污染物分析 [part 3] 环境空气质量标准",
+        "chunk_order": 5,
+        "score": 0.4000000059604645,
+        "discovery": "keyword_core_and",
+        "citation": {
+          "kind": "chunk_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+          "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-005"
+        },
+        "citation_verified": true
+      }
+    ],
+    "notes": [],
+    "trace": [
+      {
+        "stage": "code_exact",
+        "code": "GB3095",
+        "version_requested": null,
+        "strict": false,
+        "hits": 2,
+        "selected_versions": [
+          "2012",
+          "2026"
+        ],
+        "selected_docs": [
+          "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+          "doc-4c883d21fa02a53189e0911c3d59d1d1"
+        ]
+      },
+      {
+        "stage": "keyword_and",
+        "tsquery": "'标准' & '全部'",
+        "top_k": 20,
+        "restricted_to_code_docs": [
+          "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+          "doc-4c883d21fa02a53189e0911c3d59d1d1"
+        ],
+        "doc_hits": 0,
+        "chunk_hits": 0,
+        "elapsed_ms": 5
+      },
+      {
+        "stage": "keyword_and_diagnostics",
+        "per_term": [
+          {
+            "term": "标准",
+            "chunk_hits": 12
+          },
+          {
+            "term": "全部",
+            "chunk_hits": 0
+          }
+        ],
+        "absent_terms": [
+          "全部"
+        ]
+      },
+      {
+        "stage": "keyword_core_and",
+        "tsquery": "'标准'",
+        "dropped_absent_terms": [
+          "全部"
+        ],
+        "chunk_hits": 12,
+        "note": "terms absent from the corpus cannot participate in AND"
+      },
+      {
+        "stage": "document_enumeration",
+        "predicate": "((self_code = $3))",
+        "predicate_args": [
+          "GB3095"
+        ],
+        "workspace": "default",
+        "catalog_snapshot_id": "4919b3938ad93747",
+        "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+        "identity_source": "observed catalog rows via the guarded workspace+snapshot connection (separate from any replayed PG search identity)",
+        "attribution_branch": false,
+        "attribution_added": 0,
+        "related_matches": 0,
+        "related_evidence": 0,
+        "overlap_evidence": [],
+        "overlap_canonical": [],
+        "related_excluded": [],
+        "base_total": 2,
+        "base_processed": 2,
+        "base_coverage": "complete",
+        "related_total": 0,
+        "related_processed": 0,
+        "related_coverage": "not-requested",
+        "related_warnings": [
+          ""
+        ],
+        "related_request_note": "",
+        "union_total": 2,
+        "union_processed": 2,
+        "publication_guard": "stable",
+        "members_total": 2,
+        "members_processed": 2,
+        "coverage_status": "complete",
+        "read_token": "92cc74db0c40d7dcf5226cf88c5c28b3f4a9ce7797983e04d4a1357557a58299",
+        "fail_stage": "",
+        "warnings": [
+          "2 matched docs have unknown metadata fields; they are included but flagged"
+        ],
+        "note": "full paged base enumeration UNION the same-snapshot catalog attribution scan — not top-k ranked discovery, not the search index; members_total/processed describe the FINAL matched union"
+      }
+    ],
+    "elapsed_ms": 1019
+  },
+  "expansions": [],
+  "document_enumeration": {
+    "stage": "document_enumeration",
+    "predicate": "((self_code = $3))",
+    "predicate_args": [
+      "GB3095"
+    ],
+    "workspace": "default",
+    "catalog_snapshot_id": "4919b3938ad93747",
+    "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "identity_source": "observed catalog rows via the guarded workspace+snapshot connection (separate from any replayed PG search identity)",
+    "attribution_branch": false,
+    "attribution_added": 0,
+    "related_matches": 0,
+    "related_evidence": 0,
+    "overlap_evidence": [],
+    "overlap_canonical": [],
+    "related_excluded": [],
+    "base_total": 2,
+    "base_processed": 2,
+    "base_coverage": "complete",
+    "related_total": 0,
+    "related_processed": 0,
+    "related_coverage": "not-requested",
+    "related_warnings": [
+      ""
+    ],
+    "related_request_note": "",
+    "union_total": 2,
+    "union_processed": 2,
+    "publication_guard": "stable",
+    "members_total": 2,
+    "members_processed": 2,
+    "coverage_status": "complete",
+    "read_token": "92cc74db0c40d7dcf5226cf88c5c28b3f4a9ce7797983e04d4a1357557a58299",
+    "fail_stage": "",
+    "warnings": [
+      "2 matched docs have unknown metadata fields; they are included but flagged"
+    ],
+    "note": "full paged base enumeration UNION the same-snapshot catalog attribution scan — not top-k ranked discovery, not the search index; members_total/processed describe the FINAL matched union"
+  },
+  "reverification": {
+    "items_checked": 2,
+    "problems": []
+  },
+  "identity_after": {
+    "state": "current",
+    "search_id": "872d689343a9cbb6",
+    "catalog_snapshot_id": "4919b3938ad93747",
+    "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+    "vocab_sha": "c3d0b6a6cf7d6af0758329bccea3bbbf432d73b20df4db42b768ae07446978cf",
+    "index_recipe": "phase-2-v2-local-caption-identity-guard",
+    "expected_search_id": "872d689343a9cbb6",
+    "reasons": []
+  },
+  "elapsed_ms": 2523
+}

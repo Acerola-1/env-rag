@@ -1,0 +1,50 @@
+[
+  {
+    "path": "src/env_rag_final/enumerate_/prose_enum.py",
+    "severity": "high",
+    "category": "bug",
+    "content": "G1: Valid model items omit char_start, causing a TypeError in the actual CLI binding path. Numeric spans also produce negative owner-relative starts for real definitions 3.3/3.4, and ignore span_offset_in_unit. Locate model quotes and map clamped ranges to original source units before verification.",
+    "start_line": 402,
+    "end_line": 404
+  },
+  {
+    "path": "src/env_rag_final/enumerate_/table_enum.py",
+    "severity": "high",
+    "category": "bug",
+    "content": "G3: Missing first fragment with allow_partial compresses frag_meta but retains original row fragment indices, so reading the second fragment throws IndexError. Keep metadata keyed by stable physical fragment identity. The normal 13-row raw coordinate fix is verified and should remain.",
+    "start_line": 202,
+    "end_line": 204
+  },
+  {
+    "path": "src/env_rag_final/cli.py",
+    "severity": "high",
+    "category": "bug",
+    "content": "G2: No source/active check occurs after model/extraction. A formal handler test changes source state during a successful model response yet receives complete. Table enumeration also still has only its initial guard.",
+    "start_line": 341,
+    "end_line": 343
+  },
+  {
+    "path": "src/env_rag_final/enumerate_/contract.py",
+    "severity": "high",
+    "category": "bug",
+    "content": "G4: A free-text pending-extraction warning still authorizes an empty complete answer. Separate read completion from answer coverage and fail closed for unprocessed or unverified empty prose/table output.",
+    "start_line": 73,
+    "end_line": 75
+  },
+  {
+    "path": "src/env_rag_final/enumerate_/prose_enum.py",
+    "severity": "high",
+    "category": "bug",
+    "content": "G4: Any 2-character overlap counts as full claim support. The fabricated place 门诊停车场 quotes 门诊、病房 and is accepted as verified with no error. Validate the complete named item or report it unverified.",
+    "start_line": 569,
+    "end_line": 571
+  },
+  {
+    "path": "src/env_rag_final/enumerate_/doc_enum.py",
+    "severity": "medium",
+    "category": "bug",
+    "content": "G2: Document token still omits returned doc_type/title_confidence/unknown_fields. Changing those fields leaves the token identical; cover the full returned metadata contract. Live-source and workspace improvements are verified.",
+    "start_line": 33,
+    "end_line": 35
+  }
+]

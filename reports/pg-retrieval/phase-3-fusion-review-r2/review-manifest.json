@@ -1,0 +1,151 @@
+{
+  "date": "2026-10-07",
+  "task": "5.3",
+  "accepted": false,
+  "accepted_fix_groups": [
+    "F1",
+    "F2",
+    "F4",
+    "F3 SHA refusal and post-local receipt paths"
+  ],
+  "remaining": [
+    "F3-a",
+    "F3-b"
+  ],
+  "full_tests": {
+    "passed": 274,
+    "failed": 2
+  },
+  "prior_acceptance": {
+    "passed": 8,
+    "failed": 0
+  },
+  "submitted_sha_matches": {
+    "src/env_rag_final/fusion.py": true,
+    "src/env_rag_final/cli.py": true,
+    "tests/test_fusion.py": true,
+    "tests/test_fusion_review_r1.py": true,
+    "reports/pg-retrieval/phase-3-fusion-r2/fusion-runtime-latest.json": true,
+    "reports/pg-retrieval/phase-3-fusion-r2-f1/fusion-runtime-latest.json": true,
+    "reports/pg-retrieval/gate-2/review-r5/gold-approved.json": true
+  },
+  "formal_cli": [
+    {
+      "query_id": "fact-002",
+      "status": "ok",
+      "usable": 1,
+      "rejected": 0,
+      "table_units": [
+        "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+        "tb-b45c510232ed4d2452b0f5b2a13434e4-0002"
+      ],
+      "attributions": [],
+      "local_ran": false
+    },
+    {
+      "query_id": "neg-010",
+      "status": "ok",
+      "usable": 6,
+      "rejected": 0,
+      "table_units": [],
+      "attributions": [
+        {
+          "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+          "self_code": null,
+          "self_code_version": null,
+          "membership_basis": "doc name/title carries the requested code (self_code=None)",
+          "note": "verified doc_attribution target joins the allowed set; no self_code is fabricated"
+        },
+        {
+          "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+          "self_code": null,
+          "self_code_version": null,
+          "membership_basis": "doc name/title carries the requested code (self_code=None)",
+          "note": "verified doc_attribution target joins the allowed set; no self_code is fabricated"
+        }
+      ],
+      "local_ran": false
+    }
+  ],
+  "identity_before": {
+    "matches_frozen": true,
+    "problems": [],
+    "counts": {
+      "lightrag_doc_full": 221,
+      "lightrag_doc_chunks": 5709,
+      "lightrag_doc_status": 279,
+      "lightrag_llm_cache": 16514,
+      "lightrag_entity_chunks": 65527,
+      "lightrag_full_entities": 221,
+      "lightrag_full_relations": 221,
+      "lightrag_relation_chunks": 119575
+    },
+    "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "catalog_active": {
+      "run_id": "c15c741742394320",
+      "snapshot_id": "4919b3938ad93747"
+    },
+    "search_active": "872d689343a9cbb6",
+    "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+    "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+  },
+  "identity_after": {
+    "matches_frozen": true,
+    "problems": [],
+    "counts": {
+      "lightrag_doc_full": 221,
+      "lightrag_doc_chunks": 5709,
+      "lightrag_doc_status": 279,
+      "lightrag_llm_cache": 16514,
+      "lightrag_entity_chunks": 65527,
+      "lightrag_full_entities": 221,
+      "lightrag_full_relations": 221,
+      "lightrag_relation_chunks": 119575
+    },
+    "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "catalog_active": {
+      "run_id": "c15c741742394320",
+      "snapshot_id": "4919b3938ad93747"
+    },
+    "search_active": "872d689343a9cbb6",
+    "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+    "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+  },
+  "identity_drift": [],
+  "reviewer_model_calls": 0,
+  "reviewer_production_writes": 0,
+  "next_task_only": "5.3 F3-a/F3-b isolated tests",
+  "implementation_modified_by_reviewer": false,
+  "checks": {
+    "ruff": true,
+    "format": true,
+    "openspec_strict": true,
+    "diff": true
+  },
+  "scope": {
+    "total_files": 466,
+    "reviewed_files": 1,
+    "skipped_files": 465,
+    "coverage_rate": 0.002145922746781116
+  },
+  "credential_scan_leaks": [],
+  "artifact_sha256": {
+    "reports/pg-retrieval/phase-3-fusion-review-r2/ocr-rules.json": "473029fbea5919eb528a5f2ed77f1aee95dad98ec6cc0d59492b6c78a44ad306",
+    "reports/pg-retrieval/phase-3-fusion-review-r2/ruff-format.txt": "22728b34ab6ca369e20e152bfcadbfb2cab8ee18e689e24b26a7823fc7c5b1ee",
+    "reports/pg-retrieval/phase-3-fusion-review-r2/formal-cli-output.txt": "46db800e5e40678c16d242181d6b036a34bf737734a55b1e98594db8a766a26f",
+    "reports/pg-retrieval/phase-3-fusion-review-r2/ocr-preview.json": "bb034279c99de0865c420723a7c28cd6bb68127b6dac48214dfc78599185314f",
+    "reports/pg-retrieval/phase-3-fusion-review-r2/ruff-check.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "reports/pg-retrieval/phase-3-fusion-review-r2/final-tests.txt": "8a2b10ebfdd04c0d8597d2059bd53adfcc6b3833933a164f9dd198bb2b7800cf",
+    "reports/pg-retrieval/phase-3-fusion-review-r2/acceptance-tests.txt": "940be7c1a2743d350a53f75837ccf18d38df7aa443176edaa12139a871f1d0fe",
+    "reports/pg-retrieval/phase-3-fusion-review-r2/findings.json": "377d105b0cf44f5ec18640c1a87da82efd6733df2b7b9a1ab958d0b3507a25dd",
+    "reports/pg-retrieval/phase-3-fusion-review-r2/openspec-check.txt": "4693ceda9e27e58fa59b2c9dbba2ff1cf729bd8067915263151894179518ba7c",
+    "reports/pg-retrieval/phase-3-fusion-review-r2/coverage.json": "8f4120a76e86fbdbfbd637dfa41193a6d794aa9c565e66d6d13a68c5deeac8dc",
+    "reports/pg-retrieval/phase-3-fusion-review-r2/review.md": "a22f39f45337c2a8d12d85774a22b297c35073a65da7a9b86c949da080b01064",
+    "reports/pg-retrieval/phase-3-fusion-review-r2/diff-check.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/pg-retrieval/phase-3-fusion-review-r2/formal-cli/fusion-candidates.jsonl": "75d118598243fd5d4c38f4b0b28b23369643e3e5644ccc674fd6f9e15b1f90ef",
+    "reports/pg-retrieval/phase-3-fusion-review-r2/formal-cli/fusion-runtime-latest.json": "e5dea32cc7d64a8d108c9a373e66c67bfeb891b317420b2d01b34e1e45ed8aea",
+    "reports/pg-retrieval/phase-3-fusion-review-r2/formal-cli/fusion-runtime-20261007T082632.json": "e5dea32cc7d64a8d108c9a373e66c67bfeb891b317420b2d01b34e1e45ed8aea",
+    "tests/test_fusion_review_r2.py": "b8d643cb27209023fcb6b15a6004a46b413902bb2ac56f22761cdc266caf4636",
+    "openspec/changes/add-pg-scoped-retrieval/handoff-phase-3-5.3-fixes-r2.md": "39fd25d6c2100e7c9cf695c0a878c3a55d92bd7bf43d29bf4117147f1d1e28e3"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "checkpoint": "6.1",
+  "accepted": false,
+  "gate3_maintained": true,
+  "task6_1_complete": false,
+  "task6_2_started": false,
+  "reviewer_real_service_and_db_calls": 0,
+  "production_writes": 0,
+  "submitted_tests_passed": 396,
+  "independent_tests": {
+    "total": 20,
+    "failed": 18,
+    "passed": 2
+  },
+  "finding_groups": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+  ],
+  "new_frozen_file": "tests/test_evaluation_review_r1.py",
+  "checks": {
+    "ruff": "passed",
+    "ruff_format": "passed",
+    "openspec_strict": "passed",
+    "diff_check": "passed",
+    "actual_credentials_scan": "0 matches"
+  },
+  "coverage": {
+    "total_files": 607,
+    "reviewed_files": 4,
+    "skipped_files": 603,
+    "coverage_rate": 0.006589785831960461,
+    "all_entries_accounted_for": true,
+    "incremental_review_coverage": "5/5"
+  },
+  "phase3_ledger_note": "all entries unchanged except the authorized eval-run addition to cli.py; no prior runtime/gold/frozen source modifications",
+  "sha256": {
+    "reports/pg-retrieval/phase-4-6.1-review/ocr-rules.json": "3aa63b75be3a6912771d52586b07551b1a117bc46f86c6574f82cc20e40e93a0",
+    "reports/pg-retrieval/phase-4-6.1-review/ruff-format.txt": "177f260a5645724013185e4b140c7045cc39e56c0c97b120f5cb23599f85f0de",
+    "reports/pg-retrieval/phase-4-6.1-review/ocr-preview.json": "e3c58cf93b9109057e769e5ba1139cafdb9375762a5ab1391d335fea96743ade",
+    "reports/pg-retrieval/phase-4-6.1-review/ruff-check.txt": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "reports/pg-retrieval/phase-4-6.1-review/comments.json": "3ae9ce21722a0b0d1728112d0f2304f32d912f0e3410431f938bbeb863b46ae8",
+    "reports/pg-retrieval/phase-4-6.1-review/openspec-check.txt": "4693ceda9e27e58fa59b2c9dbba2ff1cf729bd8067915263151894179518ba7c",
+    "reports/pg-retrieval/phase-4-6.1-review/coverage.json": "e02da45046bdc3391f661aac6e962ac3c95ea1362222830a7cc5f8429413a527",
+    "reports/pg-retrieval/phase-4-6.1-review/credential-scan.json": "f9da5e94b359d612ccb55c74c507d791f4b8d99949d1faf4cd8f0ef4ee485238",
+    "reports/pg-retrieval/phase-4-6.1-review/independent-tests.txt": "d182a6d805235f48e9046fd44f208f94f047a99f320042634080421294fe2bcf",
+    "reports/pg-retrieval/phase-4-6.1-review/review.md": "7e160d4170aab59295dc82c03524e9cd20e97896138a9dbecd26f47048d95303",
+    "reports/pg-retrieval/phase-4-6.1-review/submitted-suite.txt": "30d0c31af9a2a0debaee513a250bc46de5a6f44eed99c6965f8a5b4eec97d29c",
+    "reports/pg-retrieval/phase-4-6.1-review/diff-check.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reports/pg-retrieval/phase-4-6.1-review/review-shas.json": "ba752a529303a32c9e080d639aaef1804838963889b167743cc1f0b3f44d077f",
+    "tests/test_evaluation_review_r1.py": "d6012bece3a44ea1cf6782fdd7c34b6fb044b72bf89f030b1f478df94e4560ad",
+    "openspec/changes/add-pg-scoped-retrieval/handoff-phase-4-6.1-fixes-r1.md": "bbb8ad173b6879c71fcad08903584f7db4113673d18e099acd535f914b86c793",
+    "src/env_rag_final/evaluation.py": "3b3b9843f80f2626263eb9e55ecb6aa3f5810ce84f1c2e2d47c63cb22f6e2389",
+    "src/env_rag_final/cli.py": "a4d9caf1f828a9e437da69dd81c2b0f9e5fa3127dd0e1249e01adde9c6a101d1",
+    "tests/test_evaluation.py": "4bf9cec4bd38505139cad7450998b85038f8b3deeb52ac776020bee3ac72ef3a"
+  }
+}

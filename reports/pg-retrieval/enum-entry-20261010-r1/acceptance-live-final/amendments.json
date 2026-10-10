@@ -1,0 +1,383 @@
+{
+  "query_id": "ask-1d8464ccca07",
+  "query": "库内有哪些 GB18466-2005 的文档（含修改单）？",
+  "effective_query": "库内有哪些 GB18466-2005 的文档（含修改单）？",
+  "kind": "files",
+  "workspace": "default",
+  "coverage_status": "complete",
+  "answer": {
+    "mode": "deterministic",
+    "generated_by": "enumerate/expand entries",
+    "items": [
+      {
+        "kind": "document",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "doc_name": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf",
+        "title": "医疗机构水污染物排放标准",
+        "self_code": "GB18466",
+        "self_code_version": "2005",
+        "attribution": false,
+        "citation": {
+          "kind": "catalog_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "doc_name": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf"
+        },
+        "citation_verified": true,
+        "citation_reverified": true
+      },
+      {
+        "kind": "document",
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "doc_name": "water-03_生态环境部_医疗机构水污染物排放标准_含2026修改单.pdf",
+        "title": "GB 18466—2005（含2026年修改单）",
+        "self_code": null,
+        "self_code_version": null,
+        "attribution": true,
+        "citation": {
+          "kind": "catalog_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+          "doc_name": "water-03_生态环境部_医疗机构水污染物排放标准_含2026修改单.pdf"
+        },
+        "citation_verified": true,
+        "citation_reverified": true
+      },
+      {
+        "kind": "document",
+        "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+        "doc_name": "water-10_生态环境部_医疗机构水污染物排放标准修改单_2026.pdf",
+        "title": "《医疗机构水污染物排放标准》（GB 18466—2005）修改单",
+        "self_code": null,
+        "self_code_version": null,
+        "attribution": true,
+        "citation": {
+          "kind": "catalog_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+          "doc_name": "water-10_生态环境部_医疗机构水污染物排放标准修改单_2026.pdf"
+        },
+        "citation_verified": true,
+        "citation_reverified": true
+      }
+    ],
+    "items_count": 3
+  },
+  "flags": [
+    "1 matched docs have unknown metadata fields; they are included but flagged",
+    "full paged base enumeration UNION the same-snapshot catalog attribution scan — not top-k ranked discovery, not the search index; members_total/processed describe the FINAL matched union"
+  ],
+  "model_calls_used": 0,
+  "embedding_calls": 0,
+  "rerank_calls": 0,
+  "original_local_baseline": "unverified",
+  "evidence_mode": "production_readonly",
+  "identity_before": {
+    "state": "current",
+    "search_id": "872d689343a9cbb6",
+    "catalog_snapshot_id": "4919b3938ad93747",
+    "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+    "vocab_sha": "c3d0b6a6cf7d6af0758329bccea3bbbf432d73b20df4db42b768ae07446978cf",
+    "index_recipe": "phase-2-v2-local-caption-identity-guard",
+    "expected_search_id": "872d689343a9cbb6",
+    "reasons": []
+  },
+  "discovery": {
+    "query_id": "search-38d9d9582462",
+    "workspace": "default",
+    "status": "ok",
+    "search_id": "872d689343a9cbb6",
+    "catalog_snapshot_id": "4919b3938ad93747",
+    "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "parsed_code": {
+      "raw": "GB18466-2005",
+      "code": "GB18466",
+      "version": "2005"
+    },
+    "parsed_codes": [
+      {
+        "raw": "GB18466-2005",
+        "code": "GB18466",
+        "version": "2005"
+      }
+    ],
+    "query_text": "库内有哪些 GB18466-2005 的文档（含修改单）？",
+    "candidates": [
+      {
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "doc_name": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf",
+        "self_code": "GB18466",
+        "self_code_version": "2005",
+        "title": "医疗机构水污染物排放标准",
+        "doc_type": "standard",
+        "discovery": "code_exact",
+        "score": 1.0,
+        "citation": {
+          "kind": "catalog_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "doc_name": "water-03_生态环境部_医疗机构水污染物排放标准_含2026修改单.pdf",
+        "title": "GB 18466—2005（含2026年修改单）",
+        "self_code": null,
+        "self_code_version": null,
+        "doc_type": "standard",
+        "score": null,
+        "discovery": "doc_attribution",
+        "membership_basis": "doc name/title carries the requested code (self_code=None)",
+        "citation": {
+          "kind": "catalog_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+        "doc_name": "water-10_生态环境部_医疗机构水污染物排放标准修改单_2026.pdf",
+        "title": "《医疗机构水污染物排放标准》（GB 18466—2005）修改单",
+        "self_code": null,
+        "self_code_version": null,
+        "doc_type": "standard",
+        "score": null,
+        "discovery": "doc_attribution",
+        "membership_basis": "doc name/title carries the requested code (self_code=None)",
+        "citation": {
+          "kind": "catalog_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-b423a0e3331541588988fd34496c349d"
+        },
+        "citation_verified": true
+      }
+    ],
+    "discovery_candidates": [
+      {
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "doc_name": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf",
+        "self_code": "GB18466",
+        "self_code_version": "2005",
+        "title": "医疗机构水污染物排放标准",
+        "doc_type": "standard",
+        "discovery": "code_exact",
+        "score": 1.0,
+        "citation": {
+          "kind": "catalog_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+        "doc_name": "water-03_生态环境部_医疗机构水污染物排放标准_含2026修改单.pdf",
+        "title": "GB 18466—2005（含2026年修改单）",
+        "self_code": null,
+        "self_code_version": null,
+        "doc_type": "standard",
+        "score": null,
+        "discovery": "doc_attribution",
+        "membership_basis": "doc name/title carries the requested code (self_code=None)",
+        "citation": {
+          "kind": "catalog_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b"
+        },
+        "citation_verified": true
+      },
+      {
+        "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+        "doc_name": "water-10_生态环境部_医疗机构水污染物排放标准修改单_2026.pdf",
+        "title": "《医疗机构水污染物排放标准》（GB 18466—2005）修改单",
+        "self_code": null,
+        "self_code_version": null,
+        "doc_type": "standard",
+        "score": null,
+        "discovery": "doc_attribution",
+        "membership_basis": "doc name/title carries the requested code (self_code=None)",
+        "citation": {
+          "kind": "catalog_row",
+          "workspace": "default",
+          "snapshot_id": "4919b3938ad93747",
+          "doc_id": "doc-b423a0e3331541588988fd34496c349d"
+        },
+        "citation_verified": true
+      }
+    ],
+    "notes": [],
+    "trace": [
+      {
+        "stage": "code_exact",
+        "code": "GB18466",
+        "version_requested": "2005",
+        "strict": false,
+        "hits": 1,
+        "version_matched": 1,
+        "selected_versions": [
+          "2005"
+        ],
+        "selected_docs": [
+          "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+        ]
+      },
+      {
+        "stage": "doc_attribution",
+        "codes": [
+          "gb18466"
+        ],
+        "emitted": 2,
+        "note": "name/title-explicit code attribution; no self_code fabricated"
+      },
+      {
+        "stage": "keyword_and",
+        "tsquery": "'修改单'",
+        "top_k": 20,
+        "restricted_to_code_docs": [
+          "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+        ],
+        "doc_hits": 0,
+        "chunk_hits": 0,
+        "elapsed_ms": 2
+      },
+      {
+        "stage": "keyword_and_diagnostics",
+        "per_term": [
+          {
+            "term": "修改单",
+            "chunk_hits": 0
+          }
+        ],
+        "absent_terms": [
+          "修改单"
+        ]
+      },
+      {
+        "stage": "keyword_no_terms_present",
+        "skipped_terms": [
+          "修改单"
+        ],
+        "note": "no term (or its synonyms) occurs in the index at all"
+      },
+      {
+        "stage": "keyword_or_original",
+        "tsquery": "'修改单'",
+        "chunk_hits": 0,
+        "note": "OR over the original terms also returned nothing"
+      },
+      {
+        "stage": "document_enumeration",
+        "predicate": "((self_code = $3 AND self_code_version IN ($4, $5)))",
+        "predicate_args": [
+          "GB18466",
+          "05",
+          "2005"
+        ],
+        "workspace": "default",
+        "catalog_snapshot_id": "4919b3938ad93747",
+        "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+        "identity_source": "observed catalog rows via the guarded workspace+snapshot connection (separate from any replayed PG search identity)",
+        "attribution_branch": true,
+        "attribution_added": 2,
+        "related_matches": 3,
+        "related_evidence": 2,
+        "overlap_evidence": [],
+        "overlap_canonical": [
+          "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+        ],
+        "related_excluded": [],
+        "base_total": 1,
+        "base_processed": 1,
+        "base_coverage": "complete",
+        "related_total": 3,
+        "related_processed": 3,
+        "related_coverage": "complete",
+        "related_warnings": [],
+        "related_request_note": "",
+        "union_total": 3,
+        "union_processed": 3,
+        "publication_guard": "stable",
+        "members_total": 3,
+        "members_processed": 3,
+        "coverage_status": "complete",
+        "read_token": "135d4f7f2b91a17773269a74cebcde1e8db536837cd2c658cdb71fdaeda32d6c",
+        "fail_stage": "",
+        "warnings": [
+          "1 matched docs have unknown metadata fields; they are included but flagged"
+        ],
+        "note": "full paged base enumeration UNION the same-snapshot catalog attribution scan — not top-k ranked discovery, not the search index; members_total/processed describe the FINAL matched union"
+      }
+    ],
+    "elapsed_ms": 649
+  },
+  "expansions": [],
+  "document_enumeration": {
+    "stage": "document_enumeration",
+    "predicate": "((self_code = $3 AND self_code_version IN ($4, $5)))",
+    "predicate_args": [
+      "GB18466",
+      "05",
+      "2005"
+    ],
+    "workspace": "default",
+    "catalog_snapshot_id": "4919b3938ad93747",
+    "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "identity_source": "observed catalog rows via the guarded workspace+snapshot connection (separate from any replayed PG search identity)",
+    "attribution_branch": true,
+    "attribution_added": 2,
+    "related_matches": 3,
+    "related_evidence": 2,
+    "overlap_evidence": [],
+    "overlap_canonical": [
+      "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+    ],
+    "related_excluded": [],
+    "base_total": 1,
+    "base_processed": 1,
+    "base_coverage": "complete",
+    "related_total": 3,
+    "related_processed": 3,
+    "related_coverage": "complete",
+    "related_warnings": [],
+    "related_request_note": "",
+    "union_total": 3,
+    "union_processed": 3,
+    "publication_guard": "stable",
+    "members_total": 3,
+    "members_processed": 3,
+    "coverage_status": "complete",
+    "read_token": "135d4f7f2b91a17773269a74cebcde1e8db536837cd2c658cdb71fdaeda32d6c",
+    "fail_stage": "",
+    "warnings": [
+      "1 matched docs have unknown metadata fields; they are included but flagged"
+    ],
+    "note": "full paged base enumeration UNION the same-snapshot catalog attribution scan — not top-k ranked discovery, not the search index; members_total/processed describe the FINAL matched union"
+  },
+  "reverification": {
+    "items_checked": 3,
+    "problems": []
+  },
+  "identity_after": {
+    "state": "current",
+    "search_id": "872d689343a9cbb6",
+    "catalog_snapshot_id": "4919b3938ad93747",
+    "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+    "vocab_sha": "c3d0b6a6cf7d6af0758329bccea3bbbf432d73b20df4db42b768ae07446978cf",
+    "index_recipe": "phase-2-v2-local-caption-identity-guard",
+    "expected_search_id": "872d689343a9cbb6",
+    "reasons": []
+  },
+  "elapsed_ms": 2822
+}

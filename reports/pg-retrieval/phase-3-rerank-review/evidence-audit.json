@@ -1,0 +1,101 @@
+{
+  "scope": "offline artifact consistency only, not a new runtime or original-response proof",
+  "input_count": 10,
+  "ordered_count": 10,
+  "index_coverage_complete": true,
+  "ordered_scores_monotone": true,
+  "mapping_checks": [
+    {
+      "index": 0,
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+      "identity_matches": true,
+      "text_sha_matches": true,
+      "score": 0.9993177652359009
+    },
+    {
+      "index": 4,
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000",
+      "identity_matches": true,
+      "text_sha_matches": true,
+      "score": 0.9785270690917969
+    },
+    {
+      "index": 3,
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-010",
+      "identity_matches": true,
+      "text_sha_matches": true,
+      "score": 0.9721884727478027
+    },
+    {
+      "index": 6,
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006",
+      "identity_matches": true,
+      "text_sha_matches": true,
+      "score": 0.9631346464157104
+    },
+    {
+      "index": 1,
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002",
+      "identity_matches": true,
+      "text_sha_matches": true,
+      "score": 0.9541338086128235
+    },
+    {
+      "index": 7,
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019",
+      "identity_matches": true,
+      "text_sha_matches": true,
+      "score": 0.8358871936798096
+    },
+    {
+      "index": 2,
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-007",
+      "identity_matches": true,
+      "text_sha_matches": true,
+      "score": 0.8333415985107422
+    },
+    {
+      "index": 5,
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-003",
+      "identity_matches": true,
+      "text_sha_matches": true,
+      "score": 0.4741153419017792
+    },
+    {
+      "index": 9,
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-011",
+      "identity_matches": true,
+      "text_sha_matches": true,
+      "score": 0.18915396928787231
+    },
+    {
+      "index": 8,
+      "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-008",
+      "identity_matches": true,
+      "text_sha_matches": true,
+      "score": 0.1707431674003601
+    }
+  ],
+  "typed_targets_input": 3,
+  "typed_targets_output": 0,
+  "actual_response_scores_preserved": false,
+  "before_frozen": true,
+  "after_frozen": true,
+  "drift": [],
+  "historical_calls": [
+    {
+      "file": "reports/pg-retrieval/phase-3-rerank/rerank-runtime-20261007T090036.json",
+      "call_status": "success",
+      "http": 200,
+      "result_status": "ok"
+    },
+    {
+      "file": "reports/pg-retrieval/phase-3-rerank/rerank-runtime-20261007T085918.json",
+      "call_status": "failure",
+      "http": 404,
+      "result_status": "degraded"
+    }
+  ],
+  "reviewer_backend_calls": 0,
+  "reviewer_model_calls": 0
+}

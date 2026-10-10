@@ -1,0 +1,4595 @@
+{
+ "task": "5.4 joint rerank over fused candidates (bounded, recorded)",
+ "started_at": "2026-10-08T13:27:51+0800",
+ "service_contract": {
+  "endpoint": "{host}/v1/rerank (POST)",
+  "request": [
+   "model",
+   "query",
+   "documents",
+   "top_n",
+   "return_documents=false"
+  ],
+  "response": [
+   "id",
+   "results[{index, relevance_score}]",
+   "meta.tokens"
+  ],
+  "errors": {
+   "401/403": "auth",
+   "429": "rate limit",
+   "5xx": "service"
+  }
+ },
+ "input_budget": 40,
+ "gold_sha_verified": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+ "identity_before": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "identity_after": {
+  "matches_frozen": true,
+  "problems": [],
+  "counts": {
+   "lightrag_doc_full": 221,
+   "lightrag_doc_chunks": 5709,
+   "lightrag_doc_status": 279,
+   "lightrag_llm_cache": 16514,
+   "lightrag_entity_chunks": 65527,
+   "lightrag_full_entities": 221,
+   "lightrag_full_relations": 221,
+   "lightrag_relation_chunks": 119575
+  },
+  "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+  "catalog_active": {
+   "run_id": "c15c741742394320",
+   "snapshot_id": "4919b3938ad93747"
+  },
+  "search_active": "872d689343a9cbb6",
+  "gold_sha": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e",
+  "env_sha": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+ },
+ "results": [
+  {
+   "query_id": "syn-006",
+   "query": "GB 8978-1996 中 1997-12-31 前与 1998-01-01 起建设的单位分别执行哪几张表？",
+   "workspace": "default",
+   "skipped": null,
+   "inputs": [
+    {
+     "input_index": 0,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "edd0690d291ae883182e80778116d2d446cf9fa62f017495f5faf3993a0b1317",
+     "content_len": 2015,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "中华人民共和国国家标准",
+       "chunk_order": 0,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 5.0
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-88",
+        "entity:GB 8978-1996",
+        "edge:GB 8978-1996|污水综合排放标准",
+        "edge:GB 8978-1996|GB 8978-88"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 1,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 1,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "00f06c44e9556a89c7387b6bc4b614ed",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "00f06c44e9556a89c7387b6bc4b614ed",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "214ef7613f1a3c64da042ce72f2bddc0",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "214ef7613f1a3c64da042ce72f2bddc0",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "2861821374df5ffccf40ab934d97c1e7",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "2861821374df5ffccf40ab934d97c1e7",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "2c1eda10b7af56873cdbd4ee86f033d6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "2c1eda10b7af56873cdbd4ee86f033d6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "35a013776bdbd5c8efcda6bf0ddd6b69",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "35a013776bdbd5c8efcda6bf0ddd6b69",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "408814b550a3d1afbd2fa53c571967a5",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "408814b550a3d1afbd2fa53c571967a5",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "66c19b0895c01ee1c36a172fcc99b0dd",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "66c19b0895c01ee1c36a172fcc99b0dd",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "6ff2251b284e052a6797b61b046938e2",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "6ff2251b284e052a6797b61b046938e2",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "784931ac8b352504247a5bbd2b92cfb0",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "784931ac8b352504247a5bbd2b92cfb0",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7de3a51726cea1b002a38741242687b8",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "7de3a51726cea1b002a38741242687b8",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "caf34c66cc93da2dc29d9739482d03f9",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "caf34c66cc93da2dc29d9739482d03f9",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "cb0ada331cd13c433a265db1cdcf17ba",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "cb0ada331cd13c433a265db1cdcf17ba",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "e0ee2cef12742c7946cfe0a26ff51f6f",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "e0ee2cef12742c7946cfe0a26ff51f6f",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "edd0690d291ae883182e80778116d2d446cf9fa62f017495f5faf3993a0b1317"
+    },
+    {
+     "input_index": 1,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "7ff986aed318b42ea5139ee7985c80a70bc265568b0b89dbe009eab206b5e6f1",
+     "content_len": 2957,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "4.3 其他规定 污水综合排放标准",
+       "chunk_order": 1,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 4.0
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996",
+        "edge:GB 8978-1996|pH",
+        "edge:GB 8978-1996|总汞",
+        "edge:GB 8978-1996|石油类",
+        "edge:GB 8978-1996|六价铬",
+        "edge:GB 8978-1996|苯并(a)芘",
+        "edge:GB 8978-1996|总铬",
+        "edge:GB 8978-1996|总镉",
+        "edge:GB 8978-1996|化学需氧量(COD)",
+        "edge:GB 8978-1996|总铅",
+        "edge:GB 8978-1996|动植物油",
+        "edge:GB 8978-1996|挥发酚",
+        "edge:GB 8978-1996|总银",
+        "edge:GB 8978-1996|悬浮物(SS)",
+        "edge:GB 8978-1996|总砷",
+        "edge:GB 8978-1996|五日生化需氧量(BOD5)",
+        "edge:GB 8978-1996|总镍",
+        "edge:GB 8978-1996|色度(稀释倍数)",
+        "edge:GB 8978-1996|烷基汞",
+        "edge:GB 8978-1996|总铍",
+        "edge:GB 8978-1996|总 α 放射性",
+        "edge:GB 8978-1996|总 β 放射性",
+        "edge:GB 8978-1996|总氰化合物"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 7,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 7,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "a00e1705c43ffacbca6c408197c6bac9",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "a00e1705c43ffacbca6c408197c6bac9",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0003",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0003",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0003",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "7ff986aed318b42ea5139ee7985c80a70bc265568b0b89dbe009eab206b5e6f1"
+    },
+    {
+     "input_index": 2,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "30caaf295cd4413427069707e1b278e17f5209047ace92764555a0008c8a9228",
+     "content_len": 3483,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "GB 8978—1996 [part 5] 污水综合排放标准",
+       "chunk_order": 6,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 2.4000000953674316
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996污水综合排放标准",
+        "edge:GB 8978-1996污水综合排放标准|氨氮",
+        "edge:GB 8978-1996污水综合排放标准|pH",
+        "edge:GB 8978-1996污水综合排放标准|石油类",
+        "edge:GB 8978-1996污水综合排放标准|硫化物",
+        "edge:GB 8978-1996污水综合排放标准|化学需氧量(COD)",
+        "edge:GB 8978-1996污水综合排放标准|挥发酚",
+        "edge:GB 8978-1996污水综合排放标准|动植物油",
+        "edge:GB 8978-1996污水综合排放标准|悬浮物(SS)",
+        "edge:GB 8978-1996污水综合排放标准|五日生化需氧量(BOD5)",
+        "edge:GB 8978-1996污水综合排放标准|酒精工业",
+        "edge:GB 8978-1996污水综合排放标准|色度(稀释倍数)",
+        "edge:GB 8978-1996污水综合排放标准|电影洗片",
+        "edge:GB 8978-1996污水综合排放标准|发酵酿造工业",
+        "edge:GB 8978-1996污水综合排放标准|总氰化合物",
+        "edge:GB 8978-1996污水综合排放标准|苎麻脱胶工业",
+        "edge:GB 8978-1996污水综合排放标准|味精工业",
+        "edge:GB 8978-1996污水综合排放标准|羊干皮",
+        "edge:GB 8978-1996污水综合排放标准|牛干皮",
+        "edge:GB 8978-1996污水综合排放标准|石油沥青工业",
+        "edge:GB 8978-1996污水综合排放标准|铁路货车洗刷",
+        "edge:GB 8978-1996污水综合排放标准|化纤浆粕",
+        "edge:GB 8978-1996污水综合排放标准|硫酸工业(水洗法)",
+        "edge:GB 8978-1996污水综合排放标准|铬盐工业",
+        "edge:GB 8978-1996污水综合排放标准|啤酒工业",
+        "edge:GB 8978-1996污水综合排放标准|粘胶纤维工业(单纯纤维)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 5,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 5,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "71860670a6f52c0934c197309cf6e5de",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "71860670a6f52c0934c197309cf6e5de",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0005",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0005",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0005",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0006",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0006",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0006",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0007",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0007",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0007",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "30caaf295cd4413427069707e1b278e17f5209047ace92764555a0008c8a9228"
+    },
+    {
+     "input_index": 3,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-009",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "4d01a1c6c3b2f409cccbd3cb0712e9fafb3d0a78b7403a570b63e12bc51d5a1f",
+     "content_len": 1019,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-009",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "GB 8978—1996 [part 3] 污水综合排放标准",
+       "chunk_order": 9,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 2.4000000953674316
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7861e85661a27b359aae0b2d02a9f750",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "7861e85661a27b359aae0b2d02a9f750",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-009"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0008",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0008",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0008",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-009"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "4d01a1c6c3b2f409cccbd3cb0712e9fafb3d0a78b7403a570b63e12bc51d5a1f"
+    },
+    {
+     "input_index": 4,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-010",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "c8c30f1ca5257761d88f7c4b4933679d6e4b3202869c10f376d68bfbb52e55ff",
+     "content_len": 1037,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-010",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "GB 8978—1996 [part 1] 污水综合排放标准",
+       "chunk_order": 10,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 2.0
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-010",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996",
+        "edge:GB 8978-1996|氯苯",
+        "edge:GB 8978-1996|苯酚",
+        "edge:2,4,6-三氯酚|GB 8978-1996",
+        "edge:2,4-二硝基氯苯|GB 8978-1996",
+        "edge:2,4-二氯酚|GB 8978-1996",
+        "edge:GB 8978-1996|间-甲酚",
+        "edge:GB 8978-1996|对-硝基氯苯",
+        "edge:GB 8978-1996|对-二氯苯",
+        "edge:GB 8978-1996|邻-二氯苯",
+        "edge:GB 8978-1996|邻苯二甲酸二丁脂"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 4,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 4,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "8447a0b01b58985f9a4c5eff0ab2fbf5",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "8447a0b01b58985f9a4c5eff0ab2fbf5",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-010"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0009",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0009",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0009",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-010"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "c8c30f1ca5257761d88f7c4b4933679d6e4b3202869c10f376d68bfbb52e55ff"
+    },
+    {
+     "input_index": 5,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "0788999c39722c5b9696840b2b3072bf120fde1415fb4e61c7d3f2999614e511",
+     "content_len": 1166,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "GB 8978—1996 [part 1] 污水综合排放标准",
+       "chunk_order": 2,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.8000000715255737
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996",
+        "edge:GB 8978-1996|氨氮",
+        "edge:GB 8978-1996|氟化物",
+        "edge:GB 8978-1996|甲醛",
+        "edge:GB 8978-1996|硫化物",
+        "edge:GB 8978-1996|苯胺类",
+        "edge:GB 8978-1996|硝基苯类",
+        "edge:GB 8978-1996|阴离子表面活性剂(LAS)",
+        "edge:GB 8978-1996|磷酸盐(以P计)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 0,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 0,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "71860670a6f52c0934c197309cf6e5de",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "71860670a6f52c0934c197309cf6e5de",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0004",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0004",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0004",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "0788999c39722c5b9696840b2b3072bf120fde1415fb4e61c7d3f2999614e511"
+    },
+    {
+     "input_index": 6,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-007",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "d50b815345c9d7c1018a19b71413c82096102dff7421df5a435fbbe27b53f282",
+     "content_len": 1009,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-007",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "GB 8978—1996 [part 1] 污水综合排放标准",
+       "chunk_order": 7,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.8000000715255737
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-007",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996",
+        "edge:GB 8978-1996|氟化物",
+        "edge:GB 8978-1996|甲醛",
+        "edge:GB 8978-1996|总铜",
+        "edge:GB 8978-1996|苯胺类",
+        "edge:GB 8978-1996|总锌",
+        "edge:GB 8978-1996|硝基苯类",
+        "edge:GB 8978-1996|阴离子表面活性剂(LAS)",
+        "edge:GB 8978-1996|磷酸盐"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 2,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 2,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7861e85661a27b359aae0b2d02a9f750",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "7861e85661a27b359aae0b2d02a9f750",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-007"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0008",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0008",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0008",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-007"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "d50b815345c9d7c1018a19b71413c82096102dff7421df5a435fbbe27b53f282"
+    },
+    {
+     "input_index": 7,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-008",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "cc3980a8142cb567e7587e5649ea5e302c57d91c541004c705e8bfaa5246f033",
+     "content_len": 1017,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-008",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "GB 8978—1996 [part 2] 污水综合排放标准",
+       "chunk_order": 8,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.600000023841858
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7861e85661a27b359aae0b2d02a9f750",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "7861e85661a27b359aae0b2d02a9f750",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-008"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0008",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0008",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0008",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-008"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "cc3980a8142cb567e7587e5649ea5e302c57d91c541004c705e8bfaa5246f033"
+    },
+    {
+     "input_index": 8,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-011",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "48131450b943be64ec657665bd2b760a436598895a8c4ff9601ca6ccf9ccfcde",
+     "content_len": 1113,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-011",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "GB 8978—1996 [part 2] 污水综合排放标准",
+       "chunk_order": 11,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.2000000476837158
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-011",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996",
+        "edge:GB 8978-1996|污水综合排放标准"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 9,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 9,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "8447a0b01b58985f9a4c5eff0ab2fbf5",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "8447a0b01b58985f9a4c5eff0ab2fbf5",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-011"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0009",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0009",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0009",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-011"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "48131450b943be64ec657665bd2b760a436598895a8c4ff9601ca6ccf9ccfcde"
+    },
+    {
+     "input_index": 9,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-003",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "021a04aeb66eca0df78f2e4aa19f1d895b6461f3eaf9fdfbb033e29b562304bf",
+     "content_len": 1284,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-003",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "GB 8978—1996 [part 2] 污水综合排放标准",
+       "chunk_order": 3,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.0
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "71860670a6f52c0934c197309cf6e5de",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "71860670a6f52c0934c197309cf6e5de",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0004",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0004",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0004",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "021a04aeb66eca0df78f2e4aa19f1d895b6461f3eaf9fdfbb033e29b562304bf"
+    },
+    {
+     "input_index": 10,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-012",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "3fa8de227699329da3024f892d62ecdb16be1aaa27334a17e7deb7c0d41247e0",
+     "content_len": 1472,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-012",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "表 5 部分行业最高允许排水量 [part 1] 污水综合排放标准",
+       "chunk_order": 12,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.6000000238418579
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "4353d89837fd2e9d9efe4f12d0f61cf1",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "4353d89837fd2e9d9efe4f12d0f61cf1",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-012"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0010",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0010",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0010",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-012"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "3fa8de227699329da3024f892d62ecdb16be1aaa27334a17e7deb7c0d41247e0"
+    },
+    {
+     "input_index": 11,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-021",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "b8b147a1067fd03ecbbbf45a9e8b50ecb258272ec25c076c715cedfa9c6e1d57",
+     "content_len": 2277,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-021",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "D2 显影剂及其氧化物总量的测定方法 污水综合排放标准",
+       "chunk_order": 21,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.4000000059604645
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "028142be81b37157eabf570464ba58b6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "028142be81b37157eabf570464ba58b6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-021"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7ca774d27e08bac3dabdda4b02e6edd5",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "7ca774d27e08bac3dabdda4b02e6edd5",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-021"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "d8c41fa61f46c34487532759949f3b7f",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "d8c41fa61f46c34487532759949f3b7f",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-021"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "b8b147a1067fd03ecbbbf45a9e8b50ecb258272ec25c076c715cedfa9c6e1d57"
+    },
+    {
+     "input_index": 12,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-022",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "4af72f9f2c5c710479c05a25f394f838b1a0a68576f58047e4ecf43ca20659db",
+     "content_len": 2278,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-022",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "D2.4.3 需排除干扰的水样测定 污水综合排放标准",
+       "chunk_order": 22,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.4000000059604645
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "28d537dc2a24d94b6fea6d9d1054180d",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "28d537dc2a24d94b6fea6d9d1054180d",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-022"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "774afffa1d5b827de2830efd74efc585",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "774afffa1d5b827de2830efd74efc585",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-022"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7fc929f52f7e83cd276c17e106bebbe3",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "7fc929f52f7e83cd276c17e106bebbe3",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-022"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "e27197315db2970f4301f4d1535256d2",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "e27197315db2970f4301f4d1535256d2",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-022"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "4af72f9f2c5c710479c05a25f394f838b1a0a68576f58047e4ecf43ca20659db"
+    },
+    {
+     "input_index": 13,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-013",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "02010c36030020cc833188eb4956bf966414e3d78ab55fb058be56dc1e232a57",
+     "content_len": 1379,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-013",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "表 5 部分行业最高允许排水量 [part 2] 污水综合排放标准",
+       "chunk_order": 13,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.20000000298023224
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-013",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996",
+        "edge:GB 8978-1996|发酵、酿造工业",
+        "edge:GB 8978-1996|皮革工业",
+        "edge:GB 8978-1996|苎麻脱胶工业",
+        "edge:GB 8978-1996|制糖工业",
+        "edge:GB 8978-1996|合成脂肪酸工业",
+        "edge:GB 8978-1996|硫酸工业(水洗法)",
+        "edge:GB 8978-1996|铬盐工业",
+        "edge:GB 8978-1996|湿法生产纤维板工业"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 6,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 6,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "4353d89837fd2e9d9efe4f12d0f61cf1",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "4353d89837fd2e9d9efe4f12d0f61cf1",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-013"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0010",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0010",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0010",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-013"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "02010c36030020cc833188eb4956bf966414e3d78ab55fb058be56dc1e232a57"
+    },
+    {
+     "input_index": 14,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-015",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "b44a2496fadfe1b47cab8451f9a73286abd40b1a3e655d5ded1c76a0773f5c1a",
+     "content_len": 1523,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-015",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "5.3 排水量 污水综合排放标准",
+       "chunk_order": 15,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.20000000298023224
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "1e8badc0e11d4d8a298e646755805bbd",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "1e8badc0e11d4d8a298e646755805bbd",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-015"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "2c9867c41c13da0663a807ce36b21dc8",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "2c9867c41c13da0663a807ce36b21dc8",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-015"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "ea9146674d36410c9159f58a3c58204a",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "ea9146674d36410c9159f58a3c58204a",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-015"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0013",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0013",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0013",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-015"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "b44a2496fadfe1b47cab8451f9a73286abd40b1a3e655d5ded1c76a0773f5c1a"
+    },
+    {
+     "input_index": 15,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-017",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "b4bade14b81d6b78426c0a664bd29a25ab3cd677896ec4a5e78f0a32c8728fb6",
+     "content_len": 1084,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-017",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "GB 8978—1996 [part 2] 污水综合排放标准",
+       "chunk_order": 17,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.20000000298023224
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7b834077734f547260139c7968ab5ed6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "7b834077734f547260139c7968ab5ed6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-017"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0014",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0014",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0014",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-017"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "b4bade14b81d6b78426c0a664bd29a25ab3cd677896ec4a5e78f0a32c8728fb6"
+    },
+    {
+     "input_index": 16,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "53221549df48809f4afa1d25f6a43302b504d310d754a4408d26f30dea70b48b",
+     "content_len": 1360,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "6 标准实施监督 污水综合排放标准",
+       "chunk_order": 19,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.20000000298023224
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "21e7b7dbce31595f1a36741b87278918",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "21e7b7dbce31595f1a36741b87278918",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "67567cebe3fb886790ca01db5b3401ff",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "67567cebe3fb886790ca01db5b3401ff",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "67e9963ca131cbe34ffd729936e9c7fc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "67e9963ca131cbe34ffd729936e9c7fc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "68f5e4887076de1ad7e96ac2e7256c82",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "68f5e4887076de1ad7e96ac2e7256c82",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "69891b270d05bf1548a431d6698967b6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "69891b270d05bf1548a431d6698967b6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "69ede9a6f865076d3f23949a5d5471de",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "69ede9a6f865076d3f23949a5d5471de",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "bc6072cfa4fd6d8b9057a46718f5c0c6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "bc6072cfa4fd6d8b9057a46718f5c0c6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "f77d701aeeda4c3ebe439505ecb3281e",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "f77d701aeeda4c3ebe439505ecb3281e",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "53221549df48809f4afa1d25f6a43302b504d310d754a4408d26f30dea70b48b"
+    },
+    {
+     "input_index": 17,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-020",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "d5ccaab5c47b6d789c66e2ffe70815247f24dfb0c60a810154e586838257da07",
+     "content_len": 1875,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-020",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "D1.1 原理 污水综合排放标准",
+       "chunk_order": 20,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.20000000298023224
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "1b64f52dbfad33323dcd644d66dfe8b2",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "1b64f52dbfad33323dcd644d66dfe8b2",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "261644dec2b41400830548514de69a9c",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "261644dec2b41400830548514de69a9c",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "38a97c75ceba4e95c12eca1c442b2c87",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "38a97c75ceba4e95c12eca1c442b2c87",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "82f2e94fa6912a53ce4798c7bd01372e",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "82f2e94fa6912a53ce4798c7bd01372e",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "d87789887921bf5b216489120188ff0d",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "d87789887921bf5b216489120188ff0d",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "ebb5c2c626938a4941877b2946a6ba5b",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "ebb5c2c626938a4941877b2946a6ba5b",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0016",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0016",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0016",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "d5ccaab5c47b6d789c66e2ffe70815247f24dfb0c60a810154e586838257da07"
+    },
+    {
+     "input_index": 18,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-016",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "b6047ce9e9a863dc536d07100a89f5cfed5f0338afba481c4df062b73e811c7f",
+     "content_len": 1119,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-016",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996",
+        "edge:GB 8978-1996|氨氮",
+        "edge:GB 8978-1996|氟化物",
+        "edge:GB 8978-1996|石油类",
+        "edge:GB 8978-1996|甲醛",
+        "edge:GB 8978-1996|硫化物",
+        "edge:GB 8978-1996|阴离子表面活性剂",
+        "edge:GB 8978-1996|化学需氧量(COD)",
+        "edge:GB 8978-1996|动植物油",
+        "edge:GB 8978-1996|挥发酚",
+        "edge:GB 8978-1996|总氰化物",
+        "edge:GB 8978-1996|苯胺类",
+        "edge:GB 8978-1996|硝基苯类",
+        "edge:GB 8978-1996|磷酸盐"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 3,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 3,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7b834077734f547260139c7968ab5ed6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "7b834077734f547260139c7968ab5ed6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-016"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0014",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0014",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0014",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-016"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "text_sha256": "b6047ce9e9a863dc536d07100a89f5cfed5f0338afba481c4df062b73e811c7f"
+    }
+   ],
+   "call": {
+    "service": "rerank",
+    "operation": "rerank",
+    "endpoint": "/v1/rerank",
+    "url_path_used": "configured-endpoint",
+    "model": "Qwen/Qwen3-Reranker-4B",
+    "documents_sent": 19,
+    "chars_sent": 30467,
+    "elapsed_ms": 1498,
+    "status_code": 200,
+    "status": "success",
+    "response_evidence": {
+     "id": "01a119fb735e77ea85cd8bfdb51c6103",
+     "results_len": 19
+    },
+    "raw_response": {
+     "id": "01a119fb735e77ea85cd8bfdb51c6103",
+     "results": [
+      {
+       "index": 0,
+       "document": null,
+       "relevance_score": 0.9990010857582092
+      },
+      {
+       "index": 10,
+       "document": null,
+       "relevance_score": 0.9662874341011047
+      },
+      {
+       "index": 2,
+       "document": null,
+       "relevance_score": 0.944469153881073
+      },
+      {
+       "index": 1,
+       "document": null,
+       "relevance_score": 0.9266767501831055
+      },
+      {
+       "index": 4,
+       "document": null,
+       "relevance_score": 0.6780641078948975
+      },
+      {
+       "index": 5,
+       "document": null,
+       "relevance_score": 0.6637724041938782
+      },
+      {
+       "index": 6,
+       "document": null,
+       "relevance_score": 0.6398276686668396
+      },
+      {
+       "index": 18,
+       "document": null,
+       "relevance_score": 0.520368218421936
+      },
+      {
+       "index": 16,
+       "document": null,
+       "relevance_score": 0.13869865238666534
+      },
+      {
+       "index": 14,
+       "document": null,
+       "relevance_score": 0.11110569536685944
+      },
+      {
+       "index": 13,
+       "document": null,
+       "relevance_score": 0.09591273963451385
+      },
+      {
+       "index": 3,
+       "document": null,
+       "relevance_score": 0.04406493529677391
+      },
+      {
+       "index": 11,
+       "document": null,
+       "relevance_score": 0.008065988309681416
+      },
+      {
+       "index": 7,
+       "document": null,
+       "relevance_score": 0.0038928103167563677
+      },
+      {
+       "index": 15,
+       "document": null,
+       "relevance_score": 0.003540270496159792
+      },
+      {
+       "index": 17,
+       "document": null,
+       "relevance_score": 0.0034343597944825888
+      },
+      {
+       "index": 9,
+       "document": null,
+       "relevance_score": 0.0020414101891219616
+      },
+      {
+       "index": 8,
+       "document": null,
+       "relevance_score": 0.002011998789384961
+      },
+      {
+       "index": 12,
+       "document": null,
+       "relevance_score": 0.0019397987052798271
+      }
+     ],
+     "meta": {
+      "tokens": "<redacted>",
+      "billed_units": {
+       "input_tokens": "<redacted>",
+       "output_tokens": "<redacted>",
+       "image_tokens": "<redacted>",
+       "search_units": 0,
+       "classifications": 0
+      }
+     }
+    }
+   },
+   "ordered": [
+    {
+     "input_index": 0,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "edd0690d291ae883182e80778116d2d446cf9fa62f017495f5faf3993a0b1317",
+     "rerank_score": 0.9990010857582092,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "中华人民共和国国家标准",
+       "chunk_order": 0,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 5.0
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-88",
+        "entity:GB 8978-1996",
+        "edge:GB 8978-1996|污水综合排放标准",
+        "edge:GB 8978-1996|GB 8978-88"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 1,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 1,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "00f06c44e9556a89c7387b6bc4b614ed",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "00f06c44e9556a89c7387b6bc4b614ed",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "214ef7613f1a3c64da042ce72f2bddc0",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "214ef7613f1a3c64da042ce72f2bddc0",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "2861821374df5ffccf40ab934d97c1e7",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "2861821374df5ffccf40ab934d97c1e7",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "2c1eda10b7af56873cdbd4ee86f033d6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "2c1eda10b7af56873cdbd4ee86f033d6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "35a013776bdbd5c8efcda6bf0ddd6b69",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "35a013776bdbd5c8efcda6bf0ddd6b69",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "408814b550a3d1afbd2fa53c571967a5",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "408814b550a3d1afbd2fa53c571967a5",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "66c19b0895c01ee1c36a172fcc99b0dd",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "66c19b0895c01ee1c36a172fcc99b0dd",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "6ff2251b284e052a6797b61b046938e2",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "6ff2251b284e052a6797b61b046938e2",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "784931ac8b352504247a5bbd2b92cfb0",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "784931ac8b352504247a5bbd2b92cfb0",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7de3a51726cea1b002a38741242687b8",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "7de3a51726cea1b002a38741242687b8",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "caf34c66cc93da2dc29d9739482d03f9",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "caf34c66cc93da2dc29d9739482d03f9",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "cb0ada331cd13c433a265db1cdcf17ba",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "cb0ada331cd13c433a265db1cdcf17ba",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "e0ee2cef12742c7946cfe0a26ff51f6f",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "e0ee2cef12742c7946cfe0a26ff51f6f",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-000"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 10,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-012",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "3fa8de227699329da3024f892d62ecdb16be1aaa27334a17e7deb7c0d41247e0",
+     "rerank_score": 0.9662874341011047,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-012",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "表 5 部分行业最高允许排水量 [part 1] 污水综合排放标准",
+       "chunk_order": 12,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.6000000238418579
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "4353d89837fd2e9d9efe4f12d0f61cf1",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "4353d89837fd2e9d9efe4f12d0f61cf1",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-012"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0010",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0010",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0010",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-012"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 2,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "30caaf295cd4413427069707e1b278e17f5209047ace92764555a0008c8a9228",
+     "rerank_score": 0.944469153881073,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "GB 8978—1996 [part 5] 污水综合排放标准",
+       "chunk_order": 6,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 2.4000000953674316
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996污水综合排放标准",
+        "edge:GB 8978-1996污水综合排放标准|氨氮",
+        "edge:GB 8978-1996污水综合排放标准|pH",
+        "edge:GB 8978-1996污水综合排放标准|石油类",
+        "edge:GB 8978-1996污水综合排放标准|硫化物",
+        "edge:GB 8978-1996污水综合排放标准|化学需氧量(COD)",
+        "edge:GB 8978-1996污水综合排放标准|挥发酚",
+        "edge:GB 8978-1996污水综合排放标准|动植物油",
+        "edge:GB 8978-1996污水综合排放标准|悬浮物(SS)",
+        "edge:GB 8978-1996污水综合排放标准|五日生化需氧量(BOD5)",
+        "edge:GB 8978-1996污水综合排放标准|酒精工业",
+        "edge:GB 8978-1996污水综合排放标准|色度(稀释倍数)",
+        "edge:GB 8978-1996污水综合排放标准|电影洗片",
+        "edge:GB 8978-1996污水综合排放标准|发酵酿造工业",
+        "edge:GB 8978-1996污水综合排放标准|总氰化合物",
+        "edge:GB 8978-1996污水综合排放标准|苎麻脱胶工业",
+        "edge:GB 8978-1996污水综合排放标准|味精工业",
+        "edge:GB 8978-1996污水综合排放标准|羊干皮",
+        "edge:GB 8978-1996污水综合排放标准|牛干皮",
+        "edge:GB 8978-1996污水综合排放标准|石油沥青工业",
+        "edge:GB 8978-1996污水综合排放标准|铁路货车洗刷",
+        "edge:GB 8978-1996污水综合排放标准|化纤浆粕",
+        "edge:GB 8978-1996污水综合排放标准|硫酸工业(水洗法)",
+        "edge:GB 8978-1996污水综合排放标准|铬盐工业",
+        "edge:GB 8978-1996污水综合排放标准|啤酒工业",
+        "edge:GB 8978-1996污水综合排放标准|粘胶纤维工业(单纯纤维)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 5,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 5,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "71860670a6f52c0934c197309cf6e5de",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "71860670a6f52c0934c197309cf6e5de",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0005",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0005",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0005",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0006",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0006",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0006",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0007",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0007",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0007",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-006"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 1,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "7ff986aed318b42ea5139ee7985c80a70bc265568b0b89dbe009eab206b5e6f1",
+     "rerank_score": 0.9266767501831055,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "4.3 其他规定 污水综合排放标准",
+       "chunk_order": 1,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 4.0
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996",
+        "edge:GB 8978-1996|pH",
+        "edge:GB 8978-1996|总汞",
+        "edge:GB 8978-1996|石油类",
+        "edge:GB 8978-1996|六价铬",
+        "edge:GB 8978-1996|苯并(a)芘",
+        "edge:GB 8978-1996|总铬",
+        "edge:GB 8978-1996|总镉",
+        "edge:GB 8978-1996|化学需氧量(COD)",
+        "edge:GB 8978-1996|总铅",
+        "edge:GB 8978-1996|动植物油",
+        "edge:GB 8978-1996|挥发酚",
+        "edge:GB 8978-1996|总银",
+        "edge:GB 8978-1996|悬浮物(SS)",
+        "edge:GB 8978-1996|总砷",
+        "edge:GB 8978-1996|五日生化需氧量(BOD5)",
+        "edge:GB 8978-1996|总镍",
+        "edge:GB 8978-1996|色度(稀释倍数)",
+        "edge:GB 8978-1996|烷基汞",
+        "edge:GB 8978-1996|总铍",
+        "edge:GB 8978-1996|总 α 放射性",
+        "edge:GB 8978-1996|总 β 放射性",
+        "edge:GB 8978-1996|总氰化合物"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 7,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 7,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "a00e1705c43ffacbca6c408197c6bac9",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "a00e1705c43ffacbca6c408197c6bac9",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0003",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0003",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0003",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 4,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-010",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "c8c30f1ca5257761d88f7c4b4933679d6e4b3202869c10f376d68bfbb52e55ff",
+     "rerank_score": 0.6780641078948975,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-010",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "GB 8978—1996 [part 1] 污水综合排放标准",
+       "chunk_order": 10,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 2.0
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-010",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996",
+        "edge:GB 8978-1996|氯苯",
+        "edge:GB 8978-1996|苯酚",
+        "edge:2,4,6-三氯酚|GB 8978-1996",
+        "edge:2,4-二硝基氯苯|GB 8978-1996",
+        "edge:2,4-二氯酚|GB 8978-1996",
+        "edge:GB 8978-1996|间-甲酚",
+        "edge:GB 8978-1996|对-硝基氯苯",
+        "edge:GB 8978-1996|对-二氯苯",
+        "edge:GB 8978-1996|邻-二氯苯",
+        "edge:GB 8978-1996|邻苯二甲酸二丁脂"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 4,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 4,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "8447a0b01b58985f9a4c5eff0ab2fbf5",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "8447a0b01b58985f9a4c5eff0ab2fbf5",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-010"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0009",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0009",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0009",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-010"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 5,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "0788999c39722c5b9696840b2b3072bf120fde1415fb4e61c7d3f2999614e511",
+     "rerank_score": 0.6637724041938782,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "GB 8978—1996 [part 1] 污水综合排放标准",
+       "chunk_order": 2,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.8000000715255737
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996",
+        "edge:GB 8978-1996|氨氮",
+        "edge:GB 8978-1996|氟化物",
+        "edge:GB 8978-1996|甲醛",
+        "edge:GB 8978-1996|硫化物",
+        "edge:GB 8978-1996|苯胺类",
+        "edge:GB 8978-1996|硝基苯类",
+        "edge:GB 8978-1996|阴离子表面活性剂(LAS)",
+        "edge:GB 8978-1996|磷酸盐(以P计)"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 0,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 0,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "71860670a6f52c0934c197309cf6e5de",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "71860670a6f52c0934c197309cf6e5de",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0004",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0004",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0004",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-002"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 6,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-007",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "d50b815345c9d7c1018a19b71413c82096102dff7421df5a435fbbe27b53f282",
+     "rerank_score": 0.6398276686668396,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-007",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "GB 8978—1996 [part 1] 污水综合排放标准",
+       "chunk_order": 7,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.8000000715255737
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-007",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996",
+        "edge:GB 8978-1996|氟化物",
+        "edge:GB 8978-1996|甲醛",
+        "edge:GB 8978-1996|总铜",
+        "edge:GB 8978-1996|苯胺类",
+        "edge:GB 8978-1996|总锌",
+        "edge:GB 8978-1996|硝基苯类",
+        "edge:GB 8978-1996|阴离子表面活性剂(LAS)",
+        "edge:GB 8978-1996|磷酸盐"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 2,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 2,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7861e85661a27b359aae0b2d02a9f750",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "7861e85661a27b359aae0b2d02a9f750",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-007"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0008",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0008",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0008",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-007"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 18,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-016",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "b6047ce9e9a863dc536d07100a89f5cfed5f0338afba481c4df062b73e811c7f",
+     "rerank_score": 0.520368218421936,
+     "paths": [
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-016",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996",
+        "edge:GB 8978-1996|氨氮",
+        "edge:GB 8978-1996|氟化物",
+        "edge:GB 8978-1996|石油类",
+        "edge:GB 8978-1996|甲醛",
+        "edge:GB 8978-1996|硫化物",
+        "edge:GB 8978-1996|阴离子表面活性剂",
+        "edge:GB 8978-1996|化学需氧量(COD)",
+        "edge:GB 8978-1996|动植物油",
+        "edge:GB 8978-1996|挥发酚",
+        "edge:GB 8978-1996|总氰化物",
+        "edge:GB 8978-1996|苯胺类",
+        "edge:GB 8978-1996|硝基苯类",
+        "edge:GB 8978-1996|磷酸盐"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 3,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 3,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7b834077734f547260139c7968ab5ed6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "7b834077734f547260139c7968ab5ed6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-016"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0014",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0014",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0014",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-016"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 16,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "53221549df48809f4afa1d25f6a43302b504d310d754a4408d26f30dea70b48b",
+     "rerank_score": 0.13869865238666534,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "6 标准实施监督 污水综合排放标准",
+       "chunk_order": 19,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.20000000298023224
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "21e7b7dbce31595f1a36741b87278918",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "21e7b7dbce31595f1a36741b87278918",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "67567cebe3fb886790ca01db5b3401ff",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "67567cebe3fb886790ca01db5b3401ff",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "67e9963ca131cbe34ffd729936e9c7fc",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "67e9963ca131cbe34ffd729936e9c7fc",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "68f5e4887076de1ad7e96ac2e7256c82",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "68f5e4887076de1ad7e96ac2e7256c82",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "69891b270d05bf1548a431d6698967b6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "69891b270d05bf1548a431d6698967b6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "69ede9a6f865076d3f23949a5d5471de",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "69ede9a6f865076d3f23949a5d5471de",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "bc6072cfa4fd6d8b9057a46718f5c0c6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "bc6072cfa4fd6d8b9057a46718f5c0c6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "f77d701aeeda4c3ebe439505ecb3281e",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "f77d701aeeda4c3ebe439505ecb3281e",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-019"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 14,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-015",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "b44a2496fadfe1b47cab8451f9a73286abd40b1a3e655d5ded1c76a0773f5c1a",
+     "rerank_score": 0.11110569536685944,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-015",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "5.3 排水量 污水综合排放标准",
+       "chunk_order": 15,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.20000000298023224
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "1e8badc0e11d4d8a298e646755805bbd",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "1e8badc0e11d4d8a298e646755805bbd",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-015"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "2c9867c41c13da0663a807ce36b21dc8",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "2c9867c41c13da0663a807ce36b21dc8",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-015"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "ea9146674d36410c9159f58a3c58204a",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "ea9146674d36410c9159f58a3c58204a",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-015"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0013",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0013",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0013",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-015"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 13,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-013",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "02010c36030020cc833188eb4956bf966414e3d78ab55fb058be56dc1e232a57",
+     "rerank_score": 0.09591273963451385,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-013",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "表 5 部分行业最高允许排水量 [part 2] 污水综合排放标准",
+       "chunk_order": 13,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.20000000298023224
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-013",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996",
+        "edge:GB 8978-1996|发酵、酿造工业",
+        "edge:GB 8978-1996|皮革工业",
+        "edge:GB 8978-1996|苎麻脱胶工业",
+        "edge:GB 8978-1996|制糖工业",
+        "edge:GB 8978-1996|合成脂肪酸工业",
+        "edge:GB 8978-1996|硫酸工业(水洗法)",
+        "edge:GB 8978-1996|铬盐工业",
+        "edge:GB 8978-1996|湿法生产纤维板工业"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 6,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 6,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "4353d89837fd2e9d9efe4f12d0f61cf1",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "4353d89837fd2e9d9efe4f12d0f61cf1",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-013"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0010",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0010",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0010",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-013"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 3,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-009",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "4d01a1c6c3b2f409cccbd3cb0712e9fafb3d0a78b7403a570b63e12bc51d5a1f",
+     "rerank_score": 0.04406493529677391,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-009",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "GB 8978—1996 [part 3] 污水综合排放标准",
+       "chunk_order": 9,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 2.4000000953674316
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7861e85661a27b359aae0b2d02a9f750",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "7861e85661a27b359aae0b2d02a9f750",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-009"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0008",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0008",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0008",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-009"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 11,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-021",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "b8b147a1067fd03ecbbbf45a9e8b50ecb258272ec25c076c715cedfa9c6e1d57",
+     "rerank_score": 0.008065988309681416,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-021",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "D2 显影剂及其氧化物总量的测定方法 污水综合排放标准",
+       "chunk_order": 21,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.4000000059604645
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "028142be81b37157eabf570464ba58b6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "028142be81b37157eabf570464ba58b6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-021"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7ca774d27e08bac3dabdda4b02e6edd5",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "7ca774d27e08bac3dabdda4b02e6edd5",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-021"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "d8c41fa61f46c34487532759949f3b7f",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "d8c41fa61f46c34487532759949f3b7f",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-021"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 7,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-008",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "cc3980a8142cb567e7587e5649ea5e302c57d91c541004c705e8bfaa5246f033",
+     "rerank_score": 0.0038928103167563677,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-008",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "GB 8978—1996 [part 2] 污水综合排放标准",
+       "chunk_order": 8,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.600000023841858
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7861e85661a27b359aae0b2d02a9f750",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "7861e85661a27b359aae0b2d02a9f750",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-008"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0008",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0008",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0008",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-008"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 15,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-017",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "b4bade14b81d6b78426c0a664bd29a25ab3cd677896ec4a5e78f0a32c8728fb6",
+     "rerank_score": 0.003540270496159792,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-017",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "GB 8978—1996 [part 2] 污水综合排放标准",
+       "chunk_order": 17,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.20000000298023224
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7b834077734f547260139c7968ab5ed6",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "7b834077734f547260139c7968ab5ed6",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-017"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0014",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0014",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0014",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-017"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 17,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-020",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "d5ccaab5c47b6d789c66e2ffe70815247f24dfb0c60a810154e586838257da07",
+     "rerank_score": 0.0034343597944825888,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-020",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "D1.1 原理 污水综合排放标准",
+       "chunk_order": 20,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.20000000298023224
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "1b64f52dbfad33323dcd644d66dfe8b2",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "1b64f52dbfad33323dcd644d66dfe8b2",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "261644dec2b41400830548514de69a9c",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "261644dec2b41400830548514de69a9c",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "38a97c75ceba4e95c12eca1c442b2c87",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "38a97c75ceba4e95c12eca1c442b2c87",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "82f2e94fa6912a53ce4798c7bd01372e",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "82f2e94fa6912a53ce4798c7bd01372e",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "d87789887921bf5b216489120188ff0d",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "d87789887921bf5b216489120188ff0d",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "ebb5c2c626938a4941877b2946a6ba5b",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "ebb5c2c626938a4941877b2946a6ba5b",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0016",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0016",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0016",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-020"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 9,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-003",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "021a04aeb66eca0df78f2e4aa19f1d895b6461f3eaf9fdfbb033e29b562304bf",
+     "rerank_score": 0.0020414101891219616,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-003",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "GB 8978—1996 [part 2] 污水综合排放标准",
+       "chunk_order": 3,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.0
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "71860670a6f52c0934c197309cf6e5de",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "71860670a6f52c0934c197309cf6e5de",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0004",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0004",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0004",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-003"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 8,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-011",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "48131450b943be64ec657665bd2b760a436598895a8c4ff9601ca6ccf9ccfcde",
+     "rerank_score": 0.002011998789384961,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-011",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "GB 8978—1996 [part 2] 污水综合排放标准",
+       "chunk_order": 11,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 1.2000000476837158
+       }
+      },
+      {
+       "path": "local",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-011",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": null,
+       "chunk_order": null,
+       "source_type": "entity",
+       "reached_via": [
+        "entity:GB 8978-1996",
+        "edge:GB 8978-1996|污水综合排放标准"
+       ],
+       "verified": true,
+       "verify_error": null,
+       "similarity_order": 9,
+       "score": {
+        "kind": "local_selection_order",
+        "value": 9,
+        "source_type": "entity",
+        "method": "vector-similarity"
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "8447a0b01b58985f9a4c5eff0ab2fbf5",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "8447a0b01b58985f9a4c5eff0ab2fbf5",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-011"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0009",
+       "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0009",
+       "citation": {
+        "kind": "table_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0009",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-011"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=table); replay predates the 5.3-F2 path fix — NOT a new retrieval hit or a requested-range confirmation",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    },
+    {
+     "input_index": 12,
+     "workspace": "default",
+     "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-022",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "content_sha256": "4af72f9f2c5c710479c05a25f394f838b1a0a68576f58047e4ecf43ca20659db",
+     "rerank_score": 0.0019397987052798271,
+     "paths": [
+      {
+       "path": "pg",
+       "workspace": "default",
+       "chunk_id": "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-022",
+       "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+       "heading": "D2.4.3 需排除干扰的水样测定 污水综合排放标准",
+       "chunk_order": 22,
+       "discovery": "keyword_or_relaxed",
+       "citation_verified": true,
+       "score": {
+        "kind": "pg_ts_rank",
+        "value": 0.4000000059604645
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "28d537dc2a24d94b6fea6d9d1054180d",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "28d537dc2a24d94b6fea6d9d1054180d",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-022"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "774afffa1d5b827de2830efd74efc585",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "774afffa1d5b827de2830efd74efc585",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-022"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "7fc929f52f7e83cd276c17e106bebbe3",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "7fc929f52f7e83cd276c17e106bebbe3",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-022"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      },
+      {
+       "path": "pg",
+       "unit_id": "e27197315db2970f4301f4d1535256d2",
+       "unit_kind": "block",
+       "citation": {
+        "kind": "source_unit",
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747",
+        "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+        "unit_id": "e27197315db2970f4301f4d1535256d2",
+        "unit_kind": "block",
+        "chunk_ids": [
+         "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-022"
+        ]
+       },
+       "enrichment_basis": "association completion from env_rag.unit_chunk_links + source_units (unit_kind=block); body-block association, never a table fragment",
+       "score": {
+        "kind": "none",
+        "value": null
+       }
+      }
+     ],
+     "source_order": "rerank"
+    }
+   ],
+   "degraded": [],
+   "status": "ok",
+   "typed_targets": [
+    {
+     "target_type": "doc",
+     "workspace": "default",
+     "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+     "doc_name": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf",
+     "self_code": "GB8978",
+     "self_code_version": "1996",
+     "discovery": "code_exact",
+     "membership_basis": null,
+     "citation": {
+      "kind": "catalog_row",
+      "workspace": "default",
+      "snapshot_id": "4919b3938ad93747",
+      "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4"
+     },
+     "citation_verified": true
+    }
+   ],
+   "path_enrichment": [
+    "association completion: 19 table fragment path(s) and 50 non-table (block/source_unit) path(s) from unit_chunk_links JOIN source_units by actual unit_kind (replay paths predate the 5.3-F2 fix); no id/locator/kind guessed"
+   ],
+   "source_verification": {
+    "candidates_checked": 19,
+    "verified": 19,
+    "problems": []
+   },
+   "skipped_inputs": []
+  }
+ ],
+ "finished_at": "2026-10-08T13:27:53+0800"
+}

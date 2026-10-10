@@ -1,0 +1,52 @@
+[
+  {
+    "id": "L1",
+    "path": "src/env_rag_final/local_adapter.py",
+    "severity": "high",
+    "start_line": 338,
+    "end_line": 340,
+    "category": "bug",
+    "title": "生产只读入口执行原生初始化写请求",
+    "content": "既有Qdrant集合仍提交create_payload_index，Neo4j仍提交CREATE INDEX；connect-only并只读预检，缺资源拒绝创建。"
+  },
+  {
+    "id": "L2",
+    "path": "src/env_rag_final/local_adapter.py",
+    "severity": "high",
+    "start_line": 558,
+    "end_line": 561,
+    "category": "bug",
+    "title": "真实边字段不匹配导致来源覆盖",
+    "content": "release边端点为src_tgt，读取source/target使全部边覆盖到键“|”，丢候选及reached_via。"
+  },
+  {
+    "id": "L3",
+    "path": "src/env_rag_final/local_adapter.py",
+    "severity": "high",
+    "start_line": 632,
+    "end_line": 656,
+    "category": "bug",
+    "title": "冻结身份未在正式入口校验",
+    "content": "FROZEN只写报告，无实际gold/source/catalog/search门控；模型名硬编码及未知workspace桥接也需请求前拒绝。"
+  },
+  {
+    "id": "L4",
+    "path": "src/env_rag_final/local_adapter.py",
+    "severity": "high",
+    "start_line": 583,
+    "end_line": 600,
+    "category": "bug",
+    "title": "VECTOR内部吞异常后被当成功",
+    "content": "实际helper在embedding异常后返回简单截断；外层看不到失败，degraded为空；须服务边界记录故障与排序来源。"
+  },
+  {
+    "id": "L5",
+    "path": "src/env_rag_final/local_adapter.py",
+    "severity": "medium",
+    "start_line": 473,
+    "end_line": 477,
+    "category": "bug",
+    "title": "自有语义客户端未回收",
+    "content": "finally只清shared_storage，创建的两Qdrant client及Neo4j driver在成功与失败均不关闭。"
+  }
+]

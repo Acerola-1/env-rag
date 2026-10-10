@@ -1,0 +1,634 @@
+........................................................................ [ 23%]
+........................................................................ [ 46%]
+........................................................................ [ 69%]
+....................................................FFFFFFFFFFFFFF...... [ 93%]
+.....................                                                    [100%]
+=================================== FAILURES ===================================
+_________ test_untrusted_replay_never_reaches_reranker[frozen_source] __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11b8b41d0>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-437/test_untrusted_replay_never_re0')
+corruption = 'frozen_source'
+
+    @pytest.mark.parametrize("corruption", ["frozen_source", "content_sha", "workspace", "unverified"])
+    def test_untrusted_replay_never_reaches_reranker(monkeypatch, tmp_path, corruption):
+        _, fused, body, path = _setup(monkeypatch, tmp_path)
+        if corruption == "frozen_source":
+            body["identity_after"] = {**body["identity_after"], "source_fingerprint": "other-source"}
+        elif corruption == "content_sha":
+            fused["usable"][0]["content"] = "replaced body with unchanged source hash"
+        elif corruption == "workspace":
+            fused["usable"][0]["workspace"] = "other"
+        else:
+            fused["usable"][0]["verified"] = False
+        path.write_text(json.dumps(body))
+        calls = []
+    
+        async def transport(query, documents):
+            calls.append(documents)
+            return base._resp(base._ok_payload(len(documents)))
+    
+        try:
+            _invoke(tmp_path, path, transport)
+        except Exception:
+            pass  # rejection or explicit skip is acceptable; service contact is not
+>       assert calls == [], f"{corruption} must be rejected before rerank service contact"
+E       AssertionError: frozen_source must be rejected before rerank service contact
+E       assert [['full body']] == []
+E         
+E         Left contains one more item: ['full body']
+E         Use -v to get more diff
+
+tests/test_rerank_review_r1.py:74: AssertionError
+__________ test_untrusted_replay_never_reaches_reranker[content_sha] ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x117e5f560>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-437/test_untrusted_replay_never_re1')
+corruption = 'content_sha'
+
+    @pytest.mark.parametrize("corruption", ["frozen_source", "content_sha", "workspace", "unverified"])
+    def test_untrusted_replay_never_reaches_reranker(monkeypatch, tmp_path, corruption):
+        _, fused, body, path = _setup(monkeypatch, tmp_path)
+        if corruption == "frozen_source":
+            body["identity_after"] = {**body["identity_after"], "source_fingerprint": "other-source"}
+        elif corruption == "content_sha":
+            fused["usable"][0]["content"] = "replaced body with unchanged source hash"
+        elif corruption == "workspace":
+            fused["usable"][0]["workspace"] = "other"
+        else:
+            fused["usable"][0]["verified"] = False
+        path.write_text(json.dumps(body))
+        calls = []
+    
+        async def transport(query, documents):
+            calls.append(documents)
+            return base._resp(base._ok_payload(len(documents)))
+    
+        try:
+            _invoke(tmp_path, path, transport)
+        except Exception:
+            pass  # rejection or explicit skip is acceptable; service contact is not
+>       assert calls == [], f"{corruption} must be rejected before rerank service contact"
+E       AssertionError: content_sha must be rejected before rerank service contact
+E       assert [['replaced b...source hash']] == []
+E         
+E         Left contains one more item: ['replaced body with unchanged source hash']
+E         Use -v to get more diff
+
+tests/test_rerank_review_r1.py:74: AssertionError
+___________ test_untrusted_replay_never_reaches_reranker[workspace] ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11b867440>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-437/test_untrusted_replay_never_re2')
+corruption = 'workspace'
+
+    @pytest.mark.parametrize("corruption", ["frozen_source", "content_sha", "workspace", "unverified"])
+    def test_untrusted_replay_never_reaches_reranker(monkeypatch, tmp_path, corruption):
+        _, fused, body, path = _setup(monkeypatch, tmp_path)
+        if corruption == "frozen_source":
+            body["identity_after"] = {**body["identity_after"], "source_fingerprint": "other-source"}
+        elif corruption == "content_sha":
+            fused["usable"][0]["content"] = "replaced body with unchanged source hash"
+        elif corruption == "workspace":
+            fused["usable"][0]["workspace"] = "other"
+        else:
+            fused["usable"][0]["verified"] = False
+        path.write_text(json.dumps(body))
+        calls = []
+    
+        async def transport(query, documents):
+            calls.append(documents)
+            return base._resp(base._ok_payload(len(documents)))
+    
+        try:
+            _invoke(tmp_path, path, transport)
+        except Exception:
+            pass  # rejection or explicit skip is acceptable; service contact is not
+>       assert calls == [], f"{corruption} must be rejected before rerank service contact"
+E       AssertionError: workspace must be rejected before rerank service contact
+E       assert [['full body']] == []
+E         
+E         Left contains one more item: ['full body']
+E         Use -v to get more diff
+
+tests/test_rerank_review_r1.py:74: AssertionError
+___________ test_untrusted_replay_never_reaches_reranker[unverified] ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11b867f50>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-437/test_untrusted_replay_never_re3')
+corruption = 'unverified'
+
+    @pytest.mark.parametrize("corruption", ["frozen_source", "content_sha", "workspace", "unverified"])
+    def test_untrusted_replay_never_reaches_reranker(monkeypatch, tmp_path, corruption):
+        _, fused, body, path = _setup(monkeypatch, tmp_path)
+        if corruption == "frozen_source":
+            body["identity_after"] = {**body["identity_after"], "source_fingerprint": "other-source"}
+        elif corruption == "content_sha":
+            fused["usable"][0]["content"] = "replaced body with unchanged source hash"
+        elif corruption == "workspace":
+            fused["usable"][0]["workspace"] = "other"
+        else:
+            fused["usable"][0]["verified"] = False
+        path.write_text(json.dumps(body))
+        calls = []
+    
+        async def transport(query, documents):
+            calls.append(documents)
+            return base._resp(base._ok_payload(len(documents)))
+    
+        try:
+            _invoke(tmp_path, path, transport)
+        except Exception:
+            pass  # rejection or explicit skip is acceptable; service contact is not
+>       assert calls == [], f"{corruption} must be rejected before rerank service contact"
+E       AssertionError: unverified must be rejected before rerank service contact
+E       assert [['full body']] == []
+E         
+E         Left contains one more item: ['full body']
+E         Use -v to get more diff
+
+tests/test_rerank_review_r1.py:74: AssertionError
+__________ test_missing_full_text_cannot_shrink_set_and_claim_success __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11c286150>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-437/test_missing_full_text_cannot_0')
+
+    def test_missing_full_text_cannot_shrink_set_and_claim_success(monkeypatch, tmp_path):
+        _, fused, body, path = _setup(
+            monkeypatch,
+            tmp_path,
+            [
+                base._usable(base.C1, base.DOC_A, "full body", 0),
+                base._usable(base.C2, base.DOC_A, "second body", 1),
+            ],
+        )
+        fused["usable"][1]["content"] = None
+        path.write_text(json.dumps(body))
+    
+        async def transport(query, documents):
+            return base._resp(base._ok_payload(len(documents)))
+    
+        try:
+            report = _invoke(tmp_path, path, transport)
+        except Exception:
+            return
+>       assert report["results"][0]["status"] != "ok", "incomplete input is never full rerank success"
+E       AssertionError: incomplete input is never full rerank success
+E       assert 'ok' != 'ok'
+
+tests/test_rerank_review_r1.py:96: AssertionError
+__ test_typed_targets_and_all_provenance_survive_success_and_fallback[False] ___
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11c284ef0>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-437/test_typed_targets_and_all_pro0')
+service_failure = False
+
+    @pytest.mark.parametrize("service_failure", [False, True])
+    def test_typed_targets_and_all_provenance_survive_success_and_fallback(
+        monkeypatch, tmp_path, service_failure
+    ):
+        _, fused, _, path = _setup(monkeypatch, tmp_path)
+    
+        async def transport(query, documents):
+            return base._resp(
+                {} if service_failure else base._ok_payload(1),
+                status_code=401 if service_failure else 200,
+            )
+    
+        result = _invoke(tmp_path, path, transport)["results"][0]
+>       assert result.get("typed_targets") == fused["typed_targets"]
+E       AssertionError: assert None == [{'target_type': 'doc', 'doc_id': 'doc-aaa'}]
+E        +  where None = <built-in method get of dict object at 0x11bfc7400>('typed_targets')
+E        +    where <built-in method get of dict object at 0x11bfc7400> = {'query_id': 'q-rerank', 'query': '问题', 'workspace': 'default', 'skipped': None, ...}.get
+
+tests/test_rerank_review_r1.py:112: AssertionError
+___ test_typed_targets_and_all_provenance_survive_success_and_fallback[True] ___
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11c286f30>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-437/test_typed_targets_and_all_pro1')
+service_failure = True
+
+    @pytest.mark.parametrize("service_failure", [False, True])
+    def test_typed_targets_and_all_provenance_survive_success_and_fallback(
+        monkeypatch, tmp_path, service_failure
+    ):
+        _, fused, _, path = _setup(monkeypatch, tmp_path)
+    
+        async def transport(query, documents):
+            return base._resp(
+                {} if service_failure else base._ok_payload(1),
+                status_code=401 if service_failure else 200,
+            )
+    
+        result = _invoke(tmp_path, path, transport)["results"][0]
+>       assert result.get("typed_targets") == fused["typed_targets"]
+E       AssertionError: assert None == [{'target_type': 'doc', 'doc_id': 'doc-aaa'}]
+E        +  where None = <built-in method get of dict object at 0x11bfa7140>('typed_targets')
+E        +    where <built-in method get of dict object at 0x11bfa7140> = {'query_id': 'q-rerank', 'query': '问题', 'workspace': 'default', 'skipped': None, ...}.get
+
+tests/test_rerank_review_r1.py:112: AssertionError
+____ test_preflight_and_replay_errors_always_write_terminal[malformed_gold] ____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11c2873b0>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-437/test_preflight_and_replay_erro0')
+failure = 'malformed_gold'
+
+    @pytest.mark.parametrize(
+        "failure", ["malformed_gold", "unknown_id", "broken_fused", "bad_structure"]
+    )
+    def test_preflight_and_replay_errors_always_write_terminal(monkeypatch, tmp_path, failure):
+        _, _, _, path = _setup(monkeypatch, tmp_path)
+        ids = ["q-rerank"]
+        if failure == "malformed_gold":
+            rr.GOLD_PATH.write_text("{bad json")
+        elif failure == "unknown_id":
+            ids = ["not-in-gold"]
+        elif failure == "broken_fused":
+            path.write_text("{bad json")
+        else:
+            rr.GOLD_PATH.write_text(json.dumps({"questions": None}))
+    
+        async def transport(query, documents):
+            raise AssertionError("invalid input must not reach service")
+    
+        with pytest.raises(Exception):
+            _invoke(tmp_path, path, transport, ids)
+        terminal = tmp_path / "rerank-runtime-latest.json"
+>       assert terminal.exists(), "all input refusal paths need a failure terminal"
+E       AssertionError: all input refusal paths need a failure terminal
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-437/test_preflight_and_replay_erro0/rerank-runtime-latest.json').exists
+
+tests/test_rerank_review_r1.py:140: AssertionError
+______ test_preflight_and_replay_errors_always_write_terminal[unknown_id] ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11c287dd0>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-437/test_preflight_and_replay_erro1')
+failure = 'unknown_id'
+
+    @pytest.mark.parametrize(
+        "failure", ["malformed_gold", "unknown_id", "broken_fused", "bad_structure"]
+    )
+    def test_preflight_and_replay_errors_always_write_terminal(monkeypatch, tmp_path, failure):
+        _, _, _, path = _setup(monkeypatch, tmp_path)
+        ids = ["q-rerank"]
+        if failure == "malformed_gold":
+            rr.GOLD_PATH.write_text("{bad json")
+        elif failure == "unknown_id":
+            ids = ["not-in-gold"]
+        elif failure == "broken_fused":
+            path.write_text("{bad json")
+        else:
+            rr.GOLD_PATH.write_text(json.dumps({"questions": None}))
+    
+        async def transport(query, documents):
+            raise AssertionError("invalid input must not reach service")
+    
+        with pytest.raises(Exception):
+            _invoke(tmp_path, path, transport, ids)
+        terminal = tmp_path / "rerank-runtime-latest.json"
+>       assert terminal.exists(), "all input refusal paths need a failure terminal"
+E       AssertionError: all input refusal paths need a failure terminal
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-437/test_preflight_and_replay_erro1/rerank-runtime-latest.json').exists
+
+tests/test_rerank_review_r1.py:140: AssertionError
+_____ test_preflight_and_replay_errors_always_write_terminal[broken_fused] _____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11c285160>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-437/test_preflight_and_replay_erro2')
+failure = 'broken_fused'
+
+    @pytest.mark.parametrize(
+        "failure", ["malformed_gold", "unknown_id", "broken_fused", "bad_structure"]
+    )
+    def test_preflight_and_replay_errors_always_write_terminal(monkeypatch, tmp_path, failure):
+        _, _, _, path = _setup(monkeypatch, tmp_path)
+        ids = ["q-rerank"]
+        if failure == "malformed_gold":
+            rr.GOLD_PATH.write_text("{bad json")
+        elif failure == "unknown_id":
+            ids = ["not-in-gold"]
+        elif failure == "broken_fused":
+            path.write_text("{bad json")
+        else:
+            rr.GOLD_PATH.write_text(json.dumps({"questions": None}))
+    
+        async def transport(query, documents):
+            raise AssertionError("invalid input must not reach service")
+    
+        with pytest.raises(Exception):
+            _invoke(tmp_path, path, transport, ids)
+        terminal = tmp_path / "rerank-runtime-latest.json"
+>       assert terminal.exists(), "all input refusal paths need a failure terminal"
+E       AssertionError: all input refusal paths need a failure terminal
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-437/test_preflight_and_replay_erro2/rerank-runtime-latest.json').exists
+
+tests/test_rerank_review_r1.py:140: AssertionError
+____ test_preflight_and_replay_errors_always_write_terminal[bad_structure] _____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11c284320>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-437/test_preflight_and_replay_erro3')
+failure = 'bad_structure'
+
+    @pytest.mark.parametrize(
+        "failure", ["malformed_gold", "unknown_id", "broken_fused", "bad_structure"]
+    )
+    def test_preflight_and_replay_errors_always_write_terminal(monkeypatch, tmp_path, failure):
+        _, _, _, path = _setup(monkeypatch, tmp_path)
+        ids = ["q-rerank"]
+        if failure == "malformed_gold":
+            rr.GOLD_PATH.write_text("{bad json")
+        elif failure == "unknown_id":
+            ids = ["not-in-gold"]
+        elif failure == "broken_fused":
+            path.write_text("{bad json")
+        else:
+            rr.GOLD_PATH.write_text(json.dumps({"questions": None}))
+    
+        async def transport(query, documents):
+            raise AssertionError("invalid input must not reach service")
+    
+        with pytest.raises(Exception):
+            _invoke(tmp_path, path, transport, ids)
+        terminal = tmp_path / "rerank-runtime-latest.json"
+>       assert terminal.exists(), "all input refusal paths need a failure terminal"
+E       AssertionError: all input refusal paths need a failure terminal
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-437/test_preflight_and_replay_erro3/rerank-runtime-latest.json').exists
+
+tests/test_rerank_review_r1.py:140: AssertionError
+_________ test_oversized_numeric_score_degrades_with_real_call_receipt _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11c287aa0>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-437/test_oversized_numeric_score_d0')
+
+    def test_oversized_numeric_score_degrades_with_real_call_receipt(monkeypatch, tmp_path):
+        _, _, _, path = _setup(monkeypatch, tmp_path)
+    
+        async def transport(query, documents):
+            return base._resp({"results": [{"index": 0, "relevance_score": 10**400}]})
+    
+        try:
+>           report = _invoke(tmp_path, path, transport)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_rerank_review_r1.py:155: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_rerank_review_r1.py:47: in _invoke
+    return asyncio.run(
+../../../../Library/Application Support/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/asyncio/runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+../../../../Library/Application Support/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../../Library/Application Support/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+report_dir = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-437/test_oversized_numeric_score_d0')
+query_ids = ['q-rerank']
+fused_report_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-437/test_oversized_numeric_score_d0/fused.json')
+transport = <function test_oversized_numeric_score_degrades_with_real_call_receipt.<locals>.transport at 0x11bf65620>
+
+    async def run_rerank(
+        report_dir: Path,
+        query_ids: list[str] | None = None,
+        fused_report_path: Path | None = None,
+        transport=None,
+    ) -> dict:
+        """Joint rerank over the 5.3 fused usable sets (replay inputs, one real
+        call per query, no retrieval round-trip). ``transport`` injects a fixed
+        replay/fake transport (tests); production passes None for real HTTP."""
+        report: dict = {
+            "task": "5.4 joint rerank over fused candidates (bounded, recorded)",
+            "started_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+            "service_contract": _SCORE_FIELDS_CONTRACT,
+            "input_budget": RERANK_INPUT_BUDGET,
+        }
+        report_dir.mkdir(parents=True, exist_ok=True)
+    
+        def _write_terminal() -> None:
+            stamp = time.strftime("%Y%m%dT%H%M%S")
+            body = json.dumps(report, ensure_ascii=False, indent=1) + "\n"
+            (report_dir / f"rerank-runtime-{stamp}.json").write_text(body, encoding="utf-8")
+            (report_dir / "rerank-runtime-latest.json").write_text(body, encoding="utf-8")
+    
+        async def _write_failure(stage: str, detail) -> None:
+            report["failure"] = {"stage": stage, "detail": detail}
+            _write_terminal()
+    
+        values = dict(dotenv_values(".env"))
+        fused_path = fused_report_path or Path(
+            "reports/pg-retrieval/phase-3-fusion/fusion-runtime-latest.json"
+        )
+    
+        # ---- 5.4 reuses the 5.3 guards verbatim (pre-flight, zero contact) ----
+        gold = json.loads(GOLD_PATH.read_text(encoding="utf-8"))
+        by_id = {q["query_id"]: q for q in gold["questions"]}
+        for c in gold.get("counter_examples", []):
+            cid = c.get("counter_id")
+            if cid and cid not in by_id:
+                by_id[cid] = {
+                    "query_id": cid,
+                    "question": c.get("question") or "",
+                    "workspace": "default",
+                }
+        wanted = query_ids or ["fact-002"]
+        try:
+            for qid in wanted:
+                verify_config_guard(values, by_id[qid].get("workspace") or "default")
+                if not (values.get("RERANK_BINDING_HOST") and values.get("RERANK_MODEL")):
+                    raise AdapterError("RERANK_BINDING_HOST / RERANK_MODEL missing in .env")
+            gold_sha = verify_gold_guard(GOLD_PATH)
+        except AdapterError as exc:
+            report["failure_service_records"] = {
+                "query_id": None,
+                "call_records": [],
+                "note": "pre-flight rejection before any backend read or service call",
+            }
+            await _write_failure("pre-flight", str(exc))
+            raise
+        report["gold_sha_verified"] = gold_sha
+    
+        try:
+            pre = await _capture_identity(values)
+        except Exception as exc:  # noqa: BLE001
+            await _write_failure("identity-capture", f"{type(exc).__name__}: {exc}")
+            raise AdapterError("pre-flight identity capture failed") from exc
+        report["identity_before"] = {
+            "matches_frozen": pre["matches_frozen"],
+            "problems": pre["problems"],
+            "counts": pre["identity"]["public_counts"],
+            "source_fingerprint": pre["identity"]["source_fingerprint"],
+            "catalog_active": pre["identity"]["catalog_active"],
+            "search_active": pre["identity"]["search_active"],
+            "gold_sha": pre["identity"]["gold_sha"],
+            "env_sha": pre["identity"]["env_sha"],
+        }
+        if not pre["matches_frozen"]:
+            await _write_failure("identity-before", pre["problems"])
+            raise AdapterError("pre-flight identity mismatch: " + "; ".join(pre["problems"]))
+    
+        fused = json.loads(fused_path.read_text(encoding="utf-8"))
+        fused_by_id = {r["query_id"]: r for r in fused.get("results", [])}
+    
+        results: list[dict] = []
+        run_error: str | None = None
+        failed_query_id: str | None = None
+        live_receipts: dict | None = None
+        try:
+            for qid in wanted:
+                failed_query_id = qid
+                out = await _rerank_one(
+                    values, qid, by_id[qid], fused_by_id.get(qid), transport, report
+                )
+                live_receipts = None  # F3-b heritage: never borrow the previous query's
+                failed_query_id = None
+                results.append(out)
+        except Exception as exc:  # noqa: BLE001 — unified terminal
+            run_error = f"{type(exc).__name__}: {exc}"
+        finally:
+            post = None
+            post_error = None
+            try:
+                post = await _capture_identity(values)
+            except Exception as exc:  # noqa: BLE001
+                post_error = f"{type(exc).__name__}: {exc}"
+                report["identity_after_error"] = post_error
+            if post is not None:
+                report["identity_after"] = {
+                    "matches_frozen": post["matches_frozen"],
+                    "problems": post["problems"],
+                    "counts": post["identity"]["public_counts"],
+                    "source_fingerprint": post["identity"]["source_fingerprint"],
+                    "catalog_active": post["identity"]["catalog_active"],
+                    "search_active": post["identity"]["search_active"],
+                    "gold_sha": post["identity"]["gold_sha"],
+                    "env_sha": post["identity"]["env_sha"],
+                }
+                drift = _identity_drift(pre["identity"], post["identity"])
+                if drift:
+                    report["identity_drift"] = drift
+            if run_error is not None:
+                report["results"] = results
+                report["failure_service_records"] = live_receipts or {
+                    "query_id": failed_query_id,
+                    "call_records": [],
+                    "note": "failure occurred before/without a captured rerank receipt",
+                }
+                await _write_failure("rerank", run_error)
+            elif post_error:
+                report["results"] = results
+                await _write_failure("identity-after-capture-error", post_error)
+            elif report.get("identity_drift"):
+                report["results"] = results
+                await _write_failure("identity-after-drift", report["identity_drift"])
+            elif report.get("identity_after") and not report["identity_after"]["matches_frozen"]:
+                report["results"] = results
+                await _write_failure("identity-after", report["identity_after"]["problems"])
+    
+        if run_error is not None:
+>           raise AdapterError(f"rerank failed (terminal report written): {run_error}")
+E           env_rag_final.local_adapter.AdapterError: rerank failed (terminal report written): OverflowError: int too large to convert to float
+
+src/env_rag_final/rerank.py:356: AdapterError
+
+During handling of the above exception, another exception occurred:
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11c287aa0>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-437/test_oversized_numeric_score_d0')
+
+    def test_oversized_numeric_score_degrades_with_real_call_receipt(monkeypatch, tmp_path):
+        _, _, _, path = _setup(monkeypatch, tmp_path)
+    
+        async def transport(query, documents):
+            return base._resp({"results": [{"index": 0, "relevance_score": 10**400}]})
+    
+        try:
+            report = _invoke(tmp_path, path, transport)
+        except Exception:
+            report = json.loads((tmp_path / "rerank-runtime-latest.json").read_text())
+            receipts = report["failure_service_records"]
+>           assert receipts["call_records"], "completed HTTP call cannot disappear from failed terminal"
+E           AssertionError: completed HTTP call cannot disappear from failed terminal
+E           assert []
+
+tests/test_rerank_review_r1.py:159: AssertionError
+_______ test_raw_response_is_preserved_for_independent_index_score_check _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11c287b90>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-437/test_raw_response_is_preserved0')
+
+    def test_raw_response_is_preserved_for_independent_index_score_check(monkeypatch, tmp_path):
+        _, _, _, path = _setup(monkeypatch, tmp_path)
+        payload = base._ok_payload(1)
+    
+        async def transport(query, documents):
+            return base._resp(payload)
+    
+        result = _invoke(tmp_path, path, transport)["results"][0]
+        response_candidates = [result.get("response"), result.get("raw_response")]
+        response_candidates.extend(
+            result["call"].get(k) for k in ["payload", "raw_response", "response_evidence"]
+        )
+>       assert any(
+            isinstance(x, dict) and x.get("results") == payload["results"] for x in response_candidates
+        ), "id/count alone cannot verify actual response scores"
+E       AssertionError: id/count alone cannot verify actual response scores
+E       assert False
+E        +  where False = any(<generator object test_raw_response_is_preserved_for_independent_index_score_check.<locals>.<genexpr> at 0x11bf9b220>)
+
+tests/test_rerank_review_r1.py:179: AssertionError
+___________ test_error_evidence_does_not_publish_configured_api_key ____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11c285eb0>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-437/test_error_evidence_does_not_p0')
+
+    def test_error_evidence_does_not_publish_configured_api_key(monkeypatch, tmp_path):
+        values, _, _, path = _setup(monkeypatch, tmp_path)
+        values["RERANK_BINDING_API_KEY"] = "fixture-secret-api-key-never-publish"
+    
+        async def transport(query, documents):
+            return base._resp(
+                {}, status_code=401, text="invalid bearer " + values["RERANK_BINDING_API_KEY"]
+            )
+    
+        _invoke(tmp_path, path, transport)
+        terminal = (tmp_path / "rerank-runtime-latest.json").read_text()
+>       assert values["RERANK_BINDING_API_KEY"] not in terminal
+E       assert 'fixture-sec...ever-publish' not in '{\n "task":...0+0800"\n}\n'
+E         
+E         'fixture-secret-api-key-never-publish' is contained here:
+E           id bearer fixture-secret-api-key-never-publish"
+E              },
+E              "ordered": [
+E               {
+E                "input_index": 0,...
+E         
+E         ...Full output truncated (15 lines hidden), use '-vv' to show
+
+tests/test_rerank_review_r1.py:195: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_rerank_review_r1.py::test_untrusted_replay_never_reaches_reranker[frozen_source]
+FAILED tests/test_rerank_review_r1.py::test_untrusted_replay_never_reaches_reranker[content_sha]
+FAILED tests/test_rerank_review_r1.py::test_untrusted_replay_never_reaches_reranker[workspace]
+FAILED tests/test_rerank_review_r1.py::test_untrusted_replay_never_reaches_reranker[unverified]
+FAILED tests/test_rerank_review_r1.py::test_missing_full_text_cannot_shrink_set_and_claim_success
+FAILED tests/test_rerank_review_r1.py::test_typed_targets_and_all_provenance_survive_success_and_fallback[False]
+FAILED tests/test_rerank_review_r1.py::test_typed_targets_and_all_provenance_survive_success_and_fallback[True]
+FAILED tests/test_rerank_review_r1.py::test_preflight_and_replay_errors_always_write_terminal[malformed_gold]
+FAILED tests/test_rerank_review_r1.py::test_preflight_and_replay_errors_always_write_terminal[unknown_id]
+FAILED tests/test_rerank_review_r1.py::test_preflight_and_replay_errors_always_write_terminal[broken_fused]
+FAILED tests/test_rerank_review_r1.py::test_preflight_and_replay_errors_always_write_terminal[bad_structure]
+FAILED tests/test_rerank_review_r1.py::test_oversized_numeric_score_degrades_with_real_call_receipt
+FAILED tests/test_rerank_review_r1.py::test_raw_response_is_preserved_for_independent_index_score_check
+FAILED tests/test_rerank_review_r1.py::test_error_evidence_does_not_publish_configured_api_key
+14 failed, 295 passed in 10.46s

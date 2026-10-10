@@ -1,0 +1,52 @@
+{
+ "task": "5.4 joint rerank over the fused candidate set (one real bounded call, read-only, guarded)",
+ "generated_at": "2026-10-07T11:35:00+0800",
+ "command_run": "uv run env-rag-final rerank-candidates --query-id fact-002 --fused-report reports/pg-retrieval/phase-3-fusion/fusion-runtime-latest.json --report-dir reports/pg-retrieval/phase-3-rerank",
+ "files_sha256": {
+  "src/env_rag_final/rerank.py": "f20779776d957049febe4849ed1fd6df2542b4d52cb0d2d3305ac02e578ee9d0",
+  "src/env_rag_final/cli.py": "f11b85561f06a3d0e313cb0e6ded4382bd0376661ee806643f160a3461c48786",
+  "tests/test_rerank.py": "cbb7c79dab36b8d9639727827af1b174961ae05c23ebb11c42210e807e22006d",
+  "reports/pg-retrieval/phase-3-rerank/rerank-runtime-latest.json": "cfd6889914d129a3aca06c6703bcf4caac672a9dee5799b5fb1e08b1b7e0fd3c",
+  "reports/pg-retrieval/phase-3-rerank/rerank-inputs.jsonl": "314392989f9b42bab8031d65a6b841138ce86b0092df5d8a996d1619f6b6690b",
+  "reports/pg-retrieval/phase-3-rerank/rerank-runs.jsonl": "0c333dc202c75b4c339ce86f541de147ac8168ef9dea2afb9686a943fd3c99ff",
+  "reports/pg-retrieval/phase-3-rerank/rerank-report.md": "5003d80cf9afc39457b7a3dca70ea3527cb487dd5a091a003176b82703fd8748",
+  "reports/pg-retrieval/phase-3-fusion/fusion-runtime-latest.json": "0bb845a6c270cb603746343ca3a8d4710fbb0754279aba45edb61b88e514281e"
+ },
+ "input_source": "5.3 ACCEPTED fused fact-002 usable set (10 candidates, full-text PG read-back independently verified by main agent in phase-3-fusion-review); replay only — no keyword/embedding/local round re-run",
+ "service_contract": {
+  "endpoint": "POST {RERANK_BINDING_HOST} (Cohere-style /v1/rerank; host carrying the full endpoint path is used verbatim, bare origins get /v1/rerank appended; url_path_used recorded per call)",
+  "model": "Qwen/Qwen3-Reranker-4B (from RERANK_MODEL, unchanged)",
+  "request": {"model": true, "query": true, "documents": "full read-back texts", "return_documents": false},
+  "response": {"id": true, "results": "[{index, relevance_score}] all indices exactly once", "meta.tokens": true},
+  "errors": {"401/403": "auth failure receipt", "429": "rate limit", "non-2xx/non-JSON/invalid-structure": "failure receipt + degraded fallback"}
+ },
+ "validation": "all input indices covered exactly once, no duplicates/out-of-range/missing; scores finite numbers only (bool/string/NaN/Inf rejected); ties keep input order; mapping back through the response index (never text equality); same text in two versions stays two sources",
+ "acceptance_matrix": {
+  "file": "tests/test_rerank.py",
+  "cases": 16,
+  "covers": [
+   "single joint call over the whole merged set; order actually changes; paths/SHA retained",
+   "same text two versions stay two sources via index mapping",
+   "401/timeout/HTTP500 real failure receipts + original-order degraded fallback, no fabricated scores",
+   "duplicate/missing/out-of-range index, bool/string/NaN/Inf score, missing results array, non-JSON all rejected without silent shrink",
+   "missing/stale/empty skip with zero calls; per-query call-receipt isolation; >40 input budget refusal"
+  ]
+ },
+ "real_run": {
+  "query_id": "fact-002",
+  "inputs": 10,
+  "call": {"status": "success", "http": 200, "elapsed_ms": 863, "documents_sent": 10, "chars_sent": 16441, "response_id": "01a113e0653d75c68ce43c8b7d5e9e9a", "results_len": 10},
+  "scores_range": [0.170743, 0.999318],
+  "identity": {"before_matches_frozen": true, "after_matches_frozen": true, "drift": []},
+  "honest_note": "the FIRST real attempt failed with HTTP 404 (double /v1/rerank path join); that failure receipt (degraded, no fabricated scores) is preserved in the earlier rerank-runtime-*.json in this directory; the URL join was fixed (host shape detection + url_path_used evidence) and the successful call above is the retry. Both receipts are auditable."
+ },
+ "guards": {
+  "pre_flight": "config guard + gold SHA + identity capture BEFORE any call (5.3 contract reused)",
+  "post_guard": "identity_after + drift comparison; unified failure terminal with per-query receipts",
+  "skips": "missing/stale/empty fused sets record skip reason with zero calls; rerank never upgrades an untrusted result"
+ },
+ "resource_evidence": {"answer_llm_calls": 0, "cache_writes": 0, "db_writes": 0, "initializations": 0, "rebuilds": 0, "llm_cache_rows": 16514},
+ "checks": {"ruff": "pass", "ruff_format": "pass", "openspec_strict": "valid", "diff_check": "pass", "credential_scan": "0 hits"},
+ "full_suite": 295,
+ "next": "stop at the 5.4 checkpoint for main-agent review; 5.5/5.6/Gate3 not entered"
+}

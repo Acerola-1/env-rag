@@ -1,0 +1,29 @@
+[
+  {
+    "id": "N1",
+    "path": "src/env_rag_final/local_adapter.py",
+    "start_line": 219,
+    "end_line": 247,
+    "severity": "high",
+    "category": "bug",
+    "content": "Neo4j session.run尚未await就记success，async TimeoutError无failure；chunk VECTOR判定又将entities查询成功作为支持，空chunk vectors仍标vector。按实际异步完成及选择阶段记账。"
+  },
+  {
+    "id": "N2",
+    "path": "src/env_rag_final/local_adapter.py",
+    "start_line": 1424,
+    "end_line": 1425,
+    "severity": "medium",
+    "category": "bug",
+    "content": "失败adapter的boundary records/group_records未进入终态，keyword服务已有failure凭证却只剩字符串。保存失败query身份和真实服务凭证。"
+  },
+  {
+    "id": "N3",
+    "path": "src/env_rag_final/local_adapter.py",
+    "start_line": 1120,
+    "end_line": 1126,
+    "severity": "high",
+    "category": "bug",
+    "content": "原生client close抛错使closed_handle为False，回退会flush的native finalize；部分图driver回收仅create_task未等待。原生handle绝不finalize，已获取driver必须回收完成或避免构造前获取。"
+  }
+]

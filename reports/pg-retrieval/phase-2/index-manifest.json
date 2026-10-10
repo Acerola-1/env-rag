@@ -1,0 +1,127 @@
+{
+ "command": "uv run env-rag-final search-build",
+ "code_sha_search_pkg": "85ef31c4e7ed921ab5fc41ed5fb41733ce75ca282d8e733b75de21e5101bf370",
+ "builds": [
+  {
+   "search_id": "2cb25528f9658ebb",
+   "catalog_snapshot_id": "4919b3938ad93747",
+   "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+   "tokenizer_version": "phase-2-v1-jieba-0.42.1",
+   "vocab_sha": "5be0aa5fc6aad2c4d8432f26f4ff9d9f82959c9ca0005f9abe9d9257c49e3832",
+   "index_recipe": "phase-2-v1-weighted-tsv",
+   "started_at": "2026-10-05 14:14:29.128678+00:00",
+   "finished_at": "2026-10-05 14:14:50.954796+00:00",
+   "status": "retired"
+  },
+  {
+   "search_id": "f32d711751e42be7",
+   "catalog_snapshot_id": "4919b3938ad93747",
+   "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+   "tokenizer_version": "phase-2-v2-jieba-0.42.1-cfs-index",
+   "vocab_sha": "5be0aa5fc6aad2c4d8432f26f4ff9d9f82959c9ca0005f9abe9d9257c49e3832",
+   "index_recipe": "phase-2-v1-weighted-tsv",
+   "started_at": "2026-10-05 14:15:43.057718+00:00",
+   "finished_at": "2026-10-05 14:16:08.089068+00:00",
+   "status": "retired"
+  },
+  {
+   "search_id": "676ae9989270c88e",
+   "catalog_snapshot_id": "4919b3938ad93747",
+   "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+   "tokenizer_version": "phase-2-v2-jieba-0.42.1-cfs-index",
+   "vocab_sha": "22896446a3ca0e6ac4d2043aaae8d046b54393fde865ee5696e181f0f76ee12a",
+   "index_recipe": "phase-2-v1-weighted-tsv",
+   "started_at": "2026-10-05 14:21:04.251587+00:00",
+   "finished_at": "2026-10-05 14:21:29.487298+00:00",
+   "status": "retired"
+  },
+  {
+   "search_id": "b3d06e581b552acd",
+   "catalog_snapshot_id": "4919b3938ad93747",
+   "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+   "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+   "vocab_sha": "22896446a3ca0e6ac4d2043aaae8d046b54393fde865ee5696e181f0f76ee12a",
+   "index_recipe": "phase-2-v1-weighted-tsv",
+   "started_at": "2026-10-05 14:22:34.419566+00:00",
+   "finished_at": "2026-10-05 14:22:59.579166+00:00",
+   "status": "retired"
+  },
+  {
+   "search_id": "097ba5acfa9a8622",
+   "catalog_snapshot_id": "4919b3938ad93747",
+   "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+   "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+   "vocab_sha": "ed5db5aafe5252378fd92cb8c38115ce12a859d559b92fb9937afe522d0243fe",
+   "index_recipe": "phase-2-v1-weighted-tsv",
+   "started_at": "2026-10-05 14:25:42.034216+00:00",
+   "finished_at": "2026-10-05 14:26:07.459947+00:00",
+   "status": "retired"
+  },
+  {
+   "search_id": "b1cd771ee0e2b55f",
+   "catalog_snapshot_id": "4919b3938ad93747",
+   "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+   "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+   "vocab_sha": "66edabd3b268b0fcbc6cf50c4a1ac0c066b4e7a0dc2041a3d9873e59d7f42003",
+   "index_recipe": "phase-2-v1-weighted-tsv",
+   "started_at": "2026-10-05 14:31:08.414702+00:00",
+   "finished_at": "2026-10-05 14:31:33.362323+00:00",
+   "status": "retired"
+  },
+  {
+   "search_id": "e3cb2a39dee53d9d",
+   "catalog_snapshot_id": "4919b3938ad93747",
+   "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+   "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+   "vocab_sha": "66edabd3b268b0fcbc6cf50c4a1ac0c066b4e7a0dc2041a3d9873e59d7f42003",
+   "index_recipe": "phase-2-v2-local-caption-identity-guard",
+   "started_at": "2026-10-05 15:48:03.039820+00:00",
+   "finished_at": "2026-10-05 15:48:26.781342+00:00",
+   "status": "active"
+  }
+ ],
+ "row_counts": {
+  "search_documents": 221,
+  "search_chunks": 5709
+ },
+ "indexes": [
+  {
+   "indexname": "search_chunks_pkey",
+   "indexdef": "CREATE UNIQUE INDEX search_chunks_pkey ON env_rag.search_chunks USING btree (workspace, doc_id, snapshot_id, chunk_id, search_id)"
+  },
+  {
+   "indexname": "idx_schunk_gin",
+   "indexdef": "CREATE INDEX idx_schunk_gin ON env_rag.search_chunks USING gin (tsv)"
+  },
+  {
+   "indexname": "idx_schunk_identity",
+   "indexdef": "CREATE INDEX idx_schunk_identity ON env_rag.search_chunks USING btree (workspace, search_id, doc_id, chunk_order)"
+  },
+  {
+   "indexname": "search_documents_pkey",
+   "indexdef": "CREATE UNIQUE INDEX search_documents_pkey ON env_rag.search_documents USING btree (workspace, doc_id, snapshot_id, search_id)"
+  },
+  {
+   "indexname": "idx_sdoc_gin",
+   "indexdef": "CREATE INDEX idx_sdoc_gin ON env_rag.search_documents USING gin (tsv)"
+  },
+  {
+   "indexname": "idx_sdoc_identity",
+   "indexdef": "CREATE INDEX idx_sdoc_identity ON env_rag.search_documents USING btree (workspace, search_id, doc_id)"
+  }
+ ],
+ "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+ "jieba_version": "0.42.1 (uv.lock)",
+ "weights": {
+  "A": "doc title/name/code",
+  "B": "heading+LOCAL caption (unit_chunk_links)",
+  "C": "chunk body"
+ },
+ "caption_locality": {
+  "doc-b45c510232ed4d2452b0f5b2a13434e4": {
+   "w": 12,
+   "t": 24
+  }
+ },
+ "note": "G2-4: captions attach only to chunks linked via audited unit_chunk_links; document-level caption signal stays in the A-weighted doc row"
+}

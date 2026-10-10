@@ -1,0 +1,57 @@
+{
+  "manifests": {
+    "phase-4-round-1/pilot-manifest.json": {
+      "count": 809,
+      "mismatches": []
+    },
+    "phase-4-round-1-assessment/pilot-manifest.json": {
+      "count": 9,
+      "mismatches": []
+    },
+    "phase-4-round-1-assessment-r2/assessment-manifest.json": {
+      "count": 4,
+      "mismatches": []
+    },
+    "phase-4-round-1-assessment-r3/assessment-manifest.json": {
+      "count": 4,
+      "mismatches": []
+    },
+    "phase-4-improvement-1/improvement-1-manifest.json": {
+      "count": 6,
+      "mismatches": []
+    },
+    "phase-4-improvement-1-review/review-manifest.json": {
+      "count": 12,
+      "mismatches": []
+    },
+    "phase-4-improvement-1-r2/improvement-1-r2-manifest.json": {
+      "count": 14,
+      "mismatches": []
+    }
+  },
+  "submitted_sha_checks": {
+    "src/env_rag_final/enumerate_/prose_enum.py": true,
+    "src/env_rag_final/search/expand.py": true,
+    "src/env_rag_final/answer.py": true,
+    "tests/test_phase4_improvement1_prose_integrity.py": true,
+    "reports/pg-retrieval/phase-4-improvement-1/baseline-shas.json": true,
+    "tests/test_phase4_improvement1r2_owning_replay.py": true,
+    "reports/pg-retrieval/phase-4-improvement-1-r2/generate_owning_evidence.py": true,
+    "reports/pg-retrieval/phase-4-improvement-1-r2/generate_replay_evidence_r2.py": true,
+    "reports/pg-retrieval/phase-4-improvement-1-r2/replay-evidence-r2.json": true,
+    "reports/pg-retrieval/phase-4-improvement-1-r2/owning-replay/owning-replay-evidence.json": true
+  },
+  "tests": {
+    "targeted": 32,
+    "engineering": 477,
+    "scoring_frozen": 35,
+    "new_matrix_passed": 1,
+    "new_matrix_failed": 2
+  },
+  "decision": "F1_F2_F4_passed_F3_caption_chain_not_accepted",
+  "requests": {
+    "network": 0,
+    "database": 0,
+    "models": 0
+  }
+}

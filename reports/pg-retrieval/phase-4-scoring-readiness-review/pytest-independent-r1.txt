@@ -1,0 +1,591 @@
+FFFFFFFFFFFFFFF..                                                        [100%]
+=================================== FAILURES ===================================
+____________ test_manifest_must_cover_consumed_artifacts[terminal] _____________
+
+ctx = (<module 'review_scorer' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readin.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_manifest_must_cover_consu0')
+omitted = 'terminal'
+
+    @pytest.mark.parametrize('omitted', ['terminal', 'answer'])
+    def test_manifest_must_cover_consumed_artifacts(ctx, tmp_path, omitted):
+        a, h = ctx
+        run = prose_run(h, tmp_path)
+        p = run / 'pilot-manifest.json'
+        data = json.loads(p.read_text())
+        tail = 'eval-runtime-latest.json' if omitted == 'terminal' else 'answer-runtime-latest.json'
+        data['files'] = {k: v for k, v in data['files'].items() if not k.endswith(tail)}
+        p.write_text(json.dumps(data))
+>       expect_rejection(a, h, tmp_path, run)
+
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = <module 'review_scorer' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/assess_two_rounds.py'>
+h = <module 'review_input_helpers' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>
+tmp = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_manifest_must_cover_consu0')
+run = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_manifest_must_cover_consu0/gen1')
+kwargs = {}
+
+    def expect_rejection(a, h, tmp, run, **kwargs):
+>       with pytest.raises((a.InputIntegrityError, SystemExit)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (InputIntegrityError, SystemExit)
+
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:40: Failed
+----------------------------- Captured stdout call -----------------------------
+rows: 123
+{"positive": {"FAIL": 92, "PASS": 1}, "counter": {"PENDING": 21, "FAIL": 9}}
+{
+ "no_answer_artifact": 92,
+ "pass_mechanical": 1,
+ "counter_no_answer_artifact": 18,
+ "behaviour_violation_or_incomplete": 3,
+ "set_violation": 3,
+ "pending_status_review": 3,
+ "budget_refused_at_pg_guard_expected": 3
+}
+inputs ok: True | manifest entries: 11
+ledger diffs: 0 | refusals: 0 | recorded total s: 0.0
+_____________ test_manifest_must_cover_consumed_artifacts[answer] ______________
+
+ctx = (<module 'review_scorer' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readin.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_manifest_must_cover_consu1')
+omitted = 'answer'
+
+    @pytest.mark.parametrize('omitted', ['terminal', 'answer'])
+    def test_manifest_must_cover_consumed_artifacts(ctx, tmp_path, omitted):
+        a, h = ctx
+        run = prose_run(h, tmp_path)
+        p = run / 'pilot-manifest.json'
+        data = json.loads(p.read_text())
+        tail = 'eval-runtime-latest.json' if omitted == 'terminal' else 'answer-runtime-latest.json'
+        data['files'] = {k: v for k, v in data['files'].items() if not k.endswith(tail)}
+        p.write_text(json.dumps(data))
+>       expect_rejection(a, h, tmp_path, run)
+
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:59: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = <module 'review_scorer' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/assess_two_rounds.py'>
+h = <module 'review_input_helpers' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>
+tmp = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_manifest_must_cover_consu1')
+run = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_manifest_must_cover_consu1/gen1')
+kwargs = {}
+
+    def expect_rejection(a, h, tmp, run, **kwargs):
+>       with pytest.raises((a.InputIntegrityError, SystemExit)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (InputIntegrityError, SystemExit)
+
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:40: Failed
+----------------------------- Captured stdout call -----------------------------
+rows: 123
+{"positive": {"FAIL": 92, "PASS": 1}, "counter": {"PENDING": 21, "FAIL": 9}}
+{
+ "no_answer_artifact": 92,
+ "pass_mechanical": 1,
+ "counter_no_answer_artifact": 18,
+ "behaviour_violation_or_incomplete": 3,
+ "set_violation": 3,
+ "pending_status_review": 3,
+ "budget_refused_at_pg_guard_expected": 3
+}
+inputs ok: True | manifest entries: 11
+ledger diffs: 0 | refusals: 0 | recorded total s: 0.0
+________________ test_post_identity_every_frozen_field[env_sha] ________________
+
+ctx = (<module 'review_scorer' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readin.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_post_identity_every_froze0')
+field = 'env_sha'
+
+    @pytest.mark.parametrize('field', ['env_sha', 'counts'])
+    def test_post_identity_every_frozen_field(ctx, tmp_path, field):
+        a, h = ctx
+        run = h.build_run(tmp_path)
+        p = run / 'eval-runtime-latest.json'
+        d = json.loads(p.read_text())
+        if field == 'env_sha':
+            d['identity_after'][field] = '0' * 64
+        else:
+            d['identity_after'][field]['lightrag_doc_full'] += 1
+        p.write_text(json.dumps(d))
+        h.rewrite_manifest(run)
+>       expect_rejection(a, h, tmp_path, run)
+
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = <module 'review_scorer' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/assess_two_rounds.py'>
+h = <module 'review_input_helpers' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>
+tmp = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_post_identity_every_froze0')
+run = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_post_identity_every_froze0/gen1')
+kwargs = {}
+
+    def expect_rejection(a, h, tmp, run, **kwargs):
+>       with pytest.raises((a.InputIntegrityError, SystemExit)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (InputIntegrityError, SystemExit)
+
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:40: Failed
+----------------------------- Captured stdout call -----------------------------
+rows: 123
+{"positive": {"FAIL": 93}, "counter": {"PENDING": 21, "FAIL": 9}}
+{
+ "no_answer_artifact": 93,
+ "counter_no_answer_artifact": 18,
+ "behaviour_violation_or_incomplete": 3,
+ "set_violation": 3,
+ "pending_status_review": 3,
+ "budget_refused_at_pg_guard_expected": 3
+}
+inputs ok: True | manifest entries: 11
+ledger diffs: 0 | refusals: 0 | recorded total s: 0.0
+________________ test_post_identity_every_frozen_field[counts] _________________
+
+ctx = (<module 'review_scorer' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readin.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_post_identity_every_froze1')
+field = 'counts'
+
+    @pytest.mark.parametrize('field', ['env_sha', 'counts'])
+    def test_post_identity_every_frozen_field(ctx, tmp_path, field):
+        a, h = ctx
+        run = h.build_run(tmp_path)
+        p = run / 'eval-runtime-latest.json'
+        d = json.loads(p.read_text())
+        if field == 'env_sha':
+            d['identity_after'][field] = '0' * 64
+        else:
+            d['identity_after'][field]['lightrag_doc_full'] += 1
+        p.write_text(json.dumps(d))
+        h.rewrite_manifest(run)
+>       expect_rejection(a, h, tmp_path, run)
+
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = <module 'review_scorer' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/assess_two_rounds.py'>
+h = <module 'review_input_helpers' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>
+tmp = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_post_identity_every_froze1')
+run = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_post_identity_every_froze1/gen1')
+kwargs = {}
+
+    def expect_rejection(a, h, tmp, run, **kwargs):
+>       with pytest.raises((a.InputIntegrityError, SystemExit)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (InputIntegrityError, SystemExit)
+
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:40: Failed
+----------------------------- Captured stdout call -----------------------------
+rows: 123
+{"positive": {"FAIL": 93}, "counter": {"PENDING": 21, "FAIL": 9}}
+{
+ "no_answer_artifact": 93,
+ "counter_no_answer_artifact": 18,
+ "behaviour_violation_or_incomplete": 3,
+ "set_violation": 3,
+ "pending_status_review": 3,
+ "budget_refused_at_pg_guard_expected": 3
+}
+inputs ok: True | manifest entries: 11
+ledger diffs: 0 | refusals: 0 | recorded total s: 0.0
+_________________ test_denominator_requires_unique_gold_matrix _________________
+
+ctx = (<module 'review_scorer' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readin.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_denominator_requires_uniq0')
+
+    def test_denominator_requires_unique_gold_matrix(ctx, tmp_path):
+        a, h = ctx
+        run = h.build_run(tmp_path)
+        p = run / 'eval-runtime-latest.json'
+        d = json.loads(p.read_text())
+        d['results'][1] = copy.deepcopy(d['results'][0])  # still 93+30, missing one key
+        p.write_text(json.dumps(d))
+        h.rewrite_manifest(run)
+>       expect_rejection(a, h, tmp_path, run)
+
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:85: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = <module 'review_scorer' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/assess_two_rounds.py'>
+h = <module 'review_input_helpers' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>
+tmp = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_denominator_requires_uniq0')
+run = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_denominator_requires_uniq0/gen1')
+kwargs = {}
+
+    def expect_rejection(a, h, tmp, run, **kwargs):
+>       with pytest.raises((a.InputIntegrityError, SystemExit)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (InputIntegrityError, SystemExit)
+
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:40: Failed
+----------------------------- Captured stdout call -----------------------------
+rows: 123
+{"positive": {"FAIL": 93}, "counter": {"PENDING": 21, "FAIL": 9}}
+{
+ "no_answer_artifact": 93,
+ "counter_no_answer_artifact": 18,
+ "behaviour_violation_or_incomplete": 3,
+ "set_violation": 3,
+ "pending_status_review": 3,
+ "budget_refused_at_pg_guard_expected": 3
+}
+inputs ok: True | manifest entries: 11
+ledger diffs: 0 | refusals: 0 | recorded total s: 0.0
+___________________ test_required_lineage_cannot_be_deleted ____________________
+
+ctx = (<module 'review_scorer' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readin.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_required_lineage_cannot_b0')
+
+    def test_required_lineage_cannot_be_deleted(ctx, tmp_path):
+        a, h = ctx
+        run = h.build_run(tmp_path)
+        d = json.loads(h.ANCHOR.read_text())
+        d['code_anchors'] = {k: v for k, v in d['code_anchors'].items() if k in ('answer.py', 'fusion.py')}
+        d['evaluation_code_anchors'] = {}
+        p = tmp_path / 'incomplete-anchor.json'
+        p.write_text(json.dumps(d))
+>       expect_rejection(a, h, tmp_path, run, anchor=p)
+
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = <module 'review_scorer' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/assess_two_rounds.py'>
+h = <module 'review_input_helpers' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>
+tmp = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_required_lineage_cannot_b0')
+run = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_required_lineage_cannot_b0/gen1')
+kwargs = {'anchor': PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_required_lineage_cannot_b0/incomplete-anchor.json')}
+
+    def expect_rejection(a, h, tmp, run, **kwargs):
+>       with pytest.raises((a.InputIntegrityError, SystemExit)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (InputIntegrityError, SystemExit)
+
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:40: Failed
+----------------------------- Captured stdout call -----------------------------
+rows: 123
+{"positive": {"FAIL": 93}, "counter": {"PENDING": 21, "FAIL": 9}}
+{
+ "no_answer_artifact": 93,
+ "counter_no_answer_artifact": 18,
+ "behaviour_violation_or_incomplete": 3,
+ "set_violation": 3,
+ "pending_status_review": 3,
+ "budget_refused_at_pg_guard_expected": 3
+}
+inputs ok: True | manifest entries: 11
+ledger diffs: 0 | refusals: 0 | recorded total s: 0.0
+___________________ test_answer_file_must_bind_this_question ___________________
+
+ctx = (<module 'review_scorer' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readin.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_answer_file_must_bind_thi0')
+
+    def test_answer_file_must_bind_this_question(ctx, tmp_path):
+        a, h = ctx
+        run = prose_run(h, tmp_path)
+        p = run / 'legs/r1/pg/prose-enum-002/answer/answer-runtime-latest.json'
+        d = json.loads(p.read_text())
+        d['results'][0]['query_id'] = 'prose-enum-001'
+        p.write_text(json.dumps(d))
+        h.rewrite_manifest(run)
+>       expect_rejection(a, h, tmp_path, run)
+
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:107: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = <module 'review_scorer' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/assess_two_rounds.py'>
+h = <module 'review_input_helpers' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>
+tmp = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_answer_file_must_bind_thi0')
+run = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_answer_file_must_bind_thi0/gen1')
+kwargs = {}
+
+    def expect_rejection(a, h, tmp, run, **kwargs):
+>       with pytest.raises((a.InputIntegrityError, SystemExit)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (InputIntegrityError, SystemExit)
+
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:40: Failed
+----------------------------- Captured stdout call -----------------------------
+rows: 123
+{"positive": {"FAIL": 92, "PASS": 1}, "counter": {"PENDING": 21, "FAIL": 9}}
+{
+ "no_answer_artifact": 92,
+ "pass_mechanical": 1,
+ "counter_no_answer_artifact": 18,
+ "behaviour_violation_or_incomplete": 3,
+ "set_violation": 3,
+ "pending_status_review": 3,
+ "budget_refused_at_pg_guard_expected": 3
+}
+inputs ok: True | manifest entries: 12
+ledger diffs: 0 | refusals: 0 | recorded total s: 0.0
+______ test_manual_pass_cannot_rescue_synthesis_contract_failure[partial] ______
+
+ctx = (<module 'review_scorer' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readin.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_manual_pass_cannot_rescue0')
+mutation = 'partial'
+
+    @pytest.mark.parametrize('mutation', ['partial', 'invalid-citation'])
+    def test_manual_pass_cannot_rescue_synthesis_contract_failure(ctx, tmp_path, mutation):
+        a, h = ctx
+        run = h.build_run(tmp_path, legs=[('pg', 'syn-002', h.ROUND1 / 'legs/r1/pg/syn-002/answer/answer-runtime-latest.json')])
+        p = run / 'legs/r1/pg/syn-002/answer/answer-runtime-latest.json'
+        d = json.loads(p.read_text())
+        r = d['results'][0]
+        assert r['answer']['items']
+        if mutation == 'partial':
+            r['coverage_status'] = 'partial'
+        else:
+            r['coverage_status'] = 'complete'
+            r['answer']['items'][0]['citation']['quote'] = 'fabricated impossible quote'
+        p.write_text(json.dumps(d))
+        h.rewrite_manifest(run)
+        rec = h.record(run, 1, 'pg', 'syn-002', 'PASS', 'fixture cannot override source failure', checked=['semantic_answer'], response='sha')
+        adj = invoke(a, h, tmp_path, run, records=h.write_records(tmp_path, [rec]))
+        row = next(x for x in adj['rows'] if x['qid'] == 'syn-002' and x['path'] == 'pg')
+>       assert row['final_status'] == 'FAIL', row
+E       AssertionError: {'qid': 'syn-002', 'path': 'pg', 'category': 'synthesis', 'is_counter': False, ...}
+E       assert 'PASS' == 'FAIL'
+E         
+E         - FAIL
+E         + PASS
+
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:128: AssertionError
+----------------------------- Captured stdout call -----------------------------
+rows: 123
+{"positive": {"FAIL": 92, "PASS": 1}, "counter": {"PENDING": 21, "FAIL": 9}}
+{
+ "no_answer_artifact": 92,
+ "synthesis_pending_human_review": 1,
+ "counter_no_answer_artifact": 18,
+ "behaviour_violation_or_incomplete": 3,
+ "set_violation": 3,
+ "pending_status_review": 3,
+ "budget_refused_at_pg_guard_expected": 3
+}
+inputs ok: True | manifest entries: 12
+ledger diffs: 0 | refusals: 0 | recorded total s: 0.0
+_ test_manual_pass_cannot_rescue_synthesis_contract_failure[invalid-citation] __
+
+ctx = (<module 'review_scorer' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readin.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_manual_pass_cannot_rescue1')
+mutation = 'invalid-citation'
+
+    @pytest.mark.parametrize('mutation', ['partial', 'invalid-citation'])
+    def test_manual_pass_cannot_rescue_synthesis_contract_failure(ctx, tmp_path, mutation):
+        a, h = ctx
+        run = h.build_run(tmp_path, legs=[('pg', 'syn-002', h.ROUND1 / 'legs/r1/pg/syn-002/answer/answer-runtime-latest.json')])
+        p = run / 'legs/r1/pg/syn-002/answer/answer-runtime-latest.json'
+        d = json.loads(p.read_text())
+        r = d['results'][0]
+        assert r['answer']['items']
+        if mutation == 'partial':
+            r['coverage_status'] = 'partial'
+        else:
+            r['coverage_status'] = 'complete'
+            r['answer']['items'][0]['citation']['quote'] = 'fabricated impossible quote'
+        p.write_text(json.dumps(d))
+        h.rewrite_manifest(run)
+        rec = h.record(run, 1, 'pg', 'syn-002', 'PASS', 'fixture cannot override source failure', checked=['semantic_answer'], response='sha')
+        adj = invoke(a, h, tmp_path, run, records=h.write_records(tmp_path, [rec]))
+        row = next(x for x in adj['rows'] if x['qid'] == 'syn-002' and x['path'] == 'pg')
+>       assert row['final_status'] == 'FAIL', row
+E       AssertionError: {'qid': 'syn-002', 'path': 'pg', 'category': 'synthesis', 'is_counter': False, ...}
+E       assert 'PASS' == 'FAIL'
+E         
+E         - FAIL
+E         + PASS
+
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:128: AssertionError
+----------------------------- Captured stdout call -----------------------------
+rows: 123
+{"positive": {"FAIL": 92, "PASS": 1}, "counter": {"PENDING": 21, "FAIL": 9}}
+{
+ "no_answer_artifact": 92,
+ "synthesis_pending_human_review": 1,
+ "counter_no_answer_artifact": 18,
+ "behaviour_violation_or_incomplete": 3,
+ "set_violation": 3,
+ "pending_status_review": 3,
+ "budget_refused_at_pg_guard_expected": 3
+}
+inputs ok: True | manifest entries: 12
+ledger diffs: 0 | refusals: 0 | recorded total s: 0.0
+_____________ test_misbound_round_records_refused_with_diagnostic ______________
+
+ctx = (<module 'review_scorer' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readin.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_misbound_round_records_re0')
+
+    def test_misbound_round_records_refused_with_diagnostic(ctx, tmp_path):
+        a, h = ctx
+        run = h.build_run(tmp_path, legs=[('pg', 'syn-002', h.ROUND1 / 'legs/r1/pg/syn-002/answer/answer-runtime-latest.json')])
+        rec = h.record(run, 1, 'pg', 'syn-002', response='sha')
+        rec['round'] = 2
+>       expect_rejection(a, h, tmp_path, run, records=h.write_records(tmp_path, [rec]))
+
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:136: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = <module 'review_scorer' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/assess_two_rounds.py'>
+h = <module 'review_input_helpers' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>
+tmp = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_misbound_round_records_re0')
+run = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_misbound_round_records_re0/gen1')
+kwargs = {'records': PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_misbound_round_records_re0/records.json')}
+
+    def expect_rejection(a, h, tmp, run, **kwargs):
+>       with pytest.raises((a.InputIntegrityError, SystemExit)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (InputIntegrityError, SystemExit)
+
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:40: Failed
+----------------------------- Captured stdout call -----------------------------
+rows: 123
+{"positive": {"FAIL": 92, "PENDING": 1}, "counter": {"PENDING": 21, "FAIL": 9}}
+{
+ "no_answer_artifact": 92,
+ "synthesis_pending_human_review": 1,
+ "counter_no_answer_artifact": 18,
+ "behaviour_violation_or_incomplete": 3,
+ "set_violation": 3,
+ "pending_status_review": 3,
+ "budget_refused_at_pg_guard_expected": 3
+}
+inputs ok: True | manifest entries: 12
+ledger diffs: 0 | refusals: 0 | recorded total s: 0.0
+____________________ test_record_sha_failure_has_diagnostic ____________________
+
+ctx = (<module 'review_scorer' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readin.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_record_sha_failure_has_di0')
+
+    def test_record_sha_failure_has_diagnostic(ctx, tmp_path):
+        a, h = ctx
+        run = h.build_run(tmp_path, legs=[('pg', 'syn-002', h.ROUND1 / 'legs/r1/pg/syn-002/answer/answer-runtime-latest.json')])
+        rec = h.record(run, 1, 'pg', 'syn-002', response='sha')
+        rec['answer_runtime_sha256'] = '0' * 64
+>       expect_rejection(a, h, tmp_path, run, records=h.write_records(tmp_path, [rec]))
+
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:144: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+a = <module 'review_scorer' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/assess_two_rounds.py'>
+h = <module 'review_input_helpers' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>
+tmp = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_record_sha_failure_has_di0')
+run = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_record_sha_failure_has_di0/gen1')
+kwargs = {'records': PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_record_sha_failure_has_di0/records.json')}
+
+    def expect_rejection(a, h, tmp, run, **kwargs):
+        with pytest.raises((a.InputIntegrityError, SystemExit)):
+            invoke(a, h, tmp, run, **kwargs)
+        assert not (tmp / 'new-adjudication.json').exists()
+>       assert (tmp / 'input-rejection.json').exists(), 'refusal must publish a diagnostic'
+E       AssertionError: refusal must publish a diagnostic
+E       assert False
+E        +  where False = exists()
+E        +    where exists = (PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_record_sha_failure_has_di0') / 'input-rejection.json').exists
+
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:43: AssertionError
+___________________ test_answer_parse_failure_has_diagnostic ___________________
+
+ctx = (<module 'review_scorer' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readin.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_answer_parse_failure_has_0')
+
+    def test_answer_parse_failure_has_diagnostic(ctx, tmp_path):
+        a, h = ctx
+        run = prose_run(h, tmp_path)
+        p = run / 'legs/r1/pg/prose-enum-002/answer/answer-runtime-latest.json'
+        p.write_text('{invalid json')
+        h.rewrite_manifest(run)
+>       expect_rejection(a, h, tmp_path, run)
+
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:153: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:41: in expect_rejection
+    invoke(a, h, tmp, run, **kwargs)
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:35: in invoke
+    a.main(argv)
+reports/pg-retrieval/phase-4-scoring-readiness/assess_two_rounds.py:2123: in main
+    items, meta = answer_items(r["path"], qid)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+reports/pg-retrieval/phase-4-scoring-readiness/assess_two_rounds.py:392: in answer_items
+    d = json.loads(p.read_text(encoding="utf-8"))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../../Library/Application Support/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../../Library/Application Support/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/json/decoder.py:338: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0x10331f830>, s = '{invalid json'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+>           obj, end = self.scan_once(s, idx)
+                       ^^^^^^^^^^^^^^^^^^^^^^
+E           json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+
+../../../../Library/Application Support/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/json/decoder.py:354: JSONDecodeError
+________________ test_wrong_chunk_same_document_cannot_hit_unit ________________
+
+ctx = (<module 'review_scorer' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readin.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_wrong_chunk_same_document0')
+
+    def test_wrong_chunk_same_document_cannot_hit_unit(ctx, tmp_path):
+        a, h = ctx
+        row = typed_setup(a, h, tmp_path, [target()], [ent()], [{'workspace': 'default', 'doc_id': 'd', 'chunk_id': 'c-other'}])
+>       assert row['typed_evidence_recall'] in (None, 0.0) and not row['covered']
+E       assert (1.0 in (None, 0.0))
+
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:180: AssertionError
+_____________ test_unmapped_units_do_not_shrink_metric_denominator _____________
+
+ctx = (<module 'review_scorer' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readin.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_unmapped_units_do_not_shr0')
+
+    def test_unmapped_units_do_not_shrink_metric_denominator(ctx, tmp_path):
+        a, h = ctx
+        row = typed_setup(a, h, tmp_path, [target(), target(uid='u-missing')], [ent()], [{'workspace': 'default', 'doc_id': 'd', 'chunk_id': 'c-target'}])
+        assert row['pending_unmapped'] == ['u-missing']
+>       assert row['typed_evidence_recall'] is None, 'unresolved unit cannot become a perfect published metric'
+E       AssertionError: unresolved unit cannot become a perfect published metric
+E       assert 1.0 is None
+
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:187: AssertionError
+____________ test_mapping_uses_document_and_workspace_composite_key ____________
+
+ctx = (<module 'review_scorer' from '/Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readin.../Users/acerola/Dev/Python/RAG/env-rag-final/reports/pg-retrieval/phase-4-scoring-readiness/test_scoring_readiness.py'>)
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-865/test_mapping_uses_document_and0')
+
+    def test_mapping_uses_document_and_workspace_composite_key(ctx, tmp_path):
+        a, h = ctx
+        row = typed_setup(a, h, tmp_path, [target('d1')], [ent('d1'), ent('d2', chunks=['c2'])], [{'workspace': 'default', 'doc_id': 'd2', 'chunk_id': 'c2'}])
+>       assert row['typed_evidence_recall'] in (None, 0.0) and not row['covered']
+E       assert (1.0 in (None, 0.0))
+
+reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py:193: AssertionError
+=========================== short test summary info ============================
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py::test_manifest_must_cover_consumed_artifacts[terminal]
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py::test_manifest_must_cover_consumed_artifacts[answer]
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py::test_post_identity_every_frozen_field[env_sha]
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py::test_post_identity_every_frozen_field[counts]
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py::test_denominator_requires_unique_gold_matrix
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py::test_required_lineage_cannot_be_deleted
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py::test_answer_file_must_bind_this_question
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py::test_manual_pass_cannot_rescue_synthesis_contract_failure[partial]
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py::test_manual_pass_cannot_rescue_synthesis_contract_failure[invalid-citation]
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py::test_misbound_round_records_refused_with_diagnostic
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py::test_record_sha_failure_has_diagnostic
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py::test_answer_parse_failure_has_diagnostic
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py::test_wrong_chunk_same_document_cannot_hit_unit
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py::test_unmapped_units_do_not_shrink_metric_denominator
+FAILED reports/pg-retrieval/phase-4-scoring-readiness-review/test_scoring_review_r1.py::test_mapping_uses_document_and_workspace_composite_key
+15 failed, 2 passed in 3.87s

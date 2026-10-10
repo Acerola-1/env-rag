@@ -1,0 +1,58 @@
+[
+  {
+    "path": "src/env_rag_final/enumerate_/prose_enum.py",
+    "start_line": 130,
+    "end_line": 149,
+    "severity": "high",
+    "category": "bug",
+    "content": "E1: Whole linked chunks are treated as unit text; locator/requires_span are unused, empty content still increments processed and returns complete. Enforce bounded source-unit reads and span/budget protection through the prose orchestrator."
+  },
+  {
+    "path": "src/env_rag_final/enumerate_/tables.py",
+    "start_line": 141,
+    "end_line": 150,
+    "severity": "high",
+    "category": "bug",
+    "content": "E2: A numbered continuation searches only by table number, merging chapter 7 Table 1 continuation into chapter 4 Table 1 as confirmed. Bind all grouping passes to source chapter/scope; same-number multiple targets require disambiguation."
+  },
+  {
+    "path": "src/env_rag_final/enumerate_/tables.py",
+    "start_line": 405,
+    "end_line": 416,
+    "severity": "high",
+    "category": "bug",
+    "content": "E3: Every leading row with a nonnumeric first cell becomes header. A valid pH/total-mercury table returns no items yet complete via enumerate_table. Detect data without requiring sequence numbers and reject unreadable fragments."
+  },
+  {
+    "path": "src/env_rag_final/enumerate_/table_enum.py",
+    "start_line": 157,
+    "end_line": 172,
+    "severity": "high",
+    "category": "bug",
+    "content": "E4: fragment_index is the global row index, so the 13-row two-fragment GB8978 output points to nonexistent fragments 2-12. Preserve actual physical fragment and row provenance through grid parsing; verify each citation by independently reading its source."
+  },
+  {
+    "path": "src/env_rag_final/enumerate_/doc_enum.py",
+    "start_line": 170,
+    "end_line": 183,
+    "severity": "high",
+    "category": "bug",
+    "content": "E5: There is no final active/source check; the single-page path performs only one active lookup and can return complete after replacement. source_snapshot_id is incorrectly set to the catalog snapshot. Bind workspace and separate source fingerprint, verify the full read window, and validate every return."
+  },
+  {
+    "path": "src/env_rag_final/enumerate_/contract.py",
+    "start_line": 67,
+    "end_line": 71,
+    "severity": "high",
+    "category": "bug",
+    "content": "E6: Missing citation_verified is accepted as complete because only literal False is rejected; require explicit True and a valid citation identity/locator. Model validation also marks missing quotes verified."
+  },
+  {
+    "path": "src/env_rag_final/cli.py",
+    "start_line": 87,
+    "end_line": 93,
+    "severity": "medium",
+    "category": "other",
+    "content": "E7: No enumeration command or submitted run generator is shipped, and prose helpers have no supported orchestration path that propagates span/model failures into coverage. Deliver replayable three-kind entry points plus the requested real small-range paragraph-item extraction."
+  }
+]

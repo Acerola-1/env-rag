@@ -1,0 +1,31 @@
+{
+  "submitted_ledger_entries": 54,
+  "submitted_ledger_all_match": true,
+  "previous_accepted_code_and_frozen_anchor_checks": {
+    "reports/pg-retrieval/phase-3/syn004-source-citations.json": true,
+    "reports/pg-retrieval/phase-3/syn-prep-syn004.json": true,
+    "src/env_rag_final/answer.py": true
+  },
+  "request_messages_match_preparation": true,
+  "context_sha256": "b0487919fa1d1deff53db927300d1f2123f259f054e83608690aae83a04670a4",
+  "system_prompt_sha256": "626fda413ae3be3c7531ee04e2f235ee80da72ac6fade45848705a194dc31dda",
+  "user_content_chars": 1934,
+  "guard_before_after_equal": true,
+  "guard_frozen_match": true,
+  "source_reverification": {
+    "items_checked": 8,
+    "problems": []
+  },
+  "rerank_for_syn004": "absent (explicit)",
+  "answer_model_calls": 1,
+  "http_error": "http_503",
+  "latency_ms": 73,
+  "coverage": "partial",
+  "generated_answer_items": 0,
+  "runtime_copies_have_same_sha": true,
+  "reviewer_new_db_or_service_calls": 0,
+  "new_tests_run": 0,
+  "unchanged_code_previous_focused_tests": 64,
+  "runtime_sha256": "53c0c2437f914b7e881accda9d61031084149a701a915b8027792392ea956373",
+  "submitted_ledger_sha256": "541a83852d2853bddb7e5f54d61fa044b1f2db4297bc4ca08fb48d348b410370"
+}

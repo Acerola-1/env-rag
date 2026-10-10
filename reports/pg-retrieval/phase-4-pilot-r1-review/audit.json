@@ -1,0 +1,168 @@
+{
+  "manifest_checked": 31,
+  "manifest_mismatches": [],
+  "identity_fields_unchanged": {
+    "counts": true,
+    "source_fingerprint": true,
+    "catalog_active": true,
+    "search_active": true,
+    "gold_sha": true,
+    "env_sha": true
+  },
+  "real_service_statuses": {
+    "llm/success": 3,
+    "embedding/success": 8,
+    "qdrant/success": 8,
+    "neo4j/success": 15,
+    "pg/success": 8
+  },
+  "local_candidate_content_and_identity_checks": 30,
+  "reserved_total": {
+    "pg": 216,
+    "llm": 3,
+    "embedding": 8,
+    "qdrant": 8,
+    "neo4j": 15,
+    "answer_llm": 1
+  },
+  "issued_total": {
+    "pg": 216,
+    "llm": 3,
+    "embedding": 8,
+    "qdrant": 8,
+    "neo4j": 15
+  },
+  "refusal_count": 15,
+  "legs": [
+    {
+      "where": "r1/pg/fact-002",
+      "reserved": {
+        "pg": 24
+      },
+      "issued": {
+        "pg": 24
+      },
+      "budget_failure_stage": "swallowed-refusal",
+      "answer_record_present": false
+    },
+    {
+      "where": "r1/local/fact-002",
+      "reserved": {
+        "llm": 1,
+        "embedding": 3,
+        "qdrant": 3,
+        "neo4j": 5,
+        "pg": 24
+      },
+      "issued": {
+        "llm": 1,
+        "embedding": 3,
+        "qdrant": 3,
+        "neo4j": 5,
+        "pg": 24
+      },
+      "budget_failure_stage": "swallowed-refusal",
+      "answer_record_present": false
+    },
+    {
+      "where": "r1/fusion/fact-002",
+      "reserved": {
+        "pg": 24
+      },
+      "issued": {
+        "pg": 24
+      },
+      "budget_failure_stage": "swallowed-refusal",
+      "answer_record_present": false
+    },
+    {
+      "where": "r1/pg/prose-enum-001",
+      "reserved": {
+        "pg": 24
+      },
+      "issued": {
+        "pg": 24
+      },
+      "budget_failure_stage": "swallowed-refusal",
+      "answer_record_present": false
+    },
+    {
+      "where": "r1/local/prose-enum-001",
+      "reserved": {
+        "llm": 1,
+        "embedding": 3,
+        "qdrant": 3,
+        "neo4j": 5,
+        "pg": 24
+      },
+      "issued": {
+        "llm": 1,
+        "embedding": 3,
+        "qdrant": 3,
+        "neo4j": 5,
+        "pg": 24
+      },
+      "budget_failure_stage": "swallowed-refusal",
+      "answer_record_present": false
+    },
+    {
+      "where": "r1/fusion/prose-enum-001",
+      "reserved": {
+        "pg": 24
+      },
+      "issued": {
+        "pg": 24
+      },
+      "budget_failure_stage": "swallowed-refusal",
+      "answer_record_present": false
+    },
+    {
+      "where": "r1/pg/syn-004",
+      "reserved": {
+        "pg": 24
+      },
+      "issued": {
+        "pg": 24
+      },
+      "budget_failure_stage": "swallowed-refusal",
+      "answer_record_present": false
+    },
+    {
+      "where": "r1/local/syn-004",
+      "reserved": {
+        "llm": 1,
+        "embedding": 2,
+        "qdrant": 2,
+        "neo4j": 5,
+        "pg": 24,
+        "answer_llm": 1
+      },
+      "issued": {
+        "llm": 1,
+        "embedding": 2,
+        "qdrant": 2,
+        "neo4j": 5,
+        "pg": 24
+      },
+      "budget_failure_stage": "swallowed-refusal",
+      "answer_record_present": false
+    },
+    {
+      "where": "r1/fusion/syn-004",
+      "reserved": {
+        "pg": 24
+      },
+      "issued": {
+        "pg": 24
+      },
+      "budget_failure_stage": "swallowed-refusal",
+      "answer_record_present": false
+    }
+  ],
+  "engineering_safeguards_accepted": true,
+  "end_to_end_pilot_success": false,
+  "synthesis_semantics_tested": false,
+  "root_cause": "PG cap 24 counts cumulative discovery+read-back+answer on one leg; production work has not been fully measured; static bound wording x2 does not grant a second envelope",
+  "reviewer_new_real_requests": 0,
+  "production_writes": 0
+}

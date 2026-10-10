@@ -1,0 +1,28 @@
+{
+ "task": "5.4 joint rerank (rev 4, D1/D2 owning-entry wiring: verified active snapshot for enrichment + published canonical-repair evidence)",
+ "generated_at": "2026-10-07T14:10:00+0800",
+ "history": "phase-3-rerank/ (rev1), phase-3-rerank-r2/ (rev2 accepted 997ms HTTP), phase-3-rerank-r3/ (rev3 derived metadata) retained unchanged; review phase-3-rerank-review-r3/review.md (2 failed)",
+ "files_sha256": {
+  "src/env_rag_final/rerank.py": "e2a8e089dd69cc02791a3c175bfadd27dd4fded80b249a32786b6a4d099cce08",
+  "src/env_rag_final/cli.py": "9b4fee387dd16136f3590a713b0cbe7d979c5e87fcf44ccdce6b0cd1c073dc6a",
+  "tests/test_rerank.py": "7edeaa62a72f330b1baa2e6f6294ed5c8259eb38ab18d6b28e5d4a2f2a463586",
+  "tests/test_rerank_review_r1.py": "303906859bf4c8199c11cac2c2c698250cca85d70b5380483bd34fc96908c34e",
+  "tests/test_rerank_review_r2.py": "6673e0ef9579a373da9c8c0481f8e92722e6a1c8b14f487d56772a62f0d45fac",
+  "tests/test_rerank_review_r3.py": "9a337de82a2d4d5822fbc8821ba4d45252cb7d45b57790d65b1301573c1790d8",
+  "reports/pg-retrieval/phase-3-rerank-r4/rerank-report.md": "5b1809f4db8a1def128a0bd7464b780c2fd000a927224abb7490174ae110228e",
+  "reports/pg-retrieval/gate-2/review-r5/gold-approved.json": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e"
+ },
+ "fixes": {
+  "D1": "enrichment snapshot now taken from the pre-guard VERIFIED active catalog snapshot (report.identity_before.catalog_active.snapshot_id); all snapshots the replay declares — the real 5.3 nested pg.catalog_snapshot_id plus any root field — must agree with it, conflicts refused before service contact; a known active value is never silently skipped; the real accepted JSON shape runs through the production branch with fake HTTP/PG (frozen r3 test passes); unit-kind join unchanged",
+  "D2": "doc/SHA/LENGTH always canonicalized from the production row (wrong length alone now repaired too); repair_fields/replayed_* / canonicalization_basis survive _rerank_inputs by KEY presence (a repaired None original is evidence) and reach inputs and the failure terminal via the live partial slot reset per query; both success and failure terminals traceable"
+ },
+ "verification": {
+  "frozen_r3": "2/2",
+  "r1": "14/14", "r2": "6/6", "matrix": "18/18 (adds declared-snapshot-conflict refusal and empty-set zero-catalog-read; SHA-assertion formatting fixed per handoff)",
+  "full_suite": 319,
+  "frozen_files_untouched": true
+ },
+ "no_real_calls": "0 new HTTP/model/embedding calls, no new read-only PG verification this round; the 997ms accepted response and the 12 table/29 block type evidence carry forward unchanged",
+ "checks": {"ruff": "pass", "ruff_format": "pass (rerank.py + tests/test_rerank.py included)", "openspec_strict": "valid", "diff_check": "pass", "credential_scan": "0 hits"},
+ "next": "stop at the 5.4 checkpoint for main-agent review; 5.5/5.6/Gate3 not entered"
+}

@@ -1,0 +1,324 @@
+FFFFFFFFF                                                                [100%]
+=================================== FAILURES ===================================
+_______ test_definition_expansion_does_not_count_chapter_heading_as_item _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b7b0bf0>
+
+    def test_definition_expansion_does_not_count_chapter_heading_as_item(monkeypatch):
+        import env_rag_final.enumerate_.prose_enum as prose
+    
+        patch_search_current(monkeypatch)
+        text = "## 3 术语和定义\n3.1 医疗机构\n指医院。\n3.2 医疗机构污水\n指诊疗污水。\n3.3 污泥\n指污泥。\n3.4 废气\n指有害气体。"
+        unit = UnitText("u", text, ["c"], {"blockid": "u"}, 0, len(text), False, "parsed_block")
+    
+        async def read(*args, **kwargs):
+            return [unit], EnumResult(
+                "q",
+                "prose",
+                "default",
+                "catalog",
+                "source",
+                members_total=1,
+                members_processed=1,
+                coverage_status="ambiguous",
+                read_status="complete",
+            )
+    
+        monkeypatch.setattr(prose, "read_prose_scope", read)
+        result = run(expand._expand_prose(None, "default", "d", "d:scope:3", None))
+        assert result["coverage_status"] == "complete"
+>       assert {i["clause"] for i in result["items"]} == {"3.1", "3.2", "3.3", "3.4"}
+E       AssertionError: assert {'3', '3.1', ... '3.3', '3.4'} == {'3.1', '3.2', '3.3', '3.4'}
+E         
+E         Extra items in the left set:
+E         '3'
+E         Use -v to get more diff
+
+tests/test_gate2_rereview.py:53: AssertionError
+__ test_two_version_file_expansion_returns_union_not_impossible_intersection ___
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b783890>
+
+    def test_two_version_file_expansion_returns_union_not_impossible_intersection(monkeypatch):
+        from env_rag_final.enumerate_ import doc_enum
+    
+        async def enum(conn, predicate, args=(), **kwargs):
+            db = sqlite3.connect(":memory:")
+            try:
+                db.execute(
+                    "CREATE TABLE docs (doc_id TEXT,self_code TEXT,self_code_version TEXT,doc_name TEXT)"
+                )
+                db.executemany(
+                    "INSERT INTO docs VALUES (?,?,?,?)",
+                    [
+                        ("d12", "GB3095", "2012", "GB3095-2012.pdf"),
+                        ("d26", "GB3095", "2026", "GB3095-2026.pdf"),
+                    ],
+                )
+                rows = db.execute("SELECT * FROM docs WHERE " + predicate, args).fetchall()
+                items = [
+                    dict(
+                        doc_id=d,
+                        self_code=c,
+                        self_code_version=v,
+                        doc_name=n,
+                        title="标准",
+                        doc_type="standard",
+                        citation={},
+                        citation_verified=True,
+                    )
+                    for d, c, v, n in rows
+                ]
+                return EnumResult(
+                    "q",
+                    "document",
+                    "default",
+                    "catalog",
+                    "source",
+                    items=items,
+                    coverage_status="complete",
+                )
+            finally:
+                db.close()
+    
+        monkeypatch.setattr(doc_enum, "enumerate_documents", enum)
+        result = query.SearchResult("q", "default")
+        result.query_text = "GB3095-2012 与 GB3095-2026"
+        result.parsed_codes = [
+            {"code": "GB3095", "version": "2012"},
+            {"code": "GB3095", "version": "2026"},
+        ]
+        result.parsed_code = result.parsed_codes[0]
+        run(expand.expand_candidates(None, result, "default", {}, expand_docs=True))
+>       assert {c["self_code_version"] for c in result.candidates} == {"2012", "2026"}
+E       AssertionError: assert set() == {'2012', '2026'}
+E         
+E         Extra items in the right set:
+E         '2026'
+E         '2012'
+E         Use -v to get more diff
+
+tests/test_gate2_rereview.py:107: AssertionError
+_________ test_self_code_query_does_not_add_cover_attributed_amendment _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b7b2f00>
+
+    def test_self_code_query_does_not_add_cover_attributed_amendment(monkeypatch):
+        patch_search_current(monkeypatch)
+        standard = dict(
+            doc_id="original",
+            doc_name="GB18466-2005.pdf",
+            title="医疗机构水污染物排放标准",
+            self_code="GB18466",
+            self_code_version="2005",
+            doc_type="standard",
+        )
+        amendment = dict(
+            doc_id="amendment",
+            doc_name="修改单.pdf",
+            title="GB18466-2005修改单",
+            self_code=None,
+            self_code_version=None,
+            doc_type="amendment",
+        )
+    
+        class Conn:
+            async def fetchrow(self, *args):
+                return {
+                    "search_id": "search",
+                    "catalog_snapshot_id": "catalog",
+                    "source_fingerprint": "source",
+                }
+    
+            async def fetchval(self, *args):
+                return 0
+    
+            async def fetch(self, sql, *args):
+                if "self_code=$3" in sql:
+                    return [standard]
+                if "search_documents" in sql:
+                    return [amendment]
+                return []
+    
+        result = run(query.run_query(Conn(), "自身编号为GB18466-2005的文档有哪些"))
+>       assert {c["doc_id"] for c in result.candidates} == {"original"}
+E       AssertionError: assert {'amendment', 'original'} == {'original'}
+E         
+E         Extra items in the left set:
+E         'amendment'
+E         Use -v to get more diff
+
+tests/test_gate2_rereview.py:148: AssertionError
+----------------------------- Captured stderr call -----------------------------
+Building prefix dict from the default dictionary ...
+Loading model from cache /var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/jieba.cache
+Loading model cost 0.269 seconds.
+Prefix dict has been built successfully.
+------------------------------ Captured log call -------------------------------
+DEBUG    jieba:__init__.py:113 Building prefix dict from the default dictionary ...
+DEBUG    jieba:__init__.py:132 Loading model from cache /var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/jieba.cache
+DEBUG    jieba:__init__.py:164 Loading model cost 0.269 seconds.
+DEBUG    jieba:__init__.py:166 Prefix dict has been built successfully.
+________ test_requested_expansion_without_confirmed_scope_is_ambiguous _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b7b2570>
+
+    def test_requested_expansion_without_confirmed_scope_is_ambiguous(monkeypatch):
+        result = query.SearchResult("q", "default")
+        result.query_text = "医疗机构污水执行要求"
+        result.candidates = [{"doc_id": "d"}]
+        run(expand.expand_candidates(None, result, "default", {}))
+>       assert result.status == "ambiguous"
+E       AssertionError: assert 'ok' == 'ambiguous'
+E         
+E         - ambiguous
+E         + ok
+
+tests/test_gate2_rereview.py:156: AssertionError
+____________ test_stale_query_candidates_are_not_eligible_evidence _____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b7839b0>
+
+    def test_stale_query_candidates_are_not_eligible_evidence(monkeypatch):
+        patch_benchmark_result(monkeypatch, "stale")
+        result = run(evaluation.run_benchmark(None, benchmark_gold()))
+>       assert result["evidence_recall_at_k_reviewed"] in (None, 0)
+E       assert 1.0 in (None, 0)
+
+tests/test_gate2_rereview.py:197: AssertionError
+_________ test_evidence_metric_does_not_match_other_workspace_identity _________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b7ddeb0>
+
+    def test_evidence_metric_does_not_match_other_workspace_identity(monkeypatch):
+        patch_benchmark_result(monkeypatch)
+        result = run(evaluation.run_benchmark(None, benchmark_gold("other")))
+>       assert result["evidence_recall_at_k_reviewed"] in (None, 0)
+E       assert 1.0 in (None, 0)
+
+tests/test_gate2_rereview.py:203: AssertionError
+______________ test_frozen_source_mismatch_does_not_enter_metrics ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b7de4e0>
+
+    def test_frozen_source_mismatch_does_not_enter_metrics(monkeypatch):
+        import env_rag_final.search.index as index
+    
+        patch_benchmark_result(monkeypatch)
+    
+        async def state(*a, **kw):
+            return {"state": "current", "catalog_snapshot_id": "catalog"}
+    
+        monkeypatch.setattr(index, "check_search_stale", state)
+        dataset = benchmark_gold(
+            frozen={
+                "source_fingerprint": "old-source",
+                "catalog_snapshot_id": "old-catalog",
+                "workspace": "default",
+            }
+        )
+        result = run(evaluation.run_benchmark(object(), dataset))
+>       assert result["evidence_recall_at_k_reviewed"] in (None, 0)
+E       assert 1.0 in (None, 0)
+
+tests/test_gate2_rereview.py:223: AssertionError
+______________ test_gold_block_selector_ignores_table_of_contents ______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b7df080>
+
+    def test_gold_block_selector_ignores_table_of_contents(monkeypatch):
+        contents = [
+            {"blockid": "toc", "content": "## 目次\n6.1 污水取样与监测 ……5"},
+            {"blockid": "body", "content": "## 6.1 污水取样与监测\n6.1.1 应设科室排出口与单位外排口。"},
+        ]
+        monkeypatch.setattr(gold, "blocks_of", lambda *a: contents)
+>       assert gold.block_of("file.pdf", r"^#*\s*6\.1\s")["blockid"] == "body"
+E       AssertionError: assert 'toc' == 'body'
+E         
+E         - body
+E         + toc
+
+tests/test_gate2_rereview.py:232: AssertionError
+_______ test_rowspan_repeated_sequence_does_not_imply_missing_table_rows _______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10b7df710>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-175/test_rowspan_repeated_sequence0')
+
+    def test_rowspan_repeated_sequence_does_not_imply_missing_table_rows(monkeypatch, tmp_path):
+        import env_rag_final.enumerate_.table_enum as tables
+        from env_rag_final.audit import identity
+    
+        folder = tmp_path / "test.pdf.parsed"
+        folder.mkdir()
+        html = '<table><tr><th>序号</th><th>项目</th><th>平均时间</th><th>限值</th></tr><tr><td rowspan="2">1</td><td rowspan="2">二氧化硫</td><td>年平均</td><td>20</td></tr><tr><td>小时平均</td><td>100</td></tr><tr><td>2</td><td>二氧化氮</td><td>年平均</td><td>40</td></tr></table>'
+        (folder / "test.tables.json").write_text(json.dumps({"tables": {"table": {"content": html}}}))
+    
+        class Conn:
+            async def fetchval(self, *a):
+                return "test.pdf"
+    
+            async def fetch(self, sql, *a):
+                if "source_units" in sql:
+                    return [
+                        dict(
+                            unit_id="table",
+                            unit_order=1,
+                            table_seq=1,
+                            caption="表1 浓度限值",
+                            heading="4",
+                            locator={"blockid": "u"},
+                        )
+                    ]
+                return [{"chunk_id": "c"}]
+    
+        async def current(*a, **kw):
+            return {"state": "current", "active_snapshot_id": "catalog", "stored_fingerprint": "source"}
+    
+        monkeypatch.setattr(identity, "PARSED_ROOT", tmp_path)
+        monkeypatch.setattr(tables, "check_stale", current)
+        result = run(tables.enumerate_table(Conn(), "default", "d", "1"))
+        assert len(result.items) == 3
+>       assert result.coverage_status == "complete"
+E       AssertionError: assert 'partial' == 'complete'
+E         
+E         - complete
+E         + partial
+
+tests/test_gate2_rereview.py:269: AssertionError
+=============================== warnings summary ===============================
+tests/test_gate2_rereview.py::test_two_version_file_expansion_returns_union_not_impossible_intersection
+  /Users/acerola/Dev/Python/RAG/env-rag-final/tests/test_gate2_rereview.py:72: DeprecationWarning: Binding 1 ('$3') is a named parameter, but you supplied a sequence which requires nameless (qmark) placeholders. Starting with Python 3.14 an sqlite3.ProgrammingError will be raised.
+    rows = db.execute("SELECT * FROM docs WHERE " + predicate, args).fetchall()
+
+tests/test_gate2_rereview.py::test_two_version_file_expansion_returns_union_not_impossible_intersection
+  /Users/acerola/Dev/Python/RAG/env-rag-final/tests/test_gate2_rereview.py:72: DeprecationWarning: Binding 2 ('$4') is a named parameter, but you supplied a sequence which requires nameless (qmark) placeholders. Starting with Python 3.14 an sqlite3.ProgrammingError will be raised.
+    rows = db.execute("SELECT * FROM docs WHERE " + predicate, args).fetchall()
+
+tests/test_gate2_rereview.py::test_two_version_file_expansion_returns_union_not_impossible_intersection
+  /Users/acerola/Dev/Python/RAG/env-rag-final/tests/test_gate2_rereview.py:72: DeprecationWarning: Binding 3 ('$5') is a named parameter, but you supplied a sequence which requires nameless (qmark) placeholders. Starting with Python 3.14 an sqlite3.ProgrammingError will be raised.
+    rows = db.execute("SELECT * FROM docs WHERE " + predicate, args).fetchall()
+
+tests/test_gate2_rereview.py::test_two_version_file_expansion_returns_union_not_impossible_intersection
+  /Users/acerola/Dev/Python/RAG/env-rag-final/tests/test_gate2_rereview.py:72: DeprecationWarning: Binding 4 ('$6') is a named parameter, but you supplied a sequence which requires nameless (qmark) placeholders. Starting with Python 3.14 an sqlite3.ProgrammingError will be raised.
+    rows = db.execute("SELECT * FROM docs WHERE " + predicate, args).fetchall()
+
+tests/test_gate2_rereview.py::test_two_version_file_expansion_returns_union_not_impossible_intersection
+  /Users/acerola/Dev/Python/RAG/env-rag-final/tests/test_gate2_rereview.py:72: DeprecationWarning: Binding 5 ('$7') is a named parameter, but you supplied a sequence which requires nameless (qmark) placeholders. Starting with Python 3.14 an sqlite3.ProgrammingError will be raised.
+    rows = db.execute("SELECT * FROM docs WHERE " + predicate, args).fetchall()
+
+tests/test_gate2_rereview.py::test_two_version_file_expansion_returns_union_not_impossible_intersection
+  /Users/acerola/Dev/Python/RAG/env-rag-final/tests/test_gate2_rereview.py:72: DeprecationWarning: Binding 6 ('$8') is a named parameter, but you supplied a sequence which requires nameless (qmark) placeholders. Starting with Python 3.14 an sqlite3.ProgrammingError will be raised.
+    rows = db.execute("SELECT * FROM docs WHERE " + predicate, args).fetchall()
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_gate2_rereview.py::test_definition_expansion_does_not_count_chapter_heading_as_item
+FAILED tests/test_gate2_rereview.py::test_two_version_file_expansion_returns_union_not_impossible_intersection
+FAILED tests/test_gate2_rereview.py::test_self_code_query_does_not_add_cover_attributed_amendment
+FAILED tests/test_gate2_rereview.py::test_requested_expansion_without_confirmed_scope_is_ambiguous
+FAILED tests/test_gate2_rereview.py::test_stale_query_candidates_are_not_eligible_evidence
+FAILED tests/test_gate2_rereview.py::test_evidence_metric_does_not_match_other_workspace_identity
+FAILED tests/test_gate2_rereview.py::test_frozen_source_mismatch_does_not_enter_metrics
+FAILED tests/test_gate2_rereview.py::test_gold_block_selector_ignores_table_of_contents
+FAILED tests/test_gate2_rereview.py::test_rowspan_repeated_sequence_does_not_imply_missing_table_rows
+9 failed, 6 warnings in 0.40s

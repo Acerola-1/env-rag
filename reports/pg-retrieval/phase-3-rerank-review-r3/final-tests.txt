@@ -1,0 +1,101 @@
+........................................................................ [ 22%]
+........................................................................ [ 45%]
+........................................................................ [ 68%]
+........................................................................ [ 90%]
+FF...........................                                            [100%]
+=================================== FAILURES ===================================
+_____ test_real_fusion_shape_uses_verified_active_snapshot_for_enrichment ______
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1172dfad0>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-476/test_real_fusion_shape_uses_ve0')
+
+    def test_real_fusion_shape_uses_verified_active_snapshot_for_enrichment(monkeypatch, tmp_path):
+        _, fused, body, path = first._setup(monkeypatch, tmp_path)
+        # Actual 5.3 reports keep the catalog snapshot under `pg`; they do not
+        # have this top-level field used by the earlier fixture.
+        fused.pop("catalog_snapshot_id", None)
+        fused["pg"] = {"catalog_snapshot_id": "s"}
+        path.write_text(json.dumps(body))
+        catalog_reads = []
+    
+        class Conn:
+            async def fetch(self, sql, *args):
+                if "lightrag_doc_chunks" in sql:
+                    return [
+                        {
+                            "id": base.C1,
+                            "workspace": "default",
+                            "full_doc_id": base.DOC_A,
+                            "content": "full body",
+                            "file_path": "a.pdf",
+                        }
+                    ]
+                if "unit_chunk_links" in sql:
+                    catalog_reads.append(args)
+                    return [
+                        {
+                            "unit_id": "actual-table-unit",
+                            "doc_id": base.DOC_A,
+                            "chunk_id": base.C1,
+                            "unit_kind": "table",
+                        }
+                    ]
+                return []
+    
+            async def close(self):
+                pass
+    
+        async def connect(**kwargs):
+            return Conn()
+    
+        async def call(values, query, documents, transport=None):
+            return {"status": "success", "status_code": 200, "payload": base._ok_payload(1)}
+    
+        monkeypatch.setattr(rr.asyncpg, "connect", connect)
+        monkeypatch.setattr(rr, "_call_rerank", call)
+        result = first._invoke(tmp_path, path, None)["results"][0]
+>       assert catalog_reads, "the real input shape must not silently skip catalog enrichment"
+E       AssertionError: the real input shape must not silently skip catalog enrichment
+E       assert []
+
+tests/test_rerank_review_r3.py:56: AssertionError
+___ test_canonical_repair_evidence_is_published_not_only_kept_in_local_dict ____
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x1172dfb60>
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-476/test_canonical_repair_evidence0')
+
+    def test_canonical_repair_evidence_is_published_not_only_kept_in_local_dict(monkeypatch, tmp_path):
+        _, fused, body, path = first._setup(monkeypatch, tmp_path)
+        fused["usable"][0]["content_sha256"] = "incorrect-original-hash"
+        fused["usable"][0]["doc_id"] = None
+        path.write_text(json.dumps(body))
+    
+        async def transport(query, documents):
+            return base._resp(base._ok_payload(1))
+    
+        first._invoke(tmp_path, path, transport)
+        terminal = json.loads((tmp_path / "rerank-runtime-latest.json").read_text())
+    
+        def records(value):
+            if isinstance(value, dict):
+                yield value
+                for v in value.values():
+                    yield from records(v)
+            elif isinstance(value, list):
+                for v in value:
+                    yield from records(v)
+    
+        repairs = [
+            r
+            for r in records(terminal)
+            if r.get("replayed_content_sha256") == "incorrect-original-hash"
+        ]
+>       assert repairs, "repair originals and basis must exist in the persisted terminal"
+E       AssertionError: repair originals and basis must exist in the persisted terminal
+E       assert []
+
+tests/test_rerank_review_r3.py:87: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_rerank_review_r3.py::test_real_fusion_shape_uses_verified_active_snapshot_for_enrichment
+FAILED tests/test_rerank_review_r3.py::test_canonical_repair_evidence_is_published_not_only_kept_in_local_dict
+2 failed, 315 passed in 10.58s

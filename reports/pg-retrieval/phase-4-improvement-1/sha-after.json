@@ -1,0 +1,25 @@
+{
+ "schema": "improvement-1-sha-delta",
+ "files_checked": 6,
+ "changed": {
+  "src/env_rag_final/enumerate_/prose_enum.py": {
+   "before": "84c282710160e49f25f84c101bd911f73bfa0ca0abf455534da3293ebec033bb",
+   "after": "28e2b73a79169a5b58ed7ad20b862e688b48aeaa6d2ca5b1c5316864babd3d42",
+   "differs": true
+  },
+  "src/env_rag_final/search/expand.py": {
+   "before": "d3deba9f08fdf763552fd33ae3d6ffecb90a74b995869ce620f4a275f48a0392",
+   "after": "15422a8d9fd3b53baeb2f6e808ebdac772eb7c22c398f0b10ef6f771966c06f0",
+   "differs": true
+  },
+  "src/env_rag_final/answer.py": {
+   "before": "c017606cd35ddcb9b5afe5e19385d386d1e7a21eddff4ed12107c2af2572ccc8",
+   "after": "0cd30bc390da727b9e6941a3c54b6d37ab1fe056cf484e20817e06b04c20b2e6",
+   "differs": true
+  }
+ },
+ "new_files": {
+  "tests/test_phase4_improvement1_prose_integrity.py": "3b73d8bdc63242e1651f4fa428f27a9e507ec526e6ed75c223098cc2020449a3"
+ },
+ "note": "allowed-edit files per handoff: prose_enum.py + expand.py + answer.py; catalog/config/enumerate_init unchanged | refreshed after ruff --fix (import cleanup only, behavior unchanged; suite rerun green)"
+}

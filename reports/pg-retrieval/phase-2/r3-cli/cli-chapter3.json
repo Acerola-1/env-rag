@@ -1,0 +1,328 @@
+{
+ "query_id": "search-3bc456670701",
+ "workspace": "default",
+ "status": "ok",
+ "search_id": "e3cb2a39dee53d9d",
+ "catalog_snapshot_id": "4919b3938ad93747",
+ "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+ "parsed_code": {
+  "raw": "GB18466-2005",
+  "code": "GB18466",
+  "version": "2005"
+ },
+ "parsed_codes": [
+  {
+   "raw": "GB18466-2005",
+   "code": "GB18466",
+   "version": "2005"
+  }
+ ],
+ "query_text": "GB18466-2005 3章定义了哪些术语",
+ "candidates": [
+  {
+   "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+   "doc_name": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf",
+   "self_code": "GB18466",
+   "self_code_version": "2005",
+   "title": "医疗机构水污染物排放标准",
+   "doc_type": "standard",
+   "discovery": "code_exact",
+   "score": 1.0,
+   "citation": {
+    "kind": "catalog_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+   "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001",
+   "heading": "2 规范性引用文件 公 告",
+   "chunk_order": 1,
+   "score": 0.1008230447769165,
+   "discovery": "keyword_core_and",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+    "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+   "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000",
+   "heading": "中华人民共和国国家标准",
+   "chunk_order": 0,
+   "score": 0.10000000149011612,
+   "discovery": "keyword_core_and",
+   "citation": {
+    "kind": "chunk_row",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+    "chunk_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-000"
+   },
+   "citation_verified": true
+  },
+  {
+   "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+   "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3",
+   "heading": "3 术语和定义",
+   "chunk_ids": [],
+   "score": null,
+   "discovery": "scope_range_binding",
+   "scope_status": "confirmed",
+   "member_units": [
+    "385d9e8e0539a87e61f0407bda1739ad",
+    "ad9d292d3ee2fd88a8fd25b9efc8265a",
+    "90d4b1c55cb8c6ff81dcbdfd55827165"
+   ],
+   "citation": {
+    "kind": "scope",
+    "workspace": "default",
+    "snapshot_id": "4919b3938ad93747",
+    "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+    "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3"
+   },
+   "citation_verified": true
+  }
+ ],
+ "notes": [],
+ "trace": [
+  {
+   "stage": "code_exact",
+   "code": "GB18466",
+   "version_requested": "2005",
+   "strict": false,
+   "hits": 1,
+   "version_matched": 1,
+   "selected_versions": [
+    "2005"
+   ],
+   "selected_docs": [
+    "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+   ]
+  },
+  {
+   "stage": "keyword_and",
+   "tsquery": "'3' & '章' & '定义' & '术语'",
+   "top_k": 20,
+   "restricted_to_code_docs": [
+    "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+   ],
+   "doc_hits": 0,
+   "chunk_hits": 0,
+   "elapsed_ms": 5
+  },
+  {
+   "stage": "keyword_and_diagnostics",
+   "per_term": [
+    {
+     "term": "3",
+     "chunk_hits": 26
+    },
+    {
+     "term": "章",
+     "chunk_hits": 0
+    },
+    {
+     "term": "定义",
+     "chunk_hits": 2
+    },
+    {
+     "term": "术语",
+     "chunk_hits": 2
+    }
+   ],
+   "absent_terms": [
+    "章"
+   ]
+  },
+  {
+   "stage": "keyword_core_and",
+   "tsquery": "'3' & '定义' & '术语'",
+   "dropped_absent_terms": [
+    "章"
+   ],
+   "chunk_hits": 2,
+   "note": "terms absent from the corpus cannot participate in AND"
+  },
+  {
+   "stage": "range_binding",
+   "targets": [
+    {
+     "kind": "chapter",
+     "value": "3",
+     "clauses": null
+    }
+   ],
+   "code_docs": [
+    "doc-68a03b50e1ba1ffc6a0116529f694fe1"
+   ],
+   "hits": 1,
+   "selected": 1,
+   "budget": 20,
+   "units": [
+    "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3"
+   ],
+   "note": "requested table/chapter bound to actual catalog units; full member read stays in expansion, top-k bounds this discovery list too"
+  },
+  {
+   "stage": "scope_expansion",
+   "requested_scope_id": null,
+   "requested_table_number": null,
+   "auto_targets": [
+    {
+     "kind": "chapter",
+     "value": "3",
+     "clauses": null
+    }
+   ],
+   "expansions": [
+    {
+     "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+     "kind": "prose",
+     "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3",
+     "requested_clauses": null,
+     "missing_requested_clauses": [],
+     "members_total": 3,
+     "members_processed": 3,
+     "coverage_status": "complete",
+     "read_status": "complete",
+     "fail_stage": "",
+     "units_read": 3,
+     "unit_ids": [
+      "385d9e8e0539a87e61f0407bda1739ad",
+      "ad9d292d3ee2fd88a8fd25b9efc8265a",
+      "90d4b1c55cb8c6ff81dcbdfd55827165"
+     ],
+     "chunk_ids": [
+      "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+     ],
+     "items_count": 4,
+     "items": [
+      {
+       "clause": "3.1",
+       "text": "3.1 医疗机构 medical organization\n指从事疾病诊断、治疗活动的医院、卫生院、疗养院、门诊部、诊所、卫生急救站等。",
+       "citation": {
+        "kind": "char_span",
+        "char_start": 22,
+        "char_end": 91,
+        "quote": "3.1 医疗机构 medical organization\n指从事疾病诊断、治疗活动的医院、卫生院、疗养院、门诊部、诊所、卫生急救站等。",
+        "unit_rel_start": 22,
+        "unit_rel_end": 91,
+        "unit_id": "385d9e8e0539a87e61f0407bda1739ad",
+        "locator": {
+         "file": "blocks.jsonl",
+         "kind": "block",
+         "blockid": "385d9e8e0539a87e61f0407bda1739ad",
+         "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+        },
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+        ],
+        "unit_source": "parsed_block",
+        "workspace": "default",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "snapshot_id": "4919b3938ad93747"
+       },
+       "citation_verified": true,
+       "source": "regex_clause_split"
+      },
+      {
+       "clause": "3.2",
+       "text": "3.2 医疗机构污水 medical organization wastewater\n指医疗机构门诊、病房、手术室、各类检验室、病理解剖室、放射室、洗衣房、太平间等处排出的诊疗、生活及粪便污水。当医疗机构其他污水与上述污水混合排出时一律视为医疗机构污水。",
+       "citation": {
+        "kind": "char_span",
+        "char_start": 91,
+        "char_end": 219,
+        "quote": "3.2 医疗机构污水 medical organization wastewater\n指医疗机构门诊、病房、手术室、各类检验室、病理解剖室、放射室、洗衣房、太平间等处排出的诊疗、生活及粪便污水。当医疗机构其他污水与上述污水混合排出时一律视为",
+        "unit_rel_start": 91,
+        "unit_rel_end": 218,
+        "unit_id": "385d9e8e0539a87e61f0407bda1739ad",
+        "locator": {
+         "file": "blocks.jsonl",
+         "kind": "block",
+         "blockid": "385d9e8e0539a87e61f0407bda1739ad",
+         "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+        },
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+        ],
+        "unit_source": "parsed_block",
+        "workspace": "default",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "snapshot_id": "4919b3938ad93747"
+       },
+       "citation_verified": true,
+       "source": "regex_clause_split"
+      },
+      {
+       "clause": "3.3",
+       "text": "## 3.3 污泥 sludge\n指医疗机构污水处理过程中产生的栅渣、沉淀污泥和化粪池污泥。",
+       "citation": {
+        "kind": "char_span",
+        "char_start": 219,
+        "char_end": 267,
+        "quote": "## 3.3 污泥 sludge\n指医疗机构污水处理过程中产生的栅渣、沉淀污泥和化粪池污泥。",
+        "unit_rel_start": 0,
+        "unit_rel_end": 46,
+        "unit_id": "ad9d292d3ee2fd88a8fd25b9efc8265a",
+        "locator": {
+         "file": "blocks.jsonl",
+         "kind": "block",
+         "blockid": "ad9d292d3ee2fd88a8fd25b9efc8265a",
+         "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+        },
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+        ],
+        "unit_source": "parsed_block",
+        "workspace": "default",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "snapshot_id": "4919b3938ad93747"
+       },
+       "citation_verified": true,
+       "source": "regex_clause_split"
+      },
+      {
+       "clause": "3.4",
+       "text": "## 3.4 废气 waste gas\n指医疗机构污水处理过程中产生的有害气体。",
+       "citation": {
+        "kind": "char_span",
+        "char_start": 267,
+        "char_end": 308,
+        "quote": "## 3.4 废气 waste gas\n指医疗机构污水处理过程中产生的有害气体。",
+        "unit_rel_start": 0,
+        "unit_rel_end": 40,
+        "unit_id": "90d4b1c55cb8c6ff81dcbdfd55827165",
+        "locator": {
+         "file": "blocks.jsonl",
+         "kind": "block",
+         "blockid": "90d4b1c55cb8c6ff81dcbdfd55827165",
+         "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+        },
+        "chunk_ids": [
+         "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+        ],
+        "unit_source": "parsed_block",
+        "workspace": "default",
+        "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+        "snapshot_id": "4919b3938ad93747"
+       },
+       "citation_verified": true,
+       "source": "regex_clause_split"
+      }
+     ],
+     "warnings": []
+    }
+   ],
+   "note": "expansion reads the FULL ordered membership; discovery top-k is not a limit"
+  }
+ ],
+ "elapsed_ms": 2375
+}

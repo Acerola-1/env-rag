@@ -1,0 +1,39 @@
+{
+  "round": 1,
+  "files_scanned": 805,
+  "secret_env_keys_checked": [
+    "LLM_BINDING_API_KEY",
+    "EMBEDDING_BINDING_API_KEY",
+    "RERANK_BINDING_API_KEY",
+    "POSTGRES_PASSWORD",
+    "NEO4J_PASSWORD"
+  ],
+  "non_credential_env_values_excluded": [
+    "LLM_BINDING_HOST",
+    "LLM_MODEL",
+    "KEYWORD_LLM_MODEL",
+    "QUERY_LLM_MODEL",
+    "EMBEDDING_BINDING_HOST",
+    "EMBEDDING_MODEL",
+    "LIGHTRAG_KV_STORAGE",
+    "LIGHTRAG_DOC_STATUS_STORAGE",
+    "LIGHTRAG_GRAPH_STORAGE",
+    "LIGHTRAG_VECTOR_STORAGE",
+    "RERANK_BINDING_HOST",
+    "RERANK_MODEL",
+    "KV_STORAGE",
+    "DOC_STATUS_STORAGE",
+    "VECTOR_STORAGE",
+    "GRAPH_STORAGE",
+    "POSTGRES_HOST",
+    "NEO4J_URI",
+    "QDRANT_URL",
+    "SOURCE_LIGHTRAG_DIR",
+    "MINERU_ARTIFACT_DIR"
+  ],
+  "pattern_hits": [],
+  "raw_secret_value_hits": [],
+  "residual": 0,
+  "scanned_at": "2026-10-09T13:07:32Z",
+  "classification": "clean; assignment-form pattern zero; only secret-named .env values diffed (model names/local proxy host excluded as non-credentials per established scan discipline)"
+}
