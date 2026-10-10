@@ -24,3 +24,7 @@ snapshots/
 
 # Historical audit note contains a credential; keep local, never publish.
 reports/pg-retrieval/phase-4-improvements123-local-validation-r1/sensitive-scan.json
+
+# Historical evaluation inputs are test fixtures, not service data directories.
+!reports/**/inputs/
+!reports/**/inputs/**
