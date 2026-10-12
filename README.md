@@ -104,7 +104,21 @@ Gate 3 条件逐条状态与证据见 `reports/pg-retrieval/phase-3/gate3-checkl
 
 ## OpenSpec 计划
 
-知识库权限与双实例的新变更见 [add-workspace-knowledge-access](openspec/changes/add-workspace-knowledge-access/proposal.md)，实施边界、44 项任务及固定验收在同目录；交给 Z Code 的完整提示见 [GOAL-ZCODE.md](openspec/changes/add-workspace-knowledge-access/GOAL-ZCODE.md)。该计划尚未实施，沿用当前 DeepSeek／embedding／reranker 配置。
+知识库权限与双实例的变更见 [add-workspace-knowledge-access](openspec/changes/add-workspace-knowledge-access/proposal.md)，实施边界、44 项任务及固定验收在同目录；交给 Z Code 的完整提示见 [GOAL-ZCODE.md](openspec/changes/add-workspace-knowledge-access/GOAL-ZCODE.md)。**本轮已实施并完成真实验收**，沿用当前 DeepSeek／embedding／reranker 配置。
+
+### workspace 权限功能（已交付）
+
+交付 `air`／`water` 两个固定 workspace 的 LightRAG 实例（共享现有 PG／Qdrant／Neo4j）、一个先认证后授权的 Knowledge API 网关与网页。启动、登录、入库、新增库、恢复与回滚说明见 [WORKSPACE-ACCESS.md](WORKSPACE-ACCESS.md)；本轮证据与报告见 `reports/workspace-access/wa-20261012-r1/`。
+
+```bash
+bash scripts/wa_instances.sh start            # 两个 LightRAG 实例
+.venv/bin/python -m env_rag_final.access --port 8099   # 网关（唯一客户端入口）
+.venv/bin/env-rag-final workspace-ingest --workspace air --dry-run
+.venv/bin/env-rag-final workspace-catalog --workspace air
+.venv/bin/env-rag-final workspace-index   --workspace air
+```
+
+workspace、主体与角色授权都在 `.local/workspace-access/registry.json`（模板 `deployment/workspaces.example.json`）；凭据只存在本机 `.local/` 下，不入 Git。新增第三个知识库只需改注册表、启动实例并入库，已由 `scripts/wa_third_workspace.py` 实测证明核心检索代码零改动。
 
 变更：[add-pg-scoped-retrieval](openspec/changes/add-pg-scoped-retrieval/)。proposal定义范围、design定义门槛、tasks跟踪证据。Phase0–3及Gate3已验收；Phase4交接就绪，新增真实对照评测未执行。
 

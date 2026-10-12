@@ -1,0 +1,90 @@
+{
+ "workspace": "coastal",
+ "document": "water-01_国家法律法规数据库_中华人民共和国长江保护法_2021.pdf",
+ "steps": [
+  {
+   "step": "registry.add",
+   "detail": {
+    "revision": "wa-20261012-r1+coastal-20261013012705"
+   },
+   "at": 1791826025.687
+  },
+  {
+   "step": "instance.env",
+   "detail": "wrote /Users/acerola/Dev/Python/RAG/env-rag-final/.local/workspace-access/env/lightrag-coastal.env (port 9624)",
+   "at": 1791826025.726
+  },
+  {
+   "step": "instance.start",
+   "detail": "created lightrag-coastal on 127.0.0.1:9624\nlightrag-coastal healthy after 4s\n[0/6] [0s]\n[1/6] Fetching image [0s]\n[2/6] Unpacking image [0s]\n[3/6] Fetching kernel [0s]\n[4/6] Fetching init image [0s]\n[5/6] Unpacking init image [0s]\n[6/6] Starting container [0s]\n[6/6] Starting container [1s]\n[6/6] Starting container [1s]",
+   "at": 1791826033.158
+  },
+  {
+   "step": "instance.health",
+   "detail": "nc\":8,\"max_queue_size\":1000,\"queued\":0,\"physical_queued\":0,\"running\":0,\"in_flight\":0,\"worker_count\":0,\"initialized\":false,\"submitted_total\":0,\"completed_total\":0,\"failed_total\":0,\"cancelled_total\":0,\"rejected_total\":0,\"global_slot_waits\":0,\"pid\":1,\"updated_at\":1791826033.4882998}},\"available\":true}}",
+   "at": 1791826033.264
+  },
+  {
+   "step": "ingest",
+   "detail": "\"chunk_overlap\": \"300\"\n },\n \"manifest\": \"/Users/acerola/Dev/Python/RAG/env-rag-final/reports/workspace-access/wa-20261012-r1/corpus-manifest.jsonl\",\n \"planned\": 1,\n \"duplicates\": 0,\n \"shared_documents\": [\n  \"water-01_国家法律法规数据库_中华人民共和国长江保护法_2021.pdf\"\n ],\n \"excluded\": 0,\n \"to_process\": 1,\n \"dry_run\": false,\n \"started_at\": 1791826033.349,\n \"pruned_duplicate_rows\": \"DELETE 0\",\n \"reused_cache_rows\": 16,\n \"llm_dispatches\": {\n  \"llm_calls\": 0,\n  \"extract_calls\": 0,\n  \"summary_calls\": 0,\n  \"prompt_tokens\": 0,\n  \"embed_calls\": 21\n },\n \"ledger_counts\": {\n  \"done\": 1\n },\n \"finished_at\": 1791826040.818\n}\n",
+   "at": 1791826041.177
+  },
+  {
+   "step": "workspace-catalog",
+   "detail": "{\n \"command\": \"catalog\",\n \"workspace\": \"coastal\",\n \"snapshot_id\": \"db0d2dad0809973b\",\n \"fingerprint\": \"11a4e28b311b21901d8d262ca9b219a1ea46aff63cf8546cdd43e6e96355eb70\",\n \"docs\": 1,\n \"units\": 14,\n \"links\": 14,\n \"scopes\": 1,\n \"published\": true\n}\n",
+   "at": 1791826041.442
+  },
+  {
+   "step": "workspace-index",
+   "detail": "{\n \"command\": \"index\",\n \"workspace\": \"coastal\",\n \"search_id\": \"31b8a197ac4de840\",\n \"catalog_snapshot_id\": \"db0d2dad0809973b\",\n \"documents\": null,\n \"chunks\": null\n}\n",
+   "at": 1791826042.155
+  },
+  {
+   "step": "granted-query",
+   "detail": {
+    "status": 200,
+    "result": {
+     "status": "ambiguous",
+     "workspaces": [
+      "coastal"
+     ],
+     "evidence": 6,
+     "failures": []
+    }
+   },
+   "at": 1791826042.424
+  },
+  {
+   "step": "ungranted-query",
+   "detail": {
+    "status": 403,
+    "body": {
+     "error": "unauthorized_workspace",
+     "message": "the requested knowledge scope is not permitted"
+    }
+   },
+   "at": 1791826042.473
+  }
+ ],
+ "core_modules_before": {
+  "src/env_rag_final/search/query.py": "25bed96d08219800",
+  "src/env_rag_final/search/expand.py": "7ce0a67ca9f325ec",
+  "src/env_rag_final/search/index.py": "a40c2cd7cfcd1a2a",
+  "src/env_rag_final/enumerate_/doc_enum.py": "495efb96f9ecb2f6",
+  "src/env_rag_final/enumerate_/prose_enum.py": "ad98184ea145aae0",
+  "src/env_rag_final/enumerate_/table_enum.py": "8ee22a4188884940",
+  "src/env_rag_final/ask.py": "28de54f4a78a8699"
+ },
+ "granted_ok": true,
+ "ungranted_refused": true,
+ "core_modules_after": {
+  "src/env_rag_final/search/query.py": "25bed96d08219800",
+  "src/env_rag_final/search/expand.py": "7ce0a67ca9f325ec",
+  "src/env_rag_final/search/index.py": "a40c2cd7cfcd1a2a",
+  "src/env_rag_final/enumerate_/doc_enum.py": "495efb96f9ecb2f6",
+  "src/env_rag_final/enumerate_/prose_enum.py": "ad98184ea145aae0",
+  "src/env_rag_final/enumerate_/table_enum.py": "8ee22a4188884940",
+  "src/env_rag_final/ask.py": "28de54f4a78a8699"
+ },
+ "core_modules_unchanged": true
+}

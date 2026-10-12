@@ -1,0 +1,74 @@
+# Docker Compose template for the two fixed LightRAG instances + Knowledge API.
+#
+# The on-site runtime on this machine is Apple Container (`scripts/wa_instances.sh`);
+# this file is the equivalent for environments that have Docker, and is a
+# template only — it has NOT been exercised here, so it is not reported as
+# accepted.  Secrets come from .local/workspace-access/env/*.env (git-ignored)
+# and are never baked into an image.
+#
+#   docker compose -f deployment/docker-compose.workspaces.yml up -d
+#
+# Notes
+#  * Both instances share the same PostgreSQL / Qdrant / Neo4j services.
+#  * `WORKSPACE` and the per-backend overrides are set to the same value, and
+#    the health check refuses readiness if the effective namespaces disagree.
+#  * Ports bind to 127.0.0.1 only: the instances are an internal surface.
+
+name: env-rag-workspaces
+
+services:
+  lightrag-air:
+    image: ghcr.io/hkuds/lightrag:latest
+    container_name: lightrag-air
+    env_file:
+      - ../.local/workspace-access/env/lightrag-air.env
+    ports:
+      - "127.0.0.1:9622:9621"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS -H \"X-API-Key: $$LIGHTRAG_API_KEY\" http://127.0.0.1:9621/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  lightrag-water:
+    image: ghcr.io/hkuds/lightrag:latest
+    container_name: lightrag-water
+    env_file:
+      - ../.local/workspace-access/env/lightrag-water.env
+    ports:
+      - "127.0.0.1:9623:9621"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS -H \"X-API-Key: $$LIGHTRAG_API_KEY\" http://127.0.0.1:9621/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  # The Knowledge API is the only client-facing knowledge entry point.  It runs
+  # from this repository's code and reaches the instances over the compose
+  # network using the internal credentials in .local/.
+  knowledge-api:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile.knowledge-api
+    container_name: knowledge-api
+    depends_on:
+      lightrag-air:
+        condition: service_healthy
+      lightrag-water:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8099:8099"
+    volumes:
+      - ../.local:/app/.local:ro
+      - ../reports:/app/reports
+    environment:
+      ENV_RAG_PARSED_ROOT: /app/datasets/corpus/parsed
+    command: ["python", "-m", "env_rag_final.access", "--port", "8099"]
+
+volumes: {}

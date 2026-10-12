@@ -52,13 +52,15 @@ def _mk(
     }
 
 
-def build_scopes(doc_id: str, snapshot_id: str, blocks: list[dict]) -> list[dict]:
+def build_scopes(
+    doc_id: str, snapshot_id: str, blocks: list[dict], workspace: str = "default"
+) -> list[dict]:
     """Build leaf + parent scopes from ordered raw content blocks.
 
     Each scope dict carries ``_members`` (leaf: own blocks; parent: aggregated
     descendant members in source order).
     """
-    ws = "default"
+    ws = workspace
     leaf: list[tuple[dict, list[str]]] = []
     open_scope: dict | None = None
     open_members: list[str] = []

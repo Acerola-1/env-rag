@@ -1,0 +1,337 @@
+{
+ "files": {
+  ".env": {
+   "bytes": 4999,
+   "sha256": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+  },
+  "DESIGN.md": {
+   "bytes": 2987,
+   "sha256": "84a4b9e1d17cdb98472bf3663954a24fc0a1a82f50ea0172652f8029e176da88"
+  },
+  "ENUMERATION.md": {
+   "bytes": 5438,
+   "sha256": "65ce990f41e442999a202d89df87685e13d4606868c1d60ca50613ac3a982d2d"
+  },
+  "UX-CONTRACT.md": {
+   "bytes": 2687,
+   "sha256": "6e5850837c6b13903bec3741b8224415c1d91d0ce32ac393e000a5a190d95aaf"
+  },
+  "WEB_RAG.md": {
+   "bytes": 4127,
+   "sha256": "74220b4d32080cb7a3d366aa5eeff528c492fad117849e9e0156ffc1546b36ac"
+  },
+  "datasets/evaluation/gold-approved.json": {
+   "bytes": 88640,
+   "sha256": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e"
+  },
+  "datasets/evaluation/unit-mapping.json": {
+   "bytes": 17627,
+   "sha256": "ee23f2c10a8e2c733511fae59bb157380c4ab9c1e888aa510e36daf49f9b8f3b"
+  },
+  "datasets/manifest.json": {
+   "bytes": 2621610,
+   "sha256": "cf1387858b823e50c71528dd1ca863dfceb858ede890e5ffe1b33bb39b8f033c"
+  },
+  "premium-ui.json": {
+   "bytes": 884,
+   "sha256": "e1961b7e042d4bd647dee814485ef56df2dff6afccfc0c4176a4ab460fff7784"
+  }
+ },
+ "format": "workspace-access/protected-snapshot-r1",
+ "neo4j": {
+  "labels": {
+   "air": {
+    "entity_id_digest": "c93053b466c631612d13a9c6c31b7d62",
+    "nodes": 25987,
+    "relationships_out": 44250
+   },
+   "base": {
+    "entity_id_digest": "53265c68ff36eb5d06a34f3b88657f2c",
+    "nodes": 66069,
+    "relationships_out": 121819
+   },
+   "coastal": {
+    "entity_id_digest": "3b469a5c19dada9798ffc960aeab4999",
+    "nodes": 302,
+    "relationships_out": 311
+   },
+   "default": {
+    "entity_id_digest": "e3b0c44298fc1c149afbf4c8996fb924",
+    "nodes": 0,
+    "relationships_out": 0
+   },
+   "water": {
+    "entity_id_digest": "c35b2f6b7a3b5f09f91cca0cb7b6dc45",
+    "nodes": 37916,
+    "relationships_out": 63300
+   }
+  }
+ },
+ "pg": {
+  "env_rag": {
+   "active_catalog": {
+    "air": {
+     "run_id": "773d665b76de446d",
+     "snapshot_id": "123afd3d431b84d0"
+    },
+    "coastal": {
+     "run_id": "7231f366992149cb",
+     "snapshot_id": "db0d2dad0809973b"
+    },
+    "default": {
+     "run_id": "c15c741742394320",
+     "snapshot_id": "4919b3938ad93747"
+    },
+    "water": {
+     "run_id": "99ef7567f2bd4e16",
+     "snapshot_id": "c27663b642656217"
+    }
+   },
+   "active_search": {
+    "air": {
+     "catalog_snapshot_id": "123afd3d431b84d0",
+     "search_id": "f444794b094741a3",
+     "status": "active"
+    },
+    "coastal": {
+     "catalog_snapshot_id": "db0d2dad0809973b",
+     "search_id": "31b8a197ac4de840",
+     "status": "active"
+    },
+    "default": {
+     "catalog_snapshot_id": "4919b3938ad93747",
+     "search_id": "872d689343a9cbb6",
+     "status": "active"
+    },
+    "water": {
+     "catalog_snapshot_id": "c27663b642656217",
+     "search_id": "8af0eb66fc92dacc",
+     "status": "active"
+    }
+   },
+   "corpus_runs": {
+    "counts": {
+     "air": 3,
+     "coastal": 2,
+     "default": 6,
+     "water": 3
+    }
+   },
+   "documents": {
+    "counts": {
+     "air": 63,
+     "coastal": 1,
+     "default": 221,
+     "water": 159
+    }
+   },
+   "scope_units": {
+    "counts": {
+     "air": 7462,
+     "coastal": 14,
+     "default": 14557,
+     "water": 7123
+    }
+   },
+   "scopes": {
+    "counts": {
+     "air": 1089,
+     "coastal": 1,
+     "default": 1970,
+     "water": 894
+    }
+   },
+   "search_builds": {
+    "counts": {
+     "air": 2,
+     "coastal": 1,
+     "default": 8,
+     "water": 2
+    }
+   },
+   "search_chunks": {
+    "counts": {
+     "air": 1949,
+     "coastal": 8,
+     "default": 5709,
+     "water": 3765
+    }
+   },
+   "search_documents": {
+    "counts": {
+     "air": 63,
+     "coastal": 1,
+     "default": 221,
+     "water": 159
+    }
+   },
+   "source_units": {
+    "counts": {
+     "air": 5579,
+     "coastal": 14,
+     "default": 12269,
+     "water": 6718
+    }
+   },
+   "unit_chunk_links": {
+    "counts": {
+     "air": 6441,
+     "coastal": 14,
+     "default": 16783,
+     "water": 10370
+    }
+   }
+  },
+  "tables": {
+   "lightrag_doc_chunks": {
+    "counts": {
+     "air": 1949,
+     "coastal": 8,
+     "default": 5709,
+     "water": 3765
+    },
+    "id_digest": {
+     "air": "caaad4846ceb8e278617e493156d6c26",
+     "coastal": "c1d265350cbe635b56e7da5a42e36dfc",
+     "default": "39477cf2f6021abf428b18ac2848ea6c",
+     "water": "b4372f34f47efa30aa957ee5fad5ad72"
+    }
+   },
+   "lightrag_doc_full": {
+    "counts": {
+     "air": 63,
+     "coastal": 1,
+     "default": 221,
+     "water": 159
+    },
+    "id_digest": {
+     "air": "1f742f1f40cec51ab9122d27f8e4b990",
+     "coastal": "fcb61cb7bb32be28e6299fb8d6846ec2",
+     "default": "cd04f958a9012d8b2d6b23d813821558",
+     "water": "2780ae09b6ea9e1c994e8a09920dda2a"
+    }
+   },
+   "lightrag_doc_status": {
+    "counts": {
+     "air": 63,
+     "coastal": 1,
+     "default": 279,
+     "water": 159
+    },
+    "id_digest": {
+     "air": "1f742f1f40cec51ab9122d27f8e4b990",
+     "coastal": "fcb61cb7bb32be28e6299fb8d6846ec2",
+     "default": "e711badb254a1e2a97b46ff94a865084",
+     "water": "2780ae09b6ea9e1c994e8a09920dda2a"
+    }
+   },
+   "lightrag_entity_chunks": {
+    "counts": {
+     "air": 25987,
+     "coastal": 302,
+     "default": 65527,
+     "water": 37916
+    }
+   },
+   "lightrag_full_entities": {
+    "counts": {
+     "air": 63,
+     "coastal": 1,
+     "default": 221,
+     "water": 159
+    }
+   },
+   "lightrag_full_relations": {
+    "counts": {
+     "air": 63,
+     "coastal": 1,
+     "default": 221,
+     "water": 159
+    }
+   },
+   "lightrag_llm_cache": {
+    "counts": {
+     "air": 6360,
+     "coastal": 16,
+     "default": 16514,
+     "water": 9862
+    }
+   },
+   "lightrag_relation_chunks": {
+    "counts": {
+     "air": 44250,
+     "coastal": 311,
+     "default": 119575,
+     "water": 63300
+    }
+   }
+  }
+ },
+ "qdrant": {
+  "collections": {
+   "lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d": {
+    "by_workspace": {
+     "_": {
+      "count": 5709,
+      "id_digest": "06db439a5ed9fc94e1e8258618337473"
+     },
+     "air": {
+      "count": 1949,
+      "id_digest": "d6c9f3a8d2b4445142e669d0921e79bd"
+     },
+     "coastal": {
+      "count": 8,
+      "id_digest": "c5c7ea5b486eaec26c05ed8fcebaefe7"
+     },
+     "water": {
+      "count": 3765,
+      "id_digest": "b86664ca467afff562e9eaad84e699f5"
+     }
+    },
+    "points": 11431
+   },
+   "lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d": {
+    "by_workspace": {
+     "_": {
+      "count": 65526,
+      "id_digest": "760b4f3f5107db3c2fc043df18fa9633"
+     },
+     "air": {
+      "count": 25983,
+      "id_digest": "c9ed165e63cdd2fb13c60a9f28db2a85"
+     },
+     "coastal": {
+      "count": 302,
+      "id_digest": "0872e47e289f16acf1f36cad8036e3f2"
+     },
+     "water": {
+      "count": 37895,
+      "id_digest": "4d56308dd86067ef98f8fe158b18d8a8"
+     }
+    },
+    "points": 129706
+   },
+   "lightrag_vdb_relationships_qwen_qwen3_embedding_4b_2560d": {
+    "by_workspace": {
+     "_": {
+      "count": 105057,
+      "id_digest": "08c7944f50a97643c18e53515c40587f"
+     },
+     "air": {
+      "count": 38963,
+      "id_digest": "f9a380e84ef915fcc34f11aa7a546306"
+     },
+     "coastal": {
+      "count": 270,
+      "id_digest": "b9c3104d782e512a7103a0a439690bf8"
+     },
+     "water": {
+      "count": 55710,
+      "id_digest": "44c31ce715e1c4618456b75c0ee1155f"
+     }
+    },
+    "points": 227434
+   }
+  }
+ }
+}

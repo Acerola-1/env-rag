@@ -1,0 +1,35 @@
+{
+ "workspace": "coastal",
+ "recipe": "wa-ingest-r1-paragraph-semantic-reuse",
+ "models": {
+  "llm": "deepseek-v4.1-flash",
+  "keyword_llm": "deepseek-v4.1-flash",
+  "embedding": "Qwen/Qwen3-Embedding-4B",
+  "embedding_dim": "2560",
+  "chunk_size": "1500",
+  "chunk_overlap": "300"
+ },
+ "manifest": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/workspace-access/wa-20261012-r1/corpus-manifest.jsonl",
+ "planned": 1,
+ "duplicates": 0,
+ "shared_documents": [
+  "water-01_国家法律法规数据库_中华人民共和国长江保护法_2021.pdf"
+ ],
+ "excluded": 0,
+ "to_process": 1,
+ "dry_run": false,
+ "started_at": 1791826033.349,
+ "pruned_duplicate_rows": "DELETE 0",
+ "reused_cache_rows": 16,
+ "llm_dispatches": {
+  "llm_calls": 0,
+  "extract_calls": 0,
+  "summary_calls": 0,
+  "prompt_tokens": 0,
+  "embed_calls": 21
+ },
+ "ledger_counts": {
+  "done": 1
+ },
+ "finished_at": 1791826040.818
+}

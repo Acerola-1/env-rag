@@ -1,0 +1,769 @@
+{
+ "cases": [
+  {
+   "case": "air:pg",
+   "route": "pg",
+   "mode": null,
+   "http": 200,
+   "elapsed_s": 0.61,
+   "status": "ambiguous",
+   "workspaces": [
+    "air"
+   ],
+   "evidence": 8,
+   "failures": [],
+   "stale": [],
+   "per_workspace": [
+    {
+     "workspace": "air",
+     "status": "ambiguous",
+     "mode": null,
+     "items": 8,
+     "entities": 0,
+     "relationships": 0,
+     "search_id": "f444794b094741a3",
+     "catalog_snapshot_id": "123afd3d431b84d0",
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "air:lightrag:naive",
+   "route": "lightrag",
+   "mode": "naive",
+   "http": 200,
+   "elapsed_s": 2.51,
+   "status": "complete",
+   "workspaces": [
+    "air"
+   ],
+   "evidence": 20,
+   "failures": [],
+   "stale": [],
+   "per_workspace": [
+    {
+     "workspace": "air",
+     "status": "success",
+     "mode": "naive",
+     "items": 20,
+     "entities": 0,
+     "relationships": 0,
+     "search_id": null,
+     "catalog_snapshot_id": null,
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "air:pg+lightrag:naive",
+   "route": "pg+lightrag",
+   "mode": "naive",
+   "http": 200,
+   "elapsed_s": 2.53,
+   "status": "ambiguous",
+   "workspaces": [
+    "air"
+   ],
+   "evidence": 23,
+   "failures": [],
+   "stale": [],
+   "per_workspace": [
+    {
+     "workspace": "air",
+     "status": "ambiguous",
+     "mode": null,
+     "items": 8,
+     "entities": 0,
+     "relationships": 0,
+     "search_id": "f444794b094741a3",
+     "catalog_snapshot_id": "123afd3d431b84d0",
+     "error": null
+    },
+    {
+     "workspace": "air",
+     "status": "success",
+     "mode": "naive",
+     "items": 20,
+     "entities": 0,
+     "relationships": 0,
+     "search_id": null,
+     "catalog_snapshot_id": null,
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "air:lightrag:local",
+   "route": "lightrag",
+   "mode": "local",
+   "http": 200,
+   "elapsed_s": 8.62,
+   "status": "complete",
+   "workspaces": [
+    "air"
+   ],
+   "evidence": 18,
+   "failures": [],
+   "stale": [],
+   "per_workspace": [
+    {
+     "workspace": "air",
+     "status": "success",
+     "mode": "local",
+     "items": 18,
+     "entities": 20,
+     "relationships": 102,
+     "search_id": null,
+     "catalog_snapshot_id": null,
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "air:pg+lightrag:local",
+   "route": "pg+lightrag",
+   "mode": "local",
+   "http": 200,
+   "elapsed_s": 3.02,
+   "status": "ambiguous",
+   "workspaces": [
+    "air"
+   ],
+   "evidence": 19,
+   "failures": [],
+   "stale": [],
+   "per_workspace": [
+    {
+     "workspace": "air",
+     "status": "ambiguous",
+     "mode": null,
+     "items": 8,
+     "entities": 0,
+     "relationships": 0,
+     "search_id": "f444794b094741a3",
+     "catalog_snapshot_id": "123afd3d431b84d0",
+     "error": null
+    },
+    {
+     "workspace": "air",
+     "status": "success",
+     "mode": "local",
+     "items": 17,
+     "entities": 20,
+     "relationships": 102,
+     "search_id": null,
+     "catalog_snapshot_id": null,
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "air:lightrag:global",
+   "route": "lightrag",
+   "mode": "global",
+   "http": 200,
+   "elapsed_s": 5.52,
+   "status": "complete",
+   "workspaces": [
+    "air"
+   ],
+   "evidence": 15,
+   "failures": [],
+   "stale": [],
+   "per_workspace": [
+    {
+     "workspace": "air",
+     "status": "success",
+     "mode": "global",
+     "items": 15,
+     "entities": 12,
+     "relationships": 20,
+     "search_id": null,
+     "catalog_snapshot_id": null,
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "air:pg+lightrag:global",
+   "route": "pg+lightrag",
+   "mode": "global",
+   "http": 200,
+   "elapsed_s": 5.61,
+   "status": "ambiguous",
+   "workspaces": [
+    "air"
+   ],
+   "evidence": 16,
+   "failures": [],
+   "stale": [],
+   "per_workspace": [
+    {
+     "workspace": "air",
+     "status": "ambiguous",
+     "mode": null,
+     "items": 8,
+     "entities": 0,
+     "relationships": 0,
+     "search_id": "f444794b094741a3",
+     "catalog_snapshot_id": "123afd3d431b84d0",
+     "error": null
+    },
+    {
+     "workspace": "air",
+     "status": "success",
+     "mode": "global",
+     "items": 15,
+     "entities": 12,
+     "relationships": 20,
+     "search_id": null,
+     "catalog_snapshot_id": null,
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "air:lightrag:hybrid",
+   "route": "lightrag",
+   "mode": "hybrid",
+   "http": 200,
+   "elapsed_s": 11.54,
+   "status": "complete",
+   "workspaces": [
+    "air"
+   ],
+   "evidence": 13,
+   "failures": [],
+   "stale": [],
+   "per_workspace": [
+    {
+     "workspace": "air",
+     "status": "success",
+     "mode": "hybrid",
+     "items": 13,
+     "entities": 19,
+     "relationships": 148,
+     "search_id": null,
+     "catalog_snapshot_id": null,
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "air:pg+lightrag:hybrid",
+   "route": "pg+lightrag",
+   "mode": "hybrid",
+   "http": 200,
+   "elapsed_s": 11.19,
+   "status": "ambiguous",
+   "workspaces": [
+    "air"
+   ],
+   "evidence": 16,
+   "failures": [],
+   "stale": [],
+   "per_workspace": [
+    {
+     "workspace": "air",
+     "status": "ambiguous",
+     "mode": null,
+     "items": 8,
+     "entities": 0,
+     "relationships": 0,
+     "search_id": "f444794b094741a3",
+     "catalog_snapshot_id": "123afd3d431b84d0",
+     "error": null
+    },
+    {
+     "workspace": "air",
+     "status": "success",
+     "mode": "hybrid",
+     "items": 12,
+     "entities": 19,
+     "relationships": 148,
+     "search_id": null,
+     "catalog_snapshot_id": null,
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "air:lightrag:mix",
+   "route": "lightrag",
+   "mode": "mix",
+   "http": 200,
+   "elapsed_s": 19.46,
+   "status": "complete",
+   "workspaces": [
+    "air"
+   ],
+   "evidence": 14,
+   "failures": [],
+   "stale": [],
+   "per_workspace": [
+    {
+     "workspace": "air",
+     "status": "success",
+     "mode": "mix",
+     "items": 14,
+     "entities": 18,
+     "relationships": 87,
+     "search_id": null,
+     "catalog_snapshot_id": null,
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "air:pg+lightrag:mix",
+   "route": "pg+lightrag",
+   "mode": "mix",
+   "http": 200,
+   "elapsed_s": 18.79,
+   "status": "ambiguous",
+   "workspaces": [
+    "air"
+   ],
+   "evidence": 18,
+   "failures": [],
+   "stale": [],
+   "per_workspace": [
+    {
+     "workspace": "air",
+     "status": "ambiguous",
+     "mode": null,
+     "items": 8,
+     "entities": 0,
+     "relationships": 0,
+     "search_id": "f444794b094741a3",
+     "catalog_snapshot_id": "123afd3d431b84d0",
+     "error": null
+    },
+    {
+     "workspace": "air",
+     "status": "success",
+     "mode": "mix",
+     "items": 14,
+     "entities": 18,
+     "relationships": 87,
+     "search_id": null,
+     "catalog_snapshot_id": null,
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "water:pg",
+   "route": "pg",
+   "mode": null,
+   "http": 200,
+   "elapsed_s": 0.79,
+   "status": "ambiguous",
+   "workspaces": [
+    "water"
+   ],
+   "evidence": 2,
+   "failures": [],
+   "stale": [],
+   "per_workspace": [
+    {
+     "workspace": "water",
+     "status": "ambiguous",
+     "mode": null,
+     "items": 2,
+     "entities": 0,
+     "relationships": 0,
+     "search_id": "8af0eb66fc92dacc",
+     "catalog_snapshot_id": "c27663b642656217",
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "water:lightrag:naive",
+   "route": "lightrag",
+   "mode": "naive",
+   "http": 200,
+   "elapsed_s": 3.12,
+   "status": "complete",
+   "workspaces": [
+    "water"
+   ],
+   "evidence": 20,
+   "failures": [],
+   "stale": [],
+   "per_workspace": [
+    {
+     "workspace": "water",
+     "status": "success",
+     "mode": "naive",
+     "items": 20,
+     "entities": 0,
+     "relationships": 0,
+     "search_id": null,
+     "catalog_snapshot_id": null,
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "water:pg+lightrag:naive",
+   "route": "pg+lightrag",
+   "mode": "naive",
+   "http": 200,
+   "elapsed_s": 2.18,
+   "status": "ambiguous",
+   "workspaces": [
+    "water"
+   ],
+   "evidence": 20,
+   "failures": [],
+   "stale": [],
+   "per_workspace": [
+    {
+     "workspace": "water",
+     "status": "ambiguous",
+     "mode": null,
+     "items": 2,
+     "entities": 0,
+     "relationships": 0,
+     "search_id": "8af0eb66fc92dacc",
+     "catalog_snapshot_id": "c27663b642656217",
+     "error": null
+    },
+    {
+     "workspace": "water",
+     "status": "success",
+     "mode": "naive",
+     "items": 20,
+     "entities": 0,
+     "relationships": 0,
+     "search_id": null,
+     "catalog_snapshot_id": null,
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "water:lightrag:local",
+   "route": "lightrag",
+   "mode": "local",
+   "http": 200,
+   "elapsed_s": 3.49,
+   "status": "complete",
+   "workspaces": [
+    "water"
+   ],
+   "evidence": 16,
+   "failures": [],
+   "stale": [],
+   "per_workspace": [
+    {
+     "workspace": "water",
+     "status": "success",
+     "mode": "local",
+     "items": 16,
+     "entities": 20,
+     "relationships": 138,
+     "search_id": null,
+     "catalog_snapshot_id": null,
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "water:pg+lightrag:local",
+   "route": "pg+lightrag",
+   "mode": "local",
+   "http": 200,
+   "elapsed_s": 4.06,
+   "status": "ambiguous",
+   "workspaces": [
+    "water"
+   ],
+   "evidence": 16,
+   "failures": [],
+   "stale": [],
+   "per_workspace": [
+    {
+     "workspace": "water",
+     "status": "ambiguous",
+     "mode": null,
+     "items": 2,
+     "entities": 0,
+     "relationships": 0,
+     "search_id": "8af0eb66fc92dacc",
+     "catalog_snapshot_id": "c27663b642656217",
+     "error": null
+    },
+    {
+     "workspace": "water",
+     "status": "success",
+     "mode": "local",
+     "items": 16,
+     "entities": 20,
+     "relationships": 138,
+     "search_id": null,
+     "catalog_snapshot_id": null,
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "water:lightrag:global",
+   "route": "lightrag",
+   "mode": "global",
+   "http": 200,
+   "elapsed_s": 4.71,
+   "status": "complete",
+   "workspaces": [
+    "water"
+   ],
+   "evidence": 20,
+   "failures": [],
+   "stale": [],
+   "per_workspace": [
+    {
+     "workspace": "water",
+     "status": "success",
+     "mode": "global",
+     "items": 20,
+     "entities": 14,
+     "relationships": 20,
+     "search_id": null,
+     "catalog_snapshot_id": null,
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "water:pg+lightrag:global",
+   "route": "pg+lightrag",
+   "mode": "global",
+   "http": 200,
+   "elapsed_s": 2.35,
+   "status": "ambiguous",
+   "workspaces": [
+    "water"
+   ],
+   "evidence": 21,
+   "failures": [],
+   "stale": [],
+   "per_workspace": [
+    {
+     "workspace": "water",
+     "status": "ambiguous",
+     "mode": null,
+     "items": 2,
+     "entities": 0,
+     "relationships": 0,
+     "search_id": "8af0eb66fc92dacc",
+     "catalog_snapshot_id": "c27663b642656217",
+     "error": null
+    },
+    {
+     "workspace": "water",
+     "status": "success",
+     "mode": "global",
+     "items": 20,
+     "entities": 15,
+     "relationships": 20,
+     "search_id": null,
+     "catalog_snapshot_id": null,
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "water:lightrag:hybrid",
+   "route": "lightrag",
+   "mode": "hybrid",
+   "http": 200,
+   "elapsed_s": 4.34,
+   "status": "complete",
+   "workspaces": [
+    "water"
+   ],
+   "evidence": 14,
+   "failures": [],
+   "stale": [],
+   "per_workspace": [
+    {
+     "workspace": "water",
+     "status": "success",
+     "mode": "hybrid",
+     "items": 14,
+     "entities": 19,
+     "relationships": 140,
+     "search_id": null,
+     "catalog_snapshot_id": null,
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "water:pg+lightrag:hybrid",
+   "route": "pg+lightrag",
+   "mode": "hybrid",
+   "http": 200,
+   "elapsed_s": 4.94,
+   "status": "ambiguous",
+   "workspaces": [
+    "water"
+   ],
+   "evidence": 14,
+   "failures": [],
+   "stale": [],
+   "per_workspace": [
+    {
+     "workspace": "water",
+     "status": "ambiguous",
+     "mode": null,
+     "items": 2,
+     "entities": 0,
+     "relationships": 0,
+     "search_id": "8af0eb66fc92dacc",
+     "catalog_snapshot_id": "c27663b642656217",
+     "error": null
+    },
+    {
+     "workspace": "water",
+     "status": "success",
+     "mode": "hybrid",
+     "items": 14,
+     "entities": 19,
+     "relationships": 140,
+     "search_id": null,
+     "catalog_snapshot_id": null,
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "water:lightrag:mix",
+   "route": "lightrag",
+   "mode": "mix",
+   "http": 200,
+   "elapsed_s": 5.82,
+   "status": "complete",
+   "workspaces": [
+    "water"
+   ],
+   "evidence": 13,
+   "failures": [],
+   "stale": [],
+   "per_workspace": [
+    {
+     "workspace": "water",
+     "status": "success",
+     "mode": "mix",
+     "items": 13,
+     "entities": 27,
+     "relationships": 138,
+     "search_id": null,
+     "catalog_snapshot_id": null,
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "water:pg+lightrag:mix",
+   "route": "pg+lightrag",
+   "mode": "mix",
+   "http": 200,
+   "elapsed_s": 3.17,
+   "status": "ambiguous",
+   "workspaces": [
+    "water"
+   ],
+   "evidence": 12,
+   "failures": [],
+   "stale": [],
+   "per_workspace": [
+    {
+     "workspace": "water",
+     "status": "ambiguous",
+     "mode": null,
+     "items": 2,
+     "entities": 0,
+     "relationships": 0,
+     "search_id": "8af0eb66fc92dacc",
+     "catalog_snapshot_id": "c27663b642656217",
+     "error": null
+    },
+    {
+     "workspace": "water",
+     "status": "success",
+     "mode": "mix",
+     "items": 12,
+     "entities": 28,
+     "relationships": 138,
+     "search_id": null,
+     "catalog_snapshot_id": null,
+     "error": null
+    }
+   ]
+  },
+  {
+   "case": "dual:pg+lightrag:hybrid",
+   "route": "pg+lightrag",
+   "mode": "hybrid",
+   "http": 200,
+   "elapsed_s": 20.34,
+   "status": "ambiguous",
+   "workspaces": [
+    "air",
+    "water"
+   ],
+   "evidence": 58,
+   "failures": [],
+   "stale": [],
+   "per_workspace": [
+    {
+     "workspace": "air",
+     "status": "ambiguous",
+     "mode": null,
+     "items": 20,
+     "entities": 0,
+     "relationships": 0,
+     "search_id": "f444794b094741a3",
+     "catalog_snapshot_id": "123afd3d431b84d0",
+     "error": null
+    },
+    {
+     "workspace": "air",
+     "status": "success",
+     "mode": "hybrid",
+     "items": 14,
+     "entities": 17,
+     "relationships": 146,
+     "search_id": null,
+     "catalog_snapshot_id": null,
+     "error": null
+    },
+    {
+     "workspace": "water",
+     "status": "ambiguous",
+     "mode": null,
+     "items": 20,
+     "entities": 0,
+     "relationships": 0,
+     "search_id": "8af0eb66fc92dacc",
+     "catalog_snapshot_id": "c27663b642656217",
+     "error": null
+    },
+    {
+     "workspace": "water",
+     "status": "success",
+     "mode": "hybrid",
+     "items": 12,
+     "entities": 42,
+     "relationships": 145,
+     "search_id": null,
+     "catalog_snapshot_id": null,
+     "error": null
+    }
+   ]
+  }
+ ]
+}

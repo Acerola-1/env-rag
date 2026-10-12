@@ -1,0 +1,151 @@
+{
+ "steps": [
+  {
+   "step": "load",
+   "detail": "环境知识库 · 授权访问",
+   "at": 1791829207.663
+  },
+  {
+   "step": "login.air-reader",
+   "detail": {
+    "app_panel_visible": true
+   },
+   "at": 1791829208.247
+  },
+  {
+   "step": "air-reader.libraries",
+   "detail": [
+    "air"
+   ],
+   "at": 1791829208.25
+  },
+  {
+   "step": "air-reader.pg-query",
+   "detail": {
+    "result_panel": true,
+    "meta": "请求知识库：air · 路径 pg · 模式 local · 状态：存在歧义",
+    "evidence": 3
+   },
+   "at": 1791829209.009
+  },
+  {
+   "step": "air-reader.generate",
+   "detail": "模型：deepseek-v4.1-flash · 状态：complete · 引用数：2\n\n资料[0]中给出了臭氧污染防治攻坚行动的攻坚目标：到2025年，细颗粒物（PM2.5）和臭氧协同控制取得积极成效，全国臭氧浓度增长趋势得到有效遏制，全国空气质量优良天数比率达到87.5%，挥发性有机物（VOCs）、氮氧化物排放总量比2020年分别下降10%以上。[0]\n\n资料[1]中还给出了柴油货车污染治理",
+   "at": 1791829211.462
+  },
+  {
+   "step": "air-reader.parsed-text",
+   "detail": "200:998",
+   "at": 1791829211.894
+  },
+  {
+   "step": "air-reader.forged-water",
+   "detail": "403 unauthorized_workspace",
+   "at": 1791829211.896
+  },
+  {
+   "step": "air-reader.dom-injection-effective-selection",
+   "detail": "查询完成：5 条证据，知识库 air",
+   "at": 1791829212.654
+  },
+  {
+   "step": "air-reader.logout",
+   "detail": true,
+   "at": 1791829213.796
+  },
+  {
+   "step": "login.dual-reader",
+   "detail": {
+    "app_panel_visible": true
+   },
+   "at": 1791829214.049
+  },
+  {
+   "step": "dual-reader.libraries",
+   "detail": [
+    "air",
+    "water",
+    "all"
+   ],
+   "at": 1791829214.049
+  },
+  {
+   "step": "dual-reader.pg+pg-query",
+   "detail": {
+    "meta": "请求知识库：air、water · 路径 pg · 模式 local · 状态：存在歧义",
+    "evidence": 40
+   },
+   "at": 1791829215.592
+  },
+  {
+   "step": "dual-reader.switch-no-model",
+   "detail": {
+    "switch": {
+     "before": 18,
+     "after": 18,
+     "status": "已切换知识库：all（未发起模型请求）",
+     "selected": "all"
+    },
+    "resources_after_1s": 18
+   },
+   "at": 1791829217.026
+  },
+  {
+   "step": "login.water-reader",
+   "detail": {
+    "app_panel_visible": true
+   },
+   "at": 1791829217.534
+  },
+  {
+   "step": "water-reader.libraries",
+   "detail": [
+    "water"
+   ],
+   "at": 1791829217.534
+  },
+  {
+   "step": "water-reader.lightrag-local",
+   "detail": {
+    "meta": "请求知识库：water · 路径 lightrag · 模式 local · 状态：完整",
+    "evidence": 16
+   },
+   "at": 1791829221.069
+  },
+  {
+   "step": "login.no-access",
+   "detail": {
+    "app_panel_visible": true
+   },
+   "at": 1791829222.011
+  },
+  {
+   "step": "no-access.libraries",
+   "detail": {
+    "inputs": [],
+    "empty_notice": true
+   },
+   "at": 1791829222.011
+  },
+  {
+   "step": "no-access.notice",
+   "detail": "该主体没有任何知识库授权，无法查询。",
+   "at": 1791829222.011
+  },
+  {
+   "step": "keyboard.focus",
+   "detail": "logout",
+   "at": 1791829222.434
+  }
+ ],
+ "screenshots": [
+  "desktop-air-generation.png",
+  "desktop-air-query.png",
+  "desktop-air-records.png",
+  "desktop-dual-query.png",
+  "desktop-no-access.png",
+  "desktop-water-lightrag.png",
+  "narrow-air.png",
+  "narrow-no-access.png"
+ ]
+}

@@ -47,20 +47,26 @@ def index_identity(
     tokenizer_version: str = tk.VERSION,
     vocab_sha: str | None = None,
     index_recipe: str = INDEX_RECIPE,
+    workspace: str = "default",
 ) -> str:
-    return hashlib.sha256(
-        json.dumps(
-            {
-                "catalog": catalog_snapshot_id,
-                "source": source_fingerprint,
-                "tokenizer": tokenizer_version,
-                "vocab": vocab_sha or tk.vocab_sha(),
-                "clean": clean.CLEAN_VERSION,
-                "recipe": index_recipe,
-            },
-            sort_keys=True,
-        ).encode()
-    ).hexdigest()[:16]
+    """Search build identity.
+
+    The workspace participates so that the *same* corpus built in two
+    workspaces produces two distinct ``search_id`` values instead of one shared
+    global primary key.  The frozen ``default`` workspace contributes nothing,
+    keeping its historical identity (and active build) byte-identical.
+    """
+    payload = {
+        "catalog": catalog_snapshot_id,
+        "source": source_fingerprint,
+        "tokenizer": tokenizer_version,
+        "vocab": vocab_sha or tk.vocab_sha(),
+        "clean": clean.CLEAN_VERSION,
+        "recipe": index_recipe,
+    }
+    if workspace != "default":
+        payload["workspace"] = workspace
+    return hashlib.sha256(json.dumps(payload, sort_keys=True).encode()).hexdigest()[:16]
 
 
 @dataclass
@@ -168,7 +174,7 @@ async def _build_locked(
     catalog_snapshot_id = stale["active_snapshot_id"]
     source_fp = stale.get("stored_fingerprint") or FROZEN_SNAPSHOT
 
-    search_id = index_identity(catalog_snapshot_id, source_fp)
+    search_id = index_identity(catalog_snapshot_id, source_fp, workspace=workspace)
     existing = await conn.fetchrow(
         """SELECT search_id, status FROM env_rag.search_builds
            WHERE workspace=$1 AND search_id=$2""",
@@ -499,6 +505,7 @@ async def check_search_stale(
         tokenizer_version=tk.VERSION,
         vocab_sha=tk.vocab_sha(),
         index_recipe=INDEX_RECIPE,
+        workspace=workspace,
     )
     if active["search_id"] != expected_id:
         reasons.append(

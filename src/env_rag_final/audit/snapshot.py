@@ -71,15 +71,26 @@ def fingerprint_status(statuses: list) -> str:
     return _h(payload)
 
 
-def fingerprint_artifacts(parsed_root: Path) -> str:
+def fingerprint_artifacts(parsed_root: Path, document_scope=None) -> str:
     """SHA-256 over parsed blocks/tables bytes (sorted path+size+content digest).
 
     Reads every ``*.blocks.jsonl`` and ``*.tables.json`` under the parsed root;
     any byte change to a product file changes the value.
+
+    ``document_scope`` restricts the walk to the ``<doc_name>.parsed``
+    directories of the named documents.  It stays unset for the frozen
+    ``default`` workspace (whole-root behaviour, fingerprint unchanged) and is
+    set to a derived workspace's own document list, so an update in one
+    workspace cannot invalidate another's identity.
     """
+    allowed_dirs = None
+    if document_scope is not None:
+        allowed_dirs = {f"{name}.parsed" for name in document_scope}
     files = []
     for path in sorted(parsed_root.glob("*/*.jsonl")) + sorted(parsed_root.glob("*/*.json")):
         if not (path.name.endswith(".blocks.jsonl") or path.name.endswith(".tables.json")):
+            continue
+        if allowed_dirs is not None and path.parent.name not in allowed_dirs:
             continue
         data = path.read_bytes()
         files.append(

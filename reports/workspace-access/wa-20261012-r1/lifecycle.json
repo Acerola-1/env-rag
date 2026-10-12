@@ -1,0 +1,176 @@
+{
+ "steps": [
+  {
+   "step": "trial.query.before",
+   "detail": {
+    "http": 200,
+    "status": "missing",
+    "evidence": 0,
+    "workspaces": [
+     "coastal"
+    ]
+   },
+   "at": 1791828444.01
+  },
+  {
+   "step": "restart.query",
+   "detail": {
+    "http": 200,
+    "status": "ambiguous",
+    "evidence": 40,
+    "workspaces": [
+     "air",
+     "water"
+    ]
+   },
+   "at": 1791828455.096
+  },
+  {
+   "step": "restart.identity_preserved",
+   "detail": true,
+   "at": 1791828455.344
+  },
+  {
+   "step": "withdraw.trial-doc",
+   "detail": "0",
+   "at": 1791828456.681
+  },
+  {
+   "step": "withdraw.checkpoint-cleared",
+   "detail": true,
+   "at": 1791828456.681
+  },
+  {
+   "step": "withdraw.others_unchanged",
+   "detail": true,
+   "at": 1791828456.915
+  },
+  {
+   "step": "trial.query.after_withdraw",
+   "detail": {
+    "http": 200,
+    "status": "stale",
+    "evidence": 0,
+    "workspaces": [
+     "coastal"
+    ]
+   },
+   "at": 1791828456.979
+  },
+  {
+   "step": "restore.ingest",
+   "detail": " false,\n \"started_at\": 1791828457.061,\n \"pruned_duplicate_rows\": \"DELETE 0\",\n \"reused_cache_rows\": 0,\n \"llm_dispatches\": {\n  \"llm_calls\": 0,\n  \"extract_calls\": 0,\n  \"summary_calls\": 0,\n  \"prompt_tokens\": 0,\n  \"embed_calls\": 21\n },\n \"ledger_counts\": {\n  \"done\": 1\n },\n \"finished_at\": 1791828463.557\n}\n",
+   "at": 1791828463.878
+  },
+  {
+   "step": "restore.workspace-catalog",
+   "detail": "al\",\n \"snapshot_id\": \"db0d2dad0809973b\",\n \"fingerprint\": \"11a4e28b311b21901d8d262ca9b219a1ea46aff63cf8546cdd43e6e96355eb70\",\n \"docs\": 1,\n \"units\": 14,\n \"links\": 14,\n \"scopes\": 1,\n \"published\": true\n}\n",
+   "at": 1791828464.136
+  },
+  {
+   "step": "restore.workspace-index",
+   "detail": "{\n \"command\": \"index\",\n \"workspace\": \"coastal\",\n \"search_id\": \"31b8a197ac4de840\",\n \"catalog_snapshot_id\": \"db0d2dad0809973b\",\n \"documents\": null,\n \"chunks\": null\n}\n",
+   "at": 1791828464.761
+  },
+  {
+   "step": "trial.query.after_restore",
+   "detail": {
+    "http": 200,
+    "status": "ambiguous",
+    "evidence": 6,
+    "workspaces": [
+     "coastal"
+    ]
+   },
+   "at": 1791828464.934
+  }
+ ],
+ "before": {
+  "chunks": [
+   "air=1949",
+   "default=5709",
+   "water=3765"
+  ],
+  "docs": [
+   "air=63",
+   "default=221",
+   "water=159"
+  ],
+  "active_search": [
+   "air=f444794b094741a3",
+   "coastal=656e449cb2294838",
+   "default=872d689343a9cbb6",
+   "water=8af0eb66fc92dacc"
+  ]
+ },
+ "trial_query_before": {
+  "http": 200,
+  "status": "missing",
+  "evidence": 0,
+  "workspaces": [
+   "coastal"
+  ]
+ },
+ "restart_query_after": {
+  "http": 200,
+  "status": "ambiguous",
+  "evidence": 40,
+  "workspaces": [
+   "air",
+   "water"
+  ]
+ },
+ "after_restart": {
+  "chunks": [
+   "air=1949",
+   "default=5709",
+   "water=3765"
+  ],
+  "docs": [
+   "air=63",
+   "default=221",
+   "water=159"
+  ],
+  "active_search": [
+   "air=f444794b094741a3",
+   "coastal=656e449cb2294838",
+   "default=872d689343a9cbb6",
+   "water=8af0eb66fc92dacc"
+  ]
+ },
+ "restart_preserved_identity": true,
+ "after_withdraw": {
+  "chunks": [
+   "air=1949",
+   "default=5709",
+   "water=3765"
+  ],
+  "docs": [
+   "air=63",
+   "default=221",
+   "water=159"
+  ],
+  "active_search": [
+   "air=f444794b094741a3",
+   "default=872d689343a9cbb6",
+   "water=8af0eb66fc92dacc"
+  ]
+ },
+ "other_libraries_unchanged": true,
+ "trial_query_after_withdraw": {
+  "http": 200,
+  "status": "stale",
+  "evidence": 0,
+  "workspaces": [
+   "coastal"
+  ]
+ },
+ "trial_query_after_restore": {
+  "http": 200,
+  "status": "ambiguous",
+  "evidence": 6,
+  "workspaces": [
+   "coastal"
+  ]
+ }
+}

@@ -69,13 +69,30 @@ class BuildResult:
     warnings: list
 
 
-def build_identity(source_fingerprint_value: str, recipe_id: str = RECIPE_ID) -> str:
-    """snapshot_id binds BOTH the source snapshot and the catalog recipe."""
-    return hashlib.sha256(
-        json.dumps(
-            {"source": source_fingerprint_value, "recipe": recipe_id}, sort_keys=True
-        ).encode()
-    ).hexdigest()[:16]
+def build_identity(
+    source_fingerprint_value: str, recipe_id: str = RECIPE_ID, workspace: str = "default"
+) -> str:
+    """snapshot_id binds the source snapshot, the catalog recipe and the workspace.
+
+    The frozen ``default`` workspace contributes no workspace component, so its
+    historical snapshot ids are unchanged.  Derived workspaces include their own
+    id, so identical corpora in two workspaces can never collide.
+    """
+    payload = {"source": source_fingerprint_value, "recipe": recipe_id}
+    if workspace != "default":
+        payload["workspace"] = workspace
+    return hashlib.sha256(json.dumps(payload, sort_keys=True).encode()).hexdigest()[:16]
+
+
+async def _document_scope(conn: asyncpg.Connection, workspace: str) -> tuple | None:
+    """Names of the documents a derived workspace owns (``None`` = whole root)."""
+    if workspace == "default":
+        return None
+    rows = await conn.fetch(
+        "SELECT DISTINCT doc_name FROM public.lightrag_doc_full WHERE workspace=$1",
+        workspace,
+    )
+    return tuple(sorted(r["doc_name"] for r in rows if r["doc_name"]))
 
 
 async def _live_source_fingerprint(conn: asyncpg.Connection, workspace: str = "default") -> str:
@@ -89,7 +106,9 @@ async def _live_source_fingerprint(conn: asyncpg.Connection, workspace: str = "d
         _snap.fingerprint_docs(rows["docs"]),
         _snap.fingerprint_chunks(rows["chunks"]),
         _snap.fingerprint_status(rows["statuses"]),
-        _snap.fingerprint_artifacts(_sid.PARSED_ROOT),
+        _snap.fingerprint_artifacts(
+            _sid.PARSED_ROOT, document_scope=await _document_scope(conn, workspace)
+        ),
         _snap.chunking_params(rows["docs"]),
     )["value"]
 
@@ -116,12 +135,12 @@ async def _collect_rows(conn: asyncpg.Connection, workspace: str = "default") ->
     }
 
 
-async def _source_fingerprint(rows: dict, parsed_root: Path) -> str:
+async def _source_fingerprint(rows: dict, parsed_root: Path, document_scope=None) -> str:
     return snap.source_snapshot_fingerprint(
         snap.fingerprint_docs(rows["docs"]),
         snap.fingerprint_chunks(rows["chunks"]),
         snap.fingerprint_status(rows["statuses"]),
-        snap.fingerprint_artifacts(parsed_root),
+        snap.fingerprint_artifacts(parsed_root, document_scope=document_scope),
         snap.chunking_params(rows["docs"]),
     )["value"]
 
@@ -163,22 +182,23 @@ async def _build_catalog_locked(
     """Build and publish the catalog from a guarded source snapshot."""
     parsed_root = parsed_root or sid.PARSED_ROOT
     warnings: list = []
+    scope = await _document_scope(conn, workspace)
 
     # ---- 1. guard BEFORE snapshot ----------------------------------------
-    fp_before = snap.fingerprint_artifacts(parsed_root)
+    fp_before = snap.fingerprint_artifacts(parsed_root, document_scope=scope)
 
     # ---- 2. one REPEATABLE READ source snapshot ---------------------------
     async with conn.transaction(readonly=True, isolation="repeatable_read"):
         await conn.execute("SET LOCAL statement_timeout = 60000")
         rows = await _collect_rows(conn, workspace)
-    live_fp = await _source_fingerprint(rows, parsed_root)
+    live_fp = await _source_fingerprint(rows, parsed_root, document_scope=scope)
     if live_fp != expected_fingerprint:
         raise SourceChangedError(
             "live source fingerprint differs from expected; refusing to build a stale catalog "
             f"(expected={expected_fingerprint[:16]}, live={live_fp[:16]})"
         )
 
-    snap_id = build_identity(live_fp)
+    snap_id = build_identity(live_fp, workspace=workspace)
 
     # ---- 3. derive INSIDE the artifact guard (S4) -------------------------
     # _derive reads local parsed artifacts; after it returns the fingerprint is
@@ -190,7 +210,7 @@ async def _build_catalog_locked(
         )
     finally:
         pass
-    fp_after = snap.fingerprint_artifacts(parsed_root)
+    fp_after = snap.fingerprint_artifacts(parsed_root, document_scope=scope)
     if fp_after != fp_before:
         raise SourceChangedError(
             "parsed artifacts changed during derivation "
@@ -437,7 +457,12 @@ def _derive(
             warnings.append({"doc_id": doc_id, "warning": "no blocks.jsonl; units skipped"})
             continue
         us, ls = units_mod.build_units_and_links(
-            doc_id, doc_name, snap_id, chunks_by_doc.get(doc_id, []), pdir
+            doc_id,
+            doc_name,
+            snap_id,
+            chunks_by_doc.get(doc_id, []),
+            pdir,
+            workspace=workspace,
         )
         # S4: only links whose chunk actually exists in this source snapshot
         ls = [lk for lk in ls if lk["chunk_id"] in known_chunk_ids]
@@ -448,7 +473,7 @@ def _derive(
         for lk in ls:
             chunk_link_counts[lk["unit_id"]] = chunk_link_counts.get(lk["unit_id"], 0) + 1
 
-        scopes = scopes_mod.build_scopes(doc_id, snap_id, blocks)
+        scopes = scopes_mod.build_scopes(doc_id, snap_id, blocks, workspace=workspace)
         # S2: persist span requirements (requires_span) instead of warnings only
         for sc in scopes_mod.persist_span_requirements(
             doc_id, snap_id, blocks, scopes, chunk_link_counts
@@ -543,9 +568,10 @@ async def check_stale(
     active = await active_snapshot(conn, workspace)
     if active is None:
         return {"state": "no-active-build"}
+    scope = await _document_scope(conn, workspace)
     async with conn.transaction(readonly=True):
         rows = await _collect_rows(conn, workspace)
-    live_fp = await _source_fingerprint(rows, parsed_root)
+    live_fp = await _source_fingerprint(rows, parsed_root, document_scope=scope)
     raw_fp = active["source_fingerprint"]
     if isinstance(raw_fp, str):
         raw_fp = json.loads(raw_fp) if raw_fp else {}

@@ -1,0 +1,40 @@
+{
+ "experiment": "chunk-identity-reproduction",
+ "doc": "air-01_生态环境部等_臭氧污染防治攻坚行动方案_2022.pdf",
+ "doc_id": "doc-890f735fa40acb93614ffe371be430a8",
+ "engine": "PyPI lightrag-hku 1.5.7 (same code as the ingestion engine used for the existing default workspace)",
+ "isolated_pg": "wa-probe-pg 127.0.0.1:55432 (schema clone of production)",
+ "chunks_generated": 4,
+ "chunks_stored": 4,
+ "identical": true,
+ "per_chunk": [
+  {
+   "id_eq": true,
+   "tokens_eq": true,
+   "content_eq": true,
+   "heading_eq": true,
+   "sidecar_eq": true
+  },
+  {
+   "id_eq": true,
+   "tokens_eq": true,
+   "content_eq": true,
+   "heading_eq": true,
+   "sidecar_eq": true
+  },
+  {
+   "id_eq": true,
+   "tokens_eq": true,
+   "content_eq": true,
+   "heading_eq": true,
+   "sidecar_eq": true
+  },
+  {
+   "id_eq": true,
+   "tokens_eq": true,
+   "content_eq": true,
+   "heading_eq": true,
+   "sidecar_eq": true
+  }
+ ]
+}

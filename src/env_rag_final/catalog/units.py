@@ -61,6 +61,7 @@ def build_units_and_links(
     snapshot_id: str,
     chunk_rows: list,
     parsed_dir: Path,
+    workspace: str = "default",
 ) -> tuple[list[dict], list[dict]]:
     """Compute units + links for one document.
 
@@ -79,7 +80,7 @@ def build_units_and_links(
         bid = b["blockid"]
         units.append(
             {
-                "workspace": "default",
+                "workspace": workspace,
                 "doc_id": doc_id,
                 "snapshot_id": snapshot_id,
                 "unit_id": bid,
@@ -110,7 +111,7 @@ def build_units_and_links(
         seq_m = re_last_segment(tid)
         units.append(
             {
-                "workspace": "default",
+                "workspace": workspace,
                 "doc_id": doc_id,
                 "snapshot_id": snapshot_id,
                 "unit_id": tid,
@@ -144,7 +145,17 @@ def build_units_and_links(
         # prose mentions or prefix-similar ids must not create links).
         for c in chunk_rows:
             if tid in extract_table_ids(c["content"] or ""):
-                links.append(_link(doc_id, snapshot_id, tid, c, "inline_table_id", "partial"))
+                links.append(
+                    _link(
+                        doc_id,
+                        snapshot_id,
+                        tid,
+                        c,
+                        "inline_table_id",
+                        "partial",
+                        workspace,
+                    )
+                )
 
     # --- block → chunk links from sidecar.refs (primary basis) -------------
     for c in chunk_rows:
@@ -159,14 +170,14 @@ def build_units_and_links(
             bid = ref["id"]
             if not any(u["unit_id"] == bid for u in units):
                 continue  # ref to unknown block: leave unmapped, recorded in build report
-            links.append(_link(doc_id, snapshot_id, bid, c, "sidecar_ref", "partial"))
+            links.append(_link(doc_id, snapshot_id, bid, c, "sidecar_ref", "partial", workspace))
 
     return units, links
 
 
-def _link(doc_id, snapshot_id, unit_id, chunk_row, basis, coverage):
+def _link(doc_id, snapshot_id, unit_id, chunk_row, basis, coverage, workspace="default"):
     return {
-        "workspace": "default",
+        "workspace": workspace,
         "doc_id": doc_id,
         "snapshot_id": snapshot_id,
         "unit_id": unit_id,

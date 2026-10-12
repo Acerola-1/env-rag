@@ -3,6 +3,7 @@
 import argparse
 import asyncio
 import importlib
+import sys
 from importlib.metadata import version
 from pathlib import Path
 
@@ -82,6 +83,13 @@ async def check_connections(values: dict[str, str]) -> bool:
 
 
 def main() -> None:
+    # Workspace-access commands live in their own module so the frozen
+    # retrieval CLI and its contracts stay untouched.
+    if len(sys.argv) > 1 and sys.argv[1].startswith("workspace-"):
+        from .workspace_cli import main as workspace_main
+
+        raise SystemExit(workspace_main(sys.argv[1:]))
+
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "command",
@@ -160,7 +168,12 @@ def main() -> None:
     parser.add_argument("--document", default=None, help="Exact catalog filename or doc_id (ask)")
     parser.add_argument("--version", default=None, help="Standard edition with --code (ask)")
     parser.add_argument("--scope", default=None, help="Range such as 第3章 or 4.1.1 至 4.1.5 (ask)")
-    parser.add_argument("--workspace", default="default", help="Verified workspace (ask)")
+    parser.add_argument(
+        "--workspace",
+        default="default",
+        help="Verified workspace (ask/catalog/search/enum); 'default' keeps the "
+        "historical regression identity, other values are registry-validated",
+    )
     parser.add_argument(
         "--format", choices=["text", "json"], default="text", help="ask output format"
     )
@@ -250,6 +263,16 @@ def main() -> None:
         help="JSON file with configurable budget caps (eval-run)",
     )
     args = parser.parse_args()
+    # Replace the default-only restriction with registry validation (the
+    # check is strengthened, never removed): 'default' keeps the historical
+    # regression identity, every other value must be a registered active
+    # workspace.
+    from .access.registry import resolve_cli_workspace
+
+    try:
+        args.workspace = resolve_cli_workspace(getattr(args, "workspace", "default"))
+    except Exception as error:  # RegistryError and friends
+        raise SystemExit(f"{args.command}: FAIL ({type(error).__name__}: {error})") from None
     if args.command == "ask":
         _run_ask(args, parser)
         return
@@ -440,6 +463,7 @@ def _run_catalog(args, values: dict[str, str]) -> None:
     }
 
     async def run():
+        workspace = getattr(args, "workspace", "default")
         conn = await asyncpg.connect(**dsn)
         try:
             if args.command == "catalog-migrate":
@@ -451,6 +475,7 @@ def _run_catalog(args, values: dict[str, str]) -> None:
                 result = await build_catalog(
                     conn,
                     expected_fingerprint=args.fingerprint or FROZEN_SNAPSHOT,
+                    workspace=workspace,
                     force=args.force,
                 )
                 print(
@@ -513,16 +538,19 @@ def _run_search(args, values: dict[str, str]) -> None:
         dsn["server_settings"] = {"default_transaction_read_only": "on"}
 
     async def run():
+        workspace = getattr(args, "workspace", "default")
         conn = await asyncpg.connect(**dsn)
         try:
             if args.command == "search-build":
                 from .search.index import build_search_index
 
-                return "build", await build_search_index(conn, force=args.force)
+                return "build", await build_search_index(
+                    conn, workspace=workspace, force=args.force
+                )
             if args.command == "search-stale":
                 from .search.index import check_search_stale
 
-                return "stale", await check_search_stale(conn)
+                return "stale", await check_search_stale(conn, workspace=workspace)
             if args.command == "search-bench":
                 from .search.eval import load_gold, run_benchmark
 
@@ -736,6 +764,7 @@ def _run_enum(args, values: dict[str, str]) -> None:
     }
 
     async def run():
+        workspace = getattr(args, "workspace", "default")
         conn = await asyncpg.connect(**dsn)
         adapter = None
         try:
@@ -746,7 +775,7 @@ def _run_enum(args, values: dict[str, str]) -> None:
                     raise ValueError("enum-table requires --doc-id and --table-number")
                 return await enumerate_table(
                     conn,
-                    "default",
+                    workspace,
                     args.doc_id,
                     args.table_number,
                     chapter_scope=args.chapter_scope,
@@ -779,7 +808,7 @@ def _run_enum(args, values: dict[str, str]) -> None:
                 units, result = await read_prose_scope(
                     adapter,
                     conn,
-                    "default",
+                    workspace,
                     args.doc_id,
                     snap,
                     scope_id=args.scope_id,
@@ -809,7 +838,7 @@ def _run_enum(args, values: dict[str, str]) -> None:
                     items = extract_clauses_regex(text, wanted)
 
                 # G1: bind every item's source; model quotes get located spans
-                items = bind_citations(items, "default", args.doc_id, snap, units)
+                items = bind_citations(items, workspace, args.doc_id, snap, units)
                 items = verify_citations(items, text, units)
                 result.items = items
 

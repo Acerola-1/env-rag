@@ -1,0 +1,57 @@
+{
+ "generated_at": 1791829436.902,
+ "containers": [
+  {
+   "name": "lightrag-air",
+   "image": "ghcr.io/hkuds/lightrag:latest",
+   "digest": "sha256:5bdbd524931b011df246fe20888d110cef691e6804c12cde636a2b746d7de27e",
+   "workspace": "air",
+   "postgres_workspace": "air",
+   "qdrant_workspace": "air",
+   "neo4j_workspace": "air",
+   "neo4j_database": "neo4j",
+   "embedding_model": "Qwen/Qwen3-Embedding-4B",
+   "embedding_dim": "2560",
+   "llm_model": "deepseek-v4.1-flash",
+   "ports": [
+    9622
+   ]
+  },
+  {
+   "name": "lightrag-water",
+   "image": "ghcr.io/hkuds/lightrag:latest",
+   "digest": "sha256:5bdbd524931b011df246fe20888d110cef691e6804c12cde636a2b746d7de27e",
+   "workspace": "water",
+   "postgres_workspace": "water",
+   "qdrant_workspace": "water",
+   "neo4j_workspace": "water",
+   "neo4j_database": "neo4j",
+   "embedding_model": "Qwen/Qwen3-Embedding-4B",
+   "embedding_dim": "2560",
+   "llm_model": "deepseek-v4.1-flash",
+   "ports": [
+    9623
+   ]
+  }
+ ],
+ "code_identity": {
+  "src/env_rag_final/access/registry.py": "e58f16b48a135131",
+  "src/env_rag_final/access/auth.py": "5c45a243d642cdb7",
+  "src/env_rag_final/access/gateway.py": "e6a3a20732612081",
+  "src/env_rag_final/access/server.py": "768887f1d9410d6e",
+  "src/env_rag_final/ingest/runner.py": "f68fb095bab6ad67",
+  "src/env_rag_final/manifest.py": "5431b6d49b81eda3",
+  "src/env_rag_final/search/index.py": "a40c2cd7cfcd1a2a",
+  "src/env_rag_final/catalog/builder.py": "78d5b61555dd906c",
+  "src/env_rag_final/audit/snapshot.py": "701e311c0e66f43b"
+ },
+ "model_configuration": {
+  "llm": "deepseek-v4.1-flash",
+  "keyword_llm": "deepseek-v4.1-flash",
+  "query_llm": "deepseek-v4.1-flash",
+  "embedding": "Qwen/Qwen3-Embedding-4B",
+  "embedding_dim": "2560",
+  "rerank": "Qwen/Qwen3-Reranker-4B",
+  "lightrag_package": "1.5.7"
+ }
+}

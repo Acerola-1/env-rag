@@ -1,0 +1,646 @@
+{
+ "base": "http://127.0.0.1:8099",
+ "rows": [
+  {
+   "case": "anonymous.query",
+   "expected": "401",
+   "status": 401,
+   "body": {
+    "error": "unauthenticated",
+    "message": "authentication required"
+   },
+   "at": 1791828729.002
+  },
+  {
+   "case": "anonymous.records",
+   "expected": "401",
+   "status": 401,
+   "body": {
+    "error": "unauthenticated",
+    "message": "authentication required"
+   },
+   "at": 1791828729.002
+  },
+  {
+   "case": "forged.bearer",
+   "expected": "401",
+   "status": 401,
+   "body": {
+    "error": "unauthenticated",
+    "message": "authentication required"
+   },
+   "at": 1791828729.012
+  },
+  {
+   "case": "forged.role-header",
+   "expected": "per-subject",
+   "status": 403,
+   "body": {
+    "error": "unauthorized_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791828729.022
+  },
+  {
+   "case": "air-reader.login",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "air-reader",
+    "display": "大气读者",
+    "csrf": "Mv48MduIe87bGdkai-Ydi7GgGRthxeNtvd10rEQJOMQ",
+    "workspaces": [
+     {
+      "id": "air",
+      "name": "大气资料",
+      "pg_workspace": "air",
+      "vector_workspace": "air",
+      "graph_workspace": "air",
+      "status": "active",
+      "parsed_root": "datasets/corpus/parsed",
+      "document_scope": null,
+      "instance_url": "http://127.0.0.1:9622",
+      "instance_key_ref": "air",
+      "code_identity": "lightrag-hku==1.5.7 / ghcr.io/hkuds/lightrag:latest",
+      "embedding_model": "Qwen/Qwen3-Embedding-4B",
+      "embedding_dim": 2560,
+      "corpus_manifest": "reports/workspace-access/wa-20261012-r1/corpus-manifest.jsonl",
+      "notes": "大气环境资料；解析产物复用仓库 MinerU sidecar"
+     }
+    ]
+   },
+   "at": 1791828729.063
+  },
+  {
+   "case": "air-reader.allow.air",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "air-reader",
+    "record_id": null,
+    "workspaces": [
+     "air"
+    ],
+    "policy_revision": "wa-20261012-r1+coastal-20261013012705",
+    "result": {
+     "status": "ambiguous",
+     "workspaces": [
+      "air"
+     ],
+     "evidence": 20,
+     "failures": 0
+    }
+   },
+   "at": 1791828729.941
+  },
+  {
+   "case": "air-reader.deny.water",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unauthorized_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791828729.942
+  },
+  {
+   "case": "air-reader.deny.air+water",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unauthorized_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791828729.942
+  },
+  {
+   "case": "air-reader.deny.default",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unknown_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791828729.943
+  },
+  {
+   "case": "air-reader.deny.unknown",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unknown_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791828729.943
+  },
+  {
+   "case": "water-reader.login",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "water-reader",
+    "display": "水资料读者",
+    "csrf": "CButWZK4M62nQ4kMP5Z_Lx3rQnHW-T9eGeeI81OHRGc",
+    "workspaces": [
+     {
+      "id": "water",
+      "name": "水资料",
+      "pg_workspace": "water",
+      "vector_workspace": "water",
+      "graph_workspace": "water",
+      "status": "active",
+      "parsed_root": "datasets/corpus/parsed",
+      "document_scope": null,
+      "instance_url": "http://127.0.0.1:9623",
+      "instance_key_ref": "water",
+      "code_identity": "lightrag-hku==1.5.7 / ghcr.io/hkuds/lightrag:latest",
+      "embedding_model": "Qwen/Qwen3-Embedding-4B",
+      "embedding_dim": 2560,
+      "corpus_manifest": "reports/workspace-access/wa-20261012-r1/corpus-manifest.jsonl",
+      "notes": "水环境资料；含显式共用样本"
+     }
+    ]
+   },
+   "at": 1791828729.987
+  },
+  {
+   "case": "water-reader.allow.water",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "water-reader",
+    "record_id": null,
+    "workspaces": [
+     "water"
+    ],
+    "policy_revision": "wa-20261012-r1+coastal-20261013012705",
+    "result": {
+     "status": "ambiguous",
+     "workspaces": [
+      "water"
+     ],
+     "evidence": 4,
+     "failures": 0
+    }
+   },
+   "at": 1791828730.785
+  },
+  {
+   "case": "water-reader.deny.air",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unauthorized_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791828730.786
+  },
+  {
+   "case": "water-reader.deny.air+water",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unauthorized_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791828730.787
+  },
+  {
+   "case": "water-reader.deny.default",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unknown_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791828730.787
+  },
+  {
+   "case": "water-reader.deny.unknown",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unknown_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791828730.788
+  },
+  {
+   "case": "dual-reader.login",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "dual-reader",
+    "display": "双库读者",
+    "csrf": "I_cbSmql7ndkKwqf_p0aNJKFF8IRZGRC6sStciuLzp0",
+    "workspaces": [
+     {
+      "id": "air",
+      "name": "大气资料",
+      "pg_workspace": "air",
+      "vector_workspace": "air",
+      "graph_workspace": "air",
+      "status": "active",
+      "parsed_root": "datasets/corpus/parsed",
+      "document_scope": null,
+      "instance_url": "http://127.0.0.1:9622",
+      "instance_key_ref": "air",
+      "code_identity": "lightrag-hku==1.5.7 / ghcr.io/hkuds/lightrag:latest",
+      "embedding_model": "Qwen/Qwen3-Embedding-4B",
+      "embedding_dim": 2560,
+      "corpus_manifest": "reports/workspace-access/wa-20261012-r1/corpus-manifest.jsonl",
+      "notes": "大气环境资料；解析产物复用仓库 MinerU sidecar"
+     },
+     {
+      "id": "water",
+      "name": "水资料",
+      "pg_workspace": "water",
+      "vector_workspace": "water",
+      "graph_workspace": "water",
+      "status": "active",
+      "parsed_root": "datasets/corpus/parsed",
+      "document_scope": null,
+      "instance_url": "http://127.0.0.1:9623",
+      "instance_key_ref": "water",
+      "code_identity": "lightrag-hku==1.5.7 / ghcr.io/hkuds/lightrag:latest",
+      "embedding_model": "Qwen/Qwen3-Embedding-4B",
+      "embedding_dim": 2560,
+      "corpus_manifest": "reports/workspace-access/wa-20261012-r1/corpus-manifest.jsonl",
+      "notes": "水环境资料；含显式共用样本"
+     }
+    ]
+   },
+   "at": 1791828730.829
+  },
+  {
+   "case": "dual-reader.allow.air",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "dual-reader",
+    "record_id": null,
+    "workspaces": [
+     "air"
+    ],
+    "policy_revision": "wa-20261012-r1+coastal-20261013012705",
+    "result": {
+     "status": "ambiguous",
+     "workspaces": [
+      "air"
+     ],
+     "evidence": 20,
+     "failures": 0
+    }
+   },
+   "at": 1791828731.36
+  },
+  {
+   "case": "dual-reader.allow.water",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "dual-reader",
+    "record_id": null,
+    "workspaces": [
+     "water"
+    ],
+    "policy_revision": "wa-20261012-r1+coastal-20261013012705",
+    "result": {
+     "status": "ambiguous",
+     "workspaces": [
+      "water"
+     ],
+     "evidence": 4,
+     "failures": 0
+    }
+   },
+   "at": 1791828732.085
+  },
+  {
+   "case": "dual-reader.allow.air+water",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "dual-reader",
+    "record_id": null,
+    "workspaces": [
+     "air",
+     "water"
+    ],
+    "policy_revision": "wa-20261012-r1+coastal-20261013012705",
+    "result": {
+     "status": "ambiguous",
+     "workspaces": [
+      "air",
+      "water"
+     ],
+     "evidence": 24,
+     "failures": 0
+    }
+   },
+   "at": 1791828733.324
+  },
+  {
+   "case": "dual-reader.deny.default",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unknown_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791828733.325
+  },
+  {
+   "case": "dual-reader.deny.unknown",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unknown_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791828733.326
+  },
+  {
+   "case": "no-access.login",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "no-access",
+    "display": "无知识库授权主体",
+    "csrf": "Ac-2NxWe9FBfLPSt_VUZAlArXKJaS635uY_3MaggRoQ",
+    "workspaces": []
+   },
+   "at": 1791828733.366
+  },
+  {
+   "case": "no-access.deny.air",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unauthorized_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791828733.367
+  },
+  {
+   "case": "no-access.deny.water",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unauthorized_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791828733.368
+  },
+  {
+   "case": "no-access.deny.air+water",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unauthorized_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791828733.368
+  },
+  {
+   "case": "no-access.deny.all",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "no_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791828733.368
+  },
+  {
+   "case": "no-access.deny.default",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unknown_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791828733.369
+  },
+  {
+   "case": "beta-reader.login",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "beta-reader",
+    "display": "乙企业大气读者",
+    "csrf": "JoK-KmVpdt_jGqrf7jxzRwi4x2llnvKywZYOVCEO7kI",
+    "workspaces": [
+     {
+      "id": "water",
+      "name": "水资料",
+      "pg_workspace": "water",
+      "vector_workspace": "water",
+      "graph_workspace": "water",
+      "status": "active",
+      "parsed_root": "datasets/corpus/parsed",
+      "document_scope": null,
+      "instance_url": "http://127.0.0.1:9623",
+      "instance_key_ref": "water",
+      "code_identity": "lightrag-hku==1.5.7 / ghcr.io/hkuds/lightrag:latest",
+      "embedding_model": "Qwen/Qwen3-Embedding-4B",
+      "embedding_dim": 2560,
+      "corpus_manifest": "reports/workspace-access/wa-20261012-r1/corpus-manifest.jsonl",
+      "notes": "水环境资料；含显式共用样本"
+     }
+    ]
+   },
+   "at": 1791828733.41
+  },
+  {
+   "case": "beta-reader.same-role-different-grant.allows-water",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "beta-reader",
+    "record_id": null,
+    "workspaces": [
+     "water"
+    ],
+    "policy_revision": "wa-20261012-r1+coastal-20261013012705",
+    "result": {
+     "status": "ambiguous",
+     "workspaces": [
+      "water"
+     ],
+     "evidence": 14,
+     "failures": 0
+    }
+   },
+   "at": 1791828734.153
+  },
+  {
+   "case": "beta-reader.same-role-different-grant.denies-air",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unauthorized_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791828734.154
+  },
+  {
+   "case": "dual.query.air+water",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "dual-reader",
+    "record_id": "wa-10517dfba380b26c4d9a",
+    "workspaces": [
+     "air",
+     "water"
+    ],
+    "policy_revision": "wa-20261012-r1+coastal-20261013012705",
+    "result": {
+     "status": "ambiguous",
+     "workspaces": [
+      "air",
+      "water"
+     ],
+     "evidence": 40,
+     "failures": 0
+    }
+   },
+   "at": 1791828735.496
+  },
+  {
+   "case": "air-reader.foreign-record",
+   "expected": "404",
+   "status": 404,
+   "body": {
+    "error": "not_available",
+    "message": "not available"
+   },
+   "at": 1791828735.538
+  },
+  {
+   "case": "air-reader.foreign-export",
+   "expected": "404",
+   "status": 404,
+   "body": {
+    "error": "not_available",
+    "message": "not available"
+   },
+   "at": 1791828735.538
+  },
+  {
+   "case": "air-reader.foreign-summary",
+   "expected": "200-empty",
+   "status": 200,
+   "body": {
+    "records": "…"
+   },
+   "at": 1791828735.547
+  },
+  {
+   "case": "air-reader.own-record-detail",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "records": "…"
+   },
+   "at": 1791828735.548
+  },
+  {
+   "case": "bypass.instance.air.no-key",
+   "expected": "403/404",
+   "status": 403,
+   "body": {
+    "text_len": 29
+   },
+   "at": 1791828735.579
+  },
+  {
+   "case": "bypass.instance.air.reader-credential",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "text_len": 28
+   },
+   "at": 1791828735.591
+  },
+  {
+   "case": "bypass.instance.water.no-key",
+   "expected": "403/404",
+   "status": 403,
+   "body": {
+    "text_len": 29
+   },
+   "at": 1791828735.624
+  },
+  {
+   "case": "bypass.instance.manage-with-instance-key",
+   "expected": "documented-internal",
+   "status": 405,
+   "body": {
+    "text_len": 31
+   },
+   "at": 1791828735.64
+  },
+  {
+   "case": "revocation.before.record-visible",
+   "expected": "200/404",
+   "status": 200,
+   "body": {
+    "record_id": "wa-f224a24b6b39257e1780",
+    "user_id": "dual-reader",
+    "enterprise": "alpha-env",
+    "policy_revision": "wa-20261012-r1+coastal-20261013012705",
+    "workspaces": [
+     "air",
+     "water"
+    ],
+    "created_at": 1791828736.940418,
+    "question": "空气质量标准",
+    "route": "pg",
+    "status": "ambiguous",
+    "payload": "…"
+   },
+   "at": 1791828736.947
+  },
+  {
+   "case": "revocation.deny.new-water-query",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unauthorized_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   }
+  },
+  {
+   "case": "revocation.deny.old-record-after-revocation",
+   "expected": "404",
+   "status": 404,
+   "body": {
+    "error": "not_available",
+    "message": "not available"
+   }
+  },
+  {
+   "case": "revocation.all-expands-to-air-only",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "dual-reader",
+    "record_id": null,
+    "workspaces": [
+     "air"
+    ],
+    "policy_revision": "wa-20261012-r1+coastal-20261013012705-revoked",
+    "result": {
+     "status": "ambiguous",
+     "workspaces": [
+      "air"
+     ],
+     "evidence": 21,
+     "failures": 0
+    }
+   }
+  }
+ ]
+}

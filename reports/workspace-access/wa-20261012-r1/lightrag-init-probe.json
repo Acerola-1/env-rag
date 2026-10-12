@@ -1,0 +1,56 @@
+{
+ "workspace": "wa-probe",
+ "pg_target": "127.0.0.1:55432/rag",
+ "events": [
+  "initialize_storages ok",
+  "initialize_pipeline_status ok"
+ ],
+ "diff": {
+  "neo4j.labels": {
+   "added": [
+    "wa-probe"
+   ],
+   "removed": []
+  },
+  "neo4j.indexes": {
+   "added": [
+    "{'name': 'entity_id_fulltext_idx_wa_probe', 'labelsOrTypes': ['wa-probe'], 'properties': ['entity_id']}",
+    "{'name': 'index_8a3295c4', 'labelsOrTypes': ['wa-probe'], 'properties': ['entity_id']}"
+   ],
+   "removed": []
+  },
+  "qdrant.new_collections": [
+   "lightrag_vdb_chunks",
+   "lightrag_vdb_entities",
+   "lightrag_vdb_relationships"
+  ]
+ },
+ "before_summary": {
+  "pg_tables": 20,
+  "qdrant": {
+   "lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d": 5709,
+   "lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d": 65526,
+   "lightrag_vdb_relationships_qwen_qwen3_embedding_4b_2560d": 119574
+  },
+  "neo4j_labels": [
+   "base",
+   "default"
+  ]
+ },
+ "after_summary": {
+  "pg_tables": 20,
+  "qdrant": {
+   "lightrag_vdb_chunks": 0,
+   "lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d": 5709,
+   "lightrag_vdb_entities": 0,
+   "lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d": 65526,
+   "lightrag_vdb_relationships": 0,
+   "lightrag_vdb_relationships_qwen_qwen3_embedding_4b_2560d": 119574
+  },
+  "neo4j_labels": [
+   "base",
+   "default",
+   "wa-probe"
+  ]
+ }
+}

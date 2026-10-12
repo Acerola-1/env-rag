@@ -1,0 +1,199 @@
+{
+ "files": {
+  ".env": {
+   "bytes": 4999,
+   "sha256": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+  },
+  "DESIGN.md": {
+   "bytes": 2987,
+   "sha256": "84a4b9e1d17cdb98472bf3663954a24fc0a1a82f50ea0172652f8029e176da88"
+  },
+  "ENUMERATION.md": {
+   "bytes": 5438,
+   "sha256": "65ce990f41e442999a202d89df87685e13d4606868c1d60ca50613ac3a982d2d"
+  },
+  "UX-CONTRACT.md": {
+   "bytes": 2687,
+   "sha256": "6e5850837c6b13903bec3741b8224415c1d91d0ce32ac393e000a5a190d95aaf"
+  },
+  "WEB_RAG.md": {
+   "bytes": 4127,
+   "sha256": "74220b4d32080cb7a3d366aa5eeff528c492fad117849e9e0156ffc1546b36ac"
+  },
+  "datasets/evaluation/gold-approved.json": {
+   "bytes": 88640,
+   "sha256": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e"
+  },
+  "datasets/evaluation/unit-mapping.json": {
+   "bytes": 17627,
+   "sha256": "ee23f2c10a8e2c733511fae59bb157380c4ab9c1e888aa510e36daf49f9b8f3b"
+  },
+  "datasets/manifest.json": {
+   "bytes": 2621610,
+   "sha256": "cf1387858b823e50c71528dd1ca863dfceb858ede890e5ffe1b33bb39b8f033c"
+  },
+  "premium-ui.json": {
+   "bytes": 884,
+   "sha256": "e1961b7e042d4bd647dee814485ef56df2dff6afccfc0c4176a4ab460fff7784"
+  }
+ },
+ "format": "workspace-access/protected-snapshot-r1",
+ "neo4j": {
+  "labels": {
+   "base": {
+    "entity_id_digest": "53265c68ff36eb5d06a34f3b88657f2c",
+    "nodes": 66069,
+    "relationships_out": 121819
+   },
+   "default": {
+    "entity_id_digest": "e3b0c44298fc1c149afbf4c8996fb924",
+    "nodes": 0,
+    "relationships_out": 0
+   }
+  }
+ },
+ "pg": {
+  "env_rag": {
+   "active_catalog": {
+    "default": {
+     "run_id": "c15c741742394320",
+     "snapshot_id": "4919b3938ad93747"
+    }
+   },
+   "active_search": {
+    "default": {
+     "catalog_snapshot_id": "4919b3938ad93747",
+     "search_id": "872d689343a9cbb6",
+     "status": "active"
+    }
+   },
+   "corpus_runs": {
+    "counts": {
+     "default": 6
+    }
+   },
+   "documents": {
+    "counts": {
+     "default": 221
+    }
+   },
+   "scope_units": {
+    "counts": {
+     "default": 14557
+    }
+   },
+   "scopes": {
+    "counts": {
+     "default": 1970
+    }
+   },
+   "search_builds": {
+    "counts": {
+     "default": 8
+    }
+   },
+   "search_chunks": {
+    "counts": {
+     "default": 5709
+    }
+   },
+   "search_documents": {
+    "counts": {
+     "default": 221
+    }
+   },
+   "source_units": {
+    "counts": {
+     "default": 12269
+    }
+   },
+   "unit_chunk_links": {
+    "counts": {
+     "default": 16783
+    }
+   }
+  },
+  "tables": {
+   "lightrag_doc_chunks": {
+    "counts": {
+     "default": 5709
+    },
+    "id_digest": {
+     "default": "39477cf2f6021abf428b18ac2848ea6c"
+    }
+   },
+   "lightrag_doc_full": {
+    "counts": {
+     "default": 221
+    },
+    "id_digest": {
+     "default": "cd04f958a9012d8b2d6b23d813821558"
+    }
+   },
+   "lightrag_doc_status": {
+    "counts": {
+     "default": 279
+    },
+    "id_digest": {
+     "default": "e711badb254a1e2a97b46ff94a865084"
+    }
+   },
+   "lightrag_entity_chunks": {
+    "counts": {
+     "default": 65527
+    }
+   },
+   "lightrag_full_entities": {
+    "counts": {
+     "default": 221
+    }
+   },
+   "lightrag_full_relations": {
+    "counts": {
+     "default": 221
+    }
+   },
+   "lightrag_llm_cache": {
+    "counts": {
+     "default": 16514
+    }
+   },
+   "lightrag_relation_chunks": {
+    "counts": {
+     "default": 119575
+    }
+   }
+  }
+ },
+ "qdrant": {
+  "collections": {
+   "lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d": {
+    "by_workspace": {
+     "_": {
+      "count": 5709,
+      "id_digest": "06db439a5ed9fc94e1e8258618337473"
+     }
+    },
+    "points": 5709
+   },
+   "lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d": {
+    "by_workspace": {
+     "_": {
+      "count": 65526,
+      "id_digest": "760b4f3f5107db3c2fc043df18fa9633"
+     }
+    },
+    "points": 65526
+   },
+   "lightrag_vdb_relationships_qwen_qwen3_embedding_4b_2560d": {
+    "by_workspace": {
+     "_": {
+      "count": 119574,
+      "id_digest": "4106bb2312969666a2d8e7791e420b99"
+     }
+    },
+    "points": 119574
+   }
+  }
+ }
+}

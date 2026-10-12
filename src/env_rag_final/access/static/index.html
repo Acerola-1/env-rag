@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>环境知识库 · 授权访问</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<a class="skip" href="#ask">跳到查询表单</a>
+<header class="topbar">
+  <h1>环境知识库</h1>
+  <div class="session" role="status" aria-live="polite">
+    <span id="who">未登录</span>
+    <button id="logout" type="button" class="ghost" hidden>退出</button>
+  </div>
+</header>
+
+<main>
+  <section id="login-panel" class="panel" aria-labelledby="login-h">
+    <h2 id="login-h">登录</h2>
+    <form id="login-form" autocomplete="off">
+      <label for="user_id">主体</label>
+      <input id="user_id" name="user_id" required>
+      <label for="password">口令</label>
+      <input id="password" name="password" type="password" required>
+      <button type="submit">登录</button>
+    </form>
+    <p id="login-error" class="error" role="alert" hidden></p>
+  </section>
+
+  <section id="app-panel" hidden>
+    <section class="panel" aria-labelledby="libs-h">
+      <h2 id="libs-h">知识库</h2>
+      <div id="libs" class="libs" role="radiogroup" aria-label="可访问知识库"></div>
+      <p id="libs-empty" class="warn" hidden>该主体没有任何知识库授权，无法查询。</p>
+    </section>
+
+    <section class="panel" aria-labelledby="ask-h">
+      <h2 id="ask-h">查询</h2>
+      <form id="ask" autocomplete="off">
+        <label for="question">问题</label>
+        <textarea id="question" rows="3" required></textarea>
+        <div class="row">
+          <label for="route">检索路径</label>
+          <select id="route">
+            <option value="pg">PG 结构化检索（完整范围）</option>
+            <option value="lightrag">LightRAG 图检索</option>
+            <option value="pg+lightrag">PG + LightRAG 组合</option>
+          </select>
+          <label for="mode">LightRAG 模式</label>
+          <select id="mode">
+            <option value="naive">naive</option>
+            <option value="local" selected>local</option>
+            <option value="global">global</option>
+            <option value="hybrid">hybrid</option>
+            <option value="mix">mix</option>
+          </select>
+          <button type="submit" id="ask-submit">查询</button>
+        </div>
+      </form>
+      <p id="ask-status" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="panel" aria-labelledby="res-h" hidden id="result-panel">
+      <h2 id="res-h">结果</h2>
+      <p id="result-meta" class="meta"></p>
+      <div class="row">
+        <button id="generate" type="button">用本次证据生成回答</button>
+      </div>
+      <div id="generation" class="generation" hidden></div>
+      <h3>证据</h3>
+      <ol id="evidence" class="evidence"></ol>
+    </section>
+
+    <section class="panel" aria-labelledby="rec-h">
+      <h2 id="rec-h">我的记录</h2>
+      <button id="refresh-records" type="button" class="ghost">刷新</button>
+      <ul id="records" class="records"></ul>
+    </section>
+  </section>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>

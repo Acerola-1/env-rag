@@ -1,0 +1,34 @@
+{
+ "workspace": "air",
+ "recipe": "wa-ingest-r1-paragraph-semantic-reuse",
+ "models": {
+  "llm": "deepseek-v4.1-flash",
+  "keyword_llm": "deepseek-v4.1-flash",
+  "embedding": "Qwen/Qwen3-Embedding-4B",
+  "embedding_dim": "2560",
+  "chunk_size": "1500",
+  "chunk_overlap": "300"
+ },
+ "manifest": "/Users/acerola/Dev/Python/RAG/env-rag-final/reports/workspace-access/wa-20261012-r1/corpus-manifest.jsonl",
+ "planned": 63,
+ "duplicates": 4,
+ "shared_documents": [],
+ "excluded": 0,
+ "to_process": 24,
+ "dry_run": false,
+ "started_at": 1791823068.864,
+ "pruned_duplicate_rows": "DELETE 42",
+ "reused_cache_rows": 0,
+ "llm_dispatches": {
+  "llm_calls": 865,
+  "extract_calls": 0,
+  "summary_calls": 865,
+  "prompt_tokens": 1083657,
+  "embed_calls": 1412
+ },
+ "ledger_counts": {
+  "done": 63,
+  "duplicate": 4
+ },
+ "finished_at": 1791823906.279
+}
