@@ -104,6 +104,8 @@ Gate 3 条件逐条状态与证据见 `reports/pg-retrieval/phase-3/gate3-checkl
 
 ## OpenSpec 计划
 
+知识库权限与双实例的新变更见 [add-workspace-knowledge-access](openspec/changes/add-workspace-knowledge-access/proposal.md)，实施边界、44 项任务及固定验收在同目录；交给 Z Code 的完整提示见 [GOAL-ZCODE.md](openspec/changes/add-workspace-knowledge-access/GOAL-ZCODE.md)。该计划尚未实施，沿用当前 DeepSeek／embedding／reranker 配置。
+
 变更：[add-pg-scoped-retrieval](openspec/changes/add-pg-scoped-retrieval/)。proposal定义范围、design定义门槛、tasks跟踪证据。Phase0–3及Gate3已验收；Phase4交接就绪，新增真实对照评测未执行。
 
 固定金标：[审核副本](reports/pg-retrieval/gate-2/review-r5/gold-approved.json)，31正例/10反例期望，top-k=20，保持原题、期望及公开失败。源/词表/配方变化仍按stale合同处理。
