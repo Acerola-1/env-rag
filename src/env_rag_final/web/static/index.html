@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="用同一个问题对照不同 RAG 检索策略及其来源证据。" />
+    <title>知识库问答 — 环境知识库</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <script src="/static/markdown.js" defer></script>
+    <script src="/static/selection.js" defer></script>
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar" aria-labelledby="sidebar-title">
+        <header class="brand-lockup">
+          <p class="eyebrow">ENVIRONMENTAL KNOWLEDGE</p>
+          <h1 id="sidebar-title">知识库问答</h1>
+          <p>选一条路线提问，按引用核对原文。</p>
+        </header>
+
+        <fieldset class="workflow-switch" id="workflow-fieldset">
+          <legend>使用方式</legend>
+          <div class="workflow-switch-options">
+            <label for="workflow-ask"><input id="workflow-ask" name="workflow" type="radio" value="ask" checked /><span>普通问答</span></label>
+            <label for="workflow-compare"><input id="workflow-compare" name="workflow" type="radio" value="compare" /><span>对照实验</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="strategies" id="strategy-fieldset">
+          <legend id="strategy-legend">选择一条检索路线</legend>
+          <div id="ordinary-selection">
+            <p class="helper-copy">只执行所选路线，返回一份结果。</p>
+            <label class="route-choice" for="route-lightrag"><input id="route-lightrag" name="route" type="radio" value="lightrag" checked /><span><strong>LightRAG</strong><small>使用原生检索</small></span></label>
+            <label class="route-choice" for="route-pg"><input id="route-pg" name="route" type="radio" value="pg" /><span><strong>PG</strong><small>使用关键词与完整范围检索</small></span></label>
+            <label class="route-choice" for="route-combined"><input id="route-combined" name="route" type="radio" value="combined" /><span><strong>PG + LightRAG</strong><small>两路证据合并，生成一份回答</small></span></label>
+            <label class="route-choice" for="route-bypass"><input id="route-bypass" name="route" type="radio" value="bypass" /><span><strong>纯模型</strong><small>不查知识库，无来源证据</small></span></label>
+            <div class="native-mode-field" id="native-mode-field">
+              <label for="ordinary-mode">LightRAG 模式</label>
+              <select id="ordinary-mode" aria-describedby="native-mode-help">
+                <option value="local" selected>local · 实体与关联</option>
+                <option value="global">global · 整体图谱关系</option>
+                <option value="hybrid">hybrid · 局部与整体图谱</option>
+                <option value="mix">mix · 图谱与向量检索</option>
+                <option value="naive">naive · 向量检索</option>
+              </select>
+              <p class="helper-copy" id="native-mode-help">使用 LightRAG 原生 local 模式。</p>
+            </div>
+          </div>
+          <div id="comparison-selection" hidden>
+            <p class="helper-copy">每个选项是一条完整路线。多选会分别运行，返回多份结果。</p>
+            <div class="compare-presets">
+              <button type="button" id="compare-pg-local" disabled>local 对比 PG + local</button>
+              <button type="button" id="compare-three" disabled>local / PG / PG + local</button>
+            </div>
+
+          <fieldset class="strategy-group">
+            <legend>LightRAG</legend>
+            <label class="strategy-option" for="strategy-naive">
+              <input id="strategy-naive" name="strategies" type="checkbox" value="naive" />
+              <span>naive</span>
+            </label>
+            <label class="strategy-option" for="strategy-local">
+              <input id="strategy-local" name="strategies" type="checkbox" value="local" checked />
+              <span>local</span>
+            </label>
+            <label class="strategy-option" for="strategy-global">
+              <input id="strategy-global" name="strategies" type="checkbox" value="global" />
+              <span>global</span>
+            </label>
+            <label class="strategy-option" for="strategy-hybrid">
+              <input id="strategy-hybrid" name="strategies" type="checkbox" value="hybrid" />
+              <span>hybrid</span>
+            </label>
+            <label class="strategy-option" for="strategy-mix">
+              <input id="strategy-mix" name="strategies" type="checkbox" value="mix" />
+              <span>mix</span>
+            </label>
+          </fieldset>
+
+          <fieldset class="strategy-group">
+            <legend>PG</legend>
+            <label class="strategy-option" for="strategy-pg">
+              <input id="strategy-pg" name="strategies" type="checkbox" value="pg" />
+              <span>PG</span>
+            </label>
+          </fieldset>
+
+          <fieldset class="strategy-group">
+            <legend>PG + LightRAG</legend>
+            <label class="strategy-option" for="strategy-pg-naive">
+              <input id="strategy-pg-naive" name="strategies" type="checkbox" value="pg+naive" />
+              <span>PG + naive</span>
+            </label>
+            <label class="strategy-option" for="strategy-pg-local">
+              <input id="strategy-pg-local" name="strategies" type="checkbox" value="pg+local" />
+              <span>PG + local</span>
+            </label>
+            <label class="strategy-option" for="strategy-pg-global">
+              <input id="strategy-pg-global" name="strategies" type="checkbox" value="pg+global" />
+              <span>PG + global</span>
+            </label>
+            <label class="strategy-option" for="strategy-pg-hybrid">
+              <input id="strategy-pg-hybrid" name="strategies" type="checkbox" value="pg+hybrid" />
+              <span>PG + hybrid</span>
+            </label>
+            <label class="strategy-option" for="strategy-pg-mix">
+              <input id="strategy-pg-mix" name="strategies" type="checkbox" value="pg+mix" />
+              <span>PG + mix</span>
+            </label>
+          </fieldset>
+
+          <fieldset class="strategy-group">
+            <legend>纯模型对照</legend>
+            <label class="strategy-option" for="strategy-bypass">
+              <input id="strategy-bypass" name="strategies" type="checkbox" value="bypass" />
+              <span>bypass <span class="muted-label">不检索</span></span>
+            </label>
+          </fieldset>
+          </div>
+          <p class="selection-preview" id="selection-preview" role="status" aria-live="polite">本次路线：local · 1 份结果</p>
+        </fieldset>
+
+        <section class="budget-panel" aria-labelledby="budget-title">
+          <div class="section-heading">
+            <h2 id="budget-title">本轮预算</h2>
+            <span class="badge" id="budget-state">等待返回</span>
+          </div>
+          <div class="budget-values" id="budget-values">
+            <p class="empty-copy">提交后显示 caps、reserved 和 issued。</p>
+          </div>
+        </section>
+      </aside>
+
+      <main class="main" id="main-content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow" id="workspace-eyebrow">KNOWLEDGE · SOURCES</p>
+            <h2 id="workspace-title">查知识库，看原文</h2>
+          </div>
+          <p class="topbar-note" id="workspace-description">一次提问，一条路线；回答和原文在一起。</p>
+        </header>
+
+        <section class="composer" aria-labelledby="composer-title">
+          <form id="query-form" novalidate>
+            <div class="section-heading composer-heading">
+              <div>
+                <p class="eyebrow">QUERY</p>
+                <h2 id="composer-title">提出一个问题</h2>
+              </div>
+              <span class="badge" id="selection-count">1 份结果</span>
+            </div>
+
+            <div class="question-field">
+              <label for="question">问题</label>
+              <textarea
+                class="resize-none"
+                id="question"
+                name="query"
+                rows="4"
+                required
+                maxlength="4000"
+                autocomplete="off"
+                aria-describedby="question-hint question-error"
+                placeholder="例如：GB 8978-1996 表 1 的污染物限值有哪些？"
+              ></textarea>
+              <div class="question-actions">
+                <span id="question-hint" class="helper-copy">按 ⌘/Ctrl + Enter 可提交；输入法组合输入结束后再提交。</span>
+                <button class="clear-button" id="clear-question" type="button" aria-label="清空问题" disabled>清空</button>
+              </div>
+              <p class="field-error" id="question-error" role="alert" hidden></p>
+            </div>
+
+            <details class="scope-options">
+              <summary>补充范围（可选）</summary>
+              <div class="scope-fields">
+                <label for="query-kind">问题类型
+                  <input id="query-kind" name="kind" type="text" maxlength="40" autocomplete="off" placeholder="如 table、files、prose" />
+                </label>
+                <label for="table-number">表号
+                  <input id="table-number" name="table_number" type="text" maxlength="40" autocomplete="off" placeholder="如 1" />
+                </label>
+                <label for="query-scope">章节或范围
+                  <input id="query-scope" name="scope" type="text" maxlength="240" autocomplete="off" placeholder="如 第三章" />
+                </label>
+              </div>
+            </details>
+
+            <div class="mode-row">
+              <label class="generation-toggle" for="generate-toggle">
+                <input id="generate-toggle" name="generate" type="checkbox" />
+                <span>生成回答</span>
+              </label>
+              <p id="mode-description" class="helper-copy">关闭时只检索；抽词和向量化仍可能调用服务。</p>
+            </div>
+
+            <div class="toolbar composer-toolbar">
+              <button class="primary-button" id="submit-query" type="submit">
+                <span class="button-label">开始查询</span>
+                <span class="button-progress" aria-hidden="true"></span>
+              </button>
+              <p class="status" id="query-status" role="status" aria-live="polite" aria-atomic="true">准备就绪。</p>
+            </div>
+          </form>
+        </section>
+
+        <section class="results" aria-labelledby="results-title">
+          <header class="section-heading results-heading">
+            <div>
+              <p class="eyebrow">RUN RECORDS</p>
+              <h2 id="results-title">本次结果</h2>
+            </div>
+            <p class="helper-copy" id="results-summary">提交问题后，各策略会按真实执行结果分别显示。</p>
+          </header>
+
+          <div class="empty-state" id="empty-state">
+            <span class="empty-mark" aria-hidden="true">↘</span>
+            <h3>等待问题</h3>
+            <p>选择策略并提交后，这里会显示答案、完整证据和引用。</p>
+          </div>
+          <div class="results-list" id="results-list" aria-live="off"></div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1432 @@
+{
+  "cases": [
+    {
+      "id": "versions",
+      "query": "列出库内 GB3095 标准的全部文档及版本",
+      "category": "files",
+      "origin": "existing_verified",
+      "expected_items": [
+        {
+          "kind": "document",
+          "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+          "doc_name": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf",
+          "title": "环境空气质量标准",
+          "self_code": "GB3095",
+          "self_code_version": "2012",
+          "attribution": false,
+          "citation": {
+            "kind": "catalog_row",
+            "workspace": "default",
+            "snapshot_id": "4919b3938ad93747",
+            "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+            "doc_name": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf"
+          },
+          "citation_verified": true,
+          "citation_reverified": true
+        },
+        {
+          "kind": "document",
+          "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+          "doc_name": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf",
+          "title": "环境空气质量标准",
+          "self_code": "GB3095",
+          "self_code_version": "2026",
+          "attribution": false,
+          "citation": {
+            "kind": "catalog_row",
+            "workspace": "default",
+            "snapshot_id": "4919b3938ad93747",
+            "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+            "doc_name": "air-03_生态环境部_环境空气质量标准_GB3095-2026.pdf"
+          },
+          "citation_verified": true,
+          "citation_reverified": true
+        }
+      ],
+      "expected_count": 2,
+      "source": "reports/pg-retrieval/enum-entry-20261010-r1/acceptance-sealed/versions.json"
+    },
+    {
+      "id": "amendments",
+      "query": "库内有哪些 GB18466-2005 的文档（含修改单）？",
+      "category": "files",
+      "origin": "existing_verified",
+      "expected_items": [
+        {
+          "kind": "document",
+          "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "doc_name": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf",
+          "title": "医疗机构水污染物排放标准",
+          "self_code": "GB18466",
+          "self_code_version": "2005",
+          "attribution": false,
+          "citation": {
+            "kind": "catalog_row",
+            "workspace": "default",
+            "snapshot_id": "4919b3938ad93747",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "doc_name": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf"
+          },
+          "citation_verified": true,
+          "citation_reverified": true
+        },
+        {
+          "kind": "document",
+          "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+          "doc_name": "water-03_生态环境部_医疗机构水污染物排放标准_含2026修改单.pdf",
+          "title": "GB 18466—2005（含2026年修改单）",
+          "self_code": null,
+          "self_code_version": null,
+          "attribution": true,
+          "citation": {
+            "kind": "catalog_row",
+            "workspace": "default",
+            "snapshot_id": "4919b3938ad93747",
+            "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+            "doc_name": "water-03_生态环境部_医疗机构水污染物排放标准_含2026修改单.pdf"
+          },
+          "citation_verified": true,
+          "citation_reverified": true
+        },
+        {
+          "kind": "document",
+          "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+          "doc_name": "water-10_生态环境部_医疗机构水污染物排放标准修改单_2026.pdf",
+          "title": "《医疗机构水污染物排放标准》（GB 18466—2005）修改单",
+          "self_code": null,
+          "self_code_version": null,
+          "attribution": true,
+          "citation": {
+            "kind": "catalog_row",
+            "workspace": "default",
+            "snapshot_id": "4919b3938ad93747",
+            "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+            "doc_name": "water-10_生态环境部_医疗机构水污染物排放标准修改单_2026.pdf"
+          },
+          "citation_verified": true,
+          "citation_reverified": true
+        }
+      ],
+      "expected_count": 3,
+      "source": "reports/pg-retrieval/enum-entry-20261010-r1/acceptance-sealed/amendments.json"
+    },
+    {
+      "id": "terms",
+      "query": "列出 GB18466-2005 第3章的全部术语和定义",
+      "category": "prose",
+      "origin": "existing_verified",
+      "expected_items": [
+        {
+          "kind": "prose_item",
+          "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3",
+          "clause": "3.1",
+          "text": "3.1 医疗机构 medical organization\n指从事疾病诊断、治疗活动的医院、卫生院、疗养院、门诊部、诊所、卫生急救站等。",
+          "citation": {
+            "kind": "char_span",
+            "char_start": 22,
+            "char_end": 91,
+            "quote": "3.1 医疗机构 medical organization\n指从事疾病诊断、治疗活动的医院、卫生院、疗养院、门诊部、诊所、卫生急救站等。",
+            "unit_rel_start": 22,
+            "unit_rel_end": 91,
+            "unit_id": "385d9e8e0539a87e61f0407bda1739ad",
+            "locator": {
+              "file": "blocks.jsonl",
+              "kind": "block",
+              "blockid": "385d9e8e0539a87e61f0407bda1739ad",
+              "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+            },
+            "chunk_ids": [
+              "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+            ],
+            "unit_source": "parsed_block",
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "snapshot_id": "4919b3938ad93747"
+          },
+          "citation_verified": true,
+          "citation_reverified": true,
+          "doc_name": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf"
+        },
+        {
+          "kind": "prose_item",
+          "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3",
+          "clause": "3.2",
+          "text": "3.2 医疗机构污水 medical organization wastewater\n指医疗机构门诊、病房、手术室、各类检验室、病理解剖室、放射室、洗衣房、太平间等处排出的诊疗、生活及粪便污水。当医疗机构其他污水与上述污水混合排出时一律视为医疗机构污水。",
+          "citation": {
+            "kind": "char_span",
+            "char_start": 91,
+            "char_end": 219,
+            "quote": "3.2 医疗机构污水 medical organization wastewater\n指医疗机构门诊、病房、手术室、各类检验室、病理解剖室、放射室、洗衣房、太平间等处排出的诊疗、生活及粪便污水。当医疗机构其他污水与上述污水混合排出时一律视为",
+            "unit_rel_start": 91,
+            "unit_rel_end": 218,
+            "unit_id": "385d9e8e0539a87e61f0407bda1739ad",
+            "locator": {
+              "file": "blocks.jsonl",
+              "kind": "block",
+              "blockid": "385d9e8e0539a87e61f0407bda1739ad",
+              "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+            },
+            "chunk_ids": [
+              "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+            ],
+            "unit_source": "parsed_block",
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "snapshot_id": "4919b3938ad93747"
+          },
+          "citation_verified": true,
+          "citation_reverified": true,
+          "doc_name": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf"
+        },
+        {
+          "kind": "prose_item",
+          "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3",
+          "clause": "3.3",
+          "text": "## 3.3 污泥 sludge\n指医疗机构污水处理过程中产生的栅渣、沉淀污泥和化粪池污泥。",
+          "citation": {
+            "kind": "char_span",
+            "char_start": 219,
+            "char_end": 267,
+            "quote": "## 3.3 污泥 sludge\n指医疗机构污水处理过程中产生的栅渣、沉淀污泥和化粪池污泥。",
+            "unit_rel_start": 0,
+            "unit_rel_end": 46,
+            "unit_id": "ad9d292d3ee2fd88a8fd25b9efc8265a",
+            "locator": {
+              "file": "blocks.jsonl",
+              "kind": "block",
+              "blockid": "ad9d292d3ee2fd88a8fd25b9efc8265a",
+              "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+            },
+            "chunk_ids": [
+              "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+            ],
+            "unit_source": "parsed_block",
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "snapshot_id": "4919b3938ad93747"
+          },
+          "citation_verified": true,
+          "citation_reverified": true,
+          "doc_name": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf"
+        },
+        {
+          "kind": "prose_item",
+          "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+          "scope_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1:scope:3",
+          "clause": "3.4",
+          "text": "## 3.4 废气 waste gas\n指医疗机构污水处理过程中产生的有害气体。",
+          "citation": {
+            "kind": "char_span",
+            "char_start": 267,
+            "char_end": 308,
+            "quote": "## 3.4 废气 waste gas\n指医疗机构污水处理过程中产生的有害气体。",
+            "unit_rel_start": 0,
+            "unit_rel_end": 40,
+            "unit_id": "90d4b1c55cb8c6ff81dcbdfd55827165",
+            "locator": {
+              "file": "blocks.jsonl",
+              "kind": "block",
+              "blockid": "90d4b1c55cb8c6ff81dcbdfd55827165",
+              "parsed_dir": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf.parsed"
+            },
+            "chunk_ids": [
+              "doc-68a03b50e1ba1ffc6a0116529f694fe1-chunk-001"
+            ],
+            "unit_source": "parsed_block",
+            "workspace": "default",
+            "doc_id": "doc-68a03b50e1ba1ffc6a0116529f694fe1",
+            "snapshot_id": "4919b3938ad93747"
+          },
+          "citation_verified": true,
+          "citation_reverified": true,
+          "doc_name": "water-09_生态环境部_医疗机构水污染物排放标准_GB18466-2005.pdf"
+        }
+      ],
+      "expected_count": 4,
+      "source": "reports/pg-retrieval/enum-entry-20261010-r1/acceptance-sealed/terms.json"
+    },
+    {
+      "id": "clauses",
+      "query": "列出 GB8978-1996 第4.3节的全部要求",
+      "category": "prose",
+      "origin": "existing_verified",
+      "expected_items": [
+        {
+          "kind": "prose_item",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "scope_id": "doc-b45c510232ed4d2452b0f5b2a13434e4:scope:4.3",
+          "clause": "4.3.1",
+          "text": "4.3.1 同一排放口排放两种或两种以上不同类别的污水，且每种污水的排放标准又不同时，其混合污水的排放标准按附录 A 计算。",
+          "citation": {
+            "kind": "char_span",
+            "char_start": 12,
+            "char_end": 75,
+            "quote": "4.3.1 同一排放口排放两种或两种以上不同类别的污水，且每种污水的排放标准又不同时，其混合污水的排放标准按附录 A 计算。",
+            "unit_rel_start": 12,
+            "unit_rel_end": 75,
+            "unit_id": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": {
+              "file": "blocks.jsonl",
+              "kind": "block",
+              "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+              "parsed_dir": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf.parsed"
+            },
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ],
+            "unit_source": "parsed_block",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747"
+          },
+          "citation_verified": true,
+          "citation_reverified": true,
+          "doc_name": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf"
+        },
+        {
+          "kind": "prose_item",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "scope_id": "doc-b45c510232ed4d2452b0f5b2a13434e4:scope:4.3",
+          "clause": "4.3.2",
+          "text": "4.3.2 工业污水污染物的最高允许排放负荷量按附录 B 计算。",
+          "citation": {
+            "kind": "char_span",
+            "char_start": 75,
+            "char_end": 108,
+            "quote": "4.3.2 工业污水污染物的最高允许排放负荷量按附录 B 计算。",
+            "unit_rel_start": 75,
+            "unit_rel_end": 108,
+            "unit_id": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": {
+              "file": "blocks.jsonl",
+              "kind": "block",
+              "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+              "parsed_dir": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf.parsed"
+            },
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ],
+            "unit_source": "parsed_block",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747"
+          },
+          "citation_verified": true,
+          "citation_reverified": true,
+          "doc_name": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf"
+        },
+        {
+          "kind": "prose_item",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "scope_id": "doc-b45c510232ed4d2452b0f5b2a13434e4:scope:4.3",
+          "clause": "4.3.3",
+          "text": "4.3.3 污染物最高允许年排放总量按附录 C 计算。",
+          "citation": {
+            "kind": "char_span",
+            "char_start": 108,
+            "char_end": 136,
+            "quote": "4.3.3 污染物最高允许年排放总量按附录 C 计算。",
+            "unit_rel_start": 108,
+            "unit_rel_end": 136,
+            "unit_id": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": {
+              "file": "blocks.jsonl",
+              "kind": "block",
+              "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+              "parsed_dir": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf.parsed"
+            },
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ],
+            "unit_source": "parsed_block",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747"
+          },
+          "citation_verified": true,
+          "citation_reverified": true,
+          "doc_name": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf"
+        },
+        {
+          "kind": "prose_item",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "scope_id": "doc-b45c510232ed4d2452b0f5b2a13434e4:scope:4.3",
+          "clause": "4.3.4",
+          "text": "4.3.4 对于排放含有放射性物质的污水，除执行本标准外，还须符合 GB 8703—88《辐射防护规定》。",
+          "citation": {
+            "kind": "char_span",
+            "char_start": 136,
+            "char_end": 190,
+            "quote": "4.3.4 对于排放含有放射性物质的污水，除执行本标准外，还须符合 GB 8703—88《辐射防护规定》。",
+            "unit_rel_start": 136,
+            "unit_rel_end": 190,
+            "unit_id": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": {
+              "file": "blocks.jsonl",
+              "kind": "block",
+              "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+              "parsed_dir": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf.parsed"
+            },
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ],
+            "unit_source": "parsed_block",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747"
+          },
+          "citation_verified": true,
+          "citation_reverified": true,
+          "doc_name": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf"
+        }
+      ],
+      "expected_count": 4,
+      "source": "reports/pg-retrieval/enum-entry-20261010-r1/acceptance-sealed/clauses.json"
+    },
+    {
+      "id": "continued_table",
+      "query": "列出 GB8978-1996 表1的全部项目及限值",
+      "category": "table",
+      "origin": "existing_verified",
+      "expected_items": [
+        {
+          "kind": "table_row",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "table_number": "1",
+          "seq": "1",
+          "cells": [
+            "1",
+            "总汞",
+            "0.05"
+          ],
+          "header": [
+            [
+              "序号",
+              "污染物",
+              "最高允许排放浓度"
+            ]
+          ],
+          "units": [],
+          "footnotes": [],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 0,
+            "row_in_fragment": 1,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true,
+          "citation_reverified": true,
+          "caption": "表 1 第一类污染物最高允许排放浓度",
+          "doc_name": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf"
+        },
+        {
+          "kind": "table_row",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "table_number": "1",
+          "seq": "2",
+          "cells": [
+            "2",
+            "烷基汞",
+            "不得检出"
+          ],
+          "header": [
+            [
+              "序号",
+              "污染物",
+              "最高允许排放浓度"
+            ]
+          ],
+          "units": [],
+          "footnotes": [],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 0,
+            "row_in_fragment": 2,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true,
+          "citation_reverified": true,
+          "caption": "表 1 第一类污染物最高允许排放浓度",
+          "doc_name": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf"
+        },
+        {
+          "kind": "table_row",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "table_number": "1",
+          "seq": "3",
+          "cells": [
+            "3",
+            "总镉",
+            "0.1"
+          ],
+          "header": [
+            [
+              "序号",
+              "污染物",
+              "最高允许排放浓度"
+            ]
+          ],
+          "units": [],
+          "footnotes": [],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 0,
+            "row_in_fragment": 3,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true,
+          "citation_reverified": true,
+          "caption": "表 1 第一类污染物最高允许排放浓度",
+          "doc_name": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf"
+        },
+        {
+          "kind": "table_row",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "table_number": "1",
+          "seq": "4",
+          "cells": [
+            "4",
+            "总铬",
+            "1.5"
+          ],
+          "header": [
+            [
+              "序号",
+              "污染物",
+              "最高允许排放浓度"
+            ]
+          ],
+          "units": [],
+          "footnotes": [],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 0,
+            "row_in_fragment": 4,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0001",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true,
+          "citation_reverified": true,
+          "caption": "表 1 第一类污染物最高允许排放浓度",
+          "doc_name": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf"
+        },
+        {
+          "kind": "table_row",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "table_number": "1",
+          "seq": "5",
+          "cells": [
+            "5",
+            "六价铬",
+            "0.5"
+          ],
+          "header": [
+            [
+              "序号",
+              "污染物",
+              "最高允许排放浓度"
+            ]
+          ],
+          "units": [],
+          "footnotes": [],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 1,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true,
+          "citation_reverified": true,
+          "caption": "表 1(完)",
+          "doc_name": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf"
+        },
+        {
+          "kind": "table_row",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "table_number": "1",
+          "seq": "6",
+          "cells": [
+            "6",
+            "总砷",
+            "0.5"
+          ],
+          "header": [
+            [
+              "序号",
+              "污染物",
+              "最高允许排放浓度"
+            ]
+          ],
+          "units": [],
+          "footnotes": [],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 2,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true,
+          "citation_reverified": true,
+          "caption": "表 1(完)",
+          "doc_name": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf"
+        },
+        {
+          "kind": "table_row",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "table_number": "1",
+          "seq": "7",
+          "cells": [
+            "7",
+            "总铅",
+            "1.0"
+          ],
+          "header": [
+            [
+              "序号",
+              "污染物",
+              "最高允许排放浓度"
+            ]
+          ],
+          "units": [],
+          "footnotes": [],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 3,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true,
+          "citation_reverified": true,
+          "caption": "表 1(完)",
+          "doc_name": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf"
+        },
+        {
+          "kind": "table_row",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "table_number": "1",
+          "seq": "8",
+          "cells": [
+            "8",
+            "总镍",
+            "1.0"
+          ],
+          "header": [
+            [
+              "序号",
+              "污染物",
+              "最高允许排放浓度"
+            ]
+          ],
+          "units": [],
+          "footnotes": [],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 4,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true,
+          "citation_reverified": true,
+          "caption": "表 1(完)",
+          "doc_name": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf"
+        },
+        {
+          "kind": "table_row",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "table_number": "1",
+          "seq": "9",
+          "cells": [
+            "9",
+            "苯并(a)芘",
+            "0.000 03"
+          ],
+          "header": [
+            [
+              "序号",
+              "污染物",
+              "最高允许排放浓度"
+            ]
+          ],
+          "units": [],
+          "footnotes": [],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 5,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true,
+          "citation_reverified": true,
+          "caption": "表 1(完)",
+          "doc_name": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf"
+        },
+        {
+          "kind": "table_row",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "table_number": "1",
+          "seq": "10",
+          "cells": [
+            "10",
+            "总铍",
+            "0.005"
+          ],
+          "header": [
+            [
+              "序号",
+              "污染物",
+              "最高允许排放浓度"
+            ]
+          ],
+          "units": [],
+          "footnotes": [],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 6,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true,
+          "citation_reverified": true,
+          "caption": "表 1(完)",
+          "doc_name": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf"
+        },
+        {
+          "kind": "table_row",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "table_number": "1",
+          "seq": "11",
+          "cells": [
+            "11",
+            "总银",
+            "0.5"
+          ],
+          "header": [
+            [
+              "序号",
+              "污染物",
+              "最高允许排放浓度"
+            ]
+          ],
+          "units": [],
+          "footnotes": [],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 7,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true,
+          "citation_reverified": true,
+          "caption": "表 1(完)",
+          "doc_name": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf"
+        },
+        {
+          "kind": "table_row",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "table_number": "1",
+          "seq": "12",
+          "cells": [
+            "12",
+            "总 $\\alpha$ 放射性",
+            "1 Bq/L"
+          ],
+          "header": [
+            [
+              "序号",
+              "污染物",
+              "最高允许排放浓度"
+            ]
+          ],
+          "units": [],
+          "footnotes": [],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 8,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true,
+          "citation_reverified": true,
+          "caption": "表 1(完)",
+          "doc_name": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf"
+        },
+        {
+          "kind": "table_row",
+          "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+          "table_number": "1",
+          "seq": "13",
+          "cells": [
+            "13",
+            "总 $\\beta$ 放射性",
+            "10 Bq/L"
+          ],
+          "header": [
+            [
+              "序号",
+              "污染物",
+              "最高允许排放浓度"
+            ]
+          ],
+          "units": [],
+          "footnotes": [],
+          "citation": {
+            "kind": "table_row",
+            "workspace": "default",
+            "doc_id": "doc-b45c510232ed4d2452b0f5b2a13434e4",
+            "snapshot_id": "4919b3938ad93747",
+            "fragment_index": 1,
+            "row_in_fragment": 9,
+            "table_id": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "blockid": "a00e1705c43ffacbca6c408197c6bac9",
+            "locator": "tb-b45c510232ed4d2452b0f5b2a13434e4-0002",
+            "chunk_ids": [
+              "doc-b45c510232ed4d2452b0f5b2a13434e4-chunk-001"
+            ]
+          },
+          "citation_verified": true,
+          "citation_reverified": true,
+          "caption": "表 1(完)",
+          "doc_name": "water-11_生态环境部_污水综合排放标准_GB8978-1996.pdf"
+        }
+      ],
+      "expected_count": 13,
+      "source": "reports/pg-retrieval/enum-entry-20261010-r1/acceptance-sealed/continued_table.json"
+    },
+    {
+      "id": "edition",
+      "query": "列出 GB3095-2012 第4.2条的全部规定",
+      "category": "prose",
+      "origin": "existing_verified",
+      "expected_items": [
+        {
+          "kind": "prose_item",
+          "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+          "scope_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1:scope:4.2",
+          "clause": "4.2",
+          "text": "一类区适用一级浓度限值，二类区适用二级浓度限值。一、二类环境空气功能区质量要求见表 1和表 2。",
+          "citation": {
+            "kind": "char_span",
+            "char_start": 19,
+            "char_end": 67,
+            "quote": "一类区适用一级浓度限值，二类区适用二级浓度限值。一、二类环境空气功能区质量要求见表 1和表 2。",
+            "unit_rel_start": 19,
+            "unit_rel_end": 67,
+            "unit_id": "7f9dddaf02f372cc7d329f4678c46fbc",
+            "locator": {
+              "file": "blocks.jsonl",
+              "kind": "block",
+              "blockid": "7f9dddaf02f372cc7d329f4678c46fbc",
+              "parsed_dir": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf.parsed"
+            },
+            "chunk_ids": [
+              "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-002"
+            ],
+            "unit_source": "parsed_block",
+            "workspace": "default",
+            "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+            "snapshot_id": "4919b3938ad93747"
+          },
+          "citation_verified": true,
+          "citation_reverified": true,
+          "doc_name": "air-02_生态环境部_环境空气质量标准_GB3095-2012.pdf"
+        }
+      ],
+      "expected_count": 1,
+      "source": "reports/pg-retrieval/enum-entry-20261010-r1/acceptance-sealed/edition.json"
+    },
+    {
+      "query": "列出《地表水环境质量标准》1.1至1.2条的全部规定",
+      "category": "prose",
+      "expected_clauses": [
+        "1.1",
+        "1.2"
+      ],
+      "source": "datasets/corpus/parsed/water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf.parsed/water-04_生态环境部_地表水环境质量标准_GB3838-2002.blocks.jsonl",
+      "id": "new-prose-GB3838-2002",
+      "origin": "independent_raw_source",
+      "expected_source_blocks": [
+        {
+          "type": "content",
+          "blockid": "1be5a15442ef9d0368b3e1367a03a2fb",
+          "format": "plain_text",
+          "content": "## 1 范围\n1.1 本标准按照地表水环境功能分类和保护目标，规定了水环境质量应控制的项目及限值，以及水质评价、水质项目的分析方法和标准的实施与监督。\n1.2 本标准适用于中华人民共和国领域内江河、湖泊、运河、渠道、水库等具有使用功能的地表水水域。具有特定功能的水域，执行相应的专业用水水质标准。",
+          "heading": "1 范围",
+          "parent_headings": [
+            "地表水环境质量标准"
+          ],
+          "level": 2,
+          "session_type": "body",
+          "table_slice": "none",
+          "positions": [
+            {
+              "type": "bbox",
+              "anchor": "4",
+              "range": [
+                143.0,
+                186.0,
+                208.0,
+                201.0
+              ]
+            },
+            {
+              "type": "bbox",
+              "anchor": "4",
+              "range": [
+                141.0,
+                220.0,
+                926.0,
+                255.0
+              ]
+            },
+            {
+              "type": "bbox",
+              "anchor": "4",
+              "range": [
+                141.0,
+                258.0,
+                926.0,
+                293.0
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_count": 2
+    },
+    {
+      "query": "逐条列出 GB5084-2021 第4.1.1至4.1.2条的全部规定",
+      "category": "prose",
+      "expected_clauses": [
+        "4.1.1",
+        "4.1.2"
+      ],
+      "source": "datasets/corpus/parsed/water-02_生态环境部_农田灌溉水质标准_GB5084-2021.pdf.parsed/water-02_生态环境部_农田灌溉水质标准_GB5084-2021.blocks.jsonl",
+      "id": "new-prose-GB5084-2021",
+      "origin": "independent_raw_source",
+      "expected_source_blocks": [
+        {
+          "type": "content",
+          "blockid": "7d1ae1570e635a033defa441458f5d42",
+          "format": "plain_text",
+          "content": "## 4 农田灌溉水质要求\n4.1 农田灌溉水质控制项目分为基本控制项目和选择控制项目。\n4.1.1 基本控制项目为必测项目，应符合表 1的规定。\n4.1.2 选择控制项目由地方生态环境主管部门会同农业农村、水利等主管部门根据农田灌溉用水类型和作物种类要求选择执行，应符合表 2的规定。\n<table id=\"tb-503d7a0789fa0087345a5f4358e1dca0-0001\" format=\"html\"><tr><td rowspan=\"2\">序号</td><td rowspan=\"2\">项目类别</td><td colspan=\"3\">作物种类</td></tr><tr><td>水田作物</td><td>旱地作物</td><td>蔬菜</td></tr><tr><td>1</td><td>pH值</td><td colspan=\"3\">5.5~8.5</td></tr><tr><td>2</td><td>水温/°C ≤</td><td colspan=\"3\">35</td></tr><tr><td>3</td><td>悬浮物/(mg/L) ≤</td><td>80</td><td>100</td><td> $60^a, 15^b$ </td></tr><tr><td>4</td><td>五日生化需氧量( $BOD_5$ )/(mg/L) ≤</td><td>60</td><td>100</td><td> $40^a, 15^b$ </td></tr><tr><td>5</td><td>化学需氧量( $COD_{Cr}$ )/(mg/L) ≤</td><td>150</td><td>200</td><td> $100^a, 60^b$ </td></tr><tr><td>6</td><td>阴离子表面活性剂/(mg/L) ≤</td><td>5</td><td>8</td><td>5</td></tr><tr><td>7</td><td>氯化物(以 $Cl^-$ 计)/(mg/L) ≤</td><td colspan=\"3\">350</td></tr><tr><td>8</td><td>硫化物(以 $S^{2-}$ 计)/(mg/L) ≤</td><td colspan=\"3\">1</td></tr><tr><td>9</td><td>全盐量/(mg/L) ≤</td><td colspan=\"3\">1000(非盐碱土地区),2000(盐碱土地区)</td></tr><tr><td>10</td><td>总铅/(mg/L) ≤</td><td colspan=\"3\">0.2</td></tr><tr><td>11</td><td>总镉/(mg/L) ≤</td><td colspan=\"3\">0.01</td></tr><tr><td>12</td><td>铬(六价)/(mg/L) ≤</td><td colspan=\"3\">0.1</td></tr><tr><td>13</td><td>总汞/(mg/L) ≤</td><td colspan=\"3\">0.001</td></tr><tr><td>14</td><td>总砷/(mg/L) ≤</td><td>0.05</td><td>0.1</td><td>0.05</td></tr><tr><td>15</td><td>粪大肠菌群数/(MPN/L) ≤</td><td>40000</td><td>40000</td><td> $20000^a, 10000^b$ </td></tr><tr><td>16</td><td>蛔虫卵数/(个/10L) ≤</td><td colspan=\"2\">20</td><td> $20^a, 10^b$ </td></tr><tr><td colspan=\"5\"> $^a$ 加工、烹调及去皮蔬菜。 $^b$ 生食类蔬菜、瓜类和草本水果。</td></tr></table>\nGB 5084—2021",
+          "heading": "4 农田灌溉水质要求",
+          "parent_headings": [
+            "农田灌溉水质标准"
+          ],
+          "level": 2,
+          "session_type": "body",
+          "table_slice": "none",
+          "positions": [
+            {
+              "type": "bbox",
+              "anchor": "6",
+              "range": [
+                112.0,
+                192.0,
+                289.0,
+                208.0
+              ]
+            },
+            {
+              "type": "bbox",
+              "anchor": "6",
+              "range": [
+                112.0,
+                229.0,
+                610.0,
+                244.0
+              ]
+            },
+            {
+              "type": "bbox",
+              "anchor": "6",
+              "range": [
+                112.0,
+                248.0,
+                534.0,
+                263.0
+              ]
+            },
+            {
+              "type": "bbox",
+              "anchor": "6",
+              "range": [
+                112.0,
+                266.0,
+                907.0,
+                302.0
+              ]
+            },
+            {
+              "type": "bbox",
+              "anchor": "6",
+              "range": [
+                117.0,
+                349.0,
+                902.0,
+                826.0
+              ]
+            },
+            {
+              "type": "bbox",
+              "anchor": "6",
+              "range": [
+                773.0,
+                83.0,
+                904.0,
+                97.0
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_count": 2
+    },
+    {
+      "query": "完整列出 GB/T14848-2017 第3.1至3.4条的术语和定义",
+      "category": "prose",
+      "expected_clauses": [
+        "3.1",
+        "3.2",
+        "3.3",
+        "3.4"
+      ],
+      "source": "datasets/corpus/parsed/water-05_水利部中国灌溉排水发展中心_地下水质量标准_GBT14848-2017.pdf.parsed/water-05_水利部中国灌溉排水发展中心_地下水质量标准_GBT14848-2017.blocks.jsonl",
+      "id": "new-prose-GBT14848-2017",
+      "origin": "independent_raw_source",
+      "expected_source_blocks": [
+        {
+          "type": "content",
+          "blockid": "2ced9fc26e6c2ceb9473c149ccbfd85f",
+          "format": "plain_text",
+          "content": "## 3.1",
+          "heading": "3.1",
+          "parent_headings": [
+            "地下水质量标准"
+          ],
+          "level": 2,
+          "session_type": "body",
+          "table_slice": "none",
+          "positions": [
+            {
+              "type": "bbox",
+              "anchor": "5",
+              "range": [
+                106.0,
+                483.0,
+                137.0,
+                497.0
+              ]
+            }
+          ]
+        },
+        {
+          "type": "content",
+          "blockid": "e527baf377c286a5330d430f3b6ac23a",
+          "format": "plain_text",
+          "content": "## 3.2",
+          "heading": "3.2",
+          "parent_headings": [
+            "地下水质量标准"
+          ],
+          "level": 2,
+          "session_type": "body",
+          "table_slice": "none",
+          "positions": [
+            {
+              "type": "bbox",
+              "anchor": "5",
+              "range": [
+                105.0,
+                538.0,
+                138.0,
+                553.0
+              ]
+            }
+          ]
+        },
+        {
+          "type": "content",
+          "blockid": "f842ed691b6c7562accaa85f2bdaf201",
+          "format": "plain_text",
+          "content": "## 3.3",
+          "heading": "3.3",
+          "parent_headings": [
+            "地下水质量标准"
+          ],
+          "level": 2,
+          "session_type": "body",
+          "table_slice": "none",
+          "positions": [
+            {
+              "type": "bbox",
+              "anchor": "5",
+              "range": [
+                106.0,
+                614.0,
+                138.0,
+                628.0
+              ]
+            }
+          ]
+        },
+        {
+          "type": "content",
+          "blockid": "d2aae004fec0409605ec93ba459cfb78",
+          "format": "plain_text",
+          "content": "## 3.4",
+          "heading": "3.4",
+          "parent_headings": [
+            "地下水质量标准"
+          ],
+          "level": 2,
+          "session_type": "body",
+          "table_slice": "none",
+          "positions": [
+            {
+              "type": "bbox",
+              "anchor": "5",
+              "range": [
+                106.0,
+                690.0,
+                137.0,
+                704.0
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_count": 4
+    },
+    {
+      "query": "列出 GB11607-89 第4.1至4.3条的全部渔业水质保护要求",
+      "category": "prose",
+      "expected_clauses": [
+        "4.1",
+        "4.2",
+        "4.3"
+      ],
+      "source": "datasets/corpus/parsed/water-07_生态环境部_渔业水质标准_GB11607-89.pdf.parsed/water-07_生态环境部_渔业水质标准_GB11607-89.blocks.jsonl",
+      "id": "new-prose-GB11607-89",
+      "origin": "independent_raw_source",
+      "expected_source_blocks": [
+        {
+          "type": "content",
+          "blockid": "dca44189a856b337b0ca30545f315106",
+          "format": "plain_text",
+          "content": "## 4 渔业水质保护\n4.1 任何企、事业单位和个体经营者排放的工业废水、生活污水和有害废弃物，必须采取有效措施，保证最近渔业水域的水质符合本标准。\n4.2 未经处理的工业废水、生活污水和有害废弃物严禁直接排入鱼、虾类的产卵场、索饵场、越冬场和鱼、虾、贝、藻类的养殖场及珍贵水生动物保护区。\n4.3 严禁向渔业水域排放含病源体的污水；如需排放此类污水，必须经过处理和严格消毒。",
+          "heading": "4 渔业水质保护",
+          "parent_headings": [
+            "中华人民共和国国家标准"
+          ],
+          "level": 2,
+          "session_type": "body",
+          "table_slice": "none",
+          "positions": [
+            {
+              "type": "bbox",
+              "anchor": "3",
+              "range": [
+                161.0,
+                282.0,
+                282.0,
+                295.0
+              ]
+            },
+            {
+              "type": "bbox",
+              "anchor": "3",
+              "range": [
+                161.0,
+                305.0,
+                816.0,
+                334.0
+              ]
+            },
+            {
+              "type": "bbox",
+              "anchor": "3",
+              "range": [
+                161.0,
+                336.0,
+                816.0,
+                365.0
+              ]
+            },
+            {
+              "type": "bbox",
+              "anchor": "3",
+              "range": [
+                161.0,
+                368.0,
+                744.0,
+                381.0
+              ]
+            }
+          ]
+        }
+      ],
+      "expected_count": 3
+    },
+    {
+      "id": "new-table-HJ2.2-2018",
+      "query": "列出 HJ2.2-2018 表2的全部评价工作等级和分级判据",
+      "category": "table",
+      "origin": "independent_raw_source",
+      "expected_cells": [
+        [
+          "一级评价",
+          "$P_{\\max} \\geqslant 10\\%$"
+        ],
+        [
+          "二级评价",
+          "$1\\% \\leqslant P_{\\max} < 10\\%$"
+        ],
+        [
+          "三级评价",
+          "$P_{\\max} < 1\\%$"
+        ]
+      ],
+      "expected_count": 3,
+      "source": "datasets/corpus/parsed/air-04_生态环境部_环境影响评价技术导则_大气环境_HJ2.2-2018_2018.pdf.parsed/air-04_生态环境部_环境影响评价技术导则_大气环境_HJ2.2-2018_2018.tables.json",
+      "table_id": "tb-d3d7d38fe9dc1348e57c1fa29b47f404-0002",
+      "expected_header": [
+        [
+          "评价工作等级",
+          "评价工作分级判据"
+        ]
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "new-table-GB13271-2014",
+      "query": "列出 GB13271-2014 表2新建锅炉全部污染物的限值和监控位置",
+      "category": "table",
+      "origin": "independent_raw_source",
+      "expected_cells": [
+        [
+          "颗粒物",
+          "50",
+          "30",
+          "20",
+          "烟囱或烟道"
+        ],
+        [
+          "二氧化硫",
+          "300",
+          "200",
+          "50",
+          "烟囱或烟道"
+        ],
+        [
+          "氮氧化物",
+          "300",
+          "250",
+          "200",
+          "烟囱或烟道"
+        ],
+        [
+          "汞及其化合物",
+          "0.05",
+          "-",
+          "-",
+          "烟囱或烟道"
+        ],
+        [
+          "烟气黑度(林格曼黑度,级)",
+          "$\\leqslant 1$",
+          "$\\leqslant 1$",
+          "$\\leqslant 1$",
+          "烟囱排放口"
+        ]
+      ],
+      "expected_count": 5,
+      "source": "datasets/corpus/parsed/air-14_生态环境部_锅炉大气污染物排放标准_GB13271-2014.pdf.parsed/air-14_生态环境部_锅炉大气污染物排放标准_GB13271-2014.tables.json",
+      "table_id": "tb-bd8756901e5b4d4746ef9a2989699fd1-0002",
+      "expected_header": [
+        [
+          "污染物项目",
+          "限值",
+          "限值",
+          "限值",
+          "污染物排放监控位置"
+        ],
+        [
+          "污染物项目",
+          "燃煤锅炉",
+          "燃油锅炉",
+          "燃气锅炉",
+          "污染物排放监控位置"
+        ]
+      ],
+      "footnotes": []
+    },
+    {
+      "id": "unconfirmed-table",
+      "query": "列出 GB8978-1996 表2的全部项目",
+      "category": "control",
+      "expected_behavior": "ambiguous"
+    },
+    {
+      "id": "judgement",
+      "query": "GB3838-2002 的表1与 GB3095-2012 的表1是同一张表吗？",
+      "category": "control",
+      "expected_behavior": "general_not_enumeration"
+    },
+    {
+      "id": "no-document",
+      "query": "列出表1的全部项目和限值。",
+      "category": "control",
+      "expected_behavior": "clarification"
+    },
+    {
+      "id": "name-year-ambiguity",
+      "query": "列出《环境空气质量标准》表1全部限值。",
+      "category": "control",
+      "expected_behavior": "clarification"
+    },
+    {
+      "id": "no-document-terms",
+      "query": "列出第3章的全部术语和定义。",
+      "category": "control",
+      "expected_behavior": "clarification"
+    },
+    {
+      "id": "general-mixing",
+      "query": "GB3097-1997 对混合区有什么规定？",
+      "category": "control",
+      "expected_behavior": "general_not_enumeration"
+    },
+    {
+      "id": "general-footnote",
+      "query": "GB5084-2021 表1脚注 a、b 分别适用于哪些蔬菜？",
+      "category": "control",
+      "expected_behavior": "general_not_enumeration"
+    },
+    {
+      "id": "general-assessment",
+      "query": "GB3838-2002 的水质评价主要怎么做？",
+      "category": "control",
+      "expected_behavior": "general_not_enumeration"
+    }
+  ],
+  "source_sha256": {
+    "datasets/corpus/parsed/air-04_生态环境部_环境影响评价技术导则_大气环境_HJ2.2-2018_2018.pdf.parsed/air-04_生态环境部_环境影响评价技术导则_大气环境_HJ2.2-2018_2018.tables.json": "437fa5a6216cc6ae94ef49b05e53efde423988aa8ed39904ca1491849415c938",
+    "datasets/corpus/parsed/air-14_生态环境部_锅炉大气污染物排放标准_GB13271-2014.pdf.parsed/air-14_生态环境部_锅炉大气污染物排放标准_GB13271-2014.tables.json": "630e60e42a0806b1c0b66cf86e796df9bb9545dcb7a9443ad6f34b90d05d6d09",
+    "datasets/corpus/parsed/water-02_生态环境部_农田灌溉水质标准_GB5084-2021.pdf.parsed/water-02_生态环境部_农田灌溉水质标准_GB5084-2021.blocks.jsonl": "adbb1ef863eb854ad9c2c4e15345273ed3da32e035208a71fe69e93db1d549ba",
+    "datasets/corpus/parsed/water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf.parsed/water-04_生态环境部_地表水环境质量标准_GB3838-2002.blocks.jsonl": "96e36b6b127f69753dfdcadd47977775352cf74cda8c28042a4e57a4320faf8f",
+    "datasets/corpus/parsed/water-05_水利部中国灌溉排水发展中心_地下水质量标准_GBT14848-2017.pdf.parsed/water-05_水利部中国灌溉排水发展中心_地下水质量标准_GBT14848-2017.blocks.jsonl": "b21395dccc914da934d47ea005cf6f5e25489b85f67c84bdf35b791b1b400dd7",
+    "datasets/corpus/parsed/water-07_生态环境部_渔业水质标准_GB11607-89.pdf.parsed/water-07_生态环境部_渔业水质标准_GB11607-89.blocks.jsonl": "c57da9cc9c755ca6788d339f48601e684a41fdbfe4750d1952a6350b82fad2a9",
+    "reports/pg-retrieval/enum-entry-20261010-r1/acceptance-sealed/amendments.json": "c24d8dc06a6cb95684cbba7971fe6a54a0a54cec104a24255396af7ef403f981",
+    "reports/pg-retrieval/enum-entry-20261010-r1/acceptance-sealed/clauses.json": "bc77c4dec65ad348e0bf95de8d52436e9c744814a38a1dc16acc4a0d7caa50f4",
+    "reports/pg-retrieval/enum-entry-20261010-r1/acceptance-sealed/continued_table.json": "59100be7f4eda7b9b30050f61f540917898cc8043b61f3cc4865d30e2b1edde3",
+    "reports/pg-retrieval/enum-entry-20261010-r1/acceptance-sealed/edition.json": "3bf08ea583a5b1ec2249b36fb5a269cdf5d02e38393e45d9b5f8a0e351917a51",
+    "reports/pg-retrieval/enum-entry-20261010-r1/acceptance-sealed/terms.json": "48192683501f37c0146e03055ab82d3bff9436f4df314ba9e17d7ca1c7c12998",
+    "reports/pg-retrieval/enum-entry-20261010-r1/acceptance-sealed/versions.json": "6b378bf670cfb167476816a6c45fe388608d2cee6e7e9b662ae15fcc3c3719cc"
+  },
+  "frozen_before_native_live": true,
+  "criteria": {
+    "corrected_local_set_errors_min": 3,
+    "new_errors_on_correct_local": 0,
+    "controls_false_complete_enum": 0
+  },
+  "interpretation": "Native original prompt product baseline; extra uniform generation is separate. No expectation enters generation."
+}

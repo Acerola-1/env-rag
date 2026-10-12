@@ -1,0 +1,32 @@
+{
+  "findings": [
+    {
+      "category": "unresolved",
+      "file": "UX-CONTRACT.md",
+      "line": null,
+      "message": "The configured UX contract has no Canonical UI Map with the required columns.",
+      "remediation": "Add the exact Capability, Canonical owner, Source of truth, Allowed variants, and Verification columns.",
+      "ruleId": "canonical.map-missing",
+      "severity": "error"
+    },
+    {
+      "category": "violation",
+      "file": "src/env_rag_final/web/static/index.html",
+      "line": 121,
+      "message": "Literal product textarea does not show evidence of the canonical resize-none rule.",
+      "remediation": "Use the shared Textarea owner or apply resize-none/resize: none with adequate height or auto-grow behavior.",
+      "ruleId": "form.textarea-resize-missing",
+      "severity": "error"
+    }
+  ],
+  "mode": "strict",
+  "projectRoot": "/Users/acerola/Dev/Python/RAG/env-rag-final",
+  "schemaVersion": 1,
+  "summary": {
+    "errors": 2,
+    "total": 2,
+    "unresolved": 1,
+    "violations": 1,
+    "warnings": 0
+  }
+}

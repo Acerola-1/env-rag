@@ -1,0 +1,157 @@
+{
+  "classification": "auxiliary_corrected_reference_and_explicit_file_not_original_success",
+  "request": {
+    "query": "欧盟指令 2024/2881 附件 I 表 3 规定了哪 4 项指标的目标值？请用英文名称列出这 4 项指标。",
+    "document": "air-47_European-Commission_Directive-2024-2881-Ambient-Air-Quality_2024.pdf"
+  },
+  "result": {
+    "query_id": "ask-aef7d20bcd46",
+    "query": "欧盟指令 2024/2881 附件 I 表 3 规定了哪 4 项指标的目标值？请用英文名称列出这 4 项指标。",
+    "effective_query": "欧盟指令 2024/2881 附件 I 表 3 规定了哪 4 项指标的目标值？请用英文名称列出这 4 项指标。",
+    "kind": "table",
+    "workspace": "default",
+    "coverage_status": "ambiguous",
+    "answer": {
+      "mode": "deterministic",
+      "generated_by": "enumerate/expand entries",
+      "items": [],
+      "items_count": 0
+    },
+    "flags": [
+      "no logical table 表3 in air-47_European-Commission_Directive-202",
+      "范围读取未完成：ambiguous"
+    ],
+    "model_calls_used": 0,
+    "embedding_calls": 0,
+    "rerank_calls": 0,
+    "original_local_baseline": "unverified",
+    "evidence_mode": "caller_supplied_connection",
+    "identity_before": {
+      "state": "current",
+      "search_id": "872d689343a9cbb6",
+      "catalog_snapshot_id": "4919b3938ad93747",
+      "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+      "vocab_sha": "c3d0b6a6cf7d6af0758329bccea3bbbf432d73b20df4db42b768ae07446978cf",
+      "index_recipe": "phase-2-v2-local-caption-identity-guard",
+      "expected_search_id": "872d689343a9cbb6",
+      "reasons": []
+    },
+    "discovery": {
+      "query_id": "ask-aef7d20bcd46",
+      "workspace": "default",
+      "status": "ok",
+      "search_id": "872d689343a9cbb6",
+      "catalog_snapshot_id": "4919b3938ad93747",
+      "source_snapshot_id": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "parsed_code": null,
+      "parsed_codes": [],
+      "query_text": "欧盟指令 2024/2881 附件 I 表 3 规定了哪 4 项指标的目标值？请用英文名称列出这 4 项指标。",
+      "candidates": [],
+      "discovery_candidates": null,
+      "notes": [],
+      "trace": [
+        {
+          "stage": "scope_expansion",
+          "requested_scope_id": null,
+          "requested_table_number": null,
+          "auto_targets": [
+            {
+              "kind": "table",
+              "value": "3",
+              "clauses": null
+            }
+          ],
+          "expansions": [
+            {
+              "doc_id": "doc-13aaccec179aaa355c8c3d98abd0716e",
+              "kind": "table",
+              "table_number": "3",
+              "scope_ids": [],
+              "members_total": 0,
+              "members_processed": 0,
+              "coverage_status": "ambiguous",
+              "fail_stage": "ambiguous",
+              "items_count": 0,
+              "items": [],
+              "warnings": [
+                "no logical table 表3 in air-47_European-Commission_Directive-202"
+              ]
+            }
+          ],
+          "note": "expansion reads the FULL ordered membership; discovery top-k is not a limit"
+        }
+      ],
+      "elapsed_ms": 0
+    },
+    "selected_documents": [
+      {
+        "doc_id": "doc-13aaccec179aaa355c8c3d98abd0716e",
+        "doc_name": "air-47_European-Commission_Directive-2024-2881-Ambient-Air-Quality_2024.pdf",
+        "title": "2024/2881",
+        "self_code": null,
+        "self_code_version": null
+      }
+    ],
+    "expansions": [
+      {
+        "doc_id": "doc-13aaccec179aaa355c8c3d98abd0716e",
+        "kind": "table",
+        "table_number": "3",
+        "scope_ids": [],
+        "members_total": 0,
+        "members_processed": 0,
+        "coverage_status": "ambiguous",
+        "fail_stage": "ambiguous",
+        "items_count": 0,
+        "warnings": [
+          "no logical table 表3 in air-47_European-Commission_Directive-202"
+        ]
+      }
+    ],
+    "document_enumeration": null,
+    "reverification": {
+      "items_checked": 0,
+      "problems": []
+    },
+    "catalog_selection": {
+      "before_sha256": "3023b6aa68773ecffddeb7e5f34120b34ddfb06cecba0a997a20f9787a26c787",
+      "after_sha256": "3023b6aa68773ecffddeb7e5f34120b34ddfb06cecba0a997a20f9787a26c787"
+    },
+    "identity_after": {
+      "state": "current",
+      "search_id": "872d689343a9cbb6",
+      "catalog_snapshot_id": "4919b3938ad93747",
+      "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+      "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+      "vocab_sha": "c3d0b6a6cf7d6af0758329bccea3bbbf432d73b20df4db42b768ae07446978cf",
+      "index_recipe": "phase-2-v2-local-caption-identity-guard",
+      "expected_search_id": "872d689343a9cbb6",
+      "reasons": []
+    },
+    "elapsed_ms": 1484
+  },
+  "identity_before": {
+    "state": "current",
+    "search_id": "872d689343a9cbb6",
+    "catalog_snapshot_id": "4919b3938ad93747",
+    "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+    "vocab_sha": "c3d0b6a6cf7d6af0758329bccea3bbbf432d73b20df4db42b768ae07446978cf",
+    "index_recipe": "phase-2-v2-local-caption-identity-guard",
+    "expected_search_id": "872d689343a9cbb6",
+    "reasons": []
+  },
+  "identity_after": {
+    "state": "current",
+    "search_id": "872d689343a9cbb6",
+    "catalog_snapshot_id": "4919b3938ad93747",
+    "source_fingerprint": "95f7791fd84171ab727870fc5810d79b4327b0c4fa547d432951e0499a3808f8",
+    "tokenizer_version": "phase-2-v3-jieba-0.42.1-cfs-index",
+    "vocab_sha": "c3d0b6a6cf7d6af0758329bccea3bbbf432d73b20df4db42b768ae07446978cf",
+    "index_recipe": "phase-2-v2-local-caption-identity-guard",
+    "expected_search_id": "872d689343a9cbb6",
+    "reasons": []
+  },
+  "model_calls": 0
+}

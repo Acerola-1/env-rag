@@ -1,0 +1,33 @@
+{
+  "profile": "product-admin",
+  "sourceRoots": [
+    "src/env_rag_final/web/static"
+  ],
+  "locale": "zh-CN",
+  "canonicalMap": "UX-CONTRACT.md",
+  "requiredCapabilities": [
+    "Select/Listbox",
+    "Form",
+    "Scrollbar",
+    "Toast"
+  ],
+  "ownership": {
+    "Select/Listbox": "native",
+    "Form": "app.js composer",
+    "Scrollbar": "style.css",
+    "Toast": "query-status"
+  },
+  "requiredCommands": [
+    "unit",
+    "selection",
+    "premium"
+  ],
+  "commands": {
+    "unit": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/pytest -q tests/test_web_rag.py",
+    "premium": ".venv/bin/python /Users/acerola/.codex/plugins/cache/openai-curated-remote/frontend-design-premium/1.4.0/skills/frontend-design-premium/scripts/audit_project.py . --mode strict",
+    "selection": "node --test tests/test_web_selection.cjs"
+  },
+  "evidence": {
+    "failurePaths": "tests/test_web_rag.py"
+  }
+}

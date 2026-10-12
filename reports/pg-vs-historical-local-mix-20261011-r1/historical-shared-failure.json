@@ -1,0 +1,44 @@
+{
+  "case": {
+    "id": "enum-15",
+    "qtype": "enum",
+    "question": "欧盟指令 2024/2881 附件 I 第 1 节表 2 规定了哪 4 项指标的目标值？请用英文名称列出这 4 项指标。",
+    "ground_truth": "Arsenic（砷）年均 6.0 ng/m3、Cadmium（镉）年均 5.0 ng/m3、Nickel（镍）年均 20 ng/m3、Benzo(a)pyrene（苯并(a)芘）年均 1.0 ng/m3。",
+    "project": "env-policy-rag-v1",
+    "expected_items": [
+      "Arsenic",
+      "Cadmium",
+      "Nickel",
+      "Benzo(a)pyrene"
+    ],
+    "evidence_location": "air-47 chunk_order_index=20 Table 2"
+  },
+  "historical_source_sha256": {
+    "/Users/acerola/Dev/Python/RAG/LightRAG/runs/eval/frozen/rag_eval_dataset_v2.json": "11159ff7e859d898f9cec422df8f29beb5d10f960f88edb2c400fea5e2f1de04",
+    "/Users/acerola/Dev/Python/RAG/LightRAG/runs/ragas/answers_local_v2fresh_fresh.json": "30fa2b26b8ccd875b5634ae09f6f37963bacf4be244d74400f24cdeaeb2ca500",
+    "/Users/acerola/Dev/Python/RAG/LightRAG/runs/ragas/answers_mix_v2fresh_fresh.json": "9ff47138e653ee412f362d6148fd972ffd49f22a633772e3a2db42a6e43fb7f1",
+    "/Users/acerola/Dev/Python/RAG/LightRAG/runs/ragas/ragas_local_v2fresh_20261004_000707_fixed_patched.json": "9f81994cf7a6ec8194ded79b918106e49d48f499fb606095245952646a215b40",
+    "/Users/acerola/Dev/Python/RAG/LightRAG/runs/ragas/ragas_mix_v2fresh_20261004_005653_fixed_patched.json": "1c5cb16068f1dddf577075b00a28c370f63dc18328c66dbb21b34cb2b01bb8ec",
+    "/Users/acerola/Dev/Python/RAG/LightRAG/runs/ragas/RESULT_final_rerank_cold_20261004.md": "9cf4619590642d3014455da22bcf52a92ca42f3300ecff39822b089e44d0f428"
+  },
+  "local": {
+    "answer": "根据提供的资料，我无法确定欧盟指令 2024/2881 附件 I 第 1 节表 2 所规定的 4 项目标值指标。附件 I 中所能查到的表格包含了限值（Limit value）、臭氧目标值（Ozone target values）、臭氧长期目标（Long-term objectives for ozone）、临界水平（Critical levels）、警报阈值（Alert thresholds）以及信息阈值（Information thresholds）等内容，但**未显示标注为“表 2（Table 2）”且规定 4 项目标值指标的信息**。因此，我无法回答该问题。",
+    "latency_seconds": 8.583088000013959,
+    "contexts_contain_target_terms": {
+      "Arsenic": true,
+      "Cadmium": true,
+      "Nickel": true,
+      "Benzo(a)pyrene": true
+    }
+  },
+  "mix": {
+    "answer": "我无法直接回答这个问题。根据所提供的 **Context**，欧盟指令 (EU) 2024/2881 的 **附件 I** 相关信息包含以下内容：\n\n- **附件 I 第 1 节**规定的是**限值（limit values）**，涵盖 PM2.5、PM10、二氧化氮、二氧化硫、苯、一氧化碳、铅、砷、镉、镍、苯并(a)芘等污染物。\n- **附件 I 第 1 节和第 2 节**规定**目标值（target values）**，其中**第 2 节**专门规定**臭氧目标值**及臭氧长期目标。\n\n然而，所提供的 Context 中**并未明确列出附件 I 第 1 节表 2 所规定的 4 项目标值的具体指标名称**。因此，我没有足够的信息来准确回答该问题。\n\n**建议**：如需确认该项内容，请查阅指令 (EU) 2024/2881 附件 I 第 1 节表 2 的原文。\n\n### References\n\n- [1] air-47_European-Commission_Directive-2024-2881-Ambient-Air-Quality_2024.pdf",
+    "latency_seconds": 16.15931941603776,
+    "contexts_contain_target_terms": {
+      "Arsenic": true,
+      "Cadmium": true,
+      "Nickel": true,
+      "Benzo(a)pyrene": true
+    }
+  }
+}

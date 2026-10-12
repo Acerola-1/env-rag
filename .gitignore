@@ -28,3 +28,9 @@ reports/pg-retrieval/phase-4-improvements123-local-validation-r1/sensitive-scan.
 # Historical evaluation inputs are test fixtures, not service data directories.
 !reports/**/inputs/
 !reports/**/inputs/**
+
+# Local working state; sealed historical web records have a recoverable archive.
+.local/
+premium-audit.json
+reports/rag-web-20261010-r1/runtime/
+reports/rag-web-interactive/usage.json

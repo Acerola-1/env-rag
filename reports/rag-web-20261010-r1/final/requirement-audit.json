@@ -1,0 +1,87 @@
+{
+  "goal_file": "GOAL_RAG_COMPARISON_WEB.md",
+  "verdict": "passed_with_disclosed_boundaries",
+  "sections": [
+    {
+      "section": 1,
+      "status": "passed",
+      "evidence": "native.py actual original operate function provenance; mode-smokes.json + fixed actual local baseline; all 12 options real. no rerank/cache/default-equivalence claim."
+    },
+    {
+      "section": 2,
+      "status": "passed",
+      "evidence": "service.py identity merge + full confirmed enumeration; graph preserved; general controls and ambiguity source reviewed."
+    },
+    {
+      "section": 3,
+      "status": "passed",
+      "evidence": "browser-acceptance.json; actual source PDF hash, text, clickable citations, JSON export, same-question filtering, responsive and errors."
+    },
+    {
+      "section": 4,
+      "status": "passed_with_boundary",
+      "evidence": "independent source sets; no scope upgrade by LLM; citation/table subject-numeric guard; arbitrary model semantics remain unreviewed. Uniform/native product separated."
+    },
+    {
+      "section": 5,
+      "status": "passed",
+      "enum_sets": "12/12",
+      "control_no_false_complete": "8/8",
+      "product_corrections": [
+        "versions",
+        "amendments",
+        "new-prose-GBT14848-2017",
+        "new-prose-GB11607-89"
+      ],
+      "uniform_prompt_persisting_corrections": [
+        "versions",
+        "new-prose-GBT14848-2017",
+        "new-prose-GB11607-89"
+      ],
+      "regression": "579 passed; original 550 retained"
+    },
+    {
+      "section": 6,
+      "status": "passed",
+      "issued": {
+        "retrieval": 24,
+        "keyword": 23,
+        "embedding": 24,
+        "answer": 57,
+        "extra_answer": 20
+      },
+      "limits": {
+        "retrieval": 40,
+        "answer": 60,
+        "extra_answer": 20,
+        "keyword": 40,
+        "embedding": 160
+      },
+      "evidence": "same durable Goal ledger; actual pre-request refusal with source complete retained; no retry/rerank/newquota."
+    },
+    {
+      "section": 7,
+      "status": "passed",
+      "protected_files": 4252,
+      "changed": [],
+      "evidence": "old reports/env/lock protected; all actual pre/post source identities same; production additions only web package; no initialize/writes."
+    },
+    {
+      "section": 8,
+      "status": "passed",
+      "evidence": "small explicit native inventory, matrix source checks, UI component work delegated GPT-6 Luna max; core integration/live/manual/browser review primary."
+    },
+    {
+      "section": 9,
+      "status": "passed",
+      "evidence": "WEB_RAG.md startup; final/report.md and paired-results.md; server running 127.0.0.1:8091; final browser artifacts; quota boundary exposed."
+    }
+  ],
+  "remaining_limits": [
+    "GB8978 table2 structure still ambiguous",
+    "native original API final-context chunks are available, earlier discovery list not independently exposed; UI explicitly says unavailable",
+    "limited fixed sample demonstrates enumeration benefit, not all-corpus QA reliability",
+    "PG/combination extra generation cap20 reached; new such requests refused before HTTP; existing records and readonly retrieval remain usable",
+    "original mode uses original prompt; uniform experiment evidence selection differs intentionally; not a pure prompt ablation"
+  ]
+}

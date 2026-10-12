@@ -1,0 +1,76 @@
+{
+  "browser": "actual Codex IAB operation",
+  "desktop": {
+    "viewport": 1280,
+    "document_width": 1269,
+    "card_widths": [
+      360,
+      360,
+      360
+    ],
+    "horizontal_scroll_is_results_panel_only": true
+  },
+  "narrow": {
+    "viewport": 390,
+    "document_width": 379,
+    "card_widths": [
+      347,
+      347,
+      347
+    ],
+    "overflow": false
+  },
+  "same_question_record_ids": [
+    "web-6fc7a0bba4744d47",
+    "web-a1141036de04433d",
+    "web-fd7e78f70a754ab1"
+  ],
+  "source_document": {
+    "record_id": "web-3fe05a2fc9d044f1",
+    "doc_id": "doc-b423a0e3331541588988fd34496c349d",
+    "citation_clicked": true,
+    "download": "/Users/acerola/Downloads/pdf.pdf",
+    "pdf_bytes": 302121,
+    "pdf_header": "%PDF-",
+    "download_sha256": "17176c74c2c52423d7b7088bb8ed16cba0892fc932f197d0a73fdba08d728d61",
+    "source_equal": true,
+    "source": "/Users/acerola/Dev/Python/RAG/LightRAG/inputs/__parsed__/water-10_生态环境部_医疗机构水污染物排放标准修改单_2026.pdf",
+    "pdf_preview": "not accepted as proof; actual download verified"
+  },
+  "clarification": {
+    "query": "列出表1的全部项目和限值。",
+    "initial_record": "web-68854e83b990480c",
+    "resolved_record": "web-446cfb9fa4cb4b8a",
+    "resolved_via_actual_document_select": true,
+    "items": 13,
+    "last_fragment_citation_clicked": true,
+    "parsed_text_opened": true
+  },
+  "export": {
+    "record_id": "web-446cfb9fa4cb4b8a",
+    "download": "/Users/acerola/Downloads/web-446cfb9fa4cb4b8a.json"
+  },
+  "budget_refusal": {
+    "record_id": "web-9623c08f72064ece",
+    "generation_status": "budget_exhausted",
+    "source_status": "complete",
+    "source_items": 13,
+    "answer_call": null,
+    "issued_increment": 0,
+    "prepared_evidence_not_shown_as_sent": true
+  },
+  "empty_question": {
+    "visible_alert": "请先输入问题。",
+    "backend_calls": 0
+  },
+  "screenshots": [
+    "browser-answer-comparison.jpg",
+    "browser-desktop-paired-final-layout.jpg",
+    "browser-narrow.jpg",
+    "browser-budget-refusal.jpg",
+    "browser-empty-error.jpg"
+  ],
+  "backend_pid": 11542,
+  "backend_address": "http://127.0.0.1:8091",
+  "backend_left_running": true
+}

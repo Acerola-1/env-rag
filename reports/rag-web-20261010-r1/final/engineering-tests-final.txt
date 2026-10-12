@@ -1,0 +1,75 @@
+........................................................................ [ 12%]
+........................................................................ [ 24%]
+........................................................................ [ 37%]
+........................................................................ [ 49%]
+........................................................................ [ 62%]
+........................................................................ [ 74%]
+........................................................................ [ 87%]
+..............................................................F......... [ 99%]
+...                                                                      [100%]
+=================================== FAILURES ===================================
+____________ test_transport_requires_csrf_and_rejects_wrong_origin _____________
+
+tmp_path = PosixPath('/private/var/folders/sl/97x01_kj0xvcq_k7zhb7w4dm0000gn/T/pytest-of-acerola/pytest-994/test_transport_requires_csrf_a0')
+
+    def test_transport_requires_csrf_and_rejects_wrong_origin(tmp_path):
+        from aiohttp.test_utils import TestClient, TestServer
+    
+        s = SimpleNamespace(ledger=ledger(tmp_path))
+    
+        async def run():
+            client = TestClient(TestServer(create_app(s)), headers={"Host": "127.0.0.1"})
+            try:
+                await client.start_server()
+                resp = await client.post("/api/query", json={})
+                assert resp.status == 403
+                cfg = await (await client.get("/api/config")).json()
+                resp = await client.post(
+                    "/api/query",
+                    json={},
+                    headers={"X-RAG-Token": cfg["token"], "Origin": "http://outside.example"},
+                )
+                assert resp.status == 403
+            finally:
+                await client.close()
+    
+>       asyncio.run(run())
+
+tests/test_web_rag.py:269: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+../../../../Library/Application Support/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/asyncio/runners.py:195: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+../../../../Library/Application Support/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+../../../../Library/Application Support/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+tests/test_web_rag.py:256: in run
+    await client.start_server()
+.venv/lib/python3.12/site-packages/aiohttp/test_utils.py:312: in start_server
+    await self._server.start_server(loop=self._loop)
+.venv/lib/python3.12/site-packages/aiohttp/test_utils.py:141: in start_server
+    _sock = self.socket_factory(self.host, self.port, family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+host = '127.0.0.1', port = 0, family = <AddressFamily.AF_INET: 2>
+
+    def get_port_socket(
+        host: str, port: int, family: socket.AddressFamily
+    ) -> socket.socket:
+        s = socket.socket(family, socket.SOCK_STREAM)
+        if REUSE_ADDRESS:
+            # Windows has different semantics for SO_REUSEADDR,
+            # so don't set it. Ref:
+            # https://docs.microsoft.com/en-us/windows/win32/winsock/using-so-reuseaddr-and-so-exclusiveaddruse
+            s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+>       s.bind((host, port))
+E       PermissionError: [Errno 1] Operation not permitted
+
+.venv/lib/python3.12/site-packages/aiohttp/test_utils.py:85: PermissionError
+=========================== short test summary info ============================
+FAILED tests/test_web_rag.py::test_transport_requires_csrf_and_rejects_wrong_origin
+1 failed, 578 passed in 11.85s

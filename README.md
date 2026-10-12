@@ -10,6 +10,8 @@
 - `tests/`：工程回归；`reports/`、`openspec/`：历史证据、设计和交接记录。历史报告里的旧绝对路径仅是当时的审计信息。
 - 数据库、向量、图谱、缓存、`.env` 和密钥 **不入 Git**。数据库是运行时派生数据；入库与重建方式见 [部署与入库说明](docs/initialization/INGESTION.md)。
 
+当前网页使用见 [WEB_RAG.md](WEB_RAG.md)；历史网页 GOAL 提示和枚举后续方案分别归入 [交接资料](docs/handoffs/GOAL_RAG_COMPARISON_WEB.md)、[检索方案](docs/retrieval/ENUMERATION_NEXT_STEPS.md)。本机历史网页运行记录有 [可恢复归档](reports/archives/README.md)，工作区整理说明见 [维护记录](docs/maintenance/WORKSPACE-CLEANUP-20261012.md)。
+
 大文件使用 Git LFS，首次克隆请先安装 Git LFS，再运行：
 
 ```bash

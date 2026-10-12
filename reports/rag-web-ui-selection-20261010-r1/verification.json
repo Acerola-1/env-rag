@@ -1,0 +1,37 @@
+{
+  "backend_sources_and_env_budget_unchanged": [
+    ".env",
+    "reports/rag-web-20261010-r1/goal-budget.json",
+    "src/env_rag_final/web/service.py",
+    "src/env_rag_final/web/server.py",
+    "src/env_rag_final/web/support.py",
+    "src/env_rag_final/web/budget.py",
+    "src/env_rag_final/web/__init__.py",
+    "src/env_rag_final/web/native.py",
+    "src/env_rag_final/web/__main__.py"
+  ],
+  "changed": [],
+  "credential_hits": [],
+  "new_real_retrievals": 0,
+  "new_model_calls": 0,
+  "production_writes": 0,
+  "browser_checks": [
+    "普通问答单路线，默认local",
+    "PG+mix是一条组合，1份结果",
+    "PG与纯模型隐藏LightRAG模式",
+    "对照默认local/pg+local；三路预设真实切换",
+    "全选12个对照后返回普通问答仍只有1条路线",
+    "原生radio箭头键及select键盘选择",
+    "空问题、零对照选择在浏览器拒绝",
+    "390px视口document width379，无横向溢出",
+    "恢复原问题与生成开关，默认local，不自动查询"
+  ],
+  "unit_tests": {
+    "existing_web": 29,
+    "new_selection": 6
+  },
+  "strict_ui_findings": 0,
+  "console_errors": 0,
+  "old_results_preserved": true,
+  "server_unchanged": "http://127.0.0.1:8091"
+}

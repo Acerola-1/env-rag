@@ -1,0 +1,306 @@
+[
+  {
+    "id": "enum-01",
+    "question": "GB 3095-2026 表1 规定的环境空气污染物基本项目有哪些？请全部列出。",
+    "ground_truth": "共六项基本项目：二氧化硫（SO2）、二氧化氮（NO2）、一氧化碳（CO）、臭氧（O3）、颗粒物（粒径≤10μm, PM10）、颗粒物（粒径≤2.5μm, PM2.5）。",
+    "local": {
+      "n_expected": 6,
+      "n_hit": 6,
+      "missing": []
+    },
+    "mix": {
+      "n_expected": 6,
+      "n_hit": 6,
+      "missing": []
+    },
+    "both_under_old_item_name_metric": false,
+    "review": "historical item-name metric only; not full exact-set/source/semantic acceptance"
+  },
+  {
+    "id": "enum-02",
+    "question": "GB 3838-2002 表1 规定的地表水环境质量基本项目共 24 项，请尽可能列出项目名称。",
+    "ground_truth": "24 项基本项目：水温、pH值、溶解氧、高锰酸盐指数、化学需氧量、五日生化需氧量、氨氮、总磷、总氮、铜、锌、氟化物、硒、砷、汞、镉、铬（六价）、铅、氰化物、挥发酚、石油类、阴离子表面活性剂、硫化物、粪大肠菌群。（注：水质月报评价指标为其中除水温、总氮、粪大肠菌群外的 21 项）",
+    "local": {
+      "n_expected": 24,
+      "n_hit": 24,
+      "missing": []
+    },
+    "mix": {
+      "n_expected": 24,
+      "n_hit": 24,
+      "missing": []
+    },
+    "both_under_old_item_name_metric": false,
+    "review": "historical item-name metric only; not full exact-set/source/semantic acceptance"
+  },
+  {
+    "id": "enum-03",
+    "question": "GB 18466-2005 中，医疗机构污水的定义包含哪些场所排出的污水？",
+    "ground_truth": "医疗机构污水指医疗机构门诊、病房、手术室、各类检验室、病理解剖室、放射室、洗衣房、太平间等处排出的诊疗、生活及粪便污水；当医疗机构其他污水与上述污水混合排出时，一律视为医疗机构污水。",
+    "local": {
+      "n_expected": 8,
+      "n_hit": 8,
+      "missing": []
+    },
+    "mix": {
+      "n_expected": 8,
+      "n_hit": 8,
+      "missing": []
+    },
+    "both_under_old_item_name_metric": false,
+    "review": "historical item-name metric only; not full exact-set/source/semantic acceptance"
+  },
+  {
+    "id": "enum-04",
+    "question": "GB 5084-2021 农田灌溉水质标准替代了之前的哪些标准？",
+    "ground_truth": "GB 5084-2021 代替 GB 5084-2005《农田灌溉水质标准》、GB 22573-2008、GB 22574-2008（后两项为灌溉水中特定污染物控制标准）。2021-01-20 发布，2021-07-01 实施。",
+    "local": {
+      "n_expected": 3,
+      "n_hit": 3,
+      "missing": []
+    },
+    "mix": {
+      "n_expected": 3,
+      "n_hit": 3,
+      "missing": []
+    },
+    "both_under_old_item_name_metric": false,
+    "review": "historical item-name metric only; not full exact-set/source/semantic acceptance"
+  },
+  {
+    "id": "enum-05",
+    "question": "根据库中收录的火电厂和钢铁行业大气污染物排放标准，涉及哪些标准编号？",
+    "ground_truth": "收录的标准包括：GB 13223-2011《火电厂大气污染物排放标准》、GB 28662-2012《钢铁烧结球团工业大气污染物排放标准》及其 2020 年修改单。",
+    "local": {
+      "n_expected": 2,
+      "n_hit": 0,
+      "missing": [
+        "GB 13223-2011 火电厂",
+        "GB 28662-2012 钢铁烧结球团"
+      ]
+    },
+    "mix": {
+      "n_expected": 2,
+      "n_hit": 2,
+      "missing": []
+    },
+    "both_under_old_item_name_metric": false,
+    "review": "historical item-name metric only; not full exact-set/source/semantic acceptance"
+  },
+  {
+    "id": "enum-06",
+    "question": "GB 3095-2026 表2 规定的环境空气污染物其他项目有哪些？请全部列出。",
+    "ground_truth": "表2 其他项目共 4 项：总悬浮颗粒物（TSP）、氮氧化物（NOx，以NO2计）、铅（Pb）、苯并[a]芘（BaP）。",
+    "local": {
+      "n_expected": 4,
+      "n_hit": 4,
+      "missing": []
+    },
+    "mix": {
+      "n_expected": 4,
+      "n_hit": 4,
+      "missing": []
+    },
+    "both_under_old_item_name_metric": false,
+    "review": "historical item-name metric only; not full exact-set/source/semantic acceptance"
+  },
+  {
+    "id": "enum-07",
+    "question": "GB 3838-2002 表2 规定的集中式生活饮用水地表水源地补充项目共 5 项，请全部列出。",
+    "ground_truth": "硫酸盐（以SO4计）250、氯化物（以Cl计）250、硝酸盐（以N计）10、铁 0.3、锰 0.1（单位 mg/L）。",
+    "local": {
+      "n_expected": 5,
+      "n_hit": 5,
+      "missing": []
+    },
+    "mix": {
+      "n_expected": 5,
+      "n_hit": 5,
+      "missing": []
+    },
+    "both_under_old_item_name_metric": false,
+    "review": "historical item-name metric only; not full exact-set/source/semantic acceptance"
+  },
+  {
+    "id": "enum-08",
+    "question": "GB 8978-1996 表1 规定的第一类污染物共 13 项，请尽可能列全。",
+    "ground_truth": "13 项：总汞 0.05、烷基汞（不得检出）、总镉 0.1、总铬 1.5、六价铬 0.5、总砷 0.5、总铅 1.0、总镍 1.0、苯并(a)芘 0.00003、总铍 0.005、总银 0.5、总α放射性 1 Bq/L、总β放射性 10 Bq/L（单位 mg/L，放射性除外）。",
+    "local": {
+      "n_expected": 13,
+      "n_hit": 13,
+      "missing": []
+    },
+    "mix": {
+      "n_expected": 13,
+      "n_hit": 13,
+      "missing": []
+    },
+    "both_under_old_item_name_metric": false,
+    "review": "historical item-name metric only; not full exact-set/source/semantic acceptance"
+  },
+  {
+    "id": "enum-09",
+    "question": "HJ 1328-2023 规定连续自动监测的 PM2.5 中 8 种水溶性离子是哪些？请用中文名称列出。",
+    "ground_truth": "8 种水溶性离子：氯离子（Cl-）、硝酸根（NO3-）、硫酸根（SO42-）、钠离子（Na+）、铵根（NH4+）、钾离子（K+）、镁离子（Mg2+）、钙离子（Ca2+），采用离子色谱法。",
+    "local": {
+      "n_expected": 8,
+      "n_hit": 8,
+      "missing": []
+    },
+    "mix": {
+      "n_expected": 8,
+      "n_hit": 7,
+      "missing": [
+        "铵根"
+      ]
+    },
+    "both_under_old_item_name_metric": false,
+    "review": "mix false negative: 铵离子 NH4+ is equivalent to 铵根 NH4+"
+  },
+  {
+    "id": "enum-10",
+    "question": "《重污染天气消除攻坚行动方案》（2022）提出要针对哪些重点区域开展攻坚？",
+    "ground_truth": "聚焦 PM2.5 污染，以秋冬季（10月—次年3月）为重点时段，针对京津冀及周边地区、汾渭平原、东北地区、天山北坡城市群等区域提出针对性攻坚措施；目标要求这四个区域人为因素导致的重度及以上污染天数减少 30% 以上。",
+    "local": {
+      "n_expected": 4,
+      "n_hit": 4,
+      "missing": []
+    },
+    "mix": {
+      "n_expected": 4,
+      "n_hit": 4,
+      "missing": []
+    },
+    "both_under_old_item_name_metric": false,
+    "review": "historical item-name metric only; not full exact-set/source/semantic acceptance"
+  },
+  {
+    "id": "enum-11",
+    "question": "GB 4287-2026 纺织工业水污染物排放标准整合纳入并废止了此前哪些标准？请列出标准编号。",
+    "ground_truth": "代替 GB 4287-2012《纺织染整工业水污染物排放标准》及其修改单，同时整合纳入并修订 GB 28936-2012《缫丝工业》、GB 28937-2012《毛纺工业》、GB 28938-2012《麻纺工业》水污染物排放标准；上述标准自新标准实施后同时废止。",
+    "local": {
+      "n_expected": 4,
+      "n_hit": 4,
+      "missing": []
+    },
+    "mix": {
+      "n_expected": 4,
+      "n_hit": 4,
+      "missing": []
+    },
+    "both_under_old_item_name_metric": false,
+    "review": "historical item-name metric only; not full exact-set/source/semantic acceptance"
+  },
+  {
+    "id": "enum-12",
+    "question": "GB 46817-2025 食品加工制造业水污染物排放标准中，哪六类子行业不执行本标准、仍执行各自的行业排放标准？",
+    "ground_truth": "屠宰及肉类加工（GB 13457）、柠檬酸（GB 19430）、味精（GB 19431）、制糖（GB 21909）、淀粉（GB 25461）、酵母制造（GB 25462）及相应修改单的相关规定。",
+    "local": {
+      "n_expected": 6,
+      "n_hit": 6,
+      "missing": []
+    },
+    "mix": {
+      "n_expected": 6,
+      "n_hit": 6,
+      "missing": []
+    },
+    "both_under_old_item_name_metric": false,
+    "review": "historical item-name metric only; not full exact-set/source/semantic acceptance"
+  },
+  {
+    "id": "enum-13",
+    "question": "《臭氧污染防治攻坚行动方案》（2022）确定的国家臭氧污染防治攻坚重点地区是哪些？",
+    "ground_truth": "以 5—9 月为重点时段，以京津冀及周边地区、长三角地区、汾渭平原为国家臭氧污染防治攻坚的重点地区；珠三角地区、成渝地区、长江中游城市群及其他臭氧超标城市在国家指导下开展攻坚。",
+    "local": {
+      "n_expected": 3,
+      "n_hit": 3,
+      "missing": []
+    },
+    "mix": {
+      "n_expected": 3,
+      "n_hit": 3,
+      "missing": []
+    },
+    "both_under_old_item_name_metric": false,
+    "review": "historical item-name metric only; not full exact-set/source/semantic acceptance"
+  },
+  {
+    "id": "enum-14",
+    "question": "美国 EPA 的 AQI 分为六个级别，请用英文颜色名称按 AQI 从低到高列出对应的颜色。",
+    "ground_truth": "Green（0-50, Good）、Yellow（51-100, Moderate）、Orange（101-150, Unhealthy for Sensitive Groups）、Red（151-200, Unhealthy）、Purple（201-300, Very Unhealthy）、Maroon（301 and higher, Hazardous）。",
+    "local": {
+      "n_expected": 6,
+      "n_hit": 6,
+      "missing": []
+    },
+    "mix": {
+      "n_expected": 6,
+      "n_hit": 6,
+      "missing": []
+    },
+    "both_under_old_item_name_metric": false,
+    "review": "historical item-name metric only; not full exact-set/source/semantic acceptance"
+  },
+  {
+    "id": "enum-15",
+    "question": "欧盟指令 2024/2881 附件 I 第 1 节表 2 规定了哪 4 项指标的目标值？请用英文名称列出这 4 项指标。",
+    "ground_truth": "Arsenic（砷）年均 6.0 ng/m3、Cadmium（镉）年均 5.0 ng/m3、Nickel（镍）年均 20 ng/m3、Benzo(a)pyrene（苯并(a)芘）年均 1.0 ng/m3。",
+    "local": {
+      "n_expected": 4,
+      "n_hit": 0,
+      "missing": [
+        "Arsenic",
+        "Cadmium",
+        "Nickel",
+        "Benzo(a)pyrene"
+      ]
+    },
+    "mix": {
+      "n_expected": 4,
+      "n_hit": 0,
+      "missing": [
+        "Arsenic",
+        "Cadmium",
+        "Nickel",
+        "Benzo(a)pyrene"
+      ]
+    },
+    "both_under_old_item_name_metric": true,
+    "review": "invalid_reference: expected target values are in PDF Table 3, not Table 2"
+  },
+  {
+    "id": "enum-16",
+    "question": "《柴油货车污染治理攻坚行动方案》（2022）明确了哪三个排放标准实施时间节点？请给出具体日期和对应标准。",
+    "ground_truth": "2023年7月1日全国实施轻型车和重型车国6b排放标准；2022年12月1日实施非道路移动柴油机械第四阶段排放标准；2022年7月1日实施船舶发动机第二阶段排放标准。",
+    "local": {
+      "n_expected": 3,
+      "n_hit": 3,
+      "missing": []
+    },
+    "mix": {
+      "n_expected": 3,
+      "n_hit": 3,
+      "missing": []
+    },
+    "both_under_old_item_name_metric": false,
+    "review": "historical item-name metric only; not full exact-set/source/semantic acceptance"
+  },
+  {
+    "id": "enum-17",
+    "question": "GB 18466-2005 表3 对医疗机构污水处理站周边大气污染物规定了哪几个控制项目？",
+    "ground_truth": "5 项：氨 1.0 mg/m3；硫化氢 0.03 mg/m3；臭气浓度（无量纲）10；氯气 0.1 mg/m3；甲烷（指处理站内最高体积百分数）1%。",
+    "local": {
+      "n_expected": 5,
+      "n_hit": 5,
+      "missing": []
+    },
+    "mix": {
+      "n_expected": 5,
+      "n_hit": 5,
+      "missing": []
+    },
+    "both_under_old_item_name_metric": false,
+    "review": "historical item-name metric only; not full exact-set/source/semantic acceptance"
+  }
+]

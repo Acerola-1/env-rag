@@ -1,0 +1,53 @@
+[
+  {
+    "id": "versions",
+    "query": "列出库内 GB3095 标准的全部文档及版本",
+    "native_product": "FAIL",
+    "enhanced": "PASS",
+    "uniform_native": "FAIL",
+    "reviewer": "primary agent",
+    "basis": "actual answer text + fixed source expectations; no other LLM judge",
+    "reason": "历史1982/1996及GB9137被列成库内文件；库内目标只有2012、2026",
+    "native_record": "web-7084f4eda72b4d06",
+    "enhanced_record": "web-d579f9936dfd4054",
+    "uniform_record": "web-55945bc85cd549cd",
+    "native_retrieval_ms": 3417,
+    "enhanced_retrieval_ms": 3772,
+    "native_generation_ms": 2917,
+    "enhanced_generation_ms": 1635
+  },
+  {
+    "id": "new-prose-GBT14848-2017",
+    "query": "完整列出 GB/T14848-2017 第3.1至3.4条的术语和定义",
+    "native_product": "FAIL",
+    "enhanced": "PASS",
+    "uniform_native": "FAIL",
+    "reviewer": "primary agent",
+    "basis": "actual answer text + fixed source expectations; no other LLM judge",
+    "reason": "原生仅拿到目次/前言，四个定义缺失；增强4/4",
+    "native_record": "web-6fc7a0bba4744d47",
+    "enhanced_record": "web-a1141036de04433d",
+    "uniform_record": "web-fd7e78f70a754ab1",
+    "native_retrieval_ms": 1920,
+    "enhanced_retrieval_ms": 4185,
+    "native_generation_ms": 2159,
+    "enhanced_generation_ms": 1882
+  },
+  {
+    "id": "new-prose-GB11607-89",
+    "query": "列出 GB11607-89 第4.1至4.3条的全部渔业水质保护要求",
+    "native_product": "FAIL",
+    "enhanced": "PASS",
+    "uniform_native": "FAIL",
+    "reviewer": "primary agent",
+    "basis": "actual answer text + fixed source expectations; no other LLM judge",
+    "reason": "原生明确找不到4.1–4.3，增强3/3",
+    "native_record": "web-0c721b5b36ff4445",
+    "enhanced_record": "web-03bf7c8ad65c433c",
+    "uniform_record": "web-e70e3d16ab114469",
+    "native_retrieval_ms": 2202,
+    "enhanced_retrieval_ms": 5502,
+    "native_generation_ms": 3217,
+    "enhanced_generation_ms": 2114
+  }
+]
