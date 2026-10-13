@@ -9,7 +9,7 @@
     "error": "unauthenticated",
     "message": "authentication required"
    },
-   "at": 1791828729.002
+   "at": 1791853639.899
   },
   {
    "case": "anonymous.records",
@@ -19,7 +19,7 @@
     "error": "unauthenticated",
     "message": "authentication required"
    },
-   "at": 1791828729.002
+   "at": 1791853639.9
   },
   {
    "case": "forged.bearer",
@@ -29,7 +29,7 @@
     "error": "unauthenticated",
     "message": "authentication required"
    },
-   "at": 1791828729.012
+   "at": 1791853639.91
   },
   {
    "case": "forged.role-header",
@@ -39,7 +39,7 @@
     "error": "unauthorized_workspace",
     "message": "the requested knowledge scope is not permitted"
    },
-   "at": 1791828729.022
+   "at": 1791853639.921
   },
   {
    "case": "air-reader.login",
@@ -48,7 +48,7 @@
    "body": {
     "user_id": "air-reader",
     "display": "大气读者",
-    "csrf": "Mv48MduIe87bGdkai-Ydi7GgGRthxeNtvd10rEQJOMQ",
+    "csrf": "gmTs8gNs5TnyeNIsq2YdCBtpn4ocWsnQx7V7sTAu2a8",
     "workspaces": [
      {
       "id": "air",
@@ -69,7 +69,7 @@
      }
     ]
    },
-   "at": 1791828729.063
+   "at": 1791853639.962
   },
   {
    "case": "air-reader.allow.air",
@@ -91,7 +91,7 @@
      "failures": 0
     }
    },
-   "at": 1791828729.941
+   "at": 1791853640.578
   },
   {
    "case": "air-reader.deny.water",
@@ -101,7 +101,7 @@
     "error": "unauthorized_workspace",
     "message": "the requested knowledge scope is not permitted"
    },
-   "at": 1791828729.942
+   "at": 1791853640.579
   },
   {
    "case": "air-reader.deny.air+water",
@@ -111,7 +111,7 @@
     "error": "unauthorized_workspace",
     "message": "the requested knowledge scope is not permitted"
    },
-   "at": 1791828729.942
+   "at": 1791853640.579
   },
   {
    "case": "air-reader.deny.default",
@@ -121,7 +121,7 @@
     "error": "unknown_workspace",
     "message": "the requested knowledge scope is not permitted"
    },
-   "at": 1791828729.943
+   "at": 1791853640.58
   },
   {
    "case": "air-reader.deny.unknown",
@@ -131,7 +131,7 @@
     "error": "unknown_workspace",
     "message": "the requested knowledge scope is not permitted"
    },
-   "at": 1791828729.943
+   "at": 1791853640.58
   },
   {
    "case": "water-reader.login",
@@ -140,7 +140,7 @@
    "body": {
     "user_id": "water-reader",
     "display": "水资料读者",
-    "csrf": "CButWZK4M62nQ4kMP5Z_Lx3rQnHW-T9eGeeI81OHRGc",
+    "csrf": "NEz9NJfrPFtxT2JspT66AOpK6M_LMrGL1w826mQfhYA",
     "workspaces": [
      {
       "id": "water",
@@ -161,7 +161,7 @@
      }
     ]
    },
-   "at": 1791828729.987
+   "at": 1791853640.621
   },
   {
    "case": "water-reader.allow.water",
@@ -183,7 +183,7 @@
      "failures": 0
     }
    },
-   "at": 1791828730.785
+   "at": 1791853641.442
   },
   {
    "case": "water-reader.deny.air",
@@ -193,7 +193,7 @@
     "error": "unauthorized_workspace",
     "message": "the requested knowledge scope is not permitted"
    },
-   "at": 1791828730.786
+   "at": 1791853641.443
   },
   {
    "case": "water-reader.deny.air+water",
@@ -203,7 +203,7 @@
     "error": "unauthorized_workspace",
     "message": "the requested knowledge scope is not permitted"
    },
-   "at": 1791828730.787
+   "at": 1791853641.444
   },
   {
    "case": "water-reader.deny.default",
@@ -213,7 +213,7 @@
     "error": "unknown_workspace",
     "message": "the requested knowledge scope is not permitted"
    },
-   "at": 1791828730.787
+   "at": 1791853641.444
   },
   {
    "case": "water-reader.deny.unknown",
@@ -223,7 +223,7 @@
     "error": "unknown_workspace",
     "message": "the requested knowledge scope is not permitted"
    },
-   "at": 1791828730.788
+   "at": 1791853641.444
   },
   {
    "case": "dual-reader.login",
@@ -232,7 +232,7 @@
    "body": {
     "user_id": "dual-reader",
     "display": "双库读者",
-    "csrf": "I_cbSmql7ndkKwqf_p0aNJKFF8IRZGRC6sStciuLzp0",
+    "csrf": "ARIiQV0b4bpV86NCH55ogzudowt5OhKBqg7c_1x5GOs",
     "workspaces": [
      {
       "id": "air",
@@ -270,7 +270,7 @@
      }
     ]
    },
-   "at": 1791828730.829
+   "at": 1791853641.488
   },
   {
    "case": "dual-reader.allow.air",
@@ -292,7 +292,7 @@
      "failures": 0
     }
    },
-   "at": 1791828731.36
+   "at": 1791853642.572
   },
   {
    "case": "dual-reader.allow.water",
@@ -314,7 +314,7 @@
      "failures": 0
     }
    },
-   "at": 1791828732.085
+   "at": 1791853643.514
   },
   {
    "case": "dual-reader.allow.air+water",
@@ -338,7 +338,7 @@
      "failures": 0
     }
    },
-   "at": 1791828733.324
+   "at": 1791853644.838
   },
   {
    "case": "dual-reader.deny.default",
@@ -348,7 +348,7 @@
     "error": "unknown_workspace",
     "message": "the requested knowledge scope is not permitted"
    },
-   "at": 1791828733.325
+   "at": 1791853644.839
   },
   {
    "case": "dual-reader.deny.unknown",
@@ -358,7 +358,7 @@
     "error": "unknown_workspace",
     "message": "the requested knowledge scope is not permitted"
    },
-   "at": 1791828733.326
+   "at": 1791853644.839
   },
   {
    "case": "no-access.login",
@@ -367,10 +367,10 @@
    "body": {
     "user_id": "no-access",
     "display": "无知识库授权主体",
-    "csrf": "Ac-2NxWe9FBfLPSt_VUZAlArXKJaS635uY_3MaggRoQ",
+    "csrf": "v7wnXax_5QUlcGN_REtVZY6zEoEeI1l9xtQki5gxI04",
     "workspaces": []
    },
-   "at": 1791828733.366
+   "at": 1791853644.881
   },
   {
    "case": "no-access.deny.air",
@@ -380,7 +380,7 @@
     "error": "unauthorized_workspace",
     "message": "the requested knowledge scope is not permitted"
    },
-   "at": 1791828733.367
+   "at": 1791853644.881
   },
   {
    "case": "no-access.deny.water",
@@ -390,7 +390,7 @@
     "error": "unauthorized_workspace",
     "message": "the requested knowledge scope is not permitted"
    },
-   "at": 1791828733.368
+   "at": 1791853644.882
   },
   {
    "case": "no-access.deny.air+water",
@@ -400,7 +400,7 @@
     "error": "unauthorized_workspace",
     "message": "the requested knowledge scope is not permitted"
    },
-   "at": 1791828733.368
+   "at": 1791853644.882
   },
   {
    "case": "no-access.deny.all",
@@ -410,7 +410,7 @@
     "error": "no_workspace",
     "message": "the requested knowledge scope is not permitted"
    },
-   "at": 1791828733.368
+   "at": 1791853644.883
   },
   {
    "case": "no-access.deny.default",
@@ -420,7 +420,7 @@
     "error": "unknown_workspace",
     "message": "the requested knowledge scope is not permitted"
    },
-   "at": 1791828733.369
+   "at": 1791853644.883
   },
   {
    "case": "beta-reader.login",
@@ -429,7 +429,7 @@
    "body": {
     "user_id": "beta-reader",
     "display": "乙企业大气读者",
-    "csrf": "JoK-KmVpdt_jGqrf7jxzRwi4x2llnvKywZYOVCEO7kI",
+    "csrf": "3XevaGShnJG6VJ7FkXDoL7j1a-yPq6y6MCO_TRtdCwY",
     "workspaces": [
      {
       "id": "water",
@@ -450,7 +450,7 @@
      }
     ]
    },
-   "at": 1791828733.41
+   "at": 1791853644.924
   },
   {
    "case": "beta-reader.same-role-different-grant.allows-water",
@@ -472,7 +472,7 @@
      "failures": 0
     }
    },
-   "at": 1791828734.153
+   "at": 1791853645.705
   },
   {
    "case": "beta-reader.same-role-different-grant.denies-air",
@@ -482,7 +482,7 @@
     "error": "unauthorized_workspace",
     "message": "the requested knowledge scope is not permitted"
    },
-   "at": 1791828734.154
+   "at": 1791853645.706
   },
   {
    "case": "dual.query.air+water",
@@ -506,7 +506,7 @@
      "failures": 0
     }
    },
-   "at": 1791828735.496
+   "at": 1791853647.163
   },
   {
    "case": "air-reader.foreign-record",
@@ -516,7 +516,7 @@
     "error": "not_available",
     "message": "not available"
    },
-   "at": 1791828735.538
+   "at": 1791853647.206
   },
   {
    "case": "air-reader.foreign-export",
@@ -526,7 +526,7 @@
     "error": "not_available",
     "message": "not available"
    },
-   "at": 1791828735.538
+   "at": 1791853647.207
   },
   {
    "case": "air-reader.foreign-summary",
@@ -535,7 +535,37 @@
    "body": {
     "records": "…"
    },
-   "at": 1791828735.547
+   "at": 1791853647.207
+  },
+  {
+   "case": "air-reader.foreign-source-text",
+   "expected": "404",
+   "status": 404,
+   "body": {
+    "error": "not_available",
+    "message": "not available"
+   },
+   "at": 1791853647.208
+  },
+  {
+   "case": "air-reader.foreign-source-pdf",
+   "expected": "404",
+   "status": 404,
+   "body": {
+    "error": "not_available",
+    "message": "not available"
+   },
+   "at": 1791853647.208
+  },
+  {
+   "case": "air-reader.foreign-document",
+   "expected": "404",
+   "status": 404,
+   "body": {
+    "error": "not_available",
+    "message": "not available"
+   },
+   "at": 1791853647.209
   },
   {
    "case": "air-reader.own-record-detail",
@@ -544,7 +574,7 @@
    "body": {
     "records": "…"
    },
-   "at": 1791828735.548
+   "at": 1791853647.21
   },
   {
    "case": "bypass.instance.air.no-key",
@@ -553,7 +583,7 @@
    "body": {
     "text_len": 29
    },
-   "at": 1791828735.579
+   "at": 1791853647.245
   },
   {
    "case": "bypass.instance.air.reader-credential",
@@ -562,7 +592,7 @@
    "body": {
     "text_len": 28
    },
-   "at": 1791828735.591
+   "at": 1791853647.258
   },
   {
    "case": "bypass.instance.water.no-key",
@@ -571,7 +601,7 @@
    "body": {
     "text_len": 29
    },
-   "at": 1791828735.624
+   "at": 1791853647.281
   },
   {
    "case": "bypass.instance.manage-with-instance-key",
@@ -580,7 +610,43 @@
    "body": {
     "text_len": 31
    },
-   "at": 1791828735.64
+   "at": 1791853647.294
+  },
+  {
+   "case": "bypass.instance.graph-list.no-key",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "text_len": 29
+   },
+   "at": 1791853647.307
+  },
+  {
+   "case": "bypass.instance.graph-list.reader-credential",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "text_len": 28
+   },
+   "at": 1791853647.321
+  },
+  {
+   "case": "bypass.instance.pipeline-status.no-key",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "text_len": 29
+   },
+   "at": 1791853647.333
+  },
+  {
+   "case": "bypass.instance.pipeline-status.reader-credential",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "text_len": 28
+   },
+   "at": 1791853647.346
   },
   {
    "case": "revocation.before.record-visible",
@@ -595,13 +661,13 @@
      "air",
      "water"
     ],
-    "created_at": 1791828736.940418,
+    "created_at": 1791853649.310694,
     "question": "空气质量标准",
     "route": "pg",
     "status": "ambiguous",
     "payload": "…"
    },
-   "at": 1791828736.947
+   "at": 1791853649.319
   },
   {
    "case": "revocation.deny.new-water-query",

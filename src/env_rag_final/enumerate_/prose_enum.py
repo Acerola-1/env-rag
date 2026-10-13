@@ -172,7 +172,7 @@ async def read_prose_scope(
         r = EnumResult(**base)
         return r
 
-    stale_before = await check_stale(conn)
+    stale_before = await check_stale(conn, workspace=workspace)
     stored_fp = stale_before.get("stored_fingerprint") or ""
     if stale_before.get("state") != "current":
         return [], _result(
@@ -360,7 +360,7 @@ async def read_prose_scope(
         assembled_len += len(text) + len(ASSEMBLY_SEPARATOR)
         processed += 1
 
-    stale_after = await check_stale(conn)
+    stale_after = await check_stale(conn, workspace=workspace)
     if (
         stale_after.get("state") != "current"
         or stale_after.get("active_snapshot_id") != catalog_snapshot_id

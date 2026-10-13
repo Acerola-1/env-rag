@@ -179,10 +179,9 @@ def main() -> int:
         ledger_path.rename(ledger_path.with_suffix(".jsonl.withdrawn"))
     step("withdraw.checkpoint-cleared", not ledger_path.exists())
     report["after_withdraw"] = counts()
-    report["other_libraries_unchanged"] = (
-        keep_only(before) == keep_only(report["after_withdraw"])
-        and not any(x.startswith(f"{TRIAL}=") for x in report["after_withdraw"]["chunks"])
-    )
+    report["other_libraries_unchanged"] = keep_only(before) == keep_only(
+        report["after_withdraw"]
+    ) and not any(x.startswith(f"{TRIAL}=") for x in report["after_withdraw"]["chunks"])
     step("withdraw.others_unchanged", report["other_libraries_unchanged"])
     report["trial_query_after_withdraw"] = query("coastal-reader", TRIAL, "长江保护法 水生态保护")
     step("trial.query.after_withdraw", report["trial_query_after_withdraw"])

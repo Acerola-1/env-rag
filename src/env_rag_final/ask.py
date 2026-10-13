@@ -51,8 +51,12 @@ class Question:
             raise ValueError("问题不能为空")
         if self.kind not in ("auto", "files", "prose", "table"):
             raise ValueError("kind must be auto/files/prose/table")
-        if self.workspace != "default":
-            raise ValueError("仅支持已核实的 default 工作区")
+        # The default-only restriction is replaced by registry validation, not
+        # removed: 'default' keeps its historical verified identity and any
+        # other value must be a registered, active workspace.
+        from env_rag_final.access.registry import resolve_cli_workspace
+
+        resolve_cli_workspace(self.workspace)
         if type(self.top_k) is not int or not 1 <= self.top_k <= 100:
             raise ValueError("top_k must be an integer in 1..100")
         if self.version and not self.code:

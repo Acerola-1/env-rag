@@ -1,7 +1,7 @@
 # workspace 权限交付 · 验收报告
 
 - run id: `wa-20261012-r1`
-- 生成时间: 2026-10-13 02:24:07
+- 生成时间: 2026-10-13 09:07:45
 
 ## 1. 运行身份
 
@@ -29,6 +29,8 @@
 - lightrag-init-probe.json: 见 `lightrag-init-probe.json`
 - acceptance-matrix.json: 见 `acceptance-matrix.json`
 - third-workspace.json: 见 `third-workspace.json`
+- pg-tasks.json: 见 `pg-tasks.json`
+- retrieval-sweep.json: 见 `retrieval-sweep.json`
 - lifecycle.json: 见 `lifecycle.json`
 - browser/operations.json: 见 `browser/operations.json`
 - browser screenshots: desktop-air-generation.png、desktop-air-query.png、desktop-air-records.png、desktop-dual-query.png、desktop-no-access.png、desktop-water-lightrag.png、narrow-air.png、narrow-no-access.png

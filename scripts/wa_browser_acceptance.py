@@ -286,7 +286,10 @@ async def run(base: str, out_dir: Path, creds: dict) -> dict:
         )
         await asyncio.sleep(1)
         after_switch = await browser.evaluate("performance.getEntriesByType('resource').length")
-        note("dual-reader.switch-no-model", {"switch": json.loads(switch), "resources_after_1s": after_switch})
+        note(
+            "dual-reader.switch-no-model",
+            {"switch": json.loads(switch), "resources_after_1s": after_switch},
+        )
         await browser.evaluate("document.getElementById('logout').click()")
         await browser.wait_for("document.getElementById('login-panel').hidden === false", 30)
 

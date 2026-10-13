@@ -488,7 +488,7 @@ def _run_catalog(args, values: dict[str, str]) -> None:
                 for w in result.warnings[:8]:
                     print(f"  warning: {w}")
             else:
-                stale = await check_stale(conn)
+                stale = await check_stale(conn, workspace=workspace)
                 print(f"Stale check: {stale}")
         finally:
             await conn.close()
@@ -791,7 +791,7 @@ def _run_enum(args, values: dict[str, str]) -> None:
 
                 if not args.doc_id or not args.scope_id:
                     raise ValueError("enum-prose requires --doc-id and --scope-id")
-                snap = (await check_stale(conn)).get("active_snapshot_id")
+                snap = (await check_stale(conn, workspace=workspace)).get("active_snapshot_id")
                 if adapter is None:
                     from .catalog.source import SourceAdapter
 
@@ -844,7 +844,7 @@ def _run_enum(args, values: dict[str, str]) -> None:
 
                 # G2: re-check the source AFTER extraction/model before deciding
                 # the final coverage — a change during extraction is stale
-                stale_after = await check_stale(conn)
+                stale_after = await check_stale(conn, workspace=workspace)
                 if (
                     stale_after.get("state") != "current"
                     or stale_after.get("active_snapshot_id") != snap

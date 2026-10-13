@@ -343,6 +343,8 @@ def main() -> int:
         "lightrag-init-probe.json",
         "acceptance-matrix.json",
         "third-workspace.json",
+        "pg-tasks.json",
+        "retrieval-sweep.json",
         "lifecycle.json",
         "browser/operations.json",
     ):

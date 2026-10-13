@@ -206,6 +206,11 @@ def main() -> int:
         record("air-reader.foreign-record", "404", air.get(f"/api/records/{record_id}"))
         record("air-reader.foreign-export", "404", air.get(f"/api/export/{record_id}"))
         record("air-reader.foreign-summary", "200-empty", air.get("/api/records"))
+        record("air-reader.foreign-source-text", "404", air.get(f"/api/source/{record_id}/0/text"))
+        record("air-reader.foreign-source-pdf", "404", air.get(f"/api/source/{record_id}/0/pdf"))
+        record(
+            "air-reader.foreign-document", "404", air.get(f"/api/document/{record_id}/doc-x/text")
+        )
     record("air-reader.own-record-detail", "200", air.get("/api/records"))
 
     # --- instance bypass --------------------------------------------------
@@ -218,6 +223,22 @@ def main() -> int:
         "bypass.instance.manage-with-instance-key",
         "documented-internal",
         _direct(9622, keys["air"], path="/documents"),
+    )
+    record("bypass.instance.graph-list.no-key", "403", _get(9622, "/graph/label/list", None))
+    record(
+        "bypass.instance.graph-list.reader-credential",
+        "403",
+        _get(9622, "/graph/label/list", creds["air-reader"]["bearer"]),
+    )
+    record(
+        "bypass.instance.pipeline-status.no-key",
+        "403",
+        _get(9622, "/documents/pipeline_status", None),
+    )
+    record(
+        "bypass.instance.pipeline-status.reader-credential",
+        "403",
+        _get(9622, "/documents/pipeline_status", creds["air-reader"]["bearer"]),
     )
 
     # --- revocation -------------------------------------------------------
@@ -299,6 +320,12 @@ def _direct(port: int, credential: str | None, path: str = "/query/data") -> dic
         headers=headers,
         timeout=60,
     )
+    return {"status": res.status_code, "body": {"text_len": len(res.text)}}
+
+
+def _get(port: int, path: str, credential: str | None) -> dict:
+    headers = {"X-API-Key": credential} if credential else {}
+    res = httpx.get(f"http://127.0.0.1:{port}{path}", headers=headers, timeout=60)
     return {"status": res.status_code, "body": {"text_len": len(res.text)}}
 
 

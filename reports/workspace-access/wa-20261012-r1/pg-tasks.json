@@ -1,0 +1,226 @@
+{
+ "tasks": [
+  {
+   "workspace": "air",
+   "task": "files",
+   "argv": [
+    "--workspace",
+    "air",
+    "--query",
+    "臭氧污染防治攻坚行动方案 涉及哪些文件",
+    "--kind",
+    "files",
+    "--format",
+    "json"
+   ],
+   "elapsed_s": 2.63,
+   "exit": 0,
+   "catalog_snapshot_id": null,
+   "source_snapshot_id": null,
+   "coverage_status": "complete",
+   "fail_stage": null,
+   "items": 1,
+   "items_verified": 1,
+   "first_citation": {
+    "kind": "catalog_row",
+    "workspace": "air",
+    "snapshot_id": "123afd3d431b84d0",
+    "doc_id": "doc-890f735fa40acb93614ffe371be430a8",
+    "doc_name": "air-01_生态环境部等_臭氧污染防治攻坚行动方案_2022.pdf"
+   },
+   "members_total": null,
+   "members_processed": null
+  },
+  {
+   "workspace": "air",
+   "task": "prose",
+   "argv": [
+    "--workspace",
+    "air",
+    "--doc-id",
+    "doc-00645c1f4da31db8df7673ca9d0dd052",
+    "--scope-id",
+    "doc-00645c1f4da31db8df7673ca9d0dd052:scope:01.1"
+   ],
+   "elapsed_s": 1.71,
+   "exit": 0,
+   "catalog_snapshot_id": "123afd3d431b84d0",
+   "source_snapshot_id": "21d3540e247a4cd8007e4f1c84471db74974f13eebca1c5ea6522f1d96625857",
+   "coverage_status": "complete",
+   "fail_stage": "",
+   "items": 2,
+   "items_verified": 2,
+   "first_citation": {
+    "kind": "char_span",
+    "char_start": 2342,
+    "char_end": 2448,
+    "quote": "01 – CAMS AT A GLANCE\n三←04→\nPROGRAMME OF THE EUROPEAN UNION\nopernicus Farth\nIMPLEMENTED B ECMWF\nAtmosphere",
+    "unit_rel_start": 257,
+    "unit_rel_end": 363,
+    "unit_id": "ce064ce640e70e35ab02d9fd6ddb28fb",
+    "locator": {
+     "file": "blocks.jsonl",
+     "kind": "block",
+     "blockid": "ce064ce640e70e35ab02d9fd6ddb28fb",
+     "parsed_dir": "air-52_CAMS_Achievements-Report-2014-2021_2022.pdf.parsed"
+    },
+    "chunk_ids": [
+     "doc-00645c1f4da31db8df7673ca9d0dd052-chunk-002"
+    ],
+    "unit_source": "parsed_block",
+    "workspace": "air",
+    "doc_id": "doc-00645c1f4da31db8df7673ca9d0dd052",
+    "snapshot_id": "123afd3d431b84d0"
+   },
+   "members_total": 6,
+   "members_processed": 6
+  },
+  {
+   "workspace": "air",
+   "task": "table",
+   "argv": [
+    "--workspace",
+    "air",
+    "--doc-id",
+    "doc-e48b9ef7fd5c2049d28342dec28aecfb",
+    "--table-number",
+    "1"
+   ],
+   "elapsed_s": 1.38,
+   "exit": 0,
+   "catalog_snapshot_id": "123afd3d431b84d0",
+   "source_snapshot_id": "21d3540e247a4cd8007e4f1c84471db74974f13eebca1c5ea6522f1d96625857",
+   "coverage_status": "complete",
+   "fail_stage": "",
+   "items": 1,
+   "items_verified": 1,
+   "first_citation": {
+    "kind": "table_row",
+    "workspace": "air",
+    "doc_id": "doc-e48b9ef7fd5c2049d28342dec28aecfb",
+    "snapshot_id": "123afd3d431b84d0",
+    "fragment_index": 0,
+    "row_in_fragment": 12,
+    "table_id": "tb-e48b9ef7fd5c2049d28342dec28aecfb-0001",
+    "blockid": "0999ce1637b4a7b72793399ad53ef450",
+    "locator": "tb-e48b9ef7fd5c2049d28342dec28aecfb-0001",
+    "chunk_ids": [
+     "doc-e48b9ef7fd5c2049d28342dec28aecfb-chunk-006"
+    ]
+   },
+   "members_total": 1,
+   "members_processed": 1
+  },
+  {
+   "workspace": "water",
+   "task": "files",
+   "argv": [
+    "--workspace",
+    "water",
+    "--query",
+    "地表水环境质量标准 涉及哪些文件",
+    "--kind",
+    "files",
+    "--format",
+    "json"
+   ],
+   "elapsed_s": 2.97,
+   "exit": 0,
+   "catalog_snapshot_id": null,
+   "source_snapshot_id": null,
+   "coverage_status": "complete",
+   "fail_stage": null,
+   "items": 1,
+   "items_verified": 1,
+   "first_citation": {
+    "kind": "catalog_row",
+    "workspace": "water",
+    "snapshot_id": "c27663b642656217",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "doc_name": "water-04_生态环境部_地表水环境质量标准_GB3838-2002.pdf"
+   },
+   "members_total": null,
+   "members_processed": null
+  },
+  {
+   "workspace": "water",
+   "task": "prose",
+   "argv": [
+    "--workspace",
+    "water",
+    "--doc-id",
+    "doc-22aae4e69fd62630943d8d2de1dc3255",
+    "--scope-id",
+    "doc-22aae4e69fd62630943d8d2de1dc3255:scope:1"
+   ],
+   "elapsed_s": 1.94,
+   "exit": 0,
+   "catalog_snapshot_id": "c27663b642656217",
+   "source_snapshot_id": "cb750f7d46b980a9a291a556ea697c9445d5c0c4c625a6045e9c37364bf736c0",
+   "coverage_status": "complete",
+   "fail_stage": "",
+   "items": 1,
+   "items_verified": 1,
+   "first_citation": {
+    "kind": "char_span",
+    "char_start": 0,
+    "char_end": 59,
+    "quote": "## 1 主题内容与适用范围\n本标准适用于鱼虾类的产卵场、索饵场、越冬场、洄游通道和水产增养殖区等海、淡水的渔业水域。",
+    "unit_rel_start": 0,
+    "unit_rel_end": 59,
+    "unit_id": "83b38e2f418db499333737e6e6a3cf38",
+    "locator": {
+     "file": "blocks.jsonl",
+     "kind": "block",
+     "blockid": "83b38e2f418db499333737e6e6a3cf38",
+     "parsed_dir": "water-07_生态环境部_渔业水质标准_GB11607-89.pdf.parsed"
+    },
+    "chunk_ids": [
+     "doc-22aae4e69fd62630943d8d2de1dc3255-chunk-001"
+    ],
+    "unit_source": "parsed_block",
+    "workspace": "water",
+    "doc_id": "doc-22aae4e69fd62630943d8d2de1dc3255",
+    "snapshot_id": "c27663b642656217"
+   },
+   "members_total": 1,
+   "members_processed": 1
+  },
+  {
+   "workspace": "water",
+   "task": "table",
+   "argv": [
+    "--workspace",
+    "water",
+    "--doc-id",
+    "doc-9bb11e5d3809e590259aef28fb61062b",
+    "--table-number",
+    "1"
+   ],
+   "elapsed_s": 1.47,
+   "exit": 0,
+   "catalog_snapshot_id": "c27663b642656217",
+   "source_snapshot_id": "cb750f7d46b980a9a291a556ea697c9445d5c0c4c625a6045e9c37364bf736c0",
+   "coverage_status": "complete",
+   "fail_stage": "",
+   "items": 33,
+   "items_verified": 33,
+   "first_citation": {
+    "kind": "table_row",
+    "workspace": "water",
+    "doc_id": "doc-9bb11e5d3809e590259aef28fb61062b",
+    "snapshot_id": "c27663b642656217",
+    "fragment_index": 0,
+    "row_in_fragment": 1,
+    "table_id": "tb-9bb11e5d3809e590259aef28fb61062b-0001",
+    "blockid": "7b73677ed76518813bac0eda38c72ead",
+    "locator": "tb-9bb11e5d3809e590259aef28fb61062b-0001",
+    "chunk_ids": [
+     "doc-9bb11e5d3809e590259aef28fb61062b-chunk-003"
+    ]
+   },
+   "members_total": 1,
+   "members_processed": 1
+  }
+ ]
+}

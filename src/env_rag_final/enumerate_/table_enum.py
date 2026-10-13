@@ -48,7 +48,7 @@ async def enumerate_table(
         base.update(kw)
         return EnumResult(**base)
 
-    stale_before = await check_stale(conn)
+    stale_before = await check_stale(conn, workspace=workspace)
     snapshot_id = stale_before.get("active_snapshot_id")
     if stale_before.get("state") != "current" or snapshot_id is None:
         return _result(
@@ -198,7 +198,7 @@ async def enumerate_table(
         warnings.append("no data rows could be extracted")
 
     # G2: re-check the source before claiming a final coverage
-    stale_final = await check_stale(conn)
+    stale_final = await check_stale(conn, workspace=workspace)
     if (
         stale_final.get("state") != "current"
         or stale_final.get("active_snapshot_id") != snapshot_id

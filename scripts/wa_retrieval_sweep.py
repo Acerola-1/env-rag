@@ -26,7 +26,16 @@ CASES = [
 MODES = ["naive", "local", "global", "hybrid", "mix"]
 
 
-def call(client: httpx.Client, base: str, user: str, creds: dict, workspace, question: str, route: str, mode: str | None) -> dict:
+def call(
+    client: httpx.Client,
+    base: str,
+    user: str,
+    creds: dict,
+    workspace,
+    question: str,
+    route: str,
+    mode: str | None,
+) -> dict:
     login = client.post(
         f"{base}/api/login", json={"user_id": user, "password": creds[user]["password"]}
     ).json()
@@ -70,7 +79,9 @@ def call(client: httpx.Client, base: str, user: str, creds: dict, workspace, que
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--base", default="http://127.0.0.1:8099")
-    parser.add_argument("--out", default=str(ROOT / "reports/workspace-access/wa-20261012-r1/retrieval-sweep.json"))
+    parser.add_argument(
+        "--out", default=str(ROOT / "reports/workspace-access/wa-20261012-r1/retrieval-sweep.json")
+    )
     args = parser.parse_args()
     creds = json.loads((LOCAL / "credentials.json").read_text(encoding="utf-8"))
     client = httpx.Client(timeout=900)
@@ -99,7 +110,9 @@ def main() -> int:
                     "case": f"{workspace}:pg+lightrag:{mode}",
                     "route": "pg+lightrag",
                     "mode": mode,
-                    **call(client, args.base, user, creds, workspace, question, "pg+lightrag", mode),
+                    **call(
+                        client, args.base, user, creds, workspace, question, "pg+lightrag", mode
+                    ),
                 }
             )
 
@@ -130,7 +143,11 @@ def main() -> int:
         print(
             f"  {r['case']:34s} http={r.get('http')} status={r.get('status')} "
             f"ev={r.get('evidence')} {r.get('elapsed_s')}s "
-            + ("FAIL " + json.dumps(r.get("failures"), ensure_ascii=False) if r.get("failures") else "")
+            + (
+                "FAIL " + json.dumps(r.get("failures"), ensure_ascii=False)
+                if r.get("failures")
+                else ""
+            )
         )
     return 0 if len(ok) == len(rows) else 1
 
