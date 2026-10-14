@@ -26,6 +26,9 @@ import httpx
 import websockets
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from wa_credentials import load_credentials  # noqa: E402
+
 LOCAL = ROOT / ".local/workspace-access"
 EDGE = "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge"
 
@@ -357,7 +360,7 @@ def main() -> int:
     if not Path(EDGE).exists():
         print("no Chromium-based browser found", file=sys.stderr)
         return 2
-    creds = json.loads((LOCAL / "credentials.json").read_text(encoding="utf-8"))
+    creds = load_credentials()
     out_dir = Path(args.out)
     out_dir.mkdir(parents=True, exist_ok=True)
     report = asyncio.run(run(args.base, out_dir, creds))

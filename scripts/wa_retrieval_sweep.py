@@ -16,6 +16,8 @@ from pathlib import Path
 import httpx
 
 ROOT = Path(__file__).resolve().parents[1]
+from wa_credentials import load_credentials  # noqa: E402
+
 LOCAL = ROOT / ".local/workspace-access"
 
 CASES = [
@@ -83,7 +85,7 @@ def main() -> int:
         "--out", default=str(ROOT / "reports/workspace-access/wa-20261012-r1/retrieval-sweep.json")
     )
     args = parser.parse_args()
-    creds = json.loads((LOCAL / "credentials.json").read_text(encoding="utf-8"))
+    creds = load_credentials()
     client = httpx.Client(timeout=900)
     rows: list[dict] = []
 
@@ -116,7 +118,7 @@ def main() -> int:
                 }
             )
 
-    # dual-library combined question, one generation over both libraries
+    # dual-library retrieval; model generation requires a separate real receipt
     rows.append(
         {
             "case": "dual:pg+lightrag:hybrid",
@@ -136,8 +138,26 @@ def main() -> int:
     )
 
     out = Path(args.out)
-    out.write_text(json.dumps({"cases": rows}, ensure_ascii=False, indent=1), encoding="utf-8")
-    ok = [r for r in rows if r.get("http") == 200 and r.get("evidence")]
+    out.write_text(
+        json.dumps(
+            {
+                "evidence_type": "retrieval only; no generation or full coverage proof",
+                "cases": rows,
+            },
+            ensure_ascii=False,
+            indent=1,
+        ),
+        encoding="utf-8",
+    )
+    ok = [
+        r
+        for r in rows
+        if r.get("http") == 200
+        and r.get("evidence")
+        and not r.get("failures")
+        and not r.get("stale")
+        and r.get("status") in ("retrieved", "complete")
+    ]
     print(json.dumps({"cases": len(rows), "with_evidence": len(ok)}, ensure_ascii=False))
     for r in rows:
         print(

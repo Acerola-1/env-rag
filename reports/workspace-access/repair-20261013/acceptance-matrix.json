@@ -1,0 +1,628 @@
+{
+ "base": "http://127.0.0.1:8099",
+ "rows": [
+  {
+   "case": "anonymous.query",
+   "expected": "401",
+   "status": 401,
+   "body": {
+    "error": "unauthenticated",
+    "message": "authentication required"
+   },
+   "at": 1791862046.807
+  },
+  {
+   "case": "anonymous.records",
+   "expected": "401",
+   "status": 401,
+   "body": {
+    "error": "unauthenticated",
+    "message": "authentication required"
+   },
+   "at": 1791862046.808
+  },
+  {
+   "case": "forged.bearer",
+   "expected": "401",
+   "status": 401,
+   "body": {
+    "error": "unauthenticated",
+    "message": "authentication required"
+   },
+   "at": 1791862046.827
+  },
+  {
+   "case": "forged.role-header",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unauthorized_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791862046.842
+  },
+  {
+   "case": "air-reader.login",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "air-reader",
+    "display": "大气读者",
+    "workspaces": [
+     "air"
+    ]
+   },
+   "at": 1791862046.894
+  },
+  {
+   "case": "air-reader.allow.air",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "air-reader",
+    "record_id": null,
+    "workspaces": [
+     "air"
+    ],
+    "policy_revision": "wa-20261012-r1+coastal-20261013012705-credential-repair-163489abe228-restored-a8b6959105e1",
+    "result": {
+     "status": "ambiguous",
+     "workspaces": [
+      "air"
+     ],
+     "evidence": 20,
+     "failures": 0
+    }
+   },
+   "at": 1791862050.184
+  },
+  {
+   "case": "air-reader.deny.water",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unauthorized_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791862050.187
+  },
+  {
+   "case": "air-reader.deny.air+water",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unauthorized_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791862050.187
+  },
+  {
+   "case": "air-reader.deny.default",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unknown_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791862050.188
+  },
+  {
+   "case": "air-reader.deny.unknown",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unknown_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791862050.189
+  },
+  {
+   "case": "water-reader.login",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "water-reader",
+    "display": "水资料读者",
+    "workspaces": [
+     "water"
+    ]
+   },
+   "at": 1791862050.232
+  },
+  {
+   "case": "water-reader.allow.water",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "water-reader",
+    "record_id": null,
+    "workspaces": [
+     "water"
+    ],
+    "policy_revision": "wa-20261012-r1+coastal-20261013012705-credential-repair-163489abe228-restored-a8b6959105e1",
+    "result": {
+     "status": "ambiguous",
+     "workspaces": [
+      "water"
+     ],
+     "evidence": 4,
+     "failures": 0
+    }
+   },
+   "at": 1791862051.753
+  },
+  {
+   "case": "water-reader.deny.air",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unauthorized_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791862051.754
+  },
+  {
+   "case": "water-reader.deny.air+water",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unauthorized_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791862051.754
+  },
+  {
+   "case": "water-reader.deny.default",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unknown_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791862051.755
+  },
+  {
+   "case": "water-reader.deny.unknown",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unknown_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791862051.755
+  },
+  {
+   "case": "dual-reader.login",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "dual-reader",
+    "display": "双库读者",
+    "workspaces": [
+     "air",
+     "water"
+    ]
+   },
+   "at": 1791862051.793
+  },
+  {
+   "case": "dual-reader.allow.air",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "dual-reader",
+    "record_id": null,
+    "workspaces": [
+     "air"
+    ],
+    "policy_revision": "wa-20261012-r1+coastal-20261013012705-credential-repair-163489abe228-restored-a8b6959105e1",
+    "result": {
+     "status": "ambiguous",
+     "workspaces": [
+      "air"
+     ],
+     "evidence": 20,
+     "failures": 0
+    }
+   },
+   "at": 1791862052.801
+  },
+  {
+   "case": "dual-reader.allow.water",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "dual-reader",
+    "record_id": null,
+    "workspaces": [
+     "water"
+    ],
+    "policy_revision": "wa-20261012-r1+coastal-20261013012705-credential-repair-163489abe228-restored-a8b6959105e1",
+    "result": {
+     "status": "ambiguous",
+     "workspaces": [
+      "water"
+     ],
+     "evidence": 4,
+     "failures": 0
+    }
+   },
+   "at": 1791862054.224
+  },
+  {
+   "case": "dual-reader.allow.air+water",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "dual-reader",
+    "record_id": null,
+    "workspaces": [
+     "air",
+     "water"
+    ],
+    "policy_revision": "wa-20261012-r1+coastal-20261013012705-credential-repair-163489abe228-restored-a8b6959105e1",
+    "result": {
+     "status": "ambiguous",
+     "workspaces": [
+      "air",
+      "water"
+     ],
+     "evidence": 24,
+     "failures": 0
+    }
+   },
+   "at": 1791862056.666
+  },
+  {
+   "case": "dual-reader.deny.default",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unknown_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791862056.667
+  },
+  {
+   "case": "dual-reader.deny.unknown",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unknown_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791862056.667
+  },
+  {
+   "case": "no-access.login",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "no-access",
+    "display": "无知识库授权主体",
+    "workspaces": []
+   },
+   "at": 1791862056.708
+  },
+  {
+   "case": "no-access.deny.air",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unauthorized_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791862056.708
+  },
+  {
+   "case": "no-access.deny.water",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unauthorized_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791862056.709
+  },
+  {
+   "case": "no-access.deny.air+water",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unauthorized_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791862056.709
+  },
+  {
+   "case": "no-access.deny.all",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "no_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791862056.71
+  },
+  {
+   "case": "no-access.deny.default",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unknown_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791862056.71
+  },
+  {
+   "case": "beta-reader.login",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "beta-reader",
+    "display": "乙企业大气读者",
+    "workspaces": [
+     "water"
+    ]
+   },
+   "at": 1791862056.748
+  },
+  {
+   "case": "beta-reader.same-role-different-grant.allows-water",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "beta-reader",
+    "record_id": null,
+    "workspaces": [
+     "water"
+    ],
+    "policy_revision": "wa-20261012-r1+coastal-20261013012705-credential-repair-163489abe228-restored-a8b6959105e1",
+    "result": {
+     "status": "ambiguous",
+     "workspaces": [
+      "water"
+     ],
+     "evidence": 14,
+     "failures": 0
+    }
+   },
+   "at": 1791862058.219
+  },
+  {
+   "case": "beta-reader.same-role-different-grant.denies-air",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unauthorized_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   },
+   "at": 1791862058.22
+  },
+  {
+   "case": "dual.query.air+water",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "dual-reader",
+    "record_id": "wa-f36ca2badbe445640cee",
+    "workspaces": [
+     "air",
+     "water"
+    ],
+    "policy_revision": "wa-20261012-r1+coastal-20261013012705-credential-repair-163489abe228-restored-a8b6959105e1",
+    "result": {
+     "status": "ambiguous",
+     "workspaces": [
+      "air",
+      "water"
+     ],
+     "evidence": 40,
+     "failures": 0
+    }
+   },
+   "at": 1791862060.672
+  },
+  {
+   "case": "air-reader.foreign-record",
+   "expected": "404",
+   "status": 404,
+   "body": {
+    "error": "not_available",
+    "message": "not available"
+   },
+   "at": 1791862060.71
+  },
+  {
+   "case": "air-reader.foreign-export",
+   "expected": "404",
+   "status": 404,
+   "body": {
+    "error": "not_available",
+    "message": "not available"
+   },
+   "at": 1791862060.711
+  },
+  {
+   "case": "air-reader.foreign-summary",
+   "expected": "200-no-foreign-record",
+   "status": 200,
+   "body": {
+    "records": []
+   },
+   "at": 1791862060.727,
+   "foreign_record_id": "wa-f36ca2badbe445640cee"
+  },
+  {
+   "case": "air-reader.foreign-source-text",
+   "expected": "404",
+   "status": 404,
+   "body": {
+    "error": "not_available",
+    "message": "not available"
+   },
+   "at": 1791862060.728
+  },
+  {
+   "case": "air-reader.foreign-source-pdf",
+   "expected": "404",
+   "status": 404,
+   "body": {
+    "error": "not_available",
+    "message": "not available"
+   },
+   "at": 1791862060.728
+  },
+  {
+   "case": "air-reader.foreign-document",
+   "expected": "404",
+   "status": 404,
+   "body": {
+    "error": "not_available",
+    "message": "not available"
+   },
+   "at": 1791862060.729
+  },
+  {
+   "case": "air-reader.own-record-detail",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "records": []
+   },
+   "at": 1791862060.73
+  },
+  {
+   "case": "bypass.instance.air.no-key",
+   "expected": "403/404",
+   "status": 403,
+   "body": {
+    "text_len": 29
+   },
+   "at": 1791862060.757
+  },
+  {
+   "case": "bypass.instance.air.reader-credential",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "text_len": 28
+   },
+   "at": 1791862060.769
+  },
+  {
+   "case": "bypass.instance.water.no-key",
+   "expected": "403/404",
+   "status": 403,
+   "body": {
+    "text_len": 29
+   },
+   "at": 1791862060.793
+  },
+  {
+   "case": "bypass.instance.manage-with-instance-key",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "text_len": 302
+   },
+   "at": 1791862060.809
+  },
+  {
+   "case": "bypass.instance.graph-list.no-key",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "text_len": 29
+   },
+   "at": 1791862060.822
+  },
+  {
+   "case": "bypass.instance.graph-list.reader-credential",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "text_len": 28
+   },
+   "at": 1791862060.842
+  },
+  {
+   "case": "bypass.instance.pipeline-status.no-key",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "text_len": 29
+   },
+   "at": 1791862060.855
+  },
+  {
+   "case": "bypass.instance.pipeline-status.reader-credential",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "text_len": 28
+   },
+   "at": 1791862060.869
+  },
+  {
+   "case": "revocation.before.record-visible",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "record_id": "wa-498a9376d937a5f1b45b",
+    "user_id": "dual-reader",
+    "enterprise": "alpha-env",
+    "policy_revision": "wa-20261012-r1+coastal-20261013012705-credential-repair-163489abe228-restored-a8b6959105e1",
+    "workspaces": [
+     "air",
+     "water"
+    ],
+    "created_at": 1791862063.110212,
+    "question": "空气质量标准",
+    "route": "pg",
+    "status": "ambiguous",
+    "payload": "…"
+   },
+   "at": 1791862063.546
+  },
+  {
+   "case": "revocation.deny.new-water-query",
+   "expected": "403",
+   "status": 403,
+   "body": {
+    "error": "unauthorized_workspace",
+    "message": "the requested knowledge scope is not permitted"
+   }
+  },
+  {
+   "case": "revocation.deny.old-record-after-revocation",
+   "expected": "404",
+   "status": 404,
+   "body": {
+    "error": "not_available",
+    "message": "not available"
+   }
+  },
+  {
+   "case": "revocation.all-expands-to-air-only",
+   "expected": "200",
+   "status": 200,
+   "body": {
+    "user_id": "dual-reader",
+    "record_id": null,
+    "workspaces": [
+     "air"
+    ],
+    "policy_revision": "wa-20261012-r1+coastal-20261013012705-credential-repair-163489abe228-restored-a8b6959105e1-revoked",
+    "result": {
+     "status": "ambiguous",
+     "workspaces": [
+      "air"
+     ],
+     "evidence": 23,
+     "failures": 0
+    }
+   }
+  }
+ ]
+}

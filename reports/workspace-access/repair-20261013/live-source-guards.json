@@ -1,0 +1,54 @@
+{
+ "evidence_type": "real HTTP/PG identity checks using synthetic invalid local records; no real document withdrawal performed",
+ "cases": [
+  {
+   "case": "real_wrong_instance_identity",
+   "denied": true,
+   "query_model_dispatches": 0,
+   "actual_probe": "water health reached for authorized air intent; refused before query"
+  },
+  {
+   "case": "legacyrecords",
+   "http": 404
+  },
+  {
+   "case": "legacyexport",
+   "http": 404
+  },
+  {
+   "case": "legacysource",
+   "http": 404
+  },
+  {
+   "case": "legacy-generate",
+   "http": 404
+  },
+  {
+   "case": "mismatched-sourcerecords",
+   "http": 404
+  },
+  {
+   "case": "mismatched-sourceexport",
+   "http": 404
+  },
+  {
+   "case": "mismatched-sourcesource",
+   "http": 404
+  },
+  {
+   "case": "mismatched-source-generate",
+   "http": 404
+  },
+  {
+   "case": "ambiguous-enumeration-refuses-answer-model",
+   "retrieval_status": "ambiguous",
+   "generation": {
+    "status": "requires_fresh_complete_evidence",
+    "coverage_status": "ambiguous",
+    "answer": "证据范围尚未确认，请先调整问题重新检索。",
+    "citations": [],
+    "dispatches": 0
+   }
+  }
+ ]
+}

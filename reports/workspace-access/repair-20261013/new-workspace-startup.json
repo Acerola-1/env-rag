@@ -1,0 +1,46 @@
+{
+ "evidence_type": "real new-name container startup and authenticated health; no corpus ingestion or retrieval claim",
+ "workspace": "waextension",
+ "plan": [
+  {
+   "workspace": "waextension",
+   "name": "lightrag-waextension",
+   "port": 29637,
+   "url": "http://127.0.0.1:29637",
+   "pg_workspace": "waextension_pg",
+   "vector_workspace": "waextension_vec",
+   "graph_workspace": "waextension_graph",
+   "image": "ghcr.io/hkuds/lightrag@sha256:5bdbd524931b011df246fe20888d110cef691e6804c12cde636a2b746d7de27e",
+   "network": "lightrag-net",
+   "env_file": "/Users/acerola/Dev/Python/RAG/env-rag-final/.local/workspace-access/env/lightrag-waextension.env"
+  }
+ ],
+ "effective_namespaces": {
+  "WORKSPACE": "waextension",
+  "POSTGRES_WORKSPACE": "waextension_pg",
+  "QDRANT_WORKSPACE": "waextension_vec",
+  "NEO4J_WORKSPACE": "waextension_graph"
+ },
+ "image_digest": "sha256:5bdbd524931b011df246fe20888d110cef691e6804c12cde636a2b746d7de27e",
+ "health_no_key": 200,
+ "health_with_key": 200,
+ "query_no_key": 403,
+ "private_pipeline_with_key": 200,
+ "core_before": {
+  "src/env_rag_final/search/query.py": "25bed96d082198001bfb5502d15a6ff9890863c494ec2bfdac6adcb1812e7712",
+  "src/env_rag_final/search/expand.py": "7ce0a67ca9f325ec0263a54cd4850cc188ce8987f65c94666b3b6a464d28b5c1",
+  "src/env_rag_final/search/index.py": "a40c2cd7cfcd1a2a920029b87ef6e1c4d1dd7fd6d481cacc5bf960b426160c82",
+  "src/env_rag_final/ask.py": "d5460d016b0b195fd95dbbbd906b3058ebc9d2831b5d96666f742b869551e6d2",
+  "scripts/wa_instances.sh": "e73d065023537bdde1c27313c9dd76d91ad4d69b8cdcbad680c017839732ae45",
+  "src/env_rag_final/access/deployment.py": "9b029c04dba9322bf272111fa0d607eb8cf5a46e45b18e2575a212c9e426317d"
+ },
+ "core_after": {
+  "src/env_rag_final/search/query.py": "25bed96d082198001bfb5502d15a6ff9890863c494ec2bfdac6adcb1812e7712",
+  "src/env_rag_final/search/expand.py": "7ce0a67ca9f325ec0263a54cd4850cc188ce8987f65c94666b3b6a464d28b5c1",
+  "src/env_rag_final/search/index.py": "a40c2cd7cfcd1a2a920029b87ef6e1c4d1dd7fd6d481cacc5bf960b426160c82",
+  "src/env_rag_final/ask.py": "d5460d016b0b195fd95dbbbd906b3058ebc9d2831b5d96666f742b869551e6d2",
+  "scripts/wa_instances.sh": "e73d065023537bdde1c27313c9dd76d91ad4d69b8cdcbad680c017839732ae45",
+  "src/env_rag_final/access/deployment.py": "9b029c04dba9322bf272111fa0d607eb8cf5a46e45b18e2575a212c9e426317d"
+ },
+ "core_unchanged": true
+}

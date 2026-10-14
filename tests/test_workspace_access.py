@@ -244,6 +244,27 @@ class FakeInstanceClient:
     async def __aexit__(self, *exc):
         return False
 
+    async def get(self, url, **kwargs):
+        ws = "air" if ":9622/" in url else "water"
+
+        class Response:
+            status_code = 200
+
+            def json(self):
+                return {
+                    "configuration": {
+                        "workspace": ws,
+                        "storage_workspaces": {
+                            "kv_storage": ws,
+                            "doc_status_storage": ws,
+                            "vector_storage": ws,
+                            "graph_storage": ws,
+                        },
+                    }
+                }
+
+        return Response()
+
     async def post(self, url, **kwargs):
         self.log.append(("post", url))
 
@@ -275,7 +296,7 @@ def make_service(tmp_path, monkeypatch, *, backends: list):
             calls.append("pg")
             return 0
 
-    def connect_factory():
+    async def connect_factory():
         calls.append("pg-connect")
         return TrackingConn()
 
@@ -297,6 +318,16 @@ def make_service(tmp_path, monkeypatch, *, backends: list):
         client_factory=client_factory,
         connect_factory=connect_factory,
     )
+
+    async def identity_fixture(ctx):
+        # This authorization test isolates the instance transport. Source changes
+        # are exercised independently in test_workspace_repairs.py.
+        return {
+            w: {"state": "current", "source_fingerprint": "fixture", "search_id": "s"}
+            for w in ctx.workspaces
+        }
+
+    service.workspace_snapshots = identity_fixture
     backends.append(calls)
     return service
 

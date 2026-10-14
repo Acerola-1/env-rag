@@ -11,10 +11,12 @@ from __future__ import annotations
 
 import argparse
 import json
+import secrets
 import time
 from pathlib import Path
 
 import httpx
+from wa_credentials import load_credentials
 
 ROOT = Path(__file__).resolve().parents[1]
 LOCAL = ROOT / ".local/workspace-access"
@@ -40,7 +42,7 @@ class Client:
         payload = res.json()
         self.csrf = payload["csrf"]
         self.user_id = payload["user_id"]
-        return {"status": res.status_code, "body": payload}
+        return {"status": res.status_code, "body": _safe(res)}
 
     def logout(self) -> dict:
         res = self.http.post(
@@ -68,6 +70,8 @@ def _safe(res: httpx.Response) -> dict:
     if isinstance(payload, dict):
         slim = {}
         for key, value in payload.items():
+            if key in ("csrf", "password", "bearer", "token"):
+                continue
             if key in ("result", "body"):
                 result = value if isinstance(value, dict) else {}
                 slim[key] = {
@@ -76,8 +80,10 @@ def _safe(res: httpx.Response) -> dict:
                     "evidence": len(result.get("evidence") or []),
                     "failures": len(result.get("failures") or []),
                 }
-            elif key in ("error", "message", "csrf"):
+            elif key in ("error", "message"):
                 slim[key] = value
+            elif key == "records":
+                slim[key] = [{"record_id": r["record_id"]} for r in value]
             elif key == "workspaces":
                 slim[key] = [w.get("id") if isinstance(w, dict) else w for w in (value or [])]
             else:
@@ -95,7 +101,7 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    creds = load_json(LOCAL / "credentials.json")
+    creds = load_credentials()
     keys = load_json(LOCAL / "instance-keys.json")
     rows: list[dict] = []
 
@@ -124,7 +130,7 @@ def main() -> int:
     )
     record(
         "forged.role-header",
-        "per-subject",
+        "403",
         _bearer_role(
             args.base, creds["air-reader"]["bearer"], {"workspace": "water", "question": "x"}
         ),
@@ -205,7 +211,13 @@ def main() -> int:
     if record_id:
         record("air-reader.foreign-record", "404", air.get(f"/api/records/{record_id}"))
         record("air-reader.foreign-export", "404", air.get(f"/api/export/{record_id}"))
-        record("air-reader.foreign-summary", "200-empty", air.get("/api/records"))
+        summary = air.get("/api/records")
+        record(
+            "air-reader.foreign-summary",
+            "200-no-foreign-record",
+            summary,
+            {"foreign_record_id": record_id},
+        )
         record("air-reader.foreign-source-text", "404", air.get(f"/api/source/{record_id}/0/text"))
         record("air-reader.foreign-source-pdf", "404", air.get(f"/api/source/{record_id}/0/pdf"))
         record(
@@ -221,8 +233,8 @@ def main() -> int:
     record("bypass.instance.water.no-key", "403/404", _direct(9623, None))
     record(
         "bypass.instance.manage-with-instance-key",
-        "documented-internal",
-        _direct(9622, keys["air"], path="/documents"),
+        "200",
+        _get(9622, "/documents/pipeline_status", keys["air"]),
     )
     record("bypass.instance.graph-list.no-key", "403", _get(9622, "/graph/label/list", None))
     record(
@@ -250,7 +262,7 @@ def main() -> int:
     rev_id = (q2.get("body") or {}).get("record_id") if isinstance(q2.get("body"), dict) else None
     record(
         "revocation.before.record-visible",
-        "200/404",
+        "200",
         rev.get(f"/api/export/{rev_id}") if rev_id else {"status": 0},
     )
     revocation = revoke_and_restore(args.base, creds, rev_id)
@@ -280,16 +292,18 @@ def _ok(row: dict) -> bool:
         return status == 401
     if expected == "404":
         return status == 404
-    if expected == "per-subject":
-        return status in (200, 403)
     if expected == "403/404":
         return status in (403, 404)
+    if expected == "200-no-foreign-record":
+        records = (row.get("body") or {}).get("records")
+        return (
+            status == 200
+            and isinstance(records, list)
+            and all(r["record_id"] != row["foreign_record_id"] for r in records)
+        )
     if expected == "200-empty":
-        body = row.get("body") or {}
-        return status == 200 and body.get("records") in ([], "…")
-    if expected == "documented-internal":
-        return status in (200, 401, 403, 404, 405, 422)
-    return True
+        return status == 200 and (row.get("body") or {}).get("records") == []
+    return False
 
 
 def _bearer(base: str, token: str, body: dict) -> dict:
@@ -371,7 +385,13 @@ def revoke_and_restore(base: str, creds: dict, record_id: str | None) -> list[di
             }
         )
     finally:
-        registry_path.write_text(original, encoding="utf-8")
+        restored = json.loads(original)
+        restored["revision"] += "-restored-" + secrets.token_hex(6)
+        # Never reuse a revoked policy revision: old records/sessions stay invalid.
+        tmp = registry_path.with_suffix(".repair.tmp")
+        tmp.write_text(json.dumps(restored, ensure_ascii=False, indent=1), encoding="utf-8")
+        tmp.chmod(0o600)
+        tmp.replace(registry_path)
     return rows
 
 

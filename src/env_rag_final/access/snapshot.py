@@ -20,18 +20,18 @@ from pathlib import Path
 
 from env_rag_final.paths import PROJECT_ROOT
 
-SNAPSHOT_FORMAT = "workspace-access/protected-snapshot-r1"
+SNAPSHOT_FORMAT = "workspace-access/protected-snapshot-r2"
 
 PROTECTED_FILES = (
     ".env",
     "datasets/manifest.json",
     "datasets/evaluation/gold-approved.json",
     "datasets/evaluation/unit-mapping.json",
-    "premium-ui.json",
-    "WEB_RAG.md",
-    "DESIGN.md",
-    "UX-CONTRACT.md",
-    "ENUMERATION.md",
+    "assets/legacy-comparison-web/premium-ui.json",
+    "assets/legacy-comparison-web/WEB_RAG.md",
+    "assets/legacy-comparison-web/DESIGN.md",
+    "assets/legacy-comparison-web/UX-CONTRACT.md",
+    "assets/pg-retrieval/ENUMERATION.md",
 )
 
 # Tables whose per-workspace row identity must not change for old workspaces.
@@ -85,7 +85,7 @@ def _id_digest(values: list[str]) -> str:
 
 
 def pg_snapshot(psql) -> dict:
-    """Per-workspace row counts and id digests (read-only)."""
+    """Hash every column of every row, including historical builds (read-only)."""
 
     def q(sql: str) -> list[list[str]]:
         res = subprocess.run(psql + [sql], capture_output=True, text=True)
@@ -117,6 +117,21 @@ def pg_snapshot(psql) -> dict:
     for table in PG_ENV_RAG_TABLES:
         rows = q("select workspace, count(*)::text from env_rag.%s group by 1 order by 1;" % table)
         snapshot["env_rag"][table] = {"counts": {r[0]: int(r[1]) for r in rows if len(r) == 2}}
+    # PostgreSQL canonical JSON includes content, attributes, timestamps and
+    # historical rows. Sorted row hashes make the final digest order-independent.
+    for schema, tables, target in (
+        ("public", PG_LIGHTRAG_TABLES, "tables"),
+        ("env_rag", PG_ENV_RAG_TABLES, "env_rag"),
+    ):
+        for table in tables:
+            rows = q(
+                f"SELECT workspace,count(*)::text, "
+                "encode(sha256(convert_to(string_agg(h,'' ORDER BY h),'UTF8')),'hex') "
+                f"FROM (SELECT workspace,encode(sha256(convert_to(to_jsonb(t)::text,'UTF8')),'hex') h "
+                f"FROM {schema}.{table} t) r GROUP BY workspace ORDER BY workspace"
+            )
+            snapshot[target][table]["content_digest"] = {r[0]: r[2] for r in rows}
+    snapshot["complete_content_scan"] = True
     active = q(
         "select workspace, snapshot_id, run_id from env_rag.corpus_runs "
         "where status='active' order by 1;"
@@ -150,12 +165,14 @@ def qdrant_snapshot(url: str, api_key: str | None = None) -> dict:
         entry = {"points": info.get("points_count")}
         # Scroll point ids grouped by workspace_id payload (bounded pages).
         groups: dict[str, list[str]] = {}
+        content_groups: dict[str, list[str]] = {}
         offset = None
-        for _ in range(200):
+        seen_offsets = set()
+        for _ in range(10000):
             body = {
                 "limit": 1000,
-                "with_payload": ["workspace_id"],
-                "with_vector": False,
+                "with_payload": True,
+                "with_vector": True,
             }
             if offset is not None:
                 body["offset"] = offset
@@ -165,14 +182,35 @@ def qdrant_snapshot(url: str, api_key: str | None = None) -> dict:
                 json=body,
                 timeout=60,
             ).json()["result"]
-            for point in res.get("points", []):
+            if not isinstance(res.get("points"), list) or "next_page_offset" not in res:
+                raise RuntimeError("Qdrant response lacks pagination proof")
+            for point in res["points"]:
                 ws = (point.get("payload") or {}).get("workspace_id")
                 groups.setdefault(str(ws), []).append(str(point["id"]))
+                content_groups.setdefault(str(ws), []).append(
+                    _sha256_bytes(
+                        json.dumps(
+                            point, sort_keys=True, separators=(",", ":"), ensure_ascii=False
+                        ).encode()
+                    )
+                )
             offset = res.get("next_page_offset")
-            if not offset:
+            if offset is None:
                 break
+            token = json.dumps(offset, sort_keys=True)
+            if token in seen_offsets:
+                raise RuntimeError("Qdrant pagination repeated an offset")
+            seen_offsets.add(token)
+        else:
+            raise RuntimeError("Qdrant pagination did not finish; no snapshot proof")
+        entry["complete_content_scan"] = True
         entry["by_workspace"] = {
-            k: {"count": len(v), "id_digest": _id_digest(v)} for k, v in groups.items()
+            k: {
+                "count": len(v),
+                "id_digest": _id_digest(v),
+                "content_digest": _id_digest(content_groups[k]),
+            }
+            for k, v in groups.items()
         }
         out["collections"][name] = entry
     return out
@@ -190,14 +228,33 @@ def neo4j_snapshot(uri: str, user: str, password: str, database: str | None = No
                 for r in session.run("CALL db.labels() YIELD label RETURN label ORDER BY label")
             ]
             for label in labels:
-                node_count = session.run(f"MATCH (n:`{label}`) RETURN count(n) AS c").single()["c"]
+                escaped = label.replace("`", "``")
+                node_count = session.run(f"MATCH (n:`{escaped}`) RETURN count(n) AS c").single()[
+                    "c"
+                ]
                 ids = [
-                    r["eid"] for r in session.run(f"MATCH (n:`{label}`) RETURN n.entity_id AS eid")
+                    r["eid"]
+                    for r in session.run(f"MATCH (n:`{escaped}`) RETURN n.entity_id AS eid")
                 ]
                 rel_count = session.run(
-                    f"MATCH (:`{label}`)-[r]->() RETURN count(r) AS c"
+                    f"MATCH (:`{escaped}`)-[r]->() RETURN count(r) AS c"
                 ).single()["c"]
+                node_hashes = [
+                    _sha256_bytes(json.dumps(dict(r), sort_keys=True, default=str).encode())
+                    for r in session.run(
+                        f"MATCH (n:`{escaped}`) RETURN elementId(n) AS id, labels(n) AS labels, properties(n) AS properties ORDER BY id"
+                    )
+                ]
+                relation_hashes = [
+                    _sha256_bytes(json.dumps(dict(r), sort_keys=True, default=str).encode())
+                    for r in session.run(
+                        f"MATCH (a)-[r]->(b) WHERE a:`{escaped}` OR b:`{escaped}` RETURN elementId(r) AS id, elementId(a) AS source, elementId(b) AS target, type(r) AS type, properties(r) AS properties ORDER BY id"
+                    )
+                ]
                 out["labels"][label] = {
+                    "complete_content_scan": True,
+                    "node_content_digest": _id_digest(node_hashes),
+                    "relationship_content_digest": _id_digest(relation_hashes),
                     "nodes": node_count,
                     "relationships_out": rel_count,
                     "entity_id_digest": _id_digest([i for i in ids if i]),
@@ -232,7 +289,31 @@ def capture(env: dict, *, psql_argv: list[str] | None = None) -> dict:
             env.get("NEO4J_DATABASE") or None,
         ),
     }
+    from env_rag_final.access.registry import default_registry_path, load_registry
+
+    snap["namespace_map"] = {"default": {"pg": "default", "vector": "_", "graph": "base"}}
+    if default_registry_path().is_file():
+        registry = load_registry(default_registry_path())
+        snap["namespace_map"].update(
+            {
+                w.id: {
+                    "pg": w.pg_workspace,
+                    "vector": w.vector_workspace,
+                    "graph": w.graph_workspace,
+                }
+                for w in registry.workspaces.values()
+            }
+        )
     return snap
+
+
+def physical_namespace(snapshot: dict, logical: str, backend: str) -> str:
+    fallback = (
+        {"pg": "default", "vector": "_", "graph": "base"}
+        if logical == "default"
+        else {k: logical for k in ("pg", "vector", "graph")}
+    )
+    return snapshot.get("namespace_map", {}).get(logical, {}).get(backend, fallback[backend])
 
 
 def compare(before: dict, after: dict, *, protected_workspaces: list[str]) -> dict:
@@ -243,13 +324,20 @@ def compare(before: dict, after: dict, *, protected_workspaces: list[str]) -> di
         report["ok"] = False
         report["diffs"].append({"path": path, "detail": detail})
 
+    for logical in protected_workspaces:
+        for backend in ("pg", "vector", "graph"):
+            if physical_namespace(before, logical, backend) != physical_namespace(
+                after, logical, backend
+            ):
+                note(f"proof.namespace_map.{logical}.{backend}", "mapping changed")
     for rel, meta in before["files"].items():
         if after["files"].get(rel) != meta:
             note(f"files.{rel}", {"before": meta, "after": after["files"].get(rel)})
 
     for table, entry in before["pg"]["tables"].items():
         aft = after["pg"]["tables"].get(table, {})
-        for ws in protected_workspaces:
+        for logical in protected_workspaces:
+            ws = physical_namespace(before, logical, "pg")
             if entry["counts"].get(ws) != aft.get("counts", {}).get(ws):
                 note(
                     f"pg.{table}.{ws}.count",
@@ -262,14 +350,16 @@ def compare(before: dict, after: dict, *, protected_workspaces: list[str]) -> di
 
     for table, entry in before["pg"]["env_rag"].items():
         if table in ("active_catalog", "active_search"):
-            for ws in protected_workspaces:
+            for logical in protected_workspaces:
+                ws = physical_namespace(before, logical, "pg")
                 if entry.get(ws) != after["pg"]["env_rag"].get(table, {}).get(ws):
                     note(
                         f"env_rag.{table}.{ws}",
                         [entry.get(ws), after["pg"]["env_rag"].get(table, {}).get(ws)],
                     )
             continue
-        for ws in protected_workspaces:
+        for logical in protected_workspaces:
+            ws = physical_namespace(before, logical, "pg")
             if entry["counts"].get(ws) != after["pg"]["env_rag"].get(table, {}).get(
                 "counts", {}
             ).get(ws):
@@ -281,19 +371,45 @@ def compare(before: dict, after: dict, *, protected_workspaces: list[str]) -> di
                     ],
                 )
 
-    for col, entry in before["qdrant"]["collections"].items():
-        aft = after["qdrant"]["collections"].get(col, {}).get("by_workspace", {})
-        for ws in protected_workspaces:
-            b = entry["by_workspace"].get(ws)
-            a = aft.get(ws)
+    # Logical "default" is physically "_" in Qdrant and "base" in Neo4j.
+    # Missing content proof is an explicit limitation, never a passing comparison.
+    if before.get("format") != SNAPSHOT_FORMAT or after.get("format") != SNAPSHOT_FORMAT:
+        note(
+            "proof.format",
+            "legacy snapshot lacks full content proof; historical non-mutation unverified",
+        )
+    for snap in (before, after):
+        if snap.get("pg", {}).get("complete_content_scan") is not True:
+            note("proof.pg", "full row scan missing")
+    for family in ("tables", "env_rag"):
+        for table in set(before["pg"][family]) | set(after["pg"][family]):
+            if table in ("active_catalog", "active_search"):
+                continue
+            for logical in protected_workspaces:
+                ws = physical_namespace(before, logical, "pg")
+                b = before["pg"][family].get(table, {}).get("content_digest", {}).get(ws)
+                a = after["pg"][family].get(table, {}).get("content_digest", {}).get(ws)
+                if b != a:
+                    note(f"pg.{family}.{table}.{ws}.content_digest", "content changed")
+    for col in set(before["qdrant"]["collections"]) | set(after["qdrant"]["collections"]):
+        bcol = before["qdrant"]["collections"].get(col, {})
+        acol = after["qdrant"]["collections"].get(col, {})
+        if not bcol.get("complete_content_scan") or not acol.get("complete_content_scan"):
+            note(f"proof.qdrant.{col}", "full payload/vector scan missing")
+        for logical in protected_workspaces:
+            physical = physical_namespace(before, logical, "vector")
+            b = bcol.get("by_workspace", {}).get(physical)
+            a = acol.get("by_workspace", {}).get(physical)
             if b != a:
-                note(f"qdrant.{col}.{ws}", [b, a])
-
-    for label, entry in before["neo4j"]["labels"].items():
-        if label in protected_workspaces:
-            a = after["neo4j"]["labels"].get(label)
-            if entry != a:
-                note(f"neo4j.{label}", [entry, a])
+                note(f"qdrant.{col}.{physical}", [b, a])
+    for logical in protected_workspaces:
+        physical = physical_namespace(before, logical, "graph")
+        b = before["neo4j"]["labels"].get(physical)
+        a = after["neo4j"]["labels"].get(physical)
+        if b != a:
+            note(f"neo4j.{physical}", [b, a])
+        if any(entry is not None and not entry.get("complete_content_scan") for entry in (a, b)):
+            note(f"proof.neo4j.{physical}", "full node/relationship scan missing")
 
     return report
 

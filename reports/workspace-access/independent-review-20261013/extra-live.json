@@ -1,0 +1,23 @@
+[
+  {
+    "case": "committed-default-coastal-token",
+    "http": 200,
+    "authenticated_user": "coastal-reader",
+    "local_token_matches_committed_default": true
+  },
+  {
+    "case": "authorized-own-record-source:1/text",
+    "http": 200,
+    "content_type": "text/plain; charset=utf-8"
+  },
+  {
+    "case": "authorized-own-record-source:1/pdf",
+    "http": 404,
+    "content_type": "application/json; charset=utf-8"
+  },
+  {
+    "case": "authorized-own-record-source:3/pdf",
+    "http": 404,
+    "content_type": "application/json; charset=utf-8"
+  }
+]

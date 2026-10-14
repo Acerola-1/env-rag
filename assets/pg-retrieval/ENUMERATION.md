@@ -85,6 +85,6 @@ print(format_answer(listing))
 
 新入口最终验证：6个完整集合正例（2/3/4/4/13/1项）、1个表格归组歧义（只读PG现场）、1个跨标准判断题（读前拒绝）。预期在运行前由冻结gold及原始blocks/HTML验证，答案生成不读取gold。工程回归550项通过，其中24项是新增入口及适配器验证。
 
-[现场逐例证据与报告](reports/pg-retrieval/enum-entry-20261010-r1/report.md)
+[现场逐例证据与报告](../../reports/pg-retrieval/enum-entry-20261010-r1/report.md)
 
 原始未改动 LightRAG 的现场对照尚未验证。本轮没有付费模型、embedding或精排请求，也没有重新开启全量评测；此前 Gate4 失败结论保持。

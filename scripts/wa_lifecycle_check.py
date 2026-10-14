@@ -18,6 +18,9 @@ import httpx
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from wa_credentials import load_credentials  # noqa: E402
+
 LOCAL = ROOT / ".local/workspace-access"
 
 GATEWAY = "http://127.0.0.1:8099"
@@ -64,7 +67,7 @@ def keep_only(detail: dict, keep=KEEP) -> dict:
 
 
 def query(user: str, workspace, question: str, route: str = "pg") -> dict:
-    creds = json.loads((LOCAL / "credentials.json").read_text(encoding="utf-8"))
+    creds = load_credentials()
     client = httpx.Client(timeout=600)
     login = client.post(
         f"{GATEWAY}/api/login", json={"user_id": user, "password": creds[user]["password"]}

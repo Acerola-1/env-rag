@@ -12,7 +12,7 @@
 | LightRAG air 实例 | 容器 `lightrag-air`，`127.0.0.1:9622` | 固定 `WORKSPACE=air`，共享 PG／Qdrant／Neo4j |
 | LightRAG water 实例 | 容器 `lightrag-water`，`127.0.0.1:9623` | 固定 `WORKSPACE=water` |
 | workspace 注册表 | `.local/workspace-access/registry.json`（忽略，模板见 `deployment/workspaces.example.json`） | workspace、主体、角色授权、policy revision |
-| 主体凭据 | `.local/workspace-access/credentials.json`（0600，忽略） | 示例主体口令与 bearer token |
+| 主体凭据 | `.local/workspace-access/credentials.md`（0600，忽略） | 中文可读的示例主体口令与 bearer token 清单；开源说明见根目录 [ACCOUNTS.md](ACCOUNTS.md) |
 | 实例内部凭据 | `.local/workspace-access/instance-keys.json`（0600，忽略） | 只有网关使用 |
 | 入库清单 | `reports/workspace-access/wa-20261012-r1/corpus-manifest.jsonl` | 230 份 PDF 的 SHA、分类依据、目标库、duplicate 关系 |
 | 入库账本 | `.local/workspace-access/ingest-<workspace>.jsonl` | 逐项 checkpoint，可恢复 |
@@ -30,13 +30,13 @@ container start lightrag-postgres
 container start lightrag-qdrant
 container start lightrag-neo4j
 
-# 两个 LightRAG 实例（首次会创建，之后为启动）
-bash scripts/wa_instances.sh start
+# 先生成环境文件（含密钥，写入忽略目录），再检查配置和启动
+.venv/bin/python scripts/wa_instance_env.py
+bash scripts/wa_instances.sh plan
+bash scripts/wa_instances.sh start air
+bash scripts/wa_instances.sh start water
 bash scripts/wa_instances.sh status
 bash scripts/wa_instances.sh health
-
-# 生成实例环境文件（含密钥，写入忽略目录）
-.venv/bin/python scripts/wa_instance_env.py
 
 # Knowledge API
 .venv/bin/python -m env_rag_final.access --port 8099
@@ -54,13 +54,13 @@ bash scripts/wa_instances.sh stop
 浏览器打开 <http://127.0.0.1:8099>，输入主体与口令。CLI／Agent 使用 bearer：
 
 ```bash
-TOKEN=$(python3 -c "import json;print(json.load(open('.local/workspace-access/credentials.json'))['dual-reader']['bearer'])")
+TOKEN=$(grep '^| dual-reader ' .local/workspace-access/credentials.md | cut -d'|' -f4 | tr -d ' ')
 curl -s -H "Authorization: Bearer $TOKEN" -H 'Content-Type: application/json' \
   -d '{"workspace":"all","question":"空气质量标准与地表水环境质量标准","route":"pg"}' \
   http://127.0.0.1:8099/api/query | head -c 400
 ```
 
-示例主体（口令与 bearer 只保存在本机 `.local/workspace-access/credentials.json`）：
+示例主体（演示口令与 bearer 见根目录 [ACCOUNTS.md](ACCOUNTS.md)；本机清单保存在 `.local/workspace-access/credentials.md`）：
 
 | 主体 | 企业 | 角色 | 授权知识库 |
 | --- | --- | --- | --- |
@@ -108,11 +108,15 @@ exactly-once。
 1. 在 `.local/workspace-access/registry.json` 的 `workspaces` 增加一项，给出唯一
    的非保留命名空间（`pg_workspace`／`vector_workspace`／`graph_workspace`）、实例
    地址与 `instance_key_ref`；`grants` 里给某个角色分配它。
-2. `.venv/bin/python scripts/wa_instance_env.py` 生成新实例环境文件，用
-   `scripts/wa_instances.sh` 启动（把新库加入循环）。
+2. `.venv/bin/python scripts/wa_instance_env.py --workspace <新库> --allow-new-key`
+   生成环境文件；`bash scripts/wa_instances.sh plan <新库>` 查看地址和固定镜像，
+   `bash scripts/wa_instances.sh start <新库>` 启动。端口从 `instance_url` 读取，
+   无需改脚本或循环；地址格式为 `http://127.0.0.1:<未占用端口>`。
+   入库流程目前要求三个后端命名空间均等于 workspace ID，配置不一致会提前拒绝，
+   避免写进实例不会读取的空间。
 3. `workspace-ingest --workspace <新库>` 入库真实资料，再 `workspace-catalog`／
    `workspace-index` 发布。
-4. 提高 `revision` 使旧会话与缓存失效；网关会自动热加载注册表。
+4. 使用全新的 `revision` 使旧会话与缓存失效；网关会自动热加载注册表。撤权后恢复授权也必须使用新代次，不能复用旧值。
 
 核心检索代码不需要改动：workspace 只出现在注册表、入库命令与实例配置里。
 
@@ -144,3 +148,25 @@ prune、删库、重建既有卷；`default` 与本轮以外的空间不在此�
   Apple Container 路径。
 - 本轮质量结论只覆盖权限与功能链路，不重新评测检索质量，也不宣称融合优于
   local。
+
+## 8. 2026-10-13 修复后的证据与回答合同
+
+- 完整表格／条款／文件清单由确定性枚举器逐项复核后交付，不受候选 top-k 限制。
+  普通候选发现显示 `retrieved`，不宣称范围完整。网页完整展示条目，附本条全文、
+  文档解析全文与 PDF 下载；PDF 通过冻结清单 SHA 校验后才返回。
+- 生成与记录详情、导出、原文读取重新核验来源／目录／索引身份；图检索还核验实例
+  的实际 workspace、三个后端映射与版本。旧格式记录、来源变化、撤权后的记录要求
+  重新查询；历史列表保留本人问题摘要，不继续显示无效的正文。
+- stale／partial／ambiguous／missing 不调答案模型。上下文采用完整块或完整结构行，
+  不截取尾部；多库交错分配预算。完整清单放不下时返回 `context_limit`，清单仍可
+  在网页独立查看。预算是本机 o200k tokenizer ×1.5 加预留的保守估算，不宣称等同
+  DeepSeek 原生 tokenizer。
+- `generation.status=success` 只表示请求完成且引用编号有效；范围状态单独保留。
+  `semantic_support=unreviewed` 表示尚未独立确认模型每项陈述都有证据支持，不能
+  把出现 `[0]` 当成完整性或语义正确性的证明。
+- 每个网页请求绑定身份／库选择／记录／请求代次；切库、退出、新查询后忽略旧响应。
+- 原始验收资料保留；本轮独立复验见 `reports/workspace-access/repair-20261013/`。
+  r2 保护快照包含全部 PG 行、完整向量／payload、图属性／关系内容和真实物理映射。
+  它证明本轮采集前后的内容相等，无法追补原实施前缺失的完整快照。
+- 当前模型保持 `deepseek-v4.1-flash`。Docker 模板已修正挂载、网络地址与监听配置，
+  仍未作为真实 Docker 部署验收；本机实际运行和验收使用 Apple Container。

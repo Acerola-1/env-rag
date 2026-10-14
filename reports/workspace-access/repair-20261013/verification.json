@@ -1,0 +1,29 @@
+{
+ "python_tests": 633,
+ "javascript_tests": 10,
+ "ruff": "passed",
+ "format_files": 129,
+ "diff_check": "passed",
+ "http_matrix_rows": 51,
+ "http_unexpected": 0,
+ "http_status_counts": {
+  "401": 3,
+  "403": 25,
+  "200": 17,
+  "404": 6
+ },
+ "protected_comparison": {
+  "protected_workspaces": [
+   "default",
+   "air",
+   "water",
+   "coastal"
+  ],
+  "ok": true,
+  "diffs": []
+ },
+ "current_runtime": "127.0.0.1:8099",
+ "committed": false,
+ "pushed": false,
+ "historical_original_nonmutation": "unverified"
+}

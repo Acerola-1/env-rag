@@ -351,6 +351,17 @@ async def run_ingest(cfg: IngestConfig) -> dict:
         raise IngestError(
             f"refusing to ingest into workspace {cfg.workspace!r}: protected pre-existing space"
         )
+    from env_rag_final.access.registry import default_registry_path, load_registry
+
+    if default_registry_path().is_file():
+        entry = load_registry(default_registry_path()).workspace(cfg.workspace)
+        if entry and any(
+            name != cfg.workspace
+            for name in (entry.pg_workspace, entry.vector_workspace, entry.graph_workspace)
+        ):
+            raise IngestError(
+                "ingestion requires backend namespaces to equal the workspace id; refusing mismatched target"
+            )
     items = load_manifest(cfg.manifest_path)
     # Explicitly shared documents are part of this workspace's work list even
     # when the manifest files them under the other domain.

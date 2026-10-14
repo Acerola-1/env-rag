@@ -299,12 +299,14 @@ def resolve_cli_workspace(workspace: str, registry_path: Path | str | None = Non
     if not path.is_file():
         raise RegistryError(f"workspace {workspace!r} requested but no registry exists at {path}")
     registry = load_registry(path)
-    entry = registry.workspace(workspace)
+    entry = registry.workspace(workspace) or next(
+        (w for w in registry.workspaces.values() if w.pg_workspace == workspace), None
+    )
     if entry is None:
         raise RegistryError(f"workspace {workspace!r} is not registered")
     if entry.status != "active":
         raise RegistryError(f"workspace {workspace!r} is not active (status={entry.status})")
-    return workspace
+    return entry.pg_workspace
 
 
 def default_registry_path() -> Path:

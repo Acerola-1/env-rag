@@ -1,0 +1,60 @@
+{
+ "cases": [
+  {
+   "case": "revoked-public-coastal-token",
+   "http": 401
+  },
+  {
+   "case": "revoked-public-coastal-password",
+   "http": 401
+  },
+  {
+   "case": "water-table-top1",
+   "http": 200,
+   "status": "complete",
+   "table_rows": 31,
+   "evidence_count": 32,
+   "all_rows_reverified": true,
+   "record_id": "wa-29f1dd48bdec81115f21"
+  },
+  {
+   "case": "water-own-pdf",
+   "http": 200,
+   "bytes": 1112294,
+   "pdf_magic": true,
+   "sha256": "068da055b5abcdaf7ca76ce52c2e6f57b90bca137fa9ce30bd9ee07223615e89",
+   "document_text_http": 200,
+   "document_text_bytes": 65433
+  },
+  {
+   "case": "water-denied-foreign",
+   "http": 403
+  },
+  {
+   "case": "air-table-top1",
+   "http": 200,
+   "status": "complete",
+   "table_rows": 14,
+   "evidence_count": 15,
+   "all_rows_reverified": true,
+   "record_id": "wa-20ac0072fd1118d48ba8"
+  },
+  {
+   "case": "air-own-pdf",
+   "http": 200,
+   "bytes": 757718,
+   "pdf_magic": true,
+   "sha256": "df0503fac908ca22923b8b9fb2d88222bb0267ae22a7de8fd42f69bdc1d5045f",
+   "document_text_http": 200,
+   "document_text_bytes": 18719
+  },
+  {
+   "case": "air-denied-foreign",
+   "http": 403
+  },
+  {
+   "case": "rotated-coastal-token",
+   "http": 200
+  }
+ ]
+}

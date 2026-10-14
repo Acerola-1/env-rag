@@ -1,0 +1,470 @@
+{
+ "files": {
+  ".env": {
+   "bytes": 4999,
+   "sha256": "e3bf75975fde97618fd9716c19dbf861b16753b3372250e654bae0df750cf604"
+  },
+  "DESIGN.md": {
+   "bytes": 2987,
+   "sha256": "84a4b9e1d17cdb98472bf3663954a24fc0a1a82f50ea0172652f8029e176da88"
+  },
+  "ENUMERATION.md": {
+   "bytes": 5438,
+   "sha256": "65ce990f41e442999a202d89df87685e13d4606868c1d60ca50613ac3a982d2d"
+  },
+  "UX-CONTRACT.md": {
+   "bytes": 2687,
+   "sha256": "6e5850837c6b13903bec3741b8224415c1d91d0ce32ac393e000a5a190d95aaf"
+  },
+  "WEB_RAG.md": {
+   "bytes": 4127,
+   "sha256": "74220b4d32080cb7a3d366aa5eeff528c492fad117849e9e0156ffc1546b36ac"
+  },
+  "datasets/evaluation/gold-approved.json": {
+   "bytes": 88640,
+   "sha256": "1bf130077c21583a89c5ca14695694d9552c558a7d8dc5d45ff0d9f72cfd7a5e"
+  },
+  "datasets/evaluation/unit-mapping.json": {
+   "bytes": 17627,
+   "sha256": "ee23f2c10a8e2c733511fae59bb157380c4ab9c1e888aa510e36daf49f9b8f3b"
+  },
+  "datasets/manifest.json": {
+   "bytes": 2621610,
+   "sha256": "cf1387858b823e50c71528dd1ca863dfceb858ede890e5ffe1b33bb39b8f033c"
+  },
+  "premium-ui.json": {
+   "bytes": 884,
+   "sha256": "e1961b7e042d4bd647dee814485ef56df2dff6afccfc0c4176a4ab460fff7784"
+  }
+ },
+ "format": "workspace-access/protected-snapshot-r2",
+ "neo4j": {
+  "labels": {
+   "air": {
+    "complete_content_scan": true,
+    "entity_id_digest": "c93053b466c631612d13a9c6c31b7d62",
+    "node_content_digest": "d83f473bec91d0b94ea7ef24aa21a729",
+    "nodes": 25987,
+    "relationship_content_digest": "4b03d5804a328c527f800705ad08a832",
+    "relationships_out": 44250
+   },
+   "base": {
+    "complete_content_scan": true,
+    "entity_id_digest": "53265c68ff36eb5d06a34f3b88657f2c",
+    "node_content_digest": "47dd9e3e96aa09f8fbe89a7665e0aee1",
+    "nodes": 66069,
+    "relationship_content_digest": "240c5d1415e748221d5434d4088c669e",
+    "relationships_out": 121819
+   },
+   "coastal": {
+    "complete_content_scan": true,
+    "entity_id_digest": "3b469a5c19dada9798ffc960aeab4999",
+    "node_content_digest": "ed0060fc0c0b07f1975205f698df46e1",
+    "nodes": 302,
+    "relationship_content_digest": "a4faa3720ee7ce3233c803c6ac863a06",
+    "relationships_out": 311
+   },
+   "default": {
+    "complete_content_scan": true,
+    "entity_id_digest": "e3b0c44298fc1c149afbf4c8996fb924",
+    "node_content_digest": "e3b0c44298fc1c149afbf4c8996fb924",
+    "nodes": 0,
+    "relationship_content_digest": "e3b0c44298fc1c149afbf4c8996fb924",
+    "relationships_out": 0
+   },
+   "water": {
+    "complete_content_scan": true,
+    "entity_id_digest": "c35b2f6b7a3b5f09f91cca0cb7b6dc45",
+    "node_content_digest": "ce3364914cd315440ca183d3f7d964ab",
+    "nodes": 37916,
+    "relationship_content_digest": "a334362123300c3af571e23c56119ad2",
+    "relationships_out": 63300
+   }
+  }
+ },
+ "pg": {
+  "complete_content_scan": true,
+  "env_rag": {
+   "active_catalog": {
+    "air": {
+     "run_id": "773d665b76de446d",
+     "snapshot_id": "123afd3d431b84d0"
+    },
+    "coastal": {
+     "run_id": "7231f366992149cb",
+     "snapshot_id": "db0d2dad0809973b"
+    },
+    "default": {
+     "run_id": "c15c741742394320",
+     "snapshot_id": "4919b3938ad93747"
+    },
+    "water": {
+     "run_id": "99ef7567f2bd4e16",
+     "snapshot_id": "c27663b642656217"
+    }
+   },
+   "active_search": {
+    "air": {
+     "catalog_snapshot_id": "123afd3d431b84d0",
+     "search_id": "f444794b094741a3",
+     "status": "active"
+    },
+    "coastal": {
+     "catalog_snapshot_id": "db0d2dad0809973b",
+     "search_id": "31b8a197ac4de840",
+     "status": "active"
+    },
+    "default": {
+     "catalog_snapshot_id": "4919b3938ad93747",
+     "search_id": "872d689343a9cbb6",
+     "status": "active"
+    },
+    "water": {
+     "catalog_snapshot_id": "c27663b642656217",
+     "search_id": "8af0eb66fc92dacc",
+     "status": "active"
+    }
+   },
+   "corpus_runs": {
+    "content_digest": {
+     "air": "bbfc7d3d3913111b0253cdb94089cb3cee802e88ca053bcac53ab24440b1b975",
+     "coastal": "0d79159877615c21f633175941819666f05b758da780e4e842fc8acebba24915",
+     "default": "efc053bb9f8b0b5804bafb26dc909ad9b9e79b80b7b6e1e35dd8ab866046b847",
+     "water": "d04c907662fbb2dde8c46c3961a8383f932a56ab2a0420234a7c71aed003a5f7"
+    },
+    "counts": {
+     "air": 3,
+     "coastal": 2,
+     "default": 6,
+     "water": 3
+    }
+   },
+   "documents": {
+    "content_digest": {
+     "air": "b913328ac2716fd0255c34181061fbbdb7152e68fa2f7f1dd02ebcd145ff8c1e",
+     "coastal": "201774e22ad8a785b5b897497962a6de5a31f269d8fc5bf21c17317f78bd5cc8",
+     "default": "decd29360c0b79401c26117ca9e3cc7a52e6c82433bf929be655d4615d207f4c",
+     "water": "b452cca03e4a1b5d3c6474b9fe193940c732ba0ada0c1873934bcbcd4e638488"
+    },
+    "counts": {
+     "air": 63,
+     "coastal": 1,
+     "default": 221,
+     "water": 159
+    }
+   },
+   "scope_units": {
+    "content_digest": {
+     "air": "2e10934eb0fd654fd83a962f1df4d3c6c785041294397441b92cfd253af365a7",
+     "coastal": "91b4df67a478145ba5ddf0daf92e337c4f9eb2c9d17d5f8a7ff6372165e4f977",
+     "default": "f56f4ef480c67e4a9ba538b16e44088c9826678b504a6c9e42e57cf56315f73a",
+     "water": "e13243916f6a8148160a774559452c1880ce49f6247da762592d359f78a61ef6"
+    },
+    "counts": {
+     "air": 7462,
+     "coastal": 14,
+     "default": 14557,
+     "water": 7123
+    }
+   },
+   "scopes": {
+    "content_digest": {
+     "air": "f034d24d4fa08a2976a92365d026a8ee98a3da758a537e3166904d7e89b3427f",
+     "coastal": "51afcdbe386623a0118151030c675360c5ad12f0292b80ecaea7921fdfa92cd8",
+     "default": "0ce2c6a4a9384cca778df57bd9fd8468a7313851c7226318bca064a43457fe91",
+     "water": "dcf3b82ee71fe81392277a26eef0896ce26ae1d3c37e0ef4bf846bd437f31c24"
+    },
+    "counts": {
+     "air": 1089,
+     "coastal": 1,
+     "default": 1970,
+     "water": 894
+    }
+   },
+   "search_builds": {
+    "content_digest": {
+     "air": "672e42c455f3990712d444ad5afd2ce3de2abfcb1cc052cf232a46cdf4986b19",
+     "coastal": "0edbebeaa9754f0b98a3cacdb6632b23f0aa18b904125ce765027500f7258aec",
+     "default": "72f39c5d05d2df462884be827f1689a39b99822597c56f124af58eca8e0ddaf4",
+     "water": "53eecb76a6e50ecdc1e21a18f3e89daaa586f4ba2b5af95152ff417bb4f16fbc"
+    },
+    "counts": {
+     "air": 2,
+     "coastal": 1,
+     "default": 8,
+     "water": 2
+    }
+   },
+   "search_chunks": {
+    "content_digest": {
+     "air": "d8c0a95188e9cf54fe730a82e468324ffd0398dff9bead2d31c26cad206100eb",
+     "coastal": "40a55123b161fae74b980e3e7d766381bf9c0d8ad2dc4dfa81369857a1c786b5",
+     "default": "479411c13c01e6cfd5bebee224ff42a2443bcf5e0b7f90d67144651dba419b59",
+     "water": "93f3c025f4d1b75795b546c30997b4b46d785ba784a49813334a80a343fd85d0"
+    },
+    "counts": {
+     "air": 1949,
+     "coastal": 8,
+     "default": 5709,
+     "water": 3765
+    }
+   },
+   "search_documents": {
+    "content_digest": {
+     "air": "a9d1ac84de7211b98a077d53e6feec40b485829011915923915cb0830df2ec66",
+     "coastal": "4b7a269dbf4e399b99529ebcaf0c5c0ed8191c0bdddf385a7c5d1c3978267393",
+     "default": "bc26833a11477c91c90042f19436cb0233c4ca59fd15612aae6836cc767cc11b",
+     "water": "4657b5fc0c236f05143f8da428520f569ba399f0314999bd9e9632298c059e4d"
+    },
+    "counts": {
+     "air": 63,
+     "coastal": 1,
+     "default": 221,
+     "water": 159
+    }
+   },
+   "source_units": {
+    "content_digest": {
+     "air": "f6a845361a6399d76bf7c13bcbf22535fee50f62b65e0f4fdbc8275c32c69ed6",
+     "coastal": "7b13b7f10fe2eb23f66d2345ee395d807f3a3210bfb2d478e0cf8a78b86e7a97",
+     "default": "bb8c799a31ddbebe5a32bd0ed5dae735264961f693f5ed2d0442ce59928a27f4",
+     "water": "33ac69718c6f3bfc7cd6cce9f390867ffe21a0bd3dcdb35b8a3c02f14502297b"
+    },
+    "counts": {
+     "air": 5579,
+     "coastal": 14,
+     "default": 12269,
+     "water": 6718
+    }
+   },
+   "unit_chunk_links": {
+    "content_digest": {
+     "air": "ff46c31d4e87f07fb21f300180b90cacd03592c91644d871f7cd4a927c0919b6",
+     "coastal": "d5f687b49e16133d327ca4f90809b2e4fa0418f3bbeda22f88d229645c03af06",
+     "default": "e3b502ef7cdb7b8ac7306be61d5e5e2b981f61feda9ce6d9444e9e0c9b27f532",
+     "water": "a7c832dd19db17c37027e210a143308d4fb7a705a9cc00acef6c26c589a68259"
+    },
+    "counts": {
+     "air": 6441,
+     "coastal": 14,
+     "default": 16783,
+     "water": 10370
+    }
+   }
+  },
+  "tables": {
+   "lightrag_doc_chunks": {
+    "content_digest": {
+     "air": "700f4ff988db4677f2afdbb7779fa2fc96d4a75a5bbda230e19bc854ee1dbf93",
+     "coastal": "fd9b185f18e62da4ae3bb3eceaac763d352d0602392d28b77ce66e28f3cc32bd",
+     "default": "21816a68f9162dd59bf4fc59e7eec56f61b1df54feef908911187a10537de3f5",
+     "water": "b0d2dc218ac7bfaaa33c39d8192bbd999450217f11c4069ac7a72c905511e44a"
+    },
+    "counts": {
+     "air": 1949,
+     "coastal": 8,
+     "default": 5709,
+     "water": 3765
+    },
+    "id_digest": {
+     "air": "caaad4846ceb8e278617e493156d6c26",
+     "coastal": "c1d265350cbe635b56e7da5a42e36dfc",
+     "default": "39477cf2f6021abf428b18ac2848ea6c",
+     "water": "b4372f34f47efa30aa957ee5fad5ad72"
+    }
+   },
+   "lightrag_doc_full": {
+    "content_digest": {
+     "air": "8e2684c7543f1da3211686e0de2eb392558435e750bb0e4e0a525ea413c5fd93",
+     "coastal": "14be6690cd1466967f26b9f3d97371f5cc3755581eaa676529db6a027fa97f4a",
+     "default": "820fd16d0bd68fcb14764c8f9616e10fdc21017dea774b4f49cf020d1d986dab",
+     "water": "394495f136b62e5b86d6bc329f469f9030fc75e7f39f5488a3c77fe77f1b6276"
+    },
+    "counts": {
+     "air": 63,
+     "coastal": 1,
+     "default": 221,
+     "water": 159
+    },
+    "id_digest": {
+     "air": "1f742f1f40cec51ab9122d27f8e4b990",
+     "coastal": "fcb61cb7bb32be28e6299fb8d6846ec2",
+     "default": "cd04f958a9012d8b2d6b23d813821558",
+     "water": "2780ae09b6ea9e1c994e8a09920dda2a"
+    }
+   },
+   "lightrag_doc_status": {
+    "content_digest": {
+     "air": "16e48b259c8f3ef6569625aa53e4d18b1d964c90c559df8cfb1d0fb850dbf695",
+     "coastal": "1c7dd181c952510e7013037e218e3ffc9ebbfa5517f930d52ac86491fb7a5af2",
+     "default": "3930539acd8edf0894f6195a57ccb0cafa9ae8295a71b0dab389a9ed69b56f4b",
+     "water": "934a7327c26b7d0ea135ae4a5dea778826c8ff004bfe5644678f8e93c4ba4c68"
+    },
+    "counts": {
+     "air": 63,
+     "coastal": 1,
+     "default": 279,
+     "water": 159
+    },
+    "id_digest": {
+     "air": "1f742f1f40cec51ab9122d27f8e4b990",
+     "coastal": "fcb61cb7bb32be28e6299fb8d6846ec2",
+     "default": "e711badb254a1e2a97b46ff94a865084",
+     "water": "2780ae09b6ea9e1c994e8a09920dda2a"
+    }
+   },
+   "lightrag_entity_chunks": {
+    "content_digest": {
+     "air": "2623135786551db714043d47536209da77b5352cc15ea28abc02ff25ea4ae29f",
+     "coastal": "239861dad1bf89c2818e70d75caf814d61b012ced0a45b00b551e066bab54364",
+     "default": "1540268b0e1d4c9d414ac41229ca7c75e73ccc0588df73d54f769707678c6926",
+     "water": "cb2cdddfc60790777e31d1ee84615d0533cff901a54600080eede451490c232a"
+    },
+    "counts": {
+     "air": 25987,
+     "coastal": 302,
+     "default": 65527,
+     "water": 37916
+    }
+   },
+   "lightrag_full_entities": {
+    "content_digest": {
+     "air": "fa89b69e7adb0b9ceade7383918af2c59395bc7a5a83c4abfa63f6c3b253a61e",
+     "coastal": "f5dea7d2cc96a151810dfbe24efde08267f88eacc5a6cde989ad2f1f70212943",
+     "default": "93aa90a92ef3cb7d0b84302fb45e1a03c6fc5eaf4066b52d22cd2031dcaa882b",
+     "water": "2574114070a5bf5bd8b2f52d8337dfb37933f387bea652fca3a455ca4eb9cfbe"
+    },
+    "counts": {
+     "air": 63,
+     "coastal": 1,
+     "default": 221,
+     "water": 159
+    }
+   },
+   "lightrag_full_relations": {
+    "content_digest": {
+     "air": "8588e6c1af7e73bca83148119fe3fefae5982b08ffc874b60492066ca4106394",
+     "coastal": "7434a92e100cb073256924bfa3569b8c950ba5e85d4e5a9ed94baa64afbdf678",
+     "default": "cba5a9ad2bf236cfb35fda1cade5f915aa5726781d1e5a4108453bf1fb877725",
+     "water": "585271ab4dd9a5e5f1a8c535a144dc47ee1aa358b7a7ca96c241037edfc9937d"
+    },
+    "counts": {
+     "air": 63,
+     "coastal": 1,
+     "default": 221,
+     "water": 159
+    }
+   },
+   "lightrag_llm_cache": {
+    "content_digest": {
+     "air": "35e42f84417a1f3d3fa95fcce7e82aae465b8d38103ad95293b37c48e513fe16",
+     "coastal": "7104bb917dd519c30f86e7f9e255713e7d3bd54a3d01d8bee9cf8d63d1aecd33",
+     "default": "97854c1befbc504b0e8677baf4110bd774f43643d7bd5745db673e49bdfedf07",
+     "water": "38ba4a985f6dae55b905c44d09a22ceede6b36345ab03de497765ccbb44e93a1"
+    },
+    "counts": {
+     "air": 6360,
+     "coastal": 16,
+     "default": 16514,
+     "water": 9862
+    }
+   },
+   "lightrag_relation_chunks": {
+    "content_digest": {
+     "air": "43e4f50d619510eb52be7cde7848b4507d0a0ca4b1508fb80dd7f170bd0616ca",
+     "coastal": "74754d98c8b135b8f0b9fd47b487f77b9df33cfb01cd2371e5a1cc52762a1231",
+     "default": "bba091a058d689cb6c699594d6c5c41c2ca28dea77167f568930fc7f24e21a21",
+     "water": "81cafd0a1faabf20fdc4009af4c10bbd232b209e232a106a93ac32607130b58d"
+    },
+    "counts": {
+     "air": 44250,
+     "coastal": 311,
+     "default": 119575,
+     "water": 63300
+    }
+   }
+  }
+ },
+ "qdrant": {
+  "collections": {
+   "lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d": {
+    "by_workspace": {
+     "_": {
+      "content_digest": "a1205c33d7fd684d1a5ca3dda1a2c4e3",
+      "count": 5709,
+      "id_digest": "06db439a5ed9fc94e1e8258618337473"
+     },
+     "air": {
+      "content_digest": "d8eede04cb29100dd37ab6b11a43d69a",
+      "count": 1949,
+      "id_digest": "d6c9f3a8d2b4445142e669d0921e79bd"
+     },
+     "coastal": {
+      "content_digest": "5e0f475e2abc5b7073b67bc5aeb318a0",
+      "count": 8,
+      "id_digest": "c5c7ea5b486eaec26c05ed8fcebaefe7"
+     },
+     "water": {
+      "content_digest": "d8c53ffaa5be11c0eedffb0b49fbbd1d",
+      "count": 3765,
+      "id_digest": "b86664ca467afff562e9eaad84e699f5"
+     }
+    },
+    "complete_content_scan": true,
+    "points": 11431
+   },
+   "lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d": {
+    "by_workspace": {
+     "_": {
+      "content_digest": "e6552faf65c00933cc351b4299d952e7",
+      "count": 65526,
+      "id_digest": "760b4f3f5107db3c2fc043df18fa9633"
+     },
+     "air": {
+      "content_digest": "d38014840ac233ea59a63f10feb278af",
+      "count": 25983,
+      "id_digest": "c9ed165e63cdd2fb13c60a9f28db2a85"
+     },
+     "coastal": {
+      "content_digest": "0eeb11f59142f4f2f8ee9d4bf1ce5c81",
+      "count": 302,
+      "id_digest": "0872e47e289f16acf1f36cad8036e3f2"
+     },
+     "water": {
+      "content_digest": "9a8fcfd1cbfa9adfd397cd82626da0e7",
+      "count": 37895,
+      "id_digest": "4d56308dd86067ef98f8fe158b18d8a8"
+     }
+    },
+    "complete_content_scan": true,
+    "points": 129706
+   },
+   "lightrag_vdb_relationships_qwen_qwen3_embedding_4b_2560d": {
+    "by_workspace": {
+     "_": {
+      "content_digest": "fe682b2fcde3d65508a185b10d734731",
+      "count": 119574,
+      "id_digest": "4106bb2312969666a2d8e7791e420b99"
+     },
+     "air": {
+      "content_digest": "cb0416ec2c63d6026ba5e6c7f86f6d80",
+      "count": 44250,
+      "id_digest": "787ba2582f98688aa111a4afdb6ddf1c"
+     },
+     "coastal": {
+      "content_digest": "ec250f1c02519d4c8b6cde534a1b0595",
+      "count": 311,
+      "id_digest": "c04dbfa2809f412308bc83fd56f1fa01"
+     },
+     "water": {
+      "content_digest": "db149b5b01cd602a34c6a7a3bd42fd16",
+      "count": 63299,
+      "id_digest": "d70d0303354e0cab0b2be13281d7ee31"
+     }
+    },
+    "complete_content_scan": true,
+    "points": 227434
+   }
+  }
+ }
+}

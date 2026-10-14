@@ -1,0 +1,58 @@
+[
+  {
+    "path": "scripts/wa_third_workspace.py",
+    "start_line": 79,
+    "end_line": 80,
+    "category": "security",
+    "severity": "high",
+    "content": "第三库固定凭据已进入提交且现场仍有效；改为随机凭据并撤销公开旧值。"
+  },
+  {
+    "path": "src/env_rag_final/access/gateway.py",
+    "start_line": 276,
+    "end_line": 276,
+    "category": "bug",
+    "severity": "high",
+    "content": "只回读单数 chunk_id，丢失表格范围的 chunk_ids；top_k=1 的真实表1查询仍报 complete 却只交付前言。"
+  },
+  {
+    "path": "src/env_rag_final/access/gateway.py",
+    "start_line": 501,
+    "end_line": 504,
+    "category": "bug",
+    "severity": "high",
+    "content": "生成静默截断证据且不核验当前来源，stale/截断仍可被标 complete；需要来源快照守卫及独立范围覆盖状态。"
+  },
+  {
+    "path": "src/env_rag_final/access/static/app.js",
+    "start_line": 250,
+    "end_line": 255,
+    "category": "bug",
+    "severity": "high",
+    "content": "生成异步返回没有绑定用户、workspace 和请求代次；旧库响应可以覆盖新库生成区域。"
+  },
+  {
+    "path": "src/env_rag_final/access/server.py",
+    "start_line": 317,
+    "end_line": 324,
+    "category": "bug",
+    "severity": "medium",
+    "content": "合法记录的 PDF 下载实际返回 404；证据未保留文档路径，网页也缺少下载入口。"
+  },
+  {
+    "path": "src/env_rag_final/access/snapshot.py",
+    "start_line": 284,
+    "end_line": 296,
+    "category": "test",
+    "severity": "high",
+    "content": "保护比较使用 default 而非实际向量 _ 与图谱 base，导致实际旧空间变化漏检；计数及ID摘要也不能证明内容未变。"
+  },
+  {
+    "path": "scripts/wa_instances.sh",
+    "start_line": 17,
+    "end_line": 17,
+    "category": "bug",
+    "severity": "medium",
+    "content": "端口仅硬编码 air/water/coastal；任意新注册库无法只靠配置启动，需要从注册表读取部署参数。"
+  }
+]

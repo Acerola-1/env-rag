@@ -14,6 +14,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import secrets
 import subprocess
 import sys
 import time
@@ -23,6 +24,12 @@ import httpx
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
+
+from wa_credentials import (  # noqa: E402
+    CREDENTIALS_MD,
+    load_credentials,
+    render_credentials_md,
+)
 
 from env_rag_final.access.registry import hash_password, hash_token, load_registry  # noqa: E402
 
@@ -74,12 +81,15 @@ def add_to_registry() -> dict:
         "code_identity": "lightrag-hku==1.5.7 / ghcr.io/hkuds/lightrag:latest",
         "notes": "配置扩展验证：仅注册表＋启动＋入库",
     }
-    creds = json.loads((LOCAL / "credentials.json").read_text(encoding="utf-8"))
+    creds = load_credentials()
     entry = creds.setdefault(NEW_USER, {})
-    password = entry.get("password") or "coastal-demo-pw"
-    token = entry.get("bearer") or "coastal-demo-token"
+    password = entry.get("password") or secrets.token_urlsafe(18)
+    token = entry.get("bearer") or secrets.token_urlsafe(32)
     entry.update({"password": password, "bearer": token, "enterprise": "gamma-env"})
-    (LOCAL / "credentials.json").write_text(json.dumps(creds, indent=1), encoding="utf-8")
+    tmp_credentials = CREDENTIALS_MD.with_suffix(".rotate.tmp")
+    tmp_credentials.write_text(render_credentials_md(creds), encoding="utf-8")
+    tmp_credentials.chmod(0o600)
+    tmp_credentials.replace(CREDENTIALS_MD)
     payload["grants"][f"gamma-env:{NEW_ROLE}"] = [NEW_WORKSPACE]
     payload["principals"][NEW_USER] = {
         "enterprise": "gamma-env",
@@ -100,7 +110,7 @@ def remove_from_registry() -> None:
     payload["workspaces"].pop(NEW_WORKSPACE, None)
     payload["grants"].pop(f"gamma-env:{NEW_ROLE}", None)
     payload["principals"].pop(NEW_USER, None)
-    payload["revision"] = "wa-20261012-r1"
+    payload["revision"] += "-removed-" + secrets.token_hex(6)
     registry_path().write_text(json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")
 
 
@@ -182,7 +192,7 @@ def main() -> int:
             step(command, (res.stdout or res.stderr)[-400:])
 
     # granted reader queries the new library through the gateway
-    creds = json.loads((LOCAL / "credentials.json").read_text(encoding="utf-8"))
+    creds = load_credentials()
     client = httpx.Client(timeout=300)
     login = client.post(
         "http://127.0.0.1:8099/api/login",

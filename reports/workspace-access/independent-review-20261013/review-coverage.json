@@ -1,0 +1,407 @@
+{
+  "base": "1c73eec3",
+  "head": "af29ae36",
+  "total_files": 55,
+  "reviewed_files": 55,
+  "skipped_files": 0,
+  "coverage_rate": 1.0,
+  "scope": "OCR reviewable files; static review is separate from live acceptance",
+  "files": [
+    {
+      "path": "deployment/docker-compose.workspaces.yml",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "deployment/workspaces.example.json",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/acceptance-matrix.json",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/browser/operations.json",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/chunk-identity-proof.json",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/corpus-manifest-summary.json",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/ingestion-air.json",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/ingestion-coastal.json",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/ingestion-water.json",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/lifecycle.json",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/lightrag-init-probe.json",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/pg-tasks.json",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/protected-after.json",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/protected-before-after.json",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/protected-before.json",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/retrieval-sweep.json",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/runtime-identity.json",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/third-workspace.json",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "scripts/wa_acceptance_http.py",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "scripts/wa_bootstrap_registry.py",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "scripts/wa_browser_acceptance.py",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "scripts/wa_instance_env.py",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "scripts/wa_instances.sh",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "scripts/wa_lifecycle_check.py",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "scripts/wa_lightrag_init_probe.py",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "scripts/wa_pg_tasks.py",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "scripts/wa_report.py",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "scripts/wa_retrieval_sweep.py",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "scripts/wa_third_workspace.py",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/access/__init__.py",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/access/__main__.py",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/access/auth.py",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/access/gateway.py",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/access/registry.py",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/access/server.py",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/access/snapshot.py",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/access/static/app.js",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/access/static/index.html",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/access/static/style.css",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/ask.py",
+      "status": "modified",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/audit/snapshot.py",
+      "status": "modified",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/catalog/builder.py",
+      "status": "modified",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/catalog/scopes.py",
+      "status": "modified",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/catalog/units.py",
+      "status": "modified",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/cli.py",
+      "status": "modified",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/prose_enum.py",
+      "status": "modified",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/enumerate_/table_enum.py",
+      "status": "modified",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/ingest/__init__.py",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/ingest/ledger.py",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/ingest/plan.py",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/ingest/reuse.py",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/ingest/runner.py",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/manifest.py",
+      "status": "added",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/search/index.py",
+      "status": "modified",
+      "review_status": "reviewed"
+    },
+    {
+      "path": "src/env_rag_final/workspace_cli.py",
+      "status": "added",
+      "review_status": "reviewed"
+    }
+  ],
+  "excluded_by_tool": [
+    {
+      "path": "README.md",
+      "status": "modified",
+      "insertions": 15,
+      "deletions": 1,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "WORKSPACE-ACCESS.md",
+      "status": "added",
+      "insertions": 146,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "deployment/Dockerfile.knowledge-api",
+      "status": "added",
+      "insertions": 11,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "openspec/changes/add-workspace-knowledge-access/tasks.md",
+      "status": "modified",
+      "insertions": 90,
+      "deletions": 44,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/browser/desktop-air-generation.png",
+      "status": "binary",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "binary"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/browser/desktop-air-query.png",
+      "status": "binary",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "binary"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/browser/desktop-air-records.png",
+      "status": "binary",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "binary"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/browser/desktop-dual-query.png",
+      "status": "binary",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "binary"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/browser/desktop-no-access.png",
+      "status": "binary",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "binary"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/browser/desktop-water-lightrag.png",
+      "status": "binary",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "binary"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/browser/narrow-air.png",
+      "status": "binary",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "binary"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/browser/narrow-no-access.png",
+      "status": "binary",
+      "insertions": 0,
+      "deletions": 0,
+      "exclude_reason": "binary"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/corpus-manifest.jsonl",
+      "status": "added",
+      "insertions": 230,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/ingestion-results.jsonl",
+      "status": "added",
+      "insertions": 231,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/service-receipts.jsonl",
+      "status": "added",
+      "insertions": 3,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "reports/workspace-access/wa-20261012-r1/summary.md",
+      "status": "added",
+      "insertions": 37,
+      "deletions": 0,
+      "exclude_reason": "unsupported_ext"
+    },
+    {
+      "path": "tests/test_workspace_access.py",
+      "status": "added",
+      "insertions": 428,
+      "deletions": 0,
+      "exclude_reason": "default_path"
+    }
+  ]
+}

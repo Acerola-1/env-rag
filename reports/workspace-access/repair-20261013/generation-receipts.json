@@ -1,0 +1,39 @@
+{
+ "evidence_type": "real model calls through authenticated Knowledge API",
+ "cases": [
+  {
+   "workspace": "air",
+   "model": "deepseek-v4.1-flash",
+   "status": "success",
+   "coverage_status": "complete",
+   "dispatches": 1,
+   "citations": 15,
+   "semantic_support": "unreviewed"
+  },
+  {
+   "workspace": "water",
+   "model": "deepseek-v4.1-flash",
+   "status": "success",
+   "coverage_status": "complete",
+   "dispatches": 1,
+   "citations": 31,
+   "semantic_support": "unreviewed"
+  },
+  {
+   "workspace": "all",
+   "model": "deepseek-v4.1-flash",
+   "status": "success",
+   "coverage_status": "partial",
+   "dispatches": 1,
+   "citations": 4,
+   "cited_workspaces": [
+    "air",
+    "water"
+   ],
+   "invalid_citations": [],
+   "semantic_support": "unreviewed",
+   "included": 22,
+   "excluded": 18
+  }
+ ]
+}

@@ -1,5 +1,7 @@
 # 工作区整理与提交核验
 
+> 2026-10-14 注：本文是 2026-10-12 那次整理的时点记录，此后随 assets 归档一并移入本目录。下文出现的 `docs/handoffs/`、`docs/retrieval/` 路径分别对应现在的 `assets/legacy-comparison-web/GOAL_RAG_COMPARISON_WEB.md` 与 `assets/pg-retrieval/ENUMERATION_NEXT_STEPS.md`。
+
 本轮整理只处理应用工作区，不修改已有数据库、语料、模型配置或隔壁 LightRAG checkout。
 
 ## 保留

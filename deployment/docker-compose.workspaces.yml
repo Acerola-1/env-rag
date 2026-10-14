@@ -18,12 +18,18 @@ name: env-rag-workspaces
 
 services:
   lightrag-air:
-    image: ghcr.io/hkuds/lightrag:latest
+    image: ghcr.io/hkuds/lightrag@sha256:5bdbd524931b011df246fe20888d110cef691e6804c12cde636a2b746d7de27e
     container_name: lightrag-air
     env_file:
       - ../.local/workspace-access/env/lightrag-air.env
     ports:
       - "127.0.0.1:9622:9621"
+    environment:
+      POSTGRES_HOST: host.docker.internal
+      POSTGRES_PORT: "5432"
+      QDRANT_URL: http://host.docker.internal:6333
+      NEO4J_URI: bolt://host.docker.internal:7687
+      LLM_BINDING_HOST: http://host.docker.internal:8787/v1
     extra_hosts:
       - "host.docker.internal:host-gateway"
     healthcheck:
@@ -34,12 +40,18 @@ services:
     restart: unless-stopped
 
   lightrag-water:
-    image: ghcr.io/hkuds/lightrag:latest
+    image: ghcr.io/hkuds/lightrag@sha256:5bdbd524931b011df246fe20888d110cef691e6804c12cde636a2b746d7de27e
     container_name: lightrag-water
     env_file:
       - ../.local/workspace-access/env/lightrag-water.env
     ports:
       - "127.0.0.1:9623:9621"
+    environment:
+      POSTGRES_HOST: host.docker.internal
+      POSTGRES_PORT: "5432"
+      QDRANT_URL: http://host.docker.internal:6333
+      NEO4J_URI: bolt://host.docker.internal:7687
+      LLM_BINDING_HOST: http://host.docker.internal:8787/v1
     extra_hosts:
       - "host.docker.internal:host-gateway"
     healthcheck:
@@ -65,10 +77,19 @@ services:
     ports:
       - "127.0.0.1:8099:8099"
     volumes:
-      - ../.local:/app/.local:ro
-      - ../reports:/app/reports
+      - ../.env:/app/.env:ro
+      - ../.local/workspace-access/registry.json:/app/.local/workspace-access/registry.json:ro
+      - ../.local/workspace-access/instance-keys.json:/app/.local/workspace-access/instance-keys.json:ro
+      - ../.local/workspace-access/records:/app/.local/workspace-access/records
+      - ../datasets:/app/datasets:ro
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     environment:
+      POSTGRES_HOST: host.docker.internal
+      POSTGRES_PORT: "5432"
+      LLM_BINDING_HOST: http://host.docker.internal:8787/v1
+      ENV_RAG_INSTANCE_URLS: '{"air":"http://lightrag-air:9621","water":"http://lightrag-water:9621"}'
       ENV_RAG_PARSED_ROOT: /app/datasets/corpus/parsed
-    command: ["python", "-m", "env_rag_final.access", "--port", "8099"]
+    command: ["python", "-m", "env_rag_final.access", "--host", "0.0.0.0", "--port", "8099"]
 
 volumes: {}

@@ -10,6 +10,7 @@ from __future__ import annotations
 import json
 import secrets
 from pathlib import Path
+from urllib.parse import quote
 
 from aiohttp import web
 
@@ -207,7 +208,12 @@ def create_app(service: KnowledgeService) -> web.Application:
 
         saved_id = None
         if not body.get("no_record"):
-            saved_id = record_id_for(record_id, retrieval["evidence_sha256"])
+            saved_id = record_id_for(
+                record_id,
+                retrieval["evidence_sha256"],
+                retrieval["workspace_snapshots"],
+                bool(body.get("expand", True)),
+            )
             svc.records.save(
                 Record(
                     record_id=saved_id,
@@ -240,16 +246,8 @@ def create_app(service: KnowledgeService) -> web.Application:
         # Authorization happens before the record (and therefore the evidence)
         # is touched at all.
         ctx = authorize(svc.registry, principal, body.get("workspace") or ALL)
-        record = svc.records.get(record_id) if record_id else None
-        if record is None or record.user_id != ctx.user_id:
-            raise NotAvailable("unknown record")
-        if record.policy_revision != ctx.policy_revision or not set(record.workspaces) <= set(
-            ctx.workspaces
-        ):
-            raise NotAvailable("unknown record")
+        record = await svc.current_record(ctx, record_id)
         retrieval = record.payload.get("retrieval") or {}
-        if not set(retrieval.get("workspaces") or []) <= set(ctx.workspaces):
-            raise NotAvailable("unknown record")
         generation = await svc.generate(ctx, retrieval)
         record.payload["generation"] = generation
         svc.records.save(record)
@@ -265,6 +263,27 @@ def create_app(service: KnowledgeService) -> web.Application:
         )
         if ctx is None:
             return web.json_response({"records": []})
+        owned = svc.records.owned(ctx)
+        try:
+            live = await svc.workspace_snapshots(ctx) if owned else {}
+        except NotAvailable:
+            live = {}
+
+        def requires_query(record):
+            retrieval = record.payload.get("retrieval", {})
+            expected = retrieval.get("workspace_snapshots") or {}
+            return (
+                not expected
+                or any(
+                    live.get(w, {}).get("state") != "current" or live.get(w) != expected.get(w)
+                    for w in record.workspaces
+                )
+                or any(
+                    block.get("mode") and not block.get("instance_identity")
+                    for block in retrieval.get("per_workspace", [])
+                )
+            )
+
         return web.json_response(
             {
                 "records": [
@@ -276,8 +295,9 @@ def create_app(service: KnowledgeService) -> web.Application:
                         "workspaces": r.workspaces,
                         "created_at": r.created_at,
                         "has_generation": "generation" in r.payload,
+                        "requires_fresh_query": requires_query(r),
                     }
-                    for r in svc.records.owned(ctx)
+                    for r in owned
                 ]
             }
         )
@@ -286,14 +306,14 @@ def create_app(service: KnowledgeService) -> web.Application:
         svc: KnowledgeService = request.app["service"]
         principal = ctx_for(request)
         ctx = authorize(svc.registry, principal, ALL)
-        record = svc._record_for(ctx, request.match_info["rid"])
+        record = await svc.current_record(ctx, request.match_info["rid"])
         return web.json_response(record.as_dict())
 
     async def export(request: web.Request) -> web.Response:
         svc: KnowledgeService = request.app["service"]
         principal = ctx_for(request)
         ctx = authorize(svc.registry, principal, ALL)
-        record = svc._record_for(ctx, request.match_info["rid"])
+        record = await svc.current_record(ctx, request.match_info["rid"])
         body = json.dumps(record.as_dict(), ensure_ascii=False, indent=1)
         return web.Response(
             body=body.encode(),
@@ -303,62 +323,50 @@ def create_app(service: KnowledgeService) -> web.Application:
 
     async def source(request: web.Request) -> web.Response:
         svc: KnowledgeService = request.app["service"]
-        principal = ctx_for(request)
-        ctx = authorize(svc.registry, principal, ALL)
-        index = int(request.match_info["index"])
+        ctx = authorize(svc.registry, ctx_for(request), ALL)
+        rid = request.match_info["rid"]
+        record = await svc.current_record(ctx, rid)
+        try:
+            index = int(request.match_info["index"])
+        except ValueError:
+            raise NotAvailable("not available") from None
+        item = svc.record_chunk(ctx, rid, index)
         kind = request.match_info["kind"]
-        item = svc.record_chunk(ctx, request.match_info["rid"], index)
         if kind == "text":
-            return web.Response(
-                text=item.get("content") or "",
-                content_type="text/plain",
-                charset="utf-8",
-            )
-        if kind == "pdf":
-            doc_name = str(item.get("path") or "")
-            if not doc_name:
-                raise NotAvailable("not available")
-            root = svc.parsed_root.resolve()
-            candidate = (root / f"{doc_name}.pdf").resolve()
-            if root not in candidate.parents or not candidate.is_file():
-                raise NotAvailable("not available")
-            return web.FileResponse(candidate, headers={"Content-Type": "application/pdf"})
-        raise NotAvailable("not available")
+            body = (item.get("content") or "").encode()
+        else:
+            body = await svc.document_source(ctx, item, kind)
+        await svc.validate_retrieval(ctx, record.payload["retrieval"])
+        return web.Response(
+            body=body,
+            content_type="application/pdf" if kind == "pdf" else "text/plain",
+            headers={
+                "Content-Disposition": "attachment; filename*=UTF-8''"
+                + quote(item.get("doc_name") or "source.pdf")
+            }
+            if kind == "pdf"
+            else None,
+        )
 
     async def document(request: web.Request) -> web.Response:
         svc: KnowledgeService = app["service"]
-        principal = ctx_for(request)
-        ctx = authorize(svc.registry, principal, ALL)
-        record = svc._record_for(ctx, request.match_info["rid"])
-        doc_id = request.match_info["doc_id"]
+        ctx = authorize(svc.registry, ctx_for(request), ALL)
+        record = await svc.current_record(ctx, request.match_info["rid"])
         kind = request.match_info["kind"]
-        evidence = record.payload.get("retrieval", {}).get("evidence", [])
-        for item in evidence:
-            if item.get("doc_id") == doc_id:
-                if not ctx.allows(item["workspace"]):
-                    raise NotAvailable("not available")
-                if kind == "text":
-                    return web.Response(
-                        text=item.get("content") or "",
-                        content_type="text/plain",
-                        charset="utf-8",
-                    )
-                doc_name = str(item.get("path") or "")
-                root = svc.parsed_root.resolve()
-                candidate = (root / f"{doc_name}.pdf").resolve()
-                if doc_name and root in candidate.parents and candidate.is_file():
-                    return web.FileResponse(candidate, headers={"Content-Type": "application/pdf"})
+        for item in record.payload["retrieval"].get("evidence", []):
+            if item.get("doc_id") == request.match_info["doc_id"]:
+                body = await svc.document_source(
+                    ctx, item, "document-text" if kind == "text" else kind
+                )
+                await svc.validate_retrieval(ctx, record.payload["retrieval"])
+                return web.Response(
+                    body=body, content_type="application/pdf" if kind == "pdf" else "text/plain"
+                )
         raise NotAvailable("not available")
 
     async def health(request: web.Request) -> web.Response:
-        svc: KnowledgeService = request.app["service"]
-        return web.json_response(
-            {
-                "status": "ok",
-                "policy_revision": svc.registry.revision,
-                "workspaces": list(svc.registry.workspaces),
-            }
-        )
+        # Public liveness reveals no knowledge-library identities.
+        return web.json_response({"status": "ok"})
 
     app.add_routes(
         [

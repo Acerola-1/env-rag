@@ -1,0 +1,354 @@
+{
+  "network_cases": [
+    {
+      "case": "health:8099",
+      "http": 200,
+      "body_keys": [
+        "status",
+        "policy_revision",
+        "workspaces"
+      ]
+    },
+    {
+      "case": "health:9622",
+      "http": 200,
+      "body_keys": [
+        "status",
+        "auth_mode",
+        "core_version",
+        "api_version",
+        "webui_available",
+        "workspace_available",
+        "api_docs_available",
+        "webui_title",
+        "webui_description",
+        "ai_content_notice_enabled",
+        "pipeline_busy",
+        "pipeline_active"
+      ]
+    },
+    {
+      "case": "health:9623",
+      "http": 200,
+      "body_keys": [
+        "status",
+        "auth_mode",
+        "core_version",
+        "api_version",
+        "webui_available",
+        "workspace_available",
+        "api_docs_available",
+        "webui_title",
+        "webui_description",
+        "ai_content_notice_enabled",
+        "pipeline_busy",
+        "pipeline_active"
+      ]
+    },
+    {
+      "case": "None:air",
+      "http": 401,
+      "expected": 401,
+      "passed": true
+    },
+    {
+      "case": "air-reader:water",
+      "http": 403,
+      "expected": 403,
+      "passed": true
+    },
+    {
+      "case": "air-reader:['air', 'water']",
+      "http": 403,
+      "expected": 403,
+      "passed": true
+    },
+    {
+      "case": "water-reader:air",
+      "http": 403,
+      "expected": 403,
+      "passed": true
+    },
+    {
+      "case": "no-access:all",
+      "http": 403,
+      "expected": 403,
+      "passed": true
+    },
+    {
+      "case": "beta-reader:air",
+      "http": 403,
+      "expected": 403,
+      "passed": true
+    },
+    {
+      "case": "air-reader:default",
+      "http": 403,
+      "expected": 403,
+      "passed": true
+    },
+    {
+      "case": "air-reader:ghost",
+      "http": 403,
+      "expected": 403,
+      "passed": true
+    },
+    {
+      "case": "pg:water",
+      "http": 200,
+      "status": "complete",
+      "evidence_count": 2,
+      "raw_keys": [
+        "query_id",
+        "workspace",
+        "status",
+        "search_id",
+        "catalog_snapshot_id",
+        "source_snapshot_id",
+        "parsed_code",
+        "parsed_codes",
+        "query_text",
+        "candidates",
+        "discovery_candidates",
+        "notes",
+        "trace",
+        "elapsed_ms"
+      ],
+      "record_id": null
+    },
+    {
+      "case": "pg:air",
+      "http": 200,
+      "status": "ambiguous",
+      "evidence_count": 2,
+      "raw_keys": [
+        "query_id",
+        "workspace",
+        "status",
+        "search_id",
+        "catalog_snapshot_id",
+        "source_snapshot_id",
+        "parsed_code",
+        "parsed_codes",
+        "query_text",
+        "candidates",
+        "discovery_candidates",
+        "notes",
+        "trace",
+        "elapsed_ms"
+      ],
+      "record_id": null
+    },
+    {
+      "case": "cross-owner-record",
+      "http": 404,
+      "expected": 404,
+      "passed": true
+    },
+    {
+      "case": "cross-owner-record",
+      "http": 404,
+      "expected": 404,
+      "passed": true
+    },
+    {
+      "case": "cross-owner-record",
+      "http": 404,
+      "expected": 404,
+      "passed": true
+    },
+    {
+      "case": "internal:air:/query/data:reader",
+      "http": 401,
+      "passed": true
+    },
+    {
+      "case": "internal:air:/documents/scan:reader",
+      "http": 401,
+      "passed": true
+    },
+    {
+      "case": "internal:air:authorized-health",
+      "http": 200
+    },
+    {
+      "case": "internal:water:/query/data:reader",
+      "http": 401,
+      "passed": true
+    },
+    {
+      "case": "internal:water:/documents/scan:reader",
+      "http": 401,
+      "passed": true
+    },
+    {
+      "case": "internal:water:authorized-health",
+      "http": 200
+    }
+  ],
+  "inventory": {
+    "lightrag_doc_full": [
+      {
+        "workspace": "air",
+        "n": 63
+      },
+      {
+        "workspace": "coastal",
+        "n": 1
+      },
+      {
+        "workspace": "default",
+        "n": 221
+      },
+      {
+        "workspace": "water",
+        "n": 159
+      }
+    ],
+    "lightrag_doc_chunks": [
+      {
+        "workspace": "air",
+        "n": 1949
+      },
+      {
+        "workspace": "coastal",
+        "n": 8
+      },
+      {
+        "workspace": "default",
+        "n": 5709
+      },
+      {
+        "workspace": "water",
+        "n": 3765
+      }
+    ],
+    "lightrag_doc_status": [
+      {
+        "workspace": "air",
+        "n": 63
+      },
+      {
+        "workspace": "coastal",
+        "n": 1
+      },
+      {
+        "workspace": "default",
+        "n": 279
+      },
+      {
+        "workspace": "water",
+        "n": 159
+      }
+    ],
+    "status": [
+      {
+        "workspace": "air",
+        "status": "processed",
+        "n": 63
+      },
+      {
+        "workspace": "coastal",
+        "status": "processed",
+        "n": 1
+      },
+      {
+        "workspace": "default",
+        "status": "failed",
+        "n": 58
+      },
+      {
+        "workspace": "default",
+        "status": "processed",
+        "n": 221
+      },
+      {
+        "workspace": "water",
+        "status": "processed",
+        "n": 159
+      }
+    ],
+    "chunk_comparison": {
+      "target_chunks": 5714,
+      "absent_in_default": 0,
+      "different_payloads": 0
+    },
+    "union_chunks": 5709,
+    "active_catalog": [
+      {
+        "workspace": "air",
+        "snapshot_id": "123afd3d431b84d0"
+      },
+      {
+        "workspace": "coastal",
+        "snapshot_id": "db0d2dad0809973b"
+      },
+      {
+        "workspace": "default",
+        "snapshot_id": "4919b3938ad93747"
+      },
+      {
+        "workspace": "water",
+        "snapshot_id": "c27663b642656217"
+      }
+    ],
+    "active_search": [
+      {
+        "workspace": "air",
+        "search_id": "f444794b094741a3",
+        "catalog_snapshot_id": "123afd3d431b84d0"
+      },
+      {
+        "workspace": "coastal",
+        "search_id": "31b8a197ac4de840",
+        "catalog_snapshot_id": "db0d2dad0809973b"
+      },
+      {
+        "workspace": "default",
+        "search_id": "872d689343a9cbb6",
+        "catalog_snapshot_id": "4919b3938ad93747"
+      },
+      {
+        "workspace": "water",
+        "search_id": "8af0eb66fc92dacc",
+        "catalog_snapshot_id": "c27663b642656217"
+      }
+    ]
+  },
+  "notes": [],
+  "instances": [
+    {
+      "name": "lightrag-air",
+      "image": "ghcr.io/hkuds/lightrag:latest",
+      "digest": "sha256:5bdbd524931b011df246fe20888d110cef691e6804c12cde636a2b746d7de27e",
+      "workspace": "air",
+      "effective_spaces": {
+        "POSTGRES_WORKSPACE": "air",
+        "QDRANT_WORKSPACE": "air",
+        "NEO4J_WORKSPACE": "air"
+      }
+    },
+    {
+      "name": "lightrag-water",
+      "image": "ghcr.io/hkuds/lightrag:latest",
+      "digest": "sha256:5bdbd524931b011df246fe20888d110cef691e6804c12cde636a2b746d7de27e",
+      "workspace": "water",
+      "effective_spaces": {
+        "POSTGRES_WORKSPACE": "water",
+        "QDRANT_WORKSPACE": "water",
+        "NEO4J_WORKSPACE": "water"
+      }
+    },
+    {
+      "name": "lightrag-coastal",
+      "image": "ghcr.io/hkuds/lightrag:latest",
+      "digest": "sha256:5bdbd524931b011df246fe20888d110cef691e6804c12cde636a2b746d7de27e",
+      "workspace": "coastal",
+      "effective_spaces": {
+        "POSTGRES_WORKSPACE": "coastal",
+        "QDRANT_WORKSPACE": "coastal",
+        "NEO4J_WORKSPACE": "coastal"
+      }
+    }
+  ]
+}

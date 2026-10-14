@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from pathlib import Path
 
 from aiohttp import web
@@ -24,6 +25,13 @@ def build_service(registry_path: Path, env_file: Path, keys_path: Path, record_r
 
     registry = load_registry(registry_path)
     values = {k: v for k, v in dotenv_values(env_file).items() if v is not None}
+    values.update(
+        {
+            k: v
+            for k, v in os.environ.items()
+            if k in values and k.startswith(("POSTGRES_", "QDRANT_", "NEO4J_", "LLM_"))
+        }
+    )
     keys = json.loads(keys_path.read_text(encoding="utf-8")) if keys_path.exists() else {}
     return KnowledgeService(
         registry=registry,
@@ -31,6 +39,7 @@ def build_service(registry_path: Path, env_file: Path, keys_path: Path, record_r
         record_root=record_root,
         parsed_root=PARSED_ROOT,
         instance_keys=keys,
+        instance_urls=json.loads(os.environ.get("ENV_RAG_INSTANCE_URLS", "{}")),
     )
 
 

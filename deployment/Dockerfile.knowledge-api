@@ -8,4 +8,4 @@ COPY datasets/manifest.json ./datasets/manifest.json
 RUN pip install --no-cache-dir .
 
 EXPOSE 8099
-CMD ["python", "-m", "env_rag_final.access", "--port", "8099"]
+CMD ["python", "-m", "env_rag_final.access", "--host", "0.0.0.0", "--port", "8099"]

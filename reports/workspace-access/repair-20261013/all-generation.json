@@ -1,0 +1,123 @@
+{
+ "record_id": "wa-85144250afb0da928ad2",
+ "generation": {
+  "status": "success",
+  "coverage_status": "partial",
+  "answer": "根据现有资料，可说明如下：\n\n**一、《环境空气质量标准》的适用范围**\n\n依据资料 [0] 和 [22]（均为 GB 3095—2012 的内容）：“本标准规定了环境空气功能区分类、标准分级、污染物项目、平均时间及浓度限值、监测方法、数据统计的有效性规定及实施与监督等内容。本标准适用于环境空气质量评价与管理。”[0][22]\n\n依据资料 [2]（GB 3095—2026 的内容）：“本标准规定了环境空气功能区分类、标准分级、污染物项目、平均时间及浓度限值、监测方法、数据统计的有效性规定及实施与监督等内容。本标准适用于环境空气质量评价与管理。”[2]\n\n此外，资料 [0] 中对“环境空气”术语作出定义：指人群、植物、动物和建筑物所暴露的室外空气。[0]\n\n**二、《地表水环境质量标准》的适用范围**\n\n依据资料 [20]（GB 3838—2002 的内容）：“本标准按照地表水环境功能分类和保护目标，规定了水环境质量应控制的项目及限值，以及水质评价、水质项目的分析方法和标准的实施与监督。”[20] 并明确“本标准适用于中华人民共和国领域内江河、湖泊、运河、渠道、水库等具有使用功能的地表水水域。具有特定功能的水域，执行相应的专业用水水质标准。”[20]\n\n同一资料还说明，该标准将项目分为地表水环境质量标准基本项目、集中式生活饮用水地表水源地补充项目和特定项目；基本项目适用于全国江河、湖泊、运河、渠道、水库等具有使用功能的地表水水域；补充项目和特定项目适用于集中式生活饮用水地表水源地一级保护区和二级保护区。[20]\n\n**三、二者对比小结**\n\n- 空气标准适用于环境空气质量评价与管理，针对室外空气 [0][2][22]；\n- 地表水标准适用于中华人民共和国领域内江河、湖泊、运河、渠道、水库等具有使用功能的地表水水域 [20]。\n\n**资料不足说明：**\n\n上述资料能够分别提供空气标准与地表水标准各自的适用范围条款，但未提供将两者范围并列比较的专门条文，因此以上“对比小结”是依据各自条款所作的并列归纳，不是资料中的直接对比结论。此外，所给资料中未包含这两项标准关于范围交叉、冲突或优先适用的规定，无法据此作出该类判断。",
+  "citations": [
+   {
+    "index": 0,
+    "workspace": "air",
+    "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-001",
+    "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+    "source_verified": true,
+    "semantic_support": "unreviewed"
+   },
+   {
+    "index": 2,
+    "workspace": "air",
+    "chunk_id": "doc-4c883d21fa02a53189e0911c3d59d1d1-chunk-000",
+    "doc_id": "doc-4c883d21fa02a53189e0911c3d59d1d1",
+    "source_verified": true,
+    "semantic_support": "unreviewed"
+   },
+   {
+    "index": 20,
+    "workspace": "water",
+    "chunk_id": "doc-91f9049decde09153368d4b69f280e78-chunk-000",
+    "doc_id": "doc-91f9049decde09153368d4b69f280e78",
+    "source_verified": true,
+    "semantic_support": "unreviewed"
+   },
+   {
+    "index": 22,
+    "workspace": "water",
+    "chunk_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1-chunk-000",
+    "doc_id": "doc-257d8cf3fdf90e76c31908c4f92fc1a1",
+    "source_verified": true,
+    "semantic_support": "unreviewed"
+   }
+  ],
+  "invalid_citations": [],
+  "semantic_support": "unreviewed",
+  "model": "deepseek-v4.1-flash",
+  "usage": {
+   "prompt_tokens": 16017,
+   "completion_tokens": 497,
+   "total_tokens": 16514,
+   "completion_tokens_details": {
+    "accepted_prediction_tokens": 0,
+    "audio_tokens": 0,
+    "reasoning_tokens": 0,
+    "rejected_prediction_tokens": 0,
+    "cached_tokens": 0
+   },
+   "prompt_tokens_details": {
+    "accepted_prediction_tokens": 0,
+    "audio_tokens": 0,
+    "reasoning_tokens": 0,
+    "rejected_prediction_tokens": 0,
+    "cached_tokens": 0
+   },
+   "prompt_cache_hit_tokens": 0,
+   "prompt_cache_miss_tokens": 16017,
+   "cache_read_input_tokens": 0,
+   "cache_creation_input_tokens": 0,
+   "prompt_cache_write_tokens": 0,
+   "completion_thinking_tokens": 0,
+   "credit": 0.51,
+   "cached_tokens": 0
+  },
+  "dispatches": 1,
+  "included_evidence": [
+   0,
+   20,
+   1,
+   21,
+   2,
+   22,
+   3,
+   23,
+   4,
+   24,
+   5,
+   25,
+   6,
+   26,
+   28,
+   9,
+   29,
+   30,
+   31,
+   33,
+   36,
+   17
+  ],
+  "included_workspaces": [
+   "air",
+   "water"
+  ],
+  "excluded_evidence": [
+   7,
+   27,
+   8,
+   10,
+   11,
+   12,
+   32,
+   13,
+   14,
+   34,
+   15,
+   35,
+   16,
+   37,
+   18,
+   38,
+   19,
+   39
+  ],
+  "prompt_sha256": "000ffb1039118a3d7035f01743879f7fa4114e4620c76701ee5beb7a5d0bffe1",
+  "context_estimate": "o200k_base * 1.5 + framing/reserve; provider tokenizer unverified"
+ }
+}

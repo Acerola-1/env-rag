@@ -3,10 +3,11 @@
 
 Writes:
 
-* ``.local/workspace-access/registry.json``   — workspaces, principals, grants
-* ``.local/workspace-access/credentials.json`` — generated passwords + bearer
-  tokens for the sample subjects (0600, never committed)
-* ``deployment/workspaces.example.json``      — committed template, no secrets
+* ``.local/workspace-access/registry.json``  — workspaces, principals, grants
+* ``.local/workspace-access/credentials.md`` — Chinese human-readable sheet
+  with generated passwords + bearer tokens (0600, never committed). The
+  committed companion document for open-source readers is ``ACCOUNTS.md``.
+* ``deployment/workspaces.example.json``     — committed template, no secrets
 
 Adding a library is a registry edit plus ingestion; no retrieval code changes.
 """
@@ -20,6 +21,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from wa_credentials import (  # noqa: E402
+    CREDENTIALS_MD,
+    parse_credentials_md,
+    render_credentials_md,
+)
 
 from env_rag_final.access.registry import (  # noqa: E402
     REGISTRY_FORMAT,
@@ -84,10 +92,14 @@ PRINCIPALS = {
 
 def main() -> int:
     LOCAL.mkdir(parents=True, exist_ok=True)
-    creds_path = LOCAL / "credentials.json"
     creds: dict = {}
-    if creds_path.exists():
-        creds = json.loads(creds_path.read_text(encoding="utf-8"))
+    if CREDENTIALS_MD.exists():
+        creds = parse_credentials_md(CREDENTIALS_MD.read_text(encoding="utf-8"))
+    else:
+        # One-time migration from the old JSON sheet (no re-hash churn).
+        legacy = LOCAL / "credentials.json"
+        if legacy.exists():
+            creds = json.loads(legacy.read_text(encoding="utf-8"))
 
     principals: dict = {}
     for user_id, (enterprise, display, roles) in PRINCIPALS.items():
@@ -113,8 +125,8 @@ def main() -> int:
     reg_path = LOCAL / "registry.json"
     reg_path.write_text(json.dumps(registry, ensure_ascii=False, indent=1), encoding="utf-8")
     reg_path.chmod(0o600)
-    creds_path.write_text(json.dumps(creds, ensure_ascii=False, indent=1), encoding="utf-8")
-    creds_path.chmod(0o600)
+    CREDENTIALS_MD.write_text(render_credentials_md(creds), encoding="utf-8")
+    CREDENTIALS_MD.chmod(0o600)
 
     template = json.loads(json.dumps(registry))
     for entry in template["principals"].values():
@@ -133,7 +145,7 @@ def main() -> int:
     )
     for user_id, principal in sorted(reg.principals.items()):
         print(f"  {user_id:14s} {principal.enterprise:10s} -> {reg.allowed_workspaces(principal)}")
-    print(f"credentials: {creds_path}")
+    print(f"credentials: {CREDENTIALS_MD}")
     print(f"template   : {out}")
     return 0
 

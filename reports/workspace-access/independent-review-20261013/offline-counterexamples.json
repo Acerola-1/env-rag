@@ -1,0 +1,28 @@
+{
+  "evidence_type": "offline counterexamples, no real model call or database write",
+  "stale_generation": {
+    "retrieval_status": "stale",
+    "generation_status": "complete",
+    "dispatches_attempted_to_fake_client": 1
+  },
+  "silent_truncation": {
+    "original_content_chars": 4025,
+    "last_member_in_model_input": false,
+    "output_status": "complete"
+  },
+  "protection_false_negative": {
+    "mutated_snapshot_fields": [
+      "neo4j.base.nodes",
+      "qdrant.lightrag_vdb_chunks_qwen_qwen3_embedding_4b_2560d._.count",
+      "qdrant.lightrag_vdb_entities_qwen_qwen3_embedding_4b_2560d._.count",
+      "qdrant.lightrag_vdb_relationships_qwen_qwen3_embedding_4b_2560d._.count"
+    ],
+    "compare_result": {
+      "protected_workspaces": [
+        "default"
+      ],
+      "ok": true,
+      "diffs": []
+    }
+  }
+}

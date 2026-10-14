@@ -44,7 +44,7 @@
         <div class="row">
           <label for="route">检索路径</label>
           <select id="route">
-            <option value="pg">PG 结构化检索（完整范围）</option>
+            <option value="pg">PG 文档与范围检索</option>
             <option value="lightrag">LightRAG 图检索</option>
             <option value="pg+lightrag">PG + LightRAG 组合</option>
           </select>
@@ -68,7 +68,7 @@
       <div class="row">
         <button id="generate" type="button">用本次证据生成回答</button>
       </div>
-      <div id="generation" class="generation" hidden></div>
+      <div id="generation" class="generation" role="status" aria-live="polite" hidden></div>
       <h3>证据</h3>
       <ol id="evidence" class="evidence"></ol>
     </section>
