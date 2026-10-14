@@ -396,9 +396,9 @@ def test_table_kind_unit_with_attributed_intro_is_kept_not_cut():
 
 def test_expand_prose_ambiguous_boundary_forces_partial_with_warning():
     """[构造测试+正式入口] F3 完整性：'本条限值如下：'（冒号宣告但未指认对象）
-    + 内嵌表 + '本条补充要求' 经正式 _expand_prose —— 无法判断归属时整题必须
-    partial 且警告随结果发布；带对象指认的孪生例则 complete 且表内容与后续
-    要求都在交付文本里。"""
+    + 内嵌表 + '本条补充要求' 经正式 _expand_prose —— 归属无法判断时整题结果
+    为 partial 且警告随结果发布；带对象指认的孪生例结果为 complete，表内容与
+    后续要求都在交付文本里。"""
     from unittest.mock import patch
 
     ambiguous = (
@@ -758,8 +758,8 @@ def test_replay_correct_contrasts_stay_supported(qid):
 def test_replay_prose004_category_projection_survives():
     """[原始产物离线读取] GB3838 五类功能正文（C5 类别投影）在无数字子条款的
     正文路径上保持逐项全文可回读。F4-a: 一对一集合核验——gold 的五条类别文本
-    必须各自配到恰好一个交付项（编号按既有合同保留 OCR 原样标签，配对以全文+
-    来源为主，见 _set_match 说明），多余的交付项同样必须列空。"""
+    各自对应恰好一个交付项（编号按既有合同保留 OCR 原样标签，配对以全文+
+    来源为主，见 _set_match 说明），多余的交付项同样列为空。"""
     result, items, probs, q = _replay("prose-enum-004")
     assert probs == [], probs
     assert result["coverage_status"] == "complete"
@@ -775,9 +775,9 @@ def test_replay_prose004_category_projection_survives():
 
 
 def test_replay_generalization_other_clause_and_tamper_detection():
-    """[原始产物离线读取+构造] 验收6：同文件不同条款请求仍边界正确；把长条款
-    尾部数值改动（quote 前 120 字不变）必须被全文回读拒绝——只验 quote 的旧
-    语义救不回来。"""
+    """[原始产物离线读取+构造] 验收6：同文件不同条款请求仍边界正确；长条款
+    尾部数值改动（quote 前 120 字不变）经全文回读判为不支持——仅 quote
+    前缀通过的旧语义不构成支持。"""
     # 只请求 4.3.1 —— 边界/装配不受其它条款影响
     import env_rag_final.enumerate_.prose_enum as pe  # noqa: F401  (module identity)
 

@@ -532,7 +532,7 @@ async def _mapping_samples(conn: asyncpg.Connection) -> list[dict]:
         }
     )
 
-    # D) block 跨多 chunk —— 全库聚合取真实最大值（G0-2：不得写死 14）
+    # D) block 跨多 chunk —— 全库聚合取真实最大值（G0-2：最大值来自聚合查询而非固定值 14）
     rows = await conn.fetch(
         """WITH refs AS (
              SELECT c.full_doc_id, c.id AS chunk_id, c.chunk_order_index, e->>'id' AS ref_id
@@ -572,7 +572,7 @@ async def _mapping_samples(conn: asyncpg.Connection) -> list[dict]:
                 "block_content_length": len(block_content),
                 "match_status": "confirmed",
                 "observed": f"本次全库聚合实测：引用数最多的 block 出现在 {top['n']} 个 chunk 中"
-                f"（chunk_order {top['lo']}–{top['hi']}）。单 chunk 命中不能认定整个 block 已读。",
+                f"（chunk_order {top['lo']}–{top['hi']}）；单 chunk 命中仅代表该 chunk，不代表整个 block 已读。",
                 "basis": "PG sidecar.refs 全库聚合（本次运行，read-only SQL）",
             }
         )
@@ -792,7 +792,7 @@ def _audit_md(stats: dict, hash_verify: dict, samples: list, schema: dict, manif
     else:
         failed_line = (
             f"failed 共 {stats['doc_status_failed_rows']} 条；存在指向原始文档缺失或未 processed 的行，"
-            "逐行身份见 inventory.jsonl（不得按'全部指向已处理原文'表述）。"
+            "逐行身份见 inventory.jsonl（其中存在未指向已处理原文的行）。"
         )
     order_line = (
         f"chunk_order_index 在全部 {checks['order_total_docs']} 份文档上连续且无重复"
@@ -829,7 +829,7 @@ def _audit_md(stats: dict, hash_verify: dict, samples: list, schema: dict, manif
 
 ## 1. 已观察事实（本次运行采集）
 
-### 1.1 计数口径（必须区分，不能混用）
+### 1.1 计数口径（两种口径分列统计，不交叉换算）
 
 | 口径 | 数值 |
 |---|---|
@@ -858,7 +858,7 @@ def _audit_md(stats: dict, hash_verify: dict, samples: list, schema: dict, manif
 | `mineru_raw/_manifest.source_content_hash` | `sha256(原始 PDF 字节)` | 首轮抽样（air-02）核验；本轮未逐份复算 PDF 字节 |
 
 明确不可比较的哈希对：`document_hash`（解析后正文）≠ `source_content_hash`（原始 PDF 字节）≠
-`content_hash`（规范化正文 md5）。三者都可各自复算，但**不能**按字段名互相认定。
+`content_hash`（规范化正文 md5）。三者均可各自复算，字段名之间不构成等价关系。
 {meta_line}，标题等元数据只能从解析产物正文提取。
 
 ### 1.3 block/table → chunk 映射（task 1.5 证据，详见 mapping-samples.jsonl）

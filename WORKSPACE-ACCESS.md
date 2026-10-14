@@ -116,13 +116,14 @@ exactly-once。
    避免写进实例不会读取的空间。
 3. `workspace-ingest --workspace <新库>` 入库真实资料，再 `workspace-catalog`／
    `workspace-index` 发布。
-4. 使用全新的 `revision` 使旧会话与缓存失效；网关会自动热加载注册表。撤权后恢复授权也必须使用新代次，不能复用旧值。
+4. 写入新的 `revision` 后旧会话与缓存随之失效，网关热加载注册表。撤权与恢复授权都通过新代次生效，旧 revision 不会被复用。
 
 核心检索代码不需要改动：workspace 只出现在注册表、入库命令与实例配置里。
 
 回滚：停止新实例 → 从注册表 `grants` 移除授权（revision 递增，旧记录立即不可读）
-→ 按所有权清单删除该 workspace 的 `lightrag_*` 与 `env_rag.*` 行。**禁止**全局
-prune、删库、重建既有卷；`default` 与本轮以外的空间不在此列。
+→ 按所有权清单删除该 workspace 的 `lightrag_*` 与 `env_rag.*` 行。删除范围限定
+该 workspace 名下的数据；全局 prune、删库与既有卷重建不属于回滚操作，`default`
+与本轮以外的空间同样保持原样。
 
 ## 6. 权限模型与不可绕过的边界
 
@@ -162,8 +163,8 @@ prune、删库、重建既有卷；`default` 与本轮以外的空间不在此�
   在网页独立查看。预算是本机 o200k tokenizer ×1.5 加预留的保守估算，不宣称等同
   DeepSeek 原生 tokenizer。
 - `generation.status=success` 只表示请求完成且引用编号有效；范围状态单独保留。
-  `semantic_support=unreviewed` 表示尚未独立确认模型每项陈述都有证据支持，不能
-  把出现 `[0]` 当成完整性或语义正确性的证明。
+  `semantic_support=unreviewed` 表示尚未独立确认模型每项陈述都有证据支持，
+  `[0]` 这类引用编号的出现不构成完整性或语义正确性的证明。
 - 每个网页请求绑定身份／库选择／记录／请求代次；切库、退出、新查询后忽略旧响应。
 - 原始验收资料保留；本轮独立复验见 `reports/workspace-access/repair-20261013/`。
   r2 保护快照包含全部 PG 行、完整向量／payload、图属性／关系内容和真实物理映射。

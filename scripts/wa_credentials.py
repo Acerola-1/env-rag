@@ -68,8 +68,8 @@ def render_credentials_md(creds: dict) -> str:
         "两者账号表格式一致。重新运行引导脚本会重新生成口令，本表随之重写。",
         "",
         "登录方式：浏览器打开 http://127.0.0.1:8099 ，在登录页输入“主体”和“登录口令”。",
-        "命令行调用接口时使用 Bearer Token。服务只绑定 127.0.0.1，仅限本机测试，",
-        "请勿把这些账号用于真实部署。",
+        "命令行调用接口时使用 Bearer Token。服务只绑定 127.0.0.1，这些账号的",
+        "适用范围是本机测试；真实部署使用另外签发的账号。",
         "",
         "| 主体 | 登录口令 | Bearer Token | 所属企业 |",
         "| --- | --- | --- | --- |",
@@ -87,7 +87,7 @@ def render_credentials_md(creds: dict) -> str:
     for user in ordered:
         lines.append(f"- `{user}`：{_DISPLAY.get(user, user)}")
     lines += [
-        "- `no-access` 没有任何知识库授权，用于验证“无权限”提示；登录后不应看到知识库。",
+        "- `no-access` 没有任何知识库授权，对应页面上的“无权限”提示；登录后知识库列表为空。",
         "- `beta-reader` 属于乙企业：同名角色在不同企业授予不同知识库，",
         "  它在 beta-env 被授予 water。",
         "",

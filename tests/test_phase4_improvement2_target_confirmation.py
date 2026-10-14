@@ -353,8 +353,8 @@ def test_stored_prose006_wrong_versions_and_unknown_identity_excluded(monkeypatc
 
 
 def test_stored_neg004_foreign_table_rows_never_enter_answer(monkeypatch, tmp_path):
-    """[存量产物读取] neg-004/local：GB18466 表1 的 31 行不得再混入答案；
-    13 目标行保留、verified+reverified。"""
+    """[存量产物读取] neg-004/local：GB18466 表1 的 31 行属于另一文档，
+    不进入答案集合；13 目标行保留、verified+reverified。"""
     report, _q = _run_stored(monkeypatch, tmp_path, "neg-004")
     out = report["results"][0]
     tc = _audit_of(out)

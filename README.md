@@ -83,11 +83,11 @@ uv run env-rag-final workspace-index  --workspace air
 | `scripts/` | workspace 引导、入库、验收与巡检脚本 |
 | `docs/initialization/` | 当前有效的入库与发布边界说明 |
 | `assets/` | **历史探究归档**：旧对照网页、PG 检索研究、整理记录（详见 [assets/README.md](assets/README.md)） |
-| `reports/` | 各轮评测与验收证据（400MB+，逐轮自组织，勿手改） |
+| `reports/` | 各轮评测与验收证据（400MB+，按代次目录自组织，历史轮次保持原样） |
 | `openspec/` | 规格驱动的变更计划；已完成的在 `openspec/changes/archive/` |
 | `.local/` | 本机运行状态（不进 Git）：注册表、口令清单、实例密钥、记录、入库账本 |
 
-## 网页入口说明（避免混淆）
+## 网页入口说明
 
 本项目演化出两个网页：
 
@@ -99,7 +99,7 @@ uv run env-rag-final workspace-index  --workspace air
 ## 数据与质量边界（重要）
 
 - 数据库、向量、图谱、缓存、`.env` 和密钥**不入 Git**；数据库是运行时派生数据，重建不能保证逐字复现历史 LLM 图谱。入库/重建边界见 [docs/initialization/INGESTION.md](docs/initialization/INGESTION.md)，发布边界见 [docs/initialization/PUBLISHING.md](docs/initialization/PUBLISHING.md)。
-- 权限是**应用层粗粒度知识库授权**，不是数据库强隔离（未启用 RLS）；演示账号仅限本机试用，正式部署必须替换全部凭据。
+- 权限是**应用层粗粒度知识库授权**，不是数据库强隔离（未启用 RLS）；演示账号与口令仅适用于本机试用场景，正式部署使用独立凭据与认证层。
 - 评测结论：固定金标为 31 正例 / 10 反例；**Gate 4 未通过，默认融合未启用**——工程可运行不代表检索质量已达标。完整证据在 `reports/pg-retrieval/`。
 - 语料默认定位 `datasets/corpus/parsed`，可用环境变量 `ENV_RAG_PARSED_ROOT` 或 `ENV_RAG_DATA_DIR` 覆盖。
 

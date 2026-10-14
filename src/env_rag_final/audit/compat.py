@@ -179,8 +179,8 @@ def build_compatibility_md(versions: dict) -> str:
   → 首次建池**必然**执行建表／建索引／迁移路径（PostgreSQLDB 源码含 {probed["pg_ddl_observation"]["create_table_statements_in_source"]} 处
   `CREATE TABLE` 模板，执行期对库发出 DDL）。
 - `LightRAG.initialize_storages()` 还会调用 `initialize_pipeline_status(workspace)` 写共享状态（源码事实）。
-- 结论：**用发布包直接指向现有库的任何构造/初始化都可能产生 DDL 或写入**。正式只读接入策略必须在
-  隔离临时库／测试 workspace 验证（tasks 5.1）后再定；本审计全程未实例化存储。
+- 结论：**用发布包直接指向现有库的任何构造/初始化都可能产生 DDL 或写入**。正式只读接入策略以
+  隔离临时库／测试 workspace 验证（tasks 5.1）为前提；本审计全程未实例化存储。
 
 ### 1.3 workspace 命名（发布包常量／源码默认值）
 

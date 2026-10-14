@@ -13,10 +13,10 @@ uv run env-rag-final catalog-build --help
 uv run env-rag-final search-build --help
 ```
 
-新语料必须先审计并确定新的来源指纹，再按照上述入口的参数显式构建；不要复用历史源指纹或伪造冻结锚。各迁移/构建实现位于 src/env_rag_final/catalog 与 search。
+新语料的入库顺序是先审计、确定新的来源指纹，再按上述入口参数显式构建；来源指纹按新语料内容生成，历史指纹与冻结锚不参与新语料构建。各迁移/构建实现位于 src/env_rag_final/catalog 与 search。
 
 ## 新库的原始语料导入
 
-原文、chunks、embedding 和图谱的生成由锁定发布包 LightRAG 的入库管线负责，应用没有把旧数据库备份作为输入。LightRAG 的公开 `ainsert`/`apipeline_enqueue_documents` 与 `apipeline_process_enqueue_documents` 实现随 uv.lock 安装；PDF 解析与 sidecar 生成由其文件入库管线处理。复用现存 MinerU 产物时需使用该版本支持的解析/sidecar 配置，不能只把 merged text 当成保留了表格身份的完整迁移。
+原文、chunks、embedding 和图谱的生成由锁定发布包 LightRAG 的入库管线负责，应用没有把旧数据库备份作为输入。LightRAG 的公开 `ainsert`/`apipeline_enqueue_documents` 与 `apipeline_process_enqueue_documents` 实现随 uv.lock 安装；PDF 解析与 sidecar 生成由其文件入库管线处理。复用现存 MinerU 产物时使用该版本支持的解析/sidecar 配置；merged text 不保留表格身份，单凭它构不成完整迁移。
 
 本次仓库初始化未运行重新入库（会产生数据库写入及模型/embedding 费用），也未验证全新空库一键重建。当前保证的是语料文件和应用依赖自包含；运行数据库由部署者准备。已有生产数据的入库身份合同与解析字段证据见 reports/pg-retrieval/phase-0/audit.md，不需上传数据库内容。

@@ -6,8 +6,8 @@ Model:
 - 父范围（parent scope）= 聚合其全部后代叶范围的成员（按源顺序、去重），因此
   "GB 3095 第 4 章" 同时包含 4.1／4.2 的 blocks，且不混入第 5 章。
 - 大 block 中的内嵌条款（无独立标题 block）持久化为 requires_span：scope 状态为
-  requires_span，note 记录 block 与 chunk 引用跨度；读取层必须按字符跨度提取或
-  显式拒绝，不能把整个 block 的引用跨度当作完整条款回答。
+  requires_span，note 记录 block 与 chunk 引用跨度；读取层按字符跨度提取，跨度
+  无法满足时显式拒绝，整个 block 的引用跨度不等同于完整条款。
 - front-matter／空成员标 ambiguous。
 
 confirm_status:
