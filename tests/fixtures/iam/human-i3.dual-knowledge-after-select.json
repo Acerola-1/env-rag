@@ -1,0 +1,64 @@
+{
+  "schema_version": "iam.identity.v1",
+  "active": true,
+  "issuer": "air-agent-iam",
+  "audience": "knowledge",
+  "principal": {
+    "type": "human",
+    "id": "0454dd27-8dec-4b63-a7bf-8058d5f6a6f9",
+    "realm": "workforce"
+  },
+  "user": {
+    "id": "0454dd27-8dec-4b63-a7bf-8058d5f6a6f9",
+    "account": "i3.dual",
+    "display_name": "I3 双库读者（alpha）",
+    "status": "active"
+  },
+  "session": {
+    "id": "1abc979f-4f3a-4519-b0a8-d01373811d48",
+    "ctx_version": 2,
+    "created_at": "2026-10-16T23:02:31.654153+08:00",
+    "expires_at": "2099-01-01T00:00:00Z",
+    "absolute_expires_at": "2099-01-01T00:00:00Z",
+    "idle_expires_at": "2099-01-01T00:00:00Z"
+  },
+  "current_tenant": {
+    "id": "f017c513-fcac-4d0d-9415-7c0bfa7b7335",
+    "code": "i3-alpha-env",
+    "name": "I3 Alpha 环境企业",
+    "status": "active"
+  },
+  "membership": {
+    "id": "20f35d9c-9b09-46a3-a69c-3e93d859b0f8",
+    "tenant_id": "f017c513-fcac-4d0d-9415-7c0bfa7b7335",
+    "department_id": null,
+    "status": "active",
+    "revision": 3
+  },
+  "platform_roles": [],
+  "tenant_roles": [
+    {
+      "code": "i3_air_reader",
+      "name": "I3 空气库读者"
+    },
+    {
+      "code": "i3_water_reader",
+      "name": "I3 水环境库读者"
+    }
+  ],
+  "permissions": [
+    "knowledge:lib:air:read",
+    "knowledge:lib:water:read"
+  ],
+  "revisions": {
+    "user_auth_revision": 0,
+    "tenant_auth_revision": 3,
+    "membership_revision": 3,
+    "session_ctx_version": 2
+  },
+  "context_version": 2,
+  "platform_admin": false,
+  "context_usable": true,
+  "needs_tenant_selection": false,
+  "evaluated_at": "2026-10-16T15:02:31.695437Z"
+}

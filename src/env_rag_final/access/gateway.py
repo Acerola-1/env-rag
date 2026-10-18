@@ -36,6 +36,7 @@ from env_rag_final.access.auth import (
 from env_rag_final.access.registry import Principal, Registry, load_registry
 
 SESSION_COOKIE = "wa_session"
+REMOTE_SESSION_COOKIE = "rag_remote_session"
 CSRF_HEADER = "X-RAG-Token"
 INTERNAL_HEADER = "X-Internal-Key"
 SESSION_TTL_SECONDS = 12 * 3600
@@ -66,6 +67,12 @@ class Record:
     route: str
     status: str
     payload: dict = field(default_factory=dict)
+    principal_type: str = "local"
+    tenant_id: str | None = None
+    directory_version: str | None = None
+    permissions: list[str] = field(default_factory=list)
+    mode: str = "local"
+    auth_binding: dict = field(default_factory=dict)
 
     def as_dict(self) -> dict:
         return dict(self.__dict__)
@@ -111,8 +118,11 @@ class RecordStore:
             if record is None:
                 continue
             if (
-                record.user_id == ctx.user_id
-                and record.enterprise == ctx.enterprise
+                record.user_id == ctx.principal_id
+                and record.enterprise == ctx.tenant_id
+                and record.principal_type == ctx.principal_type
+                and record.mode == ctx.mode
+                and (ctx.mode != "remote" or record.auth_binding == ctx.auth_binding())
                 and record.policy_revision == ctx.policy_revision
                 and set(record.workspaces) <= set(ctx.workspaces)
             ):
@@ -140,6 +150,7 @@ class KnowledgeService:
         client_factory=None,
         connect_factory=None,
         instance_urls: dict | None = None,
+        auth_provider=None,
     ):
         self.registry = registry
         self.values = values
@@ -153,6 +164,16 @@ class KnowledgeService:
         self._connect_factory = connect_factory
         self._cache: dict[tuple, dict] = {}
         self.backend_calls: list[str] = []
+        if auth_provider is None:
+            from env_rag_final.access.providers import LocalProvider
+
+            auth_provider = LocalProvider(registry=registry)
+        self.provider = auth_provider
+        self.mode = getattr(auth_provider, "mode", "local")
+
+    @property
+    def is_remote(self) -> bool:
+        return self.mode == "remote"
 
     # ---- backend plumbing --------------------------------------------
     async def _connect(self):
@@ -206,27 +227,82 @@ class KnowledgeService:
         ws = self.registry.workspace(ws_id)
         if ws is None or ws.status != "active":
             raise NotAvailable("library not ready")
+        if self.is_remote and ws_id == "default":
+            # The pre-existing ``default`` namespace is out of scope for every
+            # remote deployment; a mapping can never resolve to it.
+            raise NotAvailable("library not ready")
         return replace(ws, instance_url=self.instance_urls.get(ws_id, ws.instance_url))
 
-    def check_context(self, ctx: AuthContext) -> None:
+    async def check_context(self, ctx: AuthContext) -> None:
+        """Re-authorize a context at a data boundary.
+
+        Local mode keeps its original registry-revision semantics.  Remote mode
+        delegates to the provider, which re-runs the live IAM introspection for
+        the stored credential — a revocation therefore fails closed here even
+        when an answer is already cached or a record already exists.
+        """
         self.maybe_reload_registry()
-        principal = self.registry.principal(ctx.user_id)
+        if ctx.mode != self.mode:
+            raise NotAvailable("authorization mode mismatch")
+        if ctx.mode == "remote":
+            from env_rag_final.access.boundary import require_live
+
+            self.provider.registry = self.registry
+            await require_live(ctx)
+            self._recheck_remote(ctx)
+            return
+        principal = self.registry.principal(ctx.principal_id)
         if (
             principal is None
-            or principal.enterprise != ctx.enterprise
+            or principal.enterprise != ctx.tenant_id
             or self.registry.revision != ctx.policy_revision
             or not set(ctx.workspaces) <= set(self.registry.allowed_workspaces(principal))
         ):
             raise NotAvailable("not available")
 
+    def _recheck_remote(self, ctx: AuthContext) -> None:
+        """Synchronously revalidate remote state that is kept in memory.
+
+        Cached positive authorization is forbidden, so this cannot be a
+        substitute for a live introspection; it guards the *local* invariants
+        (registry revision, technical mapping still present, workspace still
+        active) while the request handlers perform the live IAM check through
+        :meth:`recheck_remote_live`.
+        """
+        if self.registry.revision != ctx.policy_revision:
+            raise NotAvailable("not available")
+        if not set(ctx.workspaces) <= set(self.registry.workspaces):
+            raise NotAvailable("not available")
+
+    async def recheck_remote_live(self, ctx: AuthContext, subject_token: str | None) -> None:
+        """Live IAM re-check for a remote context (async boundary helper).
+
+        ``subject_token`` is the in-flight credential from the server-side
+        session or the current Bearer header; it is used once and discarded.
+        """
+        if ctx.mode != "remote":
+            return
+        from env_rag_final.access.providers import RemoteProvider
+
+        if not isinstance(self.provider, RemoteProvider):
+            raise NotAvailable("not available")
+        if not subject_token:
+            raise NotAvailable("not available")
+        await self.provider.recheck_token(subject_token, ctx)
+
+    def authorize_for_request(self, principal, requested: object) -> AuthContext:
+        """Local-mode authorization kept for the registry-backed flow."""
+        return self.provider.authorize_request(principal, requested)
+
     async def workspace_snapshots(self, ctx: AuthContext) -> dict:
         from env_rag_final.search.index import check_search_stale
 
-        self.check_context(ctx)
+        await self.check_context(ctx)
         conn = await self._connect()
         try:
             result = {}
             for ws_id in ctx.workspaces:
+                await self.check_context(ctx)
                 ws = self.workspace_for(ctx, ws_id)
                 guard = await check_search_stale(conn, workspace=ws.pg_workspace)
                 result[ws_id] = {
@@ -271,6 +347,7 @@ class KnowledgeService:
         return record
 
     async def document_row(self, ctx: AuthContext, ws_id: str, doc_id: str) -> dict:
+        await self.check_context(ctx)
         ws = self.workspace_for(ctx, ws_id)
         conn = await self._connect()
         try:
@@ -286,6 +363,7 @@ class KnowledgeService:
             await conn.close()
 
     async def document_source(self, ctx: AuthContext, item: dict, kind: str) -> bytes:
+        await self.check_context(ctx)
         self.workspace_for(ctx, item["workspace"])
         row = await self.document_row(ctx, item["workspace"], item.get("doc_id") or "")
         if kind == "document-text":
@@ -312,6 +390,7 @@ class KnowledgeService:
             for f in manifest["files"]
             if f["path"].endswith(".pdf")
         }.get(name)
+        await self.check_context(ctx)
         body = candidate.read_bytes()
         if not expected or hashlib.sha256(body).hexdigest() != expected:
             raise NotAvailable("source integrity check failed")
@@ -376,6 +455,7 @@ class KnowledgeService:
     async def hydrate_chunks(
         self, ctx: AuthContext, ws_id: str, chunk_ids: list[str]
     ) -> list[dict]:
+        await self.check_context(ctx)
         ws = self.workspace_for(ctx, ws_id)
         if not chunk_ids:
             return []
@@ -427,6 +507,7 @@ class KnowledgeService:
         from env_rag_final.ask import _ENUM, _JUDGEMENT, Question, ask_question
         from env_rag_final.search import query as query_mod
 
+        await self.check_context(ctx)
         ws = self.workspace_for(ctx, ws_id)
         self._note(f"pg:{ws_id}")
         enumeration = None
@@ -499,8 +580,10 @@ class KnowledgeService:
         }
 
     async def instance_identity(self, ctx: AuthContext, ws_id: str) -> dict:
+        await self.check_context(ctx)
         ws = self.workspace_for(ctx, ws_id)
         async with self._client_factory() as client:
+            await self.check_context(ctx)
             response = await client.get(
                 ws.instance_url.rstrip("/") + "/health", headers=self._instance_headers(ws_id)
             )
@@ -528,14 +611,17 @@ class KnowledgeService:
     async def instance_evidence(
         self, ctx: AuthContext, ws_id: str, question: str, *, mode: str, top_k: int
     ) -> dict:
+        await self.check_context(ctx)
         ws = self.workspace_for(ctx, ws_id)
         if not ws.instance_url:
             raise NotAvailable(f"library {ws_id} has no running instance")
         identity = await self.instance_identity(ctx, ws_id)
         self._note(f"instance:{ws_id}:{mode}")
+        await self.check_context(ctx)
         body = {"query": question, "mode": mode, "top_k": top_k}
         async with self._client_factory() as client:
             try:
+                await self.check_context(ctx)
                 res = await client.post(
                     ws.instance_url.rstrip("/") + "/query/data",
                     headers=self._instance_headers(ws_id),
@@ -638,6 +724,7 @@ class KnowledgeService:
         top_k: int = 20,
         expand: bool = True,
     ) -> dict:
+        await self.check_context(ctx)
         if route not in ("pg", "lightrag", "pg+lightrag"):
             raise Forbidden(f"unknown route {route!r}", code="bad_route")
         if mode is not None and mode not in NATIVE_MODES:
@@ -691,6 +778,7 @@ class KnowledgeService:
             )
         if await self.workspace_snapshots(ctx) != snapshots:
             raise NotAvailable("source changed during query")
+        await self.check_context(ctx)
         evidence = self.merge_evidence(blocks)
         included = "".join(
             f"{item['workspace']}::{item['chunk_id']}::{item['content']}"
@@ -829,8 +917,10 @@ class KnowledgeService:
             + "\n\n".join(context_parts)
             + suffix
         )
+        await self.check_context(ctx)
         self._note("llm:answer")
         async with self._client_factory() as client:
+            await self.check_context(ctx)
             res = await client.post(
                 str(self.values["LLM_BINDING_HOST"]).rstrip("/") + "/chat/completions",
                 headers={"Authorization": f"Bearer {self.values['LLM_BINDING_API_KEY']}"},
@@ -882,8 +972,15 @@ class KnowledgeService:
         record = self.records.get(record_id)
         if record is None:
             raise NotAvailable("unknown object")
-        if record.user_id != ctx.user_id or record.enterprise != ctx.enterprise:
+        if (
+            record.user_id != ctx.principal_id
+            or record.enterprise != ctx.tenant_id
+            or record.principal_type != ctx.principal_type
+            or record.mode != ctx.mode
+        ):
             # Another principal's private record:统一不可访问，不泄漏存在性.
+            raise NotAvailable("unknown object")
+        if ctx.mode == "remote" and record.auth_binding != ctx.auth_binding():
             raise NotAvailable("unknown object")
         if record.policy_revision != ctx.policy_revision:
             raise NotAvailable("unknown object")

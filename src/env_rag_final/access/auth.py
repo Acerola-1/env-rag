@@ -17,6 +17,26 @@ from env_rag_final.access.registry import Principal, Registry
 
 ALL = "all"
 
+_UNSET = object()
+_DEFAULTS = {
+    "mode": "local",
+    "principal_type": "local",
+    "principal_id": "",
+    "tenant_id": "",
+    "tenant_code": "",
+    "permissions": frozenset(),
+    "context_version": None,
+    "session_id": None,
+    "credential_id": None,
+    "credential_revision": None,
+    "workspaces": (),
+    "issued_at": 0.0,
+    "policy_revision": "",
+    "directory_version": "",
+    "revisions": (),
+    "service_account_revision": None,
+}
+
 # HTTP status mapping contract:
 #   401 unauthenticated / bad credentials
 #   403 authenticated but not permitted (or a forbidden selection)
@@ -61,38 +81,157 @@ class NotAvailable(AccessError):
 
 @dataclass(frozen=True)
 class AuthContext:
-    principal: Principal
-    enterprise: str
-    policy_revision: str
+    """Immutable, serialisable, non-secret authorization context.
+
+    ``mode`` tells whether the deployment is local (registry principals and
+    grants) or remote (IAM introspection).  The two modes share the same shape
+    so that every downstream boundary (cache, records, sources, generation)
+    applies one rule, but the identity fields differ in meaning:
+
+    * ``mode="local"`` — ``principal_type`` is always ``"local"``,
+      ``tenant_id`` is the registry enterprise, ``permissions`` is empty and
+      ``context_version`` is ``None``.  Nothing changes for existing
+      deployments.
+    * ``mode="remote"`` — ``principal_type`` is ``"human"`` or
+      ``"service_account"``, ``principal_id`` ``tenant_id`` come from the IAM
+      reply, ``permissions`` holds the exact permission codes and
+      ``context_version``/``revisions`` mirror the IAM authority snapshot.
+
+    The raw IAM subject token is deliberately *not* part of this dataclass: it
+    must never reach a record, a log or an export.
+    """
+
+    mode: str
+    principal_type: str
+    principal_id: str
+    tenant_id: str
+    tenant_code: str
+    permissions: frozenset[str]
+    context_version: int | None
+    session_id: str | None
+    credential_id: str | None
+    credential_revision: int | None
     workspaces: tuple[str, ...]
     issued_at: float
+    policy_revision: str = ""
+    directory_version: str = ""
+    revisions: tuple[tuple[str, int], ...] = ()
+    service_account_revision: int | None = None
+
+    def __init__(self, **kwargs):
+        """Accept both the mode-aware fields and the legacy local shorthand.
+
+        ``AuthContext(principal=..., enterprise=..., policy_revision=...,
+        workspaces=..., issued_at=...)`` from existing local callers is
+        translated into the explicit local form so that one context type
+        serves both deployments without weakening either.
+        """
+        sentinel = _UNSET
+        principal = kwargs.pop("principal", sentinel)
+        enterprise = kwargs.pop("enterprise", sentinel)
+        if enterprise is not sentinel and "tenant_id" not in kwargs:
+            kwargs["tenant_id"] = enterprise
+            kwargs.setdefault("tenant_code", enterprise or "")
+        if principal is not sentinel:
+            kwargs.setdefault("principal_type", "local")
+            kwargs.setdefault("principal_id", principal.user_id)
+            kwargs.setdefault("tenant_id", principal.enterprise)
+            kwargs.setdefault("tenant_code", principal.enterprise)
+            kwargs["permissions"] = frozenset(kwargs.get("permissions") or ())
+            kwargs.setdefault("context_version", None)
+            kwargs.setdefault("session_id", None)
+            kwargs.setdefault("credential_id", None)
+            kwargs.setdefault("credential_revision", None)
+        fields = (
+            "mode",
+            "principal_type",
+            "principal_id",
+            "tenant_id",
+            "tenant_code",
+            "permissions",
+            "context_version",
+            "session_id",
+            "credential_id",
+            "credential_revision",
+            "workspaces",
+            "issued_at",
+            "policy_revision",
+            "directory_version",
+            "revisions",
+            "service_account_revision",
+        )
+        unknown = set(kwargs) - set(fields)
+        if unknown:
+            raise TypeError(f"AuthContext got unexpected fields {sorted(unknown)}")
+        for name in fields:
+            object.__setattr__(self, name, kwargs[name] if name in kwargs else _DEFAULTS[name])
+
+    @property
+    def principal(self) -> Principal:
+        """Back-compat shim: the local registry principal when available."""
+        raise AttributeError("principal is not carried by AuthContext; use principal_id")
 
     @property
     def user_id(self) -> str:
-        return self.principal.user_id
+        return self.principal_id
+
+    @property
+    def enterprise(self) -> str:
+        return self.tenant_id
 
     def cache_key(self, *parts: object) -> tuple:
         """Identity prefix every cache/record key must carry."""
         return (
-            self.principal.user_id,
-            self.enterprise,
+            self.principal_id,
+            self.tenant_id,
             self.policy_revision,
+            self.mode,
+            self.principal_type,
+            self.directory_version,
             self.workspaces,
+            tuple(sorted(self.permissions)),
+            self.context_version,
+            self.session_id,
+            self.credential_id,
+            self.credential_revision,
+            self.revisions,
+            self.service_account_revision,
             *parts,
         )
+
+    def auth_binding(self) -> dict:
+        """Exact, non-secret scope persisted with remote records."""
+        result = self.identity_dict()
+        result.pop("issued_at")
+        result.pop("workspaces")
+        return result
 
     def allows(self, ws_id: str) -> bool:
         return ws_id in self.workspaces
 
-    def as_dict(self) -> dict:
+    def identity_dict(self) -> dict:
+        """Non-secret identity projection (safe for records and JSON)."""
         return {
-            "user_id": self.principal.user_id,
-            "display": self.principal.display,
-            "enterprise": self.enterprise,
-            "roles": list(self.principal.roles),
+            "mode": self.mode,
+            "principal_type": self.principal_type,
+            "principal_id": self.principal_id,
+            "tenant_id": self.tenant_id,
+            "tenant_code": self.tenant_code,
+            "permissions": sorted(self.permissions),
+            "context_version": self.context_version,
+            "session_id": self.session_id,
+            "credential_id": self.credential_id,
+            "credential_revision": self.credential_revision,
             "policy_revision": self.policy_revision,
+            "directory_version": self.directory_version,
             "workspaces": list(self.workspaces),
+            "issued_at": self.issued_at,
+            "revisions": dict(self.revisions),
+            "service_account_revision": self.service_account_revision,
         }
+
+    def as_dict(self) -> dict:
+        return self.identity_dict()
 
 
 def resolve_selection(
@@ -178,9 +317,18 @@ def authorize(
     allowed = registry.allowed_workspaces(principal)
     workspaces = resolve_selection(registry, allowed, requested)
     return AuthContext(
-        principal=principal,
-        enterprise=principal.enterprise,
-        policy_revision=registry.revision,
+        mode="local",
+        principal_type="local",
+        principal_id=principal.user_id,
+        tenant_id=principal.enterprise,
+        tenant_code=principal.enterprise,
+        permissions=frozenset(),
+        context_version=None,
+        session_id=None,
+        credential_id=None,
+        credential_revision=None,
         workspaces=workspaces,
+        policy_revision=registry.revision,
+        directory_version=registry.revision,
         issued_at=time.time(),
     )

@@ -5,7 +5,14 @@ function fixture(){
  const nodes=new Map(),pending=[];
  function element(){return {hidden:false,disabled:false,value:'',textContent:'',children:[],addEventListener(){},appendChild(n){this.children.push(n)},set innerHTML(v){this.children=[]},get innerHTML(){return ''}}}
  function node(id){if(!nodes.has(id))nodes.set(id,element());return nodes.get(id)}
- const env={document:{getElementById:node,createElement:element},fetch:(url,opts)=>new Promise((resolve,reject)=>pending.push({url,opts,resolve,reject}))};
+ /* The page bootstraps a session on load (GET /api/me).  These tests drive the
+  * page in a logged-out fixture, so that one call is answered immediately with
+  * 401 and never enters the pending queue; the race scenarios below are
+  * unchanged. */
+ const env={document:{getElementById:node,createElement:element},fetch:(url,opts)=>{
+   if(url==='/api/me')return Promise.resolve({ok:false,status:401,json:async()=>({error:'unauthenticated'})});
+   return new Promise((resolve,reject)=>pending.push({url,opts,resolve,reject}));
+ }};
  vm.createContext(env);vm.runInContext(fs.readFileSync(path.join(__dirname,'../src/env_rag_final/access/static/app.js'),'utf8'),env);
  const run=code=>vm.runInContext(code,env);
  run('state.csrf="fixture";state.user={user_id:"dual"};state.selection="air";state.recordId="air-record";state.lastResult={};');

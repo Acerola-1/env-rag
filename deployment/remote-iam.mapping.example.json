@@ -1,0 +1,9 @@
+{
+ "format": "knowledge-remote-iam/mapping-r1",
+ "comment": "键必须是字面 tenant UUID（不接受 all/default），值必须是已注册且非保留的 workspace id。",
+ "tenants": {
+  "00000000-0000-4000-8000-000000000000": {
+   "knowledge:lib:example": "example"
+  }
+ }
+}

@@ -17,6 +17,13 @@ const state = {
   lastResult: null,
   answerRequest: 0,
   recordsRequest: 0,
+  // remote mode: the enterprise (tenant) is part of the identity.  Every
+  // response is bound to the epoch it was requested under; a switch or a
+  // logout invalidates in-flight replies instead of letting them paint.
+  mode: "local",
+  tenant: null,
+  tenants: [],
+  tenantEpoch: 0,
 };
 
 const $ = (id) => document.getElementById(id);
@@ -30,6 +37,7 @@ async function api(path, options) {
   if (opts.method && opts.method !== "GET" && state.csrf) {
     opts.headers["X-RAG-Token"] = state.csrf;
   }
+  if (state.mode === "remote" && state.serverEpoch) opts.headers["X-RAG-Context"] = state.serverEpoch;
   const res = await fetch(path, opts);
   let payload = null;
   try {
@@ -53,10 +61,16 @@ function describeError(err) {
     forbidden: "该请求不在当前主体的授权范围内，已整体拒绝。",
     unauthorized_workspace: "请求包含未授权知识库，已整体拒绝。",
     unknown_workspace: "请求包含未知知识库，已整体拒绝。",
-    no_workspace: "该主体没有任何知识库授权。",
     bad_csrf: "会话校验失败，请重新登录。",
     not_available: "对象不存在或当前主体不可访问。",
     host_not_allowed: "仅允许本机访问。",
+    tenant_selection_required: "请先选择企业后再查询。",
+    upstream_unavailable: "身份服务暂不可用（503），当前请求已关闭，请稍后重试。",
+    context_changed: "企业或会话上下文已变化，请重新选择企业。",
+    rate_limited: "尝试过于频繁，请稍后再试。",
+    bad_sso_state: "SSO 回调校验失败，请重新发起。",
+    bad_sso_ticket: "SSO 票据缺失或已过期，请重新发起。",
+    no_workspace: "当前企业没有可用的知识库授权。",
   };
   return map[err.message] || "请求失败（" + err.message + "）。";
 }
@@ -132,31 +146,142 @@ function selectWorkspace(value) {
   $("ask-status").textContent = "已切换知识库：" + value + "（未发起模型请求）";
 }
 
+function renderTenants() {
+  const box = $("tenant-panel");
+  const select = $("tenant");
+  if (!box || !select) return;
+  if (state.mode !== "remote") { box.hidden = true; return; }
+  box.hidden = false;
+  select.innerHTML = "";
+  const empty = document.createElement("option");
+  empty.value = "";
+  empty.textContent = state.tenant ? "（重新选择企业）" : "请选择企业（不自动选择）";
+  select.appendChild(empty);
+  state.tenants.forEach((t) => {
+    const option = document.createElement("option");
+    option.value = t.tenant_id;
+    option.textContent = (t.code || "") + (t.name ? " · " + t.name : "");
+    if (t.tenant_id === state.tenant) option.selected = true;
+    select.appendChild(option);
+  });
+  const disabled = state.tenants.length < 1;
+  select.disabled = disabled;
+  $("tenant-apply").disabled = disabled;
+  $("tenant-hint").textContent = state.tenant
+    ? "当前企业：" + (state.tenant_code || state.tenant)
+    : "必须显式选择企业后才能查询（多企业不会自动选择第一家）。";
+}
+
+function syncQueryAvailability() {
+  const needsTenant = state.mode === "remote" && !state.tenant;
+  const blocked = needsTenant || !state.workspaces.length;
+  $("ask-submit").disabled = blocked;
+  if (blocked) $("ask-status").textContent = needsTenant ? "请先选择企业。" : "当前没有可用知识库，请联系管理员授权。";
+}
+
+async function doSwitchTenant() {
+  if (state.switching) return;
+  const target = $("tenant").value;
+  if (!target) { $("tenant-hint").textContent = "请选择要切换的企业。"; return; }
+  invalidateResult();
+  const gen = state.generation;
+  const epoch = ++state.tenantEpoch;
+  state.switching = true;
+  $("tenant-apply").disabled = true;
+  $("tenant-hint").textContent = "切换中…";
+  try {
+    const payload = await api("/api/switch-tenant", {
+      method: "POST",
+      body: { tenant_id: target, expected_ctx_version: state.contextVersion },
+    });
+    if (gen !== state.generation || epoch !== state.tenantEpoch) return;
+    state.serverEpoch = payload.tenant_epoch;
+    state.csrf = payload.csrf;
+    state.tenant = payload.tenant;
+    state.tenant_code = payload.tenant_code;
+    state.contextVersion = payload.context_version;
+    state.tenants = payload.tenants || state.tenants;
+    state.workspaces = payload.workspaces || [];
+    state.selection = null;
+    renderTenants();
+    syncQueryAvailability();
+    renderLibraries();
+    loadRecords();
+  } catch (err) {
+    if (gen !== state.generation || epoch !== state.tenantEpoch) return;
+    $("tenant-hint").textContent = describeError(err);
+  } finally {
+    state.switching = false;
+    $("tenant-apply").disabled = !state.tenants.length;
+  }
+}
+
 async function doLogin(ev) {
   ev.preventDefault();
+  if (state.loggingIn) return;
+  if (!$("account").value.trim() || !$("password").value) {
+    $("login-error").textContent = "请输入账号和口令。";
+    $("login-error").hidden = false;
+    $("account").focus();
+    return;
+  }
+  state.loggingIn = true;
+  $("login-submit").disabled = true;
   invalidateResult();
   const gen = state.generation;
   $("login-error").hidden = true;
   try {
     const payload = await api("/api/login", {
       method: "POST",
-      body: { user_id: $("user_id").value, password: $("password").value },
+      body: { user_id: $("account").value, password: $("password").value },
     });
     if (gen !== state.generation) return;
-    state.csrf = payload.csrf;
-    state.user = payload;
-    state.workspaces = payload.workspaces || [];
-    state.selection = null;
-    $("who").textContent = payload.display + " · " + payload.user_id;
-    $("logout").hidden = false;
-    $("login-panel").hidden = true;
-    $("app-panel").hidden = false;
-    renderLibraries();
-    await loadRecords();
+    applySession(payload);
+    loadRecords();
   } catch (err) {
     if (gen !== state.generation) return;
     $("login-error").textContent = describeError(err);
     $("login-error").hidden = false;
+  } finally {
+    state.loggingIn = false;
+    $("login-submit").disabled = false;
+  }
+}
+
+function applySession(payload) {
+  /* One place turns a server session view (login, /api/me after a refresh or
+   * an SSO landing) into page state; the IAM token is never part of it. */
+  state.csrf = payload.csrf;
+  state.contextVersion = payload.context_version;
+  state.serverEpoch = payload.tenant_epoch;
+  state.user = payload;
+  state.mode = payload.mode || "local";
+  state.tenants = payload.tenants || [];
+  state.tenant = payload.tenant || payload.enterprise || null;
+  state.tenant_code = payload.tenant_code || payload.enterprise || null;
+  state.tenantEpoch += 1;
+  state.workspaces = payload.workspaces || [];
+  state.selection = null;
+  $("who").textContent = payload.display + " · " + payload.user_id;
+  $("logout").hidden = false;
+  $("login-panel").hidden = true;
+  $("app-panel").hidden = false;
+  renderTenants();
+  syncQueryAvailability();
+  renderLibraries();
+}
+
+async function bootstrap() {
+  const gen = state.generation;
+  /* A refresh (or an SSO landing) re-establishes the session from the cookie
+   * instead of asking the user to log in again. */
+  try {
+    const payload = await api("/api/me");
+    if (!payload || gen !== state.generation) return;
+    applySession(payload);
+    loadRecords();
+  } catch (err) {
+    /* no session yet: stay on the login form */
   }
 }
 
@@ -165,8 +290,13 @@ async function doLogout() {
   invalidateResult();
   state.csrf = null;
   state.user = null;
+  state.serverEpoch = null;
+  state.contextVersion = null;
   state.workspaces = [];
   state.selection = null;
+  state.tenants = [];
+  state.tenant = null;
+  state.tenantEpoch += 1; // a reply from the previous account can never paint
   $("password").value = "";
   $("who").textContent = "未登录";
   $("logout").hidden = true;
@@ -191,8 +321,9 @@ async function doQuery(ev) {
     mode: route === "pg" ? null : $("mode").value,
   };
   try {
+    const epoch = state.tenantEpoch;
     const payload = await api("/api/query", { method: "POST", body: body });
-    if (gen !== state.generation) return; // a stale response for an old selection
+    if (gen !== state.generation || epoch !== state.tenantEpoch) return; // stale selection/tenant
     state.lastResult = payload.result;
     state.recordId = payload.record_id;
     renderResult(payload.result, payload.workspaces);
@@ -203,6 +334,13 @@ async function doQuery(ev) {
     if (gen !== state.generation) return;
     $("ask-status").textContent = describeError(err);
   }
+}
+
+function scopedLink(path) {
+  // Epoch is a non-secret context marker. Cookies still authenticate links;
+  // stale links never acquire the newly selected tenant's authority.
+  return state.mode === "remote" && state.serverEpoch
+    ? path + "?ctx=" + encodeURIComponent(state.serverEpoch) : path;
 }
 
 function renderResult(result, workspaces) {
@@ -249,13 +387,13 @@ function renderResult(result, workspaces) {
     links.className = "evidence-links";
     const textLink = document.createElement("a");
     textLink.textContent = "本条证据全文";
-    textLink.href = "/api/source/" + state.recordId + "/" + index + "/text";
+    textLink.href = scopedLink("/api/source/" + state.recordId + "/" + index + "/text");
     if (state.recordId) links.appendChild(textLink);
     if (state.recordId && item.doc_id) {
       [ ["文档解析全文", "document-text"], ["下载 PDF", "pdf"] ].forEach(([label, kind]) => {
         const link = document.createElement("a");
         link.textContent = label;
-        link.href = "/api/source/" + encodeURIComponent(state.recordId) + "/" + index + "/" + kind;
+        link.href = scopedLink("/api/source/" + encodeURIComponent(state.recordId) + "/" + index + "/" + kind);
         if (kind === "pdf") link.download = item.doc_name || "source.pdf";
         links.appendChild(link);
       });
@@ -318,7 +456,7 @@ async function loadRecords() {
       label.textContent = rec.question.slice(0, 40) + " · " + (rec.requires_fresh_query ? "需重新查询" : rec.status);
       li.appendChild(label);
       const link = document.createElement("a");
-      link.href = "/api/export/" + rec.record_id;
+      link.href = scopedLink("/api/export/" + rec.record_id);
       link.textContent = "导出";
       if (!rec.requires_fresh_query) li.appendChild(link);
       list.appendChild(li);
@@ -334,6 +472,8 @@ async function loadRecords() {
 }
 
 $("login-form").addEventListener("submit", doLogin);
+$("tenant-apply").addEventListener("click", doSwitchTenant);
+$("sso-start").addEventListener("click", function () { window.location.href = "/api/sso/start"; });
 $("logout").addEventListener("click", doLogout);
 $("ask").addEventListener("submit", doQuery);
 $("generate").addEventListener("click", doGenerate);
@@ -342,3 +482,4 @@ $("refresh-records").addEventListener("click", loadRecords);
 function syncRouteMode() { $("mode").disabled = $("route").value === "pg"; }
 $("route").addEventListener("change", syncRouteMode);
 syncRouteMode();
+bootstrap();

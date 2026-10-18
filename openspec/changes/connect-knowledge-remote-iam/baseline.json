@@ -1,0 +1,164 @@
+{
+  "recorded_at": "2026-10-16T14:27:10.938541+00:00",
+  "scope": "planning-and-handoff-only; no product implementation or live cutover",
+  "project_head": "1aa52b04976a94ad6e969775ced07cf1828ca81e",
+  "branch": "dev",
+  "preserve_preexisting_dirty_paths": [],
+  "baseline_tests": {
+    "status": "not_run_planning_only",
+    "instruction": "Run applicable tests at implementation start; record exact failure nodeids and skips."
+  },
+  "iam": {
+    "source_locator": "/Users/acerola/Dev/Java/air_agent_iam",
+    "commit": "8da8ba1127b7ea7aa9c0a9f7289d90cbcc96a368",
+    "access": "read-only original repository; owned exported test copy only",
+    "files": [
+      {
+        "path": "contracts/openapi/iam-identity-v1.openapi.yaml",
+        "sha256": "479bc0c6dd5dc13ea198ea0bfa3a58d953a4194b89efc30942e7909c76eed884",
+        "bytes": 83586
+      },
+      {
+        "path": "contracts/schemas/identity.schema.json",
+        "sha256": "4c3172f40cb4c2dcdc7955207e9f9f321be7915c2e318f63fa775c39f788ee1d",
+        "bytes": 5690
+      },
+      {
+        "path": "contracts/schemas/introspection-inactive.schema.json",
+        "sha256": "3ed63b94e9747cb0f4864522074b9ffd01c483ad657ad917f5fe52a1b3c2a8c4",
+        "bytes": 864
+      },
+      {
+        "path": "contracts/schemas/requests.schema.json",
+        "sha256": "6eafd6b623a4c99f4e6465cc2e52ef3dba9887e86215ee35a524355481ae846b",
+        "bytes": 10614
+      },
+      {
+        "path": "contracts/schemas/error.schema.json",
+        "sha256": "8146041e3dce891edda0245e137e43f9f961d70d4566e6f203909ab1ddeeadca",
+        "bytes": 852
+      },
+      {
+        "path": "server/src/main/java/com/airagent/iam/internal/vo/ServiceIdentityVO.java",
+        "sha256": "7f17a98a7febd244c66eb46d3144b2d90de7ae967075ad8c172e6268f1f609f8",
+        "bytes": 7321
+      },
+      {
+        "path": "server/src/main/java/com/airagent/iam/internal/service/impl/RuntimeTicketServiceImpl.java",
+        "sha256": "dc12041dc32c40c1c007b9c958f39dedbe353dfeaa98eeb6a863fd05357b3e3c",
+        "bytes": 13159
+      },
+      {
+        "path": "server/src/main/java/com/airagent/iam/webapi/sso/dto/SsoExchangeDTO.java",
+        "sha256": "4c0ba8aaeb8d55828c22ed800310c1e17ccb5d7a53ce33c25385a68bddb8c02a",
+        "bytes": 3631
+      },
+      {
+        "path": "server/src/main/java/com/airagent/iam/webapi/sso/controller/SsoController.java",
+        "sha256": "36f7120cca6f836c51fc1251f6401a2f181a443dc83c9662fd4d9f4b106a65f5",
+        "bytes": 7841
+      },
+      {
+        "path": "server/src/main/java/com/airagent/iam/internal/service/impl/IntrospectionServiceImpl.java",
+        "sha256": "fc728bb7eafd84f43f4ecebcd051a832cca271476c46c068a4728b38e7cd6959",
+        "bytes": 32361
+      }
+    ]
+  },
+  "product_sources": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "af662c111130e441999929b63be0e613f34fba6509bb4ac48ba655883abe7c20",
+      "bytes": 3917
+    },
+    {
+      "path": "WORKSPACE-ACCESS.md",
+      "sha256": "267dd6ea2bf5d255ed60392466f1ed748584fb8401014a807b8a0febe6934c31",
+      "bytes": 10421
+    },
+    {
+      "path": "src/env_rag_final/access/auth.py",
+      "sha256": "5c45a243d642cdb76bbdba3494d6ac3f62558823111a8dd8f893a58f085f225e",
+      "bytes": 5743
+    },
+    {
+      "path": "src/env_rag_final/access/gateway.py",
+      "sha256": "95cde4fdabf597324b9ff0212604fb5f5466891b4b5a2d372bbb17cbef59661c",
+      "bytes": 37362
+    },
+    {
+      "path": "src/env_rag_final/access/registry.py",
+      "sha256": "26920206529d4bb4217a088555074ce7dafbcb8999760b7cabc9800c7bd58893",
+      "bytes": 12256
+    },
+    {
+      "path": "src/env_rag_final/access/server.py",
+      "sha256": "a948544d467b20894033ad9369caf015d328b87ec7b4e7d418f015d266fcfcec",
+      "bytes": 15483
+    },
+    {
+      "path": "src/env_rag_final/access/__main__.py",
+      "sha256": "b2fade645ab46e6fee9bb6933bf897ad1aa0ebbd436fb2975a11ea22e4399590",
+      "bytes": 2279
+    },
+    {
+      "path": "src/env_rag_final/access/static/app.js",
+      "sha256": "55843650c885a7082a264f4eef68ecffc3098aeed8b5dbef8e52df46b99b2688",
+      "bytes": 12299
+    },
+    {
+      "path": "tests/test_workspace_access.py",
+      "sha256": "43d7d2224547260af29072c9466aa8e41c3379f27e87a93ff8f4c513cd259216",
+      "bytes": 14724
+    },
+    {
+      "path": "tests/test_workspace_repairs.py",
+      "sha256": "f027e61d080bd1b0ef76aff9b2a41af4adedf4d5dfb4f5a9c6cce6e1e156b8e1",
+      "bytes": 12035
+    }
+  ],
+  "handoff_files": [
+    {
+      "path": "openspec/changes/connect-knowledge-remote-iam/.openspec.yaml",
+      "sha256": "5e6f0d1072064583f2815cc09d56f9bd224b8bee9b1829898c19e88d650e1e21",
+      "bytes": 41
+    },
+    {
+      "path": "openspec/changes/connect-knowledge-remote-iam/acceptance.md",
+      "sha256": "4a6f35cbca39bfa5d1489b458da61e8e04cc3b2cbcfdec5931771bd6291d5d99",
+      "bytes": 3905
+    },
+    {
+      "path": "openspec/changes/connect-knowledge-remote-iam/contract.md",
+      "sha256": "18faf2d90dbaf38c684940d15017361cfb9acdb4715d04c87207709de5a48eb3",
+      "bytes": 10442
+    },
+    {
+      "path": "openspec/changes/connect-knowledge-remote-iam/design.md",
+      "sha256": "680ea9dbf355a0823c3ff2a6d649441af984cec0aa5e758cf59addb29eb372ec",
+      "bytes": 7061
+    },
+    {
+      "path": "openspec/changes/connect-knowledge-remote-iam/proposal.md",
+      "sha256": "6c43b694382c52a46342528de31b3e51b1e550b79ac48547dca275a370e62dae",
+      "bytes": 1991
+    },
+    {
+      "path": "openspec/changes/connect-knowledge-remote-iam/specs/knowledge-remote-iam/spec.md",
+      "sha256": "0ed101efe62595619f6d210d762f4112789251cdcb970a0b16cc42823e84fe6b",
+      "bytes": 3631
+    },
+    {
+      "path": "openspec/changes/connect-knowledge-remote-iam/tasks.md",
+      "sha256": "bed9096e9afa453593762f7e47bd47fcf5c60b5ccded2308b834fd4d46bc577c",
+      "bytes": 2603
+    },
+    {
+      "path": "docs/handoffs/knowledge-remote-iam-apply.md",
+      "sha256": "34ee011e71cac3da0bc6fa863cbf833f17cbc733cc676ad22bd4d2e277838e59",
+      "bytes": 4753
+    }
+  ],
+  "planned_shared_contract_sha256": "18faf2d90dbaf38c684940d15017361cfb9acdb4715d04c87207709de5a48eb3",
+  "workflow": "standard OpenSpec apply; tasks.md is the progress source; no goal mode"
+}

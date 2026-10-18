@@ -19,17 +19,27 @@
 <main>
   <section id="login-panel" class="panel" aria-labelledby="login-h">
     <h2 id="login-h">登录</h2>
-    <form id="login-form" autocomplete="off">
-      <label for="user_id">主体</label>
-      <input id="user_id" name="user_id" required>
+    <form id="login-form" novalidate>
+      <label for="account">主体</label>
+      <input id="account" name="account" autocomplete="username" required>
       <label for="password">口令</label>
-      <input id="password" name="password" type="password" required>
-      <button type="submit">登录</button>
+      <input id="password" name="password" type="password" autocomplete="current-password" required>
+      <button id="login-submit" type="submit">登录</button>
+      <button id="sso-start" type="button" class="ghost">使用 SSO 登录</button>
     </form>
     <p id="login-error" class="error" role="alert" hidden></p>
   </section>
 
   <section id="app-panel" hidden>
+    <section class="panel" id="tenant-panel" aria-labelledby="tenant-h" hidden>
+      <h2 id="tenant-h">企业</h2>
+      <div class="row">
+        <select id="tenant" aria-label="选择企业"></select>
+        <button id="tenant-apply" type="button">切换企业</button>
+      </div>
+      <p id="tenant-hint" class="status" role="status" aria-live="polite"></p>
+    </section>
+
     <section class="panel" aria-labelledby="libs-h">
       <h2 id="libs-h">知识库</h2>
       <div id="libs" class="libs" role="radiogroup" aria-label="可访问知识库"></div>
@@ -38,9 +48,9 @@
 
     <section class="panel" aria-labelledby="ask-h">
       <h2 id="ask-h">查询</h2>
-      <form id="ask" autocomplete="off">
+      <form id="ask" novalidate>
         <label for="question">问题</label>
-        <textarea id="question" rows="3" required></textarea>
+        <textarea id="question" rows="5" style="resize: none" required></textarea>
         <div class="row">
           <label for="route">检索路径</label>
           <select id="route">

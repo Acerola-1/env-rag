@@ -1,0 +1,30 @@
+{
+  "schema_version": "iam.introspection.v1",
+  "active": true,
+  "issuer": "air-agent-iam",
+  "audience": "knowledge",
+  "principal": {
+    "type": "service_account",
+    "id": "f22eb099-7488-4783-82fe-c4c79f72d27f",
+    "realm": "service"
+  },
+  "user": null,
+  "session": null,
+  "membership": null,
+  "current_tenant": {
+    "id": "f017c513-fcac-4d0d-9415-7c0bfa7b7335",
+    "code": "i3-alpha-env",
+    "name": "I3 Alpha 环境企业",
+    "status": "active"
+  },
+  "permissions": [
+    "knowledge:lib:air:read"
+  ],
+  "service_account_revision": 1,
+  "credential_id": "sak_8ee7b82af7564d7c8a83bdfbe46f0323",
+  "credential_revision": 1,
+  "credential_expires_at": "2099-01-01T00:00:00Z",
+  "overlap_until": null,
+  "revisions": null,
+  "evaluated_at": "2026-10-16T15:02:31.540481Z"
+}

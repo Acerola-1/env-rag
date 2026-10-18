@@ -125,3 +125,16 @@ button.ghost {
 }
 
 .evidence-links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+
+:root { scrollbar-color: var(--muted) var(--bg); scrollbar-width: thin; }
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track { background: var(--bg); }
+*::-webkit-scrollbar-thumb { background: var(--muted); border: 2px solid var(--bg); border-radius: 8px; }
+*::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+*::-webkit-scrollbar-thumb:active { background: var(--ink); }
+.status, .error { min-height: 1.6em; }
+textarea { resize: none; }
+button:hover { filter: brightness(.94); }
+button:active { filter: brightness(.88); }
+button:disabled { cursor: default; opacity: .6; }
+@media (forced-colors: active) { :root { scrollbar-color: auto; } }
