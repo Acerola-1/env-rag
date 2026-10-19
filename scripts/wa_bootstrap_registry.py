@@ -1,5 +1,7 @@
 #!/usr/bin/env python
-"""Bootstrap the workspace registry and sample credentials (local, ignored).
+"""历史隔离演练入口，正式环境清理后已退役；不要用于现用资料或账号。
+
+Bootstrap the workspace registry and sample credentials (local, ignored).
 
 Writes:
 
@@ -91,6 +93,10 @@ PRINCIPALS = {
 
 
 def main() -> int:
+    raise SystemExit(
+        "该本地鉴权/初始化演练入口已退役；正式入口为remote IAM。隔离实验请另建专用资源与脚本。"
+    )
+
     LOCAL.mkdir(parents=True, exist_ok=True)
     creds: dict = {}
     if CREDENTIALS_MD.exists():

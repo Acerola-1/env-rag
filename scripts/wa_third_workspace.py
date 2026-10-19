@@ -1,5 +1,7 @@
 #!/usr/bin/env python
-"""Third-workspace extension proof.
+"""历史隔离演练入口，正式环境清理后已退役；不要用于现用资料或账号。
+
+Third-workspace extension proof.
 
 Adds a new knowledge library using **only** registry configuration, instance
 startup and the ingestion commands — then proves a granted reader can query it
@@ -119,6 +121,10 @@ def sh(cmd: list[str], **kwargs) -> subprocess.CompletedProcess:
 
 
 def main() -> int:
+    raise SystemExit(
+        "该本地鉴权/初始化演练入口已退役；正式入口为remote IAM。隔离实验请另建专用资源与脚本。"
+    )
+
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--cleanup", action="store_true", help="remove the trial library afterwards"

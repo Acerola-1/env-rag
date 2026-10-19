@@ -1,5 +1,7 @@
 #!/usr/bin/env python
-"""Isolated probe: what does LightRAG storage initialisation actually do?
+"""历史隔离演练入口，正式环境清理后已退役；不要用于现用资料或账号。
+
+Isolated probe: what does LightRAG storage initialisation actually do?
 
 Runs ``LightRAG.initialize_storages()`` against an **isolated** PostgreSQL
 clone of the production schema (``--pg-port``), with a throwaway workspace
@@ -143,6 +145,10 @@ async def run_init(env: dict, workspace: str) -> dict:
 
 
 def main() -> int:
+    raise SystemExit(
+        "该本地鉴权/初始化演练入口已退役；正式入口为remote IAM。隔离实验请另建专用资源与脚本。"
+    )
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--pg-port", default="55432")
     parser.add_argument("--pg-user", default="rag")

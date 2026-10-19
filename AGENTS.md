@@ -1,11 +1,16 @@
 # AGENTS.md
 
+## 正式运行态（始终适用）
+
+- 知识数据只使用PG5432/rag、现有Qdrant/Neo4j及air/water/coastal技术目录，身份只使用远程IAM19100。唯一权威清单见[正式环境](docs/CURRENT-RUNTIME.md)；历史评审/评分/归档不得当作现用DSN或启动说明。
+- 统一使用Agent的`deployment/run_separated_local.py start/status`；不重建已退役原库、评测容器或本地账号源。新测试只用空临时资源，完成后回收。
+
 本文件是面向仓库协作者（人类与 AI）的项目事实与约定汇总。项目全貌见 [README.md](README.md)。
 
 ## 当前形态
 
 - **当前网页入口是 8099**：`python -m env_rag_final.access`（登录、分库授权）。`src/env_rag_final/web/`（8091）是早期的无登录对照工具，启动还依赖仓库外的 LightRAG 源码 checkout，两者是不同时期、不同用途的应用。
-- 演示账号的权威说明在根目录 [ACCOUNTS.md](ACCOUNTS.md)；本机实际口令清单是 `.local/workspace-access/credentials.md`（Markdown，由 `scripts/wa_bootstrap_registry.py` 生成）。凭据的读写逻辑统一在 `scripts/wa_credentials.py`，凭据格式以该模块渲染的 Markdown 表格为准。
+- 演示账号的权威说明在根目录 [ACCOUNTS.md](ACCOUNTS.md)；正式本机口令与机器凭据清单是 `.local/remote-iam-live/credentials.md`（Markdown，账号由IAM管理，旧本地账号生成入口已退役）。凭据的读写逻辑统一在 `scripts/wa_credentials.py`，凭据格式以该模块渲染的 Markdown 表格为准。
 - Gate 4 评测未通过、默认融合处于关闭状态，现有实验数据没有证明融合优于 local。`reports/` 与 `assets/` 中的结论都带时间戳，代表对应轮次的结果，引用时标注轮次即可与当前状态区分。
 
 ## 环境与命令

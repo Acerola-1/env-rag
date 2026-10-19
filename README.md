@@ -26,27 +26,28 @@ cp .env.example .env      # 然后填写自己的服务配置
 | PostgreSQL + pgvector | 127.0.0.1:5432 | 原文 chunks、目录与搜索索引（自有 `env_rag` schema） |
 | Qdrant | http://127.0.0.1:6333 | 向量索引 |
 | Neo4j | bolt://127.0.0.1:7687 | 知识图谱 |
-| LLM 兼容端点 | http://127.0.0.1:8787/v1 | 生成/抽取模型（OpenAI 兼容协议） |
+| LLM 兼容端点 | http://127.0.0.1:7863/v1 | 生成/抽取模型（OpenAI 兼容协议） |
 | Embedding/Rerank | https://api.siliconflow.cn | 需自行配置 API key |
 
 应用本身是纯 Python 进程，与容器运行时无关——只要这些端口和库里数据就绪即可；但数据在容器卷内，没有后端就没有可检索内容。
 
-### 2. 启动两个 LightRAG 实例与网关
+### 2. 启动正式网关
+
+I4已完成实际分库，唯一身份源为Java IAM19100；当前存储是PG5432/rag、Qdrant6333和Neo4j7687。air/water/coastal是不同资料空间，不是待删副本。
 
 ```bash
-container system start          # Apple Container 服务未运行时
-container start lightrag-postgres lightrag-qdrant lightrag-neo4j
-
-.venv/bin/python scripts/wa_instance_env.py   # 生成实例环境文件（本机）
-bash scripts/wa_instances.sh start air
-bash scripts/wa_instances.sh start water
-
-.venv/bin/python -m env_rag_final.access --port 8099
+# 在Agent仓库启动/检查协调后的正式服务：
+../../air_agent/.venv/bin/python ../../air_agent/deployment/run_separated_local.py start
+# 仅启动本仓网关时，需先将私有deployment.env安全注入进程环境：
+# python -m env_rag_final.access --auth-mode remote --port 8099 \
+#   --record-root .local/remote-iam-live/records
 ```
+
+三个LightRAG实例保留对应资料空间；它们当前为按需组件，重启前核实真实存储地址，不通过旧localhost/9621入口或重新入库来修复连接。具体运行清单见[正式环境](docs/CURRENT-RUNTIME.md)。
 
 ### 3. 登录试用
 
-浏览器打开 <http://127.0.0.1:8099>，账号口令见 **[ACCOUNTS.md](ACCOUNTS.md)**（例如 `water-reader` 只能查水库、`dual-reader` 两库都能查）。页面只绑定 127.0.0.1。
+打开 <http://127.0.0.1:8099>，使用IAM账号。当前本机口令与机器凭据只在`.local/remote-iam-live/credentials.md`；[账号说明](ACCOUNTS.md)不保存秘密。本地registry仅作技术目录，不提供正式身份与授权。旧local网关和评测IAM已退役。
 
 ### 4. 自检与测试
 
@@ -62,8 +63,7 @@ uv run ruff check src tests scripts
 # 纯 PG 完整清单（不需要模型、不需要 LightRAG，只需 .env 里 5 个 POSTGRES_*）
 uv run env-rag-final ask --query '列出 GB8978-1996 表1的全部项目及限值'
 
-# 注册表演示账号（生成/更新 credentials.md）
-.venv/bin/python scripts/wa_bootstrap_registry.py
+# 账号/成员/角色由统一 IAM 管理；旧本地账号生成脚本已退役。
 
 # 入库（可中断重跑，已完成的文档不重复计费）
 uv run env-rag-final workspace-ingest --workspace air --dry-run
@@ -99,7 +99,7 @@ uv run env-rag-final workspace-index  --workspace air
 ## 数据与质量边界（重要）
 
 - 数据库、向量、图谱、缓存、`.env` 和密钥**不入 Git**；数据库是运行时派生数据，重建不能保证逐字复现历史 LLM 图谱。入库/重建边界见 [docs/initialization/INGESTION.md](docs/initialization/INGESTION.md)，发布边界见 [docs/initialization/PUBLISHING.md](docs/initialization/PUBLISHING.md)。
-- 权限是**应用层粗粒度知识库授权**，不是数据库强隔离（未启用 RLS）；演示账号与口令仅适用于本机试用场景，正式部署使用独立凭据与认证层。
+- 正式身份和授权由远程IAM实时核验；知识技术目录与数据库/向量/图的资料范围共同约束读路径。IAM故障不回退本地账号。资料源schema不因清理旧环境而改写。
 - 评测结论：固定金标为 31 正例 / 10 反例；**Gate 4 未通过，默认融合未启用**——工程可运行不代表检索质量已达标。完整证据在 `reports/pg-retrieval/`。
 - 语料默认定位 `datasets/corpus/parsed`，可用环境变量 `ENV_RAG_PARSED_ROOT` 或 `ENV_RAG_DATA_DIR` 覆盖。
 

@@ -2,7 +2,7 @@
 
 ``ENV_RAG_AUTH_MODE=local|remote`` is fixed at process start:
 
-* ``local`` (default) — the original registry-backed behaviour; no IAM request
+* ``local`` (explicit isolated tests only) — the original registry-backed behaviour; no IAM request
   is ever issued, so an IAM outage cannot affect a local deployment.
 * ``remote`` — IAM-backed authorization; the process refuses to start without
   the IAM URL, issuer, consumer client credential, explicit tenant mapping and
@@ -48,7 +48,7 @@ def ensure_isolated_record_root(mode: str, record_root: Path) -> None:
 
 
 def resolve_mode(argv_mode: str | None = None) -> str:
-    mode = (argv_mode or os.environ.get("ENV_RAG_AUTH_MODE") or "local").strip().lower()
+    mode = (argv_mode or os.environ.get("ENV_RAG_AUTH_MODE") or "remote").strip().lower()
     if mode not in VALID_MODES:
         raise SystemExit(
             f"invalid ENV_RAG_AUTH_MODE {mode!r}; expected one of {', '.join(VALID_MODES)}"
