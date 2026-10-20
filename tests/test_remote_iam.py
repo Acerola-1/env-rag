@@ -263,8 +263,9 @@ class _FakeIam:
         self.replies = list(replies)
         self.calls = 0
 
-    async def introspect(self, subject_token, *, audience=None):
+    async def introspect(self, subject_token, *, audience=None, operation=None):
         self.calls += 1
+        self.operation = operation
         status, payload = self.replies.pop(0)
         if status == "network":
             raise R.RemoteUnavailable("identity service unreachable")

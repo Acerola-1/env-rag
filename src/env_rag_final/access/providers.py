@@ -298,8 +298,10 @@ class RemoteProvider:
         return tuple(effective)
 
     # ---- request entry points ---------------------------------------
-    async def authorize_token(self, subject_token: str, requested: object) -> AuthContext:
-        identity = await self.introspect(subject_token)
+    async def authorize_token(
+        self, subject_token: str, requested: object, *, operation: str | None = None
+    ) -> AuthContext:
+        identity = await self.introspect(subject_token, operation=operation)
         if identity.principal_type == "human":
             if identity.needs_tenant_selection or not identity.context_usable:
                 raise Forbidden(
@@ -310,16 +312,39 @@ class RemoteProvider:
         workspaces = self.resolve_selection(identity, requested)
         return self._context_for(identity, workspaces)
 
-    async def introspect(self, subject_token: str) -> RemoteIdentity:
-        payload = await self.iam.introspect(subject_token, audience=self.config.audience)
+    async def introspect(
+        self, subject_token: str, *, operation: str | None = None
+    ) -> RemoteIdentity:
+        if operation is None:
+            payload = await self.iam.introspect(subject_token, audience=self.config.audience)
+        else:
+            payload = await self.iam.introspect(
+                subject_token, audience=self.config.audience, operation=operation
+            )
         # Only a well-formed inactive response is a subject 401. Malformed
         # successful upstream responses are protocol/deployment failures (503).
-        from env_rag_final.access.remote import validate_inactive
+        from env_rag_final.access.remote import (
+            DELEGATION_SCHEMA,
+            validate_delegation_inactive,
+            validate_inactive,
+        )
 
         if isinstance(payload, dict) and payload.get("active") is False:
             try:
-                validate_inactive(payload)
-            except IdentityRejected as exc:
+                if payload.get("schema_version") == DELEGATION_SCHEMA:
+                    reason = validate_delegation_inactive(payload)
+                    if reason == "operation_mismatch":
+                        # The token is valid but was issued for another endpoint.
+                        # This is a caller error, not an expired identity.
+                        raise Forbidden(
+                            "delegated operation does not match this endpoint",
+                            code="operation_mismatch",
+                        )
+                else:
+                    validate_inactive(payload)
+            except Forbidden:
+                raise
+            except (IdentityRejected, RemoteProtocolError) as exc:
                 raise RemoteProtocolError("malformed inactive identity") from exc
             raise IdentityRejected("subject is not active")
         try:
@@ -327,6 +352,7 @@ class RemoteProvider:
                 payload,
                 expected_issuer=self.config.issuer,
                 expected_audience=self.config.audience,
+                expected_operation=operation,
             )
         except (IdentityRejected, TypeError, ValueError, OverflowError) as exc:
             raise RemoteProtocolError("malformed active identity") from exc
@@ -347,6 +373,8 @@ class RemoteProvider:
             credential_revision=identity.credential_revision,
             revisions=tuple(sorted((identity.revisions or {}).items())),
             service_account_revision=identity.service_account_revision,
+            delegation_operation=identity.delegation_operation,
+            issuing_client_id=(identity.delegation or {}).get("issuing_client_id"),
             workspaces=workspaces,
             policy_revision=self.registry.revision,
             directory_version=self.mapping_revision(),
@@ -365,7 +393,7 @@ class RemoteProvider:
         Raises ``NotAvailable`` when the permissions, tenant, revisions or
         principal changed — the stale context must not authorise new work.
         """
-        identity = await self.introspect(subject_token)
+        identity = await self.introspect(subject_token, operation=ctx.delegation_operation)
         if ctx.directory_version != self.mapping_revision() or not can_reuse_context(ctx, identity):
             raise NotAvailable("not available")
         current_allowed = set(self.allowed_workspaces(identity))

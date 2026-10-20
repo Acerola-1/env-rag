@@ -164,6 +164,11 @@ class RemoteIdentity:
     context_usable: bool = True
     needs_tenant_selection: bool = False
     service_account_revision: int | None = None
+    # Delegated knowledge identity (single-operation short-lived user delegation).
+    # The random token id/expiry are deliberately excluded from auth_binding so
+    # re-signing a new token for the same source session keeps record ownership.
+    delegation: dict | None = None
+    delegation_operation: str | None = None
 
     def workspace_grants(self) -> dict[str, str]:
         """Exact resource → library-code grants parsed from permissions."""
@@ -549,6 +554,122 @@ def validate_inactive(payload: dict) -> str:
     return reason
 
 
+# --- knowledge user delegation -------------------------------------------
+
+DELEGATION_SCHEMA = "iam.knowledge-delegation-introspection.v1"
+DELEGATION_OPERATIONS = ("query", "record:read", "source:read", "document:read")
+_DELEGATION_KEYS = {
+    "schema_version",
+    "active",
+    "issuer",
+    "audience",
+    "operation",
+    "identity",
+    "delegation",
+    "evaluated_at",
+}
+_DELEGATION_SOURCE_KEYS = {
+    "issuing_client_id",
+    "source_audience",
+    "source_session_id",
+    "operation",
+    "expires_at",
+}
+
+
+def validate_delegation_inactive(payload: dict) -> str:
+    """Validate the delegated inactive envelope (HTTP 200) and return its reason."""
+    if not isinstance(payload, dict):
+        raise RemoteProtocolError("delegation inactive: payload must be an object")
+    _reject_unknown_keys(payload, _INACTIVE_KEYS, "delegation inactive")
+    if payload["schema_version"] != DELEGATION_SCHEMA:
+        raise RemoteProtocolError("delegation inactive: unexpected schema_version")
+    if payload["active"] is not False:
+        raise RemoteProtocolError("delegation inactive: active must be false")
+    reason = payload.get("reason")
+    if not isinstance(reason, str) or not reason:
+        raise RemoteProtocolError("delegation inactive: reason must be a non-empty string")
+    return reason
+
+
+def validate_knowledge_delegation(
+    payload: dict,
+    *,
+    expected_issuer: str,
+    expected_operation: str,
+    expected_audience: str = AUDIENCE,
+) -> RemoteIdentity:
+    """Strictly validate a delegated knowledge introspection reply.
+
+    The nested ``identity`` uses the frozen ``iam.identity.v1`` human shape; the
+    outer envelope additionally binds the single operation and the issuing
+    Agent client.  A reply whose operation differs from the requested one is a
+    protocol/authorization failure, never a usable identity.
+    """
+    if not isinstance(payload, dict):
+        raise RemoteProtocolError("delegation identity: payload must be an object")
+    _reject_unknown_keys(payload, _DELEGATION_KEYS, "delegation identity")
+    where = "delegation identity"
+    if payload["schema_version"] != DELEGATION_SCHEMA:
+        raise RemoteProtocolError(f"{where}: unexpected schema_version")
+    if payload["active"] is not True:
+        raise RemoteProtocolError(f"{where}: active must be true here")
+    if _require_str(payload, "issuer", where) != expected_issuer:
+        raise RemoteProtocolError(f"{where}: issuer mismatch")
+    if _require_str(payload, "audience", where) != expected_audience:
+        raise RemoteProtocolError(f"{where}: audience mismatch")
+    operation = _require_str(payload, "operation", where)
+    if operation not in DELEGATION_OPERATIONS:
+        raise RemoteProtocolError(f"{where}: unsupported operation")
+    if expected_operation is None:
+        raise Forbidden("delegated credential requires an operation", code="operation_required")
+    if operation != expected_operation:
+        raise Forbidden(
+            "delegated operation does not match this endpoint", code="operation_mismatch"
+        )
+    if _parse_ts(_require_ts(payload, "evaluated_at", where)) is None:
+        raise RemoteProtocolError(f"{where}: invalid evaluated_at")
+
+    delegation = payload.get("delegation")
+    if not isinstance(delegation, dict):
+        raise RemoteProtocolError(f"{where}: delegation missing")
+    _reject_unknown_keys(delegation, _DELEGATION_SOURCE_KEYS, "delegation source")
+    _require_str(delegation, "issuing_client_id", "delegation source")
+    if delegation["source_audience"] != "langgraph-runtime":
+        raise RemoteProtocolError("delegation source: unexpected source_audience")
+    if delegation["operation"] != operation:
+        raise RemoteProtocolError("delegation source: operation mismatch")
+    if not _is_uuid(delegation.get("source_session_id")):
+        raise RemoteProtocolError("delegation source: invalid source_session_id")
+    if _parse_ts(_require_ts(delegation, "expires_at", "delegation source")) is None:
+        raise RemoteProtocolError("delegation source: invalid expires_at")
+
+    identity_payload = payload.get("identity")
+    if not isinstance(identity_payload, dict):
+        raise RemoteProtocolError(f"{where}: identity missing")
+    identity = validate_human_identity(
+        identity_payload, expected_issuer=expected_issuer, expected_audience=expected_audience
+    )
+    if identity.session_id != delegation["source_session_id"]:
+        raise RemoteProtocolError("delegation identity: session does not match source")
+    # The IAM projection must contain only knowledge read codes for delegations.
+    if any(not RESOURCE_READ_RE.match(code) for code in identity.permissions):
+        raise RemoteProtocolError("delegation identity: non-knowledge permission leaked")
+    if not identity.permissions:
+        raise Forbidden("delegation grants no knowledge library", code="no_workspace")
+    return replace(
+        identity,
+        delegation={
+            "issuing_client_id": delegation["issuing_client_id"],
+            "source_audience": delegation["source_audience"],
+            "source_session_id": delegation["source_session_id"],
+            "operation": operation,
+            "expires_at": delegation["expires_at"],
+        },
+        delegation_operation=operation,
+    )
+
+
 def validate_verified(payload: dict) -> int:
     """Validate the ``active=true`` verified re-check envelope."""
     _reject_unknown_keys(payload, _INACTIVE_KEYS, "verified envelope")
@@ -563,15 +684,29 @@ def validate_verified(payload: dict) -> int:
 
 
 def validate_payload(
-    payload: dict, *, expected_issuer: str, expected_audience: str = AUDIENCE
+    payload: dict,
+    *,
+    expected_issuer: str,
+    expected_audience: str = AUDIENCE,
+    expected_operation: str | None = None,
 ) -> RemoteIdentity:
-    """Dispatch to the human or machine validator based on ``schema_version``."""
+    """Dispatch to the human, machine, or delegation validator by schema."""
     if not isinstance(payload, dict):
         raise RemoteProtocolError("introspection reply must be a JSON object")
     schema = payload.get("schema_version")
     if schema == HUMAN_SCHEMA:
         return validate_human_identity(
             payload, expected_issuer=expected_issuer, expected_audience=expected_audience
+        )
+    if schema == DELEGATION_SCHEMA:
+        if payload.get("active") is False:
+            reason = validate_delegation_inactive(payload)
+            raise IdentityRejected(f"delegation is not active ({reason})")
+        return validate_knowledge_delegation(
+            payload,
+            expected_issuer=expected_issuer,
+            expected_operation=expected_operation,
+            expected_audience=expected_audience,
         )
     if schema == MACHINE_SCHEMA:
         if payload.get("active") is False:
@@ -717,12 +852,25 @@ class IamClient:
     async def aclose(self) -> None:
         await self._client.aclose()
 
-    async def introspect(self, subject_token: str, *, audience: str | None = None) -> dict:
-        """One introspection round-trip with a hard total deadline."""
+    async def introspect(
+        self,
+        subject_token: str,
+        *,
+        audience: str | None = None,
+        operation: str | None = None,
+    ) -> dict:
+        """One introspection round-trip with a hard total deadline.
+
+        ``operation`` is only sent for delegated tokens (``kdl_`` prefix); plain
+        human tokens must keep the original request shape, otherwise the IAM
+        rejects the request as an unsupported field combination.
+        """
         if not isinstance(subject_token, str) or not subject_token.strip():
             raise IdentityRejected("credentials required")
         self.calls += 1
         body = {"subject_token": subject_token, "audience": audience or self.config.audience}
+        if operation is not None and subject_token.startswith("kdl_"):
+            body["operation"] = operation
         try:
             async with asyncio.timeout(self._timeout):
                 response = await self._client.post(INTROSPECT_PATH, json=body)

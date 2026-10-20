@@ -39,8 +39,9 @@ class ScriptedIam:
         self.calls = 0
         self.mode = "ok"  # ok | network | timeout | conflict
 
-    async def introspect(self, subject_token, *, audience=None):
+    async def introspect(self, subject_token, *, audience=None, operation=None):
         self.calls += 1
+        self.operation = operation
         if self.mode == "network":
             raise R.RemoteUnavailable("identity service unreachable")
         if self.mode == "timeout":

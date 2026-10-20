@@ -16,6 +16,7 @@ Two deployment modes share this surface:
 
 from __future__ import annotations
 
+import asyncio
 import json
 import secrets
 import time
@@ -37,6 +38,7 @@ from env_rag_final.access.gateway import (
     REMOTE_SESSION_COOKIE,
     SESSION_COOKIE,
     KnowledgeService,
+    knowledge_source_digest,
 )
 from env_rag_final.access.providers import RemoteProvider
 from env_rag_final.access.remote import (
@@ -109,8 +111,47 @@ async def trust_boundary(request: web.Request, handler):
     return await handler(request)
 
 
+_BOUNDED_PATHS = {
+    "/api/query",
+    "/api/knowledge-references/validate",
+}
+_BOUNDED_PREFIXES = ("/api/source/", "/api/document/")
+
+
+@web.middleware
+async def knowledge_deadline(request: web.Request, handler):
+    """Enforce the caller's remaining total budget on bounded knowledge reads.
+
+    The header is capped by the server-side 20s ceiling; cancellation propagates
+    into the asyncpg query/task instead of letting it run unbounded after the
+    client disconnects.
+    """
+    path = request.path
+    if path not in _BOUNDED_PATHS and not path.startswith(_BOUNDED_PREFIXES):
+        return await handler(request)
+    raw = request.headers.get("X-Knowledge-Remaining-Ms", "")
+    try:
+        remaining = int(raw) if raw else 20000
+    except ValueError:
+        remaining = 20000
+    remaining = max(1, min(remaining, 20000))
+    from env_rag_final.access.budget import knowledge_deadline_at
+
+    token = knowledge_deadline_at.set(time.monotonic() + remaining / 1000)
+    try:
+        async with asyncio.timeout(remaining / 1000):
+            return await handler(request)
+    except TimeoutError:
+        return _json_error(504, "deadline_exceeded", "knowledge request deadline exceeded")
+    finally:
+        knowledge_deadline_at.reset(token)
+
+
 def create_app(service: KnowledgeService) -> web.Application:
-    app = web.Application(middlewares=[access_middleware, trust_boundary])
+    app = web.Application(
+        middlewares=[knowledge_deadline, access_middleware, trust_boundary],
+        handler_args={"handler_cancellation": True},
+    )
     app["service"] = service
 
     remote = service.provider if isinstance(service.provider, RemoteProvider) else None
@@ -137,8 +178,17 @@ def create_app(service: KnowledgeService) -> web.Application:
                 return session["subject_token"]
         return None
 
-    async def ctx_for(request: web.Request, selection: object = ALL):
-        """Resolve an authorized context; never touches a backend on refusal."""
+    async def ctx_for(
+        request: web.Request, selection: object = ALL, *, operation: str | None = None
+    ):
+        """Resolve an authorized context; never touches a backend on refusal.
+
+        ``operation`` is the single delegated operation this endpoint permits
+        (query / record:read / source:read / document:read). A short-lived
+        delegation token is refused when it does not carry exactly that
+        operation; ordinary human tokens and machine credentials keep their
+        previous behaviour.
+        """
         if remote is None:
             session_id = request.cookies.get(cookie_name)
             bearer = None
@@ -170,7 +220,7 @@ def create_app(service: KnowledgeService) -> web.Application:
             )
             if not epoch or not secrets.compare_digest(epoch, session["tenant_epoch"]):
                 raise ConflictError("context changed")
-        ctx = await remote.authorize_token(credential, selection)
+        ctx = await remote.authorize_token(credential, selection, operation=operation)
         captured_epoch = session["tenant_epoch"] if session else None
 
         async def live_check():
@@ -485,7 +535,7 @@ def create_app(service: KnowledgeService) -> web.Application:
             selection = body["workspaces"]
         if selection == ALL:
             selection = ALL
-        ctx = await ctx_for(request, selection)
+        ctx = await ctx_for(request, selection, operation="query")
         top_k = body.get("top_k")
         top_k = 20 if top_k is None else max(1, min(50, int(top_k)))
         retrieval = await service.retrieve(
@@ -578,7 +628,7 @@ def create_app(service: KnowledgeService) -> web.Application:
         return web.json_response({"record_id": record.record_id, "generation": generation})
 
     async def records(request: web.Request) -> web.Response:
-        ctx = await ctx_for(request, ALL)
+        ctx = await ctx_for(request, ALL, operation="record:read")
         owned = service.records.owned(ctx)
         try:
             live = await service.workspace_snapshots(ctx) if owned else {}
@@ -620,13 +670,13 @@ def create_app(service: KnowledgeService) -> web.Application:
         )
 
     async def record_detail(request: web.Request) -> web.Response:
-        ctx = await ctx_for(request, ALL)
+        ctx = await ctx_for(request, ALL, operation="record:read")
         record = await service.current_record(ctx, request.match_info["rid"])
         await revalidate(request, ctx)
         return web.json_response(record.as_dict())
 
     async def export(request: web.Request) -> web.Response:
-        ctx = await ctx_for(request, ALL)
+        ctx = await ctx_for(request, ALL, operation="record:read")
         record = await service.current_record(ctx, request.match_info["rid"])
         await revalidate(request, ctx)
         body = json.dumps(record.as_dict(), ensure_ascii=False, indent=1)
@@ -636,8 +686,71 @@ def create_app(service: KnowledgeService) -> web.Application:
             headers={"Content-Disposition": f'attachment; filename="{record.record_id}.json"'},
         )
 
+    _TEXT_PAGE_MAX = 8000
+    _PDF_RANGE_MAX = 4 * 1024 * 1024
+
+    def _text_page(request: web.Request, text: str) -> tuple[bytes, dict[str, str]]:
+        """Character-based pagination with explicit total/next offsets.
+
+        The offset counts Unicode characters, not bytes; the returned headers
+        make a truncated page unmistakable and never claim completeness.
+        """
+        try:
+            offset = max(int(request.query.get("offset", "0")), 0)
+            limit = min(
+                max(int(request.query.get("limit", str(_TEXT_PAGE_MAX))), 1), _TEXT_PAGE_MAX
+            )
+        except ValueError:
+            raise Forbidden("invalid text pagination", code="bad_pagination") from None
+        total = len(text)
+        page = text[offset : offset + limit]
+        next_offset = offset + len(page)
+        headers = {
+            "X-Content-Offset": str(offset),
+            "X-Content-Total-Chars": str(total),
+            "Cache-Control": "no-store",
+            "X-Content-Type-Options": "nosniff",
+        }
+        if next_offset < total:
+            headers["X-Content-Next-Offset"] = str(next_offset)
+        return page.encode(), headers
+
+    def _binary_response(
+        request: web.Request, body: bytes, filename: str, content_type: str
+    ) -> web.Response:
+        """Bounded PDF range/stream response with safe filename and no-store."""
+        import re as _re
+
+        headers = {
+            "Content-Disposition": "attachment; filename*=UTF-8''" + quote(filename),
+            "Accept-Ranges": "bytes",
+            "Cache-Control": "no-store",
+            "X-Content-Type-Options": "nosniff",
+        }
+        range_header = request.headers.get("Range", "")
+        match = _re.fullmatch(r"bytes=(\d+)-(\d*)", range_header.strip()) if range_header else None
+        if match:
+            start = int(match.group(1))
+            end = int(match.group(2)) if match.group(2) else len(body) - 1
+            end = min(end, len(body) - 1, start + _PDF_RANGE_MAX - 1)
+            if start > end or start >= len(body):
+                raise web.HTTPRequestRangeNotSatisfiable(
+                    headers={"Content-Range": f"bytes */{len(body)}"}
+                )
+            chunk = body[start : end + 1]
+            headers["Content-Range"] = f"bytes {start}-{end}/{len(body)}"
+            return web.Response(body=chunk, status=206, content_type=content_type, headers=headers)
+        return web.Response(body=body, content_type=content_type, headers=headers)
+
     async def source(request: web.Request) -> web.Response:
-        ctx = await ctx_for(request, ALL)
+        kind = request.match_info["kind"]
+        if kind not in {"text", "pdf"}:
+            raise NotAvailable("not available")
+        ctx = await ctx_for(
+            request,
+            ALL,
+            operation="document:read" if kind == "pdf" else "source:read",
+        )
         rid = request.match_info["rid"]
         record = await service.current_record(ctx, rid)
         try:
@@ -645,26 +758,21 @@ def create_app(service: KnowledgeService) -> web.Application:
         except ValueError:
             raise NotAvailable("not available") from None
         item = service.record_chunk(ctx, rid, index)
-        kind = request.match_info["kind"]
-        if kind == "text":
-            body = (item.get("content") or "").encode()
-        else:
-            body = await service.document_source(ctx, item, kind)
         await service.validate_retrieval(ctx, record.payload["retrieval"])
-        return web.Response(
-            body=body,
-            content_type="application/pdf" if kind == "pdf" else "text/plain",
-            charset=None if kind == "pdf" else "utf-8",
-            headers={
-                "Content-Disposition": "attachment; filename*=UTF-8''"
-                + quote(item.get("doc_name") or "source.pdf")
-            }
-            if kind == "pdf"
-            else None,
+        if kind == "text":
+            body, headers = _text_page(request, item.get("content") or "")
+            return web.Response(
+                body=body, content_type="text/plain", charset="utf-8", headers=headers
+            )
+        if kind != "pdf":
+            raise NotAvailable("not available")
+        body = await service.document_source(ctx, item, kind)
+        return _binary_response(
+            request, body, item.get("doc_name") or "source.pdf", "application/pdf"
         )
 
     async def document(request: web.Request) -> web.Response:
-        ctx = await ctx_for(request, ALL)
+        ctx = await ctx_for(request, ALL, operation="document:read")
         record = await service.current_record(ctx, request.match_info["rid"])
         kind = request.match_info["kind"]
         for item in record.payload["retrieval"].get("evidence", []):
@@ -673,12 +781,101 @@ def create_app(service: KnowledgeService) -> web.Application:
                     ctx, item, "document-text" if kind == "text" else kind
                 )
                 await service.validate_retrieval(ctx, record.payload["retrieval"])
-                return web.Response(
-                    body=body,
-                    content_type="application/pdf" if kind == "pdf" else "text/plain",
-                    charset=None if kind == "pdf" else "utf-8",
+                if kind == "text":
+                    page, headers = _text_page(request, body.decode("utf-8"))
+                    return web.Response(
+                        body=page, content_type="text/plain", charset="utf-8", headers=headers
+                    )
+                if kind != "pdf":
+                    raise NotAvailable("not available")
+                return _binary_response(
+                    request, body, item.get("doc_name") or "document.pdf", "application/pdf"
                 )
         raise NotAvailable("not available")
+
+    async def validate_references(request: web.Request) -> web.Response:
+        """Batched citation validation for the Agent; never returns source text.
+
+        Each item is authorized against the same owner/auth_binding as its
+        record. Up to 50 composite items per call; the caller must validate
+        every batch (no "first batch only" shortcut).
+        """
+        ctx = await ctx_for(request, ALL, operation="record:read")
+        try:
+            body = await request.json()
+        except ValueError:
+            raise Forbidden("invalid request body", code="bad_request") from None
+        items = body.get("items") if isinstance(body, dict) else None
+        if not isinstance(items, list) or not items or len(items) > 50:
+            raise Forbidden("items must contain 1..50 entries", code="bad_request")
+        states: dict[str, str] = {}
+        results = []
+        for position, entry in enumerate(items):
+            status = "unknown"
+            digest = None
+            if isinstance(entry, dict):
+                record_id = entry.get("record_id")
+                if isinstance(record_id, str) and record_id:
+                    if record_id not in states:
+                        states[record_id] = await _reference_record_state(ctx, record_id)
+                    record_state = states[record_id]
+                    if record_state == "forbidden":
+                        status = "forbidden"
+                    elif record_state != "valid":
+                        status = "stale" if record_state == "stale" else "unknown"
+                    else:
+                        record = service.records.get(record_id)
+                        retrieval = (record.payload.get("retrieval") or {}) if record else {}
+                        evidence = retrieval.get("evidence") or []
+                        index = entry.get("evidence_index")
+                        if (
+                            record is not None
+                            and isinstance(index, int)
+                            and not isinstance(index, bool)
+                            and 0 <= index < len(evidence)
+                        ):
+                            item = evidence[index]
+                            snapshot = (retrieval.get("workspace_snapshots") or {}).get(
+                                item.get("workspace")
+                            )
+                            digest = knowledge_source_digest(item, snapshot)
+                            supplied = entry.get("source_digest")
+                            if supplied is None or supplied == digest:
+                                status = "valid"
+                            else:
+                                status = "stale"
+                                digest = None
+            results.append(
+                {
+                    "index": position,
+                    "status": status,
+                    **({"source_digest": digest} if digest else {}),
+                }
+            )
+        await revalidate(request, ctx)
+        return web.json_response({"items": results})
+
+    async def _reference_record_state(ctx, record_id: str) -> str:
+        try:
+            record = service.records.get(record_id)
+        except AccessError:
+            return "unknown"
+        if record is None:
+            return "unknown"
+        if (
+            record.user_id != ctx.principal_id
+            or record.enterprise != ctx.tenant_id
+            or record.principal_type != ctx.principal_type
+            or record.mode != ctx.mode
+        ):
+            return "unknown"
+        if not set(record.workspaces) <= set(ctx.workspaces):
+            return "forbidden"
+        try:
+            await service.validate_retrieval(ctx, record.payload.get("retrieval") or {})
+        except AccessError:
+            return "stale"
+        return "valid"
 
     async def health(request: web.Request) -> web.Response:
         # Public liveness reveals no knowledge-library identities.
@@ -694,6 +891,7 @@ def create_app(service: KnowledgeService) -> web.Application:
         web.get("/api/workspaces", me),
         web.post("/api/query", query),
         web.post("/api/generate", generate),
+        web.post("/api/knowledge-references/validate", validate_references),
         web.get("/api/records", records),
         web.get("/api/records/{rid}", record_detail),
         web.get("/api/export/{rid}", export),

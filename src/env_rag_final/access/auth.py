@@ -35,6 +35,8 @@ _DEFAULTS = {
     "directory_version": "",
     "revisions": (),
     "service_account_revision": None,
+    "delegation_operation": None,
+    "issuing_client_id": None,
 }
 
 # HTTP status mapping contract:
@@ -117,6 +119,9 @@ class AuthContext:
     directory_version: str = ""
     revisions: tuple[tuple[str, int], ...] = ()
     service_account_revision: int | None = None
+    # Delegated knowledge identity metadata (not part of auth_binding).
+    delegation_operation: str | None = None
+    issuing_client_id: str | None = None
 
     def __init__(self, **kwargs):
         """Accept both the mode-aware fields and the legacy local shorthand.
@@ -159,6 +164,8 @@ class AuthContext:
             "directory_version",
             "revisions",
             "service_account_revision",
+            "delegation_operation",
+            "issuing_client_id",
         )
         unknown = set(kwargs) - set(fields)
         if unknown:

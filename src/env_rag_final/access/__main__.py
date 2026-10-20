@@ -174,7 +174,7 @@ def main(argv: list[str] | None = None) -> int:
         mapping_path=args.iam_mapping,
     )
     app = create_app(service)
-    web.run_app(app, host=args.host, port=args.port, access_log=None)
+    web.run_app(app, host=args.host, port=args.port, access_log=None, handler_cancellation=True)
     return 0
 
 

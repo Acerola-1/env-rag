@@ -135,6 +135,32 @@ def record_id_for(*parts: object) -> str:
     return "wa-" + hashlib.sha256(payload.encode()).hexdigest()[:20]
 
 
+def knowledge_source_digest(item: dict, snapshot: dict | None) -> str:
+    """Stable per-fragment digest shared with the Agent citation store.
+
+    Canonical JSON follows the frozen contract: sorted keys, compact
+    separators, UTF-8, no ASCII escaping, exact source text (no NFKC, no
+    whitespace folding) and ``location`` preserved as ``null`` when the PG
+    chunk has no unified page number. ``workspace_snapshot`` is the original
+    versioned snapshot object used by the read-time revalidation.
+    """
+    description = {
+        "schema_version": "knowledge.source.v1",
+        "workspace": item.get("workspace"),
+        "doc_id": item.get("doc_id"),
+        "chunk_id": item.get("chunk_id"),
+        "kind": item.get("kind"),
+        "source_version": (snapshot or {}).get("source_fingerprint")
+        or (snapshot or {}).get("search_id"),
+        "workspace_snapshot": snapshot,
+        "location": item.get("location"),
+        "content": item.get("content") or "",
+    }
+    import rfc8785
+
+    return hashlib.sha256(rfc8785.dumps(description)).hexdigest()
+
+
 class KnowledgeService:
     """Authorization-aware retrieval, generation and record access."""
 
@@ -181,16 +207,23 @@ class KnowledgeService:
             return await self._connect_factory()
         import asyncpg
 
+        from env_rag_final.access.budget import remaining_seconds
+
         v = self.values
+        remaining = remaining_seconds()
         return await asyncpg.connect(
             host=v["POSTGRES_HOST"],
             port=int(v["POSTGRES_PORT"]),
             user=v["POSTGRES_USER"],
             password=v["POSTGRES_PASSWORD"],
             database=v["POSTGRES_DATABASE"],
-            timeout=15,
+            timeout=min(15, remaining),
+            command_timeout=remaining,
             statement_cache_size=0,
-            server_settings={"default_transaction_read_only": "on", "statement_timeout": "60000"},
+            server_settings={
+                "default_transaction_read_only": "on",
+                "statement_timeout": str(max(1, int(remaining * 1000))),
+            },
         )
 
     def maybe_reload_registry(self) -> None:
@@ -570,7 +603,7 @@ class KnowledgeService:
             list(self.chunk_ids(enumeration.get("answer", {}) if enumeration else payload)),
         )
         items.extend(hydrated)
-        return {
+        block = {
             "workspace": ws_id,
             "status": status,
             "items": items,
@@ -578,6 +611,17 @@ class KnowledgeService:
             "raw": payload,
             "notes": payload.get("notes", []),
         }
+        # A legitimate empty discovery is distinguishable from every other
+        # ``missing`` (permission/service/stale): current, complete source
+        # snapshot + a real query that ended with zero candidates.
+        if (
+            status == "missing"
+            and not items
+            and not payload.get("error")
+            and not payload.get("failures")
+        ):
+            block["retrieval_reason"] = "empty_discovery"
+        return block
 
     async def instance_identity(self, ctx: AuthContext, ws_id: str) -> dict:
         await self.check_context(ctx)
@@ -780,11 +824,19 @@ class KnowledgeService:
             raise NotAvailable("source changed during query")
         await self.check_context(ctx)
         evidence = self.merge_evidence(blocks)
+        for item in evidence:
+            item.setdefault("location", None)
+            item["source_version"] = (snapshots.get(item.get("workspace")) or {}).get(
+                "source_fingerprint"
+            ) or (snapshots.get(item.get("workspace")) or {}).get("search_id")
+            item["source_digest"] = knowledge_source_digest(
+                item, snapshots.get(item.get("workspace"))
+            )
         included = "".join(
             f"{item['workspace']}::{item['chunk_id']}::{item['content']}"
             for item in sorted(evidence, key=lambda i: (i["workspace"] or "", i["chunk_id"] or ""))
         )
-        return {
+        result = {
             "workspace_snapshots": snapshots,
             "question": question,
             "route": route,
@@ -797,6 +849,13 @@ class KnowledgeService:
             "per_workspace": blocks,
             "evidence_sha256": hashlib.sha256(included.encode()).hexdigest(),
         }
+        if (
+            status == "missing"
+            and blocks
+            and all(b.get("retrieval_reason") == "empty_discovery" for b in blocks)
+        ):
+            result["retrieval_reason"] = "empty_discovery"
+        return result
 
     # ---- generation ---------------------------------------------------
     async def generate(self, ctx: AuthContext, retrieval: dict) -> dict:
