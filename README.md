@@ -93,23 +93,23 @@ cp .env.example .env      # 然后填写自己的服务配置
 
 应用本身是纯 Python 进程，与容器运行时无关——只要这些端口和库里数据就绪即可；但数据在容器卷内，没有后端就没有可检索内容。
 
-### 2. 启动正式网关
+### 2. 启动网关
 
-I4已完成实际分库，唯一身份源为Java IAM19100；当前存储是PG5432/rag、Qdrant6333和Neo4j7687。air/water/coastal是不同资料空间，不是待删副本。
+需要与 Agent、IAM 三仓联调时，从 Agent 仓执行统一启动器：
 
 ```bash
-# 在Agent仓库启动/检查协调后的正式服务：
 ../../air_agent/.venv/bin/python ../../air_agent/deployment/run_separated_local.py start
-# 仅启动本仓网关时，需先将私有deployment.env安全注入进程环境：
-# python -m env_rag_final.access --auth-mode remote --port 8099 \
-#   --record-root .local/remote-iam-live/records
 ```
 
-三个LightRAG实例保留对应资料空间；它们当前为按需组件，重启前核实真实存储地址，不通过旧localhost/9621入口或重新入库来修复连接。具体运行清单见[正式环境](docs/CURRENT-RUNTIME.md)。
+只启动本仓网关时，按 `.env.example` 注入身份与存储配置后运行：
+
+```bash
+python -m env_rag_final.access --auth-mode remote --port 8099
+```
 
 ### 3. 登录试用
 
-打开 <http://127.0.0.1:8099>，使用IAM账号。当前本机口令与机器凭据只在`.local/remote-iam-live/credentials.md`；[账号说明](ACCOUNTS.md)不保存秘密。本地registry仅作技术目录，不提供正式身份与授权。旧local网关和评测IAM已退役。
+打开 <http://127.0.0.1:8099>，使用 IAM 账号登录。账号与权限由统一 IAM 管理；`ACCOUNTS.md` 仅说明账号用途，不保存秘密。
 
 ### 4. 自检与测试
 
@@ -125,7 +125,7 @@ uv run ruff check src tests scripts
 # 纯 PG 完整清单（不需要模型、不需要 LightRAG，只需 .env 里 5 个 POSTGRES_*）
 uv run env-rag-final ask --query '列出 GB8978-1996 表1的全部项目及限值'
 
-# 账号/成员/角色由统一 IAM 管理；旧本地账号生成脚本已退役。
+# 账号/成员/角色由统一 IAM 管理。
 
 # 入库（可中断重跑，已完成的文档不重复计费）
 uv run env-rag-final workspace-ingest --workspace air --dry-run
@@ -147,16 +147,7 @@ uv run env-rag-final workspace-index  --workspace air
 | `assets/` | **历史探究归档**：旧对照网页、PG 检索研究、整理记录（详见 [assets/README.md](assets/README.md)） |
 | `reports/` | 各轮评测与验收证据（400MB+，按代次目录自组织，历史轮次保持原样） |
 | `openspec/` | 规格驱动的变更计划；已完成的在 `openspec/changes/archive/` |
-| `.local/` | 本机运行状态（不进 Git）：注册表、口令清单、实例密钥、记录、入库账本 |
-
-## 网页入口说明
-
-本项目演化出两个网页：
-
-| 入口 | 模块 | 认证 | 现状 |
-| --- | --- | --- | --- |
-| **8099 Knowledge API** | `env_rag_final.access` | 登录 + 分库授权 | **当前唯一推荐入口**，说明见 [WORKSPACE-ACCESS.md](WORKSPACE-ACCESS.md) |
-| 8091 检索对照页 | `env_rag_final.web` | 无（本机评测工具） | 历史工具，启动还依赖隔壁的 LightRAG 源码 checkout；用法见 [assets/legacy-comparison-web/WEB_RAG.md](assets/legacy-comparison-web/WEB_RAG.md) |
+| `.local/` | 本机运行状态（不进 Git）：注册表、实例密钥、记录、入库账本 |
 
 ## 文档
 
@@ -171,13 +162,17 @@ uv run env-rag-final workspace-index  --workspace air
 ## 数据与质量边界（重要）
 
 - 数据库、向量、图谱、缓存、`.env` 和密钥**不入 Git**；数据库是运行时派生数据，重建不能保证逐字复现历史 LLM 图谱。入库/重建边界见 [docs/initialization/INGESTION.md](docs/initialization/INGESTION.md)，发布边界见 [docs/initialization/PUBLISHING.md](docs/initialization/PUBLISHING.md)。
-- 正式身份和授权由远程IAM实时核验；知识技术目录与数据库/向量/图的资料范围共同约束读路径。IAM故障不回退本地账号。资料源schema不因清理旧环境而改写。
+- 正式身份和授权由远程 IAM 实时核验；知识目录与数据库/向量/图的资料范围共同约束读路径。IAM 故障不回退本地账号。
 - 评测结论：固定金标为 31 正例 / 10 反例；**Gate 4 未通过，默认融合未启用**——工程可运行不代表检索质量已达标。完整证据在 `reports/pg-retrieval/`。
 - 语料默认定位 `datasets/corpus/parsed`，可用环境变量 `ENV_RAG_PARSED_ROOT` 或 `ENV_RAG_DATA_DIR` 覆盖。
 
 ## 分支
 
 `dev` 为开发分支，`main` 为稳定分支。命令名保留 `env-rag-final` 以兼容既有脚本。
+
+## 维护者说明
+
+本机正式运行态、端口、容器与数据库清单以 [docs/CURRENT-RUNTIME.md](docs/CURRENT-RUNTIME.md) 为准；README 只保留公开使用与开发说明。历史评测与验收报告仍保存在 [reports/](reports/) 与 [assets/](assets/)，用于溯源，不代表当前部署状态。
 
 ## License
 
