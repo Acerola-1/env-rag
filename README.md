@@ -53,7 +53,7 @@ I4已完成实际分库，唯一身份源为Java IAM19100；当前存储是PG543
 
 ```bash
 uv run env-rag-final doctor --connections    # PG/Qdrant/Neo4j 只读连通检查
-PYTHONDONTWRITEBYTECODE=1 uv run pytest tests -q
+PYTHONDONTWRITEBYTECODE=1 uv run python -m pytest tests -q
 uv run ruff check src tests scripts
 ```
 

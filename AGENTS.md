@@ -17,7 +17,7 @@
 
 ```bash
 uv run env-rag-final doctor --connections            # PG/Qdrant/Neo4j 只读连通检查
-PYTHONDONTWRITEBYTECODE=1 uv run pytest tests -q
+PYTHONDONTWRITEBYTECODE=1 uv run python -m pytest tests -q
 uv run ruff check src tests scripts
 uv run ruff format --check src tests scripts
 ```
