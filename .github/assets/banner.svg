@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070D18"/>
+      <stop offset="0.55" stop-color="#0B1424"/>
+      <stop offset="1" stop-color="#111C30"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.45" r="0.55">
+      <stop offset="0" stop-color="#22D3EE" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#8BA3C7" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="320" rx="24" fill="url(#bg)"/>
+  <rect width="1280" height="320" rx="24" fill="url(#grid)"/>
+  <rect width="1280" height="320" rx="24" fill="url(#glow)"/>
+  <rect x="1" y="1" width="1278" height="318" rx="23" fill="none" stroke="#FFFFFF" stroke-opacity="0.10"/>
+  <g>
+    <text x="72" y="82" fill="#22D3EE" font-family="'JetBrains Mono', 'SFMono-Regular', Consolas, monospace" font-size="13" letter-spacing="3.2">ENVIRONMENTAL  /  RETRIEVAL</text>
+    <text x="72" y="146" fill="#F7FAFF" font-family="Inter, 'SF Pro Display', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="58" font-weight="700" letter-spacing="-1.2">env-rag</text>
+    <rect x="72" y="166" width="74" height="4" rx="2" fill="url(#accent)"/>
+    <text x="72" y="204" fill="#D8E5F7" font-family="Inter, 'SF Pro Display', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="21" font-weight="500">环境标准与公报 RAG 知识网关</text>
+    <text x="72" y="232" fill="#8FA6C4" font-family="Inter, 'SF Pro Display', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="14">PG 全文/结构检索 × LightRAG 图检索 · 分库授权 · 引用溯源</text>
+    <rect x="72.0" y="258" width="109.2" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.055" stroke="#FFFFFF" stroke-opacity="0.12"/>
+  <circle cx="86.0" cy="273" r="3" fill="#22D3EE"/>
+  <text x="96.0" y="277.5" fill="#C7D6EC" font-family="'JetBrains Mono', 'SFMono-Regular', Consolas, monospace" font-size="12.5" letter-spacing="0.3">LightRAG 1.5</text>
+  <rect x="191.2" y="258" width="84.0" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.055" stroke="#FFFFFF" stroke-opacity="0.12"/>
+  <circle cx="205.2" cy="273" r="3" fill="#38BDF8"/>
+  <text x="215.2" y="277.5" fill="#C7D6EC" font-family="'JetBrains Mono', 'SFMono-Regular', Consolas, monospace" font-size="12.5" letter-spacing="0.3">pgvector</text>
+  <rect x="285.2" y="258" width="84.0" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.055" stroke="#FFFFFF" stroke-opacity="0.12"/>
+  <circle cx="299.2" cy="273" r="3" fill="#A78BFA"/>
+  <text x="309.2" y="277.5" fill="#C7D6EC" font-family="'JetBrains Mono', 'SFMono-Regular', Consolas, monospace" font-size="12.5" letter-spacing="0.3">Qdrant</text>
+  <rect x="379.2" y="258" width="84.0" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.055" stroke="#FFFFFF" stroke-opacity="0.12"/>
+  <circle cx="393.2" cy="273" r="3" fill="#34D399"/>
+  <text x="403.2" y="277.5" fill="#C7D6EC" font-family="'JetBrains Mono', 'SFMono-Regular', Consolas, monospace" font-size="12.5" letter-spacing="0.3">Neo4j</text>
+  <rect x="473.2" y="258" width="94.0" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.055" stroke="#FFFFFF" stroke-opacity="0.12"/>
+  <circle cx="487.2" cy="273" r="3" fill="#F59E0B"/>
+  <text x="497.2" y="277.5" fill="#C7D6EC" font-family="'JetBrains Mono', 'SFMono-Regular', Consolas, monospace" font-size="12.5" letter-spacing="0.3">Remote IAM</text>
+  </g>
+  <g>
+    <g filter="url(#soft)" opacity="0.5"><circle cx="1040" cy="150" r="70" fill="#22D3EE" opacity="0.3"/></g>
+    <rect x="820" y="44" width="392" height="232" rx="18" fill="#FFFFFF" fill-opacity="0.035" stroke="#FFFFFF" stroke-opacity="0.10"/>
+    <text x="848" y="76" fill="#67E8F9" font-family="'JetBrains Mono', 'SFMono-Regular', Consolas, monospace" font-size="10" letter-spacing="2">KNOWLEDGE GATEWAY</text>
+    <g stroke="#22D3EE" stroke-opacity="0.35" stroke-width="1.4">
+      <path d="M884 156 L976 156"/><path d="M976 156 L1068 104"/><path d="M976 156 L1068 156"/><path d="M976 156 L1068 208"/>
+    </g>
+    <circle cx="884" cy="156" r="35" fill="#0B1A28" stroke="#22D3EE" stroke-width="2"/>
+    <text x="884" y="152" text-anchor="middle" fill="#ECFEFF" font-family="'JetBrains Mono', 'SFMono-Regular', Consolas, monospace" font-size="9" letter-spacing="1">8099</text>
+    <text x="884" y="166" text-anchor="middle" fill="#8BE9F5" font-family="'JetBrains Mono', 'SFMono-Regular', Consolas, monospace" font-size="8" letter-spacing="1">API</text>
+    <g>
+      <rect x="1024" y="80" width="88" height="48" rx="10" fill="#0B1625" stroke="#38BDF8" stroke-opacity="0.55"/>
+      <ellipse cx="1068" cy="92" rx="18" ry="5" fill="none" stroke="#38BDF8" stroke-opacity="0.7"/>
+      <path d="M1050 92 L1050 110 C1050 115 1060 118 1068 118 C1076 118 1086 115 1086 110 L1086 92" fill="none" stroke="#38BDF8" stroke-opacity="0.7"/>
+      <text x="1122" y="108" text-anchor="start" fill="#AFC3DC" font-family="'JetBrains Mono', 'SFMono-Regular', Consolas, monospace" font-size="9" letter-spacing="1">PG</text>
+    </g>
+    <g>
+      <rect x="1024" y="132" width="88" height="48" rx="10" fill="#0B1625" stroke="#A78BFA" stroke-opacity="0.55"/>
+      <ellipse cx="1068" cy="144" rx="18" ry="5" fill="none" stroke="#A78BFA" stroke-opacity="0.7"/>
+      <path d="M1050 144 L1050 162 C1050 167 1060 170 1068 170 C1076 170 1086 167 1086 162 L1086 144" fill="none" stroke="#A78BFA" stroke-opacity="0.7"/>
+      <text x="1122" y="160" text-anchor="start" fill="#AFC3DC" font-family="'JetBrains Mono', 'SFMono-Regular', Consolas, monospace" font-size="9" letter-spacing="1">QDRANT</text>
+    </g>
+    <g>
+      <rect x="1024" y="184" width="88" height="48" rx="10" fill="#0B1625" stroke="#34D399" stroke-opacity="0.55"/>
+      <ellipse cx="1068" cy="196" rx="18" ry="5" fill="none" stroke="#34D399" stroke-opacity="0.7"/>
+      <path d="M1050 196 L1050 214 C1050 219 1060 222 1068 222 C1076 222 1086 219 1086 214 L1086 196" fill="none" stroke="#34D399" stroke-opacity="0.7"/>
+      <text x="1122" y="212" text-anchor="start" fill="#AFC3DC" font-family="'JetBrains Mono', 'SFMono-Regular', Consolas, monospace" font-size="9" letter-spacing="1">NEO4J</text>
+    </g>
+  </g>
+</svg>

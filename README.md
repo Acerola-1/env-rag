@@ -1,13 +1,75 @@
+<p align="center">
+  <img src=".github/assets/banner.svg" alt="env-rag — 环境标准与公报 RAG 知识网关" width="100%">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.12-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.12">
+  <img src="https://img.shields.io/badge/LightRAG-1.5-22D3EE?style=flat-square" alt="LightRAG 1.5">
+  <img src="https://img.shields.io/badge/PostgreSQL-pgvector-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL + pgvector">
+  <img src="https://img.shields.io/badge/Qdrant-vector-A78BFA?style=flat-square" alt="Qdrant">
+  <img src="https://img.shields.io/badge/Neo4j-graph-34D399?style=flat-square&logo=neo4j&logoColor=white" alt="Neo4j">
+  <img src="https://img.shields.io/badge/license-MIT-22C55E?style=flat-square" alt="MIT License">
+</p>
+
+<p align="center">
+  面向环境标准与公报的 RAG 知识网关：PG 全文/结构检索 × LightRAG 图检索，分库授权、引用溯源与来源下载。
+</p>
+
+<p align="center">
+  <a href="#核心能力">核心能力</a> ·
+  <a href="#架构">架构</a> ·
+  <a href="#技术栈">技术栈</a> ·
+  <a href="#快速开始">快速开始</a> ·
+  <a href="#文档">文档</a>
+</p>
+
 # env-rag
 
-环境知识库：230 份中外环境标准/公报 PDF（大气、水），提供两条互相独立又可组合的检索路径：
+环境知识库：230 份中外环境标准/公报 PDF（大气、水），提供两条互相独立又可组合的检索路径。
+
+## 核心能力
 
 - **PG 文档与范围检索**：PostgreSQL + pgvector 上的关键词检索、元数据过滤，以及不依赖模型总结的**表格/条款完整清单枚举**（解决“表查全了没有”的问题）。
-- **LightRAG 图检索**：`lightrag-hku`（PyPI 1.5.7）+ Qdrant 向量库 + Neo4j 图谱，支持 naive/local/global/hybrid/mix 模式，以及两路融合与精排的工程实现。
+- **LightRAG 图检索**：`lightrag-hku`（1.5.x）+ Qdrant 向量库 + Neo4j 图谱，支持 naive/local/global/hybrid/mix 模式，以及两路融合与精排的工程实现。
+- **分库授权网关**：8099 网页按账号决定可查资料空间，支持选库、完整清单、带引用回答、证据过期/范围歧义时停止生成、来源全文与 PDF 下载、个人历史。
+- **可审计边界**：身份实时核验自远程 IAM；检索结果保留 `complete/retrieved/stale/partial/ambiguous/missing` 状态，不以 HTTP 200 代替业务成功。
 
-面向使用者的是一个**带登录和分库授权的网页网关**（8099）：按账号决定能查哪个知识库，支持选库查询、完整清单、基于证据生成回答（带引用，证据过期/范围歧义时停止生成）、来源全文与 PDF 下载、个人历史记录。
+## 技术栈
 
-## 快速开始（macOS）
+| 层 | 选型 | 说明 |
+|---|---|---|
+| 检索与存储 | PostgreSQL 17 + pgvector · Qdrant · Neo4j | 原文/目录、向量索引与知识图谱各司其职 |
+| 图检索 | LightRAG 1.5（`lightrag-hku`） | naive/local/global/hybrid/mix 与融合精排 |
+| 服务 | Python 3.12 · aiohttp · httpx | 8099 知识网关、CLI 与后台任务 |
+| 模型 | OpenAI 兼容 LLM · Embedding/Rerank | 生成、抽取与检索打分分离配置 |
+| 身份 | 独立 Java IAM（remote auth） | 实时核验、分库授权、故障不回退本地账号 |
+| 数据 | 230 份 PDF · MinerU 解析 · Git LFS | 原文、切分与金标随仓库版本管理 |
+
+## 架构
+
+```mermaid
+flowchart LR
+  Browser["浏览器 / 8099"] --> Gateway["Knowledge Gateway<br/>登录 + 分库授权"]
+  Gateway --> IAM["Remote Java IAM<br/>19100"]
+  Gateway --> PG[("PostgreSQL 17 + pgvector<br/>原文 / 目录 / 搜索")]
+  Gateway --> LightRAG["LightRAG"]
+  LightRAG --> Qdrant[("Qdrant")]
+  LightRAG --> Neo4j[("Neo4j")]
+  Gateway --> Models["LLM / Embedding / Rerank"]
+  PG --> Corpus["PDF / MinerU parsed<br/>Git LFS"]
+```
+
+## 三仓关系
+
+| 仓库 | 职责 |
+|---|---|
+| [air-agent](https://github.com/Acerola-1/air-agent) | Agent 运行时、聊天前端与运营后台 |
+| **env-rag**（本仓） | 环境标准/公报知识库、检索与 8099 网关 |
+| [air_agent_iam](https://github.com/Acerola-1/air_agent_iam) | 多租户身份、会话与业务授权 |
+
+## 快速开始
+
+以下以 macOS + Apple Container 为例。
 
 ### 1. 准备依赖服务
 
@@ -96,6 +158,16 @@ uv run env-rag-final workspace-index  --workspace air
 | **8099 Knowledge API** | `env_rag_final.access` | 登录 + 分库授权 | **当前唯一推荐入口**，说明见 [WORKSPACE-ACCESS.md](WORKSPACE-ACCESS.md) |
 | 8091 检索对照页 | `env_rag_final.web` | 无（本机评测工具） | 历史工具，启动还依赖隔壁的 LightRAG 源码 checkout；用法见 [assets/legacy-comparison-web/WEB_RAG.md](assets/legacy-comparison-web/WEB_RAG.md) |
 
+## 文档
+
+| 文档 | 内容 |
+|---|---|
+| [AGENTS.md](AGENTS.md) | 项目事实、运行边界与提交约定 |
+| [WORKSPACE-ACCESS.md](WORKSPACE-ACCESS.md) | 8099 网关、分库授权与账号说明 |
+| [docs/initialization/](docs/initialization/) | 入库、发布与数据边界 |
+| [reports/pg-retrieval/](reports/pg-retrieval/) | 固定金标、Gate 4 结论与评测证据 |
+| [openspec/](openspec/) | 规格驱动的变更与归档 |
+
 ## 数据与质量边界（重要）
 
 - 数据库、向量、图谱、缓存、`.env` 和密钥**不入 Git**；数据库是运行时派生数据，重建不能保证逐字复现历史 LLM 图谱。入库/重建边界见 [docs/initialization/INGESTION.md](docs/initialization/INGESTION.md)，发布边界见 [docs/initialization/PUBLISHING.md](docs/initialization/PUBLISHING.md)。
@@ -106,3 +178,7 @@ uv run env-rag-final workspace-index  --workspace air
 ## 分支
 
 `dev` 为开发分支，`main` 为稳定分支。命令名保留 `env-rag-final` 以兼容既有脚本。
+
+## License
+
+代码采用 [MIT](LICENSE)。`datasets/` 中的标准/公报 PDF 版权归原发布机构，仅用于检索研究，不随 MIT 重新授权。
